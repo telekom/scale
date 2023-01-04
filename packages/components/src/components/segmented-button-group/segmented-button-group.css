@@ -12,7 +12,15 @@
 :host {
   --background-color: var(--telekom-color-ui-faint);
   --radius: var(--telekom-radius-standard);
-  --height: 36px;
+  --height: 32px;
+
+  /* medium styles */
+  --height-medium: 40px;
+  
+  /* large styles */
+  --height-large: 44px;
+  
+
   display: flex;
   flex-direction: column;
 }
@@ -21,9 +29,9 @@
   background-color: var(--background-color);
   border: 0;
   border-radius: var(--radius);
-  padding: 2px;
+  padding: 0 var(--telekom-spacing-unit-x05);
   width: fit-content;
-  height: 32px;
+  height: var(--height);
   display: inline-grid;
 }
 
@@ -32,15 +40,13 @@
 }
 
 .segmented-button-group--medium {
-  height: 40px;
-  --height: 40px;
-  padding: 0 2px 0 2px;
+  height: var(--height-medium);
+  padding: 0 var(--telekom-spacing-unit-x05);
 }
 
 .segmented-button-group--large {
-  height: 44px;
-  --height: 44px;
-  padding: 0 2px 0 2px;
+  height: var(--height-large);
+  padding: 0 var(--telekom-spacing-unit-x05);
 }
 
 .segmented-button-group--label {
