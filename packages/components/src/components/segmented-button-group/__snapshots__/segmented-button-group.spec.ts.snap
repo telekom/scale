@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SegmentedButtonGroup should match selected button snapshot 1`] = `
+<scale-segmented-button-group>
+  <mock:shadow-root>
+    <div aria-label="segment button group with 2 buttons" class="segmented-button-group segmented-button-group--small" part="segmented-button-group small" role="group" style="grid-template-columns: repeat(2, 0px);">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <scale-segmented-button adjacent-siblings="right" aria-description-translation="$position $selected" position="1" selected="true" size="small">
+    Label
+  </scale-segmented-button>
+  <scale-segmented-button adjacent-siblings="left" aria-description-translation="$position $selected" position="2" selected="true" size="small">
+    Label
+  </scale-segmented-button>
+</scale-segmented-button-group>
+`;
+
+exports[`SegmentedButtonGroup should match standard snapshot 1`] = `
+<scale-segmented-button-group>
+  <mock:shadow-root>
+    <div aria-label="segment button group with 4 buttons" class="segmented-button-group segmented-button-group--small" part="segmented-button-group small" role="group" style="grid-template-columns: repeat(4, 14px);">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <scale-segmented-button adjacent-siblings="" aria-description-translation="$position $selected" position="1" selected="false" size="small">
+    Label
+  </scale-segmented-button>
+  <scale-segmented-button adjacent-siblings="" aria-description-translation="$position $selected" position="2" selected="false" size="small">
+    Label
+  </scale-segmented-button>
+  <scale-segmented-button adjacent-siblings="" aria-description-translation="$position $selected" position="3" selected="false" size="small">
+    Label
+  </scale-segmented-button>
+  <scale-segmented-button adjacent-siblings="" aria-description-translation="$position $selected" position="4" selected="false" size="small">
+    Label
+  </scale-segmented-button>
+</scale-segmented-button-group>
+`;
