@@ -10,212 +10,50 @@
  */
 
 :host {
-  /* not selected */
-  --background-color-selected: var(--telekom-color-ui-base);
-  --button-radius: 6px;
-  --padding-top-bottom: var(--telekom-spacing-unit-x1);
-  --height: 28px;
-  --font-family: var(--telekom-typography-font-family-sans);
-  --font-weight: var(--telekom-typography-font-weight-bold);
-  --font-size: var(--telekom-typography-font-size-caption);
-  --label-disabled: var(--telekom-color-text-and-icon-disabled);
-  --transition: all var(--telekom-motion-duration-transition)
-    var(--telekom-motion-easing-standard);
-  --color: var(--telekom-color-text-and-icon-standard);
-
-  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
- 
+  --background-color: var(--telekom-color-ui-faint);
+  --radius: var(--telekom-radius-standard);
+  --height: 32px;
 
   /* medium styles */
-  --font-size-medium: var(--telekom-typography-font-size-body);
-  --height-medium: 36px;
+  --height-medium: 40px;
 
   /* large styles */
-  --font-size-large: var(--telekom-typography-font-size-body);
-  --height-large: 40px;
-
-  /* hover styles */
-  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
-
-  /* active styles */
-  --background-color-active: var(--telekom-color-ui-state-fill-pressed);
+  --height-large: 44px;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
+  flex-direction: column;
 }
 
 .segmented-button {
-  box-sizing: border-box;
-  position: relative;
+  background-color: var(--background-color);
   border: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: var(--button-radius);
-  padding-top: var(--padding-top-bottom);
-  padding-bottom: var(--padding-top-bottom);
-  transition: var(--transition);
-  background-color: transparent;
-  padding: 0;
-}
-
-.segmented-button--mask {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  border-radius: var(--button-radius);
-  background-color: transparent;
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
-  transition: var(--transition);
-  white-space: nowrap;
-  color: var(--color);
-}
-
-button.segmented-button--icon-only.segmented-button--small
-  .segmented-button--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x4);
-}
-
-button.segmented-button--small .segmented-button--mask {
-  padding-left: var(--telekom-spacing-unit-x2);
-  padding-right: var(--telekom-spacing-unit-x3);
-}
-
-.segmented-button--small {
+  border-radius: var(--radius);
+  padding: 0 var(--telekom-spacing-unit-x05);
+  width: fit-content;
   height: var(--height);
+  display: inline-grid;
+}
+
+.segmented-button--full-width {
+  width: 100%;
 }
 
 .segmented-button--medium {
-  
-  font-size: var(--font-size-medium);
   height: var(--height-medium);
-}
-
-button.segmented-button--medium .segmented-button--mask {
-  padding-left: var(--telekom-spacing-unit-x3);
-  padding-right: var(--telekom-spacing-unit-x4);
+  padding: 0 var(--telekom-spacing-unit-x05);
 }
 
 .segmented-button--large {
-  font-size: var(--font-size-large);
-  height:  var(--height-large);
-}
-button.segmented-button--large .segmented-button--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x5);
+  height: var(--height-large);
+  padding: 0 var(--telekom-spacing-unit-x05);
 }
 
-.segmented-button--selected {
-  background-color: var(--background-color-selected);
-  box-shadow: var(--telekom-shadow-raised-standard);
+.segmented-button--label {
+  font-size: var(--telekom-typography-font-size-body);
+  font-weight: var(--telekom-typography-font-weight-bold);
+  margin-bottom: var(--telekom-spacing-unit-x2);
 }
 
-.segmented-button--selected .segmented-button--mask {
-  color: var(--color-selected);
-}
-
-.segmented-button--disabled.segmented-button--selected .segmented-button--mask {
-  color: var(--label-disabled);
-}
-
-.segmented-button--disabled:not(.segmented-button--selected)
-  .segmented-button--mask {
-  color: var(--label-disabled);
-  background-color: transparent;
-}
-
-.segmented-button--left-sibling-selected {
-  border-radius: 0 var(--button-radius) var(--button-radius) 0;
-  margin-left: 0;
-  clip-path: inset(-2.75rem -2.75rem -2.75rem 0);
-  backface-visibility: hidden;
-  overflow: hidden;
-}
-
-.segmented-button--right-sibling-selected {
-  border-radius: var(--button-radius) 0 0 var(--button-radius);
-  clip-path: inset(-2.75rem 0 -2.75rem -2.75rem);
-  margin-right: 0;
-  backface-visibility: hidden;
-  overflow: hidden;
-  position: relative;
-}
-
-.segmented-button--left-right-sibling-selected {
-  clip-path: inset(-2.75rem 0 -2.75rem 0);
-  border-radius: 0;
-  margin-left: 0;
-  margin-right: 0;
-  backface-visibility: hidden;
-}
-
-.segmented-button:not(.segmented-button--disabled):hover
-  .segmented-button--mask {
-  background-color: var(--background-color-hover);
-}
-
-.segmented-button:not(.segmented-button--disabled):active
-  .segmented-button--mask {
-  background-color: var(--background-color-active);
-}
-
-.segmented-button:focus {
-  box-shadow: var(--telekom-shadow-raised-standard);
-  outline: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-functional-focus);
-  outline-offset: var(--telekom-spacing-unit-x025);
-  z-index: 40;
-  position: relative;
-}
-
-.segmented-button--left-right-sibling-selected:focus,
-.segmented-button--right-sibling-selected:focus,
-.segmented-button--left-sibling-selected:focus {
-  clip-path: none;
-}
-
-.segmented-button:not(.segmented-button--icon-only) scale-icon-action-success,
-.segmented-button scale-icon-action-close {
-  margin-right: var(--telekom-spacing-unit-x1);
-}
-
-.segmented-button:not(.segmented-button--selected) scale-icon-action-success {
-  visibility: hidden !important;
-}
-
-.segmented-button scale-icon-action-success {
-  vertical-align: middle;
-}
-
-.segmented-button--selected:not(.segmented-button--icon-only) .icon-container {
-  display: none !important;
-}
-
-.segmented-button .success-icon-container {
-  display: none;
-}
-
-.segmented-button--selected .success-icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.icon-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.segmented-button--selected .icon-container {
-  color: var(--color-selected);
+.segmented-button--helper-text {
+  margin-top: var(--telekom-spacing-unit-x2);
 }

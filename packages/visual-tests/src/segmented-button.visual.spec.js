@@ -6,8 +6,8 @@ describe('SegmentedButton', () => {
     test.each([
       ['standard'],
       ['multi-select'],
+      ['disabled-segment'],
       ['disabled-button'],
-      ['disabled-button-group'],
       ['icon-only'],
       ['icon-and-text'],
       ['invalid'],
