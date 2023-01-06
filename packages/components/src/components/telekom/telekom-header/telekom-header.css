@@ -9,6 +9,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+@import url('../../../global/custom-media.css');
+
 :host {
   --shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
   --background: var(--telekom-color-background-canvas);
@@ -40,7 +42,7 @@
   --_base-menu-justify-content: end;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (--md) {
   :host {
     --_display-app-name: block;
     --_spacing-x: 0 16px;
@@ -48,7 +50,7 @@
   }
 }
 
-@media screen and (min-width: 1040px) {
+@media screen and (--lg) {
   :host,
   :host::part(scrolled-back) {
     --_height: 84px;
@@ -97,7 +99,7 @@
   }
 }
 
-@media screen and (min-width: 1296px) {
+@media screen and (--xl) {
   :host,
   :host::part(scrolled-back) {
     --_height: 96px;
@@ -116,7 +118,7 @@
   }
 }
 
-@media screen and (min-width: 1552px) {
+@media screen and (--2xl) {
   :host,
   :host::part(scrolled-back) {
     --_height: 120px;
@@ -132,6 +134,18 @@
     --_spacing-x: 0 96px 0 120px;
     --_spacing-left-horizontal-menus: 72px;
   }
+}
+
+/* WIP 🚧 */
+::slotted(*) {
+  height: 100%;
+  display: inline-flex;
+}
+
+/* WIP 🚧 */
+slot[name='main-nav'],
+slot[name='meta-nav-ext'] {
+  width: 100%;
 }
 
 slot[name='app-logo'] {
@@ -224,12 +238,11 @@ slot[name='functions'] {
   margin-left: var(--_spacing-left-horizontal-menus);
 }
 
-:host::part(extended-menu-left) {
-  display: inline-flex;
-}
-
+:host::part(extended-menu-left),
 :host::part(extended-menu-right) {
   display: inline-flex;
+  align-items: flex-start;
+  height: 100%;
 }
 
 :host::part(extended-menu) {

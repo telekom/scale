@@ -1,0 +1,96 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+/*
+       sm,md,lg,xl,2xl
+  main --,--,32,48,56
+  meta --,--,32,32,32
+  func 24,24,24,24,24
+*/
+
+@import url('../../../global/custom-media.css');
+
+:host {
+  --width: 100%;
+  --height: 100%;
+  --spacing-x-start: 0;
+
+  --_spacing-x-slotted: var(--_spacing-x-slotted-main, 24px);
+  --_spacing-x-slotted-main: var(--telekom-spacing-unit-x8);
+  --_spacing-x-slotted-meta: var(--telekom-spacing-unit-x8);
+  --_spacing-x-slotted-meta-tight: var(--telekom-spacing-unit-x4);
+  --_spacing-x-slotted-function: var(--telekom-spacing-unit-x6);
+
+  display: flex;
+  align-items: stretch;
+  width: var(--width);
+  height: var(--height);
+  margin-inline-start: var(--spacing-x-start);
+}
+
+:host([debug]) {
+  border: 1px dotted gold;
+}
+
+@media screen and (--xl) {
+  :host {
+    --_spacing-x-slotted-main: var(--telekom-spacing-unit-x12);
+    --_spacing-x-slotted-meta-tight: var(--telekom-spacing-unit-x5);
+  }
+
+  :host([debug]) {
+    border: 1px dotted cyan;
+  }
+}
+
+@media screen and (--2xl) {
+  :host {
+    --_spacing-x-slotted-main: var(--telekom-spacing-unit-x14);
+  }
+
+  :host([debug]) {
+    border: 1px dotted magenta;
+  }
+}
+
+/* TODO could this also be [slot="..."]? */
+:host([variant='main']) {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-main);
+}
+:host([variant='meta']) {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-meta);
+}
+:host([variant='meta-tight']) {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-meta-tight);
+}
+:host([variant='function']) {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-function);
+}
+
+:host([alignment='left']) {
+  justify-content: flex-start;
+}
+:host([alignment='right']) {
+  justify-content: flex-end;
+}
+:host([alignment='center']) {
+  justify-content: center;
+}
+
+:host([alignment='left']) ::slotted(*:not(:last-child)) {
+  margin-inline-end: var(--_spacing-x-slotted);
+}
+:host([alignment='right']) ::slotted(*:not(:first-child)) {
+  margin-inline-start: var(--_spacing-x-slotted);
+}
+:host([alignment='center']) ::slotted(*) {
+  margin-inline: calc(0.5 * var(--_spacing-x-slotted));
+}

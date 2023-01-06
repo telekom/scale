@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Telekom Header</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 200vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <scale-telekom-mobile-menu>
+      <scale-telekom-mobile-menu-item>
+        <a href="javascript:void(0);">Category 1</a>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">2. Level Category 1</a>
+        </scale-telekom-mobile-menu-item>
+      </scale-telekom-mobile-menu-item>
+      <scale-telekom-mobile-menu-item>
+        <a href="#">Category 2</a>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">2. Level Category 2.1</a>
+          <scale-telekom-mobile-menu-item slot="children" active>
+            <a href="#">3. Level Category 2.1.1</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">3. Level Category 2.1.2</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">2. Level Category 2.2</a>
+        </scale-telekom-mobile-menu-item>
+      </scale-telekom-mobile-menu-item>
+    </scale-telekom-mobile-menu>
+  </body>
+</html>

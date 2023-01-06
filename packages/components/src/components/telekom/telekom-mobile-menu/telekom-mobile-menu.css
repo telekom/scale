@@ -1,0 +1,17 @@
+:host {
+  --spacing: 16px;
+  --background: var(--telekom-color-background-canvas);
+  --max-width: 572px;
+}
+
+:host::part(base) {
+  padding: var(--spacing);
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+}
+
+:host::part(content) {
+  max-width: var(--max-width);
+  width: 100%;
+}

@@ -184,6 +184,7 @@ export class DropdownSelect {
 
   @Prop() comboboxId?: string = 'combobox';
   @Prop() label: string;
+  @Prop() name?: string;
   @Prop() helperText?: string = '';
   @Prop() disabled?: boolean;
   @Prop() readonly?: boolean;
