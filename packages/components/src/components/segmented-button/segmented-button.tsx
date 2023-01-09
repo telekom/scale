@@ -15,15 +15,22 @@ import {
   h,
   Host,
   Element,
+  State,
+  Listen,
   Event,
   EventEmitter,
-  Method,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
-import statusNote from '../../utils/status-note';
 
-let i = 0;
+interface SegmentStatus {
+  id: string;
+  selected: boolean;
+}
+
+const CHECKMARK_WIDTH_SMALL = 14;
+const CHECKMARK_WIDTH_LARGE = 18;
 
 @Component({
   tag: 'scale-segmented-button',
@@ -31,177 +38,214 @@ let i = 0;
   shadow: true,
 })
 export class SegmentedButton {
+  /** segment position within button */
+  position = 0;
+
+  slottedSegments = 0;
+
   @Element() hostElement: HTMLElement;
+  /** state */
+  @State() status: SegmentStatus[] = [];
   /** (optional) The size of the button */
   @Prop() size?: 'small' | 'medium' | 'large' = 'small';
-  /** (optional) If `true`, the button is selected */
-  @Prop({ mutable: true }) selected?: boolean = false;
+  /** (optional) Allow more than one button to be selected */
+  @Prop() multiSelect: boolean = false;
   /** (optional) If `true`, the button is disabled */
-  @Prop() disabled?: boolean = false;
-  /** (optional) button's id */
-  @Prop({ reflect: true, mutable: true }) segmentedButtonId?: string;
-  /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabelSegmentedButton: string;
-  /** (optional) Button width set to ensure that all buttons have the same width */
-  @Prop() width?: string;
+  @Prop({ reflect: true }) disabled?: boolean = false;
+  /** (optional) If `true`, expand to container width */
+  @Prop() fullWidth?: boolean = false;
+  /** (optional) If `true`, show error message */
+  @Prop() invalid?: boolean = false;
+  /** (optional) If `true`, show error message */
+  @Prop() helperText?: string = 'Please select an option';
+  /** (optional) Button label */
+  @Prop() label?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-  // /** (optional)  */
-  @Prop({ reflect: true, mutable: true }) adjacentSiblings?:
-    | 'left'
-    | 'right'
-    | 'leftright';
-  /** (optional) translation of 'selected */
-  @Prop() ariaLangSelected? = 'selected';
-  /** (optional) translation of 'deselected */
-  @Prop() ariaLangDeselected? = 'deselected';
-  /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaDescriptionTranslation = '$selected';
-  /** (optional) position within group */
-  @Prop() position?: number;
-  /** (optional) position within group */
-  @Prop({ mutable: true }) hasIcon?: boolean;
-  /** (optional) position within group */
-  @Prop({ mutable: true }) textOnly?: boolean;
-  /** (optional) position within group */
-  @Prop({ mutable: true }) iconOnly?: boolean;
+  /** (optional) aria-label attribute needed for icon-only buttons */
+  @Prop()
+  ariaLabelTranslation = `segment button with $slottedSegments`;
+  @Prop({ mutable: true })
+  longestButtonWidth: string;
   /** Emitted when button is clicked */
-  @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
-    id: string;
-    selected: boolean;
-  }>;
+  @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
-    id: string;
-    selected: boolean;
-  }>;
+  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
-  private focusableElement: HTMLElement;
-
-  @Method()
-  async setFocus() {
-    this.focusableElement.focus();
+  container: HTMLElement;
+  showHelperText = false;
+  @Listen('scaleClick')
+  scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
+    let tempState: SegmentStatus[];
+    if (!this.multiSelect) {
+      if (!ev.detail.selected) {
+        tempState = this.status.map((obj) =>
+          ev.detail.id === obj.id ? ev.detail : { ...obj }
+        );
+        /* clicked button has now selected state */
+      } else {
+        tempState = this.status.map((obj) =>
+          ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
+        );
+      }
+    } else {
+      tempState = this.status.map((obj) =>
+        ev.detail.id === obj.id ? ev.detail : { ...obj }
+      );
+    }
+    this.setState(tempState);
   }
 
-  componentDidRender() {
-    if (this.hostElement.hasAttribute('aria-label')) {
-      statusNote({
-        tag: 'deprecated',
-        message:
-          'Property "ariaLabel" is deprecated. Please use the "ariaLabelSegmentedButton" property!',
-        type: 'warn',
-        source: this.hostElement,
+  @Watch('disabled')
+  @Watch('size')
+  handlePropsChange() {
+    this.propagatePropsToChildren();
+  }
+
+  /**
+   * Keep props, needed in children buttons, in sync
+   */
+  propagatePropsToChildren() {
+    this.getAllSegmentedButtons().forEach((el) => {
+      el.setAttribute('size', this.size);
+      if (this.disabled) {
+        el.setAttribute('disabled', true && 'disabled');
+      }
+    });
+  }
+
+  componentDidLoad() {
+    const tempState: SegmentStatus[] = [];
+    const segmentedButtons = this.getAllSegmentedButtons();
+    this.slottedSegments = segmentedButtons.length;
+    const longestButtonWidth = this.getLongestButtonWidth();
+    segmentedButtons.forEach((SegmentedButton) => {
+      this.position++;
+      tempState.push({
+        id: SegmentedButton.getAttribute('segment-id'),
+        selected: SegmentedButton.hasAttribute('selected'),
       });
+      SegmentedButton.setAttribute('position', this.position.toString());
+      SegmentedButton.setAttribute(
+        'aria-description-translation',
+        '$position $selected'
+      );
+    });
+    // @ts-ignore
+    // this.container.style = `grid-template-columns: ${`minmax(0, ${Math.ceil(longestButtonWidth)}px) `.repeat(this.hostElement.children.length)};`;
+    this.container.style = `grid-template-columns: repeat(${
+      this.hostElement.children.length
+    }, ${Math.ceil(longestButtonWidth)}px);`;
+
+    this.propagatePropsToChildren();
+    this.position = 0;
+    this.status = tempState;
+    this.setState(tempState);
+  }
+
+  componentWillUpdate() {
+    this.showHelperText = false;
+    if (
+      this.invalid &&
+      this.status.filter((e) => e.selected === true).length <= 0
+    ) {
+      this.showHelperText = true;
     }
   }
 
-  componentWillLoad() {
-    if (this.segmentedButtonId == null) {
-      this.segmentedButtonId = 'segmented-button-' + i++;
+  getAdjacentSiblings = (tempState, i) => {
+    let adjacentSiblings = '';
+    if (i !== 0 && tempState[i].selected && tempState[i - 1].selected) {
+      adjacentSiblings = 'left';
     }
-  }
-  componentDidUpdate() {
-    this.handleIcon();
+    if (
+      i !== tempState.length - 1 &&
+      tempState[i].selected &&
+      tempState[i + 1].selected
+    ) {
+      adjacentSiblings = `${
+        adjacentSiblings ? adjacentSiblings + ' right' : 'right'
+      }`;
+    }
+    return adjacentSiblings;
+  };
+
+  // all segmented buttons should have the same width, based on the largest one
+  getLongestButtonWidth() {
+    let tempWidth = 0;
+    Array.from(this.hostElement.children).forEach((child) => {
+      const selected = child.hasAttribute('selected');
+      const iconOnly = child.hasAttribute('icon-only');
+      const checkmark =
+        this.size === 'small' ? CHECKMARK_WIDTH_SMALL : CHECKMARK_WIDTH_LARGE;
+      if (selected || iconOnly) {
+        tempWidth =
+          child.getBoundingClientRect().width > tempWidth
+            ? child.getBoundingClientRect().width
+            : tempWidth;
+      } else {
+        tempWidth =
+          child.getBoundingClientRect().width + checkmark > tempWidth
+            ? child.getBoundingClientRect().width + checkmark
+            : tempWidth;
+      }
+    });
+    return tempWidth;
   }
 
-  getAriaDescriptionTranslation() {
-    const replaceSelected = this.selected
-      ? this.ariaLangSelected
-      : this.ariaLangDeselected;
-    const filledText = this.ariaDescriptionTranslation
-      .replace(/\$position/g, `${this.position}`)
-      .replace(/\$selected/g, `${replaceSelected}`);
+  setState(tempState: SegmentStatus[]) {
+    const segmentedButtons = Array.from(
+      this.hostElement.querySelectorAll('scale-segment')
+    );
+    segmentedButtons.forEach((segmentedButton, i) => {
+      segmentedButton.setAttribute(
+        'adjacent-siblings',
+        this.getAdjacentSiblings(tempState, i)
+      );
+      segmentedButton.setAttribute(
+        'selected',
+        tempState[i].selected ? 'true' : 'false'
+      );
+    });
+    this.status = tempState;
+    emitEvent(this, 'scaleChange', this.status);
+  }
+
+  getAllSegmentedButtons() {
+    return Array.from(this.hostElement.querySelectorAll('scale-segment'));
+  }
+
+  getAriaLabelTranslation() {
+    const filledText = this.ariaLabelTranslation.replace(
+      /\$slottedSegments/g,
+      `${this.slottedSegments}`
+    );
     return filledText;
   }
-
-  handleIcon() {
-    Array.from(this.hostElement.childNodes).forEach((child) => {
-      if (
-        child.nodeType == 1 &&
-        child.nodeName.substr(0, 10) === 'SCALE-ICON'
-      ) {
-        const icon: HTMLElement = this.hostElement.querySelector(
-          child.nodeName
-        );
-        switch (this.size) {
-          case 'small':
-            icon.setAttribute('size', '14');
-            break;
-          case 'medium' || 'large':
-            icon.setAttribute('size', '16');
-            break;
-        }
-        icon.style.display = 'inline-flex';
-        icon.style.marginRight = '4px';
-        this.hasIcon = true;
-      }
-      if (child.nodeType == 3 && this.hostElement.childNodes.length == 1) {
-        this.textOnly = true;
-        var span = document.createElement('span');
-        child.parentNode.insertBefore(span, child);
-        span.appendChild(child);
-      }
-      if (
-        child.nodeType == 1 &&
-        child.nodeName.substr(0, 10) === 'SCALE-ICON' &&
-        this.hostElement.childNodes.length === 1
-      ) {
-        this.iconOnly = true;
-        this.hostElement.setAttribute('icon-only', 'true');
-        const icon: HTMLElement = this.hostElement.querySelector(
-          child.nodeName
-        );
-        icon.style.marginRight = '0px';
-        this.selected
-          ? icon.setAttribute('selected', '')
-          : icon.removeAttribute('selected');
-      }
-    });
-  }
-
-  handleClick = (event: MouseEvent) => {
-    event.preventDefault();
-    this.selected = !this.selected;
-    emitEvent(this, 'scaleClick', {
-      id: this.segmentedButtonId,
-      selected: this.selected,
-    });
-  };
 
   render() {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <button
-          ref={(el) => (this.focusableElement = el)}
+        {this.label && (
+          <span class="segmented-button--label"> {this.label} </span>
+        )}
+        <div
           class={this.getCssClassMap()}
-          id={this.segmentedButtonId}
-          onClick={this.handleClick}
-          disabled={this.disabled}
-          type="button"
-          style={{ width: this.width }}
-          aria-label={this.ariaLabelSegmentedButton}
-          aria-pressed={this.selected}
           part={this.getBasePartMap()}
-          aria-description={this.getAriaDescriptionTranslation()}
+          aria-label={this.getAriaLabelTranslation()}
+          role="group"
+          ref={(el) => (this.container = el as HTMLInputElement)}
         >
-          <div class="segmented-button--mask">
-            {!this.iconOnly && (
-              <div class="success-icon-container">
-                <scale-icon-action-success
-                  size={this.size === 'small' ? 14 : 16}
-                  class="scale-icon-action-success"
-                  accessibility-title="success"
-                  selected
-                />
-              </div>
-            )}
-            <div class="icon-container">
-              <slot name="segmented-button-icon" />
-            </div>
-            <slot />
-          </div>
-        </button>
+          <slot />
+        </div>
+        {this.showHelperText && (
+          <scale-helper-text
+            class="segmented-button--helper-text"
+            helperText={this.helperText}
+            variant={'danger'}
+          ></scale-helper-text>
+        )}
       </Host>
     );
   }
@@ -220,12 +264,7 @@ export class SegmentedButton {
     return classNames(
       'segmented-button',
       this.size && `${prefix}${this.size}`,
-      this.selected && `${prefix}selected`,
-      this.disabled && `${prefix}disabled`,
-      this.adjacentSiblings &&
-        `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
-      this.hasIcon && `${prefix}has-icon`,
-      this.iconOnly && `${prefix}icon-only`
+      this.fullWidth && `${prefix}full-width`
     );
   }
 }
