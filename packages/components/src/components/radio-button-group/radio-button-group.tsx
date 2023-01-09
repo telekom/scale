@@ -1,7 +1,7 @@
 import { Component, Element, h, Prop } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
-import { helperTextIncrement } from '../../utils/utils';
+import { generateUniqueId } from '../../utils/utils';
 
 @Component({
   tag: 'scale-radio-button-group',
@@ -43,7 +43,7 @@ export class RadioButtonGroup {
   }
 
   render() {
-    const helperTextId = `helper-message-${helperTextIncrement()}`;
+    const helperTextId = `helper-message-${generateUniqueId()}`;
     return (
       <fieldset class="radio-button-group">
         <legend class="radio-button-group__title">

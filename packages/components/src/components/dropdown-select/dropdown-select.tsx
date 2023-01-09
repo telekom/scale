@@ -13,7 +13,7 @@ import {
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 import { computePosition } from '@floating-ui/dom';
-import { emitEvent, helperTextIncrement } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
 enum Actions {
   Close = 'Close',
@@ -382,7 +382,7 @@ export class DropdownSelect {
       readOptions(this.hostElement).find(({ value }) => value === this.value) ||
       ({} as any)
     ).ItemElement;
-    const helperTextId = `helper-message-${helperTextIncrement()}`;
+    const helperTextId = `helper-message-${generateUniqueId()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (

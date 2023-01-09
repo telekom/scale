@@ -22,7 +22,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
-import { emitEvent, helperTextIncrement } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
 export interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -310,7 +310,7 @@ export class Input {
 
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${helperTextIncrement()}`;
+    const helperTextId = `helper-message-${generateUniqueId()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     if (this.type === 'checkbox') {

@@ -105,7 +105,7 @@ export const isScaleIcon = (el: Node) => {
 
 /** Creating global ids for different component helper-texts */
 let id = 0;
-export function helperTextIncrement(): number {
+export function generateUniqueId(): number {
   return id++;
 }
 

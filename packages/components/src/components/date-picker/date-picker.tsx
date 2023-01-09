@@ -32,7 +32,7 @@ import {
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
 import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
-import { emitEvent, helperTextIncrement } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
 let i = 0;
 
@@ -410,7 +410,7 @@ export class DatePicker {
   }
 
   render() {
-    const helperTextId = `helper-message-${helperTextIncrement()}`;
+    const helperTextId = `helper-message-${generateUniqueId()}`;
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}

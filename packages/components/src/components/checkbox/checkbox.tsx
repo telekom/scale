@@ -18,7 +18,7 @@ import {
   Host,
   Prop,
 } from '@stencil/core';
-import { emitEvent, helperTextIncrement } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 export interface CheckboxInterface extends HTMLElement {
@@ -30,7 +30,6 @@ export interface CheckboxInterface extends HTMLElement {
   ariaLabelCheckbox?: string;
 }
 
-let i = 0;
 @Component({
   tag: 'scale-checkbox',
   styleUrl: './checkbox.css',
@@ -70,7 +69,7 @@ export class Checkbox {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
-  private readonly internalId = i++;
+  private readonly internalId = generateUniqueId();
 
   componentDidRender() {
     if (this.status !== '') {
@@ -164,7 +163,7 @@ export class Checkbox {
 
   render() {
     const helperText = {
-      id: this.helperText ? `helper-message-${helperTextIncrement()}` : null,
+      id: this.helperText ? `helper-message-${this.internalId}` : null,
       content: this.helperText,
     };
 

@@ -21,7 +21,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { HTMLStencilElement } from '@stencil/core/internal';
-import { emitEvent, helperTextIncrement } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
@@ -241,7 +241,7 @@ export class Dropdown {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${helperTextIncrement()}`;
+    const helperTextId = `helper-message-${generateUniqueId()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
