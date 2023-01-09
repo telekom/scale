@@ -9,36 +9,36 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-:host {
+ :host {
   /* not selected */
   --background-color-selected: var(--telekom-color-ui-base);
   --button-radius: 6px;
   --padding-top-bottom: var(--telekom-spacing-unit-x1);
-  --padding-left-right: var(--telekom-spacing-unit-x2);
+  --height: 28px;
   --font-family: var(--telekom-typography-font-family-sans);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-caption);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
+  --color: var(--telekom-color-text-and-icon-standard);
 
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+ 
+
+  /* medium styles */
+  --font-size-medium: var(--telekom-typography-font-size-body);
+  --height-medium: 36px;
 
   /* large styles */
   --font-size-large: var(--telekom-typography-font-size-body);
-  --large-height: var(--telekom-spacing-unit-x6);
-
-  /* xl styles */
-  --font-size-xl: var(--telekom-typography-font-size-body);
-  --xl-height: var(--telekom-spacing-unit-x9);
+  --height-large: 40px;
 
   /* hover styles */
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
 
   /* active styles */
   --background-color-active: var(--telekom-color-ui-state-fill-pressed);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
 
   display: flex;
   align-items: center;
@@ -69,42 +69,48 @@
   height: 100%;
   width: 100%;
   border-radius: var(--button-radius);
-  background-color: transparent;  
+  background-color: transparent;
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   transition: var(--transition);
   white-space: nowrap;
-  color: var(--telekom-color-text-and-icon-standard);
+  color: var(--color);
 }
 
-button.segmented-button--icon-only.segmented-button--small .segmented-button--mask {
+button.segmented-button--icon-only.segmented-button--small
+  .segmented-button--mask {
   padding-left: var(--telekom-spacing-unit-x4);
   padding-right: var(--telekom-spacing-unit-x4);
 }
 
-button.segmented-button--small .segmented-button--mask   {
+button.segmented-button--small .segmented-button--mask {
   padding-left: var(--telekom-spacing-unit-x2);
   padding-right: var(--telekom-spacing-unit-x3);
 }
 
-.segmented-button--large {
-  font-size: var(--font-size-large);
-  height: 36px;
+.segmented-button--small {
+  height: var(--height);
 }
 
-button.segmented-button--large .segmented-button--mask {
+.segmented-button--medium {
+  
+  font-size: var(--font-size-medium);
+  height: var(--height-medium);
+}
+
+button.segmented-button--medium .segmented-button--mask {
   padding-left: var(--telekom-spacing-unit-x3);
   padding-right: var(--telekom-spacing-unit-x4);
 }
 
-.segmented-button--xl {
+.segmented-button--large {
   font-size: var(--font-size-large);
-  height: 40px;
+  height:  var(--height-large);
 }
-button.segmented-button--xl .segmented-button--mask {
-  padding-left: 16px;
-  padding-right: 20px;
+button.segmented-button--large .segmented-button--mask {
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x5);
 }
 
 .segmented-button--selected {
@@ -120,7 +126,8 @@ button.segmented-button--xl .segmented-button--mask {
   color: var(--label-disabled);
 }
 
-.segmented-button--disabled:not(.segmented-button--selected) .segmented-button--mask{
+.segmented-button--disabled:not(.segmented-button--selected)
+  .segmented-button--mask {
   color: var(--label-disabled);
   background-color: transparent;
 }
@@ -128,14 +135,14 @@ button.segmented-button--xl .segmented-button--mask {
 .segmented-button--left-sibling-selected {
   border-radius: 0 var(--button-radius) var(--button-radius) 0;
   margin-left: 0;
-  clip-path: inset(-44px -44px -44px 0px);
+  clip-path: inset(-2.75rem -2.75rem -2.75rem 0);
   backface-visibility: hidden;
   overflow: hidden;
 }
 
 .segmented-button--right-sibling-selected {
   border-radius: var(--button-radius) 0 0 var(--button-radius);
-  clip-path: inset(-44px -0px -44px -44px);
+  clip-path: inset(-2.75rem 0 -2.75rem -2.75rem);
   margin-right: 0;
   backface-visibility: hidden;
   overflow: hidden;
@@ -143,24 +150,27 @@ button.segmented-button--xl .segmented-button--mask {
 }
 
 .segmented-button--left-right-sibling-selected {
-  clip-path: inset(-44px 0px -44px -0px);
+  clip-path: inset(-2.75rem 0 -2.75rem 0);
   border-radius: 0;
   margin-left: 0;
   margin-right: 0;
   backface-visibility: hidden;
 }
 
-.segmented-button:not(.segmented-button--disabled):hover .segmented-button--mask{
+.segmented-button:not(.segmented-button--disabled):hover
+  .segmented-button--mask {
   background-color: var(--background-color-hover);
 }
 
-.segmented-button:not(.segmented-button--disabled):active .segmented-button--mask{
+.segmented-button:not(.segmented-button--disabled):active
+  .segmented-button--mask {
   background-color: var(--background-color-active);
 }
 
 .segmented-button:focus {
   box-shadow: var(--telekom-shadow-raised-standard);
-  outline: var(--telekom-spacing-unit-x05) solid var(--telekom-color-functional-focus );
+  outline: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-focus);
   outline-offset: var(--telekom-spacing-unit-x025);
   z-index: 40;
   position: relative;
@@ -179,7 +189,7 @@ button.segmented-button--xl .segmented-button--mask {
 
 .segmented-button:not(.segmented-button--selected) scale-icon-action-success {
   visibility: hidden !important;
-} 
+}
 
 .segmented-button scale-icon-action-success {
   vertical-align: middle;
@@ -190,7 +200,7 @@ button.segmented-button--xl .segmented-button--mask {
 }
 
 .segmented-button .success-icon-container {
-  display: none; 
+  display: none;
 }
 
 .segmented-button--selected .success-icon-container {
