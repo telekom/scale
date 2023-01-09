@@ -3,7 +3,7 @@
     :size="size"
     :disabled="disabled"
     :multi-select="multiSelect"
-    :required="required"
+    :invalid="invalid"
     :label="label"
     :helper-text="helperText"
     :styles="styles"
@@ -14,26 +14,26 @@
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
 export default {
   props: {
     size: { type: String, default: 'small' },
     disabled: { type: Boolean, default: false },
     multiSelect: { type: Boolean, default: false },
-    required: {type: Boolean, default: false},
-    label: {type: String},
-    helperText: {type: String},
+    invalid: { type: Boolean, default: false },
+    label: { type: String },
+    helperText: { type: String },
     styles: { type: String },
   },
   methods: {
     scaleChange($event) {
-      action("scaleChange");
-      this.$emit("scaleChange", $event);
+      action('scaleChange');
+      this.$emit('scaleChange', $event);
     },
     'scale-change'($event) {
-      action("scale-change");
-      this.$emit("scale-change", $event);
+      action('scale-change');
+      this.$emit('scale-change', $event);
     },
-  }
+  },
 };
 </script>

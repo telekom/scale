@@ -33,7 +33,7 @@ let i = 0;
 export class SegmentedButton {
   @Element() hostElement: HTMLElement;
   /** (optional) The size of the button */
-  @Prop() size?: 'small' | 'large' | 'xl' = 'small';
+  @Prop() size?: 'small' | 'medium' | 'large' = 'small';
   /** (optional) If `true`, the button is selected */
   @Prop({ mutable: true }) selected?: boolean = false;
   /** (optional) If `true`, the button is disabled */
@@ -64,7 +64,7 @@ export class SegmentedButton {
   /** (optional) position within group */
   @Prop({ mutable: true }) textOnly?: boolean;
   /** (optional) position within group */
-  @Prop({ mutable: true }) iconOnly?: boolean;  
+  @Prop({ mutable: true }) iconOnly?: boolean;
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -116,9 +116,21 @@ export class SegmentedButton {
 
   handleIcon() {
     Array.from(this.hostElement.childNodes).forEach((child) => {
-      if (child.nodeType == 1 && child.nodeName.substr(0, 10) === 'SCALE-ICON') {
-        const icon: HTMLElement = this.hostElement.querySelector(child.nodeName);
-        icon.setAttribute('size', '16');
+      if (
+        child.nodeType == 1 &&
+        child.nodeName.substr(0, 10) === 'SCALE-ICON'
+      ) {
+        const icon: HTMLElement = this.hostElement.querySelector(
+          child.nodeName
+        );
+        switch (this.size) {
+          case 'small':
+            icon.setAttribute('size', '14');
+            break;
+          case 'medium' || 'large':
+            icon.setAttribute('size', '16');
+            break;
+        }
         icon.style.display = 'inline-flex';
         icon.style.marginRight = '4px';
         this.hasIcon = true;
@@ -129,12 +141,20 @@ export class SegmentedButton {
         child.parentNode.insertBefore(span, child);
         span.appendChild(child);
       }
-      if (child.nodeType == 1 && child.nodeName.substr(0, 10) === 'SCALE-ICON' && this.hostElement.childNodes.length === 1) {
+      if (
+        child.nodeType == 1 &&
+        child.nodeName.substr(0, 10) === 'SCALE-ICON' &&
+        this.hostElement.childNodes.length === 1
+      ) {
         this.iconOnly = true;
-        this.hostElement.setAttribute('icon-only', 'true')
-        const icon: HTMLElement = this.hostElement.querySelector(child.nodeName);
+        this.hostElement.setAttribute('icon-only', 'true');
+        const icon: HTMLElement = this.hostElement.querySelector(
+          child.nodeName
+        );
         icon.style.marginRight = '0px';
-        this.selected ? icon.setAttribute('selected', '') : icon.removeAttribute('selected');
+        this.selected
+          ? icon.setAttribute('selected', '')
+          : icon.removeAttribute('selected');
       }
     });
   }
@@ -166,17 +186,20 @@ export class SegmentedButton {
           aria-description={this.getAriaDescriptionTranslation()}
         >
           <div class="segmented-button--mask">
-              { !this.iconOnly && <div class="success-icon-container">
+            {!this.iconOnly && (
+              <div class="success-icon-container">
                 <scale-icon-action-success
-                  size={14}
+                  size={this.size === 'small' ? 14 : 16}
                   class="scale-icon-action-success"
                   accessibility-title="success"
+                  selected
                 />
-              </div>}
-              <div class="icon-container">
-                <slot name="segmented-button-icon" />
               </div>
-              <slot />          
+            )}
+            <div class="icon-container">
+              <slot name="segmented-button-icon" />
+            </div>
+            <slot />
           </div>
         </button>
       </Host>
@@ -202,7 +225,7 @@ export class SegmentedButton {
       this.adjacentSiblings &&
         `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
       this.hasIcon && `${prefix}has-icon`,
-      this.iconOnly && `${prefix}icon-only`,
+      this.iconOnly && `${prefix}icon-only`
     );
   }
 }
