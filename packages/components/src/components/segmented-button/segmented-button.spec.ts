@@ -6,7 +6,12 @@ describe('SegmentedButton', () => {
     const page = await newSpecPage({
       components: [SegmentedButton],
       html: `
-        <scale-segmented-button>Label</scale-segmented-button>`,
+        <scale-segmented-button>
+            <scale-segment>Label</scale-segment>
+            <scale-segment>Label</scale-segment>
+            <scale-segment>Label</scale-segment>
+            <scale-segment>Label</scale-segment>
+        </scale-segmented-button>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -14,42 +19,33 @@ describe('SegmentedButton', () => {
     const page = await newSpecPage({
       components: [SegmentedButton],
       html: `
-            <scale-segmented-button>Label</scale-segmented-button>`,
+        <scale-segmented-button>
+            <scale-segment>Label</scale-segment>
+        </scale-segmented-button>`,
     });
+    page.root.invalid = true;
+    page.root.fullWidth = true;
+    page.root.helperText = 'helpertext';
     page.root.disabled = true;
-    page.root.size = 'medium',
-    page.root.selected = true;
-    page.root.hasIcon = true;
-    page.root.ariaLangSelected = 'ariaLangSelected';
-    page.root.ariaLangDeselected = 'ariaLangDeselected';
-    page.root.ariaDescriptionTranslation = 'ariaDescriptionTranslation';
+    page.root.multiSelect = true;
+    page.root.size = 'medium';
     await page.waitForChanges();
+    expect(page.rootInstance.invalid).toBe(true);
+    expect(page.rootInstance.fullWidth).toBe(true);
+    expect(page.rootInstance.helperText).toBe('helpertext');
     expect(page.rootInstance.disabled).toBe(true);
+    expect(page.rootInstance.multiSelect).toBe(true);
     expect(page.rootInstance.size).toBe('medium');
-    expect(page.rootInstance.selected).toBe(true);
-    expect(page.rootInstance.hasIcon).toBe(true);
-    expect(page.rootInstance.ariaLangSelected).toBe('ariaLangSelected');
-    expect(page.rootInstance.ariaLangDeselected).toBe('ariaLangDeselected');
-    expect(page.rootInstance.ariaDescriptionTranslation).toBe('ariaDescriptionTranslation');
-});
-it('should include iconOnly', async () => {
+  });
+  it('should match selected button snapshot', async () => {
     const page = await newSpecPage({
       components: [SegmentedButton],
       html: `
-            <scale-segmented-button>Label</scale-segmented-button>`,
+        <scale-segmented-button>
+            <scale-segment selected>Label</scale-segment>
+            <scale-segment selected>Label</scale-segment>
+        </scale-segmented-button>`,
     });
-    page.root.iconOnly = true;
-   await page.waitForChanges();
-    expect(page.rootInstance.iconOnly).toBe(true);
-});
-it('should include textOnly', async () => {
-    const page = await newSpecPage({
-      components: [SegmentedButton],
-      html: `
-            <scale-segmented-button>Label</scale-segmented-button>`,
-    });
-    page.root.textOnly = true;
-   await page.waitForChanges();
-    expect(page.rootInstance.textOnly).toBe(true);
-});
+    expect(page.root).toMatchSnapshot();
+  });
 });

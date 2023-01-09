@@ -1,5 +1,5 @@
 <template>
-  <scale-segmented-button-group
+  <scale-segmented-button
     :size="size"
     :disabled="disabled"
     :multi-select="multiSelect"
@@ -10,7 +10,7 @@
     @scaleChange="scaleChange"
   >
     <slot></slot>
-  </scale-segmented-button-group>
+  </scale-segmented-button>
 </template>
 
 <script>
