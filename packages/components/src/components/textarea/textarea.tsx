@@ -27,8 +27,6 @@ interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
-let i = 0;
-
 @Component({
   tag: 'scale-textarea',
   styleUrl: './textarea.css',
@@ -107,7 +105,7 @@ export class Textarea {
   @State() hasFocus: boolean = false;
 
   private focusableElement: HTMLElement;
-  private readonly internalId = i++;
+  private readonly internalId = generateUniqueId();
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -171,7 +169,7 @@ export class Textarea {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${generateUniqueId()}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     const readonlyAttr = this.readonly ? { readonly: 'readonly' } : {};
 

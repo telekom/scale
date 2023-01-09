@@ -154,7 +154,6 @@ export class Checkbox {
           aria-relevant="additions removals"
         >
           {this.renderHelperIcon()}
-
           {text.content}
         </div>
       );

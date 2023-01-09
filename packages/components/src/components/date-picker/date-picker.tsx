@@ -34,8 +34,6 @@ import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
 import { emitEvent, generateUniqueId } from '../../utils/utils';
 
-let i = 0;
-
 if (
   typeof window !== 'undefined' &&
   typeof window.Audio !== 'undefined' &&
@@ -186,7 +184,7 @@ export class DatePicker {
   @Event({ eventName: 'scaleFocus' })
   scaleFocusLegacy: EventEmitter<DuetDatePickerFocusEvent>;
 
-  private readonly internalId = i++;
+  private readonly internalId = generateUniqueId();
 
   private mo: MutationObserver;
 
@@ -239,7 +237,7 @@ export class DatePicker {
 
     this.handleKeyPress = this.handleKeyPress.bind(this);
     if (this.identifier == null) {
-      this.identifier = 'scale-date-picker-' + i++;
+      this.identifier = 'scale-date-picker-' + this.internalId;
     }
   }
 
@@ -410,7 +408,7 @@ export class DatePicker {
   }
 
   render() {
-    const helperTextId = `helper-message-${generateUniqueId()}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}

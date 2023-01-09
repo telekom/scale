@@ -28,8 +28,6 @@ export interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
-let i = 0;
-
 const SELECT_ICON =
   'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z';
 
@@ -140,7 +138,7 @@ export class Input {
   /** "forceUpdate" hack, set it to trigger and re-render */
   @State() forceUpdate: string;
 
-  private readonly internalId = i++;
+  private readonly internalId = generateUniqueId();
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -310,7 +308,7 @@ export class Input {
 
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${generateUniqueId()}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     if (this.type === 'checkbox') {

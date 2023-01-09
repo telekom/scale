@@ -19,6 +19,8 @@ export class RadioButtonGroup {
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
 
+  private readonly internalId = generateUniqueId();
+
   componentDidRender() {
     if (this.status !== '') {
       statusNote({
@@ -43,7 +45,7 @@ export class RadioButtonGroup {
   }
 
   render() {
-    const helperTextId = `helper-message-${generateUniqueId()}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     return (
       <fieldset class="radio-button-group">
         <legend class="radio-button-group__title">

@@ -25,8 +25,6 @@ import classNames from 'classnames';
 import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
-let i = 0;
-
 @Component({
   tag: 'scale-slider',
   styleUrl: './slider.css',
@@ -102,6 +100,7 @@ export class Slider {
   // private offsetLeftFrom: number;
   // private offsetLeftTo: number;
   private activeRangeThumb: null | 'From' | 'To' = null;
+  private readonly internalId = generateUniqueId();
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
@@ -117,7 +116,7 @@ export class Slider {
 
   componentWillLoad() {
     if (this.sliderId == null) {
-      this.sliderId = 'slider-' + i++;
+      this.sliderId = 'slider-' + this.internalId;
     }
     // Set initial position
     if (this.range) {
@@ -327,7 +326,7 @@ export class Slider {
   }
 
   render() {
-    const helperTextId = `helper-message-${generateUniqueId()}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     return (
       <Host>

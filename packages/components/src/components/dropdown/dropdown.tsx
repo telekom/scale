@@ -28,8 +28,6 @@ interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
-let i = 0;
-
 @Component({
   tag: 'scale-dropdown',
   styleUrl: './dropdown.css',
@@ -104,13 +102,13 @@ export class Dropdown {
   @State() forceUpdate: string;
 
   hasSlotIcon: boolean;
-  private readonly internalId = i++;
+  private readonly internalId = generateUniqueId();
 
   componentWillLoad() {
     this.hasSlotIcon = !!this.hostElement.querySelector('[slot="icon"]');
 
     if (this.inputId == null) {
-      this.inputId = 'input-dropdown' + this.internalId;
+      this.inputId = 'input-dropdown-' + this.internalId;
     }
   }
 
@@ -241,7 +239,7 @@ export class Dropdown {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${generateUniqueId()}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (

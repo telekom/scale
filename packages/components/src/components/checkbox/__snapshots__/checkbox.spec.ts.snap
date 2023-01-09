@@ -14,12 +14,12 @@ exports[`Checkbox should match snapshot 1`] = `
 exports[`Checkbox should match snapshot 2`] = `
 <scale-checkbox helper-text="helpertext">
   <!---->
-  <input aria-describedby="helper-message-0" id="input-checkbox-2" part="input" type="checkbox" value="">
+  <input aria-describedby="helper-message-2" id="input-checkbox-2" part="input" type="checkbox" value="">
   <label htmlfor="input-checkbox-2" part="container">
     <div part="checkbox"></div>
     <div part="label"></div>
   </label>
-  <div aria-live="polite" aria-relevant="additions removals" id="helper-message-0" part="helper-text">
+  <div aria-live="polite" aria-relevant="additions removals" id="helper-message-2" part="helper-text">
     <scale-icon-alert-information size="11"></scale-icon-alert-information>
     helpertext
   </div>

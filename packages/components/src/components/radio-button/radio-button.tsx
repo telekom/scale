@@ -26,8 +26,6 @@ interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
-let i = 0;
-
 @Component({
   tag: 'scale-radio-button',
   styleUrl: './radio-button.css',
@@ -62,7 +60,7 @@ export class RadioButton {
   @Event({ eventName: 'scaleChange' })
   scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
 
-  private readonly internalId = i++;
+  private readonly internalId = generateUniqueId();
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -130,7 +128,7 @@ export class RadioButton {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${generateUniqueId()}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
