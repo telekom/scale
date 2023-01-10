@@ -40,6 +40,9 @@
   --_spacing-right-app-name: 32px;
 
   --_base-menu-justify-content: end;
+
+  /* TODO make sure we want to "expose" variables this way */
+  --scl-telekom-header-container-spacing-x: var(--_spacing-x);
 }
 
 @media screen and (--md) {
