@@ -109,7 +109,7 @@ export class Textarea {
 
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-textarea' + this.internalId;
+      this.inputId = 'input-textarea-' + this.internalId;
     }
   }
 
