@@ -40,6 +40,8 @@ export class TabNav {
 
   @Listen('click')
   handleClick(event: MouseEvent) {
+    this.removeFirstRenderAttr();
+
     const nextTab = event.target as HTMLScaleTabHeaderElement;
     if (nextTab.getAttribute('role') !== 'tab') {
       return;
@@ -49,6 +51,8 @@ export class TabNav {
 
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
+    this.removeFirstRenderAttr();
+
     const target = event.target as HTMLScaleTabHeaderElement;
     let nextTab;
 
@@ -79,6 +83,13 @@ export class TabNav {
 
     event.preventDefault();
     this.selectTab(nextTab);
+  }
+
+  removeFirstRenderAttr() {
+    const tabs = this.getAllEnabledTabs();
+    tabs.forEach((tab) => {
+      tab.removeAttribute('first-render');
+    });
   }
 
   connectedCallback() {
@@ -144,14 +155,22 @@ export class TabNav {
 
   linkPanels() {
     const tabs = this.getAllEnabledTabs();
-    const selectedTab = tabs.find((x) => x.selected) || tabs[0];
+    const selectedTab = tabs.find((x) => x.selected);
 
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
       tab.setAttribute('aria-controls', panel.id);
       panel.setAttribute('aria-labelledby', tab.id);
+      if (!selectedTab) {
+        // we pass this down to tab-header to prevent the first element to be focused on first render (a11y)
+        tab.setAttribute('first-render', 'true');
+      }
     });
-    this.selectTab(selectedTab);
+    if (selectedTab) {
+      this.selectTab(selectedTab);
+    } else {
+      this.selectTab(tabs[0]);
+    }
   }
 
   reset() {

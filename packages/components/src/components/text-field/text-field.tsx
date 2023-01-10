@@ -20,14 +20,12 @@ import {
   State,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
-
-let i = 0;
 
 @Component({
   tag: 'scale-text-field',
@@ -105,6 +103,8 @@ export class TextField {
   @Prop() list?: string;
   /** (optional) the input should automatically get focus when the page loads. */
   @Prop() inputAutofocus?: boolean;
+  /** (optional) custom value for autocomplete HTML attribute */
+  @Prop() inputAutocomplete?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -142,9 +142,11 @@ export class TextField {
   /** "forceUpdate" hack, set it to trigger and re-render */
   @State() forceUpdate: string;
 
+  private readonly internalId = generateUniqueId();
+
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-text-field' + i++;
+      this.inputId = 'input-text-field-' + this.internalId;
     }
   }
 
@@ -225,7 +227,7 @@ export class TextField {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     const numericTypes = [
       'number',
@@ -266,6 +268,7 @@ export class TextField {
             {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
             disabled={this.disabled}
             readonly={this.readonly}
+            autocomplete={this.inputAutocomplete}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}

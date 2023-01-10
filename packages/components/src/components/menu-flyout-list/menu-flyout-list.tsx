@@ -166,7 +166,7 @@ export class MenuFlyoutList {
         this.focusedItemIndex
       ] as HTMLScaleMenuFlyoutItemElement;
       if (item != null) {
-        item.triggerEvent('keydown', event.key, this.closeOnSelect);
+        item.triggerEvent(event, this.closeOnSelect);
       }
     }
   }
@@ -183,7 +183,7 @@ export class MenuFlyoutList {
     ) as HTMLScaleMenuFlyoutItemElement;
     if (item != null) {
       event.stopImmediatePropagation();
-      item.triggerEvent('click', null, this.closeOnSelect);
+      item.triggerEvent(event, this.closeOnSelect);
     }
   }
 

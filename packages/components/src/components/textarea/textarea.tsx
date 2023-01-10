@@ -20,14 +20,12 @@ import {
   State,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
-
-let i = 0;
 
 @Component({
   tag: 'scale-textarea',
@@ -107,10 +105,11 @@ export class Textarea {
   @State() hasFocus: boolean = false;
 
   private focusableElement: HTMLElement;
+  private readonly internalId = generateUniqueId();
 
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-textarea' + i++;
+      this.inputId = 'input-textarea-' + this.internalId;
     }
   }
 
@@ -170,7 +169,7 @@ export class Textarea {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     const readonlyAttr = this.readonly ? { readonly: 'readonly' } : {};
 

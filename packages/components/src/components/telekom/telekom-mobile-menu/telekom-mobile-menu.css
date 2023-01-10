@@ -1,0 +1,80 @@
+:host {
+  --spacing: var(--telekom-spacing-unit-x4);
+  --background: var(--telekom-color-background-canvas);
+  --max-width: 572px;
+
+  --spacing-close-button: var(--telekom-spacing-unit-x2);
+  --radius-close-button: var(--telekom-radius-standard);
+  --transition-close-button: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --color-close-button: var(--telekom-color-text-and-icon-standard);
+  --color-close-button-hover: var(--telekom-color-primary-hovered);
+  --color-close-button-active: var(--telekom-color-primary-pressed);
+}
+
+:host::part(base) {
+  margin: 0 auto;
+  padding: var(--spacing);
+  padding-top: calc(var(--spacing) - 6px);
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: var(--max-width);
+}
+
+:host::part(app-name) {
+  padding: var(--spacing) 0;
+}
+
+:host::part(close-button) {
+  position: absolute;
+  top: 22px;
+  right: calc(var(--spacing) - var(--spacing-close-button) + 2px);
+}
+
+:host::part(nav) {
+  padding: var(--spacing) 0;
+  max-width: var(--max-width);
+  width: 100%;
+}
+
+:host::part(close-button) {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-close-button);
+  margin-bottom: calc(-2 * var(--spacing-close-button));
+  border: 0;
+  border-radius: var(--radius-close-button);
+  outline: none;
+  color: var(--color-close-button);
+  background: transparent;
+  transition: var(--transition-close-button);
+  transform: translate(
+    var(--spacing-close-button),
+    calc(-1 * var(--spacing-close-button))
+  );
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+:host::part(close-button):focus {
+  box-shadow: var(--box-shadow-close-button-focus);
+}
+
+:host::part(close-button):hover {
+  color: var(--color-close-button-hover);
+}
+
+:host::part(close-button):active {
+  color: var(--color-close-button-active);
+}
+
+:host::part(links-top) {
+  display: flex;
+}

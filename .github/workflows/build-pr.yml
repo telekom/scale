@@ -6,7 +6,7 @@ on:
 
 jobs:
   prettier:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
 
@@ -36,7 +36,7 @@ jobs:
         run: |
           sh scripts/porcelain.sh
   tslint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
 
@@ -62,7 +62,7 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components lint
   unit-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
 
@@ -88,7 +88,7 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components test --spec --max-workers=8
   e2e-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
 
@@ -119,7 +119,7 @@ jobs:
           yarn workspace @telekom/scale-components test --e2e --max-workers=8 --debug
 
   visual-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
         with:
@@ -186,7 +186,7 @@ jobs:
           branch: ${{ steps.vars.outputs.branch-name }}
 
   uncommitted-changes:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
 
