@@ -4,9 +4,9 @@ exports[`Textarea should match snapshot -> counter 1`] = `
 <scale-textarea counter="true">
   <div class="textarea">
     <div class="textarea__wrapper">
-      <label class="textarea__label" htmlfor="input-textarea2"></label><textarea class="textarea__control" id="input-textarea2" value=""></textarea>
+      <label class="textarea__label" htmlfor="input-textarea-2"></label><textarea class="textarea__control" id="input-textarea-2" value=""></textarea>
     </div>
-    <div aria-live="polite" aria-relevant="additions removals" class="textarea__meta" id="helper-message-3">
+    <div aria-live="polite" aria-relevant="additions removals" class="textarea__meta" id="helper-message-2">
       <div class="textarea__counter">
         0 /
       </div>
@@ -19,9 +19,9 @@ exports[`Textarea should match snapshot -> helpertext 1`] = `
 <scale-textarea helper-text="helpertext" invalid="true">
   <div class="textarea textarea--status-error">
     <div class="textarea__wrapper">
-      <label class="textarea__label" htmlfor="input-textarea1"></label><textarea aria-describedby="helper-message-2" aria-invalid="" class="textarea__control" id="input-textarea1" value=""></textarea>
+      <label class="textarea__label" htmlfor="input-textarea-1"></label><textarea aria-describedby="helper-message-1" aria-invalid="" class="textarea__control" id="input-textarea-1" value=""></textarea>
     </div>
-    <div aria-live="polite" aria-relevant="additions removals" class="textarea__meta" id="helper-message-2">
+    <div aria-live="polite" aria-relevant="additions removals" class="textarea__meta" id="helper-message-1">
       <div class="textarea__helper-text">
         helpertext
       </div>
@@ -34,7 +34,7 @@ exports[`Textarea should match snapshot 1`] = `
 <scale-textarea>
   <div class="textarea">
     <div class="textarea__wrapper">
-      <label class="textarea__label" htmlfor="input-textarea0"></label><textarea class="textarea__control" id="input-textarea0" value=""></textarea>
+      <label class="textarea__label" htmlfor="input-textarea-0"></label><textarea class="textarea__control" id="input-textarea-0" value=""></textarea>
     </div>
   </div>
 </scale-textarea>
