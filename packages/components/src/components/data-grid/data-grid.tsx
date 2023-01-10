@@ -186,7 +186,9 @@ export class DataGrid {
   componentDidLoad() {
     this.addResizeObserver();
   }
-  componentDidUpdate() {}
+  componentDidUpdate() {
+    this.selectable && this.updateReadableSelection();
+  }
   disconnectedCallback() {
     this.removeResizeObserver();
   }
