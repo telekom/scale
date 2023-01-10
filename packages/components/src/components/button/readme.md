@@ -11,7 +11,6 @@
 | ---------------- | ------------------ | --------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
 | `disabled`       | `disabled`         | (optional) If `true`, the button is disabled                                                              | `boolean`                         | `false`     |
 | `download`       | `download`         | (optional) Name of a file to be downloaded                                                                | `string`                          | `undefined` |
-| `form`           | `form`             | (optional) Button form                                                                                    | `string`                          | `undefined` |
 | `href`           | `href`             | (optional) When present, an <a> tag will be used                                                          | `string`                          | `undefined` |
 | `iconOnly`       | `icon-only`        | (optional) Set to `true` when the button contains only an icon                                            | `boolean`                         | `false`     |
 | `iconPosition`   | `icon-position`    | (optional) Icon position related to the label                                                             | `"after" \| "before"`             | `'before'`  |
