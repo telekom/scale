@@ -17,8 +17,10 @@ import {
   Prop,
   Listen,
   State,
+  Event,
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
+import { emitEvent } from '../../../utils/utils';
 
 function elementDepth(el) {
   let depth = 0;
@@ -38,8 +40,15 @@ export class TelekomMobileMenu {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop() activeRouteId: string;
+  @Prop() closeButtonTitle: string = 'Close';
+
+  @Prop() appName?: string;
+  @Prop() appNameLink?: string;
+  @Prop() appNameClick?: any;
 
   @State() currentLevel: number = 0;
+
+  @Event({ eventName: 'scale-close-nav-flyout' }) scaleCloseNavFlyout;
 
   @Listen('scale-click-menu-item')
   handleClickMenuItem(e) {
@@ -158,10 +167,39 @@ export class TelekomMobileMenu {
   render() {
     return (
       <Host>
+        <button
+          part="close-button"
+          onClick={(e) => {
+            emitEvent(this, 'scaleCloseNavFlyout', e);
+          }}
+        >
+          <scale-icon-action-close
+            size={24}
+            accessibility-title={this.closeButtonTitle}
+          ></scale-icon-action-close>
+        </button>
+
         <div part="base">
-          <nav part="content">
+          <div part="app-name">
+            <scale-telekom-app-name>
+              {this.appNameLink ? (
+                <a onClick={this.appNameClick} href={this.appNameLink}>
+                  {this.appName}
+                </a>
+              ) : (
+                <span>{this.appName}</span>
+              )}
+            </scale-telekom-app-name>
+          </div>
+
+          <div part="links-top">
+            <slot name="top-left"></slot>
+            <slot name="top-right"></slot>
+          </div>
+          <nav part="nav">
             <slot></slot>
           </nav>
+          <slot name="bottom"></slot>
         </div>
       </Host>
     );
