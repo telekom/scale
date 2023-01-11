@@ -120,7 +120,7 @@ export class Segment {
   handleIcon() {
     Array.from(this.hostElement.childNodes).forEach((child) => {
       if (
-        child.nodeType == 1 &&
+        child.nodeType === 1 &&
         child.nodeName.substr(0, 10) === 'SCALE-ICON'
       ) {
         const icon: HTMLElement = this.hostElement.querySelector(
@@ -138,14 +138,14 @@ export class Segment {
         icon.style.marginRight = '4px';
         this.hasIcon = true;
       }
-      if (child.nodeType == 3 && this.hostElement.childNodes.length == 1) {
+      if (child.nodeType === 3 && this.hostElement.childNodes.length === 1) {
         this.textOnly = true;
-        var span = document.createElement('span');
+        const span = document.createElement('span');
         child.parentNode.insertBefore(span, child);
         span.appendChild(child);
       }
       if (
-        child.nodeType == 1 &&
+        child.nodeType === 1 &&
         child.nodeName.substr(0, 10) === 'SCALE-ICON' &&
         this.hostElement.childNodes.length === 1
       ) {
@@ -163,7 +163,7 @@ export class Segment {
   }
 
   handleClick = (event: MouseEvent) => {
-    if (parseInt(this.selectedIndex, 10) + 1 == this.position) {
+    if (parseInt(this.selectedIndex, 10) + 1 === this.position) {
       return
     }  
     event.preventDefault();
