@@ -50,6 +50,8 @@ export class SegmentedButton {
   @Prop() size?: 'small' | 'medium' | 'large' = 'small';
   /** (optional) Allow more than one button to be selected */
   @Prop() multiSelect: boolean = false;
+  /** (optional) the index of the selected segment */
+  @Prop() selectedIndex?: number;  
   /** (optional) If `true`, the button is disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) If `true`, expand to container width */
@@ -98,6 +100,7 @@ export class SegmentedButton {
 
   @Watch('disabled')
   @Watch('size')
+  @Watch('selectedIndex')
   handlePropsChange() {
     this.propagatePropsToChildren();
   }
@@ -108,6 +111,7 @@ export class SegmentedButton {
   propagatePropsToChildren() {
     this.getAllSegmentedButtons().forEach((el) => {
       el.setAttribute('size', this.size);
+      el.setAttribute('selected-index', this.selectedIndex.toString());
       if (this.disabled) {
         el.setAttribute('disabled', true && 'disabled');
       }
@@ -137,6 +141,7 @@ export class SegmentedButton {
       this.hostElement.children.length
     }, ${Math.ceil(longestButtonWidth)}px);`;
 
+    this.selectedIndex = this.getSelectedIndex()
     this.propagatePropsToChildren();
     this.position = 0;
     this.status = tempState;
@@ -144,6 +149,7 @@ export class SegmentedButton {
   }
 
   componentWillUpdate() {
+    this.selectedIndex = this.getSelectedIndex()
     this.showHelperText = false;
     if (
       this.invalid &&
@@ -151,6 +157,18 @@ export class SegmentedButton {
     ) {
       this.showHelperText = true;
     }
+  }
+
+  getSelectedIndex() {
+    if (this.multiSelect) {
+      // in multi-select having no selected segments is allowed
+      return -1
+    } else {
+      const allButtons = this.getAllSegmentedButtons()
+      const selectedIndex = allButtons.findIndex(el => el.selected == true)
+      return selectedIndex    
+    }
+
   }
 
   getAdjacentSiblings = (tempState, i) => {

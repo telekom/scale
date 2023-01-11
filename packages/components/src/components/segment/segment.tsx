@@ -65,6 +65,9 @@ export class Segment {
   @Prop({ mutable: true }) textOnly?: boolean;
   /** (optional) position within group */
   @Prop({ mutable: true }) iconOnly?: boolean;
+  /** (optional) the index of the currently selected segment in the segmented-button */
+  @Prop({ mutable: true }) selectedIndex?: string;
+
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -160,6 +163,9 @@ export class Segment {
   }
 
   handleClick = (event: MouseEvent) => {
+    if (parseInt(this.selectedIndex, 10) + 1 == this.position) {
+      return
+    }  
     event.preventDefault();
     this.selected = !this.selected;
     emitEvent(this, 'scaleClick', {
