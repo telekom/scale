@@ -109,21 +109,21 @@ export class SegmentedButton {
    * Keep props, needed in children buttons, in sync
    */
   propagatePropsToChildren() {
-    this.getAllSegmentedButtons().forEach((el) => {
-      el.setAttribute('size', this.size);
-      el.setAttribute('selected-index', this.selectedIndex.toString());
+    this.getAllSegments().forEach((segment) => {
+      segment.setAttribute('size', this.size);
+      segment.setAttribute('selected-index', this.selectedIndex.toString());
       if (this.disabled) {
-        el.setAttribute('disabled', true && 'disabled');
+        segment.setAttribute('disabled', true && 'disabled');
       }
     });
   }
 
   componentDidLoad() {
     const tempState: SegmentStatus[] = [];
-    const segmentedButtons = this.getAllSegmentedButtons();
-    this.slottedSegments = segmentedButtons.length;
+    const segments = this.getAllSegments();
+    this.slottedSegments = segments.length;
     const longestButtonWidth = this.getLongestButtonWidth();
-    segmentedButtons.forEach((segment) => {
+    segments.forEach((segment) => {
       this.position++;
       tempState.push({
         id: segment.getAttribute('segment-id'),
@@ -164,8 +164,8 @@ export class SegmentedButton {
       // in multi-select having no selected segments is allowed
       return -1;
     } else {
-      const allButtons = this.getAllSegmentedButtons();
-      const selectedIndex = allButtons.findIndex((el) => el.selected === true);
+      const allSegments = this.getAllSegments();
+      const selectedIndex = allSegments.findIndex((el) => el.selected === true);
       return selectedIndex;
     }
   }
@@ -211,15 +211,15 @@ export class SegmentedButton {
   }
 
   setState(tempState: SegmentStatus[]) {
-    const segmentedButtons = Array.from(
+    const segments = Array.from(
       this.hostElement.querySelectorAll('scale-segment')
     );
-    segmentedButtons.forEach((segmentedButton, i) => {
-      segmentedButton.setAttribute(
+    segments.forEach((segment, i) => {
+      segment.setAttribute(
         'adjacent-siblings',
         this.getAdjacentSiblings(tempState, i)
       );
-      segmentedButton.setAttribute(
+      segment.setAttribute(
         'selected',
         tempState[i].selected ? 'true' : 'false'
       );
@@ -228,7 +228,7 @@ export class SegmentedButton {
     emitEvent(this, 'scaleChange', this.status);
   }
 
-  getAllSegmentedButtons() {
+  getAllSegments() {
     return Array.from(this.hostElement.querySelectorAll('scale-segment'));
   }
 

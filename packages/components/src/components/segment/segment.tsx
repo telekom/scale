@@ -32,17 +32,17 @@ let i = 0;
 })
 export class Segment {
   @Element() hostElement: HTMLElement;
-  /** (optional) The size of the button */
+  /** (optional) The size of the segment */
   @Prop() size?: 'small' | 'medium' | 'large' = 'small';
-  /** (optional) If `true`, the button is selected */
+  /** (optional) If `true`, the segment is selected */
   @Prop({ mutable: true }) selected?: boolean = false;
-  /** (optional) If `true`, the button is disabled */
+  /** (optional) If `true`, the segment is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) segment's id */
   @Prop({ reflect: true, mutable: true }) segmentId?: string;
-  /** (optional) aria-label attribute needed for icon-only buttons */
+  /** (optional) aria-label attribute needed for icon-only segments */
   @Prop() ariaLabelSegment: string;
-  /** (optional) Button width set to ensure that all buttons have the same width */
+  /** (optional) Segment width set to ensure that all segments have the same width */
   @Prop() width?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
