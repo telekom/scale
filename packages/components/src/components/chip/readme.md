@@ -7,16 +7,16 @@
 
 ## Properties
 
-| Property           | Attribute            | Description                    | Type                      | Default      |
-| ------------------ | -------------------- | ------------------------------ | ------------------------- | ------------ |
-| `ariaCheckedState` | `aria-checked-state` | (optional) chip aria-checked   | `boolean`                 | `undefined`  |
-| `ariaRoleTitle`    | `aria-role-title`    | (optional) chip aria-role      | `string`                  | `'switch'`   |
-| `disabled`         | `disabled`           | (optional) chip disabled       | `boolean`                 | `false`      |
-| `dismissible`      | `dismissible`        | (optional) chip dismissible    | `boolean`                 | `false`      |
-| `label`            | `label`              | (optional) chip label          | `string`                  | `undefined`  |
-| `selected`         | `selected`           | (optional)                     | `boolean`                 | `false`      |
-| `styles`           | `styles`             | (optional) Injected CSS styles | `string`                  | `undefined`  |
-| `type`             | `type`               |                                | `"outline" \| "standard"` | `'standard'` |
+| Property           | Attribute            | Description                    | Type                        | Default        |
+| ------------------ | -------------------- | ------------------------------ | --------------------------- | -------------- |
+| `ariaCheckedState` | `aria-checked-state` | (optional) chip aria-checked   | `boolean`                   | `undefined`    |
+| `ariaRoleTitle`    | `aria-role-title`    | (optional) chip aria-role      | `string`                    | `'switch'`     |
+| `disabled`         | `disabled`           | (optional) chip disabled       | `boolean`                   | `false`        |
+| `label`            | `label`              | (optional) chip label          | `string`                    | `undefined`    |
+| `selected`         | `selected`           | (optional)                     | `boolean`                   | `false`        |
+| `styles`           | `styles`             | (optional) Injected CSS styles | `string`                    | `undefined`    |
+| `type`             | `type`               | (optional)                     | `"dynamic" \| "persistent"` | `'persistent'` |
+| `variant`          | `variant`            | (optional)                     | `"outline" \| "standard"`   | `'standard'`   |
 
 
 ## Events

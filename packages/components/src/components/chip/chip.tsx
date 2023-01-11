@@ -27,15 +27,16 @@ import { emitEvent } from '../../utils/utils';
 })
 export class Chip {
   @Element() hostElement: HTMLElement;
-  @Prop() type?: 'standard' | 'outline' = 'standard';
+  /** (optional) */
+  @Prop() variant?: 'standard' | 'outline' = 'standard';
+  /** (optional) */
+  @Prop() type?: 'dynamic' | 'persistent' = 'persistent';
   /** (optional) */
   @Prop() selected?: boolean = false;
   /** (optional) chip aria-role */
   @Prop() ariaRoleTitle?: string = 'switch';
   /** (optional) chip aria-checked */
   @Prop() ariaCheckedState?: boolean;
-  /** (optional) chip dismissible */
-  @Prop() dismissible?: boolean = false;
   /** (optional) chip label */
   @Prop() label?: string;
   /** (optional) chip disabled */
@@ -54,12 +55,6 @@ export class Chip {
   @Event({ eventName: 'scaleClose' })
   scaleCloseLegacy: EventEmitter<MouseEvent>;
 
-  componentWillLoad() {
-    // TODO other logic needed
-    if (this.dismissible) {
-      this.selected = true;
-    }
-  }
   componentDidRender() {
     // handle no setted icon size attribute
     const defaultIconSize = 24;
@@ -96,7 +91,7 @@ export class Chip {
   };
 
   getIcon() {
-    if (this.dismissible) {
+    if (this.type === 'dynamic' && this.selected) {
       return (
         <scale-icon-action-close
           accessibility-title="close"
@@ -104,7 +99,7 @@ export class Chip {
           onClick={!this.disabled ? this.handleClose : null}
         />
       );
-    } else if (!this.dismissible) {
+    } else if (this.type === 'persistent') {
       return (
         <scale-icon-action-success
           accessibility-title="success"
@@ -128,9 +123,10 @@ export class Chip {
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           onClick={
-            !this.disabled && !this.dismissible ? this.handleClick : null
+            !this.disabled && this.type !== 'dynamic' ? this.handleClick : null
           }
         >
+          <slot name="chip-icon"></slot>
           <span class="chip-label">
             <slot />
           </span>
@@ -156,8 +152,8 @@ export class Chip {
       mode === 'basePart' ? 'base' : component,
       !!this.selected && `${prefix}selected`,
       !!this.disabled && `${prefix}disabled`,
-      !!this.dismissible && `${prefix}dismissible`,
-      this.type && `${prefix}type-${this.type}`
+      this.type && `${prefix}type-${this.type}`,
+      this.variant && `${prefix}variant-${this.variant}`
     );
   }
 }

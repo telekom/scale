@@ -1,8 +1,8 @@
 <template>
   <scale-chip
+    :variant="variant"
     :type="type"
     :selected="selected"
-    :dismissible="dismissible"
     :aria-checked-state="ariaCheckedState"
     :aria-role-title="ariaRoleTitle"
     :disabled="disabled"
@@ -19,9 +19,9 @@
 import { action } from '@storybook/addon-actions';
 export default {
   props: {
-    type: { type: 'standard' | 'outline', default: 'standard' },
+    variant: { type: 'standard' | 'outline', default: 'standard' },
+    type: { type: 'dynamic' | 'persistent', default: 'persistent' },
     selected: { type: Boolean, default: false },
-    dismissible: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     styles: { type: String },
     ariaRoleTitle: { type: String, default: 'switch' },
