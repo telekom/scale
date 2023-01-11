@@ -164,8 +164,8 @@ export class Segment {
 
   handleClick = (event: MouseEvent) => {
     if (parseInt(this.selectedIndex, 10) + 1 === this.position) {
-      return
-    }  
+      return;
+    }
     event.preventDefault();
     this.selected = !this.selected;
     emitEvent(this, 'scaleClick', {
