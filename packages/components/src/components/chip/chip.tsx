@@ -74,17 +74,19 @@ export class Chip {
   handleClose = (event: MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    if (this.disabled) {
+    if (this.disabled && this.type !== 'dynamic') {
       return;
     }
     emitEvent(this, 'scaleClose', event);
   };
 
   handleClick = (event: MouseEvent) => {
-    this.selected = !this.selected;
+    if (this.type !== 'dynamic') {
+      this.selected = !this.selected;
+    }
     event.preventDefault();
     event.stopPropagation();
-    if (this.disabled) {
+    if (this.disabled && this.type !== 'dynamic') {
       return;
     }
     emitEvent(this, 'scaleChange', event);
@@ -123,7 +125,7 @@ export class Chip {
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           onClick={
-            !this.disabled && this.type !== 'dynamic' ? this.handleClick : null
+            !this.disabled || this.type === 'dynamic' ? this.handleClick : null
           }
         >
           <slot name="chip-icon"></slot>

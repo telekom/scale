@@ -44,12 +44,14 @@
   border: 1px solid var(--telekom-color-ui-border-standard);
 }
 
-.chip:not(.chip--disabled):focus {
+.chip:not(.chip--disabled):focus,
+.chip.chip--type-dynamic:not(.chip--selected):focus {
   outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
   outline-offset: var(--telekom-spacing-unit-x025);
 }
 
-.chip:not(.chip--disabled):hover {
+.chip:not(.chip--disabled):hover,
+.chip.chip--type-dynamic:not(.chip--selected):hover {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-hovered),
       var(--telekom-color-ui-state-fill-hovered)
@@ -57,7 +59,8 @@
     var(--telekom-color-text-and-icon-inverted-standard);
 }
 
-.chip:not(.chip--disabled):active {
+.chip:not(.chip--disabled):active,
+.chip.chip--type-dynamic:not(.chip--selected):active {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-pressed),
       var(--telekom-color-ui-state-fill-pressed)
@@ -97,7 +100,7 @@ label
   line-height: 100%;
 }
 
-.chip--type-dynamic .chip-label,
+.chip--type-dynamic.chip--selected .chip-label,
 .chip--selected .chip-label {
   padding-right: var(--telekom-spacing-unit-x2);
 }
@@ -118,18 +121,18 @@ icon end
 /**
 disabled
 **/
-.chip.chip--disabled {
+.chip.chip--disabled:not(.chip--type-dynamic) {
   color: var(--telekom-color-text-and-icon-disabled);
   border: 1px solid var(--telekom-color-ui-border-disabled);
 }
 
-.chip--selected:not(.chip--variant-outlined).chip--disabled {
+.chip--selected:not(.chip--variant-outlined):not(.chip--type-dynamic).chip--disabled {
   background: var(--telekom-color-ui-disabled);
   color: var(--telekom-color-text-and-icon-disabled);
   border: none;
 }
 
-.chip--variant-outlined.chip--selected.chip--disabled {
+.chip--variant-outlined.chip--selected.chip--disabled:not(.chip--type-dynamic) {
   background-color: var(--telekom-color-text-and-icon-inverted-standard);
   color: var(--telekom-color-text-and-icon-disabled);
   border: 1px solid var(--telekom-color-ui-border-disabled);
