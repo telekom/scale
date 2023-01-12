@@ -1,32 +1,31 @@
 :host {
-    --selected-color: var(--telekom-color-text-and-icon-primary-standard);
-    --label-size: var(--telekom-typography-font-size-small);
-    --label-weight: var(--telekom-typography-font-weight-medium);
+  --selected-color: var(--telekom-color-text-and-icon-primary-standard);
+  --label-size: var(--telekom-typography-font-size-small);
+  --label-weight: var(--telekom-typography-font-weight-medium);
 }
 
 .bottom-bar-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
 }
 
 .bottom-bar-item--selected {
-    color: var(--selected-color);
+  color: var(--selected-color);
 }
 
 .bottom-bar-item__label {
-    font-size: var(--label-size);
-    font-weight: var(--label-weight);
-    margin-top: 4px;
+  font-size: var(--label-size);
+  font-weight: var(--label-weight);
+  margin-top: 4px;
 }
 
-:host-context([data-platform="android"]) .scale-bottom-bar-item__container {
-    background-color: var(--telekom-color-ui-subtle); 
-    border-radius: var(--telekom-radius-pill);
-    padding: 7px 22px 7px 22px;
-    display: flex;
-} 
-
+:host-context([data-platform='android']) .scale-bottom-bar-item__container {
+  background-color: var(--telekom-color-ui-subtle);
+  border-radius: var(--telekom-radius-pill);
+  padding: 7px 22px 7px 22px;
+  display: flex;
+}

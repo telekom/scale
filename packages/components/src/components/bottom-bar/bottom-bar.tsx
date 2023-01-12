@@ -9,52 +9,51 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- import { Component, Prop, h, Host, Listen, Element } from '@stencil/core';
- import classNames from 'classnames';
- @Component({
-   tag: 'scale-bottom-bar',
-   styleUrl: 'bottom-bar.css',
-   shadow: true,
- })
- export class Card {
+import { Component, Prop, h, Host, Listen, Element } from '@stencil/core';
+import classNames from 'classnames';
+@Component({
+  tag: 'scale-bottom-bar',
+  styleUrl: 'bottom-bar.css',
+  shadow: true,
+})
+export class Card {
   @Element() hostElement: HTMLElement;
 
-   /** (optional) Elements label */
-   @Prop() elements?: any = []
+  /** (optional) Elements label */
+  @Prop() elements?: any = [];
 
-   /** (optional) Injected CSS styles */
-   @Prop() styles?: string;
- 
-   @Listen('click')
-   handleClick(event: MouseEvent) {
-    const selected = event.target as HTMLElement
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
+
+  @Listen('click')
+  handleClick(event: MouseEvent) {
+    const selected = event.target as HTMLElement;
     if (selected.tagName !== 'SCALE-BOTTOM-BAR-ITEM') {
-      return 
+      return;
     }
-    const allBottomBarItems = Array.from(this.hostElement.querySelectorAll('scale-bottom-bar-item'));
-    allBottomBarItems.forEach(el => {
-      el.removeAttribute('selected')
+    const allBottomBarItems = Array.from(
+      this.hostElement.querySelectorAll('scale-bottom-bar-item')
+    );
+    allBottomBarItems.forEach((el) => {
+      el.removeAttribute('selected');
       if (el === event.target) {
-        el.setAttribute('selected', '')
+        el.setAttribute('selected', '');
       }
-    })
-   }
+    });
+  }
 
-   render() {
-     return (
-       <Host>
-         {this.styles && <style>{this.styles}</style>}
-           <div
-             class={this.getCssClassMap()}
-           >
-              <slot />
-           </div>
-       </Host>
-     );
-   }
- 
-   getCssClassMap() {
-     return classNames('bottom-bar', 'bottom-bar');
-   }
- }
- 
+  render() {
+    return (
+      <Host>
+        {this.styles && <style>{this.styles}</style>}
+        <div class={this.getCssClassMap()}>
+          <slot />
+        </div>
+      </Host>
+    );
+  }
+
+  getCssClassMap() {
+    return classNames('bottom-bar', 'bottom-bar');
+  }
+}
