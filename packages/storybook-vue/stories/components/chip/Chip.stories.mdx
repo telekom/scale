@@ -21,6 +21,12 @@ import { action } from '@storybook/addon-actions';
         options: ['standard', 'outline'],
       },
     },
+    type: {
+      control: {
+        type: 'select',
+        options: ['dynamic', 'persistent'],
+      },
+    },
   }}
 />
 
@@ -83,6 +89,25 @@ export const TemplateIcon = (args, { argTypes }) => ({
   <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-chip>Label</scale-chip>
+```
+
 ## Persistent
 
 ### Persistent Standard
@@ -97,8 +122,6 @@ export const TemplateIcon = (args, { argTypes }) => ({
     {Template.bind({})}
   </Story>
 </Canvas>
-
-<ArgsTable story="Standard" />
 
 ```html
 <scale-chip>Label</scale-chip>
@@ -246,6 +269,25 @@ export const TemplateIcon = (args, { argTypes }) => ({
       label: 'Label',
       type: 'dynamic',
       variant: 'standard',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-chip type="dynamic" variant="standard">Label</scale-chip>
+```
+
+### Dynamic Standard Selected
+
+<Canvas withSource="none">
+  <Story
+    name="Dynamic Standard Selected"
+    args={{
+      label: 'Label',
+      type: 'dynamic',
+      variant: 'standard',
       selected: true,
     }}
   >
@@ -261,7 +303,26 @@ export const TemplateIcon = (args, { argTypes }) => ({
 
 <Canvas withSource="none">
   <Story
-    name="Outline Dismissible"
+    name="Dynamic Outline"
+    args={{
+      label: 'Label',
+      type: 'dynamic',
+      variant: 'outline',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-chip type="dynamic" variant="outline">Label</scale-chip>
+```
+
+### Dynamic Outline Selected
+
+<Canvas withSource="none">
+  <Story
+    name="Dynamic Outline Selected"
     args={{
       label: 'Label',
       type: 'dynamic',

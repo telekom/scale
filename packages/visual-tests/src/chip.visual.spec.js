@@ -4,14 +4,18 @@ describe('Chip', () => {
       await global.runColorSetup('components-chip--standard', mode);
     });
     test.each([
-      ['standard'],
-      ['standard-selected'],
-      ['standard-selected-disabled'],
-      ['standard-dismissible'],
-      ['outline'],
-      ['outline-selected'],
-      ['outline-selected-disabled'],
-      ['outline-dismissible'],
+      ['persistent-standard'],
+      ['persistent-standard-selected'],
+      ['persistent-standard-disabled'],
+      ['persistent-standard-selected-disabled'],
+      ['persistent-outline'],
+      ['persistent-outline-selected'],
+      ['persistent-outline-disabled'],
+      ['persistent-outline-selected-disabled'],
+      ['dynamic-standard'],
+      ['dynamic-standard-selected'],
+      ['dynamic-outline'],
+      ['dynamic-outline-selected'],
     ])('%p', async (variant) => {
       await global.runSetup(`beta-components-chip--${variant}`);
       await global.visualCheck();
