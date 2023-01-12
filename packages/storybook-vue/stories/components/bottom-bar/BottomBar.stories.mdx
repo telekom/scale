@@ -7,6 +7,8 @@ import {
 } from '@storybook/addon-docs';
 import ScaleBottomBar from './BottomBar.vue';
 
+import mobilePreviewDecorator from '../../../utils/mobilePreviewDecorator';
+
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 <Meta
@@ -17,7 +19,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
       viewports: INITIAL_VIEWPORTS,
       defaultViewport: 'iphone6',
     },
-    mobilePreview: 'bottom'
+    mobilePreview: 'bottom',
   }}  
   argTypes={{
     icon: {
@@ -27,6 +29,9 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
       control: { type: 'text' },
     }
   }}
+  decorators={[
+    mobilePreviewDecorator
+  ]}  
 />
 
 export const TemplateIOS = (args, { argTypes }) => ({
