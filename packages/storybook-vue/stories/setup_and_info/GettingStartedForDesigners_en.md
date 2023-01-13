@@ -47,7 +47,7 @@ Just navigate to the component you want to learn more about in the left sidebar 
 
 ![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
 
-## 5. Leave feedback
+## 4. Leave feedback
 
 Find out how to provide [feedback](./?path=/story/contact-your-feedback--page) and make Scale better for everyone.
 

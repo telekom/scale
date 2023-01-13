@@ -48,7 +48,7 @@ Zu jeder Komponente gibt es ausführliche Informationen zur Verwendung sowie unt
 
 ![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
 
-## 5. Wir freuen uns auf dein Feedback
+## 4. Wir freuen uns auf dein Feedback
 
 Mit deinem [Feedback](./?path=/story/contact-your-feedback--page) können wir Scale noch besser machen. Du kannst auch deine Designs mit uns teilen, damit alle davon profitieren können.
 
