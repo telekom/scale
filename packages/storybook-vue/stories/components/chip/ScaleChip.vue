@@ -1,7 +1,7 @@
 <template>
   <scale-chip
-    :variant="variant"
     :type="type"
+    :variant="variant"
     :selected="selected"
     :aria-checked-state="ariaCheckedState"
     :aria-role-title="ariaRoleTitle"

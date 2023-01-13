@@ -70,7 +70,7 @@ export class Chip {
       if (this.selected) {
         iconSlot.children[0].setAttribute('selected', String(true));
       } else {
-        iconSlot.children[0].setAttribute('selected', String(true));
+        iconSlot.children[0].setAttribute('selected', String(false));
       }
     }
   }
