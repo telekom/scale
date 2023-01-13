@@ -18,6 +18,13 @@
 | `role`               | `role`                |                                                                                 | `"img" \| "link"` | `'img'`     |
 
 
+## Shadow Parts
+
+| Part         | Description |
+| ------------ | ----------- |
+| `"logo-svg"` |             |
+
+
 ## Dependencies
 
 ### Used by

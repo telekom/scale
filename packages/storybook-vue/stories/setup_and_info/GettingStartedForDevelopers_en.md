@@ -38,6 +38,15 @@ import { defineCustomElements } from '@telekom/scale-components/loader';
 defineCustomElements();
 ```
 
+Alternatively, if you wish to only load the component you need, for example, the button component, you can load the component in the following way:
+
+```js
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import { defineCustomElementScaleButton } from '@telekom/scale-components';
+
+defineCustomElementScaleButton();
+```
+
 ### NPM Packages
 
 | Package Name                        | Description                                 |

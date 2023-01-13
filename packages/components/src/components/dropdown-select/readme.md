@@ -14,6 +14,7 @@
 | `helperText`  | `helper-text` |             | `string`                                                | `''`              |
 | `invalid`     | `invalid`     |             | `boolean`                                               | `false`           |
 | `label`       | `label`       |             | `string`                                                | `undefined`       |
+| `name`        | `name`        |             | `string`                                                | `undefined`       |
 | `readonly`    | `readonly`    |             | `boolean`                                               | `undefined`       |
 | `transparent` | `transparent` |             | `boolean`                                               | `undefined`       |
 | `value`       | `value`       |             | `any`                                                   | `undefined`       |

@@ -19,8 +19,8 @@ export default {
         'brown' |
         'olive' |
         'teal' |
-        'grey',
-      default: 'grey',
+        'standard',
+      default: 'standard',
     },
     type: {
       type: 'strong' | 'standard',

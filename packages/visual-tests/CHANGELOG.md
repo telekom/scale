@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.118](https://github.com/telekom/scale/compare/v3.0.0-beta.117...v3.0.0-beta.118) (2023-01-13)
+
+
+### Bug Fixes
+
+* prevent focus on first render ([#1383](https://github.com/telekom/scale/issues/1383)) ([b455cda](https://github.com/telekom/scale/commit/b455cda6857291f85ac49daa43399ad639c63b07))
+* wrong tag coloring ([#1397](https://github.com/telekom/scale/issues/1397)) ([fe445cf](https://github.com/telekom/scale/commit/fe445cfdd2d3bf72359ecc2664c04c1184f57399))
+
+
+
+
+
 # [3.0.0-beta.117](https://github.com/telekom/scale/compare/v3.0.0-beta.116...v3.0.0-beta.117) (2022-11-07)
 
 
