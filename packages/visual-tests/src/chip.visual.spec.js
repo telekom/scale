@@ -12,12 +12,12 @@ describe('Chip', () => {
       ['persistent-outline-selected'],
       ['persistent-outline-disabled'],
       ['persistent-outline-selected-disabled'],
-      ['dynamic-standard'],
-      ['dynamic-standard-selected'],
-      ['dynamic-outline'],
-      ['dynamic-outline-selected'],
+      ['dynamic-suggestion'],
+      ['dynamic-selection-standard'],
+      ['dynamic-selection-outline'],
     ])('%p', async (variant) => {
       await global.runSetup(`beta-components-chip--${variant}`);
+      await global.page.waitFor(3000);
       await global.visualCheck();
     });
   });
