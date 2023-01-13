@@ -87,10 +87,9 @@ export const TemplateInteractive = (args, { argTypes }) => ({
             @scaleChange="removeChip(label)"
           >
             {{label}}
-          </scale-tag>
+          </scale-chip>
         </li>
       </ul>   
-      <div style="height: 20px;">Your selected option: {{text}}</div>
     </div>
   `,
   methods: {
@@ -98,7 +97,6 @@ export const TemplateInteractive = (args, { argTypes }) => ({
     removeChip(label) {
       this.action();
       this.labels = null;
-      this.text = label;
       setTimeout(() => {
         this.$el.querySelector('#root > ul > li > scale-chip') &&
           this.$el
@@ -362,7 +360,6 @@ export const TemplateInteractive = (args, { argTypes }) => ({
     name="Icon+Text"
     args={{
       label: 'Label',
-      text: '',
     }}
   >
     {TemplateIcon.bind({})}
@@ -387,6 +384,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
     name="Usage Example"
     args={{
       label: 'Label',
+      text: '',
     }}
   >
     {TemplateInteractive.bind({})}
