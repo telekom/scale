@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.118](https://github.com/telekom/scale/compare/v3.0.0-beta.117...v3.0.0-beta.118) (2023-01-13)
+
+
+### Bug Fixes
+
+* remove broken link ([#1474](https://github.com/telekom/scale/issues/1474)) ([09a09f0](https://github.com/telekom/scale/commit/09a09f09c4e66dc2578aa99c204d3937be1d08d3))
+* **docs:** typo in _loading the library_ section  ([#1416](https://github.com/telekom/scale/issues/1416)) ([d8a3259](https://github.com/telekom/scale/commit/d8a325928cd0beddd2a09cadd1851f86d94a66e0))
+* fixing possible default z-index problems ([#1090](https://github.com/telekom/scale/issues/1090)) ([bb86535](https://github.com/telekom/scale/commit/bb865352bf9c99fdf4132f7e409161dddbd8676e))
+* prevent focus on first render ([#1383](https://github.com/telekom/scale/issues/1383)) ([b455cda](https://github.com/telekom/scale/commit/b455cda6857291f85ac49daa43399ad639c63b07))
+* solving random deprecated console output ([#1390](https://github.com/telekom/scale/issues/1390)) ([6a63529](https://github.com/telekom/scale/commit/6a635295c3c7d6f74cb26f85f178bb9a795d8e3e))
+* wrong tag coloring ([#1397](https://github.com/telekom/scale/issues/1397)) ([fe445cf](https://github.com/telekom/scale/commit/fe445cfdd2d3bf72359ecc2664c04c1184f57399))
+* **radio-button:** solving spacing clickability problem ([#1343](https://github.com/telekom/scale/issues/1343)) ([7b88772](https://github.com/telekom/scale/commit/7b88772d5ac822fb83e47b7c5b7234b8505a95a9))
+
+
+### Features
+
+* **brand-bar:** add new components ([#1370](https://github.com/telekom/scale/issues/1370)) ([89f7d36](https://github.com/telekom/scale/commit/89f7d36501a9d3f9db9243ccc4f9b1256d0b6f7e))
+* **dropdown-select:** add _name_ prop ([#1417](https://github.com/telekom/scale/issues/1417)) ([37f1612](https://github.com/telekom/scale/commit/37f1612c69331a2ceca45d8720ba3d312cfdeef4))
+* **menu-flyout:** expose original event in scale-select event ([#1367](https://github.com/telekom/scale/issues/1367)) ([a76449a](https://github.com/telekom/scale/commit/a76449a3334cbbdc9d211bb3914f951bb38cba80))
+* **telekom-header:** icon navigation ([#1439](https://github.com/telekom/scale/issues/1439)) ([490f7c6](https://github.com/telekom/scale/commit/490f7c6d89db8d28350b4c5b2e42581df456a42c))
+* **telekom-header:** prototyping stuff ([#1431](https://github.com/telekom/scale/issues/1431)) ([2815b78](https://github.com/telekom/scale/commit/2815b78b6b51b9e4862082c0ccfac247e7b9fddb))
+* **telekom-mobile-menu:** add new component ([#1398](https://github.com/telekom/scale/issues/1398)) ([f32c55a](https://github.com/telekom/scale/commit/f32c55a0ddeacd4208761d775f6b1aa274fa74b8))
+* **telekom-nav-flyout:** add default x spacing to match header container ([#1468](https://github.com/telekom/scale/issues/1468)) ([34323e4](https://github.com/telekom/scale/commit/34323e44281167939487a0865469295263c01743))
+* **telekon-header:** improve styles for list and item ([#1437](https://github.com/telekom/scale/issues/1437)) ([cb64d01](https://github.com/telekom/scale/commit/cb64d01d6da7b16998fdd8df3f36141a00991066))
+* **text-field:** add autocomplete property ([#1400](https://github.com/telekom/scale/issues/1400)) ([24f064d](https://github.com/telekom/scale/commit/24f064dfec642c2fed62f64850d9436cf8d2a31d))
+
+
+
+
+
 # [3.0.0-beta.117](https://github.com/telekom/scale/compare/v3.0.0-beta.116...v3.0.0-beta.117) (2022-11-07)
 
 

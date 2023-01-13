@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.118](https://github.com/telekom/scale/compare/v3.0.0-beta.117...v3.0.0-beta.118) (2023-01-13)
+
+
+### Bug Fixes
+
+* remove broken link ([#1474](https://github.com/telekom/scale/issues/1474)) ([09a09f0](https://github.com/telekom/scale/commit/09a09f09c4e66dc2578aa99c204d3937be1d08d3))
+* **docs:** typo in _loading the library_ section  ([#1416](https://github.com/telekom/scale/issues/1416)) ([d8a3259](https://github.com/telekom/scale/commit/d8a325928cd0beddd2a09cadd1851f86d94a66e0))
+* wrong tag coloring ([#1397](https://github.com/telekom/scale/issues/1397)) ([fe445cf](https://github.com/telekom/scale/commit/fe445cfdd2d3bf72359ecc2664c04c1184f57399))
+
+
+### Features
+
+* **text-field:** add autocomplete property ([#1400](https://github.com/telekom/scale/issues/1400)) ([24f064d](https://github.com/telekom/scale/commit/24f064dfec642c2fed62f64850d9436cf8d2a31d))
+
+
+
+
+
 # [3.0.0-beta.117](https://github.com/telekom/scale/compare/v3.0.0-beta.116...v3.0.0-beta.117) (2022-11-07)
 
 

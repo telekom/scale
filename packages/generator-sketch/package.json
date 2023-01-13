@@ -1,7 +1,7 @@
 {
   "name": "@telekom/scale-generator-sketch",
   "private": true,
-  "version": "3.0.0-beta.117",
+  "version": "3.0.0-beta.118",
   "description": "Convert the web-components to a sketch file",
   "scripts": {
     "build": "webpack",
