@@ -14,13 +14,7 @@ TeleNeo ist die Telekom Hausschrift.
 
 [Download TeleNeo](https://www.brand-design.telekom.com/asset/font-0-teleneo/)
 
-## 3. Lade die Header, Footer und Grid Templates herunter
-
-Die folgenden Templates enthalten den Brand Header und Footer sowie das Gestaltungsraster.
-
-[Download Header, Footer und Grid](https://www.brand-design.telekom.com/asset/web-component-kit-0-sketch-library-mit-header-footer--gestaltungsraster/).
-
-## 4. Importiere die Scale Sketch Library
+## 3. Importiere die Scale Sketch Library
 
 > Bitte beachte: Die folgenden Komponenten enthalten Marken- und Design-Assets der Telekom – beispielsweise Logos, die Farbe Magenta, die Schrift, Icons sowie Footer und Header. Die Komponenten sind **nicht Open Source** und dürfen **nicht frei verwendet werden**. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
 

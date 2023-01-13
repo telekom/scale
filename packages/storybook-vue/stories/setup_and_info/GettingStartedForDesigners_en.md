@@ -14,13 +14,7 @@ TeleNeo is the Telekom company font:
 
 [Download TeleNeo](https://www.brand-design.telekom.com/asset/font-0-teleneo/)
 
-## 3. Download Header, Footer and Grid templates
-
-The following download has templates for Brand Header, Footer, and Grid:
-
-[Download Header, Footer and Grid](https://www.brand-design.telekom.com/asset/web-component-kit-0-sketch-library-mit-header-footer--gestaltungsraster/)
-
-## 4. Import the Components Kit
+## 3. Import the Components Kit
 
 > Please note that the following components make use of Telekom brand and design assets — including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components — and are **not open source** and **not available for free use**. They require Deutsche Telekom's express permission for use in commerce.
 
