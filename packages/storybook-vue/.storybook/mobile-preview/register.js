@@ -9,7 +9,44 @@ addons.register('@telekom/scale-mobile-prpeview', (api) => {
       route: () => {
      
         const mobilePreview = useParameter('mobilePreview', null);
-        console.log('!!!! in mobile preview ')
+        if (mobilePreview) {
+            console.log('!!!! in mobile preview ');
+            setTimeout( () => {
+
+                const iframe = document.getElementById('storybook-preview-iframe')
+
+                // var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+                console.log('inner doc', iframe.contentWindow.document);
+
+                console.log('container', iframe.contentWindow.document.body.querySelectorAll('.css-1wjen9k'))
+
+                const storyContainer = iframe.contentWindow.document.body.querySelectorAll('.css-1wjen9k')
+
+                storyContainer.forEach(el => {
+                    // el.style = "padding: 0; height: 100%; margin: 0; border: 2px solid red;"
+                    console.log('loopinf', el)
+                    console.log('FOOO', el.querySelectorAll('.innerZoomElementWrapper')[0].firstChild());
+
+                    el.querySelectorAll('.innerZoomElementWrapper')[0].firstChild().style = "border: none !important;"
+                    
+                })
+                // document.querySelectorAll('#storybook-preview-iframe').forEach( item =>
+                //     {   
+                //         // wait for the sb iframe to have finished loading before applying additional styles  
+                //         item.addEventListener("load", () => {
+                //             const container = item.contentWindow.document.body.querySelectorAll('.css-1wjen9k')
+                //             console.log('!!!! in IFRAME ', container);                       
+                //         });
+                            
+                //     }
+                // )
+            }, 200 )
+
+
+
+
+        }        
         // if (mobilePreview) {
         //     document.querySelectorAll('#storybook-preview-iframe').forEach( item =>
         //         {   
