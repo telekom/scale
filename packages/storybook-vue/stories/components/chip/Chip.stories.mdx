@@ -75,6 +75,44 @@ export const TemplateIcon = (args, { argTypes }) => ({
   },
 });
 
+export const TemplateInteractive = (args, { argTypes }) => ({
+  template: `
+  <div>
+    <div style="height: 20px;">Please select one option:</div>
+      <ul aria-label="selection" style="display: flex; list-style: none; padding: 0;">
+        <li v-for="label in labels" :key="label" style="margin-right: 4px;">
+          <scale-chip
+            type="dynamic"
+            v-bind:label=label
+            @scaleChange="removeChip(label)"
+          >
+            {{label}}
+          </scale-tag>
+        </li>
+      </ul>   
+      <div style="height: 20px;">Your selected option: {{text}}</div>
+    </div>
+  `,
+  methods: {
+    action: action('scaleChange'),
+    removeChip(label) {
+      this.action();
+      this.labels = null;
+      this.text = label;
+      setTimeout(() => {
+        this.$el.querySelector('#root > ul > li > scale-chip') &&
+          this.$el
+            .querySelector('#root > ul > li > scale-chip')
+            .shadowRoot.querySelector('span > button')
+            .focus();
+      });
+    },
+  },
+  data: () => ({
+    labels: ['option 1', 'option 2', 'option 3', 'option 4'],
+  }),
+});
+
 <div
   style={{
     display: 'inline-flex',
@@ -357,3 +395,18 @@ export const TemplateIcon = (args, { argTypes }) => ({
   </div>
 </scale-chip>
 ```
+
+## Dynamic Standard
+
+### Usage Example
+
+<Canvas withSource="none">
+  <Story
+    name="Usage Example"
+    args={{
+      label: 'Label',
+    }}
+  >
+    {TemplateInteractive.bind({})}
+  </Story>
+</Canvas>
