@@ -67,6 +67,11 @@ export class Chip {
       ) {
         iconSlot.children[0].setAttribute('size', String(16));
       }
+      if (this.selected) {
+        iconSlot.children[0].setAttribute('selected', String(true));
+      } else {
+        iconSlot.children[0].setAttribute('selected', String(true));
+      }
     }
   }
   disconnectedCallback() {}
@@ -99,15 +104,20 @@ export class Chip {
           accessibility-title="close"
           size={16}
           onClick={!this.disabled ? this.handleClose : null}
+          selected
         />
       );
-    } else if (this.type === 'persistent') {
+    } else if (this.type === 'persistent' && this.selected) {
       return (
         <scale-icon-action-success
           accessibility-title="success"
           size={16}
           selected
         />
+      );
+    } else if (this.type === 'persistent') {
+      return (
+        <scale-icon-action-success accessibility-title="success" size={16} />
       );
     }
   }
