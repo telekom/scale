@@ -4,7 +4,6 @@ const mobilePreviewDecorator = (story, context) => {
     const canvasHeight = mobilePreview == 'full' ? '612px' : '306px';
     const canvasBorderRadius = mobilePreview == 'full' ? '45px' : mobilePreview == 'bottom' ? '0 0 45px 45px' : '45px 45px 0 0';
     const spacing = mobilePreview == 'full' ? '40px 0 40px 0' : mobilePreview == 'bottom' ? '0 0 40px 0' : '40px 0 0 0';
-    // console.log('TEST --->',story, context );
     if (viewMode === 'docs') {
         return ({
         template: `
@@ -14,7 +13,7 @@ const mobilePreviewDecorator = (story, context) => {
                         <div style="height:${canvasHeight}; background-color: #fff; position: relative;">
                             <story />
                         </div>
-                        <div style="height: 77px; background-color: #FBFBFB; border-radius: 0 0 45px 45px;"></div>
+                        <div style="height: 77px; background-color: #FBFBFB; border-radius: 0 0 45px 45px; border-top: 1px solid #e7e7e9;"></div>
                     </div>          
                 </div>
             </div>
