@@ -7,7 +7,7 @@ const mobilePreviewDecorator = (story, context) => {
     if (viewMode === 'docs') {  
         return ({
         template: `
-            <div style="width: 100%; display: flex; justify-content: center; align-items: center; background-color: #F7F7F8; border: 1px solid #e7e7e9;">
+            <div style="width: 100%; display: flex; justify-content: center; align-items: center; background-color: #F7F7F8;">
                 <div class="mobileContainer" style="margin: ${spacing}">
                     <div class="foobar" style="width: 375px; border-radius: ${canvasBorderRadius}; box-shadow: var(--telekom-shadow-floating-standard);">
                         
