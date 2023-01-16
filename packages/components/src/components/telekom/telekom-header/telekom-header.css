@@ -31,8 +31,8 @@
   --_display-app-name-extended: none;
   --_display-main-nav: none;
   --_display-meta-nav: none;
-  --_display-meta-nav-ext: none;
-  --_display-language-switch: none;
+  --_display-meta-nav-external: none;
+  --_display-lang-switcher: none;
 
   --_spacing-x: 0 16px 0 0;
   --_spacing-left-horizontal-menus: 0;
@@ -63,8 +63,8 @@
 
     --_display-main-nav: block;
     --_display-meta-nav: block;
-    --_display-meta-nav-ext: block;
-    --_display-language-switch: block;
+    --_display-meta-nav-external: block;
+    --_display-lang-switcher: block;
     --_display-app-name-extended: block;
     --_display-app-name: none;
 
@@ -81,8 +81,8 @@
     --_height-base-menu: 72px;
 
     --_display-meta-nav: none;
-    --_display-meta-nav-ext: none;
-    --_display-language-switch: none;
+    --_display-meta-nav-external: none;
+    --_display-lang-switcher: none;
     --_display-app-name-extended: none;
     --_display-app-name: block;
 
@@ -147,7 +147,7 @@
 
 /* WIP 🚧 */
 slot[name='main-nav'],
-slot[name='meta-nav-ext'] {
+slot[name='meta-nav-external'] {
   width: 100%;
 }
 
@@ -176,11 +176,11 @@ slot[name='app-logo'] {
 slot[name='meta-nav'] {
   display: var(--_display-meta-nav);
 }
-slot[name='meta-nav-ext'] {
-  display: var(--_display-meta-nav-ext);
+slot[name='meta-nav-external'] {
+  display: var(--_display-meta-nav-external);
 }
-slot[name='language-switch'] {
-  display: var(--_display-language-switch);
+slot[name='lang-switcher'] {
+  display: var(--_display-lang-switcher);
 }
 
 slot[name='main-nav'] {

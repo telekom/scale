@@ -56,7 +56,7 @@ export class TelekomHeader {
           })}
         >
           <div part="container">
-            <slot name="app-logo">
+            <slot name="logo">
               <scale-logo part="app-logo" variant="white"></scale-logo>
             </slot>
 
@@ -80,11 +80,11 @@ export class TelekomHeader {
                     </div>
                   ) : null}
 
-                  <slot name="meta-nav-ext"></slot>
+                  <slot name="meta-nav-external"></slot>
                 </div>
                 <div part="extended-menu-right">
                   <slot name="meta-nav"></slot>
-                  <slot name="language-switch"></slot>
+                  <slot name="lang-switcher"></slot>
                 </div>
               </div>
 
