@@ -89,6 +89,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
             {{label}}
           </scale-chip>
         </li>
+       
       </ul>   
     </div>
   `,
@@ -97,6 +98,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
     removeChip(label) {
       this.action();
       this.labels = null;
+      this.text = this.label;
       setTimeout(() => {
         this.$el.querySelector('#root > ul > li > scale-chip') &&
           this.$el
@@ -374,19 +376,3 @@ export const TemplateInteractive = (args, { argTypes }) => ({
   </div>
 </scale-chip>
 ```
-
-## Dynamic Standard
-
-### Usage Example
-
-<Canvas withSource="none">
-  <Story
-    name="Usage Example"
-    args={{
-      label: 'Label',
-      text: '',
-    }}
-  >
-    {TemplateInteractive.bind({})}
-  </Story>
-</Canvas>
