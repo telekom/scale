@@ -19,8 +19,8 @@
 import { action } from '@storybook/addon-actions';
 export default {
   props: {
-    variant: { type: 'standard' | 'outline', default: 'standard' },
     type: { type: 'dynamic' | 'persistent', default: 'persistent' },
+    variant: { type: 'standard' | 'outline', default: 'standard' },
     selected: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     styles: { type: String },
