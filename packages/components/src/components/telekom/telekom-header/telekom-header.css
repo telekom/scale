@@ -151,7 +151,7 @@ slot[name='meta-nav-external'] {
   width: 100%;
 }
 
-slot[name='app-logo'] {
+slot[name='logo'] {
   height: var(--_height);
   width: var(--_height);
   background: var(--background-logo);
