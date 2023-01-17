@@ -1,0 +1,52 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+@import url('../../../global/custom-media.css');
+
+:host {
+  display: block;
+  height: 100%;
+  overflow-y: auto;
+
+  --spacing: var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x4);
+}
+
+[part='base'] {
+  padding: var(--spacing);
+}
+
+[part~='header'] {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+[part~='heading'] {
+  margin: 0;
+  font-size: var(--font-size-app-name);
+  font-weight: var(--font-weight-app-name);
+  line-height: var(--line-height-app-name);
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+/* temporary */
+[part~='close-button'] {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+}
+
+[part~='body'],
+slot[name='row']::slotted(*) {
+  margin-top: var(--telekom-spacing-unit-x6);
+}
