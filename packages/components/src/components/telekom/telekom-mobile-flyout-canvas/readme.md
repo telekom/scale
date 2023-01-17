@@ -10,7 +10,7 @@
 | Property           | Attribute            | Description | Type     | Default     |
 | ------------------ | -------------------- | ----------- | -------- | ----------- |
 | `appName`          | `app-name`           |             | `string` | `undefined` |
-| `closeButtonLabel` | `close-button-label` |             | `string` | `"Close"`   |
+| `closeButtonLabel` | `close-button-label` |             | `string` | `'Close'`   |
 | `closeButtonTitle` | `close-button-title` |             | `string` | `null`      |
 
 
