@@ -36,61 +36,61 @@ describe('scale-bottom-bar', () => {
             <scale-bottom-bar-item id="fourth" icon="user-file-user"></scale-bottom-bar-item>  
         </scale-breadcrumb>    
     `);
-    await (await page.find('scale-bottom-bar-item#second')).click()
+    await (await page.find('scale-bottom-bar-item#second')).click();
     const element = await page.find('scale-bottom-bar-item#second');
     expect(element.getAttribute('selected')).toBeTruthy;
   });
 
-//   it('should accept a custom separator via prop', async () => {
-//     const page = await newE2EPage();
-//     await page.setContent(`
-//       <scale-breadcrumb separator="/">
-//         <a href="/a">A</a>
-//         <a href="/b">B</a>
-//       </scale-breadcrumb>
-//     `);
-//     const element = await page.find('scale-breadcrumb >>> span');
-//     expect(element).toEqualText('/');
-//   });
+  //   it('should accept a custom separator via prop', async () => {
+  //     const page = await newE2EPage();
+  //     await page.setContent(`
+  //       <scale-breadcrumb separator="/">
+  //         <a href="/a">A</a>
+  //         <a href="/b">B</a>
+  //       </scale-breadcrumb>
+  //     `);
+  //     const element = await page.find('scale-breadcrumb >>> span');
+  //     expect(element).toEqualText('/');
+  //   });
 
-//   it('should accept a custom separator via slot', async () => {
-//     const page = await newE2EPage();
-//     await page.setContent(`
-//       <scale-breadcrumb separator="/">
-//         <span slot="separator">
-//           <span>/</span>
-//         </span>
-//         <a href="/a">A</a>
-//         <a href="/b">B</a>
-//       </scale-breadcrumb>
-//     `);
-//     const separator = await page.find('scale-breadcrumb >>> span');
-//     expect(separator.innerHTML.trim()).toBe('<span>/</span>');
-//     const list = await page.findAll('scale-breadcrumb >>> li');
-//     expect(list.length).toBe(2);
-//   });
+  //   it('should accept a custom separator via slot', async () => {
+  //     const page = await newE2EPage();
+  //     await page.setContent(`
+  //       <scale-breadcrumb separator="/">
+  //         <span slot="separator">
+  //           <span>/</span>
+  //         </span>
+  //         <a href="/a">A</a>
+  //         <a href="/b">B</a>
+  //       </scale-breadcrumb>
+  //     `);
+  //     const separator = await page.find('scale-breadcrumb >>> span');
+  //     expect(separator.innerHTML.trim()).toBe('<span>/</span>');
+  //     const list = await page.findAll('scale-breadcrumb >>> li');
+  //     expect(list.length).toBe(2);
+  //   });
 
-//   it('should add aria-current="page" attribute to last item, when link', async () => {
-//     const page = await newE2EPage();
-//     await page.setContent(`
-//       <scale-breadcrumb separator="/">
-//         <a href="/a">A</a>
-//         <a href="/b">B</a>
-//       </scale-breadcrumb>
-//     `);
-//     const element = await page.find('scale-breadcrumb >>> li:last-child a');
-//     expect(element.getAttribute('aria-current')).toBe('page');
-//   });
+  //   it('should add aria-current="page" attribute to last item, when link', async () => {
+  //     const page = await newE2EPage();
+  //     await page.setContent(`
+  //       <scale-breadcrumb separator="/">
+  //         <a href="/a">A</a>
+  //         <a href="/b">B</a>
+  //       </scale-breadcrumb>
+  //     `);
+  //     const element = await page.find('scale-breadcrumb >>> li:last-child a');
+  //     expect(element.getAttribute('aria-current')).toBe('page');
+  //   });
 
-//   it('should render last item as plain text when no href is found', async () => {
-//     const page = await newE2EPage();
-//     await page.setContent(`
-//       <scale-breadcrumb separator="/">
-//         <a href="/a">A</a>
-//         <span>B</span>
-//       </scale-breadcrumb>
-//     `);
-//     const element = await page.find('scale-breadcrumb >>> li:last-child span');
-//     expect(element).toEqualText('B');
-//   });
+  //   it('should render last item as plain text when no href is found', async () => {
+  //     const page = await newE2EPage();
+  //     await page.setContent(`
+  //       <scale-breadcrumb separator="/">
+  //         <a href="/a">A</a>
+  //         <span>B</span>
+  //       </scale-breadcrumb>
+  //     `);
+  //     const element = await page.find('scale-breadcrumb >>> li:last-child span');
+  //     expect(element).toEqualText('B');
+  //   });
 });
