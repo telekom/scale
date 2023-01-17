@@ -36,12 +36,11 @@ describe('scale-bottom-bar', () => {
             <scale-bottom-bar-item id="fourth" icon="user-file-user"></scale-bottom-bar-item>  
         </scale-breadcrumb>    
     `);
-    await (await page.find('scale-bottom-bar-item#second')).click()
+    await (await page.find('scale-bottom-bar-item#second')).click();
     const element = await page.find('scale-bottom-bar-item#second');
     const element2 = await page.find('scale-bottom-bar-item#third');
 
     expect(element.getAttribute('selected')).toBe('');
     expect(element2.getAttribute('selected')).toBeFalsy();
-
   });
 });
