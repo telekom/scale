@@ -16,7 +16,7 @@ import classNames from 'classnames';
   styleUrl: 'bottom-bar.css',
   shadow: true,
 })
-export class Card {
+export class BottomBar {
   @Element() hostElement: HTMLElement;
 
   /** (optional) Elements label */

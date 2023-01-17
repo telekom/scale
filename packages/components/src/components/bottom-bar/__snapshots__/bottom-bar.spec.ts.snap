@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bottom Bar should match snapshot 1`] = `
+<scale-bottom-bar>
+  <mock:shadow-root>
+    <div class="bottom-bar">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <scale-bottom-bar-item icon="home-home" selected=""></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>
+</scale-bottom-bar>
+`;
