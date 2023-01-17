@@ -30,6 +30,16 @@ const animFinished = (el: HTMLElement | ShadowRoot) => {
   );
 };
 
+/*
+TODO add something like this with a better-named prop defaulting to false
+
+if (this.allowInjectingStyleToBody) {
+  this.bodyOverflowValue = document.body.style.overflow;
+  // The following style will disable body from scrolling when modal is open
+  document.body.style.setProperty('overflow', 'hidden');
+}
+*/
+
 @Component({
   tag: 'scale-telekom-nav-flyout',
   styleUrl: 'telekom-nav-flyout.css',
