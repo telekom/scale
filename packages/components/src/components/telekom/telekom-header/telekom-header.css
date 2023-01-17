@@ -24,20 +24,20 @@
 
   --_height: 60px;
   --_height-logo: 36px;
-  --_height-base-menu: 60px;
-  --_height-extended-menu: 0;
+  --_height-bottom-bar: 60px;
+  --_height-top-bar: 0;
 
-  --_display-app-name: none;
-  --_display-app-name-extended: none;
+  --_display-bottom-app-name: none;
+  --_display-top-app-name: none;
   --_display-main-nav: none;
   --_display-meta-nav: none;
   --_display-meta-nav-external: none;
   --_display-lang-switcher: none;
 
   --_spacing-x: 0 16px 0 0;
-  --_spacing-left-horizontal-menus: 0;
-  --_spacing-right-app-name-extended: 32px;
-  --_spacing-right-app-name: 32px;
+  --_spacing-left-body: 0;
+  --_spacing-right-top-app-name: 32px;
+  --_spacing-right-bottom-app-name: 32px;
 
   --_base-menu-justify-content: end;
 
@@ -47,9 +47,9 @@
 
 @media screen and (--md) {
   :host {
-    --_display-app-name: block;
+    --_display-bottom-app-name: block;
     --_spacing-x: 0 16px;
-    --_spacing-left-horizontal-menus: 32px;
+    --_spacing-left-body: 32px;
   }
 }
 
@@ -58,35 +58,35 @@
   :host::part(scrolled-back) {
     --_height: 84px;
     --_height-logo: 44px;
-    --_height-extended-menu: 30px;
-    --_height-base-menu: 54px;
+    --_height-top-bar: 30px;
+    --_height-bottom-bar: 54px;
 
     --_display-main-nav: block;
     --_display-meta-nav: block;
     --_display-meta-nav-external: block;
     --_display-lang-switcher: block;
-    --_display-app-name-extended: block;
-    --_display-app-name: none;
+    --_display-top-app-name: block;
+    --_display-bottom-app-name: none;
 
     --_spacing-x: 0 24px;
-    --_spacing-left-horizontal-menus: 44px;
-    --_spacing-right-app-name: 0;
+    --_spacing-left-body: 44px;
+    --_spacing-right-bottom-app-name: 0;
 
     --_base-menu-justify-content: space-between;
   }
   :host::part(scrolled) {
     --_height: 72px;
     --_height-logo: 40px;
-    --_height-extended-menu: 0;
-    --_height-base-menu: 72px;
+    --_height-top-bar: 0;
+    --_height-bottom-bar: 72px;
 
     --_display-meta-nav: none;
     --_display-meta-nav-external: none;
     --_display-lang-switcher: none;
-    --_display-app-name-extended: none;
-    --_display-app-name: block;
+    --_display-top-app-name: none;
+    --_display-bottom-app-name: block;
 
-    --_spacing-right-app-name: 32px;
+    --_spacing-right-bottom-app-name: 32px;
 
     --_animation-app-name: slideInLeft var(--telekom-motion-duration-animation)
         forwards,
@@ -94,7 +94,7 @@
   }
 
   :host::part(scrolled-back) {
-    --_display-app-name: block;
+    --_display-bottom-app-name: block;
 
     --_animation-app-name: slideOutLeft var(--telekom-motion-duration-animation)
         forwards,
@@ -107,17 +107,17 @@
   :host::part(scrolled-back) {
     --_height: 96px;
     --_height-logo: 48px;
-    --_height-extended-menu: 30px;
-    --_height-base-menu: 66px;
+    --_height-top-bar: 30px;
+    --_height-bottom-bar: 66px;
 
     --_spacing-x: 0 24px;
-    --_spacing-left-horizontal-menus: 96px;
+    --_spacing-left-body: 96px;
   }
 
   :host::part(scrolled),
   :host::part(scrolled-back) {
     --_spacing-x: 0 24px;
-    --_spacing-left-horizontal-menus: 96px;
+    --_spacing-left-body: 96px;
   }
 }
 
@@ -126,30 +126,23 @@
   :host::part(scrolled-back) {
     --_height: 120px;
     --_height-logo: 60px;
-    --_height-extended-menu: 30px;
-    --_height-base-menu: 90px;
+    --_height-top-bar: 30px;
+    --_height-bottom-bar: 90px;
 
     --_spacing-x: 0 96px 0 120px;
-    --_spacing-left-horizontal-menus: 72px;
+    --_spacing-left-body: 72px;
   }
   :host::part(scrolled),
   :host::part(scrolled-back) {
     --_spacing-x: 0 96px 0 120px;
-    --_spacing-left-horizontal-menus: 72px;
+    --_spacing-left-body: 72px;
   }
 }
 
-/* WIP 🚧 */
-::slotted(*) {
+/* ::slotted(*) {
   height: 100%;
   display: inline-flex;
-}
-
-/* WIP 🚧 */
-slot[name='main-nav'],
-slot[name='meta-nav-external'] {
-  width: 100%;
-}
+} */
 
 slot[name='logo'] {
   height: var(--_height);
@@ -161,35 +154,26 @@ slot[name='logo'] {
   transition: var(--transition);
 }
 
-:host::part(app-name) {
-  display: var(--_display-app-name);
-  animation: var(--_animation-app-name);
-  margin-right: var(--_spacing-right-app-name);
-  transition: var(--transition);
-}
-:host::part(app-name-extended) {
-  display: var(--_display-app-name-extended);
-  margin-right: var(--_spacing-right-app-name-extended);
-  transition: var(--transition);
-}
-
-slot[name='meta-nav'] {
-  display: var(--_display-meta-nav);
-}
 slot[name='meta-nav-external'] {
   display: var(--_display-meta-nav-external);
+  flex: 1;
+}
+slot[name='meta-nav'] {
+  display: var(--_display-meta-nav);
+  /* TODO inline margin */
 }
 slot[name='lang-switcher'] {
   display: var(--_display-lang-switcher);
+  /* TODO inline margin */
 }
 
 slot[name='main-nav'] {
   display: var(--_display-main-nav);
+  flex: 1;
 }
-
 slot[name='functions'] {
-  display: flex;
-  justify-content: end;
+  display: block;
+  /* TODO inline margin */
 }
 
 :host::part(base) {
@@ -207,11 +191,6 @@ slot[name='functions'] {
   display: flex;
 }
 
-:host::part(icon),
-:host::part(app-logo) {
-  display: flex;
-}
-
 :host::part(app-logo) {
   height: var(--_height);
   width: var(--_height);
@@ -221,11 +200,13 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
+/* targeting `scale-logo` */
 :host::part(logo-svg) {
   height: var(--_height-logo);
   transition: var(--transition);
 }
 
+/* targeting `scale-logo` */
 :host::part(logo) {
   height: calc(var(--_height) - 6px);
   width: calc(var(--_height) - 6px);
@@ -235,41 +216,53 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
-:host::part(horizontal-menus) {
+:host::part(body) {
   display: block;
-  width: 100%;
-  margin-left: var(--_spacing-left-horizontal-menus);
+  flex: 1; /* used to be width: 100% */
+  margin-left: var(--_spacing-left-body);
 }
 
-:host::part(extended-menu-left),
-:host::part(extended-menu-right) {
-  display: inline-flex;
-  align-items: flex-start;
-  height: 100%;
-}
-
-:host::part(extended-menu) {
-  height: var(--_height-extended-menu);
+:host::part(top-bar) {
+  height: var(--_height-top-bar);
   display: flex;
-  justify-content: space-between;
   align-items: end;
   width: 100%;
   transition: var(--transition);
 }
 
-:host::part(base-menu) {
-  justify-content: var(--_base-menu-justify-content);
-  height: var(--_height-base-menu);
-  display: flex;
-  flex: 1;
+:host::part(top-app-name) {
+  display: var(--_display-top-app-name);
+  margin-right: var(--_spacing-right-top-app-name);
   transition: var(--transition);
 }
 
-:host::part(app-name-and-base-menu) {
+:host::part(top-body) {
+  display: inline-flex;
+  flex: 1;
+}
+
+:host::part(bottom-bar) {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+:host::part(bottom-app-name) {
+  display: var(--_display-bottom-app-name);
+  animation: var(--_animation-app-name);
+  margin-right: var(--_spacing-right-bottom-app-name);
+  transition: var(--transition);
+}
+
+:host::part(bottom-body) {
+  justify-content: var(--_base-menu-justify-content);
+  height: var(--_height-bottom-bar);
+  display: inline-flex;
+  flex: 1;
+  transition: var(--transition);
+}
+
+/* --- Keyframes --- */
 
 @keyframes slideInLeft {
   0% {

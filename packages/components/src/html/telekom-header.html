@@ -58,7 +58,7 @@
   </head>
 
   <body>
-    <scale-telekom-header>
+    <scale-telekom-header app-name="Hello World">
       <!-- MAIN NAV -->
       <scale-telekom-nav-list variant="main" slot="main-nav">
         <scale-telekom-nav-item>
@@ -125,7 +125,9 @@
         </scale-telekom-nav-item>
       </scale-telekom-nav-list>
 
-      <section slot="lang-switcher"></section>
+      <section slot="lang-switcher">
+        <!-- HO HO HO -->
+      </section>
 
       <scale-telekom-nav-list
         variant="function"
@@ -142,8 +144,8 @@
 
         <scale-telekom-nav-item variant="main" active>
           <a href="#">
-            <scale-badge count="1" label="cookies">
-              <scale-icon-action-shopping-cart>
+            <scale-badge count="1" label="Cart">
+              <scale-icon-action-shopping-cart selected>
               </scale-icon-action-shopping-cart>
             </scale-badge>
           </a>
@@ -166,13 +168,7 @@
 
           <scale-telekom-nav-flyout
             class="mobile-menu-flyout"
-            style="
-              --translate-y: 100%;
-              --duration: var(--telekom-motion-duration-animation);
-              --top: 0;
-              --height: 100vh;
-              --spacing-x: 0;
-            "
+            style="--top: 0; --height: 100vh; --spacing-x: 0"
           >
             <scale-telekom-mobile-menu
               app-name="Application Name"
@@ -182,7 +178,11 @@
                 variant="meta"
                 slot="top-left"
                 alignment="left"
-              >
+                ><scale-menu-flyout-list>
+                  <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
+                  <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
+                  <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
+                </scale-menu-flyout-list>
                 <scale-telekom-nav-item variant="meta">
                   <a href="#">Metalink ext 1</a>
                 </scale-telekom-nav-item>
