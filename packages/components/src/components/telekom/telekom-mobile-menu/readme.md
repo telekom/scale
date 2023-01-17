@@ -39,13 +39,11 @@
 ### Depends on
 
 - [scale-icon-action-close](../../icons/action-close)
-- [scale-telekom-app-name](../telekom-app-name)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-telekom-mobile-menu --> scale-icon-action-close
-  scale-telekom-mobile-menu --> scale-telekom-app-name
   style scale-telekom-mobile-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

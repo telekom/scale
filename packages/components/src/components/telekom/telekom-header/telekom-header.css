@@ -21,6 +21,9 @@
       var(--telekom-motion-easing-standard),
     margin-right var(--telekom-motion-duration-immediate)
       var(--telekom-motion-easing-standard);
+  --font-size-app-name: var(--telekom-typography-font-size-small);
+  --line-height-app-name: var(--telekom-typography-line-spacing-tight);
+  --font-weight-app-name: var(--telekom-typography-font-weight-extra-bold);
 
   --_height: 60px;
   --_height-logo: 36px;
@@ -139,6 +142,7 @@
   }
 }
 
+/* TODO not sure if we're actually gonna need this */
 /* ::slotted(*) {
   height: 100%;
   display: inline-flex;
@@ -260,6 +264,26 @@ slot[name='functions'] {
   display: inline-flex;
   flex: 1;
   transition: var(--transition);
+}
+
+[part~='top-app-name'] > *,
+[part~='bottom-app-name'] > * {
+  font-size: var(--font-size-app-name);
+  font-weight: var(--font-weight-app-name);
+  line-height: var(--line-height-app-name);
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+[part~='top-app-name'] > *:hover,
+[part~='bottom-app-name'] > *:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part~='top-app-name'] > *:active,
+[part~='bottom-app-name'] > *:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
 /* --- Keyframes --- */
