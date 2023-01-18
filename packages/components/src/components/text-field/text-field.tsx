@@ -107,6 +107,8 @@ export class TextField {
   @Prop() inputAutofocus?: boolean;
   /** (optional) custom value for autocomplete HTML attribute */
   @Prop() inputAutocomplete?: string;
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information.*/
+  @Prop() ariaDetailedId?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -229,6 +231,7 @@ export class TextField {
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const ariaDetailedById = { 'aria-details': this.ariaDetailedId };
     const numericTypes = [
       'number',
       'date',
@@ -269,6 +272,7 @@ export class TextField {
             disabled={this.disabled}
             readonly={this.readonly}
             autocomplete={this.inputAutocomplete}
+            {...ariaDetailedById}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
