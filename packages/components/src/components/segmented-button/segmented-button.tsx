@@ -135,11 +135,18 @@ export class SegmentedButton {
         '$position $selected'
       );
     });
-    // @ts-ignore
-    // this.container.style = `grid-template-columns: ${`minmax(0, ${Math.ceil(longestButtonWidth)}px) `.repeat(this.hostElement.children.length)};`;
-    this.container.style = `grid-template-columns: repeat(${
-      this.hostElement.children.length
-    }, ${Math.ceil(longestButtonWidth)}px);`;
+    if (!this.fullWidth) {
+      // @ts-ignore
+      this.container.style = `grid-template-columns: repeat(${
+        this.hostElement.children.length
+      }, ${Math.ceil(longestButtonWidth)}px);`;
+    } else {
+      // @ts-ignore
+      this.container.style = `
+        grid-auto-columns: minmax(0, 1fr);
+        grid-auto-flow: column;      
+      `;
+    }
 
     this.selectedIndex = this.getSelectedIndex();
     this.propagatePropsToChildren();
