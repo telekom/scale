@@ -1,0 +1,74 @@
+[1mdiff --git a/packages/components/src/components/segment/readme.md b/packages/components/src/components/segment/readme.md[m
+[1mindex 9b5d2663..d1114184 100644[m
+[1m--- a/packages/components/src/components/segment/readme.md[m
+[1m+++ b/packages/components/src/components/segment/readme.md[m
+[36m@@ -11,19 +11,20 @@[m
+ | ---------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- | -------------- |[m
+ | `adjacentSiblings`           | `adjacent-siblings`            |                                                                                                                                                        | `"left" \| "leftright" \| "right"` | `undefined`    |[m
+ | `ariaDescriptionTranslation` | `aria-description-translation` | a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties. | `string`                           | `'$selected'`  |[m
+[31m-| `ariaLabelSegment`           | `aria-label-segment`           | (optional) aria-label attribute needed for icon-only buttons                                                                                           | `string`                           | `undefined`    |[m
+[32m+[m[32m| `ariaLabelSegment`           | `aria-label-segment`           | (optional) aria-label attribute needed for icon-only segments                                                                                          | `string`                           | `undefined`    |[m
+ | `ariaLangDeselected`         | `aria-lang-deselected`         | (optional) translation of 'deselected                                                                                                                  | `string`                           | `'deselected'` |[m
+ | `ariaLangSelected`           | `aria-lang-selected`           | (optional) translation of 'selected                                                                                                                    | `string`                           | `'selected'`   |[m
+[31m-| `disabled`                   | `disabled`                     | (optional) If `true`, the button is disabled                                                                                                           | `boolean`                          | `false`        |[m
+[32m+[m[32m| `disabled`                   | `disabled`                     | (optional) If `true`, the segment is disabled                                                                                                          | `boolean`                          | `false`        |[m
+ | `hasIcon`                    | `has-icon`                     | (optional) position within group                                                                                                                       | `boolean`                          | `undefined`    |[m
+ | `iconOnly`                   | `icon-only`                    | (optional) position within group                                                                                                                       | `boolean`                          | `undefined`    |[m
+ | `position`                   | `position`                     | (optional) position within group                                                                                                                       | `number`                           | `undefined`    |[m
+ | `segmentId`                  | `segment-id`                   | (optional) segment's id                                                                                                                                | `string`                           | `undefined`    |[m
+[31m-| `selected`                   | `selected`                     | (optional) If `true`, the button is selected                                                                                                           | `boolean`                          | `false`        |[m
+[31m-| `size`                       | `size`                         | (optional) The size of the button                                                                                                                      | `"large" \| "medium" \| "small"`   | `'small'`      |[m
+[32m+[m[32m| `selected`                   | `selected`                     | (optional) If `true`, the segment is selected                                                                                                          | `boolean`                          | `false`        |[m
+[32m+[m[32m| `selectedIndex`              | `selected-index`               | (optional) the index of the currently selected segment in the segmented-button                                                                         | `string`                           | `undefined`    |[m
+[32m+[m[32m| `size`                       | `size`                         | (optional) The size of the segment                                                                                                                     | `"large" \| "medium" \| "small"`   | `'small'`      |[m
+ | `styles`                     | `styles`                       | (optional) Injected CSS styles                                                                                                                         | `string`                           | `undefined`    |[m
+ | `textOnly`                   | `text-only`                    | (optional) position within group                                                                                                                       | `boolean`                          | `undefined`    |[m
+[31m-| `width`                      | `width`                        | (optional) Button width set to ensure that all buttons have the same width                                                                             | `string`                           | `undefined`    |[m
+[32m+[m[32m| `width`                      | `width`                        | (optional) Segment width set to ensure that all segments have the same width                                                                           | `string`                           | `undefined`    |[m
+ [m
+ [m
+ ## Events[m
+[1mdiff --git a/packages/components/src/components/segmented-button/readme.md b/packages/components/src/components/segmented-button/readme.md[m
+[1mindex 0b11f0c4..64567f0d 100644[m
+[1m--- a/packages/components/src/components/segmented-button/readme.md[m
+[1m+++ b/packages/components/src/components/segmented-button/readme.md[m
+[36m@@ -17,6 +17,7 @@[m
+ | `label`                | `label`                  | (optional) Button label                                      | `string`                         | `undefined`                              |[m
+ | `longestButtonWidth`   | `longest-button-width`   |                                                              | `string`                         | `undefined`                              |[m
+ | `multiSelect`          | `multi-select`           | (optional) Allow more than one button to be selected         | `boolean`                        | `false`                                  |[m
+[32m+[m[32m| `selectedIndex`        | `selected-index`         | (optional) the index of the selected segment                 | `number`                         | `undefined`                              |[m
+ | `size`                 | `size`                   | (optional) The size of the button                            | `"large" \| "medium" \| "small"` | `'small'`                                |[m
+ | `styles`               | `styles`                 | (optional) Injected CSS styles                               | `string`                         | `undefined`                              |[m
+ [m
+[1mdiff --git a/packages/storybook-vue/stories/components/segmented-button/ScaleSegmentedButton.vue b/packages/storybook-vue/stories/components/segmented-button/ScaleSegmentedButton.vue[m
+[1mindex 0893ab8a..a0e3c4aa 100644[m
+[1m--- a/packages/storybook-vue/stories/components/segmented-button/ScaleSegmentedButton.vue[m
+[1m+++ b/packages/storybook-vue/stories/components/segmented-button/ScaleSegmentedButton.vue[m
+[36m@@ -6,6 +6,7 @@[m
+     :invalid="invalid"[m
+     :label="label"[m
+     :helper-text="helperText"[m
+[32m+[m[32m    :full-width="fullWidth"[m
+     :styles="styles"[m
+     @scaleChange="scaleChange"[m
+   >[m
+[36m@@ -23,6 +24,7 @@[m [mexport default {[m
+     invalid: { type: Boolean, default: false },[m
+     label: { type: String },[m
+     helperText: { type: String },[m
+[32m+[m[32m    fullWidth: { type: Boolean, default: false },[m
+     styles: { type: String },[m
+   },[m
+   methods: {[m
+[1mdiff --git a/packages/storybook-vue/stories/components/segmented-button/SegmentedButton.stories.mdx b/packages/storybook-vue/stories/components/segmented-button/SegmentedButton.stories.mdx[m
+[1mindex 0772cb60..7cceb47e 100644[m
+[1m--- a/packages/storybook-vue/stories/components/segmented-button/SegmentedButton.stories.mdx[m
+[1m+++ b/packages/storybook-vue/stories/components/segmented-button/SegmentedButton.stories.mdx[m
+[36m@@ -26,6 +26,7 @@[m [mexport const Template = (args, { argTypes }) => ({[m
+       :styles="styles"[m
+       :invalid="invalid"[m
+       :helper-text="helperText"[m
+[32m+[m[32m      :full-width="fullWidth"[m
+       :label="label"[m
+     >[m
+       <scale-segment selected>Apple</scale-segment>[m

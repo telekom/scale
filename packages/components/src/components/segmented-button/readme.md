@@ -17,6 +17,7 @@
 | `label`                | `label`                  | (optional) Button label                                      | `string`                         | `undefined`                              |
 | `longestButtonWidth`   | `longest-button-width`   |                                                              | `string`                         | `undefined`                              |
 | `multiSelect`          | `multi-select`           | (optional) Allow more than one button to be selected         | `boolean`                        | `false`                                  |
+| `selectedIndex`        | `selected-index`         | (optional) the index of the selected segment                 | `number`                         | `undefined`                              |
 | `size`                 | `size`                   | (optional) The size of the button                            | `"large" \| "medium" \| "small"` | `'small'`                                |
 | `styles`               | `styles`                 | (optional) Injected CSS styles                               | `string`                         | `undefined`                              |
 
