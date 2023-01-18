@@ -1117,10 +1117,7 @@ export class DataGrid {
                     return;
                   }
                   // Add rows nested tables to array
-                  if (
-                    field.type === 'html' &&
-                    field.collapsible
-                  ) {
+                  if (field.type === 'html' && field.collapsible) {
                     if (!!cellContent.isExpanded) {
                       isNestedExpanded = true;
                     }

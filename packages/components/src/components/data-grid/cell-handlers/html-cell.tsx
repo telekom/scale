@@ -16,17 +16,20 @@ import { Cell } from './cell-interface';
 
 export const HTMLCell: Cell = {
   defaults: {
-    collapsible: true
+    collapsible: true,
   },
   getLongestContent({ rows, columnIndex }) {
     // Skip check as content width is always the same
     return rows[0][columnIndex];
   },
   render: ({ field, content, component }) => {
-    return field.collapsible == false  ? (
+    return field.collapsible === false ? (
       <div
+        style={{ border: '2px solid red' }}
         ref={(el) => {
-            el && el.appendChild(content)
+          if (el) {
+            el.appendChild(content);
+          }
         }}
       ></div>
     ) : (
