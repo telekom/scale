@@ -140,8 +140,7 @@ export class SegmentedButton {
         this.hostElement.children.length
       }, ${Math.ceil(longestButtonWidth)}px)`;
     } else {
-      this.container.style.gridAutoColumns = 'minmax(0, 1fr);';
-      this.container.style.gridAutoFlow = 'column';
+      this.container.style.display = "flex";
     }
 
     this.selectedIndex = this.getSelectedIndex();
