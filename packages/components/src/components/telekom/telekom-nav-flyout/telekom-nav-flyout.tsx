@@ -129,6 +129,7 @@ export class TelekomNavItem {
       return;
     }
     event.preventDefault();
+    event.stopImmediatePropagation();
     this.expanded = !this.expanded;
     this.expanded ? this.show() : this.hide();
     this.parentElement.removeEventListener('mouseleave', this.handlePointerOut);
