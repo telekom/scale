@@ -9,8 +9,21 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Element, Prop } from '@stencil/core';
+import { Component, h, Host, Element, Prop, Watch } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
+
+// TODO? turn into util
+function toggleAriaCurrent(
+  element: HTMLElement,
+  value: boolean,
+  attrValue = 'page'
+) {
+  if (value) {
+    element.setAttribute('aria-current', attrValue);
+  } else {
+    element.removeAttribute('aria-current');
+  }
+}
 
 @Component({
   tag: 'scale-telekom-nav-item',
@@ -20,7 +33,23 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 export class TelekomNavItem {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop({ reflect: true }) variant: 'main' | 'meta' = 'main';
+  @Prop({ reflect: true }) active?: boolean = false;
+
+  @Watch('active')
+  activeChanged(newValue: boolean) {
+    if (this.link == null) {
+      return;
+    }
+    toggleAriaCurrent(this.link, newValue);
+  }
+
+  connectedCallback() {
+    this.activeChanged(this.active);
+  }
+
+  get link(): HTMLAnchorElement | null {
+    return this.hostElement.querySelector('a');
+  }
 
   render() {
     return (
