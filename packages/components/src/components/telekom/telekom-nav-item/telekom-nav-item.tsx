@@ -40,17 +40,17 @@ export class TelekomNavItem {
 
   @Watch('active')
   activeChanged(newValue: boolean) {
-    if (this.link == null) {
+    if (this.linkElement == null) {
       return;
     }
-    toggleAriaCurrent(this.link, newValue);
+    toggleAriaCurrent(this.linkElement, newValue);
   }
 
   connectedCallback() {
     this.activeChanged(this.active);
   }
 
-  get link(): HTMLAnchorElement | null {
+  get linkElement(): HTMLAnchorElement | null {
     return this.hostElement.querySelector('a');
   }
 
