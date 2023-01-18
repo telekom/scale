@@ -140,7 +140,7 @@ export class SegmentedButton {
         this.hostElement.children.length
       }, ${Math.ceil(longestButtonWidth)}px)`;
     } else {
-      this.container.style.display = "flex";
+      this.container.style.display = 'flex';
     }
 
     this.selectedIndex = this.getSelectedIndex();
