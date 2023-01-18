@@ -28,7 +28,7 @@ function toggleAriaCurrent(
 @Component({
   tag: 'scale-telekom-nav-item',
   styleUrl: 'telekom-nav-item.css',
-  shadow: true,
+  shadow: false,
 })
 export class TelekomNavItem {
   @Element() hostElement: HTMLStencilElement;
@@ -53,7 +53,9 @@ export class TelekomNavItem {
 
   render() {
     return (
-      <Host>
+      // A class is used to avoid coupling styles to the tagname
+      // (which can be different based on who defines it)
+      <Host class="scale-telekom-nav-item">
         <slot></slot>
       </Host>
     );
