@@ -82,7 +82,6 @@
   --_spacing-x-slotted: var(--_spacing-x-slotted-functions);
 }
 
-.scale-telekom-nav-list,
 .scale-telekom-nav-list[alignment='left'] {
   justify-content: flex-start;
 }
@@ -93,13 +92,11 @@
   justify-content: center;
 }
 
-.scale-telekom-nav-list > *:not(:last-child),
 .scale-telekom-nav-list[alignment='left'] > *:not(:last-child) {
   margin-inline-end: var(--_spacing-x-slotted);
 }
-.scale-telekom-nav-list[alignment='right'] > *:not(:last-child) {
+.scale-telekom-nav-list[alignment='right'] > *:not(:first-child) {
   margin-inline-start: var(--_spacing-x-slotted);
-  margin-inline-end: 0;
 }
 .scale-telekom-nav-list[alignment='center'] > * {
   margin-inline: calc(0.5 * var(--_spacing-x-slotted));
