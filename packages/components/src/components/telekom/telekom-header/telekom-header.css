@@ -266,6 +266,7 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
+/* TODO add `part` to the actual <a> or <span> and remove "> *"  */
 [part~='top-app-name'] > *,
 [part~='bottom-app-name'] > * {
   font-size: var(--font-size-app-name);
