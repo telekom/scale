@@ -111,3 +111,13 @@
   font-weight: var(--telekom-typography-font-weight-regular);
   padding-top: var(--_spacing-top-slotted-top);
 }
+
+/* take care of "external link" icon placement */
+
+.scale-telekom-nav-list[variant='meta-nav-external'] :where(a, button) {
+  display: flex;
+  align-items: center;
+}
+.scale-telekom-nav-list[variant='meta-nav-external'] :where(a, button) > * {
+  margin-inline-start: 0.5ch;
+}

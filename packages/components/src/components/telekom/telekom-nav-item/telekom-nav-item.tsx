@@ -12,6 +12,9 @@
 import { Component, h, Host, Element, Prop, Watch } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 
+// TODO maybe we want to add the <scale-icon-navigation-external-link size="11"> icon
+// automatically when inside variant="meta-nav-external"?
+
 // TODO? turn into util
 function toggleAriaCurrent(
   element: HTMLElement,
