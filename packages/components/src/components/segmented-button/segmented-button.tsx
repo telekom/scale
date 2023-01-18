@@ -136,16 +136,12 @@ export class SegmentedButton {
       );
     });
     if (!this.fullWidth) {
-      // @ts-ignore
-      this.container.style = `grid-template-columns: repeat(${
+      this.container.style.gridTemplateColumns = `repeat(${
         this.hostElement.children.length
-      }, ${Math.ceil(longestButtonWidth)}px);`;
+      }, ${Math.ceil(longestButtonWidth)}px`;
     } else {
-      // @ts-ignore
-      this.container.style = `
-        grid-auto-columns: minmax(0, 1fr);
-        grid-auto-flow: column;      
-      `;
+      this.container.style.gridAutoColumns = "minmax(0, 1fr);";
+      this.container.style.gridAutoFlow = "column"
     }
 
     this.selectedIndex = this.getSelectedIndex();
