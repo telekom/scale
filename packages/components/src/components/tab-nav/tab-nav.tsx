@@ -42,7 +42,10 @@ export class TabNav {
   handleClick(event: MouseEvent) {
     this.removeFirstRenderAttr();
 
-    const nextTab = event.target as HTMLScaleTabHeaderElement;
+    let nextTab = event.target as HTMLScaleTabHeaderElement;
+    if (nextTab.tagName !== 'SCALE-TAB-HEADER') {
+      nextTab = nextTab.closest('scale-tab-header');
+    }
     if (nextTab.getAttribute('role') !== 'tab') {
       return;
     }
