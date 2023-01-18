@@ -15,21 +15,22 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 @Component({
   tag: 'scale-telekom-nav-list',
   styleUrl: 'telekom-nav-list.css',
-  shadow: true,
+  shadow: false,
 })
 export class TelekomNavList {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop({ reflect: true }) alignment: 'left' | 'center' | 'right' = 'left';
   @Prop({ reflect: true }) variant:
-    | 'main'
-    | 'meta'
-    | 'meta-tight'
-    | 'function' = 'main';
+    | 'meta-nav-external'
+    | 'meta-nav'
+    | 'lang-switcher'
+    | 'main-nav'
+    | 'functions' = 'main-nav';
 
   render() {
     return (
-      <Host>
+      <Host class="scale-telekom-nav-list">
         <slot></slot>
       </Host>
     );
