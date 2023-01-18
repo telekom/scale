@@ -138,7 +138,7 @@ export class SegmentedButton {
     if (!this.fullWidth) {
       this.container.style.gridTemplateColumns = `repeat(${
         this.hostElement.children.length
-      }, ${Math.ceil(longestButtonWidth)}px`;
+      }, ${Math.ceil(longestButtonWidth)}px)`;
     } else {
       this.container.style.gridAutoColumns = 'minmax(0, 1fr);';
       this.container.style.gridAutoFlow = 'column';
