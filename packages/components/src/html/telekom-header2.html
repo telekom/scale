@@ -179,89 +179,18 @@
             class="mobile-menu-flyout"
             style="--top: 0; --height: 100vh; --spacing-x: 0; --duration: 0"
           >
-            <scale-telekom-mobile-menu
-              app-name="Application Name"
-              app-name-link="#"
+            <scale-telekom-mobile-flyout-canvas
+              app-name="Hellow World (Mobile)"
             >
-              <scale-telekom-nav-list
-                variant="meta"
-                slot="top-left"
-                alignment="left"
-                ><scale-menu-flyout-list>
-                  <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
-                  <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
-                  <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
-                </scale-menu-flyout-list>
-                <scale-telekom-nav-item variant="meta">
-                  <a href="#">Metalink ext 1</a>
-                </scale-telekom-nav-item>
-                <scale-telekom-nav-item variant="meta">
-                  <a href="#">Metalink ext 2</a>
-                </scale-telekom-nav-item>
-              </scale-telekom-nav-list>
-
-              <scale-telekom-nav-list
-                variant="meta"
-                slot="top-right"
-                alignment="right"
-              >
-                <scale-telekom-nav-item variant="meta">
-                  <a href="#">MK</a>
-                </scale-telekom-nav-item>
-                <scale-telekom-nav-item variant="meta">
-                  <a href="#">SO</a>
-                </scale-telekom-nav-item>
-                <scale-telekom-nav-item variant="meta">
-                  <a href="#">DE</a>
-                </scale-telekom-nav-item>
-              </scale-telekom-nav-list>
-
-              <scale-telekom-mobile-menu-item>
-                <a href="javascript:void(0);">Category 1</a>
-                <scale-telekom-mobile-menu-item slot="children">
-                  <a href="#">2. Level Category 1</a>
-                </scale-telekom-mobile-menu-item>
-              </scale-telekom-mobile-menu-item>
-              <scale-telekom-mobile-menu-item>
-                <a href="#">Category 2</a>
-                <scale-telekom-mobile-menu-item slot="children">
-                  <a href="#">2. Level Category 2.1</a>
-                  <scale-telekom-mobile-menu-item slot="children" active>
-                    <a href="#">3. Level Category 2.1.1</a>
-                  </scale-telekom-mobile-menu-item>
-                  <scale-telekom-mobile-menu-item slot="children">
-                    <a href="#">3. Level Category 2.1.2</a>
-                  </scale-telekom-mobile-menu-item>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item slot="children">
-                  <a href="#">2. Level Category 2.2</a>
-                </scale-telekom-mobile-menu-item>
-              </scale-telekom-mobile-menu-item>
-
-              <scale-telekom-nav-list
-                variant="meta"
-                slot="bottom"
-                alignment="left"
-                style="--flex-direction: column"
-              >
-                <scale-telekom-nav-item variant="meta">
-                  <a href="#">Metalink ext 1</a>
-                </scale-telekom-nav-item>
-                <scale-telekom-nav-item variant="meta">
-                  <a href="#">Metalink ext 2</a>
-                </scale-telekom-nav-item>
-              </scale-telekom-nav-list>
-            </scale-telekom-mobile-menu>
+              <div slot="mobile-main-nav">
+                <p><code>&lt;telekom-mobile-menu&gt;</code> goes here</p>
+              </div>
+              <div slot="mobile-before-main-nav">
+                NO PROPER LAYOUT STYLES YET
+              </div>
+            </scale-telekom-mobile-flyout-canvas>
           </scale-telekom-nav-flyout>
         </scale-telekom-nav-item>
-
-        <!-- <scale-menu-flyout id="new" close-on-select="false">
-            <button slot="trigger" class="item">🥭</button>
-            <scale-menu-flyout-list>
-              <scale-menu-flyout-item>Item one</scale-menu-flyout-item>
-              <scale-menu-flyout-item>Second item</scale-menu-flyout-item>
-            </scale-menu-flyout-list>
-          </scale-menu-flyout> -->
       </scale-telekom-nav-list>
     </scale-telekom-header>
   </body>

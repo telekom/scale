@@ -56,53 +56,44 @@ export class TelekomHeader {
           })}
         >
           <div part="container">
-            <slot name="app-logo">
+            <slot name="logo">
               <scale-logo part="app-logo" variant="white"></scale-logo>
             </slot>
 
-            <div part="horizontal-menus">
-              <div part="extended-menu">
-                <div part="extended-menu-left">
-                  {this.appName ? (
-                    <div part="app-name-extended">
-                      <scale-telekom-app-name>
-                        {this.appNameLink ? (
-                          <a
-                            onClick={this.appNameClick}
-                            href={this.appNameLink}
-                          >
-                            {this.appName}
-                          </a>
-                        ) : (
-                          <span>{this.appName}</span>
-                        )}
-                      </scale-telekom-app-name>
-                    </div>
-                  ) : null}
+            <div part="body">
+              <div part="top-bar">
+                {this.appName ? (
+                  <div part="top-app-name">
+                    {this.appNameLink ? (
+                      <a onClick={this.appNameClick} href={this.appNameLink}>
+                        {this.appName}
+                      </a>
+                    ) : (
+                      <span>{this.appName}</span>
+                    )}
+                  </div>
+                ) : null}
 
-                  <slot name="meta-nav-ext"></slot>
-                </div>
-                <div part="extended-menu-right">
+                <div part="top-body">
+                  <slot name="meta-nav-external"></slot>
                   <slot name="meta-nav"></slot>
-                  <slot name="language-switch"></slot>
+                  <slot name="lang-switcher"></slot>
                 </div>
               </div>
 
-              <div part="app-name-and-base-menu">
+              <div part="bottom-bar">
                 {this.appName ? (
-                  <div part="app-name">
-                    <scale-telekom-app-name>
-                      {this.appNameLink ? (
-                        <a onClick={this.appNameClick} href={this.appNameLink}>
-                          {this.appName}
-                        </a>
-                      ) : (
-                        <span>{this.appName}</span>
-                      )}
-                    </scale-telekom-app-name>
+                  <div part="bottom-app-name">
+                    {this.appNameLink ? (
+                      <a onClick={this.appNameClick} href={this.appNameLink}>
+                        {this.appName}
+                      </a>
+                    ) : (
+                      <span>{this.appName}</span>
+                    )}
                   </div>
                 ) : null}
-                <div part="base-menu">
+                <div part="bottom-body">
                   <slot name="main-nav"></slot>
                   <slot name="functions"></slot>
                 </div>

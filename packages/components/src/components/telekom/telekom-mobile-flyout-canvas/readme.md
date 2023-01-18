@@ -1,4 +1,4 @@
-# scale-telekom-mobile-menu
+# scale-telekom-nav-item
 
 
 
@@ -9,11 +9,9 @@
 
 | Property           | Attribute            | Description | Type     | Default     |
 | ------------------ | -------------------- | ----------- | -------- | ----------- |
-| `activeRouteId`    | `active-route-id`    |             | `string` | `undefined` |
 | `appName`          | `app-name`           |             | `string` | `undefined` |
-| `appNameClick`     | `app-name-click`     |             | `any`    | `undefined` |
-| `appNameLink`      | `app-name-link`      |             | `string` | `undefined` |
-| `closeButtonTitle` | `close-button-title` |             | `string` | `'Close'`   |
+| `closeButtonLabel` | `close-button-label` |             | `string` | `'Close'`   |
+| `closeButtonTitle` | `close-button-title` |             | `string` | `null`      |
 
 
 ## Events
@@ -27,24 +25,27 @@
 
 | Part             | Description |
 | ---------------- | ----------- |
-| `"app-name"`     |             |
 | `"base"`         |             |
+| `"body"`         |             |
 | `"close-button"` |             |
-| `"links-top"`    |             |
-| `"nav"`          |             |
+| `"header"`       |             |
+| `"heading"`      |             |
+| `"meta"`         |             |
 
 
 ## Dependencies
 
 ### Depends on
 
+- [scale-button](../../button)
 - [scale-icon-action-close](../../icons/action-close)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-telekom-mobile-menu --> scale-icon-action-close
-  style scale-telekom-mobile-menu fill:#f9f,stroke:#333,stroke-width:4px
+  scale-telekom-mobile-flyout-canvas --> scale-button
+  scale-telekom-mobile-flyout-canvas --> scale-icon-action-close
+  style scale-telekom-mobile-flyout-canvas fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
