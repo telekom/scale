@@ -21,6 +21,7 @@ export interface Cell {
     textAlign?: 'left' | 'center' | 'right';
     visible?: boolean;
     width?: number;
+    collapsible?: boolean;
   };
   getLongestContent?({ rows, columnIndex, field }): any;
   render({

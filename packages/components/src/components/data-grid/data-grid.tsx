@@ -1119,7 +1119,7 @@ export class DataGrid {
                   // Add rows nested tables to array
                   if (
                     field.type === 'html' &&
-                    field.options !== 'no_dropdown'
+                    field.collapsible
                   ) {
                     if (!!cellContent.isExpanded) {
                       isNestedExpanded = true;
@@ -1137,7 +1137,6 @@ export class DataGrid {
                 })}
               </tr>
             );
-
             // Add second row for nested content if any within the row are expanded
             if (rowNestedContent.length) {
               rows.push(

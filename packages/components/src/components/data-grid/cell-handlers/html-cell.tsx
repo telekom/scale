@@ -15,18 +15,18 @@ import { Cell } from './cell-interface';
 // Expected content: HTMLElement
 
 export const HTMLCell: Cell = {
-  defaults: {},
+  defaults: {
+    collapsible: true
+  },
   getLongestContent({ rows, columnIndex }) {
     // Skip check as content width is always the same
     return rows[0][columnIndex];
   },
   render: ({ field, content, component }) => {
-    return field.options === 'no_dropdown' ? (
+    return field.collapsible == false  ? (
       <div
         ref={(el) => {
-          if (el) {
-            el.appendChild(content);
-          }
+            el && el.appendChild(content)
         }}
       ></div>
     ) : (
