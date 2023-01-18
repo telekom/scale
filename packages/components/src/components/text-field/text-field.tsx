@@ -107,7 +107,7 @@ export class TextField {
   @Prop() inputAutofocus?: boolean;
   /** (optional) custom value for autocomplete HTML attribute */
   @Prop() inputAutocomplete?: string;
-  /** (optional) id or space separated list of ids of elements that provide or link to additional related information.*/
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailedId?: string;
 
   /** (optional) Injected CSS styles */
