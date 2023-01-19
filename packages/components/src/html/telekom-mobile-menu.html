@@ -23,16 +23,44 @@
   <body>
     <scale-telekom-mobile-menu>
       <scale-telekom-mobile-menu-item>
-        <a href="javascript:void(0);">Category 1</a>
+        <a href="#no-children-1">No children 1</a>
+      </scale-telekom-mobile-menu-item>
+
+      <scale-telekom-mobile-menu-item>
+        <a href="#no-children-2">No children 2</a>
+      </scale-telekom-mobile-menu-item>
+
+      <scale-telekom-mobile-menu-item>
+        <a href="#children-and-link-1">Children and link 1</a>
         <scale-telekom-mobile-menu-item slot="children">
           <a href="#">2. Level Category 1</a>
         </scale-telekom-mobile-menu-item>
       </scale-telekom-mobile-menu-item>
+
+      <scale-telekom-mobile-menu-item open>
+        <a href="#children-and-link-2">Children and link 2</a>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">2.1 Children and link 2</a>
+        </scale-telekom-mobile-menu-item>
+        <scale-telekom-mobile-menu-item slot="children" open>
+          <a href="#">2.2 Children and link 2</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">3.1 Children and link 2</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">3.2 Children and link 2</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children" active>
+            <a href="#">3.3 Children and link 2</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+      </scale-telekom-mobile-menu-item>
+
       <scale-telekom-mobile-menu-item>
-        <a href="#">Category 2</a>
+        <a href="javascript:void(0);">Category 2 no link</a>
         <scale-telekom-mobile-menu-item slot="children">
           <a href="#">2. Level Category 2.1</a>
-          <scale-telekom-mobile-menu-item slot="children" active>
+          <scale-telekom-mobile-menu-item slot="children">
             <a href="#">3. Level Category 2.1.1</a>
           </scale-telekom-mobile-menu-item>
           <scale-telekom-mobile-menu-item slot="children">

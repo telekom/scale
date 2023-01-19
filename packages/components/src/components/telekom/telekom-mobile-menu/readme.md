@@ -9,10 +9,10 @@
 
 | Property           | Attribute            | Description | Type     | Default     |
 | ------------------ | -------------------- | ----------- | -------- | ----------- |
-| `activeRouteId`    | `active-route-id`    |             | `string` | `undefined` |
 | `appName`          | `app-name`           |             | `string` | `undefined` |
 | `appNameClick`     | `app-name-click`     |             | `any`    | `undefined` |
 | `appNameLink`      | `app-name-link`      |             | `string` | `undefined` |
+| `backButtonTitle`  | `back-button-title`  |             | `string` | `'Back'`    |
 | `closeButtonTitle` | `close-button-title` |             | `string` | `'Close'`   |
 
 
@@ -28,6 +28,7 @@
 | Part             | Description |
 | ---------------- | ----------- |
 | `"app-name"`     |             |
+| `"back-button"`  |             |
 | `"base"`         |             |
 | `"close-button"` |             |
 | `"links-top"`    |             |
@@ -39,11 +40,13 @@
 ### Depends on
 
 - [scale-icon-action-close](../../icons/action-close)
+- [scale-icon-navigation-left](../../icons/navigation-left)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-telekom-mobile-menu --> scale-icon-action-close
+  scale-telekom-mobile-menu --> scale-icon-navigation-left
   style scale-telekom-mobile-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

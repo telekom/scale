@@ -34,6 +34,19 @@
   top: 22px;
   right: calc(var(--spacing) - var(--spacing-close-button) + 2px);
 }
+:host::part(back-button) {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  font: var(--telekom-text-style-lead-text);
+  width: 100%;
+  height: 72px;
+}
+
+scale-icon-navigation-left {
+  margin-right: 6px;
+}
 
 :host::part(nav) {
   padding: var(--spacing) 0;
@@ -77,4 +90,21 @@
 
 :host::part(links-top) {
   display: flex;
+}
+
+[part~='app-name'] > * {
+  font-size: var(--font-size-app-name);
+  font-weight: var(--font-weight-app-name);
+  line-height: var(--line-height-app-name);
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+[part~='app-name'] > *:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part~='app-name'] > *:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }

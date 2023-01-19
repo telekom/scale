@@ -39,128 +39,79 @@ function elementDepth(el) {
 export class TelekomMobileMenu {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop() activeRouteId: string;
   @Prop() closeButtonTitle: string = 'Close';
+  @Prop() backButtonTitle: string = 'Back';
 
   @Prop() appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
 
-  @State() currentLevel: number = 0;
+  @State() currentLevel?: string;
 
   @Event({ eventName: 'scale-close-nav-flyout' }) scaleCloseNavFlyout;
 
-  @Listen('scale-click-menu-item')
-  handleClickMenuItem(e) {
-    const hasChildren = !!e.target.querySelector('[slot="children"]');
-    if (!hasChildren) {
-      return;
-    }
-    if (e.target.hasAttribute('open')) {
-      // go one level up
-      this.selectItem(e.target);
-      return;
-    }
-    // go one level down
-    this.handleOpen(e.target);
+  @Listen('scale-set-menu-item-active')
+  handleSetMenuItemActive(e) {
+    this.menuItems.forEach((element) => element.removeAttribute('active'));
+    e.target.setAttribute('active', '');
+  }
+  @Listen('scale-set-menu-item-open')
+  handleSetMenuItemOpen(e) {
+    e.target.setAttribute('open', '');
+
+    this.currentLevel = String(+e.target.getAttribute('level') + 1);
+
+    Array.from(this.menuItems).forEach((element) => {
+      element.setAttribute('current-level', this.currentLevel);
+    });
   }
 
   connectedCallback() {
-    this.setLevelOfItems();
+    this.setLevelAttributeForAllItems();
+    this.currentLevel = this.activeItem
+      ? String(+this.activeItem.getAttribute('level'))
+      : '0';
+    Array.from(this.menuItems).forEach((element) => {
+      element.setAttribute('current-level', this.currentLevel);
+    });
   }
 
-  componentWillRender() {
-    const items = this.hostElement.querySelectorAll(
-      'scale-telekom-mobile-menu-item'
+  componentWillRender() {}
+
+  get menuItems(): NodeListOf<HTMLElement> | null {
+    return this.hostElement.querySelectorAll('scale-telekom-mobile-menu-item');
+  }
+  get activeItem(): HTMLElement | null {
+    return Array.from(this.menuItems).find((element) =>
+      element.hasAttribute('active')
     );
-
-    this.hideItemsOnLevels({ items, levels: [1, 2] });
-
-    const active = Array.from(items).find((item) => {
-      return item.hasAttribute('active');
-    });
-
-    if (active) {
-      this.selectItem(active);
-    }
+  }
+  get openItems(): HTMLElement[] | null {
+    return Array.from(this.menuItems).filter((element) =>
+      element.hasAttribute('open')
+    );
   }
 
-  handleOpen = (target) => {
-    // update current level
-    this.currentLevel = Number(target.getAttribute('level'));
-
-    // query all menu items
-    const items = this.hostElement.querySelectorAll(
-      'scale-telekom-mobile-menu-item'
+  setLevelAttributeForAllItems = () => {
+    const offset = Math.min(
+      ...Array.from(this.menuItems).map((x) => elementDepth(x))
     );
-
-    // reset all items and hide them
-    Array.from(items).forEach((item) => {
-      item.removeAttribute('open');
-      item.removeAttribute('hide-header');
-      item.setAttribute('hidden', '');
-    });
-
-    // show affected items and the target
-    [
-      target,
-      target.parentElement,
-      // affected children
-      ...Array.from(target.querySelectorAll('scale-telekom-mobile-menu-item')),
-    ].forEach((item) => {
-      item.removeAttribute('hidden');
-    });
-
-    // open the target and hide its header
-    target.setAttribute('open', '');
-    target.parentElement.setAttribute('hide-header', '');
-
-    // hide third level items when in the first level
-    if (this.currentLevel === 0) {
-      this.hideItemsOnLevels({ items, levels: [2] });
-    }
-  };
-  selectItem = (target) => {
-    const items = this.hostElement.querySelectorAll(
-      'scale-telekom-mobile-menu-item'
-    );
-
-    this.hideItemsOnLevels({ items, levels: [0, 1, 2] });
-    target.removeAttribute('open');
-    target.removeAttribute('hidden');
-    target.parentElement.setAttribute('open', '');
-    target.parentElement.removeAttribute('hidden');
-    target.parentElement.removeAttribute('hide-header');
-    target.parentElement.parentElement.setAttribute('hide-header', '');
-    target.parentElement.parentElement.removeAttribute('hidden');
-    Array.from(target.parentElement.children)
-      .filter(({ tagName }) => tagName === 'SCALE-TELEKOM-MOBILE-MENU-ITEM')
-      .forEach((item: HTMLElement) => item.removeAttribute('hidden'));
-  };
-
-  hideItemsOnLevels = ({
-    items,
-    levels,
-  }: {
-    items: NodeListOf<HTMLElement>;
-    levels: number[];
-  }) => {
-    items.forEach((item) => {
-      if (levels.includes(Number(item.getAttribute('level')))) {
-        item.setAttribute('hidden', '');
-      }
-    });
-  };
-  setLevelOfItems = () => {
-    const items = this.hostElement.querySelectorAll(
-      'scale-telekom-mobile-menu-item'
-    );
-
-    const offset = Math.min(...Array.from(items).map((x) => elementDepth(x)));
-
-    Array.from(items).forEach((item) => {
+    Array.from(this.menuItems).forEach((item) => {
       const level = elementDepth(item) - offset;
       item.setAttribute('level', String(level));
+    });
+  };
+
+  back = () => {
+    Array.from(this.openItems).forEach((element) => {
+      if (element.getAttribute('level') === String(+this.currentLevel - 1)) {
+        return element.removeAttribute('open');
+      }
+    });
+    this.currentLevel = String(+this.currentLevel - 1);
+
+    Array.from(this.menuItems).forEach((element) => {
+      element.setAttribute('current-level', this.currentLevel);
     });
   };
 
@@ -181,22 +132,31 @@ export class TelekomMobileMenu {
 
         <div part="base">
           <div part="app-name">
-            <scale-telekom-app-name>
-              {this.appNameLink ? (
-                <a onClick={this.appNameClick} href={this.appNameLink}>
-                  {this.appName}
-                </a>
-              ) : (
-                <span>{this.appName}</span>
-              )}
-            </scale-telekom-app-name>
+            {this.appNameLink ? (
+              <a onClick={this.appNameClick} href={this.appNameLink}>
+                {this.appName}
+              </a>
+            ) : (
+              <span>{this.appName}</span>
+            )}
           </div>
 
           <div part="links-top">
             <slot name="top-left"></slot>
             <slot name="top-right"></slot>
           </div>
-          <nav part="nav">
+          <nav
+            part="nav"
+            onClick={() => {
+              this.back();
+            }}
+          >
+            {+this.currentLevel > 0 ? (
+              <button part="back-button">
+                <scale-icon-navigation-left></scale-icon-navigation-left>
+                {this.backButtonTitle}
+              </button>
+            ) : null}
             <slot></slot>
           </nav>
           <slot name="bottom"></slot>
