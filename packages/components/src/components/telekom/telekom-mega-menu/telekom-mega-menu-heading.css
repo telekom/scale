@@ -1,0 +1,24 @@
+:host {
+  --font-size: var(--telekom-typography-font-size-body);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --line-height: var(--telekom-typography-line-spacing-standard);
+  --height: 22px;
+}
+
+[part='base'] {
+  font-weight: var(--font-weight);
+  font-size: var(--font-weight);
+  line-height: var(--line-height);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: var(--height);
+}
+
+[part='custom-icon'] ::slotted(*) {
+  margin-right: 8px;
+}
+
+[part='scale-icon-navigation-right'] {
+  margin-left: 7px;
+}
