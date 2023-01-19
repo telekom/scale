@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Element, Prop } from '@stencil/core';
+import { Component, h, Host, Element } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 
 @Component({
