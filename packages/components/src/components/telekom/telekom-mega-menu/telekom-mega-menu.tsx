@@ -22,7 +22,7 @@ export class TelekomMegaMenu {
   private container: HTMLElement;
 
   componentDidLoad() {
-    let slotted = this.hostElement.children;
+    const slotted = this.hostElement.children;
     if (slotted.length < 5) {
       this.container.style.paddingLeft = 'var(--spacing-4-columns)';
     }
