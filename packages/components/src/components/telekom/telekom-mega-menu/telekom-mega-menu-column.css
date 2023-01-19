@@ -1,0 +1,7 @@
+:host {
+}
+
+[part='base'] {
+    display: flex;
+    flex-direction: column;
+}

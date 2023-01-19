@@ -1,0 +1,13 @@
+:host {
+    --margin-top: 22px;
+    --font-size: var(--telekom-typography-font-size-body);
+    --font-weight: var(--telekom-typography-font-weight-regular);
+    --line-height: var(--telekom-typography-line-spacing-standard);
+}
+
+[part="base"] {
+    margin-top: var(--margin-top);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    line-height:var(--line-height);
+} 
