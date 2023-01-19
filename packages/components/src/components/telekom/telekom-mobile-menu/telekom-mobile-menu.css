@@ -9,9 +9,9 @@
     var(--telekom-motion-easing-standard);
   --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
-  --color-close-button: var(--telekom-color-text-and-icon-standard);
-  --color-close-button-hover: var(--telekom-color-primary-hovered);
-  --color-close-button-active: var(--telekom-color-primary-pressed);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-primary-hovered);
+  --color-active: var(--telekom-color-primary-pressed);
 }
 
 :host::part(base) {
@@ -39,6 +39,7 @@
   align-items: center;
   border: none;
   background: transparent;
+  color: var(--color);
   font: var(--telekom-text-style-lead-text);
   width: 100%;
   height: 72px;
@@ -64,7 +65,7 @@ scale-icon-navigation-left {
   border: 0;
   border-radius: var(--radius-close-button);
   outline: none;
-  color: var(--color-close-button);
+  color: var(--color);
   background: transparent;
   transition: var(--transition-close-button);
   transform: translate(
@@ -74,6 +75,7 @@ scale-icon-navigation-left {
   appearance: none;
   cursor: pointer;
   user-select: none;
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 :host::part(close-button):focus {
@@ -81,11 +83,11 @@ scale-icon-navigation-left {
 }
 
 :host::part(close-button):hover {
-  color: var(--color-close-button-hover);
+  color: var(--color-hover);
 }
 
 :host::part(close-button):active {
-  color: var(--color-close-button-active);
+  color: var(--color-active);
 }
 
 :host::part(links-top) {
