@@ -16,19 +16,18 @@
 :host::part(level-0) {
   --_spacing-level: 0px;
 }
+:host::part(level-0 active) {
+  --_spacing-level: 12px;
+}
+:host::part(level-0 open) {
+  --_spacing-level: 36px;
+}
 :host::part(level-1) {
   --_spacing-level: 36px;
 }
 :host::part(level-2) {
   --_spacing-level: 36px;
   --_font: var(--font-thin);
-}
-:host::part(level-0 open) {
-  --_spacing-level: 36px;
-}
-
-:host::part(level-0 active) {
-  --_spacing-level: 12px;
 }
 
 :host::part(active) {
