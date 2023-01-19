@@ -23,17 +23,21 @@ export class TelekomMegaMenu {
 
   componentDidLoad() {
     let slotted = this.hostElement.children;
-    if (slotted.length < 5 ) {
-        this.container.style.paddingLeft = 'var(--spacing-4-columns)'
+    if (slotted.length < 5) {
+      this.container.style.paddingLeft = 'var(--spacing-4-columns)';
     }
-}
+  }
 
   render() {
-
     return (
       <Host>
-        <div ref={(el) => {this.container = el}} part="base">
-            <slot></slot>
+        <div
+          ref={(el) => {
+            this.container = el;
+          }}
+          part="base"
+        >
+          <slot></slot>
         </div>
       </Host>
     );

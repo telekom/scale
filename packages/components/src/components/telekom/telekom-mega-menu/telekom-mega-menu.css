@@ -1,15 +1,15 @@
 :host {
-    --spacing-5-columns: var(--telekom-spacing-unit-x15);;
-    --spacing-4-columns: 192px;
-    --padding-top: 65px;
-    --padding-bottom: 73px;    
+  --spacing-5-columns: var(--telekom-spacing-unit-x15);
+  --spacing-4-columns: 192px;
+  --padding-top: 65px;
+  --padding-bottom: 73px;
 }
 
 [part='base'] {
-    width: 100%;  
-    display: grid; 
-    grid-template-columns: repeat(5, minmax(min-content, 240px));
-    padding-left: var(--spacing-5-columns);
-    padding-top: var(--padding-top);
-    padding-bottom: var(--padding-bottom);    
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(min-content, 240px));
+  padding-left: var(--spacing-5-columns);
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
 }

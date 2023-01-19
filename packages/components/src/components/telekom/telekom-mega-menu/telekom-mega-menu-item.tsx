@@ -24,8 +24,7 @@ export class TelekomMegaMenuItem {
     return (
       <Host>
         <div part="base">
-            <slot></slot>
-
+          <slot></slot>
         </div>
       </Host>
     );

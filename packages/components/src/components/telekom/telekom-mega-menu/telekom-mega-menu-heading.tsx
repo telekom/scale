@@ -24,11 +24,15 @@ export class TelekomMegaMenuHeading {
     return (
       <Host>
         <div part="base">
-            <div part="custom-icon">
-                <slot name="custom-icon"></slot>
-            </div>
-            <slot></slot>
-            <scale-icon-navigation-right size={8} selected part="scale-icon-navigation-right"/>
+          <div part="custom-icon">
+            <slot name="custom-icon"></slot>
+          </div>
+          <slot></slot>
+          <scale-icon-navigation-right
+            size={8}
+            selected
+            part="scale-icon-navigation-right"
+          />
         </div>
       </Host>
     );
