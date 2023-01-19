@@ -26,12 +26,20 @@
 :host::part(level-0 open) {
   --_spacing-level: 36px;
 }
+
 :host::part(level-0 active) {
   --_spacing-level: 12px;
 }
+
 :host::part(active) {
   --_color: var(--color-active);
   --_box-shadow-active: 2px 0px 0px 0px var(--color-active) inset;
+}
+
+:host::part(active-indicator) {
+  box-shadow: var(--_box-shadow-active);
+  min-height: 28px;
+  min-width: 2px;
 }
 
 :host::part(base) {
@@ -63,17 +71,10 @@
   justify-content: space-between;
 }
 
-:host::part(header hidden) {
+:host::part(hidden) {
   display: none;
 }
 
-:host::part(icon-left-container) {
-  box-shadow: var(--_box-shadow-active);
-  min-height: 28px;
-  min-width: 2px;
-}
-
-:host::part(icon-left-container),
 :host::part(icon-right-container) {
   display: flex;
   align-items: center;
