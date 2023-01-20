@@ -65,7 +65,11 @@ export class TelekomHeader {
                 {this.appName ? (
                   <div part="top-app-name">
                     {this.appNameLink ? (
-                      <a part="app-name-text" onClick={this.appNameClick} href={this.appNameLink}>
+                      <a
+                        part="app-name-text"
+                        onClick={this.appNameClick}
+                        href={this.appNameLink}
+                      >
                         {this.appName}
                       </a>
                     ) : (
@@ -85,7 +89,11 @@ export class TelekomHeader {
                 {this.appName ? (
                   <div part="bottom-app-name">
                     {this.appNameLink ? (
-                      <a part="app-name-text" onClick={this.appNameClick} href={this.appNameLink}>
+                      <a
+                        part="app-name-text"
+                        onClick={this.appNameClick}
+                        href={this.appNameLink}
+                      >
                         {this.appName}
                       </a>
                     ) : (
