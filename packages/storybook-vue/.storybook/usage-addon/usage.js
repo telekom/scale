@@ -27,6 +27,8 @@ import checkbox_en from 'raw-loader!../../stories/components/checkbox/checkbox.m
 import checkbox_de from 'raw-loader!../../stories/components/checkbox/checkbox_de.md';
 import checkboxGroup_en from 'raw-loader!../../stories/components/checkbox-group/checkbox-group.md';
 import checkboxGroup_de from 'raw-loader!../../stories/components/checkbox-group/checkbox-group_de.md';
+import chip_de from 'raw-loader!../../stories/components/chip/chip_de.md';
+import chip_en from 'raw-loader!../../stories/components/chip/chip.md';
 import datagrid_en from 'raw-loader!../../stories/components/data-grid/data-grid.md';
 import datagrid_de from 'raw-loader!../../stories/components/data-grid/data-grid_de.md';
 import date_picker_en from 'raw-loader!../../stories/components/date-picker/date-picker.md';
@@ -129,6 +131,8 @@ const Usage = (props) => {
     checkbox_de,
     'checkbox-group_en': checkboxGroup_en,
     'checkbox-group_de': checkboxGroup_de,
+    chip_en,
+    chip_de,
     divider_en,
     divider_de,
     callout_en,
