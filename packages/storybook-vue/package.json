@@ -32,6 +32,7 @@
   "dependencies": {
     "@storybook/addon-viewport": "^6.4.22",
     "@telekom/design-tokens": "^1.0.0-beta.2",
+    "caniuse-lite": "^1.0.30001436",
     "@telekom/scale-components": "^3.0.0-beta.118",
     "@telekom/scale-components-vue": "^3.0.0-beta.118"
   },
