@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Element } from '@stencil/core';
+import { Component, h, Host, Element, Prop } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 
 @Component({
@@ -19,12 +19,15 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 })
 export class TelekomMegaMenuItem {
   @Element() hostElement: HTMLStencilElement;
+  @Prop() href: string;
 
   render() {
     return (
       <Host>
         <div part="base">
-          <slot></slot>
+          <a part="link" href={this.href}>
+            <slot></slot>
+          </a>
         </div>
       </Host>
     );
