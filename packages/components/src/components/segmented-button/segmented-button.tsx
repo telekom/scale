@@ -167,7 +167,7 @@ export class SegmentedButton {
       return -1;
     } else {
       const allSegments = this.getAllSegments();
-      const selectedIndex = allSegments.findIndex((el) => el.selected === true);
+      const selectedIndex = allSegments.findIndex((el: HTMLScaleSegmentElement) => el.selected === true);
       return selectedIndex;
     }
   }
