@@ -180,7 +180,7 @@ slot[name='functions'] {
   /* TODO inline margin */
 }
 
-:host::part(base) {
+[part~='base'] {
   height: var(--_height);
   background-color: var(--background);
   box-shadow: var(--shadow);
@@ -190,12 +190,12 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
-:host::part(container) {
+[part~='container'] {
   margin: var(--_spacing-x);
   display: flex;
 }
 
-:host::part(app-logo) {
+[part~='app-logo'] {
   height: var(--_height);
   width: var(--_height);
   display: flex;
@@ -204,12 +204,12 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
+/* TODO fix exportparts */
 /* targeting `scale-logo` */
 :host::part(logo-svg) {
   height: var(--_height-logo);
   transition: var(--transition);
 }
-
 /* targeting `scale-logo` */
 :host::part(logo) {
   height: calc(var(--_height) - 6px);
@@ -220,13 +220,13 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
-:host::part(body) {
+[part~='body'] {
   display: block;
   flex: 1; /* used to be width: 100% */
   margin-left: var(--_spacing-left-body);
 }
 
-:host::part(top-bar) {
+[part~='top-bar'] {
   height: var(--_height-top-bar);
   display: flex;
   align-items: end;
@@ -234,31 +234,31 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
-:host::part(top-app-name) {
+[part~='top-app-name'] {
   display: var(--_display-top-app-name);
   margin-right: var(--_spacing-right-top-app-name);
   transition: var(--transition);
 }
 
-:host::part(top-body) {
+[part~='top-body'] {
   display: inline-flex;
   flex: 1;
 }
 
-:host::part(bottom-bar) {
+[part~='bottom-bar'] {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-:host::part(bottom-app-name) {
+[part~='bottom-app-name'] {
   display: var(--_display-bottom-app-name);
   animation: var(--_animation-app-name);
   margin-right: var(--_spacing-right-bottom-app-name);
   transition: var(--transition);
 }
 
-:host::part(bottom-body) {
+[part~='bottom-body'] {
   justify-content: var(--_base-menu-justify-content);
   height: var(--_height-bottom-bar);
   display: inline-flex;
@@ -266,9 +266,7 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
-/* TODO add `part` to the actual <a> or <span> and remove "> *"  */
-[part~='top-app-name'] > *,
-[part~='bottom-app-name'] > * {
+[part~='app-name-text'] {
   font-size: var(--font-size-app-name);
   font-weight: var(--font-weight-app-name);
   line-height: var(--line-height-app-name);
@@ -277,13 +275,11 @@ slot[name='functions'] {
   text-decoration: none;
 }
 
-[part~='top-app-name'] > *:hover,
-[part~='bottom-app-name'] > *:hover {
+[part~='app-name-text']:hover {
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
-[part~='top-app-name'] > *:active,
-[part~='bottom-app-name'] > *:active {
+[part~='app-name-text']:active {
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
