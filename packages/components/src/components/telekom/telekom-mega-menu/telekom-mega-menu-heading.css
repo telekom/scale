@@ -5,7 +5,9 @@
   --height: 22px;
 }
 
-[part='base'] {
+[part='base'],
+[part='link'],
+[part='heading'] {
   font-weight: var(--font-weight);
   font-size: var(--font-weight);
   line-height: var(--line-height);
@@ -21,4 +23,18 @@
 
 [part='scale-icon-navigation-right'] {
   margin-left: 7px;
+}
+
+[part='link'] {
+  cursor: pointer;
+  color: var(--telekom-color-text-and-icon-standard);
+  text-decoration: none;
+}
+
+[part='link']:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part='link']:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }

@@ -3,11 +3,28 @@
   --font-size: var(--telekom-typography-font-size-body);
   --font-weight: var(--telekom-typography-font-weight-regular);
   --line-height: var(--telekom-typography-line-spacing-standard);
+  --left-padding: var(--telekom-spacing-unit-x8);
 }
 
 [part='base'] {
+  display: inline-flex;
   margin-top: var(--margin-top);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
+  padding-left: var(--left-padding);
+}
+
+[part='link'] {
+  cursor: pointer;
+  color: var(--telekom-color-text-and-icon-standard);
+  text-decoration: none;
+}
+
+[part='link']:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part='link']:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }
