@@ -20,25 +20,25 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 export class TelekomMegaMenuHeading {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop() href: string; 
+  @Prop() href: string;
 
   render() {
     return (
       <Host>
         <h2 part="base">
-            { this.href ?
-              <a href={this.href} part="link">
-                <div part="custom-icon">
-                  <slot name="custom-icon"></slot>
-                </div>
-                <slot></slot>
-                <scale-icon-navigation-right
-                  size={10}
-                  selected
-                  part="scale-icon-navigation-right"
-                />
-              </a>
-            :
+          {this.href ? (
+            <a href={this.href} part="link">
+              <div part="custom-icon">
+                <slot name="custom-icon"></slot>
+              </div>
+              <slot></slot>
+              <scale-icon-navigation-right
+                size={10}
+                selected
+                part="scale-icon-navigation-right"
+              />
+            </a>
+          ) : (
             <div part="heading">
               <div part="custom-icon">
                 <slot name="custom-icon"></slot>
@@ -48,9 +48,9 @@ export class TelekomMegaMenuHeading {
                 size={10}
                 selected
                 part="scale-icon-navigation-right"
-              />  
+              />
             </div>
-            }
+          )}
         </h2>
       </Host>
     );

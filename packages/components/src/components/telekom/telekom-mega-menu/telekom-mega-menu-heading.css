@@ -5,7 +5,9 @@
   --height: 22px;
 }
 
-[part='base'],[part='link'],[part='heading'] {
+[part='base'],
+[part='link'],
+[part='heading'] {
   font-weight: var(--font-weight);
   font-size: var(--font-weight);
   line-height: var(--line-height);
@@ -14,7 +16,6 @@
   align-items: center;
   height: var(--height);
 }
-
 
 [part='custom-icon'] ::slotted(*) {
   margin-right: 8px;
