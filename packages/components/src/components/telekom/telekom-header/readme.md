@@ -20,6 +20,7 @@
 | Part                | Description |
 | ------------------- | ----------- |
 | `"app-logo"`        |             |
+| `"app-name-text"`   |             |
 | `"body"`            |             |
 | `"bottom-app-name"` |             |
 | `"bottom-bar"`      |             |
