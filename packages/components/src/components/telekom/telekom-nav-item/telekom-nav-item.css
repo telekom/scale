@@ -19,6 +19,7 @@
 .scale-telekom-nav-item {
   --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
   --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+  --_font-size-main-nav: var(--telekom-typography-font-size-body);
 }
 
 @media screen and (--md) {
@@ -45,6 +46,7 @@
   .scale-telekom-nav-item {
     --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x8);
+    --_font-size-main-nav: var(--telekom-typography-font-size-callout);
   }
 }
 
@@ -83,8 +85,8 @@
 .scale-telekom-nav-list[variant='functions']
   > .scale-telekom-nav-item
   > :where(a, button) {
-  font-size: 1.125rem; /* 18px, no token 😢 */
-  line-height: var(--telekom-typography-line-spacing-tight);
+  font-size: var(--_font-size-main-nav);
+  line-height: var(--telekom-typography-line-spacing-standard);
   font-weight: var(--telekom-typography-font-weight-extra-bold);
   padding-bottom: var(--_spacing-bottom-slotted-bottom);
 }

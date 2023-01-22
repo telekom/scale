@@ -255,8 +255,8 @@
       >
         <scale-telekom-nav-item>
           <a href="#">
-            <scale-badge count="1" label="messages" label-visually-hidden>
-              <scale-icon-user-file-user> </scale-icon-user-file-user>
+            <scale-badge count="2" label="Messages" label-visually-hidden>
+              <scale-icon-user-file-user size="20"> </scale-icon-user-file-user>
             </scale-badge>
           </a>
         </scale-telekom-nav-item>
@@ -264,7 +264,7 @@
         <scale-telekom-nav-item active>
           <a href="#">
             <scale-badge count="1" label="Cart">
-              <scale-icon-action-shopping-cart selected>
+              <scale-icon-action-shopping-cart size="20" selected>
               </scale-icon-action-shopping-cart>
             </scale-badge>
           </a>
@@ -272,19 +272,18 @@
 
         <scale-telekom-nav-item>
           <button>
-            <scale-icon-action-search> </scale-icon-action-search>
+            <scale-icon-action-search size="20"> </scale-icon-action-search>
           </button>
         </scale-telekom-nav-item>
 
         <scale-telekom-nav-item class="mobile-menu">
           <button class="mobile-menu-trigger">
             <scale-badge>
-              <scale-icon-action-menu></scale-icon-action-menu>
+              <scale-icon-action-menu size="20"></scale-icon-action-menu>
             </scale-badge>
           </button>
 
           <scale-telekom-nav-flyout
-            expanded
             class="mobile-menu-flyout"
             style="--top: 0; --height: 100vh; --spacing-x: 0; --duration: 0"
           >
@@ -361,5 +360,30 @@
         </scale-telekom-nav-item>
       </scale-telekom-nav-list>
     </scale-telekom-header>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    <style>
+      scale-grid {
+        border: 1px solid cyan;
+      }
+      scale-grid-item {
+        background: lime;
+        --size-md: 4;
+      }
+      [foo] {
+        --size-md: 2;
+      }
+    </style>
+    <scale-grid>
+      <scale-grid-item foo>1</scale-grid-item>
+      <scale-grid-item foo>2</scale-grid-item>
+      <scale-grid-item>3</scale-grid-item>
+      <scale-grid-item>4</scale-grid-item>
+      <scale-grid-item>5</scale-grid-item>
+    </scale-grid>
   </body>
 </html>
