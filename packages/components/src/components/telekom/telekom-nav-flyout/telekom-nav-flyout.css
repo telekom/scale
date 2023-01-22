@@ -10,14 +10,15 @@
  */
 
 :host {
-  --top: 100%;
+  --top: var(--scl-telekom-header-height, 0);
   --left: 0;
-  --width: 100%;
+  --width: 100vw;
   --height: auto;
-  --position: absolute;
+  --position: fixed;
   --background: var(--telekom-color-background-surface);
   --shadow: none;
   --spacing-x: var(--scl-telekom-header-container-spacing-x, 0);
+  --z-index: 7;
 
   --duration: var(--telekom-motion-duration-transition);
   --translate-x: 0;
@@ -34,6 +35,7 @@
 :host::part(base) {
   display: none;
   position: var(--position);
+  z-index: var(--z-index);
   top: var(--top);
   left: var(--left);
   width: var(--width);

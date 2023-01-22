@@ -37,22 +37,28 @@
   --_display-meta-nav-external: none;
   --_display-lang-switcher: none;
 
-  --_spacing-x: 0 16px 0 0;
+  --_max-width-container: 1552px; /* value matches scale-grid — ideally we'd have this in a global var *sigh* */
+  --_spacing-x-container: var(--telekom-spacing-unit-x4);
+  --_column-gap-container: var(--telekom-spacing-unit-x8);
+  --_grid-template-columns-container: auto;
+  --_grid-column-body: auto;
+
   --_spacing-left-body: 0;
   --_spacing-right-top-app-name: 32px;
   --_spacing-right-bottom-app-name: 32px;
+  --_left-logo: 0;
 
   --_base-menu-justify-content: end;
 
   /* TODO make sure we want to "expose" variables this way */
   --scl-telekom-header-container-spacing-x: var(--_spacing-x);
+  --scl-telekom-header-height: var(--_height);
 }
 
 @media screen and (--md) {
   :host {
     --_display-bottom-app-name: block;
-    --_spacing-x: 0 16px;
-    --_spacing-left-body: 32px;
+    --_spacing-left-body: 92px;
   }
 }
 
@@ -71,11 +77,15 @@
     --_display-top-app-name: block;
     --_display-bottom-app-name: none;
 
-    --_spacing-x: 0 24px;
-    --_spacing-left-body: 44px;
+    --_grid-template-columns-container: repeat(16, minmax(0, 1fr));
+    --_grid-column-body: 3 / span 14;
+    --_spacing-left-body: 0;
+    --_spacing-x-container: var(--telekom-spacing-unit-x6);
     --_spacing-right-bottom-app-name: 0;
 
     --_base-menu-justify-content: space-between;
+
+    --scl-telekom-header-height: var(--_height);
   }
   :host::part(scrolled) {
     --_height: 72px;
@@ -94,6 +104,8 @@
     --_animation-app-name: slideInLeft var(--telekom-motion-duration-animation)
         forwards,
       appear var(--telekom-motion-duration-animation) forwards;
+
+    --scl-telekom-header-height: var(--_height);
   }
 
   :host::part(scrolled-back) {
@@ -113,14 +125,7 @@
     --_height-top-bar: 30px;
     --_height-bottom-bar: 66px;
 
-    --_spacing-x: 0 24px;
-    --_spacing-left-body: 96px;
-  }
-
-  :host::part(scrolled),
-  :host::part(scrolled-back) {
-    --_spacing-x: 0 24px;
-    --_spacing-left-body: 96px;
+    --scl-telekom-header-height: var(--_height);
   }
 }
 
@@ -132,13 +137,13 @@
     --_height-top-bar: 30px;
     --_height-bottom-bar: 90px;
 
-    --_spacing-x: 0 96px 0 120px;
-    --_spacing-left-body: 72px;
+    --scl-telekom-header-height: var(--_height);
   }
-  :host::part(scrolled),
-  :host::part(scrolled-back) {
-    --_spacing-x: 0 96px 0 120px;
-    --_spacing-left-body: 72px;
+}
+
+@media screen and (min-width: 1552px) {
+  :host {
+    --_left-logo: var(--_spacing-x-container);
   }
 }
 
@@ -149,12 +154,15 @@
 } */
 
 slot[name='logo'] {
-  height: var(--_height);
-  width: var(--_height);
-  background: var(--background-logo);
+  position: absolute;
+  top: 0;
+  left: var(--_left-logo);
   display: flex;
   align-items: center;
   justify-content: center;
+  height: var(--_height);
+  width: var(--_height);
+  background: var(--background-logo);
   transition: var(--transition);
 }
 
@@ -191,8 +199,16 @@ slot[name='functions'] {
 }
 
 [part~='container'] {
-  margin: var(--_spacing-x);
-  display: flex;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: var(--_grid-template-columns-container);
+  column-gap: var(--_column-gap-container);
+  position: relative;
+  max-width: var(--_max-width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--_spacing-x-container);
+  padding-right: var(--_spacing-x-container);
 }
 
 [part~='app-logo'] {
@@ -222,6 +238,7 @@ slot[name='functions'] {
 
 [part~='body'] {
   display: block;
+  grid-column: var(--_grid-column-body);
   flex: 1; /* used to be width: 100% */
   margin-left: var(--_spacing-left-body);
 }
