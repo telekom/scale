@@ -14,6 +14,13 @@
 | `triggerSelector` | `trigger-selector` | Selector to query the trigger element in case it's not the previous sibling | `string`  | `undefined` |
 
 
+## Events
+
+| Event            | Description | Type               |
+| ---------------- | ----------- | ------------------ |
+| `scale-expanded` |             | `CustomEvent<any>` |
+
+
 ## Methods
 
 ### `hide() => Promise<void>`

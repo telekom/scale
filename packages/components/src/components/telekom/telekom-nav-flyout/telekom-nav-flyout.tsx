@@ -14,6 +14,7 @@ import {
   h,
   Host,
   Element,
+  Event,
   Listen,
   Method,
   Prop,
@@ -22,6 +23,7 @@ import {
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import cx from 'classnames';
+import { emitEvent } from '../../../utils/utils';
 
 // TODO make util
 const animFinished = (el: HTMLElement | ShadowRoot) => {
@@ -57,6 +59,8 @@ export class TelekomNavItem {
 
   @State() isExpanded: boolean = this.expanded;
   @State() animationState: 'in' | 'out' | undefined;
+
+  @Event({ eventName: 'scale-expanded', bubbles: true }) scaleExpanded;
 
   private parentElement: HTMLElement;
 
@@ -141,7 +145,6 @@ export class TelekomNavItem {
     event.preventDefault();
     event.stopImmediatePropagation();
     this.expanded = !this.expanded;
-    this.expanded ? this.show() : this.hide();
     this.parentElement.removeEventListener('mouseleave', this.handlePointerOut);
   };
 
@@ -166,6 +169,7 @@ export class TelekomNavItem {
       await animFinished(this.hostElement.shadowRoot);
       this.animationState = undefined;
       this.triggerElement.setAttribute('aria-expanded', 'true');
+      emitEvent(this, 'scaleExpanded', { expanded: true });
     });
   }
 
@@ -177,6 +181,7 @@ export class TelekomNavItem {
       this.animationState = undefined;
       this.isExpanded = false;
       this.triggerElement.setAttribute('aria-expanded', 'false');
+      emitEvent(this, 'scaleExpanded', { expanded: false });
     });
   }
 
