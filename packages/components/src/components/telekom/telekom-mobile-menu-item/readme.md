@@ -28,7 +28,6 @@
 
 | Part                     | Description |
 | ------------------------ | ----------- |
-| `"active-indicator"`     |             |
 | `"icon-right-container"` |             |
 
 
@@ -37,11 +36,13 @@
 ### Depends on
 
 - [scale-icon-navigation-right](../../icons/navigation-right)
+- [scale-divider](../../divider)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-telekom-mobile-menu-item --> scale-icon-navigation-right
+  scale-telekom-mobile-menu-item --> scale-divider
   style scale-telekom-mobile-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
