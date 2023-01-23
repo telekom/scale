@@ -73,16 +73,6 @@ export class TelekomNavItem {
     }
   }
 
-  // @Listen('focusin', { target: 'document' })
-  // handleDocumentFocusin(event) {
-  //   if (!this.isExpanded) {
-  //     return;
-  //   }
-  //   if (!this.hostElement.contains(event.target)) {
-  //     this.expanded = false;
-  //   }
-  // }
-
   @Listen('scale-close-nav-flyout')
   handleScaleCloseNavFlyout() {
     this.expanded = false;
@@ -114,15 +104,35 @@ export class TelekomNavItem {
     }
     this.triggerElement.setAttribute('aria-haspopup', 'true');
     this.triggerElement.setAttribute('aria-expanded', String(this.expanded));
-    this.triggerElement.addEventListener('click', this.handleTriggerClick);
     if (this.hover) {
       this.triggerElement.addEventListener('mouseenter', this.handlePointerIn);
+      this.triggerElement.addEventListener(
+        'keypress',
+        this.handleSpaceOrEnterForHover
+      );
+    } else {
+      this.triggerElement.addEventListener('click', this.handleTriggerClick);
     }
   }
 
   disconnectedCallback() {
     this.triggerElement.removeEventListener('click', this.handleTriggerClick);
+    this.triggerElement.removeEventListener('mouseenter', this.handlePointerIn);
+    this.triggerElement.removeEventListener(
+      'keypress',
+      this.handleSpaceOrEnterForHover
+    );
   }
+
+  handleSpaceOrEnterForHover = (event: KeyboardEvent) => {
+    if (this.isExpanded) {
+      return;
+    }
+    if (event.key === 'Enter' || event.key === ' ') {
+      this.expanded = true;
+      this.show();
+    }
+  };
 
   handleTriggerClick = (event: MouseEvent) => {
     if (event.ctrlKey) {
