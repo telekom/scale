@@ -71,6 +71,8 @@ import dropdownSelect_en from 'raw-loader!../../stories/components/dropdown-sele
 import dropdownSelect_de from 'raw-loader!../../stories/components/dropdown-select/dropdown-select_de.md';
 import dropdown_en from 'raw-loader!../../stories/components/dropdown/dropdown.md';
 import dropdown_de from 'raw-loader!../../stories/components/dropdown/dropdown_de.md';
+import segmentedButton_en from 'raw-loader!../../stories/components/segmented-button/segmented-button.md';
+import segmentedButton_de from 'raw-loader!../../stories/components/segmented-button/segmented-button_de.md';
 import sidebarNav_en from 'raw-loader!../../stories/components/sidebar-navigation/sidebar-nav.md';
 import sidebarNav_de from 'raw-loader!../../stories/components/sidebar-navigation/sidebar-nav_de.md';
 import slider_en from 'raw-loader!../../stories/components/slider/slider.md';
@@ -179,6 +181,8 @@ const Usage = (props) => {
     'dropdown-select_de': dropdownSelect_de,
     dropdown_en,
     dropdown_de,
+    'segmented-button_en': segmentedButton_en,
+    'segmented-button_de': segmentedButton_de,
     'sidebar-navigation_en': sidebarNav_en,
     'sidebar-navigation_de': sidebarNav_de,
     slider_en,
