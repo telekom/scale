@@ -98,8 +98,6 @@ export class TelekomMobileMenuItem {
               hidden: !!this.openChildren.length,
             })}
           >
-            <div part="active-indicator" />
-
             <slot></slot>
             <div part="icon-right-container">
               {!!this.children.length && !this.open && (
@@ -109,6 +107,7 @@ export class TelekomMobileMenuItem {
           </div>
           {<slot name="children"></slot>}
         </nav>
+        <scale-divider></scale-divider>
       </Host>
     );
   }
