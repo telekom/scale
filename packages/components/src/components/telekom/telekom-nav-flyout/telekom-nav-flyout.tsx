@@ -14,6 +14,7 @@ import {
   h,
   Host,
   Element,
+  Event,
   Listen,
   Method,
   Prop,
@@ -22,6 +23,7 @@ import {
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import cx from 'classnames';
+import { emitEvent } from '../../../utils/utils';
 
 // TODO make util
 const animFinished = (el: HTMLElement | ShadowRoot) => {
@@ -58,6 +60,8 @@ export class TelekomNavItem {
   @State() isExpanded: boolean = this.expanded;
   @State() animationState: 'in' | 'out' | undefined;
 
+  @Event({ eventName: 'scale-expanded', bubbles: true }) scaleExpanded;
+
   private parentElement: HTMLElement;
 
   @Listen('keydown', { target: 'window' })
@@ -72,16 +76,6 @@ export class TelekomNavItem {
       } catch (err) {}
     }
   }
-
-  // @Listen('focusin', { target: 'document' })
-  // handleDocumentFocusin(event) {
-  //   if (!this.isExpanded) {
-  //     return;
-  //   }
-  //   if (!this.hostElement.contains(event.target)) {
-  //     this.expanded = false;
-  //   }
-  // }
 
   @Listen('scale-close-nav-flyout')
   handleScaleCloseNavFlyout() {
@@ -114,15 +108,35 @@ export class TelekomNavItem {
     }
     this.triggerElement.setAttribute('aria-haspopup', 'true');
     this.triggerElement.setAttribute('aria-expanded', String(this.expanded));
-    this.triggerElement.addEventListener('click', this.handleTriggerClick);
     if (this.hover) {
       this.triggerElement.addEventListener('mouseenter', this.handlePointerIn);
+      this.triggerElement.addEventListener(
+        'keypress',
+        this.handleSpaceOrEnterForHover
+      );
+    } else {
+      this.triggerElement.addEventListener('click', this.handleTriggerClick);
     }
   }
 
   disconnectedCallback() {
     this.triggerElement.removeEventListener('click', this.handleTriggerClick);
+    this.triggerElement.removeEventListener('mouseenter', this.handlePointerIn);
+    this.triggerElement.removeEventListener(
+      'keypress',
+      this.handleSpaceOrEnterForHover
+    );
   }
+
+  handleSpaceOrEnterForHover = (event: KeyboardEvent) => {
+    if (this.isExpanded) {
+      return;
+    }
+    if (event.key === 'Enter' || event.key === ' ') {
+      this.expanded = true;
+      this.show();
+    }
+  };
 
   handleTriggerClick = (event: MouseEvent) => {
     if (event.ctrlKey) {
@@ -131,7 +145,6 @@ export class TelekomNavItem {
     event.preventDefault();
     event.stopImmediatePropagation();
     this.expanded = !this.expanded;
-    this.expanded ? this.show() : this.hide();
     this.parentElement.removeEventListener('mouseleave', this.handlePointerOut);
   };
 
@@ -156,6 +169,7 @@ export class TelekomNavItem {
       await animFinished(this.hostElement.shadowRoot);
       this.animationState = undefined;
       this.triggerElement.setAttribute('aria-expanded', 'true');
+      emitEvent(this, 'scaleExpanded', { expanded: true });
     });
   }
 
@@ -167,6 +181,7 @@ export class TelekomNavItem {
       this.animationState = undefined;
       this.isExpanded = false;
       this.triggerElement.setAttribute('aria-expanded', 'false');
+      emitEvent(this, 'scaleExpanded', { expanded: false });
     });
   }
 

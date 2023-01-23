@@ -70,7 +70,8 @@
   cursor: pointer;
 }
 
-.scale-telekom-nav-item > :where(a, button):hover {
+.scale-telekom-nav-item > :where(a, button):hover,
+.scale-telekom-nav-item > :where(button[aria-expanded='true']) {
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 .scale-telekom-nav-item > :where(a, button):active {
@@ -109,6 +110,28 @@
   content: '';
   width: 100%;
   height: var(--telekom-spacing-unit-x1);
+  background: var(--telekom-color-primary-standard);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button):hover:after,
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button):hover:after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after {
+  content: '';
+  width: 100%;
+  height: var(--telekom-spacing-unit-x05);
   background: var(--telekom-color-primary-standard);
   display: block;
   position: absolute;
