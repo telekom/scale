@@ -26,17 +26,23 @@ Ein Segmented Button besteht aus zwei bis fünf Auswahlmöglichkeiten derselben 
 
 ## Basistypen
 
-![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png)
+<div style=" width: 50%;">
+     <div  style="float: left; width: 40%;">
+        ![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png) <br>
+        <h3>Einfachauswahl:</h3> <br> 
+        Wie bei der Radio Button Group können Nutzer\*innen nur eine Option auswählen. Es ist immer eine Option vorausgewählt. Gib bei Bedarf eine neutrale Option an – zum Beispiel „Alle“, um gesetzte Filter aufzuheben.
+    </div>
+     <div  style="float: left; width: 20%;">
+        &nbsp;
+    </div>
+     <div style="float: left; width: 40%;">
+        ![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png) <br> 
+        <h3>Mehrfachauswahl:</h3> <br> 
+       Wie bei Check Box Groups kannst du auch mehrere Optionen auswählen. Die Mehrfachauswahl wird in der Regel zum Filtern von Inhalten benutzt.
+    </div>
+</div>
 
-### Einfachauswahl:
-
-Wie bei der Radio Button Group können Nutzer\*innen nur eine Option auswählen. Es ist immer eine Option vorausgewählt. Gib bei Bedarf eine neutrale Option an – zum Beispiel „Alle“, um gesetzte Filter aufzuheben.
-
-![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png)
-
-### Mehrfachauswahl:
-
-Wie bei Check Box Groups kannst du auch mehrere Optionen auswählen. Die Mehrfachauswahl wird in der Regel zum Filtern von Inhalten benutzt.
+# &nbsp;
 
 ## Varianten
 
@@ -68,7 +74,7 @@ Der Segmented Button ist in drei Größen verfügbar:
 - Medium
 - Large
 
-Die Breite des Segmented Buttons passt sich der Textlänge an. Bei Bedarf kannst du ihn auch auf volle Breite umschalten. Wenn die Breite durch die Textlänge definiert wird, passen sich alle Segmente dem längsten Segment an.
+Das Segment mit dem längsten Label gibt die Breite aller Segmente vor. Bei Bedarf kannst du den Segmented Button auf eine flächenfüllende Breite umschalten.
 
 ## Deaktivierter Zustand
 
@@ -100,7 +106,7 @@ Das Icon unterstützt entweder das Label, um den Inhalt zu veranschaulichen, ode
 
 Das Label beschreibt einzelne Auswahlmöglichkeiten und sollte kurz und präzise sein.
 
-## Best Practices
+## Best Practice
 
 - Mische keine Varianten: Nur Text, Text und Icon, Nur Icon.
 - Verwende kurze und eindeutige Labels.
@@ -119,9 +125,9 @@ Das Label beschreibt einzelne Auswahlmöglichkeiten und sollte kurz und präzise
 
 ## Verwandte Komponenten
 
-- Tab Navigation
-- Buttons
-- Radio Buttons Group
-- Checkbox Group
-- Chips
-- Icon Button
+[Tab Navigation](?path=/usage/components-tab-navigation--text-icon),
+[Button](?path=/usage/components-button--standard),
+[Radio Button Group](?path=/usage/components-radio-button-group--standard),
+[Checkbox Group](?path=/usage/components-checkbox-group--standard),
+[Chip](?path=/usage/beta-components-chip--standard),
+[Icon Button](?path=/usage/components-button--icon-only)

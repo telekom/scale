@@ -58,13 +58,13 @@ A set of possible responses in a chat. After clicking/tapping on the chip, it fa
 
 ## Variants
 
-<table> <tr><th>![Image Name](assets/3_components/chip/Chips-Variant-Outline.png)</th><th>![Image Name](assets/3_components/chip/Chips-Variant-Standard.png)</th></tr></table>
+![Image Name](assets/3_components/chip/Standard_Chip.png)
 
 Chips can be displayed in two variants: standard and outline.
 
 ### Disabled state
 
-<table> <tr><th>![Image Name](assets/3_components/chip/Chips-Disabled-Outline-EN.png)</th><th>![Image Name](assets/3_components/chip/Chips-Disabled-Standard-EN.png)</th></tr></table>
+![Image Name](assets/3_components/chip/chips-disabled-en.png)
 
 In the disabled state, the chip's interactive function is switched off. Use this state when an interaction can’t occur due to permissions or dependencies.
 
@@ -84,7 +84,7 @@ Depending on the type, the close icon or checkmark icon is displayed.
 
 Add an icon if it makes it easier for users to understand the function of the chip.
 
-## Best Practices
+## Best practice
 
 ### Chips in groups
 
@@ -95,4 +95,7 @@ Add an icon if it makes it easier for users to understand the function of the ch
 
 ## Related components
 
-Tag, Button, Segmented Button, Checkbox Group
+[Tag](?path=/usage/components-tag--standard),
+[Button](?path=/usage/components-button--standard),
+[Segmented Button](?path=/usage/beta-components-segmented-button--standard),
+[Checkbox Group](?path=/usage/components-checkbox-group--standard)

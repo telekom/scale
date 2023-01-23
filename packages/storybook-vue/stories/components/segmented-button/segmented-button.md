@@ -30,17 +30,23 @@ Don’t use a segmented button when:
 
 ## Basic types
 
-![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png)
+<div style=" width: 50%;">
+     <div  style="float: left; width: 40%;">
+        ![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png) <br>
+        <h3>Single selection</h3> <br> 
+        As with the Radio Button Group, users can only select one option. One option is always preselected. If necessary, specify a neutral option – for example "All" to override the set filters. 
+    </div>
+     <div  style="float: left; width: 20%;">
+        &nbsp;
+    </div>
+     <div  style="float: left; width: 40%;">
+        ![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png) <br> 
+        <h3> Multiple selection</h3> <br> 
+        As with Check Box Groups, users can also select multiple options. Multiple selections are typically used to filter content. 
+    </div>
+</div>
 
-### Single selection
-
-As with the Radio Button Group, users can only select one option. One option is always preselected. If necessary, specify a neutral option – for example "All" to override the set filters.
-
-![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png)
-
-### Multiple selection
-
-As with Check Box Groups, users can also select multiple options. Multiple selections are typically used to filter content.
+# &nbsp;
 
 ## Variants
 
@@ -73,7 +79,7 @@ Segmented buttons are available in three different sizes:
 - Medium
 - Large
 
-The width of the segmented button initially adapts to the length of the text, but can also be switched to full width if necessary. If the width is defined by the text length, all segments fit to the longest segment.
+The segment with the longest label dictates the width of all segments. If necessary, you can switch the segmented button to the full width of the area
 
 ## Disabled state
 
@@ -122,9 +128,9 @@ The label describes individual choices and should be short and precise.
 
 ## Related components
 
-- Tab Navigation
-- Button
-- Radio Button Group
-- Checkbox Group
-- Chip
-- Icon Button
+[Tab Navigation](?path=/usage/components-tab-navigation--text-icon),
+[Button](?path=/usage/components-button--standard),
+[Radio Button Group](?path=/usage/components-radio-button-group--standard),
+[Checkbox Group](?path=/usage/components-checkbox-group--standard),
+[Chip](?path=/usage/beta-components-chip--standard),
+[Icon Button](?path=/usage/components-button--icon-only)

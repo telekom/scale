@@ -7,9 +7,9 @@ Chips sind kontextabhängige Komponenten mit denen Nutzer\*innen Inhalte filtern
 
 ## Allgemein
 
-Chips bestehen aus relevanten Schlüsselwörtern in einem Container. Sie erscheinen häufig dynamisch – ausgelöst durch eine Aktion der Nutzer\*innen – und als Gruppe .
+Chips bestehen aus relevanten Schlüsselwörtern in einem Container. Sie erscheinen häufig dynamisch – ausgelöst durch eine Aktion der Nutzer\*innen – und als Gruppe.
 
-### Verwende einen Chip um
+### Verwende einen Chip, um
 
 - Nutzer\*innen Filtermöglichkeiten anzubieten,
 - die von Nutzer\*innen gesetzten Filter darzustellen oder
@@ -54,13 +54,13 @@ Eine Gruppe von Antwortmöglichkeiten in einem Chat. Nach Klick/Tap auf den Chip
 
 ## Varianten
 
-<table> <tr><th>![Image Name](assets/3_components/chip/Chips-Variant-Outline.png)</th><th>![Image Name](assets/3_components/chip/Chips-Variant-Standard.png)</th></tr></table>
+![Image Name](assets/3_components/chip/Standard_Chip.png)
 
 Chips lassen sich in zwei Varianten darstellen: Standard und Outline.
 
 ### Deaktivierter Zustand
 
-<table> <tr><th>![Image Name](assets/3_components/chip/Chips-Disabled-Outline-DE.png)</th><th>![Image Name](assets/3_components/chip/Chips-Disabled-Standard-DE.png)</th></tr></table>
+![Image Name](assets/3_components/chip/chips-disabled-de.png)
 
 Im deaktivierten Zustand ist die interaktive Funktion des Chips ausgeschaltet. Verwende diesen Zustand, wenn eine Interaktion aufgrund von Berechtigungen oder Abhängigkeiten nicht möglich ist.
 
@@ -80,7 +80,7 @@ Je nach Typ wird das Schließen-Icon oder Checkmark Icon angezeigt.
 
 Füge ein Icon hinzu, wenn Nutzer\*innen die Funktion des Chips dadurch leichter verstehen können.
 
-## Best Practices
+## Best Practice
 
 ### Chips in Gruppierungen
 
@@ -91,4 +91,7 @@ Füge ein Icon hinzu, wenn Nutzer\*innen die Funktion des Chips dadurch leichter
 
 ## Verwandte Komponenten
 
-Tag, Button, Segmented Button, Checkbox Group
+[Tag](?path=/usage/components-tag--standard),
+[Button](?path=/usage/components-button--standard),
+[Segmented Button](?path=/usage/beta-components-segmented-button--standard),
+[Checkbox Group](?path=/usage/components-checkbox-group--standard)
