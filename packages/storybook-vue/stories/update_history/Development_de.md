@@ -4,7 +4,7 @@ Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und ver
 
 ## Neue Beta-Komponenten
 
-23.01.2023
+25.01.2023
 
 - Veröffentlichung der neuen Beta-Komponenten Segmented Button und Chip.
 - Der Segmented Button ersetzt die Beta-Komponente Toggle Group.

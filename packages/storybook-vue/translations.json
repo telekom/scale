@@ -128,7 +128,7 @@
     "de": "Beta Komponenten"
   },
   {
-    "elementSelector": "#archived-components",
+    "elementSelector": "#deprecated-components",
     "en": "Deprecated Components",
     "de": "Deprecated Komponenten"
   },
