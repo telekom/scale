@@ -37,7 +37,7 @@
   --_display-meta-nav-external: none;
   --_display-lang-switcher: none;
 
-  --_max-width-container: 1552px; /* value matches scale-grid — ideally we'd have this in a global var *sigh* */
+  --_max-width-container: 1680px; /* value matches scale-grid — ideally we'd have this in a global var *sigh* */
   --_spacing-x-container: var(--telekom-spacing-unit-x4);
   --_column-gap-container: var(--telekom-spacing-unit-x8);
   --_grid-template-columns-container: auto;
@@ -127,13 +127,9 @@
     --_height-top-bar: 30px;
     --_height-bottom-bar: 90px;
 
-    --scl-telekom-header-height: var(--_height);
-  }
-}
-
-@media screen and (min-width: 1552px) {
-  :host {
     --_left-logo: var(--_spacing-x-container);
+
+    --scl-telekom-header-height: var(--_height);
   }
 }
 
@@ -255,6 +251,7 @@ slot[name='functions'] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: var(--transition-common-scrolled);
 }
 
 /*
