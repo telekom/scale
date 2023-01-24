@@ -3,6 +3,4 @@
     <img src="assets/deprecated.png" alt="Deprecated Component" />
 </div>
 
-## Deprecated-Komponente
-
 Wir unterstützen die Toggle Group nicht mehr. Bitte verwende stattdessen den [Segmented Button](?path=/usage/beta-components-segmented-button--standard).

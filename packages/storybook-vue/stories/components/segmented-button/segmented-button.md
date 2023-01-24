@@ -30,23 +30,17 @@ Don’t use a segmented button when:
 
 ## Basic types
 
-<div style=" width: 50%;">
-     <div  style="float: left; width: 40%;">
-        ![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png) <br>
-        <h3>Single selection</h3> <br> 
-        As with the Radio Button Group, users can only select one option. One option is always preselected. If necessary, specify a neutral option – for example "All" to override the set filters. 
-    </div>
-     <div  style="float: left; width: 20%;">
-        &nbsp;
-    </div>
-     <div  style="float: left; width: 40%;">
-        ![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png) <br> 
-        <h3> Multiple selection</h3> <br> 
-        As with Check Box Groups, users can also select multiple options. Multiple selections are typically used to filter content. 
-    </div>
-</div>
+### Single selection:
 
-# &nbsp;
+![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png)
+
+As with the Radio Button Group, users can only select one option. One option is always preselected. If necessary, specify a neutral option – for example "All" to override the set filters.
+
+### Multiple selection:
+
+![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png)
+
+As with Check Box Groups, users can also select multiple options. Multiple selections are typically used to filter content.
 
 ## Variants
 

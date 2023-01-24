@@ -26,23 +26,17 @@ Ein Segmented Button besteht aus zwei bis fünf Auswahlmöglichkeiten derselben 
 
 ## Basistypen
 
-<div style=" width: 50%;">
-     <div  style="float: left; width: 40%;">
-        ![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png) <br>
-        <h3>Einfachauswahl:</h3> <br> 
-        Wie bei der Radio Button Group können Nutzer\*innen nur eine Option auswählen. Es ist immer eine Option vorausgewählt. Gib bei Bedarf eine neutrale Option an – zum Beispiel „Alle“, um gesetzte Filter aufzuheben.
-    </div>
-     <div  style="float: left; width: 20%;">
-        &nbsp;
-    </div>
-     <div style="float: left; width: 40%;">
-        ![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png) <br> 
-        <h3>Mehrfachauswahl:</h3> <br> 
-       Wie bei Check Box Groups kannst du auch mehrere Optionen auswählen. Die Mehrfachauswahl wird in der Regel zum Filtern von Inhalten benutzt.
-    </div>
-</div>
+### Einfachauswahl:
 
-# &nbsp;
+![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png)
+
+Wie bei der Radio Button Group können Nutzer\*innen nur eine Option auswählen. Es ist immer eine Option vorausgewählt. Gib bei Bedarf eine neutrale Option an – zum Beispiel „Alle“, um gesetzte Filter aufzuheben.
+
+### Mehrfachauswahl:
+
+![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png)
+
+Wie bei Check Box Groups kannst du auch mehrere Optionen auswählen. Die Mehrfachauswahl wird in der Regel zum Filtern von Inhalten benutzt.
 
 ## Varianten
 
