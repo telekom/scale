@@ -181,7 +181,8 @@ slot[name='functions'] {
   position: fixed;
   top: 0;
   width: 100%;
-  transition: height var(--telekom-motion-duration-immediate) var(--telekom-motion-easing-standard);
+  transition: height var(--telekom-motion-duration-immediate)
+    var(--telekom-motion-easing-standard);
 }
 
 [part~='container'] {
