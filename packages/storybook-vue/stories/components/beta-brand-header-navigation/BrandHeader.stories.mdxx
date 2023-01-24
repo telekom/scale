@@ -365,7 +365,7 @@ import TelekomHeader from './TelekomHeader.vue';
                  >
                    <scale-telekom-nav-item>
                      <a href="#">
-                       Metalink ext 1
+                       Metalink external
                        <scale-icon-navigation-external-link
                          size="11"
                        ></scale-icon-navigation-external-link>
@@ -373,7 +373,7 @@ import TelekomHeader from './TelekomHeader.vue';
                    </scale-telekom-nav-item>
                    <scale-telekom-nav-item>
                      <a href="#">
-                       Metalink ext 2
+                       Metalink external
                        <scale-icon-navigation-external-link
                          size="11"
                        ></scale-icon-navigation-external-link>
@@ -386,10 +386,10 @@ import TelekomHeader from './TelekomHeader.vue';
                    alignment="left"
                  >
                    <scale-telekom-nav-item>
-                     <a href="#">Metalink 1</a>
+                     <a href="#">Metalink internal</a>
                    </scale-telekom-nav-item>
                    <scale-telekom-nav-item>
-                     <a href="#">Metalink 2</a>
+                     <a href="#">Metalink internal</a>
                    </scale-telekom-nav-item>
                  </scale-telekom-nav-list>
                  <section slot="language-switch"></section>
@@ -444,28 +444,6 @@ import TelekomHeader from './TelekomHeader.vue';
                          variant="meta-nav-external"
                          slot="top-left"
                          alignment="left"
-                       >
-                         <scale-telekom-nav-item>
-                           <a href="#">
-                             Metalink ext 1
-                             <scale-icon-navigation-external-link
-                               size="11"
-                             ></scale-icon-navigation-external-link>
-                           </a>
-                         </scale-telekom-nav-item>
-                         <scale-telekom-nav-item>
-                           <a href="#">
-                             Metalink ext 2
-                             <scale-icon-navigation-external-link
-                               size="11"
-                             ></scale-icon-navigation-external-link>
-                           </a>
-                         </scale-telekom-nav-item>
-                       </scale-telekom-nav-list>
-                       <scale-telekom-nav-list
-                         variant="meta-nav-external"
-                         slot="top-right"
-                         alignment="right"
                        >
                          <scale-telekom-nav-item>
                            <a href="#">MK</a>
@@ -715,11 +693,17 @@ import TelekomHeader from './TelekomHeader.vue';
                          style="--flex-direction: column"
                        >
                          <scale-telekom-nav-item>
-                           <a href="#">Metalink ext 1</a>
+                           <a href="#">Metanavigation external</a>
                          </scale-telekom-nav-item>
                          <scale-telekom-nav-item>
-                           <a href="#">Metalink ext 2</a>
+                           <a href="#">Metanavigation external</a>
                          </scale-telekom-nav-item>
+                         <scale-telekom-nav-item>
+                           <a href="#">Metanavigation internal</a>
+                         </scale-telekom-nav-item>
+                         <scale-telekom-nav-item>
+                           <a href="#">Metanavigation internal</a>
+                         </scale-telekom-nav-item>                         
                        </scale-telekom-nav-list>
                      </scale-telekom-mobile-menu>
                    </scale-telekom-nav-flyout>
