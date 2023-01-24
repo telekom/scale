@@ -186,10 +186,24 @@ import TelekomHeader from './TelekomHeader.vue';
                   style="--flex-direction: column"
                 >
                   <scale-telekom-nav-item>
-                    <a href="#">Metanavigation external</a>
+                    <a href="#">Metanavigation external
+                    <scale-icon-navigation-external-link
+                      size="11"
+                    ></scale-icon-navigation-external-link>                      
+                    </a>
+                    <scale-icon-navigation-external-link
+                      size="11"
+                    ></scale-icon-navigation-external-link>                        
                   </scale-telekom-nav-item>
                   <scale-telekom-nav-item>
-                    <a href="#">Metanavigation external</a>
+                    <a href="#">Metanavigation external
+                    <scale-icon-navigation-external-link
+                      size="11"
+                    ></scale-icon-navigation-external-link>                      
+                    </a>
+                    <scale-icon-navigation-external-link
+                      size="11"
+                    ></scale-icon-navigation-external-link>                        
                   </scale-telekom-nav-item>
                   <scale-telekom-nav-item>
                     <a href="#">Metanavigation internal</a>
@@ -357,10 +371,18 @@ import TelekomHeader from './TelekomHeader.vue';
                   style="--flex-direction: column"
                 >
                   <scale-telekom-nav-item>
-                    <a href="#">Metanavigation external</a>
+                    <a href="#">Metanavigation external
+                    <scale-icon-navigation-external-link
+                      size="11"
+                    ></scale-icon-navigation-external-link>                      
+                    </a>
                   </scale-telekom-nav-item>
                   <scale-telekom-nav-item>
-                    <a href="#">Metanavigation external</a>
+                    <a href="#">Metanavigation external
+                    <scale-icon-navigation-external-link
+                      size="11"
+                    ></scale-icon-navigation-external-link>                      
+                    </a>
                   </scale-telekom-nav-item>
                   <scale-telekom-nav-item>
                     <a href="#">Metanavigation internal</a>
@@ -1024,10 +1046,30 @@ import TelekomHeader from './TelekomHeader.vue';
                        style="--flex-direction: column"
                      >
                        <scale-telekom-nav-item>
-                         <a href="#">Metanavigation external</a>
+                         <a href="#">Metanavigation external
+                    <scale-icon-navigation-external-link
+                      size="11"
+                    ></scale-icon-navigation-external-link>                          
+                         </a>
+                         <scale-icon-navigation-external-link
+                           size="11"
+                         ></scale-icon-navigation-external-link>                             
+                         <scale-icon-navigation-external-link
+                           size="11"
+                         ></scale-icon-navigation-external-link>                         
                        </scale-telekom-nav-item>
                        <scale-telekom-nav-item>
-                         <a href="#">Metanavigation external</a>
+                         <a href="#">Metanavigation external
+                    <scale-icon-navigation-external-link
+                      size="11"
+                    ></scale-icon-navigation-external-link>                          
+                         </a>
+                         <scale-icon-navigation-external-link
+                           size="11"
+                         ></scale-icon-navigation-external-link>                             
+                         <scale-icon-navigation-external-link
+                           size="11"
+                         ></scale-icon-navigation-external-link>                             
                        </scale-telekom-nav-item>
                        <scale-telekom-nav-item>
                          <a href="#">Metanavigation internal</a>
