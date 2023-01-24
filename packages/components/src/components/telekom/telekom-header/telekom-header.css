@@ -11,22 +11,22 @@
 
 @import url('../../../global/custom-media.css');
 
+/* TODO use spacing tokens where possible to replace hard-coded pixel values */
+
 :host {
   --shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
   --background: var(--telekom-color-background-canvas);
   --background-logo: var(--telekom-color-primary-standard);
-  --transition: height var(--telekom-motion-duration-immediate)
+  --transition-common-scrolled: height var(--telekom-motion-duration-immediate)
       var(--telekom-motion-easing-standard),
     width var(--telekom-motion-duration-immediate)
-      var(--telekom-motion-easing-standard),
-    margin-right var(--telekom-motion-duration-immediate)
       var(--telekom-motion-easing-standard);
   --font-size-app-name: var(--telekom-typography-font-size-small);
   --line-height-app-name: var(--telekom-typography-line-spacing-tight);
   --font-weight-app-name: var(--telekom-typography-font-weight-extra-bold);
 
   --_height: 60px;
-  --_height-logo: 36px;
+  --_height-logo-svg: 36px;
   --_height-bottom-bar: 60px;
   --_height-top-bar: 0;
 
@@ -44,14 +44,13 @@
   --_grid-column-body: auto;
 
   --_spacing-left-body: 0;
-  --_spacing-right-top-app-name: 32px;
-  --_spacing-right-bottom-app-name: 32px;
+  --_spacing-right-top-app-name: var(--telekom-spacing-unit-x8);
+  --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x8);
   --_left-logo: 0;
 
-  --_base-menu-justify-content: end;
+  --_justify-content-bottom-body: end;
 
   /* TODO make sure we want to "expose" variables this way */
-  --scl-telekom-header-container-spacing-x: var(--_spacing-x);
   --scl-telekom-header-height: var(--_height);
 }
 
@@ -64,9 +63,9 @@
 
 @media screen and (--lg) {
   :host,
-  :host::part(scrolled-back) {
+  :host([scrolled-back]) {
     --_height: 84px;
-    --_height-logo: 44px;
+    --_height-logo-svg: 44px;
     --_height-top-bar: 30px;
     --_height-bottom-bar: 54px;
 
@@ -81,15 +80,14 @@
     --_grid-column-body: 3 / span 14;
     --_spacing-left-body: 0;
     --_spacing-x-container: var(--telekom-spacing-unit-x6);
-    --_spacing-right-bottom-app-name: 0;
 
-    --_base-menu-justify-content: space-between;
+    --_justify-content-bottom-body: space-between;
 
     --scl-telekom-header-height: var(--_height);
   }
-  :host::part(scrolled) {
+  :host([scrolled]) {
     --_height: 72px;
-    --_height-logo: 40px;
+    --_height-logo-svg: 40px;
     --_height-top-bar: 0;
     --_height-bottom-bar: 72px;
 
@@ -99,29 +97,21 @@
     --_display-top-app-name: none;
     --_display-bottom-app-name: block;
 
-    --_spacing-right-bottom-app-name: 32px;
-
-    --_animation-app-name: slideInLeft var(--telekom-motion-duration-animation)
-        forwards,
-      appear var(--telekom-motion-duration-animation) forwards;
+    --_grid-column-body: 2 / span 15;
 
     --scl-telekom-header-height: var(--_height);
   }
 
-  :host::part(scrolled-back) {
+  :host([scrolled-back]) {
     --_display-bottom-app-name: block;
-
-    --_animation-app-name: slideOutLeft var(--telekom-motion-duration-animation)
-        forwards,
-      disappear var(--telekom-motion-duration-animation) forwards;
   }
 }
 
 @media screen and (--xl) {
   :host,
-  :host::part(scrolled-back) {
+  :host([scrolled-back]) {
     --_height: 96px;
-    --_height-logo: 48px;
+    --_height-logo-svg: 48px;
     --_height-top-bar: 30px;
     --_height-bottom-bar: 66px;
 
@@ -131,9 +121,9 @@
 
 @media screen and (--2xl) {
   :host,
-  :host::part(scrolled-back) {
+  :host([scrolled-back]) {
     --_height: 120px;
-    --_height-logo: 60px;
+    --_height-logo-svg: 60px;
     --_height-top-bar: 30px;
     --_height-bottom-bar: 90px;
 
@@ -163,7 +153,7 @@ slot[name='logo'] {
   height: var(--_height);
   width: var(--_height);
   background: var(--background-logo);
-  transition: var(--transition);
+  transition: var(--transition-common-scrolled);
 }
 
 slot[name='meta-nav-external'] {
@@ -195,7 +185,7 @@ slot[name='functions'] {
   position: fixed;
   top: 0;
   width: 100%;
-  transition: var(--transition);
+  transition: height var(--telekom-motion-duration-immediate) var(--telekom-motion-easing-standard);
 }
 
 [part~='container'] {
@@ -217,14 +207,14 @@ slot[name='functions'] {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition);
+  transition: var(--transition-common-scrolled);
 }
 
 /* TODO fix exportparts */
 /* targeting `scale-logo` */
 :host::part(logo-svg) {
-  height: var(--_height-logo);
-  transition: var(--transition);
+  height: var(--_height-logo-svg);
+  transition: var(--transition-common-scrolled);
 }
 /* targeting `scale-logo` */
 :host::part(logo) {
@@ -233,7 +223,7 @@ slot[name='functions'] {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition);
+  transition: var(--transition-common-scrolled);
 }
 
 [part~='body'] {
@@ -248,13 +238,12 @@ slot[name='functions'] {
   display: flex;
   align-items: end;
   width: 100%;
-  transition: var(--transition);
+  transition: var(--transition-common-scrolled);
 }
 
 [part~='top-app-name'] {
   display: var(--_display-top-app-name);
   margin-right: var(--_spacing-right-top-app-name);
-  transition: var(--transition);
 }
 
 [part~='top-body'] {
@@ -268,19 +257,34 @@ slot[name='functions'] {
   align-items: center;
 }
 
+/*
+  TODO show/hide animation is currently half-baked,
+  it needs to handle the out transition,
+  with more parts/classes (like in telekom-nav-flyout)
+*/
 [part~='bottom-app-name'] {
-  display: var(--_display-bottom-app-name);
-  animation: var(--_animation-app-name);
+  display: none;
   margin-right: var(--_spacing-right-bottom-app-name);
-  transition: var(--transition);
+  animation-duration: var(--telekom-motion-duration-animation);
+}
+
+:host([scrolled]) [part~='bottom-app-name'] {
+  display: block;
+  animation-name: toggle;
+  animation-timing-function: var(--telekom-motion-easing-enter);
+}
+
+:host([scrolled-back]) [part~='bottom-app-name'] {
+  animation-name: toggle;
+  animation-direction: reverse;
+  animation-timing-function: var(--telekom-motion-easing-exit);
 }
 
 [part~='bottom-body'] {
-  justify-content: var(--_base-menu-justify-content);
+  justify-content: var(--_justify-content-bottom-body);
   height: var(--_height-bottom-bar);
   display: inline-flex;
   flex: 1;
-  transition: var(--transition);
 }
 
 [part~='app-name-text'] {
@@ -302,61 +306,13 @@ slot[name='functions'] {
 
 /* --- Keyframes --- */
 
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-150px);
-  }
-  30% {
-    transform: translateX(-150px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-@keyframes slideOutLeft {
-  0% {
-    transform: translateX(0px);
-  }
-  30% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(-150px);
-  }
-}
-@keyframes appear {
-  0% {
+@keyframes toggle {
+  from {
     opacity: 0;
-    visibility: hidden;
-    max-width: 0;
-  }
-  30% {
-    opacity: 0;
-    visibility: hidden;
-    max-width: 150px;
-  }
-  100% {
-    opacity: 1;
-    visibility: visible;
-    max-width: 150px;
-  }
-}
-@keyframes disappear {
-  0% {
-    opacity: 1;
-    visibility: visible;
-    max-width: 150px;
-  }
-  30% {
-    visibility: visible;
-    max-width: 150px;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    max-width: 0;
+    transform: translate3d(
+      var(--translate-x),
+      var(--translate-y),
+      var(--translate-z)
+    );
   }
 }
