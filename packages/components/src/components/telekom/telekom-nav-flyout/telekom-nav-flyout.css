@@ -17,7 +17,6 @@
   --position: fixed;
   --background: var(--telekom-color-background-surface);
   --shadow: none;
-  --spacing-x: var(--scl-telekom-header-container-spacing-x, 0);
   --z-index: 7;
 
   --duration: var(--telekom-motion-duration-transition);
@@ -41,7 +40,6 @@
   width: var(--width);
   height: var(--height);
   min-height: 25vh;
-  padding: var(--spacing-x);
   background: var(--background);
   box-shadow: var(--shadow);
   animation-duration: var(--duration);
