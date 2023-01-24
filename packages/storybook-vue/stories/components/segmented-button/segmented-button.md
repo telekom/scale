@@ -30,13 +30,13 @@ Don’t use a segmented button when:
 
 ## Basic types
 
-### Single selection:
+### Single selection
 
 ![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png)
 
 As with the Radio Button Group, users can only select one option. One option is always preselected. If necessary, specify a neutral option – for example "All" to override the set filters.
 
-### Multiple selection:
+### Multiple selection
 
 ![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png)
 

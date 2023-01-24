@@ -2,7 +2,7 @@
 
 This page documents updates to the visual appearance of Scale.
 
-## New Beta-Components
+## New Beta Components
 
 25.01.2023
 

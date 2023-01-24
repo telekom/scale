@@ -26,13 +26,13 @@ Ein Segmented Button besteht aus zwei bis fünf Auswahlmöglichkeiten derselben 
 
 ## Basistypen
 
-### Einfachauswahl:
+### Einfachauswahl
 
 ![Image Name](assets/3_components/segmented-button/SegmentedButton-Single_Select.png)
 
 Wie bei der Radio Button Group können Nutzer\*innen nur eine Option auswählen. Es ist immer eine Option vorausgewählt. Gib bei Bedarf eine neutrale Option an – zum Beispiel „Alle“, um gesetzte Filter aufzuheben.
 
-### Mehrfachauswahl:
+### Mehrfachauswahl
 
 ![Image Name](assets/3_components/segmented-button/SegmentedButton-Multiselect.png)
 

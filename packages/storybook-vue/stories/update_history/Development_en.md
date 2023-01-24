@@ -2,7 +2,7 @@
 
 This page documents updates in `@telekom/scale-components` and related packages.
 
-## New Beta-Components
+## New Beta Components
 
 25.01.2023
 
