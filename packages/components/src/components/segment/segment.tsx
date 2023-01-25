@@ -86,18 +86,6 @@ export class Segment {
     this.focusableElement.focus();
   }
 
-  componentDidRender() {
-    if (this.hostElement.hasAttribute('aria-label')) {
-      statusNote({
-        tag: 'deprecated',
-        message:
-          'Property "ariaLabel" is deprecated. Please use the "ariaLabelSegment" property!',
-        type: 'warn',
-        source: this.hostElement,
-      });
-    }
-  }
-
   componentWillLoad() {
     if (this.segmentId == null) {
       this.segmentId = 'segment-' + i++;
