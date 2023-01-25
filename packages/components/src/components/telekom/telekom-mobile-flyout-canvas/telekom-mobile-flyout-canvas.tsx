@@ -21,7 +21,7 @@ import { emitEvent } from '../../../utils/utils';
   styleUrl: 'telekom-mobile-flyout-canvas.css',
   shadow: true,
 })
-export class TelekomNavItem {
+export class TelekomMobileFlyoutCanvas {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop() appName?: string;
