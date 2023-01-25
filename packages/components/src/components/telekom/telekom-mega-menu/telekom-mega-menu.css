@@ -1,15 +1,38 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+/*
+  It's unfortunate we're not using our grid component
+  but just copy/pasting the same code…
+*/
+
 :host {
-  --spacing-5-columns: var(--telekom-spacing-unit-x15);
-  --spacing-4-columns: 192px;
-  --padding-top: 65px;
-  --padding-bottom: 73px;
+  --spacing-y: var(--telekom-spacing-unit-x18);
+  /* matches grid.css */
+  --spacing-x: var(--telekom-spacing-unit-x6);
+  --column-gap: var(--telekom-spacing-unit-x8);
 }
 
 [part='base'] {
+  box-sizing: border-box;
   width: 100%;
+  max-width: var(--scl-grid-max-width);
   display: grid;
-  grid-template-columns: repeat(5, minmax(min-content, 240px));
-  padding-left: var(--spacing-5-columns);
-  padding-top: var(--padding-top);
-  padding-bottom: var(--padding-bottom);
+  /* matches grid.css */
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  column-gap: var(--column-gap);
+  padding-left: var(--spacing-x);
+  padding-right:  var(--spacing-x);
+  padding-top: var(--spacing-y);
+  padding-bottom: var(--spacing-y);
+  margin-left: auto;
+  margin-right: auto;
 }

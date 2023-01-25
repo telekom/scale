@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Element } from '@stencil/core';
+import { Component, h, Host, Element, State } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 
 @Component({
@@ -19,24 +19,20 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 })
 export class TelekomMegaMenu {
   @Element() hostElement: HTMLStencilElement;
-  private container: HTMLElement;
 
-  componentDidLoad() {
-    const slotted = this.hostElement.children;
-    if (slotted.length < 5) {
-      this.container.style.paddingLeft = 'var(--spacing-4-columns)';
+  /** :) */
+  @State() childrenTooMany: boolean = false; 
+
+  connectedCallback() {
+    if (this.hostElement.children.length > 4) {
+      this.childrenTooMany = true;
     }
   }
 
   render() {
     return (
-      <Host>
-        <div
-          ref={(el) => {
-            this.container = el;
-          }}
-          part="base"
-        >
+      <Host children-too-many={this.childrenTooMany}>
+        <div part="base">
           <slot></slot>
         </div>
       </Host>
