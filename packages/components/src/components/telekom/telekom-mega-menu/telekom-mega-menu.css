@@ -19,7 +19,6 @@
   margin-right: auto;
   padding-left: var(--_spacing-x-container);
   padding-right: var(--_spacing-x-container);  
-  border: 5px solid purple;
 }
 
 .offset {
