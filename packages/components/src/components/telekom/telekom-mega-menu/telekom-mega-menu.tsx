@@ -21,7 +21,7 @@ export class TelekomMegaMenu {
   @Element() hostElement: HTMLStencilElement;
 
   /** :) */
-  @State() childrenTooMany: boolean = false; 
+  @State() childrenTooMany: boolean = false;
 
   connectedCallback() {
     if (this.hostElement.children.length > 4) {

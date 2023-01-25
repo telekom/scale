@@ -30,7 +30,7 @@
   grid-template-columns: repeat(16, minmax(0, 1fr));
   column-gap: var(--column-gap);
   padding-left: var(--spacing-x);
-  padding-right:  var(--spacing-x);
+  padding-right: var(--spacing-x);
   padding-top: var(--spacing-y);
   padding-bottom: var(--spacing-y);
   margin-left: auto;
