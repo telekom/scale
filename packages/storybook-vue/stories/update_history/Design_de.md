@@ -2,6 +2,16 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
+## Neue Beta-Komponenten
+
+25.01.2023
+
+- Veröffentlichung der neuen Beta-Komponenten Segmented Button und Chip.
+- Der Segmented Button ersetzt die Beta-Komponente Toggle Group.
+- Neue Kategorie „Deprecated Components“. Hier sind Komponenten aufgelistet, die wir nicht weiter unterstützen.
+
+<br>
+
 ## Komponenten-Update (Optimierung von Mobile und Visual Design)
 
 27.10.2022

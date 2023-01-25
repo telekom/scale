@@ -69,6 +69,7 @@ export const parameters = {
         ['Design', 'Development'],
         'Components',
         'Beta Components',
+        'Deprecated Components',
         'Contact',
         'Legal',
         ['Disclaimer', 'Legal Notice', 'Privacy'],
