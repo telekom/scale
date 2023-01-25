@@ -197,7 +197,7 @@ export class Segment {
                 <scale-icon-action-success
                   size={this.size === 'small' ? 14 : 16}
                   class="scale-icon-action-success"
-                  accessibility-title="success"
+                  aria-hidden="true"
                   selected
                 />
               </div>
