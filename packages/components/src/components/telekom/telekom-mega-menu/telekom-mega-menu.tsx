@@ -20,12 +20,15 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 export class TelekomMegaMenu {
   @Element() hostElement: HTMLStencilElement;
   private container: HTMLElement;
-
-  componentDidLoad() {
+  private slotted: number
+  connectedCallback() {
     const slotted = this.hostElement.children;
-    if (slotted.length < 5) {
-      this.container.style.paddingLeft = 'var(--spacing-4-columns)';
-    }
+    this.slotted = slotted.length
+    console.log('update', this.slotted, slotted)
+    // if (slotted.length < 5) {
+    //   this.container.style.paddingLeft = 'var(--spacing-4-columns)';
+    // }
+
   }
 
   render() {
@@ -37,6 +40,9 @@ export class TelekomMegaMenu {
           }}
           part="base"
         >
+          {this.slotted < 5 ? 
+            <div class="offset"></div> : null
+          }
           <slot></slot>
         </div>
       </Host>

@@ -1,15 +1,27 @@
 :host {
-  --spacing-5-columns: var(--telekom-spacing-unit-x15);
-  --spacing-4-columns: 192px;
   --padding-top: 65px;
   --padding-bottom: 73px;
+  --_max-width-container: 1552px; /* value matches scale-grid */
+  --_spacing-x-container: var(--telekom-spacing-unit-x6);
+  --_column-gap-container: var(--telekom-spacing-unit-x8);
 }
 
 [part='base'] {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(min-content, 240px));
-  padding-left: var(--spacing-5-columns);
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
+
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  column-gap: var(--_column-gap-container);
+  max-width: var(--_max-width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--_spacing-x-container);
+  padding-right: var(--_spacing-x-container);  
+  border: 5px solid purple;
+}
+
+.offset {
+  grid-column: 1 / span 2;
 }
