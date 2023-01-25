@@ -9,9 +9,9 @@
     var(--telekom-motion-easing-standard);
   --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
-  --color-close-button: var(--telekom-color-text-and-icon-standard);
-  --color-close-button-hover: var(--telekom-color-primary-hovered);
-  --color-close-button-active: var(--telekom-color-primary-pressed);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-primary-hovered);
+  --color-active: var(--telekom-color-primary-pressed);
 }
 
 :host::part(base) {
@@ -29,10 +29,19 @@
   padding: var(--spacing) 0;
 }
 
-:host::part(close-button) {
-  position: absolute;
-  top: 22px;
-  right: calc(var(--spacing) - var(--spacing-close-button) + 2px);
+:host::part(back-button) {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  color: var(--color);
+  font: var(--telekom-text-style-lead-text);
+  width: 100%;
+  height: 72px;
+}
+
+scale-icon-navigation-left {
+  margin-right: 6px;
 }
 
 :host::part(nav) {
@@ -42,6 +51,9 @@
 }
 
 :host::part(close-button) {
+  position: absolute;
+  top: 22px;
+  right: 10px;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -51,7 +63,6 @@
   border: 0;
   border-radius: var(--radius-close-button);
   outline: none;
-  color: var(--color-close-button);
   background: transparent;
   transition: var(--transition-close-button);
   transform: translate(
@@ -61,6 +72,7 @@
   appearance: none;
   cursor: pointer;
   user-select: none;
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 :host::part(close-button):focus {
@@ -68,13 +80,30 @@
 }
 
 :host::part(close-button):hover {
-  color: var(--color-close-button-hover);
+  color: var(--color-hover);
 }
 
 :host::part(close-button):active {
-  color: var(--color-close-button-active);
+  color: var(--color-active);
 }
 
 :host::part(links-top) {
   display: flex;
+}
+
+[part~='app-name'] > * {
+  font-size: var(--font-size-app-name);
+  font-weight: var(--font-weight-app-name);
+  line-height: var(--line-height-app-name);
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+[part~='app-name'] > *:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part~='app-name'] > *:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }

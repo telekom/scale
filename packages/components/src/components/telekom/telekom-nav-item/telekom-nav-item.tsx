@@ -9,22 +9,56 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Element, Prop } from '@stencil/core';
+import { Component, h, Host, Element, Prop, Watch } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
+
+// TODO maybe we want to add the <scale-icon-navigation-external-link size="11"> icon
+// automatically when inside variant="meta-nav-external"?
+
+// TODO? turn into util
+function toggleAriaCurrent(
+  element: HTMLElement,
+  value: boolean,
+  attrValue = 'page'
+) {
+  if (value) {
+    element.setAttribute('aria-current', attrValue);
+  } else {
+    element.removeAttribute('aria-current');
+  }
+}
 
 @Component({
   tag: 'scale-telekom-nav-item',
   styleUrl: 'telekom-nav-item.css',
-  shadow: true,
+  shadow: false,
 })
 export class TelekomNavItem {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop({ reflect: true }) variant: 'main' | 'meta' = 'main';
+  @Prop({ reflect: true }) active?: boolean = false;
+
+  @Watch('active')
+  activeChanged(newValue: boolean) {
+    if (this.linkElement == null) {
+      return;
+    }
+    toggleAriaCurrent(this.linkElement, newValue);
+  }
+
+  connectedCallback() {
+    this.activeChanged(this.active);
+  }
+
+  get linkElement(): HTMLAnchorElement | null {
+    return this.hostElement.querySelector('a');
+  }
 
   render() {
     return (
-      <Host>
+      // A class is used to avoid coupling styles to the tagname
+      // (which can be different based on who defines it)
+      <Host class="scale-telekom-nav-item">
         <slot></slot>
       </Host>
     );

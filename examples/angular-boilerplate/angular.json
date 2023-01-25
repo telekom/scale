@@ -102,6 +102,5 @@
         }
       }
     }
-  },
-  "defaultProject": "boilerplate-angular"
+  }
 }

@@ -2,6 +2,16 @@
 
 This page documents updates in `@telekom/scale-components` and related packages.
 
+## New Beta Components
+
+25.01.2023
+
+- Release of the new beta components Segmented Button and Chip.
+- The Segmented Button replaces the beta component Toggle Group.
+- New category Deprecated Components. This lists components we no longer support.
+
+<br>
+
 ## Component Update (Optimized Mobile and Visual Design)
 
 27.10.2022

@@ -1,0 +1,348 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleSegmentedButton from './ScaleSegmentedButton.vue';
+
+<Meta
+  title="Beta Components/Segmented Button"
+  component={ScaleSegmentedButton}
+  argTypes={{
+    size: {
+      control: { type: 'select', options: ['small', 'medium', 'large'] },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButton },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleSegmentedButton.props,
+  },
+  template: `
+    <scale-segmented-button
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+      :invalid="invalid"
+      :helper-text="helperText"
+      :full-width="fullWidth"
+      :label="label"
+    >
+      <scale-segment selected>Apple</scale-segment>
+      <scale-segment>One+</scale-segment>
+      <scale-segment>Samsung</scale-segment>
+      <scale-segment>Huawei</scale-segment>
+    </scale-segmented-button>
+  `,
+});
+
+export const MultiSelectTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButton },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleSegmentedButton.props,
+  },
+  template: `
+    <scale-segmented-button
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+    >
+      <scale-segment selected>Apple</scale-segment>
+      <scale-segment selected>One+</scale-segment>
+      <scale-segment>Samsung</scale-segment>
+      <scale-segment>Huawei</scale-segment>
+    </scale-segmented-button>
+  `,
+});
+
+export const IconOnlyTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButton },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleSegmentedButton.props,
+  },
+  template: `
+    <scale-segmented-button
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+    >
+      <scale-segment selected><scale-icon-weather-cloudy slot="segment-icon"></scale-icon-weather-cloudy></scale-segment>
+      <scale-segment><scale-icon-weather-rain slot="segment-icon"></scale-icon-weather-rain></scale-segment>
+      <scale-segment><scale-icon-weather-sunny slot="segment-icon"></scale-icon-weather-sunny></scale-segment>
+      <scale-segment><scale-icon-weather-heavy-snow slot="segment-icon"></scale-icon-weather-heavy-snow></scale-segment>
+    </scale-segmented-button>
+  `,
+});
+
+export const IconTextTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButton },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleSegmentedButton.props,
+  },
+  template: `
+    <scale-segmented-button
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+    >
+      <scale-segment selected><scale-icon-device-device-phone slot="segment-icon"></scale-icon-device-device-phone>Apple</scale-segment>
+      <scale-segment><scale-icon-device-device-phone slot="segment-icon"></scale-icon-device-device-phone>One+</scale-segment>
+      <scale-segment><scale-icon-device-device-phone slot="segment-icon"></scale-icon-device-device-phone>Samsung</scale-segment>
+      <scale-segment><scale-icon-device-device-phone slot="segment-icon"></scale-icon-device-device-phone>Huawei</scale-segment>
+    </scale-segmented-button>
+  `,
+});
+
+export const DisabledTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButton },
+  props: {
+    label: String,
+    icon: String,
+    disabled: 'true',
+    ...ScaleSegmentedButton.props,
+  },
+  template: `
+    <scale-segmented-button
+      :disabled="disabled"
+      :size="size"
+      :multi-select="multiSelect"
+      :styles="styles"
+      :invalid="invalid"
+      :helper-text="helperText"
+    >
+      <scale-segment>Apple</scale-segment>
+      <scale-segment selected>One+</scale-segment>
+      <scale-segment>Samsung</scale-segment>
+      <scale-segment>Huawei</scale-segment>
+    </scale-segmented-button>
+  `,
+});
+
+export const DisabledSegmentTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButton },
+  props: {
+    label: String,
+    icon: String,
+    disabled: true,
+    ...ScaleSegmentedButton.props,
+  },
+  template: `
+    <scale-segmented-button
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+      :invalid="invalid"
+      :helper-text="helperText"
+    >
+      <scale-segment disabled>Apple</scale-segment>
+      <scale-segment>One+</scale-segment>
+      <scale-segment>Samsung</scale-segment>
+      <scale-segment>Huawei</scale-segment>
+    </scale-segmented-button>
+  `,
+});
+
+export const InvalidTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButton },
+  props: {
+    label: String,
+    icon: String,
+    invalid: Boolean,
+    ...ScaleSegmentedButton.props,
+  },
+  template: `
+    <scale-segmented-button
+      :invalid="invalid"
+      :helper-text="helperText"
+      :label="label"
+    >
+      <scale-segment>Apple</scale-segment>
+      <scale-segment>One+</scale-segment>
+      <scale-segment>Samsung</scale-segment>
+      <scale-segment>Huawei</scale-segment>
+    </scale-segmented-button>
+  `,
+});
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{ label: 'Group Label' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-segmented-button>
+  <scale-segment selected>Apple</scale-segment>
+  <scale-segment>One+</scale-segment>
+  <scale-segment>Samsung</scale-segment>
+  <scale-segment>Huawei</scale-segment>
+</scale-segmented-button>
+```
+
+## Multi Select
+
+<Canvas withSource="none">
+  <Story name="MultiSelect" args={{ multiSelect: true, label: 'Group Label' }}>
+    {MultiSelectTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button multi-select>
+  <scale-segment selected>Apple</scale-segment>
+  <scale-segment selected>One+</scale-segment>
+  <scale-segment>Samsung</scale-segment>
+  <scale-segment>Huawei</scale-segment>
+</scale-segmented-button>
+```
+
+## Disabled
+
+### Disabled Segment
+
+<Canvas withSource="none">
+  <Story name="Disabled Segment" args={{ label: 'Label' }}>
+    {DisabledSegmentTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button>
+  <scale-segment disabled>Apple</scale-segment>
+  <scale-segment>One+</scale-segment>
+  <scale-segment>Samsung</scale-segment>
+  <scale-segment>Huawei</scale-segment>
+</scale-segmented-button>
+```
+
+### Disabled Button
+
+<Canvas withSource="none">
+  <Story name="Disabled Button" args={{ label: 'Label', disabled: true }}>
+    {DisabledTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button disabled>
+  <scale-segment>Apple</scale-segment>
+  <scale-segment selected>One+</scale-segment>
+  <scale-segment>Samsung</scale-segment>
+  <scale-segment>Huawei</scale-segment>
+</scale-segmented-button>
+```
+
+## Icon only
+
+<Canvas withSource="none">
+  <Story name="Icon only" args={{ label: 'Group Label' }}>
+    {IconOnlyTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button>
+  <scale-segment selected>
+    <scale-icon-weather-cloudy slot="segment-icon">
+    </scale-icon-weather-cloudy>
+  </scale-segment>
+  <scale-segment>
+    <scale-icon-weather-rain slot="segment-icon">
+    </scale-icon-weather-rain>
+  </scale-segment>
+  <scale-segment>
+    <scale-icon-weather-sunny slot="segment-icon">
+    </scale-icon-weather-sunny>
+  </scale-segment>
+  <scale-segment>
+    <scale-icon-weahter-heavy-snow slot="segment-icon">
+    </scale-icon-weahter-heavy-snow>
+  </scale-segment>
+</scale-segmented-button>
+```
+
+## Icon and Text
+
+<Canvas withSource="none">
+  <Story name="Icon and Text" args={{ label: 'Group Label' }}>
+    {IconTextTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button>
+  <scale-segment selected>
+    <scale-icon-device-device-phone slot="segment-icon">
+    </scale-icon-device-device-phone>
+    Apple
+  </scale-segment>
+  <scale-segment>
+    <scale-icon-device-device-phone slot="segment-icon">
+    </scale-icon-device-device-phone>
+    One+
+  </scale-segment>
+  <scale-segment>
+    <scale-icon-device-device-phone slot="segment-icon">
+    </scale-icon-device-device-phone>
+    Samsung
+    </scale-segment>
+  <scale-segment>
+    <scale-icon-device-device-phone slot="segment-icon">
+    </scale-icon-device-device-phone>
+    Huawei
+    </scale-segment>
+</scale-segmented-button>
+```
+
+## Invalid
+
+<Canvas withSource="none">
+  <Story
+    name="invalid"
+    args={{
+      invalid: true,
+    }}
+  >
+    {InvalidTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button invalid>
+  <scale-segment>
+    <scale-icon-device-device-phone slot="segment-icon">
+    </scale-icon-device-device-phone>
+    Apple
+  </scale-segment>
+  <scale-segment>
+    <scale-icon-device-device-phone slot="segment-icon">
+    </scale-icon-device-device-phone>
+    One+
+  </scale-segment>
+  <scale-segment>
+    <scale-icon-device-device-phone slot="segment-icon">
+    </scale-icon-device-device-phone>
+    Samsung
+  </scale-segment>
+  <scale-segment>
+    <scale-icon-device-device-phone slot="segment-icon">
+    </scale-icon-device-device-phone>
+    Huawei
+  </scale-segment>
+</scale-segmented-button>
+```

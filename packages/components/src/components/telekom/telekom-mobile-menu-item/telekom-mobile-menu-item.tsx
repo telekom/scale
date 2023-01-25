@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Element, Prop, State, Event } from '@stencil/core';
+import { Component, h, Host, Element, Prop, Event, Watch } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import cx from 'classnames';
 import { emitEvent } from '../../../utils/utils';
@@ -23,52 +23,91 @@ export class TelekomMobileMenuItem {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop() open?: boolean = false;
-  @Prop() hideHeader?: boolean = false;
   @Prop() active?: boolean = false;
   @Prop() level?: string = '0';
+  @Prop() currentLevel?: string = '0';
+  @Event({ eventName: 'scale-set-menu-item-active' }) scaleSetMenuItemActive;
+  @Event({ eventName: 'scale-set-menu-item-open' }) scaleSetMenuItemOpen;
+  @Event({ eventName: 'scale-close-nav-flyout' }) scaleCloseNavFlyout;
 
-  @State() hasChildren?: boolean = false;
+  @Watch('open')
+  openChanged(newValue: boolean) {
+    this.toggleChildrenVisibility(newValue);
+  }
 
-  @Event({ eventName: 'scale-click-menu-item' }) scaleClickMenuItem;
+  connectedCallback() {
+    this.toggleChildrenVisibility(this.open);
+  }
+  //
+  toggleChildrenVisibility(show) {
+    this.children.forEach((element) => {
+      show && element.getAttribute('level') === String(+this.level + 1)
+        ? element.removeAttribute('hidden')
+        : element.setAttribute('hidden', '');
+    });
+  }
 
-  componentWillRender() {
-    this.hasChildren = !!this.hostElement.querySelector('[slot="children"]');
+  handleClick = (e) => {
+    e.stopImmediatePropagation();
+    const hasLink = !(e.target.getAttribute('href') || '').includes(
+      'javascript:void(0)'
+    );
+    const hasLinkNoChildren = hasLink && !this.children.length;
+
+    if (hasLinkNoChildren) {
+      emitEvent(this, 'scaleCloseNavFlyout', e);
+      return emitEvent(this, 'scaleSetMenuItemActive', e.detail);
+    }
+
+    const hasLinkAndChildrenAndOpen =
+      hasLink && this.children.length && this.open;
+    if (hasLinkAndChildrenAndOpen) {
+      emitEvent(this, 'scaleCloseNavFlyout', e);
+      return emitEvent(this, 'scaleSetMenuItemActive', e.detail);
+    }
+
+    // EITHER hos link and children - ready to expand children without firing the link click
+    // OR no link but has children
+    e.preventDefault();
+    this.toggleChildrenVisibility(true);
+    return emitEvent(this, 'scaleSetMenuItemOpen', e.detail);
+  };
+
+  get children(): NodeListOf<HTMLElement> | null {
+    return this.hostElement.querySelectorAll('scale-telekom-mobile-menu-item');
+  }
+
+  get openChildren(): HTMLElement[] | null {
+    return Array.from(
+      this.hostElement.querySelectorAll('scale-telekom-mobile-menu-item')
+    ).filter((element) => element.hasAttribute('open'));
   }
 
   render() {
     return (
-      <Host
-        onClick={(e) => {
-          e.stopImmediatePropagation();
-          emitEvent(this, 'scaleClickMenuItem', e.detail);
-        }}
-      >
+      <Host onClick={this.handleClick}>
         <nav
           part={cx('base', `level-${this.level}`, {
             open: this.open,
-            active: !this.open && this.active,
+            active: this.active,
+            hidden: !this.open && this.level !== this.currentLevel,
           })}
         >
           <div
             part={cx('header', {
-              hidden: this.hideHeader,
+              hidden: !!this.openChildren.length,
             })}
           >
-            <div part={cx('icon-left-container', {})}>
-              {this.open && (
-                <scale-icon-navigation-left></scale-icon-navigation-left>
-              )}
-            </div>
-
             <slot></slot>
             <div part="icon-right-container">
-              {this.hasChildren && !this.open && (
+              {!!this.children.length && !this.open && (
                 <scale-icon-navigation-right></scale-icon-navigation-right>
               )}
             </div>
           </div>
           {<slot name="children"></slot>}
         </nav>
+        <scale-divider></scale-divider>
       </Host>
     );
   }

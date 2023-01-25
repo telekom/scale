@@ -11,81 +11,102 @@
 
 @import url('../../../global/custom-media.css');
 
-:host {
-  --spacing-x: 0;
+/*
+  Spacing is handled only vertically.
+  Horizontal spacing is handled by `scale-nav-list`.
+*/
 
-  --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x5);
-  --_spacing-b-slotted-main: var(--telekom-spacing-unit-x5);
+.scale-telekom-nav-item {
+  --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
+  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+  --_font-size-main-nav: var(--telekom-typography-font-size-body);
 }
 
 @media screen and (--md) {
-  :host {
-    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x5);
+  .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
   }
 }
 @media screen and (--lg) {
-  :host {
-    --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x3);
-    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x4);
+  .scale-telekom-nav-item {
+    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x4);
   }
-  :host-context([scrolled]) {
-    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x6);
+  [scrolled] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
   }
 }
 @media screen and (--xl) {
-  :host {
-    --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x3);
-    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x6);
+  .scale-telekom-nav-item {
+    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
   }
 }
 @media screen and (--2xl) {
-  :host {
-    --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x3);
-    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x8);
+  .scale-telekom-nav-item {
+    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x8);
+    --_font-size-main-nav: var(--telekom-typography-font-size-callout);
   }
 }
 
-:host([debug]) {
+.scale-telekom-nav-item[debug] {
   border: 1px dotted cyan;
 }
 
-::slotted(:where(a, button)) {
+.scale-telekom-nav-item > :where(a, button) {
   box-sizing: border-box;
-  font: inherit;
-  appearance: none;
-  padding: 0;
-  border: none;
-  background: none;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
   display: flex;
   align-items: flex-end;
   height: 100%;
   position: relative;
+  font: inherit;
+  color: inherit;
+  background: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-::slotted(:where(a, button):hover) {
+.scale-telekom-nav-item > :where(a, button):hover,
+.scale-telekom-nav-item > :where(button[aria-expanded='true']) {
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
-::slotted(:where(a, button):active) {
+.scale-telekom-nav-item > :where(a, button):active {
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
-/* main */
+/* variants: main-nav, functions (bottom bar) */
 
-:host([variant='main']) ::slotted(:where(a, button)) {
-  font-size: 1.125rem; /* 18px, no token 😢 */
-  line-height: var(--telekom-typography-line-spacing-tight);
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button),
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button) {
+  font-size: var(--_font-size-main-nav);
+  line-height: var(--telekom-typography-line-spacing-standard);
   font-weight: var(--telekom-typography-font-weight-extra-bold);
-  padding-left: var(--spacing-x);
-  padding-right: var(--spacing-x);
-  padding-bottom: var(--_spacing-b-slotted-main);
+  padding-bottom: var(--_spacing-bottom-slotted-bottom);
 }
-:host([variant='main'][active]) ::slotted(:where(a, button)) {
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button),
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button) {
   color: var(--telekom-color-text-and-icon-primary-standard);
 }
-:host([variant='main'][active]) ::slotted(:where(a, button)):after {
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button):after {
   content: '';
   width: 100%;
   height: var(--telekom-spacing-unit-x1);
@@ -96,13 +117,56 @@
   left: 0;
 }
 
-/* meta */
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button):hover:after,
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button):hover:after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after {
+  content: '';
+  width: 100%;
+  height: var(--telekom-spacing-unit-x05);
+  background: var(--telekom-color-primary-standard);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
-:host([variant='meta']) ::slotted(:where(a, button)) {
+/* variants: meta-nav-external, meta-nav, lang-switcher (top bar) */
+
+.scale-telekom-nav-list[variant='meta-nav-external']
+  > .scale-telekom-nav-item
+  > :where(a, button),
+.scale-telekom-nav-list[variant='meta-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button),
+.scale-telekom-nav-list[variant='lang-switcher']
+  > .scale-telekom-nav-item
+  > :where(a, button) {
   font-size: var(--telekom-typography-font-size-small);
   line-height: var(--telekom-typography-line-spacing-tight);
   font-weight: var(--telekom-typography-font-weight-regular);
-  padding-left: var(--spacing-x);
-  padding-right: var(--spacing-x);
-  padding-top: var(--_spacing-t-slotted-meta);
+  padding-top: var(--_spacing-top-slotted-top);
+}
+
+/* take care of "external link" icon placement */
+
+.scale-telekom-nav-list[variant='meta-nav-external']
+  > .scale-telekom-nav-item
+  > :where(a, button) {
+  display: flex;
+  align-items: center;
+}
+.scale-telekom-nav-list[variant='meta-nav-external']
+  > .scale-telekom-nav-item
+  > :where(a, button)
+  > * {
+  margin-inline-start: 0.5ch;
 }

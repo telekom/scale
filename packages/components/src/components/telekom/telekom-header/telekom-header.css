@@ -21,35 +21,44 @@
       var(--telekom-motion-easing-standard),
     margin-right var(--telekom-motion-duration-immediate)
       var(--telekom-motion-easing-standard);
+  --font-size-app-name: var(--telekom-typography-font-size-small);
+  --line-height-app-name: var(--telekom-typography-line-spacing-tight);
+  --font-weight-app-name: var(--telekom-typography-font-weight-extra-bold);
 
   --_height: 60px;
   --_height-logo: 36px;
-  --_height-base-menu: 60px;
-  --_height-extended-menu: 0;
+  --_height-bottom-bar: 60px;
+  --_height-top-bar: 0;
 
-  --_display-app-name: none;
-  --_display-app-name-extended: none;
+  --_display-bottom-app-name: none;
+  --_display-top-app-name: none;
   --_display-main-nav: none;
   --_display-meta-nav: none;
-  --_display-meta-nav-ext: none;
-  --_display-language-switch: none;
+  --_display-meta-nav-external: none;
+  --_display-lang-switcher: none;
 
-  --_spacing-x: 0 16px 0 0;
-  --_spacing-left-horizontal-menus: 0;
-  --_spacing-right-app-name-extended: 32px;
-  --_spacing-right-app-name: 32px;
+  --_max-width-container: 1552px; /* value matches scale-grid — ideally we'd have this in a global var *sigh* */
+  --_spacing-x-container: var(--telekom-spacing-unit-x4);
+  --_column-gap-container: var(--telekom-spacing-unit-x8);
+  --_grid-template-columns-container: auto;
+  --_grid-column-body: auto;
+
+  --_spacing-left-body: 0;
+  --_spacing-right-top-app-name: 32px;
+  --_spacing-right-bottom-app-name: 32px;
+  --_left-logo: 0;
 
   --_base-menu-justify-content: end;
 
   /* TODO make sure we want to "expose" variables this way */
   --scl-telekom-header-container-spacing-x: var(--_spacing-x);
+  --scl-telekom-header-height: var(--_height);
 }
 
 @media screen and (--md) {
   :host {
-    --_display-app-name: block;
-    --_spacing-x: 0 16px;
-    --_spacing-left-horizontal-menus: 32px;
+    --_display-bottom-app-name: block;
+    --_spacing-left-body: 92px;
   }
 }
 
@@ -58,43 +67,49 @@
   :host::part(scrolled-back) {
     --_height: 84px;
     --_height-logo: 44px;
-    --_height-extended-menu: 30px;
-    --_height-base-menu: 54px;
+    --_height-top-bar: 30px;
+    --_height-bottom-bar: 54px;
 
     --_display-main-nav: block;
     --_display-meta-nav: block;
-    --_display-meta-nav-ext: block;
-    --_display-language-switch: block;
-    --_display-app-name-extended: block;
-    --_display-app-name: none;
+    --_display-meta-nav-external: block;
+    --_display-lang-switcher: block;
+    --_display-top-app-name: block;
+    --_display-bottom-app-name: none;
 
-    --_spacing-x: 0 24px;
-    --_spacing-left-horizontal-menus: 44px;
-    --_spacing-right-app-name: 0;
+    --_grid-template-columns-container: repeat(16, minmax(0, 1fr));
+    --_grid-column-body: 3 / span 14;
+    --_spacing-left-body: 0;
+    --_spacing-x-container: var(--telekom-spacing-unit-x6);
+    --_spacing-right-bottom-app-name: 0;
 
     --_base-menu-justify-content: space-between;
+
+    --scl-telekom-header-height: var(--_height);
   }
   :host::part(scrolled) {
     --_height: 72px;
     --_height-logo: 40px;
-    --_height-extended-menu: 0;
-    --_height-base-menu: 72px;
+    --_height-top-bar: 0;
+    --_height-bottom-bar: 72px;
 
     --_display-meta-nav: none;
-    --_display-meta-nav-ext: none;
-    --_display-language-switch: none;
-    --_display-app-name-extended: none;
-    --_display-app-name: block;
+    --_display-meta-nav-external: none;
+    --_display-lang-switcher: none;
+    --_display-top-app-name: none;
+    --_display-bottom-app-name: block;
 
-    --_spacing-right-app-name: 32px;
+    --_spacing-right-bottom-app-name: 32px;
 
     --_animation-app-name: slideInLeft var(--telekom-motion-duration-animation)
         forwards,
       appear var(--telekom-motion-duration-animation) forwards;
+
+    --scl-telekom-header-height: var(--_height);
   }
 
   :host::part(scrolled-back) {
-    --_display-app-name: block;
+    --_display-bottom-app-name: block;
 
     --_animation-app-name: slideOutLeft var(--telekom-motion-duration-animation)
         forwards,
@@ -107,17 +122,10 @@
   :host::part(scrolled-back) {
     --_height: 96px;
     --_height-logo: 48px;
-    --_height-extended-menu: 30px;
-    --_height-base-menu: 66px;
+    --_height-top-bar: 30px;
+    --_height-bottom-bar: 66px;
 
-    --_spacing-x: 0 24px;
-    --_spacing-left-horizontal-menus: 96px;
-  }
-
-  :host::part(scrolled),
-  :host::part(scrolled-back) {
-    --_spacing-x: 0 24px;
-    --_spacing-left-horizontal-menus: 96px;
+    --scl-telekom-header-height: var(--_height);
   }
 }
 
@@ -126,73 +134,61 @@
   :host::part(scrolled-back) {
     --_height: 120px;
     --_height-logo: 60px;
-    --_height-extended-menu: 30px;
-    --_height-base-menu: 90px;
+    --_height-top-bar: 30px;
+    --_height-bottom-bar: 90px;
 
-    --_spacing-x: 0 96px 0 120px;
-    --_spacing-left-horizontal-menus: 72px;
-  }
-  :host::part(scrolled),
-  :host::part(scrolled-back) {
-    --_spacing-x: 0 96px 0 120px;
-    --_spacing-left-horizontal-menus: 72px;
+    --scl-telekom-header-height: var(--_height);
   }
 }
 
-/* WIP 🚧 */
-::slotted(*) {
+@media screen and (min-width: 1552px) {
+  :host {
+    --_left-logo: var(--_spacing-x-container);
+  }
+}
+
+/* TODO not sure if we're actually gonna need this */
+/* ::slotted(*) {
   height: 100%;
   display: inline-flex;
-}
+} */
 
-/* WIP 🚧 */
-slot[name='main-nav'],
-slot[name='meta-nav-ext'] {
-  width: 100%;
-}
-
-slot[name='app-logo'] {
-  height: var(--_height);
-  width: var(--_height);
-  background: var(--background-logo);
+slot[name='logo'] {
+  position: absolute;
+  top: 0;
+  left: var(--_left-logo);
   display: flex;
   align-items: center;
   justify-content: center;
+  height: var(--_height);
+  width: var(--_height);
+  background: var(--background-logo);
   transition: var(--transition);
 }
 
-:host::part(app-name) {
-  display: var(--_display-app-name);
-  animation: var(--_animation-app-name);
-  margin-right: var(--_spacing-right-app-name);
-  transition: var(--transition);
+slot[name='meta-nav-external'] {
+  display: var(--_display-meta-nav-external);
+  flex: 1;
 }
-:host::part(app-name-extended) {
-  display: var(--_display-app-name-extended);
-  margin-right: var(--_spacing-right-app-name-extended);
-  transition: var(--transition);
-}
-
 slot[name='meta-nav'] {
   display: var(--_display-meta-nav);
+  /* TODO inline margin */
 }
-slot[name='meta-nav-ext'] {
-  display: var(--_display-meta-nav-ext);
-}
-slot[name='language-switch'] {
-  display: var(--_display-language-switch);
+slot[name='lang-switcher'] {
+  display: var(--_display-lang-switcher);
+  /* TODO inline margin */
 }
 
 slot[name='main-nav'] {
   display: var(--_display-main-nav);
+  flex: 1;
 }
-
 slot[name='functions'] {
-  display: flex;
-  justify-content: end;
+  display: block;
+  /* TODO inline margin */
 }
 
-:host::part(base) {
+[part~='base'] {
   height: var(--_height);
   background-color: var(--background);
   box-shadow: var(--shadow);
@@ -202,17 +198,20 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
-:host::part(container) {
-  margin: var(--_spacing-x);
-  display: flex;
+[part~='container'] {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: var(--_grid-template-columns-container);
+  column-gap: var(--_column-gap-container);
+  position: relative;
+  max-width: var(--_max-width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--_spacing-x-container);
+  padding-right: var(--_spacing-x-container);
 }
 
-:host::part(icon),
-:host::part(app-logo) {
-  display: flex;
-}
-
-:host::part(app-logo) {
+[part~='app-logo'] {
   height: var(--_height);
   width: var(--_height);
   display: flex;
@@ -221,11 +220,13 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
+/* TODO fix exportparts */
+/* targeting `scale-logo` */
 :host::part(logo-svg) {
   height: var(--_height-logo);
   transition: var(--transition);
 }
-
+/* targeting `scale-logo` */
 :host::part(logo) {
   height: calc(var(--_height) - 6px);
   width: calc(var(--_height) - 6px);
@@ -235,41 +236,71 @@ slot[name='functions'] {
   transition: var(--transition);
 }
 
-:host::part(horizontal-menus) {
+[part~='body'] {
   display: block;
-  width: 100%;
-  margin-left: var(--_spacing-left-horizontal-menus);
+  grid-column: var(--_grid-column-body);
+  flex: 1; /* used to be width: 100% */
+  margin-left: var(--_spacing-left-body);
 }
 
-:host::part(extended-menu-left),
-:host::part(extended-menu-right) {
-  display: inline-flex;
-  align-items: flex-start;
-  height: 100%;
-}
-
-:host::part(extended-menu) {
-  height: var(--_height-extended-menu);
+[part~='top-bar'] {
+  height: var(--_height-top-bar);
   display: flex;
-  justify-content: space-between;
   align-items: end;
   width: 100%;
   transition: var(--transition);
 }
 
-:host::part(base-menu) {
-  justify-content: var(--_base-menu-justify-content);
-  height: var(--_height-base-menu);
-  display: flex;
-  flex: 1;
+[part~='top-app-name'] {
+  display: var(--_display-top-app-name);
+  margin-right: var(--_spacing-right-top-app-name);
   transition: var(--transition);
 }
 
-:host::part(app-name-and-base-menu) {
+[part~='top-body'] {
+  display: inline-flex;
+  flex: 1;
+}
+
+[part~='bottom-bar'] {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+[part~='bottom-app-name'] {
+  display: var(--_display-bottom-app-name);
+  animation: var(--_animation-app-name);
+  margin-right: var(--_spacing-right-bottom-app-name);
+  transition: var(--transition);
+}
+
+[part~='bottom-body'] {
+  justify-content: var(--_base-menu-justify-content);
+  height: var(--_height-bottom-bar);
+  display: inline-flex;
+  flex: 1;
+  transition: var(--transition);
+}
+
+[part~='app-name-text'] {
+  font-size: var(--font-size-app-name);
+  font-weight: var(--font-weight-app-name);
+  line-height: var(--line-height-app-name);
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+[part~='app-name-text']:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part~='app-name-text']:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+
+/* --- Keyframes --- */
 
 @keyframes slideInLeft {
   0% {

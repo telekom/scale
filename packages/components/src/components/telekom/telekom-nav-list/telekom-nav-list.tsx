@@ -9,27 +9,50 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Element, Prop } from '@stencil/core';
+import { Component, h, Host, Element, Listen, Prop } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
+
+const isDirectChild = (parent: HTMLElement, child: HTMLElement) =>
+  [...parent.children].includes(child);
 
 @Component({
   tag: 'scale-telekom-nav-list',
   styleUrl: 'telekom-nav-list.css',
-  shadow: true,
+  shadow: false,
 })
 export class TelekomNavList {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop({ reflect: true }) alignment: 'left' | 'center' | 'right' = 'left';
   @Prop({ reflect: true }) variant:
-    | 'main'
-    | 'meta'
-    | 'meta-tight'
-    | 'function' = 'main';
+    | 'meta-nav-external'
+    | 'meta-nav'
+    | 'lang-switcher'
+    | 'main-nav'
+    | 'functions' = 'main-nav';
+
+  @Listen('scale-expanded')
+  handleScaleExpanded(event) {
+    if (event.detail.expanded) {
+      this.closeExpandedFlyoutSiblings(event.target);
+    }
+  }
+
+  closeExpandedFlyoutSiblings(target: HTMLElement) {
+    const siblingItems = [...this.hostElement.children].filter(
+      (x) => !x.contains(target)
+    ) as HTMLElement[];
+    siblingItems.forEach((item) => {
+      const flyout = item.querySelector('scale-telekom-nav-flyout');
+      if (isDirectChild(item, flyout) && flyout.expanded) {
+        flyout.expanded = false;
+      }
+    });
+  }
 
   render() {
     return (
-      <Host>
+      <Host class="scale-telekom-nav-list">
         <slot></slot>
       </Host>
     );

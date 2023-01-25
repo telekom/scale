@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                                             | Default  |
-| ----------- | ----------- | ----------- | ------------------------------------------------ | -------- |
-| `alignment` | `alignment` |             | `"center" \| "left" \| "right"`                  | `'left'` |
-| `variant`   | `variant`   |             | `"function" \| "main" \| "meta" \| "meta-tight"` | `'main'` |
+| Property    | Attribute   | Description | Type                                                                                | Default      |
+| ----------- | ----------- | ----------- | ----------------------------------------------------------------------------------- | ------------ |
+| `alignment` | `alignment` |             | `"center" \| "left" \| "right"`                                                     | `'left'`     |
+| `variant`   | `variant`   |             | `"functions" \| "lang-switcher" \| "main-nav" \| "meta-nav" \| "meta-nav-external"` | `'main-nav'` |
 
 
 ----------------------------------------------

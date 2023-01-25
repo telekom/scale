@@ -7,7 +7,6 @@
   --color-active: var(--telekom-color-primary-standard);
   --border-color: var(--telekom-color-ui-border-standard);
 
-  --_box-shadow-active: none;
   --_spacing-level: 0px;
   --_font: var(--font-bold);
   --_color: var(--color);
@@ -16,6 +15,12 @@
 :host::part(level-0) {
   --_spacing-level: 0px;
 }
+:host::part(level-0 active) {
+  --_spacing-level: 12px;
+}
+:host::part(level-0 open) {
+  --_spacing-level: 36px;
+}
 :host::part(level-1) {
   --_spacing-level: 36px;
 }
@@ -23,15 +28,9 @@
   --_spacing-level: 36px;
   --_font: var(--font-thin);
 }
-:host::part(level-0 open) {
-  --_spacing-level: 36px;
-}
-:host::part(level-0 active) {
-  --_spacing-level: 12px;
-}
+
 :host::part(active) {
   --_color: var(--color-active);
-  --_box-shadow-active: 2px 0px 0px 0px var(--color-active) inset;
 }
 
 :host::part(base) {
@@ -54,27 +53,21 @@
 
 :host::part(header) {
   height: var(--height);
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  border-color: var(--border-color);
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
-:host::part(header hidden) {
+:host::part(hidden) {
   display: none;
 }
 
-:host::part(icon-left-container) {
-  box-shadow: var(--_box-shadow-active);
-  min-height: 28px;
-  min-width: 2px;
-}
-
-:host::part(icon-left-container),
 :host::part(icon-right-container) {
   display: flex;
   align-items: center;
+}
+
+scale-divider {
+  --spacing: 0;
 }

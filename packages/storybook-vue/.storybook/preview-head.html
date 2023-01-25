@@ -7,7 +7,6 @@
     color: var(--telekom-color-text-and-icon-standard);
     background: var(--telekom-color-background-canvas);
   }
-
   .sbdocs.sbdocs-preview {
     /* needed for dark mode */
     color: var(--telekom-color-text-and-icon-standard);
@@ -27,6 +26,17 @@
   }
   .brand-header-spacing {
     margin: -1rem;
+  }
+  .brand-header-spacing .mobile-menu-trigger {
+    background: var(--telekom-color-background-canvas);
+    color: var(--telekom-color-text-and-icon-standard);
+    border: none;
+  }
+
+  @media screen and (min-width: 1040px) {
+    .brand-header-spacing .mobile-menu-trigger {
+      display: none;
+    }
   }
 
   scale-sb-spacing {

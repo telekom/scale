@@ -9,18 +9,23 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host } from '@stencil/core';
+import { Component, h, Host, Element } from '@stencil/core';
+import { HTMLStencilElement } from '@stencil/core/internal';
 
 @Component({
-  tag: 'scale-telekom-app-name',
-  styleUrl: 'telekom-app-name.css',
+  tag: 'scale-telekom-mega-menu-column',
+  styleUrl: 'telekom-mega-menu-column.css',
   shadow: true,
 })
-export class TelekomAppName {
+export class TelekomMegaMenuColumn {
+  @Element() hostElement: HTMLStencilElement;
+
   render() {
     return (
       <Host>
-        <slot></slot>
+        <div part="base">
+          <slot></slot>
+        </div>
       </Host>
     );
   }

@@ -85,3 +85,7 @@ Per Klick/Tap auf das Icon blenden Nutzer\*innen den Tag aus.
 
 - Wähle eine einheitliche Größe für Tags.
 - Verwende eine eindeutige Bezeichnung für das Label.
+
+## Verwandte Komponenten
+
+[Chip](?path=/usage/components-chip--standard),
