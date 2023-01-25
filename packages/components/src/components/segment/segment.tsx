@@ -21,7 +21,6 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
-import statusNote from '../../utils/status-note';
 
 let i = 0;
 
