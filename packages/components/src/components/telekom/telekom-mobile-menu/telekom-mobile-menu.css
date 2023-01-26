@@ -38,6 +38,7 @@
   font: var(--telekom-text-style-lead-text);
   width: 100%;
   height: 72px;
+  cursor: pointer;
 }
 
 scale-icon-navigation-left {
