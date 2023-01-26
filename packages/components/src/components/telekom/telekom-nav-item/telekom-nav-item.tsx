@@ -45,7 +45,7 @@ export class TelekomNavItem {
     if (this.linkElement == null) {
       return;
     }
-    if (this.variant == "lang-switcher" && this.active) {
+    if (this.variant === 'lang-switcher' && this.active) {
       toggleAriaCurrent(this.linkElement, newValue, 'true');
     }
   }

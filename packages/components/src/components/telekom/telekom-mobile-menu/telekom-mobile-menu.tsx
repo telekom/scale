@@ -145,11 +145,10 @@ export class TelekomMobileMenu {
             <slot name="top-left"></slot>
             <slot name="top-right"></slot>
           </div>
-          <nav
-            part="nav"
-          >
+          <nav part="nav">
             {+this.currentLevel > 0 ? (
-              <button part="back-button" 
+              <button
+                part="back-button"
                 onClick={() => {
                   this.back();
                 }}

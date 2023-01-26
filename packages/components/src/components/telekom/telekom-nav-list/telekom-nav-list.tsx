@@ -51,10 +51,10 @@ export class TelekomNavList {
   }
 
   connectedCallback() {
-    if (this.variant == 'lang-switcher') {
-      [...this.hostElement.children].forEach((el: HTMLElement )=> {
-        el.setAttribute('variant', this.variant)
-      })
+    if (this.variant === 'lang-switcher') {
+      [...this.hostElement.children].forEach((el: HTMLElement) => {
+        el.setAttribute('variant', this.variant);
+      });
     }
   }
 
