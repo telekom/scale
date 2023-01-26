@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type      | Default |
-| -------- | --------- | ----------- | --------- | ------- |
-| `active` | `active`  |             | `boolean` | `false` |
+| Property  | Attribute | Description | Type      | Default     |
+| --------- | --------- | ----------- | --------- | ----------- |
+| `active`  | `active`  |             | `boolean` | `false`     |
+| `variant` | `variant` |             | `string`  | `undefined` |
 
 
 ----------------------------------------------
