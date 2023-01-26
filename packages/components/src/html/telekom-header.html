@@ -50,7 +50,7 @@
         text-decoration: line-through;
       }
       @media screen and (min-width: 1040px) {
-        .mobile-menu {
+        .mobile-menu-trigger {
           display: none;
         }
       }
@@ -472,11 +472,11 @@
               </scale-telekom-nav-item>
             </scale-telekom-nav-list>
             <scale-telekom-nav-list
-              variant="meta-nav-external"
+              variant="lang-switcher"
               slot="top-right"
               alignment="right"
             >
-              <scale-telekom-nav-item>
+              <scale-telekom-nav-item aria-current="true">
                 <a href="#">MK</a>
               </scale-telekom-nav-item>
               <scale-telekom-nav-item>
