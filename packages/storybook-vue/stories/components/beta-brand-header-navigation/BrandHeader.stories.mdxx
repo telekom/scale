@@ -153,8 +153,9 @@ import TelekomHeader from './TelekomHeader.vue';
                   variant="meta-nav-external"
                   slot="top-left"
                   alignment="left"
+                  variant="lang-switcher"
                 >
-                  <scale-telekom-nav-item>
+                  <scale-telekom-nav-item aria-current="true">
                     <a href="#">MK</a>
                   </scale-telekom-nav-item>
                   <scale-telekom-nav-item>
@@ -338,8 +339,9 @@ import TelekomHeader from './TelekomHeader.vue';
                   variant="meta-nav-external"
                   slot="top-left"
                   alignment="left"
+                  variant="lang-switcher"
                 >
-                  <scale-telekom-nav-item>
+                  <scale-telekom-nav-item aria-current="true">
                     <a href="#">MK</a>
                   </scale-telekom-nav-item>
                   <scale-telekom-nav-item>
@@ -1087,7 +1089,3 @@ import TelekomHeader from './TelekomHeader.vue';
     })}
   </Story>
 </Canvas>
-
-
-
-
