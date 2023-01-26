@@ -25,7 +25,7 @@
   "scripts": {
     "build": "stencil build --docs-readme",
     "build:whitelabel": "WHITELABEL=1 stencil build --docs-readme",
-    "build:watch": "stencil build --watch",
+    "build:watch": "stencil build --watch --serve --config stencil-dev.config.ts",
     "build:staging": "stencil build --config stencil-staging.config.ts",
     "start": "stencil build --dev --watch --serve --config stencil-dev.config.ts",
     "dev": "yarn start",
