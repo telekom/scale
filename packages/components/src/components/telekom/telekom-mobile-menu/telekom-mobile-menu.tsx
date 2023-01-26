@@ -147,12 +147,13 @@ export class TelekomMobileMenu {
           </div>
           <nav
             part="nav"
-            onClick={() => {
-              this.back();
-            }}
           >
             {+this.currentLevel > 0 ? (
-              <button part="back-button">
+              <button part="back-button" 
+                onClick={() => {
+                  this.back();
+                }}
+              >
                 <scale-icon-navigation-left></scale-icon-navigation-left>
                 {this.backButtonTitle}
               </button>
