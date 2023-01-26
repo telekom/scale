@@ -117,6 +117,10 @@ Das Label beschreibt einzelne Auswahlmöglichkeiten und sollte kurz und präzise
 
 ![Image Name](assets/3_components/segmented-button/SegmentedButton-Tip-DE.png)
 
+## Beta-Komponente
+
+Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
+
 ## Verwandte Komponenten
 
 [Tab Navigation](?path=/usage/components-tab-navigation--text-icon),
