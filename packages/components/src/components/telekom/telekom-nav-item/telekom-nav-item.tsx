@@ -37,13 +37,16 @@ export class TelekomNavItem {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop({ reflect: true }) active?: boolean = false;
+  @Prop({ reflect: true }) variant?: string;
 
   @Watch('active')
   activeChanged(newValue: boolean) {
     if (this.linkElement == null) {
       return;
     }
-    toggleAriaCurrent(this.linkElement, newValue);
+    if (this.variant == "lang-switcher" ) {
+      toggleAriaCurrent(this.linkElement, newValue, 'true');
+    }
   }
 
   connectedCallback() {

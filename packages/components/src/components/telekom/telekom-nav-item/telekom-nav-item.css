@@ -178,7 +178,7 @@
 }
 
 .scale-telekom-nav-list[variant='lang-switcher']
-  > .scale-telekom-nav-item:where([aria-current='true'])
-  > a {
+  > .scale-telekom-nav-item
+  > a:where([aria-current='true']) {
   font-weight: var(--telekom-typography-font-weight-extra-bold);
 }

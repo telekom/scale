@@ -155,7 +155,7 @@ import TelekomHeader from './TelekomHeader.vue';
                   alignment="left"
                   variant="lang-switcher"
                 >
-                  <scale-telekom-nav-item aria-current="true">
+                  <scale-telekom-nav-item active>
                     <a href="#">MK</a>
                   </scale-telekom-nav-item>
                   <scale-telekom-nav-item>
@@ -341,7 +341,7 @@ import TelekomHeader from './TelekomHeader.vue';
                   alignment="left"
                   variant="lang-switcher"
                 >
-                  <scale-telekom-nav-item aria-current="true">
+                  <scale-telekom-nav-item active>
                     <a href="#">MK</a>
                   </scale-telekom-nav-item>
                   <scale-telekom-nav-item>
