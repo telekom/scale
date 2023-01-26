@@ -15,7 +15,7 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 @Component({
   tag: 'scale-telekom-mega-menu',
   styleUrl: 'telekom-mega-menu.css',
-  shadow: true,
+  shadow: false,
 })
 export class TelekomMegaMenu {
   @Element() hostElement: HTMLStencilElement;
@@ -31,10 +31,11 @@ export class TelekomMegaMenu {
 
   render() {
     return (
-      <Host children-too-many={this.childrenTooMany}>
-        <div part="base">
-          <slot></slot>
-        </div>
+      <Host
+        class="scale-telekom-mega-menu"
+        children-too-many={this.childrenTooMany}
+      >
+        <slot></slot>
       </Host>
     );
   }

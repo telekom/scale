@@ -14,14 +14,12 @@
   but just copy/pasting the same code…
 */
 
-:host {
+.scale-telekom-mega-menu {
   --spacing-y: var(--telekom-spacing-unit-x18);
   /* matches grid.css */
   --spacing-x: var(--telekom-spacing-unit-x6);
   --column-gap: var(--telekom-spacing-unit-x8);
-}
 
-[part='base'] {
   box-sizing: border-box;
   width: 100%;
   max-width: var(--scl-grid-max-width);
@@ -35,4 +33,33 @@
   padding-bottom: var(--spacing-y);
   margin-left: auto;
   margin-right: auto;
+  font-size: var(--telekom-typography-font-size-body);
+  line-height: var(--telekom-typography-line-spacing-standard);
+}
+
+.scale-telekom-mega-menu :where(ul, ol) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.scale-telekom-mega-menu :where(a) {
+  display: inline-block;
+  color: var(--telekom-color-text-and-icon-standard);
+  text-decoration: none;
+}
+
+.scale-telekom-mega-menu :where(ul a) {
+  width: 100%;
+}
+
+.scale-telekom-mega-menu :where(a):hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+.scale-telekom-mega-menu :where(a):active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+
+.scale-telekom-mega-menu :where(li + li) {
+  margin-top: var(--telekom-spacing-unit-x5);
 }

@@ -12,6 +12,8 @@
 @import url('../../../global/custom-media.css');
 
 :host {
+  --spacing-x-icon: 1ch;
+
   grid-column: auto / span 3;
 }
 
@@ -26,4 +28,38 @@
 [part~='base'] {
   display: flex;
   flex-direction: column;
+}
+
+[part~='icon'] {
+  transform: translateY(-2px);
+}
+
+@media screen and (--xl) {
+  [part~='base'] {
+    flex-direction: row;
+  }
+
+  [part~='icon'] {
+    padding-right: var(--spacing-x-icon);
+  }
+}
+
+[part~='heading'] {
+  display: flex;
+  align-items: flex-start;
+  height: calc(var(--telekom-typography-line-spacing-standard) * 2rem);
+  font-weight: var(--telekom-typography-font-weight-bold);
+  line-height: var(--telekom-typography-line-spacing-tight);
+}
+
+[part~='heading-has-link'] [part~='heading']:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+[part~='heading-has-link'] [part~='heading']:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+
+[part~='icon-arrow-right'] {
+  margin-top: 0.5ch;
+  margin-left: 0.5ch;
 }
