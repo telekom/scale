@@ -6,6 +6,300 @@ import {
   Canvas,
 } from '@storybook/addon-docs';
 import TelekomHeader from './TelekomHeader.vue';
+const mobileMenu = `<scale-telekom-nav-flyout
+  class="mobile-menu-flyout"
+  style="
+    --translate-y: 100%;
+    --duration: 0;
+    --top: 0;
+    --height: 100vh;
+    --spacing-x: 0;
+    --background: var(--telekom-color-background-canvas);
+  "
+>
+  <scale-telekom-mobile-flyout-canvas
+    app-name="Application Name"
+    app-name-link="#"
+  >
+    <scale-telekom-nav-list
+      variant="meta-nav-external"
+      slot="mobile-before-main-nav"
+      alignment="left"
+    >
+      <scale-telekom-nav-item>
+        <a href="#">MK</a>
+      </scale-telekom-nav-item>
+      <scale-telekom-nav-item>
+        <a href="#">SO</a>
+      </scale-telekom-nav-item>
+      <scale-telekom-nav-item>
+        <a href="#">DE</a>
+      </scale-telekom-nav-item>
+    </scale-telekom-nav-list>
+    <scale-telekom-mobile-menu slot="mobile-main-nav">
+      <scale-telekom-mobile-menu-item>
+        <a href="#category-1">Topic One</a>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">Second Level</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">Second Level</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">Second Level</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">Second Level</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">Second Level</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+      </scale-telekom-mobile-menu-item>
+      <scale-telekom-mobile-menu-item>
+        <a href="#category-1">Topic Two</a>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">Second Level</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">Second Level</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">Second Level</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+        <scale-telekom-mobile-menu-item slot="children">
+          <a href="#">Second Level</a>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+          <scale-telekom-mobile-menu-item slot="children">
+            <a href="#">Third Level</a>
+          </scale-telekom-mobile-menu-item>
+        </scale-telekom-mobile-menu-item>
+      </scale-telekom-mobile-menu-item>
+      <scale-telekom-mobile-menu-item>
+        <a href="#category-1">Topic Three</a>
+      </scale-telekom-mobile-menu-item>
+      <scale-telekom-mobile-menu-item>
+        <a href="#category-1">Topic Four</a>
+      </scale-telekom-mobile-menu-item>
+      <scale-telekom-mobile-menu-item>
+        <a href="#category-1">Topic Five</a>
+      </scale-telekom-mobile-menu-item>
+    </scale-telekom-mobile-menu>
+    <scale-telekom-nav-list
+      variant="meta-nav-external"
+      slot="mobile-meta-nav-external"
+      alignment="left"
+      style="--flex-direction: column"
+    >
+      <scale-telekom-nav-item>
+        <a href="#"
+          >Metanavigation external
+          <scale-icon-navigation-external-link
+            size="11"
+          ></scale-icon-navigation-external-link>
+        </a>
+      </scale-telekom-nav-item>
+      <scale-telekom-nav-item>
+        <a href="#"
+          >Metanavigation external
+          <scale-icon-navigation-external-link
+            size="11"
+          ></scale-icon-navigation-external-link>
+        </a>
+      </scale-telekom-nav-item>
+      <scale-telekom-nav-item>
+        <a href="#">Metanavigation internal</a>
+      </scale-telekom-nav-item>
+      <scale-telekom-nav-item>
+        <a href="#">Metanavigation internal</a>
+      </scale-telekom-nav-item>
+    </scale-telekom-nav-list>
+  </scale-telekom-mobile-flyout-canvas>
+</scale-telekom-nav-flyout>`;
 
 <Meta
   title="Beta Components/Brand Header & Navigation"
@@ -136,84 +430,7 @@ import TelekomHeader from './TelekomHeader.vue';
                 <scale-icon-action-menu></scale-icon-action-menu>
               </scale-badge>
             </button>
-            <scale-telekom-nav-flyout
-              class="mobile-menu-flyout"
-              style="
-                --translate-y: 100%;
-                --duration: var(--telekom-motion-duration-animation);
-                --top: 0;
-                --height: 100vh;
-                --spacing-x: 0;
-                --background: var(--telekom-color-background-canvas);
-              "
-            >
-              <scale-telekom-mobile-menu
-              >
-                <scale-telekom-nav-list
-                  variant="meta-nav-external"
-                  slot="top-left"
-                  alignment="left"
-                >
-                  <scale-telekom-nav-item>
-                    <a href="#">MK</a>
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">SO</a>
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">DE</a>
-                  </scale-telekom-nav-item>
-                </scale-telekom-nav-list>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic One</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic Two</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic Three</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic Four</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic Five</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-nav-list
-                  variant="meta-nav-external"
-                  slot="bottom"
-                  alignment="left"
-                  style="--flex-direction: column"
-                >
-                  <scale-telekom-nav-item>
-                    <a href="#">Metanavigation external
-                    <scale-icon-navigation-external-link
-                      size="11"
-                    ></scale-icon-navigation-external-link>                      
-                    </a>
-                    <scale-icon-navigation-external-link
-                      size="11"
-                    ></scale-icon-navigation-external-link>                        
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">Metanavigation external
-                    <scale-icon-navigation-external-link
-                      size="11"
-                    ></scale-icon-navigation-external-link>                      
-                    </a>
-                    <scale-icon-navigation-external-link
-                      size="11"
-                    ></scale-icon-navigation-external-link>                        
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">Metanavigation internal</a>
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">Metanavigation internal</a>
-                  </scale-telekom-nav-item>                         
-                </scale-telekom-nav-list>
-              </scale-telekom-mobile-menu>
-            </scale-telekom-nav-flyout>
+            ${mobileMenu}
           </scale-telekom-nav-list>
         </scale-telekom-header>
         </div>
@@ -221,7 +438,6 @@ import TelekomHeader from './TelekomHeader.vue';
     })}
   </Story>
 </Canvas>
-
 
 ## Application Name
 
@@ -233,7 +449,7 @@ import TelekomHeader from './TelekomHeader.vue';
           <scale-telekom-header
           app-name="Application Name"
           app-name-link="https://example.com"
-        >
+          >
           <!-- MAIN NAV -->
           <scale-telekom-nav-list variant="main-nav" slot="main-nav">
             <scale-telekom-nav-item active>
@@ -319,80 +535,7 @@ import TelekomHeader from './TelekomHeader.vue';
                 <scale-icon-action-menu></scale-icon-action-menu>
               </scale-badge>
             </button>
-            <scale-telekom-nav-flyout
-              class="mobile-menu-flyout"
-              style="
-                --translate-y: 100%;
-                --duration: var(--telekom-motion-duration-animation);
-                --top: 0;
-                --height: 100vh;
-                --spacing-x: 0;
-                --background: var(--telekom-color-background-canvas);
-              "
-            >
-              <scale-telekom-mobile-menu
-                app-name="Application Name"
-                app-name-link="#"
-              >
-                <scale-telekom-nav-list
-                  variant="meta-nav-external"
-                  slot="top-left"
-                  alignment="left"
-                >
-                  <scale-telekom-nav-item>
-                    <a href="#">MK</a>
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">SO</a>
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">DE</a>
-                  </scale-telekom-nav-item>
-                </scale-telekom-nav-list>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic One</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic Two</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic Three</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic Four</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item>
-                  <a href="#category-1">Topic Five</a>
-                </scale-telekom-mobile-menu-item>
-                <scale-telekom-nav-list
-                  variant="meta-nav-external"
-                  slot="bottom"
-                  alignment="left"
-                  style="--flex-direction: column"
-                >
-                  <scale-telekom-nav-item>
-                    <a href="#">Metanavigation external
-                    <scale-icon-navigation-external-link
-                      size="11"
-                    ></scale-icon-navigation-external-link>                      
-                    </a>
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">Metanavigation external
-                    <scale-icon-navigation-external-link
-                      size="11"
-                    ></scale-icon-navigation-external-link>                      
-                    </a>
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">Metanavigation internal</a>
-                  </scale-telekom-nav-item>
-                  <scale-telekom-nav-item>
-                    <a href="#">Metanavigation internal</a>
-                  </scale-telekom-nav-item>                         
-                </scale-telekom-nav-list>
-              </scale-telekom-mobile-menu>
-            </scale-telekom-nav-flyout>
+            ${mobileMenu}
           </scale-telekom-nav-list>
         </scale-telekom-header>
         </div>
@@ -401,8 +544,7 @@ import TelekomHeader from './TelekomHeader.vue';
   </Story>
 </Canvas>
 
-
-## Flyout Navigation 
+## Flyout Navigation
 
 <Canvas withSource="none">
   <Story name="Flyout Navigation" args={{}} inline={false}>
@@ -782,304 +924,7 @@ import TelekomHeader from './TelekomHeader.vue';
                      <scale-icon-action-menu></scale-icon-action-menu>
                    </scale-badge>
                  </button>
-                 <scale-telekom-nav-flyout
-                   class="mobile-menu-flyout"
-                   style="
-                     --translate-y: 100%;
-                     --duration: var(--telekom-motion-duration-animation);
-                     --top: 0;
-                     --height: 100vh;
-                     --spacing-x: 0;
-                     --background: var(--telekom-color-background-canvas);
-                   "
-                 >
-                   <scale-telekom-mobile-menu>
-                     <scale-telekom-nav-list
-                       variant="meta-nav-external"
-                       slot="top-left"
-                       alignment="left">
-                       <scale-telekom-nav-item>
-                         <a href="#">MK</a>
-                       </scale-telekom-nav-item>
-                       <scale-telekom-nav-item>
-                         <a href="#">SO</a>
-                       </scale-telekom-nav-item>
-                       <scale-telekom-nav-item>
-                         <a href="#">DE</a>
-                       </scale-telekom-nav-item>
-                     </scale-telekom-nav-list>
-                     <scale-telekom-mobile-menu-item>
-                       <a href="#category-1">Topic One</a>
-                       <scale-telekom-mobile-menu-item slot="children">
-                         <a href="#">Second Level</a>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                       </scale-telekom-mobile-menu-item>
-                       <scale-telekom-mobile-menu-item slot="children">
-                         <a href="#">Second Level</a>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                       </scale-telekom-mobile-menu-item>
-                       <scale-telekom-mobile-menu-item slot="children">
-                         <a href="#">Second Level</a>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                       </scale-telekom-mobile-menu-item>
-                       <scale-telekom-mobile-menu-item slot="children">
-                         <a href="#">Second Level</a>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                       </scale-telekom-mobile-menu-item>
-                       <scale-telekom-mobile-menu-item slot="children">
-                         <a href="#">Second Level</a>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                       </scale-telekom-mobile-menu-item>
-                     </scale-telekom-mobile-menu-item>
-                     <scale-telekom-mobile-menu-item>
-                       <a href="#category-1">Topic Two</a>
-                       <scale-telekom-mobile-menu-item slot="children">
-                         <a href="#">Second Level</a>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                       </scale-telekom-mobile-menu-item>
-                       <scale-telekom-mobile-menu-item slot="children">
-                         <a href="#">Second Level</a>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                       </scale-telekom-mobile-menu-item>
-                       <scale-telekom-mobile-menu-item slot="children">
-                         <a href="#">Second Level</a>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                       </scale-telekom-mobile-menu-item>
-                       <scale-telekom-mobile-menu-item slot="children">
-                         <a href="#">Second Level</a>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                         <scale-telekom-mobile-menu-item slot="children">
-                           <a href="#">Third Level</a>
-                         </scale-telekom-mobile-menu-item>
-                       </scale-telekom-mobile-menu-item>
-                     </scale-telekom-mobile-menu-item>
-                     <scale-telekom-mobile-menu-item>
-                       <a href="#category-1">Topic Three</a>
-                     </scale-telekom-mobile-menu-item>
-                     <scale-telekom-mobile-menu-item>
-                       <a href="#category-1">Topic Four</a>
-                     </scale-telekom-mobile-menu-item>
-                     <scale-telekom-mobile-menu-item>
-                       <a href="#category-1">Topic Five</a>
-                     </scale-telekom-mobile-menu-item>
-                     <scale-telekom-nav-list
-                       variant="meta-nav-external"
-                       slot="bottom"
-                       alignment="left"
-                       style="--flex-direction: column"
-                     >
-                       <scale-telekom-nav-item>
-                         <a href="#">Metanavigation external
-                    <scale-icon-navigation-external-link
-                      size="11"
-                    ></scale-icon-navigation-external-link>                          
-                         </a>
-                         <scale-icon-navigation-external-link
-                           size="11"
-                         ></scale-icon-navigation-external-link>                             
-                         <scale-icon-navigation-external-link
-                           size="11"
-                         ></scale-icon-navigation-external-link>                         
-                       </scale-telekom-nav-item>
-                       <scale-telekom-nav-item>
-                         <a href="#">Metanavigation external
-                    <scale-icon-navigation-external-link
-                      size="11"
-                    ></scale-icon-navigation-external-link>                          
-                         </a>
-                         <scale-icon-navigation-external-link
-                           size="11"
-                         ></scale-icon-navigation-external-link>                             
-                         <scale-icon-navigation-external-link
-                           size="11"
-                         ></scale-icon-navigation-external-link>                             
-                       </scale-telekom-nav-item>
-                       <scale-telekom-nav-item>
-                         <a href="#">Metanavigation internal</a>
-                       </scale-telekom-nav-item>
-                       <scale-telekom-nav-item>
-                         <a href="#">Metanavigation internal</a>
-                       </scale-telekom-nav-item>                         
-                     </scale-telekom-nav-list>
-                   </scale-telekom-mobile-menu>
-                 </scale-telekom-nav-flyout>
+                 ${mobileMenu}
                </scale-telekom-nav-list>
              </scale-telekom-header>
         </div>
@@ -1087,7 +932,3 @@ import TelekomHeader from './TelekomHeader.vue';
     })}
   </Story>
 </Canvas>
-
-
-
-

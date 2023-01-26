@@ -5,18 +5,19 @@
   --font-thin: var(--telekom-text-style-lead-text);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-active: var(--telekom-color-primary-standard);
-  --border-color: var(--telekom-color-ui-border-standard);
+  --border-color: var(--telekom-color-ui-faint);
 
   --_spacing-level: 0px;
   --_font: var(--font-bold);
   --_color: var(--color);
+  position: relative;
 }
 
 :host::part(level-0) {
   --_spacing-level: 0px;
 }
 :host::part(level-0 active) {
-  --_spacing-level: 12px;
+  --_spacing-level: 0px;
 }
 :host::part(level-0 open) {
   --_spacing-level: 36px;
@@ -44,7 +45,7 @@
   display: flex;
   align-items: center;
   height: var(--height);
-  width: calc(100% - calc(32px + var(--_spacing-level)));
+  width: calc(100% - var(--_spacing-level));
   max-width: 572px;
   padding-left: var(--_spacing-level);
   color: var(--_color);
@@ -57,6 +58,9 @@
   width: 100%;
   align-items: center;
   justify-content: flex-end;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: var(--border-color);
 }
 
 :host::part(hidden) {
@@ -66,8 +70,4 @@
 :host::part(icon-right-container) {
   display: flex;
   align-items: center;
-}
-
-scale-divider {
-  --spacing: 0;
 }

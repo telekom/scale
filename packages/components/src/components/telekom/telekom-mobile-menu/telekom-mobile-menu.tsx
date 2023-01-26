@@ -20,7 +20,6 @@ import {
   Event,
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
-import { emitEvent } from '../../../utils/utils';
 
 function elementDepth(el) {
   let depth = 0;
@@ -118,33 +117,7 @@ export class TelekomMobileMenu {
   render() {
     return (
       <Host>
-        <button
-          part="close-button"
-          onClick={(e) => {
-            emitEvent(this, 'scaleCloseNavFlyout', e);
-          }}
-        >
-          <scale-icon-action-close
-            size={24}
-            accessibility-title={this.closeButtonTitle}
-          ></scale-icon-action-close>
-        </button>
-
         <div part="base">
-          <div part="app-name">
-            {this.appNameLink ? (
-              <a onClick={this.appNameClick} href={this.appNameLink}>
-                {this.appName}
-              </a>
-            ) : (
-              <span>{this.appName}</span>
-            )}
-          </div>
-
-          <div part="links-top">
-            <slot name="top-left"></slot>
-            <slot name="top-right"></slot>
-          </div>
           <nav
             part="nav"
             onClick={() => {
@@ -159,7 +132,6 @@ export class TelekomMobileMenu {
             ) : null}
             <slot></slot>
           </nav>
-          <slot name="bottom"></slot>
         </div>
       </Host>
     );

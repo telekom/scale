@@ -16,8 +16,6 @@
 
 :host::part(base) {
   margin: 0 auto;
-  padding: var(--spacing);
-  padding-top: calc(var(--spacing) - 6px);
   background: var(--background);
   display: flex;
   justify-content: center;
@@ -25,9 +23,6 @@
   max-width: var(--max-width);
 }
 
-:host::part(app-name) {
-  padding: var(--spacing) 0;
-}
 
 :host::part(back-button) {
   display: flex;
@@ -38,6 +33,7 @@
   font: var(--telekom-text-style-lead-text);
   width: 100%;
   height: 72px;
+  padding: 0;
 }
 
 scale-icon-navigation-left {
@@ -50,42 +46,7 @@ scale-icon-navigation-left {
   width: 100%;
 }
 
-:host::part(close-button) {
-  position: absolute;
-  top: 22px;
-  right: 10px;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-close-button);
-  margin-bottom: calc(-2 * var(--spacing-close-button));
-  border: 0;
-  border-radius: var(--radius-close-button);
-  outline: none;
-  background: transparent;
-  transition: var(--transition-close-button);
-  transform: translate(
-    var(--spacing-close-button),
-    calc(-1 * var(--spacing-close-button))
-  );
-  appearance: none;
-  cursor: pointer;
-  user-select: none;
-  color: var(--telekom-color-text-and-icon-standard);
-}
 
-:host::part(close-button):focus {
-  box-shadow: var(--box-shadow-close-button-focus);
-}
-
-:host::part(close-button):hover {
-  color: var(--color-hover);
-}
-
-:host::part(close-button):active {
-  color: var(--color-active);
-}
 
 :host::part(links-top) {
   display: flex;
