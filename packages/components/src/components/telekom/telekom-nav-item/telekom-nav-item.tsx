@@ -40,11 +40,12 @@ export class TelekomNavItem {
   @Prop({ reflect: true }) variant?: string;
 
   @Watch('active')
+  @Watch('variant')
   activeChanged(newValue: boolean) {
     if (this.linkElement == null) {
       return;
     }
-    if (this.variant == "lang-switcher" ) {
+    if (this.variant == "lang-switcher" && this.active) {
       toggleAriaCurrent(this.linkElement, newValue, 'true');
     }
   }
