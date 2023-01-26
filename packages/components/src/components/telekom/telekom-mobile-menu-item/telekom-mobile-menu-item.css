@@ -15,9 +15,7 @@
 :host::part(level-0) {
   --_spacing-level: 0px;
 }
-:host::part(level-0 active) {
-  --_spacing-level: 12px;
-}
+
 :host::part(level-0 open) {
   --_spacing-level: 36px;
 }
