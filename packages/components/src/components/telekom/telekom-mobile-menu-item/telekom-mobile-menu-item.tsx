@@ -95,7 +95,7 @@ export class TelekomMobileMenuItem {
         >
           <div
             part={cx('header', {
-              hidden: this.level < this.currentLevel
+              hidden: this.level < this.currentLevel,
             })}
           >
             <slot></slot>
