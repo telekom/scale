@@ -50,7 +50,7 @@
         text-decoration: line-through;
       }
       @media screen and (min-width: 1040px) {
-        .mobile-menu {
+        .mobile-menu-trigger {
           display: none;
         }
       }
@@ -207,7 +207,21 @@
           <a href="#">Metalink 2</a>
         </scale-telekom-nav-item>
       </scale-telekom-nav-list>
-      <section slot="language-switch"></section>
+      <scale-telekom-nav-list
+        variant="lang-switcher"
+        slot="lang-switcher"
+        alignment="right"
+      >
+        <scale-telekom-nav-item active>
+          <a href="#">MK</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <a href="#">SO</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <a href="#">DE</a>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
       <scale-telekom-nav-list
         variant="functions"
         slot="functions"
@@ -273,11 +287,11 @@
               </scale-telekom-nav-item>
             </scale-telekom-nav-list>
             <scale-telekom-nav-list
-              variant="meta-nav-external"
+              variant="lang-switcher"
               slot="top-right"
               alignment="right"
             >
-              <scale-telekom-nav-item>
+              <scale-telekom-nav-item active>
                 <a href="#">MK</a>
               </scale-telekom-nav-item>
               <scale-telekom-nav-item>
@@ -287,7 +301,7 @@
                 <a href="#">DE</a>
               </scale-telekom-nav-item>
             </scale-telekom-nav-list>
-            <scale-telekom-mobile-menu-item>
+            <scale-telekom-mobile-menu-item active>
               <a href="#category-1">Topic One</a>
               <scale-telekom-mobile-menu-item slot="children">
                 <a href="#">Second Level</a>

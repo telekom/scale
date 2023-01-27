@@ -22,11 +22,11 @@ const mobileMenu = `<scale-telekom-nav-flyout
     app-name-link="#"
   >
     <scale-telekom-nav-list
-      variant="meta-nav-external"
+      variant="lang-switcher"
       slot="mobile-before-main-nav"
       alignment="left"
     >
-      <scale-telekom-nav-item>
+      <scale-telekom-nav-item active>
         <a href="#">MK</a>
       </scale-telekom-nav-item>
       <scale-telekom-nav-item>
@@ -37,9 +37,9 @@ const mobileMenu = `<scale-telekom-nav-flyout
       </scale-telekom-nav-item>
     </scale-telekom-nav-list>
     <scale-telekom-mobile-menu slot="mobile-main-nav">
-      <scale-telekom-mobile-menu-item>
-        <a href="#category-1">Topic One</a>
-        <scale-telekom-mobile-menu-item slot="children">
+      <scale-telekom-mobile-menu-item active>
+        <a href="#category-1" >Topic One</a>
+        <scale-telekom-mobile-menu-item active slot="children">
           <a href="#">Second Level</a>
           <scale-telekom-mobile-menu-item slot="children">
             <a href="#">Third Level</a>
@@ -397,7 +397,21 @@ const mobileMenu = `<scale-telekom-nav-flyout
               <a href="#">Metalink internal</a>
             </scale-telekom-nav-item>
           </scale-telekom-nav-list>
-          <section slot="language-switch"></section>
+      <scale-telekom-nav-list
+        variant="lang-switcher"
+        slot="lang-switcher"
+        alignment="right"
+      >
+        <scale-telekom-nav-item active>
+          <a href="#">MK</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <a href="#">SO</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <a href="#">DE</a>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
           <scale-telekom-nav-list
             variant="functions"
             slot="functions"
@@ -502,7 +516,21 @@ const mobileMenu = `<scale-telekom-nav-flyout
               <a href="#">Metalink internal</a>
             </scale-telekom-nav-item>
           </scale-telekom-nav-list>
-          <section slot="language-switch"></section>
+                <scale-telekom-nav-list
+        variant="lang-switcher"
+        slot="lang-switcher"
+        alignment="right"
+      >
+        <scale-telekom-nav-item active>
+          <a href="#">MK</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <a href="#">SO</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <a href="#">DE</a>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
           <scale-telekom-nav-list
             variant="functions"
             slot="functions"
@@ -648,6 +676,7 @@ const mobileMenu = `<scale-telekom-nav-flyout
                            <li><a href="https://example.com">Third Level</a></li>
                            <li><a href="https://example.com">Third Level</a></li>
                          </ul>
+                        </scale-telekom-mega-menu-column>   
                        </scale-telekom-mega-menu-column>
                        <scale-telekom-mega-menu-column>
                          <scale-icon-home-home slot="icon"></scale-icon-home-home>
@@ -720,12 +749,26 @@ const mobileMenu = `<scale-telekom-nav-flyout
                    <a href="#">Metalink internal</a>
                  </scale-telekom-nav-item>
                </scale-telekom-nav-list>
-               <section slot="language-switch"></section>
-               <scale-telekom-nav-list
-                 variant="functions"
-                 slot="functions"
-                 alignment="right"
-               >
+              <scale-telekom-nav-list
+                variant="lang-switcher"
+                slot="lang-switcher"
+                alignment="right"
+              >
+                <scale-telekom-nav-item active>
+                  <a href="#">MK</a>
+                </scale-telekom-nav-item>
+                <scale-telekom-nav-item>
+                  <a href="#">SO</a>
+                </scale-telekom-nav-item>
+                <scale-telekom-nav-item>
+                  <a href="#">DE</a>
+                </scale-telekom-nav-item>
+              </scale-telekom-nav-list>
+                <scale-telekom-nav-list
+                  variant="functions"
+                  slot="functions"
+                  alignment="right"
+                >
                  <scale-telekom-nav-item>
                    <a href="#">
                      <scale-icon-action-search> </scale-icon-action-search>

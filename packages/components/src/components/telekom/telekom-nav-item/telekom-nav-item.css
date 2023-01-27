@@ -170,3 +170,33 @@
   > * {
   margin-inline-start: 0.5ch;
 }
+
+/* language switcher  */
+
+.scale-telekom-nav-list[variant='lang-switcher'] > .scale-telekom-nav-item > a,
+.scale-telekom-nav-list[variant='meta-nav-external']
+  > .scale-telekom-nav-item
+  > a {
+  font-size: var(--telekom-typography-font-size-body);
+}
+
+.scale-telekom-nav-list[variant='lang-switcher']
+  > .scale-telekom-nav-item
+  > a:where([aria-current='true']) {
+  font-weight: var(--telekom-typography-font-weight-extra-bold);
+}
+
+@media screen and (--lg) {
+  .scale-telekom-nav-list[variant='meta-nav'] {
+    margin-right: var(--telekom-spacing-unit-x6);
+  }
+
+  .scale-telekom-nav-list[variant='lang-switcher']
+    > .scale-telekom-nav-item
+    > a,
+  .scale-telekom-nav-list[variant='meta-nav-external']
+    > .scale-telekom-nav-item
+    > a {
+    font-size: var(--telekom-typography-font-size-small);
+  }
+}

@@ -101,7 +101,9 @@ export class TelekomMobileMenuItem {
             <slot></slot>
             <div part="icon-right-container">
               {!!this.children.length && !this.open && (
-                <scale-icon-navigation-right></scale-icon-navigation-right>
+                <scale-icon-navigation-right
+                  size={20}
+                ></scale-icon-navigation-right>
               )}
             </div>
           </div>
