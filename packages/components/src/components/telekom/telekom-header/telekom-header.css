@@ -98,11 +98,11 @@
     --_display-top-app-name: none;
     --_display-bottom-app-name: block;
 
-    --_grid-column-body: 2 / span 15;
-
     --scl-telekom-header-height: var(--_height);
   }
-
+  :host([scrolled][app-name]) {
+    --_grid-column-body: 2 / span 15;
+  }
   :host([scrolled-back]) {
     --_display-bottom-app-name: block;
   }
