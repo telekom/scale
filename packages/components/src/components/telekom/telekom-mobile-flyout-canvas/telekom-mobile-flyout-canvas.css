@@ -47,11 +47,11 @@
   text-decoration: none;
 }
 
-/* temporary */
 [part~='close-button'] {
   position: absolute;
-  top: 6px;
-  right: 10px;
+  top: var(--telekom-spacing-unit-x2);
+  right: var(--telekom-spacing-unit-x4);
+  --color-ghost: var(--telekom-color-text-and-icon-standard);
 }
 
 [part~='body'],
