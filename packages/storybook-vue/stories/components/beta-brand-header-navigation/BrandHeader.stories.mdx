@@ -22,7 +22,7 @@ const mobileMenu = `<scale-telekom-nav-flyout
     app-name-link="#"
   >
     <scale-telekom-nav-list
-      variant="meta-nav-external"
+      variant="lang-switcher"
       slot="mobile-before-main-nav"
       alignment="left"
     >
@@ -37,9 +37,9 @@ const mobileMenu = `<scale-telekom-nav-flyout
       </scale-telekom-nav-item>
     </scale-telekom-nav-list>
     <scale-telekom-mobile-menu slot="mobile-main-nav">
-      <scale-telekom-mobile-menu-item>
-        <a href="#category-1">Topic One</a>
-        <scale-telekom-mobile-menu-item slot="children">
+      <scale-telekom-mobile-menu-item active>
+        <a href="#category-1" >Topic One</a>
+        <scale-telekom-mobile-menu-item active slot="children">
           <a href="#">Second Level</a>
           <scale-telekom-mobile-menu-item slot="children">
             <a href="#">Third Level</a>
