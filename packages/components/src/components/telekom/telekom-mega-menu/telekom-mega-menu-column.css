@@ -31,7 +31,7 @@
 }
 
 [part~='icon'] {
-  transform: translateY(-2px);
+  transform: translateY(-0.25ch);
 }
 
 @media screen and (--xl) {
@@ -39,7 +39,7 @@
     flex-direction: row;
   }
 
-  [part~='icon'] {
+  [part~='icon'] ::slotted(*) {
     padding-right: var(--spacing-x-icon);
   }
 }
