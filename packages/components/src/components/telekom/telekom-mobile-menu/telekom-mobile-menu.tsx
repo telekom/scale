@@ -118,20 +118,6 @@ export class TelekomMobileMenu {
     return (
       <Host>
         <div part="base">
-          <div part="app-name">
-            {this.appNameLink ? (
-              <a onClick={this.appNameClick} href={this.appNameLink}>
-                {this.appName}
-              </a>
-            ) : (
-              <span>{this.appName}</span>
-            )}
-          </div>
-
-          <div part="links-top">
-            <slot name="top-left"></slot>
-            <slot name="top-right"></slot>
-          </div>
           <nav part="nav">
             {+this.currentLevel > 0 ? (
               <button
