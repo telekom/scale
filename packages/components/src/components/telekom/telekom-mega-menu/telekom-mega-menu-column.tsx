@@ -13,6 +13,23 @@ import { Component, h, Host, Element, Prop } from '@stencil/core';
 import { HTMLStencilElement, State } from '@stencil/core/internal';
 import cx from 'classnames';
 
+/**
+ * Usage example:
+ * 
+ * ```html
+ *  <scale-telekom-mega-menu-column>
+ *    <scale-icon-home-home slot="icon"></scale-icon-home-home>
+ *    <a href="#" slot="heading">My heading</a>
+ *    <ul>
+ *      <li><a href="#">Link One</a></li>
+ *      <li><a href="#">Link Two</a></li>
+ *      <li><a href="#">Link Three</a></li>
+ *      <li><a href="#">Link Four</a></li>
+ *    </ul>
+ *  </scale-telekom-mega-menu-column>
+ * ```
+ */
+
 @Component({
   tag: 'scale-telekom-mega-menu-column',
   styleUrl: 'telekom-mega-menu-column.css',
