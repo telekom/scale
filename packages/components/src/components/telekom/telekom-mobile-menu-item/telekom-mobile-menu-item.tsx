@@ -107,7 +107,6 @@ export class TelekomMobileMenuItem {
           </div>
           {<slot name="children"></slot>}
         </nav>
-        <scale-divider></scale-divider>
       </Host>
     );
   }

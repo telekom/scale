@@ -25,6 +25,8 @@ export class TelekomMobileFlyoutCanvas {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop() appName?: string;
+  @Prop() appNameLink?: string;
+  @Prop() appNameClick?: any;
   @Prop() closeButtonLabel?: string = 'Close';
   @Prop() closeButtonTitle?: string | null = null;
 
@@ -56,9 +58,7 @@ export class TelekomMobileFlyoutCanvas {
           <div part="body">
             <slot name="row">
               <slot name="mobile-before-main-nav"></slot>
-              <slot name="mobile-main-nav">
-                {/* 🥭 <telekom-mobile-menu> goes here */}
-              </slot>
+              <slot name="mobile-main-nav"></slot>
               <slot name="mobile-after-main-nav"></slot>
               <div part="meta">
                 <div>
