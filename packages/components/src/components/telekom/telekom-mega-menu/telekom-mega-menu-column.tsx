@@ -15,7 +15,7 @@ import cx from 'classnames';
 
 /**
  * Usage example:
- * 
+ *
  * ```html
  *  <scale-telekom-mega-menu-column>
  *    <scale-icon-home-home slot="icon"></scale-icon-home-home>
