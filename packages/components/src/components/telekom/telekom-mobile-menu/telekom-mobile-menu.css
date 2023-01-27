@@ -23,7 +23,6 @@
   max-width: var(--max-width);
 }
 
-
 :host::part(back-button) {
   display: flex;
   align-items: center;
@@ -45,8 +44,6 @@ scale-icon-navigation-left {
   max-width: var(--max-width);
   width: 100%;
 }
-
-
 
 :host::part(links-top) {
   display: flex;
