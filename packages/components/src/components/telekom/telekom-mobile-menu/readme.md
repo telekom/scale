@@ -25,27 +25,22 @@
 
 ## Shadow Parts
 
-| Part             | Description |
-| ---------------- | ----------- |
-| `"app-name"`     |             |
-| `"back-button"`  |             |
-| `"base"`         |             |
-| `"close-button"` |             |
-| `"links-top"`    |             |
-| `"nav"`          |             |
+| Part            | Description |
+| --------------- | ----------- |
+| `"back-button"` |             |
+| `"base"`        |             |
+| `"nav"`         |             |
 
 
 ## Dependencies
 
 ### Depends on
 
-- [scale-icon-action-close](../../icons/action-close)
 - [scale-icon-navigation-left](../../icons/navigation-left)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-telekom-mobile-menu --> scale-icon-action-close
   scale-telekom-mobile-menu --> scale-icon-navigation-left
   style scale-telekom-mobile-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -16,11 +16,19 @@
   height: 100%;
   overflow-y: auto;
 
+  --max-width: 572px;
   --spacing: var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x4);
+
+  background: var(--telekom-color-background-canvas);
 }
 
 [part='base'] {
   padding: var(--spacing);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: var(--max-width);
 }
 
 [part~='header'] {

@@ -48,7 +48,7 @@ export class TelekomHeader {
 
   render() {
     return (
-      <Host scrolled={this.scrolled}>
+      <Host scrolled={this.scrolled} scrolled-back={this.scrolledBack}>
         <header
           part={cx('base', {
             scrolled: this.scrolled,

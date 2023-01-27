@@ -23,6 +23,7 @@ const isDirectChild = (parent: HTMLElement, child: HTMLElement) =>
 export class TelekomNavList {
   @Element() hostElement: HTMLStencilElement;
 
+  @Prop({ reflect: true }) role: string = 'nav';
   @Prop({ reflect: true }) alignment: 'left' | 'center' | 'right' = 'left';
   @Prop({ reflect: true }) variant:
     | 'meta-nav-external'
