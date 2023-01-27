@@ -30,7 +30,7 @@ export class TelekomHeader {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop() mainNavigation: any;
-  @Prop() appName?: string;
+  @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
 
