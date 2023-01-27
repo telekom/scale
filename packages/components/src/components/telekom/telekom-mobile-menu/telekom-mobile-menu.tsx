@@ -17,7 +17,6 @@ import {
   Prop,
   Listen,
   State,
-  Event,
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 
@@ -38,7 +37,6 @@ function elementDepth(el) {
 export class TelekomMobileMenu {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop() closeButtonTitle: string = 'Close';
   @Prop() backButtonTitle: string = 'Back';
 
   @Prop() appName?: string;
@@ -46,8 +44,6 @@ export class TelekomMobileMenu {
   @Prop() appNameClick?: any;
 
   @State() currentLevel?: string;
-
-  @Event({ eventName: 'scale-close-nav-flyout' }) scaleCloseNavFlyout;
 
   @Listen('scale-set-menu-item-active')
   handleSetMenuItemActive(e) {
@@ -122,7 +118,8 @@ export class TelekomMobileMenu {
             {+this.currentLevel > 0 ? (
               <button
                 part="back-button"
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopImmediatePropagation();
                   this.back();
                 }}
               >

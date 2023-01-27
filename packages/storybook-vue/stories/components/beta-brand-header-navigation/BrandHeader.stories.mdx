@@ -6,6 +6,13 @@ import {
   Canvas,
 } from '@storybook/addon-docs';
 import TelekomHeader from './TelekomHeader.vue';
+import {
+  mainNavigation,
+  iconNavigation,
+  addonNavigation,
+  sectorNavigation,
+  userNavigation,
+} from './fixtures';
 const mobileMenu = `<scale-telekom-nav-flyout
   class="mobile-menu-flyout"
   style="
@@ -26,7 +33,7 @@ const mobileMenu = `<scale-telekom-nav-flyout
       slot="mobile-before-main-nav"
       alignment="left"
     >
-      <scale-telekom-nav-item active>
+      <scale-telekom-nav-item>
         <a href="#">MK</a>
       </scale-telekom-nav-item>
       <scale-telekom-nav-item>
@@ -37,11 +44,11 @@ const mobileMenu = `<scale-telekom-nav-flyout
       </scale-telekom-nav-item>
     </scale-telekom-nav-list>
     <scale-telekom-mobile-menu slot="mobile-main-nav">
-      <scale-telekom-mobile-menu-item active>
+      <scale-telekom-mobile-menu-item open>
         <a href="#category-1" >Topic One</a>
-        <scale-telekom-mobile-menu-item active slot="children">
+        <scale-telekom-mobile-menu-item slot="children" open>
           <a href="#">Second Level</a>
-          <scale-telekom-mobile-menu-item slot="children">
+          <scale-telekom-mobile-menu-item slot="children" active>
             <a href="#">Third Level</a>
           </scale-telekom-mobile-menu-item>
           <scale-telekom-mobile-menu-item slot="children">
@@ -799,6 +806,44 @@ const mobileMenu = `<scale-telekom-nav-flyout
                  ${mobileMenu}
                </scale-telekom-nav-list>
              </scale-telekom-header>
+        </div>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+## Data API
+
+<Canvas withSource="none">
+  <Story
+    name="Data API"
+    inline={false}
+    height={500}
+    args={{
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      userNavigation: JSON.stringify(userNavigation),
+      activeRouteId: 'Third Level 24',
+    }}
+  >
+    {() => ({
+      components: { TelekomHeader },
+      props: TelekomHeader.props,
+      template: `
+        <div class="brand-header-spacing">
+          <scale-telekom-header
+            :main-navigation="mainNavigation"
+            :icon-navigation="iconNavigation"
+            :sector-navigation="sectorNavigation"
+            :user-navigation="userNavigation"
+            :addon-navigation="addonNavigation"
+            :active-route-id="activeRouteId"
+          >
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-telekom-header>
         </div>
       `,
     })}

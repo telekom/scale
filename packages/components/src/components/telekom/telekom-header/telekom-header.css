@@ -303,6 +303,31 @@ slot[name='functions'] {
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
+.mobile-menu-trigger {
+  background: var(--telekom-color-background-canvas);
+  color: var(--telekom-color-text-and-icon-standard);
+  border: none;
+}
+
+@media screen and (min-width: 1040px) {
+  .mobile-menu-trigger {
+    display: none;
+  }
+}
+scale-telekom-nav-flyout {
+  --translate-y: 100%;
+  --duration: 0;
+  --top: 0;
+  --height: 100vh;
+  --spacing-x: 0;
+  --background: var(--telekom-color-background-canvas);
+}
+
+scale-telekom-nav-list[slot='mobile-meta-nav-external'],
+scale-telekom-nav-list[slot='mobile-meta-nav'] {
+  --flex-direction: column;
+}
+
 /* --- Keyframes --- */
 
 @keyframes toggle {

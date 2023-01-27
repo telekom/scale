@@ -3,6 +3,12 @@
     :app-name-click="appNameClick"
     :app-name-title="appNameTitle"
     :app-name="appName"
+    :main-navigation="mainNavigation"
+    :icon-navigation="iconNavigation"
+    :sector-navigation="sectorNavigation"
+    :addon-navigation="addonNavigation"
+    :user-navigation="userNavigation"
+    :active-route-id="activeRouteId"
   >
     <slot name="meta-nav-ext"></slot>
     <slot name="meta-nav"></slot>
@@ -18,6 +24,12 @@ export default {
     appNameClick: Function,
     appNameTitle: String,
     appName: String,
+    mainNavigation: String,
+    iconNavigation: String,
+    sectorNavigation: String,
+    userNavigation: String,
+    addonNavigation: String,
+    activeRouteId: String,
   },
 };
 </script>
