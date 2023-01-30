@@ -103,9 +103,6 @@
   :host([scrolled][app-name]) {
     --_grid-column-body: 2 / span 15;
   }
-  :host([scrolled-back]) {
-    --_display-bottom-app-name: block;
-  }
 }
 
 @media screen and (--xl) {
@@ -264,21 +261,22 @@ slot[name='functions'] {
   with more parts/classes (like in telekom-nav-flyout)
 */
 [part~='bottom-app-name'] {
-  display: none;
+  display: var(--_display-bottom-app-name);
   margin-right: var(--_spacing-right-bottom-app-name);
   animation-duration: var(--telekom-motion-duration-animation);
 }
 
-:host([scrolled]) [part~='bottom-app-name'] {
-  display: block;
-  animation-name: toggle;
-  animation-timing-function: var(--telekom-motion-easing-enter);
-}
+@media screen and (--lg) {
+  :host([scrolled]) [part~='bottom-app-name'] {
+    animation-name: toggle;
+    animation-timing-function: var(--telekom-motion-easing-enter);
+  }
 
-:host([scrolled-back]) [part~='bottom-app-name'] {
-  animation-name: toggle;
-  animation-direction: reverse;
-  animation-timing-function: var(--telekom-motion-easing-exit);
+  :host([scrolled-back]) [part~=' bottom-app-name'] {
+    animation-name: toggle;
+    animation-direction: reverse;
+    animation-timing-function: var(--telekom-motion-easing-exit);
+  }
 }
 
 [part~='bottom-body'] {
