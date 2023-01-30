@@ -116,7 +116,7 @@
   content: '';
   width: 100%;
   height: var(--telekom-spacing-unit-x05);
-  background: var(--telekom-color-primary-standard);
+  background: var(--telekom-color-text-and-icon-primary-hovered);
   display: block;
   position: absolute;
   bottom: 0;
@@ -138,7 +138,7 @@
   content: '';
   width: 100%;
   height: var(--telekom-spacing-unit-x05);
-  background: var(--telekom-color-primary-hovered);
+  background: var(--telekom-color-text-and-icon-primary-pressed);
   display: block;
   position: absolute;
   bottom: 0;
@@ -154,7 +154,7 @@
   content: '';
   width: 100%;
   height: var(--telekom-spacing-unit-x1);
-  background: var(--telekom-color-primary-standard);
+  background: var(--telekom-color-text-and-icon-primary-standard);
   display: block;
   position: absolute;
   bottom: 0;
