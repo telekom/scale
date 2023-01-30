@@ -26,6 +26,7 @@
 | `"bottom-bar"`      |             |
 | `"bottom-body"`     |             |
 | `"container"`       |             |
+| `"fixed-wrapper"`   |             |
 | `"top-app-name"`    |             |
 | `"top-bar"`         |             |
 | `"top-body"`        |             |

@@ -177,11 +177,15 @@ slot[name='functions'] {
 
 [part~='base'] {
   height: var(--_height);
+  width: 100%;
+}
+
+[part~='fixed-wrapper'] {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
   background-color: var(--background);
   box-shadow: var(--shadow);
-  position: fixed;
-  top: 0;
-  width: 100%;
   transition: height var(--telekom-motion-duration-immediate)
     var(--telekom-motion-easing-standard);
 }
