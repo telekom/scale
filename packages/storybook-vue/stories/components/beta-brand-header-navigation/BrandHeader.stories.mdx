@@ -453,6 +453,148 @@ const mobileMenu = `<scale-telekom-nav-flyout
   </Story>
 </Canvas>
 
+```css
+scale-telekom-header {
+  --shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  --background: var(--telekom-color-background-surface);
+  --background-logo: var(--telekom-color-primary-standard);
+  --transition-common-scrolled: height var(--telekom-motion-duration-immediate)
+      var(--telekom-motion-easing-standard),
+    width var(--telekom-motion-duration-immediate)
+      var(--telekom-motion-easing-standard);
+  --font-size-app-name: var(--telekom-typography-font-size-small);
+  --line-height-app-name: var(--telekom-typography-line-spacing-tight);
+  --font-weight-app-name: var(--telekom-typography-font-weight-extra-bold);
+
+  --_height: 60px;
+  --_height-logo-svg: 36px;
+  --_height-bottom-bar: 60px;
+  --_height-top-bar: 0;
+
+  --_display-bottom-app-name: none;
+  --_display-top-app-name: none;
+  --_display-main-nav: none;
+  --_display-meta-nav: none;
+  --_display-meta-nav-external: none;
+  --_display-lang-switcher: none;
+
+  --_max-width-container: var(--scl-grid-max-width, 1680px);
+  --_spacing-x-container: var(--telekom-spacing-unit-x4);
+  --_column-gap-container: var(--telekom-spacing-unit-x8);
+  --_grid-template-columns-container: auto;
+  --_grid-column-body: auto;
+
+  --_spacing-left-body: 0;
+  --_spacing-right-top-app-name: var(--telekom-spacing-unit-x8);
+  --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x8);
+  --_left-logo: 0;
+
+  --_justify-content-bottom-body: end;
+
+  --scl-telekom-header-height: var(--_height);  
+}
+
+scale-telekom-nav-flyout {
+  --top: var(--scl-telekom-header-height, 0);
+  --left: 0;
+  --width: 100vw;
+  --height: auto;
+  --position: fixed;
+  --background: var(--telekom-color-background-surface);
+  --shadow: none;
+  --z-index: 7;
+
+  --duration: var(--telekom-motion-duration-transition);
+  --translate-x: 0;
+  --translate-y: var(--telekom-spacing-unit-x1);
+  --translate-z: 0;
+
+  display: contents;  
+}
+
+scale-telekom-nav-list {
+  --width: 100%;
+  --height: 100%;
+  --spacing-x-start: 0;
+  --flex-direction: row;
+}
+
+scale-mega-menu-colun {
+  --spacing-x-icon: 1ch;
+}
+
+```
+
+
+```html
+<div class="brand-header-spacing" style="min-height: 120vh; background: var(--telekom-color-background-surface-subtle);">
+  <scale-telekom-header>
+  <!-- MAIN NAV -->
+  <scale-telekom-nav-list variant="main-nav" slot="main-nav">
+    <scale-telekom-nav-item active>
+      <a>Topic One</a>
+    </scale-telekom-nav-item>
+    <scale-telekom-nav-item>
+      <a>Topic Two</a>
+    </scale-telekom-nav-item>
+  ...
+  </scale-telekom-nav-list>
+  <scale-telekom-nav-list
+    variant="meta-nav-external"
+    slot="meta-nav-external"
+    alignment="left"
+  >
+    <scale-telekom-nav-item>
+      <a href="#">
+        Metalink external
+        <scale-icon-navigation-external-link
+          size="11"
+        ></scale-icon-navigation-external-link>
+      </a>
+    </scale-telekom-nav-item>
+    ...
+  </scale-telekom-nav-list>
+  <scale-telekom-nav-list
+    variant="meta-nav"
+    slot="meta-nav"
+    alignment="left"
+  >
+    <scale-telekom-nav-item>
+      <a href="#">Metalink internal</a>
+    </scale-telekom-nav-item>
+    ...
+  </scale-telekom-nav-list>
+  <scale-telekom-nav-list
+  variant="lang-switcher"
+  slot="lang-switcher"
+  alignment="right"
+  >
+  <scale-telekom-nav-item active>
+    <a href="#">MK</a>
+  </scale-telekom-nav-item>
+  ...
+</scale-telekom-nav-list>
+<scale-telekom-nav-list
+  variant="functions"
+  slot="functions"
+  alignment="right"
+>
+  <scale-telekom-nav-item>
+    <a href="#">
+      <scale-icon-action-search> </scale-icon-action-search>
+    </a>
+  </scale-telekom-nav-item>
+  ...
+  <button class="mobile-menu-trigger">
+    <scale-badge>
+      <scale-icon-action-menu></scale-icon-action-menu>
+    </scale-badge>
+  </button>
+  ${mobileMenu}
+  </scale-telekom-nav-list>
+</scale-telekom-header>
+```
+
 ## Application Name
 
 <Canvas withSource="none">
@@ -571,6 +713,17 @@ const mobileMenu = `<scale-telekom-nav-flyout
     })}
   </Story>
 </Canvas>
+
+```html
+<div class="brand-header-spacing" style="min-height: 120vh; background: var(--telekom-color-background-surface-subtle);">
+  <scale-telekom-header           
+    app-name="Application Name"
+    app-name-link="https://example.com"
+    >
+  <!-- MAIN NAV -->
+  ...
+</scale-telekom-header>
+```
 
 ## Flyout Navigation
 
@@ -804,3 +957,44 @@ const mobileMenu = `<scale-telekom-nav-flyout
     })}
   </Story>
 </Canvas>
+
+```html
+<scale-telekom-header>
+  <!-- MAIN NAV -->
+  <scale-telekom-nav-list variant="main-nav" slot="main-nav">
+    <scale-telekom-nav-item active>
+      <button><span>Topic One</span></button>
+      <scale-telekom-nav-flyout hover>
+        <scale-telekom-mega-menu>
+          <scale-telekom-mega-menu-column>
+            <scale-icon-home-home slot="icon"></scale-icon-home-home>
+            <a href="https://example.com" slot="heading">Second Level</a>
+            <ul>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+            </ul>
+          </scale-telekom-mega-menu-column>
+          <scale-telekom-mega-menu-column>
+            <scale-icon-home-home slot="icon"></scale-icon-home-home>
+            <a href="https://example.com" slot="heading">Second Level</a>
+            <ul>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+              <li><a href="https://example.com">Third Level</a></li>
+            </ul>
+          </scale-telekom-mega-menu-column>
+          ...                    
+        </scale-telekom-mega-menu>
+      </scale-telekom-nav-flyout>
+    </scale-telekom-nav-item>
+  </scale-telekom-nav-list>
+...
+<scale-telekom-header>
+```
