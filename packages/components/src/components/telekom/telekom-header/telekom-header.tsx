@@ -55,55 +55,57 @@ export class TelekomHeader {
             'scrolled-back': this.scrolledBack,
           })}
         >
-          <div part="container">
-            <slot name="logo">
-              <scale-logo part="app-logo" variant="white"></scale-logo>
-            </slot>
+          <div part="fixed-wrapper">
+            <div part="container">
+              <slot name="logo">
+                <scale-logo part="app-logo" variant="white"></scale-logo>
+              </slot>
 
-            <div part="body">
-              <div part="top-bar">
-                {this.appName ? (
-                  <div part="top-app-name">
-                    {this.appNameLink ? (
-                      <a
-                        part="app-name-text"
-                        onClick={this.appNameClick}
-                        href={this.appNameLink}
-                      >
-                        {this.appName}
-                      </a>
-                    ) : (
-                      <span part="app-name-text">{this.appName}</span>
-                    )}
+              <div part="body">
+                <div part="top-bar">
+                  {this.appName ? (
+                    <div part="top-app-name">
+                      {this.appNameLink ? (
+                        <a
+                          part="app-name-text"
+                          onClick={this.appNameClick}
+                          href={this.appNameLink}
+                        >
+                          {this.appName}
+                        </a>
+                      ) : (
+                        <span part="app-name-text">{this.appName}</span>
+                      )}
+                    </div>
+                  ) : null}
+
+                  <div part="top-body">
+                    <slot name="meta-nav-external"></slot>
+                    <slot name="meta-nav"></slot>
+                    <slot name="lang-switcher"></slot>
                   </div>
-                ) : null}
-
-                <div part="top-body">
-                  <slot name="meta-nav-external"></slot>
-                  <slot name="meta-nav"></slot>
-                  <slot name="lang-switcher"></slot>
                 </div>
-              </div>
 
-              <div part="bottom-bar">
-                {this.appName ? (
-                  <div part="bottom-app-name">
-                    {this.appNameLink ? (
-                      <a
-                        part="app-name-text"
-                        onClick={this.appNameClick}
-                        href={this.appNameLink}
-                      >
-                        {this.appName}
-                      </a>
-                    ) : (
-                      <span part="app-name-text">{this.appName}</span>
-                    )}
+                <div part="bottom-bar">
+                  {this.appName ? (
+                    <div part="bottom-app-name">
+                      {this.appNameLink ? (
+                        <a
+                          part="app-name-text"
+                          onClick={this.appNameClick}
+                          href={this.appNameLink}
+                        >
+                          {this.appName}
+                        </a>
+                      ) : (
+                        <span part="app-name-text">{this.appName}</span>
+                      )}
+                    </div>
+                  ) : null}
+                  <div part="bottom-body">
+                    <slot name="main-nav"></slot>
+                    <slot name="functions"></slot>
                   </div>
-                ) : null}
-                <div part="bottom-body">
-                  <slot name="main-nav"></slot>
-                  <slot name="functions"></slot>
                 </div>
               </div>
             </div>
