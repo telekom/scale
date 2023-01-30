@@ -108,13 +108,13 @@
   margin-inline: calc(0.5 * var(--_spacing-x-slotted));
 }
 
-.scale-telekom-nav-list .scale-icon {
+.scale-telekom-nav-list[variant='functions'] .scale-icon {
   height: 20px;
   width: 20px;
 }
 
 @media screen and (--lg) {
-  .scale-telekom-nav-list .scale-icon {
+  .scale-telekom-nav-list[variant='functions'] .scale-icon {
     height: 24px;
     width: 24px;
   }
