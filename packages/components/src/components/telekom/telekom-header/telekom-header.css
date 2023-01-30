@@ -213,6 +213,8 @@ slot[name='functions'] {
 :host::part(logo-svg) {
   height: var(--_height-logo-svg);
   transition: var(--transition-common-scrolled);
+  /* TODO align this better, find out why there are 4 extra px below svg */
+  margin-top: 4px;
 }
 /* targeting `scale-logo` */
 :host::part(logo) {
