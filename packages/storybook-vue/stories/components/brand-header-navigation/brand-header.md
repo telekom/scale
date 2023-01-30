@@ -3,6 +3,15 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
+<div style="display: flex; width: 100%; border-radius: 3px; background-color: rgb(241, 241, 239); padding: 16px 16px 14px 12px;">
+    <div style="padding-top: 8px">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="24px"><path fill-rule="evenodd" d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11A11 11 0 0012 1zm1 16h-2v-6.5h2V17zm-1-8a1.25 1.25 0 110-2.5A1.25 1.25 0 0112 9z"></path></svg>
+    </div>
+    <div style="margin-top: 4px;">
+        **The Brand Header is available in a new beta version. Once quality control is complete and WCAG accessibility certification is in place, the new component will become the official Telekom brand header.**
+    </div>
+</div>
+
 The brand header identifies our brand and the purpose of a website in seconds. It makes Telekom websites instantly recognizable and ensures a consistent experience for all our products and services.
 
 ## General

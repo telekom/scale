@@ -2,6 +2,12 @@
 
 Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und verwandten Paketen.
 
+# Neuer Brand Header
+
+31.01.2023
+
+Veröffentlichung des neuen Brand Headers als Beta-Version. Dieser ersetzt die aktuelle Komponente, wenn die Qualitätskontrolle abgeschlossen ist und die WCAG-Zertifizierung für Barrierefreiheit vorliegt. Bis dahin freuen wir uns über euer Feedback zur neuen Komponente.
+
 ## Neue Beta-Komponenten
 
 25.01.2023
