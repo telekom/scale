@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.120](https://github.com/telekom/scale/compare/v3.0.0-beta.119...v3.0.0-beta.120) (2023-01-31)
+
+
+### Bug Fixes
+
+* **telekom-header:** adjust alignments related to grid ([#1508](https://github.com/telekom/scale/issues/1508)) ([1046f56](https://github.com/telekom/scale/commit/1046f565e4abf2f1ef234f78e4b8bc9a48f00f62))
+* **telekom-header:** app-name display ([#1548](https://github.com/telekom/scale/issues/1548)) ([69b69c4](https://github.com/telekom/scale/commit/69b69c431661e0d593cf67f79536d1a835f1f22d))
+* **telekom-header:** mobile close button position ([#1554](https://github.com/telekom/scale/issues/1554)) ([fff4702](https://github.com/telekom/scale/commit/fff4702e3872f9eb92cff750eccd36f0b9f16181))
+* **telekom-header:** more feedback ([#1531](https://github.com/telekom/scale/issues/1531)) ([5c942ad](https://github.com/telekom/scale/commit/5c942ad9eb34a29e1251bef4cfa356ac56b4c155))
+* **telekom-header:** QA ([#1539](https://github.com/telekom/scale/issues/1539)) ([5c4c448](https://github.com/telekom/scale/commit/5c4c44813347e930c99bcfe71e7cb256ec7fc626))
+* **telekom-header:** scroll transitions ([#1557](https://github.com/telekom/scale/issues/1557)) ([acf398d](https://github.com/telekom/scale/commit/acf398dbc9ce5d14eb406a1986f0c26a35411201))
+* implement ux/ui feedback ([8a314c7](https://github.com/telekom/scale/commit/8a314c71cf2ac5650498146280e3a0dcb8204b95))
+* **telekom-header:** use mobile flyout canvas ([#1525](https://github.com/telekom/scale/issues/1525)) ([fcf3081](https://github.com/telekom/scale/commit/fcf308138c65b1fe4ec7097db436bfabb2f7e86d))
+
+
+### Features
+
+* **telekom-header:** updated app shell, fixed position ([#1543](https://github.com/telekom/scale/issues/1543)) ([c2b5919](https://github.com/telekom/scale/commit/c2b5919d9ce1785f2fa3d5353174d2015d2015ea))
+
+
+
+
+
 # [3.0.0-beta.119](https://github.com/telekom/scale/compare/v3.0.0-beta.118...v3.0.0-beta.119) (2023-01-25)
 
 
