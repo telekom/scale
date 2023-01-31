@@ -21,7 +21,7 @@
       var(--telekom-motion-easing-standard),
     width var(--telekom-motion-duration-immediate)
       var(--telekom-motion-easing-standard);
-  --font-size-app-name: var(--telekom-typography-font-size-small);
+  --font-size-app-name: var(--telekom-typography-font-size-body);
   --line-height-app-name: var(--telekom-typography-line-spacing-tight);
   --font-weight-app-name: var(--telekom-typography-font-weight-extra-bold);
 
@@ -297,6 +297,12 @@ slot[name='functions'] {
   color: var(--telekom-color-text-and-icon-primary-standard);
   letter-spacing: 0.02em;
   text-decoration: none;
+}
+
+@media screen and (--lg) {
+  [part~='app-name-text'] {
+    --font-size-app-name: var(--telekom-typography-font-size-small);
+  }
 }
 
 [part~='app-name-text']:hover {
