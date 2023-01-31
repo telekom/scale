@@ -38,7 +38,7 @@ export class TelekomMobileMenuItem {
   connectedCallback() {
     this.toggleChildrenVisibility(this.open);
   }
-  //
+
   toggleChildrenVisibility(show) {
     this.children.forEach((element) => {
       show && element.getAttribute('level') === String(+this.level + 1)
