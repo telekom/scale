@@ -1,4 +1,4 @@
-# scale-telekom-mega-menu-list
+# scale-telekom-mega-menu-column
 
 
 
