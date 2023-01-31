@@ -54,31 +54,31 @@ Der Brand Header Subtle hat keine Hauptnavigation oder Funktionen und ist am obe
 
 ![Image Name](assets/3_components/beta-brand-header/4_brandheader_brandbar_elements.png)
 
-### Brand Area mit Logo (1) (verpflichtend)
+#### Brand Area mit Logo (1) (verpflichtend)
 
 Das Logo und der magentafarbene Hintergrund sind für jede Seite der Telekom verbindlich und können nicht verändert werden. Das Logo ist standardmäßig mit der Telekom Homepage verlinkt oder dem Einstiegspunkt in den aktuellen Prozess.
 
-### Portalname (2) (optional)
+#### Portalname (2) (optional)
 
 Name des Produkts oder Services.
 
-### Meta-Navigation (3) (optional)
+#### Meta-Navigation (3) (optional)
 
 Platziere hier globale Links zu Telekom Inhalten außerhalb der Webseite und ermögliche den Wechsel zwischen Privat- und Geschäftskund\*innen.
 
-### Meta-Navigation (4) (optional)
+#### Meta-Navigation (4) (optional)
 
 Interne Links (zum Beispiel Einstellungen und Kontakt).
 
-### Sprachwechsel-Element (5) (optional)
+#### Sprachwechsel-Element (5) (optional)
 
 Verwende Länderkürzel als Links bei wenigen Sprachen. Ist der Inhalt in mehr als drei Sprachen, nutze ein Dropdown – in dieser Komponente noch nicht verfügbar.
 
-### Hauptnavigation (6)
+#### Hauptnavigation (6)
 
 Die Hauptnavigation enthält alle Navigationspunkte der ersten Ebene.
 
-#### Funktionen (7)
+##### Funktionen (7)
 
 Hier sind globale Funktionen wie Suche, Warenkorb oder Login aufgeführt. Der Login befindet sich dabei immer rechts. Ergänze die Icons wenn möglich mit einem Label.
 

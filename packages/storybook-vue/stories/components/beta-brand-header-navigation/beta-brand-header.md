@@ -53,31 +53,31 @@ The subtle brand header has no main navigation or features and is pinned to the 
 
 ![Image Name](assets/3_components/beta-brand-header/4_brandheader_brandbar_elements.png)
 
-### Brand area with logo (1) (required)
+#### Brand area with logo (1) (required)
 
 The logo and Magenta background are required for any Telekom webpage and can’t be changed. By default, the logo is linked to the Telekom homepage or the entry point into the current process.
 
-### Portal name (2) (optional)
+#### Portal name (2) (optional)
 
 Name of the product or service.
 
-### External meta navigation (3) (optional)
+#### External meta navigation (3) (optional)
 
 Place other global links to Telekom destinations outside the current website here and enable switching between private and business customers.
 
-### Internal meta navigation (4) (optional)
+#### Internal meta navigation (4) (optional)
 
 Internal links (e.g., settings and contact).
 
-### Language selector (5) (optional)
+#### Language selector (5) (optional)
 
 Use country abbreviations as links if there are only a few languages. If the content is available in more than three languages, use a dropdown (not yet available in this component).
 
-### Primary navigation (6)
+#### Primary navigation (6)
 
 The primary navigation contains all items from the first navigation level.
 
-**Functions (7)**
+#### Functions (7)
 
 Global functions such as search, shopping cart, or login are listed here. The login is always on the right side. If possible, add a label to the icons.
 
@@ -87,7 +87,7 @@ Different sizes are defined for the various break points.
 
 ## Navigation
 
-**Mega-Menü**
+**Mega menu**
 
 The mega menu is suitable for a flat information architecture. It offers a good overview within a category, but the depth is limited to three levels.
 
