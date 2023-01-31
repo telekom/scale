@@ -119,3 +119,9 @@
     width: 24px;
   }
 }
+
+/* FIXME overriding the above… */
+.scale-telekom-nav-list[variant='meta-nav-external'] .scale-icon {
+  height: 11px;
+  width: 11px;
+}
