@@ -175,16 +175,17 @@ slot[name='functions'] {
 [part~='base'] {
   height: var(--_height);
   width: 100%;
+  transition: var(--transition-common-scrolled);
 }
 
 [part~='fixed-wrapper'] {
   position: fixed;
   z-index: 99;
   width: 100%;
+  height: var(--_height);
   background-color: var(--background);
   box-shadow: var(--shadow);
-  transition: height var(--telekom-motion-duration-immediate)
-    var(--telekom-motion-easing-standard);
+  transition: var(--transition-common-scrolled);
 }
 
 [part~='container'] {
@@ -198,6 +199,7 @@ slot[name='functions'] {
   margin-right: auto;
   padding-left: var(--_spacing-x-container);
   padding-right: var(--_spacing-x-container);
+  transition: var(--transition-common-scrolled);
 }
 
 [part~='app-logo'] {
@@ -232,6 +234,7 @@ slot[name='functions'] {
   grid-column: var(--_grid-column-body);
   flex: 1; /* used to be width: 100% */
   margin-left: var(--_spacing-left-body);
+  transition: var(--transition-common-scrolled);
 }
 
 [part~='top-bar'] {
@@ -250,6 +253,7 @@ slot[name='functions'] {
 [part~='top-body'] {
   display: inline-flex;
   flex: 1;
+  transition: var(--transition-common-scrolled);
 }
 
 [part~='bottom-bar'] {
@@ -288,6 +292,7 @@ slot[name='functions'] {
   height: var(--_height-bottom-bar);
   display: inline-flex;
   flex: 1;
+  transition: var(--transition-common-scrolled);
 }
 
 [part~='app-name-text'] {
