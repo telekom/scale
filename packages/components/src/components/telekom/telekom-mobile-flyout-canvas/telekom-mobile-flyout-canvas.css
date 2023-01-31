@@ -50,7 +50,7 @@
 [part~='close-button'] {
   position: absolute;
   top: var(--telekom-spacing-unit-x2);
-  right: var(--telekom-spacing-unit-x4);
+  right: var(--telekom-spacing-unit-x2);
   --color-ghost: var(--telekom-color-text-and-icon-standard);
 }
 
