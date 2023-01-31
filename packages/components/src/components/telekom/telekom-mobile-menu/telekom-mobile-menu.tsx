@@ -53,10 +53,14 @@ export class TelekomMobileMenu {
   handleSetMenuItemActive(e) {
     this.menuItems.forEach((element) => element.removeAttribute('active'));
     e.target.setAttribute('active', '');
+    if (e.target.parentElement.tagName === 'SCALE-TELEKOM-MOBILE-MENU-ITEM') {
+      e.target.parentElement.setAttribute('active', '');
+    }
   }
   @Listen('scale-set-menu-item-open')
   handleSetMenuItemOpen(e) {
     e.target.setAttribute('open', '');
+    this.handleSetMenuItemActive(e);
 
     this.currentLevel = String(+e.target.getAttribute('level') + 1);
 
@@ -104,6 +108,12 @@ export class TelekomMobileMenu {
   back = () => {
     Array.from(this.openItems).forEach((element) => {
       if (element.getAttribute('level') === String(+this.currentLevel - 1)) {
+        element.setAttribute('active', '');
+        if (
+          element.parentElement.tagName === 'SCALE-TELEKOM-MOBILE-MENU-ITEM'
+        ) {
+          element.parentElement.setAttribute('active', '');
+        }
         return element.removeAttribute('open');
       }
     });
