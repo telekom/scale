@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.120](https://github.com/telekom/scale/compare/v3.0.0-beta.119...v3.0.0-beta.120) (2023-01-31)
+
+
+### Bug Fixes
+
+* adjust main content max-width for storybook ([#1541](https://github.com/telekom/scale/issues/1541)) ([0f9564e](https://github.com/telekom/scale/commit/0f9564e3661a2ad68cba5013f382c92a2923fae2))
+* **telekom-header:** more feedback ([#1531](https://github.com/telekom/scale/issues/1531)) ([5c942ad](https://github.com/telekom/scale/commit/5c942ad9eb34a29e1251bef4cfa356ac56b4c155))
+* **telekom-header:** QA ([#1539](https://github.com/telekom/scale/issues/1539)) ([5c4c448](https://github.com/telekom/scale/commit/5c4c44813347e930c99bcfe71e7cb256ec7fc626))
+* implement ux/ui feedback ([8a314c7](https://github.com/telekom/scale/commit/8a314c71cf2ac5650498146280e3a0dcb8204b95))
+* **telekom-header:** use mobile flyout canvas ([#1525](https://github.com/telekom/scale/issues/1525)) ([fcf3081](https://github.com/telekom/scale/commit/fcf308138c65b1fe4ec7097db436bfabb2f7e86d))
+
+
+### Features
+
+* adding usage text ([#1537](https://github.com/telekom/scale/issues/1537)) ([09eb2f3](https://github.com/telekom/scale/commit/09eb2f3e199cba034bf8e9d7d19cad45cf712b2a))
+
+
+
+
+
 # [3.0.0-beta.119](https://github.com/telekom/scale/compare/v3.0.0-beta.118...v3.0.0-beta.119) (2023-01-25)
 
 

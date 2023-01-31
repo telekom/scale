@@ -102,22 +102,6 @@
 }
 
 .scale-telekom-nav-list[variant='main-nav']
-  > .scale-telekom-nav-item[active]
-  > :where(a, button):after,
-.scale-telekom-nav-list[variant='functions']
-  > .scale-telekom-nav-item[active]
-  > :where(a, button):after {
-  content: '';
-  width: 100%;
-  height: var(--telekom-spacing-unit-x1);
-  background: var(--telekom-color-primary-standard);
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.scale-telekom-nav-list[variant='main-nav']
   > .scale-telekom-nav-item
   > :where(a, button):hover:after,
 .scale-telekom-nav-list[variant='main-nav']
@@ -132,7 +116,45 @@
   content: '';
   width: 100%;
   height: var(--telekom-spacing-unit-x05);
-  background: var(--telekom-color-primary-standard);
+  background: var(--telekom-color-text-and-icon-primary-hovered);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button):active:after,
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button):active:after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after {
+  content: '';
+  width: 100%;
+  height: var(--telekom-spacing-unit-x05);
+  background: var(--telekom-color-text-and-icon-primary-pressed);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button):after {
+  content: '';
+  width: 100%;
+  height: var(--telekom-spacing-unit-x1);
+  background: var(--telekom-color-text-and-icon-primary-standard);
   display: block;
   position: absolute;
   bottom: 0;
@@ -169,4 +191,54 @@
   > :where(a, button)
   > * {
   margin-inline-start: 0.5ch;
+}
+
+/* language switcher  */
+
+.scale-telekom-nav-list[variant='lang-switcher'] > .scale-telekom-nav-item > a,
+.scale-telekom-nav-list[variant='meta-nav-external']
+  > .scale-telekom-nav-item
+  > a {
+  font-size: var(--telekom-typography-font-size-body);
+}
+
+.scale-telekom-nav-list[variant='lang-switcher']
+  > .scale-telekom-nav-item
+  > a:where([aria-current='true']) {
+  font-weight: var(--telekom-typography-font-weight-extra-bold);
+}
+
+@media screen and (--lg) {
+  .scale-telekom-nav-list[variant='meta-nav'] {
+    margin-right: var(--telekom-spacing-unit-x6);
+  }
+
+  .scale-telekom-nav-list[variant='lang-switcher']
+    > .scale-telekom-nav-item
+    > a,
+  .scale-telekom-nav-list[variant='meta-nav-external']
+    > .scale-telekom-nav-item
+    > a {
+    font-size: var(--telekom-typography-font-size-small);
+  }
+}
+
+.scale-telekom-nav-list[variant='functions'] .scale-icon {
+  height: 20px;
+  width: 20px;
+}
+
+@media screen and (--lg) {
+  .scale-telekom-nav-list[variant='functions'] .scale-icon {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+/* FIXME this is too leaky (in general) */
+scale-telekom-mobile-flyout-canvas
+  .scale-telekom-nav-list[variant='meta-nav-external']
+  .scale-icon {
+  height: 12px;
+  width: 12px;
 }

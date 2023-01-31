@@ -1,4 +1,4 @@
-# scale-telekom-nav-item
+# scale-telekom-mobile-flyout-canvas
 
 
 
@@ -10,6 +10,8 @@
 | Property           | Attribute            | Description | Type     | Default     |
 | ------------------ | -------------------- | ----------- | -------- | ----------- |
 | `appName`          | `app-name`           |             | `string` | `undefined` |
+| `appNameClick`     | `app-name-click`     |             | `any`    | `undefined` |
+| `appNameLink`      | `app-name-link`      |             | `string` | `undefined` |
 | `closeButtonLabel` | `close-button-label` |             | `string` | `'Close'`   |
 | `closeButtonTitle` | `close-button-title` |             | `string` | `null`      |
 

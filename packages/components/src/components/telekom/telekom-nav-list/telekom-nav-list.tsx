@@ -23,6 +23,7 @@ const isDirectChild = (parent: HTMLElement, child: HTMLElement) =>
 export class TelekomNavList {
   @Element() hostElement: HTMLStencilElement;
 
+  @Prop({ reflect: true }) role: string = 'nav';
   @Prop({ reflect: true }) alignment: 'left' | 'center' | 'right' = 'left';
   @Prop({ reflect: true }) variant:
     | 'meta-nav-external'
@@ -48,6 +49,14 @@ export class TelekomNavList {
         flyout.expanded = false;
       }
     });
+  }
+
+  connectedCallback() {
+    if (this.variant === 'lang-switcher') {
+      [...this.hostElement.children].forEach((el: HTMLElement) => {
+        el.setAttribute('variant', this.variant);
+      });
+    }
   }
 
   render() {

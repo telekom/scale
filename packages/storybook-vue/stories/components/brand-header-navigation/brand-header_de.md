@@ -3,6 +3,15 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
+<div style="display: flex; width: 100%; border-radius: 3px; background-color: rgb(241, 241, 239); padding: 16px 16px 14px 20px; margin-top: 16px; margin-bottom: 32px;">
+    <div style="padding-top: 8px">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="24px"><path fill-rule="evenodd" d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zm1 8V17h-2v-6.5h2zm-1-4A1.25 1.25 0 1112 9a1.25 1.25 0 010-2.5z"></path></svg>
+    </div>
+    <div style="margin-top: 3px;">
+        Der Brand Header ist in einer neuen [Beta Version](?path=/docs/beta-components-telekom-brand-header-navigation--standard) verfügbar. Sobald die Qualitätskontrolle abgeschlossen ist und die WCAG-Zertifizierung für Barrierefreiheit vorliegt, wird die neue Komponente der offizielle Brand Header der Telekom.
+    </div>
+</div>
+
 Der Brand-Header vermittelt Absender und Angebot einer Webseite auf einen Blick. Er macht Telekom Webseiten für Nutzer\*innen wiedererkennbar und bietet ein einheitliches Erlebnis für alle unsere Produkte und Services.
 
 ## Allgemein

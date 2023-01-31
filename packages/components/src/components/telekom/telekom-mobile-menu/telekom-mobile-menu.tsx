@@ -20,7 +20,6 @@ import {
   Event,
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
-import { emitEvent } from '../../../utils/utils';
 
 function elementDepth(el) {
   let depth = 0;
@@ -54,10 +53,14 @@ export class TelekomMobileMenu {
   handleSetMenuItemActive(e) {
     this.menuItems.forEach((element) => element.removeAttribute('active'));
     e.target.setAttribute('active', '');
+    if (e.target.parentElement.tagName === 'SCALE-TELEKOM-MOBILE-MENU-ITEM') {
+      e.target.parentElement.setAttribute('active', '');
+    }
   }
   @Listen('scale-set-menu-item-open')
   handleSetMenuItemOpen(e) {
     e.target.setAttribute('open', '');
+    this.handleSetMenuItemActive(e);
 
     this.currentLevel = String(+e.target.getAttribute('level') + 1);
 
@@ -105,6 +108,12 @@ export class TelekomMobileMenu {
   back = () => {
     Array.from(this.openItems).forEach((element) => {
       if (element.getAttribute('level') === String(+this.currentLevel - 1)) {
+        element.setAttribute('active', '');
+        if (
+          element.parentElement.tagName === 'SCALE-TELEKOM-MOBILE-MENU-ITEM'
+        ) {
+          element.parentElement.setAttribute('active', '');
+        }
         return element.removeAttribute('open');
       }
     });
@@ -118,48 +127,23 @@ export class TelekomMobileMenu {
   render() {
     return (
       <Host>
-        <button
-          part="close-button"
-          onClick={(e) => {
-            emitEvent(this, 'scaleCloseNavFlyout', e);
-          }}
-        >
-          <scale-icon-action-close
-            size={24}
-            accessibility-title={this.closeButtonTitle}
-          ></scale-icon-action-close>
-        </button>
-
         <div part="base">
-          <div part="app-name">
-            {this.appNameLink ? (
-              <a onClick={this.appNameClick} href={this.appNameLink}>
-                {this.appName}
-              </a>
-            ) : (
-              <span>{this.appName}</span>
-            )}
-          </div>
-
-          <div part="links-top">
-            <slot name="top-left"></slot>
-            <slot name="top-right"></slot>
-          </div>
-          <nav
-            part="nav"
-            onClick={() => {
-              this.back();
-            }}
-          >
+          <nav part="nav">
             {+this.currentLevel > 0 ? (
-              <button part="back-button">
-                <scale-icon-navigation-left></scale-icon-navigation-left>
+              <button
+                part="back-button"
+                onClick={() => {
+                  this.back();
+                }}
+              >
+                <scale-icon-navigation-left
+                  size={20}
+                ></scale-icon-navigation-left>
                 {this.backButtonTitle}
               </button>
             ) : null}
             <slot></slot>
           </nav>
-          <slot name="bottom"></slot>
         </div>
       </Host>
     );

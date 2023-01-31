@@ -9,25 +9,31 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Element, Prop } from '@stencil/core';
+import { Component, h, Prop, Host, Element } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 
 @Component({
-  tag: 'scale-telekom-mega-menu-item',
-  styleUrl: 'telekom-mega-menu-item.css',
+  tag: 'scale-telekom-app-shell',
+  styleUrl: 'telekom-app-shell.css',
   shadow: true,
 })
-export class TelekomMegaMenuItem {
+export class Shell {
   @Element() hostElement: HTMLStencilElement;
-  @Prop() href: string;
+
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   render() {
     return (
       <Host>
+        {this.styles && <style>{this.styles}</style>}
+
         <div part="base">
-          <a part="link" href={this.href}>
+          <slot name="header"></slot>
+          <main part="content">
             <slot></slot>
-          </a>
+          </main>
+          <slot name="footer"></slot>
         </div>
       </Host>
     );

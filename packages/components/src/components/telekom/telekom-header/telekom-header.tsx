@@ -29,8 +29,7 @@ import cx from 'classnames';
 export class TelekomHeader {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop() mainNavigation: any;
-  @Prop() appName?: string;
+  @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
 
@@ -48,62 +47,64 @@ export class TelekomHeader {
 
   render() {
     return (
-      <Host scrolled={this.scrolled}>
+      <Host scrolled={this.scrolled} scrolled-back={this.scrolledBack}>
         <header
           part={cx('base', {
             scrolled: this.scrolled,
             'scrolled-back': this.scrolledBack,
           })}
         >
-          <div part="container">
-            <slot name="logo">
-              <scale-logo part="app-logo" variant="white"></scale-logo>
-            </slot>
+          <div part="fixed-wrapper">
+            <div part="container">
+              <slot name="logo">
+                <scale-logo part="app-logo" variant="white"></scale-logo>
+              </slot>
 
-            <div part="body">
-              <div part="top-bar">
-                {this.appName ? (
-                  <div part="top-app-name">
-                    {this.appNameLink ? (
-                      <a
-                        part="app-name-text"
-                        onClick={this.appNameClick}
-                        href={this.appNameLink}
-                      >
-                        {this.appName}
-                      </a>
-                    ) : (
-                      <span part="app-name-text">{this.appName}</span>
-                    )}
+              <div part="body">
+                <div part="top-bar">
+                  {this.appName ? (
+                    <div part="top-app-name">
+                      {this.appNameLink ? (
+                        <a
+                          part="app-name-text"
+                          onClick={this.appNameClick}
+                          href={this.appNameLink}
+                        >
+                          {this.appName}
+                        </a>
+                      ) : (
+                        <span part="app-name-text">{this.appName}</span>
+                      )}
+                    </div>
+                  ) : null}
+
+                  <div part="top-body">
+                    <slot name="meta-nav-external"></slot>
+                    <slot name="meta-nav"></slot>
+                    <slot name="lang-switcher"></slot>
                   </div>
-                ) : null}
-
-                <div part="top-body">
-                  <slot name="meta-nav-external"></slot>
-                  <slot name="meta-nav"></slot>
-                  <slot name="lang-switcher"></slot>
                 </div>
-              </div>
 
-              <div part="bottom-bar">
-                {this.appName ? (
-                  <div part="bottom-app-name">
-                    {this.appNameLink ? (
-                      <a
-                        part="app-name-text"
-                        onClick={this.appNameClick}
-                        href={this.appNameLink}
-                      >
-                        {this.appName}
-                      </a>
-                    ) : (
-                      <span part="app-name-text">{this.appName}</span>
-                    )}
+                <div part="bottom-bar">
+                  {this.appName ? (
+                    <div part="bottom-app-name">
+                      {this.appNameLink ? (
+                        <a
+                          part="app-name-text"
+                          onClick={this.appNameClick}
+                          href={this.appNameLink}
+                        >
+                          {this.appName}
+                        </a>
+                      ) : (
+                        <span part="app-name-text">{this.appName}</span>
+                      )}
+                    </div>
+                  ) : null}
+                  <div part="bottom-body">
+                    <slot name="main-nav"></slot>
+                    <slot name="functions"></slot>
                   </div>
-                ) : null}
-                <div part="bottom-body">
-                  <slot name="main-nav"></slot>
-                  <slot name="functions"></slot>
                 </div>
               </div>
             </div>

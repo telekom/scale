@@ -2,6 +2,12 @@
 
 This page documents updates to the visual appearance of Scale.
 
+## New Brand Header
+
+31.01.2023
+
+Release of the new brand header as a beta version. This will replace the current component once quality control is complete and WCAG accessibility certification is in place. Until then, we'd love to hear <a href="https://deploy-preview-1537--marvelous-moxie-a6e2fe.netlify.app/?path=/docs/contact-your-feedback--page" target="_blank" rel="noopener noreferrer">your feedback</a> on the new component.
+
 ## New Beta Components
 
 25.01.2023
