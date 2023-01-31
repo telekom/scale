@@ -1,4 +1,4 @@
-# scale-shell
+# scale-telekom-app-shell
 
 
 
