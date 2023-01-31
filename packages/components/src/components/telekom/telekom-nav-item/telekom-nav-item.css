@@ -236,7 +236,9 @@
 }
 
 /* FIXME this is too leaky (in general) */
-scale-telekom-mobile-flyout-canvas .scale-telekom-nav-list[variant='meta-nav-external'] .scale-icon {
+scale-telekom-mobile-flyout-canvas
+  .scale-telekom-nav-list[variant='meta-nav-external']
+  .scale-icon {
   height: 12px;
   width: 12px;
 }
