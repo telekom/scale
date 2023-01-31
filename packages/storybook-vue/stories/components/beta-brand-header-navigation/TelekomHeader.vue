@@ -1,12 +1,13 @@
 <template>
   <scale-telekom-header
-    :app-name-click="appNameClick"
-    :app-name-title="appNameTitle"
     :app-name="appName"
+    :app-name-link="appNameLink"
+    :app-name-click="appNameClick"
   >
-    <slot name="meta-nav-ext"></slot>
+    <slot name="logo"></slot>
+    <slot name="meta-nav-external"></slot>
     <slot name="meta-nav"></slot>
-    <slot name="language-switch"></slot>
+    <slot name="lang-switcher"></slot>
     <slot name="main-nav"></slot>
     <slot name="functions"></slot>
   </scale-telekom-header>
@@ -15,9 +16,9 @@
 <script>
 export default {
   props: {
-    appNameClick: Function,
-    appNameTitle: String,
     appName: String,
+    appNameLink: String,
+    appNameClick: Function,
   },
 };
 </script>
