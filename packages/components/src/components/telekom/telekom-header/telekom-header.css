@@ -300,7 +300,7 @@ slot[name='functions'] {
 }
 
 @media screen and (--lg) {
-  [part~='app-name-text'] {
+  :host {
     --font-size-app-name: var(--telekom-typography-font-size-small);
   }
 }
