@@ -78,7 +78,7 @@ Verwende Länderkürzel als Links bei wenigen Sprachen. Ist der Inhalt in mehr a
 
 Die Hauptnavigation enthält alle Navigationspunkte der ersten Ebene.
 
-##### Funktionen (7)
+#### Funktionen (7)
 
 Hier sind globale Funktionen wie Suche, Warenkorb oder Login aufgeführt. Der Login befindet sich dabei immer rechts. Ergänze die Icons wenn möglich mit einem Label.
 
@@ -88,13 +88,13 @@ Für die verschiedenen Breakpoints sind unterschiedliche Größen definiert.
 
 ## Navigation
 
-**Mega-Menü**
+### Mega-Menü
 
 Das Mega-Menü nutzt du am besten für eine flache Informationsarchitektur. Es bietet eine gute Übersicht innerhalb einer Kategorie. Die Ebenentiefe ist allerdings auf drei Ebenen begrenzt.
 
 ![Image Name](assets/3_components/beta-brand-header/5_brandheader_nav4_megamenu.png)
 
-**Dropdown-Navigation**
+### Dropdown-Navigation
 
 <div style="display: flex; width: 100%; border-radius: 3px; background-color: rgb(241, 241, 239); padding: 16px 16px 14px 20px;">
     <div style="padding-top:1px">
@@ -107,7 +107,7 @@ Das Mega-Menü nutzt du am besten für eine flache Informationsarchitektur. Es b
 
 Die Dropdown-Navigation eignet sich für Webseiten mit umfangreicher Seitenarchitektur. Sie kann mehrere Hierarchieebenen innerhalb des Navigationsbaums darstellen. Generell gilt: je weniger Ebenen, desto besser.
 
-**Mobile Navigation**
+### Mobile Navigation
 
 Auf kleinen Viewports gibt es nur eine Art der Navigation.
 

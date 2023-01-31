@@ -87,13 +87,13 @@ Different sizes are defined for the various break points.
 
 ## Navigation
 
-**Mega menu**
+### Mega menu
 
 The mega menu is suitable for a flat information architecture. It offers a good overview within a category, but the depth is limited to three levels.
 
 ![Image Name](assets/3_components/beta-brand-header/5_brandheader_nav4_megamenu.png)
 
-**Dropdown navigation**
+### Dropdown navigation
 
 <div style="display: flex; width: 100%; border-radius: 3px; background-color: rgb(241, 241, 239); padding: 16px 16px 14px 20px;">
     <div style="padding-top:1px">
@@ -106,7 +106,7 @@ The mega menu is suitable for a flat information architecture. It offers a good 
 
 The dropdown navigation can accommodate several levels of navigation and different depths within a navigation tree. As a general rule, the less levels the better.
 
-**Mobile navigation**
+### Mobile navigation
 
 Small viewports only have one type of navigation.
 
