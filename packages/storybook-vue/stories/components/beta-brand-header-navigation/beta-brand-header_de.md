@@ -54,27 +54,27 @@ Der Brand Header Subtle hat keine Hauptnavigation oder Funktionen und ist am obe
 
 ![Image Name](assets/3_components/beta-brand-header/4_brandheader_brandbar_elements.png)
 
-### Brand Area mit Logo (1) (verpflichtend)
+#### Brand Area mit Logo (1) (verpflichtend)
 
 Das Logo und der magentafarbene Hintergrund sind für jede Seite der Telekom verbindlich und können nicht verändert werden. Das Logo ist standardmäßig mit der Telekom Homepage verlinkt oder dem Einstiegspunkt in den aktuellen Prozess.
 
-### Portalname (2) (optional)
+#### Portalname (2) (optional)
 
 Name des Produkts oder Services.
 
-### Meta-Navigation (3) (optional)
+#### Meta-Navigation (3) (optional)
 
 Platziere hier globale Links zu Telekom Inhalten außerhalb der Webseite und ermögliche den Wechsel zwischen Privat- und Geschäftskund\*innen.
 
-### Meta-Navigation (4) (optional)
+#### Meta-Navigation (4) (optional)
 
 Interne Links (zum Beispiel Einstellungen und Kontakt).
 
-### Sprachwechsel-Element (5) (optional)
+#### Sprachwechsel-Element (5) (optional)
 
 Verwende Länderkürzel als Links bei wenigen Sprachen. Ist der Inhalt in mehr als drei Sprachen, nutze ein Dropdown – in dieser Komponente noch nicht verfügbar.
 
-### Hauptnavigation (6)
+#### Hauptnavigation (6)
 
 Die Hauptnavigation enthält alle Navigationspunkte der ersten Ebene.
 
@@ -88,13 +88,13 @@ Für die verschiedenen Breakpoints sind unterschiedliche Größen definiert.
 
 ## Navigation
 
-**Mega-Menü**
+### Mega-Menü
 
 Das Mega-Menü nutzt du am besten für eine flache Informationsarchitektur. Es bietet eine gute Übersicht innerhalb einer Kategorie. Die Ebenentiefe ist allerdings auf drei Ebenen begrenzt.
 
 ![Image Name](assets/3_components/beta-brand-header/5_brandheader_nav4_megamenu.png)
 
-**Dropdown-Navigation**
+### Dropdown-Navigation
 
 <div style="display: flex; width: 100%; border-radius: 3px; background-color: rgb(241, 241, 239); padding: 16px 16px 14px 20px;">
     <div style="padding-top:1px">
@@ -107,7 +107,7 @@ Das Mega-Menü nutzt du am besten für eine flache Informationsarchitektur. Es b
 
 Die Dropdown-Navigation eignet sich für Webseiten mit umfangreicher Seitenarchitektur. Sie kann mehrere Hierarchieebenen innerhalb des Navigationsbaums darstellen. Generell gilt: je weniger Ebenen, desto besser.
 
-**Mobile Navigation**
+### Mobile Navigation
 
 Auf kleinen Viewports gibt es nur eine Art der Navigation.
 
