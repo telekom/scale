@@ -29,7 +29,6 @@ import cx from 'classnames';
 export class TelekomHeader {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop() mainNavigation: any;
   @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
