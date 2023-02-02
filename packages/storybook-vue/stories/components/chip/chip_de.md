@@ -89,6 +89,10 @@ Füge ein Icon hinzu, wenn Nutzer\*innen die Funktion des Chips dadurch leichter
 - Horizontal angeordnete Chips befinden sich häufig oberhalb vom Inhalt auf den sie sich beziehen.
 - Formuliere das Label so präzise wie möglich.
 
+## Beta-Komponente
+
+Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
+
 ## Verwandte Komponenten
 
 [Tag](?path=/usage/components-tag--standard),

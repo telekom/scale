@@ -128,9 +128,9 @@
     "de": "Beta Komponenten"
   },
   {
-    "elementSelector": "#deprecated-components",
-    "en": "Deprecated Components",
-    "de": "Deprecated Komponenten"
+    "elementSelector": "#deprecated",
+    "en": "Deprecated",
+    "de": "Deprecated"
   },
   {
     "elementSelector": "#update-history",

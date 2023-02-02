@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.121](https://github.com/telekom/scale/compare/v3.0.0-beta.120...v3.0.0-beta.121) (2023-02-02)
+
+
+### Bug Fixes
+
+* **progress-bar:** inner bar for percentage 0 ([#1563](https://github.com/telekom/scale/issues/1563)) ([4f9c0c4](https://github.com/telekom/scale/commit/4f9c0c41c23004812cb23063d230dd6e1d785938))
+
+
+
+
+
 # [3.0.0-beta.120](https://github.com/telekom/scale/compare/v3.0.0-beta.119...v3.0.0-beta.120) (2023-01-31)
 
 

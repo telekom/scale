@@ -120,6 +120,10 @@ The label describes individual choices and should be short and precise.
 
 ![Image Name](assets/3_components/segmented-button/Map.png)
 
+## Beta components
+
+This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
+
 ## Related components
 
 [Tab Navigation](?path=/usage/components-tab-navigation--text-icon),
