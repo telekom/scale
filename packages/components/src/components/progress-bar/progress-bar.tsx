@@ -86,14 +86,7 @@ export class ProgressBar {
 
   progressStyle = () => {
     return {
-      width: this.disabled ? '100%' : `${this.percentage}%`,
-      border: '1px solid transparent',
-      background: this.customColor
-        ? this.customColor
-        : this.disabled
-        ? 'var(--background-disabled)'
-        : `var(--background)`,
-      animation: this.disabled ? 'none' : 'showProgress 3s ease-in-out',
+      '--progress': this.disabled ? '100%' : `${this.percentage}%`,
     };
   };
 
@@ -151,11 +144,13 @@ export class ProgressBar {
               aria-label={this.label}
               id={this.progressBarId}
             >
-              <div
-                part="inner"
-                class="progress-bar__inner"
-                style={this.progressStyle()}
-              ></div>
+              {this.percentage > 0 && (
+                <div
+                  part="inner"
+                  class="progress-bar__inner"
+                  style={this.progressStyle()}
+                ></div>
+              )}
             </div>
             <slot name="icon"></slot>
           </div>
