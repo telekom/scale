@@ -89,6 +89,10 @@
     var(--telekom-motion-easing-standard);
 }
 
+.progress-bar--disabled .progress-bar__inner {
+  background: var(--background-disabled);
+}
+
 .progress-bar__status {
   padding: var(--telekom-spacing-unit-x3) 0;
   font: var(--font-label);

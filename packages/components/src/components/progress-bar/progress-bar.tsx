@@ -85,8 +85,12 @@ export class ProgressBar {
   `;
 
   progressStyle = () => {
+    const customColor = this.customColor
+      ? { '--background': this.customColor }
+      : {};
     return {
       '--progress': this.disabled ? '100%' : `${this.percentage}%`,
+      ...customColor,
     };
   };
 
