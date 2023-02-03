@@ -228,7 +228,7 @@
   width: 20px;
 }
 
-@media screen and (--lg) {
+@media screen and (--xl) {
   .scale-telekom-nav-list[variant='functions'] .scale-icon {
     height: 24px;
     width: 24px;
