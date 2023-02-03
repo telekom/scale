@@ -18,6 +18,7 @@
     :counter="counter"
     :size="size"
     :value="value"
+    :aria-detailed-id="ariaDetailedId"
     :input-id="inputId"
     :input-autofocus="inputAutofocus"
     :input-autocomplete="inputAutocomplete"
@@ -55,6 +56,7 @@ export default {
     counter: { type: Boolean },
     size: { type: String },
     value: { type: String },
+    ariaDetailedId: { type: String },
     inputId: { type: String },
     inputAutofocus: { type: Boolean },
     inputAutocomplete: { type: String },

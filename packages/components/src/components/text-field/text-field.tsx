@@ -105,6 +105,8 @@ export class TextField {
   @Prop() inputAutofocus?: boolean;
   /** (optional) custom value for autocomplete HTML attribute */
   @Prop() inputAutocomplete?: string;
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
+  @Prop() ariaDetailedId?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -229,6 +231,7 @@ export class TextField {
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const ariaDetailedById = { 'aria-details': this.ariaDetailedId };
     const numericTypes = [
       'number',
       'date',
@@ -269,6 +272,7 @@ export class TextField {
             disabled={this.disabled}
             readonly={this.readonly}
             autocomplete={this.inputAutocomplete}
+            {...ariaDetailedById}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
@@ -276,7 +280,6 @@ export class TextField {
           {(!!this.helperText || !!this.counter) && (
             <div
               class="text-field__meta"
-              id={helperTextId}
               aria-live="polite"
               aria-relevant="additions removals"
             >
@@ -290,6 +293,7 @@ export class TextField {
           )}
           {this.helperText && (
             <scale-helper-text
+              id={helperTextId}
               helperText={this.helperText}
               variant={this.invalid ? 'danger' : this.variant}
             ></scale-helper-text>
