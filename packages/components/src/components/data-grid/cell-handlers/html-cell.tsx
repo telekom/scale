@@ -21,7 +21,7 @@ export const HTMLCell: Cell = {
     return rows[0][columnIndex];
   },
   render: ({ content, component }) => {
-    return (
+    return ( content &&
       <scale-button
         variant="secondary"
         size="small"
