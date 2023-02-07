@@ -12,6 +12,7 @@
 | `ariaCheckedState` | `aria-checked-state` | (optional) chip aria-checked   | `boolean`                   | `undefined`    |
 | `ariaRoleTitle`    | `aria-role-title`    | (optional) chip aria-role      | `string`                    | `'switch'`     |
 | `disabled`         | `disabled`           | (optional) chip disabled       | `boolean`                   | `false`        |
+| `dismissText`      | `dismiss-text`       | (optional) Dismiss label       | `string`                    | `'dismiss'`    |
 | `label`            | `label`              | (optional) chip label          | `string`                    | `undefined`    |
 | `selected`         | `selected`           | (optional)                     | `boolean`                   | `false`        |
 | `styles`           | `styles`             | (optional) Injected CSS styles | `string`                    | `undefined`    |

@@ -41,6 +41,8 @@ export class Chip {
   @Prop() label?: string;
   /** (optional) chip disabled */
   @Prop() disabled?: boolean = false;
+  /** (optional) Dismiss label */
+  @Prop() dismissText?: string = 'dismiss';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -103,6 +105,7 @@ export class Chip {
         <button
           part="button-dismissable"
           disabled={this.disabled}
+          aria-label={this.dismissText}
           onClick={!this.disabled ? this.handleClose : null}
         >
           <scale-icon-action-close
@@ -131,24 +134,45 @@ export class Chip {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <span
-          role={this.ariaRoleTitle}
-          aria-checked={
-            this.ariaCheckedState ? this.ariaCheckedState : this.selected
-          }
-          tabindex={this.selected ? '0' : '-1'}
-          part={this.getBasePartMap()}
-          class={this.getCssClassMap()}
-          onClick={
-            !this.disabled || this.type === 'dynamic' ? this.handleClick : null
-          }
-        >
-          <slot name="chip-icon"></slot>
-          <span class="chip-label">
-            <slot />
+        {this.type === 'dynamic' && this.selected ? (
+          <span
+            tabindex={this.selected ? '0' : '-1'}
+            part={this.getBasePartMap()}
+            class={this.getCssClassMap()}
+            onClick={
+              !this.disabled || this.type === 'dynamic'
+                ? this.handleClick
+                : null
+            }
+          >
+            <slot name="chip-icon"></slot>
+            <span class="chip-label">
+              <slot />
+            </span>
+            {this.selected ? this.getIcon() : null}
           </span>
-          {this.selected ? this.getIcon() : null}
-        </span>
+        ) : (
+          <span
+            role={this.ariaRoleTitle}
+            aria-checked={
+              this.ariaCheckedState ? this.ariaCheckedState : this.selected
+            }
+            tabindex={this.selected ? '0' : '-1'}
+            part={this.getBasePartMap()}
+            class={this.getCssClassMap()}
+            onClick={
+              !this.disabled || this.type === 'dynamic'
+                ? this.handleClick
+                : null
+            }
+          >
+            <slot name="chip-icon"></slot>
+            <span class="chip-label">
+              <slot />
+            </span>
+            {this.selected ? this.getIcon() : null}
+          </span>
+        )}
       </Host>
     );
   }
