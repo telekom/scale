@@ -100,12 +100,17 @@ export class Chip {
   getIcon() {
     if (this.type === 'dynamic' && this.selected) {
       return (
-        <scale-icon-action-close
-          accessibility-title="close"
-          size={16}
+        <button
+          part="button-dismissable"
+          disabled={this.disabled}
           onClick={!this.disabled ? this.handleClose : null}
-          selected
-        />
+        >
+          <scale-icon-action-close
+            accessibility-title="close"
+            size={16}
+            selected
+          />
+        </button>
       );
     } else if (this.type === 'persistent' && this.selected) {
       return (

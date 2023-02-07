@@ -29,6 +29,13 @@
 | `scaleClose`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<MouseEvent>` |
 
 
+## Shadow Parts
+
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"button-dismissable"` |             |
+
+
 ## Dependencies
 
 ### Depends on
