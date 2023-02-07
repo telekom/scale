@@ -34,7 +34,7 @@ export class Chip {
   /** (optional) */
   @Prop() selected?: boolean = false;
   /** (optional) chip aria-role */
-  @Prop() ariaRoleTitle?: string = 'switch';
+  @Prop() ariaRoleTitle?: string;
   /** (optional) chip aria-checked */
   @Prop() ariaCheckedState?: boolean;
   /** (optional) chip label */
@@ -136,6 +136,7 @@ export class Chip {
         {this.styles && <style>{this.styles}</style>}
         {this.type === 'dynamic' && this.selected ? (
           <span
+            role={this.ariaRoleTitle}
             tabindex={this.selected ? '0' : '-1'}
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
@@ -153,7 +154,7 @@ export class Chip {
           </span>
         ) : (
           <span
-            role={this.ariaRoleTitle}
+            role={this.ariaRoleTitle ? this.ariaRoleTitle : 'switch'}
             aria-checked={
               this.ariaCheckedState ? this.ariaCheckedState : this.selected
             }
