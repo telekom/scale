@@ -1,0 +1,146 @@
+@import url('../../../global/custom-media.css');
+
+.base {
+  --footer-background: var(--telekom-color-ui-black);
+  --_max-width-container: var(--scl-grid-max-width, 1680px);
+  --_spacing-x-container: var(--telekom-spacing-unit-x4);
+
+  --_footer-height: 304px;
+  --_bottom-margin: 24px;
+
+  --_nav-margin: 8px;
+  --_logo-top-margin: 32px;
+  --_logo-bottom-margin: 48px;
+}
+
+[part~='footer'] {
+  width: 100%;
+  /* height: var(--_footer-height); */
+  background-color: var(--footer-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.footer-container {
+    height: 100%;
+    max-width: var(--_max-width-container);
+    padding-left: var(--_spacing-x-container);
+    padding-right: var(--_spacing-x-container);
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-top: var(--_logo-top-margin);
+  margin-bottom: var(--_logo-bottom-margin);
+}
+
+.footer-content {
+  /* display: inline-flex; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+}
+
+.notice-container {
+  color: white;
+  display: flex;
+  flex: 1 0 auto;
+  margin-bottom: 12px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--_nav-margin);
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  color: white;
+  margin-bottom: var(--_bottom-margin);
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+slot[name='nav-links'] {
+  display: flex;
+}
+
+@media screen and (--md) {
+  .base {
+    --_logo-top-margin: 32px;
+    --_logo-bottom-margin: 48px;
+    --_nav-margin: 16px;
+  }
+  .footer-content {
+    flex-direction: column;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media screen and (--lg) {
+  .base {
+    --_logo-top-margin: 48px;
+    --_logo-bottom-margin: 72px;
+    --_nav-margin: 24px;
+  }
+  .footer-content {
+    flex-direction: row;
+  }  
+}
+
+@media screen and (--xl) {
+  .base {
+    --_logo-top-margin: 56px;
+    --_logo-bottom-margin: 80px;
+    --_bottom-margin: 32px;
+    --_nav-margin: 48px;
+  }
+}
+@media screen and (--2xl) {
+  .base {
+    --_logo-top-margin: 72px;
+    --_logo-bottom-margin: 96px;
+  }
+}
+
+/* .footer-container :where(ul, ol) {
+    border: 2px solid orange;
+} */
+
+a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scale-icon {
+    height: 16px;
+    width: 16px;
+    margin-right: 9px;
+  }
+  
+  @media screen and (--lg) {
+    .scale-telekom-nav-list[variant='functions'] .scale-icon {
+      height: 24px;
+      width: 24px;
+    }
+  }
