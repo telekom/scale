@@ -64,11 +64,11 @@
 }
 
 .chip.chip--selected.chip--type-dynamic.chip--variant-standard button:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--telekom-color-ui-state-fill-hovered-inverted);
 }
 
 .chip.chip--selected.chip--type-dynamic.chip--variant-standard button:active {
-  background: rgba(255, 255, 255, 0.21);
+  background: var(--telekom-color-ui-state-fill-pressed-inverted);
 }
 
 .chip.chip--selected.chip--type-dynamic button:focus {
