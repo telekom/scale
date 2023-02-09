@@ -25,27 +25,27 @@ export class TelekomFooter {
     return (
       <Host
         class={cx('scale-telekom-footer', {
-          slim: this.variant === 'slim'
-        })}        
+          slim: this.variant === 'slim',
+        })}
       >
         <footer>
-            <div class="footer-container">
-                <div class="logo-container">
-                    <scale-logo
-                    part="app-logo"
-                    variant="white"
-                    transparent
-                    ></scale-logo>
-                </div>
-                <div class="navigation-container">
-                    <div class="notice-container">
-                        <slot name="notice"></slot>
-                    </div>
-                    <div class="navigation-links-container">
-                        <slot name="navigation"></slot>
-                    </div>
-                </div>
+          <div class="footer-container">
+            <div class="logo-container">
+              <scale-logo
+                part="app-logo"
+                variant="white"
+                transparent
+              ></scale-logo>
             </div>
+            <div class="navigation-container">
+              <div class="notice-container">
+                <slot name="notice"></slot>
+              </div>
+              <div class="navigation-links">
+                <slot name="navigation"></slot>
+              </div>
+            </div>
+          </div>
         </footer>
       </Host>
     );
