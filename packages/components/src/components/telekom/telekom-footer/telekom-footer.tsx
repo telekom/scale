@@ -9,9 +9,10 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host, Element } from '@stencil/core';
-import { HTMLStencilElement } from '@stencil/core/internal';
-import { isScaleIcon, ScaleIcon} from '../../../utils/utils';
+import { Component, h, Host, Element } from '@stencil/core';
+import { HTMLStencilElement, Prop } from '@stencil/core/internal';
+import cx from 'classnames';
+
 @Component({
   tag: 'scale-telekom-footer',
   styleUrl: 'telekom-footer.css',
@@ -19,13 +20,15 @@ import { isScaleIcon, ScaleIcon} from '../../../utils/utils';
 })
 export class TelekomFooter {
   @Element() hostElement: HTMLStencilElement;
+  @Prop() variant: 'standard' | 'slim' = 'standard';
   render() {
-    console.log('footer');
     return (
       <Host
-        class="base"
+        class={cx('scale-telekom-footer', {
+          slim: this.variant === 'slim'
+        })}        
       >
-        <footer part="footer">
+        <footer>
             <div class="footer-container">
                 <div class="logo-container">
                     <scale-logo
@@ -34,12 +37,12 @@ export class TelekomFooter {
                     transparent
                     ></scale-logo>
                 </div>
-                <div class="footer-content">
+                <div class="navigation-container">
                     <div class="notice-container">
                         <slot name="notice"></slot>
                     </div>
-                    <div class="nav-links-container">
-                        <slot name="nav-links"></slot>
+                    <div class="navigation-links-container">
+                        <slot name="navigation"></slot>
                     </div>
                 </div>
             </div>

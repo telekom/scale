@@ -1,6 +1,6 @@
 @import url('../../../global/custom-media.css');
 
-.base {
+.scale-telekom-footer {
   --footer-background: var(--telekom-color-ui-black);
   --_max-width-container: var(--scl-grid-max-width, 1680px);
   --_spacing-x-container: var(--telekom-spacing-unit-x4);
@@ -11,11 +11,14 @@
   --_nav-margin: 8px;
   --_logo-top-margin: 32px;
   --_logo-bottom-margin: 48px;
+
+  --_slim-margin: 16px;
+
+  --_font-color: var(--telekom-color-text-and-icon-white-standard)
 }
 
-[part~='footer'] {
+footer {
   width: 100%;
-  /* height: var(--_footer-height); */
   background-color: var(--footer-background);
   display: flex;
   justify-content: center;
@@ -42,8 +45,7 @@
   margin-bottom: var(--_logo-bottom-margin);
 }
 
-.footer-content {
-  /* display: inline-flex; */
+.navigation-container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -53,13 +55,13 @@
 }
 
 .notice-container {
-  color: white;
+  color: var(--_font-color);
   display: flex;
   flex: 1 0 auto;
   margin-bottom: 12px;
 }
 
-ul {
+ul, ol {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -67,23 +69,55 @@ ul {
   padding: 0;
   width: 100%;
   margin: 0;
-  color: white;
+  color: var(--_font-color);
   margin-bottom: var(--_bottom-margin);
   flex-wrap: wrap;
   align-items: flex-start;
 }
 
-slot[name='nav-links'] {
+a {
+  color: var(--_font-color);
+  text-decoration: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Leave this just in case?  */
+.scale-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 9px;
+}
+
+.scale-telekom-footer.slim {
+  --footer-background: var(--telekom-color-background-canvas);
+  --_font-color: var(--telekom-color-text-and-icon-additional);
+}
+
+.scale-telekom-footer.slim .logo-container {
+  display: none;
+}
+
+.scale-telekom-footer.slim .notice-container {
+  margin-bottom: 12px;
+}
+.scale-telekom-footer.slim ul {
+  margin-bottom: 0px;
+}
+
+.scale-telekom-footer.slim .navigation-container {
+  padding-top: var(--_slim-margin);
+  padding-bottom: var(--_slim-margin);
 }
 
 @media screen and (--md) {
-  .base {
+  .scale-telekom-footer {
     --_logo-top-margin: 32px;
     --_logo-bottom-margin: 48px;
     --_nav-margin: 16px;
   }
-  .footer-content {
+  .navigation-container {
     flex-direction: column;
   }
   ul {
@@ -92,55 +126,42 @@ slot[name='nav-links'] {
     flex-direction: row;
     align-items: center;
   }
+  .scale-telekom-footer.slim .notice-container {
+    margin-bottom: 8px;
+  }  
+
 }
 
 @media screen and (--lg) {
-  .base {
+  .scale-telekom-footer {
     --_logo-top-margin: 48px;
     --_logo-bottom-margin: 72px;
     --_nav-margin: 24px;
+    --_slim-margin: 24px;
   }
-  .footer-content {
+  .navigation-container {
     flex-direction: row;
+  }  
+  .scale-telekom-footer.slim ul,
+  .scale-telekom-footer.slim .notice-container {
+    margin-bottom: 0;
+    margin-top: 0;
   }  
 }
 
 @media screen and (--xl) {
-  .base {
+  .scale-telekom-footer {
     --_logo-top-margin: 56px;
     --_logo-bottom-margin: 80px;
     --_bottom-margin: 32px;
     --_nav-margin: 48px;
+    --_slim-margin: 32px;
   }
 }
 @media screen and (--2xl) {
-  .base {
+  .scale-telekom-footer {
     --_logo-top-margin: 72px;
     --_logo-bottom-margin: 96px;
   }
 }
 
-/* .footer-container :where(ul, ol) {
-    border: 2px solid orange;
-} */
-
-a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.scale-icon {
-    height: 16px;
-    width: 16px;
-    margin-right: 9px;
-  }
-  
-  @media screen and (--lg) {
-    .scale-telekom-nav-list[variant='functions'] .scale-icon {
-      height: 24px;
-      width: 24px;
-    }
-  }

@@ -1,0 +1,79 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import TelekomFooter from './Footer.vue';
+
+<Meta
+  title="Beta Components/Footer"
+  component={TelekomFooter}
+  argTypes={{
+    variant: {
+      control: { type: 'select', options: ['slim', 'standard'] },
+    },
+  }}  
+/>
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Telekom Footer</h1>
+  <img src="assets/beta.png" alt="Beta" />
+</div>
+
+export const Template = (args, { argTypes }) => ({
+  components: { TelekomFooter },
+  props: TelekomFooter.props,
+  template: `
+    <scale-telekom-footer 
+        :variant="variant"
+    >
+      <span slot="notice"> © Deutsche Telekom AG </span>
+      <ul slot="navigation">
+        <li>
+          <a href="#">
+            Impressum 
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Datenschutz 
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            AGB
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Produktinformationsblatt
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Verbraucherinformationen
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Jugendschutz
+          </a>
+        </li>
+      </ul>
+    </scale-telekom-footer>
+  `
+});
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard"  inline={false} height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
