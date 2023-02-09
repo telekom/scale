@@ -15,6 +15,10 @@
   --_slim-margin: 16px;
 
   --_font-color: var(--telekom-color-text-and-icon-white-standard);
+  --_font-size: var(--telekom-typography-font-size-small);
+
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+  var(--telekom-color-functional-focus);
 }
 
 footer {
@@ -72,6 +76,7 @@ ol {
   margin: 0;
   color: var(--_font-color);
   margin-bottom: var(--_bottom-margin);
+  font-size: var(--_font-size);
   flex-wrap: wrap;
   align-items: flex-start;
 }
@@ -82,7 +87,34 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 2px;
 }
+
+a:hover {
+  /* text-decoration: underline;
+  text-underline-offset: 0.1875em;
+  text-underline-position: from-font;
+  text-decoration-thickness: var(
+    --line-thickness,
+    var(--line-thickness-initial)
+  );
+  text-decoration-color: var(--line-color); */
+  border-bottom: 1px solid rgba(250, 250, 250, 0.8);
+  border-radius: 0;
+  display: inline-block;
+}
+
+a:active {
+  color: var(--telekom-color-text-and-icon-white-additional);
+  border-bottom: 1px solid rgba(250, 250, 250, 0.65);
+  display: inline-block;  
+}
+
+a:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 1px;
+} 
 
 /* Leave this just in case?  */
 .scale-icon {
@@ -138,6 +170,8 @@ a {
     --_logo-bottom-margin: 72px;
     --_nav-margin: 24px;
     --_slim-margin: 24px;
+    --_font-size: var(--telekom-typography-font-size-body );
+
   }
   .navigation-container {
     flex-direction: row;
