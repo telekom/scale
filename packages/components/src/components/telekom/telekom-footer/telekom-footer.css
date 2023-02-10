@@ -18,7 +18,7 @@
   --_font-size: var(--telekom-typography-font-size-small);
 
   --focus-outline: var(--telekom-line-weight-highlight) solid
-  var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus);
 }
 
 footer {
@@ -87,7 +87,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(0,0,0,0);
+  border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 2px;
 }
 
@@ -106,7 +106,7 @@ a:focus-visible {
   /* todo better solution for this underline */
   outline: var(--focus-outline);
   outline-offset: 1px;
-} 
+}
 
 /* Leave this just in case?  */
 .scale-icon {
@@ -136,14 +136,14 @@ a:focus-visible {
   padding-bottom: var(--_slim-margin);
 }
 
-.scale-telekom-footer.slim  a:hover {
+.scale-telekom-footer.slim a:hover {
   color: var(--_font-color);
   border-bottom: 1px solid var(--telekom-color-ui-border-hovered);
 }
-.scale-telekom-footer.slim  a:active {
+.scale-telekom-footer.slim a:active {
   color: var(--_font-color);
   /* todo: not sure what token to use here, it will break on dark/light mode (problem is opacity) */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.65); 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.65);
 }
 @media screen and (--md) {
   .scale-telekom-footer {
@@ -171,8 +171,7 @@ a:focus-visible {
     --_logo-bottom-margin: 72px;
     --_nav-margin: 24px;
     --_slim-margin: 24px;
-    --_font-size: var(--telekom-typography-font-size-body );
-
+    --_font-size: var(--telekom-typography-font-size-body);
   }
   .navigation-container {
     flex-direction: row;
