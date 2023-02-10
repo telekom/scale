@@ -92,26 +92,18 @@ a {
 }
 
 a:hover {
-  /* text-decoration: underline;
-  text-underline-offset: 0.1875em;
-  text-underline-position: from-font;
-  text-decoration-thickness: var(
-    --line-thickness,
-    var(--line-thickness-initial)
-  );
-  text-decoration-color: var(--line-color); */
+  /* todo better solution for this underline */
   border-bottom: 1px solid rgba(250, 250, 250, 0.8);
   border-radius: 0;
-  display: inline-block;
 }
 
 a:active {
   color: var(--telekom-color-text-and-icon-white-additional);
   border-bottom: 1px solid rgba(250, 250, 250, 0.65);
-  display: inline-block;  
 }
 
 a:focus-visible {
+  /* todo better solution for this underline */
   outline: var(--focus-outline);
   outline-offset: 1px;
 } 
@@ -144,6 +136,15 @@ a:focus-visible {
   padding-bottom: var(--_slim-margin);
 }
 
+.scale-telekom-footer.slim  a:hover {
+  color: var(--_font-color);
+  border-bottom: 1px solid var(--telekom-color-ui-border-hovered);
+}
+.scale-telekom-footer.slim  a:active {
+  color: var(--_font-color);
+  /* todo: not sure what token to use here, it will break on dark/light mode (problem is opacity) */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.65); 
+}
 @media screen and (--md) {
   .scale-telekom-footer {
     --_logo-top-margin: 32px;
