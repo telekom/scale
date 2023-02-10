@@ -168,7 +168,7 @@ a:focus-visible {
   }
   .notice-container {
     margin-bottom: 8px;
-  }  
+  }
 }
 
 @media screen and (--lg) {
@@ -191,7 +191,7 @@ a:focus-visible {
 
   .scale-telekom-footer [part~='app-logo'] {
     --logo-size: 44px;
-  }  
+  }
 }
 
 @media screen and (--xl) {
@@ -204,7 +204,7 @@ a:focus-visible {
   }
   .scale-telekom-footer [part~='app-logo'] {
     --logo-size: 48px;
-  }  
+  }
 }
 @media screen and (--2xl) {
   .scale-telekom-footer {
@@ -213,6 +213,5 @@ a:focus-visible {
   }
   .scale-telekom-footer [part~='app-logo'] {
     --logo-size: 56px;
-  }   
+  }
 }
-
