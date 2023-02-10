@@ -5,13 +5,13 @@
   --_max-width-container: var(--scl-grid-max-width, 1680px);
   --_spacing-x-container: var(--telekom-spacing-unit-x4);
 
-  --_nav-items-bottom-margin: 24px;
-  --_nav-items-spacing: 12px;
+  --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
+  --_nav-items-spacing: var(--telekom-spacing-unit-x3);
 
-  --_logo-top-margin: 40px;
-  --_logo-bottom-margin: 40px;
+  --_logo-top-margin: var(--telekom-spacing-unit-x10);
+  --_logo-bottom-margin: var(--telekom-spacing-unit-x10);
 
-  --_slim-padding: 16px;
+  --_slim-padding: var(--telekom-spacing-unit-x4);
 
   --_font-color: var(--telekom-color-text-and-icon-white-standard);
   --_font-size: var(--telekom-typography-font-size-caption);
@@ -60,7 +60,7 @@ footer {
   color: var(--_font-color);
   display: flex;
   flex: 1 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: var(--telekom-spacing-unit-x5);
   font-size: var(--_font-size);
   line-height: 140%;
 }
@@ -109,8 +109,9 @@ a:focus-visible {
   outline-offset: 1px;
 }
 
+/* todo: should i use spacing token for logo size? */
 [part~='app-logo'] {
-  --logo-size: 36px;
+  --logo-size: var(--telekom-spacing-unit-x9);
 }
 
 /* Leave this just in case?  */
@@ -130,7 +131,7 @@ a:focus-visible {
 }
 
 .scale-telekom-footer.slim .notice-container {
-  margin-top: 24px;
+  margin-top: var(--telekom-spacing-unit-x6);
 }
 .scale-telekom-footer.slim ul {
   margin-bottom: 0px;
@@ -152,10 +153,9 @@ a:focus-visible {
 }
 @media screen and (--md) {
   .scale-telekom-footer {
-    --_logo-top-margin: 32px;
-    --_logo-bottom-margin: 48px;
-    --_nav-items-spacing: 16px;
-    border: 2px solid red;
+    --_logo-top-margin: var(--telekom-spacing-unit-x8);
+    --_logo-bottom-margin: var(--telekom-spacing-unit-x12);
+    --_nav-items-spacing: var(--telekom-spacing-unit-x4);
   }
   .navigation-container {
     flex-direction: column;
@@ -167,16 +167,16 @@ a:focus-visible {
     align-items: center;
   }
   .notice-container {
-    margin-bottom: 8px;
+    margin-bottom: var(--telekom-spacing-unit-x2);
   }
 }
 
 @media screen and (--lg) {
   .scale-telekom-footer {
-    --_logo-top-margin: 48px;
-    --_logo-bottom-margin: 72px;
-    --_nav-items-spacing: 24px;
-    --_slim-padding: 24px;
+    --_logo-top-margin: var(--telekom-spacing-unit-x12);
+    --_logo-bottom-margin: var(--telekom-spacing-unit-x18);
+    --_nav-items-spacing: var(--telekom-spacing-unit-x6);
+    --_slim-padding: var(--telekom-spacing-unit-x6);
     --_font-size: var(--telekom-typography-font-size-body);
     --_spacing-x-container: var(--telekom-spacing-unit-x6);
   }
@@ -189,29 +189,33 @@ a:focus-visible {
     margin-top: 0;
   }
 
+  /* todo: should i use spacing token for logo size? */
   .scale-telekom-footer [part~='app-logo'] {
-    --logo-size: 44px;
+    --logo-size: var(--telekom-spacing-unit-x11);
   }
 }
 
 @media screen and (--xl) {
   .scale-telekom-footer {
-    --_logo-top-margin: 56px;
-    --_logo-bottom-margin: 80px;
-    --_nav-items-bottom-margin: 32px;
-    --_nav-items-spacing: 48px;
-    --_slim-padding: 32px;
+    --_logo-top-margin: var(--telekom-spacing-unit-x14);
+    --_logo-bottom-margin: var(--telekom-spacing-unit-x20);
+    --_nav-items-bottom-margin: var(--telekom-spacing-unit-x8);
+    --_nav-items-spacing: var(--telekom-spacing-unit-x12);
+    --_slim-padding: var(--telekom-spacing-unit-x8);
   }
+  /* todo: should i use spacing token for logo size? */
   .scale-telekom-footer [part~='app-logo'] {
-    --logo-size: 48px;
+    --logo-size: var(--telekom-spacing-unit-x12);
   }
 }
 @media screen and (--2xl) {
   .scale-telekom-footer {
-    --_logo-top-margin: 72px;
+    --_logo-top-margin: var(--telekom-spacing-unit-x18);
+    /* too bad spacing tokens don't go beyond 5 rem */
     --_logo-bottom-margin: 96px;
   }
+  /* todo: should i use spacing token for logo size? */
   .scale-telekom-footer [part~='app-logo'] {
-    --logo-size: 56px;
+    --logo-size: var(--telekom-spacing-unit-x14);
   }
 }
