@@ -5,18 +5,16 @@
   --_max-width-container: var(--scl-grid-max-width, 1680px);
   --_spacing-x-container: var(--telekom-spacing-unit-x4);
 
-  --_footer-height: 304px;
-  --_bottom-margin: 24px;
+  --_nav-items-bottom-margin: 24px;
+  --_nav-items-spacing: 12px;
 
-  --_nav-margin: 12px;
   --_logo-top-margin: 40px;
   --_logo-bottom-margin: 40px;
 
-  --_slim-margin: 16px;
+  --_slim-padding: 16px;
 
   --_font-color: var(--telekom-color-text-and-icon-white-standard);
   --_font-size: var(--telekom-typography-font-size-caption);
-
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus);
 }
@@ -64,6 +62,7 @@ footer {
   flex: 1 0 auto;
   margin-bottom: 20px;
   font-size: var(--_font-size);
+  line-height: 140%;
 }
 
 ul,
@@ -71,13 +70,14 @@ ol {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--_nav-margin);
+  gap: var(--_nav-items-spacing);
   padding: 0;
   width: 100%;
   margin: 0;
   color: var(--_font-color);
-  margin-bottom: var(--_bottom-margin);
+  margin-bottom: var(--_nav-items-bottom-margin);
   font-size: var(--_font-size);
+  line-height: 140%;
   flex-wrap: wrap;
   align-items: flex-start;
 }
@@ -137,8 +137,8 @@ a:focus-visible {
 }
 
 .scale-telekom-footer.slim .navigation-container {
-  padding-top: var(--_slim-margin);
-  padding-bottom: var(--_slim-margin);
+  padding-top: var(--_slim-padding);
+  padding-bottom: var(--_slim-padding);
 }
 
 .scale-telekom-footer.slim a:hover {
@@ -154,7 +154,8 @@ a:focus-visible {
   .scale-telekom-footer {
     --_logo-top-margin: 32px;
     --_logo-bottom-margin: 48px;
-    --_nav-margin: 16px;
+    --_nav-items-spacing: 16px;
+    border: 2px solid red;
   }
   .navigation-container {
     flex-direction: column;
@@ -165,18 +166,19 @@ a:focus-visible {
     flex-direction: row;
     align-items: center;
   }
-  .scale-telekom-footer.slim .notice-container {
+  .notice-container {
     margin-bottom: 8px;
-  }
+  }  
 }
 
 @media screen and (--lg) {
   .scale-telekom-footer {
     --_logo-top-margin: 48px;
     --_logo-bottom-margin: 72px;
-    --_nav-margin: 24px;
-    --_slim-margin: 24px;
+    --_nav-items-spacing: 24px;
+    --_slim-padding: 24px;
     --_font-size: var(--telekom-typography-font-size-body);
+    --_spacing-x-container: var(--telekom-spacing-unit-x6);
   }
   .navigation-container {
     flex-direction: row;
@@ -196,9 +198,9 @@ a:focus-visible {
   .scale-telekom-footer {
     --_logo-top-margin: 56px;
     --_logo-bottom-margin: 80px;
-    --_bottom-margin: 32px;
-    --_nav-margin: 48px;
-    --_slim-margin: 32px;
+    --_nav-items-bottom-margin: 32px;
+    --_nav-items-spacing: 48px;
+    --_slim-padding: 32px;
   }
   .scale-telekom-footer [part~='app-logo'] {
     --logo-size: 48px;
