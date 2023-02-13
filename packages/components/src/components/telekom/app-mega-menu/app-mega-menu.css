@@ -106,3 +106,9 @@ app-mega-menu {
 .mega-menu__row ul {
   padding-inline-start: 0;
 }
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .mega-menu {
+    border: 1px solid hsl(0, 0%, 100%);
+  }
+}
