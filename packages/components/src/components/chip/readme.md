@@ -10,8 +10,9 @@
 | Property           | Attribute            | Description                    | Type                        | Default        |
 | ------------------ | -------------------- | ------------------------------ | --------------------------- | -------------- |
 | `ariaCheckedState` | `aria-checked-state` | (optional) chip aria-checked   | `boolean`                   | `undefined`    |
-| `ariaRoleTitle`    | `aria-role-title`    | (optional) chip aria-role      | `string`                    | `'switch'`     |
+| `ariaRoleTitle`    | `aria-role-title`    | (optional) chip aria-role      | `string`                    | `undefined`    |
 | `disabled`         | `disabled`           | (optional) chip disabled       | `boolean`                   | `false`        |
+| `dismissText`      | `dismiss-text`       | (optional) Dismiss label       | `string`                    | `'dismiss'`    |
 | `label`            | `label`              | (optional) chip label          | `string`                    | `undefined`    |
 | `selected`         | `selected`           | (optional)                     | `boolean`                   | `false`        |
 | `styles`           | `styles`             | (optional) Injected CSS styles | `string`                    | `undefined`    |
@@ -27,6 +28,13 @@
 | `scale-close`  | (optional) Close icon click event                                                                  | `CustomEvent<MouseEvent>` |
 | `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<MouseEvent>` |
 | `scaleClose`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<MouseEvent>` |
+
+
+## Shadow Parts
+
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"button-dismissable"` |             |
 
 
 ## Dependencies
