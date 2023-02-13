@@ -1,0 +1,30 @@
+.telekom-footer-extended-navigation-column {
+    display: flex;
+    flex-direction: column;
+    grid-column: auto / span 3;
+}
+
+.telekom-footer-extended-navigation-column-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.heading-container {
+    display: inline-flex;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.telekom-footer-extended-navigation-column-links {
+    display: inline-flex;
+    font-size: 16px;
+    line-height: 140%;  
+}
+
+.telekom-footer-extended-navigation-column-links ul, 
+.telekom-footer-extended-navigation-column-links ol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid red;
+} 

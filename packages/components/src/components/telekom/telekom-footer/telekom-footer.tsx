@@ -29,6 +29,7 @@ export class TelekomFooter {
         })}
       >
         <footer>
+          <slot name="extended-navigation"></slot>
           <div class="footer-container">
             <div class="logo-container">
               <scale-logo

@@ -24,7 +24,7 @@ footer {
   background-color: var(--footer-background);
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .footer-container {
@@ -65,8 +65,7 @@ footer {
   line-height: 140%;
 }
 
-ul,
-ol {
+.navigation-links ul {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -133,7 +132,7 @@ a:focus-visible {
 .scale-telekom-footer.slim .notice-container {
   margin-top: var(--telekom-spacing-unit-x6);
 }
-.scale-telekom-footer.slim ul {
+.scale-telekom-footer.slim .navigation-links ul {
   margin-bottom: 0px;
 }
 
@@ -160,7 +159,7 @@ a:focus-visible {
   .navigation-container {
     flex-direction: column;
   }
-  ul {
+  .navigation-links ul{
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -183,7 +182,7 @@ a:focus-visible {
   .navigation-container {
     flex-direction: row;
   }
-  .scale-telekom-footer.slim ul,
+  .scale-telekom-footer.slim .navigation-links ul,
   .scale-telekom-footer.slim .notice-container {
     margin-bottom: 0;
     margin-top: 0;
