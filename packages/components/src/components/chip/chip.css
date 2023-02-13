@@ -44,13 +44,51 @@
   border: 1px solid var(--telekom-color-ui-border-standard);
 }
 
-.chip:not(.chip--disabled):focus,
+.chip.chip--selected.chip--type-dynamic {
+  padding-right: var(--telekom-spacing-unit-x1);
+}
+
+.chip.chip--selected.chip--type-dynamic button {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  outline: none;
+  background: transparent;
+  border-radius: var(--telekom-radius-circle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.chip.chip--selected.chip--type-dynamic.chip--variant-standard button:hover {
+  background: var(--telekom-color-ui-state-fill-hovered-inverted);
+}
+
+.chip.chip--selected.chip--type-dynamic.chip--variant-standard button:active {
+  background: var(--telekom-color-ui-state-fill-pressed-inverted);
+}
+
+.chip.chip--selected.chip--type-dynamic button:focus {
+  justify-content: center;
+  outline: var(--focus-outline);
+}
+
+.chip.chip--selected.chip--type-dynamic.chip--variant-standard
+  scale-icon-action-close {
+  padding: 0;
+  color: var(--telekom-color-text-and-icon-inverted-standard);
+}
+
+.chip:not(.chip--disabled):not(.chip--type-dynamic):focus,
 .chip.chip--type-dynamic:not(.chip--selected):focus {
   outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
   outline-offset: var(--telekom-spacing-unit-x025);
 }
 
-.chip:not(.chip--disabled):hover,
+.chip:not(.chip--disabled):not(.chip--type-dynamic):hover,
 .chip.chip--type-dynamic:not(.chip--selected):hover {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-hovered),
@@ -59,7 +97,7 @@
     var(--telekom-color-text-and-icon-inverted-standard);
 }
 
-.chip:not(.chip--disabled):active,
+.chip:not(.chip--disabled):not(.chip--type-dynamic):active,
 .chip.chip--type-dynamic:not(.chip--selected):active {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-pressed),
@@ -73,7 +111,7 @@
   color: var(--color-standard-selected);
 }
 
-.chip--selected:not(.chip--disabled):hover {
+.chip--selected:not(.chip--disabled):not(.chip--type-dynamic):hover {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-hovered-inverted),
       var(--telekom-color-ui-state-fill-hovered-inverted)
@@ -81,7 +119,7 @@
     var(--background-standard-selected);
 }
 
-.chip--selected:not(.chip--disabled):active {
+.chip--selected:not(.chip--disabled):not(.chip--type-dynamic):active {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-pressed-inverted),
       var(--telekom-color-ui-state-fill-pressed-inverted)
@@ -142,28 +180,54 @@ disabled
 variant outline 
 **/
 
+.chip.chip--variant-outline.chip--selected:not(.chip.chip--disabled):not(.chip--type-dynamic):hover {
+  background: linear-gradient(
+      var(--telekom-color-ui-state-fill-hovered),
+      var(--telekom-color-ui-state-fill-hovered)
+    ),
+    var(--telekom-color-text-and-icon-inverted-standard);
+}
+
+.chip.chip--variant-outline.chip--selected:not(.chip.chip--disabled):not(.chip--type-dynamic):active {
+  background: linear-gradient(
+      var(--telekom-color-ui-state-fill-pressed),
+      var(--telekom-color-ui-state-fill-pressed)
+    ),
+    var(--telekom-color-text-and-icon-inverted-standard);
+}
+
+/**
+dynamic
+**/
+
 .chip.chip--variant-outline.chip--selected {
   color: var(--telekom-color-text-and-icon-primary-standard);
   background: var(--telekom-color-text-and-icon-inverted-standard);
   border: 1px solid var(--telekom-color-text-and-icon-primary-standard);
 }
 
-.chip.chip--variant-outline.chip--selected:not(.chip.chip--disabled):hover {
-  background: linear-gradient(
-      var(--telekom-color-ui-state-fill-hovered),
-      var(--telekom-color-ui-state-fill-hovered)
-    ),
-    var(--telekom-color-text-and-icon-inverted-standard);
-  color: var(--telekom-color-text-and-icon-primary-hovered);
-  border: 1px solid var(--telekom-color-text-and-icon-primary-hovered);
+.chip.chip--selected.chip--type-dynamic.chip--variant-outline
+  scale-icon-action-close {
+  padding: 0;
+  color: var(--telekom-color-text-and-icon-primary-standard);
 }
 
-.chip.chip--variant-outline.chip--selected:not(.chip.chip--disabled):active {
-  background: linear-gradient(
-      var(--telekom-color-ui-state-fill-pressed),
-      var(--telekom-color-ui-state-fill-pressed)
-    ),
-    var(--telekom-color-text-and-icon-inverted-standard);
+.chip.chip--selected.chip--type-dynamic.chip--variant-outline button:hover {
+  background: var(--telekom-color-ui-state-fill-hovered);
+}
+
+.chip.chip--selected.chip--type-dynamic.chip--variant-outline
+  button:hover
+  scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+.chip.chip--selected.chip--type-dynamic.chip--variant-outline button:active {
+  background: var(telekom-color-ui-state-fill-pressed);
+}
+
+.chip.chip--selected.chip--type-dynamic.chip--variant-outline
+  button:active
+  scale-icon-action-close {
   color: var(--telekom-color-text-and-icon-primary-pressed);
-  border: 1px solid var(--telekom-color-text-and-icon-primary-pressed);
 }
