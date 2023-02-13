@@ -1,7 +1,7 @@
 {
   "name": "@telekom/scale-visual-tests",
   "private": true,
-  "version": "3.0.0-beta.122",
+  "version": "3.0.0-beta.123",
   "main": "index.js",
   "license": "MPL-2.0",
   "scripts": {
