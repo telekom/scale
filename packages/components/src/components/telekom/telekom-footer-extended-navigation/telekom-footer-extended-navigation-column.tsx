@@ -12,6 +12,7 @@
 import { Component, h, Host, Element } from '@stencil/core';
 import { HTMLStencilElement, Prop } from '@stencil/core/internal';
 import cx from 'classnames';
+import { emitEvent } from '../../../utils/utils';
 
 @Component({
   tag: 'scale-telekom-footer-extended-navigation-column',
@@ -20,16 +21,33 @@ import cx from 'classnames';
 })
 export class TelekomFooterExtendedNavigationColumn {
   @Element() hostElement: HTMLStencilElement;
-  //   @Prop() variant: 'standard' | 'slim' = 'standard';
-  render() {
+  @Prop() heading: string;
+  /** Set to `true` to expand */
+  @Prop() expanded: boolean = false;
+  handleClick = () => {
+    console.log('CLICK EVENT', this.expanded, !this.expanded);
+    this.expanded = !this.expanded;
+    // emitEvent(this, 'scaleExpand', { expanded: this.expanded });    
+  }
+ 
+  render() { 
     return (
-      <Host class={cx('telekom-footer-extended-navigation-column')}>
-        <div class="heading-container">
-          <slot name="heading"></slot>
+      <Host>
+        <div class={cx('telekom-footer-extended-navigation-column', {
+          expanded: this.expanded
+        })}>
+          <div class="heading-container">
+            <button onClick={this.handleClick} class="heading-button">
+              <span> {this.heading}</span>
+              <scale-icon-navigation-right size={16}></scale-icon-navigation-right>
+            </button>
+            <span class="heading"> {this.heading}</span>
+          </div>
+          <div class="telekom-footer-extended-navigation-column-links">
+            <slot></slot>
+          </div>
         </div>
-        <div class="telekom-footer-extended-navigation-column-links">
-          <slot></slot>
-        </div>
+        <scale-divider></scale-divider>
       </Host>
     );
   }

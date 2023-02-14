@@ -1,3 +1,5 @@
+@import url('../../../global/custom-media.css');
+
 .telekom-footer-extended-navigation {
   --extended-navigation-background: var(
     --telekom-color-background-surface-subtle
@@ -22,11 +24,10 @@
   padding-left: var(--_spacing-x-container);
   padding-right: var(--_spacing-x-container);
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(16, minmax(0, 1fr));
-  column-gap: var(--column-gap);
   padding-top: 48px;
   padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
 }
 
 .telekom-footer-extended-navigation :where(ul) {
@@ -52,19 +53,17 @@
   margin-top: 22px;
 }
 
-/* this is ugly, it assumes that the headings are always h2 (what if they are links) */
-.telekom-footer-extended-navigation :where(h2) {
-  display: inline-flex;
-  font-size: 16px;
-  line-height: 140%;
-  margin: 0;
-  color: var(--heading-color);
-  font-weight: var(--heading-weight);
-}
-
 .telekom-footer-extended-navigation
   :where(scale-telekom-footer-extended-navigation-column) {
   display: flex;
   flex-direction: column;
   grid-column: auto / span 4;
+}
+
+@media screen and (--md) {
+  .extended-navigation-container {
+    display: grid;
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+    column-gap: var(--column-gap);
+  }
 }
