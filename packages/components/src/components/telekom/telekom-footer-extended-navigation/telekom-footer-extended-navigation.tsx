@@ -11,7 +11,6 @@
 
 import { Component, h, Host, Element } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
-import cx from 'classnames';
 
 @Component({
   tag: 'scale-telekom-footer-extended-navigation',
@@ -20,16 +19,12 @@ import cx from 'classnames';
 })
 export class TelekomFooterExtendedNavigation {
   @Element() hostElement: HTMLStencilElement;
-//   @Prop() variant: 'standard' | 'slim' = 'standard';
+  //   @Prop() variant: 'standard' | 'slim' = 'standard';
   render() {
     return (
-      <Host
-        class={cx('scale-telekom-footer-extended-navigation', {
-          slim: true,
-        })}
-      >
+      <Host class="scale-telekom-footer-extended-navigation">
         <div class="extended-navigation-container">
-            <slot></slot>
+          <slot></slot>
         </div>
       </Host>
     );

@@ -20,34 +20,15 @@ import cx from 'classnames';
 })
 export class TelekomFooter {
   @Element() hostElement: HTMLStencilElement;
-  @Prop() variant: 'standard' | 'slim' = 'standard';
+  @Prop({ reflect: true }) variant: 'standard' | 'slim' = 'standard';
   render() {
     return (
       <Host
-        class={cx('scale-telekom-footer', {
+        class={cx('telekom-footer', {
           slim: this.variant === 'slim',
         })}
       >
-        <footer>
-          <slot name="extended-navigation"></slot>
-          <div class="footer-container">
-            <div class="logo-container">
-              <scale-logo
-                part="app-logo"
-                variant="white"
-                transparent
-              ></scale-logo>
-            </div>
-            <div class="navigation-container">
-              <div class="notice-container">
-                <slot name="notice"></slot>
-              </div>
-              <div class="navigation-links">
-                <slot name="navigation"></slot>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <slot></slot>
       </Host>
     );
   }
