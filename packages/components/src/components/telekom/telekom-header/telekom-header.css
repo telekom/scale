@@ -38,7 +38,7 @@
   --_display-lang-switcher: none;
 
   /* value matches scale-grid — ideally we'd have this in a global var *sigh* */
-  --_max-width-container: var(--scl-grid-max-width, 1680px);
+  --_max-width-container: var(--scl-grid-max-width, 1504px);
   --_spacing-x-container: var(--telekom-spacing-unit-x4);
   --_column-gap-container: var(--telekom-spacing-unit-x8);
   --_grid-template-columns-container: auto;
@@ -189,7 +189,7 @@ slot[name='functions'] {
 }
 
 [part~='container'] {
-  box-sizing: border-box;
+  box-sizing: content-box;
   display: grid;
   grid-template-columns: var(--_grid-template-columns-container);
   column-gap: var(--_column-gap-container);
