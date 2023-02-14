@@ -1,10 +1,14 @@
-.scale-telekom-footer-extended-navigation {
+.telekom-footer-extended-navigation {
   --extended-navigation-background: var(
     --telekom-color-background-surface-subtle
   );
   --_max-width-container: var(--scl-grid-max-width, 1680px);
   --spacing-x: var(--telekom-spacing-unit-x6);
   --column-gap: var(--telekom-spacing-unit-x8);
+
+  --heading-color: var(--telekom-color-text-and-icon-standard);
+  --heading-weight: var(--telekom-typography-font-weight-bold);
+  --link-color: var(--telekom-color-text-and-icon-standard);
 
   width: 100%;
   display: flex;
@@ -25,24 +29,42 @@
   padding-bottom: 48px;
 }
 
-.scale-telekom-footer-extended-navigation :where(ul) {
+.telekom-footer-extended-navigation :where(ul) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   list-style: none;
   padding: 0;
   margin: 0;
-  border: 2px solid green;
+  /* LEAKY: need this to overwrite the column gap in the footer navigation */
+  gap: 0;
 }
 
-.telekom-footer-extended-navigation-column-links li {
+.telekom-footer-extended-navigation :where(li) {
   margin-top: 20px;
 }
 
-.telekom-footer-extended-navigation-column-links li * {
+.telekom-footer-extended-navigation :where(li) * {
   color: var(--link-color);
 }
 
-.telekom-footer-extended-navigation-column-links li:first-child {
+.telekom-footer-extended-navigation :where(li:first-child) {
   margin-top: 22px;
+}
+
+/* this is ugly, it assumes that the headings are always h2 (what if they are links) */
+.telekom-footer-extended-navigation :where(h2) {
+  display: inline-flex;
+  font-size: 16px;
+  line-height: 140%;
+  margin: 0;
+  color: var(--heading-color);
+  font-weight: var(--heading-weight);
+}
+
+.telekom-footer-extended-navigation
+  :where(scale-telekom-footer-extended-navigation-column) {
+  display: flex;
+  flex-direction: column;
+  grid-column: auto / span 4;
 }

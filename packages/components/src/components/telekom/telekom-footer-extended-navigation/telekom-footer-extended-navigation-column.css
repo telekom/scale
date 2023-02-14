@@ -2,10 +2,6 @@
   --heading-color: var(--telekom-color-text-and-icon-standard);
   --heading-weight: var(--telekom-typography-font-weight-bold);
   --link-color: var(--telekom-color-text-and-icon-standard);
-
-  display: flex;
-  flex-direction: column;
-  grid-column: auto / span 4;
 }
 
 .telekom-footer-extended-navigation-column-links {
@@ -13,39 +9,8 @@
   flex-direction: column;
 }
 
-.heading-container * {
-  display: inline-flex;
-  font-size: 16px;
-  line-height: 140%;
-  margin: 0;
-  color: var(--heading-color);
-  font-weight: var(--heading-weight);
-}
-
 .telekom-footer-extended-navigation-column-links {
   display: inline-flex;
   font-size: 16px;
   line-height: 140%;
 }
-/* 
-.telekom-footer-extended-navigation-column-links ul, 
-.telekom-footer-extended-navigation-column-links ol {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    list-style: none;
-    padding: 0; 
-    margin:0;
-} 
-
-.telekom-footer-extended-navigation-column-links li {
-    margin-top: 20px;
-}
-
-.telekom-footer-extended-navigation-column-links li * {
-    color: var(--link-color);
-}
-
-.telekom-footer-extended-navigation-column-links li:first-child{
-    margin-top: 22px;
-}  */

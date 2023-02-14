@@ -22,7 +22,7 @@ export class TelekomFooterExtendedNavigation {
   //   @Prop() variant: 'standard' | 'slim' = 'standard';
   render() {
     return (
-      <Host class="scale-telekom-footer-extended-navigation">
+      <Host class="telekom-footer-extended-navigation">
         <div class="extended-navigation-container">
           <slot></slot>
         </div>
