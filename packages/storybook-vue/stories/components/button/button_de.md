@@ -74,13 +74,13 @@ Im deaktivierten Zustand ist die interaktive Funktion des Buttons ausgeschaltet.
 
 ## Elemente
 
-### Label
+#### Label
 
 Das Label eines Buttons enthält eine klare Handlungsaufforderung. Es beschreibt einfach und präzise die Aktion, die Nutzer\*innen mit diesem Button ausführen können. Im besten Fall besteht das Label aus maximal drei Wörtern. Für einen klaren Kontext verwende ein Verb mit Substantiv. Der Zusatz „Jetzt” wirkt auffordernd und kann die Motivation der Nutzer\*innen steigern, zum Beispiel bei einer Anmeldung oder Registrierung. Weitere Informationen findest du in dem Artikel <a href="https://www.brand-design.telekom.com/en/articles/button-texts-and-text-links/" target="_blank">Button Texts and Text Links</a> in Brand & Design.
 
 ![Image Name](assets/3_components/button/Button_Label.png)
 
-### Icons
+#### Icons
 
 Lese die Richtlinie <a href="https://www.brand-design.telekom.com/en/articles/i/icons-for-user-interfaces/" target="_blank">Icons for User Interfaces</a> in Brand & Design um mehr über die Verwendung und Gestaltung von Icons zu erfahren.
 

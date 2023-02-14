@@ -37,13 +37,13 @@ Der erweiterte Footer eignet sich für Portale mit umfangreichem Angebot, da sic
 
 ![Image Name](assets/3_components/footer/footer-elemente.png)
 
-### Sitemap (1) (optional)
+#### Sitemap (1) (optional)
 
-### Telekom Logo mit Claim (2)
+#### Telekom Logo mit Claim (2)
 
-### Copyright (3)
+#### Copyright (3)
 
-### Links (4)
+#### Links (4)
 
 ## Der Footer auf kleinen Geräten
 
