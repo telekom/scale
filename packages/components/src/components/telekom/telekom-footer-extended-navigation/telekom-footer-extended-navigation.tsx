@@ -10,25 +10,22 @@
  */
 
 import { Component, h, Host, Element } from '@stencil/core';
-import { HTMLStencilElement, Prop } from '@stencil/core/internal';
-import cx from 'classnames';
+import { HTMLStencilElement } from '@stencil/core/internal';
 
 @Component({
-  tag: 'scale-telekom-footer',
-  styleUrl: 'telekom-footer.css',
+  tag: 'scale-telekom-footer-extended-navigation',
+  styleUrl: 'telekom-footer-extended-navigation.css',
   shadow: false,
 })
-export class TelekomFooter {
+export class TelekomFooterExtendedNavigation {
   @Element() hostElement: HTMLStencilElement;
-  @Prop({ reflect: true }) variant: 'standard' | 'slim' = 'standard';
+  //   @Prop() variant: 'standard' | 'slim' = 'standard';
   render() {
     return (
-      <Host
-        class={cx('telekom-footer', {
-          slim: this.variant === 'slim',
-        })}
-      >
-        <slot></slot>
+      <Host class="scale-telekom-footer-extended-navigation">
+        <div class="extended-navigation-container">
+          <slot></slot>
+        </div>
       </Host>
     );
   }

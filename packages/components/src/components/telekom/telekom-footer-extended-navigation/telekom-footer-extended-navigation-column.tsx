@@ -14,21 +14,22 @@ import { HTMLStencilElement, Prop } from '@stencil/core/internal';
 import cx from 'classnames';
 
 @Component({
-  tag: 'scale-telekom-footer',
-  styleUrl: 'telekom-footer.css',
-  shadow: false,
+  tag: 'scale-telekom-footer-extended-navigation-column',
+  styleUrl: 'telekom-footer-extended-navigation-column.css',
+  shadow: true,
 })
-export class TelekomFooter {
+export class TelekomFooterExtendedNavigationColumn {
   @Element() hostElement: HTMLStencilElement;
-  @Prop({ reflect: true }) variant: 'standard' | 'slim' = 'standard';
+  //   @Prop() variant: 'standard' | 'slim' = 'standard';
   render() {
     return (
-      <Host
-        class={cx('telekom-footer', {
-          slim: this.variant === 'slim',
-        })}
-      >
-        <slot></slot>
+      <Host class={cx('telekom-footer-extended-navigation-column')}>
+        <div class="heading-container">
+          <slot name="heading"></slot>
+        </div>
+        <div class="telekom-footer-extended-navigation-column-links">
+          <slot></slot>
+        </div>
       </Host>
     );
   }
