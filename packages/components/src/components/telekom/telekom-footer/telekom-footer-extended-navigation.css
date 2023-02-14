@@ -1,21 +1,27 @@
 .scale-telekom-footer-extended-navigation {
+     --extended-navigation-background: var(--telekom-color-background-surface-subtle);
+     --_max-width-container: var(--scl-grid-max-width, 1680px);
+     --spacing-x: var(--telekom-spacing-unit-x6);
+     --column-gap: var(--telekom-spacing-unit-x8);
+
     width: 100%;
     display: flex;
-    background-color: gainsboro;
+    background-color: var(--extended-navigation-background);
     align-items: center;
     justify-content: center;
 
-  --_max-width-container: var(--scl-grid-max-width, 1680px);
-  --spacing-x: var(--telekom-spacing-unit-x6);
-  --column-gap: var(--telekom-spacing-unit-x8);
+
 
 }
 
 .extended-navigation-container {
     max-width: var(--_max-width-container);
+    padding-left: var(--_spacing-x-container);
+    padding-right: var(--_spacing-x-container);    
     width: 100%;
     display: grid;
-  
     grid-template-columns: repeat(16, minmax(0, 1fr));
     column-gap: var(--column-gap);    
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
