@@ -76,7 +76,7 @@
   --radius-ghost: var(--radius);
   --border-width-ghost: var(--telekom-spacing-unit-x025);
   --spacing-x-ghost: var(--telekom-spacing-unit-x2);
-  --color-ghost: var(--telekom-color-text-and-icon-primary-standard);
+  --color-ghost: var(--telekom-color-text-and-icon-standard);
   --color-ghost-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-ghost-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-ghost-disabled: var(--telekom-color-text-and-icon-disabled);
