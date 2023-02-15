@@ -25,6 +25,11 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: var(--_nav-items-bottom-margin);
+}
+
+:host-context([variant='slim']) footer {
+  padding-bottom: 0;
 }
 
 [part~='footer-container'] {
@@ -142,7 +147,7 @@ footer {
   }
   :host-context([variant='slim']) [part~='notice-container'] {
     margin-bottom: 0;
-  }  
+  }
 }
 
 @media screen and (--xl) {

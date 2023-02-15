@@ -30,39 +30,143 @@ export const Template = (args, { argTypes }) => ({
     <scale-telekom-footer 
         :variant="variant"
     >
-      <span slot="notice"> © Deutsche Telekom AG </span>
-      <ul slot="navigation">
-        <li>
-          <a href="#">
-            Impressum 
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Datenschutz 
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            AGB
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Produktinformationsblatt
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Verbraucherinformationen
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Jugendschutz
-          </a>
-        </li>
-      </ul>
+      <scale-telekom-footer-content>
+        <span slot="notice"> © Deutsche Telekom AG </span>
+        <ul slot="navigation">
+          <li>
+            <a href="#">
+              Impressum 
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Datenschutz 
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              AGB
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Produktinformationsblatt
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Verbraucherinformationen
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Jugendschutz
+            </a>
+          </li>
+        </ul>
+      </scale-telekom-footer-content>
+    </scale-telekom-footer> 
+  `
+});
+
+export const ExtendedTemplate = (args, { argTypes }) => ({
+  components: { TelekomFooter },
+  props: TelekomFooter.props,
+  template: `
+    <scale-telekom-footer
+      :variant="variant"
+    >
+      <scale-telekom-footer-content>
+        <scale-telekom-footer-extended-navigation slot="extended-navigation">
+          <scale-telekom-footer-extended-navigation-column heading="TITLE">
+            <ul>
+              <li>
+                <a href="#">Topic One</a>
+              </li>
+              <li>
+                <a href="#">Topic One</a>
+              </li>
+              <li>
+                <a href="#">Topic One</a>
+              </li>
+              <li>
+                <a href="#">Topic One</a>
+              </li>
+            </ul>
+          </scale-telekom-footer-extended-navigation-column>
+          <scale-telekom-footer-extended-navigation-column heading="TOPIC TWO">
+            <ul>
+              <li>
+                <a href="#">Topic Two</a>
+              </li>
+              <li>
+                <a href="#">Topic Two</a>
+              </li>
+              <li>
+                <a href="#">Topic Two</a>
+              </li>
+              <li>
+                <a href="#">Topic Two</a>
+              </li>
+            </ul>
+          </scale-telekom-footer-extended-navigation-column>
+          <scale-telekom-footer-extended-navigation-column
+            heading="Topic Three"
+          >
+            <ul>
+              <li>
+                <a href="#">Topic Three </a>
+              </li>
+              <li>
+                <a href="#">Topic Three </a>
+              </li>
+              <li>
+                <a href="#">Topic Three </a>
+              </li>
+              <li>
+                <a href="#">Topic Three </a>
+              </li>
+            </ul>
+          </scale-telekom-footer-extended-navigation-column>
+          <scale-telekom-footer-extended-navigation-column heading="Topic Four">
+            <ul>
+              <li>
+                <a href="#">Topic Four </a>
+              </li>
+              <li>
+                <a href="#">Topic Four </a>
+              </li>
+              <li>
+                <a href="#">Topic Four </a>
+              </li>
+              <li>
+                <a href="#">Topic Four </a>
+              </li>
+            </ul>
+          </scale-telekom-footer-extended-navigation-column>
+        </scale-telekom-footer-extended-navigation>
+        <span slot="notice"> © Deutsche Telekom AG </span>
+        <ul slot="navigation">
+          <li>
+            <a href="#"> Impressum </a>
+          </li>
+          <li>
+            <a href="#"> Datenschutz </a>
+          </li>
+          <li>
+            <a href="#"> AGB </a>
+          </li>
+          <li>
+            <a href="#"> Produktinformationsblatt </a>
+          </li>
+          <li>
+            <a href="#"> Verbraucherinformationen </a>
+          </li>
+          <li>
+            <a href="#"> Jugendschutz </a>
+          </li>
+        </ul>
+      </scale-telekom-footer-content>
     </scale-telekom-footer>
   `
 });
@@ -73,6 +177,18 @@ export const Template = (args, { argTypes }) => ({
   <Story name="Standard"  inline={false} height={500}
   >
     {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+
+## Extended
+
+<Canvas withSource="none">
+  <Story name="Extended"  inline={false} height={500}
+  >
+    {ExtendedTemplate.bind({})}
   </Story>
 </Canvas>
 

@@ -10,10 +10,10 @@
 }
 
 [part~='telekom-footer'] :where(ul),
-[part~='slim'] :where(ul)  {
+[part~='slim'] :where(ul) {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start; 
+  align-items: flex-start;
   flex-direction: column;
   gap: var(--_nav-items-spacing);
   padding: 0;
@@ -21,11 +21,10 @@
   width: 100%;
   color: var(--font-color);
   list-style: none;
-  margin-bottom: var(--_nav-items-bottom-margin);
 }
 
 [part~='telekom-footer'] :where(a, span),
-[part~='slim'] :where(a, span)  {
+[part~='slim'] :where(a, span) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +37,7 @@
   border-radius: 2px;
 }
 
-[part~='slim'] :where(a, span) { 
+[part~='slim'] :where(a, span) {
   color: var(--telekom-color-text-and-icon-standard);
 }
 
@@ -72,7 +71,8 @@
 }
 
 [part~='telekom-footer'] :where(a:focus-visible) {
-  outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
+  outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
   outline-offset: 1px;
 }
 
