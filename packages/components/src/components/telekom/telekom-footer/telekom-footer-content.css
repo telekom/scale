@@ -11,12 +11,14 @@
   --_logo-top-margin: var(--telekom-spacing-unit-x10);
   --_logo-bottom-margin: var(--telekom-spacing-unit-x10);
 
-  --_slim-padding: var(--telekom-spacing-unit-x4);
-
   --_font-color: var(--telekom-color-text-and-icon-white-standard);
   --_font-size: var(--telekom-typography-font-size-caption);
+  
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus);
+
+    --_display-logo: flex;
+    --_navigation-container-padding: 0 0 0 0;
 }
 
 footer {
@@ -26,10 +28,6 @@ footer {
   justify-content: center;
   flex-direction: column;
   padding-bottom: var(--_nav-items-bottom-margin);
-}
-
-:host-context([variant='slim']) footer {
-  padding-bottom: 0;
 }
 
 [part~='footer-container'] {
@@ -44,7 +42,7 @@ footer {
 }
 
 [part~='logo-container'] {
-  display: flex;
+  display: var(--_display-logo);
   justify-content: center;
   height: 100%;
   width: 100%;
@@ -56,7 +54,7 @@ footer {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0;
+  padding: var(--_navigation-container-padding);
   margin: 0;
   bottom: 0;
 }
@@ -83,6 +81,11 @@ footer {
 }
 
 /* styles for SLIM variant */
+/* this is buggy on FF and safari */
+
+/* :host-context([variant='slim']) footer {
+  padding-bottom: 0;
+}
 
 :host-context([variant='slim']) {
   --footer-background: var(--telekom-color-background-canvas);
@@ -93,15 +96,16 @@ footer {
   display: none;
 }
 
+:host-context([variant='slim']) [part~='navigation-container'] {
+  padding-top: var(--_slim-padding);
+  padding-bottom: var(--_slim-padding);
+} */
+
+/* UNNECESSARY? */
 /* :host-context([variant='slim']) [part~='notice-container'],
 :host-context([variant='slim']) [part~='navigation-links'] {
   margin-top: var(--telekom-spacing-unit-x6);
 } */
-
-:host-context([variant='slim']) [part~='navigation-container'] {
-  padding-top: var(--_slim-padding);
-  padding-bottom: var(--_slim-padding);
-}
 
 @media screen and (--md) {
   :host {
