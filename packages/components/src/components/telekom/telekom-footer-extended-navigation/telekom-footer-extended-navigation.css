@@ -24,8 +24,8 @@
   padding-left: var(--_spacing-x-container);
   padding-right: var(--_spacing-x-container);
   width: 100%;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  /* padding-top: 46px;
+  padding-bottom: 46px; */
   display: flex;
   flex-direction: column;
 }
@@ -75,8 +75,17 @@ scale-telekom-footer-extended-navigation-column {
 }
 scale-telekom-footer-extended-navigation-column:last-of-type {
   border-bottom: none;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+  margin-bottom: 46px;
+  /* padding-bottom: 0px; */
+}
+
+scale-telekom-footer-extended-navigation-column:first-of-type {
+  margin-top: 46px;
+}
+
+scale-telekom-footer-extended-navigation-column[expanded]:last-of-type {
+  margin-bottom: 46px;
+  padding-bottom: 0;
 }
 
 scale-telekom-footer-extended-navigation-column[expanded] {

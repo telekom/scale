@@ -48,10 +48,10 @@ export class TelekomFooterExtendedNavigationColumn {
             <span part="heading"> {this.heading}</span>
           </div>
           <div
-            part={cx('telekom-footer-extended-navigation-column-links', {
-              'links-expanded': this.expanded,
-              'links-hidden': !this.expanded,
-            })}
+            part={cx(
+              'telekom-footer-extended-navigation-column-links',
+              this.expanded ? 'links-expanded' : 'links-hidden'
+            )}
           >
             <slot></slot>
           </div>
