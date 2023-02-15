@@ -15,13 +15,13 @@
 }
 
 [part~='telekom-footer-extended-navigation-links'] {
-  font-size: 16px;
+  font-size: var(--telekom-typography-font-size-body);
   line-height: 140%;
 }
 
 [part~='heading'],
 [part~='heading-button'] {
-  font-size: 16px;
+  font-size: var(--telekom-typography-font-size-body);
   line-height: 140%;
   margin: 0;
   color: var(--heading-color);
@@ -45,8 +45,8 @@
 
 scale-divider {
   --spacing: 0;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: var(--telekom-spacing-unit-x5);
+  margin-bottom: var(--telekom-spacing-unit-x5);
 }
 
 @media screen and (--md) {
