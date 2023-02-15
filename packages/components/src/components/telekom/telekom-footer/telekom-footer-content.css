@@ -88,10 +88,10 @@ footer {
   display: none;
 }
 
-:host-context([variant='slim']) [part~='notice-container'],
+/* :host-context([variant='slim']) [part~='notice-container'],
 :host-context([variant='slim']) [part~='navigation-links'] {
   margin-top: var(--telekom-spacing-unit-x6);
-}
+} */
 
 :host-context([variant='slim']) [part~='navigation-container'] {
   padding-top: var(--_slim-padding);
@@ -140,6 +140,9 @@ footer {
   :host [part~='app-logo'] {
     --logo-size: var(--telekom-spacing-unit-x11);
   }
+  :host-context([variant='slim']) [part~='notice-container'] {
+    margin-bottom: 0;
+  }  
 }
 
 @media screen and (--xl) {
