@@ -43,6 +43,7 @@
 
 .telekom-footer-extended-navigation :where(li) {
   margin-top: 20px;
+  font-size: 16px;
 }
 
 .telekom-footer-extended-navigation :where(li) * {
@@ -60,10 +61,32 @@
   grid-column: auto / span 4;
 }
 
+scale-telekom-footer-extended-navigation-column {
+  border-bottom: 1px solid var(--telekom-color-ui-faint);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+scale-telekom-footer-extended-navigation-column {
+  border-bottom: 1px solid var(--telekom-color-ui-faint);
+  margin-bottom: 20px;
+  padding-bottom: 22px;
+}
+
+
+scale-telekom-footer-extended-navigation-column[expanded] {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
 @media screen and (--md) {
   .extended-navigation-container {
     display: grid;
     grid-template-columns: repeat(16, minmax(0, 1fr));
     column-gap: var(--column-gap);
+  }
+  scale-telekom-footer-extended-navigation-column {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
   }
 }

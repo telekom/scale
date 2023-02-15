@@ -12,7 +12,7 @@
 import { Component, h, Host, Element } from '@stencil/core';
 import { HTMLStencilElement, Prop } from '@stencil/core/internal';
 import cx from 'classnames';
-import { emitEvent } from '../../../utils/utils';
+// import { emitEvent } from '../../../utils/utils';
 
 @Component({
   tag: 'scale-telekom-footer-extended-navigation-column',
@@ -23,9 +23,8 @@ export class TelekomFooterExtendedNavigationColumn {
   @Element() hostElement: HTMLStencilElement;
   @Prop() heading: string;
   /** Set to `true` to expand */
-  @Prop() expanded: boolean = false;
+  @Prop({reflect: true}) expanded: boolean = false;
   handleClick = () => {
-    console.log('CLICK EVENT', this.expanded, !this.expanded);
     this.expanded = !this.expanded;
     // emitEvent(this, 'scaleExpand', { expanded: this.expanded });    
   }
@@ -39,7 +38,7 @@ export class TelekomFooterExtendedNavigationColumn {
           <div class="heading-container">
             <button onClick={this.handleClick} class="heading-button">
               <span> {this.heading}</span>
-              <scale-icon-navigation-right size={16}></scale-icon-navigation-right>
+              <scale-icon-navigation-right selected size={16}></scale-icon-navigation-right>
             </button>
             <span class="heading"> {this.heading}</span>
           </div>
@@ -47,7 +46,6 @@ export class TelekomFooterExtendedNavigationColumn {
             <slot></slot>
           </div>
         </div>
-        <scale-divider></scale-divider>
       </Host>
     );
   }
