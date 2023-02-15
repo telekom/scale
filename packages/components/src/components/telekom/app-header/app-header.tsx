@@ -330,6 +330,9 @@ export class Header {
                 <scale-menu-flyout-list>
                   <app-navigation-user-menu
                     hide={() => {
+                      if (!this.userMenu) {
+                        return;
+                      }
                       this.userMenu = false;
                       this.userMenuToggle.focus();
                       window.document.dispatchEvent(new Event('click'));
@@ -525,6 +528,9 @@ export class Header {
                 {this.userMenuMobile && (
                   <app-navigation-user-menu
                     hide={() => {
+                      if (!this.userMenuMobile) {
+                        return;
+                      }
                       this.userMenuMobile = false;
                       this.userMenuMobileToggle.focus();
                     }}
