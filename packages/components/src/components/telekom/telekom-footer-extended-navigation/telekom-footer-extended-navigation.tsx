@@ -22,8 +22,8 @@ export class TelekomFooterExtendedNavigation {
   //   @Prop() variant: 'standard' | 'slim' = 'standard';
   render() {
     return (
-      <Host class="telekom-footer-extended-navigation">
-        <div class="extended-navigation-container">
+      <Host part="telekom-footer-extended-navigation">
+        <div part="extended-navigation-container">
           <slot></slot>
         </div>
       </Host>

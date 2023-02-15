@@ -27,7 +27,7 @@ footer {
   flex-direction: column;
 }
 
-.footer-container {
+[part~='footer-container'] {
   height: 100%;
   max-width: var(--_max-width-container);
   padding-left: var(--_spacing-x-container);
@@ -38,7 +38,7 @@ footer {
   flex-direction: column;
 }
 
-.logo-container {
+[part~='logo-container'] {
   display: flex;
   justify-content: center;
   height: 100%;
@@ -47,7 +47,7 @@ footer {
   margin-bottom: var(--_logo-bottom-margin);
 }
 
-.navigation-container {
+[part~='navigation-container'] {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -56,7 +56,7 @@ footer {
   bottom: 0;
 }
 
-.notice-container {
+[part~='notice-container'] {
   color: var(--_font-color);
   display: flex;
   flex: 1 0 auto;
@@ -84,16 +84,16 @@ footer {
   --_font-color: var(--telekom-color-text-and-icon-additional);
 }
 
-:host-context([variant='slim']) .logo-container {
+:host-context([variant='slim']) [part~='logo-container'] {
   display: none;
 }
 
-:host-context([variant='slim']) .notice-container,
-:host-context([variant='slim']) .navigation-links {
+:host-context([variant='slim']) [part~='notice-container'],
+:host-context([variant='slim']) [part~='navigation-links'] {
   margin-top: var(--telekom-spacing-unit-x6);
 }
 
-:host-context([variant='slim']) .navigation-container {
+:host-context([variant='slim']) [part~='navigation-container'] {
   padding-top: var(--_slim-padding);
   padding-bottom: var(--_slim-padding);
 }
@@ -104,16 +104,16 @@ footer {
     --_logo-bottom-margin: var(--telekom-spacing-unit-x12);
     --_nav-items-spacing: var(--telekom-spacing-unit-x4);
   }
-  .navigation-container {
+  [part~='navigation-container'] {
     flex-direction: column;
   }
-  .navigation-links ul {
+  [part~='navigation-links'] ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .notice-container {
+  [part~='notice-container'] {
     margin-bottom: var(--telekom-spacing-unit-x2);
   }
 }
@@ -127,14 +127,14 @@ footer {
     --_font-size: var(--telekom-typography-font-size-body);
     --_spacing-x-container: var(--telekom-spacing-unit-x6);
   }
-  .navigation-container {
+  [part~='navigation-container'] {
     flex-direction: row;
   }
-  .scale-telekom-footer-content.slim .navigation-links ul,
+  /* .scale-telekom-footer-content.slim .navigation-links ul,
   .scale-telekom-footer-content.slim .notice-container {
     margin-bottom: 0;
     margin-top: 0;
-  }
+  } */
 
   /* todo: should i use spacing token for logo size? */
   :host [part~='app-logo'] {

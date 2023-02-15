@@ -24,7 +24,7 @@ export class TelekomFooter {
   render() {
     return (
       <Host
-        class={cx('telekom-footer', {
+        part={cx('telekom-footer', {
           slim: this.variant === 'slim',
         })}
       >

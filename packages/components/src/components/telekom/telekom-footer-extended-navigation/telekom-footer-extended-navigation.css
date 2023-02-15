@@ -1,6 +1,6 @@
 @import url('../../../global/custom-media.css');
 
-.telekom-footer-extended-navigation {
+[part~='telekom-footer-extended-navigation'] {
   --extended-navigation-background: var(
     --telekom-color-background-surface-subtle
   );
@@ -19,7 +19,7 @@
   justify-content: center;
 }
 
-.extended-navigation-container {
+[part~='extended-navigation-container'] {
   max-width: var(--_max-width-container);
   padding-left: var(--_spacing-x-container);
   padding-right: var(--_spacing-x-container);
@@ -30,7 +30,7 @@
   flex-direction: column;
 }
 
-.telekom-footer-extended-navigation :where(ul) {
+[part~='telekom-footer-extended-navigation'] :where(ul) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -41,28 +41,27 @@
   gap: 0;
 }
 
-.telekom-footer-extended-navigation :where(li) {
+[part~='telekom-footer-extended-navigation'] :where(li) {
   margin-top: 20px;
   font-size: 16px;
 }
 
-.telekom-footer-extended-navigation :where(li) * {
+[part~='telekom-footer-extended-navigation'] :where(li) * {
   color: var(--link-color);
 }
 
-.telekom-footer-extended-navigation :where(li:first-child) {
+[part~='telekom-footer-extended-navigation'] :where(li:first-child) {
   margin-top: 22px;
 }
 
-.telekom-footer-extended-navigation :where(a):hover {
+[part~='telekom-footer-extended-navigation'] :where(a):hover {
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
-.telekom-footer-extended-navigation :where(a):active {
+[part~='telekom-footer-extended-navigation'] :where(a):active {
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
-
-.telekom-footer-extended-navigation
+[part~='telekom-footer-extended-navigation']
   :where(scale-telekom-footer-extended-navigation-column) {
   display: flex;
   flex-direction: column;
@@ -77,9 +76,8 @@ scale-telekom-footer-extended-navigation-column {
 scale-telekom-footer-extended-navigation-column:last-of-type {
   border-bottom: none;
   margin-bottom: 0px;
-  padding-bottom: 0px;  
+  padding-bottom: 0px;
 }
-
 
 scale-telekom-footer-extended-navigation-column[expanded] {
   margin-bottom: 20px;
@@ -87,14 +85,13 @@ scale-telekom-footer-extended-navigation-column[expanded] {
 }
 
 @media screen and (--md) {
-  .extended-navigation-container {
+  [part~='extended-navigation-container'] {
     display: grid;
     grid-template-columns: repeat(16, minmax(0, 1fr));
     column-gap: var(--column-gap);
   }
   scale-telekom-footer-extended-navigation-column,
-  scale-telekom-footer-extended-navigation-column[expanded]
-  {
+  scale-telekom-footer-extended-navigation-column[expanded] {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: 0;

@@ -23,26 +23,36 @@ export class TelekomFooterExtendedNavigationColumn {
   @Element() hostElement: HTMLStencilElement;
   @Prop() heading: string;
   /** Set to `true` to expand */
-  @Prop({reflect: true}) expanded: boolean = false;
+  @Prop({ reflect: true }) expanded: boolean = false;
   handleClick = () => {
     this.expanded = !this.expanded;
-    // emitEvent(this, 'scaleExpand', { expanded: this.expanded });    
-  }
- 
-  render() { 
+    // emitEvent(this, 'scaleExpand', { expanded: this.expanded });
+  };
+
+  render() {
     return (
       <Host>
-        <div class={cx('telekom-footer-extended-navigation-column', {
-          expanded: this.expanded
-        })}>
-          <div class="heading-container">
-            <button onClick={this.handleClick} class="heading-button">
+        <div
+          part={cx('telekom-footer-extended-navigation-column', {
+            expanded: this.expanded,
+          })}
+        >
+          <div part="heading-container">
+            <button onClick={this.handleClick} part="heading-button">
               <span> {this.heading}</span>
-              <scale-icon-navigation-right selected size={16}></scale-icon-navigation-right>
+              <scale-icon-navigation-right
+                selected
+                size={16}
+              ></scale-icon-navigation-right>
             </button>
-            <span class="heading"> {this.heading}</span>
+            <span part="heading"> {this.heading}</span>
           </div>
-          <div class="telekom-footer-extended-navigation-column-links">
+          <div
+            part={cx('telekom-footer-extended-navigation-column-links', {
+              'links-expanded': this.expanded,
+              'links-hidden': !this.expanded,
+            })}
+          >
             <slot></slot>
           </div>
         </div>

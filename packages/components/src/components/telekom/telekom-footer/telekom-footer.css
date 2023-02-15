@@ -1,9 +1,9 @@
 @import url('../../../global/custom-media.css');
 
-.telekom-footer {
+[part~='telekom-footer'] {
 }
 
-.telekom-footer :where(ul) {
+[part~='telekom-footer'] :where(ul) {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
   align-items: flex-start;
 }
 
-.telekom-footer :where(a) {
+[part~='telekom-footer'] :where(a) {
   color: var(--_font-color);
   text-decoration: none;
   display: flex;
@@ -29,39 +29,39 @@
   border-radius: 2px;
 }
 
-.telekom-footer.slim :where(ul) {
+[part~='telekom-footer'].slim :where(ul) {
   margin-bottom: 0px;
 }
 
-.telekom-footer.slim a:hover {
+[part~='telekom-footer'].slim a:hover {
   color: var(--_font-color);
   border-bottom: 1px solid var(--telekom-color-ui-border-hovered);
 }
-.telekom-footer.slim a:active {
+[part~='telekom-footer'].slim a:active {
   color: var(--_font-color);
   /* todo: not sure what token to use here, it will break on dark/light mode (problem is opacity) */
   border-bottom: 1px solid rgba(0, 0, 0, 0.65);
 }
 
-.telekom-footer :where(a:hover) {
+[part~='telekom-footer'] :where(a:hover) {
   /* todo better solution for this underline */
   border-bottom: 1px solid rgba(250, 250, 250, 0.8);
   border-radius: 0;
 }
 
-.telekom-footer :where(a:active) {
+[part~='telekom-footer'] :where(a:active) {
   color: var(--telekom-color-text-and-icon-white-additional);
   border-bottom: 1px solid rgba(250, 250, 250, 0.65);
 }
 
-.telekom-footer :where(a:focus-visible) {
+[part~='telekom-footer'] :where(a:focus-visible) {
   /* todo better solution for this underline */
   outline: var(--focus-outline);
   outline-offset: 1px;
 }
 
 @media screen and (--md) {
-  .telekom-footer :where(ul) {
+  [part~='telekom-footer'] :where(ul) {
     list-style: none;
     display: flex;
     flex-direction: row;
