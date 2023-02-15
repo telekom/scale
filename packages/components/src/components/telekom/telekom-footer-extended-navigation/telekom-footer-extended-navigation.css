@@ -54,6 +54,14 @@
   margin-top: 22px;
 }
 
+.telekom-footer-extended-navigation :where(a):hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+.telekom-footer-extended-navigation :where(a):active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+
+
 .telekom-footer-extended-navigation
   :where(scale-telekom-footer-extended-navigation-column) {
   display: flex;
