@@ -13,12 +13,12 @@
 
   --_font-color: var(--telekom-color-text-and-icon-white-standard);
   --_font-size: var(--telekom-typography-font-size-caption);
-  
+
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus);
 
-    --_display-logo: flex;
-    --_navigation-container-padding: 0 0 0 0;
+  --_display-logo: flex;
+  --_navigation-container-padding: 0 0 0 0;
 }
 
 footer {

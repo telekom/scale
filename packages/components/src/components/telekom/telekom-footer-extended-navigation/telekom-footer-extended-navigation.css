@@ -83,7 +83,6 @@ scale-telekom-footer-extended-navigation-column[expanded]:last-of-type {
   padding-bottom: 0;
 }
 
-
 @media screen and (--md) {
   [part~='extended-navigation-container'] {
     display: grid;
