@@ -55,28 +55,18 @@
 }
 
 [part~='slim'] a:hover {
-  color: var(--font-color);
-  /* TODO: is the underline still needed? */
-  border-bottom: 1px solid var(--telekom-color-ui-border-hovered);
+  color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 [part~='slim'] a:active {
-  color: var(--font-color);
-  /* TODO: is the underline still needed? */
-  /* not sure what token to use here, it will break on dark/light mode (problem is opacity) */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.65);
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
 [part~='telekom-footer'] :where(a:hover) {
-  /* TODO: is the underline still needed? */
-  /* TODO: better solution for this underline */
-  border-bottom: 1px solid rgba(250, 250, 250, 0.8);
   border-radius: 0;
 }
 
 [part~='telekom-footer'] :where(a:active) {
   color: var(--telekom-color-text-and-icon-white-additional);
-  /* TODO: is the underline still needed? */
-  border-bottom: 1px solid rgba(250, 250, 250, 0.65);
 }
 
 [part~='telekom-footer'] :where(a:focus-visible) {
