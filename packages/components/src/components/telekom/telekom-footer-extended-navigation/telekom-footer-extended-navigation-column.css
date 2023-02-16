@@ -44,10 +44,19 @@
   display: none;
 }
 
+[part~='heading-container'] h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+[part~='heading-container'] button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 scale-divider {
   --spacing: 0;
-  margin-top: var(--telekom-spacing-unit-x5);
-  margin-bottom: var(--telekom-spacing-unit-x5);
+  /* margin-top: var(--telekom-spacing-unit-x5);
+  margin-bottom: var(--telekom-spacing-unit-x5); */
 }
 
 @media screen and (--md) {
@@ -65,6 +74,6 @@ scale-divider {
   }
 }
 
-[part~='expanded'] scale-icon-navigation-right {
-  transform: rotate(0.25turn);
+[part~='expanded'] scale-icon-navigation-collapse-up {
+  transform: rotate(0.5turn);
 }

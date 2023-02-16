@@ -22,19 +22,19 @@ export class TelekomFooterContent {
       <Host>
         <footer>
           <slot name="extended-navigation"></slot>
-          <div part="footer-container">
-            <div part="logo-container">
+          <div part="base">
+            <div part="logo">
               <scale-logo
                 part="app-logo"
                 variant="white"
                 transparent
               ></scale-logo>
             </div>
-            <div part="navigation-container">
-              <div part="notice-container">
+            <div part="body">
+              <div part="notice">
                 <slot name="notice"></slot>
               </div>
-              <div part="navigation-links">
+              <div part="navigation">
                 <slot name="navigation"></slot>
               </div>
             </div>

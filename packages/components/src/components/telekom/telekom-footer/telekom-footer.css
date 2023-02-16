@@ -1,16 +1,18 @@
 @import url('../../../global/custom-media.css');
 
-[part~='telekom-footer'] {
+.scale-telekom-footer {
   --font-size: var(--telekom-typography-font-size-caption);
   --font-color: var(--telekom-color-text-and-icon-white-standard);
   --footer-background: var(--telekom-color-ui-black);
+  --minimal-footer-background: var(--telekom-color-background-canvas);
+
 
   --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
   --_nav-items-spacing: var(--telekom-spacing-unit-x3);
 }
 
-[part~='telekom-footer'] :where(ul),
-[part~='slim'] :where(ul) {
+.scale-telekom-footer :where(ul),
+.scale-telekom-footer[type='minimal'] :where(ul) {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -24,8 +26,8 @@
 }
 
 /* this is a workaround to host-context not working in FF and safari */
-[part~='slim'] scale-telekom-footer-content {
-  --footer-background: var(--telekom-color-background-canvas);
+.scale-telekom-footer[type='minimal'] scale-telekom-footer-content {
+  --footer-background: var(--minimal-footer-background);
   --_font-color: var(--telekom-color-text-and-icon-additional);
   --_display-logo: none;
   --_navigation-container-padding: var(--telekom-spacing-unit-x4) 0
@@ -33,8 +35,8 @@
   --_nav-items-bottom-margin: 0;
 }
 
-[part~='telekom-footer'] :where(a, span),
-[part~='slim'] :where(a, span) {
+.scale-telekom-footer :where(a, span),
+.scale-telekom-footer[type='minimal'] :where(a, span) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,40 +49,41 @@
   border-radius: 2px;
 }
 
-[part~='slim'] :where(a, span) {
+.scale-telekom-footer[type='minimal'] :where(a, span) {
   color: var(--telekom-color-text-and-icon-standard);
 }
 
-[part~='slim'] :where(ul) {
+.scale-telekom-footer[type='minimal'] :where(ul) {
   margin-bottom: 0;
 }
 
-[part~='slim'] a:hover {
+.scale-telekom-footer[type='minimal'] a:hover {
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
-[part~='slim'] a:active {
+.scale-telekom-footer[type='minimal'] a:active {
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
-[part~='telekom-footer'] :where(a:hover) {
+.scale-telekom-footer :where(a:hover) {
   border-radius: 0;
   border-bottom: 1px solid var(--font-color);
 }
 
-[part~='telekom-footer'] :where(a:active) {
+.scale-telekom-footer :where(a:active) {
   color: var(--telekom-color-text-and-icon-white-additional);
   /* TODO: is the underline still needed? */
   border-bottom: 1px solid var(--telekom-color-text-and-icon-white-additional);
 }
 
-[part~='telekom-footer'] :where(a:focus-visible) {
+.scale-telekom-footer :where(a:focus-visible) {
   outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus);
   outline-offset: 1px;
 }
 
 @media screen and (--md) {
-  [part~='telekom-footer'] :where(ul) {
+  .scale-telekom-footer :where(ul),
+  .scale-telekom-footer[type='minimal'] :where(ul){
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -89,8 +92,8 @@
 }
 
 @media screen and (--lg) {
-  .scale-telekom-footer.slim .navigation-links ul,
-  .scale-telekom-footer.slim .notice-container {
+  .scale-telekom-footer[type='minimal'] .navigation-links ul,
+  .scale-telekom-footer[type='minimal'] .notice-container {
     margin-bottom: 0;
     margin-top: 0;
   }

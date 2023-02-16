@@ -30,7 +30,7 @@ footer {
   padding-bottom: var(--_nav-items-bottom-margin);
 }
 
-[part~='footer-container'] {
+[part~='base'] {
   height: 100%;
   max-width: var(--_max-width-container);
   padding-left: var(--_spacing-x-container);
@@ -41,7 +41,7 @@ footer {
   flex-direction: column;
 }
 
-[part~='logo-container'] {
+[part~='logo'] {
   display: var(--_display-logo);
   justify-content: center;
   height: 100%;
@@ -50,7 +50,7 @@ footer {
   margin-bottom: var(--_logo-bottom-margin);
 }
 
-[part~='navigation-container'] {
+[part~='body'] {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -59,7 +59,7 @@ footer {
   bottom: 0;
 }
 
-[part~='notice-container'] {
+[part~='notice'] {
   color: var(--_font-color);
   display: flex;
   flex: 1 0 auto;
@@ -92,18 +92,18 @@ footer {
   --_font-color: var(--telekom-color-text-and-icon-additional);
 }
 
-:host-context([variant='slim']) [part~='logo-container'] {
+:host-context([variant='slim']) [part~='logo'] {
   display: none;
 }
 
-:host-context([variant='slim']) [part~='navigation-container'] {
+:host-context([variant='slim']) [part~='body'] {
   padding-top: var(--_slim-padding);
   padding-bottom: var(--_slim-padding);
 } */
 
 /* UNNECESSARY? */
-/* :host-context([variant='slim']) [part~='notice-container'],
-:host-context([variant='slim']) [part~='navigation-links'] {
+/* :host-context([variant='slim']) [part~='notice'],
+:host-context([variant='slim']) [part~='navigation'] {
   margin-top: var(--telekom-spacing-unit-x6);
 } */
 
@@ -113,16 +113,16 @@ footer {
     --_logo-bottom-margin: var(--telekom-spacing-unit-x12);
     --_nav-items-spacing: var(--telekom-spacing-unit-x4);
   }
-  [part~='navigation-container'] {
+  [part~='body'] {
     flex-direction: column;
   }
-  [part~='navigation-links'] ul {
+  [part~='navigation'] ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  [part~='notice-container'] {
+  [part~='notice'] {
     margin-bottom: var(--telekom-spacing-unit-x2);
   }
 }
@@ -136,11 +136,11 @@ footer {
     --_font-size: var(--telekom-typography-font-size-body);
     --_spacing-x-container: var(--telekom-spacing-unit-x6);
   }
-  [part~='navigation-container'] {
+  [part~='body'] {
     flex-direction: row;
   }
   /* .scale-telekom-footer-content.slim .navigation-links ul,
-  .scale-telekom-footer-content.slim .notice-container {
+  .scale-telekom-footer-content.slim .notice {
     margin-bottom: 0;
     margin-top: 0;
   } */
@@ -148,8 +148,9 @@ footer {
   /* todo: should i use spacing token for logo size? */
   :host [part~='app-logo'] {
     --logo-size: var(--telekom-spacing-unit-x11);
+    --logo-size: 500px;
   }
-  :host-context([variant='slim']) [part~='notice-container'] {
+  :host-context([variant='slim']) [part~='notice'] {
     margin-bottom: 0;
   }
 }

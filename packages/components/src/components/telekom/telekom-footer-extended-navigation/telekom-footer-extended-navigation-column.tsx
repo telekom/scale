@@ -24,6 +24,9 @@ export class TelekomFooterExtendedNavigationColumn {
   @Prop() heading: string;
   /** Set to `true` to expand */
   @Prop({ reflect: true }) expanded: boolean = false;
+  // Optional heading level - default h2
+  @Prop() headingLevel?: string = 'h2';
+
   handleClick = () => {
     this.expanded = !this.expanded;
     // emitEvent(this, 'scaleExpand', { expanded: this.expanded });
@@ -38,13 +41,15 @@ export class TelekomFooterExtendedNavigationColumn {
           })}
         >
           <div part="heading-container">
-            <button onClick={this.handleClick} part="heading-button">
-              <span> {this.heading}</span>
-              <scale-icon-navigation-right
-                selected
-                size={16}
-              ></scale-icon-navigation-right>
-            </button>
+            <h2 aria-level={this.headingLevel}>
+              <button onClick={this.handleClick} part="heading-button">
+                <span> {this.heading}</span>
+                <scale-icon-navigation-collapse-up
+                  selected
+                  size={16}
+                ></scale-icon-navigation-collapse-up>
+              </button>
+            </h2>
             <span part="heading"> {this.heading}</span>
           </div>
           <div
