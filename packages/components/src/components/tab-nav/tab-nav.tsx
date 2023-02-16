@@ -45,9 +45,14 @@ export class TabNav {
     // workaround for slotted icons
     const targetHTMLElement = event.target as HTMLElement;
     const targetTag = targetHTMLElement.tagName.toLowerCase();
-    if (targetTag === 'svg' || targetTag === 'g' || targetTag === 'path') {
-      const closestNextTab = targetHTMLElement.closest(`scale-tab-header`);
-      if (closestNextTab.getAttribute('role') !== 'tab') {
+    const svgTags = ['svg', 'g', 'path'];
+
+    if (svgTags.includes(targetTag)) {
+      const closestNextTab = targetHTMLElement.closest(
+        `scale-tab-header[role="tab"]`
+      );
+
+      if (!closestNextTab) {
         return;
       }
       this.selectTab(closestNextTab as HTMLScaleTabHeaderElement);
