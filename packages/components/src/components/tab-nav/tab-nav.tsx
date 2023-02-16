@@ -50,20 +50,12 @@ export class TabNav {
     if (svgTags.includes(targetTag)) {
       const closestNextTab = targetHTMLElement.closest(
         `scale-tab-header[role="tab"]`
-      );
-
-      if (!closestNextTab) {
-        return;
-      }
-      this.selectTab(closestNextTab as HTMLScaleTabHeaderElement);
+      ) as HTMLScaleTabHeaderElement;
+      closestNextTab ? this.selectTab(closestNextTab) : null;
+    } else {
+      const nextTab = event.target as HTMLScaleTabHeaderElement;
+      nextTab.getAttribute('role') === 'tab' ? this.selectTab(nextTab) : null;
     }
-
-    const nextTab = event.target as HTMLScaleTabHeaderElement;
-
-    if (nextTab.getAttribute('role') !== 'tab') {
-      return;
-    }
-    this.selectTab(nextTab);
   }
 
   @Listen('keydown')
