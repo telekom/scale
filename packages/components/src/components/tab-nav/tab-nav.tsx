@@ -42,7 +42,19 @@ export class TabNav {
   handleClick(event: MouseEvent) {
     this.removeFirstRenderAttr();
 
+    // workaround for slotted icons
+    const targetHTMLElement = event.target as HTMLElement;
+    const targetTag = targetHTMLElement.tagName.toLowerCase();
+    if (targetTag === 'svg' || targetTag === 'g' || targetTag === 'path') {
+      const closestNextTab = targetHTMLElement.closest(`scale-tab-header`);
+      if (closestNextTab.getAttribute('role') !== 'tab') {
+        return;
+      }
+      this.selectTab(closestNextTab as HTMLScaleTabHeaderElement);
+    }
+
     const nextTab = event.target as HTMLScaleTabHeaderElement;
+
     if (nextTab.getAttribute('role') !== 'tab') {
       return;
     }
