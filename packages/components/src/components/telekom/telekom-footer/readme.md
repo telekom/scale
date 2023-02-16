@@ -5,18 +5,16 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property  | Attribute | Description | Type                   | Default      |
-| --------- | --------- | ----------- | ---------------------- | ------------ |
-| `variant` | `variant` |             | `"slim" \| "standard"` | `'standard'` |
-
-
 ## Shadow Parts
 
-| Part         | Description |
-| ------------ | ----------- |
-| `"app-logo"` |             |
+| Part                     | Description |
+| ------------------------ | ----------- |
+| `"app-logo"`             |             |
+| `"footer-container"`     |             |
+| `"logo-container"`       |             |
+| `"navigation-container"` |             |
+| `"navigation-links"`     |             |
+| `"notice-container"`     |             |
 
 
 ## Dependencies
@@ -28,9 +26,9 @@
 ### Graph
 ```mermaid
 graph TD;
-  scale-telekom-footer --> scale-logo
+  scale-telekom-footer-content --> scale-logo
   scale-logo --> scale-logo-svg
-  style scale-telekom-footer fill:#f9f,stroke:#333,stroke-width:4px
+  style scale-telekom-footer-content fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
