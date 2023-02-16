@@ -21,6 +21,7 @@
 
 [part~='heading'],
 [part~='heading-button'] {
+  font-family: var(--telekom-typography-font-family-sans);
   font-size: var(--telekom-typography-font-size-body);
   line-height: 140%;
   margin: 0;
