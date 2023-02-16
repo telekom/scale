@@ -24,7 +24,7 @@
 }
 
 /* this is a workaround to host-context not working in FF and safari */
-[part~='slim'] * {
+[part~='slim'] scale-telekom-footer-content {
   --footer-background: var(--telekom-color-background-canvas);
   --_font-color: var(--telekom-color-text-and-icon-additional);  
   --_display-logo: none;
