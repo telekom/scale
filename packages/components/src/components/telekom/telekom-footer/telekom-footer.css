@@ -67,6 +67,7 @@
 
 [part~='telekom-footer'] :where(a:active) {
   color: var(--telekom-color-text-and-icon-white-additional);
+  /* TODO: is the underline still needed? */
 }
 
 [part~='telekom-footer'] :where(a:focus-visible) {
