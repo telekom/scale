@@ -222,6 +222,19 @@ scale-dropdown {
 
 /* Tokens exceptionally hard-coded, instead of using the component variables,
 to fix bug in Firefox/Windows, see https://github.com/telekom/scale/issues/1018) */
+
+[data-mode='light']
+  .dropdown:not(.dropdown--disabled):not(.dropdown--variant-danger)
+  .input__dropdown:hover {
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+}
+
+[data-mode='light']
+  .dropdown:not(.dropdown--disabled).dropdown--variant-danger
+  .input__dropdown:hover {
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+}
+
 [data-mode='dark'] .dropdown .input__dropdown {
   background-color: var(--telekom-color-background-canvas);
 }
