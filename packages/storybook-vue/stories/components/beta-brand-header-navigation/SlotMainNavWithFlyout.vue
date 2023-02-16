@@ -95,7 +95,6 @@
               <li><a href="https://example.com">Third Level</a></li>
             </ul>
           </scale-telekom-mega-menu-column>   
-          </scale-telekom-mega-menu-column>
           <scale-telekom-mega-menu-column>
             <scale-icon-home-home slot="icon"></scale-icon-home-home>
             <a href="https://example.com" slot="heading">Second Level</a>

@@ -37,6 +37,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [scale-telekom-header-data-back-compat](../telekom-header-data-back-compat)
+
 ### Depends on
 
 - [scale-button](../../button)
@@ -47,6 +51,7 @@
 graph TD;
   scale-telekom-mobile-flyout-canvas --> scale-button
   scale-telekom-mobile-flyout-canvas --> scale-icon-action-close
+  scale-telekom-header-data-back-compat --> scale-telekom-mobile-flyout-canvas
   style scale-telekom-mobile-flyout-canvas fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
