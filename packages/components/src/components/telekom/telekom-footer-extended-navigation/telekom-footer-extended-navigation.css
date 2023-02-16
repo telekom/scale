@@ -39,13 +39,10 @@
   gap: 0;
 }
 
-[part~='telekom-footer-extended-navigation'] :where(li) {
-  margin-top: var(--telekom-spacing-unit-x5);
-  font-size: var(--telekom-typography-font-size-body);
-}
-
 [part~='telekom-footer-extended-navigation'] :where(li) * {
+  font-size: var(--telekom-typography-font-size-body);
   color: var(--link-color);
+  margin-top: var(--telekom-spacing-unit-x5);
 }
 
 [part~='telekom-footer-extended-navigation'] :where(li:first-child) {
