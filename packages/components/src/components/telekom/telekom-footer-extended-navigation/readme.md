@@ -27,12 +27,12 @@
 
 ### Depends on
 
-- [scale-icon-navigation-collapse-up](../../icons/navigation-collapse-up)
+- [scale-icon-navigation-collapse-down](../../icons/navigation-collapse-down)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-telekom-footer-extended-navigation-column --> scale-icon-navigation-collapse-up
+  scale-telekom-footer-extended-navigation-column --> scale-icon-navigation-collapse-down
   style scale-telekom-footer-extended-navigation-column fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

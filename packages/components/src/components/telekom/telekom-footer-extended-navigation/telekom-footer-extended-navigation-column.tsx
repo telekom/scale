@@ -44,10 +44,10 @@ export class TelekomFooterExtendedNavigationColumn {
             <h2 aria-level={this.headingLevel}>
               <button onClick={this.handleClick} part="heading-button">
                 <span> {this.heading}</span>
-                <scale-icon-navigation-collapse-up
+                <scale-icon-navigation-collapse-down
                   selected
                   size={16}
-                ></scale-icon-navigation-collapse-up>
+                ></scale-icon-navigation-collapse-down>
               </button>
             </h2>
             <span part="heading"> {this.heading}</span>
