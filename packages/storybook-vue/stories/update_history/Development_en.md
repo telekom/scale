@@ -2,6 +2,12 @@
 
 This page documents updates in `@telekom/scale-components` and related packages.
 
+## New Brand Footer
+
+17.02.2023
+
+Release of the new brand footer as a beta version. This will replace the current component once quality control is complete and WCAG accessibility certification is in place.
+
 ## New Brand Header
 
 31.01.2023

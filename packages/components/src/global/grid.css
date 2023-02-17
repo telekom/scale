@@ -7,7 +7,7 @@
 
 :root {
   /* matches --2xl breakpoint */
-  --scl-grid-max-width: 1680px;
+  --scl-grid-max-width: 1504px;
 }
 
 /*
@@ -48,7 +48,7 @@ scale-grid,
   --columns-xxl: var(--columns-xl);
 
   display: grid;
-  box-sizing: border-box;
+  box-sizing: content-box;
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: repeat(var(--columns-sm, 4), minmax(0, 1fr));

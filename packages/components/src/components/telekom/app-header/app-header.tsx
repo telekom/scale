@@ -324,12 +324,22 @@ export class Header {
                   refUserMenuToggle={(el) => (this.userMenuToggle = el)}
                   badge={badge}
                   badgeLabel={badgeLabel}
+                  onKeyDown={(event) => {
+                    // Handle Spacebar separately because actual trigger is an <a>
+                    if (event.key === ' ') {
+                      (event.target as HTMLElement).click();
+                      event.preventDefault();
+                    }
+                  }}
                 >
                   {shortName}
                 </scale-nav-icon>
                 <scale-menu-flyout-list>
                   <app-navigation-user-menu
                     hide={() => {
+                      if (!this.userMenu) {
+                        return;
+                      }
                       this.userMenu = false;
                       this.userMenuToggle.focus();
                       window.document.dispatchEvent(new Event('click'));
@@ -353,6 +363,13 @@ export class Header {
                 }}
                 badge={badge}
                 badgeLabel={badgeLabel}
+                onKeyDown={(event) => {
+                  // Handle Spacebar separately because actual trigger is an <a>
+                  if (event.key === ' ') {
+                    (event.target as HTMLElement).click();
+                    event.preventDefault();
+                  }
+                }}
               >
                 {shortName}
               </scale-nav-icon>
@@ -525,6 +542,9 @@ export class Header {
                 {this.userMenuMobile && (
                   <app-navigation-user-menu
                     hide={() => {
+                      if (!this.userMenuMobile) {
+                        return;
+                      }
                       this.userMenuMobile = false;
                       this.userMenuMobileToggle.focus();
                     }}

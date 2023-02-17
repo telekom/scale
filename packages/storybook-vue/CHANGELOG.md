@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.124](https://github.com/telekom/scale/compare/v3.0.0-beta.123...v3.0.0-beta.124) (2023-02-17)
+
+
+### Bug Fixes
+
+* **data-grid:** accessibility affecting buttons ([#1591](https://github.com/telekom/scale/issues/1591)) ([c8d1cbc](https://github.com/telekom/scale/commit/c8d1cbc5e9072ea0f339bb977e221846626446b9))
+
+
+
+
+
 # [3.0.0-beta.123](https://github.com/telekom/scale/compare/v3.0.0-beta.122...v3.0.0-beta.123) (2023-02-13)
 
 
