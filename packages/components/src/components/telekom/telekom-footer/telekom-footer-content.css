@@ -80,33 +80,6 @@ footer {
   margin-right: 9px;
 }
 
-/* styles for SLIM variant */
-/* this is buggy on FF and safari */
-
-/* :host-context([variant='slim']) footer {
-  padding-bottom: 0;
-}
-
-:host-context([variant='slim']) {
-  --footer-background: var(--telekom-color-background-canvas);
-  --_font-color: var(--telekom-color-text-and-icon-additional);
-}
-
-:host-context([variant='slim']) [part~='logo'] {
-  display: none;
-}
-
-:host-context([variant='slim']) [part~='body'] {
-  padding-top: var(--_slim-padding);
-  padding-bottom: var(--_slim-padding);
-} */
-
-/* UNNECESSARY? */
-/* :host-context([variant='slim']) [part~='notice'],
-:host-context([variant='slim']) [part~='navigation'] {
-  margin-top: var(--telekom-spacing-unit-x6);
-} */
-
 @media screen and (--md) {
   :host {
     --_logo-top-margin: var(--telekom-spacing-unit-x8);
@@ -139,18 +112,10 @@ footer {
   [part~='body'] {
     flex-direction: row;
   }
-  /* .scale-telekom-footer-content.slim .navigation-links ul,
-  .scale-telekom-footer-content.slim .notice {
-    margin-bottom: 0;
-    margin-top: 0;
-  } */
 
   /* todo: should i use spacing token for logo size? */
   :host [part~='app-logo'] {
     --logo-size: var(--telekom-spacing-unit-x11);
-  }
-  :host-context([variant='slim']) [part~='notice'] {
-    margin-bottom: 0;
   }
 }
 

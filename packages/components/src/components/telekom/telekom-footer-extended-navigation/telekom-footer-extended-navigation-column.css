@@ -55,8 +55,6 @@
 }
 scale-divider {
   --spacing: 0;
-  /* margin-top: var(--telekom-spacing-unit-x5);
-  margin-bottom: var(--telekom-spacing-unit-x5); */
 }
 
 @media screen and (--md) {
