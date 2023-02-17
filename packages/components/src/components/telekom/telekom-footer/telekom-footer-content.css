@@ -148,7 +148,6 @@ footer {
   /* todo: should i use spacing token for logo size? */
   :host [part~='app-logo'] {
     --logo-size: var(--telekom-spacing-unit-x11);
-    --logo-size: 500px;
   }
   :host-context([variant='slim']) [part~='notice'] {
     margin-bottom: 0;
