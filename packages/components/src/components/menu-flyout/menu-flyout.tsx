@@ -125,8 +125,13 @@ export class MenuFlyout {
     const triggerSlot = this.hostElement.querySelector(
       '[slot="trigger"]'
     ) as HTMLElement;
-    if (triggerSlot && triggerSlot.tagName.toUpperCase() === 'SCALE-BUTTON') {
+    const tagName = triggerSlot ? triggerSlot.tagName.toUpperCase() : '';
+    // TODO a different, more global, solution less dependent on tag names
+    // would be great…
+    if (triggerSlot && tagName === 'SCALE-BUTTON') {
       this.trigger = triggerSlot.shadowRoot.querySelector('button');
+    } else if (triggerSlot && tagName === 'SCALE-NAV-ICON') {
+      this.trigger = triggerSlot.querySelector('a');
     } else {
       this.trigger = triggerSlot;
     }

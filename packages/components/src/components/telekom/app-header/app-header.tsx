@@ -324,6 +324,13 @@ export class Header {
                   refUserMenuToggle={(el) => (this.userMenuToggle = el)}
                   badge={badge}
                   badgeLabel={badgeLabel}
+                  onKeyDown={(event) => {
+                    // Handle Spacebar separately because actual trigger is an <a>
+                    if (event.key === ' ') {
+                      (event.target as HTMLElement).click();
+                      event.preventDefault();
+                    }
+                  }}
                 >
                   {shortName}
                 </scale-nav-icon>
@@ -356,6 +363,13 @@ export class Header {
                 }}
                 badge={badge}
                 badgeLabel={badgeLabel}
+                onKeyDown={(event) => {
+                  // Handle Spacebar separately because actual trigger is an <a>
+                  if (event.key === ' ') {
+                    (event.target as HTMLElement).click();
+                    event.preventDefault();
+                  }
+                }}
               >
                 {shortName}
               </scale-nav-icon>
