@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.124](https://github.com/telekom/scale/compare/v3.0.0-beta.123...v3.0.0-beta.124) (2023-02-17)
+
+
+### Bug Fixes
+
+* **app-header:** esc key only when open, for user menu ([#1590](https://github.com/telekom/scale/issues/1590)) ([2356ffa](https://github.com/telekom/scale/commit/2356ffabfb1f3a6c5112cb7d2a3f034d92c414a7))
+* **data-grid:** accessibility affecting buttons ([#1591](https://github.com/telekom/scale/issues/1591)) ([c8d1cbc](https://github.com/telekom/scale/commit/c8d1cbc5e9072ea0f339bb977e221846626446b9))
+* **grid:** max-width, affecting new header ([#1586](https://github.com/telekom/scale/issues/1586)) ([92ce4f3](https://github.com/telekom/scale/commit/92ce4f3511224f8041ff0127f9091720ed02c90a))
+* **nav-icon:** accessibility, role=button when no href ([#1593](https://github.com/telekom/scale/issues/1593)) ([0387bde](https://github.com/telekom/scale/commit/0387bde49935541e61c2338436aadf784c7fb7c4))
+* **telekom-footer-extended-navigation-column:** expand arrow direction ([#1601](https://github.com/telekom/scale/issues/1601)) ([39b4c5b](https://github.com/telekom/scale/commit/39b4c5bc6ec71c6af7bb08dad88cee6f44e7c483))
+
+
+### Features
+
+* **brand-header:** add link target variables to menu and footer ([#1592](https://github.com/telekom/scale/issues/1592)) ([e119627](https://github.com/telekom/scale/commit/e1196271daa99a7b6e9a25527f59c8669023b15a))
+
+
+
+
+
 # [3.0.0-beta.123](https://github.com/telekom/scale/compare/v3.0.0-beta.122...v3.0.0-beta.123) (2023-02-13)
 
 
