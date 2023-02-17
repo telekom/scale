@@ -71,6 +71,55 @@ export const Template = (args, { argTypes }) => ({
   `
 });
 
+export const TemplateMinimal = (args, { argTypes }) => ({
+  components: { TelekomFooter },
+  props: TelekomFooter.props,
+  template: `
+  <div style="position: relative; height: 100%;">
+    <scale-telekom-footer 
+        :type="type"
+        style="position:absolute; bottom: 0;  width: 100%;"
+    >
+      <scale-telekom-footer-content>
+        <span slot="notice"> © Deutsche Telekom AG </span>
+        <ul slot="navigation">
+          <li>
+            <a href="#">
+              Imprint
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Data privacy
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Terms and conditions
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Consumer protection
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Product information sheet
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Youth protection
+            </a>
+          </li>
+        </ul>
+      </scale-telekom-footer-content>
+    </scale-telekom-footer> 
+    </div>
+  `
+});
+
 export const ExtendedTemplate = (args, { argTypes }) => ({
   components: { TelekomFooter },
   props: TelekomFooter.props,
@@ -225,7 +274,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
       () => ({ template: '<div style="background-color: var(--telekom-color-background-surface-subtle); height: 300px; overflow: hidden;"><story /></div>'})
     ]}    
   >
-    {Template.bind({})}
+    {TemplateMinimal.bind({})}
   </Story>
 </Canvas>
 
