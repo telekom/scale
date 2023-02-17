@@ -1,7 +1,6 @@
 @import url('../../../global/custom-media.css');
 
 :host {
-  --footer-background: var(--telekom-color-ui-black);
   --_max-width-container: var(--scl-grid-max-width, 1680px);
   --_spacing-x-container: var(--telekom-spacing-unit-x4);
 
@@ -23,7 +22,7 @@
 
 footer {
   width: 100%;
-  background-color: var(--footer-background);
+  background-color: var(--background-footer);
   display: flex;
   justify-content: center;
   flex-direction: column;

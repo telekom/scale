@@ -3,8 +3,8 @@
 .scale-telekom-footer {
   --font-size: var(--telekom-typography-font-size-caption);
   --font-color: var(--telekom-color-text-and-icon-white-standard);
-  --footer-background: var(--telekom-color-ui-black);
-  --minimal-footer-background: var(--telekom-color-background-canvas);
+  --background-footer: var(--telekom-color-ui-black);
+  --background-footer-minimal: var(--telekom-color-background-canvas);
 
   --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
   --_nav-items-spacing: var(--telekom-spacing-unit-x3);
@@ -26,7 +26,7 @@
 
 /* this is a workaround to host-context not working in FF and safari */
 .scale-telekom-footer[type='minimal'] scale-telekom-footer-content {
-  --footer-background: var(--minimal-footer-background);
+  --background-footer: var(--background-footer-minimal);
   --_font-color: var(--telekom-color-text-and-icon-additional);
   --_display-logo: none;
   --_navigation-container-padding: var(--telekom-spacing-unit-x4) 0
