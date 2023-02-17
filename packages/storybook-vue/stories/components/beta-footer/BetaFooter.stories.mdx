@@ -6,9 +6,11 @@ import TelekomFooter from './Footer.vue';
   component={TelekomFooter}
   argTypes={{
     type: {
-      control: { type: 'select', options: ['slim', 'standard'] },
-    },
-  }}  
+      control: { type: 'select' },
+      options: ['minimal', 'standard'],
+      defaultValue: 'standard',
+    }}
+  }  
 />
 
 <div
@@ -225,31 +227,9 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-  <scale-telekom-footer type="minimal">
-    <scale-telekom-footer-content>
-      <span slot="notice"> © Deutsche Telekom AG </span>
-      <ul slot="navigation">
-        <li>
-          <a href="#"> FOO </a>
-        </li>
-        <li>
-          <a href="#"> BAR </a>
-        </li>
-        <li>
-          <a href="#"> AGB </a>
-        </li>
-        <li>
-          <a href="#"> Produktinformationsblatt </a>
-        </li>
-        <li>
-          <a href="#"> Verbraucherinformationen </a>
-        </li>
-        <li>
-          <a href="#"> Jugendschutz </a>
-        </li>
-      </ul>
-    </scale-telekom-footer-content>
-  </scale-telekom-footer>
+<scale-telekom-footer type="minimal">
+  <!-- … -->
+</scale-telekom-footer>
 ```
 
 
@@ -264,97 +244,28 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-telekom-footer>
-      <scale-telekom-footer-content>
-        <scale-telekom-footer-extended-navigation slot="extended-navigation">
-          <scale-telekom-footer-extended-navigation-column heading="TITLE">
-            <ul>
-              <li>
-                <a href="#">Topic One</a>
-              </li>
-              <li>
-                <a href="#">Topic One</a>
-              </li>
-              <li>
-                <a href="#">Topic One</a>
-              </li>
-              <li>
-                <a href="#">Topic One</a>
-              </li>
-            </ul>
-          </scale-telekom-footer-extended-navigation-column>
-          <scale-telekom-footer-extended-navigation-column heading="TOPIC TWO">
-            <ul>
-              <li>
-                <a href="#">Topic Two</a>
-              </li>
-              <li>
-                <a href="#">Topic Two</a>
-              </li>
-              <li>
-                <a href="#">Topic Two</a>
-              </li>
-              <li>
-                <a href="#">Topic Two</a>
-              </li>
-            </ul>
-          </scale-telekom-footer-extended-navigation-column>
-          <scale-telekom-footer-extended-navigation-column
-            heading="Topic Three"
-          >
-            <ul>
-              <li>
-                <a href="#">Topic Three </a>
-              </li>
-              <li>
-                <a href="#">Topic Three </a>
-              </li>
-              <li>
-                <a href="#">Topic Three </a>
-              </li>
-              <li>
-                <a href="#">Topic Three </a>
-              </li>
-            </ul>
-          </scale-telekom-footer-extended-navigation-column>
-          <scale-telekom-footer-extended-navigation-column heading="Topic Four">
-            <ul>
-              <li>
-                <a href="#">Topic Four </a>
-              </li>
-              <li>
-                <a href="#">Topic Four </a>
-              </li>
-              <li>
-                <a href="#">Topic Four </a>
-              </li>
-              <li>
-                <a href="#">Topic Four </a>
-              </li>
-            </ul>
-          </scale-telekom-footer-extended-navigation-column>
-        </scale-telekom-footer-extended-navigation>
-        <span slot="notice"> © Deutsche Telekom AG </span>
-        <ul slot="navigation">
+  <scale-telekom-footer-content>
+    <scale-telekom-footer-extended-navigation slot="extended-navigation">
+      <scale-telekom-footer-extended-navigation-column heading="Topic One">
+        <ul>
           <li>
-            <a href="#"> Impressum </a>
+            <a href="#">Topic One</a>
           </li>
           <li>
-            <a href="#"> Datenschutz </a>
+            <a href="#">Topic One</a>
           </li>
           <li>
-            <a href="#"> AGB </a>
+            <a href="#">Topic One</a>
           </li>
           <li>
-            <a href="#"> Produktinformationsblatt </a>
-          </li>
-          <li>
-            <a href="#"> Verbraucherinformationen </a>
-          </li>
-          <li>
-            <a href="#"> Jugendschutz </a>
+            <a href="#">Topic One</a>
           </li>
         </ul>
-      </scale-telekom-footer-content>
-    </scale-telekom-footer>
+      </scale-telekom-footer-extended-navigation-column>
+      <!-- … -->
+    </scale-telekom-footer-extended-navigation>
+    <!-- … -->
+  </scale-telekom-footer-content>
+</scale-telekom-footer>
 ```
 
