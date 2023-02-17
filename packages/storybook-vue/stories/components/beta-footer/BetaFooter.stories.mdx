@@ -268,13 +268,9 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
   <Story name="Minimal" 
     args={{
       type: 'minimal',
-    }}
-    height={300}
-    decorators={[
-      () => ({ template: '<div style="background-color: var(--telekom-color-background-surface-subtle); height: 300px; overflow: hidden;"><story /></div>'})
-    ]}    
+    }}   
   >
-    {TemplateMinimal.bind({})}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
