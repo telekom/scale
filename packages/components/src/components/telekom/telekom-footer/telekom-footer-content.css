@@ -117,6 +117,9 @@ footer {
   :host [part~='app-logo'] {
     --logo-size: var(--telekom-spacing-unit-x11);
   }
+  :host [part~='notice'] {
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (--xl) {
