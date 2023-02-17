@@ -176,7 +176,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 ## Standard
 
 <Canvas withSource="none">
-  <Story name="Standard"  inline={false} height={400}
+  <Story name="Standard"  height={400}
   >
     {Template.bind({})}
   </Story>
@@ -221,12 +221,9 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
       type: 'minimal',
     }}
     height={300}
-    inline={false}
     decorators={[
-      () => ({
-        template: '<div style="background-color: var(--telekom-color-background-surface-subtle); height: 250px;"><story /></div>',
-      }),
-    ]}>  
+      () => ({ template: '<div style="background-color: var(--telekom-color-background-surface-subtle); height: 300px; overflow: hidden;"><story /></div>'})
+    ]}    
   >
     {Template.bind({})}
   </Story>
@@ -242,7 +239,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 ## Extended
 
 <Canvas withSource="none">
-  <Story name="Extended"  inline={false} height={600}
+  <Story name="Extended" height={600}
   >
     {ExtendedTemplate.bind({})}
   </Story>
