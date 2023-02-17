@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="scl-font-variant-body">index.html</h1>
+    <scale-telekom-footer>
+      <scale-telekom-footer-content>
+        <scale-telekom-footer-extended-navigation slot="extended-navigation">
+          <scale-telekom-footer-extended-navigation-column heading="TITLE">
+            <ul>
+              <li>
+                <a href="#">Topic One</a>
+              </li>
+              <li>
+                <a href="#">Topic One</a>
+              </li>
+              <li>
+                <a href="#">Topic One</a>
+              </li>
+              <li>
+                <a href="#">Topic One</a>
+              </li>
+            </ul>
+          </scale-telekom-footer-extended-navigation-column>
+          <scale-telekom-footer-extended-navigation-column heading="TOPIC TWO">
+            <ul>
+              <li>
+                <a href="#">Topic Two</a>
+              </li>
+              <li>
+                <a href="#">Topic Two</a>
+              </li>
+              <li>
+                <a href="#">Topic Two</a>
+              </li>
+              <li>
+                <a href="#">Topic Two</a>
+              </li>
+            </ul>
+          </scale-telekom-footer-extended-navigation-column>
+          <scale-telekom-footer-extended-navigation-column
+            heading="Topic Three"
+          >
+            <ul>
+              <li>
+                <a href="#">Topic Three </a>
+              </li>
+              <li>
+                <a href="#">Topic Three </a>
+              </li>
+              <li>
+                <a href="#">Topic Three </a>
+              </li>
+              <li>
+                <a href="#">Topic Three </a>
+              </li>
+            </ul>
+          </scale-telekom-footer-extended-navigation-column>
+          <scale-telekom-footer-extended-navigation-column heading="Topic Four">
+            <ul>
+              <li>
+                <a href="#">Topic Four </a>
+              </li>
+              <li>
+                <a href="#">Topic Four </a>
+              </li>
+              <li>
+                <a href="#">Topic Four </a>
+              </li>
+              <li>
+                <a href="#">Topic Four </a>
+              </li>
+            </ul>
+          </scale-telekom-footer-extended-navigation-column>
+        </scale-telekom-footer-extended-navigation>
+        <span slot="notice"> © Deutsche Telekom AG </span>
+        <ul slot="navigation">
+          <li>
+            <a href="#"> Impressum </a>
+          </li>
+          <li>
+            <a href="#"> Datenschutz </a>
+          </li>
+          <li>
+            <a href="#"> AGB </a>
+          </li>
+          <li>
+            <a href="#"> Produktinformationsblatt </a>
+          </li>
+          <li>
+            <a href="#"> Verbraucherinformationen </a>
+          </li>
+          <li>
+            <a href="#"> Jugendschutz </a>
+          </li>
+        </ul>
+      </scale-telekom-footer-content>
+    </scale-telekom-footer>
+
+    <br />
+    <br />
+    <br />
+    <div style="border: 1px solid red; width: 100%; height: 100%">
+      <scale-telekom-footer type="minimal">
+        <scale-telekom-footer-content>
+          <span slot="notice"> © Deutsche Telekom AG </span>
+          <ul slot="navigation">
+            <li>
+              <a href="#"> FOO </a>
+            </li>
+            <li>
+              <a href="#"> BAR </a>
+            </li>
+            <li>
+              <a href="#"> AGB </a>
+            </li>
+            <li>
+              <a href="#"> Produktinformationsblatt </a>
+            </li>
+            <li>
+              <a href="#"> Verbraucherinformationen </a>
+            </li>
+            <li>
+              <a href="#"> Jugendschutz </a>
+            </li>
+          </ul>
+        </scale-telekom-footer-content>
+      </scale-telekom-footer>
+    </div>
+  </body>
+</html>

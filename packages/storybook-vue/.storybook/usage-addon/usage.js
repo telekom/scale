@@ -93,6 +93,8 @@ import textField_en from 'raw-loader!../../stories/components/text-field/text-fi
 import textField_de from 'raw-loader!../../stories/components/text-field/text-field_de.md';
 import footer_en from 'raw-loader!../../stories/components/footer/footer.md';
 import footer_de from 'raw-loader!../../stories/components/footer/footer_de.md';
+import betaFooter_en from 'raw-loader!../../stories/components/beta-footer/beta-footer.md';
+import betaFooter_de from 'raw-loader!../../stories/components/beta-footer/beta-footer_de.md';
 import callout_en from 'raw-loader!../../stories/components/callout/callout.md';
 import callout_de from 'raw-loader!../../stories/components/callout/callout_de.md';
 import toggleGroup_de from 'raw-loader!../../stories/components/toggle-group/toggle-group_de.md';
@@ -205,6 +207,8 @@ const Usage = (props) => {
     'text-field_de': textField_de,
     footer_en,
     footer_de,
+    'telekom-footer_en': betaFooter_en,
+    'telekom-footer_de': betaFooter_de,    
     'toggle-group_en': toggleGroup_en,
     'toggle-group_de': toggleGroup_de,
     tooltip_en,
