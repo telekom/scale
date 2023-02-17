@@ -72,6 +72,6 @@ scale-divider {
   }
 }
 
-[part~='expanded'] scale-icon-navigation-collapse-up {
+[part~='expanded'] scale-icon-navigation-collapse-down {
   transform: rotate(0.5turn);
 }
