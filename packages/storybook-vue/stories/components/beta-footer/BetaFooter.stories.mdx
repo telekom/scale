@@ -174,7 +174,22 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 ## Standard
 
 <Canvas withSource="none">
-  <Story name="Standard"  inline={false} height={500}
+  <Story name="Standard"  inline={false} height={300}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+## Minimal
+
+<Canvas withSource="none">
+  <Story name="Minimal" 
+    args={{
+      type: 'minimal',
+    }}
+   inline={false}
   >
     {Template.bind({})}
   </Story>
@@ -186,7 +201,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 ## Extended
 
 <Canvas withSource="none">
-  <Story name="Extended"  inline={false} height={500}
+  <Story name="Extended"  inline={false} height={600}
   >
     {ExtendedTemplate.bind({})}
   </Story>
