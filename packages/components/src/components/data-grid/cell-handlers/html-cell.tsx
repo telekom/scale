@@ -26,7 +26,7 @@ export const HTMLCell: Cell = {
         variant="secondary"
         size="small"
         icon-only
-        aria-label={`Activate to ${
+        inner-aria-label={`Activate to ${
           content.isExpanded ? 'collapse' : 'expand'
         } content`}
         onClick={() => {
