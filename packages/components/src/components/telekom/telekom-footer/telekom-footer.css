@@ -87,6 +87,7 @@
     flex-direction: row;
     align-items: center;
     list-style: none;
+    gap: var(--telekom-spacing-unit-x2);
   }
 }
 
