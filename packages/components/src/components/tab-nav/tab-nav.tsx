@@ -51,10 +51,10 @@ export class TabNav {
       const closestNextTab = targetHTMLElement.closest(
         `scale-tab-header[role="tab"]`
       ) as HTMLScaleTabHeaderElement;
-      closestNextTab ? this.selectTab(closestNextTab) : null;
+      closestNextTab && this.selectTab(closestNextTab);
     } else {
       const nextTab = event.target as HTMLScaleTabHeaderElement;
-      nextTab.getAttribute('role') === 'tab' ? this.selectTab(nextTab) : null;
+      nextTab.getAttribute('role') === 'tab' && this.selectTab(nextTab);
     }
   }
 
