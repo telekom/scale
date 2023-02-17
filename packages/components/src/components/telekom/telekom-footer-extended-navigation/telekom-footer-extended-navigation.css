@@ -60,12 +60,12 @@
 [part~='telekom-footer-extended-navigation'] :where(a):hover {
   color: var(--telekom-color-text-and-icon-primary-hovered);
   /* need to overwrite <a> border from telekom-footer.css */
-  border-bottom: 0;
+  border-bottom: 1px solid transparent;
 }
 [part~='telekom-footer-extended-navigation'] :where(a):active {
   color: var(--telekom-color-text-and-icon-primary-pressed);
   /* need to overwrite <a> border from telekom-footer.css */
-  border-bottom: 0;
+  border-bottom: 1px solid transparent;
 }
 
 [part~='telekom-footer-extended-navigation']
