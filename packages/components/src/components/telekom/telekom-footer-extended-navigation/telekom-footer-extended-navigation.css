@@ -78,12 +78,12 @@ scale-telekom-footer-extended-navigation-column[expanded] {
 scale-telekom-footer-extended-navigation-column:last-of-type,
 scale-telekom-footer-extended-navigation-column[expanded]:last-of-type {
   border-bottom: none;
-  margin-bottom: 46px;
+  margin-bottom: var(--telekom-spacing-unit-x5);
   padding-bottom: 0;
 }
 
 scale-telekom-footer-extended-navigation-column:first-of-type {
-  margin-top: 46px;
+  margin-top: var(--telekom-spacing-unit-x5);
 }
 
 @media screen and (--md) {
