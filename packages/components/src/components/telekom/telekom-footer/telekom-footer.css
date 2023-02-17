@@ -6,7 +6,6 @@
   --footer-background: var(--telekom-color-ui-black);
   --minimal-footer-background: var(--telekom-color-background-canvas);
 
-
   --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
   --_nav-items-spacing: var(--telekom-spacing-unit-x3);
 }
@@ -83,7 +82,7 @@
 
 @media screen and (--md) {
   .scale-telekom-footer :where(ul),
-  .scale-telekom-footer[type='minimal'] :where(ul){
+  .scale-telekom-footer[type='minimal'] :where(ul) {
     display: flex;
     flex-direction: row;
     align-items: center;
