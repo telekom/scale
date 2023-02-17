@@ -27,8 +27,6 @@ The minimal footer is very reduced in its presentation. Just like the standard v
 
 ### Extended
 
-> Available soon
-
 The extended footer is suitable for portals with a comprehensive range of products and services. In addition to the legally binding links, it can also display an introduction into the entire offering of the respective portal.
 
 ![Image Name](assets/3_components/beta-footer/footer-erweitert.png)

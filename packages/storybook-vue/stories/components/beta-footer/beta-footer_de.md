@@ -27,8 +27,6 @@ Der Minimal-Footer ist in seiner Darstellung sehr reduziert. Er eignet sich eben
 
 ### Erweitert
 
-> Diese Funktion ist bald verfügbar.
-
 Der erweiterte Footer eignet sich für Portale mit umfangreichem Angebot, da sich neben den rechtsverbindlichen Links auch ein Einstieg in das gesamte Angebot des jeweiligen Portals abbilden lässt.
 
 ![Image Name](assets/3_components/beta-footer/footer-erweitert.png)
