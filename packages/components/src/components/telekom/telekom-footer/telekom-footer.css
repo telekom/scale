@@ -92,6 +92,10 @@
 }
 
 @media screen and (--lg) {
+  .scale-telekom-footer :where(ul),
+  .scale-telekom-footer[type='minimal'] :where(ul) {
+    gap: var(--_nav-items-spacing);
+  }
   .scale-telekom-footer[type='minimal'] .navigation-links ul,
   .scale-telekom-footer[type='minimal'] .notice-container {
     margin-bottom: 0;
