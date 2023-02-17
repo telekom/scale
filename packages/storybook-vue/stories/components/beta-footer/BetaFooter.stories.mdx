@@ -10,7 +10,7 @@ import TelekomFooter from './Footer.vue';
       options: ['minimal', 'standard'],
       defaultValue: 'standard',
     }}
-  }  
+  }   
 />
 
 <div
@@ -221,7 +221,12 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
       type: 'minimal',
     }}
     height={300}
-   inline={false}
+    inline={false}
+    decorators={[
+      () => ({
+        template: '<div style="background-color: var(--telekom-color-background-surface-subtle); height: 250px;"><story /></div>',
+      }),
+    ]}>  
   >
     {Template.bind({})}
   </Story>
