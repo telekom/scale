@@ -35,16 +35,20 @@ The extended footer is suitable for portals with a comprehensive range of produc
 
 ![Image Name](assets/3_components/beta-footer/footer-elemente.png)
 
-### Sitemap (1) (optional)
+#### Sitemap (1) (optional)
 
-### Telekom logo with claim (2)
+#### Telekom logo with claim (2)
 
-### Copyright (3)
+#### Copyright (3)
 
-### Links (4)
+#### Links (4)
 
 ## The footer on small devices
 
 Mobile devices display the sitemap as an accordion in the extended footer. All other elements are also arranged vertically.
 
 ![Image Name](assets/3_components/beta-footer/Footer-navigation-mobile-en.png)
+
+## Beta components
+
+This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
