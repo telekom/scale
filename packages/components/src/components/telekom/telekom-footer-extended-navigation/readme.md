@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute  | Description             | Type      | Default     |
-| ---------- | ---------- | ----------------------- | --------- | ----------- |
-| `expanded` | `expanded` | Set to `true` to expand | `boolean` | `false`     |
-| `heading`  | `heading`  |                         | `string`  | `undefined` |
+| Property       | Attribute       | Description             | Type      | Default     |
+| -------------- | --------------- | ----------------------- | --------- | ----------- |
+| `expanded`     | `expanded`      | Set to `true` to expand | `boolean` | `false`     |
+| `heading`      | `heading`       |                         | `string`  | `undefined` |
+| `headingLevel` | `heading-level` |                         | `string`  | `'h2'`      |
 
 
 ## Shadow Parts
@@ -26,12 +27,12 @@
 
 ### Depends on
 
-- [scale-icon-navigation-right](../../icons/navigation-right)
+- [scale-icon-navigation-collapse-up](../../icons/navigation-collapse-up)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-telekom-footer-extended-navigation-column --> scale-icon-navigation-right
+  scale-telekom-footer-extended-navigation-column --> scale-icon-navigation-collapse-up
   style scale-telekom-footer-extended-navigation-column fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

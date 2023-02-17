@@ -7,14 +7,14 @@
 
 ## Shadow Parts
 
-| Part                     | Description |
-| ------------------------ | ----------- |
-| `"app-logo"`             |             |
-| `"footer-container"`     |             |
-| `"logo-container"`       |             |
-| `"navigation-container"` |             |
-| `"navigation-links"`     |             |
-| `"notice-container"`     |             |
+| Part           | Description |
+| -------------- | ----------- |
+| `"app-logo"`   |             |
+| `"base"`       |             |
+| `"body"`       |             |
+| `"logo"`       |             |
+| `"navigation"` |             |
+| `"notice"`     |             |
 
 
 ## Dependencies
