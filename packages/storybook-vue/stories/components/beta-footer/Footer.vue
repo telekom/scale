@@ -5,32 +5,32 @@
         <ul slot="navigation">
           <li>
             <a href="#">
-              Impressum 
+              Imprint 
             </a>
           </li>
           <li>
             <a href="#">
-              Datenschutz 
+              Data privacy 
             </a>
           </li>
           <li>
             <a href="#">
-              AGB
+              Terms and conditions
             </a>
           </li>
           <li>
             <a href="#">
-              Produktinformationsblatt
+              Consumer protection
             </a>
           </li>
           <li>
             <a href="#">
-              Verbraucherinformationen
+              Product information sheet
             </a>
           </li>
           <li>
             <a href="#">
-              Jugendschutz
+              Youth protection
             </a>
           </li>
         </ul>
