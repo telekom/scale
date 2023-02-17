@@ -46,15 +46,24 @@ export class TabNav {
     const targetHTMLElement = event.target as HTMLElement;
     const targetTag = targetHTMLElement.tagName.toLowerCase();
     const svgTags = ['svg', 'g', 'path'];
+    let nextTab: HTMLScaleTabHeaderElement;
 
     if (svgTags.includes(targetTag)) {
       const closestNextTab = targetHTMLElement.closest(
         `scale-tab-header[role="tab"]`
       ) as HTMLScaleTabHeaderElement;
-      closestNextTab && this.selectTab(closestNextTab);
+      if (closestNextTab) {
+        nextTab = closestNextTab;
+        this.selectTab(nextTab);
+      }
     } else {
-      const nextTab = event.target as HTMLScaleTabHeaderElement;
-      nextTab.getAttribute('role') === 'tab' && this.selectTab(nextTab);
+      if (
+        (event.target as HTMLScaleTabHeaderElement).getAttribute('role') ===
+        'tab'
+      ) {
+        nextTab = event.target as HTMLScaleTabHeaderElement;
+        this.selectTab(nextTab);
+      }
     }
   }
 
