@@ -1,5 +1,5 @@
 <template>
-    <scale-telekom-footer :variant="variant">
+    <scale-telekom-footer :type="type">
       <scale-telekom-footer-content>
         <span slot="notice"> © Deutsche Telekom AG </span>
         <ul slot="navigation">
@@ -41,7 +41,7 @@
   <script>
   export default {
     props: {
-        variant: String
+        type: String
     }
   };
   </script>

@@ -5,7 +5,7 @@ import TelekomFooter from './Footer.vue';
   title="Beta Components/Footer"
   component={TelekomFooter}
   argTypes={{
-    variant: {
+    type: {
       control: { type: 'select', options: ['slim', 'standard'] },
     },
   }}  
@@ -28,7 +28,7 @@ export const Template = (args, { argTypes }) => ({
   props: TelekomFooter.props,
   template: `
     <scale-telekom-footer 
-        :variant="variant"
+        :type="type"
     >
       <scale-telekom-footer-content>
         <span slot="notice"> © Deutsche Telekom AG </span>
@@ -74,7 +74,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
   props: TelekomFooter.props,
   template: `
     <scale-telekom-footer
-      :variant="variant"
+      :type="type"
     >
       <scale-telekom-footer-content>
         <scale-telekom-footer-extended-navigation slot="extended-navigation">
