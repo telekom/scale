@@ -289,12 +289,15 @@ export class Tooltip {
             aria-hidden={this.opened ? 'false' : 'true'}
             ref={(el) => (this.tooltipEl = el)}
             id={this.componentId}
-            tabIndex={0}
             onMouseOver={this.handleTooltipMouseOver}
             onMouseLeave={this.handleTooltipBlur}
           >
             <slot name="content">{this.content}</slot>
-            <div part="arrow" ref={(el) => (this.arrowEl = el)}></div>
+            <div
+              aria-hidden="true"
+              part="arrow"
+              ref={(el) => (this.arrowEl = el)}
+            ></div>
           </div>
         )}
       </Host>

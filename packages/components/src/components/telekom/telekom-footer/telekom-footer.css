@@ -1,0 +1,104 @@
+@import url('../../../global/custom-media.css');
+
+.scale-telekom-footer {
+  --font-size: var(--telekom-typography-font-size-caption);
+  --font-color: var(--telekom-color-text-and-icon-white-standard);
+  --background-footer: var(--telekom-color-ui-black);
+  --background-footer-minimal: var(--telekom-color-background-canvas);
+
+  --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
+  --_nav-items-spacing: var(--telekom-spacing-unit-x3);
+}
+
+.scale-telekom-footer :where(ul),
+.scale-telekom-footer[type='minimal'] :where(ul) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--_nav-items-spacing);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  color: var(--font-color);
+  list-style: none;
+}
+
+/* this is a workaround to host-context not working in FF and safari */
+.scale-telekom-footer[type='minimal'] scale-telekom-footer-content {
+  --background-footer: var(--background-footer-minimal);
+  --_font-color: var(--telekom-color-text-and-icon-additional);
+  --_display-logo: none;
+  --_navigation-container-padding: var(--telekom-spacing-unit-x4) 0
+    var(--telekom-spacing-unit-x4) 0;
+  --_nav-items-bottom-margin: 0;
+}
+
+.scale-telekom-footer :where(a, span),
+.scale-telekom-footer[type='minimal'] :where(a, span) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  line-height: 140%;
+  text-decoration: none;
+  /* TODO: is the underline still needed? */
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 2px;
+}
+
+.scale-telekom-footer[type='minimal'] :where(a, span) {
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+.scale-telekom-footer[type='minimal'] :where(ul) {
+  margin-bottom: 0;
+}
+
+.scale-telekom-footer[type='minimal'] a:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+.scale-telekom-footer[type='minimal'] a:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+
+.scale-telekom-footer :where(a:hover) {
+  border-radius: 0;
+  border-bottom: 1px solid var(--font-color);
+}
+
+.scale-telekom-footer :where(a:active) {
+  color: var(--telekom-color-text-and-icon-white-additional);
+  /* TODO: is the underline still needed? */
+  border-bottom: 1px solid var(--telekom-color-text-and-icon-white-additional);
+}
+
+.scale-telekom-footer :where(a:focus-visible) {
+  outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
+  outline-offset: 1px;
+}
+
+@media screen and (--md) {
+  .scale-telekom-footer :where(ul),
+  .scale-telekom-footer[type='minimal'] :where(ul) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    gap: var(--telekom-spacing-unit-x2);
+  }
+}
+
+@media screen and (--lg) {
+  .scale-telekom-footer :where(ul),
+  .scale-telekom-footer[type='minimal'] :where(ul) {
+    gap: var(--_nav-items-spacing);
+  }
+  .scale-telekom-footer[type='minimal'] .navigation-links ul,
+  .scale-telekom-footer[type='minimal'] .notice-container {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}

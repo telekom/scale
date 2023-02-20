@@ -102,3 +102,21 @@ export const isScaleIcon = (el: Node) => {
   }
   return el.nodeName.toUpperCase().substring(0, 10) === 'SCALE-ICON';
 };
+
+/** Creating global ids for different component helper-texts */
+let id = 0;
+export function generateUniqueId(): number {
+  return id++;
+}
+
+export function readMaybeJSONData(data) {
+  let parsedData;
+
+  try {
+    parsedData = JSON.parse(data);
+  } catch (error) {
+    parsedData = data;
+  }
+
+  return parsedData;
+}

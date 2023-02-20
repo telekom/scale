@@ -54,7 +54,7 @@ export class Logo {
   @Prop() logoAriaDescribedBy?: string;
 
   componentDidRender() {
-    if (this.accessibilityTitle !== '') {
+    if (this.accessibilityTitle) {
       statusNote({
         tag: 'deprecated',
         message:
@@ -67,7 +67,7 @@ export class Logo {
 
   render() {
     return (
-      <Host>
+      <Host exportparts="logo-svg">
         <style>
           {this.size ? `:host { --logo-size: ${this.size}px; }` : ''}
           {this.styles}

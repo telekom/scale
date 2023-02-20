@@ -22,7 +22,7 @@ describe('Textfield', () => {
       await global.runSetup(`components-text-field--${variant}`);
 
       const textfield = await global.page.evaluateHandle(
-        'document.querySelector("#input-text-field0")'
+        'document.querySelector("#input-text-field-0")'
       );
       await global.page.mouse.move(60, 40);
       await global.page.mouse.down();

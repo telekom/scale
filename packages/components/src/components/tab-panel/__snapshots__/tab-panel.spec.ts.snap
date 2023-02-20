@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabPanel should handle styles 1`] = `
-<scale-tab-panel id="scale-tab-panel-1" role="tabpanel">
+<scale-tab-panel id="scale-tab-panel-1" role="tabpanel" tabindex="0">
   <mock:shadow-root>
     <style>
       background-color:red
@@ -14,7 +14,7 @@ exports[`TabPanel should handle styles 1`] = `
 `;
 
 exports[`TabPanel should match snapshot 1`] = `
-<scale-tab-panel id="scale-tab-panel-0" role="tabpanel">
+<scale-tab-panel id="scale-tab-panel-0" role="tabpanel" tabindex="0">
   <mock:shadow-root>
     <div class="tab-panel" part="tab-panel">
       <slot></slot>

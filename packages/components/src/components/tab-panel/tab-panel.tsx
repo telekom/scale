@@ -45,9 +45,12 @@ export class TabPanel {
 
   render() {
     return (
-      <Host id={`scale-tab-panel-${this.generatedId}`} role="tabpanel">
+      <Host
+        id={`scale-tab-panel-${this.generatedId}`}
+        role="tabpanel"
+        tabindex="0"
+      >
         {this.styles && <style>{this.styles}</style>}
-
         <div part="tab-panel" class="tab-panel">
           <slot />
         </div>

@@ -3,6 +3,96 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.124](https://github.com/telekom/scale/compare/v3.0.0-beta.123...v3.0.0-beta.124) (2023-02-17)
+
+
+### Bug Fixes
+
+* **data-grid:** accessibility affecting buttons ([#1591](https://github.com/telekom/scale/issues/1591)) ([c8d1cbc](https://github.com/telekom/scale/commit/c8d1cbc5e9072ea0f339bb977e221846626446b9))
+
+
+
+
+
+# [3.0.0-beta.123](https://github.com/telekom/scale/compare/v3.0.0-beta.122...v3.0.0-beta.123) (2023-02-13)
+
+
+### Features
+
+* **button:** inner aria-label prop ([#1376](https://github.com/telekom/scale/issues/1376)) ([f936f81](https://github.com/telekom/scale/commit/f936f813f22f04677bbb90722f25b55cb27dec7c))
+
+
+
+
+
+# [3.0.0-beta.122](https://github.com/telekom/scale/compare/v3.0.0-beta.121...v3.0.0-beta.122) (2023-02-07)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.121](https://github.com/telekom/scale/compare/v3.0.0-beta.120...v3.0.0-beta.121) (2023-02-02)
+
+
+### Bug Fixes
+
+* **progress-bar:** inner bar for percentage 0 ([#1563](https://github.com/telekom/scale/issues/1563)) ([4f9c0c4](https://github.com/telekom/scale/commit/4f9c0c41c23004812cb23063d230dd6e1d785938))
+
+
+
+
+
+# [3.0.0-beta.120](https://github.com/telekom/scale/compare/v3.0.0-beta.119...v3.0.0-beta.120) (2023-01-31)
+
+
+### Bug Fixes
+
+* adjust main content max-width for storybook ([#1541](https://github.com/telekom/scale/issues/1541)) ([0f9564e](https://github.com/telekom/scale/commit/0f9564e3661a2ad68cba5013f382c92a2923fae2))
+* **telekom-header:** more feedback ([#1531](https://github.com/telekom/scale/issues/1531)) ([5c942ad](https://github.com/telekom/scale/commit/5c942ad9eb34a29e1251bef4cfa356ac56b4c155))
+* **telekom-header:** QA ([#1539](https://github.com/telekom/scale/issues/1539)) ([5c4c448](https://github.com/telekom/scale/commit/5c4c44813347e930c99bcfe71e7cb256ec7fc626))
+* implement ux/ui feedback ([8a314c7](https://github.com/telekom/scale/commit/8a314c71cf2ac5650498146280e3a0dcb8204b95))
+* **telekom-header:** use mobile flyout canvas ([#1525](https://github.com/telekom/scale/issues/1525)) ([fcf3081](https://github.com/telekom/scale/commit/fcf308138c65b1fe4ec7097db436bfabb2f7e86d))
+
+
+### Features
+
+* adding usage text ([#1537](https://github.com/telekom/scale/issues/1537)) ([09eb2f3](https://github.com/telekom/scale/commit/09eb2f3e199cba034bf8e9d7d19cad45cf712b2a))
+
+
+
+
+
+# [3.0.0-beta.119](https://github.com/telekom/scale/compare/v3.0.0-beta.118...v3.0.0-beta.119) (2023-01-25)
+
+
+### Features
+
+* **segmented-button:** add new beta components ([#1495](https://github.com/telekom/scale/issues/1495)) ([d0e38ab](https://github.com/telekom/scale/commit/d0e38abbf00342c0fd180fa29c9eccdbb4378717)), closes [#1434](https://github.com/telekom/scale/issues/1434) [#1436](https://github.com/telekom/scale/issues/1436) [#1456](https://github.com/telekom/scale/issues/1456) [#1458](https://github.com/telekom/scale/issues/1458) [#1457](https://github.com/telekom/scale/issues/1457) [#1459](https://github.com/telekom/scale/issues/1459) [#1461](https://github.com/telekom/scale/issues/1461) [#1462](https://github.com/telekom/scale/issues/1462) [#1496](https://github.com/telekom/scale/issues/1496) [#1501](https://github.com/telekom/scale/issues/1501) [#1512](https://github.com/telekom/scale/issues/1512) [#1429](https://github.com/telekom/scale/issues/1429) [#1497](https://github.com/telekom/scale/issues/1497) [#1513](https://github.com/telekom/scale/issues/1513) [#1514](https://github.com/telekom/scale/issues/1514) [#1516](https://github.com/telekom/scale/issues/1516)
+
+
+
+
+
+# [3.0.0-beta.118](https://github.com/telekom/scale/compare/v3.0.0-beta.117...v3.0.0-beta.118) (2023-01-13)
+
+
+### Bug Fixes
+
+* remove broken link ([#1474](https://github.com/telekom/scale/issues/1474)) ([09a09f0](https://github.com/telekom/scale/commit/09a09f09c4e66dc2578aa99c204d3937be1d08d3))
+* **docs:** typo in _loading the library_ section  ([#1416](https://github.com/telekom/scale/issues/1416)) ([d8a3259](https://github.com/telekom/scale/commit/d8a325928cd0beddd2a09cadd1851f86d94a66e0))
+* wrong tag coloring ([#1397](https://github.com/telekom/scale/issues/1397)) ([fe445cf](https://github.com/telekom/scale/commit/fe445cfdd2d3bf72359ecc2664c04c1184f57399))
+
+
+### Features
+
+* **text-field:** add autocomplete property ([#1400](https://github.com/telekom/scale/issues/1400)) ([24f064d](https://github.com/telekom/scale/commit/24f064dfec642c2fed62f64850d9436cf8d2a31d))
+
+
+
+
+
 # [3.0.0-beta.117](https://github.com/telekom/scale/compare/v3.0.0-beta.116...v3.0.0-beta.117) (2022-11-07)
 
 

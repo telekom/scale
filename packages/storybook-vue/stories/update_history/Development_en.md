@@ -2,6 +2,28 @@
 
 This page documents updates in `@telekom/scale-components` and related packages.
 
+## New Brand Footer
+
+17.02.2023
+
+Release of the new brand footer as a beta version. This will replace the current component once quality control is complete and WCAG accessibility certification is in place.
+
+## New Brand Header
+
+31.01.2023
+
+Release of the new brand header as a beta version. This will replace the current component once quality control is complete and WCAG accessibility certification is in place. Until then, we'd love to hear <a href="https://deploy-preview-1537--marvelous-moxie-a6e2fe.netlify.app/?path=/docs/contact-your-feedback--page" target="_blank" rel="noopener noreferrer">your feedback</a> on the new component.
+
+## New Beta Components
+
+25.01.2023
+
+- Release of the new beta components Segmented Button and Chip.
+- The Segmented Button replaces the beta component Toggle Group.
+- New category Deprecated Components. This lists components we no longer support.
+
+<br>
+
 ## Component Update (Optimized Mobile and Visual Design)
 
 27.10.2022

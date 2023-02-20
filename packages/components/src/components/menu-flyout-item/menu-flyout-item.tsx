@@ -59,10 +59,10 @@ export class MenuFlyoutItem {
   // TODO there is lot of room for improving this, aka edge-cases
   @Method()
   async triggerEvent(
-    eventType: 'keydown' | 'click',
-    key?: 'Enter' | ' ' | 'ArrowRight' | null,
+    event: KeyboardEvent | MouseEvent,
     closeOnSelect: boolean = true
   ) {
+    const { key } = event as KeyboardEvent;
     if (this.disabled) {
       return;
     }
@@ -73,7 +73,13 @@ export class MenuFlyoutItem {
       this.openSublist();
       return;
     }
-    const detail = { eventType, key, item: this.hostElement, closeOnSelect };
+    const detail = {
+      eventType: event.type,
+      key,
+      item: this.hostElement,
+      closeOnSelect,
+      originalEvent: event,
+    };
     emitEvent(this, 'scaleSelect', detail);
   }
 

@@ -2,7 +2,7 @@
 
 exports[`component prop snapshots all props are not set 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-1" fill="#e20074" role="img" viewBox="0 0 33 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-1" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 33 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-1">
       Telekom Logo
     </title>
@@ -13,7 +13,7 @@ exports[`component prop snapshots all props are not set 1`] = `
 
 exports[`component prop snapshots all props are set 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-2" role="img" viewBox="0 0 107 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-2" part="logo-svg" role="img" viewBox="0 0 107 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-2">
       title
     </title>
@@ -25,7 +25,7 @@ exports[`component prop snapshots all props are set 1`] = `
 
 exports[`testing all languages  1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-14" fill="#e20074" role="img" viewBox="0 0 33 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-14" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 33 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-14">
       logo
     </title>
@@ -36,7 +36,7 @@ exports[`testing all languages  1`] = `
 
 exports[`testing all languages cz 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-7" fill="#e20074" role="img" viewBox="0 0 142 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-7" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 142 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-7">
       logo
     </title>
@@ -48,7 +48,7 @@ exports[`testing all languages cz 1`] = `
 
 exports[`testing all languages de 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-5" fill="#e20074" role="img" viewBox="0 0 153 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-5" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 153 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-5">
       logo
     </title>
@@ -60,7 +60,7 @@ exports[`testing all languages de 1`] = `
 
 exports[`testing all languages en 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-6" fill="#e20074" role="img" viewBox="0 0 33 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-6" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 33 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-6">
       logo
     </title>
@@ -71,7 +71,7 @@ exports[`testing all languages en 1`] = `
 
 exports[`testing all languages hr 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-8" fill="#e20074" role="img" viewBox="0 0 107 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-8" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 107 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-8">
       logo
     </title>
@@ -83,7 +83,7 @@ exports[`testing all languages hr 1`] = `
 
 exports[`testing all languages hu 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-9" fill="#e20074" role="img" viewBox="0 0 103 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-9" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 103 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-9">
       logo
     </title>
@@ -95,7 +95,7 @@ exports[`testing all languages hu 1`] = `
 
 exports[`testing all languages me 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-10" fill="#e20074" role="img" viewBox="0 0 114 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-10" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 114 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-10">
       logo
     </title>
@@ -107,7 +107,7 @@ exports[`testing all languages me 1`] = `
 
 exports[`testing all languages mk_kyr 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-12" fill="#e20074" role="img" viewBox="0 0 144 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-12" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 144 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-12">
       logo
     </title>
@@ -119,7 +119,7 @@ exports[`testing all languages mk_kyr 1`] = `
 
 exports[`testing all languages mk_lat 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-11" fill="#e20074" role="img" viewBox="0 0 126 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-11" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 126 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-11">
       logo
     </title>
@@ -131,7 +131,7 @@ exports[`testing all languages mk_lat 1`] = `
 
 exports[`testing all languages ro 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-13" fill="#e20074" role="img" viewBox="0 0 142 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-13" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 142 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-13">
       logo
     </title>
@@ -143,7 +143,7 @@ exports[`testing all languages ro 1`] = `
 
 exports[`testing all languages sk 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-15" fill="#e20074" role="img" viewBox="0 0 109 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-15" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 109 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-15">
       logo
     </title>

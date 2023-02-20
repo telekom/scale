@@ -40,15 +40,37 @@ export class TabNav {
 
   @Listen('click')
   handleClick(event: MouseEvent) {
-    const nextTab = event.target as HTMLScaleTabHeaderElement;
-    if (nextTab.getAttribute('role') !== 'tab') {
-      return;
+    this.removeFirstRenderAttr();
+
+    // workaround for slotted icons
+    const targetHTMLElement = event.target as HTMLElement;
+    const targetTag = targetHTMLElement.tagName.toLowerCase();
+    const svgTags = ['svg', 'g', 'path'];
+    let nextTab: HTMLScaleTabHeaderElement;
+
+    if (svgTags.includes(targetTag)) {
+      const closestNextTab = targetHTMLElement.closest(
+        `scale-tab-header[role="tab"]`
+      ) as HTMLScaleTabHeaderElement;
+      if (closestNextTab) {
+        nextTab = closestNextTab;
+        this.selectTab(nextTab);
+      }
+    } else {
+      if (
+        (event.target as HTMLScaleTabHeaderElement).getAttribute('role') ===
+        'tab'
+      ) {
+        nextTab = event.target as HTMLScaleTabHeaderElement;
+        this.selectTab(nextTab);
+      }
     }
-    this.selectTab(nextTab);
   }
 
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
+    this.removeFirstRenderAttr();
+
     const target = event.target as HTMLScaleTabHeaderElement;
     let nextTab;
 
@@ -79,6 +101,13 @@ export class TabNav {
 
     event.preventDefault();
     this.selectTab(nextTab);
+  }
+
+  removeFirstRenderAttr() {
+    const tabs = this.getAllEnabledTabs();
+    tabs.forEach((tab) => {
+      tab.removeAttribute('first-render');
+    });
   }
 
   connectedCallback() {
@@ -144,14 +173,22 @@ export class TabNav {
 
   linkPanels() {
     const tabs = this.getAllEnabledTabs();
-    const selectedTab = tabs.find((x) => x.selected) || tabs[0];
+    const selectedTab = tabs.find((x) => x.selected);
 
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
       tab.setAttribute('aria-controls', panel.id);
       panel.setAttribute('aria-labelledby', tab.id);
+      if (!selectedTab) {
+        // we pass this down to tab-header to prevent the first element to be focused on first render (a11y)
+        tab.setAttribute('first-render', 'true');
+      }
     });
-    this.selectTab(selectedTab);
+    if (selectedTab) {
+      this.selectTab(selectedTab);
+    } else {
+      this.selectTab(tabs[0]);
+    }
   }
 
   reset() {

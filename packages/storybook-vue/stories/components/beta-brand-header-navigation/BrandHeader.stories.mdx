@@ -1,0 +1,187 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import TelekomHeader from './TelekomHeader.vue';
+import TelekomHeaderTemplate from './TelekomHeaderTemplate.vue'
+
+<Meta
+  title="Beta Components/Telekom Brand Header & Navigation"
+  component={TelekomHeader}
+  argTypes={{
+    appNameLink: {
+      control: {
+        type: 'text',
+      },
+    },
+    appName: {
+      control: {
+        type: 'text',
+      },
+    },
+    appNameClick: {
+      control: {
+        type: 'disabled',
+      },
+      description: 'app name click event handler custom function',
+    },
+    storyName: {
+      table: {
+        disable: true,
+      },
+    }
+  }}
+/>
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Brand Header & Navigation</h1>
+  <img src="assets/beta.png" alt="Beta" />
+</div>
+
+export const Template = (args, { argTypes }) => ({
+  components: { TelekomHeaderTemplate },
+  props: {
+    ...TelekomHeaderTemplate.props,
+    storyName: String,
+  },
+  template: `
+    <TelekomHeaderTemplate
+      :story-name="storyName"
+      :app-name="appName"
+      :app-name-link="appNameLink"
+    />
+  `
+});
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{ storyName: 'StoryStandard' }} inline={false} height={500}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+### Main components
+
+- [`scale-telekom-app-shell`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-app-shell)
+- [`scale-telekom-header`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-header)
+
+### Subcomponents
+
+- [`scale-telekom-nav-list`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-nav-list)
+- [`scale-telekom-nav-item`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-nav-item)
+- [`scale-telekom-nav-flyout`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-nav-flyout)
+- [`scale-telekom-mega-menu`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-mega-menu)
+- [`scale-telekom-mega-menu-column`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-mega-menu)
+- [`scale-telekom-mobile-flyout-canvas`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-mobile-flyout-canvas)
+- [`scale-telekom-mobile-menu`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-mobile-menu)
+- [`scale-telekom-mobile-menu-item`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-mobile-menu-item)
+
+```html
+<scale-telekom-header>
+  <scale-telekom-nav-list slot="main-nav">
+    <scale-telekom-nav-item>
+      <a href="#">Topic One</a>
+    </scale-telekom-nav-item>
+    <!-- … -->
+  </scale-telekom-nav-list>
+</scale-telekom-header>
+```
+
+### Scoped CSS variables
+
+```css
+scale-telekom-header {
+  --shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  --background: var(--telekom-color-background-surface);
+  --background-logo: var(--telekom-color-primary-standard);
+  --transition-common-scrolled: height var(--telekom-motion-duration-immediate)
+      var(--telekom-motion-easing-standard),
+    width var(--telekom-motion-duration-immediate)
+      var(--telekom-motion-easing-standard);
+  --font-size-app-name: var(--telekom-typography-font-size-small);
+  --line-height-app-name: var(--telekom-typography-line-spacing-tight);
+  --font-weight-app-name: var(--telekom-typography-font-weight-extra-bold);
+}
+
+scale-telekom-nav-list {
+  --flex-direction: row;
+}
+```
+
+## Application Name
+
+<Canvas withSource="none">
+  <Story name="Application Name" args={{ storyName: 'StoryStandard', appName: 'Application Name' }} inline={false} height={500}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header app-name="Application Name" app-name-link="https://example.com">
+  <!-- … -->
+</scale-telekom-header>
+```
+
+## Flyout Navigation
+
+<Canvas withSource="none">
+  <Story name="Flyout Navigation" args={{ storyName: 'StoryFlyoutNav', appName: 'Application Name' }} inline={false} height={500}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header>
+  <scale-telekom-nav-list slot="main-nav">
+    <scale-telekom-nav-item>
+      <button>Topic One</button>
+      <scale-telekom-nav-flyout hover>
+        <div>Flyout content</div>
+      </scale-telekom-nav-flyout>
+    </scale-telekom-nav-item>
+    <!-- … -->
+  </scale-telekom-nav-list>
+</scale-telekom-header>
+```
+
+### Scoped CSS variables
+
+```css
+scale-telekom-nav-flyout {
+  --top: var(--scl-telekom-header-height, 0);
+  --left: 0;
+  --width: 100vw;
+  --height: auto;
+  --position: fixed;
+  --background: var(--telekom-color-background-surface);
+  --shadow: none;
+  --z-index: 7;
+  --duration: var(--telekom-motion-duration-transition);
+  --translate-x: 0;
+  --translate-y: var(--telekom-spacing-unit-x1);
+  --translate-z: 0;
+}
+```
+
+### Mega Menu
+
+```html
+<scale-telekom-mega-menu>
+  <scale-telekom-mega-menu-column>
+    <scale-icon-home-home slot="icon"></scale-icon-home-home>
+    <a href="https://example.com" slot="heading">Second Level</a>
+    <ul>
+      <li><a href="https://example.com">Third Level</a></li>
+      <li><a href="https://example.com">Third Level</a></li>
+      <!-- … -->
+    </ul>
+  </scale-telekom-mega-menu-column>
+</scale-telekom-mega-menu>
+```

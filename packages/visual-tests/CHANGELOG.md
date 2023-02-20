@@ -3,6 +3,75 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.124](https://github.com/telekom/scale/compare/v3.0.0-beta.123...v3.0.0-beta.124) (2023-02-17)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.123](https://github.com/telekom/scale/compare/v3.0.0-beta.122...v3.0.0-beta.123) (2023-02-13)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.122](https://github.com/telekom/scale/compare/v3.0.0-beta.121...v3.0.0-beta.122) (2023-02-07)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.121](https://github.com/telekom/scale/compare/v3.0.0-beta.120...v3.0.0-beta.121) (2023-02-02)
+
+
+### Bug Fixes
+
+* **progress-bar:** inner bar for percentage 0 ([#1563](https://github.com/telekom/scale/issues/1563)) ([4f9c0c4](https://github.com/telekom/scale/commit/4f9c0c41c23004812cb23063d230dd6e1d785938))
+
+
+
+
+
+# [3.0.0-beta.120](https://github.com/telekom/scale/compare/v3.0.0-beta.119...v3.0.0-beta.120) (2023-01-31)
+
+
+### Features
+
+* adding usage text ([#1537](https://github.com/telekom/scale/issues/1537)) ([09eb2f3](https://github.com/telekom/scale/commit/09eb2f3e199cba034bf8e9d7d19cad45cf712b2a))
+
+
+
+
+
+# [3.0.0-beta.119](https://github.com/telekom/scale/compare/v3.0.0-beta.118...v3.0.0-beta.119) (2023-01-25)
+
+
+### Features
+
+* **segmented-button:** add new beta components ([#1495](https://github.com/telekom/scale/issues/1495)) ([d0e38ab](https://github.com/telekom/scale/commit/d0e38abbf00342c0fd180fa29c9eccdbb4378717)), closes [#1434](https://github.com/telekom/scale/issues/1434) [#1436](https://github.com/telekom/scale/issues/1436) [#1456](https://github.com/telekom/scale/issues/1456) [#1458](https://github.com/telekom/scale/issues/1458) [#1457](https://github.com/telekom/scale/issues/1457) [#1459](https://github.com/telekom/scale/issues/1459) [#1461](https://github.com/telekom/scale/issues/1461) [#1462](https://github.com/telekom/scale/issues/1462) [#1496](https://github.com/telekom/scale/issues/1496) [#1501](https://github.com/telekom/scale/issues/1501) [#1512](https://github.com/telekom/scale/issues/1512) [#1429](https://github.com/telekom/scale/issues/1429) [#1497](https://github.com/telekom/scale/issues/1497) [#1513](https://github.com/telekom/scale/issues/1513) [#1514](https://github.com/telekom/scale/issues/1514) [#1516](https://github.com/telekom/scale/issues/1516)
+
+
+
+
+
+# [3.0.0-beta.118](https://github.com/telekom/scale/compare/v3.0.0-beta.117...v3.0.0-beta.118) (2023-01-13)
+
+
+### Bug Fixes
+
+* prevent focus on first render ([#1383](https://github.com/telekom/scale/issues/1383)) ([b455cda](https://github.com/telekom/scale/commit/b455cda6857291f85ac49daa43399ad639c63b07))
+* wrong tag coloring ([#1397](https://github.com/telekom/scale/issues/1397)) ([fe445cf](https://github.com/telekom/scale/commit/fe445cfdd2d3bf72359ecc2664c04c1184f57399))
+
+
+
+
+
 # [3.0.0-beta.117](https://github.com/telekom/scale/compare/v3.0.0-beta.116...v3.0.0-beta.117) (2022-11-07)
 
 

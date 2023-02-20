@@ -19,7 +19,7 @@ describe('Textarea', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-text-area--${variant}`);
       const textarea = await global.page.evaluateHandle(
-        'document.querySelector("#input-textarea0")'
+        'document.querySelector("#input-textarea-0")'
       );
       await global.page.mouse.move(60, 40);
       await global.page.mouse.down();
