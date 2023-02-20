@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.125](https://github.com/telekom/scale/compare/v3.0.0-beta.124...v3.0.0-beta.125) (2023-02-20)
+
+
+### Features
+
+* **nav:** link targets in main navigation ([#1602](https://github.com/telekom/scale/issues/1602)) ([bfda3aa](https://github.com/telekom/scale/commit/bfda3aab0e7f28c4aa8068980b08023cfc0b374e))
+
+
+
+
+
 # [3.0.0-beta.124](https://github.com/telekom/scale/compare/v3.0.0-beta.123...v3.0.0-beta.124) (2023-02-17)
 
 
