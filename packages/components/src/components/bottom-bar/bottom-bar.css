@@ -8,6 +8,7 @@
   padding-left: 36px;
   padding-right: 36px;
   box-shadow: var(--telekom-shadow-app-bar-bottom-flat);
+  background-color: var(--telekom-color-background-surface);
 }
 
 ::slotted(scale-bottom-bar-item) {

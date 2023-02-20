@@ -12,7 +12,7 @@ const mobilePreviewDecorator = (story, context) => {
                     <div class="foobar" style="width: 375px; border-radius: ${canvasBorderRadius}; box-shadow: var(--telekom-shadow-floating-standard);">
                         
                         ${mobilePreview === 'top' || mobilePreview === 'full' ? `<div style="height: 77px; background-color: #FBFBFB; border-radius: ${canvasBorderRadius}; border-bottom: 1px solid #e7e7e9;"></div>` : ''}
-                        <div style="height:${canvasHeight}; background-color: #fff; position: relative;">
+                        <div style="height:${canvasHeight}; background-color: var(--telekom-color-background-canvas); position: relative;">
                             <story />
                         </div>
                         ${mobilePreview === 'bottom' || mobilePreview === 'full' ? `<div style="height: 77px; background-color: #FBFBFB; border-radius: ${canvasBorderRadius}; border-top: 1px solid #e7e7e9;"></div>` : ''}
