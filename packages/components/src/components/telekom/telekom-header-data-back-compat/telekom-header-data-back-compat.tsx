@@ -29,7 +29,7 @@ const readData = (data) => {
   tag: 'scale-telekom-header-data-back-compat',
   shadow: false,
 })
-export class TelekomHeader {
+export class TelekomHeaderDataBackCompat {
   @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
