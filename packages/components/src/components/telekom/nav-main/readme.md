@@ -17,6 +17,7 @@
 | `megaMenuVisible`   | `mega-menu-visible`    | (optional) if this mega-menu is visible | `boolean` | `false`                 |
 | `name`              | `name`                 | (optional) name value                   | `string`  | `undefined`             |
 | `popup`             | `popup`                |                                         | `boolean` | `undefined`             |
+| `target`            | `target`               | (optional) target value                 | `string`  | `'_self'`               |
 
 
 ## Dependencies
