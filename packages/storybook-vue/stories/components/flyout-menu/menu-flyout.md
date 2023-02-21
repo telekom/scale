@@ -28,27 +28,27 @@ Don't use a flyout menu for:
 
 ![Elements of Flyout Menu](assets/3_components/flyout-menu/Flyout_Menu_Elements.png)
 
-### Trigger (1)
+#### Trigger (1)
 
 The trigger is the button that displays the flyout.
 
-### Text only (2)
+#### Text only (2)
 
 Simple interactive text.
 
-### Icon right (3)
+#### Icon right (3)
 
 Interactive text with an icon on the right.
 
-### Cascade (4)
+#### Cascade (4)
 
 Text with an arrow on the right that shows another flyout when hovering.
 
-### Icon left (5)
+#### Icon left (5)
 
 Interactive text with an icon on the left.
 
-### Icon left and right (5)
+#### Icon left and right (5)
 
 Interactive text with one icon on the left and one on the right.
 

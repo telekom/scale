@@ -71,13 +71,13 @@ When disabled, the interactive function of the button is removed. Use this state
 
 ## Elements
 
-### Button label
+#### Button label
 
 The button label communicates a clear request. It explicitly describes the action a user takes when clicking. The button label contains at most three words. To provide a clear context, use a verb plus noun. To increase the motivation to subscribe or register, and similar cases, we add the word “now”. You can find more information in the guideline <a href="https://www.brand-design.telekom.com/en/articles/button-texts-and-text-links/" target="_blank">Button Texts and Text Links</a> in Brand & Design.
 
 ![Image Name](assets/3_components/button/Button_Label.png)
 
-### Icon
+#### Icon
 
 To learn more about the usage and construction of our interface icons, read our guideline <a href="https://www.brand-design.telekom.com/en/articles/i/icons-for-user-interfaces/" target="_blank">Icons for User Interfaces</a> in Brand & Design.
 
