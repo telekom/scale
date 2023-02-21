@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Configure CI Git User
         run: |
@@ -56,6 +59,9 @@ jobs:
     environment: RELEASE
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Authenticate with Registry
         run: |
@@ -127,6 +133,9 @@ jobs:
     environment: RELEASE
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Configure CI Git User
         run: |
