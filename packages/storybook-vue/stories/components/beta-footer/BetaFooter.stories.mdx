@@ -9,8 +9,8 @@ import TelekomFooter from './Footer.vue';
       control: { type: 'select' },
       options: ['minimal', 'standard'],
       defaultValue: 'standard',
-    }}
-  }   
+    },
+  }}
 />
 
 <div
@@ -68,7 +68,7 @@ export const Template = (args, { argTypes }) => ({
         </ul>
       </scale-telekom-footer-content>
     </scale-telekom-footer> 
-  `
+  `,
 });
 
 export const TemplateMinimal = (args, { argTypes }) => ({
@@ -117,7 +117,7 @@ export const TemplateMinimal = (args, { argTypes }) => ({
       </scale-telekom-footer-content>
     </scale-telekom-footer> 
     </div>
-  `
+  `,
 });
 
 export const ExtendedTemplate = (args, { argTypes }) => ({
@@ -219,20 +219,18 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
         </ul>
       </scale-telekom-footer-content>
     </scale-telekom-footer>
-  `
+  `,
 });
 
 ## Standard
 
 <Canvas withSource="none">
-  <Story name="Standard"  height={400}
-  >
+  <Story name="Standard" height={400}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Standard" />
-
 
 ```html
 <scale-telekom-footer>
@@ -265,10 +263,11 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 ## Minimal
 
 <Canvas withSource="none">
-  <Story name="Minimal" 
+  <Story
+    name="Minimal"
     args={{
       type: 'minimal',
-    }}   
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -280,12 +279,10 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 </scale-telekom-footer>
 ```
 
-
 ## Extended
 
 <Canvas withSource="none">
-  <Story name="Extended" height={600}
-  >
+  <Story name="Extended" height={600}>
     {ExtendedTemplate.bind({})}
   </Story>
 </Canvas>
@@ -316,4 +313,3 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
   </scale-telekom-footer-content>
 </scale-telekom-footer>
 ```
-
