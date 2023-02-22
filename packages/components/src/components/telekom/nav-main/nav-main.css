@@ -22,8 +22,8 @@ scale-nav-main {
 
 .main-navigation__item {
   height: 100%;
-  padding-left: var(--spacing-x);
-  padding-right: var(--spacing-x);
+  margin-left: var(--spacing-x);
+  margin-right: var(--spacing-x);
 }
 .main-navigation__item:has(a[href]) {
   cursor: pointer;
