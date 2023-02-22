@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Footer</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 Der Footer schließt alle Telekom Webseiten ab. Nutzer\*innen finden im Footer wichtige Informationen, globale Links und Zusatzfunktionen.
