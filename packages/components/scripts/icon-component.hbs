@@ -30,6 +30,8 @@ export class {{className}} {
   @Prop() decorative?: boolean = false;
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle?: string;
+  /** (optional) If `true` the icon can receive focus */
+  @Prop() focusable?: boolean = false;
 
   connectedCallback() {
     if (!this.hostElement.hasAttribute('styles')) {
@@ -42,7 +44,7 @@ export class {{className}} {
 
     return (
       <Host>
-        <svg class="scale-icon" xmlns="http://www.w3.org/2000/svg" width={this.size} height={this.size} viewBox="{{viewBox}}" {...ariaHidden}>
+        <svg class="scale-icon" xmlns="http://www.w3.org/2000/svg" width={this.size} height={this.size} viewBox="{{viewBox}}" {...ariaHidden} {...(this.focusable ? { tabindex: 0 } : {})}>
           {this.accessibilityTitle && <title>{this.accessibilityTitle}</title>}
           <g fill={((this.fill === 'currentColor') ? this.color : this.fill)}>
             {this.selected ? (<g>{{{markup.selected}}}</g>) : (<g>{{{markup.default}}}</g>)}
