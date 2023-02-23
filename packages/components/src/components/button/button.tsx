@@ -175,7 +175,7 @@ export class Button {
    */
   setChildrenIconSize() {
     if (this.size != null && buttonIconSizeMap[this.size] != null) {
-      const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
+      const icons: ScaleIcon[] = Array.from(this.hostElement.childNodes).filter(
         isScaleIcon
       );
       icons.forEach((icon) => {
