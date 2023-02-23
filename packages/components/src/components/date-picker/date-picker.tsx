@@ -73,7 +73,7 @@ export class DatePicker {
   /**
    * Defines a specific role attribute for the date picker input.
    */
-  @Prop() role: string;
+  @Prop() innerRole: string;
 
   /**
    * Forces the opening direction of the calendar modal to be always left or right.
@@ -440,7 +440,7 @@ export class DatePicker {
             }}
             name={this.name}
             identifier={this.identifier}
-            role={this.role}
+            role={this.innerRole}
             direction={this.direction}
             required={this.required}
             min={this.min}
