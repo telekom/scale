@@ -298,7 +298,8 @@ export class Dropdown {
       this.helperText && 'dropdown--helper-text',
       this.variant &&
         `dropdown--variant-${this.invalid ? 'danger' : this.variant}`,
-      this.value != null && this.value !== '' && 'animated'
+      this.value != null && this.value !== '' && 'animated',
+      !this.label && 'dropdown--no-label'
     );
   }
 }

@@ -246,9 +246,9 @@ export class TextField {
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
           {/* Accessibility: label should be always *before* the actual input */}
-          <label class="text-field__label" htmlFor={this.inputId}>
-            {this.label}
-          </label>
+          {this.label ? <label class="text-field__label" htmlFor={this.inputId}>
+            {this.label} 
+          </label> : null}
           <input
             type={this.type}
             inputMode={this.inputModeType}
@@ -321,6 +321,7 @@ export class TextField {
       this.variant && `text-field--variant-${this.variant}`,
       this.helperText && `text-field--helper-text`,
       this.readonly && `text-field--readonly`,
+      !this.label && `text-field--no-label`,
       animated && 'animated'
     );
   }

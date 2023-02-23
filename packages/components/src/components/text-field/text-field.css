@@ -111,6 +111,12 @@ scale-text-field {
   background-color: var(--background-control);
   color: var(--color-meta);
 }
+
+.text-field--no-label .text-field__control {
+  padding: 5px var(--telekom-spacing-unit-x10) 5px
+    calc(var(--spacing-x) - 1px);
+}
+
 .text-field.text-field--helper-text .text-field__control {
   margin-bottom: var(--margin-bottom-control);
 }
