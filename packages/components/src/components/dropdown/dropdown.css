@@ -90,8 +90,7 @@ scale-dropdown {
 }
 
 .dropdown--no-label .input__dropdown {
-  padding: 5px var(--telekom-spacing-unit-x10) 5px
-  calc(var(--spacing-x) - 1px);
+  padding: 5px var(--telekom-spacing-unit-x10) 5px calc(var(--spacing-x) - 1px);
 }
 
 @-moz-document url-prefix() {

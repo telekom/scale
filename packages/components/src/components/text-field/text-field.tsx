@@ -246,9 +246,11 @@ export class TextField {
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
           {/* Accessibility: label should be always *before* the actual input */}
-          {this.label ? <label class="text-field__label" htmlFor={this.inputId}>
-            {this.label} 
-          </label> : null}
+          {this.label ? (
+            <label class="text-field__label" htmlFor={this.inputId}>
+              {this.label}
+            </label>
+          ) : null}
           <input
             type={this.type}
             inputMode={this.inputModeType}
