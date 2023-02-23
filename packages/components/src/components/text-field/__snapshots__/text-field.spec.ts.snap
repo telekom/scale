@@ -1,10 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextField should match snapshot 1`] = `
-<scale-text-field>
+<scale-text-field label="test">
   <div class="text-field text-field--type-text text-field--variant-informational">
-    <label class="text-field__label" htmlfor="input-text-field-0"></label>
+    <label class="text-field__label" htmlfor="input-text-field-0">
+      test
+    </label>
     <input class="text-field__control" id="input-text-field-0" inputmode="text" type="text" value="">
   </div>
 </scale-text-field>
 `;
+
