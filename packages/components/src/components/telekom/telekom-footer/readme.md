@@ -19,6 +19,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [scale-telekom-footer-data-back-compat](../telekom-footer-data-back-compat)
+
 ### Depends on
 
 - [scale-logo](../logo)
@@ -28,6 +32,7 @@
 graph TD;
   scale-telekom-footer-content --> scale-logo
   scale-logo --> scale-logo-svg
+  scale-telekom-footer-data-back-compat --> scale-telekom-footer-content
   style scale-telekom-footer-content fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
