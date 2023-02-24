@@ -58,6 +58,7 @@ export class TelekomHeaderDataBackCompat {
                 <scale-telekom-nav-item>
                   <a
                     href={item.href || 'javascript:void(0);'}
+                    target={item.target || '_self'}
                     onClick={(event) => {
                       if (typeof item.onClick === 'function') {
                         item.onClick(event);
@@ -83,6 +84,7 @@ export class TelekomHeaderDataBackCompat {
                 <scale-telekom-nav-item>
                   <a
                     href={item.href || 'javascript:void(0);'}
+                    target={item.target || '_self'}
                     onClick={(event) => {
                       if (typeof item.onClick === 'function') {
                         item.onClick(event);
@@ -113,6 +115,7 @@ export class TelekomHeaderDataBackCompat {
                 <scale-telekom-nav-item active={isActive(item.id)}>
                   <a
                     href={item.href || 'javascript:void(0);'}
+                    target={item.target || '_self'}
                     onClick={(event) => {
                       if (typeof item.onClick === 'function') {
                         item.onClick(event);
@@ -129,6 +132,7 @@ export class TelekomHeaderDataBackCompat {
                             <scale-telekom-mega-menu-column>
                               <a
                                 href={child.href || 'javascript:void(0);'}
+                                target={child.target || '_self'}
                                 onClick={(event) => {
                                   if (typeof child.onClick === 'function') {
                                     child.onClick(event);
@@ -148,6 +152,7 @@ export class TelekomHeaderDataBackCompat {
                                             grandChild.href ||
                                             'javascript:void(0);'
                                           }
+                                          target={grandChild.target || '_self'}
                                           onClick={(event) => {
                                             if (
                                               typeof grandChild.onClick ===
@@ -189,6 +194,7 @@ export class TelekomHeaderDataBackCompat {
                   <scale-telekom-nav-item>
                     <a
                       href={item.href || 'javascript:void(0);'}
+                      target={item.target || '_self'}
                       onClick={(event) => {
                         if (typeof item.onClick === 'function') {
                           item.onClick(event);
@@ -260,6 +266,7 @@ export class TelekomHeaderDataBackCompat {
                           >
                             <a
                               href={item.href || 'javascript:void(0);'}
+                              target={item.target || '_self'}
                               onClick={(event) => {
                                 if (typeof item.onClick === 'function') {
                                   item.onClick(event);
@@ -281,6 +288,7 @@ export class TelekomHeaderDataBackCompat {
                                         href={
                                           child.href || 'javascript:void(0);'
                                         }
+                                        target={child.target || '_self'}
                                         onClick={(event) => {
                                           if (
                                             typeof child.onClick === 'function'
@@ -302,6 +310,9 @@ export class TelekomHeaderDataBackCompat {
                                                 href={
                                                   grandChild.href ||
                                                   'javascript:void(0);'
+                                                }
+                                                target={
+                                                  grandChild.target || '_self'
                                                 }
                                                 onClick={(event) => {
                                                   if (
@@ -336,6 +347,7 @@ export class TelekomHeaderDataBackCompat {
                           <scale-telekom-nav-item>
                             <a
                               href={item.href || 'javascript:void(0);'}
+                              target={item.target || '_self'}
                               onClick={(event) => {
                                 if (typeof item.onClick === 'function') {
                                   item.onClick(event);
@@ -360,6 +372,7 @@ export class TelekomHeaderDataBackCompat {
                           <scale-telekom-nav-item>
                             <a
                               href={item.href || 'javascript:void(0);'}
+                              target={item.target || '_self'}
                               onClick={(event) => {
                                 if (typeof item.onClick === 'function') {
                                   item.onClick(event);
