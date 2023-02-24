@@ -242,7 +242,6 @@ export class TextField {
       'datetime-local',
     ];
 
-    console.log('HIDE LABEL ? ', this.hideLabelVisually, this.label);
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
