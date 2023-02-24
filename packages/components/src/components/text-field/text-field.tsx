@@ -107,7 +107,8 @@ export class TextField {
   @Prop() inputAutocomplete?: string;
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailedId?: string;
-
+  /** (optional) to avoid displaying the label */
+  @Prop() hideLabelVisually?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional)) Makes type `input` behave as a controlled component in React */
@@ -241,16 +242,15 @@ export class TextField {
       'datetime-local',
     ];
 
+    console.log('HIDE LABEL ? ', this.hideLabelVisually, this.label);
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
-          {/* Accessibility: label should be always *before* the actual input */}
-          {this.label ? (
-            <label class="text-field__label" htmlFor={this.inputId}>
-              {this.label}
-            </label>
-          ) : null}
+          {/* Accessibility: label should be always *before* the actual input */}          
+          <label class="text-field__label" htmlFor={this.inputId}>
+            {this.label}
+          </label>
           <input
             type={this.type}
             inputMode={this.inputModeType}
@@ -323,7 +323,7 @@ export class TextField {
       this.variant && `text-field--variant-${this.variant}`,
       this.helperText && `text-field--helper-text`,
       this.readonly && `text-field--readonly`,
-      !this.label && `text-field--no-label`,
+      this.hideLabelVisually && `text-field--hide-label`,
       animated && 'animated'
     );
   }
