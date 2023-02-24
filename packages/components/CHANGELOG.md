@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.126](https://github.com/telekom/scale/compare/v3.0.0-beta.125...v3.0.0-beta.126) (2023-02-24)
+
+
+### Bug Fixes
+
+* **tab-header:** unsafe querySelector ([#1608](https://github.com/telekom/scale/issues/1608)) ([82d0f14](https://github.com/telekom/scale/commit/82d0f149fd34a8671b52287a7d3cff2ee368cb21))
+* add focusable attribute to scale-icons ([#1610](https://github.com/telekom/scale/issues/1610)) ([4e2e19e](https://github.com/telekom/scale/commit/4e2e19ec4ab1714315b3bb850dbbb25a6d24ade5))
+* rename role to innerRole, match native type definition ([#1616](https://github.com/telekom/scale/issues/1616)) ([ceac390](https://github.com/telekom/scale/commit/ceac390197bb1ad7bc89c0e3aa30e1cb02f838f3))
+* **app-navigation-main-mobile:** second level if no children ([#1612](https://github.com/telekom/scale/issues/1612)) ([88e0cd2](https://github.com/telekom/scale/commit/88e0cd215577234bb143505b5583f88e45f93e59))
+
+
+### Features
+
+* **back-compat:** header and footer backward compatibility components ([#1535](https://github.com/telekom/scale/issues/1535)) ([2ae1afd](https://github.com/telekom/scale/commit/2ae1afd8db2f8a6cc537ac5a43eaf4d3d8413d29))
+
+
+
+
+
 # [3.0.0-beta.125](https://github.com/telekom/scale/compare/v3.0.0-beta.124...v3.0.0-beta.125) (2023-02-20)
 
 
