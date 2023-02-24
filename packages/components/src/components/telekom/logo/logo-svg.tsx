@@ -39,7 +39,7 @@ export class LogoSvg {
     | string = 'en';
   /** (optional) Sets the icon color via the `fill` attribute */
   @Prop() color?: string = 'magenta';
-  @Prop() role?: 'link' | 'img' = 'img';
+  @Prop() innerRole?: 'link' | 'img' = 'img';
   @Prop() focusable: boolean = true;
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle?: string;
@@ -76,7 +76,7 @@ export class LogoSvg {
         <title id={`logo-title-${i}`}>{this.logoTitle}</title>
       ) : (
         <title id={`logo-title-${i}`}>{`${title} ${
-          this.role === 'link' ? linkAddition : ''
+          this.innerRole === 'link' ? linkAddition : ''
         }`}</title>
       );
     }
@@ -91,7 +91,7 @@ export class LogoSvg {
             viewBox="0 0 33 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle('Telekom Logo', '- Go to Start Page')}
@@ -105,7 +105,7 @@ export class LogoSvg {
             viewBox="0 0 153 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(
@@ -123,7 +123,7 @@ export class LogoSvg {
             viewBox="0 0 142 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(
@@ -141,7 +141,7 @@ export class LogoSvg {
             viewBox="0 0 107 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(
@@ -159,7 +159,7 @@ export class LogoSvg {
             viewBox="0 0 103 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(
@@ -177,7 +177,7 @@ export class LogoSvg {
             viewBox="0 0 114 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(
@@ -195,7 +195,7 @@ export class LogoSvg {
             viewBox="0 0 126 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(
@@ -221,7 +221,7 @@ export class LogoSvg {
             viewBox="0 0 144 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(
@@ -239,7 +239,7 @@ export class LogoSvg {
             viewBox="0 0 33 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(
@@ -256,7 +256,7 @@ export class LogoSvg {
             viewBox="0 0 142 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(
@@ -274,7 +274,7 @@ export class LogoSvg {
             viewBox="0 0 109 38"
             part="logo-svg"
             fill={this.getColor()}
-            role={this.role === 'link' ? null : 'img'}
+            role={this.innerRole === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
           >
             {this.getTitle(

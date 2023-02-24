@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.126](https://github.com/telekom/scale/compare/v3.0.0-beta.125...v3.0.0-beta.126) (2023-02-24)
+
+
+### Features
+
+* **back-compat:** header and footer backward compatibility components ([#1535](https://github.com/telekom/scale/issues/1535)) ([2ae1afd](https://github.com/telekom/scale/commit/2ae1afd8db2f8a6cc537ac5a43eaf4d3d8413d29))
+
+
+
+
+
 # [3.0.0-beta.125](https://github.com/telekom/scale/compare/v3.0.0-beta.124...v3.0.0-beta.125) (2023-02-20)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue

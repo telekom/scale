@@ -276,7 +276,7 @@ scale-app-header {
   }
 
   .header scale-nav-main:first-child li {
-    padding-left: 0;
+    margin-left: 0;
   }
   .header *[slot='menu-main'],
   .header .main-navigation {
