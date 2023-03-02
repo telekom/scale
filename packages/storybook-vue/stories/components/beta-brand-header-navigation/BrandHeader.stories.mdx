@@ -178,6 +178,33 @@ scale-telekom-nav-list {
 </scale-telekom-header>
 ```
 
+## Flyout Navigation 2
+
+<Canvas withSource="none">
+  <Story
+    name="Flyout Navigation 2"
+    args={{ storyName: 'StoryFlyoutNav2', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header>
+  <scale-telekom-nav-list slot="main-nav">
+    <scale-telekom-nav-item>
+      <button>Topic One</button>
+      <scale-telekom-nav-flyout hover>
+        <div>Flyout content</div>
+      </scale-telekom-nav-flyout>
+    </scale-telekom-nav-item>
+    <!-- … -->
+  </scale-telekom-nav-list>
+</scale-telekom-header>
+```
+
 ### Scoped CSS variables
 
 ```css

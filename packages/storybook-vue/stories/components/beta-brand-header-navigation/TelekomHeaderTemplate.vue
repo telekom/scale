@@ -10,11 +10,14 @@
 <script>
 import StoryStandard from './StoryStandard.vue';
 import StoryFlyoutNav from './StoryFlyoutNav.vue';
+import StoryFlyoutNav2 from './StoryFlyoutNav2.vue';
+
 
 export default {
   components: {
     StoryStandard,
     StoryFlyoutNav,
+    StoryFlyoutNav2
   },
   props: {
     appName: String,
