@@ -52,6 +52,7 @@ export class Logo {
   /** (optional) Hide all logo related titles */
   @Prop() logoHideTitle?: boolean;
   @Prop() logoAriaDescribedBy?: string;
+  @Prop() logoAriaHide?: boolean = false;
 
   componentDidRender() {
     if (this.accessibilityTitle) {
@@ -83,6 +84,8 @@ export class Logo {
           }}
           title={this.logoHideTitle ? '' : this.logoTitle}
           aria-describedby={this.logoAriaDescribedBy}
+          aria-hidden={this.logoAriaHide}
+          tabindex={this.logoAriaHide ? -1 : 0}
         >
           <scale-logo-svg
             part="icon"
