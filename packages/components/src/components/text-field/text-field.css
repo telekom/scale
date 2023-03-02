@@ -85,6 +85,7 @@ scale-text-field {
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+  --margin-top-label-focus: -0.5px;
 }
 
 .text-field {
@@ -201,7 +202,7 @@ scale-text-field {
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
   line-height: var(--font-size-label-focus);
-  margin-top: -0.5px;
+  margin-top: var(--margin-top-label-focus);
   transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
