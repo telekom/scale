@@ -3,7 +3,7 @@
         <scale-telekom-nav-list slot="main-nav">
         <scale-menu-flyout>
             <scale-telekom-nav-item slot="trigger" class="foobar" >
-              <a href="#">Topic One</a>
+              <a href="javascript:void(0);">Topic One</a>
             </scale-telekom-nav-item>
             <scale-menu-flyout-list>
               <scale-menu-flyout-item>Item Title</scale-menu-flyout-item>
@@ -47,7 +47,7 @@
 
         <scale-menu-flyout>
           <scale-telekom-nav-item slot="trigger" class="foobar" >
-            <a href="#">Topic Two</a>
+            <a href="javascript:void(0);">Topic Two</a>
           </scale-telekom-nav-item>   
           <scale-menu-flyout-list>
             <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
