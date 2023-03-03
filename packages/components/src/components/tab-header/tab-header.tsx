@@ -32,9 +32,11 @@ export class TabHeader {
   @Prop() disabled?: boolean = false;
   /** True for smaller height and font size */
   /** @deprecated - size should replace small */
-  @Prop() small?: boolean = false;
+  @Prop() small?: boolean = false;  
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'small';
+  /** (optional) autoFocus  */
+  @Prop() autoFocus?: boolean;  
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
@@ -50,10 +52,7 @@ export class TabHeader {
       if (newValue === true) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        const firstRender = this.hostElement.getAttribute('first-render');
-        if (!firstRender) {
-          this.hostElement.focus();
-        }
+        this.autoFocus && this.hostElement.focus();
       }
       this.updateSlottedIcon();
     }
@@ -101,6 +100,7 @@ export class TabHeader {
   }
 
   render() {
+    console.log('got autofocus', this.autoFocus)
     return (
       <Host
         id={`scale-tab-header-${this.generatedId}`}
