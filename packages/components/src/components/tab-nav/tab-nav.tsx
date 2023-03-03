@@ -36,7 +36,7 @@ export class TabNav {
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'small';
   /** (optional) autoFocus  */
-  @Prop() autoFocus: boolean = false;  
+  @Prop() autoFocus: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -148,7 +148,7 @@ export class TabNav {
 
   getNextTab() {
     const tabs = this.getAllEnabledTabs();
-    const index = tabs.findIndex((tab) => tab.selected) + 1;  
+    const index = tabs.findIndex((tab) => tab.selected) + 1;
     return tabs[index % tabs.length];
   }
 
@@ -165,7 +165,6 @@ export class TabNav {
   linkPanels() {
     const tabs = this.getAllEnabledTabs();
     const selectedTab = tabs.find((x) => x.selected) || tabs[0];
-
 
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;

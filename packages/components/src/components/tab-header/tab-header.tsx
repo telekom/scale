@@ -32,11 +32,11 @@ export class TabHeader {
   @Prop() disabled?: boolean = false;
   /** True for smaller height and font size */
   /** @deprecated - size should replace small */
-  @Prop() small?: boolean = false;  
+  @Prop() small?: boolean = false;
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'small';
   /** (optional) autoFocus  */
-  @Prop() autoFocus?: boolean;  
+  @Prop() autoFocus?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
