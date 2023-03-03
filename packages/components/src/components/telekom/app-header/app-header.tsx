@@ -497,7 +497,6 @@ export class Header {
                       size={24}
                       logoAriaDescribedBy={this.logoAriaDescribedBy}
                       logoAriaHide={!this.scrolled}
-
                     ></scale-logo>
                   )}
                 </div>
