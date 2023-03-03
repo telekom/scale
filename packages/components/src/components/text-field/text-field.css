@@ -72,7 +72,8 @@ scale-text-field {
     --telekom-color-text-and-icon-functional-warning
   );
   --color-helper-text-neutral: var(--telekom-color-text-and-icon-additional);
-  
+  --icon-size-helper-text: 11px;
+
   /* placeholder */
   --transition-placeholder: var(--transition);
   --color-placeholder: var(--telekom-color-text-and-icon-additional);

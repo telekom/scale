@@ -9,6 +9,7 @@
   --font-size: 0.75rem;
   --font-weight: 700;
   --line-height: 1.35;
+  --icon-size-helper-text: 11px;
 }
 
 .helper-text {
@@ -33,6 +34,11 @@ scale-icon-alert-success {
   align-items: center;
   margin-right: var(--telekom-spacing-unit-x1);
   margin-top: 0.1666em; /* magic */
+}
+
+.scale-icon {
+  height: var(--icon-size-helper-text);
+  width: var(--icon-size-helper-text);
 }
 
 .helper-text--informational {
