@@ -208,7 +208,6 @@ export class TabNav {
   }
 
   render() {
-    console.log('PARENT autofocus', this.autoFocus)
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}

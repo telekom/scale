@@ -52,7 +52,9 @@ export class TabHeader {
       if (newValue === true) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        this.autoFocus && this.hostElement.focus();
+        if (this.autoFocus) {
+          this.hostElement.focus();
+        }
       }
       this.updateSlottedIcon();
     }
@@ -100,7 +102,6 @@ export class TabHeader {
   }
 
   render() {
-    console.log('got autofocus', this.autoFocus)
     return (
       <Host
         id={`scale-tab-header-${this.generatedId}`}
