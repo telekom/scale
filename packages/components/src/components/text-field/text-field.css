@@ -58,7 +58,9 @@ scale-text-field {
   --color-counter-error: var(--color-meta-error);
 
   /* helper-text */
-  --font-size-helper-text: var(--font-size-meta);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --line-height-helper-text: 1.35;
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
   --color-helper-text: var(
     --telekom-color-text-and-icon-functional-informational
   );
@@ -70,7 +72,7 @@ scale-text-field {
     --telekom-color-text-and-icon-functional-warning
   );
   --color-helper-text-neutral: var(--telekom-color-text-and-icon-additional);
-
+  
   /* placeholder */
   --transition-placeholder: var(--transition);
   --color-placeholder: var(--telekom-color-text-and-icon-additional);
@@ -129,7 +131,9 @@ scale-text-field {
   --color-danger: var(--color-helper-text-error);
   --color-success: var(--color-helper-text-success);
   --color-neutral: var(--color-helper-text-neutral);
-  --font: var(--font-size-helper-text);
+  --font-size: var(--font-size-helper-text);
+  --font-weight: var(--font-weight-helper-text);
+  --line-height: var(--line-height-helper-text);
   font-weight: var(--telekom-typography-font-weight-bold);
   display: flex;
   margin: var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1) 0;

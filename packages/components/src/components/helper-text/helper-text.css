@@ -1,5 +1,4 @@
 :host {
-  --font: var(--telekom-text-style-small-bold);
   --color-informational: var(
     --telekom-color-text-and-icon-functional-informational
   );
@@ -7,6 +6,9 @@
   --color-danger: var(--telekom-color-text-and-icon-functional-danger);
   --color-success: var(--telekom-color-text-and-icon-functional-success);
   --color-neutral: var(--telekom-color-text-and-icon-additional);
+  --font-size: 0.75rem;
+  --font-weight: 700;
+  --line-height: 1.35;
 }
 
 .helper-text {
@@ -14,7 +16,9 @@
   align-items: flex-start;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  font: var(--telekom-text-style-small-bold);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
 }
 
 [part='text'] {
