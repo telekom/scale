@@ -20,13 +20,13 @@ Die Basiseinheit des Gestaltungsrasters ist 8 x 8 Pixel groß. Mehrere Basiseinh
 
 ## Breakpoints
 
-| Breakpoint | Bereich         | Anzahl der Spalten | Randabstand in px | Spaltenabstand in px |
-| ---------- | --------------- | ------------------ | ----------------- | -------------------- |
-| Small      | 320px - 639px   | 4                  | 16                | 32                   |
-| Medium     | 640px - 1039px  | 8                  | 16                | 32                   |
-| Large      | 1040px - 1295px | 16                 | 24                | 32                   |
-| X-Large    | 1296px - 1551px | 16                 | 24                | 32                   |
-| XX-Large   | 1552px -        | 16                 | 24                | 32                   |
+| Breakpoint | Range(px)       | Margin(px) | Column Number | Column(px) | Gutter(px) |
+| ---------- | --------------- | ---------- | ------------- | ---------- | ---------- |
+| Small      | 320px - 639px   | 16         | 4             | Dynamic    | 32         |
+| Medium     | 640px - 1039px  | 16         | 8             | Dynamic    | 32         |
+| Large      | 1040px - 1295px | 24         | 16            | Dynamic    | 32         |
+| X-Large    | 1296px - 1679px | 24         | 16            | Dynamic    | 32         |
+| XX-Large   | 1680 & above    | Dynamic    | 16            | 64         | 32         |
 
 ### Small
 
