@@ -31,10 +31,6 @@ Die Standard-Icons gibt es in den Größen L (48 px), M (24 px) und S (16 px).
 
 Statische Icons
 
-![Image Name](assets/3_components/icon/icon_sizes_interactive.png)
-
-Interaktive Icons
-
 ## Barrierefreiheit
 
 ### Besonderheit im Code

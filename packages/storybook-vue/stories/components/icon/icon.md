@@ -33,10 +33,6 @@ Our standard icons sizes are large (48 px), medium (24 px), and small (16 px).
 
 Static icon
 
-![Image Name](assets/3_components/icon/icon_sizes_interactive.png)
-
-Interactive icon
-
 ## Accessibility
 
 ### Special feature in the code
