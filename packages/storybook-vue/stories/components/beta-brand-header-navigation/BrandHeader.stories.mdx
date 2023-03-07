@@ -270,3 +270,49 @@ scale-telekom-nav-flyout {
   header.addonNavigation = [...[]];
 </script>
 ```
+
+## Slim Type
+
+<Canvas withSource="none">
+  <Story
+    name="Slim Type"
+    args={{ storyName: 'StorySlim', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header
+  app-name="Application Name"
+  app-name-link="https://example.com"
+>
+  <!-- … -->
+</scale-telekom-header>
+```
+
+
+## Subtle Type
+
+<Canvas withSource="none">
+  <Story
+    name="Subtle Type"
+    args={{ storyName: 'StorySubtle', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header
+  app-name="Application Name"
+  app-name-link="https://example.com"
+>
+  <!-- … -->
+</scale-telekom-header>
+```
+

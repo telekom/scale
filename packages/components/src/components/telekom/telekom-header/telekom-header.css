@@ -131,6 +131,41 @@
   }
 }
 
+:host([type='subtle']) {
+  --shadow: none;
+}
+
+:host([type='slim']) {
+  --_height: 96px;
+  --_height-logo-svg: 48px;
+  --_height-top-bar: 0;
+  --_height-bottom-bar: 96px;
+
+  --_display-meta-nav: none;
+  --_display-meta-nav-external: none;
+  --_display-lang-switcher: none;
+  --_display-top-app-name: none;
+  --_display-bottom-app-name: block;
+
+  --scl-telekom-header-height: var(--_height);
+  --scl-telekom-header-bottom-spacing: 36px;
+}
+
+:host([type='slim'][scrolled]) {
+  --_height: 72px;
+  --_height-logo-svg: 40px;
+  --_height-top-bar: 0;
+  --_height-bottom-bar: 72px;
+
+  --_display-meta-nav: none;
+  --_display-meta-nav-external: none;
+  --_display-lang-switcher: none;
+  --_display-top-app-name: none;
+  --_display-bottom-app-name: block;
+
+  --scl-telekom-header-height: var(--_height);
+}
+
 /* TODO not sure if we're actually gonna need this */
 /* ::slotted(*) {
   height: 100%;
