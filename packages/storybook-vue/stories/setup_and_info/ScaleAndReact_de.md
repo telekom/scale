@@ -88,6 +88,8 @@ const App = () => {
 export default App;
 ```
 
+Bitte beachten Sie, dass es wichtig ist, das Wort "on" vor dem Ereignisnamen zu verwenden, wenn Sie benutzerdefinierte Ereignisse von einer Skala in einem Wrapper verwenden. "scaleChange" sollte zum Beispiel als "onScaleChange" geschrieben werden.
+
 ## Events in React
 
 Um Konflikte mit Standard-Events zu vermeiden und für bessere Kompatibilität mit anderen Libraries und Frameworks, sind Custom Events mit dem Prefix `scale` gekennzeichnet. Event-Namen werden in camelCase-Syntax geschrieben (z.B. `scaleChange`) Die Dokumentation zu Custom Events findest du auf den entsprechenden Komponentenseiten im Abschnitt "Docs".
