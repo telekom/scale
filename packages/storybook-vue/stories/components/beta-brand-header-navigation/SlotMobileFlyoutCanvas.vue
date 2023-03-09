@@ -243,9 +243,6 @@
       <scale-telekom-mobile-menu-item>
         <a href="#">Topic Four</a>
       </scale-telekom-mobile-menu-item>
-      <scale-telekom-mobile-menu-item>
-        <a href="#">Topic Five</a>
-      </scale-telekom-mobile-menu-item>
     </scale-telekom-mobile-menu>
 
     <!-- meta-nav-external -->
