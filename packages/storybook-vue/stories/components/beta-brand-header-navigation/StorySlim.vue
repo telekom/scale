@@ -4,7 +4,7 @@
     <SlotMetaNav />
     <SlotLangSwitcher />
     <SlotMainNavWithFlyout />
-    <SlotFunctions :app-name="appName" :app-name-link="appNameLink" />
+    <SlotFunctionsSlim :app-name="appName" :app-name-link="appNameLink" />
   </scale-telekom-header>
 </template>
 
@@ -13,7 +13,7 @@ import SlotMetaNavExternal from './SlotMetaNavExternal.vue';
 import SlotMetaNav from './SlotMetaNav.vue';
 import SlotMainNavWithFlyout from './SlotMainNavWithFlyout.vue';
 import SlotLangSwitcher from './SlotLangSwitcher.vue';
-import SlotFunctions from './SlotFunctions.vue';
+import SlotFunctionsSlim from './SlotFunctionsSlim.vue';
 
 export default {
   components: {
@@ -21,7 +21,7 @@ export default {
     SlotMetaNav,
     SlotMainNavWithFlyout,
     SlotLangSwitcher,
-    SlotFunctions,
+    SlotFunctionsSlim,
   },
   props: {
     appName: String,
