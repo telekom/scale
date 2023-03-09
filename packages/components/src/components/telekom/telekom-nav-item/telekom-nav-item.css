@@ -26,12 +26,6 @@
   .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
   }
-  [type='slim'] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x9);
-  }
-  [type='slim'][scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
-  }
 }
 @media screen and (--lg) {
   .scale-telekom-nav-item {
@@ -41,10 +35,7 @@
   [scrolled] .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
   }
-
-  [type='slim'] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x9);
-  }
+  [type='slim'] .scale-telekom-nav-item,
   [type='slim'][scrolled] .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
   }
@@ -55,10 +46,9 @@
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
   }
   [type='slim'] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x9);
-  }
-  [type='slim'][scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+    --_spacing-bottom-slotted-bottom: calc(
+      var(--telekom-spacing-unit-x8) - 2px
+    );
   }
 }
 @media screen and (--2xl) {
@@ -66,6 +56,13 @@
     --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x8);
     --_font-size-main-nav: var(--telekom-typography-font-size-callout);
+  }
+  [type='slim'] .scale-telekom-nav-item,
+  [type='slim'][scrolled-back] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x9));
+  }
+  [type='slim'][scrolled] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x5));
   }
 }
 
