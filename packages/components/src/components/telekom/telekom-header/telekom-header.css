@@ -173,7 +173,6 @@
 
     --scl-telekom-header-height: var(--_height);
     --scl-telekom-header-bottom-spacing: 36px;
-
   }
 
   :host([type='slim'][scrolled]) {
