@@ -133,6 +133,7 @@
 
 :host([type='subtle']) {
   --shadow: none;
+  --background: transparent;
 }
 
 :host([type='slim']) {
