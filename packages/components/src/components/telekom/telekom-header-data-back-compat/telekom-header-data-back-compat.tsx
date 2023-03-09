@@ -47,13 +47,13 @@ export class TelekomHeaderDataBackCompat {
         app-name-link={this.appNameLink}
         app-name-click={this.appNameClick}
       >
-        {!readData(this.addonNavigation) ? null : (
+        {!readData(this.sectorNavigation) ? null : (
           <scale-telekom-nav-list
             slot="meta-nav-external"
             variant="meta-nav-external"
             alignment="left"
           >
-            {readData(this.addonNavigation).map((item) => {
+            {readData(this.sectorNavigation).map((item) => {
               return (
                 <scale-telekom-nav-item>
                   <a
@@ -73,13 +73,13 @@ export class TelekomHeaderDataBackCompat {
           </scale-telekom-nav-list>
         )}
 
-        {!readData(this.sectorNavigation) ? null : (
+        {!readData(this.addonNavigation) ? null : (
           <scale-telekom-nav-list
             slot="meta-nav"
             variant="meta-nav"
             alignment="right"
           >
-            {readData(this.sectorNavigation).map((item) => {
+            {readData(this.addonNavigation).map((item) => {
               return (
                 <scale-telekom-nav-item>
                   <a
@@ -336,13 +336,13 @@ export class TelekomHeaderDataBackCompat {
                     </scale-telekom-mobile-menu>
                   )}
 
-                  {!readData(this.addonNavigation) ? null : (
+                  {!readData(this.sectorNavigation) ? null : (
                     <scale-telekom-nav-list
                       variant="meta-nav"
                       slot="mobile-meta-nav-external"
                       alignment="left"
                     >
-                      {readData(this.addonNavigation).map((item) => {
+                      {readData(this.sectorNavigation).map((item) => {
                         return (
                           <scale-telekom-nav-item>
                             <a
@@ -361,13 +361,13 @@ export class TelekomHeaderDataBackCompat {
                       })}
                     </scale-telekom-nav-list>
                   )}
-                  {!readData(this.sectorNavigation) ? null : (
+                  {!readData(this.addonNavigation) ? null : (
                     <scale-telekom-nav-list
                       variant="meta-nav"
                       slot="mobile-meta-nav"
                       alignment="left"
                     >
-                      {readData(this.sectorNavigation).map((item) => {
+                      {readData(this.addonNavigation).map((item) => {
                         return (
                           <scale-telekom-nav-item>
                             <a
