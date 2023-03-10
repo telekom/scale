@@ -60,7 +60,7 @@
 @media screen and (--md) {
   :host {
     --_display-bottom-app-name: block;
-    --_spacing-left-body: 92px;
+    --_spacing-left-body: 74px;
   }
 }
 
