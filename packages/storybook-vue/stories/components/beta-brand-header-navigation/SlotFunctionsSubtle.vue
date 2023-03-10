@@ -7,17 +7,17 @@
         </scale-badge>
       </button>
       <scale-telekom-nav-flyout class="mobile-nav-flyout">
-        <SlotMobileFlyoutCanvas :app-name="appName" :app-name-link="appNameLink" />
+        <SlotMobileFlyoutCanvasSubtle :app-name="appName" :app-name-link="appNameLink" />
       </scale-telekom-nav-flyout>
     </scale-telekom-nav-item>
   </scale-telekom-nav-list>
 </template>
 
 <script>
-import SlotMobileFlyoutCanvas from './SlotMobileFlyoutCanvas.vue';
+import SlotMobileFlyoutCanvasSubtle from './SlotMobileFlyoutCanvasSubtle.vue';
 
 export default {
-  components: { SlotMobileFlyoutCanvas },
+  components: { SlotMobileFlyoutCanvasSubtle },
   props: {
     appName: String,
     appNameLink: String,
