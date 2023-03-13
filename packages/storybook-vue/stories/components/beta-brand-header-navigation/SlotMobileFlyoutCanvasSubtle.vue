@@ -2,6 +2,7 @@
   <scale-telekom-mobile-flyout-canvas
     :app-name="appName"
     :app-name-link="appNameLink"
+    type="subtle"
   >
     <!-- lang-switcher -->
     <scale-telekom-nav-list

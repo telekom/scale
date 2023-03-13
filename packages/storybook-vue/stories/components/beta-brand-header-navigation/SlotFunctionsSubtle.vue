@@ -29,7 +29,7 @@ export default {
 .mobile-nav-flyout {
   --duration: 0;
   --top: 0;
-  --height: 100vh;
+  --height: auto;
   --background: var(--telekom-color-background-canvas);
 }
 
