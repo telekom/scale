@@ -11,8 +11,6 @@
 
 import { Component, h, Prop, Host } from '@stencil/core';
 
-const ICON_SIZE = 11;
-
 /**
  * This is a superset of the default anchor `<a>` element.
  * @part anchor - the native achor element wrapping all contents
@@ -42,17 +40,13 @@ export class HelperText {
   renderHelperIcon() {
     const variant = this.variant;
     if (variant === 'informational' || variant === 'warning') {
-      return (
-        <scale-icon-alert-information></scale-icon-alert-information>
-      );
+      return <scale-icon-alert-information></scale-icon-alert-information>;
     }
     if (variant === 'danger') {
       return <scale-icon-alert-error></scale-icon-alert-error>;
     }
     if (variant === 'success') {
-      return (
-        <scale-icon-alert-success></scale-icon-alert-success>
-      );
+      return <scale-icon-alert-success></scale-icon-alert-success>;
     }
   }
 
