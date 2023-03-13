@@ -84,6 +84,8 @@
   border: none;
   text-decoration: none;
   cursor: pointer;
+  transition: all var(--telekom-motion-duration-immediate)
+    var(--telekom-motion-easing-standard);
 }
 
 .scale-telekom-nav-item > :where(a, button):hover,

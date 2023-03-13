@@ -17,10 +17,8 @@
   --shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
   --background: var(--telekom-color-background-surface);
   --background-logo: var(--telekom-color-primary-standard);
-  --transition-common-scrolled: height var(--telekom-motion-duration-immediate)
-      var(--telekom-motion-easing-standard),
-    width var(--telekom-motion-duration-immediate)
-      var(--telekom-motion-easing-standard);
+  --transition-common-scrolled: all var(--telekom-motion-duration-immediate)
+    var(--telekom-motion-easing-standard);
   --font-size-app-name: var(--telekom-typography-font-size-body);
   --line-height-app-name: var(--telekom-typography-line-spacing-tight);
   --font-weight-app-name: var(--telekom-typography-font-weight-extra-bold);
@@ -154,10 +152,6 @@
     --_left-logo: var(--_spacing-x-container);
 
     --scl-telekom-header-height: var(--_height);
-  }
-
-  :host([scrolled][app-name]) {
-    --_grid-column-body: 2 / span 19;
   }
 
   :host([type='slim']) {
