@@ -240,6 +240,7 @@ export class Header {
               href={item.href}
               active={isActive(item)}
               megaMenuVisible={this.visibleMegaMenu === item.id}
+              innerId={item.id}
               onMouseEnter={() => {
                 this.visibleMegaMenu = item.children ? item.id : null;
               }}
