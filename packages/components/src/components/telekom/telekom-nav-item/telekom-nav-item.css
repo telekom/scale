@@ -88,6 +88,7 @@
     var(--telekom-motion-easing-standard);
 }
 
+.scale-telekom-nav-item > :where(a, button):hover scale-badge::part(label),
 .scale-telekom-nav-item > :where(a, button):hover,
 .scale-telekom-nav-item > :where(button[aria-expanded='true']) {
   color: var(--telekom-color-text-and-icon-primary-hovered);
