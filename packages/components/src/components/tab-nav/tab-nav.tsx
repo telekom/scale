@@ -40,6 +40,9 @@ export class TabNav {
 
   @Listen('click')
   handleClick(event: MouseEvent) {
+    // To provent event bubbling.
+    event.stopPropagation();
+
     this.removeFirstRenderAttr();
 
     // workaround for slotted icons
