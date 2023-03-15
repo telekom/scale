@@ -9,15 +9,15 @@
 
 <script>
 import StoryStandard from './StoryStandard.vue';
-import StoryFlyoutNav from './StoryFlyoutNav.vue';
-import StoryFlyoutNav2 from './StoryFlyoutNav2.vue';
+import StoryMegaMenu from './StoryMegaMenu.vue';
+import StoryDropdown from './StoryDropdown.vue';
 
 
 export default {
   components: {
     StoryStandard,
-    StoryFlyoutNav,
-    StoryFlyoutNav2
+    StoryMegaMenu,
+    StoryDropdown
   },
   props: {
     appName: String,
