@@ -60,6 +60,7 @@
   overflow-y: auto;
   overflow-y: overlay;
   overscroll-behavior: contain;
+  width: 100%;
 }
 
 .menu-flyout-list--flip-horizontal.menu-flyout-list--direction-bottom-left,

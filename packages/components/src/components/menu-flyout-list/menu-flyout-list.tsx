@@ -55,6 +55,8 @@ export class MenuFlyoutList {
   @Prop({ reflect: true, mutable: true }) active: boolean = false;
   /** (optional) Determines whether the flyout should close when a menu item is selected */
   @Prop() closeOnSelect = true;
+  /** (optional) set to true when using in telekom-brand-header*/
+  @Prop() brandHeaderDropdown: boolean = false;  
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
@@ -288,14 +290,22 @@ export class MenuFlyoutList {
 
   setPosition() {
     const { top, left } = this.triggerRect;
-    this.hostElement.style.top = `${top}px`;
     this.hostElement.style.left = `${left}px`;
+    if (this.trigger().tagName === "SCALE-TELEKOM-NAV-ITEM") {
+      this.hostElement.style.top = `${top - 12}px`;
+    } else {
+      this.hostElement.style.top = `${top}px`;
+    }
   }
 
   setSize() {
     const { width, height } = this.triggerRect;
     this.hostElement.style.height = `${height}px`;
     this.hostElement.style.width = `${width}px`;
+    if (this.brandHeaderDropdown) {
+      this.base.style.minWidth = `280px`;
+    }    
+
   }
 
   checkPlacement() {
@@ -454,7 +464,7 @@ export class MenuFlyoutList {
           class={this.getCssClassMap()}
           ref={(el) => (this.base = el)}
           part="base"
-          style={{ maxHeight: `calc(${this.windowHeight}px - 20px)` }}
+          style={{ maxHeight: `calc(${this.windowHeight}px - 20px)`}}
           onWheelCapture={this.handleWheel}
         >
           <div
