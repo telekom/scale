@@ -243,7 +243,7 @@
 
 @media screen and (--lg) {
   .scale-telekom-nav-list[variant='meta-nav'] {
-    margin-right: var(--telekom-spacing-unit-x6);
+    margin-right: var(--telekom-spacing-unit-x8);
   }
 
   .scale-telekom-nav-list[variant='lang-switcher']
