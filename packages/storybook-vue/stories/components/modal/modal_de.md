@@ -25,11 +25,11 @@ Der modale Dialog wird als Overlay angezeigt. Der Hauptinhalt der Seite ist nich
 
 ![Image Name](assets/3_components/modal/Modal_Basic.png)
 
-### Titel (1)
+#### Titel (1)
 
 Der Titel ist obligatorisch. Er sollte kurz und prägnant sein.
 
-### Inhalt (2)
+#### Inhalt (2)
 
 Es sind verschiedene Längen von Inhalten möglich. Wenn der Inhalt den Inhaltsbereich überschreitet, kann der restliche Teil durch Scrollen angezeigt werden.
 
@@ -37,7 +37,7 @@ Es sind verschiedene Längen von Inhalten möglich. Wenn der Inhalt den Inhaltsb
 
 Im Aktionsbereich der Nutzer\*innen können eine primäre und bis zu zwei sekundäre Schaltflächen stehen. Die primäre Schaltfläche sollte eine positive Aktion darstellen, wie zum Beispiel „Bestätigen“ oder „Speichern“. Sekundär-Schaltflächen können negative oder weniger wichtige Aktionen anzeigen, wie „Löschen" oder „Abbrechen".
 
-### Schließen-Symbol (4)
+#### Schließen-Symbol (4)
 
 Das Schließen-Symbol ist bei jedem modalen Dialog vorhanden.
 

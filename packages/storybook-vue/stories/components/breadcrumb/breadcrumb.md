@@ -23,15 +23,15 @@ If your product or service has a flat architecture with only one or two levels o
 
 ![Image Name](assets/3_components/breadcrumb/elements.png)
 
-### Page links (1)
+#### Page links (1)
 
 Start with the link to the parent page at the highest level (typically the homepage). Every further link leads one level lower. The link label should be short and precise.
 
-### Divider (2)
+#### Divider (2)
 
 The arrow icon visually separates the individual pages.
 
-### Current page (3)
+#### Current page (3)
 
 The current page is highlighted at the right end of the breadcrumb. It has no interactive functionality.
 
