@@ -88,7 +88,6 @@
     var(--telekom-motion-easing-standard);
 }
 
-.scale-telekom-nav-item > :where(a, button):hover scale-badge::part(label),
 .scale-telekom-nav-item > :where(a, button):hover,
 .scale-telekom-nav-item > :where(button[aria-expanded='true']) {
   color: var(--telekom-color-text-and-icon-primary-hovered);
@@ -140,6 +139,21 @@
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button):has(scale-badge[label]):hover:after,
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):has(scale-badge[label]):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button):has(scale-badge[label]):hover:after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):has(scale-badge[label]):after {
+  width: 24px;
 }
 
 .scale-telekom-nav-list[variant='main-nav']
