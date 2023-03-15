@@ -84,7 +84,7 @@
   border: none;
   text-decoration: none;
   cursor: pointer;
-  transition: all var(--telekom-motion-duration-immediate)
+  transition: padding-bottom var(--telekom-motion-duration-immediate)
     var(--telekom-motion-easing-standard);
 }
 
