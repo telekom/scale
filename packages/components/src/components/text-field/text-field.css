@@ -138,7 +138,7 @@ scale-text-field {
   --icon-size-helper-text: var(--helper-text-icon-size);
   font-weight: var(--telekom-typography-font-weight-bold);
   display: flex;
-  margin: var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1) 0;
+  /* margin: var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1) 0; */
 }
 
 .text-field .text-field__meta {
