@@ -146,7 +146,7 @@
   opacity: 1;
 }
 
-.menu-flyout-list ::slotted(scale-menu-flyout-item){
+.menu-flyout-list--brand-header-dropdown ::slotted(scale-menu-flyout-item){
   --_min-width-moz: 0;
   --_min-width: 0;
 }

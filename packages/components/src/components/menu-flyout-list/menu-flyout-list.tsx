@@ -290,7 +290,7 @@ export class MenuFlyoutList {
 
   setPosition() {
     const { top, left } = this.triggerRect;
-    this.hostElement.style.left = `${left}px`;
+    this.hostElement.style.left = `${left - 4}px`;
     if (this.trigger().tagName === "SCALE-TELEKOM-NAV-ITEM") {
       this.hostElement.style.top = `${top - 12}px`;
       this.hostElement.style.left = `${left - 24}px`;
@@ -453,7 +453,8 @@ export class MenuFlyoutList {
       this.canScrollUp && 'menu-flyout-list--can-scroll-up',
       this.canScrollDown && 'menu-flyout-list--can-scroll-down',
       this.flipHorizontal && `menu-flyout-list--flip-horizontal`,
-      this.flipVertical && `menu-flyout-list--flip-vertical`
+      this.flipVertical && `menu-flyout-list--flip-vertical`,
+      this.brandHeaderDropdown && `menu-flyout-list--brand-header-dropdown`,
     );
   }
 
