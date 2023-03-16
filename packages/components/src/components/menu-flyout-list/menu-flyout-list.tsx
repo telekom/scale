@@ -293,6 +293,7 @@ export class MenuFlyoutList {
     this.hostElement.style.left = `${left}px`;
     if (this.trigger().tagName === "SCALE-TELEKOM-NAV-ITEM") {
       this.hostElement.style.top = `${top - 12}px`;
+      this.hostElement.style.left = `${left - 24}px`;
     } else {
       this.hostElement.style.top = `${top}px`;
     }
@@ -303,7 +304,7 @@ export class MenuFlyoutList {
     this.hostElement.style.height = `${height}px`;
     this.hostElement.style.width = `${width}px`;
     if (this.brandHeaderDropdown) {
-      this.base.style.minWidth = `280px`;
+      this.base.style.width = `240px`;
     }    
 
   }

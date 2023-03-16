@@ -145,3 +145,8 @@
 .menu-flyout-list--can-scroll-down .menu-flyout-list__scroll-down-indicator {
   opacity: 1;
 }
+
+.menu-flyout-list ::slotted(scale-menu-flyout-item){
+  --_min-width-moz: 0;
+  --_min-width: 0;
+}
