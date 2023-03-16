@@ -44,7 +44,7 @@ scale-text-field {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /* control */
-  --spacing-control: 21px var(--telekom-spacing-unit-x10) 5px
+  --spacing-control: 21px var(--telekom-spacing-unit-x10) 7px
     calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
@@ -85,8 +85,9 @@ scale-text-field {
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-footnote);
+  --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+  --margin-top-label-focus: -0.5px;
 }
 
 .text-field {
@@ -188,7 +189,8 @@ scale-text-field {
 }
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
-  line-height: var(--telekom-typography-font-size-small);
+  line-height: var(--font-size-label-focus);
+  margin-top: var(--margin-top-label-focus);
   transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
