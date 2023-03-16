@@ -93,7 +93,7 @@
   padding: var(--padding-type-text-after-badge-slot);
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 1024px) {
   /*icon*/
   .notification-badge.notification-badge--icon .notification-badge__circle {
     top: -4px;
@@ -138,7 +138,7 @@
   }
 }
 
-@media (max-width: 1039px) {
+@media (max-width: 1023px) {
   /*icon*/
   .notification-badge.notification-badge--icon .notification-badge__circle {
     top: -4px;

@@ -30,14 +30,14 @@
   border-top: var(--border-width-divider) solid var(--color-divider);
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 1024px) {
   .app-navigation-user-menu__user-info {
     margin: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x6) 0
       var(--telekom-spacing-unit-x6);
   }
 }
 
-@media (max-width: 1039px) {
+@media (max-width: 1023px) {
   .app-navigation-user-menu__user-info {
     margin: var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x4) 0
       var(--telekom-spacing-unit-x4);
@@ -61,7 +61,7 @@
   text-decoration: none;
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 1024px) {
   .app-navigation-user-menu__item {
     padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x6);
   }
@@ -91,12 +91,12 @@
   padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x4);
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 1024px) {
   .app-navigation-user-menu__button {
     padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x6);
   }
 }
-@media (min-width: 1040px) {
+@media (min-width: 1024px) {
   .app-navigation-user-menu {
     padding-bottom: var(--telekom-spacing-unit-x1);
   }

@@ -15,7 +15,7 @@ const baseConfig = getConfig();
 const customConfig = Object.assign({}, baseConfig);
 
 customConfig.connect.defaultViewport = {
-  width: 1040,
+  width: 1024,
   height: 768,
 };
 
