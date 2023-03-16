@@ -58,9 +58,9 @@ scale-text-field {
   --color-counter-error: var(--color-meta-error);
 
   /* helper-text */
-  --transition-helper-text: var(--transition);
-  --font-size-helper-text: var(--font-size-meta);
-  --line-height-helper-text: var(--line-height-meta);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --line-height-helper-text: 1.35;
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
   --color-helper-text: var(
     --telekom-color-text-and-icon-functional-informational
   );
@@ -71,6 +71,8 @@ scale-text-field {
   --color-helper-text-warning: var(
     --telekom-color-text-and-icon-functional-warning
   );
+  --color-helper-text-neutral: var(--telekom-color-text-and-icon-additional);
+  --helper-text-icon-size: 11px;
 
   /* placeholder */
   --transition-placeholder: var(--transition);
@@ -124,33 +126,19 @@ scale-text-field {
   color: inherit;
   font-weight: var(--telekom-typography-font-weight-medium);
 }
-.text-field .text-field__helper-text {
-  transition: var(--transition-helper-text);
-  font-size: var(--font-size-helper-text);
-  color: var(--color-helper-text);
+.text-field scale-helper-text {
+  --color-informational: var(--color-helper-text);
+  --color-warning: var(--color-helper-text-warning);
+  --color-danger: var(--color-helper-text-error);
+  --color-success: var(--color-helper-text-success);
+  --color-neutral: var(--color-helper-text-neutral);
+  --font-size: var(--font-size-helper-text);
+  --font-weight: var(--font-weight-helper-text);
+  --line-height: var(--line-height-helper-text);
+  --icon-size-helper-text: var(--helper-text-icon-size);
   font-weight: var(--telekom-typography-font-weight-bold);
   display: flex;
-  margin: var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1) 0;
-}
-.text-field .text-field__helper-text_label {
-  font-size: var(--telekom-typography-font-size-small);
-}
-.text-field--variant-warning .text-field__helper-text_label {
-  color: var(--color-helper-text-warning);
-}
-.text-field--variant-success .text-field__helper-text_label {
-  color: var(--color-helper-text-success);
-}
-.text-field .text-field__helper-text_icon {
-  justify-content: center;
-  padding-top: 1.5px;
-  padding-right: 4.5px;
-}
-.text-field--variant-warning .text-field__helper-text_icon {
-  color: var(--color-helper-text-warning);
-}
-.text-field--variant-success .text-field__helper-text_icon {
-  color: var(--color-helper-text-success);
+  /* margin: var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1) 0; */
 }
 
 .text-field .text-field__meta {
