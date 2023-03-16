@@ -111,4 +111,7 @@
   .notification-message__icon-close {
     color: hsl(0, 0%, 100%);
   }
+  .notification-message {
+    border: 1px solid hsl(0, 0%, 100%);
+  }
 }
