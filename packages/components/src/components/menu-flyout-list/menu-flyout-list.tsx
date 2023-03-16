@@ -55,8 +55,8 @@ export class MenuFlyoutList {
   @Prop({ reflect: true, mutable: true }) active: boolean = false;
   /** (optional) Determines whether the flyout should close when a menu item is selected */
   @Prop() closeOnSelect = true;
-  /** (optional) set to true when using in telekom-brand-header*/
-  @Prop() brandHeaderDropdown: boolean = false;  
+  /** (optional) set to true when using in telekom-brand-header */
+  @Prop() brandHeaderDropdown: boolean = false;
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
@@ -291,7 +291,7 @@ export class MenuFlyoutList {
   setPosition() {
     const { top, left } = this.triggerRect;
     this.hostElement.style.left = `${left - 4}px`;
-    if (this.trigger().tagName === "SCALE-TELEKOM-NAV-ITEM") {
+    if (this.trigger().tagName === 'SCALE-TELEKOM-NAV-ITEM') {
       this.hostElement.style.top = `${top - 12}px`;
       this.hostElement.style.left = `${left - 24}px`;
     } else {
@@ -305,8 +305,7 @@ export class MenuFlyoutList {
     this.hostElement.style.width = `${width}px`;
     if (this.brandHeaderDropdown) {
       this.base.style.width = `240px`;
-    }    
-
+    }
   }
 
   checkPlacement() {
@@ -454,7 +453,7 @@ export class MenuFlyoutList {
       this.canScrollDown && 'menu-flyout-list--can-scroll-down',
       this.flipHorizontal && `menu-flyout-list--flip-horizontal`,
       this.flipVertical && `menu-flyout-list--flip-vertical`,
-      this.brandHeaderDropdown && `menu-flyout-list--brand-header-dropdown`,
+      this.brandHeaderDropdown && `menu-flyout-list--brand-header-dropdown`
     );
   }
 
@@ -466,7 +465,7 @@ export class MenuFlyoutList {
           class={this.getCssClassMap()}
           ref={(el) => (this.base = el)}
           part="base"
-          style={{ maxHeight: `calc(${this.windowHeight}px - 20px)`}}
+          style={{ maxHeight: `calc(${this.windowHeight}px - 20px)` }}
           onWheelCapture={this.handleWheel}
         >
           <div
