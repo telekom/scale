@@ -39,7 +39,7 @@
         </scale-badge>
       </button>
       <scale-telekom-nav-flyout class="mobile-nav-flyout">
-        <SlotMobileFlyoutCanvas
+        <SlotMobileFlyoutCanvasSlim
           :app-name="appName"
           :app-name-link="appNameLink"
         />
@@ -49,10 +49,10 @@
 </template>
 
 <script>
-import SlotMobileFlyoutCanvas from './SlotMobileFlyoutCanvas.vue';
+import SlotMobileFlyoutCanvasSlim from './SlotMobileFlyoutCanvasSlim.vue';
 
 export default {
-  components: { SlotMobileFlyoutCanvas },
+  components: { SlotMobileFlyoutCanvasSlim },
   props: {
     appName: String,
     appNameLink: String,
