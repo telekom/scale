@@ -32,6 +32,10 @@
   --_spacing-level: 26px;
   --_font: var(--font-thin);
 }
+:host::part(level-3) {
+  --_spacing-level: 26px;
+  --_font: var(--font-thin);
+}
 
 :host::part(active) {
   --_color: var(--color-active);
