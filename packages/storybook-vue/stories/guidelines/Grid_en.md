@@ -20,13 +20,13 @@ The basic unit of our grid is the eight-pixel square base unit. Multiples of bas
 
 ## Breakpoints
 
-| Breakpoint | Range           | Column amount | Margin in px | Gutter in px |
-| ---------- | --------------- | ------------- | ------------ | ------------ |
-| Small      | 320px - 639px   | 4             | 16           | 32           |
-| Medium     | 640px - 1039px  | 8             | 16           | 32           |
-| Large      | 1040px - 1295px | 16            | 24           | 32           |
-| X-Large    | 1296px - 1551px | 16            | 24           | 32           |
-| XX-Large   | 1552px -        | 16            | 24           | 32           |
+| Breakpoint | Range in px  | Margin in px | Column Amount | Column in px | Gutter in px |
+| ---------- | ------------ | ------------ | ------------- | ------------ | ------------ |
+| S          | 320 - 639    | 16           | 4             | Dynamic      | 32           |
+| M          | 640 - 1039   | 16           | 8             | Dynamic      | 32           |
+| L          | 1040 - 1295  | 24           | 16            | Dynamic      | 32           |
+| XL         | 1296 - 1679  | 24           | 16            | Dynamic      | 32           |
+| XXL        | 1680 & above | Dynamic      | 16            | 64           | 32           |
 
 ### Small
 

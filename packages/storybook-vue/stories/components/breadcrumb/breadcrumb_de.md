@@ -25,15 +25,15 @@ Die Breadcrumb spiegelt die Informationshierarchie des Produkts oder Services wi
 
 ![Image Name](assets/3_components/breadcrumb/elements.png)
 
-### Links (1)
+#### Links (1)
 
 Beginne mit dem Link, der zur übergeordneten Seite auf der höchsten Ebene führt (in der Regel die Homepage). Jeder weitere Link führt eine Ebene tiefer. Die Bezeichnung der Links sollte kurz und präzise sein.
 
-### Trenner (2)
+#### Trenner (2)
 
 Das Pfeilsymbol trennt die einzelnen Links optisch voneinander.
 
-### Aktuelle Seite (3)
+#### Aktuelle Seite (3)
 
 Die aktuelle Seite ist immer der letzte Eintrag der Breadcrumb. Sie hat keine interaktive Funktionalität.
 
