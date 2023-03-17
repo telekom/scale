@@ -45,8 +45,6 @@ export class TabNav {
     // To provent event bubbling.
     event.stopPropagation();
 
-    this.removeFirstRenderAttr();
-
     // workaround for slotted icons
     const targetHTMLElement = event.target as HTMLElement;
     const targetTag = targetHTMLElement.tagName.toLowerCase();
