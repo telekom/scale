@@ -19,7 +19,7 @@
   --max-width: 572px;
   --spacing: var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x4);
 
-  background: var(--telekom-color-background-canvas);
+  background: var(--telekom-color-background-surface);
 }
 
 [part='base'] {
