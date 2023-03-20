@@ -1,7 +1,7 @@
 <template>
         <scale-telekom-nav-list slot="main-nav">
         <scale-menu-flyout>
-            <scale-telekom-nav-item slot="trigger" class="foobar" >
+            <scale-telekom-nav-item slot="trigger">
               <a href="javascript:void(0);">Topic One</a>
             </scale-telekom-nav-item>
             <scale-menu-flyout-list brand-header-dropdown>
@@ -30,7 +30,7 @@
         </scale-menu-flyout>  
 
         <scale-menu-flyout>
-          <scale-telekom-nav-item slot="trigger" class="foobar" >
+          <scale-telekom-nav-item slot="trigger">
             <a href="javascript:void(0);">Topic Two</a>
           </scale-telekom-nav-item>   
           <scale-menu-flyout-list brand-header-dropdown>
