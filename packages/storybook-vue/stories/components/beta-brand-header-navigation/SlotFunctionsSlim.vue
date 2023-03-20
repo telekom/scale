@@ -4,30 +4,23 @@
     slot="functions"
     alignment="right"
   >
-    <scale-telekom-nav-item search>
+    <scale-telekom-nav-item>
       <a href="#">
-        <scale-badge no-dot label="Search">
+        <scale-badge no-dot label="Search" search>
           <scale-icon-action-search></scale-icon-action-search>
         </scale-badge>
       </a>
     </scale-telekom-nav-item>
-    <scale-telekom-nav-item cc>
+    <scale-telekom-nav-item>
       <a href="#">
-        <scale-badge no-dot label="Payment" label-visually-hidden>
-          <scale-icon-content-credit-card></scale-icon-content-credit-card>
-        </scale-badge>
-      </a>
-    </scale-telekom-nav-item>
-    <scale-telekom-nav-item cart>
-      <a href="#">
-        <scale-badge count="1" label="Cart">
+        <scale-badge count="1" label="Cart" cart>
           <scale-icon-action-shopping-cart></scale-icon-action-shopping-cart>
         </scale-badge>
       </a>
     </scale-telekom-nav-item>
-    <scale-telekom-nav-item user>
+    <scale-telekom-nav-item>
       <a href="#">
-        <scale-badge no-dot label="Login">
+        <scale-badge no-dot label="Login" user>
           <scale-icon-user-file-user></scale-icon-user-file-user>
         </scale-badge>
       </a>
@@ -68,9 +61,7 @@ export default {
   --background: var(--telekom-color-background-canvas);
 }
 
-[search],
-[cart],
-[user] {
+scale-badge::part(label) {
   display: none;
 }
 
@@ -81,13 +72,8 @@ export default {
 }
 
 @media screen and (min-width: 1040px) {
-  [search],
-  [cart],
-  [user] {
-    display: block;
-  }
-  [cc] {
-    display: none;
+  scale-badge::part(label) {
+    display: flex
   }
 }
 </style>
