@@ -42,6 +42,9 @@ export class TabNav {
 
   @Listen('click')
   handleClick(event: MouseEvent) {
+    // To provent event bubbling.
+    event.stopPropagation();
+
     // workaround for slotted icons
     const targetHTMLElement = event.target as HTMLElement;
     const targetTag = targetHTMLElement.tagName.toLowerCase();

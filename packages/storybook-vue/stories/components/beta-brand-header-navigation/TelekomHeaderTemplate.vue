@@ -10,11 +10,15 @@
 <script>
 import StoryStandard from './StoryStandard.vue';
 import StoryFlyoutNav from './StoryFlyoutNav.vue';
+import StorySlim from './StorySlim.vue';
+import StorySubtle from './StorySubtle.vue';
 
 export default {
   components: {
     StoryStandard,
     StoryFlyoutNav,
+    StorySlim,
+    StorySubtle
   },
   props: {
     appName: String,

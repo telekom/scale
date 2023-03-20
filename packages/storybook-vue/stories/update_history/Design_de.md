@@ -2,6 +2,12 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
+## Gestaltungsraster
+
+10.03.2023
+
+Optimierung des Gestaltungsrasters in den Breakpoints XL und XXL.
+
 ## Neuer Brand Footer
 
 17.02.2023
