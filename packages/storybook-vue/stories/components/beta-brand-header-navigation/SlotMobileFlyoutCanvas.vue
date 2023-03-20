@@ -28,6 +28,9 @@
           <a href="#">Second Level</a>
           <scale-telekom-mobile-menu-item slot="children">
             <a href="#">Third Level</a>
+            <scale-telekom-mobile-menu-item slot="children">
+              <a href="#">Fourth Level</a>
+            </scale-telekom-mobile-menu-item>
           </scale-telekom-mobile-menu-item>
           <scale-telekom-mobile-menu-item slot="children">
             <a href="#">Third Level</a>

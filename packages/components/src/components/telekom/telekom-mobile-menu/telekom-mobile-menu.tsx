@@ -50,7 +50,10 @@ export class TelekomMobileMenu {
 
   @Listen('scale-set-menu-item-active')
   handleSetMenuItemActive(e) {
-    this.menuItems.forEach((element) => element.removeAttribute('active'));
+    console.log(e, 'wtf?')
+    setTimeout(() => {
+      this.menuItems.forEach((element) => element.removeAttribute('active'))
+    })
     e.target.setAttribute('active', '');
     if (e.target.parentElement.tagName === 'SCALE-TELEKOM-MOBILE-MENU-ITEM') {
       e.target.parentElement.setAttribute('active', '');
