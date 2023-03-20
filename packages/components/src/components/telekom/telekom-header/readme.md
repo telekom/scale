@@ -12,7 +12,7 @@
 | `appName`      | `app-name`       |             | `string` | `undefined` |
 | `appNameClick` | `app-name-click` |             | `any`    | `undefined` |
 | `appNameLink`  | `app-name-link`  |             | `string` | `undefined` |
-| `type`         | `type`           |             | `string` | `'default'` |
+| `type`         | `type`           |             | `string` | `''`        |
 
 
 ## Shadow Parts
