@@ -32,7 +32,7 @@ export class TelekomHeader {
   @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
-  @Prop() type: string = 'default';
+  @Prop() type?: string = '';
 
   @State() scrolled: boolean;
   @State() scrolledBack: boolean = false;
