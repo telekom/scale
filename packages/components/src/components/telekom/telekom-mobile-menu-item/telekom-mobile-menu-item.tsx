@@ -83,7 +83,8 @@ export class TelekomMobileMenuItem {
     return (
       <Host onClick={this.handleClick}>
         <nav
-          part={cx('base',
+          part={cx(
+            'base',
             `level-${this.level}`,
             `current-level-${this.currentLevel}`,
             {

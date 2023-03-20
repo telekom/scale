@@ -290,7 +290,9 @@ export class MenuFlyoutList {
 
   setPosition() {
     const { top, left } = this.triggerRect;
-    this.hostElement.style.left = !this.brandHeaderDropdown ? `${left}px` : `${left - 4}px`; 
+    this.hostElement.style.left = !this.brandHeaderDropdown
+      ? `${left}px`
+      : `${left - 4}px`;
     if (this.trigger().tagName === 'SCALE-TELEKOM-NAV-ITEM') {
       this.hostElement.style.top = `${top - 12}px`;
       this.hostElement.style.left = `${left - 24}px`;
