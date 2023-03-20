@@ -2,11 +2,11 @@
 
 This page documents updates to the visual appearance of Scale.
 
-## Grid
+## Additional basic types of the Telekom Brand Header
 
-10.03.2023
+20.03.2023
 
-Optimization of the design grid in breakpoints XL and XXL.
+The beta component “Telekom Brand Header & Navigation” released in January is extended by two new basic types - “Slim Header” and “Subtle Header”. You can find more information in the Usage Text of the [new Brand Header](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
 
 ## New Brand Footer
 

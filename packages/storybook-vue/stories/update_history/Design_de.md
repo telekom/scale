@@ -2,11 +2,11 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
-## Gestaltungsraster
+## Weitere Basistypen des Telekom Brand Headers
 
-10.03.2023
+20.03.2023
 
-Optimierung des Gestaltungsrasters in den Breakpoints XL und XXL.
+Die im Januar veröffentlichte Beta-Komponente “Telekom Brand Header & Navigation” wird um zwei neue Basistypen ergänzt – “Slim Header” und “Subtle Header”. Mehr Informationen findest du im Usage Text des [neuen Brand Headers](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
 
 ## Neuer Brand Footer
 
