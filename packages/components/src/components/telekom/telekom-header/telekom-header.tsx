@@ -32,6 +32,7 @@ export class TelekomHeader {
   @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
+  @Prop() type: string = 'default';
 
   @State() scrolled: boolean;
   @State() scrolledBack: boolean = false;
@@ -47,11 +48,14 @@ export class TelekomHeader {
 
   render() {
     return (
-      <Host scrolled={this.scrolled} scrolled-back={this.scrolledBack}>
+      <Host
+        scrolled={this.type !== 'subtle' && this.scrolled}
+        scrolled-back={this.type !== 'subtle' && this.scrolledBack}
+      >
         <header
-          part={cx('base', {
-            scrolled: this.scrolled,
-            'scrolled-back': this.scrolledBack,
+          part={cx('base', this.type, {
+            scrolled: this.type !== 'subtle' && this.scrolled,
+            'scrolled-back': this.type !== 'subtle' && this.scrolledBack,
           })}
         >
           <div part="fixed-wrapper">

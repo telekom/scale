@@ -22,29 +22,11 @@ Im gescrollten Zustand sind die Meta-Navigation und das Sprachwechsel-Element au
 
 ### Brand Header Slim
 
-<div style="display: flex; width: 100%; border-radius: 3px; background-color: rgb(241, 241, 239); padding: 16px 16px 14px 20px;">
-    <div style="padding-top:1px">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="24px"><path fill-rule="evenodd" d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zm1 8V17h-2v-6.5h2zm-1-4A1.25 1.25 0 1112 9a1.25 1.25 0 010-2.5z"></path></svg>
-    </div>
-    <div style="margin-top: 4px;">
-        **Diese Komponente ist bald verfügbar**
-    </div>
-</div>
-
 Der Brand Header Slim enthält weder Meta-Navigation noch Sprachwechsel. Beim Scrollen reduziert sich lediglich die Höhe der Komponente.
 
 ![Image Name](assets/3_components/beta-brand-header/2_DE_brandheader_brandbar_slim.png)
 
 ### Brand Header Subtle
-
-<div style="display: flex; width: 100%; border-radius: 3px; background-color: rgb(241, 241, 239); padding: 16px 16px 14px 20px;">
-    <div style="padding-top:1px">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="24px"><path fill-rule="evenodd" d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zm1 8V17h-2v-6.5h2zm-1-4A1.25 1.25 0 1112 9a1.25 1.25 0 010-2.5z"></path></svg>
-    </div>
-    <div style="margin-top: 4px;">
-        **Diese Komponente ist bald verfügbar**
-    </div>
-</div>
 
 Der Brand Header Subtle hat keine Hauptnavigation oder Funktionen und ist am oberen Bildschirmrand fixiert. Er hebt sich nicht durch einen Schatten vom Inhalt der Seite ab oder verändert sich beim Scrollen.
 
@@ -96,14 +78,7 @@ Das Mega-Menü nutzt du am besten für eine flache Informationsarchitektur. Es b
 
 ### Dropdown-Navigation
 
-<div style="display: flex; width: 100%; border-radius: 3px; background-color: rgb(241, 241, 239); padding: 16px 16px 14px 20px;">
-    <div style="padding-top:1px">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="24px"><path fill-rule="evenodd" d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zm1 8V17h-2v-6.5h2zm-1-4A1.25 1.25 0 1112 9a1.25 1.25 0 010-2.5z"></path></svg>
-    </div>
-    <div style="margin-top: 4px;">
-        **Diese Komponente ist bald verfügbar**
-    </div>
-</div>
+![Image Name](assets/3_components/beta-brand-header/brandheader_dropdown_menu.png)
 
 Die Dropdown-Navigation eignet sich für Webseiten mit umfangreicher Seitenarchitektur. Sie kann mehrere Hierarchieebenen innerhalb des Navigationsbaums darstellen. Generell gilt: je weniger Ebenen, desto besser.
 

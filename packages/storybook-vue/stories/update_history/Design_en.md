@@ -2,6 +2,12 @@
 
 This page documents updates to the visual appearance of Scale.
 
+## Grid
+
+10.03.2023
+
+Optimization of the design grid in breakpoints XL and XXL.
+
 ## New Brand Footer
 
 17.02.2023

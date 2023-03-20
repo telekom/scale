@@ -468,7 +468,7 @@ export class Header {
                       variant="white"
                       scrollIntoViewOnFocus={true}
                       focusable={true}
-                      styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+                      styles=":host { --logo-size: 36px;} @media (max-width: 1039px) { :host {--logo-size: 26px;} }"
                       logoAriaDescribedBy={this.logoAriaDescribedBy}
                     ></scale-logo>
                   )}

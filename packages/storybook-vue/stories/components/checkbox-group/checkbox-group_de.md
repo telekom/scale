@@ -24,31 +24,31 @@ Checkbox-Gruppen lassen sich mit einem Klick auf die übergeordnete Checkbox akt
 
 ![Elements of Checkbox Group](assets/3_components/checkbox-group/Checkbox_Group_Elements.png)
 
-### Übergeordnete Checkbox (unbestimmter Zustand) (1)
+#### Übergeordnete Checkbox (unbestimmter Zustand) (1)
 
 Per Klick/Tap auf die übergeordnete Checkbox lässt sich die gesamte Gruppe aktivieren oder deaktivieren. Der Zustand dieser Checkbox zeigt an, ob alle oder nur einige Optionen aktiviert beziehungsweise deaktiviert sind.
 
-### Gruppenlabel (2)
+#### Gruppenlabel (2)
 
 Wähle einen kurzen und aussagekräftigen Titel für die gesamte Gruppe.
 
-### Information (3) (optional)
+#### Information (3) (optional)
 
 Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
 
-### Untergeordnete Checkbox (4)
+#### Untergeordnete Checkbox (4)
 
 Die untergeordneten Checkboxen lassen sich einzeln aktivieren oder deaktivieren.
 
-### Label (5)
+#### Label (5)
 
 Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. Ein Label enthält in der Regel maximal drei Wörter.
 
-### Fehlermeldung (6)
+#### Fehlermeldung (6)
 
 Bei einer nicht eingeschalteten, aber verpflichtenden Auswahl einer einzelnen Option, die zum Beispiel notwendig ist, um die nächsten Schritte im Prozess ausführen zu können, erscheint eine Fehlermeldung unterhalb dieser Checkbox.
 
-### Übergeordnete Fehlermeldung (7)
+#### Übergeordnete Fehlermeldung (7)
 
 Betrifft eine Fehlermeldung die gesamte Gruppe, wird sie unterhalb des Gruppenlabels platziert.
 

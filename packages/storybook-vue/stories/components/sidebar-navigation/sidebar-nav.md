@@ -28,27 +28,27 @@ Don't use the sidebar navigation if:
 
 An example of the sidebar navigation for desktop
 
-### First level of hierarchy (1)
+#### First level of hierarchy (1)
 
 The first level of hierarchy can have a submenu or link. If it's a submenu, hovering over it displays an arrow.
 
-### Second level of hierarchy (2)
+#### Second level of hierarchy (2)
 
 The same applies to the second level of hierarchy: it can also have a submenu or link.
 
-### Third level of hierarchy (3)
+#### Third level of hierarchy (3)
 
 The third level of hierarchy only has links.
 
-### Current page (4)
+#### Current page (4)
 
 A Magenta font designates the current page.
 
-### Icon (5)
+#### Icon (5)
 
 The arrow appears during a mouse over. After clicking on the submenu, it remains visible and changes its orientation to indicate that the submenu is open.
 
-### Divider (6)
+#### Divider (6)
 
 Navigation points from the first and second level of hierarchy are separated by a divider below the navigation points.
 
