@@ -4,7 +4,7 @@
     <SlotMetaNav />
     <SlotLangSwitcher />
     <SlotDropdown />
-    <SlotMobileDropdown />
+    <SlotMobileDropdown :app-name="appName" :app-name-link="appNameLink" />
   </scale-telekom-header>
 </template>
 
