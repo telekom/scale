@@ -26,38 +26,32 @@
 :host::part(level-0 open) {
   --_spacing-level: 26px;
 }
-:host::part(level-1) {
+:host::part(level-1),
+:host::part(level-2),
+:host::part(level-3),
+:host::part(level-4) {
   --_spacing-level: 26px;
 }
 
-:host::part(level-1 current-level-2) {
-  --_spacing-level: 26px;
+:host::part(level-1 current-level-2),
+:host::part(level-2 current-level-3),
+:host::part(level-3 current-level-4) {
   --_font: var(--font-bold);
-}
-
-:host::part(level-2) {
-  --_spacing-level: 26px;
-}
-:host::part(level-2 current-level-3) {
-  --_spacing-level: 26px;
-  --_font: var(--font-bold);
-}
-
-:host::part(level-3) {
-  --_spacing-level: 26px;
 }
 
 :host::part(active),
 :host::part(level-0 current-level-0 active),
 :host::part(level-1 current-level-1 active),
-:host::part(level-2 current-level-2 active) {
+:host::part(level-2 current-level-2 active),
+:host::part(level-3 current-level-3 active) {
   --_color: var(--color-active);
   --_box-shadow-active: 2px 0px 0px 0px var(--color-active) inset;
 }
 
 :host::part(level-0 current-level-1),
 :host::part(level-1 current-level-2),
-:host::part(level-2 current-level-3) {
+:host::part(level-2 current-level-3),
+:host::part(level-3 current-level-4) {
   --_color: var(--color);
 }
 
