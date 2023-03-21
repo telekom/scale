@@ -35,38 +35,38 @@ With the data grid framework, you can freely combine a selection of existing com
 
 ![Image Name](assets/3_components/data-grid/elements-en.png)
 
-### Data grid heading (1)
+#### Data grid heading (1)
 
 A short headline describes the content in clear and simple terms.
 
-### Menu (2)
+#### Menu (2)
 
 The menu includes functions such as sorting, selecting or deselecting all, showing and hiding, and exporting.
 
-### Numbering (3)
+#### Numbering (3)
 
 If you activate numbering, all lines are automatically numbered starting from 1.
 
-### Checkbox (4)
+#### Checkbox (4)
 
 If you activate the checkbox, users can select some or all of the table data records for batch processing (e.g., archive, delete, mark as done).
 
-### Column headers (5)
+#### Column headers (5)
 
 The title in the column headers describes the content of the respective column.
 
-### Table row (6)
+#### Table row (6)
 
 The content of a row forms a data unit and differs from the other rows both visually and in terms of content.
 The row title contains a meaningful description of the data record.
 The other rows can contain all kinds of content.
 To aid readability, you can highlight the rows when hovering over them.
 
-### HTML slot (7)
+#### HTML slot (7)
 
 If you fill in the HTML slot in a table row, it will add an expand icon at the end of the row. If users click on the expand icon, it will display the HTML content of this slot.
 
-### Pagination (8)
+#### Pagination (8)
 
 With the help of pagination, users can move through the entire data set in a deliberate way.
 

@@ -60,6 +60,7 @@ export class Header {
   @Prop() activeRouteId: string;
   @Prop() activeSectorId?: string;
   @Prop() sticky?: boolean = false;
+  @Prop() userMenuAriaLabel?: string;
   // DEPRECATED - megaMenuVisible should replace isMegaMenuVisible
   @Prop() isMegaMenuVisible?: boolean = false;
   @Prop() megaMenuVisible?: boolean = false;
@@ -316,7 +317,10 @@ export class Header {
 
         {readData(this.userNavigation).length > 0 && (
           <span>
-            <span class="header__user-menu--desktop">
+            <span
+              class="header__user-menu--desktop"
+              aria-label={this.userMenuAriaLabel}
+            >
               <scale-menu-flyout>
                 <scale-nav-icon
                   slot="trigger"
@@ -350,7 +354,10 @@ export class Header {
                 </scale-menu-flyout-list>
               </scale-menu-flyout>
             </span>
-            <span class="header__user-menu--mobile">
+            <span
+              class="header__user-menu--mobile"
+              aria-label={this.userMenuAriaLabel}
+            >
               <scale-nav-icon
                 slot="trigger"
                 active={this.userMenuMobile}
@@ -468,7 +475,7 @@ export class Header {
                       variant="white"
                       scrollIntoViewOnFocus={true}
                       focusable={true}
-                      styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+                      styles=":host { --logo-size: 36px;} @media (max-width: 1039px) { :host {--logo-size: 26px;} }"
                       logoAriaDescribedBy={this.logoAriaDescribedBy}
                       logoAriaHide={this.scrolled}
                     ></scale-logo>

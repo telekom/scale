@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.128](https://github.com/telekom/scale/compare/v3.0.0-beta.127...v3.0.0-beta.128) (2023-03-20)
+
+**Note:** Version bump only for package telekom
+
+
+
+
+
+# [3.0.0-beta.127](https://github.com/telekom/scale/compare/v3.0.0-beta.126...v3.0.0-beta.127) (2023-03-20)
+
+
+### Bug Fixes
+
+* [#1467](https://github.com/telekom/scale/issues/1467) fixed event bubbling issue ([#1653](https://github.com/telekom/scale/issues/1653)) ([0183965](https://github.com/telekom/scale/commit/01839653cad373ef9cc3b6d242dbf8768d919736))
+* **app-navigation-main-mobile:** second level if no children (actual child element) ([#1660](https://github.com/telekom/scale/issues/1660)) ([ccc5749](https://github.com/telekom/scale/commit/ccc57494d64b58005cdfb5daf84922dbfe53b36e))
+* remove firstRender attribute and revert to initial autofocus app… ([#1631](https://github.com/telekom/scale/issues/1631)) ([643245b](https://github.com/telekom/scale/commit/643245bbd303855a22404fd074a3dc8af0f676b9))
+* remove unused css vars, pass helper text vars to helper text component, update story docs ([77a42bc](https://github.com/telekom/scale/commit/77a42bc62468fa036e09dc3d9ad770402795cd0a))
+
+
+### Features
+
+* **header:** add slim and subtle types ([#1640](https://github.com/telekom/scale/issues/1640)) ([1f92285](https://github.com/telekom/scale/commit/1f92285d48a4c64840d522e1f69dc6416a20fbb0))
+* adding brand-header usage text picture for dropdown nav ([#1669](https://github.com/telekom/scale/issues/1669)) ([499ca21](https://github.com/telekom/scale/commit/499ca212ac4dbb0f511594960c2283ec2a205aa3))
+* adding section for selected icons from icon library ([#1589](https://github.com/telekom/scale/issues/1589)) ([eb5f8a8](https://github.com/telekom/scale/commit/eb5f8a8bbb9496278c4be890fd717c5713a97a8e))
+* improving high-contrast mode accessibility ([#1585](https://github.com/telekom/scale/issues/1585)) ([62e42b7](https://github.com/telekom/scale/commit/62e42b7f4d5b6f64aa415ff2309d6203b11be8fc))
+
+
+### Reverts
+
+* Revert "Fix/media query 1024 (#1650)" ([e17f3f8](https://github.com/telekom/scale/commit/e17f3f8487f900f12b26fcb8f4be7303f9bd5d56)), closes [#1650](https://github.com/telekom/scale/issues/1650)
+
+
+
+
+
 # [3.0.0-beta.126](https://github.com/telekom/scale/compare/v3.0.0-beta.125...v3.0.0-beta.126) (2023-02-24)
 
 

@@ -27,19 +27,19 @@ Eine Checkbox ist ein Steuerelement, mit dem Nutzer\*innen zwischen zwei Optione
 
 ![Image Name](assets/3_components/checkbox/checkbox-elements.png)
 
-### Checkbox ausgeschaltet (1)
+#### Checkbox ausgeschaltet (1)
 
 Wenn kein Häkchen vorhanden ist, gilt eine Option als abgewählt.
 
-### Checkbox eingeschaltet (2)
+#### Checkbox eingeschaltet (2)
 
 Ist eine Checkbox mit einem Häkchen versehen, so gilt die Option als ausgewählt.
 
-### Information (3) (optional)
+#### Information (3) (optional)
 
 Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
 
-### Fehlermeldung (4)
+#### Fehlermeldung (4)
 
 Bei einer nicht eingeschalteten, aber verpflichtenden Auswahl einer Option, die z.B. notwendig ist, um die nächsten Schritte im Prozess ausführen zu können, erscheint eine Fehlermeldung.
 

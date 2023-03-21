@@ -27,6 +27,7 @@
 | `portalName`          | `portal-name`            |             | `string`  | `''`        |
 | `sectorNavigation`    | `sector-navigation`      |             | `any`     | `[]`        |
 | `sticky`              | `sticky`                 |             | `boolean` | `false`     |
+| `userMenuAriaLabel`   | `user-menu-aria-label`   |             | `string`  | `undefined` |
 | `userNavigation`      | `user-navigation`        |             | `any`     | `[]`        |
 
 

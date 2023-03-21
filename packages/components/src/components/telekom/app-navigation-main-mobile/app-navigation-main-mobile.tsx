@@ -87,7 +87,7 @@ export class MainNavigationMobile {
 
   childMenuPage() {
     const section =
-      this.selected && this.selected.children ? this.selected : this.parent;
+      this.selected && hasChildren(this.selected) ? this.selected : this.parent;
 
     const { selected, parent } = findSelected(
       this.navigation,
@@ -141,7 +141,7 @@ export class MainNavigationMobile {
             <li class="main-navigation-mobile__child-menu-item">
               <a
                 aria-current={isActive(child) ? 'true' : 'false'}
-                aria-haspopup={child.children ? 'true' : 'false'}
+                aria-haspopup={hasChildren(child) ? 'true' : 'false'}
                 class={`main-navigation-mobile__child-menu-item-link ${
                   isActive(child) ? 'selected' : ''
                 }`}
@@ -170,7 +170,7 @@ export class MainNavigationMobile {
                 <div class="main-navigation-mobile__child-menu-item-wrapper">
                   <span>{child.name}</span>
                   {isActive(child) && <span class="sr-only">active</span>}
-                  {child.children && (
+                  {hasChildren(child) && (
                     <scale-icon-navigation-right></scale-icon-navigation-right>
                   )}
                 </div>

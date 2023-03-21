@@ -29,11 +29,11 @@ Don't use a modal for:
 
 ![Image Name](assets/3_components/modal/Modal_Basic.png)
 
-### Title (1)
+#### Title (1)
 
 A title is mandatory and should be short and concise.
 
-### Content (2)
+#### Content (2)
 
 Different kinds of content are possible. Once the modal reaches its maximum display height, the content starts scrolling.
 
@@ -41,7 +41,7 @@ Different kinds of content are possible. Once the modal reaches its maximum disp
 
 The action area can contain one primary button and up to two secondary buttons. The primary button should represent a positive action (confirm, save); the secondary buttons represent negative or less important actions (delete, cancel).
 
-### Close Icon (4)
+#### Close Icon (4)
 
 The close icon is mandatory.
 

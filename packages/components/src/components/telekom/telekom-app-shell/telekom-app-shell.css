@@ -10,7 +10,6 @@
  */
 
 :host {
-  --background: var(--telekom-color-background-canvas, #fff);
   --spacing-x: 0;
   --min-height: 100vh;
 }
@@ -25,7 +24,6 @@
   box-sizing: border-box;
   align-self: center;
   width: 100%;
-  background: var(--background);
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);
   flex: 1;

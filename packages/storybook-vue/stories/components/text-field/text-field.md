@@ -30,23 +30,23 @@ Don't use a text field when users need to:
 
 ![Image Name](assets/3_components/text-input/input-field-elements.png)
 
-### Label (1)
+#### Label (1)
 
 The label clearly indicates what information a user should enter, e.g., "Last name".
 
-### Placeholder text (2) (Optional)
+#### Placeholder text (2) (Optional)
 
 After a user clicks/taps the text area, the placeholder text offers a brief explanation of what to enter.
 
-### Information (3) (Optional)
+#### Information (3) (Optional)
 
 When necessary, you can also provide additional information to help users, such as "This information will remain anonymous".
 
-### Character count (4) (Optional)
+#### Character count (4) (Optional)
 
 If the number of characters is limited, the counter shows the max number of characters and the current character count.
 
-### Error (5)
+#### Error (5)
 
 If an error occurs, a corresponding text indicates what a user still needs to do, e.g., "Please enter your name". If the input field has an information text, the error text will temporarily take its place.
 
