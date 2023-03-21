@@ -24,6 +24,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [scale-telekom-header-data-back-compat](../telekom-header-data-back-compat)
+
 ### Depends on
 
 - [scale-icon-navigation-right](../../icons/navigation-right)
@@ -32,6 +36,7 @@
 ```mermaid
 graph TD;
   scale-telekom-mega-menu-column --> scale-icon-navigation-right
+  scale-telekom-header-data-back-compat --> scale-telekom-mega-menu-column
   style scale-telekom-mega-menu-column fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

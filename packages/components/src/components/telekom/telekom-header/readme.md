@@ -12,6 +12,7 @@
 | `appName`      | `app-name`       |             | `string` | `undefined` |
 | `appNameClick` | `app-name-click` |             | `any`    | `undefined` |
 | `appNameLink`  | `app-name-link`  |             | `string` | `undefined` |
+| `type`         | `type`           |             | `string` | `'default'` |
 
 
 ## Shadow Parts
@@ -33,6 +34,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [scale-telekom-header-data-back-compat](../telekom-header-data-back-compat)
+
 ### Depends on
 
 - [scale-logo](../logo)
@@ -42,6 +47,7 @@
 graph TD;
   scale-telekom-header --> scale-logo
   scale-logo --> scale-logo-svg
+  scale-telekom-header-data-back-compat --> scale-telekom-header
   style scale-telekom-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

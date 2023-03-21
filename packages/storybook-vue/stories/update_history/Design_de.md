@@ -2,6 +2,18 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
+## Weitere Basistypen des Telekom Brand Headers
+
+20.03.2023
+
+Die im Januar veröffentlichte Beta-Komponente “Telekom Brand Header & Navigation” wird um zwei neue Basistypen ergänzt – “Slim Header” und “Subtle Header”. Mehr Informationen findest du im Usage Text des [neuen Brand Headers](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
+
+## Neuer Brand Footer
+
+17.02.2023
+
+Veröffentlichung des neuen Brand Footers als Beta-Version. Dieser ersetzt die aktuelle Komponente, wenn die Qualitätskontrolle abgeschlossen ist und die WCAG-Zertifizierung für Barrierefreiheit vorliegt.
+
 ## Neuer Brand Header
 
 31.01.2023

@@ -24,7 +24,7 @@ export default {
     selected: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     styles: { type: String },
-    ariaRoleTitle: { type: String, default: 'switch' },
+    ariaRoleTitle: { type: String },
     ariaCheckedState: { type: Boolean },
   },
   methods: {

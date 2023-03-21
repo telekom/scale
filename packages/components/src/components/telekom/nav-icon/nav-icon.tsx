@@ -71,6 +71,7 @@ export class NavIcon {
             this.refUserMenuToggle
           }
           href={this.href}
+          role={this.href === 'javascript:void(0);' ? 'button' : null}
           onClick={this.clickLink}
           onKeyDown={(event) => {
             if (!this.refMobileMenuToggle) {

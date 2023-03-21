@@ -35,11 +35,20 @@
   [scrolled] .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
   }
+  [type='slim'] .scale-telekom-nav-item,
+  [type='slim'][scrolled] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+  }
 }
 @media screen and (--xl) {
   .scale-telekom-nav-item {
     --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+  }
+  [type='slim'] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: calc(
+      var(--telekom-spacing-unit-x8) - 2px
+    );
   }
 }
 @media screen and (--2xl) {
@@ -47,6 +56,13 @@
     --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x8);
     --_font-size-main-nav: var(--telekom-typography-font-size-callout);
+  }
+  [type='slim'] .scale-telekom-nav-item,
+  [type='slim'][scrolled-back] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x9));
+  }
+  [type='slim'][scrolled] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x6));
   }
 }
 
@@ -68,6 +84,8 @@
   border: none;
   text-decoration: none;
   cursor: pointer;
+  transition: padding-bottom var(--telekom-motion-duration-immediate)
+    var(--telekom-motion-easing-standard);
 }
 
 .scale-telekom-nav-item > :where(a, button):hover,
@@ -121,6 +139,21 @@
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button):has(scale-badge[label]):hover:after,
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):has(scale-badge[label]):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button):has(scale-badge[label]):hover:after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):has(scale-badge[label]):after {
+  width: 24px;
 }
 
 .scale-telekom-nav-list[variant='main-nav']
@@ -210,7 +243,7 @@
 
 @media screen and (--lg) {
   .scale-telekom-nav-list[variant='meta-nav'] {
-    margin-right: var(--telekom-spacing-unit-x6);
+    margin-right: var(--telekom-spacing-unit-x8);
   }
 
   .scale-telekom-nav-list[variant='lang-switcher']
@@ -228,7 +261,7 @@
   width: 20px;
 }
 
-@media screen and (--lg) {
+@media screen and (--xl) {
   .scale-telekom-nav-list[variant='functions'] .scale-icon {
     height: 24px;
     width: 24px;

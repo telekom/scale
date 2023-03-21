@@ -3,6 +3,86 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.128](https://github.com/telekom/scale/compare/v3.0.0-beta.127...v3.0.0-beta.128) (2023-03-20)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.127](https://github.com/telekom/scale/compare/v3.0.0-beta.126...v3.0.0-beta.127) (2023-03-20)
+
+
+### Bug Fixes
+
+* remove unused css vars, pass helper text vars to helper text component, update story docs ([77a42bc](https://github.com/telekom/scale/commit/77a42bc62468fa036e09dc3d9ad770402795cd0a))
+
+
+### Features
+
+* **header:** add slim and subtle types ([#1640](https://github.com/telekom/scale/issues/1640)) ([1f92285](https://github.com/telekom/scale/commit/1f92285d48a4c64840d522e1f69dc6416a20fbb0))
+* adding brand-header usage text picture for dropdown nav ([#1669](https://github.com/telekom/scale/issues/1669)) ([499ca21](https://github.com/telekom/scale/commit/499ca212ac4dbb0f511594960c2283ec2a205aa3))
+* adding section for selected icons from icon library ([#1589](https://github.com/telekom/scale/issues/1589)) ([eb5f8a8](https://github.com/telekom/scale/commit/eb5f8a8bbb9496278c4be890fd717c5713a97a8e))
+
+
+### Reverts
+
+* Revert "Fix/media query 1024 (#1650)" ([e17f3f8](https://github.com/telekom/scale/commit/e17f3f8487f900f12b26fcb8f4be7303f9bd5d56)), closes [#1650](https://github.com/telekom/scale/issues/1650)
+
+
+
+
+
+# [3.0.0-beta.126](https://github.com/telekom/scale/compare/v3.0.0-beta.125...v3.0.0-beta.126) (2023-02-24)
+
+
+### Features
+
+* **back-compat:** header and footer backward compatibility components ([#1535](https://github.com/telekom/scale/issues/1535)) ([2ae1afd](https://github.com/telekom/scale/commit/2ae1afd8db2f8a6cc537ac5a43eaf4d3d8413d29))
+
+
+
+
+
+# [3.0.0-beta.125](https://github.com/telekom/scale/compare/v3.0.0-beta.124...v3.0.0-beta.125) (2023-02-20)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.124](https://github.com/telekom/scale/compare/v3.0.0-beta.123...v3.0.0-beta.124) (2023-02-17)
+
+
+### Bug Fixes
+
+* **data-grid:** accessibility affecting buttons ([#1591](https://github.com/telekom/scale/issues/1591)) ([c8d1cbc](https://github.com/telekom/scale/commit/c8d1cbc5e9072ea0f339bb977e221846626446b9))
+
+
+
+
+
+# [3.0.0-beta.123](https://github.com/telekom/scale/compare/v3.0.0-beta.122...v3.0.0-beta.123) (2023-02-13)
+
+
+### Features
+
+* **button:** inner aria-label prop ([#1376](https://github.com/telekom/scale/issues/1376)) ([f936f81](https://github.com/telekom/scale/commit/f936f813f22f04677bbb90722f25b55cb27dec7c))
+
+
+
+
+
+# [3.0.0-beta.122](https://github.com/telekom/scale/compare/v3.0.0-beta.121...v3.0.0-beta.122) (2023-02-07)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
 # [3.0.0-beta.121](https://github.com/telekom/scale/compare/v3.0.0-beta.120...v3.0.0-beta.121) (2023-02-02)
 
 

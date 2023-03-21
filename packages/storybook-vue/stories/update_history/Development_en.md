@@ -2,6 +2,18 @@
 
 This page documents updates in `@telekom/scale-components` and related packages.
 
+## Additional basic types of the Telekom Brand Header
+
+20.03.2023
+
+The beta component “Telekom Brand Header & Navigation” released in January is extended by two new basic types - “Slim Header” and “Subtle Header”. You can find more information in the Usage Text of the [new Brand Header](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
+
+## New Brand Footer
+
+17.02.2023
+
+Release of the new brand footer as a beta version. This will replace the current component once quality control is complete and WCAG accessibility certification is in place.
+
 ## New Brand Header
 
 31.01.2023
