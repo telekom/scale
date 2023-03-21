@@ -15,8 +15,9 @@
   --font-size-circle: var(--telekom-typography-font-size-footnote);
   --font-weight-circle: bold;
   --border-radius-circle: var(--telekom-radius-circle);
-  display: flex;
+  --font-color-label: var(--telekom-color-text-and-icon-standard);
   --_display-circle: flex;
+  display: flex;  
 }
 
 :host([no-dot]) {
@@ -60,7 +61,7 @@
   margin-left: 8px;
   font-weight: 400;
   font-size: 12px;
-  color: black;
+  color: var(--font-color-label);
   display: flex;
   align-items: center;
 }
