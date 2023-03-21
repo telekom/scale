@@ -477,7 +477,7 @@ export class Header {
                       focusable={true}
                       styles=":host { --logo-size: 36px;} @media (max-width: 1039px) { :host {--logo-size: 26px;} }"
                       logoAriaDescribedBy={this.logoAriaDescribedBy}
-                      logoAriaHide={this.scrolled}
+                      logoAriaHidden={this.scrolled}
                     ></scale-logo>
                   )}
                 </div>
@@ -503,7 +503,7 @@ export class Header {
                       focusable={this.scrolled || this.sticky}
                       size={24}
                       logoAriaDescribedBy={this.logoAriaDescribedBy}
-                      logoAriaHide={!this.scrolled}
+                      logoAriaHidden={!this.scrolled}
                     ></scale-logo>
                   )}
                 </div>
