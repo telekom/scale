@@ -111,9 +111,6 @@ export class Button {
   connectedCallback() {
     this.setIconPositionProp();
     this.appendEnterKeySubmitFallback();
-    if (this.disabled) {
-      this.hostElement.removeAttribute('href');
-    }
   }
 
   disconnectedCallback() {
@@ -201,22 +198,21 @@ export class Button {
         {this.styles && <style>{this.styles}</style>}
 
         {this.href ? (
-            <a
-              ref={(el) => (this.focusableElement = el)}
-              class={this.getCssClassMap()}
-              href={this.href}
-              download={this.download}
-              target={this.target}
-              rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
-              part={basePart}
-              tabIndex={this.innerTabindex}
-              role="link"
-              aria-disabled={this.disabled}
-            >
-              <slot />
-            </a>
-          )
-        : (
+          <a
+            ref={(el) => (this.focusableElement = el)}
+            class={this.getCssClassMap()}
+            href={this.disabled ? null : this.href}
+            download={this.download}
+            target={this.target}
+            rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
+            part={basePart}
+            tabIndex={this.innerTabindex}
+            role="link"
+            aria-disabled={this.disabled ? 'true' : null}
+          >
+            <slot />
+          </a>
+        ) : (
           <button
             ref={(el) => (this.focusableElement = el)}
             class={this.getCssClassMap()}
