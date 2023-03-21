@@ -68,22 +68,29 @@
   margin-left: 0;
   overflow: hidden;
   position: relative;
-  border-radius: 100px;
+  border-radius: var(--telekom-radius-pill);
   background-color: var(--background-color);
 }
 
 .progress-bar__inner {
+  position: absolute;
   top: 0;
   left: 0;
+  width: var(--progress, 0);
   height: var(--progress-bar-inner-size);
   display: flex;
-  position: absolute;
   align-items: center;
   white-space: nowrap;
   justify-content: flex-end;
-  animation-fill-mode: both;
-  border-radius: 100px;
+  border-radius: var(--telekom-radius-pill);
+  border: 1px solid transparent;
   background: var(--background);
+  transition: width var(--telekom-motion-duration-immediate)
+    var(--telekom-motion-easing-standard);
+}
+
+.progress-bar--disabled .progress-bar__inner {
+  background: var(--background-disabled);
 }
 
 .progress-bar__status {

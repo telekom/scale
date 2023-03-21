@@ -4,7 +4,7 @@ exports[`NavMain should handle is active props 1`] = `
 <scale-nav-main active="true" mega-menu-visible="true" name="nameDummy">
   <!---->
   <li class="main-navigation__item mega-menu--visible selected">
-    <a aria-current="true" aria-haspopup="false" class="main-navigation__item-link" href="javascript:void(0);">
+    <a aria-current="true" aria-haspopup="false" class="main-navigation__item-link" href="javascript:void(0);" target="_self">
       <span class="main-navigation__item-link-text">
         nameDummy
       </span>
@@ -20,7 +20,7 @@ exports[`NavMain should match snapshot 1`] = `
 <scale-nav-main>
   <!---->
   <li class="main-navigation__item">
-    <a aria-current="false" aria-haspopup="false" class="main-navigation__item-link" href="javascript:void(0);">
+    <a aria-current="false" aria-haspopup="false" class="main-navigation__item-link" href="javascript:void(0);" target="_self">
       <span class="main-navigation__item-link-text"></span>
     </a>
   </li>

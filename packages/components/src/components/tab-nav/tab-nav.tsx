@@ -35,16 +35,39 @@ export class TabNav {
   @Prop() small?: boolean = false;
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'small';
+  /** (optional) autoFocus  */
+  @Prop() autoFocus: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
   @Listen('click')
   handleClick(event: MouseEvent) {
-    const nextTab = event.target as HTMLScaleTabHeaderElement;
-    if (nextTab.getAttribute('role') !== 'tab') {
-      return;
+    // To provent event bubbling.
+    event.stopPropagation();
+
+    // workaround for slotted icons
+    const targetHTMLElement = event.target as HTMLElement;
+    const targetTag = targetHTMLElement.tagName.toLowerCase();
+    const svgTags = ['svg', 'g', 'path'];
+    let nextTab: HTMLScaleTabHeaderElement;
+
+    if (svgTags.includes(targetTag)) {
+      const closestNextTab = targetHTMLElement.closest(
+        `scale-tab-header[role="tab"]`
+      ) as HTMLScaleTabHeaderElement;
+      if (closestNextTab) {
+        nextTab = closestNextTab;
+        this.selectTab(nextTab);
+      }
+    } else {
+      if (
+        (event.target as HTMLScaleTabHeaderElement).getAttribute('role') ===
+        'tab'
+      ) {
+        nextTab = event.target as HTMLScaleTabHeaderElement;
+        this.selectTab(nextTab);
+      }
     }
-    this.selectTab(nextTab);
   }
 
   @Listen('keydown')
@@ -149,6 +172,7 @@ export class TabNav {
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
       tab.setAttribute('aria-controls', panel.id);
+      tab.setAttribute('auto-focus', this.autoFocus.toString());
       panel.setAttribute('aria-labelledby', tab.id);
     });
     this.selectTab(selectedTab);

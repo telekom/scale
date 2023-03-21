@@ -6,9 +6,12 @@ on:
 
 jobs:
   deploy-storybook:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Configure CI Git User
         run: |
@@ -52,10 +55,13 @@ jobs:
           yarn workspace @telekom/scale-storybook-vue deploy
 
   publish-telekom:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     environment: RELEASE
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Authenticate with Registry
         run: |
@@ -123,10 +129,13 @@ jobs:
           npm deprecate @telekom/scale-design-tokens@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."
 
   publish-neutral:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     environment: RELEASE
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Configure CI Git User
         run: |

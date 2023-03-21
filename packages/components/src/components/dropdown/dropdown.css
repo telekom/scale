@@ -58,7 +58,7 @@ scale-dropdown {
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-footnote);
+  --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
 }
 
@@ -87,6 +87,14 @@ scale-dropdown {
   -webkit-appearance: none;
   background-color: var(--background-color);
   color: var(--color);
+}
+
+.dropdown--hide-label .input__dropdown {
+  padding: 5px var(--telekom-spacing-unit-x10) 5px calc(var(--spacing-x) - 1px);
+}
+
+.dropdown--hide-label .input__label {
+  visibility: hidden;
 }
 
 @-moz-document url-prefix() {

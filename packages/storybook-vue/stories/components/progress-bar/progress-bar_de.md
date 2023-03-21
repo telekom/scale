@@ -29,19 +29,19 @@ Wenn du die Dauer eines Prozesses nicht genau abschätzen kannst, dann verwende 
 
 ![Image Name](assets/3_components/progress-bar/pb_elements.png)
 
-### Label (1)
+#### Label (1)
 
 Wähle einen kurzen und aussagekräftigen Titel.
 
-### Track (2)
+#### Track (2)
 
 Der Balken ist animiert und füllt sich von links nach rechts.
 
-### Status-Label (3)
+#### Status-Label (3)
 
 Das Status-Label gibt an, wie viel Prozent eines Prozesses bereits erledigt ist.
 
-### Beschreibung (4)
+#### Beschreibung (4)
 
 Gib, wenn möglich, immer eine Beschreibung an, die den Nutzer\*innen weitere Informationen über den laufenden Prozess gibt, zum Beispiel welche Datei hochgeladen wird.
 

@@ -1,0 +1,277 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+@import url('../../../global/custom-media.css');
+
+/*
+  Spacing is handled only vertically.
+  Horizontal spacing is handled by `scale-nav-list`.
+*/
+
+.scale-telekom-nav-item {
+  --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
+  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+  --_font-size-main-nav: var(--telekom-typography-font-size-body);
+}
+
+@media screen and (--md) {
+  .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+  }
+}
+@media screen and (--lg) {
+  .scale-telekom-nav-item {
+    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x4);
+  }
+  [scrolled] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+  }
+  [type='slim'] .scale-telekom-nav-item,
+  [type='slim'][scrolled] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+  }
+}
+@media screen and (--xl) {
+  .scale-telekom-nav-item {
+    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+  }
+  [type='slim'] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: calc(
+      var(--telekom-spacing-unit-x8) - 2px
+    );
+  }
+}
+@media screen and (--2xl) {
+  .scale-telekom-nav-item {
+    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x8);
+    --_font-size-main-nav: var(--telekom-typography-font-size-callout);
+  }
+  [type='slim'] .scale-telekom-nav-item,
+  [type='slim'][scrolled-back] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x9));
+  }
+  [type='slim'][scrolled] .scale-telekom-nav-item {
+    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x6));
+  }
+}
+
+.scale-telekom-nav-item[debug] {
+  border: 1px dotted cyan;
+}
+
+.scale-telekom-nav-item > :where(a, button) {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  position: relative;
+  font: inherit;
+  color: inherit;
+  background: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: padding-bottom var(--telekom-motion-duration-immediate)
+    var(--telekom-motion-easing-standard);
+}
+
+.scale-telekom-nav-item > :where(a, button):hover,
+.scale-telekom-nav-item > :where(button[aria-expanded='true']) {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+.scale-telekom-nav-item > :where(a, button):active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+
+/* variants: main-nav, functions (bottom bar) */
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button),
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button) {
+  font-size: var(--_font-size-main-nav);
+  line-height: var(--telekom-typography-line-spacing-standard);
+  font-weight: var(--telekom-typography-font-weight-extra-bold);
+  padding-bottom: var(--_spacing-bottom-slotted-bottom);
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button),
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button) {
+  color: var(--telekom-color-text-and-icon-primary-standard);
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button):hover:after,
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button):hover:after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after {
+  content: '';
+  width: 100%;
+  height: var(--telekom-spacing-unit-x05);
+  background: var(--telekom-color-text-and-icon-primary-hovered);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button):has(scale-badge[label]):hover:after,
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):has(scale-badge[label]):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button):has(scale-badge[label]):hover:after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):has(scale-badge[label]):after {
+  width: 24px;
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button):active:after,
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button):active:after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after {
+  content: '';
+  width: 100%;
+  height: var(--telekom-spacing-unit-x05);
+  background: var(--telekom-color-text-and-icon-primary-pressed);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button):after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button):after {
+  content: '';
+  width: 100%;
+  height: var(--telekom-spacing-unit-x1);
+  background: var(--telekom-color-text-and-icon-primary-standard);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* variants: meta-nav-external, meta-nav, lang-switcher (top bar) */
+
+.scale-telekom-nav-list[variant='meta-nav-external']
+  > .scale-telekom-nav-item
+  > :where(a, button),
+.scale-telekom-nav-list[variant='meta-nav']
+  > .scale-telekom-nav-item
+  > :where(a, button),
+.scale-telekom-nav-list[variant='lang-switcher']
+  > .scale-telekom-nav-item
+  > :where(a, button) {
+  font-size: var(--telekom-typography-font-size-small);
+  line-height: var(--telekom-typography-line-spacing-tight);
+  font-weight: var(--telekom-typography-font-weight-regular);
+  padding-top: var(--_spacing-top-slotted-top);
+}
+
+/* take care of "external link" icon placement */
+
+.scale-telekom-nav-list[variant='meta-nav-external']
+  > .scale-telekom-nav-item
+  > :where(a, button) {
+  display: flex;
+  align-items: center;
+}
+.scale-telekom-nav-list[variant='meta-nav-external']
+  > .scale-telekom-nav-item
+  > :where(a, button)
+  > * {
+  margin-inline-start: 0.5ch;
+}
+
+/* language switcher  */
+
+.scale-telekom-nav-list[variant='lang-switcher'] > .scale-telekom-nav-item > a,
+.scale-telekom-nav-list[variant='meta-nav-external']
+  > .scale-telekom-nav-item
+  > a {
+  font-size: var(--telekom-typography-font-size-body);
+}
+
+.scale-telekom-nav-list[variant='lang-switcher']
+  > .scale-telekom-nav-item
+  > a:where([aria-current='true']) {
+  font-weight: var(--telekom-typography-font-weight-extra-bold);
+}
+
+@media screen and (--lg) {
+  .scale-telekom-nav-list[variant='meta-nav'] {
+    margin-right: var(--telekom-spacing-unit-x8);
+  }
+
+  .scale-telekom-nav-list[variant='lang-switcher']
+    > .scale-telekom-nav-item
+    > a,
+  .scale-telekom-nav-list[variant='meta-nav-external']
+    > .scale-telekom-nav-item
+    > a {
+    font-size: var(--telekom-typography-font-size-small);
+  }
+}
+
+.scale-telekom-nav-list[variant='functions'] .scale-icon {
+  height: 20px;
+  width: 20px;
+}
+
+@media screen and (--xl) {
+  .scale-telekom-nav-list[variant='functions'] .scale-icon {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+/* FIXME this is too leaky (in general) */
+scale-telekom-mobile-flyout-canvas
+  .scale-telekom-nav-list[variant='meta-nav-external']
+  .scale-icon {
+  height: 12px;
+  width: 12px;
+}

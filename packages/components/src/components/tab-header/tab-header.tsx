@@ -14,7 +14,6 @@ import classNames from 'classnames';
 import { ScaleIcon, isScaleIcon } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
-const DEFAULT_ICON_SIZE = 24;
 const PER_SPEC_ICON_SIZE = 16;
 
 let i = 0;
@@ -26,7 +25,6 @@ let i = 0;
 })
 export class TabHeader {
   generatedId: number = i++;
-  container: HTMLElement;
 
   @Element() hostElement: HTMLElement;
 
@@ -37,6 +35,8 @@ export class TabHeader {
   @Prop() small?: boolean = false;
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'small';
+  /** (optional) autoFocus  */
+  @Prop() autoFocus?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
@@ -45,11 +45,16 @@ export class TabHeader {
 
   @Watch('selected')
   selectedChanged(newValue: boolean) {
+    if (!this.hostElement.isConnected) {
+      return;
+    }
     if (!this.disabled) {
       if (newValue === true) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        this.hostElement.focus();
+        if (this.autoFocus) {
+          this.hostElement.focus();
+        }
       }
       this.updateSlottedIcon();
     }
@@ -74,30 +79,23 @@ export class TabHeader {
    * Find slotted icons, and if any, add the `selected` attribute accordingly.
    */
   updateSlottedIcon() {
-    const slot = this.container.querySelector('slot') as HTMLSlotElement;
-    if (slot === null) {
-      return;
-    }
-    const children = Array.from(slot.assignedNodes())
-      .filter((node) => node.nodeType === 1)
-      .filter((node) => node.nodeName.toUpperCase().indexOf('ICON') > -1);
-    if (children.length === 0) {
-      return;
-    }
+    const icons: ScaleIcon[] = Array.from(this.hostElement.childNodes).filter(
+      isScaleIcon
+    );
     const action = this.selected ? 'setAttribute' : 'removeAttribute';
-    children.forEach((child) => child[action]('selected', ''));
+    icons.forEach((child) => child[action]('selected', ''));
   }
 
   /**
    * Set any children icon's size according the button size.
    */
   setChildrenIconSize() {
-    const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
+    const icons: ScaleIcon[] = Array.from(this.hostElement.childNodes).filter(
       isScaleIcon
     );
     icons.forEach((icon) => {
       // This is meh people might actually want 24
-      if (icon.size === DEFAULT_ICON_SIZE) {
+      if (icon.size !== PER_SPEC_ICON_SIZE) {
         icon.size = PER_SPEC_ICON_SIZE;
       }
     });
@@ -114,12 +112,7 @@ export class TabHeader {
         onBlur={() => (this.hasFocus = false)}
       >
         {this.styles && <style>{this.styles}</style>}
-
-        <span
-          part={this.getBasePartMap()}
-          ref={(el) => (this.container = el)}
-          class={this.getCssClassMap()}
-        >
+        <span part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <slot />
         </span>
       </Host>

@@ -35,7 +35,7 @@ export class Tag {
     | 'teal'
     | 'black'
     | 'dismissable'
-    | 'grey' = 'grey';
+    | 'standard' = 'standard';
   /** (optional) Tag href */
   @Prop() href?: string = '';
   /** (optional) Tag target */

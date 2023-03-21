@@ -23,7 +23,7 @@
     "elementSelector": "#new-release",
     "en": "New Release",
     "de": "New Release"
-  },  
+  },
   {
     "elementSelector": "#new-release-release-notes--page",
     "en": "Release Notes",
@@ -127,7 +127,11 @@
     "en": "Beta Components",
     "de": "Beta Komponenten"
   },
-
+  {
+    "elementSelector": "#deprecated",
+    "en": "Deprecated",
+    "de": "Deprecated"
+  },
   {
     "elementSelector": "#update-history",
     "en": "Update History",

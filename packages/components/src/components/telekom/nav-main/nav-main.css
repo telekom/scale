@@ -18,12 +18,14 @@ scale-nav-main {
   --font-size: var(--telekom-typography-font-size-callout);
   --font-weight: var(--telekom-typography-font-weight-extra-bold);
   --line-height: var(--telekom-typography-line-spacing-tight);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
 }
 
 .main-navigation__item {
   height: 100%;
-  padding-left: var(--spacing-x);
-  padding-right: var(--spacing-x);
+  margin-left: var(--spacing-x);
+  margin-right: var(--spacing-x);
 }
 .main-navigation__item:has(a[href]) {
   cursor: pointer;
@@ -60,6 +62,11 @@ scale-nav-main {
   display: flex;
   align-items: center;
 }
+
+.main-navigation__item-link:focus {
+  outline: var(--focus-outline);
+}
+
 .main-navigation__item:active .main-navigation__item-link {
   color: var(--color-active);
 }
