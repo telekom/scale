@@ -260,7 +260,6 @@
 .thead__cell[aria-sort='none']:hover .thead__arrow-top,
 .thead__cell[aria-sort='none']:hover .thead__arrow-bottom {
   display: none;
-  border-bottom: 5px solid var(--telekom-color-text-and-icon-primary-hovered);
 }
 
 .thead__cell[aria-sort='ascending']:hover .thead__arrow-top {
