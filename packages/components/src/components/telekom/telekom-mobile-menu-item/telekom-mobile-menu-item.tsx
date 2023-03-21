@@ -35,10 +35,6 @@ export class TelekomMobileMenuItem {
     this.toggleChildrenVisibility(newValue);
   }
 
-  connectedCallback() {
-    this.toggleChildrenVisibility(this.open);
-  }
-
   toggleChildrenVisibility(show) {
     this.children.forEach((element) => {
       show && element.getAttribute('level') === String(+this.level + 1)
@@ -80,7 +76,7 @@ export class TelekomMobileMenuItem {
   get openChildren(): HTMLElement[] | null {
     return Array.from(
       this.hostElement.querySelectorAll('scale-telekom-mobile-menu-item')
-    ).filter((element) => element.hasAttribute('open'));
+    ).filter((element) => element.hasAttribute('open') || element.open);
   }
 
   render() {

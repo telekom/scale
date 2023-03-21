@@ -209,7 +209,44 @@ When using the `name` attribute, the component assumes there is an object with a
         >
           {category.items.map((item) => {
             let markup = () => ({
-              __html: `<scale-icon-${category.category}-${item} accessibility-title="${item}" />`,
+              __html: `<scale-icon-${category.category}-${item} accessibility-title="${item}"/>`,
+            });
+            return (
+              <div key={item}>
+                <span>
+                  <span style={{ color: '#7C7C7C' }}>{category.category}-</span>
+                  {item}
+                </span>
+                <Canvas mdxSource={markup().__html}>
+                  <span dangerouslySetInnerHTML={markup()}></span>
+                </Canvas>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+### Full list of selected, grouped by category
+
+<div style={{ marginTop: 16 }}>
+  {index.map((category) => {
+    return (
+      <div key={category.category}>
+        <h4>{category.label}</h4>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+            gap: 16,
+            marginTop: 32,
+          }}
+        >
+          {category.items.map((item) => {
+            let markup = () => ({
+              __html: `<scale-icon-${category.category}-${item} accessibility-title="${item}" selected/>`,
             });
             return (
               <div key={item}>

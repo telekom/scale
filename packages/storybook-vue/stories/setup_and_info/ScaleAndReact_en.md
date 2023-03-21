@@ -88,6 +88,8 @@ const App = () => {
 export default App;
 ```
 
+Please note that when using any custom events from scale in a wrapper, it is important to include "on" before the event name. For example, "scaleChange" should be written as "onScaleChange.
+
 ## Events in React
 
 In order to prevent collisions with standard events and for better compatibility with other libraries and frameworks, the custom events emitted by some Scale components are prefixed with `scale`. Event names are camelCased (e.g. `scaleChange`). You can find the documentation for these custom events on the respective component pages in the "docs" section.

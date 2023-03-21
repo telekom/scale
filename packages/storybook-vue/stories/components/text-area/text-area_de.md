@@ -21,27 +21,27 @@ Nutzer\*innen nur sehr kurze Texte eingeben müssen (hier eignen sich Text-Field
 
 ![Image Name](assets/3_components/text-area/text_area_elements.png)
 
-### Label (1)
+#### Label (1)
 
 Das Label gibt eindeutig an, welche Informationen die Nutzer\*innen eingeben sollen (z. B. „Ihre Nachricht“).
 
-### Platzhaltertext (2) (optional)
+#### Platzhaltertext (2) (optional)
 
 Per Klick/Tap auf die Text-Area erscheint ein Platzhaltertext mit einer kurzen Erklärung, welche Informationen genau benötigt werden.
 
-### Informationstext (3) (optional)
+#### Informationstext (3) (optional)
 
 Wenn nötig, kannst du auch noch eine zusätzliche Information angeben (z. B. „Diese Angaben bleiben anonym.“).
 
-### Zeichenanzahl (4) (optional)
+#### Zeichenanzahl (4) (optional)
 
 Wenn die Anzahl der Zeichen begrenzt ist, zeige die maximale und die aktuell verbrauchte Zeichenanzahl in oder an der Text-Area an.
 
-### Fehlermeldung (5)
+#### Fehlermeldung (5)
 
 Bei nicht ausgefüllten, aber verpflichtenden Feldern erscheint eine Fehlermeldung (z. B. „Bitte füllen Sie dieses Feld aus."). Wenn die Text-Area einen Informationstext besitzt, erscheint der Fehlertext vorübergehend an dessen Stelle.
 
-### Variable Größe (6) (optional)
+#### Variable Größe (6) (optional)
 
 Mit diesem Element können Nutzer\*innen den gesamten Text sichtbar machen.
 

@@ -38,7 +38,6 @@ function elementDepth(el) {
 export class TelekomMobileMenu {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop() closeButtonTitle: string = 'Close';
   @Prop() backButtonTitle: string = 'Back';
 
   @Prop() appName?: string;
@@ -60,7 +59,6 @@ export class TelekomMobileMenu {
   @Listen('scale-set-menu-item-open')
   handleSetMenuItemOpen(e) {
     e.target.setAttribute('open', '');
-    this.handleSetMenuItemActive(e);
 
     this.currentLevel = String(+e.target.getAttribute('level') + 1);
 
@@ -85,13 +83,17 @@ export class TelekomMobileMenu {
     return this.hostElement.querySelectorAll('scale-telekom-mobile-menu-item');
   }
   get activeItem(): HTMLElement | null {
-    return Array.from(this.menuItems).find((element) =>
-      element.hasAttribute('active')
+    return Array.from(this.menuItems).find(
+      (element) =>
+        // @ts-ignore
+        element.hasAttribute('active') || element.active
     );
   }
   get openItems(): HTMLElement[] | null {
-    return Array.from(this.menuItems).filter((element) =>
-      element.hasAttribute('open')
+    return Array.from(this.menuItems).filter(
+      (element) =>
+        // @ts-ignore
+        element.hasAttribute('open') || element.open
     );
   }
 
@@ -114,6 +116,8 @@ export class TelekomMobileMenu {
         ) {
           element.parentElement.setAttribute('active', '');
         }
+        // @ts-ignore
+        element.open = false;
         return element.removeAttribute('open');
       }
     });
