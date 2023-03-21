@@ -26,19 +26,19 @@ There are two main use cases for checkboxes:
 
 ![Image Name](assets/3_components/checkbox/checkbox-elements.png)
 
-### Checkbox deselected (1)
+#### Checkbox deselected (1)
 
 If there is no checkmark, a checkbox is considered to be deselected.
 
-### Checkbox selected (2)
+#### Checkbox selected (2)
 
 If a checkbox has a check mark, it is considered to be selected.
 
-### Information (3) (Optional)
+#### Information (3) (Optional)
 
 If necessary, you can also provide additional information.
 
-### Error (4)
+#### Error (4)
 
 An error message appears if an option is mandatory but not selected, e.g., when it’s required to execute the next steps in the process.
 

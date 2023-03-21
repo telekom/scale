@@ -24,6 +24,7 @@
 | `sectorNavigation`    | `sector-navigation`      |                                | `any`     | `[]`        |
 | `sticky`              | `sticky`                 |                                | `boolean` | `false`     |
 | `styles`              | `styles`                 | (optional) Injected CSS styles | `string`  | `undefined` |
+| `userMenuAriaLabel`   | `user-menu-aria-label`   |                                | `string`  | `undefined` |
 | `userNavigation`      | `user-navigation`        |                                | `any`     | `[]`        |
 
 

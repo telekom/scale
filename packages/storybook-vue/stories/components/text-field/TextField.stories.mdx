@@ -94,6 +94,7 @@ export const Template = (args, { argTypes }) => ({
       :input-autofocus="inputAutofocus"
       :input-autocomplete="inputAutocomplete"
       :experimental-controlled="experimentalControlled"
+      :hide-label-visually="hideLabelVisually"
       @scaleChange="scaleChange"
       @scaleFocus="scaleFocus"
       @scaleBlur="scaleBlur"
@@ -237,9 +238,9 @@ scale-text-field {
   --color-counter-error: var(--color-meta-error);
 
   /* helper-text */
-  --transition-helper-text: var(--transition);
-  --font-size-helper-text: var(--font-size-meta);
-  --line-height-helper-text: var(--line-height-meta);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --line-height-helper-text: 1.35;
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
   --color-helper-text: var(
     --telekom-color-text-and-icon-functional-informational
   );
@@ -250,6 +251,8 @@ scale-text-field {
   --color-helper-text-warning: var(
     --telekom-color-text-and-icon-functional-warning
   );
+  --color-helper-text-neutral: var(--telekom-color-text-and-icon-additional);
+  --helper-text-icon-size: 11px;
 
   /* placeholder */
   --transition-placeholder: var(--transition);

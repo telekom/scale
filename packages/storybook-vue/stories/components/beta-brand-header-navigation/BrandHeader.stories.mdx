@@ -47,7 +47,7 @@ import {
   }}
 >
   <h1>Brand Header & Navigation</h1>
-  <img src="assets/beta.png" alt="Beta" />
+  <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 export const Template = (args, { argTypes }) => ({
@@ -65,11 +65,11 @@ export const Template = (args, { argTypes }) => ({
   `,
 });
 
-## Standard
+## Standard Header
 
 <Canvas withSource="none">
   <Story
-    name="Standard"
+    name="Standard Header"
     args={{ storyName: 'StoryStandard' }}
     inline={false}
     height={500}
@@ -78,7 +78,7 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<ArgsTable story="Standard" />
+<ArgsTable story="Standard Header" />
 
 ### Main components
 
@@ -239,6 +239,50 @@ scale-telekom-nav-flyout {
     </ul>
   </scale-telekom-mega-menu-column>
 </scale-telekom-mega-menu>
+```
+
+## Slim Header
+
+<Canvas withSource="none">
+  <Story
+    name="Slim Header"
+    args={{ storyName: 'StorySlim', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header
+  app-name="Application Name"
+  app-name-link="https://example.com"
+>
+  <!-- … -->
+</scale-telekom-header>
+```
+
+## Subtle Header
+
+<Canvas withSource="none">
+  <Story
+    name="Subtle Header"
+    args={{ storyName: 'StorySubtle', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header
+  app-name="Application Name"
+  app-name-link="https://example.com"
+>
+  <!-- … -->
+</scale-telekom-header>
 ```
 
 ## Data API (Backward compatibility)

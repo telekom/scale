@@ -1118,6 +1118,14 @@ export class DataGrid {
                   }
                   // Add rows nested tables to array
                   if (field.type === 'html') {
+                    if (!cellContent) {
+                      return this.renderTableCell(
+                        field,
+                        null,
+                        rowIndex,
+                        columnIndex
+                      );
+                    }
                     if (!!cellContent.isExpanded) {
                       isNestedExpanded = true;
                     }
@@ -1148,20 +1156,22 @@ export class DataGrid {
                   <td class={`tbody__nested-cell`}>
                     {rowNestedContent.map(({ content }) => {
                       return (
-                        <div
-                          ref={(el) => {
-                            if (el) {
-                              // Remove content from other pages
-                              let child = el.lastElementChild;
-                              while (child) {
-                                el.removeChild(child);
-                                child = el.lastElementChild;
+                        content && (
+                          <div
+                            ref={(el) => {
+                              if (el) {
+                                // Remove content from other pages
+                                let child = el.lastElementChild;
+                                while (child) {
+                                  el.removeChild(child);
+                                  child = el.lastElementChild;
+                                }
+                                // Append actual content
+                                el.appendChild(content);
                               }
-                              // Append actual content
-                              el.appendChild(content);
-                            }
-                          }}
-                        ></div>
+                            }}
+                          ></div>
+                        )
                       );
                     })}
                   </td>

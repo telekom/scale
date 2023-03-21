@@ -23,6 +23,7 @@
     :input-autofocus="inputAutofocus"
     :input-autocomplete="inputAutocomplete"
     :experimental-controlled="experimentalControlled"
+    :hide-label-visually="hideLabelVisually"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
@@ -61,6 +62,7 @@ export default {
     inputAutofocus: { type: Boolean },
     inputAutocomplete: { type: String },
     experimentalControlled: { type: Boolean },
+    hideLabelVisually: {type: Boolean, default: false},
     styles: { type: String },
   },
   methods: {

@@ -11,13 +11,16 @@
 import StoryStandard from './StoryStandard.vue';
 import StoryMegaMenu from './StoryMegaMenu.vue';
 import StoryDropdown from './StoryDropdown.vue';
-
+import StorySlim from './StorySlim.vue';
+import StorySubtle from './StorySubtle.vue';
 
 export default {
   components: {
     StoryStandard,
     StoryMegaMenu,
-    StoryDropdown
+    StoryDropdown,
+    StorySlim,
+    StorySubtle
   },
   props: {
     appName: String,

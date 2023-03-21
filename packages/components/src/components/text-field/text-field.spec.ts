@@ -18,7 +18,7 @@ describe('TextField', () => {
   beforeEach(async () => {
     page = await newSpecPage({
       components: [TextField],
-      html: `<scale-text-field></scale-text-field>`,
+      html: `<scale-text-field label="test"></scale-text-field>`,
     });
   });
 

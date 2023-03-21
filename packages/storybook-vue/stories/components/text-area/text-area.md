@@ -21,27 +21,27 @@ If users don't need to enter multiple lines of text, use text fields instead.
 
 ![Image Name](assets/3_components/text-area/text_area_elements.png)
 
-### Label (1)
+#### Label (1)
 
 The label clearly indicates what information a user should enter, e.g., "Your message".
 
-### Placeholder text (2) (Optional)
+#### Placeholder text (2) (Optional)
 
 After a user clicks/taps the text area, the placeholder text offers a brief explanation of what to enter.
 
-### Information (3) (Optional)
+#### Information (3) (Optional)
 
 When necessary, you can also provide additional information, such as "This information will remain anonymous".
 
-### Character count (4) (Optional)
+#### Character count (4) (Optional)
 
 If the number of characters is limited, the counter shows the max number of characters and the current character count.
 
-### Error (5)
+#### Error (5)
 
 If an error occurs, a corresponding text indicates what a user still needs to do, e.g., "Please fill out this field". If the input field has an information text, the error text will temporarily take its place.
 
-### Resize (6) (Optional)
+#### Resize (6) (Optional)
 
 Users can make the entire text visible with this resizing element.
 

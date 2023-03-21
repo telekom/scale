@@ -25,23 +25,23 @@ Ein Text-Field ist ein Eingabefeld für eine einzelne Textzeile. Das Feld kann i
 
 ![Image Name](assets/3_components/text-input/input-field-elements.png)
 
-### Label (1)
+#### Label (1)
 
 Das Label gibt eindeutig an, welche Informationen die Nutzer\*innen eingeben sollen (z. B. „Nachname“).
 
-### Platzhaltertext (2) (optional)
+#### Platzhaltertext (2) (optional)
 
 Per Klick/Tap auf das Text-Field erscheint ein Platzhaltertext mit einer kurzen Erklärung, welche Information benötigt wird.
 
-### Information (3) (optional)
+#### Information (3) (optional)
 
 Wenn nötig, kannst du auch noch eine zusätzliche Information angeben (z. B. „Diese Angaben bleiben anonym.“).
 
-### Zeichenanzahl (4) (optional)
+#### Zeichenanzahl (4) (optional)
 
 Wenn die Anzahl der Zeichen begrenzt ist, zeige die maximale und die aktuell verbrauchte Zeichenanzahl im oder am Text-Field an.
 
-### Fehlermeldung (5)
+#### Fehlermeldung (5)
 
 Bei nicht ausgefüllten, aber verpflichtenden Feldern erscheint eine Fehlermeldung (z. B. „Bitte füllen Sie dieses Feld aus."). Wenn das Text-Field einen Informationstext besitzt, erscheint der Fehlertext vorübergehend an dessen Stelle.
 
