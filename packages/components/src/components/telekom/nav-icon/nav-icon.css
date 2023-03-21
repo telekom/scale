@@ -57,7 +57,7 @@ scale-nav-icon {
   outline: var(--focus-outline);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1039px) {
   .meta-navigation__item-link {
     min-width: 24px;
     height: auto;
@@ -80,7 +80,7 @@ scale-nav-icon {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1040px) {
   .meta-navigation__item scale-menu-flyout {
     height: 24px;
   }

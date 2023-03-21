@@ -24,27 +24,27 @@ Der Einsatz der Sidebar-Navigation ist optional. Sie bietet die Möglichkeit, ei
 
 Beispiel einer Sidebar-Navigation für Desktop-Anwendungen
 
-### Erste Hierarchieebene (1)
+#### Erste Hierarchieebene (1)
 
 Auf der ersten Hierarchieebene kannst du ein Submenü oder einen Link einsetzen. Bei einem Submenü wird bei Mouseover ein Pfeil eingeblendet.
 
-### Zweite Hierarchieebene (2)
+#### Zweite Hierarchieebene (2)
 
 Dasselbe gilt für die zweite Hierarchieebene: Auch hier kannst du ein Submenü oder einen Link einsetzen.
 
-### Dritte Hierarchieebene (3)
+#### Dritte Hierarchieebene (3)
 
 Die dritte Hierarchieebene beinhaltet nur Links.
 
-### Aktuelle Seite (4)
+#### Aktuelle Seite (4)
 
 Die aktuelle Seite wird durch eine magentafarbene Schrift gekennzeichnet.
 
-### Icon (5)
+#### Icon (5)
 
 Der Pfeil erscheint bei Mouseover. Nach Klick/Tap auf das Submenü bleibt der Pfeil sichtbar und ändert seine Ausrichtung, um anzuzeigen, dass das Submenü geöffnet ist.
 
-### Divider (6)
+#### Divider (6)
 
 Trenne Navigationspunkte der ersten und zweiten Hierarchieebene mit einem Divider unterhalb der jeweiligen Ebene.
 

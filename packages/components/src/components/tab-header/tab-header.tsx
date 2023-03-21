@@ -35,6 +35,8 @@ export class TabHeader {
   @Prop() small?: boolean = false;
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'small';
+  /** (optional) autoFocus  */
+  @Prop() autoFocus?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
@@ -50,8 +52,7 @@ export class TabHeader {
       if (newValue === true) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        const firstRender = this.hostElement.getAttribute('first-render');
-        if (!firstRender) {
+        if (this.autoFocus) {
           this.hostElement.focus();
         }
       }

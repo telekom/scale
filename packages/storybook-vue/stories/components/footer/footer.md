@@ -46,13 +46,13 @@ The extended footer is suitable for portals with a comprehensive range of produc
 
 ![Image Name](assets/3_components/footer/footer-elemente.png)
 
-### Sitemap (1) (optional)
+#### Sitemap (1) (optional)
 
-### Telekom logo with claim (2)
+#### Telekom logo with claim (2)
 
-### Copyright (3)
+#### Copyright (3)
 
-### Links (4)
+#### Links (4)
 
 ## The footer on small devices
 

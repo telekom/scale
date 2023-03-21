@@ -1,6 +1,14 @@
 import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
 import TelekomHeader from './TelekomHeader.vue';
-import TelekomHeaderTemplate from './TelekomHeaderTemplate.vue'
+import TelekomHeaderDataBackCompat from './TelekomHeaderDataBackCompat.vue';
+import TelekomHeaderTemplate from './TelekomHeaderTemplate.vue';
+import {
+  mainNavigation,
+  iconNavigation,
+  addonNavigation,
+  sectorNavigation,
+  userNavigation,
+} from './fixtures';
 
 <Meta
   title="Beta Components/Telekom Brand Header & Navigation"
@@ -26,7 +34,7 @@ import TelekomHeaderTemplate from './TelekomHeaderTemplate.vue'
       table: {
         disable: true,
       },
-    }
+    },
   }}
 />
 
@@ -39,7 +47,7 @@ import TelekomHeaderTemplate from './TelekomHeaderTemplate.vue'
   }}
 >
   <h1>Brand Header & Navigation</h1>
-  <img src="assets/beta.png" alt="Beta" />
+  <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 export const Template = (args, { argTypes }) => ({
@@ -54,18 +62,23 @@ export const Template = (args, { argTypes }) => ({
       :app-name="appName"
       :app-name-link="appNameLink"
     />
-  `
+  `,
 });
 
-## Standard
+## Standard Header
 
 <Canvas withSource="none">
-  <Story name="Standard" args={{ storyName: 'StoryStandard' }} inline={false} height={500}>
+  <Story
+    name="Standard Header"
+    args={{ storyName: 'StoryStandard' }}
+    inline={false}
+    height={500}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Standard" />
+<ArgsTable story="Standard Header" />
 
 ### Main components
 
@@ -101,10 +114,11 @@ scale-telekom-header {
   --shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
   --background: var(--telekom-color-background-surface);
   --background-logo: var(--telekom-color-primary-standard);
-  --transition-common-scrolled: height var(--telekom-motion-duration-immediate)
-      var(--telekom-motion-easing-standard),
-    width var(--telekom-motion-duration-immediate)
-      var(--telekom-motion-easing-standard);
+  --transition-common-scrolled: height var(--telekom-motion-duration-immediate) var(
+        --telekom-motion-easing-standard
+      ), width var(--telekom-motion-duration-immediate) var(
+        --telekom-motion-easing-standard
+      );
   --font-size-app-name: var(--telekom-typography-font-size-small);
   --line-height-app-name: var(--telekom-typography-line-spacing-tight);
   --font-weight-app-name: var(--telekom-typography-font-weight-extra-bold);
@@ -118,13 +132,21 @@ scale-telekom-nav-list {
 ## Application Name
 
 <Canvas withSource="none">
-  <Story name="Application Name" args={{ storyName: 'StoryStandard', appName: 'Application Name' }} inline={false} height={500}>
+  <Story
+    name="Application Name"
+    args={{ storyName: 'StoryStandard', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-telekom-header app-name="Application Name" app-name-link="https://example.com">
+<scale-telekom-header
+  app-name="Application Name"
+  app-name-link="https://example.com"
+>
   <!-- … -->
 </scale-telekom-header>
 ```
@@ -132,7 +154,12 @@ scale-telekom-nav-list {
 ## Flyout Navigation
 
 <Canvas withSource="none">
-  <Story name="Flyout Navigation" args={{ storyName: 'StoryFlyoutNav', appName: 'Application Name' }} inline={false} height={500}>
+  <Story
+    name="Flyout Navigation"
+    args={{ storyName: 'StoryFlyoutNav', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -184,4 +211,106 @@ scale-telekom-nav-flyout {
     </ul>
   </scale-telekom-mega-menu-column>
 </scale-telekom-mega-menu>
+```
+
+## Slim Header
+
+<Canvas withSource="none">
+  <Story
+    name="Slim Header"
+    args={{ storyName: 'StorySlim', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header
+  app-name="Application Name"
+  app-name-link="https://example.com"
+>
+  <!-- … -->
+</scale-telekom-header>
+```
+
+## Subtle Header
+
+<Canvas withSource="none">
+  <Story
+    name="Subtle Header"
+    args={{ storyName: 'StorySubtle', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header
+  app-name="Application Name"
+  app-name-link="https://example.com"
+>
+  <!-- … -->
+</scale-telekom-header>
+```
+
+## Data API (Backward compatibility)
+
+> This scale-telekom-header-data-back-compat component is only meant to make it easier to migrate from a [previous version of the Brand Header](?path=/usage/components-brand-header-navigation--standard). If you do not need to migrate, please avoid it. Learn more about the [expected data shape](https://github.com/telekom/scale/blob/main/packages/storybook-vue/stories/components/brand-header-navigation/fixtures.js).
+
+<Canvas withSource="none">
+  <Story
+    name="Data API"
+    inline={false}
+    height={500}
+    args={{
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      userNavigation: JSON.stringify(userNavigation),
+      activeRouteId: 'Third Level 24',
+      appName: 'Application Name',
+    }}
+  >
+    {() => ({
+      components: { TelekomHeaderDataBackCompat },
+      props: TelekomHeaderDataBackCompat.props,
+      template: `
+        <div class="brand-header-spacing">
+          <scale-telekom-header-data-back-compat
+            :main-navigation="mainNavigation"
+            :icon-navigation="iconNavigation"
+            :sector-navigation="sectorNavigation"
+            :user-navigation="userNavigation"
+            :addon-navigation="addonNavigation"
+            :active-route-id="activeRouteId"
+            :app-name="appName"
+          >
+          </scale-telekom-header-data-back-compat>
+        </div>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header-data-back-compat
+  app-name="Application Name"
+  app-name-link="https://example.com"
+  active-route-id="id"
+></scale-telekom-header-data-back-compat>
+
+<script>
+  const header = window.document.querySelector(
+    'scale-telekom-header-data-back-compat'
+  );
+  header.mainNavigation = [...[]];
+  header.iconNavigation = [...[]];
+  header.sectorNavigation = [...[]];
+  header.addonNavigation = [...[]];
+</script>
 ```

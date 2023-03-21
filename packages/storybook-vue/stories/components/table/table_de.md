@@ -22,13 +22,13 @@ Eine Tabelle organisiert Daten in Zeilen und Spalten. Zusätzliche Funktionen wi
 
 ![Image Name](assets/3_components/data-table/data-table-elements.png)
 
-### Spalten-Header (1)
+#### Spalten-Header (1)
 
 Der Titel im Spalten-Header beschreibt den Inhalt der jeweiligen Spalte. Standardmäßig ist der Spalten-Header statisch. Du kannst aber auch die Sortierfunktion verwenden, damit Nutzer\*innen die Inhalte der Spalte nach aufsteigender oder absteigender Reihenfolge sortieren können.
 
 Das Sortier-Icon zeigt an, wenn Nutzer\*innen einen Spalteninhalt bereits sortiert haben.
 
-### Tabellenzeile (2)
+#### Tabellenzeile (2)
 
 Der Inhalt einer Zeile bildet eine Dateneinheit und unterscheidet sich sowohl inhaltlich als auch visuell von den anderen Zeilen.
 Die erste Zelle einer Reihe enthält den Titel – eine aussagekräftige Beschreibung des Datensatzes.
@@ -36,7 +36,7 @@ Die anderen Zellen können die unterschiedlichsten Arten von Inhalten enthalten.
 
 Für eine Unterstützung der Lesbarkeit können die Zeilen bei Mouseover hervorgehoben werden.
 
-### Trenner (3)
+#### Trenner (3)
 
 Eine Trennlinie trennt die Tabellenzeilen voneinander.
 

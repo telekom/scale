@@ -185,3 +185,17 @@
   background-color: white;
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .notification-toast__button-close svg {
+    color: hsl(0, 0%, 100%);
+  }
+  .notification-toast {
+    border: 1px solid hsl(0, 0%, 100%);
+  }
+
+  .notification-toast__icon-container {
+    border: 1px solid hsl(0, 0%, 100%);
+    margin-top: -1px;
+  }
+}
