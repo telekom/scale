@@ -104,7 +104,11 @@ export class TelekomMobileMenuItem {
               {!!this.children.length && !this.open && (
                 <scale-icon-navigation-right
                   size={20}
-                  color={this.active ? 'var(--telekom-color-primary-standard)' : 'var(--telekom-color-text-and-icon-standard)'}
+                  color={
+                    this.active
+                      ? 'var(--telekom-color-primary-standard)'
+                      : 'var(--telekom-color-text-and-icon-standard)'
+                  }
                 ></scale-icon-navigation-right>
               )}
             </div>
