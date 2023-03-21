@@ -89,6 +89,14 @@ scale-dropdown {
   color: var(--color);
 }
 
+.dropdown--hide-label .input__dropdown {
+  padding: 5px var(--telekom-spacing-unit-x10) 5px calc(var(--spacing-x) - 1px);
+}
+
+.dropdown--hide-label .input__label {
+  visibility: hidden;
+}
+
 @-moz-document url-prefix() {
   .dropdown .input__dropdown {
     text-indent: -2px;
