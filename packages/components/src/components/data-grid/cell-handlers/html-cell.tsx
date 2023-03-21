@@ -22,28 +22,30 @@ export const HTMLCell: Cell = {
   },
   render: ({ content, component }) => {
     return (
-      <scale-button
-        variant="secondary"
-        size="small"
-        icon-only
-        inner-aria-label={`Activate to ${
-          content.isExpanded ? 'collapse' : 'expand'
-        } content`}
-        onClick={() => {
-          content.isExpanded = !content.isExpanded;
-          component.forceRender++;
-        }}
-      >
-        {content.isExpanded ? (
-          <scale-icon-navigation-collapse-up
-            size={14}
-          ></scale-icon-navigation-collapse-up>
-        ) : (
-          <scale-icon-navigation-collapse-down
-            size={14}
-          ></scale-icon-navigation-collapse-down>
-        )}
-      </scale-button>
+      content && (
+        <scale-button
+          variant="secondary"
+          size="small"
+          icon-only
+          aria-label={`Activate to ${
+            content.isExpanded ? 'collapse' : 'expand'
+          } content`}
+          onClick={() => {
+            content.isExpanded = !content.isExpanded;
+            component.forceRender++;
+          }}
+        >
+          {content.isExpanded ? (
+            <scale-icon-navigation-collapse-up
+              size={14}
+            ></scale-icon-navigation-collapse-up>
+          ) : (
+            <scale-icon-navigation-collapse-down
+              size={14}
+            ></scale-icon-navigation-collapse-down>
+          )}
+        </scale-button>
+      )
     );
   },
 };
