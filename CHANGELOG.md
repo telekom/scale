@@ -3,6 +3,205 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.128](https://github.com/telekom/scale/compare/v3.0.0-beta.127...v3.0.0-beta.128) (2023-03-20)
+
+**Note:** Version bump only for package telekom
+
+
+
+
+
+# [3.0.0-beta.127](https://github.com/telekom/scale/compare/v3.0.0-beta.126...v3.0.0-beta.127) (2023-03-20)
+
+
+### Bug Fixes
+
+* [#1467](https://github.com/telekom/scale/issues/1467) fixed event bubbling issue ([#1653](https://github.com/telekom/scale/issues/1653)) ([0183965](https://github.com/telekom/scale/commit/01839653cad373ef9cc3b6d242dbf8768d919736))
+* **app-navigation-main-mobile:** second level if no children (actual child element) ([#1660](https://github.com/telekom/scale/issues/1660)) ([ccc5749](https://github.com/telekom/scale/commit/ccc57494d64b58005cdfb5daf84922dbfe53b36e))
+* remove firstRender attribute and revert to initial autofocus app… ([#1631](https://github.com/telekom/scale/issues/1631)) ([643245b](https://github.com/telekom/scale/commit/643245bbd303855a22404fd074a3dc8af0f676b9))
+* remove unused css vars, pass helper text vars to helper text component, update story docs ([77a42bc](https://github.com/telekom/scale/commit/77a42bc62468fa036e09dc3d9ad770402795cd0a))
+
+
+### Features
+
+* **header:** add slim and subtle types ([#1640](https://github.com/telekom/scale/issues/1640)) ([1f92285](https://github.com/telekom/scale/commit/1f92285d48a4c64840d522e1f69dc6416a20fbb0))
+* adding brand-header usage text picture for dropdown nav ([#1669](https://github.com/telekom/scale/issues/1669)) ([499ca21](https://github.com/telekom/scale/commit/499ca212ac4dbb0f511594960c2283ec2a205aa3))
+* adding section for selected icons from icon library ([#1589](https://github.com/telekom/scale/issues/1589)) ([eb5f8a8](https://github.com/telekom/scale/commit/eb5f8a8bbb9496278c4be890fd717c5713a97a8e))
+* improving high-contrast mode accessibility ([#1585](https://github.com/telekom/scale/issues/1585)) ([62e42b7](https://github.com/telekom/scale/commit/62e42b7f4d5b6f64aa415ff2309d6203b11be8fc))
+
+
+### Reverts
+
+* Revert "Fix/media query 1024 (#1650)" ([e17f3f8](https://github.com/telekom/scale/commit/e17f3f8487f900f12b26fcb8f4be7303f9bd5d56)), closes [#1650](https://github.com/telekom/scale/issues/1650)
+
+
+
+
+
+# [3.0.0-beta.126](https://github.com/telekom/scale/compare/v3.0.0-beta.125...v3.0.0-beta.126) (2023-02-24)
+
+
+### Bug Fixes
+
+* **tab-header:** unsafe querySelector ([#1608](https://github.com/telekom/scale/issues/1608)) ([82d0f14](https://github.com/telekom/scale/commit/82d0f149fd34a8671b52287a7d3cff2ee368cb21))
+* add focusable attribute to scale-icons ([#1610](https://github.com/telekom/scale/issues/1610)) ([4e2e19e](https://github.com/telekom/scale/commit/4e2e19ec4ab1714315b3bb850dbbb25a6d24ade5))
+* rename role to innerRole, match native type definition ([#1616](https://github.com/telekom/scale/issues/1616)) ([ceac390](https://github.com/telekom/scale/commit/ceac390197bb1ad7bc89c0e3aa30e1cb02f838f3))
+* **app-navigation-main-mobile:** second level if no children ([#1612](https://github.com/telekom/scale/issues/1612)) ([88e0cd2](https://github.com/telekom/scale/commit/88e0cd215577234bb143505b5583f88e45f93e59))
+
+
+### Features
+
+* **back-compat:** header and footer backward compatibility components ([#1535](https://github.com/telekom/scale/issues/1535)) ([2ae1afd](https://github.com/telekom/scale/commit/2ae1afd8db2f8a6cc537ac5a43eaf4d3d8413d29))
+
+
+
+
+
+# [3.0.0-beta.125](https://github.com/telekom/scale/compare/v3.0.0-beta.124...v3.0.0-beta.125) (2023-02-20)
+
+
+### Features
+
+* **nav:** link targets in main navigation ([#1602](https://github.com/telekom/scale/issues/1602)) ([bfda3aa](https://github.com/telekom/scale/commit/bfda3aab0e7f28c4aa8068980b08023cfc0b374e))
+
+
+
+
+
+# [3.0.0-beta.124](https://github.com/telekom/scale/compare/v3.0.0-beta.123...v3.0.0-beta.124) (2023-02-17)
+
+
+### Bug Fixes
+
+* **app-header:** esc key only when open, for user menu ([#1590](https://github.com/telekom/scale/issues/1590)) ([2356ffa](https://github.com/telekom/scale/commit/2356ffabfb1f3a6c5112cb7d2a3f034d92c414a7))
+* **data-grid:** accessibility affecting buttons ([#1591](https://github.com/telekom/scale/issues/1591)) ([c8d1cbc](https://github.com/telekom/scale/commit/c8d1cbc5e9072ea0f339bb977e221846626446b9))
+* **grid:** max-width, affecting new header ([#1586](https://github.com/telekom/scale/issues/1586)) ([92ce4f3](https://github.com/telekom/scale/commit/92ce4f3511224f8041ff0127f9091720ed02c90a))
+* **nav-icon:** accessibility, role=button when no href ([#1593](https://github.com/telekom/scale/issues/1593)) ([0387bde](https://github.com/telekom/scale/commit/0387bde49935541e61c2338436aadf784c7fb7c4))
+* **telekom-footer-extended-navigation-column:** expand arrow direction ([#1601](https://github.com/telekom/scale/issues/1601)) ([39b4c5b](https://github.com/telekom/scale/commit/39b4c5bc6ec71c6af7bb08dad88cee6f44e7c483))
+
+
+### Features
+
+* **brand-header:** add link target variables to menu and footer ([#1592](https://github.com/telekom/scale/issues/1592)) ([e119627](https://github.com/telekom/scale/commit/e1196271daa99a7b6e9a25527f59c8669023b15a))
+
+
+
+
+
+# [3.0.0-beta.123](https://github.com/telekom/scale/compare/v3.0.0-beta.122...v3.0.0-beta.123) (2023-02-13)
+
+
+### Bug Fixes
+
+* **tooltip:** should not receive focus ([#1170](https://github.com/telekom/scale/issues/1170)) ([33571f7](https://github.com/telekom/scale/commit/33571f747ceb536d3a10c7aaf4a7e2388bf9ddac))
+
+
+### Features
+
+* **button:** inner aria-label prop ([#1376](https://github.com/telekom/scale/issues/1376)) ([f936f81](https://github.com/telekom/scale/commit/f936f813f22f04677bbb90722f25b55cb27dec7c))
+
+
+
+
+
+# [3.0.0-beta.122](https://github.com/telekom/scale/compare/v3.0.0-beta.121...v3.0.0-beta.122) (2023-02-07)
+
+
+### Bug Fixes
+
+* change icon size on xl ([#1569](https://github.com/telekom/scale/issues/1569)) ([e1fddba](https://github.com/telekom/scale/commit/e1fddbacb2ccff206f73135e2493e1e0525e3d1b))
+
+
+
+
+
+# [3.0.0-beta.121](https://github.com/telekom/scale/compare/v3.0.0-beta.120...v3.0.0-beta.121) (2023-02-02)
+
+
+### Bug Fixes
+
+* **progress-bar:** inner bar for percentage 0 ([#1563](https://github.com/telekom/scale/issues/1563)) ([4f9c0c4](https://github.com/telekom/scale/commit/4f9c0c41c23004812cb23063d230dd6e1d785938))
+
+
+
+
+
+# [3.0.0-beta.120](https://github.com/telekom/scale/compare/v3.0.0-beta.119...v3.0.0-beta.120) (2023-01-31)
+
+
+### Bug Fixes
+
+* **telekom-header:** scroll transitions ([#1557](https://github.com/telekom/scale/issues/1557)) ([acf398d](https://github.com/telekom/scale/commit/acf398dbc9ce5d14eb406a1986f0c26a35411201))
+* adjust main content max-width for storybook ([#1541](https://github.com/telekom/scale/issues/1541)) ([0f9564e](https://github.com/telekom/scale/commit/0f9564e3661a2ad68cba5013f382c92a2923fae2))
+* **telekom-header:** adjust alignments related to grid ([#1508](https://github.com/telekom/scale/issues/1508)) ([1046f56](https://github.com/telekom/scale/commit/1046f565e4abf2f1ef234f78e4b8bc9a48f00f62))
+* **telekom-header:** app-name display ([#1548](https://github.com/telekom/scale/issues/1548)) ([69b69c4](https://github.com/telekom/scale/commit/69b69c431661e0d593cf67f79536d1a835f1f22d))
+* **telekom-header:** mobile close button position ([#1554](https://github.com/telekom/scale/issues/1554)) ([fff4702](https://github.com/telekom/scale/commit/fff4702e3872f9eb92cff750eccd36f0b9f16181))
+* **telekom-header:** more feedback ([#1531](https://github.com/telekom/scale/issues/1531)) ([5c942ad](https://github.com/telekom/scale/commit/5c942ad9eb34a29e1251bef4cfa356ac56b4c155))
+* **telekom-header:** QA ([#1539](https://github.com/telekom/scale/issues/1539)) ([5c4c448](https://github.com/telekom/scale/commit/5c4c44813347e930c99bcfe71e7cb256ec7fc626))
+* implement ux/ui feedback ([8a314c7](https://github.com/telekom/scale/commit/8a314c71cf2ac5650498146280e3a0dcb8204b95))
+* **telekom-header:** use mobile flyout canvas ([#1525](https://github.com/telekom/scale/issues/1525)) ([fcf3081](https://github.com/telekom/scale/commit/fcf308138c65b1fe4ec7097db436bfabb2f7e86d))
+
+
+### Features
+
+* **telekom-header:** updated app shell, fixed position ([#1543](https://github.com/telekom/scale/issues/1543)) ([c2b5919](https://github.com/telekom/scale/commit/c2b5919d9ce1785f2fa3d5353174d2015d2015ea))
+* adding usage text ([#1537](https://github.com/telekom/scale/issues/1537)) ([09eb2f3](https://github.com/telekom/scale/commit/09eb2f3e199cba034bf8e9d7d19cad45cf712b2a))
+
+
+
+
+
+# [3.0.0-beta.119](https://github.com/telekom/scale/compare/v3.0.0-beta.118...v3.0.0-beta.119) (2023-01-25)
+
+
+### Bug Fixes
+
+* **telekom-header:** adjust layout to match grid ([#1499](https://github.com/telekom/scale/issues/1499)) ([0acb7cc](https://github.com/telekom/scale/commit/0acb7cc60b0ce3f096438220e9f976a2ef1c6e2e))
+* **telekom-header:** flyout hover/click handling ([#1505](https://github.com/telekom/scale/issues/1505)) ([b8325dd](https://github.com/telekom/scale/commit/b8325dd82361f961f3089e274e134cff73efe4ea))
+* megamenu links ([#1498](https://github.com/telekom/scale/issues/1498)) ([bd9c848](https://github.com/telekom/scale/commit/bd9c8484083be048a956ae89ed59a7cfcd8057e5))
+
+
+### Features
+
+* **segmented-button:** add new beta components ([#1495](https://github.com/telekom/scale/issues/1495)) ([d0e38ab](https://github.com/telekom/scale/commit/d0e38abbf00342c0fd180fa29c9eccdbb4378717)), closes [#1434](https://github.com/telekom/scale/issues/1434) [#1436](https://github.com/telekom/scale/issues/1436) [#1456](https://github.com/telekom/scale/issues/1456) [#1458](https://github.com/telekom/scale/issues/1458) [#1457](https://github.com/telekom/scale/issues/1457) [#1459](https://github.com/telekom/scale/issues/1459) [#1461](https://github.com/telekom/scale/issues/1461) [#1462](https://github.com/telekom/scale/issues/1462) [#1496](https://github.com/telekom/scale/issues/1496) [#1501](https://github.com/telekom/scale/issues/1501) [#1512](https://github.com/telekom/scale/issues/1512) [#1429](https://github.com/telekom/scale/issues/1429) [#1497](https://github.com/telekom/scale/issues/1497) [#1513](https://github.com/telekom/scale/issues/1513) [#1514](https://github.com/telekom/scale/issues/1514) [#1516](https://github.com/telekom/scale/issues/1516)
+* **telekom-header:** consolidate slots, improve markup ([#1477](https://github.com/telekom/scale/issues/1477)) ([1568385](https://github.com/telekom/scale/commit/1568385053e3a5dac65d29a06acce24e0a109048))
+* **telekom-header:** no shadow dom for `nav-list` and `nav-item` ([#1484](https://github.com/telekom/scale/issues/1484)) ([9665120](https://github.com/telekom/scale/commit/96651204085c4ecccaf6b957ea602be773186fc6))
+* **telekom-mega-menu:** add new components ([#1491](https://github.com/telekom/scale/issues/1491)) ([282026c](https://github.com/telekom/scale/commit/282026c48a498d1e866de0d8e77844838acfa8d7)), closes [#1492](https://github.com/telekom/scale/issues/1492)
+
+
+
+
+
+# [3.0.0-beta.118](https://github.com/telekom/scale/compare/v3.0.0-beta.117...v3.0.0-beta.118) (2023-01-13)
+
+
+### Bug Fixes
+
+* remove broken link ([#1474](https://github.com/telekom/scale/issues/1474)) ([09a09f0](https://github.com/telekom/scale/commit/09a09f09c4e66dc2578aa99c204d3937be1d08d3))
+* **docs:** typo in _loading the library_ section  ([#1416](https://github.com/telekom/scale/issues/1416)) ([d8a3259](https://github.com/telekom/scale/commit/d8a325928cd0beddd2a09cadd1851f86d94a66e0))
+* fixing possible default z-index problems ([#1090](https://github.com/telekom/scale/issues/1090)) ([bb86535](https://github.com/telekom/scale/commit/bb865352bf9c99fdf4132f7e409161dddbd8676e))
+* prevent focus on first render ([#1383](https://github.com/telekom/scale/issues/1383)) ([b455cda](https://github.com/telekom/scale/commit/b455cda6857291f85ac49daa43399ad639c63b07))
+* solving random deprecated console output ([#1390](https://github.com/telekom/scale/issues/1390)) ([6a63529](https://github.com/telekom/scale/commit/6a635295c3c7d6f74cb26f85f178bb9a795d8e3e))
+* wrong tag coloring ([#1397](https://github.com/telekom/scale/issues/1397)) ([fe445cf](https://github.com/telekom/scale/commit/fe445cfdd2d3bf72359ecc2664c04c1184f57399))
+* **radio-button:** solving spacing clickability problem ([#1343](https://github.com/telekom/scale/issues/1343)) ([7b88772](https://github.com/telekom/scale/commit/7b88772d5ac822fb83e47b7c5b7234b8505a95a9))
+
+
+### Features
+
+* **brand-bar:** add new components ([#1370](https://github.com/telekom/scale/issues/1370)) ([89f7d36](https://github.com/telekom/scale/commit/89f7d36501a9d3f9db9243ccc4f9b1256d0b6f7e))
+* **dropdown-select:** add _name_ prop ([#1417](https://github.com/telekom/scale/issues/1417)) ([37f1612](https://github.com/telekom/scale/commit/37f1612c69331a2ceca45d8720ba3d312cfdeef4))
+* **menu-flyout:** expose original event in scale-select event ([#1367](https://github.com/telekom/scale/issues/1367)) ([a76449a](https://github.com/telekom/scale/commit/a76449a3334cbbdc9d211bb3914f951bb38cba80))
+* **telekom-header:** icon navigation ([#1439](https://github.com/telekom/scale/issues/1439)) ([490f7c6](https://github.com/telekom/scale/commit/490f7c6d89db8d28350b4c5b2e42581df456a42c))
+* **telekom-header:** prototyping stuff ([#1431](https://github.com/telekom/scale/issues/1431)) ([2815b78](https://github.com/telekom/scale/commit/2815b78b6b51b9e4862082c0ccfac247e7b9fddb))
+* **telekom-mobile-menu:** add new component ([#1398](https://github.com/telekom/scale/issues/1398)) ([f32c55a](https://github.com/telekom/scale/commit/f32c55a0ddeacd4208761d775f6b1aa274fa74b8))
+* **telekom-nav-flyout:** add default x spacing to match header container ([#1468](https://github.com/telekom/scale/issues/1468)) ([34323e4](https://github.com/telekom/scale/commit/34323e44281167939487a0865469295263c01743))
+* **telekon-header:** improve styles for list and item ([#1437](https://github.com/telekom/scale/issues/1437)) ([cb64d01](https://github.com/telekom/scale/commit/cb64d01d6da7b16998fdd8df3f36141a00991066))
+* **text-field:** add autocomplete property ([#1400](https://github.com/telekom/scale/issues/1400)) ([24f064d](https://github.com/telekom/scale/commit/24f064dfec642c2fed62f64850d9436cf8d2a31d))
+
+
+
+
+
 # [3.0.0-beta.117](https://github.com/telekom/scale/compare/v3.0.0-beta.116...v3.0.0-beta.117) (2022-11-07)
 
 

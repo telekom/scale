@@ -1,0 +1,77 @@
+@import url('../../../global/custom-media.css');
+
+[part~='telekom-footer-extended-navigation-column'] {
+  --heading-color: var(--telekom-color-text-and-icon-standard);
+  --heading-weight: var(--telekom-typography-font-weight-bold);
+  --link-color: var(--telekom-color-text-and-icon-standard);
+}
+
+[part~='links-hidden'] {
+  display: none;
+}
+
+[part~='links-expanded'] {
+  display: block;
+}
+
+[part~='telekom-footer-extended-navigation-links'] {
+  font-size: var(--telekom-typography-font-size-body);
+  line-height: 140%;
+}
+
+[part~='heading'],
+[part~='heading-button'] {
+  font-family: var(--telekom-typography-font-family-sans);
+  font-size: var(--telekom-typography-font-size-body);
+  line-height: 140%;
+  margin: 0;
+  color: var(--heading-color);
+  font-weight: var(--heading-weight);
+  background: none;
+  border: none;
+}
+
+[part~='heading-button'] {
+  display: flex;
+  padding: 0;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[part~='heading'] {
+  display: none;
+}
+
+[part~='heading-container'] h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+[part~='heading-container'] button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+scale-divider {
+  --spacing: 0;
+}
+
+@media screen and (--md) {
+  [part~='heading-button'] {
+    display: none;
+  }
+  [part~='heading'] {
+    display: block;
+  }
+  [part~='telekom-footer-extended-navigation-column-links'] {
+    display: block;
+  }
+  scale-divider {
+    display: none;
+  }
+}
+
+[part~='expanded'] scale-icon-navigation-collapse-down {
+  transform: rotate(0.5turn);
+}

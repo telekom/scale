@@ -31,6 +31,7 @@
       size="small"
       invalid
       value="caspar"
+      name="foo"
     >
       <scale-dropdown-select-item value="caspar">
         <scale-icon-action-add slot="suffix"></scale-icon-action-add>
@@ -132,7 +133,7 @@
     const ChooseDarioBtn = document.getElementById('choose-dario');
 
     Select.addEventListener('scale-change', function (event) {
-      console.log(event.detail.value);
+      console.log(event.target.name, event.detail.value);
     });
 
     ChooseDarioBtn.addEventListener('click', function () {

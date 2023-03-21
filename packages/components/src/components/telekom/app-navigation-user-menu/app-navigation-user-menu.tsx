@@ -76,6 +76,7 @@ export class AppNavigationUserMenu {
               return (
                 <a
                   href={item.href || 'javascript:void(0);'}
+                  target={item.target || '_self'}
                   tabindex={0}
                   class="app-navigation-user-menu__item"
                   onClick={(e) => {

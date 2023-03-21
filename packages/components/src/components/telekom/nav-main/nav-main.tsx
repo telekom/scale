@@ -33,6 +33,10 @@ export class NavMain {
   @Prop() href?: string = 'javascript:void(0);';
   /** (optional) name value */
   @Prop() name: string;
+  /** (optional) target value */
+  @Prop() target?: string = '_self';
+  /** (optional) inner element id */
+  @Prop() innerId?: string;
 
   @Prop() clickLink: any;
   hasPopup: boolean;
@@ -70,9 +74,11 @@ export class NavMain {
           <a
             class="main-navigation__item-link"
             href={this.href}
+            target={this.target || '_self'}
             aria-current={this.active || this.isActive ? 'true' : 'false'}
             aria-haspopup={this.hasPopup ? 'true' : 'false'}
             onClick={this.clickLink}
+            id={this.innerId}
           >
             <span class="main-navigation__item-link-text">{this.name}</span>
             {(this.active || this.isActive) && (

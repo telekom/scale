@@ -3,6 +3,13 @@
   - [ ] decide whether max-width should be calculated instead of hard-coded
 */
 
+@import url('./custom-media.css');
+
+:root {
+  /* matches --2xl breakpoint */
+  --scl-grid-max-width: 1504px;
+}
+
 /*
   columns / spacing / gutter
   --------------------------
@@ -41,7 +48,7 @@ scale-grid,
   --columns-xxl: var(--columns-xl);
 
   display: grid;
-  box-sizing: border-box;
+  box-sizing: content-box;
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: repeat(var(--columns-sm, 4), minmax(0, 1fr));
@@ -50,7 +57,7 @@ scale-grid,
   column-gap: var(--gutter-y-sm, var(--telekom-spacing-unit-x8, 2em));
   row-gap: var(--gutter-x-sm, var(--telekom-spacing-unit-x8, 2em));
   /* xxl: (64px * 16 cols) + (32px * 15 gutters) + 24px + 24px */
-  max-width: var(--max-width, 1552px);
+  max-width: var(--max-width, var(--scl-grid-max-width));
 }
 
 /*
@@ -73,7 +80,7 @@ scale-grid-item,
 }
 
 /* md */
-@media screen and (min-width: 40em) {
+@media screen and (--md) {
   scale-grid,
   .scl-grid {
     grid-template-columns: repeat(var(--columns-md, 8), minmax(0, 1fr));
@@ -90,7 +97,7 @@ scale-grid-item,
 }
 
 /* lg */
-@media screen and (min-width: 65em) {
+@media screen and (--lg) {
   scale-grid,
   .scl-grid {
     grid-template-columns: repeat(var(--columns-lg, 16), minmax(0, 1fr));
@@ -107,7 +114,7 @@ scale-grid-item,
 }
 
 /* xl */
-@media screen and (min-width: 81em) {
+@media screen and (--xl) {
   scale-grid,
   .scl-grid {
     grid-template-columns: repeat(var(--columns-xl, 16), minmax(0, 1fr));
@@ -124,7 +131,7 @@ scale-grid-item,
 }
 
 /* xxl */
-@media screen and (min-width: 97em) {
+@media screen and (--2xl) {
   scale-grid,
   .scl-grid {
     grid-template-columns: repeat(var(--columns-xxl, 16), minmax(0, 1fr));

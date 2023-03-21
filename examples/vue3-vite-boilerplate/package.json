@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@telekom/scale-components-neutral": "^3.0.0-beta.110",
-    "vue": "^3.2.37"
+    "@telekom/scale-components-neutral": "^3.0.0-beta.117",
+    "vue": "^3.2.45"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.1",
-    "vite": "^3.0.2"
+    "vite": "^3.2.4"
   }
 }

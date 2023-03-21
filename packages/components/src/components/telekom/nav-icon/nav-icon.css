@@ -22,6 +22,9 @@ scale-nav-icon {
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
 }
 
 .meta-navigation__item-link {
@@ -50,8 +53,11 @@ scale-nav-icon {
 .meta-navigation__item-link:active {
   color: var(--color-active);
 }
+.meta-navigation__item-link:focus {
+  outline: var(--focus-outline);
+}
 
-@media (max-width: 1023px) {
+@media (max-width: 1039px) {
   .meta-navigation__item-link {
     min-width: 24px;
     height: auto;
@@ -74,7 +80,7 @@ scale-nav-icon {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1040px) {
   .meta-navigation__item scale-menu-flyout {
     height: 24px;
   }

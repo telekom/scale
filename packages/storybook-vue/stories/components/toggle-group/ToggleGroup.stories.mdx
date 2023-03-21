@@ -2,7 +2,7 @@ import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
 import ScaleToggleGroup from './ScaleToggleGroup.vue';
 
 <Meta
-  title="Beta Components/Toggle Group"
+  title="Deprecated/Toggle Group"
   component={ScaleToggleGroup}
   argTypes={{
     background: {
@@ -142,7 +142,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
   }}
 >
   <h1>Toggle Group</h1>
-  <img src="assets/beta.png" alt="Beta Component" />
+  <img src="assets/deprecated.png" alt="Deprecated Component" />
 </div>
 
 ## Standard
@@ -326,20 +326,22 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group aria-label-translation="wechsel schalter gruppe mit $slottedButtons schaltern">
-  <scale-toggle-button 
+<scale-toggle-group
+  aria-label-translation="wechsel schalter gruppe mit $slottedButtons schaltern"
+>
+  <scale-toggle-button
     aria-label-toggle-button="Drück mich"
     aria-lang-selected="selektiert"
     aria-lang-deselected="deselektiert"
     >Label
   </scale-toggle-button>
-  <scale-toggle-button 
+  <scale-toggle-button
     aria-label-toggle-button="Drück mich"
     aria-lang-selected="selektiert"
     aria-lang-deselected="deselektiert"
     >Label
   </scale-toggle-button>
-  <scale-toggle-button 
+  <scale-toggle-button
     aria-label-toggle-button="Drück mich"
     aria-lang-selected="selektiert"
     aria-lang-deselected="deselektiert"
@@ -391,7 +393,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button icon-only aria-label-toggle-button="search">
+  <scale-toggle-button icon-only aria-label-toggle-button="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
   <scale-toggle-button icon-only aria-label-toggle-button="search">

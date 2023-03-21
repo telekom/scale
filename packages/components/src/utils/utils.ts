@@ -92,16 +92,22 @@ export function isClickOutside(event: MouseEvent, host: HTMLElement) {
   return true;
 }
 
-export interface ScaleIcon extends Element {
+export interface ScaleIcon extends Node {
   size?: number;
 }
 
 export const isScaleIcon = (el: Node) => {
-  if (el == null) {
+  if (el == null || el.nodeType !== 1) {
     return false;
   }
   return el.nodeName.toUpperCase().substring(0, 10) === 'SCALE-ICON';
 };
+
+/** Creating global ids for different component helper-texts */
+let id = 0;
+export function generateUniqueId(): number {
+  return id++;
+}
 
 export function readMaybeJSONData(data) {
   let parsedData;

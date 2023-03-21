@@ -14,6 +14,7 @@
     :user-navigation="userNavigation"
     :active-route-id="activeRouteId"
     :active-sector-id="activeRouteId"
+    :user-menu-aria-label="userMenuAriaLabel"
   >
     <slot></slot>
     <slot name="header"></slot>
@@ -38,6 +39,7 @@ export default {
     addonNavigation: String,
     activeRouteId: String,
     activeSectorId: String,
+    userMenuAriaLabel: String,
   },
 };
 </script>

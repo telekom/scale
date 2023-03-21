@@ -20,14 +20,12 @@ import {
   State,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
-
-let i = 0;
 
 @Component({
   tag: 'scale-text-field',
@@ -107,7 +105,10 @@ export class TextField {
   @Prop() inputAutofocus?: boolean;
   /** (optional) custom value for autocomplete HTML attribute */
   @Prop() inputAutocomplete?: string;
-
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
+  @Prop() ariaDetailedId?: string;
+  /** (optional) to avoid displaying the label */
+  @Prop() hideLabelVisually?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional)) Makes type `input` behave as a controlled component in React */
@@ -144,9 +145,11 @@ export class TextField {
   /** "forceUpdate" hack, set it to trigger and re-render */
   @State() forceUpdate: string;
 
+  private readonly internalId = generateUniqueId();
+
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-text-field' + i++;
+      this.inputId = 'input-text-field-' + this.internalId;
     }
   }
 
@@ -227,8 +230,9 @@ export class TextField {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const ariaDetailedById = { 'aria-details': this.ariaDetailedId };
     const numericTypes = [
       'number',
       'date',
@@ -269,6 +273,7 @@ export class TextField {
             disabled={this.disabled}
             readonly={this.readonly}
             autocomplete={this.inputAutocomplete}
+            {...ariaDetailedById}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
@@ -276,7 +281,6 @@ export class TextField {
           {(!!this.helperText || !!this.counter) && (
             <div
               class="text-field__meta"
-              id={helperTextId}
               aria-live="polite"
               aria-relevant="additions removals"
             >
@@ -290,6 +294,7 @@ export class TextField {
           )}
           {this.helperText && (
             <scale-helper-text
+              id={helperTextId}
               helperText={this.helperText}
               variant={this.invalid ? 'danger' : this.variant}
             ></scale-helper-text>
@@ -317,6 +322,7 @@ export class TextField {
       this.variant && `text-field--variant-${this.variant}`,
       this.helperText && `text-field--helper-text`,
       this.readonly && `text-field--readonly`,
+      this.hideLabelVisually && `text-field--hide-label`,
       animated && 'animated'
     );
   }
