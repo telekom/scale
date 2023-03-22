@@ -110,7 +110,6 @@ export class TelekomMobileMenu {
   back = () => {
     Array.from(this.openItems).forEach((element) => {
       if (element.getAttribute('level') === String(+this.currentLevel - 1)) {
-        element.setAttribute('active', '');
         // @ts-ignore
         element.open = false;
         return element.removeAttribute('open');
