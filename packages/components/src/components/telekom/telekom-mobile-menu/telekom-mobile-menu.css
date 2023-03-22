@@ -37,7 +37,7 @@
 }
 
 scale-icon-navigation-left {
-  margin-right: 6px;
+  margin-right: 12px;
 }
 
 :host::part(nav) {
