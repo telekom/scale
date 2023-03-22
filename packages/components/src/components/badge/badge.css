@@ -17,7 +17,7 @@
   --border-radius-circle: var(--telekom-radius-circle);
   --font-color-label: var(--telekom-color-text-and-icon-standard);
   --_display-circle: flex;
-  display: flex;  
+  display: flex;
 }
 
 :host([no-dot]) {
