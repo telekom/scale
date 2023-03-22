@@ -62,6 +62,13 @@ export class MenuFlyoutItem {
     event: KeyboardEvent | MouseEvent,
     closeOnSelect: boolean = true
   ) {
+    const sublist = this.hostElement.querySelector(
+      '[slot="sublist"]'
+    ) as HTMLScaleMenuFlyoutListElement;
+    if (sublist.hasAttribute('opened')) {
+      sublist.removeAttribute('opened');
+      return;
+    }
     const { key } = event as KeyboardEvent;
     if (this.disabled) {
       return;
