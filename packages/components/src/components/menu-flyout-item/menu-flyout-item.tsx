@@ -62,13 +62,6 @@ export class MenuFlyoutItem {
     event: KeyboardEvent | MouseEvent,
     closeOnSelect: boolean = true
   ) {
-    const sublist = this.hostElement.querySelector(
-      '[slot="sublist"]'
-    ) as HTMLScaleMenuFlyoutListElement;
-    if (sublist.hasAttribute('opened')) {
-      sublist.removeAttribute('opened');
-      return;
-    }
     const { key } = event as KeyboardEvent;
     if (this.disabled) {
       return;
@@ -77,7 +70,14 @@ export class MenuFlyoutItem {
       return;
     }
     if (this.hasSlotSublist) {
-      this.openSublist();
+      const sublist = this.hostElement.querySelector(
+        '[slot="sublist"]'
+      ) as HTMLScaleMenuFlyoutListElement;
+      if (sublist.hasAttribute('opened')) {
+        sublist.removeAttribute('opened');
+      } else {
+        this.openSublist();
+      }
       return;
     }
     const detail = {
@@ -87,6 +87,7 @@ export class MenuFlyoutItem {
       closeOnSelect,
       originalEvent: event,
     };
+
     emitEvent(this, 'scaleSelect', detail);
   }
 
