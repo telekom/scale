@@ -226,6 +226,9 @@ export class MenuFlyoutList {
       this.hostElement.style.marginTop = '';
       this.hostElement.style.marginRight = '';
       this.hostElement.style.marginBottom = '';
+      if (this.trigger().tagName === 'SCALE-TELEKOM-NAV-ITEM') {
+        this.trigger().style.color = 'var(--telekom-color-text-and-icon-standard)';
+      }
     }
 
     if (this.opened) {
@@ -296,6 +299,7 @@ export class MenuFlyoutList {
     if (this.trigger().tagName === 'SCALE-TELEKOM-NAV-ITEM') {
       this.hostElement.style.top = `${top - 12}px`;
       this.hostElement.style.left = `${left - 24}px`;
+      this.trigger().style.color = 'var(--telekom-color-text-and-icon-primary-standard)'
     } else {
       this.hostElement.style.top = `${top}px`;
     }
