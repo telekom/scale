@@ -46,7 +46,7 @@
   
       <!-- main-nav -->
       <scale-telekom-mobile-menu slot="mobile-main-nav">
-        <scale-telekom-mobile-menu-item active>
+        <scale-telekom-mobile-menu-item>
           <a href="#">Topic One</a>
             <a href="#">Topic One</a>
             <scale-telekom-mobile-menu-item slot="children">
