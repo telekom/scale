@@ -390,7 +390,7 @@
 
 /* Info block */
 .info {
-  height: 54px;
+  height: 44px;
   position: relative;
   border-top: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-subtle);
