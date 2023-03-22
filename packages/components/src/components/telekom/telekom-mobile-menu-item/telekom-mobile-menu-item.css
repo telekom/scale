@@ -24,13 +24,13 @@
 }
 
 :host::part(level-0 open) {
-  --_spacing-level: 26px;
+  --_spacing-level: 36px;
 }
 :host::part(level-1),
 :host::part(level-2),
 :host::part(level-3),
 :host::part(level-4) {
-  --_spacing-level: 26px;
+  --_spacing-level: 36px;
 }
 
 :host::part(level-1 current-level-2),
