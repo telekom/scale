@@ -182,7 +182,9 @@ button.segment--large .segment--mask {
 }
 
 .segment:not(.segment--selected) scale-icon-action-success {
-  visibility: hidden !important;
+  visibility: hidden;
+  /* margin-right: -18px; */
+  /* border: 1px solid red; */
 }
 
 .segment scale-icon-action-success {
@@ -190,15 +192,18 @@ button.segment--large .segment--mask {
 }
 
 .segment--selected:not(.segment--icon-only) .icon-container {
-  display: none !important;
+  /* display: none !important; */
+  visibility: hidden;
 }
 
 .segment .success-icon-container {
-  display: none;
+  /* display: none; */
+  /* visibility: hidden; */
 }
 
 .segment--selected .success-icon-container {
   display: flex;
+  visibility: visible;
   justify-content: center;
   align-items: center;
 }
@@ -212,4 +217,22 @@ button.segment--large .segment--mask {
 
 .segment--selected .icon-container {
   color: var(--color-selected);
+}
+
+/* .segment:not(.segment--selected) ::slotted(*) {
+  border: 1px solid red;
+  margin-left: -9px;
+}
+
+.segment:not(.segment--selected) ::slotted(*) {
+  border: 1px solid red;
+  margin-left: -9px;
+} */
+
+.segment:not(.segment--selected) ::slotted(*) {
+  /* position: absolute;
+  left: -18px;
+  border: 1px solid red;   */
+  /* padding-right: 9px; */
+  transform: translateX(-9px);
 }

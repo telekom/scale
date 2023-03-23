@@ -131,11 +131,7 @@ export class SegmentedButton {
         '$position $selected'
       );
     });
-    // @ts-ignore
-    // this.container.style = `grid-template-columns: ${`minmax(0, ${Math.ceil(longestButtonWidth)}px) `.repeat(this.hostElement.children.length)};`;
-    this.container.style = `grid-template-columns: repeat(${
-      this.hostElement.children.length
-    }, ${Math.ceil(longestButtonWidth)}px);`;
+    this.hostElement.style.setProperty('--colNum', this.slottedSegments.toString())
 
     this.propagatePropsToChildren();
     this.position = 0;
