@@ -171,7 +171,7 @@ export class DataGrid {
     this.fieldsHandler();
     this.rowsHandler();
   }
-  componentWillUpdate() {}
+  componentWillUpdate() { }
   componentDidRender() {
     if (this.needsAutoWidthParse) {
       this.calculateAutoWidths();
@@ -186,7 +186,7 @@ export class DataGrid {
   componentDidLoad() {
     this.addResizeObserver();
   }
-  componentDidUpdate() {}
+  componentDidUpdate() { }
   disconnectedCallback() {
     this.removeResizeObserver();
   }
@@ -276,8 +276,7 @@ export class DataGrid {
       if (this.rows[i].length !== this.fields.length) {
         // tslint:disable-next-line: no-console
         console.warn(
-          `Unable to render ${
-            this.heading && `"${this.heading}" `
+          `Unable to render ${this.heading && `"${this.heading}" `
           }table: row data length not equal to supplied fields.`
         );
         return false;
@@ -395,8 +394,8 @@ export class DataGrid {
       sortDirection === 'none'
         ? 'ascending'
         : sortDirection === 'ascending'
-        ? 'descending'
-        : 'none';
+          ? 'descending'
+          : 'none';
     this.fields[columnIndex].sortDirection = newSortDirection;
     this.sortTable(newSortDirection, type, columnIndex);
   }
@@ -408,10 +407,10 @@ export class DataGrid {
       });
     } else {
       switch (
-        (CELL_TYPES[type] &&
-          CELL_TYPES[type].defaults &&
-          CELL_TYPES[type].defaults.sortBy) ||
-        CELL_DEFAULTS.sortBy
+      (CELL_TYPES[type] &&
+        CELL_TYPES[type].defaults &&
+        CELL_TYPES[type].defaults.sortBy) ||
+      CELL_DEFAULTS.sortBy
       ) {
         case 'text':
           if (sortDirection === 'ascending') {
@@ -974,11 +973,11 @@ export class DataGrid {
                   : CELL_DEFAULTS.resizable,
                 width = CELL_TYPES[type].defaults.width || CELL_DEFAULTS.width,
                 minWidth = CELL_TYPES[type].defaults.minWidth ||
-                  CELL_DEFAULTS.minWidth,
+                CELL_DEFAULTS.minWidth,
                 maxWidth = CELL_TYPES[type].defaults.maxWidth ||
-                  CELL_DEFAULTS.maxWidth,
+                CELL_DEFAULTS.maxWidth,
                 textAlign = CELL_TYPES[type].defaults.textAlign ||
-                  CELL_DEFAULTS.textAlign,
+                CELL_DEFAULTS.textAlign,
                 stretchWidth = 0,
               },
               columnIndex
@@ -1003,25 +1002,25 @@ export class DataGrid {
                   {...props}
                   {...(sortable
                     ? {
-                        onKeyDown: (event: KeyboardEvent) => {
-                          if (['Enter', ' '].includes(event.key)) {
-                            this.toggleTableSorting(
-                              sortDirection,
-                              columnIndex,
-                              type
-                            );
-                          }
-                        },
-                        onClick: () => {
+                      onKeyDown: (event: KeyboardEvent) => {
+                        if (['Enter', ' '].includes(event.key)) {
                           this.toggleTableSorting(
                             sortDirection,
                             columnIndex,
                             type
                           );
-                        },
-                        tabindex: 0,
-                        class: `${props.class} thead-sortable`,
-                      }
+                        }
+                      },
+                      onClick: () => {
+                        this.toggleTableSorting(
+                          sortDirection,
+                          columnIndex,
+                          type
+                        );
+                      },
+                      tabindex: 0,
+                      class: `${props.class} thead-sortable`,
+                    }
                     : {})}
                 >
                   <div class={`thead__title`}>
@@ -1115,8 +1114,8 @@ export class DataGrid {
                     field.visible !== undefined
                       ? field.visible
                       : CELL_TYPES[field.type].defaults.visible !== undefined
-                      ? CELL_TYPES[field.type].defaults.visible
-                      : CELL_DEFAULTS.visible;
+                        ? CELL_TYPES[field.type].defaults.visible
+                        : CELL_DEFAULTS.visible;
                   if (!visible) {
                     return;
                   }
@@ -1246,9 +1245,8 @@ export class DataGrid {
 
     return (
       <td
-        class={`tbody__cell${
-          mobileTitle ? ` tbody__cell--used-as-mobile-title` : ``
-        }`}
+        class={`tbody__cell${mobileTitle ? ` tbody__cell--used-as-mobile-title` : ``
+          }`}
         style={{ width: `calc(${width}px + ${stretchWidth}px)` }}
       >
         <div class={`tbody__mobile-label`}>{label}</div>
@@ -1268,9 +1266,8 @@ export class DataGrid {
       <div class={`info`}>
         {this.selectable && !!this.selection.length && (
           <div class={`info__selection`}>
-            {`${this.selection.length} row${
-              this.selection.length > 1 ? 's' : ''
-            } selected`}
+            {`${this.selection.length} row${this.selection.length > 1 ? 's' : ''
+              } selected`}
           </div>
         )}
         {this.isPagination && (
