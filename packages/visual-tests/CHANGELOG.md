@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.129](https://github.com/telekom/scale/compare/v3.0.0-beta.128...v3.0.0-beta.129) (2023-03-24)
+
+
+### Bug Fixes
+
+* add focus outline to brand header ([#1621](https://github.com/telekom/scale/issues/1621)) ([86ee300](https://github.com/telekom/scale/commit/86ee3003a2a7367a6c6a5031dab5d4168f6a6337))
+* fix style issue in data-grid pagination ([#1664](https://github.com/telekom/scale/issues/1664)) ([171ed79](https://github.com/telekom/scale/commit/171ed79f5c59353f19e10ef3aac7835affc589d9)), closes [#1665](https://github.com/telekom/scale/issues/1665) [#1677](https://github.com/telekom/scale/issues/1677)
+
+
+
+
+
 # [3.0.0-beta.128](https://github.com/telekom/scale/compare/v3.0.0-beta.127...v3.0.0-beta.128) (2023-03-20)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests

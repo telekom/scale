@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.129](https://github.com/telekom/scale/compare/v3.0.0-beta.128...v3.0.0-beta.129) (2023-03-24)
+
+
+### Bug Fixes
+
+* **tab-nav:** content clickable for screen readers ([#1692](https://github.com/telekom/scale/issues/1692)) ([6d4c323](https://github.com/telekom/scale/commit/6d4c323a82c2766b0af1857afdcdb43b66fe33e7))
+* add disabled link option ([#1430](https://github.com/telekom/scale/issues/1430)) ([0128a9e](https://github.com/telekom/scale/commit/0128a9e50aaeeabeae826c04954f973c37aa5874))
+* add focus outline to brand header ([#1621](https://github.com/telekom/scale/issues/1621)) ([86ee300](https://github.com/telekom/scale/commit/86ee3003a2a7367a6c6a5031dab5d4168f6a6337))
+* do not render expand button when html field is empty ([#1573](https://github.com/telekom/scale/issues/1573)) ([1fe6a9b](https://github.com/telekom/scale/commit/1fe6a9bae993f6054454930a94db6d7c0d85b444))
+* do not show arrow when unsorted  ([4c324c7](https://github.com/telekom/scale/commit/4c324c7f6819491dd91c72307dcb418c43738f1f))
+* fix style issue in data-grid pagination ([#1664](https://github.com/telekom/scale/issues/1664)) ([171ed79](https://github.com/telekom/scale/commit/171ed79f5c59353f19e10ef3aac7835affc589d9)), closes [#1665](https://github.com/telekom/scale/issues/1665) [#1677](https://github.com/telekom/scale/issues/1677)
+* reset pagination to last page if new records are rendered are less than previous ([#1690](https://github.com/telekom/scale/issues/1690)) ([1e45f88](https://github.com/telekom/scale/commit/1e45f8853f2ff46cff1334bbcac10550a856327c))
+* use color token ([#1687](https://github.com/telekom/scale/issues/1687)) ([b6e2be8](https://github.com/telekom/scale/commit/b6e2be800911cd8aa5ca7e366d7f192b1dfc9288))
+* use color token for switch ([#1689](https://github.com/telekom/scale/issues/1689)) ([870ad52](https://github.com/telekom/scale/commit/870ad528ef62527c2e3ae90c21ca22f4d290090e))
+
+
+### Features
+
+* adding high-contrast border due to better accessibility ([#1603](https://github.com/telekom/scale/issues/1603)) ([21f5d4f](https://github.com/telekom/scale/commit/21f5d4f72b6cd3be165d0088e9815c2333c28985))
+
+
+
+
+
 # [3.0.0-beta.128](https://github.com/telekom/scale/compare/v3.0.0-beta.127...v3.0.0-beta.128) (2023-03-20)
 
 **Note:** Version bump only for package @telekom/scale-components
