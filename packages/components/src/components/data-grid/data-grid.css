@@ -257,9 +257,9 @@
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
-.thead__cell[aria-sort='none']:hover .thead__arrow-top {
-  display: block;
-  border-bottom: 5px solid var(--telekom-color-text-and-icon-primary-hovered);
+.thead__cell[aria-sort='none']:hover .thead__arrow-top,
+.thead__cell[aria-sort='none']:hover .thead__arrow-bottom {
+  display: none;
 }
 
 .thead__cell[aria-sort='ascending']:hover .thead__arrow-top {
@@ -390,7 +390,7 @@
 
 /* Info block */
 .info {
-  height: 54px;
+  height: 44px;
   position: relative;
   border-top: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-subtle);

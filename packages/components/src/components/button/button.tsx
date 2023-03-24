@@ -203,12 +203,14 @@ export class Button {
           <a
             ref={(el) => (this.focusableElement = el)}
             class={this.getCssClassMap()}
-            href={this.href}
+            href={this.disabled ? null : this.href}
             download={this.download}
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             part={basePart}
             tabIndex={this.innerTabindex}
+            role="link"
+            aria-disabled={this.disabled ? 'true' : null}
             aria-label={this.innerAriaLabel}
           >
             <slot />
@@ -242,7 +244,7 @@ export class Button {
       !this.iconOnly &&
         this.iconPosition &&
         `button--icon-${this.iconPosition}`,
-      this.disabled && !this.href && `button--disabled`
+      this.disabled && `button--disabled`
     );
   }
 }

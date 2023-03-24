@@ -107,7 +107,8 @@ export class TextField {
   @Prop() inputAutocomplete?: string;
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailedId?: string;
-
+  /** (optional) to avoid displaying the label */
+  @Prop() hideLabelVisually?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional)) Makes type `input` behave as a controlled component in React */
@@ -321,6 +322,7 @@ export class TextField {
       this.variant && `text-field--variant-${this.variant}`,
       this.helperText && `text-field--helper-text`,
       this.readonly && `text-field--readonly`,
+      this.hideLabelVisually && `text-field--hide-label`,
       animated && 'animated'
     );
   }

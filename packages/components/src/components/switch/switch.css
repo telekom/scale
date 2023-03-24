@@ -21,6 +21,7 @@ scale-switch {
   --spacing-x-label: var(--telekom-spacing-unit-x2);
   --font-label: var(--telekom-text-style-ui);
   --font-io-text: var(--telekom-text-style-small-bold);
+  --color-label: var(--telekom-color-text-and-icon-standard);
 }
 
 .switch {
@@ -240,6 +241,7 @@ scale-switch {
 .switch__label-text {
   font: var(--font-label);
   margin-inline-start: var(--spacing-x-label);
+  color: var(--color-label);
 }
 
 /* PLATFORM Android */

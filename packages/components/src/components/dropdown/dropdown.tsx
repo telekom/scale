@@ -68,6 +68,8 @@ export class Dropdown {
   @Prop() transparent?: boolean;
   /** (optional) Makes type `select` behave as a controlled component in React */
   @Prop() controlled?: boolean = false;
+  /** (optional) to avoid displaying the label */
+  @Prop() hideLabelVisually?: boolean = false;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -298,7 +300,8 @@ export class Dropdown {
       this.helperText && 'dropdown--helper-text',
       this.variant &&
         `dropdown--variant-${this.invalid ? 'danger' : this.variant}`,
-      this.value != null && this.value !== '' && 'animated'
+      this.value != null && this.value !== '' && 'animated',
+      this.hideLabelVisually && 'dropdown--hide-label'
     );
   }
 }
