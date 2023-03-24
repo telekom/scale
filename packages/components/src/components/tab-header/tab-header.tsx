@@ -9,7 +9,18 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
+import {
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Listen,
+  Prop,
+  State,
+  Watch,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { ScaleIcon, isScaleIcon } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
@@ -34,14 +45,26 @@ export class TabHeader {
   /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
   /** (optional) size  */
-  @Prop() size: 'small' | 'large' = 'small';
+  @Prop() size?: 'small' | 'large' = 'small';
   /** (optional) autoFocus  */
   @Prop() autoFocus?: boolean;
+  /** (optional) Whether the tab is selected */
+  @Prop() selected?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-  @Prop() selected: boolean;
 
   @State() hasFocus: boolean = false;
+
+  @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter;
+
+  @Listen('click')
+  handleClick(event: MouseEvent) {
+    event.stopPropagation();
+    if (this.disabled) {
+      return;
+    }
+    this.scaleSelect.emit();
+  }
 
   @Watch('selected')
   selectedChanged(newValue: boolean) {
