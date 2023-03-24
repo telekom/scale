@@ -29,9 +29,6 @@ interface SegmentStatus {
   selected: boolean;
 }
 
-const CHECKMARK_WIDTH_SMALL = 14;
-const CHECKMARK_WIDTH_LARGE = 18;
-
 @Component({
   tag: 'scale-segmented-button',
   styleUrl: 'segmented-button.css',
@@ -60,6 +57,8 @@ export class SegmentedButton {
   @Prop() helperText?: string = 'Please select an option';
   /** (optional) Button label */
   @Prop() label?: string;
+  /** (optional) icon only */
+  @Prop() iconOnly?: boolean = false;  
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
@@ -74,6 +73,7 @@ export class SegmentedButton {
 
   container: HTMLElement;
   showHelperText = false;
+  
   @Listen('scaleClick')
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
     let tempState: SegmentStatus[];
@@ -111,6 +111,9 @@ export class SegmentedButton {
       if (this.disabled) {
         el.setAttribute('disabled', true && 'disabled');
       }
+      if (this.iconOnly) {
+        el.setAttribute('icon-only', '');
+      }      
     });
   }
 
@@ -118,7 +121,6 @@ export class SegmentedButton {
     const tempState: SegmentStatus[] = [];
     const segmentedButtons = this.getAllSegmentedButtons();
     this.slottedSegments = segmentedButtons.length;
-    const longestButtonWidth = this.getLongestButtonWidth();
     segmentedButtons.forEach((SegmentedButton) => {
       this.position++;
       tempState.push({
@@ -132,7 +134,6 @@ export class SegmentedButton {
       );
     });
     this.hostElement.style.setProperty('--colNum', this.slottedSegments.toString())
-
     this.propagatePropsToChildren();
     this.position = 0;
     this.status = tempState;
@@ -165,29 +166,6 @@ export class SegmentedButton {
     }
     return adjacentSiblings;
   };
-
-  // all segmented buttons should have the same width, based on the largest one
-  getLongestButtonWidth() {
-    let tempWidth = 0;
-    Array.from(this.hostElement.children).forEach((child) => {
-      const selected = child.hasAttribute('selected');
-      const iconOnly = child.hasAttribute('icon-only');
-      const checkmark =
-        this.size === 'small' ? CHECKMARK_WIDTH_SMALL : CHECKMARK_WIDTH_LARGE;
-      if (selected || iconOnly) {
-        tempWidth =
-          child.getBoundingClientRect().width > tempWidth
-            ? child.getBoundingClientRect().width
-            : tempWidth;
-      } else {
-        tempWidth =
-          child.getBoundingClientRect().width + checkmark > tempWidth
-            ? child.getBoundingClientRect().width + checkmark
-            : tempWidth;
-      }
-    });
-    return tempWidth;
-  }
 
   setState(tempState: SegmentStatus[]) {
     const segmentedButtons = Array.from(

@@ -22,8 +22,15 @@ import {
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+import { hasShadowDom, ScaleIcon, isScaleIcon } from '../../utils/utils';
 
 let i = 0;
+
+const iconSizeMap = {
+  small: 14,
+  medium: 16,
+  large: 16,
+};
 
 @Component({
   tag: 'scale-segment',
@@ -64,7 +71,7 @@ export class Segment {
   /** (optional) position within group */
   @Prop({ mutable: true }) textOnly?: boolean;
   /** (optional) position within group */
-  @Prop({ mutable: true }) iconOnly?: boolean;
+  @Prop({ mutable: true }) iconOnly?: boolean = false;
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -95,14 +102,18 @@ export class Segment {
     }
   }
 
+  componentDidLoad() {
+    this.setChildrenIconSize();
+  }
+  
   componentWillLoad() {
     if (this.segmentId == null) {
       this.segmentId = 'segment-' + i++;
     }
   }
-  componentDidUpdate() {
-    this.handleIcon();
-  }
+  // componentDidUpdate() {
+  //   this.handleIcon();
+  // }
 
   getAriaDescriptionTranslation() {
     const replaceSelected = this.selected
@@ -114,50 +125,70 @@ export class Segment {
     return filledText;
   }
 
-  handleIcon() {
-    Array.from(this.hostElement.childNodes).forEach((child) => {
-      if (
-        child.nodeType == 1 &&
-        child.nodeName.substr(0, 10) === 'SCALE-ICON'
-      ) {
-        const icon: HTMLElement = this.hostElement.querySelector(
-          child.nodeName
-        );
-        switch (this.size) {
-          case 'small':
-            icon.setAttribute('size', '14');
-            break;
-          case 'medium' || 'large':
-            icon.setAttribute('size', '16');
-            break;
+  /**
+ * Set any children icon's size according the button size.
+ */
+  setChildrenIconSize() {
+    if (this.size != null && iconSizeMap[this.size] != null) {
+      const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
+        isScaleIcon
+      );
+
+      console.log('SETTING SIZE', icons)
+      icons.forEach((icon) => {
+        if (this.size == 'small') {
+          icon.size = iconSizeMap['small'];
+        } else {
+          icon.size = iconSizeMap['large'];
         }
-        icon.style.display = 'inline-flex';
-        icon.style.marginRight = '4px';
-        this.hasIcon = true;
-      }
-      if (child.nodeType == 3 && this.hostElement.childNodes.length == 1) {
-        this.textOnly = true;
-        var span = document.createElement('span');
-        child.parentNode.insertBefore(span, child);
-        span.appendChild(child);
-      }
-      if (
-        child.nodeType == 1 &&
-        child.nodeName.substr(0, 10) === 'SCALE-ICON' &&
-        this.hostElement.childNodes.length === 1
-      ) {
-        this.iconOnly = true;
-        this.hostElement.setAttribute('icon-only', 'true');
-        const icon: HTMLElement = this.hostElement.querySelector(
-          child.nodeName
-        );
-        icon.style.marginRight = '0px';
-        this.selected
-          ? icon.setAttribute('selected', '')
-          : icon.removeAttribute('selected');
-      }
-    });
+      });
+    }
   }
+
+  // handleIcon() {
+  //   Array.from(this.hostElement.childNodes).forEach((child) => {
+  //     if (
+  //       child.nodeType == 1 &&
+  //       child.nodeName.substr(0, 10) === 'SCALE-ICON'
+  //     ) {
+  //       const icon: HTMLElement = this.hostElement.querySelector(
+  //         child.nodeName
+  //       );
+  //       switch (this.size) {
+  //         case 'small':
+  //           icon.setAttribute('size', '14');
+  //           break;
+  //         case 'medium' || 'large':
+  //           icon.setAttribute('size', '16');
+  //           break;
+  //       }
+  //       icon.style.display = 'inline-flex';
+  //       // icon.style.marginRight = '4px';
+  //       this.hasIcon = true;
+  //     }
+  //     if (child.nodeType == 3 && this.hostElement.childNodes.length == 1) {
+  //       this.textOnly = true;
+  //       var span = document.createElement('span');
+  //       child.parentNode.insertBefore(span, child);
+  //       span.appendChild(child);
+  //     }
+  //     if (
+  //       child.nodeType == 1 &&
+  //       child.nodeName.substr(0, 10) === 'SCALE-ICON' &&
+  //       this.hostElement.childNodes.length === 1
+  //     ) {
+  //       this.iconOnly = true;
+  //       this.hostElement.setAttribute('icon-only', 'true');
+  //       const icon: HTMLElement = this.hostElement.querySelector(
+  //         child.nodeName
+  //       );
+  //       icon.style.marginRight = '0px';
+  //       this.selected
+  //         ? icon.setAttribute('selected', '')
+  //         : icon.removeAttribute('selected');
+  //     }
+  //   });
+  // }
 
   handleClick = (event: MouseEvent) => {
     event.preventDefault();
@@ -186,20 +217,21 @@ export class Segment {
           aria-description={this.getAriaDescriptionTranslation()}
         >
           <div class="segment--mask">
-            {!this.iconOnly && (
-              <div class="success-icon-container">
-                <scale-icon-action-success
-                  size={this.size === 'small' ? 14 : 16}
-                  class="scale-icon-action-success"
-                  accessibility-title="success"
-                  selected
-                />
-              </div>
-            )}
+            
+            <div class="success-icon-container">
+              <scale-icon-action-success
+                size={this.size === 'small' ? 14 : 16}
+                class="scale-icon-action-success"
+                accessibility-title="success"
+                selected
+              />
+            </div>
             <div class="icon-container">
               <slot name="segment-icon" />
             </div>
-            <slot />
+            <div class="text-container">
+              <slot />
+            </div>
           </div>
         </button>
       </Host>
