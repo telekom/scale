@@ -40,33 +40,12 @@ export class TabNav {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  @Listen('click')
-  handleClick(event: MouseEvent) {
-    // To provent event bubbling.
-    event.stopPropagation();
-
-    // workaround for slotted icons
-    const targetHTMLElement = event.target as HTMLElement;
-    const targetTag = targetHTMLElement.tagName.toLowerCase();
-    const svgTags = ['svg', 'g', 'path'];
-    let nextTab: HTMLScaleTabHeaderElement;
-
-    if (svgTags.includes(targetTag)) {
-      const closestNextTab = targetHTMLElement.closest(
-        `scale-tab-header[role="tab"]`
-      ) as HTMLScaleTabHeaderElement;
-      if (closestNextTab) {
-        nextTab = closestNextTab;
-        this.selectTab(nextTab);
-      }
-    } else {
-      if (
-        (event.target as HTMLScaleTabHeaderElement).getAttribute('role') ===
-        'tab'
-      ) {
-        nextTab = event.target as HTMLScaleTabHeaderElement;
-        this.selectTab(nextTab);
-      }
+  @Listen('scale-select')
+  handleSelect(event) {
+    const nextTab = event.target as HTMLScaleTabHeaderElement;
+    // Act only if it's a direct child
+    if (this.getAllEnabledTabs().includes(nextTab)) {
+      this.selectTab(nextTab);
     }
   }
 
