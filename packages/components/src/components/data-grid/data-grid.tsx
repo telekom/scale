@@ -201,6 +201,8 @@ export class DataGrid {
   }
   @Watch('rows')
   rowsHandler() {
+    // Reset pagination start point to render new data.
+    this.paginationStart = 0;
     this.parseRows();
     this.setInitialRowProps();
     this.resetSortingToggle();
