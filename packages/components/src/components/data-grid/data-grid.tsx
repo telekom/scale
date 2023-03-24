@@ -201,6 +201,11 @@ export class DataGrid {
   }
   @Watch('rows')
   rowsHandler() {
+    // Reset pagination to the last page of the new records if new records are less than previous.
+    if (this.paginationStart > this.rows.length) {
+      this.paginationStart =
+        this.rows.length - (this.rows.length % this.pageSize);
+    }
     this.parseRows();
     this.setInitialRowProps();
     this.resetSortingToggle();
