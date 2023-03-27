@@ -44,10 +44,13 @@ export class TelekomMobileFlyoutCanvas {
               href="#"
               onClick={(event) => {
                 event.preventDefault();
-                emitEvent(this, 'scaleCloseNavFlyout', { originalEvent: event });
+                emitEvent(this, 'scaleCloseNavFlyout', {
+                  originalEvent: event,
+                });
               }}
               title={this.closeButtonTitle}
               aria-label={this.closeButtonLabel}
+              part="close-button"
             >
               <slot name="close-icon">
                 <scale-icon-action-close decorative />

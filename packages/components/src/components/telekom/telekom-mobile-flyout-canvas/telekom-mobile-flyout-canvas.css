@@ -9,8 +9,6 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-@import url('../../../global/custom-media.css');
-
 :host {
   display: block;
   height: 100%;
@@ -50,9 +48,16 @@
 
 [part~='close-button'] {
   position: absolute;
-  top: var(--telekom-spacing-unit-x2);
   right: var(--telekom-spacing-unit-x4);
-  --color-ghost: var(--telekom-color-text-and-icon-standard);
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+[part~='close-button']:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part~='close-button']:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
 [part~='body'],
