@@ -48,7 +48,6 @@ export class TelekomMobileFlyoutCanvas {
               }}
               title={this.closeButtonTitle}
               aria-label={this.closeButtonLabel}
-              style={{ border: "1px solid green"}}
             >
               <slot name="close-icon">
                 <scale-icon-action-close decorative />
