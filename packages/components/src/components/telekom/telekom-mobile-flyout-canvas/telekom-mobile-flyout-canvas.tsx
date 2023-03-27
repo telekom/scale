@@ -40,20 +40,20 @@ export class TelekomMobileFlyoutCanvas {
             <slot name="heading">
               <h2 part="heading">{this.appName}</h2>
             </slot>
-            {/* TODO probably use a regular button since variant="ghost" or check if ghost is actually officially magenta */}
-            <scale-button
-              variant="ghost"
-              part="close-button"
-              onClick={(event) =>
-                emitEvent(this, 'scaleCloseNavFlyout', { originalEvent: event })
-              }
-              aria-label={this.closeButtonLabel}
+            <a
+              href="#"
+              onClick={(event) => {
+                event.preventDefault();
+                emitEvent(this, 'scaleCloseNavFlyout', { originalEvent: event });
+              }}
               title={this.closeButtonTitle}
+              aria-label={this.closeButtonLabel}
+              style={{ border: "1px solid green"}}
             >
               <slot name="close-icon">
                 <scale-icon-action-close decorative />
               </slot>
-            </scale-button>
+            </a>
           </div>
           <div part="body">
             <slot name="row">

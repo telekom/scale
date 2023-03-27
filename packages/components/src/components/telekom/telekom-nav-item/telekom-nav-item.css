@@ -18,7 +18,7 @@
 
 .scale-telekom-nav-item {
   --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
-  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+  --_spacing-top-slotted-icon: var(--telekom-spacing-unit-x6);
   --_font-size-main-nav: var(--telekom-typography-font-size-body);
 }
 
@@ -73,7 +73,7 @@
 .scale-telekom-nav-item > :where(a, button) {
   box-sizing: border-box;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   height: 100%;
   position: relative;
   font: inherit;
@@ -111,7 +111,7 @@
   font-size: var(--_font-size-main-nav);
   line-height: var(--telekom-typography-line-spacing-standard);
   font-weight: var(--telekom-typography-font-weight-extra-bold);
-  padding-bottom: var(--_spacing-bottom-slotted-bottom);
+  padding-top: var(--_spacing-top-slotted-icon);
 }
 
 .scale-telekom-nav-list[variant='main-nav']
