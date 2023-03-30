@@ -78,7 +78,7 @@ Scale is the new Telekom Digital Design System—a library of production-ready U
 
 The component library is centrally accessible and works with all modern frameworks used for building web applications. Scale is integrated into an optimized toolchain that greatly simplifies the frontend development workflow: As a UX designer you can easily integrate the Scale library into Sketch and receive automated updates. As a frontend developer you will find that implementation and updating with the library on NPM are as easy as it gets.
 
-What's special about Scale: the UX design libraries are generated directly from Code. Scale is thus the single source of truth for both designers and developers. And design and code are always in sync and up to date. And since this single source of truth—Storybook—also holds the entire documentation for design and development, communication will improve within teams since everyone speaks the same language.
+Scale is the single source of truth for both designers and developers. Design and code are always in sync and up to date. And since this single source of truth—Storybook—also holds the entire documentation for design and development, communication will improve within teams since everyone speaks the same language.
 
 ## What is the Scale accessibility standard?
 
