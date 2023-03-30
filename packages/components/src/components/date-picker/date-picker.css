@@ -170,7 +170,7 @@ duet-date-picker .duet-date__input::placeholder {
   );
   transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
-  font-size: var(--telekom-typography-font-size-footnote);
+  font-size: var(--telekom-typography-font-size-small);
   font-weight: var(--telekom-typography-font-weight-bold);
 }
 
