@@ -70,8 +70,10 @@ export class Segment {
   @Prop({ mutable: true }) hasIcon?: boolean;
   /** (optional) position within group */
   @Prop({ mutable: true }) textOnly?: boolean;
-  /** (optional) position within group */
+  /** (optional) icon only segment */
   @Prop({ mutable: true }) iconOnly?: boolean = false;
+  /** (optional) segment with icon and text */
+  @Prop({ mutable: true }) iconText?: boolean = false;  
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -111,9 +113,6 @@ export class Segment {
       this.segmentId = 'segment-' + i++;
     }
   }
-  // componentDidUpdate() {
-  //   this.handleIcon();
-  // }
 
   getAriaDescriptionTranslation() {
     const replaceSelected = this.selected
@@ -125,16 +124,14 @@ export class Segment {
     return filledText;
   }
 
-  /**
- * Set any children icon's size according the button size.
- */
+  /*
+  * Set any children icon's size according the button size.
+  */
   setChildrenIconSize() {
     if (this.size != null && iconSizeMap[this.size] != null) {
       const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
         isScaleIcon
       );
-
-      console.log('SETTING SIZE', icons)
       icons.forEach((icon) => {
         if (this.size == 'small') {
           icon.size = iconSizeMap['small'];
@@ -144,51 +141,6 @@ export class Segment {
       });
     }
   }
-
-  // handleIcon() {
-  //   Array.from(this.hostElement.childNodes).forEach((child) => {
-  //     if (
-  //       child.nodeType == 1 &&
-  //       child.nodeName.substr(0, 10) === 'SCALE-ICON'
-  //     ) {
-  //       const icon: HTMLElement = this.hostElement.querySelector(
-  //         child.nodeName
-  //       );
-  //       switch (this.size) {
-  //         case 'small':
-  //           icon.setAttribute('size', '14');
-  //           break;
-  //         case 'medium' || 'large':
-  //           icon.setAttribute('size', '16');
-  //           break;
-  //       }
-  //       icon.style.display = 'inline-flex';
-  //       // icon.style.marginRight = '4px';
-  //       this.hasIcon = true;
-  //     }
-  //     if (child.nodeType == 3 && this.hostElement.childNodes.length == 1) {
-  //       this.textOnly = true;
-  //       var span = document.createElement('span');
-  //       child.parentNode.insertBefore(span, child);
-  //       span.appendChild(child);
-  //     }
-  //     if (
-  //       child.nodeType == 1 &&
-  //       child.nodeName.substr(0, 10) === 'SCALE-ICON' &&
-  //       this.hostElement.childNodes.length === 1
-  //     ) {
-  //       this.iconOnly = true;
-  //       this.hostElement.setAttribute('icon-only', 'true');
-  //       const icon: HTMLElement = this.hostElement.querySelector(
-  //         child.nodeName
-  //       );
-  //       icon.style.marginRight = '0px';
-  //       this.selected
-  //         ? icon.setAttribute('selected', '')
-  //         : icon.removeAttribute('selected');
-  //     }
-  //   });
-  // }
 
   handleClick = (event: MouseEvent) => {
     event.preventDefault();
@@ -257,7 +209,8 @@ export class Segment {
       this.adjacentSiblings &&
         `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
       this.hasIcon && `${prefix}has-icon`,
-      this.iconOnly && `${prefix}icon-only`
+      this.iconOnly && `${prefix}icon-only`,
+      this.iconText && `${prefix}icon-text`
     );
   }
 }

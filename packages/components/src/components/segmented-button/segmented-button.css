@@ -34,7 +34,6 @@
   width: fit-content;
   height: var(--height);
   display: inline-grid;
-  /* grid-template-rows: repeat(var(--rowNum), var(--gridHeight)); */
   grid-template-columns: repeat(var(--colNum), minmax(auto, 1fr));  
   column-gap: 0;
 }

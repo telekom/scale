@@ -77,10 +77,6 @@
   color: var(--color);
 }
 
-
-button.segment--icon-only {
-  /* border: 2px solid orangered; */
-}
 button.segment--icon-only.segment--small .segment--mask {
   padding-left: var(--telekom-spacing-unit-x4);
   padding-right: var(--telekom-spacing-unit-x4);
@@ -203,20 +199,18 @@ button.segment--large .segment--mask {
   visibility: hidden;
 }
 
-.segment--icon-only .success-icon-container {
+.segment--icon-only .success-icon-container,
+.segment--icon-text .success-icon-container {
   display: none;
 }
 
-.segment--icon-only.segment--selected .icon-container {
+.segment--icon-only.segment--selected .icon-container,
+.segment--icon-text .success-icon-container{
   display: none;
 }
 
 .segment.segment--selected:not(.segment--icon-only) .icon-container {
   display: none;
-}
-
-.segment:not(.segment--selected):not(.segment--icon-only) .icon-container {
-  margin-right: 12px;
 }
 
 .segment--selected .success-icon-container {
@@ -237,14 +231,10 @@ button.segment--large .segment--mask {
   color: var(--color-selected);
 }
 
-.segment:not(.segment--selected).segment:not(.segment--icon-only) .text-container {
+.segment:not(.segment--selected).segment:not(.segment--icon-only):not(.segment--icon-text) .text-container {
   transform: translateX(-6px);
 }
 
-.segment--selected.segment--icon-only .icon-container {
-  visibility: visible;
-}
-
-.segment--selected:not(.segment--icon-only) .icon-container {
-  margin-left: -6px;
+.segment--icon-text .icon-container ::slotted(*){
+  margin-right: var(--telekom-spacing-unit-x1);
 }
