@@ -22,7 +22,7 @@ import {
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
-import { hasShadowDom, ScaleIcon, isScaleIcon } from '../../utils/utils';
+import { ScaleIcon, isScaleIcon } from '../../utils/utils';
 
 let i = 0;
 
