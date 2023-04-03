@@ -50,43 +50,43 @@
           <a href="#">Topic One</a>
             <a href="#">Topic One</a>
             <scale-telekom-mobile-menu-item slot="children">
-              <a href="#">Item 1</a>
+              <a href="#">2. Level Subcategory</a>
             </scale-telekom-mobile-menu-item>
             <scale-telekom-mobile-menu-item slot="children">
-              <a href="#">More Options</a>
+              <a href="#">2. Level More Options</a>
             <scale-telekom-mobile-menu-item slot="children">
-              <a href="#">Item 1</a>
+              <a href="#">3. Level Subcategory</a>
             </scale-telekom-mobile-menu-item>
             <scale-telekom-mobile-menu-item slot="children">
-                <a href="#">Even More</a>
+                <a href="#">3. Level More Options</a>
                 <scale-telekom-mobile-menu-item slot="children">
-                  <a href="#">Item </a>
+                  <a href="#">4. Level Subcategory </a>
                 </scale-telekom-mobile-menu-item>
                 <scale-telekom-mobile-menu-item slot="children">
-                    <a href="#">Item 2</a>
+                    <a href="#">4. Level Subcategory</a>
                 </scale-telekom-mobile-menu-item>
                 <scale-telekom-mobile-menu-item slot="children">
-                    <a href="#">Item 3</a>
+                    <a href="#">4. Level Subcategory</a>
                 </scale-telekom-mobile-menu-item>                                
             </scale-telekom-mobile-menu-item>
             <scale-telekom-mobile-menu-item slot="children">
-              <a href="#">Item 3</a>
+              <a href="#">3. Level Subcategory</a>
             </scale-telekom-mobile-menu-item>
             </scale-telekom-mobile-menu-item>
             <scale-telekom-mobile-menu-item slot="children">
-              <a href="#">Topic Three</a>
+              <a href="#">2. Level Subcategory</a>
             </scale-telekom-mobile-menu-item>
         </scale-telekom-mobile-menu-item>
         <scale-telekom-mobile-menu-item>
           <a href="#">Topic Two</a>
             <scale-telekom-mobile-menu-item slot="children">
-              <a href="#">Menu Item 1</a>
+              <a href="#">2. Level Subcategory</a>
             </scale-telekom-mobile-menu-item>
             <scale-telekom-mobile-menu-item slot="children">
-              <a href="#">Menu Item 2</a>
+              <a href="#">2. Level Subcategory</a>
             </scale-telekom-mobile-menu-item>
             <scale-telekom-mobile-menu-item slot="children">
-              <a href="#">Menu Item 3</a>
+              <a href="#">2. Level Subcategory</a>
             </scale-telekom-mobile-menu-item>
           </scale-telekom-mobile-menu-item>
       </scale-telekom-mobile-menu>

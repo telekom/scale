@@ -5,27 +5,27 @@
               <button>Topic One</button>
             </scale-telekom-nav-item>
             <scale-menu-flyout-list brand-header-dropdown>
-              <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+              <scale-menu-flyout-item>2. Level Subcategory</scale-menu-flyout-item>
               <scale-menu-flyout-item>
-                More Options
+                2. Level More Options
                 <scale-menu-flyout-list slot="sublist" brand-header-dropdown>
                   <scale-menu-flyout-item>
-                    Item 1
+                    3. Level Subcategory
                   </scale-menu-flyout-item>
                   <scale-menu-flyout-item>
-                    Even More
+                    3. Level More Options
                     <scale-menu-flyout-list slot="sublist" brand-header-dropdown>
-                      <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
-                      <scale-menu-flyout-item> Item 2</scale-menu-flyout-item>
-                      <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+                      <scale-menu-flyout-item>4. Level Subcategory</scale-menu-flyout-item>
+                      <scale-menu-flyout-item>4. Level Subcategory</scale-menu-flyout-item>
+                      <scale-menu-flyout-item>4. Level Subcategory</scale-menu-flyout-item>
                     </scale-menu-flyout-list>
                   </scale-menu-flyout-item>
                   <scale-menu-flyout-item>
-                    Item 3
+                    3. Level Subcategory
                   </scale-menu-flyout-item>
                 </scale-menu-flyout-list>
               </scale-menu-flyout-item>              
-              <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+              <scale-menu-flyout-item>2. Level Subcategory</scale-menu-flyout-item>
             </scale-menu-flyout-list>
         </scale-menu-flyout>  
 
@@ -34,9 +34,9 @@
             <button>Topic Two</button>
           </scale-telekom-nav-item>   
           <scale-menu-flyout-list brand-header-dropdown>
-            <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
-            <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
-            <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
+            <scale-menu-flyout-item>2. Level More Options</scale-menu-flyout-item>
+            <scale-menu-flyout-item>2. Level More Options</scale-menu-flyout-item>
+            <scale-menu-flyout-item>2. Level More Options</scale-menu-flyout-item>
           </scale-menu-flyout-list>
         </scale-menu-flyout>     
       </scale-telekom-nav-list>
