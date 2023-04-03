@@ -111,11 +111,6 @@ export class TelekomMobileMenu {
     Array.from(this.openItems).forEach((element) => {
       if (element.getAttribute('level') === String(+this.currentLevel - 1)) {
         element.setAttribute('active', '');
-        if (
-          element.parentElement.tagName === 'SCALE-TELEKOM-MOBILE-MENU-ITEM'
-        ) {
-          element.parentElement.setAttribute('active', '');
-        }
         // @ts-ignore
         element.open = false;
         return element.removeAttribute('open');
@@ -141,7 +136,7 @@ export class TelekomMobileMenu {
                 }}
               >
                 <scale-icon-navigation-left
-                  size={20}
+                  size={24}
                 ></scale-icon-navigation-left>
                 {this.backButtonTitle}
               </button>

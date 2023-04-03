@@ -116,6 +116,9 @@ export class MenuFlyout {
       'Tab' === event.key &&
       !this.hostElement.querySelector('app-navigation-user-menu')
     ) {
+      if (this.trigger.tagName === 'SCALE-TELEKOM-NAV-ITEM') {
+        (this.trigger.firstElementChild as HTMLElement).focus();
+      }
       this.closeAll();
       return;
     }

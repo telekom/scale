@@ -43,13 +43,11 @@
 
 ### Depends on
 
-- [scale-button](../../button)
 - [scale-icon-action-close](../../icons/action-close)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-telekom-mobile-flyout-canvas --> scale-button
   scale-telekom-mobile-flyout-canvas --> scale-icon-action-close
   scale-telekom-header-data-back-compat --> scale-telekom-mobile-flyout-canvas
   style scale-telekom-mobile-flyout-canvas fill:#f9f,stroke:#333,stroke-width:4px

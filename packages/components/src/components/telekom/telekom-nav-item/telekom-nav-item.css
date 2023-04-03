@@ -18,7 +18,7 @@
 
 .scale-telekom-nav-item {
   --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
-  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
   --_font-size-main-nav: var(--telekom-typography-font-size-body);
 }
 
@@ -103,6 +103,10 @@
   > :where(a, button),
 .scale-telekom-nav-list[variant='functions']
   > .scale-telekom-nav-item
+  > :where(a, button),
+.scale-telekom-nav-list[variant='main-nav']
+  > scale-menu-flyout
+  > .scale-telekom-nav-item
   > :where(a, button) {
   font-size: var(--_font-size-main-nav);
   line-height: var(--telekom-typography-line-spacing-standard);
@@ -113,7 +117,11 @@
 .scale-telekom-nav-list[variant='main-nav']
   > .scale-telekom-nav-item[active]
   > :where(a, button),
-.scale-telekom-nav-list[variant='functions']
+.scale-telekom-nav-list[variant='main-nav']
+  > scale-menu-flyout
+  > .scale-telekom-nav-item[active]
+  > :where(a, button),
+.scale-telekom-nav-list[variant='main-nav']
   > .scale-telekom-nav-item[active]
   > :where(a, button) {
   color: var(--telekom-color-text-and-icon-primary-standard);
@@ -130,7 +138,11 @@
   > :where(a, button):hover:after,
 .scale-telekom-nav-list[variant='functions']
   > .scale-telekom-nav-item
-  > :where(button[aria-expanded='true']):after {
+  > :where(button[aria-expanded='true']):after,
+.scale-telekom-nav-list[variant='main-nav']
+  > scale-menu-flyout
+  > .scale-telekom-nav-item
+  > :where(a, button):hover:after {
   content: '';
   width: 100%;
   height: var(--telekom-spacing-unit-x05);
@@ -167,7 +179,11 @@
   > :where(a, button):active:after,
 .scale-telekom-nav-list[variant='functions']
   > .scale-telekom-nav-item
-  > :where(button[aria-expanded='true']):after {
+  > :where(button[aria-expanded='true']):after,
+.scale-telekom-nav-list[variant='main-nav']
+  > scale-menu-flyout
+  > .scale-telekom-nav-item
+  > :where(a, button):active:after {
   content: '';
   width: 100%;
   height: var(--telekom-spacing-unit-x05);
@@ -182,6 +198,10 @@
   > .scale-telekom-nav-item[active]
   > :where(a, button):after,
 .scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item[active]
+  > :where(a, button):after,
+.scale-telekom-nav-list[variant='main-nav']
+  > scale-menu-flyout
   > .scale-telekom-nav-item[active]
   > :where(a, button):after {
   content: '';
@@ -274,4 +294,8 @@ scale-telekom-mobile-flyout-canvas
   .scale-icon {
   height: 12px;
   width: 12px;
+}
+
+.scale-telekom-nav-list > scale-menu-flyout::part(trigger) {
+  height: 100%;
 }
