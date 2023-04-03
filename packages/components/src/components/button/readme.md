@@ -44,14 +44,12 @@ Type: `Promise<void>`
 
  - [app-navigation-user-menu](../telekom/app-navigation-user-menu)
  - [scale-data-grid](../data-grid)
- - [scale-telekom-mobile-flyout-canvas](../telekom/telekom-mobile-flyout-canvas)
 
 ### Graph
 ```mermaid
 graph TD;
   app-navigation-user-menu --> scale-button
   scale-data-grid --> scale-button
-  scale-telekom-mobile-flyout-canvas --> scale-button
   style scale-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
