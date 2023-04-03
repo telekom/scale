@@ -41,7 +41,7 @@ export class TelekomMobileFlyoutCanvas {
               <h2 part="heading">{this.appName}</h2>
             </slot>
             <a
-              href='javascript:void(0)'
+              href="javascript:void(0)"
               onClick={(event) => {
                 event.preventDefault();
                 emitEvent(this, 'scaleCloseNavFlyout', {
