@@ -136,7 +136,7 @@ export class TelekomMobileMenu {
                 }}
               >
                 <scale-icon-navigation-left
-                  size={24}
+                  size={20}
                 ></scale-icon-navigation-left>
                 {this.backButtonTitle}
               </button>

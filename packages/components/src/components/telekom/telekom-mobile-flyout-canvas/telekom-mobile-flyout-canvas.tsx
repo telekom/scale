@@ -53,7 +53,7 @@ export class TelekomMobileFlyoutCanvas {
               part="close-button"
             >
               <slot name="close-icon">
-                <scale-icon-action-close decorative />
+                <scale-icon-action-close decorative size={20} />
               </slot>
             </a>
           </div>

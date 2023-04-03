@@ -24,7 +24,7 @@
 
 @media screen and (--md) {
   .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
   }
 }
 @media screen and (--lg) {
