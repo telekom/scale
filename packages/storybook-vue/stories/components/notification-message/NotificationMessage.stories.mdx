@@ -34,6 +34,8 @@ export const Template = (args, { argTypes }) => ({
       :auto-hide-duration="autoHideDuration"
       :auto-hide="autoHide"
       :opened="opened"
+      :close-button-label="closeButtonLabel"
+      :close-button-title="closeButtonTitle"
     >
       {{ heading }} 
       <p v-if="text">{{ text }}</p>
