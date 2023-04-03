@@ -66,10 +66,6 @@ export class Segment {
   @Prop() ariaDescriptionTranslation = '$selected';
   /** (optional) position within group */
   @Prop() position?: number;
-  /** (optional) position within group */
-  @Prop({ mutable: true }) hasIcon?: boolean;
-  /** (optional) position within group */
-  @Prop({ mutable: true }) textOnly?: boolean;
   /** (optional) icon only segment */
   @Prop({ mutable: true }) iconOnly?: boolean = false;
   /** (optional) segment with icon and text */
@@ -208,7 +204,6 @@ export class Segment {
       this.disabled && `${prefix}disabled`,
       this.adjacentSiblings &&
         `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
-      this.hasIcon && `${prefix}has-icon`,
       this.iconOnly && `${prefix}icon-only`,
       this.iconText && `${prefix}icon-text`
     );
