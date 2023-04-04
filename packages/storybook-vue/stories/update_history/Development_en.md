@@ -2,6 +2,13 @@
 
 This page documents updates in `@telekom/scale-components` and related packages.
 
+## Type and Brand Header Updates
+
+04.04.2023
+
+- The new Brand Header now has a second menu type available called Dropdown navigation.
+- Font format “Footnote” has been removed from our type scale.
+
 ## Additional basic types of the Telekom Brand Header
 
 20.03.2023

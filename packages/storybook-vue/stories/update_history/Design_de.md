@@ -2,6 +2,13 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
+## Typografie- und Brand Header-Update
+
+04.04.2023
+
+- Für den neuen Brand Header ist nun eine zweite Menü-Variante (Dropdown-Navigation) verfügbar.
+- Das Schriftformat “Footnote” wurde aus der Typografie-Skala entfernt.
+
 ## Weitere Basistypen des Telekom Brand Headers
 
 20.03.2023
