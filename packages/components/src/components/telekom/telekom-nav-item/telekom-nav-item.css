@@ -18,13 +18,13 @@
 
 .scale-telekom-nav-item {
   --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
-  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
   --_font-size-main-nav: var(--telekom-typography-font-size-body);
 }
 
 @media screen and (--md) {
   .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
   }
 }
 @media screen and (--lg) {
