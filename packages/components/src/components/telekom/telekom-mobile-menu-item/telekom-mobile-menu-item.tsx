@@ -83,11 +83,16 @@ export class TelekomMobileMenuItem {
     return (
       <Host onClick={this.handleClick}>
         <nav
-          part={cx('base', `level-${this.level}`, {
-            open: this.open,
-            active: this.active,
-            hidden: !this.open && this.level !== this.currentLevel,
-          })}
+          part={cx(
+            'base',
+            `level-${this.level}`,
+            `current-level-${this.currentLevel}`,
+            {
+              open: this.open,
+              active: this.active,
+              hidden: !this.open && this.level !== this.currentLevel,
+            }
+          )}
         >
           <div
             part={cx('header', {
@@ -99,6 +104,11 @@ export class TelekomMobileMenuItem {
               {!!this.children.length && !this.open && (
                 <scale-icon-navigation-right
                   size={20}
+                  color={
+                    this.active
+                      ? 'var(--telekom-color-primary-standard)'
+                      : 'var(--telekom-color-text-and-icon-standard)'
+                  }
                 ></scale-icon-navigation-right>
               )}
             </div>

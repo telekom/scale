@@ -25,6 +25,8 @@ export default {
     autoHideDuration: { type: Number, default: 3000 },
     autoHide: { type: Boolean, default: false },
     styles: { type: String },
+    closeButtonLabel: { type: String, default: 'close' },
+    closeButtonTitle: { type: String, default: 'close' },
   },
   methods: {
     scaleClose($event) {

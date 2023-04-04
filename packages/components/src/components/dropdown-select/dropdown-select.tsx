@@ -29,12 +29,17 @@ enum Actions {
   Type = 'Type',
 }
 
+const isElementValue = (x: unknown): x is Element & { value: string } =>
+  typeof (x as { value: unknown }).value === 'string';
+const readValue = (element: Element) =>
+  isElementValue(element) ? element.value : null;
+
 const readOptions = (
   hostElement: HTMLElement
 ): Array<{ label: string; value: any; ItemElement: VNode }> => {
   return Array.from(hostElement.children).map((x) => ({
     label: x.textContent.trim(),
-    value: x.getAttribute('value'),
+    value: x.getAttribute('value') ?? readValue(x),
     ItemElement: <span innerHTML={x.outerHTML}></span>,
   }));
 };

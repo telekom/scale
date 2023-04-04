@@ -9,17 +9,16 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-@import url('../../../global/custom-media.css');
-
 :host {
   display: block;
   height: 100%;
   overflow-y: auto;
 
   --max-width: 572px;
-  --spacing: var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x4);
+  --spacing: var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x4)
+    var(--telekom-spacing-unit-x12);
 
-  background: var(--telekom-color-background-canvas);
+  background: var(--telekom-color-background-surface);
 }
 
 [part='base'] {
@@ -49,9 +48,16 @@
 
 [part~='close-button'] {
   position: absolute;
-  top: var(--telekom-spacing-unit-x2);
-  right: var(--telekom-spacing-unit-x2);
-  --color-ghost: var(--telekom-color-text-and-icon-standard);
+  right: var(--telekom-spacing-unit-x4);
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+[part~='close-button']:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part~='close-button']:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
 [part~='body'],

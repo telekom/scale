@@ -9,14 +9,16 @@
 
 <script>
 import StoryStandard from './StoryStandard.vue';
-import StoryFlyoutNav from './StoryFlyoutNav.vue';
+import StoryMegaMenu from './StoryMegaMenu.vue';
+import StoryDropdown from './StoryDropdown.vue';
 import StorySlim from './StorySlim.vue';
 import StorySubtle from './StorySubtle.vue';
 
 export default {
   components: {
     StoryStandard,
-    StoryFlyoutNav,
+    StoryMegaMenu,
+    StoryDropdown,
     StorySlim,
     StorySubtle
   },
