@@ -29,8 +29,10 @@ enum Actions {
   Type = 'Type',
 }
 
-const isElementValue = (x: unknown):x is Element & {value: string} => typeof (x as {value: unknown}).value === 'string'
-const readValue = (element: Element) => isElementValue(element) ? element.value : null
+const isElementValue = (x: unknown): x is Element & { value: string } =>
+  typeof (x as { value: unknown }).value === 'string';
+const readValue = (element: Element) =>
+  isElementValue(element) ? element.value : null;
 
 const readOptions = (
   hostElement: HTMLElement
