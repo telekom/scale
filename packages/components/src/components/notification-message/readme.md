@@ -5,13 +5,15 @@
 
 ## Properties
 
-| Property           | Attribute            | Description | Type                                                   | Default           |
-| ------------------ | -------------------- | ----------- | ------------------------------------------------------ | ----------------- |
-| `autoHide`         | `auto-hide`          |             | `boolean`                                              | `false`           |
-| `autoHideDuration` | `auto-hide-duration` |             | `number`                                               | `3000`            |
-| `dismissible`      | `dismissible`        |             | `boolean`                                              | `false`           |
-| `opened`           | `opened`             |             | `boolean`                                              | `undefined`       |
-| `variant`          | `variant`            |             | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
+| Property           | Attribute            | Description                       | Type                                                   | Default           |
+| ------------------ | -------------------- | --------------------------------- | ------------------------------------------------------ | ----------------- |
+| `autoHide`         | `auto-hide`          |                                   | `boolean`                                              | `false`           |
+| `autoHideDuration` | `auto-hide-duration` |                                   | `number`                                               | `3000`            |
+| `closeButtonLabel` | `close-button-label` | (optional) Label for close button | `string`                                               | `'close'`         |
+| `closeButtonTitle` | `close-button-title` | (optional) Title for close button | `string`                                               | `'close'`         |
+| `dismissible`      | `dismissible`        |                                   | `boolean`                                              | `false`           |
+| `opened`           | `opened`             |                                   | `boolean`                                              | `undefined`       |
+| `variant`          | `variant`            |                                   | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
 
 
 ## Events

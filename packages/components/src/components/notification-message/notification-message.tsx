@@ -37,6 +37,10 @@ export class NotificationMessage {
   @Prop({ reflect: true }) opened: boolean;
   @Prop() autoHide?: boolean = false;
   @Prop() autoHideDuration?: number = 3000;
+  /** (optional) Label for close button */
+  @Prop() closeButtonLabel?: string = 'close';
+  /** (optional) Title for close button */
+  @Prop() closeButtonTitle?: string = 'close';
   /** Fires when the notification message has been dismissed */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
 
@@ -134,7 +138,8 @@ export class NotificationMessage {
                   class="notification-message__icon-close"
                   onClick={() => this.close()}
                   tabindex={0}
-                  aria-label="close"
+                  aria-label={this.closeButtonLabel}
+                  title={this.closeButtonTitle}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                       this.close();
