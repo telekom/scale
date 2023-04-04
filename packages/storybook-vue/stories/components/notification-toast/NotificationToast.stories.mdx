@@ -42,6 +42,8 @@ export const Template = (args, { argTypes }) => ({
       :opened="opened"
       :auto-hide-duration="autoHideDuration"
       :auto-hide="autoHide"
+      @scaleClose="scaleClose"
+      @scaleClosing="scaleClosing"
       ><p slot="header">Informational toast headline</p>
     </scale-notification-toast>
     </div>

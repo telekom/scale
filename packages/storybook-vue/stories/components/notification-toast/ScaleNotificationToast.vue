@@ -26,5 +26,15 @@ export default {
     autoHide: { type: Boolean, default: false },
     styles: { type: String },
   },
+  methods: {
+    scaleClose($event) {
+      action('scaleClose');
+      this.$emit('scaleClose', $event);
+    },
+    scaleClosing($event) {
+      action('scaleClosing');
+      this.$emit('scaleClosing', $event);
+    },
+  },
 };
 </script>
