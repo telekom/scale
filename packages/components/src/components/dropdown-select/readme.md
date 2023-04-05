@@ -33,13 +33,14 @@
 
 ## Shadow Parts
 
-| Part                   | Description |
-| ---------------------- | ----------- |
-| `"combobox-container"` |             |
-| `"icon"`               |             |
-| `"label"`              |             |
-| `"listbox"`            |             |
-| `"listbox-pad"`        |             |
+| Part                         | Description |
+| ---------------------------- | ----------- |
+| `"combobox-container"`       |             |
+| `"icon"`                     |             |
+| `"label"`                    |             |
+| `"listbox"`                  |             |
+| `"listbox-pad"`              |             |
+| `"listbox-scroll-container"` |             |
 
 
 ## Dependencies
