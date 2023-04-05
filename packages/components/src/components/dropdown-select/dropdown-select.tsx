@@ -425,41 +425,43 @@ export class DropdownSelect {
               {ValueElement}
             </div>
             <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
-              <div
-                ref={(el) => (this.listboxEl = el)}
-                part="listbox"
-                role="listbox"
-                id={`${this.comboboxId}-listbox`}
-                aria-labelledby={`${this.comboboxId}-label`}
-                tabindex="-1"
-              >
-                {readOptions(this.hostElement).map(
-                  ({ value, ItemElement }, index) => (
-                    <div
-                      role="option"
-                      part={`option${
-                        index === this.currentIndex ? ' current' : ''
-                      }`}
-                      id={value}
-                      onClick={(event) => {
-                        this.handleOptionClick(event, index);
-                      }}
-                      onMouseDown={() => {
-                        this.ignoreBlur = true;
-                      }}
-                      {...(value === this.value
-                        ? { 'aria-selected': 'true' }
-                        : {})}
-                    >
-                      {ItemElement}
-                      {value === this.value ? (
-                        <scale-icon-action-success
-                          size={16}
-                        ></scale-icon-action-success>
-                      ) : null}
-                    </div>
-                  )
-                )}
+              <div part="listbox-scroll-container">
+                <div
+                  ref={(el) => (this.listboxEl = el)}
+                  part="listbox"
+                  role="listbox"
+                  id={`${this.comboboxId}-listbox`}
+                  aria-labelledby={`${this.comboboxId}-label`}
+                  tabindex="-1"
+                >
+                  {readOptions(this.hostElement).map(
+                    ({ value, ItemElement }, index) => (
+                      <div
+                        role="option"
+                        part={`option${
+                          index === this.currentIndex ? ' current' : ''
+                        }`}
+                        id={value}
+                        onClick={(event) => {
+                          this.handleOptionClick(event, index);
+                        }}
+                        onMouseDown={() => {
+                          this.ignoreBlur = true;
+                        }}
+                        {...(value === this.value
+                          ? { 'aria-selected': 'true' }
+                          : {})}
+                      >
+                        {ItemElement}
+                        {value === this.value ? (
+                          <scale-icon-action-success
+                            size={16}
+                          ></scale-icon-action-success>
+                        ) : null}
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
             </div>
 

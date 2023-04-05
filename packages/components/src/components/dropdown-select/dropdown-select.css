@@ -210,9 +210,12 @@
 
 /*listbox*/
 [part='listbox'] {
-  overflow-y: auto;
   position: relative;
+}
+
+[part='listbox-scroll-container'] {
   max-height: var(--max-height-listbox);
+  overflow-y: auto;
 }
 
 [part='listbox-pad'] {
