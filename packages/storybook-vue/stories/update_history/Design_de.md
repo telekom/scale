@@ -2,6 +2,12 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
+## Typografie-Update
+
+06.04.2023
+
+Das Schriftformat “Footnote” wurde aus der Typografie-Skala entfernt.
+
 ## Weitere Basistypen des Telekom Brand Headers
 
 20.03.2023

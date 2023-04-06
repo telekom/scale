@@ -178,53 +178,6 @@ scale-telekom-nav-list {
 </scale-telekom-header>
 ```
 
-## Dropdown Navigation
-
-<Canvas withSource="none">
-  <Story
-    name="Dropdown Navigation"
-    args={{ storyName: 'StoryDropdown', appName: 'Application Name' }}
-    inline={false}
-    height={500}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-telekom-header>
-  <scale-telekom-nav-list slot="main-nav">
-    <scale-menu-flyout>
-        <scale-telekom-nav-item slot="trigger">
-          <button href="#">Topic One</button>
-        </scale-telekom-nav-item>
-        <scale-menu-flyout-list>
-          <!-- … -->
-        </scale-menu-flyout-list>
-    </scale-menu-flyout>    
-  </scale-telekom-nav-list>
-</scale-telekom-header>
-```
-
-### Scoped CSS variables
-
-```css
-scale-telekom-nav-flyout {
-  --top: var(--scl-telekom-header-height, 0);
-  --left: 0;
-  --width: 100vw;
-  --height: auto;
-  --position: fixed;
-  --background: var(--telekom-color-background-surface);
-  --shadow: none;
-  --z-index: 7;
-  --duration: var(--telekom-motion-duration-transition);
-  --translate-x: 0;
-  --translate-y: var(--telekom-spacing-unit-x1);
-  --translate-z: 0;
-}
-```
-
 ### Mega Menu
 
 ```html
