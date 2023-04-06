@@ -55,6 +55,8 @@ export class MenuFlyoutList {
   @Prop({ reflect: true, mutable: true }) active: boolean = false;
   /** (optional) Determines whether the flyout should close when a menu item is selected */
   @Prop() closeOnSelect = true;
+  /** (optional) set to true when using in telekom-brand-header */
+  @Prop() brandHeaderDropdown: boolean = false;
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
@@ -224,6 +226,10 @@ export class MenuFlyoutList {
       this.hostElement.style.marginTop = '';
       this.hostElement.style.marginRight = '';
       this.hostElement.style.marginBottom = '';
+      if (this.trigger().tagName === 'SCALE-TELEKOM-NAV-ITEM') {
+        this.trigger().style.color =
+          'var(--telekom-color-text-and-icon-standard)';
+      }
     }
 
     if (this.opened) {
@@ -288,14 +294,26 @@ export class MenuFlyoutList {
 
   setPosition() {
     const { top, left } = this.triggerRect;
-    this.hostElement.style.top = `${top}px`;
-    this.hostElement.style.left = `${left}px`;
+    this.hostElement.style.left = !this.brandHeaderDropdown
+      ? `${left}px`
+      : `${left - 4}px`;
+    if (this.trigger().tagName === 'SCALE-TELEKOM-NAV-ITEM') {
+      this.hostElement.style.top = `${top - 12}px`;
+      this.hostElement.style.left = `${left - 24}px`;
+      this.trigger().style.color =
+        'var(--telekom-color-text-and-icon-primary-standard)';
+    } else {
+      this.hostElement.style.top = `${top}px`;
+    }
   }
 
   setSize() {
     const { width, height } = this.triggerRect;
     this.hostElement.style.height = `${height}px`;
     this.hostElement.style.width = `${width}px`;
+    if (this.brandHeaderDropdown) {
+      this.base.style.width = `240px`;
+    }
   }
 
   checkPlacement() {
@@ -442,7 +460,8 @@ export class MenuFlyoutList {
       this.canScrollUp && 'menu-flyout-list--can-scroll-up',
       this.canScrollDown && 'menu-flyout-list--can-scroll-down',
       this.flipHorizontal && `menu-flyout-list--flip-horizontal`,
-      this.flipVertical && `menu-flyout-list--flip-vertical`
+      this.flipVertical && `menu-flyout-list--flip-vertical`,
+      this.brandHeaderDropdown && `menu-flyout-list--brand-header-dropdown`
     );
   }
 

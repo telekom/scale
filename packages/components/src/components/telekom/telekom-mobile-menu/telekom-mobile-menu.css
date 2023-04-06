@@ -1,6 +1,6 @@
 :host {
   --spacing: var(--telekom-spacing-unit-x4);
-  --background: var(--telekom-color-background-canvas);
+  --background: var(--telekom-color-background-surface);
   --max-width: 572px;
 
   --spacing-close-button: var(--telekom-spacing-unit-x2);
@@ -37,7 +37,7 @@
 }
 
 scale-icon-navigation-left {
-  margin-right: 6px;
+  margin-right: 12px;
 }
 
 :host::part(nav) {

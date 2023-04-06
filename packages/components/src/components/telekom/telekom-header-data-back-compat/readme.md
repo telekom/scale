@@ -54,7 +54,6 @@ graph TD;
   scale-telekom-header --> scale-logo
   scale-logo --> scale-logo-svg
   scale-telekom-mega-menu-column --> scale-icon-navigation-right
-  scale-telekom-mobile-flyout-canvas --> scale-button
   scale-telekom-mobile-flyout-canvas --> scale-icon-action-close
   scale-telekom-mobile-menu --> scale-icon-navigation-left
   scale-telekom-mobile-menu-item --> scale-icon-navigation-right

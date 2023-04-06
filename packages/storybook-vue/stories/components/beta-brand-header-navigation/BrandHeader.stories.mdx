@@ -151,12 +151,12 @@ scale-telekom-nav-list {
 </scale-telekom-header>
 ```
 
-## Flyout Navigation
+## Mega Menu
 
 <Canvas withSource="none">
   <Story
-    name="Flyout Navigation"
-    args={{ storyName: 'StoryFlyoutNav', appName: 'Application Name' }}
+    name="Mega Menu"
+    args={{ storyName: 'StoryMegaMenu', appName: 'Application Name' }}
     inline={false}
     height={500}
   >
@@ -176,25 +176,6 @@ scale-telekom-nav-list {
     <!-- … -->
   </scale-telekom-nav-list>
 </scale-telekom-header>
-```
-
-### Scoped CSS variables
-
-```css
-scale-telekom-nav-flyout {
-  --top: var(--scl-telekom-header-height, 0);
-  --left: 0;
-  --width: 100vw;
-  --height: auto;
-  --position: fixed;
-  --background: var(--telekom-color-background-surface);
-  --shadow: none;
-  --z-index: 7;
-  --duration: var(--telekom-motion-duration-transition);
-  --translate-x: 0;
-  --translate-y: var(--telekom-spacing-unit-x1);
-  --translate-z: 0;
-}
 ```
 
 ### Mega Menu
