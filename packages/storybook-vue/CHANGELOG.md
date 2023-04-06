@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.130](https://github.com/telekom/scale/compare/v3.0.0-beta.129...v3.0.0-beta.130) (2023-04-06)
+
+
+### Bug Fixes
+
+* replace _footnote_ typography size token ([#1696](https://github.com/telekom/scale/issues/1696)) ([a33843f](https://github.com/telekom/scale/commit/a33843f50abf6fb93da550e35219f4fbf6048b4b))
+
+
+### Features
+
+* adding closeButtonLabel and -Title to notifications ([#1694](https://github.com/telekom/scale/issues/1694)) ([021c9c9](https://github.com/telekom/scale/commit/021c9c9cf15ea95c7ac7b22b216f3a1369f6e377))
+
+
+
+
+
 # [3.0.0-beta.129](https://github.com/telekom/scale/compare/v3.0.0-beta.128...v3.0.0-beta.129) (2023-03-24)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue
