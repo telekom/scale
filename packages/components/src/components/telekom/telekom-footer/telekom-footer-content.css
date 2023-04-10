@@ -31,7 +31,6 @@ footer {
 
 [part~='base'] {
   height: 100%;
-  max-width: var(--_max-width-container);
   padding-left: var(--_spacing-x-container);
   padding-right: var(--_spacing-x-container);
   position: relative;
