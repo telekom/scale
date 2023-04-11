@@ -215,11 +215,11 @@ slot[name='logo'] {
   transition: var(--transition-common-scrolled);
 }
 
-@media screen and (min-width: 1553px) and (max-width: 1679px) { 
+/* @media screen and (min-width: 1553px) and (max-width: 1679px) { 
   slot[name='logo'] {
     position: relative;
   }
-}
+} */
 
 
 slot[name='meta-nav-external'] {
