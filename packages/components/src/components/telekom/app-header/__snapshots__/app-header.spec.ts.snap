@@ -29,7 +29,7 @@ exports[`app-Header snapshots hasSlots 1`] = `
         <span class="header__nav-after"></span>
         <div class="header__nav-content">
           <div class="header__nav-logo">
-            <scale-logo language="" size="24" transparent=""></scale-logo>
+            <scale-logo language="" logoariahidden="" size="24" transparent=""></scale-logo>
           </div>
           <div class="header__nav-menu-wrapper">
             <div class="header__nav-menu-main">
@@ -84,7 +84,7 @@ exports[`app-Header snapshots smoke test 1`] = `
         <span class="header__nav-after"></span>
         <div class="header__nav-content">
           <div class="header__nav-logo">
-            <scale-logo language="" size="24" transparent=""></scale-logo>
+            <scale-logo language="" logoariahidden="" size="24" transparent=""></scale-logo>
           </div>
           <div class="header__nav-menu-wrapper">
             <div class="header__nav-menu-main">
