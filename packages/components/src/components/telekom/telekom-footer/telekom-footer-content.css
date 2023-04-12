@@ -18,8 +18,6 @@
 
   --_display-logo: flex;
   --_navigation-container-padding: 0 0 0 0;
-  --_width-moz: -moz-available;
-  --_width-webkit: -webkit-fill-available;
 }
 
 footer {
@@ -42,9 +40,9 @@ footer {
   flex: 1;
   flex-direction: column;
   width: 100%;
-  width: var(--_width-moz);
-  width: var(--_width-webkit);
   width: fill-available;
+  width: -moz-available;
+  width: -webkit-fill-available;
 }
 
 [part~='logo'] {
