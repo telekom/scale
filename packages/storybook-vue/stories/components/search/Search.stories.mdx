@@ -1,0 +1,74 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleSearch from './ScaleSearch.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta title="Components/Search" component={ScaleSearch} argTypes={{}} />
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleSearch },
+  props: {
+    label: String,
+    ...ScaleSearch.props,
+  },
+  template: `
+  <div style="padding: 20px 0 20px 0;">
+    <scale-search
+      :name="name"
+      :label="label"
+      :invalid="invalid"
+      :max-length="maxLength"
+      :min-length="minLength"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :required="required"
+      :value="value"
+      :aria-detailed-id="ariaDetailedId"
+      :input-id="inputId"
+      :input-autofocus="inputAutofocus"
+      :input-autocomplete="inputAutocomplete"
+      :experimental-controlled="experimentalControlled"
+      :hide-label-visually="hideLabelVisually"
+      @scaleChange="scaleChange"
+      @scaleFocus="scaleFocus"
+      @scaleBlur="scaleBlur"
+      @scaleKeyDown="scaleKeyDown"
+    ></scale-search>
+    </div>
+  `,
+  methods: {
+    scaleChange: action('scaleChange'),
+    scaleFocus: action('scaleFocus'),
+    scaleBlur: action('scaleBlur'),
+    scaleKeyDown: action('scaleKeyDown'),
+  },
+});
+
+# Search
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'Search',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+### Scoped CSS variables
+
+```css
+scale-search {
+}
+```
