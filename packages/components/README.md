@@ -77,7 +77,6 @@ If you want to use the source code, remove the following folders. These folders 
 | Folder                                     | Content                    |
 | ------------------------------------------ | -------------------------- |
 | assets                                     | Scale key visual           |
-| packages/components-sketch/                | Sketch generator templates |
 | packages/components/src/components/telekom | Telekom components         |
 | packages/components/src/telekom            | Telekom fonts & icons      |
 | packages/components/src/html/telekom       | Telekom code examples      |
@@ -146,11 +145,8 @@ Simply clone/download this repository and use the source code as is.
 | components         | Stencil components                                         |
 | components-angular | Component proxies for Angular (auto-generated)             |
 | components-react   | Component proxies for React (auto-generated)               |
-| components-sketch  | Component templates for Sketch generation (auto-generated) |
 | components-vue     | Component proxies for Vue (auto-generated)                 |
 | design-token       | Design tokens                                              |
-| generator-sketch   | Sketch generator                                           |
-| html-to-sketch     | Component template Sketch conversion utilities             |
 | storybook-vue      | Our Storybook                                              |
 | visual-tests       | Visual snapshot testing                                    |
 
