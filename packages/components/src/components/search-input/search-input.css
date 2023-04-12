@@ -1,0 +1,194 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  /* base */
+  --width: 100%;
+  --min-width: 144px;
+  --height: 44px;
+  --border: 1px solid var(--telekom-color-ui-border-hovered);
+  --border-radius: var(--telekom-spacing-unit-x2);
+  --margin: 0;
+  /* focus */
+  --focus-box-shadow: transparent;
+  --focus-outline: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-focus);
+  --focus-outline-offset: var(--telekom-spacing-unit-x025);
+  --focus-prefix-icon-color: var(--telekom-color-text-and-icon-standard);
+  /* hover */
+  --hover-background-color: var(--telekom-color-ui-state-fill-hovered);
+  --hover-border-color: var(--telekom-color-ui-border-hovered);
+  /* active */
+  --active-background-color: var(--telekom-color-ui-state-fill-hovered);
+  /* disabled */
+  --disabled-slot_input-border-color: var(--telekom-color-ui-border-disabled);
+  --disabled-slot_input-color: var(--telekom-color-text-and-icon-disabled);
+
+  /* input */
+  --input-width: 100%;
+  --input-height: 44px;
+  --input-padding-left: var(--telekom-spacing-unit-x2);
+  --input-margin: 0;
+  --input-font-family: inherit;
+  --input-font-size: var(--telekom-typography-font-size-body);
+  --input-background-color: var(--telekom-color-ui-state-fill-standard);
+
+  /* interactive-icon */
+  --interactive-icon-color: var(--telekom-color-text-and-icon-additional);
+
+  /* clear-icon-button */
+  --clear-icon-button-margin-left: var(--telekom-spacing-unit-x2);
+  --clear-icon-button-margin-right: var(--telekom-spacing-unit-x2);
+
+  /* clear-icon */
+  --clear-icon-color: var(--telekom-color-text-and-icon-standard);
+
+  /* suffix-icon */
+  --suffix-icon-margin-left: var(--telekom-spacing-unit-x3);
+  --suffix-icon-margin-right: var(--telekom-spacing-unit-x2);
+  --suffix-icon-color: var(--telekom-color-text-and-icon-additional);
+
+  /* prefix-icon */
+  --prefix-icon-margin-left: var(--telekom-spacing-unit-x3);
+  --prefix-icon-color: var(--telekom-color-text-and-icon-additional);
+
+  /* placeholder */
+  --placeholder-color: var(--telekom-color-text-and-icon-additional);
+}
+
+[part~='base'] {
+  width: var(--width);
+  height: var(--height);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  margin: var(--margin);
+  display: flex;
+  outline: none;
+  min-width: var(--min-width);
+}
+
+[part~='base'][part~='focus'],
+[part~='base']:focus {
+  box-shadow: var(--focus-box-shadow);
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+  z-index: 40;
+}
+
+[part~='base']:hover {
+  background-color: var(--hover-background-color);
+  border-color: var(--hover-border-color);
+}
+
+[part~='base']:active {
+  background-color: var(--active-background-color);
+}
+
+[part~='input'] {
+  width: var(--input-width);
+  height: var(--input-height);
+  padding-left: var(--input-padding-left);
+  margin: var(--input-margin);
+  display: flex;
+  outline: none;
+  border: 0;
+  box-sizing: border-box;
+  font-family: var(--input-font-family);
+  font-size: var(--input-font-size);
+  background-color: var(--input-background-color);
+}
+
+[part~='interactive-icon'] {
+  align-items: center;
+  display: flex;
+  color: var(--interactive-icon-color);
+}
+
+[part~='clear-icon-button'] {
+  margin-left: var(--clear-icon-button-margin-left);
+  margin-right: var(--clear-icon-button-margin-right);
+  align-items: center;
+  --background: transparent;
+}
+
+[part~='clear-icon'] {
+  color: var(--clear-icon-color);
+}
+
+slot[name='prefix-icon']::slotted(*) {
+  margin-left: var(--prefix-icon-margin-left);
+  align-items: center;
+  color: var(--prefix-icon-color);
+}
+
+[part~='base'][part~='focus'] slot[name='prefix-icon']::slotted(*) {
+  color: var(--focus-prefix-icon-color);
+}
+
+slot[name='suffix-icon']::slotted(*) {
+  margin-left: var(--suffix-icon-margin-left);
+  margin-right: var(--suffix-icon-margin-right);
+  align-items: center;
+  color: var(--suffix-icon-color);
+  --background: transparent;
+  --background-hover: var(--telekom-color-ui-state-fill-hovered);
+  --color: var(--suffix-icon-color);
+}
+
+[part~='base']:hover slot[name='suffix-icon']::slotted(*) {
+  --background: transparent;
+}
+
+[part~='base'][part~='focus'] slot[name='suffix-icon']::slotted(*) {
+  --color: var(--telekom-color-text-and-icon-standard);
+}
+
+[part~='base'][part~='disabled'] input,
+[part~='base'][part~='disabled'] slot {
+  cursor: not-allowed;
+  border-color: var(--disabled-slot_input-border-color);
+  background-color: none;
+  color: var(--disabled-slot_input-color);
+  background: transparent;
+}
+
+/* Hide default styling for type search */
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+/*Hide Arrows From Input Number*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--placeholder-color);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--placeholder-color);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--placeholder-color);
+}
