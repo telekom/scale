@@ -141,6 +141,9 @@ export class DatePicker {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  /** (optional) Input place holder */
+  @Prop() placeholder?: string = '';
+
   /** @deprecated */
   @Prop() size?: string;
 
@@ -291,6 +294,10 @@ export class DatePicker {
         'aria-describedby',
         `helper-message-${this.internalId}`
       );
+    }
+
+    if (input && this.placeholder) {
+      input.setAttribute('placeholder', this.placeholder);
     }
 
     if (input && (this.status === 'error' || this.invalid)) {
