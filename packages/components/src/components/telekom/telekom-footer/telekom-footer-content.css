@@ -18,6 +18,8 @@
 
   --_display-logo: flex;
   --_navigation-container-padding: 0 0 0 0;
+  --_width-moz: -moz-available;
+  --_width-webkit: -webkit-fill-available;
 }
 
 footer {
@@ -27,16 +29,22 @@ footer {
   justify-content: center;
   flex-direction: column;
   padding-bottom: var(--_nav-items-bottom-margin);
+  align-items: center;
 }
 
 [part~='base'] {
   height: 100%;
+  max-width: var(--_max-width-container);
   padding-left: var(--_spacing-x-container);
   padding-right: var(--_spacing-x-container);
   position: relative;
   display: flex;
   flex: 1;
   flex-direction: column;
+  width: 100%;
+  width: var(--_width-moz);
+  width: var(--_width-webkit);
+  width: fill-available;
 }
 
 [part~='logo'] {
