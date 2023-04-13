@@ -42,6 +42,8 @@ export class MenuFlyout {
     | 'top-left'
     | 'right'
     | 'left' = 'bottom-right';
+  /** (optional) set to true when using in telekom-brand-header */
+  @Prop() brandHeaderDropdown: boolean = false;
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
@@ -141,8 +143,30 @@ export class MenuFlyout {
     this.lists = new Set(
       Array.from(this.hostElement.querySelectorAll(MENU_SELECTOR))
     );
-    this.setTriggerAttributes();
+
+    // possibly remove brandHeaderDropdown prop from here and instead do
+    // if (this.trigger.tagName === 'SCALE-TELEKOM-NAV-ITEM') 
+    if (this.brandHeaderDropdown) {      
+      this.propagatePropsToChildren()
+      this.trigger.parentElement.addEventListener('mouseenter', () => {
+        this.toggle();
+      });
+      this.trigger.parentElement.addEventListener('mouseleave', () => {
+          this.toggle();
+      }); 
+    }    
   }
+
+  propagatePropsToChildren() {
+    const items = Array.from(this.hostElement.children).filter((child) =>
+      child.matches('scale-menu-flyout-list')
+    );
+    (items as HTMLScaleMenuFlyoutListElement[]).forEach((item) => {
+      item.brandHeaderDropdown = true;
+    });
+  }
+
+
 
   setTriggerAttributes() {
     const triggers = Array.from(

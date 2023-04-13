@@ -42,7 +42,7 @@ export class MenuFlyoutItem {
   /** (optional) Disabled */
   @Prop({ reflect: true }) disabled? = false;
   /** (optional) Set to true if cascading sublists should open on hover */
-  @Prop({ reflect: false }) openOnHover? = false;
+  @Prop({ reflect: false }) brandHeaderDropdown? = false;
   /** (optional) value */
   @Prop({ reflect: true }) value?: string;
   /** (optional) Injected styles */
@@ -103,7 +103,7 @@ export class MenuFlyoutItem {
 
   @Listen('mouseenter')
   handleHover() {
-    if (this.openOnHover) {
+    if (this.brandHeaderDropdown) {
       clearTimeout(this.hoverTimer);
       this.hoverTimer = setTimeout(() => {
         if (this.hasSlotSublist) {
@@ -119,7 +119,7 @@ export class MenuFlyoutItem {
 
   @Listen('mouseleave')
   handleHoverLeave() {
-    if (this.openOnHover) {
+    if (this.brandHeaderDropdown) {
       clearTimeout(this.hoverTimer);
       if (this.hasSlotSublist) {
         this.hoverTimer = setTimeout( () => {
@@ -132,6 +132,21 @@ export class MenuFlyoutItem {
       }
     }
   }
+
+  componentWillRender() {
+    if (this.brandHeaderDropdown) {
+      this.propagatePropsToChildren()
+    }
+  }
+
+  propagatePropsToChildren() {
+    const items = Array.from(this.hostElement.children).filter((child) =>
+      child.matches('scale-menu-flyout-list')
+    );
+    (items as HTMLScaleMenuFlyoutListElement[]).forEach((item) => {
+      item.brandHeaderDropdown = true;
+    });
+  }    
 
   connectedCallback() {
     this.hasSlotSublist =
