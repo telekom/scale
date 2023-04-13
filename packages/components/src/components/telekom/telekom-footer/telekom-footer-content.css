@@ -39,10 +39,9 @@ footer {
   display: flex;
   flex: 1;
   flex-direction: column;
-  width: 100%;
-  width: fill-available;
   width: -moz-available;
   width: -webkit-fill-available;
+  width: fill-available;
 }
 
 [part~='logo'] {
