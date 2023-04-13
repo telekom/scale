@@ -104,6 +104,7 @@ export class MenuFlyoutItem {
   @Listen('mouseenter')
   handleHover() {
     if (this.openOnHover) {
+      clearTimeout(this.hoverTimer);
       this.hoverTimer = setTimeout(() => {
         if (this.hasSlotSublist) {
           const sublist = this.hostElement.querySelector('[slot="sublist"]');
@@ -121,10 +122,12 @@ export class MenuFlyoutItem {
     if (this.openOnHover) {
       clearTimeout(this.hoverTimer);
       if (this.hasSlotSublist) {
-        const sublist = this.hostElement.querySelector('[slot="sublist"]');
-        if (sublist.hasAttribute('opened')) {
-          sublist.removeAttribute('opened');
-        }
+        this.hoverTimer = setTimeout( () => {
+          const sublist = this.hostElement.querySelector('[slot="sublist"]');
+          if (sublist.hasAttribute('opened')) {
+            sublist.removeAttribute('opened');
+          }
+        }, 200);
         return;
       }
     }
