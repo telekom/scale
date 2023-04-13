@@ -13,6 +13,7 @@ export class LoadingSpinner {
   @Prop() variant: 'white' | 'primary' = 'primary';
   @Prop() alignment: 'horizontal' | 'vertical' = 'horizontal';
   @Prop() text: string;
+  @Prop() accessibilityTitle: string;
   @Prop() size: 'small' | 'large' = 'small';
 
   componentWillLoad() {
@@ -50,7 +51,9 @@ export class LoadingSpinner {
             </svg>
           </div>
           <div class="sr-only" aria-live="polite" id={`spinner-label-${i}`}>
-            {this.text || 'Loading'}
+            {this.accessibilityTitle
+              ? this.accessibilityTitle
+              : this.text || 'Loading'}
           </div>
           {this.text ? (
             <div part="text" class="spinner__text" aria-hidden="true">
