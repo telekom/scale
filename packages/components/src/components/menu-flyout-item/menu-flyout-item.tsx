@@ -18,6 +18,7 @@ import {
   Event,
   EventEmitter,
   Element,
+  Listen,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -40,6 +41,8 @@ export class MenuFlyoutItem {
   @Prop({ reflect: true, mutable: true }) checked?: boolean = false;
   /** (optional) Disabled */
   @Prop({ reflect: true }) disabled? = false;
+  /** (optional) Set to true if cascading sublists should open on hover */
+  @Prop({ reflect: false }) openOnHover? = false;
   /** (optional) value */
   @Prop({ reflect: true }) value?: string;
   /** (optional) Injected styles */
@@ -89,6 +92,42 @@ export class MenuFlyoutItem {
     };
 
     emitEvent(this, 'scaleSelect', detail);
+  }
+
+  /**
+   * We handle item clicks here, to avoid setting up
+   * listeners on every item
+   */
+
+  hoverTimer;
+
+  @Listen('mouseenter')
+  handleHover() {
+    if (this.openOnHover) {
+      this.hoverTimer = setTimeout(() => {
+        if (this.hasSlotSublist) {
+          const sublist = this.hostElement.querySelector('[slot="sublist"]');
+          if (!sublist.hasAttribute('opened')) {
+            this.openSublist();
+          }
+          return;
+        }
+      }, 200);
+    }
+  }
+
+  @Listen('mouseleave')
+  handleHoverLeave() {
+    if (this.openOnHover) {
+      clearTimeout(this.hoverTimer);
+      if (this.hasSlotSublist) {
+        const sublist = this.hostElement.querySelector('[slot="sublist"]');
+        if (sublist.hasAttribute('opened')) {
+          sublist.removeAttribute('opened');
+        }
+        return;
+      }
+    }
   }
 
   connectedCallback() {

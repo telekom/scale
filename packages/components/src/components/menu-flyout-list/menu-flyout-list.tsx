@@ -57,6 +57,8 @@ export class MenuFlyoutList {
   @Prop() closeOnSelect = true;
   /** (optional) set to true when using in telekom-brand-header */
   @Prop() brandHeaderDropdown: boolean = false;
+  /** (optional) Set to true if cascading sublists should open on hover */
+  @Prop() openOnHover: boolean = this.brandHeaderDropdown;
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
@@ -106,6 +108,14 @@ export class MenuFlyoutList {
     if (this.opened && this.needsCheckPlacement) {
       this.setSize();
       this.checkPlacement();
+    }
+    const items = Array.from(
+      this.hostElement.children
+    ) as HTMLScaleMenuFlyoutItemElement[];
+    if (this.openOnHover) {
+      items.forEach((item) => {
+        item.openOnHover = true;
+      });
     }
   }
 
@@ -194,7 +204,7 @@ export class MenuFlyoutList {
    */
   @Listen('scale-select')
   handleScaleSelect({ detail }) {
-    if (this.active && this.opened) {
+    if (this.active && this.opened && !this.openOnHover) {
       const index = this.items.findIndex((x) => x === detail.item);
       if (index != null) {
         this.focusedItemIndex = index;
@@ -234,7 +244,9 @@ export class MenuFlyoutList {
 
     if (this.opened) {
       this.active = true;
-      this.setFocus();
+      if (!this.openOnHover) {
+        this.setFocus();
+      }
       this.setWindowSize();
       this.setPosition();
       this.padForNonOverlayScrollbars();
