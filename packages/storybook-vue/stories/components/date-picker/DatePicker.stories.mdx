@@ -145,7 +145,6 @@ export const RangeTemplate = (args, { argTypes }) => ({
             ref="start"
             identifier="start"
             label="Start"
-            :placeholder="placeholder"
             style="margin-right: 8px;"
             :value="$data.start"
             :max="$data.end"
@@ -205,6 +204,7 @@ export const RangeTemplate = (args, { argTypes }) => ({
     args={{
       value: '2020-12-31',
       label: 'Standard',
+      placeholder: 'Select date'
     }}
   >
     {Template.bind({})}
@@ -217,6 +217,7 @@ export const RangeTemplate = (args, { argTypes }) => ({
 <scale-date-picker
   label="Standard"
   value="2020-12-31"
+  placeholder="Select date"
   @scaleChange="handleChange"
   @scaleFocus="handleFocus"
   @scaleBlur="handleBlur"
@@ -284,6 +285,7 @@ duet-date-picker {
       label: 'With Error',
       invalid: true,
       helperText: 'something is wrong',
+      placeholder: 'select date'
     }}
   >
     {Template.bind({})}
@@ -296,6 +298,7 @@ duet-date-picker {
   helper-text="something is wrong"
   invalid
   value="2020-12-31"
+  placeholder: 'select date'
 ></scale-date-picker>
 ```
 
@@ -419,7 +422,6 @@ const RangeTemplate = (args, { argTypes }) => ({
             ref="start"
             identifier="start"
             label="Start"
-            :placeholder="placeholder"
             style="margin-right: 8px;"
             :value="$data.start"
             :max="$data.end"
