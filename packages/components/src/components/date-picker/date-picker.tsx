@@ -227,6 +227,17 @@ export class DatePicker {
     this.duetInput.querySelector('.duet-date__input').value = this.value;
   }
 
+  /**
+   * Watch `placeholder` property for changes and update `placeholder` based on that.
+   */
+  @Watch('placeholder')
+  onPlaceholderChange(newValue: string) {
+    const input = this.duetInput.querySelector('.duet-date__input');
+    if (input && this.placeholder) {
+      input.setAttribute('placeholder', newValue);
+    }
+  }
+
   componentWillLoad() {
     if (this.popupTitle !== 'Pick a date') {
       statusNote({
@@ -380,6 +391,11 @@ export class DatePicker {
    */
   adjustButtonsLabelsForA11y = () => {
     const table = this.hostElement.querySelector('.duet-date__table');
+    if (!table) {
+      // The node we need does not exist yet. Wait and try again.
+      setTimeout(this.adjustButtonsLabelsForA11y);
+      return;
+    }
     const options = { subtree: true, childList: true, attributes: true };
     const callback = () => {
       this.mo.disconnect(); // avoid a feedback loop
@@ -399,10 +415,12 @@ export class DatePicker {
   };
 
   disconnectedCallback() {
-    const input = this.duetInput.querySelector('.duet-date__input');
+    if (this.duetInput) {
+      const input = this.duetInput.querySelector('.duet-date__input');
 
-    if (input) {
-      input.removeEventListener('keyup', this.handleKeyPress);
+      if (input) {
+        input.removeEventListener('keyup', this.handleKeyPress);
+      }
     }
 
     if (this.mo) {
