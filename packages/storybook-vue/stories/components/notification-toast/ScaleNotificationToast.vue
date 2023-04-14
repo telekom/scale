@@ -29,13 +29,13 @@ export default {
     closeButtonTitle: { type: String, default: 'close' },
   },
   methods: {
-    scaleClose($event) {
-      action('scaleClose');
-      this.$emit('scaleClose', $event);
+    'scale-close'($event) {
+      action('scale-close');
+      this.$emit('scale-close', $event);
     },
-    scaleClosing($event) {
-      action('scaleClosing');
-      this.$emit('scaleClosing', $event);
+    'scale-closing'($event) {
+      action('scale-closing');
+      this.$emit('scale-closing', $event);
     },
   },
 };
