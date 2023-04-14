@@ -17,9 +17,12 @@ import {
   State,
   Element,
   Host,
+  Event,
+  EventEmitter,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 @Component({
   tag: 'scale-notification-toast',
@@ -64,6 +67,11 @@ export class NotificationToast {
 
   @Element() element: HTMLElement;
 
+  /** Triggered when the notification toast closing process begins */
+  @Event({ eventName: 'scale-closing' }) scaleClosing: EventEmitter<void>;
+  /** Triggered when the notification toast has been dismissed */
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
+
   hideToast: boolean = false;
   alignmentVertical: string;
   alignmentHorizontal: string;
@@ -85,9 +93,11 @@ export class NotificationToast {
   }
 
   close = () => {
+    emitEvent(this, 'scaleClosing');
     this.hideToast = true;
     setTimeout(() => {
       this.opened = false;
+      emitEvent(this, 'scaleClose');
     }, this.fadeDuration);
   };
 
