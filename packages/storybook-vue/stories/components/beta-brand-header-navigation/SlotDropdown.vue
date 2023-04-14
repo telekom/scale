@@ -29,7 +29,7 @@
             </scale-menu-flyout-list>
         </scale-menu-flyout>  
 
-        <scale-menu-flyout>
+        <scale-menu-flyout brand-header-dropdown>
           <scale-telekom-nav-item slot="trigger">
             <button>Topic Two</button>
           </scale-telekom-nav-item>   
