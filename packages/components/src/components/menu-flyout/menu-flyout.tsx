@@ -102,7 +102,9 @@ export class MenuFlyout {
 
   @Listen('scroll', { target: 'window' })
   handleWindowScroll() {
-    this.closeAll();
+    if (!this.brandHeaderDropdown) {
+      this.closeAll();
+    }
   }
 
   @Listen('click', { target: 'document' })
@@ -146,6 +148,7 @@ export class MenuFlyout {
 
     // possibly remove brandHeaderDropdown prop from here and instead do
     // if (this.trigger.tagName === 'SCALE-TELEKOM-NAV-ITEM') 
+    
     if (this.brandHeaderDropdown) {      
       this.propagatePropsToChildren()
       this.trigger.parentElement.addEventListener('mouseenter', () => {
