@@ -46,8 +46,6 @@ export class TabHeader {
   @Prop() small?: boolean = false;
   /** (optional) size  */
   @Prop() size?: 'small' | 'large' = 'small';
-  /** (optional) autoFocus  */
-  @Prop() autoFocus?: boolean;
   /** (optional) Whether the tab is selected */
   @Prop() selected?: boolean;
   /** (optional) Injected CSS styles */
@@ -72,12 +70,10 @@ export class TabHeader {
       return;
     }
     if (!this.disabled) {
-      if (newValue === true) {
+      if (newValue === true && this.tabsHaveFocus()) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        if (this.autoFocus) {
-          this.hostElement.focus();
-        }
+        this.hostElement.focus();
       }
       this.updateSlottedIcon();
     }
@@ -96,6 +92,19 @@ export class TabHeader {
         source: this.hostElement,
       });
     }
+  }
+
+  /**
+   * Whether current focused element is within parent `scale-tab-nav`.
+   * Only if `true`, we imperatively focus the selected element.
+   * @returns boolean
+   */
+  tabsHaveFocus() {
+    const tabs = this.hostElement.closest('.scale-tab-nav');
+    if (!tabs) {
+      return false;
+    }
+    return tabs.contains(document.activeElement);
   }
 
   /**
