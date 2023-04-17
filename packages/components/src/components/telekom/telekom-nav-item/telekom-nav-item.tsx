@@ -21,6 +21,7 @@ function toggleAriaCurrent(
   value: boolean,
   attrValue = 'page'
 ) {
+  console.log('toggleAriaCurrent!!!!!!!!!!!!', element, value, attrValue)
   if (value) {
     element.setAttribute('aria-current', attrValue);
   } else {
@@ -39,6 +40,8 @@ export class TelekomNavItem {
   @Prop({ reflect: true }) active?: boolean = false;
   @Prop({ reflect: true }) variant?: string;
   @Prop() ariaLabelNavItem?: string;
+  @Prop() navItemTitle?: string;
+
 
   @Watch('active')
   @Watch('variant')
@@ -49,6 +52,9 @@ export class TelekomNavItem {
     if (this.variant === 'lang-switcher' && this.active) {
       toggleAriaCurrent(this.linkElement, newValue, 'true');
     }
+    if (this.variant === 'main-nav' && this.active) {
+      toggleAriaCurrent(this.linkElement, newValue, 'true');
+    }    
   }
 
   connectedCallback() {
@@ -56,14 +62,14 @@ export class TelekomNavItem {
   }
 
   get linkElement(): HTMLAnchorElement | null {
-    return this.hostElement.querySelector('a');
+    return this.hostElement.querySelector('a, button');
   }
 
   render() {
     return (
       // A class is used to avoid coupling styles to the tagname
       // (which can be different based on who defines it)
-      <Host class="scale-telekom-nav-item" aria-label={this.ariaLabelNavItem} role="listitem">
+      <Host class="scale-telekom-nav-item" aria-label={this.ariaLabelNavItem} title={this.navItemTitle} role="listitem">
         <slot></slot> 
       </Host>
     );
