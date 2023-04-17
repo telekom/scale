@@ -7,14 +7,13 @@
 
 ## Properties
 
-| Property    | Attribute    | Description                                                                           | Type                 | Default     |
-| ----------- | ------------ | ------------------------------------------------------------------------------------- | -------------------- | ----------- |
-| `autoFocus` | `auto-focus` | (optional) autoFocus                                                                  | `boolean`            | `undefined` |
-| `disabled`  | `disabled`   | True for a disabled Tabnavigation                                                     | `boolean`            | `false`     |
-| `selected`  | `selected`   | (optional) Whether the tab is selected                                                | `boolean`            | `undefined` |
-| `size`      | `size`       | (optional) size                                                                       | `"large" \| "small"` | `'small'`   |
-| `small`     | `small`      | <span style="color:red">**[DEPRECATED]**</span> - size should replace small<br/><br/> | `boolean`            | `false`     |
-| `styles`    | `styles`     | (optional) Injected CSS styles                                                        | `string`             | `undefined` |
+| Property   | Attribute  | Description                                                                           | Type                 | Default     |
+| ---------- | ---------- | ------------------------------------------------------------------------------------- | -------------------- | ----------- |
+| `disabled` | `disabled` | True for a disabled Tabnavigation                                                     | `boolean`            | `false`     |
+| `selected` | `selected` | (optional) Whether the tab is selected                                                | `boolean`            | `undefined` |
+| `size`     | `size`     | (optional) size                                                                       | `"large" \| "small"` | `'small'`   |
+| `small`    | `small`    | <span style="color:red">**[DEPRECATED]**</span> - size should replace small<br/><br/> | `boolean`            | `false`     |
+| `styles`   | `styles`   | (optional) Injected CSS styles                                                        | `string`             | `undefined` |
 
 
 ## Events
