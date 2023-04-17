@@ -133,6 +133,7 @@ export class TelekomNavItem {
       return;
     }
     if (event.key === 'Enter' || event.key === ' ') {
+      console.log('Keyboard')
       this.expanded = true;
       this.show();
     }

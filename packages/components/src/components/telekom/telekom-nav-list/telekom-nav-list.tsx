@@ -23,8 +23,9 @@ const isDirectChild = (parent: HTMLElement, child: HTMLElement) =>
 export class TelekomNavList {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop({ reflect: true }) role: string | null = 'nav';
+  @Prop({ reflect: true }) role: string | null = 'navigation';
   @Prop({ reflect: true }) alignment: 'left' | 'center' | 'right' = 'left';
+  @Prop() ariaLabelNavList?: string;
   @Prop({ reflect: true }) variant:
     | 'meta-nav-external'
     | 'meta-nav'
@@ -61,7 +62,10 @@ export class TelekomNavList {
 
   render() {
     return (
-      <Host class="scale-telekom-nav-list">
+      <Host class="scale-telekom-nav-list" 
+        role="navigation"
+        aria-label={this.ariaLabelNavList}
+      >
         <slot></slot>
       </Host>
     );

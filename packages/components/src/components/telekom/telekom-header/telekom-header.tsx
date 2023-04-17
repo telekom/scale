@@ -83,9 +83,15 @@ export class TelekomHeader {
                   ) : null}
 
                   <div part="top-body">
-                    <slot name="meta-nav-external"></slot>
-                    <slot name="meta-nav"></slot>
-                    <slot name="lang-switcher"></slot>
+                    <nav part="meta-nav-external">
+                      <slot name="meta-nav-external"></slot>
+                    </nav>
+                    <nav part="meta-nav">
+                      <slot name="meta-nav"></slot>
+                    </nav>
+                    <nav part="lang-switcher">
+                      <slot name="lang-switcher"></slot>
+                    </nav>
                   </div>
                 </div>
 
@@ -106,7 +112,9 @@ export class TelekomHeader {
                     </div>
                   ) : null}
                   <div part="bottom-body">
-                    <slot name="main-nav"></slot>
+                    <nav>
+                      <slot name="main-nav"></slot>
+                    </nav>
                     <slot name="functions"></slot>
                   </div>
                 </div>
