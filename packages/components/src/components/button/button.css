@@ -127,7 +127,7 @@
 
 .button.button--icon-before:not(.button--icon-only) ::slotted(*) {
   margin-right: 8px;
-  margin-left: calc(4px*-1);
+  margin-left: calc(4px * -1);
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -140,7 +140,7 @@
 
 .button.button--icon-after:not(.button--icon-only) ::slotted(*) {
   margin-left: 8px;
-  margin-right: calc(4px*-1);
+  margin-right: calc(4px * -1);
   margin-top: 8px;
   margin-bottom: 8px;
 }
