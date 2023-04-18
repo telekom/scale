@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton should handle click 1`] = `
+<scale-icon-button>
+  <mock:shadow-root>
+    <button aria-pressed="false" part="base size-medium">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+  <scale-icon-action-search></scale-icon-action-search>
+</scale-icon-button>
+`;
+
+exports[`IconButton should handle click 2`] = `
+<scale-icon-button>
+  <mock:shadow-root>
+    <button aria-pressed="false" part="base size-medium">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+  <scale-icon-action-search></scale-icon-action-search>
+</scale-icon-button>
+`;
+
+exports[`IconButton should match snapshot 1`] = `
+<scale-icon-button>
+  <mock:shadow-root>
+    <button aria-pressed="false" part="base size-medium">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+  <scale-icon-action-search></scale-icon-action-search>
+</scale-icon-button>
+`;
