@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.131](https://github.com/telekom/scale/compare/v3.0.0-beta.130...v3.0.0-beta.131) (2023-04-18)
+
+
+### Bug Fixes
+
+* undo unwanted commit ([2c8819f](https://github.com/telekom/scale/commit/2c8819f239e454cecb2f08f6c0fc38f5ec57f109))
+* **tab-header:** focus problems ([#1729](https://github.com/telekom/scale/issues/1729)) ([d1ed031](https://github.com/telekom/scale/commit/d1ed031d376bab029a402ee5ceda0eae9b3bafc1))
+* fix footer not taking full width of container ([#1714](https://github.com/telekom/scale/issues/1714)) ([a17e9df](https://github.com/telekom/scale/commit/a17e9df5e758fa2939d588e0e42dc36a95bf9b62))
+* hide double logo ([#1627](https://github.com/telekom/scale/issues/1627)) ([83169a1](https://github.com/telekom/scale/commit/83169a1f853eba2d5b52b5f78019313b4abdcec1))
+
+
+### Features
+
+* add placeholder prop in date picker ([#1720](https://github.com/telekom/scale/issues/1720)) ([335c78f](https://github.com/telekom/scale/commit/335c78f244bd1061b25c46d4877ee75e43a34603))
+* adding close and closing event ([#1698](https://github.com/telekom/scale/issues/1698)) ([5c325d9](https://github.com/telekom/scale/commit/5c325d905e6b2d86e6431c22d7ba7cbb2c3e0364))
+
+
+
+
+
 # [3.0.0-beta.130](https://github.com/telekom/scale/compare/v3.0.0-beta.129...v3.0.0-beta.130) (2023-04-06)
 
 
