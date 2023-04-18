@@ -29,14 +29,12 @@ interface InputChangeEventDetail {
 @Component({
   tag: 'scale-search',
   styleUrl: './search.css',
-  shadow: false,
+  shadow: true,
 })
 export class Search {
   @Element() hostElement: HTMLElement;
   /** (optional) Input name */
   @Prop() name?: string = 'Search';
-  /** Input label */
-  @Prop() label: string = 'Search';
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
   /** (optional) Input text string max length */
@@ -44,14 +42,14 @@ export class Search {
   /** (optional) Input text string min length */
   @Prop() minLength?: number;
   /** (optional) Input placeHolder */
-  @Prop() placeholder?: string = '';
+  @Prop() placeholder?: string = 'Search';
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
   /** (optional) Input required */
   @Prop() required?: boolean;
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string | null = '';
-  /** (optional) Input checkbox id */
+  /** (optional) Input id */
   @Prop() inputId?: string;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
@@ -86,6 +84,8 @@ export class Search {
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
+  /** Emitted when the input has focus. */
+  @Event({ eventName: 'scale-focus-out' }) scaleFocusout!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
   scaleKeyDown!: EventEmitter<KeyboardEvent>;
@@ -139,6 +139,7 @@ export class Search {
   handleChange = (event: Event) => {
     const target = event.target as HTMLInputElement | null;
     if (target) {
+      console.log(target.value);
       this.value = target.value || '';
       this.emitChange();
     }
@@ -149,9 +150,13 @@ export class Search {
     this.hasFocus = true;
   };
 
+  handleFocusout = () => {
+    emitEvent(this, 'scaleFocusout');
+    this.hasFocus = false;
+  };
+
   handleBlur = () => {
     emitEvent(this, 'scaleBlur');
-    this.hasFocus = false;
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
@@ -165,15 +170,14 @@ export class Search {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
-          {/* Accessibility: label should be always *before* the actual input */}
-          <label class="search__label" htmlFor={this.inputId}>
-            {this.label}
-          </label>
+          <slot name="search__front-icon" />
           <input
-            type="text"
+            type="search"
+            tabindex="0"
             inputMode="search"
-            class="search__control"
-            value={this.value}
+            class="search__input"
+            placeholder={this.placeholder}
+            value=""
             {...(!!this.name ? { name: this.name } : {})}
             {...(!!this.inputAutofocus ? { autofocus: 'true' } : {})}
             required={this.required}
@@ -183,29 +187,25 @@ export class Search {
             onInput={this.handleInput}
             onChange={this.handleChange}
             onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
+            onFocusout={this.handleFocusout}
             onKeyDown={this.handleKeyDown}
-            {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
+            onBlur={this.handleBlur}
             disabled={this.disabled}
             autocomplete={this.inputAutocomplete}
             {...ariaDetailedById}
-          />
+          ></input>
+          <slot name="search__back-icon" />
         </div>
       </Host>
     );
   }
 
   getCssClassMap() {
-    const animated = this.value != null && this.value !== '';
-
     return classNames(
       'search',
       this.hasFocus && 'search--has-focus',
       this.disabled && `search--disabled`,
-      this.transparent && 'search--transparent',
-      this.invalid && `search--variant-danger`,
-      this.hideLabelVisually && `search--hide-label`,
-      animated && 'animated'
+      this.transparent && 'search--transparent'
     );
   }
 }

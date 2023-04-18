@@ -10,6 +10,8 @@
  */
 
 scale-search {
+  /* TODO: reject not used variables */
+
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
@@ -33,159 +35,86 @@ scale-search {
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
 
-  /* meta */
-  --font-weight-meta: var(--telekom-line-weight-bold);
-  --font-size-meta: var(--telekom-typography-font-size-small);
-  --line-height-meta: var(--telekom-typography-line-spacing-standard);
-  --spacing-y-meta: var(--telekom-spacing-unit-x1);
-  --color-meta: var(--telekom-color-text-and-icon-standard);
-  --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
-
-  /* control */
+  /* input */
   --spacing-control: 21px var(--telekom-spacing-unit-x10) 7px
     calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
   --margin-bottom-control: var(--telekom-spacing-unit-x1);
-
-  /* counter */
-  --transition-counter: var(--transition);
-  --font-size-counter: var(--font-size-meta);
-  --line-height-counter: var(--line-height-meta);
-  --color-counter-error: var(--color-meta-error);
-
-  /* placeholder */
-  --transition-placeholder: var(--transition);
-  --color-placeholder: var(--telekom-color-text-and-icon-additional);
-
-  /* label */
-  --color-label: var(--telekom-color-text-and-icon-additional);
-  --color-label-readonly: var(--telekom-color-text-and-icon-standard);
-  --z-index-label: var(--scl-z-index-10);
-  --transition-label: var(--transition);
-  --font-size-label: var(--telekom-typography-font-size-body);
-  --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-small);
-  --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
-  --margin-top-label-focus: -0.5px;
 }
 
 .search {
-  position: relative;
-}
-.search .search__helper-text,
-.search .search__counter {
-  font-weight: var(--font-weight-meta);
-}
-.search .search__control {
   width: 100%;
-  height: var(--height);
+  height: 44px;
+  border: 1px solid rgba(0, 0, 0, 0.71);
+  border-radius: 8px;
   margin: 0;
   display: flex;
   outline: none;
-  padding: var(--spacing-control);
-  z-index: 1;
+}
+
+slot[name='search__front-icon']::slotted(*) {
+  margin-left: 12px;
+  align-items: center;
+}
+
+slot[name='search__back-icon']::slotted(*) {
+  margin-left: 12px;
+  margin-right: 12px;
+  align-items: center;
+}
+
+.search .search__input {
+  width: 100%;
+  height: 44px;
+  padding-left: 14px;
+  margin: 0;
+  display: flex;
+  outline: none;
+  border: 0;
   box-sizing: border-box;
-  transition: var(--transition-control);
   font-family: inherit;
   font-size: var(--font-size-control);
-  border-radius: var(--radius);
-  border: var(--border);
   background-color: var(--background-control);
   color: var(--color-meta);
 }
 
-.search--hide-label .search__control {
+.search--hide-label .search__input {
   padding: 5px var(--telekom-spacing-unit-x10) 5px calc(var(--spacing-x) - 1px);
 }
 
-.search--hide-label .search__label {
-  visibility: hidden;
+.search:not(.search--disabled):hover {
+  background-color: #00000012;
 }
 
-.search .search__counter {
-  display: flex;
-  transition: var(--transition-counter);
-  margin-left: auto;
-  justify-content: flex-end;
-  font-size: var(--font-size-counter);
-  line-height: var(--line-height-counter);
-  color: inherit;
-  font-weight: var(--telekom-typography-font-weight-medium);
-}
-
-.search .search__meta {
-  display: flex;
-  justify-content: space-between;
-  margin-top: var(--spacing-y-meta);
-  color: var(--color-meta);
-}
-
-.search:not(.search--disabled) .search__control:hover {
-  border-color: var(--border-color-hover);
-  background-color: var(--background-color-hover);
-}
-
-.search:not(.search--disabled) .search__control:focus {
-  border-color: var(--border-color-focus);
+.search--has-focus {
+  border: 1px solid #2238df;
   outline: var(--focus-outline);
   outline-offset: 1px;
 }
 
-.search:not(.search--disabled) .search__control:focus::placeholder {
-  color: var(--color-placeholder);
-}
-
-.search .search__control::placeholder,
-.search ::placeholder {
-  color: transparent;
-  transition: var(--transition-placeholder);
-}
-
-.search__label {
-  top: -1px;
-  color: var(--color-label);
-  display: flex;
-  z-index: var(--z-index-label);
-  position: absolute;
-  transition: var(--transition-label);
-  pointer-events: none;
-  font-size: var(--font-size-label);
-  transform: translate(
-    var(--spacing-x),
-    calc((var(--height) - var(--font-size-label)) / 2)
-  );
-  font-weight: var(--font-weight-label);
-}
-.search--has-focus .search__label,
-.animated .search__label {
-  line-height: var(--font-size-label-focus);
-  margin-top: var(--margin-top-label-focus);
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
-  font-size: var(--font-size-label-focus);
-  font-weight: var(--font-weight-label-focus);
-}
-
-.search--transparent .search__control {
+.search--transparent .search__input {
   background-color: transparent;
 }
 
 .search--disabled label,
-.search--disabled .search__label,
 .search--disabled input,
-.search--disabled .search__control,
-.search--disabled .search__meta,
-.search--disabled .search__counter,
-.search--disabled .search__helper-text {
+.search--disabled .search__input {
   cursor: not-allowed;
   border-color: var(--border-color-disabled);
   background-color: var(--background-color-disabled);
   color: var(--color-disabled);
   background: transparent;
 }
-.search--disabled.animated label.search__label {
-  color: var(--color-disabled);
+
+/* Hide default styling for type search */
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }
 
 /*Hide Arrows From Input Number*/
