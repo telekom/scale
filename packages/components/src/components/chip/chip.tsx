@@ -20,6 +20,8 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
+
 @Component({
   tag: 'scale-chip',
   styleUrl: './chip.css',
@@ -37,7 +39,7 @@ export class Chip {
   @Prop() ariaRoleTitle?: string;
   /** (optional) chip aria-checked */
   @Prop() ariaCheckedState?: boolean;
-  /** (optional) chip label */
+  /** @deprecated - label slot should label prop */
   @Prop() label?: string;
   /** (optional) chip disabled */
   @Prop() disabled?: boolean = false;
@@ -75,6 +77,16 @@ export class Chip {
         iconSlot.children[0].setAttribute('selected', String(false));
       }
     }
+
+    // handle deprecated props
+    if (this.label !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "label" is deprecated. Please use the slot!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
   disconnectedCallback() {}
 
@@ -88,6 +100,14 @@ export class Chip {
   };
 
   handleClick = (event: MouseEvent) => {
+    this.handleScaleChangeEvent(event);
+  };
+
+  handleKeyPress = (event: KeyboardEvent) => {
+    this.handleScaleChangeEvent(event);
+  };
+
+  handleScaleChangeEvent = (event) => {
     if (this.type !== 'dynamic') {
       this.selected = !this.selected;
     }
@@ -137,14 +157,9 @@ export class Chip {
         {this.type === 'dynamic' && this.selected ? (
           <span
             role={this.ariaRoleTitle}
-            tabindex={this.selected ? '0' : '-1'}
+            tabindex="-1"
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
-            onClick={
-              !this.disabled || this.type === 'dynamic'
-                ? this.handleClick
-                : null
-            }
           >
             <slot name="chip-icon"></slot>
             <span class="chip-label">
@@ -158,14 +173,20 @@ export class Chip {
             aria-checked={
               this.ariaCheckedState ? this.ariaCheckedState : this.selected
             }
-            tabindex={this.selected ? '0' : '-1'}
+            tabindex="0"
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
-            onClick={
+            onClick={(event) => {
               !this.disabled || this.type === 'dynamic'
-                ? this.handleClick
-                : null
-            }
+                ? this.handleClick(event)
+                : null;
+            }}
+            onKeyDown={(event) => {
+              (!this.disabled && ['Enter', ' '].includes(event.key)) ||
+              (this.type === 'dynamic' && ['Enter', ' '].includes(event.key))
+                ? this.handleKeyPress(event)
+                : null;
+            }}
           >
             <slot name="chip-icon"></slot>
             <span class="chip-label">
