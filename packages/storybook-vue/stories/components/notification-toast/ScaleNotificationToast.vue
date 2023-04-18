@@ -28,5 +28,15 @@ export default {
     closeButtonLabel: { type: String, default: 'close' },
     closeButtonTitle: { type: String, default: 'close' },
   },
+  methods: {
+    'scale-close'($event) {
+      action('scale-close');
+      this.$emit('scale-close', $event);
+    },
+    'scale-closing'($event) {
+      action('scale-closing');
+      this.$emit('scale-closing', $event);
+    },
+  },
 };
 </script>

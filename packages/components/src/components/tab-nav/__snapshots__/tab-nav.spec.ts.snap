@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabNav should match snapshot 1`] = `
+<scale-tab-nav class="scale-tab-nav" role="tablist">
+  <mock:shadow-root>
+    <div class="tab-nav tab-nav--" part="tab-nav">
+      <slot name="tab"></slot>
+      <slot name="panel"></slot>
+    </div>
+  </mock:shadow-root>
+</scale-tab-nav>
+`;
