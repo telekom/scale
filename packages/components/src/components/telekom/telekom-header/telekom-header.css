@@ -216,18 +216,15 @@ slot[name='logo'] {
 }
 
 [part~='meta-nav-external'] {
-  /* slot[name='meta-nav-external'] { */
   display: var(--_display-meta-nav-external);
   flex: 1;
 }
 [part~='meta-nav-external'] {
-  /* slot[name='meta-nav'] { */
   display: var(--_display-meta-nav);
   /* TODO inline margin */
 }
 
 [part~='lang-switcher'] {
-  /* slot[name='lang-switcher'] { */
   display: var(--_display-lang-switcher);
   /* TODO inline margin */
 }

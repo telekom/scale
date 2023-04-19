@@ -62,7 +62,6 @@ export class TelekomNavList {
     return (
       <Host
         class="scale-telekom-nav-list"
-        role="navigation"
         aria-label={this.ariaLabelNavList}
       >
         <slot></slot>
