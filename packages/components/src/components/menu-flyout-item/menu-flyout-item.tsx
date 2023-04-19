@@ -70,7 +70,7 @@ export class MenuFlyoutItem {
       return;
     }
     if (this.hasSlotSublist) {
-        this.openSublist();
+      this.openSublist();
       return;
     }
     const detail = {
