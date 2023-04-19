@@ -17,19 +17,22 @@
 
 ## Shadow Parts
 
-| Part                | Description |
-| ------------------- | ----------- |
-| `"app-logo"`        |             |
-| `"app-name-text"`   |             |
-| `"body"`            |             |
-| `"bottom-app-name"` |             |
-| `"bottom-bar"`      |             |
-| `"bottom-body"`     |             |
-| `"container"`       |             |
-| `"fixed-wrapper"`   |             |
-| `"top-app-name"`    |             |
-| `"top-bar"`         |             |
-| `"top-body"`        |             |
+| Part                  | Description |
+| --------------------- | ----------- |
+| `"app-logo"`          |             |
+| `"app-name-text"`     |             |
+| `"body"`              |             |
+| `"bottom-app-name"`   |             |
+| `"bottom-bar"`        |             |
+| `"bottom-body"`       |             |
+| `"container"`         |             |
+| `"fixed-wrapper"`     |             |
+| `"lang-switcher"`     |             |
+| `"meta-nav"`          |             |
+| `"meta-nav-external"` |             |
+| `"top-app-name"`      |             |
+| `"top-bar"`           |             |
+| `"top-body"`          |             |
 
 
 ## Dependencies
