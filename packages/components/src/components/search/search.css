@@ -62,7 +62,7 @@ slot[name='search__front-icon']::slotted(*) {
 
 slot[name='search__back-icon']::slotted(*) {
   margin-left: 12px;
-  margin-right: 12px;
+  margin-right: 8px;
   align-items: center;
   color: #000000a6;
 }
@@ -75,7 +75,7 @@ slot[name='search__back-icon']::slotted(*) {
 
 .search .search__clear-icon {
   margin-left: 12px;
-  margin-right: 12px;
+  margin-right: 8px;
   align-items: center;
   color: #000000a6;
 }

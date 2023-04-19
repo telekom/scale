@@ -142,7 +142,6 @@ export class Search {
   handleChange = (event: Event) => {
     const target = event.target as HTMLInputElement | null;
     if (target) {
-      console.log(target.value);
       this.value = target.value || '';
       this.emitChange();
     }
@@ -166,12 +165,8 @@ export class Search {
     emitEvent(this, 'scaleKeyDown', event);
   };
 
-  handleClearIconClick = () => {
-    this.value = '';
-  };
-
-  handleInteractiveIconClick = () => {
-    console.log('clicked');
+  handleInteractiveIconClick = (event: MouseEvent) => {
+    emitEvent(this, 'scaleInteractiveIconClick', event);
   };
 
   getClearIconButton() {
@@ -180,7 +175,7 @@ export class Search {
         size="medium"
         slot="search__back-icon"
         class="search__clear-icon"
-        onClick={this.handleClearIconClick}
+        onClick={() => (this.value = '')}
       >
         <scale-icon-action-close accessibility-title="close" size={24.1} />
       </scale-icon-button>
