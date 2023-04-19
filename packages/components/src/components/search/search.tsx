@@ -92,6 +92,9 @@ export class Search {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleKeydown' })
   scaleKeyDownLegacy!: EventEmitter<KeyboardEvent>;
+  /** Emitted on interactive icon click */
+  @Event({ eventName: 'scale-interactive-icon-click' })
+  scaleInteractiveIconClick!: EventEmitter<KeyboardEvent>;
 
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
@@ -163,6 +166,27 @@ export class Search {
     emitEvent(this, 'scaleKeyDown', event);
   };
 
+  handleClearIconClick = () => {
+    this.value = '';
+  };
+
+  handleInteractiveIconClick = () => {
+    console.log('clicked');
+  };
+
+  getClearIconButton() {
+    return (
+      <scale-icon-button
+        size="medium"
+        slot="search__back-icon"
+        class="search__clear-icon"
+        onClick={this.handleClearIconClick}
+      >
+        <scale-icon-action-close accessibility-title="close" size={24.1} />
+      </scale-icon-button>
+    );
+  }
+
   render() {
     const ariaDetailedById = { 'aria-details': this.ariaDetailedId };
 
@@ -177,7 +201,7 @@ export class Search {
             inputMode="search"
             class="search__input"
             placeholder={this.placeholder}
-            value=""
+            value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
             {...(!!this.inputAutofocus ? { autofocus: 'true' } : {})}
             required={this.required}
@@ -194,7 +218,16 @@ export class Search {
             autocomplete={this.inputAutocomplete}
             {...ariaDetailedById}
           ></input>
-          <slot name="search__back-icon" />
+          {this.value ? (
+            this.getClearIconButton()
+          ) : (
+            <div
+              class="search__interactive-icon"
+              onClick={this.handleInteractiveIconClick}
+            >
+              <slot name="search__back-icon" />
+            </div>
+          )}
         </div>
       </Host>
     );
