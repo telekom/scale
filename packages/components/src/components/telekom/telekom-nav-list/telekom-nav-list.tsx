@@ -60,10 +60,7 @@ export class TelekomNavList {
 
   render() {
     return (
-      <Host
-        class="scale-telekom-nav-list"
-        aria-label={this.ariaLabelNavList}
-      >
+      <Host class="scale-telekom-nav-list" aria-label={this.ariaLabelNavList}>
         <slot></slot>
       </Host>
     );
