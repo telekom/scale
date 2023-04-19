@@ -1,0 +1,49 @@
+:host {
+}
+
+/*!*items*!*/
+
+[part~='base'] {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+[part~='prefix'],
+[part~='label'],
+[part~='suffix'] {
+  display: flex;
+}
+
+[part~='text'] {
+  margin-left: 10px;
+}
+
+[part~='label'] {
+  margin-top: 8px;
+  font-family: TeleNeo;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+  line-height: 100%;
+}
+
+[part~='supporting-text'] {
+  position: relative;
+  top: 8px;
+  font-family: TeleNeo;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+[part~='suffix']:last-of-type {
+  margin-left: auto;
+}
