@@ -41,7 +41,7 @@ export class TelekomFooterExtendedNavigationColumn {
           })}
         >
           <div part="heading-container">
-
+            <span role="heading" aria-level={this.headingLevel}>
               <button onClick={this.handleClick} part="heading-button">
                 <span> {this.heading}</span>
                 <scale-icon-navigation-collapse-down
@@ -49,6 +49,7 @@ export class TelekomFooterExtendedNavigationColumn {
                   size={16}
                 ></scale-icon-navigation-collapse-down>
               </button>
+            </span>
             <span part="heading" role="heading" aria-level={this.headingLevel}> {this.heading}</span>
           </div>
           <div

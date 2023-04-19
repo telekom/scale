@@ -21,7 +21,6 @@ function toggleAriaCurrent(
   value: boolean,
   attrValue = 'page'
 ) {
-  console.log('toggleAriaCurrent!!!!!!!!!!!!', element, value, attrValue)
   if (value) {
     element.setAttribute('aria-current', attrValue);
   } else {
