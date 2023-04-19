@@ -37,14 +37,17 @@ export class Badge {
   getAriaLabel() {
     const filledText = this.ariaLabelTranslation
       .replace(/\$count/g, `${this.count}`)
-      .replace(/\$label/g, `${this.label}`)
+      .replace(/\$label/g, `${this.label}`);
     return filledText;
   }
 
   render() {
     return (
       <Host>
-        <span part="base" aria-label={this.count ? this.getAriaLabel() : this.label}> 
+        <span
+          part="base"
+          aria-label={this.count ? this.getAriaLabel() : this.label}
+        >
           <slot />
           <span
             aria-hidden="true"

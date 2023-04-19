@@ -21,7 +21,7 @@
   --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
   --_font-size-main-nav: var(--telekom-typography-font-size-body);
   --focus-outline: var(--telekom-line-weight-highlight) solid
-  var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus);
 }
 
 @media screen and (--md) {

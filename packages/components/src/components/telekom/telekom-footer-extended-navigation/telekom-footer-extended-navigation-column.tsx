@@ -50,7 +50,10 @@ export class TelekomFooterExtendedNavigationColumn {
                 ></scale-icon-navigation-collapse-down>
               </button>
             </span>
-            <span part="heading" role="heading" aria-level={this.headingLevel}> {this.heading}</span>
+            <span part="heading" role="heading" aria-level={this.headingLevel}>
+              {' '}
+              {this.heading}
+            </span>
           </div>
           <div
             part={cx(

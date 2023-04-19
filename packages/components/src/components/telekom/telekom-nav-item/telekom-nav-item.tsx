@@ -52,7 +52,7 @@ export class TelekomNavItem {
     }
     if (this.variant === 'main-nav' && this.active) {
       toggleAriaCurrent(this.linkElement, newValue, 'true');
-    }    
+    }
   }
 
   connectedCallback() {
@@ -67,8 +67,13 @@ export class TelekomNavItem {
     return (
       // A class is used to avoid coupling styles to the tagname
       // (which can be different based on who defines it)
-      <Host class="scale-telekom-nav-item" aria-label={this.ariaLabelNavItem} title={this.navItemTitle} role="listitem">
-        <slot></slot> 
+      <Host
+        class="scale-telekom-nav-item"
+        aria-label={this.ariaLabelNavItem}
+        title={this.navItemTitle}
+        role="listitem"
+      >
+        <slot></slot>
       </Host>
     );
   }

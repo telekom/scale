@@ -53,14 +53,15 @@ export class TelekomNavList {
   }
 
   connectedCallback() {
-      [...this.hostElement.children].forEach((el: HTMLElement) => {
-        el.setAttribute('variant', this.variant);
-      });
+    [...this.hostElement.children].forEach((el: HTMLElement) => {
+      el.setAttribute('variant', this.variant);
+    });
   }
 
   render() {
     return (
-      <Host class="scale-telekom-nav-list" 
+      <Host
+        class="scale-telekom-nav-list"
         role="navigation"
         aria-label={this.ariaLabelNavList}
       >
