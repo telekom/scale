@@ -42,7 +42,6 @@ export class TelekomNavItem {
   @Prop() ariaLabelNavItem?: string;
   @Prop() navItemTitle?: string;
 
-
   @Watch('active')
   @Watch('variant')
   activeChanged(newValue: boolean) {

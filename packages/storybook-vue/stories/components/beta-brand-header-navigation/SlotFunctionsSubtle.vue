@@ -1,6 +1,6 @@
 <template>
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right">
-    <scale-telekom-nav-item class="burger-item">
+    <scale-telekom-nav-item class="burger-item" aria-label-nav-item="burger menu">
       <button>
         <scale-badge>
           <scale-icon-action-menu></scale-icon-action-menu>
