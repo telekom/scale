@@ -183,7 +183,7 @@ export class Search {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div part={basePart}>
-          <slot name="search__front-icon" />
+          <slot name="prefix-icon" />
           <input
             type="search"
             tabindex="0"
@@ -214,7 +214,7 @@ export class Search {
               part="interactive-icon"
               onClick={this.emitInteractiveIconClick}
             >
-              <slot name="search__back-icon" />
+              <slot name="suffix-icon" />
             </div>
           )}
         </div>

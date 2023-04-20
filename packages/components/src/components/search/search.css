@@ -21,7 +21,7 @@
   --focus-outline: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-focus);
   --focus-outline-offset: var(--telekom-spacing-unit-x025);
-  --focus-search__front-icon-color: var(--telekom-color-text-and-icon-standard);
+  --focus-prefix-icon-color: var(--telekom-color-text-and-icon-standard);
   /* hover */
   --hover-background-color: var(--telekom-color-ui-state-fill-hovered);
   --hover-border-color: var(--telekom-color-ui-border-hovered);
@@ -50,14 +50,14 @@
   /* clear-icon */
   --clear-icon-color: var(--telekom-color-text-and-icon-standard);
 
-  /* search__back-icon */
-  --search__back-icon-margin-left: var(--telekom-spacing-unit-x3);
-  --search__back-icon-margin-right: var(--telekom-spacing-unit-x2);
-  --search__back-icon-color: var(--telekom-color-text-and-icon-additional);
+  /* suffix-icon */
+  --suffix-icon-margin-left: var(--telekom-spacing-unit-x3);
+  --suffix-icon-margin-right: var(--telekom-spacing-unit-x2);
+  --suffix-icon-color: var(--telekom-color-text-and-icon-additional);
 
-  /* search__front-icon */
-  --search__front-icon-margin-left: var(--telekom-spacing-unit-x3);
-  --search__front-icon-color: var(--telekom-color-text-and-icon-additional);
+  /* prefix-icon */
+  --prefix-icon-margin-left: var(--telekom-spacing-unit-x3);
+  --prefix-icon-color: var(--telekom-color-text-and-icon-additional);
 
   /* placeholder */
   --placeholder-color: var(--telekom-color-text-and-icon-additional);
@@ -121,31 +121,31 @@
   color: var(--clear-icon-color);
 }
 
-slot[name='search__front-icon']::slotted(*) {
-  margin-left: var(--search__front-icon-margin-left);
+slot[name='prefix-icon']::slotted(*) {
+  margin-left: var(--prefix-icon-margin-left);
   align-items: center;
-  color: var(--search__front-icon-color);
+  color: var(--prefix-icon-color);
 }
 
-[part~='base'][part~='focus'] slot[name='search__front-icon']::slotted(*) {
-  color: var(--focus-search__front-icon-color);
+[part~='base'][part~='focus'] slot[name='prefix-icon']::slotted(*) {
+  color: var(--focus-prefix-icon-color);
 }
 
-slot[name='search__back-icon']::slotted(*) {
-  margin-left: var(--search__back-icon-margin-left);
-  margin-right: var(--search__back-icon-margin-right);
+slot[name='suffix-icon']::slotted(*) {
+  margin-left: var(--suffix-icon-margin-left);
+  margin-right: var(--suffix-icon-margin-right);
   align-items: center;
-  color: var(--search__back-icon-color);
+  color: var(--suffix-icon-color);
   --background: transparent;
   --background-hover: var(--telekom-color-ui-state-fill-hovered);
-  --color: var(--search__back-icon-color);
+  --color: var(--suffix-icon-color);
 }
 
-[part~='base']:hover slot[name='search__back-icon']::slotted(*) {
+[part~='base']:hover slot[name='suffix-icon']::slotted(*) {
   --background: transparent;
 }
 
-[part~='base'][part~='focus'] slot[name='search__back-icon']::slotted(*) {
+[part~='base'][part~='focus'] slot[name='suffix-icon']::slotted(*) {
   --color: var(--telekom-color-text-and-icon-standard);
 }
 
