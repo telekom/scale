@@ -1,4 +1,4 @@
-import { Component, Element, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'scale-search-list-item',
@@ -6,8 +6,6 @@ import { Component, Element, h } from '@stencil/core';
   shadow: true,
 })
 export class SearchSelectItem {
-  @Element() hostElement: HTMLElement;
-
   render() {
     return (
       <div part="base">
