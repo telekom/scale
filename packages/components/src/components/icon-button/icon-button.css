@@ -23,6 +23,7 @@
   --background-active: var(--telekom-color-ui-state-fill-pressed);
   --spacing-icon-x: var(--telekom-spacing-unit-x2);
   --vertical-align: middle;
+  --color: var(--telekom-color-text-and-icon-standard);
 
   display: inline-flex;
 }
@@ -81,4 +82,8 @@
 [part~='base'][part~='active']:focus {
   background: var(--background-active);
   box-shadow: var(--box-shadow-focus);
+}
+
+slot {
+  color: var(--color);
 }

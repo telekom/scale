@@ -29,20 +29,40 @@
 
 ## Events
 
-| Event             | Description                                                                                        | Type                                  |
-| ----------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| `scale-blur`      | Emitted when the input loses focus.                                                                | `CustomEvent<void>`                   |
-| `scale-change`    | Emitted when the value has changed.                                                                | `CustomEvent<InputChangeEventDetail>` |
-| `scale-focus`     | Emitted when the input has focus.                                                                  | `CustomEvent<void>`                   |
-| `scale-focus-out` | Emitted when the input has focus.                                                                  | `CustomEvent<void>`                   |
-| `scale-input`     | Emitted when a keyboard input occurred.                                                            | `CustomEvent<KeyboardEvent>`          |
-| `scale-keydown`   | Emitted on keydown.                                                                                | `CustomEvent<KeyboardEvent>`          |
-| `scaleBlur`       | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<void>`                   |
-| `scaleChange`     | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<InputChangeEventDetail>` |
-| `scaleFocus`      | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<void>`                   |
-| `scaleInput`      | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<KeyboardEvent>`          |
-| `scaleKeydown`    | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<KeyboardEvent>`          |
+| Event                          | Description                             | Type                                  |
+| ------------------------------ | --------------------------------------- | ------------------------------------- |
+| `scale-blur`                   | Emitted when the input loses focus.     | `CustomEvent<void>`                   |
+| `scale-change`                 | Emitted when the value has changed.     | `CustomEvent<InputChangeEventDetail>` |
+| `scale-focus`                  | Emitted when the input has focus.       | `CustomEvent<void>`                   |
+| `scale-focus-out`              | Emitted when the input has focus.       | `CustomEvent<void>`                   |
+| `scale-input`                  | Emitted when a keyboard input occurred. | `CustomEvent<KeyboardEvent>`          |
+| `scale-interactive-icon-click` | Emitted on interactive icon click       | `CustomEvent<KeyboardEvent>`          |
+| `scale-keydown`                | Emitted on keydown.                     | `CustomEvent<KeyboardEvent>`          |
 
+
+## Shadow Parts
+
+| Part                  | Description |
+| --------------------- | ----------- |
+| `"clear-icon"`        |             |
+| `"clear-icon-button"` |             |
+| `"interactive-icon"`  |             |
+
+
+## Dependencies
+
+### Depends on
+
+- [scale-icon-button](../icon-button)
+- [scale-icon-action-close](../icons/action-close)
+
+### Graph
+```mermaid
+graph TD;
+  scale-search --> scale-icon-button
+  scale-search --> scale-icon-action-close
+  style scale-search fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

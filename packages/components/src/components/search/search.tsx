@@ -67,31 +67,18 @@ export class Search {
   @Prop() experimentalControlled?: boolean = false;
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleInput' })
-  scaleInputLegacy!: EventEmitter<KeyboardEvent>;
   /** Emitted when the value has changed. */
   @Event({ eventName: 'scale-change' })
   scaleChange!: EventEmitter<InputChangeEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' })
-  scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
   /** Emitted when the input has focus. */
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleFocus' }) scaleFocusLegacy!: EventEmitter<void>;
   /** Emitted when the input loses focus. */
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
   /** Emitted when the input has focus. */
   @Event({ eventName: 'scale-focus-out' }) scaleFocusout!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
   scaleKeyDown!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleKeydown' })
-  scaleKeyDownLegacy!: EventEmitter<KeyboardEvent>;
   /** Emitted on interactive icon click */
   @Event({ eventName: 'scale-interactive-icon-click' })
   scaleInteractiveIconClick!: EventEmitter<KeyboardEvent>;
@@ -120,21 +107,15 @@ export class Search {
     }
   }
 
-  emitChange() {
-    emitEvent(this, 'scaleChange', {
-      value: this.value == null ? this.value : this.value.toString(),
-    });
-  }
-
   handleInput = (event: Event) => {
     const target = event.target as HTMLInputElement | null;
-    if (this.experimentalControlled) {
-      this.hostElement.querySelector('input').value = String(this.value);
-      this.forceUpdate = String(Date.now());
-    }
     if (target) {
       this.value = target.value || '';
       this.emitChange();
+    }
+    if (this.experimentalControlled) {
+      this.hostElement.querySelector('input').value = String(this.value);
+      this.forceUpdate = String(Date.now());
     }
     emitEvent(this, 'scaleInput', event as KeyboardEvent);
   };
@@ -148,24 +129,30 @@ export class Search {
   };
 
   handleFocus = () => {
-    emitEvent(this, 'scaleFocus');
     this.hasFocus = true;
+    emitEvent(this, 'scaleFocus');
   };
 
   handleFocusout = () => {
-    emitEvent(this, 'scaleFocusout');
     this.hasFocus = false;
+    emitEvent(this, 'scaleFocusout');
   };
 
-  handleBlur = () => {
+  emitChange() {
+    emitEvent(this, 'scaleChange', {
+      value: this.value == null ? this.value : this.value.toString(),
+    });
+  }
+
+  emitBlur = () => {
     emitEvent(this, 'scaleBlur');
   };
 
-  handleKeyDown = (event: KeyboardEvent) => {
+  emitKeyDown = (event: KeyboardEvent) => {
     emitEvent(this, 'scaleKeyDown', event);
   };
 
-  handleInteractiveIconClick = (event: MouseEvent) => {
+  emitInteractiveIconClick = (event: MouseEvent) => {
     emitEvent(this, 'scaleInteractiveIconClick', event);
   };
 
@@ -173,14 +160,13 @@ export class Search {
     return (
       <scale-icon-button
         size="medium"
-        class="search__clear-icon"
         part="clear-icon-button"
         onClick={() => (this.value = '')}
       >
         <scale-icon-action-close
           part="clear-icon"
           accessibility-title="close"
-          size={24.1}
+          size={24}
         />
       </scale-icon-button>
     );
@@ -196,13 +182,12 @@ export class Search {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div class={this.getCssClassMap()} part={basePart}>
+        <div part={basePart}>
           <slot name="search__front-icon" />
           <input
             type="search"
             tabindex="0"
             inputMode="search"
-            class="search__input"
             part="input"
             placeholder={this.placeholder}
             value={this.value}
@@ -216,8 +201,8 @@ export class Search {
             onChange={this.handleChange}
             onFocus={this.handleFocus}
             onFocusout={this.handleFocusout}
-            onKeyDown={this.handleKeyDown}
-            onBlur={this.handleBlur}
+            onKeyDown={this.emitKeyDown}
+            onBlur={this.emitBlur}
             disabled={this.disabled}
             autocomplete={this.inputAutocomplete}
             {...ariaDetailedById}
@@ -226,24 +211,14 @@ export class Search {
             this.getClearIconButton()
           ) : (
             <div
-              class="search__interactive-icon"
               part="interactive-icon"
-              onClick={this.handleInteractiveIconClick}
+              onClick={this.emitInteractiveIconClick}
             >
               <slot name="search__back-icon" />
             </div>
           )}
         </div>
       </Host>
-    );
-  }
-
-  getCssClassMap() {
-    return classNames(
-      'search',
-      this.hasFocus && 'search--has-focus',
-      this.disabled && `search--disabled`,
-      this.transparent && 'search--transparent'
     );
   }
 }
