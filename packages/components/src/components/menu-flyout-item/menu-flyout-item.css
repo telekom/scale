@@ -61,6 +61,10 @@
 }
 
 :host(:focus) .menu-flyout-item {
+  outline: none;
+}
+
+:host(:focus-visible) .menu-flyout-item {
   outline: var(--focus-outline);
 }
 

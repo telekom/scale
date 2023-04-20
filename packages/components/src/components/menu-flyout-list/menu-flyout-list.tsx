@@ -257,9 +257,7 @@ export class MenuFlyoutList {
 
     if (this.opened) {
       this.active = true;
-      if (!this.brandHeaderDropdown) {
-        this.setFocus();
-      }
+      this.setFocus();
       this.setWindowSize();
       this.setPosition();
       this.padForNonOverlayScrollbars();
