@@ -173,28 +173,37 @@ export class Search {
     return (
       <scale-icon-button
         size="medium"
-        slot="search__back-icon"
         class="search__clear-icon"
+        part="clear-icon-button"
         onClick={() => (this.value = '')}
       >
-        <scale-icon-action-close accessibility-title="close" size={24.1} />
+        <scale-icon-action-close
+          part="clear-icon"
+          accessibility-title="close"
+          size={24.1}
+        />
       </scale-icon-button>
     );
   }
 
   render() {
     const ariaDetailedById = { 'aria-details': this.ariaDetailedId };
-
+    const basePart = classNames(
+      'base',
+      this.hasFocus && 'focus',
+      this.disabled && 'disabled'
+    );
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div class={this.getCssClassMap()}>
+        <div class={this.getCssClassMap()} part={basePart}>
           <slot name="search__front-icon" />
           <input
             type="search"
             tabindex="0"
             inputMode="search"
             class="search__input"
+            part="input"
             placeholder={this.placeholder}
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
@@ -218,6 +227,7 @@ export class Search {
           ) : (
             <div
               class="search__interactive-icon"
+              part="interactive-icon"
               onClick={this.handleInteractiveIconClick}
             >
               <slot name="search__back-icon" />

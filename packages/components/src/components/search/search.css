@@ -9,42 +9,18 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-scale-search {
-  /* TODO: reject not used variables */
-
-  --transition: all var(--telekom-motion-duration-transition)
-    var(--telekom-motion-easing-standard);
-  --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-border-standard);
-  --border-error: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-functional-danger-standard);
-  --border-success: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-functional-success-standard);
-  --border-warning: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-functional-warning-standard);
-  --border-color-hover: var(--telekom-color-ui-border-hovered);
-  --border-color-focus: var(--telekom-color-ui-border-hovered);
-  --border-color-disabled: var(--telekom-color-ui-border-disabled);
-  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
-  --background-color-disabled: none;
-  --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
-  --height: var(--telekom-spacing-unit-x11);
-  --spacing-x: var(--telekom-spacing-unit-x3);
-  --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-disabled: none;
-
-  /* input */
-  --spacing-control: 21px var(--telekom-spacing-unit-x10) 7px
-    calc(var(--spacing-x) - 1px);
-  --transition-control: var(--transition);
+:host {
+  --focus-outline: var(--telekom-line-weight-highlight) solid;
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
-  --margin-bottom-control: var(--telekom-spacing-unit-x1);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --background-color-disabled: none;
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
 }
 
-.search {
+[part~='base'] {
   width: 100%;
   height: 44px;
   border: 1px solid #00000070;
@@ -52,6 +28,53 @@ scale-search {
   margin: 0;
   display: flex;
   outline: none;
+}
+
+[part~='base'][part~='focus'],
+[part~='base']:focus {
+  box-shadow: var(--telekom-shadow-raised-standard);
+  outline: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-focus);
+  outline-offset: var(--telekom-spacing-unit-x025);
+  z-index: 40;
+}
+
+[part~='base']:hover {
+  background-color: blueviolet;
+}
+
+[part~='base']:active {
+  background-color: greenyellow;
+}
+
+[part~='input'] {
+  width: 100%;
+  height: 44px;
+  padding-left: 14px;
+  margin: 0;
+  display: flex;
+  outline: none;
+  border: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: var(--font-size-control);
+  background-color: var(--background-control);
+}
+
+[part~='interactive-icon'] {
+  align-items: center;
+  display: flex;
+  color: #000000a6;
+}
+
+[part~='clear-icon-button'] {
+  margin-left: 12px;
+  margin-right: 8px;
+  align-items: center;
+}
+
+[part~='clear-icon'] {
+  color: #000000a6;
 }
 
 slot[name='search__front-icon']::slotted(*) {
@@ -67,60 +90,8 @@ slot[name='search__back-icon']::slotted(*) {
   color: #000000a6;
 }
 
-.search .search__interactive-icon {
-  align-items: center;
-  display: flex;
-  color: #000000a6;
-}
-
-.search .search__clear-icon {
-  margin-left: 12px;
-  margin-right: 8px;
-  align-items: center;
-  color: #000000a6;
-}
-
-.search .search__input {
-  width: 100%;
-  height: 44px;
-  padding-left: 14px;
-  margin: 0;
-  display: flex;
-  outline: none;
-  border: 0;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: var(--font-size-control);
-  background-color: var(--background-control);
-}
-
-.search--hide-label .search__input {
-  padding: 5px var(--telekom-spacing-unit-x10) 5px calc(var(--spacing-x) - 1px);
-}
-
-.search:not(.search--disabled):hover {
-  background-color: #00000012;
-}
-
-.search--has-focus {
-  border: 1px solid #2238df;
-  outline: var(--focus-outline);
-  outline-offset: 1px;
-}
-
-.search--has-focus {
-  border: 1px solid #2238df;
-  outline: var(--focus-outline);
-  outline-offset: 1px;
-}
-
-.search--transparent .search__input {
-  background-color: transparent;
-}
-
-.search--disabled label,
-.search--disabled input,
-.search--disabled .search__input {
+[part~='base'][part~='disabled'] input,
+[part~='base'][part~='disabled'] slot {
   cursor: not-allowed;
   border-color: var(--border-color-disabled);
   background-color: var(--background-color-disabled);
