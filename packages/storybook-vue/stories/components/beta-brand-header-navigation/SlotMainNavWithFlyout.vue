@@ -69,7 +69,7 @@
     </scale-telekom-nav-item>
     <scale-telekom-nav-item>
       <button>Topic Two</button>
-      <scale-telekom-nav-flyout hover expanded>
+      <scale-telekom-nav-flyout hover>
         <scale-telekom-mega-menu>
           <scale-telekom-mega-menu-column>
             <scale-icon-home-home slot="icon"></scale-icon-home-home>
