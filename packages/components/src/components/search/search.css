@@ -12,6 +12,7 @@
 :host {
   /* base */
   --width: 100%;
+  --min-width: 144px;
   --height: 44px;
   --border: 1px solid var(--telekom-color-ui-border-hovered);
   --border-radius: var(--telekom-spacing-unit-x2);
@@ -71,6 +72,7 @@
   margin: var(--margin);
   display: flex;
   outline: none;
+  min-width: 144px;
 }
 
 [part~='base'][part~='focus'],
