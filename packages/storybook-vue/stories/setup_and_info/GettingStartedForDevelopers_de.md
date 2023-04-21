@@ -30,8 +30,11 @@ Um die Komponenten zu verwenden, lade die CSS-Datei sowie JavaScript. Die CSS-Da
 ### Mit Bundler oder ES-Modulen
 
 ```js
-import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@telekom/scale-components/loader";
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from '@telekom/scale-components/loader';
 
 applyPolyfills().then(() => {
   defineCustomElements(window);

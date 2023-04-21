@@ -32,8 +32,11 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 ### With a bundler or ES modules
 
 ```js
-import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@telekom/scale-components/loader";
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from '@telekom/scale-components/loader';
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
