@@ -28,7 +28,7 @@ Jeder Slider benötigt ein Label, das den sich ändernden Wert beschreibt. Stand
 
 ### Slider mit Wert
 
-Nutzer\*innen können einen genauen Wert, z. B. 200 $, aus einem vorgegebenen Wertebereich einstellen.
+Nutzer\*innen können einen genauen Wert, z. B. 200 \$, aus einem vorgegebenen Wertebereich einstellen.
 
 Der eingestellte Wert ändert sich in Echtzeit, sobald sich der Regler bewegt.
 

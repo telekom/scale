@@ -2,7 +2,7 @@
 
 ## Was sind Design Tokens?
 
-Design Tokens sind die Variablen unseres Designs. Sie speichern die Werte für Farben, Typografie, Abstände oder Radien zentral ab – im Gegensatz zu fest codierten Werten. Dadurch erleichtern sie eine konsistente Produktentwicklung. Die Übergabe von Designs in die Entwicklung ist weniger fehleranfällig, da die Entwickler\*innen den richtigen Token aus einem vordefinierten Paket auswählen können. Zudem ist es möglich, Tokens global zu aktualisieren – das passiert dann ganz automatisch in allen Projekten. Wenn du noch mehr über Design Tokens erfahren möchtest, lese den Artikel <a href="https://lukasoppermann.medium.com/design-tokens-what-are-they-how-will-they-help-you-b73f80f602ab" target="_blank" rel="noopener noreferrer">Design tokens — What are they & how will they help you?</a>
+Design Tokens sind die Variablen unseres Designs. Sie speichern die Werte für Farben, Typografie, Abstände oder Radien zentral ab – im Gegensatz zu fest codierten Werten. Dadurch erleichtern sie eine konsistente Produktentwicklung. Die Übergabe von Designs in die Entwicklung ist weniger fehleranfällig, da die Entwickler\*innen den richtigen Token aus einem vordefinierten Paket auswählen können. Zudem ist es möglich, Tokens global zu aktualisieren – das passiert dann ganz automatisch in allen Projekten.
 
 ## Wie setzt Scale Design Tokens in der Praxis um?
 
