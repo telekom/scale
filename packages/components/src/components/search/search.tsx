@@ -186,7 +186,6 @@ export class Search {
           <slot name="prefix-icon" />
           <input
             type="search"
-            tabindex="0"
             inputMode="search"
             part="input"
             placeholder={this.placeholder}
