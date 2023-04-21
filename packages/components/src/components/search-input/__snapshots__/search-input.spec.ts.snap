@@ -3,7 +3,7 @@
 exports[`Search should match snapshot 1`] = `
 <scale-search-input>
   <mock:shadow-root>
-    <div part="base onHover">
+    <div part="base">
       <slot name="prefix-icon"></slot>
       <input id="input-search-0" inputmode="search" name="Search" part="input" placeholder="Search" type="search" value="">
       <div part="interactive-icon">
