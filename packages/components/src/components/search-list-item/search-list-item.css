@@ -1,3 +1,7 @@
+:host {
+  --background-hover: var(--telekom-color-ui-state-fill-hovered);
+}
+
 /*!*items*!*/
 
 [part~='base'] {
@@ -6,6 +10,10 @@
   align-items: center;
   width: 100%;
   padding: 8px 8px 8px 16px;
+}
+
+[part~='base'].scale-search-list-item-hover:hover {
+  background-color: var(--background-hover);
 }
 
 [part~='label'],
@@ -42,6 +50,20 @@
 [part~='suffix']:last-of-type {
   margin-left: auto;
 }
+
+/* [part~='suffix'].scale-search-list-item-hover {
+  display: none;
+}
+
+[part~='suffix'].scale-search-list-item-hover:hover {
+  display: block;
+  background-color: var(--background-hover);
+}
+
+[part~='suffix'].scale-search-list-item-always {
+  display: block;
+  background-color: var(--background-hover);
+} */
 
 ::slotted([slot='prefix']) {
   display: inline;
