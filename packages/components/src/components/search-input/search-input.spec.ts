@@ -10,22 +10,22 @@
  */
 
 import { newSpecPage } from '@stencil/core/testing';
-import { Search } from './search';
+import { SearchInput } from './search-input';
 
 describe('Search', () => {
   let page;
   const TEST_VALUE = 'Test Value';
   beforeEach(async () => {
     page = await newSpecPage({
-      components: [Search],
-      html: ` <scale-search>
+      components: [SearchInput],
+      html: ` <scale-search-input>
                 <scale-icon-action-search slot="prefix-icon"></scale-icon-action-search>
                 <scale-icon-button size="medium" slot="suffix-icon">
                   <scale-icon-action-microphone
                     size="24"
                     accessibility-title="microphone" />
                 </scale-icon-button>
-              </scale-search>`,
+              </scale-search-input>`,
     });
   });
 
@@ -35,8 +35,8 @@ describe('Search', () => {
 
   it('should reflect attributes/props being set', async () => {
     const specPage = await newSpecPage({
-      components: [Search],
-      html: `<scale-search
+      components: [SearchInput],
+      html: `<scale-search-input
                 name="search_name"
                 invalid="true"
                 max-length="2"
@@ -55,7 +55,7 @@ describe('Search', () => {
                     size="24"
                     accessibility-title="microphone" />
                 </scale-icon-button
-             ></scale-search>`,
+             ></scale-search-input>`,
     });
 
     expect(specPage.rootInstance.name).toBe('search_name');

@@ -27,11 +27,11 @@ interface InputChangeEventDetail {
 }
 
 @Component({
-  tag: 'scale-search',
-  styleUrl: './search.css',
+  tag: 'scale-search-input',
+  styleUrl: './search-input.css',
   shadow: true,
 })
-export class Search {
+export class SearchInput {
   @Element() hostElement: HTMLElement;
   /** (optional) Input name */
   @Prop() name?: string = 'Search';
@@ -55,6 +55,8 @@ export class Search {
   @Prop() transparent?: boolean;
   /** (optional) the input should automatically get focus when the page loads. */
   @Prop() inputAutofocus?: boolean;
+  @Prop() dismissable?: boolean;
+  @Prop() variant?: string = 'onHover' || 'alwaysOn';
   /** (optional) custom value for autocomplete HTML attribute */
   @Prop() inputAutocomplete?: string;
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
@@ -177,7 +179,8 @@ export class Search {
     const basePart = classNames(
       'base',
       this.hasFocus && 'focus',
-      this.disabled && 'disabled'
+      this.disabled && 'disabled',
+      this.variant == 'onHover' && 'onHover'
     );
     return (
       <Host>
@@ -206,7 +209,7 @@ export class Search {
             autocomplete={this.inputAutocomplete}
             {...ariaDetailedById}
           ></input>
-          {this.value ? (
+          {this.dismissable ? (
             this.getClearIconButton()
           ) : (
             <div

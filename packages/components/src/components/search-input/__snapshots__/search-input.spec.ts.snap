@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search should match snapshot 1`] = `
-<scale-search>
+<scale-search-input>
   <mock:shadow-root>
-    <div part="base">
+    <div part="base onHover">
       <slot name="prefix-icon"></slot>
-      <input id="input-search-0" inputmode="search" name="Search" part="input" placeholder="Search" tabindex="0" type="search" value="">
+      <input id="input-search-0" inputmode="search" name="Search" part="input" placeholder="Search" type="search" value="">
       <div part="interactive-icon">
         <slot name="suffix-icon"></slot>
       </div>
@@ -15,5 +15,5 @@ exports[`Search should match snapshot 1`] = `
   <scale-icon-button size="medium" slot="suffix-icon">
     <scale-icon-action-microphone accessibility-title="microphone" size="24"></scale-icon-action-microphone>
   </scale-icon-button>
-</scale-search>
+</scale-search-input>
 `;
