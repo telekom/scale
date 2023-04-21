@@ -55,8 +55,6 @@ export class SearchInput {
   @Prop() transparent?: boolean;
   /** (optional) the input should automatically get focus when the page loads. */
   @Prop() inputAutofocus?: boolean;
-  @Prop() dismissable?: boolean;
-  @Prop() variant?: string = 'onHover' || 'alwaysOn';
   /** (optional) custom value for autocomplete HTML attribute */
   @Prop() inputAutocomplete?: string;
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
@@ -179,8 +177,7 @@ export class SearchInput {
     const basePart = classNames(
       'base',
       this.hasFocus && 'focus',
-      this.disabled && 'disabled',
-      this.variant == 'onHover' && 'onHover'
+      this.disabled && 'disabled'
     );
     return (
       <Host>
@@ -209,7 +206,7 @@ export class SearchInput {
             autocomplete={this.inputAutocomplete}
             {...ariaDetailedById}
           ></input>
-          {this.dismissable ? (
+          {this.value ? (
             this.getClearIconButton()
           ) : (
             <div

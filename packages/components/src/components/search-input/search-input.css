@@ -75,28 +75,6 @@
   min-width: var(--min-width);
 }
 
-[part~='base'][part~='onHover'] {
-  width: var(--width);
-  height: var(--height);
-  border: var(--border);
-  border-radius: var(--border-radius);
-  margin: var(--margin);
-  display: flex;
-  outline: none;
-  min-width: var(--min-width);
-}
-
-[part~='base'][part~='alwaysOn'] {
-  width: var(--width);
-  height: var(--height);
-  border: var(--border);
-  border-radius: var(--border-radius);
-  margin: var(--margin);
-  display: flex;
-  outline: none;
-  min-width: var(--min-width);
-}
-
 [part~='base'][part~='focus'],
 [part~='base']:focus {
   box-shadow: var(--focus-box-shadow);
