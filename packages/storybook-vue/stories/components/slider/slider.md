@@ -32,7 +32,7 @@ Each slider needs a label which describes the value that is changing. Always dis
 
 ### Single value slider
 
-The user can set a precise value (e.g., $200) from the pre-defined range.
+The user can set a precise value (e.g., \$200) from the pre-defined range.
 
 The selected value changes in real time as the knob moves.
 

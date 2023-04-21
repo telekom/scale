@@ -110,7 +110,7 @@ npm install @telekom/scale-components
 
 ### Setup with a bundler or ES modules
 
-```
+```javascript
 import "@telekom/scale-components/dist/scale-components/scale-components.css";
 import { applyPolyfills, defineCustomElements } from "@telekom/scale-components/loader";
 
