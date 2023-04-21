@@ -328,7 +328,7 @@ There are two known issues with the JAWS2019 screen reader and Google Chrome, th
       template: `
         <scale-menu-flyout close-on-select="false" @scale-open="handleOpen" @scale-close="handleClose" @scale-select="handleSelect">
           <scale-button slot="trigger" variant="secondary">
-            Options <scale-icon-navigation-collapse-down aria-hidden="true"></scale-icon-navigation-collapse-down>
+            Options <scale-icon-navigation-collapse-down size="16" aria-hidden="true"></scale-icon-navigation-collapse-down>
           </scale-button>
           <scale-menu-flyout-list @scale-select="toggleChecked">
             <scale-menu-flyout-item checkable="checkbox">Toggle option 1</scale-menu-flyout-item>
@@ -347,6 +347,7 @@ There are two known issues with the JAWS2019 screen reader and Google Chrome, th
   <scale-button slot="trigger" variant="secondary">
     Options
     <scale-icon-navigation-collapse-down
+      size="16"
       aria-hidden="true"
     ></scale-icon-navigation-collapse-down>
   </scale-button>
