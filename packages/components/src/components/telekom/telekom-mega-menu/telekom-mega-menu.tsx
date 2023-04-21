@@ -35,7 +35,9 @@ export class TelekomMegaMenu {
         class="scale-telekom-mega-menu"
         children-too-many={this.childrenTooMany}
       >
-        <slot></slot>
+        <div class="scale-telekom-mega-menu-container">
+          <slot></slot>
+        </div>
       </Host>
     );
   }
