@@ -31,13 +31,11 @@
 
 ### Depends on
 
-- [scale-icon-button](../icon-button)
 - [scale-icon-action-close](../icons/action-close)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-search-list-item --> scale-icon-button
   scale-search-list-item --> scale-icon-action-close
   style scale-search-list-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
