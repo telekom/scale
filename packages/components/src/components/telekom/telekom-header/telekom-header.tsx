@@ -87,13 +87,19 @@ export class TelekomHeader {
                   ) : null}
 
                   <div part="top-body">
-                    <nav part="meta-nav-external" aria-label={this.metaNavExternalAriaLabel}>
+                    <nav
+                      part="meta-nav-external"
+                      aria-label={this.metaNavExternalAriaLabel}
+                    >
                       <slot name="meta-nav-external"></slot>
                     </nav>
                     <nav part="meta-nav" aria-label={this.metaNavAriaLabel}>
                       <slot name="meta-nav"></slot>
                     </nav>
-                    <nav part="lang-switcher" aria-label={this.languageSwitcherAriaLabel}>
+                    <nav
+                      part="lang-switcher"
+                      aria-label={this.languageSwitcherAriaLabel}
+                    >
                       <slot name="lang-switcher"></slot>
                     </nav>
                   </div>

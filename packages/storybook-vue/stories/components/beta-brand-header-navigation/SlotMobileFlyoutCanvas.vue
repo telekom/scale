@@ -10,14 +10,14 @@
       alignment="left"
       aria-label="Language Switcher"
     >
-      <scale-telekom-nav-item active aria-label="English">
-        <a href="#">EN</a>
+      <scale-telekom-nav-item active aria-label="Switch to English">
+        <a href="#" title="English">EN</a>
       </scale-telekom-nav-item>
-      <scale-telekom-nav-item aria-label="Somali">
-        <a href="#">SO</a>
+      <scale-telekom-nav-item aria-label="Switch to Somali">
+        <a href="#" title="Somali">SO</a>
       </scale-telekom-nav-item>
-      <scale-telekom-nav-item aria-label="German">
-        <a href="#">DE</a>
+      <scale-telekom-nav-item aria-label="Switch to German">
+        <a href="#" title="German">DE</a>
       </scale-telekom-nav-item>
     </scale-telekom-nav-list>
 

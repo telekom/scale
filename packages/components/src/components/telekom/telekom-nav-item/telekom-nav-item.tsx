@@ -67,10 +67,7 @@ export class TelekomNavItem {
     return (
       // A class is used to avoid coupling styles to the tagname
       // (which can be different based on who defines it)
-      <Host
-        class="scale-telekom-nav-item"
-        title={this.navItemTitle}
-      >
+      <Host class="scale-telekom-nav-item" title={this.navItemTitle}>
         <slot></slot>
       </Host>
     );
