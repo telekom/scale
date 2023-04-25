@@ -38,6 +38,7 @@ export class TelekomNavItem {
 
   @Prop({ reflect: true }) active?: boolean = false;
   @Prop({ reflect: true }) variant?: string;
+  @Prop({ reflect: true }) role: string | null = 'listitem';
   @Prop() navItemTitle?: string;
 
   @Watch('active')
@@ -69,7 +70,6 @@ export class TelekomNavItem {
       <Host
         class="scale-telekom-nav-item"
         title={this.navItemTitle}
-        role="listitem"
       >
         <slot></slot>
       </Host>
