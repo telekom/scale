@@ -51,9 +51,13 @@
 .segmented-button--label {
   font-size: var(--telekom-typography-font-size-body);
   font-weight: var(--telekom-typography-font-weight-bold);
-  margin-bottom: var(--telekom-spacing-unit-x2);
+  margin-bottom: var(--telekom-spacing-unit-x05);
 }
 
 .segmented-button--helper-text {
   margin-top: var(--telekom-spacing-unit-x2);
+}
+
+.segmented-button--fieldset {
+  border: 0;
 }
