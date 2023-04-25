@@ -20,7 +20,7 @@ import {
   State,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent, hasShadowDom } from '../../utils/utils';
+import { emitEvent } from '../../utils/utils';
 @Component({
   tag: 'scale-chip',
   styleUrl: './chip.css',
