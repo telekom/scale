@@ -1,5 +1,12 @@
 <template>
-  <scale-telekom-header :app-name="appName" :app-name-link="appNameLink" type="subtle">
+  <scale-telekom-header type="subtle"
+    :app-name="appName" 
+    :app-name-link="appNameLink"
+    :meta-nav-aria-label="metaNavAriaLabel" 
+    :meta-nav-external-aria-label="metaNavExternalAriaLabel"
+    :language-switcher-aria-label="languageSwitcherAriaLabel"
+    :main-nav-aria-label="mainNavAriaLabel"   
+  >
     <SlotMetaNavExternal />
     <SlotMetaNav />
     <SlotLangSwitcher />
@@ -25,6 +32,10 @@ export default {
   props: {
     appName: String,
     appNameLink: String,
+    metaNavAriaLabel: String,
+    metaNavExternalAriaLabel: String,
+    languageSwitcherAriaLabel: String,
+    mainNavAriaLabel: String,    
   },
 };
 </script>

@@ -61,6 +61,10 @@ export const Template = (args, { argTypes }) => ({
       :story-name="storyName"
       :app-name="appName"
       :app-name-link="appNameLink"
+      :meta-nav-aria-label="metaNavAriaLabel" 
+      :meta-nav-external-aria-label="metaNavExternalAriaLabel"
+      :language-switcher-aria-label="languageSwitcherAriaLabel"
+      :main-nav-aria-label="mainNavAriaLabel"      
     />
   `,
 });
@@ -97,9 +101,14 @@ export const Template = (args, { argTypes }) => ({
 - [`scale-telekom-mobile-menu-item`](https://github.com/telekom/scale/tree/main/packages/components/src/components/telekom/telekom-mobile-menu-item)
 
 ```html
-<scale-telekom-header>
-  <scale-telekom-nav-list slot="main-nav">
-    <scale-telekom-nav-item>
+<scale-telekom-header
+  meta-nav-aria-label="Meta navigation section" 
+  meta-nav-external-aria-label="External navigation section"
+  language-switcher-aria-label="Language switcher section"
+  main-nav-aria-label="Main navigation section"
+>
+  <scale-telekom-nav-list slot="main-nav" aria-label="Main Navigation Links">
+    <scale-telekom-nav-item aria-label="Topic One">
       <a href="#">Topic One</a>
     </scale-telekom-nav-item>
     <!-- … -->
@@ -146,6 +155,10 @@ scale-telekom-nav-list {
 <scale-telekom-header
   app-name="Application Name"
   app-name-link="https://example.com"
+  meta-nav-aria-label="Meta navigation section" 
+  meta-nav-external-aria-label="External navigation section"
+  language-switcher-aria-label="Language switcher section"
+  main-nav-aria-label="Main navigation"  section 
 >
   <!-- … -->
 </scale-telekom-header>
@@ -165,9 +178,14 @@ scale-telekom-nav-list {
 </Canvas>
 
 ```html
-<scale-telekom-header>
-  <scale-telekom-nav-list slot="main-nav">
-    <scale-telekom-nav-item>
+<scale-telekom-header 
+  meta-nav-aria-label="Meta navigation section" 
+  meta-nav-external-aria-label="External navigation section"
+  language-switcher-aria-label="Language switcher section"
+  main-nav-aria-label="Main navigation section"
+>
+  <scale-telekom-nav-list slot="main-nav" aria-label="Main Navigation Links">
+    <scale-telekom-nav-item aria-label="Topic one">
       <button>Topic One</button>
       <scale-telekom-nav-flyout hover>
         <div>Flyout content</div>
@@ -211,6 +229,10 @@ scale-telekom-nav-list {
 <scale-telekom-header
   app-name="Application Name"
   app-name-link="https://example.com"
+  meta-nav-aria-label="Meta navigation section" 
+  meta-nav-external-aria-label="External navigation section"
+  language-switcher-aria-label="Language switcher section"
+  main-nav-aria-label="Main navigation section"  
 >
   <!-- … -->
 </scale-telekom-header>
@@ -233,6 +255,10 @@ scale-telekom-nav-list {
 <scale-telekom-header
   app-name="Application Name"
   app-name-link="https://example.com"
+  meta-nav-aria-label="Meta navigation section" 
+  meta-nav-external-aria-label="External navigation section"
+  language-switcher-aria-label="Language switcher section"
+  main-nav-aria-label="Main navigation section"  
 >
   <!-- … -->
 </scale-telekom-header>

@@ -5,21 +5,21 @@
     alignment="right"
     aria-label="Functions Menu"
   >
-    <scale-telekom-nav-item>
+    <scale-telekom-nav-item aria-label="Search">
       <a href="#">
         <scale-badge no-dot label="Search">
           <scale-icon-action-search></scale-icon-action-search>
         </scale-badge>
       </a>
     </scale-telekom-nav-item>
-    <scale-telekom-nav-item>
+    <scale-telekom-nav-item aria-label="Cart">
       <a href="#">
         <scale-badge count="1" label="Cart">
           <scale-icon-action-shopping-cart></scale-icon-action-shopping-cart>
         </scale-badge>
       </a>
     </scale-telekom-nav-item>
-    <scale-telekom-nav-item>
+    <scale-telekom-nav-item aria-label="Login">
       <a href="#">
         <scale-badge no-dot label="Login">
           <scale-icon-user-file-user></scale-icon-user-file-user>
