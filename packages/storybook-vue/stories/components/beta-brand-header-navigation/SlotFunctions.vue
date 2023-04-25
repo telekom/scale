@@ -3,6 +3,7 @@
     variant="functions"
     slot="functions"
     alignment="right"
+    aria-label="Functions Menu"
   >
     <scale-telekom-nav-item>
       <a href="#">
@@ -25,7 +26,7 @@
         </scale-badge>
       </a>
     </scale-telekom-nav-item>
-    <scale-telekom-nav-item class="burger-item" aria-label-nav-item="burger menu">
+    <scale-telekom-nav-item class="burger-item" aria-label="Menu">
       <button>
         <scale-badge>
           <scale-icon-action-menu></scale-icon-action-menu>

@@ -112,7 +112,7 @@ export class TelekomHeader {
                     </div>
                   ) : null}
                   <div part="bottom-body">
-                    <nav>
+                    <nav part="main-nav">
                       <slot name="main-nav"></slot>
                     </nav>
                     <slot name="functions"></slot>

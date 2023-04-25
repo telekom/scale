@@ -355,7 +355,7 @@ slot[name='functions'] {
 }
 
 [part~='bottom-body'],
-[part~='bottom-body'] nav {
+[part~='main-nav'] {
   justify-content: var(--_justify-content-bottom-body);
   height: var(--_height-bottom-bar);
   display: inline-flex;

@@ -38,7 +38,6 @@ export class TelekomNavItem {
 
   @Prop({ reflect: true }) active?: boolean = false;
   @Prop({ reflect: true }) variant?: string;
-  @Prop() ariaLabelNavItem?: string;
   @Prop() navItemTitle?: string;
 
   @Watch('active')
@@ -69,7 +68,6 @@ export class TelekomNavItem {
       // (which can be different based on who defines it)
       <Host
         class="scale-telekom-nav-item"
-        aria-label={this.ariaLabelNavItem}
         title={this.navItemTitle}
         role="listitem"
       >
