@@ -1,6 +1,5 @@
 import { Component, Element, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
-
 import { emitEvent } from '../../utils/utils';
 
 @Component({
@@ -12,7 +11,7 @@ export class SearchSelectItem {
   @Element() hostElement: HTMLElement;
 
   /** (optional) is close button to be shown */
-  @Prop() dismissible?: boolean = true;
+  @Prop() dismissible?: boolean = false;
 
   /** (optional) The buttons to be shown on Hover or always */
   @Prop() variant?: 'always' | 'hover' = 'hover';
@@ -66,8 +65,6 @@ export class SearchSelectItem {
 
           <div
             part="suffix"
-            // style={{ display: `${this.variant === 'always' ? '' : 'none'}` }}
-            // class={this.getCssClassMap()}
           >
             {this.dismissible ? (
               this.getClearIconButton()
@@ -82,7 +79,6 @@ export class SearchSelectItem {
 
   getCssClassMap() {
     const component = 'scale-search-list-item';
-
     return classNames(`${component}-${this.variant}`);
   }
 }
