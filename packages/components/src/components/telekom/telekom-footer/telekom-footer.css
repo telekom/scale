@@ -87,18 +87,15 @@
     flex-direction: row;
     align-items: center;
     list-style: none;
-    gap: var(--telekom-spacing-unit-x2);
+    column-gap: var(--telekom-spacing-unit-x2);
+    row-gap: var(--telekom-spacing-unit-x1);;
   }
 }
 
 @media screen and (--lg) {
   .scale-telekom-footer :where(ul),
   .scale-telekom-footer[type='minimal'] :where(ul) {
-    gap: var(--_nav-items-spacing);
-  }
-  .scale-telekom-footer[type='minimal'] .navigation-links ul,
-  .scale-telekom-footer[type='minimal'] .notice-container {
-    margin-bottom: 0;
-    margin-top: 0;
+    column-gap: var(--_nav-items-spacing);
+    row-gap: var(--telekom-spacing-unit-x2);
   }
 }
