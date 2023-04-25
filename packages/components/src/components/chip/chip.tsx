@@ -17,9 +17,10 @@ import {
   Event,
   EventEmitter,
   Element,
+  State,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, hasShadowDom } from '../../utils/utils';
 @Component({
   tag: 'scale-chip',
   styleUrl: './chip.css',
@@ -46,6 +47,8 @@ export class Chip {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  @State() accessibilityLabel?: string;
+
   /** (optional) Change icon click event */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<MouseEvent>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -56,6 +59,14 @@ export class Chip {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleClose' })
   scaleCloseLegacy: EventEmitter<MouseEvent>;
+
+  componentWillRender() {
+    this.getAccessibilityLabel();
+  }
+
+  componentWillUpdate() {
+    this.getAccessibilityLabel();
+  }
 
   componentDidRender() {
     // handle no setted icon size attribute
@@ -78,6 +89,11 @@ export class Chip {
   }
   disconnectedCallback() {}
 
+  getAccessibilityLabel() {
+    const labelSlot = this.hostElement.childNodes[0];
+    this.accessibilityLabel = labelSlot ? this.label : labelSlot.textContent;
+  }
+
   handleClose = (event: MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
@@ -88,6 +104,16 @@ export class Chip {
   };
 
   handleClick = (event: MouseEvent) => {
+    this.emitChangeEvent(event);
+  };
+
+  handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      this.emitChangeEvent(event);
+    }
+  };
+
+  emitChangeEvent = (event) => {
     if (this.type !== 'dynamic') {
       this.selected = !this.selected;
     }
@@ -105,7 +131,7 @@ export class Chip {
         <button
           part="button-dismissable"
           disabled={this.disabled}
-          aria-label={this.dismissText}
+          aria-label={this.accessibilityLabel + ' ' + this.dismissText}
           onClick={!this.disabled ? this.handleClose : null}
         >
           <scale-icon-action-close
@@ -116,17 +142,9 @@ export class Chip {
         </button>
       );
     } else if (this.type === 'persistent' && this.selected) {
-      return (
-        <scale-icon-action-success
-          accessibility-title="success"
-          size={16}
-          selected
-        />
-      );
+      return <scale-icon-action-success decorative size={16} selected />;
     } else if (this.type === 'persistent') {
-      return (
-        <scale-icon-action-success accessibility-title="success" size={16} />
-      );
+      return <scale-icon-action-success decorative size={16} />;
     }
   }
 
@@ -137,7 +155,7 @@ export class Chip {
         {this.type === 'dynamic' && this.selected ? (
           <span
             role={this.ariaRoleTitle}
-            tabindex={this.selected ? '0' : '-1'}
+            tabindex="-1"
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
             onClick={
@@ -147,9 +165,7 @@ export class Chip {
             }
           >
             <slot name="chip-icon"></slot>
-            <span class="chip-label">
-              <slot />
-            </span>
+            <span class="chip-label">{this.label ? this.label : <slot />}</span>
             {this.selected ? this.getIcon() : null}
           </span>
         ) : (
@@ -158,7 +174,7 @@ export class Chip {
             aria-checked={
               this.ariaCheckedState ? this.ariaCheckedState : this.selected
             }
-            tabindex={this.selected ? '0' : '-1'}
+            tabindex={this.disabled ? '-1' : '0'}
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
             onClick={
@@ -166,11 +182,14 @@ export class Chip {
                 ? this.handleClick
                 : null
             }
+            onKeyDown={
+              !this.disabled || this.type === 'dynamic'
+                ? this.handleKeyDown
+                : null
+            }
           >
             <slot name="chip-icon"></slot>
-            <span class="chip-label">
-              <slot />
-            </span>
+            <span class="chip-label">{this.label ? this.label : <slot />}</span>
             {this.selected ? this.getIcon() : null}
           </span>
         )}
