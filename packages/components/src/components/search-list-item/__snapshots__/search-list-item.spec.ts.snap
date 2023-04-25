@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchSelectItem should match snapshot 1`] = `
+<scale-search-list-item>
+  <mock:shadow-root>
+    <div class="scale-search-list-item-hover" part="base" tabindex="0">
+      <div part="prefix">
+        <slot name="prefix"></slot>
+      </div>
+      <div part="text">
+        <div part="label">
+          <slot></slot>
+        </div>
+        <div part="supporting-text">
+          <slot name="supporting-text"></slot>
+        </div>
+      </div>
+      <div part="suffix">
+        <slot name="suffix"></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Item 01
+</scale-search-list-item>
+`;

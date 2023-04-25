@@ -11,7 +11,7 @@ export class SearchSelectItem {
   @Element() hostElement: HTMLElement;
 
   /** (optional) is close button to be shown */
-  @Prop() dismissible?: boolean = false;
+  @Prop() dismissible?: boolean = true;
 
   /** (optional) The buttons to be shown on Hover or always */
   @Prop() variant?: 'always' | 'hover' = 'hover';
@@ -63,9 +63,7 @@ export class SearchSelectItem {
             </div>
           </div>
 
-          <div
-            part="suffix"
-          >
+          <div part="suffix">
             {this.dismissible ? (
               this.getClearIconButton()
             ) : (
