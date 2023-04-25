@@ -224,19 +224,18 @@
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .scale-telekom-nav-list[variant='main-nav']
-  > .scale-telekom-nav-item[active]
-  > :where(a, button),
-.scale-telekom-nav-list[variant='functions']
-  > .scale-telekom-nav-item[active]
-  > :where(a, button),
-.scale-telekom-nav-list[variant='main-nav']
-  > scale-menu-flyout
-  > .scale-telekom-nav-item[active]
-  > :where(a, button) {
+    > .scale-telekom-nav-item[active]
+    > :where(a, button),
+  .scale-telekom-nav-list[variant='functions']
+    > .scale-telekom-nav-item[active]
+    > :where(a, button),
+  .scale-telekom-nav-list[variant='main-nav']
+    > scale-menu-flyout
+    > .scale-telekom-nav-item[active]
+    > :where(a, button) {
     border-bottom: 2px solid hsl(0, 0%, 100%);
   }
 }
-
 
 /* variants: meta-nav-external, meta-nav, lang-switcher (top bar) */
 

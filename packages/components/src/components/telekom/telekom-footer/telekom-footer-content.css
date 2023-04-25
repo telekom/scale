@@ -69,7 +69,7 @@ footer {
   margin-bottom: var(--telekom-spacing-unit-x5);
   font-size: var(--_font-size);
   line-height: 140%;
-  margin-right: var(--telekom-spacing-unit-x5)
+  margin-right: var(--telekom-spacing-unit-x5);
 }
 
 /* todo: should i use spacing token for logo size? */
