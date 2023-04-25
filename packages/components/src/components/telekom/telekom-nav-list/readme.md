@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property           | Attribute             | Description | Type                                                                                | Default        |
-| ------------------ | --------------------- | ----------- | ----------------------------------------------------------------------------------- | -------------- |
-| `alignment`        | `alignment`           |             | `"center" \| "left" \| "right"`                                                     | `'left'`       |
-| `ariaLabelNavList` | `aria-label-nav-list` |             | `string`                                                                            | `undefined`    |
-| `role`             | `role`                |             | `string`                                                                            | `'navigation'` |
-| `variant`          | `variant`             |             | `"functions" \| "lang-switcher" \| "main-nav" \| "meta-nav" \| "meta-nav-external"` | `'main-nav'`   |
+| Property    | Attribute   | Description | Type                                                                                | Default      |
+| ----------- | ----------- | ----------- | ----------------------------------------------------------------------------------- | ------------ |
+| `alignment` | `alignment` |             | `"center" \| "left" \| "right"`                                                     | `'left'`     |
+| `role`      | `role`      |             | `string`                                                                            | `'list'`     |
+| `variant`   | `variant`   |             | `"functions" \| "lang-switcher" \| "main-nav" \| "meta-nav" \| "meta-nav-external"` | `'main-nav'` |
 
 
 ## Dependencies

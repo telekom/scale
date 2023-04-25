@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property           | Attribute             | Description | Type      | Default     |
-| ------------------ | --------------------- | ----------- | --------- | ----------- |
-| `active`           | `active`              |             | `boolean` | `false`     |
-| `ariaLabelNavItem` | `aria-label-nav-item` |             | `string`  | `undefined` |
-| `navItemTitle`     | `nav-item-title`      |             | `string`  | `undefined` |
-| `variant`          | `variant`             |             | `string`  | `undefined` |
+| Property       | Attribute        | Description | Type      | Default      |
+| -------------- | ---------------- | ----------- | --------- | ------------ |
+| `active`       | `active`         |             | `boolean` | `false`      |
+| `navItemTitle` | `nav-item-title` |             | `string`  | `undefined`  |
+| `role`         | `role`           |             | `string`  | `'listitem'` |
+| `variant`      | `variant`        |             | `string`  | `undefined`  |
 
 
 ## Dependencies
