@@ -6,7 +6,7 @@ Design Tokens sind die Variablen unseres Designs. Sie speichern die Werte für F
 
 ## Wie setzt Scale Design Tokens in der Praxis um?
 
-Die Design Tokens liegen in Form einer JSON-Datei auf GitHub. Ein Programm namens Style Dictionary wandelt sie in Formate um, die in Sketch, Figma, CSS oder Javascript verwendet werden können. Unsere Sketch- und Figma-Bibliotheken beinhalten das jeweilige Ausgabeformat. Auch die Scale Code-Komponenten arbeiten mit dem Design Token Package. Als Entwickler*in kannst du die Design Tokens direkt von GitHub oder NPM in dein Projekt laden. Das stellt sicher, dass jeder bei der Deutschen Telekom mit den gleichen Designgrundlagen arbeitet und wir eine konsistente, qualitativ hochwertige Nutzungserfahrung für unsere Kund*innen schaffen. In dem Artikel <a href="https://uxdesign.cc/building-better-products-with-the-design-token-pipeline-faa86aa068e8" target="_blank" rel="noopener noreferrer">Building better products with a design token pipeline</a> findest du weitere Informationen zur Implementierung der Design Tokens in deinen Workflow.
+Die Design Tokens liegen in Form einer JSON-Datei auf GitHub. Ein Programm namens Style Dictionary wandelt sie in Formate um, die in Sketch, Figma, CSS oder Javascript verwendet werden können. Unsere Sketch- und Figma-Bibliotheken beinhalten das jeweilige Ausgabeformat. Auch die Scale Code-Komponenten arbeiten mit dem Design Token Package. Als Entwickler*in kannst du die Design Tokens direkt von GitHub oder NPM in dein Projekt laden. Das stellt sicher, dass jeder bei der Deutschen Telekom mit den gleichen Designgrundlagen arbeitet und wir eine konsistente, qualitativ hochwertige Nutzungserfahrung für unsere Kund*innen schaffen.
 
 ## So arbeiten Designer\*innen mit Design Tokens
 
