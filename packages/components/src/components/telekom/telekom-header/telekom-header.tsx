@@ -33,6 +33,10 @@ export class TelekomHeader {
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
   @Prop() type: string = 'default';
+  @Prop() metaNavAriaLabel?: string = 'Meta navigation';
+  @Prop() metaNavExternalAriaLabel?: string = 'External meta navigation';
+  @Prop() languageSwitcherAriaLabel?: string = 'Language switcher';
+  @Prop() mainNavAriaLabel?: string = 'Main navigation';
 
   @State() scrolled: boolean;
   @State() scrolledBack: boolean = false;
@@ -83,13 +87,13 @@ export class TelekomHeader {
                   ) : null}
 
                   <div part="top-body">
-                    <nav part="meta-nav-external">
+                    <nav part="meta-nav-external" aria-label={this.metaNavExternalAriaLabel}>
                       <slot name="meta-nav-external"></slot>
                     </nav>
-                    <nav part="meta-nav">
+                    <nav part="meta-nav" aria-label={this.metaNavAriaLabel}>
                       <slot name="meta-nav"></slot>
                     </nav>
-                    <nav part="lang-switcher">
+                    <nav part="lang-switcher" aria-label={this.languageSwitcherAriaLabel}>
                       <slot name="lang-switcher"></slot>
                     </nav>
                   </div>
@@ -112,7 +116,7 @@ export class TelekomHeader {
                     </div>
                   ) : null}
                   <div part="bottom-body">
-                    <nav part="main-nav">
+                    <nav part="main-nav" aria-label={this.mainNavAriaLabel}>
                       <slot name="main-nav"></slot>
                     </nav>
                     <slot name="functions"></slot>
