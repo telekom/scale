@@ -1,8 +1,12 @@
 :host {
   --background-hover: var(--telekom-color-ui-state-fill-hovered);
+  --text-item-color: var(--telekom-color-text-and-icon-standard);
+  --text-supporting-text-color: var(--telekom-color-text-and-icon-additional);
+  --font-weight: var(--telekom-typography-font-weight-medium);
+  --letter-spacing-standard: var(--telekom-typography-letter-spacing-standard);
+  --font-size-supporting-text: 12px;
+  --font-size-item-text: 12px;
 }
-
-/*!*items*!*/
 
 [part~='base'] {
   display: flex;
@@ -10,6 +14,9 @@
   align-items: center;
   width: 100%;
   padding: 8px 8px 8px 16px;
+  font-family: inherit;
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing-standard);
 }
 
 [part~='base'].scale-search-list-item-hover:hover {
@@ -26,44 +33,24 @@
 }
 
 [part~='label'] {
+  font-size: var(--font-size-item-text);
+  color: var(--text-item-color);
   padding-top: 8px;
   padding-bottom: 8px;
-  font-family: TeleNeo;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0em;
   text-align: left;
-  color: #000000;
   line-height: 100%;
 }
 
 [part~='supporting-text'] {
-  font-family: TeleNeo;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: var(--font-size-supporting-text);
+  color: var(--text-supporting-text-color);
   line-height: 16px;
-  letter-spacing: 0em;
   text-align: left;
-  color: rgba(0, 0, 0, 0.65);
 }
 
 [part~='suffix']:last-of-type {
   margin-left: auto;
 }
-
-/* [part~='suffix'].scale-search-list-item-hover {
-  display: none;
-}
-
-[part~='suffix'].scale-search-list-item-hover:hover {
-  display: block;
-  background-color: var(--background-hover);
-}
-
-[part~='suffix'].scale-search-list-item-always {
-  display: block;
-  background-color: var(--background-hover);
-} */
 
 ::slotted([slot='prefix']) {
   display: inline;
