@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchSelectItem should match snapshot 1`] = `
-<scale-search-list-item>
+<scale-search-list-item dismissible="true">
   <mock:shadow-root>
     <div class="scale-search-list-item-hover" part="base" tabindex="0">
       <div part="prefix">
@@ -16,10 +16,19 @@ exports[`SearchSelectItem should match snapshot 1`] = `
         </div>
       </div>
       <div part="suffix">
-        <slot name="suffix"></slot>
+        <scale-icon-button part="clear-icon-button" size="medium">
+          <scale-icon-action-close accessibility-title="close" part="clear-icon" size="24"></scale-icon-action-close>
+        </scale-icon-button>
       </div>
     </div>
   </mock:shadow-root>
+  <scale-icon-action-search size="24" slot="prefix"></scale-icon-action-search>
   Item 01
+  <div slot="supporting-text">
+    Supporting text
+  </div>
+  <scale-icon-button size="medium" slot="suffix">
+    <scale-icon-navigation-external-link size="24"></scale-icon-navigation-external-link>
+  </scale-icon-button>
 </scale-search-list-item>
 `;
