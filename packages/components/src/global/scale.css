@@ -49,7 +49,7 @@
   --telekom-color-functional-focus-standard-on-dark: #7d94f9;
 }
 
-[data-mode=dark] {
+[data-mode='dark'] {
   --telekom-color-functional-focus-standard-standard: #2238df;
   --telekom-color-functional-focus-standard-inverted: #7d94f9;
   --telekom-color-functional-focus-standard-on-dark: #7d94f9;
