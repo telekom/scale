@@ -38,7 +38,7 @@ export class TelekomNavItem {
 
   @Prop({ reflect: true }) active?: boolean = false;
   @Prop({ reflect: true }) variant?: string;
-  @Prop({ reflect: true }) role: string | null = 'listitem';
+  @Prop({ reflect: true }) role: string | null = 'none';
   @Prop() navItemTitle?: string;
 
   @Watch('active')
