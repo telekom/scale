@@ -17,7 +17,7 @@
   --box-shadow: var(--telekom-shadow-raised-standard);
   --box-shadow-hover: var(--telekom-shadow-raised-hover);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   --box-shadow-active: var(--telekom-shadow-raised-pressed);
 
   --spacing-body: var(--telekom-spacing-unit-x6);

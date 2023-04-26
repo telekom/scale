@@ -23,7 +23,7 @@ scale-checkbox {
   --color-standard: var(--telekom-color-background-surface);
   --background-disabled: none;
   --color-primary: var(--telekom-color-primary-standard);
-  --color-focus: var(--telekom-color-functional-focus);
+  --color-focus: var(--telekom-color-functional-focus-standard);
   --color-primary-hover: var(--telekom-color-text-and-icon-standard);
   --color-primary-active: var(--telekom-color-text-and-icon-standard);
 

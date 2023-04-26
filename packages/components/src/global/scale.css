@@ -44,15 +44,15 @@
   --scl-z-index-60: 60;
   --scl-z-index-70: 70;
   /* temporary hard coded values, these will be added to design-tokens package */
-  --telekom-color-functional-focus-standard: #7d94f9;
-  --telekom-color-functional-focus-inverted: #2238df;
-  --telekom-color-functional-focus-on-dark: #7d94f9;
+  --telekom-color-functional-focus-standard-standard: #7d94f9;
+  --telekom-color-functional-focus-standard-inverted: #2238df;
+  --telekom-color-functional-focus-standard-on-dark: #7d94f9;
 }
 
 [data-mode=dark] {
-  --telekom-color-functional-focus-standard: #2238df;
-  --telekom-color-functional-focus-inverted: #7d94f9;
-  --telekom-color-functional-focus-on-dark: #7d94f9;
+  --telekom-color-functional-focus-standard-standard: #2238df;
+  --telekom-color-functional-focus-standard-inverted: #7d94f9;
+  --telekom-color-functional-focus-standard-on-dark: #7d94f9;
 }
 
 /**
