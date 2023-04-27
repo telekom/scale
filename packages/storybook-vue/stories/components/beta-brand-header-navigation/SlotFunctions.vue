@@ -14,7 +14,7 @@
     </scale-telekom-nav-item>
     <scale-telekom-nav-item aria-label="Cart">
       <a href="#">
-        <scale-badge count="1" label="Cart">
+        <scale-badge count="1" label="Cart" aria-label-translation="$label - $count items in shopping cart">
           <scale-icon-action-shopping-cart></scale-icon-action-shopping-cart>
         </scale-badge>
       </a>
