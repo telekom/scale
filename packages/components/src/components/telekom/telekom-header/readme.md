@@ -7,16 +7,16 @@
 
 ## Properties
 
-| Property                    | Attribute                      | Description | Type     | Default                      |
-| --------------------------- | ------------------------------ | ----------- | -------- | ---------------------------- |
-| `appName`                   | `app-name`                     |             | `string` | `undefined`                  |
-| `appNameClick`              | `app-name-click`               |             | `any`    | `undefined`                  |
-| `appNameLink`               | `app-name-link`                |             | `string` | `undefined`                  |
-| `languageSwitcherAriaLabel` | `language-switcher-aria-label` |             | `string` | `'Language switcher'`        |
-| `mainNavAriaLabel`          | `main-nav-aria-label`          |             | `string` | `'Main navigation'`          |
-| `metaNavAriaLabel`          | `meta-nav-aria-label`          |             | `string` | `'Meta navigation'`          |
-| `metaNavExternalAriaLabel`  | `meta-nav-external-aria-label` |             | `string` | `'External meta navigation'` |
-| `type`                      | `type`                         |             | `string` | `'default'`                  |
+| Property                   | Attribute                      | Description | Type     | Default                      |
+| -------------------------- | ------------------------------ | ----------- | -------- | ---------------------------- |
+| `appName`                  | `app-name`                     |             | `string` | `undefined`                  |
+| `appNameClick`             | `app-name-click`               |             | `any`    | `undefined`                  |
+| `appNameLink`              | `app-name-link`                |             | `string` | `undefined`                  |
+| `langSwitcherAriaLabel`    | `lang-switcher-aria-label`     |             | `string` | `'Language switcher'`        |
+| `mainNavAriaLabel`         | `main-nav-aria-label`          |             | `string` | `'Main navigation'`          |
+| `metaNavAriaLabel`         | `meta-nav-aria-label`          |             | `string` | `'Meta navigation'`          |
+| `metaNavExternalAriaLabel` | `meta-nav-external-aria-label` |             | `string` | `'External meta navigation'` |
+| `type`                     | `type`                         |             | `string` | `'default'`                  |
 
 
 ## Shadow Parts
