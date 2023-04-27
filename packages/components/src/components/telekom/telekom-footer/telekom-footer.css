@@ -38,7 +38,6 @@
 .scale-telekom-footer[type='minimal'] :where(a, span) {
   display: flex;
   justify-content: center;
-  align-items: center;
   font-size: var(--font-size);
   color: var(--font-color);
   line-height: 140%;
