@@ -24,7 +24,7 @@ scale-nav-icon {
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
 
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
 }
 
 .meta-navigation__item-link {
