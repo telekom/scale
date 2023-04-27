@@ -56,7 +56,6 @@
   padding-bottom: var(--padding-top-bottom);
   transition: var(--transition);
   background-color: transparent;
-  padding: 0;
 }
 
 .segment--mask {
@@ -169,11 +168,11 @@ button.segment--large.segment--selected .segment--mask {
   backface-visibility: hidden;
 }
 
-.segment:not(.segment--disabled):hover .segment--mask {
+.segment:not(.segment--disabled):hover {
   background-color: var(--background-color-hover);
 }
 
-.segment:not(.segment--disabled):active .segment--mask {
+.segment:not(.segment--disabled):active {
   background-color: var(--background-color-active);
 }
 
@@ -228,4 +227,17 @@ button.segment--large.segment--selected .segment--mask {
 
 .segment--selected .icon-container {
   color: var(--color-selected);
+}
+
+.segment--list-item {
+  list-style: none;
+  box-sizing: border-box;
+  position: relative;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--button-radius);
+  padding-top: var(--telekom-spacing-unit-x05);
+  transition: var(--transition);
+  background-color: transparent;
 }

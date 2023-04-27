@@ -165,36 +165,39 @@ export class Segment {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <button
-          ref={(el) => (this.focusableElement = el)}
-          class={this.getCssClassMap()}
-          id={this.segmentId}
-          onClick={this.handleClick}
-          disabled={this.disabled}
-          type="button"
-          style={{ width: this.width }}
-          aria-label={this.ariaLabelSegment}
-          aria-pressed={this.selected}
-          part={this.getBasePartMap()}
-          aria-description={this.getAriaDescriptionTranslation()}
-        >
-          <div class="segment--mask">
-            {!this.iconOnly && (
-              <div class="success-icon-container">
-                <scale-icon-action-success
-                  size={this.size === 'small' ? 14 : 16}
-                  class="scale-icon-action-success"
-                  aria-hidden="true"
-                  selected
-                />
+        <li class="segment--list-item" role="option">
+          <button
+            ref={(el) => (this.focusableElement = el)}
+            class={this.getCssClassMap()}
+            onClick={this.handleClick}
+            id={this.segmentId}
+            disabled={this.disabled}
+            type="button"
+            style={{ width: this.width }}
+            aria-label={this.ariaLabelSegment}
+            part={this.getBasePartMap()}
+            aria-selected={this.selected}
+            aria-pressed={this.selected}
+            aria-description={this.getAriaDescriptionTranslation()}
+          >
+            <div class="segment--mask">
+              {!this.iconOnly && (
+                <div class="success-icon-container">
+                  <scale-icon-action-success
+                    size={this.size === 'small' ? 14 : 16}
+                    class="scale-icon-action-success"
+                    aria-hidden="true"
+                    selected
+                  />
+                </div>
+              )}
+              <div class="icon-container">
+                <slot name="segment-icon" />
               </div>
-            )}
-            <div class="icon-container">
-              <slot name="segment-icon" />
+              <slot />
             </div>
-            <slot />
-          </div>
-        </button>
+          </button>
+        </li>
       </Host>
     );
   }

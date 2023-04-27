@@ -252,15 +252,18 @@ export class SegmentedButton {
           {this.label && (
             <legend class="segmented-button--label"> {this.label} </legend>
           )}
-          <div
+          <ul
             class={this.getCssClassMap()}
             part={this.getBasePartMap()}
             aria-label={this.getAriaLabelTranslation()}
-            role="group"
-            ref={(el) => (this.container = el as HTMLInputElement)}
+            role="listbox"
+            ref={(el) => (this.container = el as HTMLUListElement)}
+            aria-description={
+              this.showHelperText && this.helperText ? this.helperText : null
+            }
           >
             <slot />
-          </div>
+          </ul>
           {this.showHelperText && (
             <scale-helper-text
               class="segmented-button--helper-text"
