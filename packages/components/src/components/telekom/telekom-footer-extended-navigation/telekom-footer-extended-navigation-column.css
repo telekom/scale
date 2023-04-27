@@ -58,7 +58,7 @@ scale-divider {
 }
 
 @media screen and (--md) {
-  [part~='heading-button'] {
+  [part~='heading-with-button'] {
     display: none;
   }
   [part~='heading'] {
