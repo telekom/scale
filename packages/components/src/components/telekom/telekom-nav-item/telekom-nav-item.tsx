@@ -59,6 +59,16 @@ export class TelekomNavItem {
     this.activeChanged(this.active);
   }
 
+  componentDidLoad() {
+    const child = Array.from(this.hostElement.children).find((child) =>
+      child.matches('a, button')
+    );
+    const parentRole = this.hostElement.parentElement.getAttribute('role')
+    if (parentRole === 'menu') {
+      child.setAttribute('role', 'menuitem')
+    }
+  }
+
   get linkElement(): HTMLAnchorElement | null {
     return this.hostElement.querySelector('a, button');
   }

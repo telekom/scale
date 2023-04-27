@@ -1,7 +1,7 @@
 <template>
   <scale-telekom-nav-list variant="main-nav" slot="main-nav" aria-label="Main navigation links">
     <scale-telekom-nav-item active aria-label="Topic One">
-      <button role="menuitem">Topic One</button>
+      <button>Topic One</button>
       <scale-telekom-nav-flyout hover>
         <scale-telekom-mega-menu>
           <scale-telekom-mega-menu-column>
@@ -56,7 +56,7 @@
       </scale-telekom-nav-flyout>
     </scale-telekom-nav-item>
     <scale-telekom-nav-item aria-label="Topic Two">
-      <button role="menuitem">Topic Two</button>
+      <button>Topic Two</button>
       <scale-telekom-nav-flyout hover>
         <scale-telekom-mega-menu>
           <scale-telekom-mega-menu-column>
