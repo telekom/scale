@@ -3,6 +3,9 @@
     :app-name="appName"
     :app-name-link="appNameLink"
     :app-name-click="appNameClick"
+    :logo-ref="logoHref"
+    :logo-title="logoTitle"
+    :logo-hide-title="logoHideTitle"
     :meta-nav-aria-label="metaNavAriaLabel" 
     :meta-nav-external-aria-label="metaNavExternalAriaLabel"
     :lang-switcher-aria-label="langSwitcherAriaLabel"
@@ -23,6 +26,9 @@ export default {
     appName: String,
     appNameLink: String,
     appNameClick: Function,
+    logoHref: String,
+    logoTitle: String,
+    logoHideTitle: String,
     metaNavAriaLabel: String,
     metaNavExternalAriaLabel: String,
     langSwitcherAriaLabel: String,

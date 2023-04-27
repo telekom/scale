@@ -41,7 +41,7 @@ export class LogoSvg {
   @Prop() color?: string = 'magenta';
   @Prop() innerRole?: 'link' | 'img' = 'img';
   @Prop() focusable: boolean = true;
-  /** (optional) When using the icon standalone, make it meaningful for accessibility */
+  /** @deprecated (optional) When using the icon standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle?: string;
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
   @Prop() logoTitle?: string;
