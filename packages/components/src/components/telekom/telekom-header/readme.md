@@ -7,12 +7,15 @@
 
 ## Properties
 
-| Property       | Attribute        | Description | Type     | Default     |
-| -------------- | ---------------- | ----------- | -------- | ----------- |
-| `appName`      | `app-name`       |             | `string` | `undefined` |
-| `appNameClick` | `app-name-click` |             | `any`    | `undefined` |
-| `appNameLink`  | `app-name-link`  |             | `string` | `undefined` |
-| `type`         | `type`           |             | `string` | `'default'` |
+| Property        | Attribute         | Description | Type      | Default     |
+| --------------- | ----------------- | ----------- | --------- | ----------- |
+| `appName`       | `app-name`        |             | `string`  | `undefined` |
+| `appNameClick`  | `app-name-click`  |             | `any`     | `undefined` |
+| `appNameLink`   | `app-name-link`   |             | `string`  | `undefined` |
+| `logoHideTitle` | `logo-hide-title` |             | `boolean` | `undefined` |
+| `logoHref`      | `logo-href`       |             | `string`  | `undefined` |
+| `logoTitle`     | `logo-title`      |             | `string`  | `undefined` |
+| `type`          | `type`            |             | `string`  | `'default'` |
 
 
 ## Shadow Parts
