@@ -5,7 +5,7 @@
     :app-name-click="appNameClick"
     :meta-nav-aria-label="metaNavAriaLabel" 
     :meta-nav-external-aria-label="metaNavExternalAriaLabel"
-    :language-switcher-aria-label="languageSwitcherAriaLabel"
+    :lang-switcher-aria-label="langSwitcherAriaLabel"
     :main-nav-aria-label="mainNavAriaLabel"      
   >
     <slot name="logo"></slot>
@@ -25,7 +25,7 @@ export default {
     appNameClick: Function,
     metaNavAriaLabel: String,
     metaNavExternalAriaLabel: String,
-    languageSwitcherAriaLabel: String,
+    langSwitcherAriaLabel: String,
     mainNavAriaLabel: String,    
   },
 };

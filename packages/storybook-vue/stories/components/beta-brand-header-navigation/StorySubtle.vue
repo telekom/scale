@@ -4,7 +4,7 @@
     :app-name-link="appNameLink"
     :meta-nav-aria-label="metaNavAriaLabel" 
     :meta-nav-external-aria-label="metaNavExternalAriaLabel"
-    :language-switcher-aria-label="languageSwitcherAriaLabel"
+    :lang-switcher-aria-label="langSwitcherAriaLabel"
     :main-nav-aria-label="mainNavAriaLabel"   
   >
     <SlotMetaNavExternal />
@@ -34,7 +34,7 @@ export default {
     appNameLink: String,
     metaNavAriaLabel: String,
     metaNavExternalAriaLabel: String,
-    languageSwitcherAriaLabel: String,
+    langSwitcherAriaLabel: String,
     mainNavAriaLabel: String,    
   },
 };

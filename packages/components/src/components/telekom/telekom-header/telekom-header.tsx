@@ -35,7 +35,7 @@ export class TelekomHeader {
   @Prop() type: string = 'default';
   @Prop() metaNavAriaLabel?: string = 'Meta navigation';
   @Prop() metaNavExternalAriaLabel?: string = 'External meta navigation';
-  @Prop() languageSwitcherAriaLabel?: string = 'Language switcher';
+  @Prop() langSwitcherAriaLabel?: string = 'Language switcher';
   @Prop() mainNavAriaLabel?: string = 'Main navigation';
 
   @State() scrolled: boolean;
@@ -98,7 +98,7 @@ export class TelekomHeader {
                     </nav>
                     <nav
                       part="lang-switcher"
-                      aria-label={this.languageSwitcherAriaLabel}
+                      aria-label={this.langSwitcherAriaLabel}
                     >
                       <slot name="lang-switcher"></slot>
                     </nav>
