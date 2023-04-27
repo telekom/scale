@@ -60,8 +60,8 @@ export class TelekomNavItem {
   }
 
   componentDidLoad() {
-    const child = Array.from(this.hostElement.children).find((child) =>
-      child.matches('a, button')
+    const child = Array.from(this.hostElement.children).find((el) =>
+      el.matches('a, button')
     );
     const parentRole = this.hostElement.parentElement.getAttribute('role');
     if (parentRole === 'menu') {
