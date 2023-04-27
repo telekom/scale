@@ -223,7 +223,7 @@ export class TelekomHeaderDataBackCompat {
                 );
               })}
 
-            <scale-telekom-nav-item class="burger-item">
+            <scale-telekom-nav-item hide-on-desktop>
               <button>
                 <scale-badge>
                   <scale-icon-action-menu></scale-icon-action-menu>
