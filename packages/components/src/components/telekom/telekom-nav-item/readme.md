@@ -7,10 +7,12 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type      | Default     |
-| --------- | --------- | ----------- | --------- | ----------- |
-| `active`  | `active`  |             | `boolean` | `false`     |
-| `variant` | `variant` |             | `string`  | `undefined` |
+| Property        | Attribute         | Description | Type      | Default     |
+| --------------- | ----------------- | ----------- | --------- | ----------- |
+| `active`        | `active`          |             | `boolean` | `false`     |
+| `hideOnDesktop` | `hide-on-desktop` |             | `boolean` | `false`     |
+| `hideOnMobile`  | `hide-on-mobile`  |             | `boolean` | `false`     |
+| `variant`       | `variant`         |             | `string`  | `undefined` |
 
 
 ## Dependencies

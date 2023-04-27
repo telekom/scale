@@ -25,7 +25,7 @@
         </scale-badge>
       </a>
     </scale-telekom-nav-item>
-    <scale-telekom-nav-item class="burger-item">
+    <scale-telekom-nav-item hide-on-desktop>
       <button>
         <scale-badge>
           <scale-icon-action-menu></scale-icon-action-menu>
@@ -56,12 +56,6 @@ export default {
 <style>
 scale-badge::part(label) {
   display: none;
-}
-
-@media screen and (min-width: 1040px) {
-  .burger-item {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 1040px) {

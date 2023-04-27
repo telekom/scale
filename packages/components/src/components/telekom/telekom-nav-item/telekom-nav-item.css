@@ -16,6 +16,21 @@
   Horizontal spacing is handled by `scale-nav-list`.
 */
 
+/*
+  TODO this is experimental (mostly the name)
+  it should be put in global.css since it's already global haha
+*/
+@media screen and (--not-lg) {
+  .scl-hide-on-mobile {
+    display: none;
+  }
+}
+@media screen and (--lg) {
+  .scl-hide-on-desktop {
+    display: none;
+  }
+}
+
 .scale-telekom-nav-item {
   --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
   --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);

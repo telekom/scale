@@ -15,6 +15,11 @@
 @import './fonts.css';
 
 /**
+ * Load custom media queries.
+ */
+@import url('./custom-media.css');
+
+/**
  * Include --scl tokens from legacy @telekom/scale-design-tokens package for backward-compat.
  * @deprecated in v3
  */

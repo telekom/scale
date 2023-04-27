@@ -1,6 +1,6 @@
 <template>
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right">
-    <scale-telekom-nav-item class="burger-item">
+    <scale-telekom-nav-item hide-on-desktop>
       <button>
         <scale-badge>
           <scale-icon-action-menu></scale-icon-action-menu>
@@ -26,9 +26,4 @@ export default {
 </script>
 
 <style>
-@media screen and (min-width: 1040px) {
-  .burger-item {
-    display: none;
-  }
-}
 </style>
