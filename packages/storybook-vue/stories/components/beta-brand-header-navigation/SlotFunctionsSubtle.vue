@@ -6,7 +6,7 @@
           <scale-icon-action-menu></scale-icon-action-menu>
         </scale-badge>
       </button>
-      <scale-telekom-nav-flyout class="mobile-nav-flyout">
+      <scale-telekom-nav-flyout variant="mobile">
         <SlotMobileFlyoutCanvasSubtle :app-name="appName" :app-name-link="appNameLink" />
       </scale-telekom-nav-flyout>
     </scale-telekom-nav-item>
@@ -26,13 +26,6 @@ export default {
 </script>
 
 <style>
-.mobile-nav-flyout {
-  --duration: 0;
-  --top: 0;
-  --height: auto;
-  --background: var(--telekom-color-background-canvas);
-}
-
 @media screen and (min-width: 1040px) {
   .burger-item {
     display: none;

@@ -31,7 +31,7 @@
           <scale-icon-action-menu></scale-icon-action-menu>
         </scale-badge>
       </button>
-      <scale-telekom-nav-flyout class="mobile-nav-flyout">
+      <scale-telekom-nav-flyout variant="mobile">
         <SlotMobileFlyoutCanvas
           :app-name="appName"
           :app-name-link="appNameLink"
@@ -54,13 +54,6 @@ export default {
 </script>
 
 <style>
-.mobile-nav-flyout {
-  --duration: 0;
-  --top: 0;
-  --height: 100vh;
-  --background: var(--telekom-color-background-canvas);
-}
-
 scale-badge::part(label) {
   display: none;
 }
