@@ -75,7 +75,7 @@
 
 .scale-telekom-footer :where(a:focus-visible) {
   outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus-standard-on-dark);
+    var(--telekom-color-functional-focus-on-dark-background);
   outline-offset: 1px;
 }
 
