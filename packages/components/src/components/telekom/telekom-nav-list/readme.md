@@ -10,7 +10,7 @@
 | Property    | Attribute   | Description | Type                                                                                | Default      |
 | ----------- | ----------- | ----------- | ----------------------------------------------------------------------------------- | ------------ |
 | `alignment` | `alignment` |             | `"center" \| "left" \| "right"`                                                     | `'left'`     |
-| `role`      | `role`      |             | `string`                                                                            | `'list'`     |
+| `role`      | `role`      |             | `string`                                                                            | `'menu'`     |
 | `variant`   | `variant`   |             | `"functions" \| "lang-switcher" \| "main-nav" \| "meta-nav" \| "meta-nav-external"` | `'main-nav'` |
 
 
