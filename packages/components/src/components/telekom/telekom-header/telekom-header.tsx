@@ -32,6 +32,9 @@ export class TelekomHeader {
   @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
+  @Prop() logoHref?: string;
+  @Prop() logoTitle?: string;
+  @Prop() logoHideTitle?: boolean;
   @Prop() type: string = 'default';
 
   @State() scrolled: boolean;
@@ -61,7 +64,13 @@ export class TelekomHeader {
           <div part="fixed-wrapper">
             <div part="container">
               <slot name="logo">
-                <scale-logo part="app-logo" variant="white"></scale-logo>
+                <scale-logo
+                  part="app-logo"
+                  variant="white"
+                  href={this.logoHref}
+                  logoTitle={this.logoTitle}
+                  logoHideTitle={this.logoHideTitle}
+                ></scale-logo>
               </slot>
 
               <div part="body">

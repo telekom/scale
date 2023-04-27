@@ -1,7 +1,15 @@
 <template>
   <div class="wrapper">
     <scale-telekom-app-shell>
-      <component slot="header" :is="storyName" :app-name="appName" :app-name-link="appNameLink"></component>
+      <component
+        slot="header"
+        :is="storyName"
+        :app-name="appName"
+        :app-name-link="appNameLink"
+        :logo-href="logoHref"
+        :logo-title="logoTitle"
+        :logo-hide-title="logoHideTitle"
+      ></component>
       <!-- content goes here -->
     </scale-telekom-app-shell>
   </div>
@@ -26,6 +34,9 @@ export default {
     appName: String,
     appNameLink: String,
     appNameClick: Function,
+    logoHref: String,
+    logoTitle: String,
+    logoHideTitle: String,
     storyName: String,
   },
 };

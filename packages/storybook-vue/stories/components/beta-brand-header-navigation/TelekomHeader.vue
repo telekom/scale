@@ -3,6 +3,9 @@
     :app-name="appName"
     :app-name-link="appNameLink"
     :app-name-click="appNameClick"
+    :logo-ref="logoHref"
+    :logo-title="logoTitle"
+    :logo-hide-title="logoHideTitle"
   >
     <slot name="logo"></slot>
     <slot name="meta-nav-external"></slot>
@@ -19,6 +22,9 @@ export default {
     appName: String,
     appNameLink: String,
     appNameClick: Function,
+    logoHref: String,
+    logoTitle: String,
+    logoHideTitle: String,
   },
 };
 </script>
