@@ -35,9 +35,11 @@
 
   /* hover styles */
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
 
   /* active styles */
   --background-color-active: var(--telekom-color-ui-state-fill-pressed);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
 
   display: flex;
   align-items: center;
@@ -172,8 +174,16 @@ button.segment--large.segment--selected .segment--mask {
   background-color: var(--background-color-hover);
 }
 
+.segment.segment--selected:not(.segment--disabled):hover .segment--mask {
+  color: var(--color-hover);
+}
+
 .segment:not(.segment--disabled):active {
   background-color: var(--background-color-active);
+}
+
+.segment.segment--selected:not(.segment--disabled):active .segment--mask {
+  color: var(--color-active);
 }
 
 .segment:focus {
