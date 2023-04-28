@@ -73,7 +73,7 @@
   border-bottom: 1px solid var(--telekom-color-text-and-icon-white-additional);
 }
 
-.scale-telekom-footer :where(a:focus-visible) {
+.scale-telekom-footer:not([type="minimal"]) :where(a:focus-visible) {
   outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-on-dark-background);
   outline-offset: 1px;
