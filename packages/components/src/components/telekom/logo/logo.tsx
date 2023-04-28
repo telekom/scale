@@ -91,7 +91,6 @@ export class Logo {
             part="icon"
             language={this.language}
             color={this.variant}
-            role="link"
             logoTitle={this.logoTitle}
             logoHideTitle={this.logoHideTitle}
           ></scale-logo-svg>

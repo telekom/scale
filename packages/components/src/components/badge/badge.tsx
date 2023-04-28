@@ -23,6 +23,9 @@ export class Badge {
   @Prop() count: number;
   @Prop() label: string;
   @Prop() labelVisuallyHidden: boolean;
+  /** a11y text for getting meaningful value. */
+  @Prop() ariaLabelTranslation = '$label - $count item';
+
   formatter = new Intl.NumberFormat('en', {
     // @ts-ignore
     notation: 'compact',
@@ -31,10 +34,20 @@ export class Badge {
     statusNote({ source: this.hostElement, tag: 'beta' });
   }
 
+  getAriaLabel() {
+    const filledText = this.ariaLabelTranslation
+      .replace(/\$count/g, `${this.count}`)
+      .replace(/\$label/g, `${this.label}`);
+    return filledText;
+  }
+
   render() {
     return (
       <Host>
-        <span part="base" aria-labelledby="raw-count label">
+        <span
+          part="base"
+          aria-label={this.count ? this.getAriaLabel() : this.label}
+        >
           <slot />
           <span
             aria-hidden="true"

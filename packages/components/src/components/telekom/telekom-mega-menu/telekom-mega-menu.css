@@ -60,6 +60,13 @@
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
+.scale-telekom-mega-menu :where(a):focus-visible {
+  outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
+  outline-offset: 1px;
+  border-radius: var(--telekom-radius-small);
+}
+
 .scale-telekom-mega-menu :where(li + li) {
   margin-top: var(--telekom-spacing-unit-x5);
 }

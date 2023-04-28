@@ -35,7 +35,7 @@ duet-date-picker {
   --font-size-table-header: var(--font-size-day);
   --font-weight-table-header: var(--telekom-typography-font-weight-extra-bold);
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
 
   --z-index-label: 10;
 }

@@ -25,7 +25,7 @@
   --color-link-active: var(--telekom-color-text-and-icon-primary-pressed);
 
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   --color-current: var(--telekom-color-text-and-icon-standard);
 }
 

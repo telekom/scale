@@ -11,7 +11,7 @@
 | -------------- | --------------- | ----------------------- | --------- | ----------- |
 | `expanded`     | `expanded`      | Set to `true` to expand | `boolean` | `false`     |
 | `heading`      | `heading`       |                         | `string`  | `undefined` |
-| `headingLevel` | `heading-level` |                         | `string`  | `'h2'`      |
+| `headingLevel` | `heading-level` |                         | `string`  | `'2'`       |
 
 
 ## Shadow Parts

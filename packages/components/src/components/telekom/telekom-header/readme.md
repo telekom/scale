@@ -7,29 +7,37 @@
 
 ## Properties
 
-| Property       | Attribute        | Description | Type     | Default     |
-| -------------- | ---------------- | ----------- | -------- | ----------- |
-| `appName`      | `app-name`       |             | `string` | `undefined` |
-| `appNameClick` | `app-name-click` |             | `any`    | `undefined` |
-| `appNameLink`  | `app-name-link`  |             | `string` | `undefined` |
-| `type`         | `type`           |             | `string` | `'default'` |
+| Property                   | Attribute                      | Description | Type     | Default                      |
+| -------------------------- | ------------------------------ | ----------- | -------- | ---------------------------- |
+| `appName`                  | `app-name`                     |             | `string` | `undefined`                  |
+| `appNameClick`             | `app-name-click`               |             | `any`    | `undefined`                  |
+| `appNameLink`              | `app-name-link`                |             | `string` | `undefined`                  |
+| `langSwitcherAriaLabel`    | `lang-switcher-aria-label`     |             | `string` | `'Language switcher'`        |
+| `mainNavAriaLabel`         | `main-nav-aria-label`          |             | `string` | `'Main navigation'`          |
+| `metaNavAriaLabel`         | `meta-nav-aria-label`          |             | `string` | `'Meta navigation'`          |
+| `metaNavExternalAriaLabel` | `meta-nav-external-aria-label` |             | `string` | `'External meta navigation'` |
+| `type`                     | `type`                         |             | `string` | `'default'`                  |
 
 
 ## Shadow Parts
 
-| Part                | Description |
-| ------------------- | ----------- |
-| `"app-logo"`        |             |
-| `"app-name-text"`   |             |
-| `"body"`            |             |
-| `"bottom-app-name"` |             |
-| `"bottom-bar"`      |             |
-| `"bottom-body"`     |             |
-| `"container"`       |             |
-| `"fixed-wrapper"`   |             |
-| `"top-app-name"`    |             |
-| `"top-bar"`         |             |
-| `"top-body"`        |             |
+| Part                  | Description |
+| --------------------- | ----------- |
+| `"app-logo"`          |             |
+| `"app-name-text"`     |             |
+| `"body"`              |             |
+| `"bottom-app-name"`   |             |
+| `"bottom-bar"`        |             |
+| `"bottom-body"`       |             |
+| `"container"`         |             |
+| `"fixed-wrapper"`     |             |
+| `"lang-switcher"`     |             |
+| `"main-nav"`          |             |
+| `"meta-nav"`          |             |
+| `"meta-nav-external"` |             |
+| `"top-app-name"`      |             |
+| `"top-bar"`           |             |
+| `"top-body"`          |             |
 
 
 ## Dependencies

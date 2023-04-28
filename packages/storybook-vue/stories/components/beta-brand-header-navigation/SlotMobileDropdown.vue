@@ -1,6 +1,6 @@
 <template>
-    <scale-telekom-nav-list variant="functions" slot="functions" alignment="right">
-      <scale-telekom-nav-item>
+    <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Mobile Navigation">
+      <scale-telekom-nav-item aria-label="Search">
         <a href="#">
           <scale-icon-action-search></scale-icon-action-search>
         </a>
@@ -10,38 +10,37 @@
           <scale-icon-content-credit-card></scale-icon-content-credit-card>
         </a>
       </scale-telekom-nav-item>
-      <scale-telekom-nav-item>
+      <scale-telekom-nav-item aria-label="Shopping cart">
         <a href="#">
           <scale-badge count="1" label="Cart" label-visually-hidden>
             <scale-icon-action-shopping-cart></scale-icon-action-shopping-cart>
           </scale-badge>
         </a>
       </scale-telekom-nav-item>
-      <scale-telekom-nav-item>
+      <scale-telekom-nav-item aria-label="User">
         <a href="#">
           <scale-icon-user-file-user></scale-icon-user-file-user>
         </a>
       </scale-telekom-nav-item>
-      <scale-telekom-nav-item class="burger-item">
+      <scale-telekom-nav-item class="burger-item" aria-label="Menu">
         <button>
           <scale-badge>
             <scale-icon-action-menu></scale-icon-action-menu>
           </scale-badge>
         </button>
-        <scale-telekom-nav-flyout class="mobile-nav-flyout">
-
-            <scale-telekom-mobile-flyout-canvas :app-name="appName" :app-name-link="appNameLink">
+      <scale-telekom-nav-flyout class="mobile-nav-flyout">
+          <scale-telekom-mobile-flyout-canvas :app-name="appName" :app-name-link="appNameLink">
       <!-- lang-switcher -->
-      <scale-telekom-nav-list variant="lang-switcher" slot="mobile-before-main-nav" alignment="left">
-        <scale-telekom-nav-item active>
-          <a href="#">EN</a>
+      <scale-telekom-nav-list variant="lang-switcher" slot="mobile-before-main-nav" alignment="left" aria-label="Language switcher">
+        <scale-telekom-nav-item active aria-label="Switch to English">
+          <a href="#" title="English">EN</a>
         </scale-telekom-nav-item>
-        <scale-telekom-nav-item>
-          <a href="#">SO</a>
+        <scale-telekom-nav-item aria-label="Switch to German">
+          <a href="#" title="German">DE</a>
         </scale-telekom-nav-item>
-        <scale-telekom-nav-item>
-          <a href="#">DE</a>
-        </scale-telekom-nav-item>
+        <scale-telekom-nav-item aria-label="Switch to Hungarian">
+          <a href="#" title="Hungarian">HU</a>
+        </scale-telekom-nav-item>    
       </scale-telekom-nav-list>
   
       <!-- main-nav -->
