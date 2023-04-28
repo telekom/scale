@@ -14,7 +14,7 @@
   display: block;
 }
 
-[part~='telekom-footer-extended-navigation-links'] {
+[part~='telekom-footer-extended-navigation-column-links'] {
   font-size: var(--telekom-typography-font-size-body);
   line-height: 140%;
 }

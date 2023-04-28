@@ -79,6 +79,12 @@
   outline-offset: 1px;
 }
 
+.scale-telekom-footer scale-telekom-footer-extended-navigation-column :where(a:focus-visible) {
+  outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
+  outline-offset: 1px;
+}
+
 @media screen and (--md) {
   .scale-telekom-footer :where(ul),
   .scale-telekom-footer[type='minimal'] :where(ul) {
