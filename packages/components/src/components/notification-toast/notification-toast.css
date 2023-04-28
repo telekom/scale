@@ -135,7 +135,7 @@
 
 ::slotted([slot='header']) {
   margin: 0;
-  padding: 3px 0 0 10px;
+  padding: 3px calc(var(--width-icon-container)) 0 10px;
   font-weight: bold;
   font-size: 16px;
 }
