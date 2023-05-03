@@ -14,7 +14,13 @@ scale-telekom-header-data-back-compat .user-menu-desktop scale-menu-flyout {
 
 scale-telekom-header-data-back-compat .user-menu-trigger {
   position: relative;
-  top: calc(var(--_spacing-bottom-slotted-bottom) + 24px);
+  left: 24px;
+}
+
+@media screen and (--md) {
+  scale-telekom-header-data-back-compat .user-menu-trigger {
+    top: calc(var(--_spacing-bottom-slotted-bottom) + 8px);
+  }
 }
 
 @media screen and (--lg) {
@@ -24,5 +30,11 @@ scale-telekom-header-data-back-compat .user-menu-trigger {
 
   scale-telekom-header-data-back-compat .user-menu-desktop {
     display: block;
+  }
+}
+
+dia screen and (--xl) {
+  scale-telekom-header-data-back-compat .user-menu-trigger {
+    top: calc(var(--_spacing-bottom-slotted-bottom) + 12px);
   }
 }

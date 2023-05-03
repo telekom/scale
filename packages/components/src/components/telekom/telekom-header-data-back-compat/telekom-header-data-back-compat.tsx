@@ -219,7 +219,7 @@ export class TelekomHeaderDataBackCompat {
                     this.userMenuDesktopTrigger.click();
                   }}
                 >
-                  <scale-menu-flyout>
+                  <scale-menu-flyout direction="bottom-left">
                     {badge ? (
                       <scale-badge
                         count={badgeLabel}
