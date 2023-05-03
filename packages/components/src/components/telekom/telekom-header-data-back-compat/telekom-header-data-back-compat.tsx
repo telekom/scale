@@ -27,6 +27,7 @@ const readData = (data) => {
 
 @Component({
   tag: 'scale-telekom-header-data-back-compat',
+  styleUrl: './telekom-header-data-back-compat.css',
   shadow: false,
 })
 export class TelekomHeaderDataBackCompat {
@@ -38,9 +39,24 @@ export class TelekomHeaderDataBackCompat {
   @Prop() iconNavigation: any;
   @Prop() addonNavigation: any;
   @Prop() sectorNavigation: any;
+  @Prop() userNavigation: any;
   @Prop() activeRouteId: string;
 
+  userMenuMobileTrigger?: HTMLButtonElement;
+  userMenuDesktopTrigger?: HTMLSpanElement;
+  userMenuDesktopLink?: HTMLAnchorElement;
+
   render() {
+    const {
+      shortName = 'Login',
+      badge,
+      badgeLabel,
+    } = readData(this.userNavigation).find(
+      ({ type }) => type === 'userInfo'
+    ) || {
+      shortName: 'Login',
+    };
+
     return (
       <scale-telekom-header
         app-name={this.appName}
@@ -187,6 +203,84 @@ export class TelekomHeaderDataBackCompat {
             slot="functions"
             alignment="right"
           >
+            {readData(this.userNavigation).length > 0 && (
+              <scale-telekom-nav-item class="user-menu-desktop">
+                <a
+                  href="javascript:void(0);"
+                  ref={(el) => (this.userMenuDesktopLink = el)}
+                  onKeyDown={(e) => {
+                    if ([' ', 'Enter', 'Escape'].includes(e.key)) {
+                      e.preventDefault();
+                      this.userMenuDesktopTrigger.click();
+                    }
+                  }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    this.userMenuDesktopTrigger.click();
+                  }}
+                >
+                  <scale-menu-flyout>
+                    {badge ? (
+                      <scale-badge
+                        count={badgeLabel}
+                        label={shortName}
+                        label-visually-hidden
+                      >
+                        <scale-icon-user-file-user> </scale-icon-user-file-user>
+                      </scale-badge>
+                    ) : (
+                      <scale-icon-user-file-user> </scale-icon-user-file-user>
+                    )}
+
+                    <scale-menu-flyout-list>
+                      <app-navigation-user-menu
+                        hide={() => {
+                          this.userMenuDesktopTrigger.click();
+                          this.userMenuDesktopLink.focus();
+                        }}
+                        navigation={readData(this.userNavigation)}
+                      ></app-navigation-user-menu>
+                    </scale-menu-flyout-list>
+                    <div
+                      slot="trigger"
+                      class="user-menu-trigger"
+                      ref={(el) => (this.userMenuDesktopTrigger = el)}
+                    ></div>
+                  </scale-menu-flyout>
+                </a>
+              </scale-telekom-nav-item>
+            )}
+
+            {readData(this.userNavigation).length > 0 && (
+              <scale-telekom-nav-item class="user-menu-mobile">
+                <button
+                  ref={(el) => {
+                    this.userMenuMobileTrigger = el;
+                  }}
+                >
+                  <scale-badge
+                    count={badgeLabel}
+                    label={shortName}
+                    label-visually-hidden
+                  >
+                    <scale-icon-user-file-user> </scale-icon-user-file-user>
+                  </scale-badge>
+                </button>
+                <scale-telekom-nav-flyout class="mobile-nav-flyout">
+                  <scale-telekom-mobile-flyout-canvas>
+                    <app-navigation-user-menu
+                      slot="mobile-main-nav"
+                      hide={() => {
+                        this.userMenuMobileTrigger.click();
+                        this.userMenuMobileTrigger.focus();
+                      }}
+                      navigation={readData(this.userNavigation)}
+                    ></app-navigation-user-menu>
+                  </scale-telekom-mobile-flyout-canvas>
+                </scale-telekom-nav-flyout>
+              </scale-telekom-nav-item>
+            )}
+
             {readData(this.iconNavigation)
               .filter(({ id }) => id !== 'menu')
               .map((item) => {

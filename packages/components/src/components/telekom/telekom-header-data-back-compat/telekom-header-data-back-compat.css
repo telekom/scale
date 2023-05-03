@@ -1,0 +1,28 @@
+@import url('../../../global/custom-media.css');
+
+scale-telekom-header-data-back-compat .user-menu-mobile {
+  display: block;
+}
+
+scale-telekom-header-data-back-compat .user-menu-desktop {
+  display: none;
+}
+
+scale-telekom-header-data-back-compat .user-menu-desktop scale-menu-flyout {
+  display: flex;
+}
+
+scale-telekom-header-data-back-compat .user-menu-trigger {
+  position: relative;
+  top: calc(var(--_spacing-bottom-slotted-bottom) + 24px);
+}
+
+@media screen and (--lg) {
+  scale-telekom-header-data-back-compat .user-menu-mobile {
+    display: none;
+  }
+
+  scale-telekom-header-data-back-compat .user-menu-desktop {
+    display: block;
+  }
+}
