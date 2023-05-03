@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property       | Attribute        | Description | Type      | Default     |
-| -------------- | ---------------- | ----------- | --------- | ----------- |
-| `active`       | `active`         |             | `boolean` | `false`     |
-| `navItemTitle` | `nav-item-title` |             | `string`  | `undefined` |
-| `role`         | `role`           |             | `string`  | `'none'`    |
-| `variant`      | `variant`        |             | `string`  | `undefined` |
+| Property  | Attribute | Description | Type      | Default     |
+| --------- | --------- | ----------- | --------- | ----------- |
+| `active`  | `active`  |             | `boolean` | `false`     |
+| `role`    | `role`    |             | `string`  | `'none'`    |
+| `variant` | `variant` |             | `string`  | `undefined` |
 
 
 ## Dependencies

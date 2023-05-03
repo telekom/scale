@@ -51,7 +51,9 @@ export class Logo {
   @Prop() logoTitle?: string = 'Telekom Logo';
   /** (optional) Hide all logo related titles */
   @Prop() logoHideTitle?: boolean;
+  /** FIXME is this actually working? probably not because of shadow DOM? */
   @Prop() logoAriaDescribedBy?: string;
+  /** FIXME this is also probably not working properly, see below (it needs a string value) */
   @Prop() logoAriaHidden?: boolean = false;
 
   componentDidRender() {
