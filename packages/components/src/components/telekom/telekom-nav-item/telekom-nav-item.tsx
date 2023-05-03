@@ -39,6 +39,8 @@ export class TelekomNavItem {
   @Prop({ reflect: true }) active?: boolean = false;
   @Prop({ reflect: true }) variant?: string;
   @Prop({ reflect: true }) role: string | null = 'none';
+  @Prop({ reflect: true }) hideOnMobile?: boolean = false;
+  @Prop({ reflect: true }) hideOnDesktop?: boolean = false;
 
   @Watch('active')
   @Watch('variant')
@@ -74,9 +76,15 @@ export class TelekomNavItem {
 
   render() {
     return (
-      // A class is used to avoid coupling styles to the tagname
+      // The `scale-telekom-nav-item` class is used to avoid coupling styles to the tagname
       // (which can be different based on who defines it)
-      <Host class="scale-telekom-nav-item">
+      <Host
+        class={{
+          'scale-telekom-nav-item': true,
+          'scl-hide-on-mobile': this.hideOnMobile,
+          'scl-hide-on-desktop': this.hideOnDesktop,
+        }}
+      >
         <slot></slot>
       </Host>
     );

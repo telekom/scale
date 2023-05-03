@@ -223,13 +223,13 @@ export class TelekomHeaderDataBackCompat {
                 );
               })}
 
-            <scale-telekom-nav-item class="burger-item">
+            <scale-telekom-nav-item hide-on-desktop>
               <button>
                 <scale-badge>
                   <scale-icon-action-menu></scale-icon-action-menu>
                 </scale-badge>
               </button>
-              <scale-telekom-nav-flyout class="mobile-nav-flyout">
+              <scale-telekom-nav-flyout variant="mobile">
                 <scale-telekom-mobile-flyout-canvas
                   app-name={this.appName}
                   app-name-link={this.appNameLink || 'javascript:void(0);'}
