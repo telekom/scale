@@ -149,6 +149,7 @@ export class Chip {
   }
 
   render() {
+    const checked = this.selected ? 'true' : 'false';
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -171,9 +172,7 @@ export class Chip {
         ) : (
           <span
             role={this.ariaRoleTitle ? this.ariaRoleTitle : 'switch'}
-            aria-checked={
-              this.ariaCheckedState ? this.ariaCheckedState : this.selected
-            }
+            aria-checked={checked}
             tabindex={this.disabled ? '-1' : '0'}
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
