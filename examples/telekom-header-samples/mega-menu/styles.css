@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+
+@media screen and (min-width: 1040px) {
+
+  .burger-item {
+    display: none;
+  }
+}
+.mobile-nav-flyout {
+  --duration: 0;
+  --top: 0;
+  --height: 100vh;
+  --background: var(--telekom-color-background-canvas);
+}
+
+.notice {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
