@@ -17,13 +17,13 @@
   /*notification-badge circle*/
   --background-color-circle: var(--telekom-color-primary-standard);
   --color-circle: var(--telekom-color-text-and-icon-inverted-standard);
-  --font-size-circle: var(--telekom-typography-font-size-badge, 10px);
+  --font-size-circle: var(--telekom-typography-font-size-badge);
   --font-weight-circle: bold;
   --border-radius-circle: var(--telekom-radius-circle);
 
   /*border*/
   --color-notification-badge-border-focus: var(
-    --telekom-color-functional-focus
+    --telekom-color-functional-focus-standard
   );
   --color-notification-badge-border-hover: var(
     --telekom-color-text-and-icon-primary-hovered
