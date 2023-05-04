@@ -267,7 +267,7 @@ export class TelekomHeaderDataBackCompat {
                     <scale-icon-user-file-user> </scale-icon-user-file-user>
                   </scale-badge>
                 </button>
-                <scale-telekom-nav-flyout class="mobile-nav-flyout">
+                <scale-telekom-nav-flyout variant="mobile">
                   <scale-telekom-mobile-flyout-canvas>
                     <app-navigation-user-menu
                       slot="mobile-main-nav"
@@ -318,41 +318,44 @@ export class TelekomHeaderDataBackCompat {
                 );
               })}
 
-            <scale-telekom-nav-item hide-on-desktop>
-              <button>
-                <scale-badge>
-                  <scale-icon-action-menu></scale-icon-action-menu>
-                </scale-badge>
-              </button>
-              <scale-telekom-nav-flyout variant="mobile">
-                <scale-telekom-mobile-flyout-canvas
-                  app-name={this.appName}
-                  app-name-link={this.appNameLink || 'javascript:void(0);'}
-                  app-name-click={(event) => {
-                    if (typeof this.appNameClick === 'function') {
-                      this.appNameClick(event);
-                    }
-                  }}
-                >
-                  {!readData(this.mainNavigation) ? null : (
-                    <scale-telekom-mobile-menu slot="mobile-main-nav">
-                      {readData(this.mainNavigation).map((item) => {
-                        const { selected, parent } = findSelected(
-                          readData(this.mainNavigation),
-                          this.activeRouteId
-                        );
-                        const rootNode =
-                          selected &&
-                          findRootNode(
+            {!readData(this.mainNavigation) &&
+            !readData(this.sectorNavigation) &&
+            !readData(this.addonNavigation) ? null : (
+              <scale-telekom-nav-item hide-on-desktop>
+                <button>
+                  <scale-badge>
+                    <scale-icon-action-menu></scale-icon-action-menu>
+                  </scale-badge>
+                </button>
+                <scale-telekom-nav-flyout variant="mobile">
+                  <scale-telekom-mobile-flyout-canvas
+                    app-name={this.appName}
+                    app-name-link={this.appNameLink || 'javascript:void(0);'}
+                    app-name-click={(event) => {
+                      if (typeof this.appNameClick === 'function') {
+                        this.appNameClick(event);
+                      }
+                    }}
+                  >
+                    {!readData(this.mainNavigation) ? null : (
+                      <scale-telekom-mobile-menu slot="mobile-main-nav">
+                        {readData(this.mainNavigation).map((item) => {
+                          const { selected, parent } = findSelected(
                             readData(this.mainNavigation),
-                            selected.id
+                            this.activeRouteId
                           );
-                        const isRootOpen = (itemId) =>
-                          rootNode &&
-                          rootNode.id === itemId &&
-                          itemId !== this.activeRouteId;
-                        const isActive = (itemId) =>
-                          itemId === this.activeRouteId;
+                          const rootNode =
+                            selected &&
+                            findRootNode(
+                              readData(this.mainNavigation),
+                              selected.id
+                            );
+                          const isRootOpen = (itemId) =>
+                            rootNode &&
+                            rootNode.id === itemId &&
+                            itemId !== this.activeRouteId;
+                          const isActive = (itemId) =>
+                            itemId === this.activeRouteId;
 
                           return (
                             <scale-telekom-mobile-menu-item
