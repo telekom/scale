@@ -51,7 +51,7 @@ export class TelekomHeaderDataBackCompat {
       shortName = 'Login',
       badge,
       badgeLabel,
-    } = readData(this.userNavigation).find(
+    } = (readData(this.userNavigation) || []).find(
       ({ type }) => type === 'userInfo'
     ) || {
       shortName: 'Login',
@@ -197,7 +197,8 @@ export class TelekomHeaderDataBackCompat {
           </scale-telekom-nav-list>
         )}
 
-        {!readData(this.iconNavigation) ? null : (
+        {!readData(this.iconNavigation) &&
+        !readData(this.userNavigation) ? null : (
           <scale-telekom-nav-list
             variant="functions"
             slot="functions"
@@ -281,7 +282,7 @@ export class TelekomHeaderDataBackCompat {
               </scale-telekom-nav-item>
             )}
 
-            {readData(this.iconNavigation)
+            {(readData(this.iconNavigation) || [])
               .filter(({ id }) => id !== 'menu')
               .map((item) => {
                 return (
@@ -353,136 +354,138 @@ export class TelekomHeaderDataBackCompat {
                         const isActive = (itemId) =>
                           itemId === this.activeRouteId;
 
-                        return (
-                          <scale-telekom-mobile-menu-item
-                            open={isRootOpen(item.id)}
-                            active={isActive(item.id)}
-                          >
-                            <a
-                              href={item.href || 'javascript:void(0);'}
-                              target={item.target || '_self'}
-                              onClick={(event) => {
-                                if (typeof item.onClick === 'function') {
-                                  item.onClick(event);
-                                }
-                              }}
+                          return (
+                            <scale-telekom-mobile-menu-item
+                              open={isRootOpen(item.id)}
+                              active={isActive(item.id)}
                             >
-                              {item.name}
-                            </a>
-                            {!item.children
-                              ? null
-                              : item.children.map((child) => {
-                                  return (
-                                    <scale-telekom-mobile-menu-item
-                                      slot="children"
-                                      active={isActive(child.id)}
-                                      open={parent && parent.id === child.id}
-                                    >
-                                      <a
-                                        href={
-                                          child.href || 'javascript:void(0);'
-                                        }
-                                        target={child.target || '_self'}
-                                        onClick={(event) => {
-                                          if (
-                                            typeof child.onClick === 'function'
-                                          ) {
-                                            child.onClick(event);
-                                          }
-                                        }}
+                              <a
+                                href={item.href || 'javascript:void(0);'}
+                                target={item.target || '_self'}
+                                onClick={(event) => {
+                                  if (typeof item.onClick === 'function') {
+                                    item.onClick(event);
+                                  }
+                                }}
+                              >
+                                {item.name}
+                              </a>
+                              {!item.children
+                                ? null
+                                : item.children.map((child) => {
+                                    return (
+                                      <scale-telekom-mobile-menu-item
+                                        slot="children"
+                                        active={isActive(child.id)}
+                                        open={parent && parent.id === child.id}
                                       >
-                                        {child.name}
-                                      </a>
-                                      {!child.children
-                                        ? null
-                                        : child.children.map((grandChild) => (
-                                            <scale-telekom-mobile-menu-item
-                                              slot="children"
-                                              active={isActive(grandChild.id)}
-                                            >
-                                              <a
-                                                href={
-                                                  grandChild.href ||
-                                                  'javascript:void(0);'
-                                                }
-                                                target={
-                                                  grandChild.target || '_self'
-                                                }
-                                                onClick={(event) => {
-                                                  if (
-                                                    typeof grandChild.onClick ===
-                                                    'function'
-                                                  ) {
-                                                    grandChild.onClick(event);
-                                                  }
-                                                }}
+                                        <a
+                                          href={
+                                            child.href || 'javascript:void(0);'
+                                          }
+                                          target={child.target || '_self'}
+                                          onClick={(event) => {
+                                            if (
+                                              typeof child.onClick ===
+                                              'function'
+                                            ) {
+                                              child.onClick(event);
+                                            }
+                                          }}
+                                        >
+                                          {child.name}
+                                        </a>
+                                        {!child.children
+                                          ? null
+                                          : child.children.map((grandChild) => (
+                                              <scale-telekom-mobile-menu-item
+                                                slot="children"
+                                                active={isActive(grandChild.id)}
                                               >
-                                                {grandChild.name}
-                                              </a>
-                                            </scale-telekom-mobile-menu-item>
-                                          ))}
-                                    </scale-telekom-mobile-menu-item>
-                                  );
-                                })}
-                          </scale-telekom-mobile-menu-item>
-                        );
-                      })}
-                    </scale-telekom-mobile-menu>
-                  )}
+                                                <a
+                                                  href={
+                                                    grandChild.href ||
+                                                    'javascript:void(0);'
+                                                  }
+                                                  target={
+                                                    grandChild.target || '_self'
+                                                  }
+                                                  onClick={(event) => {
+                                                    if (
+                                                      typeof grandChild.onClick ===
+                                                      'function'
+                                                    ) {
+                                                      grandChild.onClick(event);
+                                                    }
+                                                  }}
+                                                >
+                                                  {grandChild.name}
+                                                </a>
+                                              </scale-telekom-mobile-menu-item>
+                                            ))}
+                                      </scale-telekom-mobile-menu-item>
+                                    );
+                                  })}
+                            </scale-telekom-mobile-menu-item>
+                          );
+                        })}
+                      </scale-telekom-mobile-menu>
+                    )}
 
-                  {!readData(this.sectorNavigation) ? null : (
-                    <scale-telekom-nav-list
-                      variant="meta-nav"
-                      slot="mobile-meta-nav-external"
-                      alignment="left"
-                    >
-                      {readData(this.sectorNavigation).map((item) => {
-                        return (
-                          <scale-telekom-nav-item>
-                            <a
-                              href={item.href || 'javascript:void(0);'}
-                              target={item.target || '_self'}
-                              onClick={(event) => {
-                                if (typeof item.onClick === 'function') {
-                                  item.onClick(event);
-                                }
-                              }}
-                            >
-                              {item.name}
-                            </a>
-                          </scale-telekom-nav-item>
-                        );
-                      })}
-                    </scale-telekom-nav-list>
-                  )}
-                  {!readData(this.addonNavigation) ? null : (
-                    <scale-telekom-nav-list
-                      variant="meta-nav"
-                      slot="mobile-meta-nav"
-                      alignment="left"
-                    >
-                      {readData(this.addonNavigation).map((item) => {
-                        return (
-                          <scale-telekom-nav-item>
-                            <a
-                              href={item.href || 'javascript:void(0);'}
-                              target={item.target || '_self'}
-                              onClick={(event) => {
-                                if (typeof item.onClick === 'function') {
-                                  item.onClick(event);
-                                }
-                              }}
-                            >
-                              {item.name}
-                            </a>
-                          </scale-telekom-nav-item>
-                        );
-                      })}
-                    </scale-telekom-nav-list>
-                  )}
-                </scale-telekom-mobile-flyout-canvas>
-              </scale-telekom-nav-flyout>
-            </scale-telekom-nav-item>
+                    {!readData(this.sectorNavigation) ? null : (
+                      <scale-telekom-nav-list
+                        variant="meta-nav"
+                        slot="mobile-meta-nav-external"
+                        alignment="left"
+                      >
+                        {readData(this.sectorNavigation).map((item) => {
+                          return (
+                            <scale-telekom-nav-item>
+                              <a
+                                href={item.href || 'javascript:void(0);'}
+                                target={item.target || '_self'}
+                                onClick={(event) => {
+                                  if (typeof item.onClick === 'function') {
+                                    item.onClick(event);
+                                  }
+                                }}
+                              >
+                                {item.name}
+                              </a>
+                            </scale-telekom-nav-item>
+                          );
+                        })}
+                      </scale-telekom-nav-list>
+                    )}
+                    {!readData(this.addonNavigation) ? null : (
+                      <scale-telekom-nav-list
+                        variant="meta-nav"
+                        slot="mobile-meta-nav"
+                        alignment="left"
+                      >
+                        {readData(this.addonNavigation).map((item) => {
+                          return (
+                            <scale-telekom-nav-item>
+                              <a
+                                href={item.href || 'javascript:void(0);'}
+                                target={item.target || '_self'}
+                                onClick={(event) => {
+                                  if (typeof item.onClick === 'function') {
+                                    item.onClick(event);
+                                  }
+                                }}
+                              >
+                                {item.name}
+                              </a>
+                            </scale-telekom-nav-item>
+                          );
+                        })}
+                      </scale-telekom-nav-list>
+                    )}
+                  </scale-telekom-mobile-flyout-canvas>
+                </scale-telekom-nav-flyout>
+              </scale-telekom-nav-item>
+            )}
           </scale-telekom-nav-list>
         )}
       </scale-telekom-header>
