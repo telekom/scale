@@ -16,11 +16,12 @@
 
 ## Shadow Parts
 
-| Part                  | Description |
-| --------------------- | ----------- |
-| `"heading"`           |             |
-| `"heading-button"`    |             |
-| `"heading-container"` |             |
+| Part                    | Description |
+| ----------------------- | ----------- |
+| `"heading"`             |             |
+| `"heading-button"`      |             |
+| `"heading-container"`   |             |
+| `"heading-with-button"` |             |
 
 
 ## Dependencies
