@@ -267,6 +267,78 @@ scale-telekom-nav-list {
 </scale-telekom-header>
 ```
 
+## Mobile Menu
+
+<Canvas withSource="none">
+  <Story
+    name="Mobile Menu"
+    inline={false}
+    height={500}
+    args={{
+      storyName: 'StoryMobile',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+  <scale-telekom-header>
+    <scale-telekom-nav-list
+      variant="functions"
+      slot="functions"
+      alignment="right"
+      aria-label="Functions Menu"
+    >
+      <scale-telekom-nav-item aria-label="Menu">
+        <button>
+          <scale-badge>
+            <scale-icon-action-menu></scale-icon-action-menu>
+          </scale-badge>
+        </button>
+        <scale-telekom-nav-flyout variant="mobile">
+          <scale-telekom-mobile-flyout-canvas
+            app-name="appName"
+            app-name-link="appNameLink"
+          >
+            <!-- lang-switcher -->
+            <scale-telekom-nav-list
+              variant="lang-switcher"
+              slot="mobile-before-main-nav"
+              alignment="left"
+              aria-label="Language Switcher"
+            >
+                <!-- ... -->
+            </scale-telekom-nav-list>
+            <!-- main-nav -->
+            <scale-telekom-mobile-menu slot="mobile-main-nav">
+              <scale-telekom-mobile-menu-item active>
+                <a href="#">Topic One</a>
+                <scale-telekom-mobile-menu-item active slot="children">
+                  <a href="#">Second Level</a>
+                        <!-- ... -->
+                </scale-telekom-mobile-menu-item>
+                    <!-- ... -->
+                </scale-telekom-mobile-menu-item>
+              </scale-telekom-mobile-menu-item>
+            </scale-telekom-mobile-menu>
+
+            <!-- meta-nav-external -->
+            <scale-telekom-nav-list
+              variant="meta-nav-external"
+              slot="mobile-meta-nav-external"
+              alignment="left"
+              style="--flex-direction: column"
+            >
+                  <!-- ... -->
+            </scale-telekom-nav-list>
+          </scale-telekom-mobile-flyout-canvas>
+        </scale-telekom-nav-flyout>
+      </scale-telekom-nav-item>
+    </scale-telekom-nav-list>    
+  </scale-telekom-header>
+```
+
 ## Data API (Backward compatibility)
 
 > This scale-telekom-header-data-back-compat component is only meant to make it easier to migrate from a [previous version of the Brand Header](?path=/usage/components-brand-header-navigation--standard). If you do not need to migrate, please avoid it. Learn more about the [expected data shape](https://github.com/telekom/scale/blob/main/packages/storybook-vue/stories/components/brand-header-navigation/fixtures.js).
@@ -324,3 +396,4 @@ scale-telekom-nav-list {
   header.addonNavigation = [...[]];
 </script>
 ```
+
