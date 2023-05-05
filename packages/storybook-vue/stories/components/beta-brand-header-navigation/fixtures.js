@@ -355,7 +355,17 @@ export const mainNavigationFlyout = [
 ];
 export const iconNavigation = [
   { name: 'Search', id: 'Search35', href: '#search', icon: 'action-search' },
-  { name: 'Cart', id: 'Cart36', href: '#cart', icon: 'action-shopping-cart' },
+  { 
+    name: 'Cart',
+    id: 'Cart36',
+    href: '#cart',
+    icon: 'action-shopping-cart',
+    badge: true,
+    badgeLabel: 3,
+    labelVisuallyHidden: false,
+    badgeCount: 3,
+    ariaLabelTranslation: '$badgeLabel - $badgeCount item'
+  },
   { id: 'menu', defaultName: 'Menu', openedName: 'Close' },
 ];
 

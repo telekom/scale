@@ -205,7 +205,8 @@ export class TelekomHeaderDataBackCompat {
                         <scale-badge
                           count={item.badgeCount}
                           label={item.badgeLabel}
-                          label-visually-hidden
+                          label-visually-hidden={item.labelVisuallyHidden}
+                          aria-label-translation={item.ariaLabelTranslation}
                         >
                           {renderIcon({
                             tag: `scale-icon-${item.icon}`,
