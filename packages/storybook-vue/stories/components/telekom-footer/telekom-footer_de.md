@@ -1,5 +1,5 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Footer</h1>
+    <h1>Telekom Footer</h1>
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
