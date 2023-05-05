@@ -63,31 +63,28 @@ applyPolyfills().then(() => {
 
 ### NPM packages
 
-| Package name                               | Description                   |
-| ------------------------------------------ | ----------------------------- |
-| @telekom/scale-components-neutral          | Stencil components            |
-| @telekom/scale-components-react-neutral    | Component proxies for React   |
-| @telekom/scale-components-vue-neutral*     | Component proxies for Vue     |
-| @telekom/scale-components-angular-neutral* | Component proxies for Angular |
-| @telekom/scale-design-tokens-neutral\**    | Design tokens                 |
+| Package name                                | Description                   |
+| ------------------------------------------- | ----------------------------- |
+| @telekom/scale-components-neutral           | Stencil components            |
+| @telekom/scale-components-react-neutral     | Component proxies for React   |
+| @telekom/scale-components-vue-neutral\*     | Component proxies for Vue     |
+| @telekom/scale-components-angular-neutral\* | Component proxies for Angular |
 
-> *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components-neutral` directly, support for custom elements is already great.
-
-> \**deprecated since `v3.0.0-beta.100` in favor of [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens)
+> \*deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components-neutral` directly, support for custom elements is already great.
 
 ### Using the source code directly
 
 If you want to use the source code, remove the following folders. These folders contain all the protected brand and design assets of the Telekom and are not available under the MPL-2.0 License:
 
-| Folder                                     | Content                    |
-| ------------------------------------------ | -------------------------- |
-| assets                                     | Scale key visual           |
-| packages/components/src/components/telekom | Telekom components         |
-| packages/components/src/telekom            | Telekom fonts & icons      |
-| packages/components/src/html/telekom       | Telekom code examples      |
-| packages/design-tokens/src/telekom         | Telekom design tokens      |
-| packages/visual-tests/                     | Visual tests               |
-| storybook-vue                              | Telekom branded storybook  |
+| Folder                                     | Content                   |
+| ------------------------------------------ | ------------------------- |
+| assets                                     | Scale key visual          |
+| packages/components/src/components/telekom | Telekom components        |
+| packages/components/src/telekom            | Telekom fonts & icons     |
+| packages/components/src/html/telekom       | Telekom code examples     |
+| packages/design-tokens/src/telekom         | Telekom design tokens     |
+| packages/visual-tests/                     | Visual tests              |
+| storybook-vue                              | Telekom branded storybook |
 
 ## Telekom version
 
@@ -119,8 +116,11 @@ npm install @telekom/scale-components@next
 ### Setup with a bundler or ES modules
 
 ```javascript
-import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@telekom/scale-components/loader";
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from '@telekom/scale-components/loader';
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
@@ -129,17 +129,14 @@ applyPolyfills().then(() => {
 
 ### NPM packages
 
-| Package name                       | Description                   |
-| ---------------------------------- | ----------------------------- |
-| @telekom/scale-components          | Stencil components            |
-| @telekom/scale-components-react    | Component proxies for React   |
-| @telekom/scale-components-vue*     | Component proxies for Vue     |
-| @telekom/scale-components-angular* | Component proxies for Angular |
-| @telekom/scale-design-tokens\**    | Telekom design tokens         |
+| Package name                        | Description                   |
+| ----------------------------------- | ----------------------------- |
+| @telekom/scale-components           | Stencil components            |
+| @telekom/scale-components-react     | Component proxies for React   |
+| @telekom/scale-components-vue\*     | Component proxies for Vue     |
+| @telekom/scale-components-angular\* | Component proxies for Angular |
 
-> *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components` directly, support for custom elements is already great. Check out the info relative to frameworks in [the documentation](https://telekom.github.io/scale/).
-
-> \**deprecated since `v3.0.0-beta.100` in favor of [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens)
+> \*deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components` directly, support for custom elements is already great. Check out the info relative to frameworks in [the documentation](https://telekom.github.io/scale/).
 
 ### Using the source code directly
 
@@ -147,15 +144,14 @@ Simply clone/download this repository and use the source code as is.
 
 ## Monorepo packages overview
 
-| Package name       | Description                                                |
-| ------------------ | ---------------------------------------------------------- |
-| components         | Stencil components                                         |
-| components-angular | Component proxies for Angular (auto-generated)             |
-| components-react   | Component proxies for React (auto-generated)               |
-| components-vue     | Component proxies for Vue (auto-generated)                 |
-| design-token       | Design tokens                                              |
-| storybook-vue      | Our Storybook                                              |
-| visual-tests       | Visual snapshot testing                                    |
+| Package name       | Description                                    |
+| ------------------ | ---------------------------------------------- |
+| components         | Stencil components                             |
+| components-angular | Component proxies for Angular (auto-generated) |
+| components-react   | Component proxies for React (auto-generated)   |
+| components-vue     | Component proxies for Vue (auto-generated)     |
+| storybook-vue      | Our Storybook                                  |
+| visual-tests       | Visual snapshot testing                        |
 
 # Contributing
 

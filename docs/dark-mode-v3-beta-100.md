@@ -100,8 +100,6 @@ It will require work, if:
 
 The `--scl` prefixed variables will continue to be available until the next major release (v4).
 
-It is recommended however that you replace those with the equivalents in the new [`@telekom/design-tokens` package](https://www.npmjs.com/package/@telekom/design-tokens).
-
 ### On .scl-font-variant-* CSS classes
 
 `.scl-font-variant-*` classes will continue to work and have been updated with the latest design values from the new design tokens.

@@ -44,6 +44,7 @@
     "@stencil/angular-output-target": "^0.0.7",
     "@stencil/postcss": "^2.0.0",
     "@stencil/react-output-target": "^0.3.1",
+    "@telekom/scale-design-tokens": "^3.0.0-beta.132",
     "@types/classnames": "2.2.8",
     "@types/jest": "24.9.1",
     "@types/lodash": "4.14.149",
@@ -71,7 +72,6 @@
     "@floating-ui/dom": "^0.5.4",
     "@stencil/core": "^2.17.0",
     "@telekom/design-tokens": "^1.0.0-beta.4",
-    "@telekom/scale-design-tokens": "^3.0.0-beta.132",
     "classnames": "^2.2.6",
     "stencil-inline-svg": "^1.0.1"
   }

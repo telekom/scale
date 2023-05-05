@@ -5749,6 +5749,13 @@
   resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.4.tgz#5bde16205470657f4da62062e5b6ac6de2e1750d"
   integrity sha512-g2a9GUI0xhTsPEGEQvmSRLPmYVN81nclamiNwc0QAMkArjF7m5jOYCK01+lodKziuwNLzYrffWV9BKFyRpDygQ==
 
+"@telekom/scale-design-tokens@^3.0.0-beta.132":
+  version "3.0.0-beta.132"
+  resolved "https://registry.yarnpkg.com/@telekom/scale-design-tokens/-/scale-design-tokens-3.0.0-beta.132.tgz#47bd167fd83e3d3d37d1216b7ee1fcb14da6d06c"
+  integrity sha512-KKRsdHnrbtmCdWX08AmQBwKRy6SunPX9uSDf8J6ar2eCkDT2CwYaQ3rKjt9b7nmBKQqSqiAXbm3q26vALB7lbw==
+  dependencies:
+    color "^3.1.3"
+
 "@testing-library/jest-dom@^5.8.0":
   version "5.11.4"
   resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.4.tgz"
@@ -10530,16 +10537,6 @@ fs-extra@^9.0.0, fs-extra@^9.0.1:
     graceful-fs "^4.2.0"
     jsonfile "^6.0.1"
     universalify "^1.0.0"
-
-fs-extra@^9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz"
-  integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
-  dependencies:
-    at-least-node "^1.0.0"
-    graceful-fs "^4.2.0"
-    jsonfile "^6.0.1"
-    universalify "^2.0.0"
 
 fs-minipass@^1.2.5:
   version "1.2.7"
@@ -15524,7 +15521,7 @@ postcss@^8.1.10:
     nanoid "^3.1.22"
     source-map "^0.6.1"
 
-postcss@^8.2.5, postcss@~8.2.1:
+postcss@~8.2.1:
   version "8.2.5"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.5.tgz"
   integrity sha512-wMcb7BpDcm3gxQOQx46NDNT36Kk0Ao6PJLLI2ed5vehbbbxCEuslSQzbQ2sfSKy+gkYxhWcGWSeaK+gwm4KIZg==
