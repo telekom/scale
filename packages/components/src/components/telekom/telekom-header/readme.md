@@ -19,7 +19,7 @@
 | `mainNavAriaLabel`         | `main-nav-aria-label`          |             | `string`  | `'Main navigation'`          |
 | `metaNavAriaLabel`         | `meta-nav-aria-label`          |             | `string`  | `'Meta navigation'`          |
 | `metaNavExternalAriaLabel` | `meta-nav-external-aria-label` |             | `string`  | `'External meta navigation'` |
-| `type`                     | `type`                         |             | `string`  | `'default'`                  |
+| `type`                     | `type`                         |             | `string`  | `''`                         |
 
 
 ## Shadow Parts
