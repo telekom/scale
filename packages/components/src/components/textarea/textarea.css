@@ -23,7 +23,7 @@ scale-textarea {
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-color-disabled: none;
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   --spacing-x-control: var(--telekom-spacing-unit-x3);
   --spacing-bottom-control: var(--telekom-spacing-unit-x3);
   --spacing-top-control: var(--telekom-spacing-unit-x6);

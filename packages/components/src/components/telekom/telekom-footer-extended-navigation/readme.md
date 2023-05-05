@@ -11,16 +11,17 @@
 | -------------- | --------------- | ----------------------- | --------- | ----------- |
 | `expanded`     | `expanded`      | Set to `true` to expand | `boolean` | `false`     |
 | `heading`      | `heading`       |                         | `string`  | `undefined` |
-| `headingLevel` | `heading-level` |                         | `string`  | `'h2'`      |
+| `headingLevel` | `heading-level` |                         | `string`  | `'2'`       |
 
 
 ## Shadow Parts
 
-| Part                  | Description |
-| --------------------- | ----------- |
-| `"heading"`           |             |
-| `"heading-button"`    |             |
-| `"heading-container"` |             |
+| Part                    | Description |
+| ----------------------- | ----------- |
+| `"heading"`             |             |
+| `"heading-button"`      |             |
+| `"heading-container"`   |             |
+| `"heading-with-button"` |             |
 
 
 ## Dependencies

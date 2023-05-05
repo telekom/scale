@@ -15,7 +15,6 @@ import {
   Prop,
   Event,
   EventEmitter,
-  Listen,
   Host,
   Element,
 } from '@stencil/core';
@@ -37,13 +36,6 @@ export class AppNavigationUserMenu {
     bubbles: true,
   })
   closeMenu: EventEmitter;
-
-  @Listen('keydown', { target: 'window' })
-  handleKeydown(event: KeyboardEvent) {
-    if ('Escape' === event.key) {
-      this.hide();
-    }
-  }
 
   render() {
     return (
@@ -80,10 +72,22 @@ export class AppNavigationUserMenu {
                   tabindex={0}
                   class="app-navigation-user-menu__item"
                   onClick={(e) => {
+                    e.stopImmediatePropagation();
                     if (item.onClick) {
                       item.onClick(e);
                     }
                     this.hide();
+                  }}
+                  onKeyDown={(e) => {
+                    if ([' ', 'Enter'].includes(e.key)) {
+                      e.stopImmediatePropagation();
+                      e.preventDefault();
+
+                      if (item.onClick) {
+                        item.onClick(e);
+                      }
+                      this.hide();
+                    }
                   }}
                 >
                   {item.icon &&
@@ -118,6 +122,17 @@ export class AppNavigationUserMenu {
                       item.onClick(e);
                     }
                     this.hide();
+                  }}
+                  onKeyDown={(e) => {
+                    if ([' ', 'Enter'].includes(e.key)) {
+                      e.stopImmediatePropagation();
+                      e.preventDefault();
+
+                      if (item.onClick) {
+                        item.onClick(e);
+                      }
+                      this.hide();
+                    }
                   }}
                   href={item.href}
                   variant={item.variant || 'primary'}

@@ -58,7 +58,7 @@
   --transition-close-button: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   --color-close-button: var(--telekom-color-text-and-icon-standard);
   --color-close-button-hover: var(--telekom-color-primary-hovered);
   --color-close-button-active: var(--telekom-color-primary-pressed);

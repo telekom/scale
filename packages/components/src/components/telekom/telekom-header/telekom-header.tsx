@@ -32,7 +32,14 @@ export class TelekomHeader {
   @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
-  @Prop() type: string = 'default';
+  @Prop() logoHref?: string;
+  @Prop() logoTitle?: string;
+  @Prop() logoHideTitle?: boolean;
+  @Prop() type?: string = '';
+  @Prop() metaNavAriaLabel?: string = 'Meta navigation';
+  @Prop() metaNavExternalAriaLabel?: string = 'External meta navigation';
+  @Prop() langSwitcherAriaLabel?: string = 'Language switcher';
+  @Prop() mainNavAriaLabel?: string = 'Main navigation';
 
   @State() scrolled: boolean;
   @State() scrolledBack: boolean = false;
@@ -61,7 +68,13 @@ export class TelekomHeader {
           <div part="fixed-wrapper">
             <div part="container">
               <slot name="logo">
-                <scale-logo part="app-logo" variant="white"></scale-logo>
+                <scale-logo
+                  part="app-logo"
+                  variant="white"
+                  href={this.logoHref}
+                  logoTitle={this.logoTitle}
+                  logoHideTitle={this.logoHideTitle}
+                ></scale-logo>
               </slot>
 
               <div part="body">
@@ -83,9 +96,21 @@ export class TelekomHeader {
                   ) : null}
 
                   <div part="top-body">
-                    <slot name="meta-nav-external"></slot>
-                    <slot name="meta-nav"></slot>
-                    <slot name="lang-switcher"></slot>
+                    <nav
+                      part="meta-nav-external"
+                      aria-label={this.metaNavExternalAriaLabel}
+                    >
+                      <slot name="meta-nav-external"></slot>
+                    </nav>
+                    <nav part="meta-nav" aria-label={this.metaNavAriaLabel}>
+                      <slot name="meta-nav"></slot>
+                    </nav>
+                    <nav
+                      part="lang-switcher"
+                      aria-label={this.langSwitcherAriaLabel}
+                    >
+                      <slot name="lang-switcher"></slot>
+                    </nav>
                   </div>
                 </div>
 
@@ -106,7 +131,9 @@ export class TelekomHeader {
                     </div>
                   ) : null}
                   <div part="bottom-body">
-                    <slot name="main-nav"></slot>
+                    <nav part="main-nav" aria-label={this.mainNavAriaLabel}>
+                      <slot name="main-nav"></slot>
+                    </nav>
                     <slot name="functions"></slot>
                   </div>
                 </div>
