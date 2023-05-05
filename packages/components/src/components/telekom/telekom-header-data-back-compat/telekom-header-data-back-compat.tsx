@@ -33,6 +33,9 @@ export class TelekomHeaderDataBackCompat {
   @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
+  @Prop() logoHref?: string;
+  @Prop() logoTitle?: string;
+  @Prop() logoHideTitle?: boolean;
 
   @Prop() mainNavigation: any;
   @Prop() iconNavigation: any;
@@ -46,6 +49,9 @@ export class TelekomHeaderDataBackCompat {
         app-name={this.appName}
         app-name-link={this.appNameLink}
         app-name-click={this.appNameClick}
+        logo-href={this.logoHref}
+        logo-title={this.logoTitle}
+        logo-hide-title={this.logoHideTitle}
       >
         {!readData(this.sectorNavigation) ? null : (
           <scale-telekom-nav-list
