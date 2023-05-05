@@ -1,14 +1,14 @@
-describe('Brand Header', () => {
+describe.skip('Deprecated Brand Header', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup(
-        'components-brand-header-navigation--standard',
+        'deprecated-components-brand-header-navigation--standard',
         mode
       );
     });
     it('default mega menu states', async () => {
       await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--standard&viewMode=story`
+        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--standard&viewMode=story`
       );
       await global.page.waitForSelector('html.hydrated');
 
@@ -36,7 +36,7 @@ describe('Brand Header', () => {
 
     it('custom mega menu states', async () => {
       await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--custom-main-navigation&viewMode=story`
+        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--custom-main-navigation&viewMode=story`
       );
       await global.page.waitForSelector('html.hydrated');
 
@@ -69,7 +69,7 @@ describe('Brand Header', () => {
       ['custom-logo'],
     ])('%p', async (variant) => {
       await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--${variant}&viewMode=story`
+        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--${variant}&viewMode=story`
       );
       await global.page.waitForSelector('html.hydrated');
 

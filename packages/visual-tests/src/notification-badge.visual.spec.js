@@ -7,8 +7,6 @@ describe('NotificationBadge', () => {
       );
     });
     test.each([
-      ['brand-header-user-menu-icon-navigation'],
-      ['brand-header-custom-icon-navigation'],
       ['label-text'],
       ['label-icon'],
       ['text'],

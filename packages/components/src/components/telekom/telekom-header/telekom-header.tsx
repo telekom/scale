@@ -35,7 +35,7 @@ export class TelekomHeader {
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
   @Prop() logoHideTitle?: boolean;
-  @Prop() type: string = 'default';
+  @Prop() type?: string = '';
   @Prop() metaNavAriaLabel?: string = 'Meta navigation';
   @Prop() metaNavExternalAriaLabel?: string = 'External meta navigation';
   @Prop() langSwitcherAriaLabel?: string = 'Language switcher';
