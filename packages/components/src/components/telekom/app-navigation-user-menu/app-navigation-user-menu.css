@@ -50,6 +50,7 @@
 }
 .app-navigation-user-menu__user-info--email {
   color: var(--telekom-color-text-and-icon-additional);
+  font: var(--telekom-text-style-body);
 }
 
 .app-navigation-user-menu__item {

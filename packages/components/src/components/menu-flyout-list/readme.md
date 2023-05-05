@@ -74,12 +74,14 @@ Type: `Promise<void>`
 
  - [scale-app-header](../telekom/app-header)
  - [scale-data-grid](../data-grid)
+ - [scale-telekom-header-data-back-compat](../telekom/telekom-header-data-back-compat)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-app-header --> scale-menu-flyout-list
   scale-data-grid --> scale-menu-flyout-list
+  scale-telekom-header-data-back-compat --> scale-menu-flyout-list
   style scale-menu-flyout-list fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
