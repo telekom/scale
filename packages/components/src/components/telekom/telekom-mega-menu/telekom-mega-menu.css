@@ -13,26 +13,32 @@
   It's unfortunate we're not using our grid component
   but just copy/pasting the same code…
 */
+@import url('../../../global/custom-media.css');
 
 .scale-telekom-mega-menu {
   --spacing-y: var(--telekom-spacing-unit-x18);
   /* matches grid.css */
-  --spacing-x: var(--telekom-spacing-unit-x6);
   --column-gap: var(--telekom-spacing-unit-x8);
+  --max-width-container: var(--scl-grid-max-width, 1504px);
+  --spacing-x: var(--telekom-spacing-unit-x6);
+  --grid-template-columns: repeat(16, minmax(0, 1fr));
 
-  box-sizing: border-box;
-  width: 100%;
-  max-width: var(--scl-grid-max-width);
-  display: grid;
-  /* matches grid.css */
-  grid-template-columns: repeat(16, minmax(0, 1fr));
-  column-gap: var(--column-gap);
+  display: block;
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);
-  padding-top: var(--spacing-y);
-  padding-bottom: var(--spacing-y);
   margin-left: auto;
   margin-right: auto;
+  max-width: var(--max-width-container);
+}
+
+.scale-telekom-mega-menu-container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: var(--grid-template-columns);
+  grid-column: auto;
+  column-gap: var(--column-gap);
+  padding-top: var(--spacing-y);
+  padding-bottom: var(--spacing-y);
   font-size: var(--telekom-typography-font-size-body);
   line-height: var(--telekom-typography-line-spacing-standard);
 }
@@ -69,4 +75,9 @@
 
 .scale-telekom-mega-menu :where(li + li) {
   margin-top: var(--telekom-spacing-unit-x5);
+}
+@media screen and (--lg) {
+  .scale-telekom-mega-menu {
+    --spacing-x: var(--telekom-spacing-unit-x6);
+  }
 }
