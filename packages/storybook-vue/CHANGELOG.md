@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.132](https://github.com/telekom/scale/compare/v3.0.0-beta.131...v3.0.0-beta.132) (2023-05-05)
+
+
+### Bug Fixes
+
+* **telekom-header:** allow link for logo ([#1762](https://github.com/telekom/scale/issues/1762)) ([5dd544a](https://github.com/telekom/scale/commit/5dd544a5d8259a326b346e4bf7847be5cf0e9206))
+* **telekom-nav-flyout:** add variant prop (mobile) ([#1764](https://github.com/telekom/scale/issues/1764)) ([fa1ee1a](https://github.com/telekom/scale/commit/fa1ee1a329d99479d3aec1c349eeda8d14ba1f31))
+
+
+### Features
+
+* **telekom-header-data-back-compat:** support for prop that hides label in iconNavigation and alternate text ([#1785](https://github.com/telekom/scale/issues/1785)) ([4d5bda4](https://github.com/telekom/scale/commit/4d5bda4e5390226c99ce0f41ac774c18d29c4a03))
+
+
+
+
+
 # [3.0.0-beta.131](https://github.com/telekom/scale/compare/v3.0.0-beta.130...v3.0.0-beta.131) (2023-04-18)
 
 
