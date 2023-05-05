@@ -10,7 +10,7 @@ const setColorMode = () => {
 };
 
 <Meta
-  title="Components/Footer"
+  title="Deprecated Components/Footer"
   component={AppFooter}
   argTypes={{
     footerNavigation: {
@@ -66,7 +66,7 @@ export const Template = (args, { argTypes }) => ({
   }}
 >
   <h1>Footer</h1>
-  <img src="assets/aa.png" alt="Accessible AA" />
+  <img src="assets/deprecated.png" alt="Deprecated Component" />
 </div>
 
 <div
@@ -87,12 +87,8 @@ export const Template = (args, { argTypes }) => ({
     </svg>
   </div>
   <div style={{ marginTop: '8px' }}>
-    The Brand Footer is available in a new{' '}
-    <a href="?path=/docs/beta-components-telekom-footer--standard">
-      beta version
-    </a>
-    . Once quality control is complete and WCAG accessibility certification is in
-    place, the new component will become the official Telekom brand footer.
+    There is a newer version of the Brand Footer available:{' '}
+    <a href="?path=/docs/components-telekom-footer--standard">Telekom Footer</a>.
   </div>
 </div>
 

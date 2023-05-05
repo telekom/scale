@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Brand Header & Navigation</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/deprecated.png" alt="Deprecated" />
 </div>
 
 <div style="display: flex; width: 100%; border-radius: 3px; background-color: rgb(241, 241, 239); padding: 16px 16px 14px 20px; margin-top: 16px; margin-bottom: 32px;">
@@ -8,7 +8,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="24px"><path fill-rule="evenodd" d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zm1 8V17h-2v-6.5h2zm-1-4A1.25 1.25 0 1112 9a1.25 1.25 0 010-2.5z"></path></svg>
     </div>
     <div style="margin-top: 3px;">
-        The Brand Header is available in a new [beta version](?path=/docs/beta-components-telekom-brand-header-navigation--standard) . Once quality control is complete and WCAG accessibility certification is in place, the new component will become the official Telekom brand header.
+        The Brand Header is available in a new [version](?path=/docs/components-telekom-brand-header-navigation--standard-header). 
     </div>
 </div>
 

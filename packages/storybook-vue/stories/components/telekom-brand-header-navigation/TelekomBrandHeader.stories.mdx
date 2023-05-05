@@ -11,7 +11,7 @@ import {
 } from './fixtures';
 
 <Meta
-  title="Beta Components/Telekom Brand Header & Navigation"
+  title="Components/Telekom Brand Header & Navigation"
   component={TelekomHeader}
   argTypes={{
     appNameLink: {
@@ -47,7 +47,7 @@ import {
   }}
 >
   <h1>Brand Header & Navigation</h1>
-  <img src="assets/beta.png" alt="Beta Component" />
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 export const Template = (args, { argTypes }) => ({
@@ -158,10 +158,11 @@ scale-telekom-nav-list {
 <scale-telekom-header
   app-name="Application Name"
   app-name-link="https://example.com"
-  meta-nav-aria-label="Meta navigation section" 
+  meta-nav-aria-label="Meta navigation section"
   meta-nav-external-aria-label="External navigation section"
   lang-switcher-aria-label="Language switcher section"
-  main-nav-aria-label="Main navigation"  section 
+  main-nav-aria-label="Main navigation"
+  section
 >
   <!-- … -->
 </scale-telekom-header>
@@ -181,8 +182,8 @@ scale-telekom-nav-list {
 </Canvas>
 
 ```html
-<scale-telekom-header 
-  meta-nav-aria-label="Meta navigation section" 
+<scale-telekom-header
+  meta-nav-aria-label="Meta navigation section"
   meta-nav-external-aria-label="External navigation section"
   lang-switcher-aria-label="Language switcher section"
   main-nav-aria-label="Main navigation section"
@@ -232,10 +233,10 @@ scale-telekom-nav-list {
 <scale-telekom-header
   app-name="Application Name"
   app-name-link="https://example.com"
-  meta-nav-aria-label="Meta navigation section" 
+  meta-nav-aria-label="Meta navigation section"
   meta-nav-external-aria-label="External navigation section"
   lang-switcher-aria-label="Language switcher section"
-  main-nav-aria-label="Main navigation section"  
+  main-nav-aria-label="Main navigation section"
 >
   <!-- … -->
 </scale-telekom-header>
@@ -258,10 +259,10 @@ scale-telekom-nav-list {
 <scale-telekom-header
   app-name="Application Name"
   app-name-link="https://example.com"
-  meta-nav-aria-label="Meta navigation section" 
+  meta-nav-aria-label="Meta navigation section"
   meta-nav-external-aria-label="External navigation section"
   lang-switcher-aria-label="Language switcher section"
-  main-nav-aria-label="Main navigation section"  
+  main-nav-aria-label="Main navigation section"
 >
   <!-- … -->
 </scale-telekom-header>
@@ -269,7 +270,7 @@ scale-telekom-nav-list {
 
 ## Data API (Backward compatibility)
 
-> This scale-telekom-header-data-back-compat component is only meant to make it easier to migrate from a [previous version of the Brand Header](?path=/usage/components-brand-header-navigation--standard). If you do not need to migrate, please avoid it. Learn more about the [expected data shape](https://github.com/telekom/scale/blob/main/packages/storybook-vue/stories/components/brand-header-navigation/fixtures.js).
+> This scale-telekom-header-data-back-compat component is only meant to make it easier to migrate from a [previous version of the Brand Header](?path=/usage/components-brand-header-navigation--standard). If you do not need to migrate, please avoid it. Learn more about the [expected data shape](https://github.com/telekom/scale/blob/main/packages/storybook-vue/stories/components/telekom-header-navigation/fixtures.js).
 
 <Canvas withSource="none">
   <Story
