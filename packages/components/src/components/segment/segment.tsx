@@ -60,7 +60,8 @@ export class Segment {
   @Prop({ mutable: true }) iconOnly?: boolean;
   /** (optional) the index of the currently selected segment in the segmented-button */
   @Prop({ mutable: true }) selectedIndex?: string;
-
+  /** (optional) Icon aria-label for icon only */
+  @Prop() iconAriaLabel?: string;
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -159,7 +160,7 @@ export class Segment {
             type="button"
             style={{ width: this.width }}
             part={this.getBasePartMap()}
-            aria-selected={this.selected}
+            aria-selected={`${this.selected}`}
             aria-pressed={`${this.selected}`}
           >
             <div class="segment--mask">
