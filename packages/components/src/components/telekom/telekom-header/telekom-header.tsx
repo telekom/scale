@@ -76,7 +76,6 @@ export class TelekomHeader {
                   logoHideTitle={this.logoHideTitle}
                 ></scale-logo>
               </slot>
-
               <div part="body">
                 <div part="top-bar">
                   {this.appName ? (

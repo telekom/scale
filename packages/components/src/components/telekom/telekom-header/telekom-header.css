@@ -257,16 +257,37 @@ slot[name='functions'] {
 
 [part~='container'] {
   box-sizing: content-box;
-  display: grid;
-  grid-template-columns: var(--_grid-template-columns-container);
-  column-gap: var(--_column-gap-container);
-  position: relative;
-  max-width: var(--_max-width-container);
+  display: flex;
   margin-left: auto;
+  max-width: var(--_max-width-container);
   margin-right: auto;
-  padding-left: var(--_spacing-x-container);
   padding-right: var(--_spacing-x-container);
   transition: var(--transition-common-scrolled);
+}
+
+@media screen and (--lg) {
+  [part~='container'] {
+    margin-left: calc(var(--_height) + 68px);
+  }
+}
+
+@media screen and (--xl) {
+  [part~='container'] {
+    margin-left: calc(var(--_height) + 88px);
+  }
+}
+
+@media screen and (--2xl) {
+  [part~='container'] {
+    position: relative;
+    margin-left: auto;
+  display: grid;
+  grid-template-columns: var(--_grid-template-columns-container);
+  column-gap: var(--_column-gap-container); 
+  padding-left: var(--_spacing-x-container);
+
+  
+  }
 }
 
 [part~='app-logo'] {
