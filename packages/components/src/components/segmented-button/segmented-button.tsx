@@ -130,10 +130,6 @@ export class SegmentedButton {
         selected: segment.hasAttribute('selected') || segment.selected,
       });
       segment.setAttribute('position', this.position.toString());
-      segment.setAttribute(
-        'aria-description-translation',
-        '$position $selected'
-      );
     });
     if (!this.fullWidth) {
       this.container.style.gridTemplateColumns = `repeat(${

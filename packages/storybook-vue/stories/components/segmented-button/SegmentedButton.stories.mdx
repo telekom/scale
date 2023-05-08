@@ -73,10 +73,10 @@ export const IconOnlyTemplate = (args, { argTypes }) => ({
       :multi-select="multiSelect"
       :styles="styles"
     >
-      <scale-segment selected><scale-icon-weather-cloudy slot="segment-icon"></scale-icon-weather-cloudy></scale-segment>
-      <scale-segment><scale-icon-weather-rain slot="segment-icon"></scale-icon-weather-rain></scale-segment>
-      <scale-segment><scale-icon-weather-sunny slot="segment-icon"></scale-icon-weather-sunny></scale-segment>
-      <scale-segment><scale-icon-weather-heavy-snow slot="segment-icon"></scale-icon-weather-heavy-snow></scale-segment>
+      <scale-segment selected aria-label="cloudy"><scale-icon-weather-cloudy slot="segment-icon" aria-label-segment="sunny weather"></scale-icon-weather-cloudy></scale-segment>
+      <scale-segment aria-label="rainy"><scale-icon-weather-rain slot="segment-icon"></scale-icon-weather-rain></scale-segment>
+      <scale-segment aria-label="sunny"><scale-icon-weather-sunny slot="segment-icon"></scale-icon-weather-sunny></scale-segment>
+      <scale-segment aria-label="snow"><scale-icon-weather-heavy-snow slot="segment-icon"></scale-icon-weather-heavy-snow></scale-segment>
     </scale-segmented-button>
   `,
 });

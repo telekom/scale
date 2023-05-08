@@ -39,8 +39,6 @@ export class Segment {
   @Prop() disabled?: boolean = false;
   /** (optional) segment's id */
   @Prop({ reflect: true, mutable: true }) segmentId?: string;
-  /** (optional) aria-label attribute needed for icon-only segments */
-  @Prop() ariaLabelSegment: string;
   /** (optional) Segment width set to ensure that all segments have the same width */
   @Prop() width?: string;
   /** (optional) Injected CSS styles */
@@ -50,12 +48,8 @@ export class Segment {
     | 'left'
     | 'right'
     | 'leftright';
-  /** (optional) translation of 'selected */
-  @Prop() ariaLangSelected? = 'selected';
-  /** (optional) translation of 'deselected */
-  @Prop() ariaLangDeselected? = 'deselected';
   /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaDescriptionTranslation = '$selected';
+  @Prop() ariaDescriptionTranslation = '';
   /** (optional) position within group */
   @Prop() position?: number;
   /** (optional) position within group */
@@ -92,16 +86,6 @@ export class Segment {
   }
   componentDidUpdate() {
     this.handleIcon();
-  }
-
-  getAriaDescriptionTranslation() {
-    const replaceSelected = this.selected
-      ? this.ariaLangSelected
-      : this.ariaLangDeselected;
-    const filledText = this.ariaDescriptionTranslation
-      .replace(/\$position/g, `${this.position}`)
-      .replace(/\$selected/g, `${replaceSelected}`);
-    return filledText;
   }
 
   handleIcon() {
@@ -174,11 +158,9 @@ export class Segment {
             disabled={this.disabled}
             type="button"
             style={{ width: this.width }}
-            aria-label={this.ariaLabelSegment}
             part={this.getBasePartMap()}
             aria-selected={this.selected}
-            aria-pressed={this.selected}
-            aria-description={this.getAriaDescriptionTranslation()}
+            aria-pressed={`${this.selected}`}
           >
             <div class="segment--mask">
               {!this.iconOnly && (
