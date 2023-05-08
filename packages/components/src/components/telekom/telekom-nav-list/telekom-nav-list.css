@@ -107,3 +107,8 @@
 .scale-telekom-nav-list[alignment='center'] > * {
   margin-inline: calc(0.5 * var(--_spacing-x-slotted));
 }
+
+.scale-telekom-nav-list[slot='mobile-meta-nav'],
+.scale-telekom-nav-list[slot='mobile-meta-nav-external'] {
+  --flex-direction: column;
+}
