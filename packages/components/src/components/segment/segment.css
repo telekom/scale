@@ -171,6 +171,7 @@ button.segment--large.segment--selected .segment--mask {
 
 .segment:not(.segment--disabled):hover .segment--mask {
   background-color: var(--background-color-hover);
+  cursor: pointer;
 }
 
 .segment:not(.segment--disabled):active .segment--mask {
