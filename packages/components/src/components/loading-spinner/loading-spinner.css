@@ -90,6 +90,11 @@
   text-align: left;
 }
 
+.spinner .spinner__container {
+  align-items: center;
+  display: inline-flex;
+}
+
 .spinner .spinner__container .spinner__circle {
   animation: rotate 2s linear infinite;
   z-index: 2;
