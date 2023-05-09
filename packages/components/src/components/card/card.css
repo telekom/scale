@@ -32,7 +32,6 @@
 }
 .card {
   width: 100%;
-  overflow: hidden;
   box-sizing: border-box;
   background: var(--background);
   transition: var(--transition);

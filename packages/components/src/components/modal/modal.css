@@ -109,7 +109,6 @@
   display: flex;
   z-index: 1;
   position: relative;
-  overflow-y: auto;
   flex-direction: column;
   background-color: var(--background-window);
   color: var(--color-window);
@@ -120,7 +119,6 @@
 }
 
 .modal__window .modal__body-wrapper {
-  overflow-y: auto;
   flex-shrink: 1;
   flex-grow: 1;
 }
