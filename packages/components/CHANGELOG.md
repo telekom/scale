@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.133](https://github.com/telekom/scale/compare/v3.0.0-beta.132...v3.0.0-beta.133) (2023-05-09)
+
+
+### Bug Fixes
+
+* **link:** bust permanent aria-disabled state ([#1807](https://github.com/telekom/scale/issues/1807)) ([6d7d93e](https://github.com/telekom/scale/commit/6d7d93e5afc62360911a59ac14aa41044a1f1d29))
+* **telekom-header-mobile-menu:** proper meta nav link styles ([#1802](https://github.com/telekom/scale/issues/1802)) ([5e8dced](https://github.com/telekom/scale/commit/5e8dced050bc7774e9f93f116ed155153c20314b))
+
+
+
+
+
 # [3.0.0-beta.132](https://github.com/telekom/scale/compare/v3.0.0-beta.131...v3.0.0-beta.132) (2023-05-05)
 
 
