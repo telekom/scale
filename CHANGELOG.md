@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.134](https://github.com/telekom/scale/compare/v3.0.0-beta.133...v3.0.0-beta.134) (2023-05-09)
+
+
+### Bug Fixes
+
+* **grid:** 5 columns behavior on --l --xl ([#1798](https://github.com/telekom/scale/issues/1798)) ([b421e27](https://github.com/telekom/scale/commit/b421e276cf6e640610cd703a0b0848fe3f051e70))
+
+
+
+
+
 # [3.0.0-beta.133](https://github.com/telekom/scale/compare/v3.0.0-beta.132...v3.0.0-beta.133) (2023-05-09)
 
 
