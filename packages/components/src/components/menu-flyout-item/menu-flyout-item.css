@@ -11,7 +11,7 @@
 
 :host {
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   display: block;
   position: relative;
   outline-color: transparent;

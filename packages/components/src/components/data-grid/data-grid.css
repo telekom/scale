@@ -150,7 +150,7 @@
 }
 .thead-sortable:focus {
   box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
 }
 
 .thead__cell {

@@ -14,7 +14,7 @@
   --_font-size: var(--telekom-typography-font-size-caption);
 
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
 
   --_display-logo: flex;
   --_navigation-container-padding: 0 0 0 0;
@@ -69,6 +69,7 @@ footer {
   margin-bottom: var(--telekom-spacing-unit-x5);
   font-size: var(--_font-size);
   line-height: 140%;
+  margin-right: var(--telekom-spacing-unit-x5);
 }
 
 /* todo: should i use spacing token for logo size? */

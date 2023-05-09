@@ -52,9 +52,11 @@ export class TelekomNavItem {
 
   /** Open the flyout menu */
   @Prop({ reflect: true, mutable: true }) expanded?: boolean = false;
-  /** Selector to query the trigger element in case it's not the previous sibling */
+  /** (optional) Selector to query the trigger element in case it's not the previous sibling */
   @Prop() triggerSelector?: string;
-  /** Whether the flyout should open on hover (needs better name!) */
+  /** (optional) Variant ("mobile" gives it a fixed height of `100vh`) */
+  @Prop() variant?: null | 'mobile' = null;
+  /** (optinal) Whether the flyout should open on hover (needs better name!) */
   @Prop() hover?: boolean = false;
 
   @State() isExpanded: boolean = this.expanded;
@@ -203,7 +205,7 @@ export class TelekomNavItem {
     return (
       <Host>
         <div
-          part={cx('base', this.animationState, {
+          part={cx('base', this.animationState, this.variant, {
             expanded: this.isExpanded,
           })}
         >

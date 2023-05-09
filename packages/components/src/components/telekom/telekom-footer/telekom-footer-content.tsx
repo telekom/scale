@@ -27,6 +27,10 @@ export class TelekomFooterContent {
               <scale-logo
                 part="app-logo"
                 variant="white"
+                style={{
+                  '--focus-outline':
+                    'var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus-on-dark-background)',
+                }}
                 transparent
               ></scale-logo>
             </div>

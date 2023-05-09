@@ -25,6 +25,14 @@
 | `variant`            | `variant`             | (optional) Toast variant                       | `"error" \| "informational" \| "success" \| "warning"`         | `'informational'` |
 
 
+## Events
+
+| Event           | Description                                                  | Type                |
+| --------------- | ------------------------------------------------------------ | ------------------- |
+| `scale-close`   | Triggered when the notification toast has been dismissed     | `CustomEvent<void>` |
+| `scale-closing` | Triggered when the notification toast closing process begins | `CustomEvent<void>` |
+
+
 ## Methods
 
 ### `open() => Promise<void>`

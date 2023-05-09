@@ -215,15 +215,16 @@ slot[name='logo'] {
   transition: var(--transition-common-scrolled);
 }
 
-slot[name='meta-nav-external'] {
+[part~='meta-nav-external'] {
   display: var(--_display-meta-nav-external);
   flex: 1;
 }
-slot[name='meta-nav'] {
+[part~='meta-nav-external'] {
   display: var(--_display-meta-nav);
   /* TODO inline margin */
 }
-slot[name='lang-switcher'] {
+
+[part~='lang-switcher'] {
   display: var(--_display-lang-switcher);
   /* TODO inline margin */
 }
@@ -232,6 +233,7 @@ slot[name='main-nav'] {
   display: var(--_display-main-nav);
   flex: 1;
 }
+
 slot[name='functions'] {
   display: block;
   /* TODO inline margin */
@@ -352,7 +354,8 @@ slot[name='functions'] {
   }
 }
 
-[part~='bottom-body'] {
+[part~='bottom-body'],
+[part~='main-nav'] {
   justify-content: var(--_justify-content-bottom-body);
   height: var(--_height-bottom-bar);
   display: inline-flex;

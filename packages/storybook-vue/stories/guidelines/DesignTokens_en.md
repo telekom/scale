@@ -2,11 +2,11 @@
 
 ## What are design tokens?
 
-Design tokens are the variables of our designs. They centrally store the values for colors, typography, spacing, or radii – in contrast to hard-coded values. As a result, they help establish consistent product development. Handing designs off for development is less prone to errors because developers can select the right token from a predefined package. And tokens can update globally and change automatically for all projects. To learn more about design tokens, read the article <a href="https://lukasoppermann.medium.com/design-tokens-what-are-they-how-will-they-help-you-b73f80f602ab" target="_blank" rel="noopener noreferrer">Design tokens — What are they & how will they help you?</a>
+Design tokens are the variables of our designs. They centrally store the values for colors, typography, spacing, or radii – in contrast to hard-coded values. As a result, they help establish consistent product development. Handing designs off for development is less prone to errors because developers can select the right token from a predefined package. And tokens can update globally and change automatically for all projects.
 
 ## How does Scale implement design tokens in practice?
 
-The design tokens are created in a JSON format and converted into formats that can be used in Sketch, Figma, CSS, or Javascript by a program called Style Dictionary. The Sketch & Figma libraries are created by using the respective outputs from Style Dictionary. The Scale code components use the design token package as well. As a developer, you can pull the design tokens directly from GitHub into your project. This assures that everyone at Deutsche Telekom works with the same design principles to create a consistent, high-quality experience for our customers. For more information on implementing design tokens in your workflow, read the article <a href="https://uxdesign.cc/building-better-products-with-the-design-token-pipeline-faa86aa068e8" target="_blank" rel="noopener noreferrer">Building better products with a design token pipeline</a>.
+The design tokens are created in a JSON format and converted into formats that can be used in Sketch, Figma, CSS, or Javascript by a program called Style Dictionary. The Sketch & Figma libraries are created by using the respective outputs from Style Dictionary. The Scale code components use the design token package as well. As a developer, you can pull the design tokens directly from GitHub into your project. This assures that everyone at Deutsche Telekom works with the same design principles to create a consistent, high-quality experience for our customers.
 
 ## How designers work with design tokens
 

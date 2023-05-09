@@ -1,7 +1,10 @@
-describe('ToggleGroup', () => {
+describe.skip('Deprecated ToggleGroup', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.runColorSetup('components-toggle-group--standard', mode);
+      await global.runColorSetup(
+        'deprecated-components-toggle-group--standard',
+        mode
+      );
     });
     test.each([
       ['standard'],
