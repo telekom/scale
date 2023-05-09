@@ -16,6 +16,8 @@ export default {
     opened: { type: Boolean },
     autoHide: { type: Boolean, default: false },
     autoHideDuration: { type: Number, default: 3000 },
+    closeButtonLabel: { type: String, default: 'close' },
+    closeButtonTitle: { type: String, default: 'close' },
   },
 };
 </script>

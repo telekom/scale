@@ -17,6 +17,9 @@ scale-nav-segment {
   --font-weight: var(--telekom-typography-font-weight-extra-bold);
   --line-height: var(--telekom-typography-line-spacing-extra-tight);
   --border-bottom: 1px solid var(--telekom-color-text-and-icon-white-standard);
+
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
 }
 .sr-only {
   position: absolute;
@@ -42,4 +45,8 @@ scale-nav-segment {
 .segment-navigation__item-link.active {
   border-bottom: var(--border-bottom);
   transition: var(--transition);
+}
+
+.segment-navigation__item-link:focus {
+  outline: var(--focus-outline);
 }

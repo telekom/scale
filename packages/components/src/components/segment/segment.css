@@ -1,0 +1,231 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  /* not selected */
+  --background-color-selected: var(--telekom-color-ui-base);
+  --button-radius: 6px;
+  --padding-top-bottom: var(--telekom-spacing-unit-x1);
+  --height: 28px;
+  --font-family: var(--telekom-typography-font-family-sans);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --font-size: var(--telekom-typography-font-size-caption);
+  --label-disabled: var(--telekom-color-text-and-icon-disabled);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --color: var(--telekom-color-text-and-icon-standard);
+
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+
+  /* medium styles */
+  --font-size-medium: var(--telekom-typography-font-size-body);
+  --height-medium: 36px;
+
+  /* large styles */
+  --font-size-large: var(--telekom-typography-font-size-body);
+  --height-large: 40px;
+
+  /* hover styles */
+  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+
+  /* active styles */
+  --background-color-active: var(--telekom-color-ui-state-fill-pressed);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.segment {
+  box-sizing: border-box;
+  position: relative;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--button-radius);
+  padding-top: var(--padding-top-bottom);
+  padding-bottom: var(--padding-top-bottom);
+  transition: var(--transition);
+  background-color: transparent;
+  padding: 0;
+}
+
+.segment--mask {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--button-radius);
+  background-color: transparent;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  transition: var(--transition);
+  white-space: nowrap;
+  color: var(--color);
+}
+
+button.segment--icon-only.segment--small .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x4);
+}
+
+button.segment--small.segment--selected .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x2);
+  padding-right: var(--telekom-spacing-unit-x3);
+}
+
+button.segment--small .segment--mask {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+.segment--small {
+  height: var(--height);
+}
+
+.segment--medium {
+  font-size: var(--font-size-medium);
+  height: var(--height-medium);
+}
+
+button.segment--medium.segment--selected .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x3);
+  padding-right: var(--telekom-spacing-unit-x4);
+}
+
+button.segment--medium .segment--mask {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+
+.segment--large {
+  font-size: var(--font-size-large);
+  height: var(--height-large);
+}
+
+button.segment--large .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x5);
+}
+
+button.segment--large.segment--selected .segment--mask {
+  padding-left: 1.125rem;
+  padding-right: 1.125rem;
+}
+
+.segment--selected {
+  background-color: var(--background-color-selected);
+  box-shadow: var(--telekom-shadow-raised-standard);
+}
+
+.segment--selected .segment--mask {
+  color: var(--color-selected);
+}
+
+.segment--disabled.segment--selected .segment--mask {
+  color: var(--label-disabled);
+}
+
+.segment--disabled:not(.segment--selected) .segment--mask {
+  color: var(--label-disabled);
+  background-color: transparent;
+}
+
+.segment--left-sibling-selected {
+  border-radius: 0 var(--button-radius) var(--button-radius) 0;
+  margin-left: 0;
+  clip-path: inset(-2.75rem -2.75rem -2.75rem 0);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.segment--right-sibling-selected {
+  border-radius: var(--button-radius) 0 0 var(--button-radius);
+  clip-path: inset(-2.75rem 0 -2.75rem -2.75rem);
+  margin-right: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+  position: relative;
+}
+
+.segment--left-right-sibling-selected {
+  clip-path: inset(-2.75rem 0 -2.75rem 0);
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 0;
+  backface-visibility: hidden;
+}
+
+.segment:not(.segment--disabled):hover .segment--mask {
+  background-color: var(--background-color-hover);
+}
+
+.segment:not(.segment--disabled):active .segment--mask {
+  background-color: var(--background-color-active);
+}
+
+.segment:focus {
+  box-shadow: var(--telekom-shadow-raised-standard);
+  outline: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-focus-standard);
+  outline-offset: var(--telekom-spacing-unit-x025);
+  z-index: 40;
+  position: relative;
+}
+
+.segment--left-right-sibling-selected:focus,
+.segment--right-sibling-selected:focus,
+.segment--left-sibling-selected:focus {
+  clip-path: none;
+}
+
+.segment:not(.segment--icon-only) scale-icon-action-success,
+.segment scale-icon-action-close {
+  margin-right: var(--telekom-spacing-unit-x1);
+}
+
+.segment:not(.segment--selected) scale-icon-action-success {
+  visibility: hidden !important;
+}
+
+.segment scale-icon-action-success {
+  vertical-align: middle;
+}
+
+.segment--selected:not(.segment--icon-only) .icon-container {
+  display: none !important;
+}
+
+.segment .success-icon-container {
+  display: none;
+}
+
+.segment--selected .success-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.segment--selected .icon-container {
+  color: var(--color-selected);
+}

@@ -23,7 +23,7 @@ scale-textarea {
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-color-disabled: none;
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   --spacing-x-control: var(--telekom-spacing-unit-x3);
   --spacing-bottom-control: var(--telekom-spacing-unit-x3);
   --spacing-top-control: var(--telekom-spacing-unit-x6);
@@ -69,8 +69,9 @@ scale-textarea {
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-footnote);
+  --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+  --margin-top-label-focus: 1.5px;
 }
 
 .textarea {
@@ -173,6 +174,8 @@ scale-textarea {
 }
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
+  line-height: var(--font-size-label-focus);
+  margin-top: var(--margin-top-label-focus);
   transform: translate(
     var(--spacing-x-control),
     var(--telekom-spacing-unit-x2)

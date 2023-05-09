@@ -43,7 +43,7 @@ export default Vue.extend({
 </script>
 
 <style>
-@import "@telekom/scale-components/dist/scale-components/scale-components.css";
+@import "@telekom/scale-components-neutral/dist/scale-components/scale-components.css";
 .container {
   margin: 0 auto;
   min-height: 100vh;

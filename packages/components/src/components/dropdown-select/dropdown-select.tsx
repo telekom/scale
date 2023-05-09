@@ -13,7 +13,7 @@ import {
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 import { computePosition } from '@floating-ui/dom';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
 enum Actions {
   Close = 'Close',
@@ -29,12 +29,17 @@ enum Actions {
   Type = 'Type',
 }
 
+const isElementValue = (x: unknown): x is Element & { value: string } =>
+  typeof (x as { value: unknown }).value === 'string';
+const readValue = (element: Element) =>
+  isElementValue(element) ? element.value : null;
+
 const readOptions = (
   hostElement: HTMLElement
 ): Array<{ label: string; value: any; ItemElement: VNode }> => {
   return Array.from(hostElement.children).map((x) => ({
     label: x.textContent.trim(),
-    value: x.getAttribute('value'),
+    value: x.getAttribute('value') ?? readValue(x),
     ItemElement: <span innerHTML={x.outerHTML}></span>,
   }));
 };
@@ -382,7 +387,7 @@ export class DropdownSelect {
       readOptions(this.hostElement).find(({ value }) => value === this.value) ||
       ({} as any)
     ).ItemElement;
-    const helperTextId = `helper-message`;
+    const helperTextId = `helper-message-${generateUniqueId()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
@@ -420,41 +425,43 @@ export class DropdownSelect {
               {ValueElement}
             </div>
             <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
-              <div
-                ref={(el) => (this.listboxEl = el)}
-                part="listbox"
-                role="listbox"
-                id={`${this.comboboxId}-listbox`}
-                aria-labelledby={`${this.comboboxId}-label`}
-                tabindex="-1"
-              >
-                {readOptions(this.hostElement).map(
-                  ({ value, ItemElement }, index) => (
-                    <div
-                      role="option"
-                      part={`option${
-                        index === this.currentIndex ? ' current' : ''
-                      }`}
-                      id={value}
-                      onClick={(event) => {
-                        this.handleOptionClick(event, index);
-                      }}
-                      onMouseDown={() => {
-                        this.ignoreBlur = true;
-                      }}
-                      {...(value === this.value
-                        ? { 'aria-selected': 'true' }
-                        : {})}
-                    >
-                      {ItemElement}
-                      {value === this.value ? (
-                        <scale-icon-action-success
-                          size={16}
-                        ></scale-icon-action-success>
-                      ) : null}
-                    </div>
-                  )
-                )}
+              <div part="listbox-scroll-container">
+                <div
+                  ref={(el) => (this.listboxEl = el)}
+                  part="listbox"
+                  role="listbox"
+                  id={`${this.comboboxId}-listbox`}
+                  aria-labelledby={`${this.comboboxId}-label`}
+                  tabindex="-1"
+                >
+                  {readOptions(this.hostElement).map(
+                    ({ value, ItemElement }, index) => (
+                      <div
+                        role="option"
+                        part={`option${
+                          index === this.currentIndex ? ' current' : ''
+                        }`}
+                        id={value}
+                        onClick={(event) => {
+                          this.handleOptionClick(event, index);
+                        }}
+                        onMouseDown={() => {
+                          this.ignoreBlur = true;
+                        }}
+                        {...(value === this.value
+                          ? { 'aria-selected': 'true' }
+                          : {})}
+                      >
+                        {ItemElement}
+                        {value === this.value ? (
+                          <scale-icon-action-success
+                            size={16}
+                          ></scale-icon-action-success>
+                        ) : null}
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
             </div>
 

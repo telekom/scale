@@ -21,14 +21,12 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { HTMLStencilElement } from '@stencil/core/internal';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
-
-let i = 0;
 
 @Component({
   tag: 'scale-dropdown',
@@ -70,6 +68,8 @@ export class Dropdown {
   @Prop() transparent?: boolean;
   /** (optional) Makes type `select` behave as a controlled component in React */
   @Prop() controlled?: boolean = false;
+  /** (optional) to avoid displaying the label */
+  @Prop() hideLabelVisually?: boolean = false;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -104,12 +104,13 @@ export class Dropdown {
   @State() forceUpdate: string;
 
   hasSlotIcon: boolean;
+  private readonly internalId = generateUniqueId();
 
   componentWillLoad() {
     this.hasSlotIcon = !!this.hostElement.querySelector('[slot="icon"]');
 
     if (this.inputId == null) {
-      this.inputId = 'input-dropdown' + i++;
+      this.inputId = 'input-dropdown-' + this.internalId;
     }
   }
 
@@ -240,7 +241,7 @@ export class Dropdown {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
@@ -299,7 +300,8 @@ export class Dropdown {
       this.helperText && 'dropdown--helper-text',
       this.variant &&
         `dropdown--variant-${this.invalid ? 'danger' : this.variant}`,
-      this.value != null && this.value !== '' && 'animated'
+      this.value != null && this.value !== '' && 'animated',
+      this.hideLabelVisually && 'dropdown--hide-label'
     );
   }
 }

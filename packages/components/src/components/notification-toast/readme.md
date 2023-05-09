@@ -13,6 +13,8 @@
 | `animated`           | `animated`            | (optional) Animated toast                      | `boolean`                                                      | `true`            |
 | `autoHide`           | `auto-hide`           | (optional) Toast auto hide                     | `boolean`                                                      | `false`           |
 | `autoHideDuration`   | `auto-hide-duration`  | (optional) Toast auto hide duration            | `number`                                                       | `3000`            |
+| `closeButtonLabel`   | `close-button-label`  | (optional) Label for close button              | `string`                                                       | `'close'`         |
+| `closeButtonTitle`   | `close-button-title`  | (optional) Title for close button              | `string`                                                       | `'close'`         |
 | `fadeDuration`       | `fade-duration`       | (optional) Toast fade duration                 | `number`                                                       | `500`             |
 | `href`               | `href`                |                                                | `string`                                                       | `undefined`       |
 | `opened`             | `opened`              | (optional) Toast opened                        | `boolean`                                                      | `undefined`       |
@@ -21,6 +23,14 @@
 | `story`              | `story`               | (do not use) it is a helper prop for storybook | `boolean`                                                      | `undefined`       |
 | `styles`             | `styles`              | (optional) Injected CSS styles                 | `string`                                                       | `undefined`       |
 | `variant`            | `variant`             | (optional) Toast variant                       | `"error" \| "informational" \| "success" \| "warning"`         | `'informational'` |
+
+
+## Events
+
+| Event           | Description                                                  | Type                |
+| --------------- | ------------------------------------------------------------ | ------------------- |
+| `scale-close`   | Triggered when the notification toast has been dismissed     | `CustomEvent<void>` |
+| `scale-closing` | Triggered when the notification toast closing process begins | `CustomEvent<void>` |
 
 
 ## Methods

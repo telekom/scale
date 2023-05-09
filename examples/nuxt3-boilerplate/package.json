@@ -7,9 +7,9 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.3"
+    "nuxt": "3.0.0"
   },
   "dependencies": {
-    "@telekom/scale-components": "^3.0.0-beta.107"
+    "@telekom/scale-components-neutral": "^3.0.0-beta.117"
   }
 }

@@ -87,6 +87,7 @@ export class AppFooter {
                         <a
                           class="footer-navigation__item-link"
                           href={item.href || 'javascript:void(0);'}
+                          target={item.target || '_self'}
                           onClick={(event) => {
                             if (typeof item.onClick === 'function') {
                               item.onClick(event);

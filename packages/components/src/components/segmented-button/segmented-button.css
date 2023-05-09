@@ -1,0 +1,59 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --background-color: var(--telekom-color-ui-faint);
+  --radius: var(--telekom-radius-standard);
+  --height: 32px;
+
+  /* medium styles */
+  --height-medium: 40px;
+
+  /* large styles */
+  --height-large: 44px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.segmented-button {
+  background-color: var(--background-color);
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0 var(--telekom-spacing-unit-x05);
+  width: fit-content;
+  height: var(--height);
+  display: inline-grid;
+}
+
+.segmented-button--full-width {
+  width: 100%;
+}
+
+.segmented-button--medium {
+  height: var(--height-medium);
+  padding: 0 var(--telekom-spacing-unit-x05);
+}
+
+.segmented-button--large {
+  height: var(--height-large);
+  padding: 0 var(--telekom-spacing-unit-x05);
+}
+
+.segmented-button--label {
+  font-size: var(--telekom-typography-font-size-body);
+  font-weight: var(--telekom-typography-font-weight-bold);
+  margin-bottom: var(--telekom-spacing-unit-x2);
+}
+
+.segmented-button--helper-text {
+  margin-top: var(--telekom-spacing-unit-x2);
+}

@@ -15,8 +15,10 @@ import { Description } from '@storybook/components';
 import { useStorybookState, useGlobals } from '@storybook/api';
 import accordion_en from 'raw-loader!../../stories/components/accordion/accordion.md';
 import accordion_de from 'raw-loader!../../stories/components/accordion/accordion_de.md';
-import brandHeader_en from 'raw-loader!../../stories/components/brand-header-navigation/brand-header.md';
-import brandHeader_de from 'raw-loader!../../stories/components/brand-header-navigation/brand-header_de.md';
+import brandHeader_en from 'raw-loader!../../stories/deprecated/brand-header-navigation/brand-header.md';
+import brandHeader_de from 'raw-loader!../../stories/deprecated/brand-header-navigation/brand-header_de.md';
+import telekomBrandHeader_en from 'raw-loader!../../stories/components/telekom-brand-header-navigation/telekom-brand-header.md';
+import telekomBrandHeader_de from 'raw-loader!../../stories/components/telekom-brand-header-navigation/telekom-brand-header_de.md';
 import breadcrumb_en from 'raw-loader!../../stories/components/breadcrumb/breadcrumb.md';
 import breadcrumb_de from 'raw-loader!../../stories/components/breadcrumb/breadcrumb_de.md';
 import button_en from 'raw-loader!../../stories/components/button/button.md';
@@ -27,6 +29,8 @@ import checkbox_en from 'raw-loader!../../stories/components/checkbox/checkbox.m
 import checkbox_de from 'raw-loader!../../stories/components/checkbox/checkbox_de.md';
 import checkboxGroup_en from 'raw-loader!../../stories/components/checkbox-group/checkbox-group.md';
 import checkboxGroup_de from 'raw-loader!../../stories/components/checkbox-group/checkbox-group_de.md';
+import chip_de from 'raw-loader!../../stories/components/chip/chip_de.md';
+import chip_en from 'raw-loader!../../stories/components/chip/chip.md';
 import datagrid_en from 'raw-loader!../../stories/components/data-grid/data-grid.md';
 import datagrid_de from 'raw-loader!../../stories/components/data-grid/data-grid_de.md';
 import date_picker_en from 'raw-loader!../../stories/components/date-picker/date-picker.md';
@@ -69,6 +73,8 @@ import dropdownSelect_en from 'raw-loader!../../stories/components/dropdown-sele
 import dropdownSelect_de from 'raw-loader!../../stories/components/dropdown-select/dropdown-select_de.md';
 import dropdown_en from 'raw-loader!../../stories/components/dropdown/dropdown.md';
 import dropdown_de from 'raw-loader!../../stories/components/dropdown/dropdown_de.md';
+import segmentedButton_en from 'raw-loader!../../stories/components/segmented-button/segmented-button.md';
+import segmentedButton_de from 'raw-loader!../../stories/components/segmented-button/segmented-button_de.md';
 import sidebarNav_en from 'raw-loader!../../stories/components/sidebar-navigation/sidebar-nav.md';
 import sidebarNav_de from 'raw-loader!../../stories/components/sidebar-navigation/sidebar-nav_de.md';
 import slider_en from 'raw-loader!../../stories/components/slider/slider.md';
@@ -85,12 +91,14 @@ import textArea_en from 'raw-loader!../../stories/components/text-area/text-area
 import textArea_de from 'raw-loader!../../stories/components/text-area/text-area_de.md';
 import textField_en from 'raw-loader!../../stories/components/text-field/text-field.md';
 import textField_de from 'raw-loader!../../stories/components/text-field/text-field_de.md';
-import footer_en from 'raw-loader!../../stories/components/footer/footer.md';
-import footer_de from 'raw-loader!../../stories/components/footer/footer_de.md';
+import footer_en from 'raw-loader!../../stories/deprecated/footer/footer.md';
+import footer_de from 'raw-loader!../../stories/deprecated/footer/footer_de.md';
+import telekomFooter_en from 'raw-loader!../../stories/components/telekom-footer/telekom-footer.md';
+import telekomFooter_de from 'raw-loader!../../stories/components/telekom-footer/telekom-footer_de.md';
 import callout_en from 'raw-loader!../../stories/components/callout/callout.md';
 import callout_de from 'raw-loader!../../stories/components/callout/callout_de.md';
-import toggleGroup_de from 'raw-loader!../../stories/components/toggle-group/toggle-group_de.md';
-import toggleGroup_en from 'raw-loader!../../stories/components/toggle-group/toggle-group.md';
+import toggleGroup_de from 'raw-loader!../../stories/deprecated/toggle-group/toggle-group_de.md';
+import toggleGroup_en from 'raw-loader!../../stories/deprecated/toggle-group/toggle-group.md';
 import tooltip_en from 'raw-loader!../../stories/components/tooltip/tooltip.md';
 import tooltip_de from 'raw-loader!../../stories/components/tooltip/tooltip_de.md';
 
@@ -119,6 +127,8 @@ const Usage = (props) => {
     accordion_de,
     'brand-header-navigation_en': brandHeader_en,
     'brand-header-navigation_de': brandHeader_de,
+    'telekom-brand-header-navigation_en': telekomBrandHeader_en,
+    'telekom-brand-header-navigation_de': telekomBrandHeader_de,
     breadcrumb_en,
     breadcrumb_de,
     button_en,
@@ -129,6 +139,8 @@ const Usage = (props) => {
     checkbox_de,
     'checkbox-group_en': checkboxGroup_en,
     'checkbox-group_de': checkboxGroup_de,
+    chip_en,
+    chip_de,
     divider_en,
     divider_de,
     callout_en,
@@ -175,6 +187,8 @@ const Usage = (props) => {
     'dropdown-select_de': dropdownSelect_de,
     dropdown_en,
     dropdown_de,
+    'segmented-button_en': segmentedButton_en,
+    'segmented-button_de': segmentedButton_de,
     'sidebar-navigation_en': sidebarNav_en,
     'sidebar-navigation_de': sidebarNav_de,
     slider_en,
@@ -193,6 +207,8 @@ const Usage = (props) => {
     'text-field_de': textField_de,
     footer_en,
     footer_de,
+    'telekom-footer_en': telekomFooter_en,
+    'telekom-footer_de': telekomFooter_de,
     'toggle-group_en': toggleGroup_en,
     'toggle-group_de': toggleGroup_de,
     tooltip_en,

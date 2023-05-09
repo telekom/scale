@@ -51,7 +51,7 @@ exports[`NotificationToast  handle variant prop 1`] = `
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" title="close" type="button">
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>
@@ -111,7 +111,7 @@ exports[`NotificationToast  handle variant prop 2`] = `
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" title="close" type="button">
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>
@@ -171,7 +171,7 @@ exports[`NotificationToast  handle variant prop 3`] = `
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" title="close" type="button">
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>
@@ -231,7 +231,7 @@ exports[`NotificationToast  handle variant prop 4`] = `
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" title="close" type="button">
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>
@@ -291,7 +291,7 @@ exports[`NotificationToast  should match snapshot 1`] = `
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" title="close" type="button">
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>

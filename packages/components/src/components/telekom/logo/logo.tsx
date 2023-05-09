@@ -51,7 +51,10 @@ export class Logo {
   @Prop() logoTitle?: string = 'Telekom Logo';
   /** (optional) Hide all logo related titles */
   @Prop() logoHideTitle?: boolean;
+  /** FIXME is this actually working? probably not because of shadow DOM? */
   @Prop() logoAriaDescribedBy?: string;
+  /** FIXME this is also probably not working properly, see below (it needs a string value) */
+  @Prop() logoAriaHidden?: boolean = false;
 
   componentDidRender() {
     if (this.accessibilityTitle) {
@@ -83,12 +86,13 @@ export class Logo {
           }}
           title={this.logoHideTitle ? '' : this.logoTitle}
           aria-describedby={this.logoAriaDescribedBy}
+          aria-hidden={this.logoAriaHidden}
+          tabindex={this.logoAriaHidden ? -1 : 0}
         >
           <scale-logo-svg
             part="icon"
             language={this.language}
             color={this.variant}
-            role="link"
             logoTitle={this.logoTitle}
             logoHideTitle={this.logoHideTitle}
           ></scale-logo-svg>

@@ -89,3 +89,7 @@ By clicking/tapping on the icon, users remove the tag.
 
 - Decide on one size for your tags.
 - Use a clear keyword for the label.
+
+## Related components
+
+[Chip](?path=/usage/components-chip--standard),

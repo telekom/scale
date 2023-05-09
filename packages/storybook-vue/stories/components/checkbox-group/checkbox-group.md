@@ -28,31 +28,31 @@ Don't use a checkbox group when:
 
 ![Elements of Checkbox Group](assets/3_components/checkbox-group/Checkbox_Group_Elements.png)
 
-### Parent checkbox (indeterminate state) (1)
+#### Parent checkbox (indeterminate state) (1)
 
 Clicking/tapping on the parent checkbox activates or deactivates the whole group. The status of this checkbox shows whether all or only some options are activated or all options are deactivated.
 
-### Group label (2)
+#### Group label (2)
 
 Choose a short and meaningful title for the entire group.
 
-### Information (3) (optional)
+#### Information (3) (optional)
 
 If necessary, you can also provide additional information.
 
-### Child checkbox (4)
+#### Child checkbox (4)
 
 The child checkboxes can be activated or deactivated individually.
 
-### Label (5)
+#### Label (5)
 
 Use the label to clearly describe the effect of the respective selection. A label usually contains max three words.
 
-### Error message (6)
+#### Error message (6)
 
 If a mandatory option isn't activated (e.g., when it's required to carry out the next step in the process), an error message appears below this checkbox.
 
-### Group error message (7)
+#### Group error message (7)
 
 If an error message affects the entire group, place it below the group label.
 

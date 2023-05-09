@@ -11,13 +11,16 @@
 
 :host {
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   display: block;
   position: relative;
   outline-color: transparent;
   /* So box-shadow is visible on the sides */
   padding-left: var(--telekom-spacing-unit-x05);
   padding-right: var(--telekom-spacing-unit-x05);
+
+  --_min-width: fit-content;
+  --_min-width-moz: -moz-fit-content;
 }
 
 * {
@@ -40,8 +43,8 @@
   /* 10px relates to the PAD value in Menu component */
   max-width: calc(100vw - 2 * var(--telekom-spacing-unit-x6) - 2 * 10px);
   overflow: hidden;
-  min-width: fit-content;
-  min-width: -moz-fit-content;
+  min-width: var(--_min-width-moz);
+  min-width: var(--_min-width);
 }
 
 .menu-flyout-item:focus:not(.menu-flyout-item--disabled),
@@ -66,7 +69,7 @@
 }
 
 :host([aria-expanded='true']) .menu-flyout-item {
-  color: var(--telekom-color-text-and-icon-primary-pressed);
+  color: var(--telekom-color-text-and-icon-primary-standard);
 }
 
 .menu-flyout-item--disabled {

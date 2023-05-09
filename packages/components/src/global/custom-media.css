@@ -9,7 +9,12 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+@custom-media --sm- (max-width: 640px);
+@custom-media --not-md (max-width: 639px);
 @custom-media --md (min-width: 640px);
+@custom-media --not-lg (max-width: 1039px);
 @custom-media --lg (min-width: 1040px);
+@custom-media --not-xl (max-width: 1295px);
 @custom-media --xl (min-width: 1296px);
+@custom-media --not-2xl (max-width: 1679px);
 @custom-media --2xl (min-width: 1680px);

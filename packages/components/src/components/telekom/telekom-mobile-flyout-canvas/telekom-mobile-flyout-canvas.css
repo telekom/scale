@@ -1,0 +1,73 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  display: block;
+  height: 100%;
+  overflow-y: auto;
+
+  --max-width: 572px;
+  --spacing: var(--telekom-spacing-unit-x5) var(--telekom-spacing-unit-x4)
+    var(--telekom-spacing-unit-x12);
+
+  background: var(--telekom-color-background-surface);
+}
+
+[part='base'] {
+  padding: var(--spacing);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+[part~='header'] {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+[part~='heading'] {
+  margin: 0;
+  font-size: var(--font-size-app-name);
+  font-weight: var(--font-weight-app-name);
+  line-height: var(--line-height-app-name);
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+[part~='close-button'] {
+  position: absolute;
+  right: var(--telekom-spacing-unit-x4);
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+[part~='close-button']:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part~='close-button']:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+
+[part~='body'],
+slot[name='row']::slotted(*) {
+  margin-top: var(--telekom-spacing-unit-x6);
+}
+
+:host([type='subtle']) [part~='body'] {
+  margin-top: var(--telekom-spacing-unit-x4);
+}
+:host([type='subtle']) [part~='meta'] {
+  margin-top: var(--telekom-spacing-unit-x3);
+}

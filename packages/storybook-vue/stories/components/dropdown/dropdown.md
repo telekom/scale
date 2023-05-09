@@ -44,27 +44,27 @@ If you have a lot of options to categorize, you can create groups of options.
 
 ![Image Name](assets/3_components/select-box/Elemente.png)
 
-### Label (1)
+#### Label (1)
 
 The label clearly indicates what kind of options the dropdown provides.
 
-### Icon (2)
+#### Icon (2)
 
 The direction of the arrow indicates whether the dropdown menu is open or closed.
 
-### Information (3) (Optional)
+#### Information (3) (Optional)
 
 Additional information can help clarify the content or purpose of a dropdown.
 
-### Error (4)
+#### Error (4)
 
 If users have to select an option, submitting a form without a selection will result in an error message. If the dropdown already has an information text, the error text will temporarily take its place.
 
-### Title (5)
+#### Title (5)
 
 The title prompts the user to select an option
 
-### Dropdown menu (6)
+#### Dropdown menu (6)
 
 The dropdown menu contains the available options or groups of options.
 

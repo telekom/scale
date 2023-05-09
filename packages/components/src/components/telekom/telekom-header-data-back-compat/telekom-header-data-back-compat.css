@@ -1,0 +1,40 @@
+@import url('../../../global/custom-media.css');
+
+scale-telekom-header-data-back-compat .user-menu-mobile {
+  display: block;
+}
+
+scale-telekom-header-data-back-compat .user-menu-desktop {
+  display: none;
+}
+
+scale-telekom-header-data-back-compat .user-menu-desktop scale-menu-flyout {
+  display: flex;
+}
+
+scale-telekom-header-data-back-compat .user-menu-trigger {
+  position: relative;
+  left: 24px;
+}
+
+@media screen and (--md) {
+  scale-telekom-header-data-back-compat .user-menu-trigger {
+    top: calc(var(--_spacing-bottom-slotted-bottom) + 8px);
+  }
+}
+
+@media screen and (--lg) {
+  scale-telekom-header-data-back-compat .user-menu-mobile {
+    display: none;
+  }
+
+  scale-telekom-header-data-back-compat .user-menu-desktop {
+    display: block;
+  }
+}
+
+dia screen and (--xl) {
+  scale-telekom-header-data-back-compat .user-menu-trigger {
+    top: calc(var(--_spacing-bottom-slotted-bottom) + 12px);
+  }
+}

@@ -29,10 +29,17 @@ import cx from 'classnames';
 export class TelekomHeader {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop() mainNavigation: any;
-  @Prop() appName?: string;
+  @Prop({ reflect: true }) appName?: string;
   @Prop() appNameLink?: string;
   @Prop() appNameClick?: any;
+  @Prop() logoHref?: string;
+  @Prop() logoTitle?: string;
+  @Prop() logoHideTitle?: boolean;
+  @Prop() type?: string = '';
+  @Prop() metaNavAriaLabel?: string = 'Meta navigation';
+  @Prop() metaNavExternalAriaLabel?: string = 'External meta navigation';
+  @Prop() langSwitcherAriaLabel?: string = 'Language switcher';
+  @Prop() mainNavAriaLabel?: string = 'Main navigation';
 
   @State() scrolled: boolean;
   @State() scrolledBack: boolean = false;
@@ -48,63 +55,87 @@ export class TelekomHeader {
 
   render() {
     return (
-      <Host scrolled={this.scrolled}>
+      <Host
+        scrolled={this.type !== 'subtle' && this.scrolled}
+        scrolled-back={this.type !== 'subtle' && this.scrolledBack}
+      >
         <header
-          part={cx('base', {
-            scrolled: this.scrolled,
-            'scrolled-back': this.scrolledBack,
+          part={cx('base', this.type, {
+            scrolled: this.type !== 'subtle' && this.scrolled,
+            'scrolled-back': this.type !== 'subtle' && this.scrolledBack,
           })}
         >
-          <div part="container">
-            <slot name="app-logo">
-              <scale-logo part="app-logo" variant="white"></scale-logo>
-            </slot>
+          <div part="fixed-wrapper">
+            <div part="container">
+              <slot name="logo">
+                <scale-logo
+                  part="app-logo"
+                  variant="white"
+                  href={this.logoHref}
+                  logoTitle={this.logoTitle}
+                  logoHideTitle={this.logoHideTitle}
+                ></scale-logo>
+              </slot>
 
-            <div part="horizontal-menus">
-              <div part="extended-menu">
-                <div part="extended-menu-left">
+              <div part="body">
+                <div part="top-bar">
                   {this.appName ? (
-                    <div part="app-name-extended">
-                      <scale-telekom-app-name>
-                        {this.appNameLink ? (
-                          <a
-                            onClick={this.appNameClick}
-                            href={this.appNameLink}
-                          >
-                            {this.appName}
-                          </a>
-                        ) : (
-                          <span>{this.appName}</span>
-                        )}
-                      </scale-telekom-app-name>
-                    </div>
-                  ) : null}
-
-                  <slot name="meta-nav-ext"></slot>
-                </div>
-                <div part="extended-menu-right">
-                  <slot name="meta-nav"></slot>
-                  <slot name="language-switch"></slot>
-                </div>
-              </div>
-
-              <div part="app-name-and-base-menu">
-                {this.appName ? (
-                  <div part="app-name">
-                    <scale-telekom-app-name>
+                    <div part="top-app-name">
                       {this.appNameLink ? (
-                        <a onClick={this.appNameClick} href={this.appNameLink}>
+                        <a
+                          part="app-name-text"
+                          onClick={this.appNameClick}
+                          href={this.appNameLink}
+                        >
                           {this.appName}
                         </a>
                       ) : (
-                        <span>{this.appName}</span>
+                        <span part="app-name-text">{this.appName}</span>
                       )}
-                    </scale-telekom-app-name>
+                    </div>
+                  ) : null}
+
+                  <div part="top-body">
+                    <nav
+                      part="meta-nav-external"
+                      aria-label={this.metaNavExternalAriaLabel}
+                    >
+                      <slot name="meta-nav-external"></slot>
+                    </nav>
+                    <nav part="meta-nav" aria-label={this.metaNavAriaLabel}>
+                      <slot name="meta-nav"></slot>
+                    </nav>
+                    <nav
+                      part="lang-switcher"
+                      aria-label={this.langSwitcherAriaLabel}
+                    >
+                      <slot name="lang-switcher"></slot>
+                    </nav>
                   </div>
-                ) : null}
-                <div part="base-menu">
-                  <slot name="main-nav"></slot>
-                  <slot name="functions"></slot>
+                </div>
+
+                <div part="bottom-bar">
+                  {this.appName ? (
+                    <div part="bottom-app-name">
+                      {this.appNameLink ? (
+                        <a
+                          part="app-name-text"
+                          onClick={this.appNameClick}
+                          href={this.appNameLink}
+                        >
+                          {this.appName}
+                        </a>
+                      ) : (
+                        <span part="app-name-text">{this.appName}</span>
+                      )}
+                    </div>
+                  ) : null}
+                  <div part="bottom-body">
+                    <nav part="main-nav" aria-label={this.mainNavAriaLabel}>
+                      <slot name="main-nav"></slot>
+                    </nav>
+                    <slot name="functions"></slot>
+                  </div>
                 </div>
               </div>
             </div>

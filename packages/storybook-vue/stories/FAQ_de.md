@@ -74,7 +74,7 @@ Scale ist das neue digitale Designsystem der Telekom – eine Bibliothek produkt
 
 Die Komponenten-Bibliothek ist zentral zugänglich und funktioniert mit allen gängigen Frameworks, die zur Erstellung von Webanwendungen verwendet werden. Außerdem ist sie in eine optimierte Toolchain integriert, die die Abläufe in der Frontend-Entwicklung stark vereinfacht: Als UX-Designer*in kannst du die Scale Bibliothek ganz leicht in Sketch integrieren und dich über automatische Updates freuen. Als Frontend-Entwickler*in profitierst du von der einfachen Implementierung und mühelosen Updates mit der Bibliothek auf NPM.
 
-Das Besondere an Scale: Die UX-Design-Bibliotheken werden direkt aus dem Code generiert. Scale dient also als "Single Source Of Truth" für Designer*innen und Entwickler*innen. So sind Design und Code immer auf dem neuesten Stand. Und weil dieser eine Ort – Storybook – auch die gesamte Dokumentation für Design und Entwicklung enthält, verbessert sich die Zusammenarbeit im Team, weil alle dieselbe Sprache sprechen.
+Scale ist "Single Source Of Truth" für Designer*innen und Entwickler*innen. Design und Code sind immer auf dem neuesten Stand. Und weil dieser eine Ort – Storybook – auch die gesamte Dokumentation für Design und Entwicklung enthält, verbessert sich die Zusammenarbeit im Team, weil alle dieselbe Sprache sprechen.
 
 ## Wie gestalte ich barrierefreie Produkte und Dienste mit Scale?
 

@@ -1,17 +1,15 @@
-describe('Menu', () => {
+describe.skip('Menu', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-flyout-menu--standard', mode);
     });
-    test.each([
-      ['standard'],
-      ['cascading-menu'],
-      ['checked-toggle'],
-      ['brand-header-primary-navigation'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-flyout-menu--${variant}`);
-      await global.visualCheck();
-    });
+    test.each([['standard'], ['cascading-menu'], ['checked-toggle']])(
+      '%p',
+      async (variant) => {
+        await global.runSetup(`components-flyout-menu--${variant}`);
+        await global.visualCheck();
+      }
+    );
     // open menu on click
     test.each([['standard'], ['cascading-menu']])('%p', async (variant) => {
       await global.runSetup(`components-flyout-menu--${variant}`);

@@ -10,13 +10,14 @@
  */
 
 :host {
-  --top: 100%;
+  --top: var(--scl-telekom-header-height, 0);
   --left: 0;
-  --width: 100%;
+  --width: 100vw;
   --height: auto;
-  --position: absolute;
+  --position: fixed;
   --background: var(--telekom-color-background-surface);
   --shadow: none;
+  --z-index: 7;
 
   --duration: var(--telekom-motion-duration-transition);
   --translate-x: 0;
@@ -26,13 +27,21 @@
   display: contents;
 }
 
-:host([debug])::part(base) {
-  border: 1px dotted gold;
+[part~='mobile'] {
+  --height: 100vh;
+  --top: 0;
+  --duration: 0;
+  --background: var(--telekom-color-background-canvas);
 }
 
-:host::part(base) {
+:host([debug]) [part~='base'] {
+  outline: 1px dotted gold;
+}
+
+[part~='base'] {
   display: none;
   position: var(--position);
+  z-index: var(--z-index);
   top: var(--top);
   left: var(--left);
   width: var(--width);
@@ -44,7 +53,7 @@
   border-top: 1px solid var(--telekom-color-ui-faint);
 }
 
-:host::part(base expanded) {
+[part~='base'][part~='expanded'] {
   display: block;
 }
 
@@ -59,12 +68,12 @@
   }
 }
 
-:host::part(in) {
+[part~='in'] {
   animation-name: toggle;
   animation-timing-function: var(--telekom-motion-easing-enter);
 }
 
-:host::part(out) {
+[part~='out'] {
   animation-name: toggle;
   animation-direction: reverse;
   animation-timing-function: var(--telekom-motion-easing-exit);

@@ -130,7 +130,14 @@
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-  .notification-banner__icon-close {
-    color: white;
+  .notification-banner__button-close svg {
+    color: hsl(0, 0%, 100%);
+  }
+  .notification-banner {
+    border: 1px solid hsl(0, 0%, 100%);
+  }
+
+  .notification-banner__heading {
+    margin: 0px 48px 0px 48px;
   }
 }

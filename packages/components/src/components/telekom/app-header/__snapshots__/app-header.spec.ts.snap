@@ -29,7 +29,7 @@ exports[`app-Header snapshots hasSlots 1`] = `
         <span class="header__nav-after"></span>
         <div class="header__nav-content">
           <div class="header__nav-logo">
-            <scale-logo language="" size="24" transparent=""></scale-logo>
+            <scale-logo language="" logoariahidden="" size="24" transparent=""></scale-logo>
           </div>
           <div class="header__nav-menu-wrapper">
             <div class="header__nav-menu-main">
@@ -69,7 +69,7 @@ exports[`app-Header snapshots smoke test 1`] = `
         <span class="header__brand-after"></span>
         <div class="header__brand-content">
           <div class="header__brand-branding">
-            <scale-logo focusable="" scrollintoviewonfocus="" styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }" transparent="" variant="white"></scale-logo>
+            <scale-logo focusable="" scrollintoviewonfocus="" styles=":host { --logo-size: 36px;} @media (max-width: 1039px) { :host {--logo-size: 26px;} }" transparent="" variant="white"></scale-logo>
           </div>
           <div class="header__brand-sector">
             <ul class="sector-navigation"></ul>
@@ -84,7 +84,7 @@ exports[`app-Header snapshots smoke test 1`] = `
         <span class="header__nav-after"></span>
         <div class="header__nav-content">
           <div class="header__nav-logo">
-            <scale-logo language="" size="24" transparent=""></scale-logo>
+            <scale-logo language="" logoariahidden="" size="24" transparent=""></scale-logo>
           </div>
           <div class="header__nav-menu-wrapper">
             <div class="header__nav-menu-main">

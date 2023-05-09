@@ -2,6 +2,34 @@
 
 Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und verwandten Paketen.
 
+## Weitere Basistypen des Telekom Brand Headers
+
+20.03.2023
+
+Die im Januar veröffentlichte Beta-Komponente “Telekom Brand Header & Navigation” wird um zwei neue Basistypen ergänzt – “Slim Header” und “Subtle Header”. Mehr Informationen findest du im Usage Text des [neuen Brand Headers](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
+
+## Neuer Brand Footer
+
+17.02.2023
+
+Veröffentlichung des neuen Brand Footers als Beta-Version. Dieser ersetzt die aktuelle Komponente, wenn die Qualitätskontrolle abgeschlossen ist und die WCAG-Zertifizierung für Barrierefreiheit vorliegt.
+
+## Neuer Brand Header
+
+31.01.2023
+
+Veröffentlichung des neuen Brand Headers als Beta-Version. Dieser ersetzt die aktuelle Komponente, wenn die Qualitätskontrolle abgeschlossen ist und die WCAG-Zertifizierung für Barrierefreiheit vorliegt. Bis dahin freuen wir uns über <a href="https://deploy-preview-1537--marvelous-moxie-a6e2fe.netlify.app/?path=/docs/contact-your-feedback--page" target="_blank" rel="noopener noreferrer">euer Feedback</a> zur neuen Komponente.
+
+## Neue Beta-Komponenten
+
+25.01.2023
+
+- Veröffentlichung der neuen Beta-Komponenten Segmented Button und Chip.
+- Der Segmented Button ersetzt die Beta-Komponente Toggle Group.
+- Neue Kategorie „Deprecated Components“. Hier sind Komponenten aufgelistet, die wir nicht weiter unterstützen.
+
+<br>
+
 ## Komponenten-Update (Optimierung von Mobile und Visual Design)
 
 27.10.2022

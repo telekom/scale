@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@nuxt/ufo": "^0.5.4",
-    "@telekom/scale-components-neutral": "^3.0.0-beta.1",
-    "nuxt": "^2.0.0"
+    "@telekom/scale-components-neutral": "^3.0.0-beta.117",
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",

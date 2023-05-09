@@ -7,43 +7,58 @@
 
 ## Properties
 
-| Property         | Attribute         | Description | Type     | Default     |
-| ---------------- | ----------------- | ----------- | -------- | ----------- |
-| `appName`        | `app-name`        |             | `string` | `undefined` |
-| `appNameClick`   | `app-name-click`  |             | `any`    | `undefined` |
-| `appNameLink`    | `app-name-link`   |             | `string` | `undefined` |
-| `mainNavigation` | `main-navigation` |             | `any`    | `undefined` |
+| Property                   | Attribute                      | Description | Type      | Default                      |
+| -------------------------- | ------------------------------ | ----------- | --------- | ---------------------------- |
+| `appName`                  | `app-name`                     |             | `string`  | `undefined`                  |
+| `appNameClick`             | `app-name-click`               |             | `any`     | `undefined`                  |
+| `appNameLink`              | `app-name-link`                |             | `string`  | `undefined`                  |
+| `langSwitcherAriaLabel`    | `lang-switcher-aria-label`     |             | `string`  | `'Language switcher'`        |
+| `logoHideTitle`            | `logo-hide-title`              |             | `boolean` | `undefined`                  |
+| `logoHref`                 | `logo-href`                    |             | `string`  | `undefined`                  |
+| `logoTitle`                | `logo-title`                   |             | `string`  | `undefined`                  |
+| `mainNavAriaLabel`         | `main-nav-aria-label`          |             | `string`  | `'Main navigation'`          |
+| `metaNavAriaLabel`         | `meta-nav-aria-label`          |             | `string`  | `'Meta navigation'`          |
+| `metaNavExternalAriaLabel` | `meta-nav-external-aria-label` |             | `string`  | `'External meta navigation'` |
+| `type`                     | `type`                         |             | `string`  | `''`                         |
 
 
 ## Shadow Parts
 
-| Part                       | Description |
-| -------------------------- | ----------- |
-| `"app-logo"`               |             |
-| `"app-name"`               |             |
-| `"app-name-and-base-menu"` |             |
-| `"app-name-extended"`      |             |
-| `"base-menu"`              |             |
-| `"container"`              |             |
-| `"extended-menu"`          |             |
-| `"extended-menu-left"`     |             |
-| `"extended-menu-right"`    |             |
-| `"horizontal-menus"`       |             |
+| Part                  | Description |
+| --------------------- | ----------- |
+| `"app-logo"`          |             |
+| `"app-name-text"`     |             |
+| `"body"`              |             |
+| `"bottom-app-name"`   |             |
+| `"bottom-bar"`        |             |
+| `"bottom-body"`       |             |
+| `"container"`         |             |
+| `"fixed-wrapper"`     |             |
+| `"lang-switcher"`     |             |
+| `"main-nav"`          |             |
+| `"meta-nav"`          |             |
+| `"meta-nav-external"` |             |
+| `"top-app-name"`      |             |
+| `"top-bar"`           |             |
+| `"top-body"`          |             |
 
 
 ## Dependencies
 
+### Used by
+
+ - [scale-telekom-header-data-back-compat](../telekom-header-data-back-compat)
+
 ### Depends on
 
 - [scale-logo](../logo)
-- [scale-telekom-app-name](../telekom-app-name)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-telekom-header --> scale-logo
-  scale-telekom-header --> scale-telekom-app-name
   scale-logo --> scale-logo-svg
+  scale-telekom-header-data-back-compat --> scale-telekom-header
   style scale-telekom-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

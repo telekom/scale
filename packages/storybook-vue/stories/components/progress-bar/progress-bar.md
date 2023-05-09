@@ -29,19 +29,19 @@ If you cannot determine the duration of a process, use the indeterminate progres
 
 ![Image Name](assets/3_components/progress-bar/pb_elements.png)
 
-### Label (1)
+#### Label (1)
 
 Choose a short and meaningful title.
 
-### Track (2)
+#### Track (2)
 
 The track is animated and fills from left to right.
 
-### Status label (3)
+#### Status label (3)
 
 The status label indicates what percentage of a task has already finished.
 
-### Description (4)
+#### Description (4)
 
 Show a description whenever you can. It gives more information about the ongoing process, e.g., which file is uploading.
 

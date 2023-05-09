@@ -32,9 +32,7 @@ import {
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
 import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
-import { emitEvent } from '../../utils/utils';
-
-let i = 0;
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
 if (
   typeof window !== 'undefined' &&
@@ -75,7 +73,7 @@ export class DatePicker {
   /**
    * Defines a specific role attribute for the date picker input.
    */
-  @Prop() role: string;
+  @Prop() innerRole: string;
 
   /**
    * Forces the opening direction of the calendar modal to be always left or right.
@@ -143,6 +141,9 @@ export class DatePicker {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  /** (optional) Input place holder */
+  @Prop() placeholder?: string = '';
+
   /** @deprecated */
   @Prop() size?: string;
 
@@ -186,7 +187,7 @@ export class DatePicker {
   @Event({ eventName: 'scaleFocus' })
   scaleFocusLegacy: EventEmitter<DuetDatePickerFocusEvent>;
 
-  private helperTextId = `helper-message-${i}`;
+  private readonly internalId = generateUniqueId();
 
   private mo: MutationObserver;
 
@@ -226,6 +227,17 @@ export class DatePicker {
     this.duetInput.querySelector('.duet-date__input').value = this.value;
   }
 
+  /**
+   * Watch `placeholder` property for changes and update `placeholder` based on that.
+   */
+  @Watch('placeholder')
+  onPlaceholderChange(newValue: string) {
+    const input = this.duetInput.querySelector('.duet-date__input');
+    if (input && this.placeholder) {
+      input.setAttribute('placeholder', newValue);
+    }
+  }
+
   componentWillLoad() {
     if (this.popupTitle !== 'Pick a date') {
       statusNote({
@@ -239,7 +251,7 @@ export class DatePicker {
 
     this.handleKeyPress = this.handleKeyPress.bind(this);
     if (this.identifier == null) {
-      this.identifier = 'scale-date-picker-' + i++;
+      this.identifier = 'scale-date-picker-' + this.internalId;
     }
   }
 
@@ -289,7 +301,14 @@ export class DatePicker {
     }
 
     if (input && this.helperText) {
-      input.setAttribute('aria-describedby', this.helperTextId);
+      input.setAttribute(
+        'aria-describedby',
+        `helper-message-${this.internalId}`
+      );
+    }
+
+    if (input && this.placeholder) {
+      input.setAttribute('placeholder', this.placeholder);
     }
 
     if (input && (this.status === 'error' || this.invalid)) {
@@ -372,6 +391,11 @@ export class DatePicker {
    */
   adjustButtonsLabelsForA11y = () => {
     const table = this.hostElement.querySelector('.duet-date__table');
+    if (!table) {
+      // The node we need does not exist yet. Wait and try again.
+      setTimeout(this.adjustButtonsLabelsForA11y);
+      return;
+    }
     const options = { subtree: true, childList: true, attributes: true };
     const callback = () => {
       this.mo.disconnect(); // avoid a feedback loop
@@ -391,10 +415,12 @@ export class DatePicker {
   };
 
   disconnectedCallback() {
-    const input = this.duetInput.querySelector('.duet-date__input');
+    if (this.duetInput) {
+      const input = this.duetInput.querySelector('.duet-date__input');
 
-    if (input) {
-      input.removeEventListener('keyup', this.handleKeyPress);
+      if (input) {
+        input.removeEventListener('keyup', this.handleKeyPress);
+      }
     }
 
     if (this.mo) {
@@ -407,6 +433,7 @@ export class DatePicker {
   }
 
   render() {
+    const helperTextId = `helper-message-${this.internalId}`;
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -438,7 +465,7 @@ export class DatePicker {
             }}
             name={this.name}
             identifier={this.identifier}
-            role={this.role}
+            role={this.innerRole}
             direction={this.direction}
             required={this.required}
             min={this.min}
@@ -455,7 +482,7 @@ export class DatePicker {
           {!!this.helperText && (
             <div
               class="date-picker__meta"
-              id={this.helperTextId}
+              id={helperTextId}
               aria-live="polite"
               aria-relevant="additions removals"
             >
