@@ -34,8 +34,9 @@
   --line-thickness-hover: var(--line-thickness-initial);
   /* focus */
   --color-focus: var(--telekom-color-text-and-icon-link-standard);
-  --color-line-focus: var(--telekom-color-text-and-icon-link-standard);
-  --line-thickness-focus: var(--telekom-line-weight-bold);
+  --line-thickness-focus: 0;
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+  var(--telekom-color-functional-focus-standard);  
   /* active */
   --color-active: var(--telekom-color-text-and-icon-link-active);
   --color-line-active: var(--telekom-color-functional-interaction-pressed);
@@ -144,8 +145,9 @@ slot[name='icon']::slotted(*) {
 
 [part='anchor']:focus {
   --anchor-color: var(--color-focus);
-  --line-color: var(--color-line-focus);
-  --line-thickness: var(--line-thickness-focus);
+  outline: var(--focus-outline);
+  text-decoration: none;
+  border-radius: var(--telekom-radius-small);
 }
 
 [part='anchor']:active {
