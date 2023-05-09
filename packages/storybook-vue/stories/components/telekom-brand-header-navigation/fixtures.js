@@ -361,8 +361,8 @@ export const iconNavigation = [
     href: '#cart',
     icon: 'action-shopping-cart',
     badge: true,
-    badgeLabel: 3,
-    labelVisuallyHidden: false,
+    badgeLabel: 'Cart',
+    labelVisuallyHidden: true,
     badgeCount: 3,
     ariaLabelTranslation: '$badgeLabel - $badgeCount item'
   },

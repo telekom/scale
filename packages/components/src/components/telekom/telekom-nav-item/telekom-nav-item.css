@@ -301,6 +301,13 @@
   font-weight: var(--telekom-typography-font-weight-extra-bold);
 }
 
+.scale-telekom-nav-list[slot='mobile-meta-nav-external']
+  > .scale-telekom-nav-item
+  > a,
+.scale-telekom-nav-list[slot='mobile-meta-nav'] > .scale-telekom-nav-item > a {
+  font-size: var(--telekom-typography-font-size-body);
+}
+
 @media screen and (--lg) {
   .scale-telekom-nav-list[variant='meta-nav'] {
     margin-right: var(--telekom-spacing-unit-x8);
@@ -334,6 +341,11 @@ scale-telekom-mobile-flyout-canvas
   .scale-icon {
   height: 12px;
   width: 12px;
+}
+
+[slot='mobile-meta-nav'] .scale-telekom-nav-item,
+[slot='mobile-meta-nav-external'] .scale-telekom-nav-item {
+  --_font-size-main-nav: 16px;
 }
 
 .scale-telekom-nav-list > scale-menu-flyout::part(trigger) {
