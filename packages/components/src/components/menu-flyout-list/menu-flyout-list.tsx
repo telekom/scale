@@ -133,8 +133,12 @@ export class MenuFlyoutList {
   }  
 
   @Method()
-  async open() {
+  async open(keyboardEvent?: boolean) {
     this.opened = true;
+    if (keyboardEvent) {
+      this.setFocus();
+    }
+
     emitEvent(this, 'scaleOpen', { list: this.hostElement });
   }
 
@@ -172,6 +176,7 @@ export class MenuFlyoutList {
 
     if ('ArrowDown' === event.key) {
       this.shiftItemsFocus();
+
       return;
     }
     if ('ArrowUp' === event.key) {
@@ -257,7 +262,7 @@ export class MenuFlyoutList {
 
     if (this.opened) {
       this.active = true;
-      this.setFocus();
+      // this.setFocus();
       this.setWindowSize();
       this.setPosition();
       this.padForNonOverlayScrollbars();

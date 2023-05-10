@@ -151,11 +151,11 @@ export class MenuFlyout {
     
     if (this.brandHeaderDropdown) {      
       this.propagatePropsToChildren()
-      this.trigger.parentElement.addEventListener('mouseenter', () => {
-        this.toggle();
+      this.trigger.parentElement.addEventListener('mouseenter', (e) => {
+        this.toggle(e);
       });
-      this.trigger.parentElement.addEventListener('mouseleave', () => {
-          this.toggle();
+      this.trigger.parentElement.addEventListener('mouseleave', (e) => {
+          this.toggle(e);
       }); 
     }    
   }
@@ -191,7 +191,8 @@ export class MenuFlyout {
     });
   };
 
-  toggle = () => {
+  toggle = (e) => {
+    e.preventDefault();
     const list = this.getListElement();
     if (list.opened) {
       this.closeAll();
@@ -202,7 +203,10 @@ export class MenuFlyout {
       list.direction = this.direction;
     }
     list.trigger = () => this.trigger;
-    list.open();
+    if (e.type === 'keydown' && e.key === 'Enter') {
+      list.open(true)
+    }
+    list.open(false); 
   };
 
   getListElement(): HTMLScaleMenuFlyoutListElement {
@@ -216,7 +220,7 @@ export class MenuFlyout {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div part="trigger" onClick={this.toggle}>
+        <div part="trigger" onClick={this.toggle} onKeyDown={this.toggle}>
           <slot name="trigger" />
         </div>
         <slot />

@@ -79,7 +79,7 @@ export class MenuFlyoutItem {
       if (sublist.hasAttribute('opened')) {
         sublist.removeAttribute('opened');
       } else {
-        this.openSublist();
+        this.openSublist(event.type === 'keydown');
       }
       return;
     }
@@ -109,7 +109,7 @@ export class MenuFlyoutItem {
         if (this.hasSlotSublist) {
           const sublist = this.hostElement.querySelector('[slot="sublist"]');
           if (!sublist.hasAttribute('opened')) {
-            this.openSublist();
+            this.openSublist(false);
           }
           return;
         }
@@ -156,7 +156,7 @@ export class MenuFlyoutItem {
     }
   }
 
-  openSublist() {
+  openSublist(keydown) {
     const sublist = this.hostElement.querySelector(
       '[slot="sublist"]'
     ) as HTMLScaleMenuFlyoutListElement;
@@ -165,7 +165,7 @@ export class MenuFlyoutItem {
     }
     sublist.trigger = () => this.hostElement;
     sublist.direction = 'right';
-    sublist.open();
+    sublist.open(keydown);
   }
 
   getCssClassMap() {
