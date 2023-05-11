@@ -58,7 +58,7 @@ export class MenuFlyout {
     // - it's not the root and
     // - it's not the one being opened
     // (useful only with "click" interactions)
-    const rootList = this.getListElement();
+    const rootList = this.getListElement()
     if (
       this.activeList &&
       this.activeList.active &&
@@ -128,6 +128,8 @@ export class MenuFlyout {
     }
   }
 
+  
+
   componentDidLoad() {
     const triggerSlot = this.hostElement.querySelector(
       '[slot="trigger"]'
@@ -148,14 +150,20 @@ export class MenuFlyout {
 
     // possibly remove brandHeaderDropdown prop from here and instead do
     // if (this.trigger.tagName === 'SCALE-TELEKOM-NAV-ITEM') 
-    
+    let hoverTimer;
     if (this.brandHeaderDropdown) {      
       this.propagatePropsToChildren()
       this.trigger.parentElement.addEventListener('mouseenter', (e) => {
-        this.toggle(e);
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout( () => {
+          this.toggle(e);
+        }, 500)
       });
       this.trigger.parentElement.addEventListener('mouseleave', (e) => {
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout( () => {
           this.toggle(e);
+        }, 500)
       }); 
     }    
   }
@@ -192,25 +200,30 @@ export class MenuFlyout {
   };
 
   toggle = (e) => {
-    e.preventDefault();
-    const list = this.getListElement();
-    if (list.opened) {
-      this.closeAll();
-      return;
-    }
+    const list = this.getListElement()
     if (this.direction != null) {
       // Overwrite `direction` in list
       list.direction = this.direction;
     }
-    list.trigger = () => this.trigger;
-    if (e.type === 'keydown' && e.key === 'Enter') {
-      list.open(true)
-    }
-    list.open(false); 
-  };
 
-  getListElement(): HTMLScaleMenuFlyoutListElement {
-    // TODO use [role="menu"]?
+    list.trigger = () => this.trigger;
+
+    if (list.opened) {
+      if (e.type === 'keydown' && e.key === 'Enter') {
+        e.preventDefault();
+        return
+      } else {
+        list.open(e.type); 
+        return
+      }
+    } else {
+      list.open(e.type); 
+      return
+    }
+  }
+
+  // TODO use [role="menu"]?
+  getListElement = () => {
     return Array.from(this.hostElement.children).find((el) =>
       el.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT')
     ) as HTMLScaleMenuFlyoutListElement;

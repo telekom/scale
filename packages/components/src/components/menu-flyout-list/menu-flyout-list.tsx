@@ -132,13 +132,20 @@ export class MenuFlyoutList {
     });
   }  
 
+
   @Method()
-  async open(keyboardEvent?: boolean) {
-    this.opened = true;
-    if (keyboardEvent) {
-      this.setFocus();
+  async open(eventType?: any) {
+    if (
+    (eventType == 'mouseleave')) 
+      {
+      this.opened = false;
+    } else {
+      this.opened = true;
     }
 
+    if (eventType == 'keydown') {
+      this.setFocus();
+    }
     emitEvent(this, 'scaleOpen', { list: this.hostElement });
   }
 

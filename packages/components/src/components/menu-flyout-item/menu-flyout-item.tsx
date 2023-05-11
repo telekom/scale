@@ -79,7 +79,7 @@ export class MenuFlyoutItem {
       if (sublist.hasAttribute('opened')) {
         sublist.removeAttribute('opened');
       } else {
-        this.openSublist(event.type === 'keydown');
+        this.openSublist(event.type);
       }
       return;
     }
@@ -102,18 +102,18 @@ export class MenuFlyoutItem {
   hoverTimer;
 
   @Listen('mouseenter')
-  handleHover() {
+  handleHover(e) {
     if (this.brandHeaderDropdown) {
       clearTimeout(this.hoverTimer);
       this.hoverTimer = setTimeout(() => {
         if (this.hasSlotSublist) {
           const sublist = this.hostElement.querySelector('[slot="sublist"]');
           if (!sublist.hasAttribute('opened')) {
-            this.openSublist(false);
+            this.openSublist(e.type);
           }
           return;
         }
-      }, 200);
+      }, 500);
     }
   }
 
@@ -127,7 +127,7 @@ export class MenuFlyoutItem {
           if (sublist.hasAttribute('opened')) {
             sublist.removeAttribute('opened');
           }
-        }, 200);
+        }, 500);
         return;
       }
     }
