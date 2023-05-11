@@ -134,13 +134,13 @@ export class MenuFlyoutList {
 
   @Method()
   async open(eventType?: 'mouseleave' | 'keydown') {
-    if (eventType == 'mouseleave') {
+    if (eventType === 'mouseleave') {
       this.opened = false;
     } else {
       this.opened = true;
     }
 
-    if (eventType == 'keydown') {
+    if (eventType === 'keydown') {
       this.setFocus();
     }
     emitEvent(this, 'scaleOpen', { list: this.hostElement });

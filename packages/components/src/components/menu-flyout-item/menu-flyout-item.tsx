@@ -58,7 +58,7 @@ export class MenuFlyoutItem {
   }>;
 
   private hasSlotSublist: boolean = false;
-
+  private hoverTimer;
   // TODO there is lot of room for improving this, aka edge-cases
   @Method()
   async triggerEvent(
@@ -94,8 +94,6 @@ export class MenuFlyoutItem {
     emitEvent(this, 'scaleSelect', detail);
   }
 
-  hoverTimer;
-
   @Listen('mouseenter')
   handleHover(e) {
     if (this.brandHeaderDropdown) {
@@ -108,7 +106,7 @@ export class MenuFlyoutItem {
           }
           return;
         }
-      }, 500);
+      }, 200);
     }
   }
 
@@ -122,7 +120,7 @@ export class MenuFlyoutItem {
           if (sublist.hasAttribute('opened')) {
             sublist.removeAttribute('opened');
           }
-        }, 500);
+        }, 200);
         return;
       }
     }

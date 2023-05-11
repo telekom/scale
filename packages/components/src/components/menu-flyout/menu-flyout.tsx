@@ -155,13 +155,13 @@ export class MenuFlyout {
         clearTimeout(hoverTimer);
         hoverTimer = setTimeout(() => {
           this.toggle(e);
-        }, 500);
+        }, 200);
       });
       this.trigger.parentElement.addEventListener('mouseleave', (e) => {
         clearTimeout(hoverTimer);
         hoverTimer = setTimeout(() => {
           this.toggle(e);
-        }, 500);
+        }, 200);
       });
     }
   }
