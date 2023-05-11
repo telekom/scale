@@ -2,6 +2,7 @@
   <scale-loading-spinner
     :variant="variant"
     :alignment="alignment"
+    :accessibility-title="accessibilityTitle"
     :text="text"
     :size="size"
   >
@@ -19,6 +20,7 @@ export default {
       default: 'horizontal',
     },
     text: { type: String },
+    accessibilityTitle: { type: String },
     size: { type: 'small' | 'large', default: 'small' },
   },
 };
