@@ -58,7 +58,7 @@ export class MenuFlyout {
     // - it's not the root and
     // - it's not the one being opened
     // (useful only with "click" interactions)
-    const rootList = this.getListElement()
+    const rootList = this.getListElement();
     if (
       this.activeList &&
       this.activeList.active &&
@@ -128,8 +128,6 @@ export class MenuFlyout {
     }
   }
 
-  
-
   componentDidLoad() {
     const triggerSlot = this.hostElement.querySelector(
       '[slot="trigger"]'
@@ -149,23 +147,23 @@ export class MenuFlyout {
     );
 
     // possibly remove brandHeaderDropdown prop from here and instead do
-    // if (this.trigger.tagName === 'SCALE-TELEKOM-NAV-ITEM') 
+    // if (this.trigger.tagName === 'SCALE-TELEKOM-NAV-ITEM')
     let hoverTimer;
-    if (this.brandHeaderDropdown) {      
-      this.propagatePropsToChildren()
+    if (this.brandHeaderDropdown) {
+      this.propagatePropsToChildren();
       this.trigger.parentElement.addEventListener('mouseenter', (e) => {
         clearTimeout(hoverTimer);
-        hoverTimer = setTimeout( () => {
+        hoverTimer = setTimeout(() => {
           this.toggle(e);
-        }, 500)
+        }, 500);
       });
       this.trigger.parentElement.addEventListener('mouseleave', (e) => {
         clearTimeout(hoverTimer);
-        hoverTimer = setTimeout( () => {
+        hoverTimer = setTimeout(() => {
           this.toggle(e);
-        }, 500)
-      }); 
-    }    
+        }, 500);
+      });
+    }
   }
 
   propagatePropsToChildren() {
@@ -176,8 +174,6 @@ export class MenuFlyout {
       item.brandHeaderDropdown = true;
     });
   }
-
-
 
   setTriggerAttributes() {
     const triggers = Array.from(
@@ -200,7 +196,7 @@ export class MenuFlyout {
   };
 
   toggle = (e) => {
-    const list = this.getListElement()
+    const list = this.getListElement();
     if (this.direction != null) {
       // Overwrite `direction` in list
       list.direction = this.direction;
@@ -211,23 +207,23 @@ export class MenuFlyout {
     if (list.opened) {
       if (e.type === 'keydown' && e.key === 'Enter') {
         e.preventDefault();
-        return
+        return;
       } else {
-        list.open(e.type); 
-        return
+        list.open(e.type);
+        return;
       }
     } else {
-      list.open(e.type); 
-      return
+      list.open(e.type);
+      return;
     }
-  }
+  };
 
   // TODO use [role="menu"]?
   getListElement = () => {
     return Array.from(this.hostElement.children).find((el) =>
       el.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT')
     ) as HTMLScaleMenuFlyoutListElement;
-  }
+  };
 
   render() {
     return (

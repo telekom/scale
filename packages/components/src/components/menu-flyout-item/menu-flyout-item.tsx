@@ -117,7 +117,7 @@ export class MenuFlyoutItem {
     if (this.brandHeaderDropdown) {
       clearTimeout(this.hoverTimer);
       if (this.hasSlotSublist) {
-        this.hoverTimer = setTimeout( () => {
+        this.hoverTimer = setTimeout(() => {
           const sublist = this.hostElement.querySelector('[slot="sublist"]');
           if (sublist.hasAttribute('opened')) {
             sublist.removeAttribute('opened');
@@ -130,7 +130,7 @@ export class MenuFlyoutItem {
 
   componentWillRender() {
     if (this.brandHeaderDropdown) {
-      this.propagatePropsToChildren()
+      this.propagatePropsToChildren();
     }
   }
 
@@ -141,7 +141,7 @@ export class MenuFlyoutItem {
     (items as HTMLScaleMenuFlyoutListElement[]).forEach((item) => {
       item.brandHeaderDropdown = true;
     });
-  }    
+  }
 
   connectedCallback() {
     this.hasSlotSublist =

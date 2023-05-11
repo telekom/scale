@@ -116,7 +116,7 @@ export class MenuFlyoutList {
       });
     }
   }
-  
+
   componentWillRender() {
     if (this.brandHeaderDropdown) {
       this.propagatePropsToChildren();
@@ -130,14 +130,11 @@ export class MenuFlyoutList {
     (items as HTMLScaleMenuFlyoutItemElement[]).forEach((item) => {
       item.brandHeaderDropdown = true;
     });
-  }  
-
+  }
 
   @Method()
   async open(eventType?: 'mouseleave' | 'keydown') {
-    if (
-    (eventType == 'mouseleave')) 
-      {
+    if (eventType == 'mouseleave') {
       this.opened = false;
     } else {
       this.opened = true;
