@@ -94,11 +94,6 @@ export class MenuFlyoutItem {
     emitEvent(this, 'scaleSelect', detail);
   }
 
-  /**
-   * We handle item clicks here, to avoid setting up
-   * listeners on every item
-   */
-
   hoverTimer;
 
   @Listen('mouseenter')
@@ -156,7 +151,7 @@ export class MenuFlyoutItem {
     }
   }
 
-  openSublist(keydown) {
+  openSublist(eventType) {
     const sublist = this.hostElement.querySelector(
       '[slot="sublist"]'
     ) as HTMLScaleMenuFlyoutListElement;
@@ -165,7 +160,7 @@ export class MenuFlyoutItem {
     }
     sublist.trigger = () => this.hostElement;
     sublist.direction = 'right';
-    sublist.open(keydown);
+    sublist.open(eventType);
   }
 
   getCssClassMap() {

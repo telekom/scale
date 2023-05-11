@@ -134,7 +134,7 @@ export class MenuFlyoutList {
 
 
   @Method()
-  async open(eventType?: any) {
+  async open(eventType?: 'mouseleave' | 'keydown') {
     if (
     (eventType == 'mouseleave')) 
       {
@@ -269,7 +269,6 @@ export class MenuFlyoutList {
 
     if (this.opened) {
       this.active = true;
-      // this.setFocus();
       this.setWindowSize();
       this.setPosition();
       this.padForNonOverlayScrollbars();
