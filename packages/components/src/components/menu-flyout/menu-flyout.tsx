@@ -146,9 +146,9 @@ export class MenuFlyout {
       Array.from(this.hostElement.querySelectorAll(MENU_SELECTOR))
     );
 
+    let hoverTimer;
     // possibly remove brandHeaderDropdown prop from here and instead do
     // if (this.trigger.tagName === 'SCALE-TELEKOM-NAV-ITEM')
-    let hoverTimer;
     if (this.brandHeaderDropdown) {
       this.propagatePropsToChildren();
       this.trigger.parentElement.addEventListener('mouseenter', (e) => {
