@@ -81,21 +81,25 @@ export class RadioButton {
   }
 
   handleCheckedChange = (event: any) => {
-    this.checked = event.target.checked;
-    // I don't think this is ever going to be `false` but well...
-    if (this.checked) {
-      this.uncheckSiblings();
+    if (!this.disabled) {
+      this.checked = event.target.checked;
+      // I don't think this is ever going to be `false` but well...
+      if (this.checked) {
+        this.uncheckSiblings();
+      }
+      emitEvent(this, 'scaleChange', {
+        value: this.value == null ? this.value : this.value.toString(),
+      });
     }
-    emitEvent(this, 'scaleChange', {
-      value: this.value == null ? this.value : this.value.toString(),
-    });
   };
 
   // Prevent click event being fired twice when the target is the label.
   handleClick = (event: any) => {
     event.stopPropagation();
-    this.checked = true;
-    this.uncheckSiblings();
+    if (!this.disabled) {
+      this.checked = true;
+      this.uncheckSiblings();
+    }
   };
 
   // We manually set `checked` to false on sibling <scale-radio-button> elements,
