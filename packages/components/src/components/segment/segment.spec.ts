@@ -27,8 +27,6 @@ describe('Segment', () => {
     expect(page.rootInstance.size).toBe('medium');
     expect(page.rootInstance.selected).toBe(true);
     expect(page.rootInstance.hasIcon).toBe(true);
-    expect(page.rootInstance.ariaLangSelected).toBe('ariaLangSelected');
-    expect(page.rootInstance.ariaLangDeselected).toBe('ariaLangDeselected');
     expect(page.rootInstance.ariaDescriptionTranslation).toBe(
       'ariaDescriptionTranslation'
     );

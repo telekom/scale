@@ -3,17 +3,19 @@
 exports[`Segment should match standard snapshot 1`] = `
 <scale-segment segment-id="segment-0">
   <mock:shadow-root>
-    <button aria-description="deselected" class="segment segment--small" id="segment-0" part="segment small" type="button">
-      <div class="segment--mask">
-        <div class="success-icon-container">
-          <scale-icon-action-success aria-hidden="true" class="scale-icon-action-success" selected="" size="14"></scale-icon-action-success>
+    <li class="segment--list-item" role="option">
+      <button aria-pressed="false" aria-selected="false" class="segment segment--small" id="segment-0" part="segment small" type="button">
+        <div class="segment--mask">
+          <div class="success-icon-container">
+            <scale-icon-action-success aria-hidden="true" class="scale-icon-action-success" selected="" size="14"></scale-icon-action-success>
+          </div>
+          <div class="icon-container">
+            <slot name="segment-icon"></slot>
+          </div>
+          <slot></slot>
         </div>
-        <div class="icon-container">
-          <slot name="segment-icon"></slot>
-        </div>
-        <slot></slot>
-      </div>
-    </button>
+      </button>
+    </li>
   </mock:shadow-root>
   Label
 </scale-segment>
