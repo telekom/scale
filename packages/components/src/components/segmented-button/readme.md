@@ -13,6 +13,7 @@
 | `disabled`             | `disabled`               | (optional) If `true`, the button is disabled                 | `boolean`                        | `false`                                  |
 | `fullWidth`            | `full-width`             | (optional) If `true`, expand to container width              | `boolean`                        | `false`                                  |
 | `helperText`           | `helper-text`            | (optional) If `true`, show error message                     | `string`                         | `'Please select an option'`              |
+| `iconOnly`             | `icon-only`              | (optional) icon only                                         | `boolean`                        | `false`                                  |
 | `invalid`              | `invalid`                | (optional) If `true`, show error message                     | `boolean`                        | `false`                                  |
 | `label`                | `label`                  | (optional) Button label                                      | `string`                         | `undefined`                              |
 | `longestButtonWidth`   | `longest-button-width`   |                                                              | `string`                         | `undefined`                              |
