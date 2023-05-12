@@ -17,6 +17,7 @@
     :helper-text="helperText"
     :invalid="invalid"
     :popup-title="popupTitle"
+    :placeholder="placeholder"
     :styles="styles"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
@@ -47,6 +48,7 @@ export default {
     disabled: { type: Boolean },
     popupTitle: { type: String },
     styles: { type: String },
+    placeholder: { type: String },
     size: { type: String },
   },
   methods: {

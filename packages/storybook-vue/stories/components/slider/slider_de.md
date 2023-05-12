@@ -3,10 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Mit einem Slider können Nutzer\*innen
-
-- einen einzelnen Wert aus einem gegebenen Bereich von Werten auswählen oder
-- den Start- und Endpunkt von Werten festlegen, der einen Bereich innerhalb des gesamten vorgegebenen Bereichs bestimmt.
+Mit einem Slider können Nutzer\*innen einen Wert oder Wertebereich verändern.
 
 ## Allgemein
 
@@ -31,7 +28,7 @@ Jeder Slider benötigt ein Label, das den sich ändernden Wert beschreibt. Stand
 
 ### Slider mit Wert
 
-Nutzer\*innen können einen genauen Wert, z. B. 200 $, aus einem vorgegebenen Wertebereich einstellen.
+Nutzer\*innen können einen genauen Wert, z. B. 200 \$, aus einem vorgegebenen Wertebereich einstellen.
 
 Der eingestellte Wert ändert sich in Echtzeit, sobald sich der Regler bewegt.
 
@@ -69,7 +66,7 @@ Meldung ein-/ausgeblendet
 
 ### Farben
 
-Der Slider hat einen magentafarbenen Balken. Möchtest du mit anderen Farben arbeiten, kannst du entweder eine aus der Telekom Farbpalette auswählen oder eine eigene Farbe festlegen. Achte in jedem Fall darauf, dass die Farbe für Nutzer\*innen verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
+Der Slider hat einen magentafarbenen Balken. Möchtest du mit anderen Farben arbeiten, kannst du entweder eine aus der <a href="?path=/docs/guidelines-colors--page">Telekom Farbpalette</a> auswählen oder eine eigene Farbe festlegen. Achte in jedem Fall darauf, dass die Farbe für Nutzer\*innen verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
 ![slider_color-DE.png](assets/3_components/slider/slider_color-DE.png)
 
@@ -81,8 +78,6 @@ Deaktiviere den Slider, wenn
 - die Nutzer\*innen den Wert/Wertebereich aktuell nicht ändern können.
 
 Wenn der Slider deaktiviert ist, werden die Regler entfernt, um anzuzeigen, dass der Wert nicht verändert werden kann.
-
-Deaktivierter Zustand (Regler ausgeblendet)
 
 ![slider_disabled-DE.png](assets/3_components/slider/slider_disabled-DE.png)
 

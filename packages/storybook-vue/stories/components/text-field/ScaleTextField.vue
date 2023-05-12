@@ -2,6 +2,7 @@
   <scale-text-field
     :name="name"
     :type="type"
+    :input-mode-type="inputModeType"
     :label="label"
     :helper-text="helperText"
     :invalid="invalid"
@@ -17,9 +18,12 @@
     :counter="counter"
     :size="size"
     :value="value"
+    :aria-detailed-id="ariaDetailedId"
     :input-id="inputId"
     :input-autofocus="inputAutofocus"
+    :input-autocomplete="inputAutocomplete"
     :experimental-controlled="experimentalControlled"
+    :hide-label-visually="hideLabelVisually"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
@@ -37,6 +41,7 @@ export default {
   props: {
     name: { type: String },
     type: { type: String },
+    inputModeType: { type: String },
     label: { type: String },
     helperText: { type: String },
     invalid: { type: Boolean },
@@ -52,9 +57,12 @@ export default {
     counter: { type: Boolean },
     size: { type: String },
     value: { type: String },
+    ariaDetailedId: { type: String },
     inputId: { type: String },
     inputAutofocus: { type: Boolean },
+    inputAutocomplete: { type: String },
     experimentalControlled: { type: Boolean },
+    hideLabelVisually: {type: Boolean, default: false},
     styles: { type: String },
   },
   methods: {

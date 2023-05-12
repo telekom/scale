@@ -16,13 +16,13 @@ Die TeleNeo verfügt über fünf gleichmäßig im Schriftgewicht abgestufte Schr
 
 ### Schriftschnitte und CSS Variablen
 
-| Schnitt   | Variable                                   | CSS Wert |
-| --------- | ------------------------------------------ | -------- |
-| extrabold | --telekom-typography-font-weight-extrabold | 800      |
-| bold      | --telekom-typography-font-weight-bold      | 700      |
-| medium    | --telekom-typography-font-weight-medium    | 500      |
-| regular   | --telekom-typography-font-weight-regular   | 400      |
-| thin      | --telekom-typography-font-weight-thin      | 200      |
+| Schnitt   | Variable                                    | CSS Wert |
+| --------- | ------------------------------------------- | -------- |
+| extrabold | --telekom-typography-font-weight-extra-bold | 800      |
+| bold      | --telekom-typography-font-weight-bold       | 700      |
+| medium    | --telekom-typography-font-weight-medium     | 500      |
+| regular   | --telekom-typography-font-weight-regular    | 400      |
+| thin      | --telekom-typography-font-weight-thin       | 200      |
 
 ## Schriftformate für User Interfaces
 

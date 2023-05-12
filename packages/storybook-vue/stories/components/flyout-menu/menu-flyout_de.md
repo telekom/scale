@@ -24,27 +24,27 @@ Das Flyout Menu öffnet sich per Klick/Tap auf einen Button. Es kann unterschied
 
 ![Elements des Flyout Menus](assets/3_components/flyout-menu/Flyout_Menu_Elements.png)
 
-### Trigger (1)
+#### Trigger (1)
 
 Der Trigger ist der Button, über den Nutzer\*innen das Flyout Menu einblenden können.
 
-### Text only (2)
+#### Text only (2)
 
 Einfacher interaktiver Text.
 
-### Icon rechts (3)
+#### Icon rechts (3)
 
 Interaktiver Text mit einem rechts angeordneten Icon.
 
-### Cascade (4)
+#### Cascade (4)
 
 Text mit rechts angeordnetem Pfeil, der bei Hover ein nachgelagertes Flyout Menu einblendet.
 
-### Icon links (5)
+#### Icon links (5)
 
 Interaktiver Text mit einem links angeordneten Icon.
 
-### Icon links und rechts (5)
+#### Icon links und rechts (5)
 
 Interaktiver Text mit jeweils einem Icon links und rechts.
 

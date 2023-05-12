@@ -3,11 +3,11 @@
 exports[`Helper Text should render danger text with danger icon if dange variant is specified 1`] = `
 <scale-helper-text variant="danger">
   <mock:shadow-root>
-    <div class="helper-text helper-text--danger">
-      <span>
+    <div class="helper-text helper-text--danger" part="base">
+      <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-error size="11"></scale-icon-alert-error>
+      <scale-icon-alert-error></scale-icon-alert-error>
     </div>
   </mock:shadow-root>
   danger
@@ -17,11 +17,11 @@ exports[`Helper Text should render danger text with danger icon if dange variant
 exports[`Helper Text should render informational helper text with info icon if informational variant is specified 1`] = `
 <scale-helper-text variant="informational">
   <mock:shadow-root>
-    <div class="helper-text helper-text--informational">
-      <span>
+    <div class="helper-text helper-text--informational" part="base">
+      <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-information size="11"></scale-icon-alert-information>
+      <scale-icon-alert-information></scale-icon-alert-information>
     </div>
   </mock:shadow-root>
   informational
@@ -31,11 +31,11 @@ exports[`Helper Text should render informational helper text with info icon if i
 exports[`Helper Text should render informational helper text with info icon if no variant is specified 1`] = `
 <scale-helper-text>
   <mock:shadow-root>
-    <div class="helper-text helper-text--informational">
-      <span>
+    <div class="helper-text helper-text--informational" part="base">
+      <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-information size="11"></scale-icon-alert-information>
+      <scale-icon-alert-information></scale-icon-alert-information>
     </div>
   </mock:shadow-root>
   informational
@@ -45,8 +45,8 @@ exports[`Helper Text should render informational helper text with info icon if n
 exports[`Helper Text should render neutral text without icon if neutral variant is specified 1`] = `
 <scale-helper-text variant="neutral">
   <mock:shadow-root>
-    <div class="helper-text helper-text--neutral">
-      <span>
+    <div class="helper-text helper-text--neutral" part="base">
+      <span part="text">
         <slot></slot>
       </span>
     </div>
@@ -58,11 +58,11 @@ exports[`Helper Text should render neutral text without icon if neutral variant 
 exports[`Helper Text should render success text with success icon if success variant is specified 1`] = `
 <scale-helper-text variant="success">
   <mock:shadow-root>
-    <div class="helper-text helper-text--success">
-      <span>
+    <div class="helper-text helper-text--success" part="base">
+      <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-success size="11"></scale-icon-alert-success>
+      <scale-icon-alert-success></scale-icon-alert-success>
     </div>
   </mock:shadow-root>
   success
@@ -72,11 +72,11 @@ exports[`Helper Text should render success text with success icon if success var
 exports[`Helper Text should render warning text with warning icon if warning variant is specified 1`] = `
 <scale-helper-text variant="warning">
   <mock:shadow-root>
-    <div class="helper-text helper-text--warning">
-      <span>
+    <div class="helper-text helper-text--warning" part="base">
+      <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-information size="11"></scale-icon-alert-information>
+      <scale-icon-alert-information></scale-icon-alert-information>
     </div>
   </mock:shadow-root>
   warning

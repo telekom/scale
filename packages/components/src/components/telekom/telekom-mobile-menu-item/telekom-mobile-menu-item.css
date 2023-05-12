@@ -1,0 +1,102 @@
+:host {
+  --height: 72px;
+  --max-width: 572px;
+  --font-bold: var(--telekom-text-style-heading-5);
+  --font-thin: var(--telekom-text-style-lead-text);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-active: var(--telekom-color-primary-standard);
+  --border-color: var(--telekom-color-ui-faint);
+
+  --_box-shadow-active: none;
+  --_spacing-level: 0px;
+  --_font: var(--font-thin);
+  --_color: var(--color);
+  position: relative;
+}
+
+:host::part(level-0) {
+  --_spacing-level: 0px;
+  --_font: var(--font-bold);
+}
+
+:host::part(level-0 active) {
+  --_spacing-level: 0px;
+}
+
+:host::part(level-0 open) {
+  --_spacing-level: 36px;
+}
+:host::part(level-1),
+:host::part(level-2),
+:host::part(level-3),
+:host::part(level-4) {
+  --_spacing-level: 36px;
+}
+
+:host::part(level-1 current-level-2),
+:host::part(level-2 current-level-3),
+:host::part(level-3 current-level-4) {
+  --_font: var(--font-bold);
+}
+
+:host::part(active),
+:host::part(level-0 current-level-0 active),
+:host::part(level-1 current-level-1 active),
+:host::part(level-2 current-level-2 active),
+:host::part(level-3 current-level-3 active) {
+  --_color: var(--color-active);
+  --_box-shadow-active: 2px 0px 0px 0px var(--color-active) inset;
+}
+
+:host::part(level-0 current-level-1),
+:host::part(level-1 current-level-2),
+:host::part(level-2 current-level-3),
+:host::part(level-3 current-level-4) {
+  --_color: var(--color);
+}
+
+:host::part(active-indicator) {
+  box-shadow: var(--_box-shadow-active);
+  min-height: 28px;
+  min-width: 2px;
+}
+
+:host::part(base) {
+  font: var(--_font);
+  max-width: var(--max-width);
+}
+
+::slotted(a) {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: var(--height);
+  width: calc(100% - var(--_spacing-level));
+  max-width: 572px;
+  padding-left: var(--_spacing-level);
+  color: var(--_color);
+  text-decoration: none;
+}
+
+:host::part(header) {
+  height: var(--height);
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: var(--border-color);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: var(--border-color);
+}
+
+:host::part(hidden) {
+  display: none;
+}
+
+:host::part(icon-right-container) {
+  display: flex;
+  align-items: center;
+}

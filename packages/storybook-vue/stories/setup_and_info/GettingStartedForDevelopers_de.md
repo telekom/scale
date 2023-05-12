@@ -31,9 +31,23 @@ Um die Komponenten zu verwenden, lade die CSS-Datei sowie JavaScript. Die CSS-Da
 
 ```js
 import '@telekom/scale-components/dist/scale-components/scale-components.css';
-import { defineCustomElements } from '@telekom/scale-components/loader';
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from '@telekom/scale-components/loader';
 
-defineCustomElements();
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
+```
+
+Falls Sie nur eine spezifische Komponente laden möchten, z.B. die Komponente Button, können Sie diese Komponente auch auf folgende Art laden:
+
+```js
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import { defineCustomElementScaleButton } from '@telekom/scale-components';
+
+defineCustomElementScaleButton();
 ```
 
 ### NPM Packages

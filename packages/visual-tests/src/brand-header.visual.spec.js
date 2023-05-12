@@ -1,14 +1,14 @@
-describe('Brand Header', () => {
+describe.skip('Deprecated Brand Header', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup(
-        'components-brand-header-navigation--standard',
+        'deprecated-components-brand-header-navigation--standard',
         mode
       );
     });
     it('default mega menu states', async () => {
       await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--standard&viewMode=story`
+        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--standard&viewMode=story`
       );
       await global.page.waitForSelector('html.hydrated');
 
@@ -26,6 +26,8 @@ describe('Brand Header', () => {
       const firstLink = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-app-shell").shadowRoot.querySelector("scale-app-header nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a")`
       );
+      // TODO we probably want to make sure `hover` is not affecting the `focus` snapshot?
+      // https://github.com/telekom/scale/pull/1565/files#diff-900e1daba44b830c5fb035a03c58deea10a791e34e9eadb54a5ba5db7f40e48d
       await firstLink.hover();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       await firstLink.focus();
@@ -34,7 +36,7 @@ describe('Brand Header', () => {
 
     it('custom mega menu states', async () => {
       await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--custom-main-navigation&viewMode=story`
+        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--custom-main-navigation&viewMode=story`
       );
       await global.page.waitForSelector('html.hydrated');
 
@@ -67,7 +69,7 @@ describe('Brand Header', () => {
       ['custom-logo'],
     ])('%p', async (variant) => {
       await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--${variant}&viewMode=story`
+        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--${variant}&viewMode=story`
       );
       await global.page.waitForSelector('html.hydrated');
 

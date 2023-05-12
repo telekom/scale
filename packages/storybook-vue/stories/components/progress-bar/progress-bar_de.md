@@ -29,15 +29,19 @@ Wenn du die Dauer eines Prozesses nicht genau abschätzen kannst, dann verwende 
 
 ![Image Name](assets/3_components/progress-bar/pb_elements.png)
 
-### Track (1)
+#### Label (1)
+
+Wähle einen kurzen und aussagekräftigen Titel.
+
+#### Track (2)
 
 Der Balken ist animiert und füllt sich von links nach rechts.
 
-### Status-Label (2)
+#### Status-Label (3)
 
 Das Status-Label gibt an, wie viel Prozent eines Prozesses bereits erledigt ist.
 
-### Beschreibung (3)
+#### Beschreibung (4)
 
 Gib, wenn möglich, immer eine Beschreibung an, die den Nutzer\*innen weitere Informationen über den laufenden Prozess gibt, zum Beispiel welche Datei hochgeladen wird.
 
@@ -45,8 +49,8 @@ Gib, wenn möglich, immer eine Beschreibung an, die den Nutzer\*innen weitere In
 
 Nutze bei Telekom Progress-Bars Magenta als Akzentfarbe. Wenn du aus einem bestimmten Grund eine andere Farbe verwenden möchtest, kannst du entweder die Farben aus der Telekom Farbpalette nutzen oder eine eigene Farbe auswählen. Bitte achte in diesem Fall darauf, dass das Farbschema für die Nutzer\*innen verständlich ist und alle Anforderungen der Barrierefreiheit erfüllt.
 
-![Image Name](assets/3_components/progress-bar/pb-in-custom-color_de.png)
+![Image Name](assets/3_components/progress-bar/pb-in-custom-color.png)
 
 ### Fortschritt-Status
 
-![Image Name](assets/3_components/progress-bar/pb_states-de.png)
+![Image Name](assets/3_components/progress-bar/pb_states.png)

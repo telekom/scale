@@ -21,6 +21,9 @@ import {
 import { MenuItem } from '../app-interfaces';
 import { findSelected, findRootNode } from '../../../utils/menu-utils';
 
+const hasChildren = (item: any) =>
+  Array.isArray(item.children) && item.children.length > 0;
+
 @Component({
   tag: 'app-navigation-main-mobile',
   styleUrl: 'app-navigation-main-mobile.css',
@@ -77,14 +80,14 @@ export class MainNavigationMobile {
       item.onClick(event);
     }
 
-    if (!selected.children) {
+    if (!hasChildren(selected)) {
       this.closeMenuHandler();
     }
   }
 
   childMenuPage() {
     const section =
-      this.selected && this.selected.children ? this.selected : this.parent;
+      this.selected && hasChildren(this.selected) ? this.selected : this.parent;
 
     const { selected, parent } = findSelected(
       this.navigation,
@@ -138,7 +141,7 @@ export class MainNavigationMobile {
             <li class="main-navigation-mobile__child-menu-item">
               <a
                 aria-current={isActive(child) ? 'true' : 'false'}
-                aria-haspopup={child.children ? 'true' : 'false'}
+                aria-haspopup={hasChildren(child) ? 'true' : 'false'}
                 class={`main-navigation-mobile__child-menu-item-link ${
                   isActive(child) ? 'selected' : ''
                 }`}
@@ -167,7 +170,7 @@ export class MainNavigationMobile {
                 <div class="main-navigation-mobile__child-menu-item-wrapper">
                   <span>{child.name}</span>
                   {isActive(child) && <span class="sr-only">active</span>}
-                  {child.children && (
+                  {hasChildren(child) && (
                     <scale-icon-navigation-right></scale-icon-navigation-right>
                   )}
                 </div>
@@ -202,7 +205,7 @@ export class MainNavigationMobile {
             >
               <a
                 aria-current={isActive(item.id) ? 'true' : 'false'}
-                aria-haspopup={item.children ? 'true' : 'false'}
+                aria-haspopup={hasChildren(item) ? 'true' : 'false'}
                 class={`main-navigation-mobile__item-link${
                   isActive(item.id)
                     ? ' main-navigation-mobile__item-link--selected'
@@ -234,7 +237,7 @@ export class MainNavigationMobile {
                 <div class="main-navigation-mobile__item-wrapper">
                   <span>{item.name}</span>
                   {isActive(item.id) && <span class="sr-only">active</span>}
-                  {item.children && (
+                  {hasChildren(item) && (
                     <scale-icon-navigation-right></scale-icon-navigation-right>
                   )}
                 </div>

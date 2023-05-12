@@ -33,9 +33,23 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 
 ```js
 import '@telekom/scale-components/dist/scale-components/scale-components.css';
-import { defineCustomElements } from '@telekom/scale-components/loader';
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from '@telekom/scale-components/loader';
 
-defineCustomElements();
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
+```
+
+Alternatively, if you wish to only load the component you need, for example, the button component, you can load the component in the following way:
+
+```js
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import { defineCustomElementScaleButton } from '@telekom/scale-components';
+
+defineCustomElementScaleButton();
 ```
 
 ### NPM Packages

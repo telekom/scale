@@ -1,5 +1,4 @@
 :host {
-  --font: var(--telekom-text-style-small-bold);
   --color-informational: var(
     --telekom-color-text-and-icon-functional-informational
   );
@@ -7,14 +6,24 @@
   --color-danger: var(--telekom-color-text-and-icon-functional-danger);
   --color-success: var(--telekom-color-text-and-icon-functional-success);
   --color-neutral: var(--telekom-color-text-and-icon-additional);
+  --font-size: 0.75rem;
+  --font-weight: 700;
+  --line-height: 1.35;
+  --icon-size-helper-text: 11px;
 }
 
 .helper-text {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  font: var(--telekom-text-style-small-bold);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+}
+
+[part='text'] {
+  text-align: left;
 }
 
 scale-icon-alert-information,
@@ -24,6 +33,12 @@ scale-icon-alert-success {
   justify-content: center;
   align-items: center;
   margin-right: var(--telekom-spacing-unit-x1);
+  margin-top: 0.1666em; /* magic */
+}
+
+.scale-icon {
+  height: var(--icon-size-helper-text);
+  width: var(--icon-size-helper-text);
 }
 
 .helper-text--informational {

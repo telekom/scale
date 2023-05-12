@@ -23,6 +23,7 @@ export class Shell {
   @Prop() claimLang?: string = 'de';
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
+  @Prop() logoHideTitle?: boolean;
   @Prop() logoClick?: any;
   @Prop() logoAriaDescribedBy?: string;
   @Prop() mainNavigation?: any = [];
@@ -32,6 +33,7 @@ export class Shell {
   @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
+  @Prop() userMenuAriaLabel?: string;
   @Prop() sticky?: boolean = false;
   @State() scrolled: boolean = false;
   /** (optional) Injected CSS styles */
@@ -56,6 +58,7 @@ export class Shell {
               logoAriaDescribedBy={this.logoAriaDescribedBy}
               logoHref={this.logoHref}
               logoTitle={this.logoTitle}
+              logoHideTitle={this.logoHideTitle}
               portalName={this.portalName}
               mainNavigation={this.mainNavigation}
               iconNavigation={this.iconNavigation}
@@ -66,6 +69,7 @@ export class Shell {
               activeSectorId={this.activeSectorId}
               claimLang={this.claimLang}
               sticky={this.sticky}
+              userMenuAriaLabel={this.userMenuAriaLabel}
             ></scale-app-header>
           )}
           <main class="content">

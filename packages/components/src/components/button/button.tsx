@@ -61,6 +61,8 @@ export class Button {
   @Prop() download?: string;
   /** (optional) Set `tabindex` in the inner button or link element */
   @Prop() innerTabindex?: number;
+  /** (optional) Button aria-label */
+  @Prop() innerAriaLabel?: string;
 
   private focusableElement: HTMLElement;
   private fallbackSubmitInputElement: HTMLInputElement;
@@ -173,7 +175,7 @@ export class Button {
    */
   setChildrenIconSize() {
     if (this.size != null && buttonIconSizeMap[this.size] != null) {
-      const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
+      const icons: ScaleIcon[] = Array.from(this.hostElement.childNodes).filter(
         isScaleIcon
       );
       icons.forEach((icon) => {
@@ -201,12 +203,15 @@ export class Button {
           <a
             ref={(el) => (this.focusableElement = el)}
             class={this.getCssClassMap()}
-            href={this.href}
+            href={this.disabled ? null : this.href}
             download={this.download}
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             part={basePart}
             tabIndex={this.innerTabindex}
+            role="link"
+            aria-disabled={this.disabled ? 'true' : null}
+            aria-label={this.innerAriaLabel}
           >
             <slot />
           </a>
@@ -221,6 +226,7 @@ export class Button {
             tabIndex={this.innerTabindex}
             name={this.name}
             value={this.value}
+            aria-label={this.innerAriaLabel}
           >
             <slot />
           </button>
@@ -238,7 +244,7 @@ export class Button {
       !this.iconOnly &&
         this.iconPosition &&
         `button--icon-${this.iconPosition}`,
-      this.disabled && !this.href && `button--disabled`
+      this.disabled && `button--disabled`
     );
   }
 }

@@ -33,27 +33,27 @@ Don't use a radio button group when:
 
 ![Elements of Radio Button Group](assets/3_components/radio-button-group/radio-button-group-elements.png)
 
-### Group label (1)
+#### Group label (1)
 
 Choose a short and meaningful title for the entire group.
 
-### Deselected radio button (2)
-
-If the circle is empty, an option is deselected.
-
-### Label (3)
-
-Use the label to clearly describe the effect of the respective selection. A label usually contains max three words.
-
-### Selected radio button
+#### Selected radio button (2)
 
 If the circle is filled in, an option is selected.
 
-### Information (5) (optional)
+#### Label (3)
+
+Use the label to clearly describe the effect of the respective selection. A label usually contains max three words.
+
+#### Deselected radio button (4)
+
+If the circle is empty, an option is deselected.
+
+#### Information (5) (optional)
 
 If necessary, you can also provide additional information.
 
-### Error message (6)
+#### Error message (6)
 
 Place error messages below the group label.
 

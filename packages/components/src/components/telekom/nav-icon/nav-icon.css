@@ -11,7 +11,7 @@
 
 scale-nav-icon {
   --spacing-mobile: var(--telekom-spacing-unit-x0) 6px;
-  --font-size-mobile: var(--telekom-typography-font-size-footnote);
+  --font-size-mobile: var(--telekom-typography-font-size-badge);
   --line-height-mobile: var(--telekom-typography-line-spacing-tight);
   --font-weight-mobile: var(--telekom-typography-font-weight-bold);
 
@@ -22,6 +22,9 @@ scale-nav-icon {
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
 }
 
 .meta-navigation__item-link {
@@ -50,8 +53,11 @@ scale-nav-icon {
 .meta-navigation__item-link:active {
   color: var(--color-active);
 }
+.meta-navigation__item-link:focus {
+  outline: var(--focus-outline);
+}
 
-@media (max-width: 1023px) {
+@media (max-width: 1039px) {
   .meta-navigation__item-link {
     min-width: 24px;
     height: auto;
@@ -74,7 +80,7 @@ scale-nav-icon {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1040px) {
   .meta-navigation__item scale-menu-flyout {
     height: 24px;
   }

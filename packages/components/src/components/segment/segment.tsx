@@ -165,7 +165,6 @@ export class Segment {
           aria-description={this.getAriaDescriptionTranslation()}
         >
           <div class="segment--mask">
-            
             <div class="success-icon-container">
               <scale-icon-action-success
                 size={this.size === 'small' ? 14 : 16}

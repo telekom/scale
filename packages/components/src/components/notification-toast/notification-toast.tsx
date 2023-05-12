@@ -17,9 +17,12 @@ import {
   State,
   Element,
   Host,
+  Event,
+  EventEmitter,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 @Component({
   tag: 'scale-notification-toast',
@@ -52,6 +55,10 @@ export class NotificationToast {
   @Prop() fadeDuration?: number = 500;
   /** (optional) Injected CSS styles */
   @Prop({ reflect: true }) styles?: string;
+  /** (optional) Label for close button */
+  @Prop() closeButtonLabel?: string = 'close';
+  /** (optional) Title for close button */
+  @Prop() closeButtonTitle?: string = 'close';
   /** (do not use) it is a helper prop for storybook */
   @Prop() story?: boolean;
   /** (optional) Toast state height with offset */
@@ -59,6 +66,11 @@ export class NotificationToast {
   @Prop() href: string;
 
   @Element() element: HTMLElement;
+
+  /** Triggered when the notification toast closing process begins */
+  @Event({ eventName: 'scale-closing' }) scaleClosing: EventEmitter<void>;
+  /** Triggered when the notification toast has been dismissed */
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
 
   hideToast: boolean = false;
   alignmentVertical: string;
@@ -81,9 +93,11 @@ export class NotificationToast {
   }
 
   close = () => {
+    emitEvent(this, 'scaleClosing');
     this.hideToast = true;
     setTimeout(() => {
       this.opened = false;
+      emitEvent(this, 'scaleClose');
     }, this.fadeDuration);
   };
 
@@ -178,7 +192,8 @@ export class NotificationToast {
               class="notification-toast__button-close"
               onClick={() => this.close()}
               tabindex={0}
-              aria-label="close"
+              aria-label={this.closeButtonLabel}
+              title={this.closeButtonTitle}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   this.close();

@@ -10,19 +10,19 @@
  */
 
 :host {
-  --background: var(--telekom-color-ui-extra-strong);
-  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --background: var(--telekom-color-ui-faint);
+  --color: var(--telekom-color-text-and-icon-standard);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --radius: var(--telekom-radius-small);
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
 
-  --icon-color: var(--color);
+  --icon-color: var(--telekom-color-text-and-icon-additional);
   --icon-color-hover: var(--color);
 
-  --background-disabled: var(--telekom-color-ui-disabled);
+  --background-disabled: var(--telekom-color-ui-faint);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
   --spacing-left-dismissable: var(--telekom-spacing-unit-x05);
@@ -116,20 +116,20 @@ dismissable
 .tag--dismissable:not(.tag--disabled) button:hover {
   background: var(--background-button-dismissable-hover);
 }
-.tag--dismissable.tag--color-grey:not(.tag--disabled) button:hover {
+.tag--dismissable.tag--color-standard:not(.tag--disabled) button:hover {
   background: var(--background-button-standard-dismissible-hover);
 }
-.tag--dismissable.tag--type-strong.tag--color-grey:not(.tag--disabled)
+.tag--dismissable.tag--type-strong.tag--color-standard:not(.tag--disabled)
   button:hover {
   background: var(--background-button-standard-strong-dismissible-hover);
 }
 .tag--dismissable button:active {
   background: var(--background-button-dismissable-active);
 }
-.tag--dismissable.tag--color-grey button:active {
+.tag--dismissable.tag--color-standard button:active {
   background: var(--background-button-standard-dismissible-hover);
 }
-.tag--dismissable.tag--type-strong.tag--color-grey button:active {
+.tag--dismissable.tag--type-strong.tag--color-standard button:active {
   background: var(--background-button-standard-strong-dismissible-hover);
 }
 .tag--dismissable button:focus scale-icon-action-close {
@@ -201,14 +201,6 @@ link
 standard type
 **/
 
-/*standard*/
-.tag--type-standard.tag--color-grey {
-  background-color: var(--telekom-color-ui-faint);
-  color: var(--telekom-color-text-and-icon-standard);
-}
-.tag--type-standard.tag--color-grey.tag--dismissable scale-icon-action-close {
-  color: var(--telekom-color-text-and-icon-standard);
-}
 /*cyan*/
 .tag--type-standard.tag--color-cyan {
   background-color: var(--telekom-color-additional-cyan-subtle);
@@ -288,53 +280,104 @@ standard type
 strong type
 *
 */
-.tag--type-strong {
-  color: var(--telekom-color-text-and-icon-standard);
-}
-.tag--type-strong.tag--dismissable scale-icon-action-close {
-  color: var(--telekom-color-text-and-icon-additional);
-}
-/*standard*/
-.tag--type-strong.tag--color-grey {
+
+/*
+standard
+*/
+.tag--type-strong.tag--color-standard {
   background-color: var(--telekom-color-ui-extra-strong);
   color: var(--telekom-color-text-and-icon-inverted-standard);
 }
-.tag--type-strong.tag--color-grey.tag--dismissable scale-icon-action-close {
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+.tag--type-strong.tag--color-standard.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-inverted-additional);
 }
-/*cyan*/
+/*
+cyan
+*/
 .tag--type-strong.tag--color-cyan {
   background-color: var(--telekom-color-additional-cyan-400);
+  color: var(--telekom-color-text-and-icon-black-standard);
 }
-/*yellow*/
+.tag--type-strong.tag--color-cyan.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-black-additional);
+}
+/*
+yellow
+*/
 .tag--type-strong.tag--color-yellow {
   background-color: var(--telekom-color-additional-yellow-400);
+  color: var(--telekom-color-text-and-icon-black-standard);
 }
-/*green*/
+.tag--type-strong.tag--color-yellow.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-black-additional);
+}
+/*
+green
+*/
 .tag--type-strong.tag--color-green {
   background-color: var(--telekom-color-functional-success-standard);
+  color: var(--telekom-color-text-and-icon-black-standard);
 }
-/*orange*/
+.tag--type-strong.tag--color-green.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-black-additional);
+}
+/*
+orange
+*/
 .tag--type-strong.tag--color-orange {
   background-color: var(--telekom-color-functional-warning-standard);
+  color: var(--telekom-color-text-and-icon-black-standard);
 }
-/*red*/
+.tag--type-strong.tag--color-orange.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-black-additional);
+}
+/*
+red
+*/
 .tag--type-strong.tag--color-red {
   background-color: var(--telekom-color-functional-danger-standard);
+  color: var(--telekom-color-text-and-icon-black-standard);
 }
-/*violet*/
+.tag--type-strong.tag--color-red.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-black-additional);
+}
+/*
+violet
+*/
 .tag--type-strong.tag--color-violet {
   background-color: var(--telekom-color-additional-violet-300);
+  color: var(--telekom-color-text-and-icon-black-standard);
 }
-/*brown*/
+.tag--type-strong.tag--color-violet.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-black-additional);
+}
+/*
+brown
+*/
 .tag--type-strong.tag--color-brown {
   background-color: var(--telekom-color-additional-brown-400);
+  color: var(--telekom-color-text-and-icon-black-standard);
 }
-/*olive*/
+.tag--type-strong.tag--color-brown.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-black-additional);
+}
+/*
+olive
+*/
 .tag--type-strong.tag--color-olive {
   background-color: var(--telekom-color-additional-olive-400);
+  color: var(--telekom-color-text-and-icon-black-standard);
 }
-/*teal*/
+.tag--type-strong.tag--color-olive.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-black-additional);
+}
+/*
+teal
+*/
 .tag--type-strong.tag--color-teal {
   background-color: var(--telekom-color-additional-teal-400);
+  color: var(--telekom-color-text-and-icon-black-standard);
+}
+.tag--type-strong.tag--color-teal.tag--dismissable scale-icon-action-close {
+  color: var(--telekom-color-text-and-icon-black-additional);
 }

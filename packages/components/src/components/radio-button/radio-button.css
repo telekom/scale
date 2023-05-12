@@ -18,7 +18,7 @@ scale-radio-button {
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --color-primary-hover: var(--telekom-color-text-and-icon-standard);
   --color-primary-active: var(--telekom-color-text-and-icon-standard);
-  --color-focus: var(--telekom-color-functional-focus);
+  --color-focus: var(--telekom-color-functional-focus-standard);
   --color-text: var(--telekom-color-text-and-icon-standard);
 
   /*helper-text*/
@@ -172,6 +172,7 @@ scale-icon-alert-error {
   border: var(--border-control-disabled);
 }
 
+.radio-button--disabled,
 .radio-button--disabled label,
 .radio-button--disabled .radio-button__label,
 .radio-button--disabled input,

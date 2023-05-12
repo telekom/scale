@@ -5,6 +5,7 @@
     :disabled="disabled"
     :input-id="inputId"
     :checked="checked"
+    :size="size"
     @scaleChange="scaleChange"
     style="--color-on: blue"
   >
@@ -20,6 +21,7 @@ export default {
     inputId: { type: String },
     checked: { type: Boolean, default: false },
     label: String,
+    size: String,
     name: String,
   },
   methods: {

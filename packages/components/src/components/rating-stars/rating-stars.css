@@ -18,13 +18,13 @@
   --stars-placeholder-revert-color: var(--telekom-color-ui-regular);
   --stars-disabled-color: var(--telekom-color-text-and-icon-disabled);
   --stars-spacing: var(--telekom-spacing-unit-x05);
-  --stars-transition: color 0.1s;
+  --stars-transition: color var(--telekom-motion-duration-immediate);
   --stars-size: 24px;
   --font-weight-medium: var(--telekom-typography-font-weight-medium);
   --font-size-small: var(--telekom-typography-font-size-small);
   --infotext-color: var(--telekom-color-text-and-icon-additional);
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
 }
 
 :host([star-size='small']) {

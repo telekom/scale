@@ -7,7 +7,7 @@ Switches allow users to quickly turn an item on or off. Like a physical light sw
 
 ## General
 
-A switch offers two mutually exclusive states (on/off, yes/no). It always has a default value. A solid Magenta color shows it is on, while a dark outline shows it is off.
+A switch offers two mutually exclusive states (on/off, yes/no). It always has a default value.
 
 ![Image Name](assets/3_components/switch/switch.png)
 
@@ -21,6 +21,34 @@ Use radio buttons or a single checkbox if
 
 - the user has to confirm by saving or submitting to apply the new state or
 - immediate results are not possible.
+
+## Variants
+
+### Standard / iOS
+
+Use the standard variant for all cross-platform apps or those primarily designed for iOS.
+
+### Android
+
+This variant is ideal if you’re using Scale to build a mobile app that should visually integrate into Android as seamlessly as possible.
+
+![Image Name](assets/3_components/switch/switch_android.png)
+
+## Sizes
+
+The standard variant is available in large and small.
+
+### Large
+
+The large switch works for all web apps. Also, use this variant for cross-platform mobile apps or those designed primarily for iOS.
+
+![Image Name](assets/3_components/switch/switch_large.png)
+
+### Small
+
+Only use this variant for desktop apps. If your layout is responsive, you can change to the large switch for smaller viewport sizes.
+
+![Image Name](assets/3_components/switch/switch_small.png)
 
 ## Label
 

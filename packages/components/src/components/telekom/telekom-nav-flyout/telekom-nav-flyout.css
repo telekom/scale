@@ -1,0 +1,80 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --top: var(--scl-telekom-header-height, 0);
+  --left: 0;
+  --width: 100vw;
+  --height: auto;
+  --position: fixed;
+  --background: var(--telekom-color-background-surface);
+  --shadow: none;
+  --z-index: 7;
+
+  --duration: var(--telekom-motion-duration-transition);
+  --translate-x: 0;
+  --translate-y: var(--telekom-spacing-unit-x1);
+  --translate-z: 0;
+
+  display: contents;
+}
+
+[part~='mobile'] {
+  --height: 100vh;
+  --top: 0;
+  --duration: 0;
+  --background: var(--telekom-color-background-canvas);
+}
+
+:host([debug]) [part~='base'] {
+  outline: 1px dotted gold;
+}
+
+[part~='base'] {
+  display: none;
+  position: var(--position);
+  z-index: var(--z-index);
+  top: var(--top);
+  left: var(--left);
+  width: var(--width);
+  height: var(--height);
+  min-height: 25vh;
+  background: var(--background);
+  box-shadow: var(--shadow);
+  animation-duration: var(--duration);
+  border-top: 1px solid var(--telekom-color-ui-faint);
+}
+
+[part~='base'][part~='expanded'] {
+  display: block;
+}
+
+@keyframes toggle {
+  from {
+    opacity: 0;
+    transform: translate3d(
+      var(--translate-x),
+      var(--translate-y),
+      var(--translate-z)
+    );
+  }
+}
+
+[part~='in'] {
+  animation-name: toggle;
+  animation-timing-function: var(--telekom-motion-easing-enter);
+}
+
+[part~='out'] {
+  animation-name: toggle;
+  animation-direction: reverse;
+  animation-timing-function: var(--telekom-motion-easing-exit);
+}

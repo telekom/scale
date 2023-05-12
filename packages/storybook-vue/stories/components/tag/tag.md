@@ -1,16 +1,20 @@
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Tag</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
 Tags draw the user's attention to certain content elements. They represent a category or an attribute.
 
 ## General
 
-Tags consist of relevant keywords in a container. A static tag is non-dismissable and indicates a category or an attribute; an interactive tag is dismissable and shows things like selected filters, which users can then also remove.
+Tags consist of relevant keywords in a container. A tag refers to a category or attribute.
 
 ### When to use
 
 Use a tag to:
 
-- draw a user's attention to certain elements they might otherwise overlook,
-- make it easier for users to recognize content, for instance in tables, or
-- show users selected filters.
+- draw a user's attention to certain elements they might otherwise overlook, or
+- make it easier for users to recognize content, for instance in tables.
 
 ### When not to use
 
@@ -27,38 +31,25 @@ A static tag has no interactive function. It only conveys information, for insta
 
 ![Tag-static.png](assets/3_components/tag/tag-static.png)
 
-### Interactive tag
+### Dismissible tag
 
-An interactive tag offers the possibility to remove the tag by clicking/tapping on the icon. A typical use, for example, is deactivating selected filters.
+A dismissible tag offers the possibility to remove the tag by clicking/tapping on the icon.
 
-![Tag-Interactive.png](assets/3_components/tag/tag-interactive.png)
+![Tag-Dismissible.png](assets/3_components/tag/tag-interactive.png)
 
 ## Variants
 
-### Colors
-
 ![Tag-Strong-Standard.png](assets/3_components/tag/tag-strong-standard.png)
 
-The standard color for the tag is black text on light grey. Each defined color has a standard and stronger version with a darker background. Use the stronger version to provide more emphasis.
-All standard and strong colors are optimized for legibility and accessibility.
+Scale offers standard and strong variants. The strong variant is ideal for more emphasis.
 
-Defined colors:
-
-- Teal
-- Olive
-- Violet
-- Brown
-- Cyan
-- Yellow
-- Green
-- Orange
-- Red
+## Colors
 
 You can choose your own color for color coding or to achieve a different visual effect. It's important that the color scheme is easily understandable and meets all accessibility requirements.
 
 ![Tag-Basic-Colors.png](assets/3_components/tag/tag-basic-colors.png)
 
-### Sizes
+## Sizes
 
 Scale offers two sizes for tags: large and small. If needed, you can adjust the size of the tags yourself.
 
@@ -70,11 +61,11 @@ Use large tags as default.
 
 ### Small
 
-![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
-
 Use small tags if space is limited.
 
-### Disabled state
+![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
+
+## Disabled state
 
 ![Tag-disabled.png](assets/3_components/tag/tag-disabled.png)
 
@@ -90,12 +81,15 @@ The container contains a label and optionally, a remove icon.
 
 The label represents a category or an attribute; try to make it clear and concise.
 
-#### Icon (3)
+#### Icon (3) (optional)
 
 By clicking/tapping on the icon, users remove the tag.
 
 ## Best practices
 
-- Don't mix interactive and static tags within a product or service.
 - Decide on one size for your tags.
 - Use a clear keyword for the label.
+
+## Related components
+
+[Chip](?path=/usage/components-chip--standard),

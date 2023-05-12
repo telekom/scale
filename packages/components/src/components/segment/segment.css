@@ -82,11 +82,23 @@ button.segment--icon-only.segment--small .segment--mask {
   padding-right: var(--telekom-spacing-unit-x4);
 }
 
+<<<<<<< HEAD
 button.segment--small .segment--mask {
+=======
+button.segment--small.segment--selected .segment--mask {
+>>>>>>> main
   padding-left: var(--telekom-spacing-unit-x2);
   padding-right: var(--telekom-spacing-unit-x3);
 }
 
+<<<<<<< HEAD
+=======
+button.segment--small .segment--mask {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+>>>>>>> main
 .segment--small {
   height: var(--height);
 }
@@ -96,21 +108,44 @@ button.segment--small .segment--mask {
   height: var(--height-medium);
 }
 
+<<<<<<< HEAD
 button.segment--medium .segment--mask {
+=======
+button.segment--medium.segment--selected .segment--mask {
+>>>>>>> main
   padding-left: var(--telekom-spacing-unit-x3);
   padding-right: var(--telekom-spacing-unit-x4);
 }
 
+<<<<<<< HEAD
+=======
+button.segment--medium .segment--mask {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+
+>>>>>>> main
 .segment--large {
   font-size: var(--font-size-large);
   height: var(--height-large);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 button.segment--large .segment--mask {
   padding-left: var(--telekom-spacing-unit-x4);
   padding-right: var(--telekom-spacing-unit-x5);
 }
 
+<<<<<<< HEAD
 /* selected */
+=======
+button.segment--large.segment--selected .segment--mask {
+  padding-left: 1.125rem;
+  padding-right: 1.125rem;
+}
+>>>>>>> main
 
 .segment--selected {
   background-color: var(--background-color-selected);
@@ -121,8 +156,11 @@ button.segment--large .segment--mask {
   color: var(--color-selected);
 }
 
+<<<<<<< HEAD
 /* disabled */
 
+=======
+>>>>>>> main
 .segment--disabled.segment--selected .segment--mask {
   color: var(--label-disabled);
 }
@@ -132,10 +170,13 @@ button.segment--large .segment--mask {
   background-color: transparent;
 }
 
+<<<<<<< HEAD
 
 /* shadows left and right */
 
 
+=======
+>>>>>>> main
 .segment--left-sibling-selected {
   border-radius: 0 var(--button-radius) var(--button-radius) 0;
   margin-left: 0;
@@ -172,7 +213,11 @@ button.segment--large .segment--mask {
 .segment:focus {
   box-shadow: var(--telekom-shadow-raised-standard);
   outline: var(--telekom-spacing-unit-x05) solid
+<<<<<<< HEAD
     var(--telekom-color-functional-focus);
+=======
+    var(--telekom-color-functional-focus-standard);
+>>>>>>> main
   outline-offset: var(--telekom-spacing-unit-x025);
   z-index: 40;
   position: relative;

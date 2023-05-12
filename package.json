@@ -10,7 +10,6 @@
     "build": "./scripts/build.sh",
     "build:storybook:staging": "./scripts/build-storybook.sh",
     "build:components": "yarn workspace @telekom/scale-components build",
-    "build:sketch": "./scripts/build-sketch.sh",
     "bootstrap": "lerna bootstrap",
     "postbootstrap": "lerna run generate",
     "new-version": "lerna version --conventional-commits --no-push",

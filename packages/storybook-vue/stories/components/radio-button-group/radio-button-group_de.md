@@ -26,27 +26,27 @@ Verwende Radio-Buttons grundsätzlich nicht, wenn
 
 ![Elemente der Radio Button Group](assets/3_components/radio-button-group/radio-button-group-elements.png)
 
-### Gruppenlabel (1)
+#### Gruppenlabel (1)
 
 Wähle einen kurzen und aussagekräftigen Titel für die gesamte Gruppe.
 
-### Radio-Button ausgeschaltet (2)
-
-Wenn der Kreis leer ist, gilt eine Option als abgewählt.
-
-### Label (3)
-
-Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. Ein Label enthält in der Regel maximal drei Wörter.
-
-### Radio-Button eingeschaltet
+#### Radio-Button eingeschaltet (2)
 
 Ist der Kreis ausgefüllt, so gilt eine Option als ausgewählt.
 
-### Information (5) (optional)
+#### Label (3)
+
+Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. Ein Label enthält in der Regel maximal drei Wörter.
+
+#### Radio-Button ausgeschaltet (4)
+
+Wenn der Kreis leer ist, gilt eine Option als abgewählt.
+
+#### Information (5) (optional)
 
 Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
 
-### Fehlermeldung (6)
+#### Fehlermeldung (6)
 
 Fehlermeldungen sind unterhalb des Gruppenlabels platziert.
 

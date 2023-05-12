@@ -24,10 +24,10 @@ const toMatchImageSnapshot = configureToMatchImageSnapshot({
 
 expect.extend({ toMatchImageSnapshot });
 
-global.visualCheck = async (selector) => {
+global.visualCheck = async (options) => {
   await global.page.waitForSelector('html.hydrated');
   const previewHtml = await global.page.$('body');
-  expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  expect(await previewHtml.screenshot()).toMatchImageSnapshot(options);
 };
 
 global.extensions = initExtensions(global.page);
@@ -45,6 +45,13 @@ global.runSetup = async (id) => {
       '--telekom-motion-duration-animation-deliberate',
     ].forEach((transitionSpeed) => {
       document.body.style.setProperty(transitionSpeed, '0s');
+    });
+    [
+      '--telekom-motion-easing-standard',
+      '--telekom-motion-easing-enter',
+      '--telekom-motion-easing-leave',
+    ].forEach((motion) => {
+      document.body.style.setProperty(motion, 'unset');
     });
   });
 };

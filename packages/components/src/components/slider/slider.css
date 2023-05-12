@@ -22,7 +22,9 @@
   --size-thumb: 24px;
   --border-color-thumb: rgba(0, 0, 0, 0.05);
   --background-thumb: var(--telekom-color-ui-white);
-  --color-focus: var(--telekom-color-functional-focus);
+  --shadow-thumb: 0 0 2px 0 rgba(0, 0, 0, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.24),
+    0 4px 12px 0 rgba(0, 0, 0, 0.26);
+  --color-focus: var(--telekom-color-functional-focus-standard);
   --spacing-x-step-marks: 8px;
   --color-step-mark: var(--telekom-color-text-and-icon-additional);
   --radius-step-mark: var(--telekom-radius-circle);
@@ -67,6 +69,7 @@
   height: var(--height-track);
   background: var(--background-track);
   border-radius: var(--radius-track);
+  border: 1px solid transparent;
 }
 
 /* Really holds the thumb, adding some spacing on the sides */
@@ -85,6 +88,8 @@
   z-index: 1;
   border-radius: var(--radius-track);
   background-color: var(--background-bar);
+  /* to cover the transparent border in the track */
+  border: 1px solid transparent;
 }
 
 [part~='thumb-wrapper'] {
@@ -103,19 +108,11 @@
   --_border: 0 0 0 var(--telekom-spacing-unit-x025) var(--border-color-thumb);
   width: var(--size-thumb);
   height: var(--size-thumb);
-  outline: none;
   box-sizing: border-box;
   border-radius: var(--radius-thumb);
   background-color: var(--background-thumb);
-  box-shadow: var(--_border), var(--telekom-shadow-raised-standard);
-}
-
-[part~='thumb-wrapper']:hover [part~='thumb'] {
-  box-shadow: var(--_border), var(--telekom-shadow-raised-hover);
-}
-
-[part~='thumb-wrapper']:active [part~='thumb'] {
-  box-shadow: var(--_border), var(--telekom-shadow-raised-pressed);
+  box-shadow: var(--_border), var(--shadow-thumb);
+  border: 1px solid transparent;
 }
 
 [part~='thumb']:focus {
@@ -191,4 +188,8 @@
 
 :host-context([data-platform='android']) {
   --background-thumb: var(--telekom-color-primary-standard);
+}
+
+:host-context([data-platform='android']) [part~='thumb'] {
+  box-shadow: var(--_border), var(--telekom-shadow-raised-standard);
 }

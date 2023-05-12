@@ -38,13 +38,13 @@ export class TabNav {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  @Listen('click')
-  handleClick(event: MouseEvent) {
+  @Listen('scale-select')
+  handleSelect(event) {
     const nextTab = event.target as HTMLScaleTabHeaderElement;
-    if (nextTab.getAttribute('role') !== 'tab') {
-      return;
+    // Act only if it's a direct child
+    if (this.getAllEnabledTabs().includes(nextTab)) {
+      this.selectTab(nextTab);
     }
-    this.selectTab(nextTab);
   }
 
   @Listen('keydown')
@@ -187,7 +187,7 @@ export class TabNav {
 
   render() {
     return (
-      <Host>
+      <Host class="scale-tab-nav">
         {this.styles && <style>{this.styles}</style>}
 
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>

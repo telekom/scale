@@ -40,27 +40,27 @@ Wenn du viele kategorisierbare Optionen anbietest, kannst du Optionsgruppen erst
 
 ![Image Name](assets/3_components/select-box/Elemente.png)
 
-### Label (1)
+#### Label (1)
 
 Das Label beschreibt eindeutig, welche Art von Optionen das Dropdown enthält.
 
-### Icon (2)
+#### Icon (2)
 
 Der Pfeil zeigt durch seine Ausrichtung an, ob das Dropdown-Menü geöffnet oder geschlossen ist.
 
-### Information (3) (optional)
+#### Information (3) (optional)
 
 Eine zusätzliche Information kann helfen, den Inhalt oder Zweck eines Dropdowns zu verdeutlichen.
 
-### Fehlermeldung (4)
+#### Fehlermeldung (4)
 
 Wenn die Auswahl einer Option für Nutzer\*innen verpflichtend ist, führt das Absenden eines Formulars ohne getätigte Auswahl zu einer Fehlermeldung. Besitzt das Dropdown bereits einen Informationstext, wird dieser kurzzeitig überschrieben.
 
-### Titel (5)
+#### Titel (5)
 
 Der Titel fordert zur Auswahl einer Option auf.
 
-### Dropdown Menü (6)
+#### Dropdown Menü (6)
 
 Das Dropdown Menü beinhaltet die verfügbaren Optionen oder Optionsgruppen.
 

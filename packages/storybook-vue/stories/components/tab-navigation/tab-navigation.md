@@ -28,7 +28,7 @@ Don't use tabs if:
 - users need to read the content in a particular order (e.g., with processes), or
 - you have the option to optimize the content and display it within one viewing element.
 
-## Basic Types
+## Variants
 
 ### Text only
 

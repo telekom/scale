@@ -26,12 +26,12 @@ Don't use a table when:
 
 ![Image Name](assets/3_components/data-table/data-table-elements.png)
 
-### Column header (1)
+#### Column header (1)
 
 The title in the column header describes the content of the respective column. By default, the column header is static. But you can also use the sorting function so users can sort the content in the column in ascending or descending order.
 The sort icon shows when the user has sorted the content in a column.
 
-### Table row (2)
+#### Table row (2)
 
 The content of a row forms a data unit and differentiates from the other rows both visually and in terms of its content.
 The first cell of a row contains the title: a meaningful description of the data set.
@@ -39,7 +39,7 @@ The other cells can contain a wide variety of content types - in addition to tex
 
 A mouse over highlights the rows to make them more readable.
 
-### Divider (3)
+#### Divider (3)
 
 The dividing line separates the table rows from one another.
 

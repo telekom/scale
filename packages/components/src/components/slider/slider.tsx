@@ -22,10 +22,8 @@ import {
   Fragment,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
-
-let i = 0;
 
 @Component({
   tag: 'scale-slider',
@@ -78,6 +76,8 @@ export class Slider {
   @Prop() thumbLarge?: boolean;
   /** (optional) Slider id */
   @Prop({ mutable: true }) sliderId?: string;
+  /** (optional) Aria label for range slider */
+  @Prop() innerAriaValueText = '$from to $to';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -100,6 +100,7 @@ export class Slider {
   // private offsetLeftFrom: number;
   // private offsetLeftTo: number;
   private activeRangeThumb: null | 'From' | 'To' = null;
+  private readonly internalId = generateUniqueId();
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
@@ -115,7 +116,7 @@ export class Slider {
 
   componentWillLoad() {
     if (this.sliderId == null) {
-      this.sliderId = 'slider-' + i++;
+      this.sliderId = 'slider-' + this.internalId;
     }
     // Set initial position
     if (this.range) {
@@ -317,10 +318,16 @@ export class Slider {
     window.removeEventListener('touchend', this.onDragEnd);
   }
 
-  render() {
-    const helperTextId = `slider-helper-message-${i}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+  getRangeAriaValueText() {
+    const filledText = this.innerAriaValueText
+      .replace(/\$from/g, `${this.valueFrom}`)
+      .replace(/\$to/g, `${this.valueTo}`);
+    return filledText;
+  }
 
+  render() {
+    const helperTextId = `helper-message-${this.internalId}`;
+    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -379,9 +386,9 @@ export class Slider {
                         role="slider"
                         id={this.sliderId + '-from'}
                         aria-valuemin={this.min}
-                        aria-valuenow={this.value}
+                        aria-valuenow={`${this.valueFrom} to ${this.valueTo}`}
                         aria-valuemax={this.max}
-                        aria-valuetext={`${this.value}`}
+                        aria-valuetext={`${this.valueFrom} to ${this.valueTo}`}
                         aria-labelledby={`${this.sliderId}-label`}
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
@@ -403,7 +410,7 @@ export class Slider {
                         aria-valuemin={this.min}
                         aria-valuenow={this.value}
                         aria-valuemax={this.max}
-                        aria-valuetext={`${this.value}`}
+                        aria-valuetext={this.getRangeAriaValueText()}
                         aria-labelledby={`${this.sliderId}-label`}
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}

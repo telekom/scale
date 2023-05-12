@@ -11,6 +11,7 @@
 
 import { Component, h, Prop, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../../utils/status-note';
 
 @Component({
   tag: 'scale-logo',
@@ -46,12 +47,30 @@ export class Logo {
   @Prop() styles?: string;
   @Prop() focusable: boolean = true;
   @Prop() scrollIntoViewOnFocus: boolean = false;
+  /** (optional) set logo specific title */
   @Prop() logoTitle?: string = 'Telekom Logo';
+  /** (optional) Hide all logo related titles */
+  @Prop() logoHideTitle?: boolean;
+  /** FIXME is this actually working? probably not because of shadow DOM? */
   @Prop() logoAriaDescribedBy?: string;
+  /** FIXME this is also probably not working properly, see below (it needs a string value) */
+  @Prop() logoAriaHidden?: boolean = false;
+
+  componentDidRender() {
+    if (this.accessibilityTitle) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "accessibilityTitle" is deprecated. Please use the "logoTitle" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
 
   render() {
     return (
-      <Host>
+      <Host exportparts="logo-svg">
         <style>
           {this.size ? `:host { --logo-size: ${this.size}px; }` : ''}
           {this.styles}
@@ -65,15 +84,17 @@ export class Logo {
               window.scrollTo({ top: 0 });
             }
           }}
-          title={this.logoTitle}
+          title={this.logoHideTitle ? '' : this.logoTitle}
           aria-describedby={this.logoAriaDescribedBy}
+          aria-hidden={this.logoAriaHidden}
+          tabindex={this.logoAriaHidden ? -1 : 0}
         >
           <scale-logo-svg
             part="icon"
             language={this.language}
             color={this.variant}
-            accessibilityTitle={this.accessibilityTitle}
-            role="link"
+            logoTitle={this.logoTitle}
+            logoHideTitle={this.logoHideTitle}
           ></scale-logo-svg>
         </a>
       </Host>

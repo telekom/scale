@@ -1,0 +1,68 @@
+:host {
+  --spacing: var(--telekom-spacing-unit-x4);
+  --background: var(--telekom-color-background-surface);
+  --max-width: 572px;
+
+  --spacing-close-button: var(--telekom-spacing-unit-x2);
+  --radius-close-button: var(--telekom-radius-standard);
+  --transition-close-button: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus-standard);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-primary-hovered);
+  --color-active: var(--telekom-color-primary-pressed);
+}
+
+:host::part(base) {
+  margin: 0 auto;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: var(--max-width);
+}
+
+:host::part(back-button) {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  color: var(--color);
+  font: var(--telekom-text-style-lead-text);
+  width: 100%;
+  height: 72px;
+  cursor: pointer;
+  padding: 0;
+}
+
+scale-icon-navigation-left {
+  margin-right: 12px;
+}
+
+:host::part(nav) {
+  padding: var(--spacing) 0;
+  max-width: var(--max-width);
+  width: 100%;
+}
+
+:host::part(links-top) {
+  display: flex;
+}
+
+[part~='app-name'] > * {
+  font-size: var(--font-size-app-name);
+  font-weight: var(--font-weight-app-name);
+  line-height: var(--line-height-app-name);
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+[part~='app-name'] > *:hover {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+[part~='app-name'] > *:active {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+}

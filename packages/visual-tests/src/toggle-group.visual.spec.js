@@ -1,7 +1,10 @@
-describe('ToggleGroup', () => {
+describe.skip('Deprecated ToggleGroup', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.runColorSetup('components-toggle-group--standard', mode);
+      await global.runColorSetup(
+        'deprecated-components-toggle-group--standard',
+        mode
+      );
     });
     test.each([
       ['standard'],
@@ -15,13 +18,13 @@ describe('ToggleGroup', () => {
       ['icon-before'],
       ['icon-only'],
     ])('%p', async (variant) => {
-      await global.runSetup(`beta-components-toggle-group--${variant}`);
+      await global.runSetup(`deprecated-toggle-group--${variant}`);
       await global.page.waitFor(500);
       await global.visualCheck();
     });
     // hover, active, focus
     test.each([['standard'], ['monochrome-variant']])('%p', async (variant) => {
-      await global.runSetup(`beta-components-toggle-group--${variant}`);
+      await global.runSetup(`deprecated-toggle-group--${variant}`);
       const buttonOne = await global.page.evaluateHandle(
         `document.querySelector("#root scale-toggle-group > scale-toggle-button[radius='left']").shadowRoot.querySelector("button")`
       );

@@ -3,7 +3,7 @@
 exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 <scale-link href="http://example.com" open-new-tab="true">
   <mock:shadow-root>
-    <a href="http://example.com" part="anchor">
+    <a aria-disabled="false" href="http://example.com" part="anchor">
       <div part="content">
         <slot></slot>
       </div>
@@ -34,7 +34,7 @@ exports[`Link should handle setted styles 1`] = `
     <style>
       color:red
     </style>
-    <a href="http://example.com" part="anchor">
+    <a aria-disabled="false" href="http://example.com" part="anchor">
       <div part="content">
         <slot></slot>
       </div>
@@ -48,7 +48,7 @@ exports[`Link should handle setted styles 1`] = `
 exports[`Link should have link href value when href value is set 1`] = `
 <scale-link href="http://example.com">
   <mock:shadow-root>
-    <a href="http://example.com" part="anchor">
+    <a aria-disabled="false" href="http://example.com" part="anchor">
       <div part="content">
         <slot></slot>
       </div>
@@ -62,7 +62,7 @@ exports[`Link should have link href value when href value is set 1`] = `
 exports[`Link should match snapshot 1`] = `
 <scale-link>
   <mock:shadow-root>
-    <a part="anchor">
+    <a aria-disabled="false" part="anchor">
       <div part="content">
         <slot></slot>
       </div>

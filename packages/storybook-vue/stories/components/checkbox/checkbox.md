@@ -26,19 +26,19 @@ There are two main use cases for checkboxes:
 
 ![Image Name](assets/3_components/checkbox/checkbox-elements.png)
 
-### Checkbox deselected (1)
+#### Checkbox deselected (1)
 
 If there is no checkmark, a checkbox is considered to be deselected.
 
-### Checkbox selected (2)
+#### Checkbox selected (2)
 
 If a checkbox has a check mark, it is considered to be selected.
 
-### Information (3) (Optional)
+#### Information (3) (Optional)
 
 If necessary, you can also provide additional information.
 
-### Error (4)
+#### Error (4)
 
 An error message appears if an option is mandatory but not selected, e.g., when it’s required to execute the next steps in the process.
 
@@ -59,10 +59,6 @@ Disable the checkbox if:
 
 > The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
-## Nested groups of checkboxes
-
-When checkboxes are related to a parent checkbox, you can nest them in a [Checkbox Group](?path=/usage/components-checkbox-group--standard). Selecting the parent checkbox automatically selects all checkboxes of the group and vice versa. When the user selects a portion of the nested checkboxes, the state of the parent checkbox is indeterminate.
-
 ![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
 
 ## Required input
@@ -73,6 +69,7 @@ When checking a box is required, use an asterisk (\*) in the text label.
 
 ## Related components
 
+[Checkbox Group, ](?path=/usage/components-checkbox-group--standard)
 [Dropdown, ](?path=/usage/components-dropdown--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)

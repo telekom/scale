@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-vanilla-example',
@@ -13,11 +13,11 @@ export class VanillaExampleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signupForm = new FormGroup({
-    username: new FormControl('admin'),
-    password: new FormControl({ value: '', disabled: false }),
-    consent: new FormControl(),
-    spam: new FormControl()
+  signupForm = new UntypedFormGroup({
+    username: new UntypedFormControl('admin'),
+    password: new UntypedFormControl({ value: '', disabled: false }),
+    consent: new UntypedFormControl(),
+    spam: new UntypedFormControl()
   });
 
   onSubmit() {

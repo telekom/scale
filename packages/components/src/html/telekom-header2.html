@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Telekom Header</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 200vh;
+        background: var(--telekom-color-background-surface-subtle);
+      }
+
+      section {
+        /* --b: #333; */
+        /* width: 22ch; */
+        /* border: 1px dotted #666; */
+      }
+
+      scale-telekom-nav-list {
+        --spacing-inner-x: var(--telekom-spacing-unit-x14);
+      }
+
+      .flyout-body {
+        padding: var(--telekom-spacing-unit-x6) 0;
+      }
+
+      .mobile-menu-flyout {
+        --topbar-height: 60px;
+        --top: var(--topbar-height);
+        --height: calc(100vh - var(--topbar-height));
+        --position: fixed;
+      }
+      .mobile-menu-flyout > div {
+        display: flex;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+      }
+      .mobile-menu-trigger[aria-expanded='true'] {
+        color: red;
+        text-decoration: line-through;
+      }
+      @media screen and (min-width: 1040px) {
+        .mobile-menu {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <scale-telekom-header
+      app-name="Hello World"
+      app-name-link="https://example.com"
+    >
+      <!-- MAIN NAV -->
+      <scale-telekom-nav-list variant="main" slot="main-nav">
+        <scale-telekom-nav-item>
+          <button><span>Category 1</span></button>
+          <scale-telekom-nav-flyout hover>
+            <div clas="mega-menu">
+              <div>
+                <h2>(optional icon here) Level foo</h2>
+                <ul>
+                  <li>
+                    <a href="#">I don't know 1</a>
+                  </li>
+                  <li>
+                    <a href="#">I don't know 2</a>
+                  </li>
+                  <li>
+                    <a href="#">I don't know 3</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </scale-telekom-nav-flyout>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <button>Category 2</button>
+          <scale-telekom-nav-flyout hover>
+            <div class="flyout-body">
+              <h2>Hello, this is the same flyout</h2>
+              <p>With a list of links.</p>
+              <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+              </ul>
+            </div>
+          </scale-telekom-nav-flyout>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item active>
+          <a href="#">Category 3</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <a href="#">Category 4</a>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
+
+      <scale-telekom-nav-list
+        variant="meta"
+        slot="meta-nav-external"
+        alignment="left"
+      >
+        <scale-telekom-nav-item variant="meta">
+          <a href="#">Metalink ext 1</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item variant="meta">
+          <a href="#">Metalink ext 2</a>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
+
+      <scale-telekom-nav-list
+        variant="meta-tight"
+        slot="meta-nav"
+        alignment="left"
+      >
+        <scale-telekom-nav-item variant="meta">
+          <a href="#">Metalink 1</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item variant="meta">
+          <a href="#">Metalink 2</a>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
+
+      <section slot="lang-switcher">
+        <!-- HO HO HO -->
+      </section>
+
+      <scale-telekom-nav-list
+        variant="function"
+        slot="functions"
+        alignment="right"
+      >
+        <scale-telekom-nav-item variant="main">
+          <a href="#">
+            <scale-badge count="1" label="messages" label-visually-hidden>
+              <scale-icon-user-file-user> </scale-icon-user-file-user>
+            </scale-badge>
+          </a>
+        </scale-telekom-nav-item>
+
+        <scale-telekom-nav-item variant="main" active>
+          <a href="#">
+            <scale-badge count="1" label="Cart">
+              <scale-icon-action-shopping-cart selected>
+              </scale-icon-action-shopping-cart>
+            </scale-badge>
+          </a>
+        </scale-telekom-nav-item>
+
+        <scale-telekom-nav-item variant="main">
+          <a href="#">
+            <scale-icon-action-search> </scale-icon-action-search>
+          </a>
+        </scale-telekom-nav-item>
+
+        <scale-telekom-nav-item class="mobile-menu" variant="main">
+          <scale-telekom-nav-item variant="main">
+            <button class="mobile-menu-trigger">
+              <scale-badge>
+                <scale-icon-action-menu></scale-icon-action-menu>
+              </scale-badge>
+            </button>
+          </scale-telekom-nav-item>
+
+          <scale-telekom-nav-flyout
+            class="mobile-menu-flyout"
+            style="--top: 0; --height: 100vh; --spacing-x: 0; --duration: 0"
+          >
+            <scale-telekom-mobile-flyout-canvas
+              app-name="Hellow World (Mobile)"
+            >
+              <div slot="mobile-main-nav">
+                <p><code>&lt;telekom-mobile-menu&gt;</code> goes here</p>
+              </div>
+              <div slot="mobile-before-main-nav">
+                NO PROPER LAYOUT STYLES YET
+              </div>
+            </scale-telekom-mobile-flyout-canvas>
+          </scale-telekom-nav-flyout>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
+    </scale-telekom-header>
+  </body>
+</html>

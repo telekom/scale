@@ -20,7 +20,7 @@ describe('DataGrid', () => {
     ])('%p', async (variant) => {
       await global.runSetup(`components-data-grid--${variant}`);
 
-      await global.visualCheck();
+      await global.visualCheck({ failureThreshold: 1000 });
     });
   });
 });

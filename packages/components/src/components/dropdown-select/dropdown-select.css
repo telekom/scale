@@ -13,7 +13,7 @@
   --border-invalid: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-hovered);
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
@@ -44,8 +44,9 @@
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-footnote);
+  --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+  --margin-top-label-focus: -1.5px;
   --line-height-label: var(--telekom-typography-font-size-body);
   --line-height-label-animated: var(--telekom-typography-font-size-small);
   --transform-label: translate(
@@ -65,7 +66,7 @@
   --z-index-listbox: 99;
 
   /*option  */
-  --outline-color-option: var(--telekom-color-functional-focus);
+  --outline-color-option: var(--telekom-color-functional-focus-standard);
 }
 
 /*combobox-container*/
@@ -193,6 +194,7 @@
 }
 
 [part~='animated'] [part='label'] {
+  margin-top: var(--margin-top-label-focus);
   transform: var(--transform-label-animated);
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
@@ -208,9 +210,12 @@
 
 /*listbox*/
 [part='listbox'] {
-  overflow-y: auto;
   position: relative;
+}
+
+[part='listbox-scroll-container'] {
   max-height: var(--max-height-listbox);
+  overflow-y: auto;
 }
 
 [part='listbox-pad'] {

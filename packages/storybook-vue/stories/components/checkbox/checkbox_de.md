@@ -27,19 +27,19 @@ Eine Checkbox ist ein Steuerelement, mit dem Nutzer\*innen zwischen zwei Optione
 
 ![Image Name](assets/3_components/checkbox/checkbox-elements.png)
 
-### Checkbox ausgeschaltet (1)
+#### Checkbox ausgeschaltet (1)
 
 Wenn kein Häkchen vorhanden ist, gilt eine Option als abgewählt.
 
-### Checkbox eingeschaltet (2)
+#### Checkbox eingeschaltet (2)
 
 Ist eine Checkbox mit einem Häkchen versehen, so gilt die Option als ausgewählt.
 
-### Information (3) (optional)
+#### Information (3) (optional)
 
 Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
 
-### Fehlermeldung (4)
+#### Fehlermeldung (4)
 
 Bei einer nicht eingeschalteten, aber verpflichtenden Auswahl einer Option, die z.B. notwendig ist, um die nächsten Schritte im Prozess ausführen zu können, erscheint eine Fehlermeldung.
 
@@ -60,10 +60,6 @@ Deaktiviere die Checkbox, wenn
 
 > Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
-## Verschachtelte Checkboxen
-
-Wenn Checkboxen zu einer übergeordneten Auswahloption gehören, dann kannst du diese in einer [Checkbox Group](?path=/usage/components-checkbox-group--standard) verschachteln. Durch Aktivieren der übergeordneten Checkbox werden alle anderen dieser Gruppe automatisch ausgewählt und umgekehrt. Wählen Nutzer\*innen nur eine der untergeordneten Checkboxen, ist der Status des übergeordneten Kontrollkästchens unbestimmt.
-
 ![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
 
 ## Verpflichtende Eingaben
@@ -74,6 +70,7 @@ Verwende ein Sternchen (\*) hinter dem Text, wenn eine Checkbox ausgewählt werd
 
 ## Verwandte Komponenten
 
+[Checkbox Group, ](?path=/usage/components-checkbox-group--standard)
 [Dropdown, ](?path=/usage/components-dropdown--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)

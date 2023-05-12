@@ -15,30 +15,30 @@ Radio buttons only appear in groups. Activating a radio button automatically des
 
 ### When to use
 
-Use radio buttons to provide the user with a collection of related but mutually exclusive choices.
+- Use radio buttons to provide the user with a collection of related but mutually exclusive choices.
 
 ### When not to use
 
-If the user needs to choose one or more options, use checkboxes.
-To initiate an action, use a button.
+- If the user needs to choose one or more options, use checkboxes.
+- To initiate an action, use a button.
 
 ## Elements
 
 ![Image Name](assets/3_components/radio-button/radio-button-elements.png)
 
-### Radio button deselected (1)
+#### Radio button deselected (1)
 
 An empty circle is considered to be deselected.
 
-### Radio button selected (2)
+#### Radio button selected (2)
 
 If the circle is filled, the option is considered to be selected.
 
-### Information (3) (Optional)
+#### Information (3) (Optional)
 
 When necessary, you can also provide additional information to help users.
 
-### Error (4)
+#### Error (4)
 
 If the selection is contradictory or not applicable, an error message appears.
 
@@ -69,6 +69,7 @@ Display one option as a default selection to align with user expectations and re
 
 ## Related components
 
+[Radio Button Group, ](?path=/usage/components-radio-button-group--standard)
 [Checkbox, ](?path=/usage/components-checkbox--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Dropdown ](?path=/usage/components-dropdown--standard)

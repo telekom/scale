@@ -19,14 +19,12 @@ import {
   Prop,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
-
-let i = 0;
 
 @Component({
   tag: 'scale-radio-button',
@@ -62,9 +60,11 @@ export class RadioButton {
   @Event({ eventName: 'scaleChange' })
   scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
 
+  private readonly internalId = generateUniqueId();
+
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-' + i++;
+      this.inputId = 'input-' + this.internalId;
     }
   }
 
@@ -81,19 +81,25 @@ export class RadioButton {
   }
 
   handleCheckedChange = (event: any) => {
-    this.checked = event.target.checked;
-    // I don't think this is ever going to be `false` but well...
-    if (this.checked) {
-      this.uncheckSiblings();
+    if (!this.disabled) {
+      this.checked = event.target.checked;
+      // I don't think this is ever going to be `false` but well...
+      if (this.checked) {
+        this.uncheckSiblings();
+      }
+      emitEvent(this, 'scaleChange', {
+        value: this.value == null ? this.value : this.value.toString(),
+      });
     }
-    emitEvent(this, 'scaleChange', {
-      value: this.value == null ? this.value : this.value.toString(),
-    });
   };
 
   // Prevent click event being fired twice when the target is the label.
-  handleLabelClick = (event: any) => {
+  handleClick = (event: any) => {
     event.stopPropagation();
+    if (!this.disabled) {
+      this.checked = true;
+      this.uncheckSiblings();
+    }
   };
 
   // We manually set `checked` to false on sibling <scale-radio-button> elements,
@@ -126,12 +132,12 @@ export class RadioButton {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
       <Host>
-        <div class={this.getCssClassMap()}>
+        <div class={this.getCssClassMap()} onClick={this.handleClick}>
           <input
             type="radio"
             name={this.name}
@@ -143,7 +149,7 @@ export class RadioButton {
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
           />
-          <label htmlFor={this.inputId} onClick={this.handleLabelClick}>
+          <label htmlFor={this.inputId} onClick={this.handleClick}>
             {this.label}
           </label>
           {!!this.helperText && (

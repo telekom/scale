@@ -47,6 +47,7 @@ export class Header {
   userMenuMobileToggle?: HTMLAnchorElement;
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
+  @Prop() logoHideTitle?: boolean;
   @Prop() logoClick?: any;
   @Prop() logoAriaDescribedBy?: string;
   @Prop() claimLang: string;
@@ -59,6 +60,7 @@ export class Header {
   @Prop() activeRouteId: string;
   @Prop() activeSectorId?: string;
   @Prop() sticky?: boolean = false;
+  @Prop() userMenuAriaLabel?: string;
   // DEPRECATED - megaMenuVisible should replace isMegaMenuVisible
   @Prop() isMegaMenuVisible?: boolean = false;
   @Prop() megaMenuVisible?: boolean = false;
@@ -239,6 +241,7 @@ export class Header {
               href={item.href}
               active={isActive(item)}
               megaMenuVisible={this.visibleMegaMenu === item.id}
+              innerId={item.id}
               onMouseEnter={() => {
                 this.visibleMegaMenu = item.children ? item.id : null;
               }}
@@ -314,7 +317,10 @@ export class Header {
 
         {readData(this.userNavigation).length > 0 && (
           <span>
-            <span class="header__user-menu--desktop">
+            <span
+              class="header__user-menu--desktop"
+              aria-label={this.userMenuAriaLabel}
+            >
               <scale-menu-flyout>
                 <scale-nav-icon
                   slot="trigger"
@@ -323,12 +329,22 @@ export class Header {
                   refUserMenuToggle={(el) => (this.userMenuToggle = el)}
                   badge={badge}
                   badgeLabel={badgeLabel}
+                  onKeyDown={(event) => {
+                    // Handle Spacebar separately because actual trigger is an <a>
+                    if (event.key === ' ') {
+                      (event.target as HTMLElement).click();
+                      event.preventDefault();
+                    }
+                  }}
                 >
                   {shortName}
                 </scale-nav-icon>
                 <scale-menu-flyout-list>
                   <app-navigation-user-menu
                     hide={() => {
+                      if (!this.userMenu) {
+                        return;
+                      }
                       this.userMenu = false;
                       this.userMenuToggle.focus();
                       window.document.dispatchEvent(new Event('click'));
@@ -338,7 +354,10 @@ export class Header {
                 </scale-menu-flyout-list>
               </scale-menu-flyout>
             </span>
-            <span class="header__user-menu--mobile">
+            <span
+              class="header__user-menu--mobile"
+              aria-label={this.userMenuAriaLabel}
+            >
               <scale-nav-icon
                 slot="trigger"
                 active={this.userMenuMobile}
@@ -352,6 +371,13 @@ export class Header {
                 }}
                 badge={badge}
                 badgeLabel={badgeLabel}
+                onKeyDown={(event) => {
+                  // Handle Spacebar separately because actual trigger is an <a>
+                  if (event.key === ' ') {
+                    (event.target as HTMLElement).click();
+                    event.preventDefault();
+                  }
+                }}
               >
                 {shortName}
               </scale-nav-icon>
@@ -444,12 +470,14 @@ export class Header {
                       language={this.claimLang}
                       href={this.logoHref}
                       logoTitle={this.logoTitle}
+                      logoHideTitle={this.logoHideTitle}
                       onClick={this.logoClick}
                       variant="white"
                       scrollIntoViewOnFocus={true}
                       focusable={true}
-                      styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+                      styles=":host { --logo-size: 36px;} @media (max-width: 1039px) { :host {--logo-size: 26px;} }"
                       logoAriaDescribedBy={this.logoAriaDescribedBy}
+                      logoAriaHidden={this.scrolled}
                     ></scale-logo>
                   )}
                 </div>
@@ -470,10 +498,12 @@ export class Header {
                       language=""
                       href={this.logoHref}
                       logoTitle={this.logoTitle}
+                      logoHideTitle={this.logoHideTitle}
                       onClick={this.logoClick}
                       focusable={this.scrolled || this.sticky}
                       size={24}
                       logoAriaDescribedBy={this.logoAriaDescribedBy}
+                      logoAriaHidden={!this.scrolled}
                     ></scale-logo>
                   )}
                 </div>
@@ -522,6 +552,9 @@ export class Header {
                 {this.userMenuMobile && (
                   <app-navigation-user-menu
                     hide={() => {
+                      if (!this.userMenuMobile) {
+                        return;
+                      }
                       this.userMenuMobile = false;
                       this.userMenuMobileToggle.focus();
                     }}

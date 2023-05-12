@@ -88,14 +88,9 @@ describe('ProgressBar', () => {
   // Does not effect coverage
   it('test function progressStyle()', () => {
     const style = {
-      width: '20%',
-      border: '1px solid transparent',
-      background: 'magenta',
-      animation: 'showProgress 3s ease-in-out',
-      height: '4px',
+      '--progress': '20%',
     };
     element.percentage = 20;
-    element.customColor = 'magenta';
     expect(JSON.stringify(element.progressStyle())).toBe(JSON.stringify(style));
   });
 

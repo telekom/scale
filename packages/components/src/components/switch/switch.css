@@ -9,226 +9,295 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-.switch {
-  --size: 20px;
+scale-switch {
+  --width: 42px;
+  --height: 24px;
   --offset: 2px;
+  --radius: 1em;
+  --transition-duration: var(--telekom-motion-duration-immediate);
+  --transition-easing: var(--telekom-motion-easing-standard);
+  --shadow-thumb: 0 0 2px 0 rgba(0, 0, 0, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.24),
+    0 4px 12px 0 rgba(0, 0, 0, 0.26);
+  --spacing-x-label: var(--telekom-spacing-unit-x2);
+  --font-label: var(--telekom-text-style-ui);
+  --font-io-text: var(--telekom-text-style-small-bold);
+  --color-label: var(--telekom-color-text-and-icon-standard);
+}
 
-  --text: var(--telekom-color-text-and-icon-standard);
-  --text-disabled: var(--telekom-color-text-and-icon-disabled);
-
-  --toggle: var(--telekom-color-ui-regular);
-  --background: var(--telekom-color-ui-state-fill-standard);
-  --border: var(--telekom-color-ui-border-standard);
-
-  --transition-duration: var(--telekom-motion-duration-transition);
-  --transition-timing-function: var(--telekom-motion-easing-standard);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
-  --spacing-left: var(--telekom-spacing-unit-x2);
-  --font-weight: var(--telekom-typography-font-weight-medium);
+.switch {
+  --_background: var(--telekom-color-ui-faint);
+  --_color-thumb: var(--telekom-color-ui-white, #fff);
+  --_overlay-background: transparent;
 
   display: inline-block;
   position: relative;
 }
 
-.switch label {
+/* <input> */
+.switch__control {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  width: var(--width);
+  height: var(--height);
+  opacity: 0;
+}
+
+/* <label> */
+.switch__wrapper {
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
-.switch input {
-  width: 0;
-  height: 0;
-  opacity: 0;
-  position: absolute;
-}
-
-/* base elements */
-
-.switch .switch__text {
-  display: flex;
-  width: 100%;
-  color: var(--text);
-  justify-content: space-evenly;
-  font-size: var(--telekom-typography-font-size-small);
-  line-height: calc(var(--size) - var(--offset));
-  transition-property: color;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
-
-.switch .switch__text:before {
-  color: var(--telekom-color-text-and-icon-white-standard);
-  content: 'I';
-}
-
-.switch .switch__text:after {
-  color: var(--telekom-color-text-and-icon-additional);
-  content: '0';
+.switch__toggle {
   position: relative;
-  right: -1px;
-}
-
-.switch .switch__toggle {
-  position: absolute;
-  border-radius: 50%;
-  padding: calc(0.5 * var(--size) - var(--offset));
-  margin: calc(-0.5 * var(--size) + var(--offset));
-  background: var(--toggle);
-  left: calc(0.5 * var(--size) - 0.5 * var(--offset));
-  top: 50%;
-  transition-property: transform, background;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-  z-index: 20;
-}
-
-.switch input:checked:disabled + .switch__wrapper .switch__toggle,
-.switch
-  input:not(:checked):not(:disabled):active
-  + .switch__wrapper
-  .switch__toggle,
-.switch
-  input:checked:not(:disabled):not(:active)
-  + .switch__wrapper
-  .switch__toggle {
-  transform: translateX(var(--size));
-}
-
-.switch .switch__label {
-  cursor: inherit;
-  color: var(--text);
-  margin-left: var(--spacing-left);
-  font-weight: var(--font-weight);
-  transition-property: color;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
-
-/* toggle off */
-
-.switch .switch__wrapper {
-  position: relative;
-  border: 1px solid var(--border);
-  border-radius: calc(var(--size) / 2);
-  width: calc(2 * var(--size) - var(--offset));
-  height: calc(var(--size) - var(--offset));
-  display: inline-flex;
-  justify-content: space-between;
-  background: var(--background);
+  width: var(--width);
+  height: var(--height);
+  background: var(--_background);
+  border-radius: var(--radius);
   transition-property: background;
   transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition-timing-function: var(--transition-easing);
 }
 
-.switch:not(.switch--disabled) .switch__wrapper .switch__toggle {
-  background-color: var(--toggle);
+.switch__toggle--overlay {
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--radius);
+  background: var(--_overlay-background);
 }
 
-.switch:not(.switch--disabled):hover input:not(:checked) ~ .switch__wrapper {
-  --background: var(--telekom-color-ui-state-fill-hovered);
-  --border: var(--telekom-color-ui-border-hovered);
+[data-platform='android'] .switch__toggle--overlay {
+  display: none;
 }
 
-.switch:not(.switch--disabled):hover
-  input:not(:checked)
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-strong);
+.switch:hover {
+  --_overlay-background: var(--telekom-color-ui-state-fill-hovered);
 }
 
-.switch:not(.switch--disabled):active input:not(:checked) ~ .switch__wrapper {
-  --background: var(--telekom-color-ui-state-fill-pressed);
-  --border: var(--telekom-color-ui-border-pressed);
+.switch:active {
+  --_overlay-background: var(--telekom-color-ui-state-fill-pressed);
 }
 
-.switch:not(.switch--disabled):active
-  input:not(:checked)
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-extra-strong);
+.switch--checked {
+  --_background: var(--telekom-color-primary-standard);
 }
 
-.switch--focus-visible-not-supported input:focus ~ .switch__wrapper {
-  box-shadow: var(--box-shadow-focus);
+[data-platform='android'] .switch.switch--checked {
+  --_background: var(--telekom-color-primary-standard);
+  --_color-thumb: var(--telekom-color-ui-white);
 }
 
-.switch--focus-visible-supported
-  input:focus-visible:not(:checked)
-  ~ .switch__wrapper {
-  box-shadow: var(--box-shadow-focus);
-  border-color: var(--border);
+[data-platform='android'] .switch {
+  --_color-thumb: var(--telekom-color-ui-strong);
 }
 
-.switch--focus-visible-supported
-  input:focus-visible:checked
-  ~ .switch__wrapper {
-  box-shadow: var(--box-shadow-focus);
+[data-platform='android'] .switch:hover {
+  --_background: var(--telekom-color-ui-faint);
 }
 
-/* toggle on */
-
-.switch:not(.switch--disabled) input:checked ~ .switch__wrapper {
-  --background: var(--telekom-color-primary-standard);
-  --border: transparent;
+[data-platform='android'] .switch:active {
+  --_background: var(--telekom-color-ui-faint);
 }
 
-.switch:not(.switch--disabled)
-  input:checked
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-white);
+[data-platform='android'] .switch:hover {
+  --_color-thumb: var(--telekom-color-ui-extra-strong);
+}
+[data-platform='android'] .switch:active {
+  --_color-thumb: var(--telekom-color-ui-extra-strong);
+}
+[data-platform='android'] .switch--checked:active,
+[data-platform='android'] .switch--checked:hover {
+  --_color-thumb: var(--telekom-color-ui-white);
 }
 
-.switch:not(.switch--disabled):hover input:checked ~ .switch__wrapper {
-  --background: var(--telekom-color-primary-hovered);
-  --border: transparent;
+[data-platform='android'] .switch--checked:hover,
+.switch--checked:hover {
+  --_background: var(--telekom-color-primary-hovered);
 }
 
-.switch:not(.switch--disabled):hover
-  input:checked
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-white);
+[data-platform='android'] .switch--checked:active,
+.switch--checked:active {
+  --_background: var(--telekom-color-primary-pressed);
 }
 
-.switch:not(.switch--disabled):active input:checked ~ .switch__wrapper {
-  --background: var(--telekom-color-primary-pressed);
-  --border: transparent;
+[data-platform='android'] .switch--disabled {
+  --_background: var(--telekom-color-ui-faint);
+  --_color-thumb: var(--telekom-color-ui-border-disabled);
 }
 
-.switch:not(.switch--disabled):active
-  input:checked
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-white);
+[data-platform='android'] .switch--disabled:hover {
+  --_color-thumb: var(--telekom-color-ui-border-disabled);
+  --_background: var(--telekom-color-ui-faint);
 }
 
-/* disabled states */
+[data-platform='android'] .switch--checked.switch--disabled:hover {
+  --_background: var(--telekom-color-ui-border-disabled);
+  --_color-thumb: var(--telekom-color-ui-faint);
+}
 
-.switch.switch--disabled label {
+.switch--disabled,
+.switch--disabled:hover,
+.switch--disabled:active {
+  --_background: var(--telekom-color-ui-disabled);
+  --_color-thumb: var(--telekom-color-ui-faint);
+  --_overlay-background: transparent;
+}
+
+.switch--checked .switch--disabled,
+.switch--checked .switch--disabled:hover,
+.switch--checked .switch--disabled:active {
+  --_background: var(--telekom-color-ui-faint);
+  --_color-thumb: var(--telekom-color-ui-disabled);
+  box-shadow: var(--telekom-shadow-raised-standard);
+  --_overlay-background: transparent;
+}
+
+[data-platform='android'] .switch--disabled.switch--checked {
+  --_background: var(--telekom-color-ui-border-disabled);
+  --_color-thumb: var(--telekom-color-ui-faint);
+}
+
+.switch--disabled .switch__wrapper {
   cursor: not-allowed;
 }
-
-.switch.switch--disabled .switch__label {
-  color: var(--text-disabled);
+.switch--disabled .switch__thumb {
+  box-shadow: var(--telekom-shadow-raised-standard);
 }
 
-.switch.switch--disabled .switch__wrapper {
-  --border: var(--telekom-color-ui-border-disabled);
-  --background: none;
+.switch--size-large {
+  --width: 56px;
+  --height: 32px;
 }
 
-.switch.switch--disabled input:checked ~ .switch__wrapper {
-  --border: var(--telekom-color-ui-border-disabled);
-  --background: none;
+/*
+  I think there's a selector combination that could
+  replace .switch--focus-visible-not-supported and the JS check
+*/
+
+/* I don't like the ~ */
+.switch--focus-visible-not-supported :focus ~ .switch__toggle,
+:focus-visible ~ .switch__toggle {
+  outline: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-focus-standard);
+  outline-offset: var(--telekom-spacing-unit-x025);
 }
 
-.switch.switch--disabled input:checked ~ .switch__wrapper .switch__toggle,
-.switch.switch--disabled .switch__wrapper .switch__toggle {
-  --toggle: var(--telekom-color-ui-disabled);
+.switch__thumb {
+  --_size: calc(var(--height) - var(--offset) * 2);
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  width: var(--_size);
+  height: var(--_size);
+  aspect-ratio: 1 / 1;
+  background: var(--_color-thumb);
+  border-radius: 50%;
+  box-shadow: var(--shadow-thumb);
+  margin: var(--offset);
+  transition-property: margin, width, height, background, color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-easing);
+  color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-.switch.switch--disabled .switch__text:before,
-.switch.switch--disabled .switch__text:after {
-  color: var(--text-disabled);
+.switch--checked .switch__thumb {
+  margin-left: 1em;
+  margin-inline-start: calc(var(--width) - var(--height) + var(--offset));
+}
+
+.switch__io-text {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: var(--height);
+  margin-left: calc(50% - var(--offset));
+  font: var(--font-io-text);
+  line-height: var(--telekom-typography-line-spacing-none);
+}
+
+.switch--size-large .switch__io-text {
+  margin-top: 1px;
+  font: var(--telekom-text-style-caption-bold);
+}
+
+.switch--checked .switch__io-text {
+  margin-left: var(--offset);
+  color: var(--telekom-color-text-and-icon-white-standard);
+}
+
+.switch--disabled .switch__io-text {
+  color: var(--telekom-color-text-and-icon-disabled);
+}
+
+.switch__label-text {
+  font: var(--font-label);
+  margin-inline-start: var(--spacing-x-label);
+  color: var(--color-label);
+}
+
+/* PLATFORM Android */
+
+[data-platform='android'] scale-switch {
+  --width: 56px;
+  --height: 32px;
+  --offset: 7px;
+}
+
+[data-platform='android'] .switch__thumb {
+  width: 18px;
+  height: 18px;
+}
+
+[data-platform='android'] scale-switch:not([disabled]):active .switch__thumb {
+  width: 28px;
+  height: 28px;
+  --offset: 2px;
+}
+[data-platform='android'] .switch--checked .switch__thumb {
+  width: 24px;
+  height: 24px;
+  --offset: 4px;
+}
+
+[data-platform='android'] .switch__thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+}
+
+scale-switch scale-icon-action-success {
+  display: none !important;
+}
+
+[data-platform='android'] .switch--checked scale-icon-action-success {
+  position: absolute;
+  display: inline-block !important;
+  margin-top: 2px;
+  margin-left: 1px;
+}
+
+[data-platform='android'] .switch--checked .switch__thumb {
+  color: var(--_background);
+}
+
+[data-platform='android'] .switch__io-text {
+  display: none;
+}
+
+[data-platform='android'] .switch--checked .switch__thumb {
+  color: var(--telekom-color-primary-standard);
+}
+
+[data-platform='android'] .switch--disabled .switch__thumb {
+  color: var(--telekom-color-ui-strong);
 }

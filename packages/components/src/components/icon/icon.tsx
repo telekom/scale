@@ -52,12 +52,11 @@ export class Icon {
       stroke: this.stroke,
     };
     const ariaHidden = this.decorative ? { 'aria-hidden': 'true' } : {};
-
+    const focusable = this.focusable ? { tabindex: 0 } : {};
     return (
       <Host>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          {...(this.focusable ? { tabindex: 0 } : {})}
           class={this.getCssClassMap()}
           part="base"
           width={this.size}
@@ -65,6 +64,7 @@ export class Icon {
           viewBox="0 0 24 24"
           role="img"
           {...ariaHidden}
+          {...focusable}
         >
           {this.accessibilityTitle && <title>{this.accessibilityTitle}</title>}
           {this.path ? (

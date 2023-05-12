@@ -1,0 +1,114 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+/*
+       sm,md,lg,xl,2xl
+  main --,--,32,48,56
+  meta --,--,32,32,32
+  func 24,24,24,24,24
+*/
+
+@import url('../../../global/custom-media.css');
+
+.scale-telekom-nav-list {
+  /* TODO is width and height really needed? */
+  --width: 100%;
+  --height: 100%;
+  --spacing-x-start: 0;
+  --flex-direction: row;
+
+  --_spacing-x-slotted: var(--_spacing-x-slotted-main-nav, 24px);
+
+  --_spacing-x-slotted-meta-nav-external: var(--telekom-spacing-unit-x5);
+  --_spacing-x-slotted-meta-nav: var(--telekom-spacing-unit-x5);
+  --_spacing-x-slotted-lang-switcher: var(--telekom-spacing-unit-x2);
+  --_spacing-x-slotted-main-nav: var(--telekom-spacing-unit-x8);
+  --_spacing-x-slotted-functions: var(--telekom-spacing-unit-x6);
+
+  display: flex;
+  align-items: stretch;
+  flex-direction: var(--flex-direction);
+  width: var(--width);
+  height: var(--height);
+  margin-inline-start: var(--spacing-x-start);
+}
+
+.scale-telekom-nav-list[debug] {
+  border: 1px dotted gold;
+}
+
+@media screen and (--xl) {
+  .scale-telekom-nav-list {
+    --_spacing-x-slotted-main-nav: var(--telekom-spacing-unit-x12);
+    --_spacing-x-slotted-meta-nav: var(--telekom-spacing-unit-x5);
+    --_spacing-x-slotted-meta-nav-external: var(--telekom-spacing-unit-x5);
+  }
+
+  .scale-telekom-nav-list[debug] {
+    border: 1px dotted cyan;
+  }
+}
+
+@media screen and (--2xl) {
+  .scale-telekom-nav-list {
+    --_spacing-x-slotted-main-nav: var(--telekom-spacing-unit-x14);
+  }
+
+  .scale-telekom-nav-list[debug] {
+    border: 1px dotted magenta;
+  }
+}
+
+.scale-telekom-nav-list[variant='meta-nav-external'] {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-meta-nav-external);
+}
+.scale-telekom-nav-list[variant='meta-nav'] {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-meta-nav);
+}
+.scale-telekom-nav-list[variant='lang-switcher'] {
+  --_spacing-x-slotted: var(--telekom-spacing-unit-x6);
+}
+@media screen and (--lg) {
+  .scale-telekom-nav-list[variant='lang-switcher'] {
+    --_spacing-x-slotted: var(--telekom-spacing-unit-x2);
+  }
+}
+.scale-telekom-nav-list[variant='main-nav'] {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-main-nav);
+}
+.scale-telekom-nav-list[variant='functions'] {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-functions);
+}
+
+.scale-telekom-nav-list[alignment='left'] {
+  justify-content: flex-start;
+}
+.scale-telekom-nav-list[alignment='right'] {
+  justify-content: flex-end;
+}
+.scale-telekom-nav-list[alignment='center'] {
+  justify-content: center;
+}
+
+.scale-telekom-nav-list[alignment='left'] > *:not(:last-child) {
+  margin-inline-end: var(--_spacing-x-slotted);
+}
+.scale-telekom-nav-list[alignment='right'] > *:not(:first-child) {
+  margin-inline-start: var(--_spacing-x-slotted);
+}
+.scale-telekom-nav-list[alignment='center'] > * {
+  margin-inline: calc(0.5 * var(--_spacing-x-slotted));
+}
+
+.scale-telekom-nav-list[slot='mobile-meta-nav'],
+.scale-telekom-nav-list[slot='mobile-meta-nav-external'] {
+  --flex-direction: column;
+}

@@ -32,7 +32,7 @@ Each slider needs a label which describes the value that is changing. Always dis
 
 ### Single value slider
 
-The user can set a precise value (e.g., $200) from the pre-defined range.
+The user can set a precise value (e.g., \$200) from the pre-defined range.
 
 The selected value changes in real time as the knob moves.
 
@@ -65,11 +65,12 @@ Current value shown/hidden
 ![slider_variants-EN.png](assets/3_components/slider/slider_variants-EN.png)
 
 Message shown/hidden
+
 ![slider_variants-message-EN.png](assets/3_components/slider/slider_variants-message-EN.png)
 
 ### Colors
 
-Telekom sliders use Magenta as an accent color. If you need to apply a custom color, you can either use colors from the Telekom color palette or create a new one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
+Telekom sliders use Magenta as an accent color. If you need to apply a custom color, you can either use colors from the <a href="?path=/docs/guidelines-colors--page">Telekom color palette</a> or create a new one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
 
 ![slider_color-EN.png](assets/3_components/slider/slider_color-EN.png)
 

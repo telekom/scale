@@ -15,7 +15,7 @@
   --width-icon-container: 48px;
   --radius: var(--telekom-radius-standard);
   --background: var(--telekom-color-background-surface);
-  --z-index: 1;
+  --z-index: 100;
   /* FIXME:TOKEN not sure what elevation to use here */
   --box-shadow: var(--telekom-shadow-raised-standard);
 
@@ -135,7 +135,7 @@
 
 ::slotted([slot='header']) {
   margin: 0;
-  padding: 3px 0 0 10px;
+  padding: 3px var(--width-icon-container) 0 10px;
   font-weight: bold;
   font-size: 16px;
 }
@@ -184,4 +184,18 @@
 .notification-toast__button-close:hover svg {
   background-color: white;
   color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .notification-toast__button-close svg {
+    color: hsl(0, 0%, 100%);
+  }
+  .notification-toast {
+    border: 1px solid hsl(0, 0%, 100%);
+  }
+
+  .notification-toast__icon-container {
+    border: 1px solid hsl(0, 0%, 100%);
+    margin-top: -1px;
+  }
 }

@@ -26,19 +26,19 @@ Radio-Buttons funktionieren nur als Gruppe. Durch Aktivieren eines Radio-Buttons
 
 ![Image Name](assets/3_components/radio-button/radio-button-elements.png)
 
-### Radio-Button ausgeschaltet (1)
+#### Radio-Button ausgeschaltet (1)
 
 Wenn der Kreis leer ist, gilt eine Option als abgewählt.
 
-### Radio-Button eingeschaltet (2)
+#### Radio-Button eingeschaltet (2)
 
 Ist der Kreis ausgefüllt, so gilt eine Option als ausgewählt.
 
-### Information (3) (optional)
+#### Information (3) (optional)
 
 Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
 
-### Fehlermeldung (4)
+#### Fehlermeldung (4)
 
 Bei widersprüchlicher oder nichtzutreffender Auswahl erscheint eine Fehlermeldung.
 
@@ -71,6 +71,7 @@ In vielen Fällen ist es für Nutzer\*innen hilfreich, wenn du eine Headline ver
 
 ## Verwandte Komponenten
 
+[Radio Button Group, ](?path=/usage/components-radio-button-group--standard)
 [Checkbox, ](?path=/usage/components-checkbox--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Dropdown ](?path=/usage/components-dropdown--standard)

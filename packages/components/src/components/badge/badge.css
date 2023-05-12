@@ -1,0 +1,77 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --background-color-circle: var(--telekom-color-primary-standard);
+  --color-circle: var(--telekom-color-text-and-icon-inverted-standard);
+  --font-size-circle: var(--telekom-typography-font-size-badge);
+  --font-weight-circle: bold;
+  --border-radius-circle: var(--telekom-radius-circle);
+  --font-color-label: var(--telekom-color-text-and-icon-standard);
+  --_display-circle: flex;
+  display: flex;
+}
+
+:host([no-dot]) {
+  --_display-circle: none;
+}
+
+:host::part(base) {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+}
+
+:host::part(circle) {
+  display: var(--_display-circle);
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-circle);
+  font-weight: var(--font-weight-circle);
+  border-radius: var(--border-radius-circle);
+  background-color: var(--background-color-circle);
+  color: var(--color-circle);
+}
+
+:host::part(circle has-count) {
+  padding: 0 2px;
+  top: -8px;
+  right: -5px;
+  height: 14px;
+  min-width: 10px;
+}
+
+:host::part(circle no-count) {
+  top: -4px;
+  right: -2px;
+  height: 8px;
+  min-width: 8px;
+}
+
+:host::part(label) {
+  margin-left: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--font-color-label);
+  display: flex;
+  align-items: center;
+}
+
+:host::part(visually-hidden) {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

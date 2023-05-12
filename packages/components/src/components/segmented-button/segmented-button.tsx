@@ -73,7 +73,7 @@ export class SegmentedButton {
 
   container: HTMLElement;
   showHelperText = false;
-  
+
   @Listen('scaleClick')
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
     let tempState: SegmentStatus[];
@@ -113,7 +113,7 @@ export class SegmentedButton {
       }
       if (this.iconOnly) {
         el.setAttribute('icon-only', '');
-      }      
+      }
     });
   }
 

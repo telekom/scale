@@ -7,6 +7,7 @@
     :styles="styles"
     :href="href"
     :logo-title="logoTitle"
+    :logo-hide-title="logoHideTitle"
     :logo-aria-described-by="logoAriaDescribedBy"
     :accessibility-title="accessibilityTitle"
     :focusable="focusable"
@@ -40,9 +41,9 @@ export default {
     size: { type: Number, default: 36 },
     href: { type: String },
     styles: { type: String },
-    logoTitle: { type: String },
     logoAriaDescribedBy: { type: String },
-    accessibilityTitle: { type: String, default: 'Telekom Logo' },
+    logoTitle: { type: String },
+    logoHideTitle: { type: Boolean },
   },
 };
 </script>

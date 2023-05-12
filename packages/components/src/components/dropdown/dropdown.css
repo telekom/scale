@@ -30,7 +30,7 @@ scale-dropdown {
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
   --color: var(--telekom-color-text-and-icon-standard);
@@ -58,7 +58,7 @@ scale-dropdown {
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-footnote);
+  --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
 }
 
@@ -87,6 +87,14 @@ scale-dropdown {
   -webkit-appearance: none;
   background-color: var(--background-color);
   color: var(--color);
+}
+
+.dropdown--hide-label .input__dropdown {
+  padding: 5px var(--telekom-spacing-unit-x10) 5px calc(var(--spacing-x) - 1px);
+}
+
+.dropdown--hide-label .input__label {
+  visibility: hidden;
 }
 
 @-moz-document url-prefix() {
@@ -222,6 +230,19 @@ scale-dropdown {
 
 /* Tokens exceptionally hard-coded, instead of using the component variables,
 to fix bug in Firefox/Windows, see https://github.com/telekom/scale/issues/1018) */
+
+[data-mode='light']
+  .dropdown:not(.dropdown--disabled):not(.dropdown--variant-danger)
+  .input__dropdown:hover {
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+}
+
+[data-mode='light']
+  .dropdown:not(.dropdown--disabled).dropdown--variant-danger
+  .input__dropdown:hover {
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+}
+
 [data-mode='dark'] .dropdown .input__dropdown {
   background-color: var(--telekom-color-background-canvas);
 }
@@ -240,4 +261,24 @@ to fix bug in Firefox/Windows, see https://github.com/telekom/scale/issues/1018)
 
 [data-mode='dark'] .dropdown--disabled .input__dropdown {
   background-color: var(--telekom-color-background-canvas);
+}
+
+@media (prefers-color-scheme: dark) {
+  .dropdown .input__dropdown {
+    background-color: var(--telekom-color-background-canvas);
+  }
+
+  .dropdown:not(.dropdown--disabled):not(.dropdown--status-error)
+    .input__dropdown:hover {
+    background-color: #1b1b1b;
+  }
+
+  .dropdown:not(.dropdown--disabled).dropdown--status-error
+    .input__dropdown:hover {
+    background-color: #1b1b1b;
+  }
+
+  .dropdown--disabled .input__dropdown {
+    background-color: var(--telekom-color-background-canvas);
+  }
 }
