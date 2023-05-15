@@ -1,4 +1,12 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+import {
+  Component,
+  Element,
+  h,
+  Host,
+  Prop,
+  State,
+  Method,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 
@@ -7,7 +15,7 @@ import { emitEvent } from '../../utils/utils';
   styleUrl: 'search-list-item.css',
   shadow: true,
 })
-export class SearchSelectItem {
+export class SearchListItem {
   @Element() hostElement: HTMLElement;
 
   /** (optional) is close button to be shown */
@@ -15,6 +23,12 @@ export class SearchSelectItem {
 
   /** (optional) The buttons to be shown on Hover or always */
   @Prop() variant?: 'always' | 'hover' = 'hover';
+  @State() isHighlighted = false;
+
+  @Method()
+  async highlight(toggle) {
+    this.isHighlighted = toggle;
+  }
 
   /**
    * Handles click event for close button.
@@ -46,17 +60,26 @@ export class SearchSelectItem {
     );
   }
 
+  connectedCallback() {
+    this.hostElement.setAttribute('role', 'option');
+  }
+
   render() {
     return (
       <Host>
-        <div part="base" tabIndex={0} class={this.getCssClassMap()}>
+        <div
+          part={`base ${this.isHighlighted ? 'highlighted' : ''}`}
+          tabIndex={0}
+          role="button"
+          class={this.getCssClassMap()}
+        >
           <div part="prefix">
             <slot name="prefix"></slot>
           </div>
 
           <div part="text">
             <div part="label">
-              <slot></slot>
+              <slot name="label"></slot>
             </div>
             <div part="supporting-text">
               <slot name="supporting-text"></slot>
@@ -64,11 +87,7 @@ export class SearchSelectItem {
           </div>
 
           <div part="suffix">
-            {this.dismissible ? (
-              this.getClearIconButton()
-            ) : (
-              <slot name="suffix"></slot>
-            )}
+            <slot name="suffix"></slot>
           </div>
         </div>
       </Host>

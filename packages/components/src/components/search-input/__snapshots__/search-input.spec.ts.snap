@@ -1,11 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search should match snapshot 1`] = `
-<scale-search-input>
+<scale-search-input input-id="input-search-0" value="">
   <mock:shadow-root>
     <div part="base">
       <slot name="prefix-icon"></slot>
-      <input id="input-search-0" inputmode="search" name="Search" part="input" placeholder="Search" type="search" value="">
+      <label id="input-search-0-label" part="label">
+        Search
+      </label>
+      <input aria-autocomplete="list" aria-haspopup="listbox" aria-labelledby="input-search-0-label" aria-owns="input-search-0-listbox" autocomplete="off" id="input-search-0" inputmode="search" name="search" part="input" placeholder="Search" role="combobox" type="search" value="">
       <div part="interactive-icon">
         <slot name="suffix-icon"></slot>
       </div>

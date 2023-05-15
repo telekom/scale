@@ -22,10 +22,6 @@ import {
 import classNames from 'classnames';
 import { emitEvent, generateUniqueId } from '../../utils/utils';
 
-interface InputChangeEventDetail {
-  value: string | undefined | null;
-}
-
 @Component({
   tag: 'scale-search-input',
   styleUrl: './search-input.css',
@@ -33,8 +29,12 @@ interface InputChangeEventDetail {
 })
 export class SearchInput {
   @Element() hostElement: HTMLElement;
+
   /** (optional) Input name */
-  @Prop() name?: string = 'Search';
+  @Prop() name?: string = 'search';
+
+  /** (optional) Input label */
+  @Prop() label?: string = 'Search';
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
   /** (optional) Input text string max length */
@@ -48,34 +48,21 @@ export class SearchInput {
   /** (optional) Input required */
   @Prop() required?: boolean;
   /** (optional) Input value */
-  @Prop({ mutable: true }) value?: string | null = '';
-  /** (optional) Input id */
-  @Prop() inputId?: string;
-  /** (optional) input background transparent */
-  @Prop() transparent?: boolean;
+  @Prop({ mutable: true, reflect: true }) value?: string | null = '';
   /** (optional) the input should automatically get focus when the page loads. */
   @Prop() inputAutofocus?: boolean;
   /** (optional) custom value for autocomplete HTML attribute */
-  @Prop() inputAutocomplete?: string;
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailedId?: string;
-  /** (optional) to avoid displaying the label */
-  @Prop() hideLabelVisually?: boolean = false;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
+
   /** (optional)) Makes type `input` behave as a controlled component in React */
   @Prop() experimentalControlled?: boolean = false;
-  /** Emitted when a keyboard input occurred. */
-  @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
-  /** Emitted when the value has changed. */
-  @Event({ eventName: 'scale-change' })
-  scaleChange!: EventEmitter<InputChangeEventDetail>;
+  @Prop() innerAriaExpanded: string;
+  @Prop({ mutable: true, reflect: true }) inputId: string;
   /** Emitted when the input has focus. */
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
   /** Emitted when the input loses focus. */
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
-  /** Emitted when the input has focus. */
-  @Event({ eventName: 'scale-focus-out' }) scaleFocusout!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
   scaleKeyDown!: EventEmitter<KeyboardEvent>;
@@ -89,7 +76,14 @@ export class SearchInput {
   /** "forceUpdate" hack, set it to trigger and re-render */
   @State() forceUpdate: string;
 
+  /** (optional) Input helper text */
+  @Prop() helperText?: string = '';
+  /** (optional) Variant */
+  @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
+    'informational';
+
   private readonly internalId = generateUniqueId();
+  private inputElement: HTMLInputElement;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -98,57 +92,29 @@ export class SearchInput {
   }
 
   componentDidRender() {
-    // When `experimentalControlled` is true,
-    // make sure the <input> is always in sync with the value.
-    const value = this.value == null ? '' : this.value.toString();
-    const input = this.hostElement.querySelector('input');
-    if (this.experimentalControlled && input.value.toString() !== value) {
-      input.value = value;
-    }
+    // // When `experimentalControlled` is true,
+    // // make sure the <input> is always in sync with the value.
+    // const value = this.value == null ? '' : this.value.toString();
+    // const input = this.hostElement.querySelector('input');
+    // if (this.experimentalControlled && input.value.toString() !== value) {
+    //   input.value = value;
+    // }
   }
-
-  handleInput = (event: Event) => {
-    const target = event.target as HTMLInputElement | null;
-    if (target) {
-      this.value = target.value || '';
-      this.emitChange();
-    }
-    if (this.experimentalControlled) {
-      this.hostElement.querySelector('input').value = String(this.value);
-      this.forceUpdate = String(Date.now());
-    }
-    emitEvent(this, 'scaleInput', event as KeyboardEvent);
-  };
-
-  handleChange = (event: Event) => {
-    const target = event.target as HTMLInputElement | null;
-    if (target) {
-      this.value = target.value || '';
-      this.emitChange();
-    }
-  };
 
   handleFocus = () => {
     this.hasFocus = true;
     emitEvent(this, 'scaleFocus');
   };
 
-  handleFocusout = () => {
-    this.hasFocus = false;
-    emitEvent(this, 'scaleFocusout');
-  };
-
-  emitChange() {
-    emitEvent(this, 'scaleChange', {
-      value: this.value == null ? this.value : this.value.toString(),
-    });
-  }
-
   emitBlur = () => {
+    this.hasFocus = false;
     emitEvent(this, 'scaleBlur');
   };
 
   emitKeyDown = (event: KeyboardEvent) => {
+    setTimeout(() => {
+      this.value = this.inputElement?.value;
+    });
     emitEvent(this, 'scaleKeyDown', event);
   };
 
@@ -161,7 +127,7 @@ export class SearchInput {
       <scale-icon-button
         size="medium"
         part="clear-icon-button"
-        onClick={() => (this.value = '')}
+        onClick={() => (this.inputElement.value = '')}
       >
         <scale-icon-action-close
           part="clear-icon"
@@ -173,7 +139,11 @@ export class SearchInput {
   }
 
   render() {
+    const helperTextId = `helper-message-${this.internalId}`;
+    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     const ariaDetailedById = { 'aria-details': this.ariaDetailedId };
+    const ariaInvalidAttr = this.invalid ? { 'aria-invalid': true } : {};
+
     const basePart = classNames(
       'base',
       this.hasFocus && 'focus',
@@ -181,13 +151,22 @@ export class SearchInput {
     );
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div part={basePart}>
           <slot name="prefix-icon" />
+          <label id={`${this.inputId}-label`} part="label">
+            {this.label}
+          </label>
           <input
+            ref={(ref) => (this.inputElement = ref)}
+            aria-owns={`${this.inputId}-listbox`}
+            aria-expanded={this.innerAriaExpanded}
+            aria-labelledby={`${this.inputId}-label`}
+            aria-haspopup="listbox"
+            aria-autocomplete="list"
             type="search"
             inputMode="search"
             part="input"
+            role="combobox"
             placeholder={this.placeholder}
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
@@ -196,17 +175,16 @@ export class SearchInput {
             minLength={this.minLength}
             maxLength={this.maxLength}
             id={this.inputId}
-            onInput={this.handleInput}
-            onChange={this.handleChange}
             onFocus={this.handleFocus}
-            onFocusout={this.handleFocusout}
             onKeyDown={this.emitKeyDown}
             onBlur={this.emitBlur}
             disabled={this.disabled}
-            autocomplete={this.inputAutocomplete}
+            autocomplete="off"
             {...ariaDetailedById}
+            {...ariaInvalidAttr}
+            {...(this.helperText ? ariaDescribedByAttr : {})}
           ></input>
-          {this.value ? (
+          {this.inputElement?.value ? (
             this.getClearIconButton()
           ) : (
             <div
@@ -217,6 +195,13 @@ export class SearchInput {
             </div>
           )}
         </div>
+        {this.helperText && (
+          <scale-helper-text
+            id={helperTextId}
+            helperText={this.helperText}
+            variant={this.invalid ? 'danger' : this.variant}
+          ></scale-helper-text>
+        )}
       </Host>
     );
   }

@@ -39,6 +39,7 @@
  - [scale-date-picker](../date-picker)
  - [scale-dropdown](../dropdown)
  - [scale-dropdown-select](../dropdown-select)
+ - [scale-search-input](../search-input)
  - [scale-segmented-button](../segmented-button)
  - [scale-text-field](../text-field)
  - [scale-textarea](../textarea)
@@ -58,6 +59,7 @@ graph TD;
   scale-date-picker --> scale-helper-text
   scale-dropdown --> scale-helper-text
   scale-dropdown-select --> scale-helper-text
+  scale-search-input --> scale-helper-text
   scale-segmented-button --> scale-helper-text
   scale-text-field --> scale-helper-text
   scale-textarea --> scale-helper-text

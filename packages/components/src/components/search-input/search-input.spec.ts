@@ -67,7 +67,6 @@ describe('Search', () => {
     expect(specPage.rootInstance.required).toBe(true);
     expect(specPage.rootInstance.value).toBe('value');
     expect(specPage.rootInstance.inputId).toBe('input-search1');
-    expect(specPage.rootInstance.transparent).toBe(true);
     expect(specPage.rootInstance.ariaDetailedId).toBe('id');
   });
 

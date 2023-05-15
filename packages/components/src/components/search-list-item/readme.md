@@ -13,11 +13,23 @@
 | `variant`     | `variant`     | (optional) The buttons to be shown on Hover or always | `"always" \| "hover"` | `'hover'` |
 
 
+## Methods
+
+### `highlight(toggle: any) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Shadow Parts
 
 | Part                  | Description |
 | --------------------- | ----------- |
-| `"base"`              |             |
 | `"clear-icon"`        |             |
 | `"clear-icon-button"` |             |
 | `"label"`             |             |
