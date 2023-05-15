@@ -23,7 +23,7 @@
  * Include --scl tokens from legacy @telekom/scale-design-tokens package for backward-compat.
  * @deprecated in v3
  */
-@import '~@telekom/scale-design-tokens/dist/design-tokens-telekom.css';
+/*@import '~@telekom/scale-design-tokens/dist/design-tokens-telekom.css';*/
 
 /**
  * Include --telekom tokens (including dark mode).

@@ -1,0 +1,11 @@
+:host {
+}
+
+:host [part='head'] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 8px 8px 16px;
+  color: var(--telekom-color-text-and-icon-additional);
+  font: var(--telekom-text-style-small-bold);
+}
