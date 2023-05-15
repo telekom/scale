@@ -1,12 +1,12 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { SearchSelectItem } from './search-list-item';
+import { SearchListItem } from './search-list-item';
 
-describe('SearchSelectItem', () => {
+describe('SearchListItem', () => {
   let page;
 
   beforeEach(async () => {
     page = await newSpecPage({
-      components: [SearchSelectItem],
+      components: [SearchListItem],
       html: `<scale-search-list-item dismissible=true>
       <scale-icon-action-search
         size="24"
@@ -29,7 +29,7 @@ describe('SearchSelectItem', () => {
 
   it('should reflect attributes/props being set', async () => {
     const specPage = await newSpecPage({
-      components: [SearchSelectItem],
+      components: [SearchListItem],
       html: `<scale-search-list-item dismissible=true>
       <scale-icon-action-search
         size="24"

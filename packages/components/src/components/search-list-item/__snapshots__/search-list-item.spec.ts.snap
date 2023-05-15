@@ -1,24 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchSelectItem should match snapshot 1`] = `
-<scale-search-list-item dismissible="true">
+exports[`SearchListItem should match snapshot 1`] = `
+<scale-search-list-item dismissible="true" role="option">
   <mock:shadow-root>
-    <div class="scale-search-list-item-hover" part="base" tabindex="0">
+    <div class="scale-search-list-item-hover" part="base " role="button" tabindex="0">
       <div part="prefix">
         <slot name="prefix"></slot>
       </div>
       <div part="text">
         <div part="label">
-          <slot></slot>
+          <slot name="label"></slot>
         </div>
         <div part="supporting-text">
           <slot name="supporting-text"></slot>
         </div>
       </div>
       <div part="suffix">
-        <scale-icon-button part="clear-icon-button" size="medium">
-          <scale-icon-action-close accessibility-title="close" part="clear-icon" size="24"></scale-icon-action-close>
-        </scale-icon-button>
+        <slot name="suffix"></slot>
       </div>
     </div>
   </mock:shadow-root>

@@ -36,11 +36,13 @@ Type: `Promise<void>`
 ### Used by
 
  - [scale-search-input](../search-input)
+ - [scale-search-list-item](../search-list-item)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-search-input --> scale-icon-button
+  scale-search-list-item --> scale-icon-button
   style scale-icon-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

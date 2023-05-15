@@ -1,0 +1,40 @@
+:host {
+  /*listbox*/
+  --background-listbox: var(--telekom-color-background-surface);
+  --box-shadow-listbox: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  --max-height-listbox: 300px;
+  --z-index-listbox: 99;
+  --radius: var(--telekom-radius-standard);
+}
+/*listbox*/
+[part='listbox'] {
+  position: relative;
+}
+
+[part='listbox-scroll-container'] {
+  max-height: var(--max-height-listbox);
+  overflow-y: auto;
+}
+
+[part='listbox-pad'] {
+  background: var(--background-listbox);
+  box-shadow: var(--box-shadow-listbox);
+  border-radius: var(--radius);
+  padding: var(--radius) 0;
+  margin-top: var(--telekom-line-weight-highlight);
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: var(--z-index-listbox);
+  display: none;
+}
+
+:host([open]) [part='listbox-pad'] {
+  display: block;
+}
+
+[part~='transparent'] [part='listbox'] {
+  background-color: transparent;
+}
