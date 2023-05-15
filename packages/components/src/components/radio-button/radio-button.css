@@ -172,6 +172,7 @@ scale-icon-alert-error {
   border: var(--border-control-disabled);
 }
 
+.radio-button--disabled,
 .radio-button--disabled label,
 .radio-button--disabled .radio-button__label,
 .radio-button--disabled input,
