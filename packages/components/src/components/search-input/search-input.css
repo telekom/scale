@@ -40,6 +40,7 @@
   --input-font-family: inherit;
   --input-font-size: var(--telekom-typography-font-size-body);
   --input-background-color: var(--telekom-color-ui-state-fill-standard);
+  --input-color: var(--telekom-color-text-and-icon-standard);
 
   /* interactive-icon */
   --interactive-icon-color: var(--telekom-color-text-and-icon-additional);
@@ -104,12 +105,17 @@
   font-family: var(--input-font-family);
   font-size: var(--input-font-size);
   background-color: var(--input-background-color);
+  color: var(--input-color);
 }
 
 [part~='interactive-icon'] {
   align-items: center;
   display: flex;
   color: var(--interactive-icon-color);
+}
+
+[part~='label'] {
+  visibility: hidden;
 }
 
 [part~='clear-icon-button'] {

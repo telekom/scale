@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.css"
+    />
+    <script
+      type="module"
+      src="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.esm.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+        background: var(--telekom-color-ui-base);
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+    <title>Search With Autocomplete</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Scale with Auto Complete</h1>
+
+      <scale-search>
+        <scale-search-input
+          slot="input"
+          placeholder="Search"
+          name="search-thing"
+        >
+          <scale-icon-action-search slot="prefix-icon" />
+        </scale-search-input>
+      </scale-search>
+
+      <script>
+        const list = [
+          {
+            title: "Old Man's War",
+            author: {
+              firstName: 'John',
+              lastName: 'Scalzi',
+            },
+          },
+          {
+            title: 'The Lock Artist',
+            author: {
+              firstName: 'Steve',
+              lastName: 'Hamilton',
+            },
+          },
+          {
+            title: 'HTML5',
+            author: {
+              firstName: 'Remy',
+              lastName: 'Sharp',
+            },
+          },
+          {
+            title: 'Right Ho Jeeves',
+            author: {
+              firstName: 'P.D',
+              lastName: 'Woodhouse',
+            },
+          },
+          {
+            title: 'The Code of the Wooster',
+            author: {
+              firstName: 'P.D',
+              lastName: 'Woodhouse',
+            },
+          },
+          {
+            title: 'Thank You Jeeves',
+            author: {
+              firstName: 'P.D',
+              lastName: 'Woodhouse',
+            },
+          },
+          {
+            title: 'The DaVinci Code',
+            author: {
+              firstName: 'Dan',
+              lastName: 'Brown',
+            },
+          },
+          {
+            title: 'Angels & Demons',
+            author: {
+              firstName: 'Dan',
+              lastName: 'Brown',
+            },
+          },
+          {
+            title: 'The Silmarillion',
+            author: {
+              firstName: 'J.R.R',
+              lastName: 'Tolkien',
+            },
+          },
+          {
+            title: 'Syrup',
+            author: {
+              firstName: 'Max',
+              lastName: 'Barry',
+            },
+          },
+          {
+            title: 'The Lost Symbol',
+            author: {
+              firstName: 'Dan',
+              lastName: 'Brown',
+            },
+          },
+          {
+            title: 'The Book of Lies',
+            author: {
+              firstName: 'Brad',
+              lastName: 'Meltzer',
+            },
+          },
+          {
+            title: 'Lamb',
+            author: {
+              firstName: 'Christopher',
+              lastName: 'Moore',
+            },
+          },
+          {
+            title: 'Fool',
+            author: {
+              firstName: 'Christopher',
+              lastName: 'Moore',
+            },
+          },
+          {
+            title: 'Incompetence',
+            author: {
+              firstName: 'Rob',
+              lastName: 'Grant',
+            },
+          },
+          {
+            title: 'Fat',
+            author: {
+              firstName: 'Rob',
+              lastName: 'Grant',
+            },
+          },
+          {
+            title: 'Colony',
+            author: {
+              firstName: 'Rob',
+              lastName: 'Grant',
+            },
+          },
+          {
+            title: 'Backwards, Red Dwarf',
+            author: {
+              firstName: 'Rob',
+              lastName: 'Grant',
+            },
+          },
+          {
+            title: 'The Grand Design',
+            author: {
+              firstName: 'Stephen',
+              lastName: 'Hawking',
+            },
+          },
+          {
+            title: 'The Book of Samson',
+            author: {
+              firstName: 'David',
+              lastName: 'Maine',
+            },
+          },
+          {
+            title: 'The Preservationist',
+            author: {
+              firstName: 'David',
+              lastName: 'Maine',
+            },
+          },
+          {
+            title: 'Fallen',
+            author: {
+              firstName: 'David',
+              lastName: 'Maine',
+            },
+          },
+          {
+            title: 'Monster 1959',
+            author: {
+              firstName: 'David',
+              lastName: 'Maine',
+            },
+          },
+        ];
+
+        const fuse = new Fuse(list, {
+          threshold: 0.1,
+          keys: ['title'],
+          shouldSort: true,
+        });
+
+        const input = document.querySelector('scale-search-input');
+
+        const search = window.document.querySelector('scale-search');
+
+        document.querySelectorAll('scale-search-list-item').forEach((x) => {
+          x.addEventListener('click', handler);
+          x.addEventListener('keydown', handler);
+        });
+
+        document.querySelectorAll('scale-link[data-clear-all]').forEach((x) =>
+          x.addEventListener('click', function (e) {
+            e.target.closest('scale-search-list-category').remove();
+          })
+        );
+        updateResults();
+
+        input.addEventListener('keydown', (e) => {
+          if (['ArrowDown', 'ArrowUp', 'Enter', 'Tab'].includes(e.key)) {
+            return;
+          }
+
+          setTimeout(() => {
+            updateResults(e.target.value);
+          });
+        });
+
+        function updateResults(value) {
+          const results = value
+            ? fuse.search(value)
+            : list.map((item) => ({ item }));
+
+          document
+            .querySelectorAll('scale-search-list-item')
+            .forEach((x) => x.remove());
+
+          results.forEach(({ item }) => {
+            const element = window.document.createElement(
+              'scale-search-list-item'
+            );
+            element.innerHTML = `<span slot="label">${item.title}</span>`;
+
+            element.addEventListener('click', handler);
+            element.addEventListener('keydown', handler);
+
+            search.appendChild(element);
+          });
+
+          if (!results?.length) {
+            const element = window.document.createElement(
+              'scale-search-list-item'
+            );
+            element.innerHTML = `<span slot="label">No results</span>`;
+            search.appendChild(element);
+          }
+        }
+
+        function handler(event) {
+          if (event.key && event.key !== 'Enter') {
+            return;
+          }
+          if (this.querySelector('scale-icon-button')?.contains(event.target)) {
+            this.closest('scale-search-list-item').nextElementSibling.highlight(
+              true
+            );
+            document
+              .querySelector('scale-search')
+              .shadowRoot.querySelector('scale-search-input')
+              .shadowRoot.querySelector('input')
+              .focus();
+
+            this.remove();
+
+            return;
+          }
+          const myEvent = new Event('scale-close-search', {
+            bubbles: true,
+            cancelable: true,
+            composed: false,
+          });
+
+          this.dispatchEvent(myEvent);
+
+          document.querySelector('scale-search-input').value = event.target
+            .closest('scale-search-list-item')
+            .querySelector(`[slot="label"]`).textContent;
+        }
+      </script>
+    </div>
+  </body>
+</html>

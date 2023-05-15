@@ -1,0 +1,309 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleSearch from './ScaleSearch.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta
+  title="Beta Components/Search"
+  component={ScaleSearch}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleSearch },
+  props: ScaleSearch.props,
+  template: `<div style="min-height: 350px;">
+  <scale-search>
+        <scale-search-list-item
+          ><span slot="label">Special 1</span>
+          <scale-icon-button slot="suffix" size="medium">
+            <scale-icon-action-close
+              accessibility-title="close"
+            /> </scale-icon-button
+        ></scale-search-list-item>
+        <scale-search-list-item
+          ><span slot="label">Special 2</span>
+          <scale-icon-button slot="suffix" size="medium">
+            <scale-icon-action-close
+              accessibility-title="close"
+            /> </scale-icon-button
+        ></scale-search-list-item>
+        <scale-search-list-item
+          ><span slot="label">Special 3</span>
+          <scale-icon-button slot="suffix" size="medium">
+            <scale-icon-action-close
+              accessibility-title="close"
+            /> </scale-icon-button
+        ></scale-search-list-item>
+        <scale-search-list-category>
+          <span slot="title">Recent</span>
+          <span slot="action"
+            ><scale-link omit-underline data-clear-all href="javascript:void(0);"
+              >Clear All</scale-link
+            ></span
+          >
+          <scale-search-list-item
+            ><span slot="label">Item 1</span>
+            <div slot="supporting-text">Supporting text</div>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close accessibility-title="close" />
+            </scale-icon-button>
+            <scale-icon-action-search slot="prefix" />
+          </scale-search-list-item>
+        </scale-search-list-category>
+        <scale-search-list-category>
+          <span slot="title">Rest</span>
+          <span slot="action"
+            ><scale-link omit-underline data-clear-all href="javascript:void(0);"
+              >Clear All</scale-link
+            ></span
+          >
+          <scale-search-list-item
+            ><span slot="label">Item 2</span>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close
+                accessibility-title="close"
+              /> </scale-icon-button
+          ></scale-search-list-item>
+          <scale-search-list-item
+            ><span slot="label">Item 3</span>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close
+                accessibility-title="close"
+              /> </scale-icon-button
+          ></scale-search-list-item>
+          <scale-search-list-item
+            ><span slot="label">Item 4</span>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close
+                accessibility-title="close"
+              /> </scale-icon-button
+          ></scale-search-list-item>
+          <scale-search-list-item
+            ><span slot="label">Item 5</span>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close
+                accessibility-title="close"
+              /> </scale-icon-button
+          ></scale-search-list-item>
+          <scale-search-list-item
+            ><span slot="label">Item 6</span>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close
+                accessibility-title="close"
+              /> </scale-icon-button
+          ></scale-search-list-item>
+          <scale-search-list-item
+            ><span slot="label">Item 7</span>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close
+                accessibility-title="close"
+              /> </scale-icon-button
+          ></scale-search-list-item>
+          <scale-search-list-item
+            ><span slot="label">Item 8</span>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close
+                accessibility-title="close"
+              /> </scale-icon-button
+          ></scale-search-list-item>
+          <scale-search-list-item
+            ><span slot="label">Item 9</span>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close
+                accessibility-title="close"
+              /> </scale-icon-button
+          ></scale-search-list-item>
+          <scale-search-list-item
+            ><span slot="label">Item 10</span>
+            <scale-icon-button slot="suffix" size="medium">
+              <scale-icon-action-close
+                accessibility-title="close"
+              /> </scale-icon-button
+          ></scale-search-list-item>
+        </scale-search-list-category>
+      </scale-search>
+      </div>`,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Search</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<div>
+  <scale-search>
+    <scale-search-list-item
+      ><span slot="label">Special 1</span>
+      <scale-icon-button slot="suffix" size="medium">
+        <scale-icon-action-close
+          accessibility-title="close"
+        /> </scale-icon-button
+    ></scale-search-list-item>
+
+    <scale-search-list-item
+      ><span slot="label">Special 2</span>
+      <scale-icon-button slot="suffix" size="medium">
+        <scale-icon-action-close
+          accessibility-title="close"
+        /> </scale-icon-button
+    ></scale-search-list-item>
+    <scale-search-list-item
+      ><span slot="label">Special 3</span>
+      <scale-icon-button slot="suffix" size="medium">
+        <scale-icon-action-close
+          accessibility-title="close"
+        /> </scale-icon-button
+    ></scale-search-list-item>
+
+    <scale-search-list-category>
+      <span slot="title">Recent</span>
+      <span slot="action"
+        ><scale-link omit-underline data-clear-all href="javascript:void(0);"
+          >Clear All</scale-link
+        ></span
+      >
+
+      <scale-search-list-item
+        ><span slot="label">Item 1</span>
+
+        <div slot="supporting-text">Supporting text</div>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close accessibility-title="close" />
+        </scale-icon-button>
+        <scale-icon-action-search slot="prefix" />
+      </scale-search-list-item>
+    </scale-search-list-category>
+
+    <scale-search-list-category>
+      <span slot="title">Rest</span>
+      <span slot="action"
+        ><scale-link omit-underline data-clear-all href="javascript:void(0);"
+          >Clear All</scale-link
+        ></span
+      >
+
+      <scale-search-list-item
+        ><span slot="label">Item 2</span>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close
+            accessibility-title="close"
+          /> </scale-icon-button
+      ></scale-search-list-item>
+      <scale-search-list-item
+        ><span slot="label">Item 3</span>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close
+            accessibility-title="close"
+          /> </scale-icon-button
+      ></scale-search-list-item>
+      <scale-search-list-item
+        ><span slot="label">Item 4</span>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close
+            accessibility-title="close"
+          /> </scale-icon-button
+      ></scale-search-list-item>
+      <scale-search-list-item
+        ><span slot="label">Item 5</span>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close
+            accessibility-title="close"
+          /> </scale-icon-button
+      ></scale-search-list-item>
+      <scale-search-list-item
+        ><span slot="label">Item 6</span>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close
+            accessibility-title="close"
+          /> </scale-icon-button
+      ></scale-search-list-item>
+      <scale-search-list-item
+        ><span slot="label">Item 7</span>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close
+            accessibility-title="close"
+          /> </scale-icon-button
+      ></scale-search-list-item>
+      <scale-search-list-item
+        ><span slot="label">Item 8</span>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close
+            accessibility-title="close"
+          /> </scale-icon-button
+      ></scale-search-list-item>
+      <scale-search-list-item
+        ><span slot="label">Item 9</span>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close
+            accessibility-title="close"
+          /> </scale-icon-button
+      ></scale-search-list-item>
+      <scale-search-list-item
+        ><span slot="label">Item 10</span>
+        <scale-icon-button slot="suffix" size="medium">
+          <scale-icon-action-close
+            accessibility-title="close"
+          /> </scale-icon-button
+      ></scale-search-list-item>
+    </scale-search-list-category>
+  </scale-search>
+
+  <script>
+    document.querySelectorAll('scale-search-list-item').forEach((x) => {
+      function handler(e) {
+        if (e.key && e.key !== 'Enter') {
+          return;
+        }
+        if (x.querySelector('scale-icon-button').contains(e.target)) {
+          x.closest('scale-search-list-item').nextElementSibling.highlight(
+            true
+          );
+          document
+            .querySelector('scale-search')
+            .shadowRoot.querySelector('scale-search-input')
+            .shadowRoot.querySelector('input')
+            .focus();
+
+          x.remove();
+
+          return;
+        }
+        const myEvent = new Event('scale-close-search', {
+          bubbles: true,
+          cancelable: true,
+          composed: false,
+        });
+
+        x.dispatchEvent(myEvent);
+
+        document.querySelector('scale-search').value = e.target
+          .closest('scale-search-list-item')
+          .querySelector(`[slot="label"]`).textContent;
+      }
+      x.addEventListener('click', handler);
+      x.addEventListener('keydown', handler);
+    });
+
+    document.querySelectorAll('scale-link[data-clear-all]').forEach((x) =>
+      x.addEventListener('click', function (e) {
+        e.target.closest('scale-search-list-category').remove();
+      })
+    );
+  </script>
+</div>
+```
