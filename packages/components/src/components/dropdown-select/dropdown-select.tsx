@@ -422,7 +422,7 @@ export class DropdownSelect {
               {...(this.helperText ? ariaDescribedByAttr : {})}
               {...(this.invalid ? { 'aria-invalid': 'true' } : {})}
             >
-              {ValueElement}
+              <span part="combobox-value">{ValueElement}</span>
             </div>
             <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
               <div part="listbox-scroll-container">
