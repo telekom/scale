@@ -14,6 +14,16 @@ import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
     alignment: {
       control: { type: 'select', options: ['vertical', 'horizontal'] },
     },
+    accessibilityTitle: {
+      control: {
+        type: 'text',
+      },
+    },
+    text: {
+      control: {
+        type: 'text',
+      },
+    },
   }}
 />
 
@@ -30,7 +40,6 @@ export const Template = () => ({
             :alignment='alignment'
             :text='text'
             :size='size'
-            :accessibility-title='accessibilityTitle'
         >
         </scale-loading-spinner>
     </div>
