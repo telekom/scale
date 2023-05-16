@@ -27,7 +27,11 @@ export const GraphCell: Cell = {
     const { style = 'progress', min = 0, max = 100 } = field;
 
     // Convert content to 0>100 range for progress bar
-    const progress = ((content - min) / (max - min)) * 100;
+    const progress = parseFloat(
+      (((content - min) / (max - min)) * 100).toPrecision(
+        String(content).replace('.', '').length
+      )
+    );
 
     switch (style) {
       case 'bar':
