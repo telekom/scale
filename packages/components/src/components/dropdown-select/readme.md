@@ -36,7 +36,7 @@
 | Part                         | Description |
 | ---------------------------- | ----------- |
 | `"combobox-container"`       |             |
-| `"combobox_value"`           |             |
+| `"combobox-value"`           |             |
 | `"icon"`                     |             |
 | `"label"`                    |             |
 | `"listbox"`                  |             |
