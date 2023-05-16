@@ -205,15 +205,21 @@ export class MenuFlyout {
     list.trigger = () => this.trigger;
 
     if (list.opened) {
-      if (e.type === 'keydown' && e.key === 'Enter') {
+      return;
+    } else {
+      if (
+        (e.type === 'keydown' && e.key === 'Enter') ||
+        (e.type === 'keydown' && e.key === ' ')
+      ) {
         e.preventDefault();
-        return;
+      }
+      if (e.type === 'keydown') {
+        if (e.key == 'Enter' || e.key == ' ') {
+          list.open(e.type);
+        }
       } else {
         list.open(e.type);
-        return;
       }
-    } else {
-      list.open(e.type);
       return;
     }
   };
