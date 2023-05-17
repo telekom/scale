@@ -67,6 +67,8 @@ export class Segment {
   @Prop() position?: number;
   /** (optional) icon only segment */
   @Prop({ mutable: true }) iconOnly?: boolean = false;
+  /** (optional) multi select segment */
+  @Prop({ mutable: true }) multiSelect?: boolean = false;
   /** (optional) segment with icon and text */
   @Prop({ mutable: true }) iconText?: boolean = false;  
   /** Emitted when button is clicked */
@@ -200,7 +202,8 @@ export class Segment {
       this.adjacentSiblings &&
         `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
       this.iconOnly && `${prefix}icon-only`,
-      this.iconText && `${prefix}icon-text`
+      this.iconText && `${prefix}icon-text`,
+      this.multiSelect && `${prefix}multi-select`
     );
   }
 }

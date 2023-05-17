@@ -109,9 +109,16 @@ export class SegmentedButton {
     this.getAllSegmentedButtons().forEach((el) => {
       el.setAttribute('size', this.size);
       if (this.disabled) {
-        el.setAttribute('disabled', true && 'disabled');
+        el.setAttribute('disabled', '');
+      }
+      if (this.multiSelect) {
+        el.setAttribute('multi-select', '');
       }
     });
+  }
+
+  connectedCallback() {
+    this.propagatePropsToChildren();
   }
 
   componentDidLoad() {

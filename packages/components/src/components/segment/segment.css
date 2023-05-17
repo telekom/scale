@@ -54,7 +54,6 @@
   border-radius: var(--button-radius);
   padding-top: var(--padding-top-bottom);
   padding-bottom: var(--padding-top-bottom);
-  /* transition: var(--transition); */
   background-color: transparent;
   padding: 0;
 }
@@ -72,19 +71,28 @@
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
-  /* transition: var(--transition); */
   white-space: nowrap;
   color: var(--color);
 }
 
 button.segment--icon-only.segment--small .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x4);
+  padding-left: var(--telekom-spacing-unit-x9);
+  padding-right: var(--telekom-spacing-unit-x9);
+}
+
+button.segment--icon-only.segment--multi-select.segment--small .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x3);
+  padding-right: var(--telekom-spacing-unit-x3);
 }
 
 button.segment--small .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x2);
-  padding-right: var(--telekom-spacing-unit-x3);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+button.segment--small.segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
+  padding-left: 19px;
+  padding-right: 19px;
 }
 
 .segment--small {
@@ -239,7 +247,7 @@ button.segment--large .segment--mask {
 }
 
 .segment:not(.segment--selected).segment:not(.segment--icon-only):not(.segment--icon-text) .text-container {
-  transform: translateX(-6px);
+  transform: translateX(-9px);
 }
 
 .segment--icon-text .icon-container ::slotted(*){
