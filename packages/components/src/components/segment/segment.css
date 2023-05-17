@@ -34,10 +34,10 @@
   --height-large: 40px;
 
   /* hover styles */
-  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-color-hover: var(--telekom-color-ui-state-fill-hovered-inverted);
 
   /* active styles */
-  --background-color-active: var(--telekom-color-ui-state-fill-pressed);
+  --background-color-active: var(--telekom-color-ui-state-fill-pressed-inverted);
 
   display: flex;
   align-items: center;
