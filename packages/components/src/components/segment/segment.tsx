@@ -21,7 +21,6 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
-import statusNote from '../../utils/status-note';
 import { ScaleIcon, isScaleIcon } from '../../utils/utils';
 
 let i = 0;
@@ -88,16 +87,13 @@ export class Segment {
     this.focusableElement.focus();
   }
 
-  componentDidRender() {
-    if (this.hostElement.hasAttribute('aria-label')) {
-      statusNote({
-        tag: 'deprecated',
-        message:
-          'Property "ariaLabel" is deprecated. Please use the "ariaLabelSegment" property!',
-        type: 'warn',
-        source: this.hostElement,
-      });
-    }
+  connectedCallback() { 
+    const childNodes = Array.from(this.hostElement.childNodes);
+    const nodeNames = childNodes.map(el => el.nodeName.substring(0, 10))
+    const hasText = nodeNames.includes('#text');
+    const hasIcon = nodeNames.includes('SCALE-ICON')
+    this.iconOnly = hasIcon && !hasText;
+    this.iconText = hasIcon && hasText;    
   }
 
   componentDidLoad() {

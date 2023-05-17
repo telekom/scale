@@ -19,8 +19,8 @@
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-caption);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
-  --transition: all var(--telekom-motion-duration-transition)
-    var(--telekom-motion-easing-standard);
+  /* --transition: all var(--telekom-motion-duration-transition) */
+    /* var(--telekom-motion-easing-standard); */
   --color: var(--telekom-color-text-and-icon-standard);
 
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
@@ -54,7 +54,7 @@
   border-radius: var(--button-radius);
   padding-top: var(--padding-top-bottom);
   padding-bottom: var(--padding-top-bottom);
-  transition: var(--transition);
+  /* transition: var(--transition); */
   background-color: transparent;
   padding: 0;
 }
@@ -72,7 +72,7 @@
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
-  transition: var(--transition);
+  /* transition: var(--transition); */
   white-space: nowrap;
   color: var(--color);
 }
@@ -191,7 +191,15 @@ button.segment--large .segment--mask {
 }
 
 .segment:not(.segment--selected) .success-icon-container {
-  visibility: hidden;
+  display: none;
+}
+
+.segment:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container {
+  margin-left: 18px;
+}
+
+.segment--selected .text-container {
+  margin-left: 0;
 }
 
 .segment--selected:not(.segment--icon-only) .icon-container {

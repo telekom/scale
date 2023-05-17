@@ -111,9 +111,6 @@ export class SegmentedButton {
       if (this.disabled) {
         el.setAttribute('disabled', true && 'disabled');
       }
-      if (this.iconOnly) {
-        el.setAttribute('icon-only', '');
-      }
     });
   }
 
@@ -134,7 +131,6 @@ export class SegmentedButton {
       );
     });
     this.hostElement.style.setProperty('--colNum', this.slottedSegments.toString())
-    this.propagatePropsToChildren();
     this.position = 0;
     this.status = tempState;
     this.setState(tempState);
