@@ -309,7 +309,7 @@ export class Tooltip {
             onMouseOver={this.handleTooltipMouseOver}
             onMouseLeave={this.handleTooltipBlur}
           >
-            <slot name="content">{this.content}</slot>
+            {this.content}
             <div
               aria-hidden="true"
               part="arrow"

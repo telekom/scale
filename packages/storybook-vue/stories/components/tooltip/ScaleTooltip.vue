@@ -9,7 +9,6 @@
       :trigger="trigger"
       :flip="flip"
     >
-      <slot name="content"></slot>
       <scale-button>Hover me</scale-button>
     </scale-tooltip>
   </div>
