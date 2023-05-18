@@ -62,10 +62,6 @@
   pointer-events: none;
 }
 
-[part='trigger'] {
-  /*display: flow-root;*/
-}
-
 [part='arrow'] {
   position: absolute;
   z-index: -1; /* always below the text */
@@ -75,8 +71,12 @@
   transform: rotate(45deg);
 }
 
-@media screen and (-ms-high-contrast: active) {
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   [part='tooltip'] {
-    border: 1px solid yellow;
+    border: 1px solid transparent;
+  }
+  [part='arrow'] {
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
   }
 }
