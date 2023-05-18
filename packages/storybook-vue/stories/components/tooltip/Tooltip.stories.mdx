@@ -96,7 +96,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 export const FocusTemplate = (args, { argTypes }) => ({
   template: `
     <div style="padding: 30px 30px 30px 70px">
-      <scale-tooltip trigger="focus" content="Tooltip">
+      <scale-tooltip trigger="focus click" content="Tooltip">
         <scale-button>Focus me</scale-button>
       </scale-tooltip>
     </div>
@@ -205,7 +205,7 @@ export const FocusTemplate = (args, { argTypes }) => ({
     name="Trigger"
     args={{
       content: 'Tooltip',
-      trigger: 'focus',
+      trigger: 'focus click',
     }}
   >
     {FocusTemplate.bind({})}
@@ -213,28 +213,8 @@ export const FocusTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-tooltip content="Tooltip" trigger="focus">
+<scale-tooltip content="Tooltip" trigger="focus click">
   <scale-button>Focus me</scale-button>
-</scale-tooltip>
-```
-
-## Slot
-
-### Link Example
-
-<Canvas withSource="none">
-  <Story name="Slot" args={{}}>
-    {SlotTemplate.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-tooltip trigger="click">
-  <span slot="content">
-    I'm a HTML-tooltip
-    <scale-link href="https://github.com/telekom/scale">with a link</scale-link>
-  </span>
-  <scale-button>Click me</scale-button>
 </scale-tooltip>
 ```
 
