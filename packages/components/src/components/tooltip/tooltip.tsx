@@ -23,10 +23,8 @@ import {
   Listen,
 } from '@stencil/core';
 import { computePosition, offset, flip, shift, arrow } from '@floating-ui/dom';
-import { isClickOutside } from '../../utils/utils';
+import { isClickOutside, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
-
-let id = 0;
 
 @Component({
   tag: 'scale-tooltip',
@@ -34,8 +32,6 @@ let id = 0;
   shadow: true,
 })
 export class Tooltip {
-  componentId = `tooltip-${++id}`;
-
   @Element() hostElement: HTMLElement;
 
   /** (optional) The content of the Tooltip, supporting text only */
@@ -78,6 +74,7 @@ export class Tooltip {
   @Event({ eventName: 'scale-before-hide' }) tooltipBeforeHide: EventEmitter;
   @Event({ eventName: 'scale-hide' }) tooltipHide: EventEmitter;
 
+  private readonly internalId = generateUniqueId();
   private tooltipEl: HTMLElement;
   private arrowEl: HTMLElement;
   private triggerEl: HTMLElement;
@@ -134,11 +131,17 @@ export class Tooltip {
     }
   }
 
+  componentDidRender() {
+    this.update();
+    this.ensureAriaInSlottedTrigger();
+  }
+
   componentDidUpdate() {
     this.update();
     if (this.opened) {
       this.showTooltip();
     }
+    this.ensureAriaInSlottedTrigger();
   }
 
   /**
@@ -186,9 +189,20 @@ export class Tooltip {
     });
   };
 
-  componentDidRender() {
-    this.update();
-  }
+  /**
+   * We add `aria-describedby` to the slotted trigger element.
+   * And then add the `id` to the host itself, to keep the link outside of the shadow DOM.
+   * @see {@link https://www.tpgi.com/stuff-doesnt-work-dom-shadow-dom/}
+   */
+  ensureAriaInSlottedTrigger = () => {
+    if (this.triggerEl.hasAttribute('aria-describedby')) {
+      return;
+    }
+    this.triggerEl.setAttribute(
+      'aria-describedby',
+      `tooltip-${this.internalId}`
+    );
+  };
 
   @Method()
   async showTooltip() {
@@ -275,10 +289,14 @@ export class Tooltip {
 
   render() {
     return (
-      <Host onKeyDown={this.handleKeyDown}>
+      <Host
+        id={`tooltip-${this.internalId}`}
+        aria-label={this.content}
+        onKeyDown={this.handleKeyDown}
+      >
         {this.styles && <style>{this.styles}</style>}
 
-        <span part="trigger" aria-describedby={this.componentId}>
+        <span part="trigger">
           <slot></slot>
         </span>
 
@@ -288,7 +306,6 @@ export class Tooltip {
             role="tooltip"
             aria-hidden={this.opened ? 'false' : 'true'}
             ref={(el) => (this.tooltipEl = el)}
-            id={this.componentId}
             onMouseOver={this.handleTooltipMouseOver}
             onMouseLeave={this.handleTooltipBlur}
           >
