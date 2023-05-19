@@ -245,6 +245,12 @@
   display: none;
 }
 
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  [part='listbox-pad'] {
+    border: 1px solid transparent;
+  }
+}
+
 [part~='open'] [part='listbox-pad'] {
   display: block;
 }
