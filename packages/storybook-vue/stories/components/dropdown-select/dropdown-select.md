@@ -12,6 +12,7 @@ The dropdown temporarily displays a selection list. Thus, the dropdown helps sav
 ### When to use
 
 Use a dropdown when users:
+
 - can select options within a form,
 - should only select one of the options, or
 - should filter or sort content.
@@ -19,6 +20,7 @@ Use a dropdown when users:
 ### When not to use
 
 Don’t use dropdowns, when users:
+
 - should only have a few options (radio buttons may be better and they do not hide the content from the user),
 - should have a lot of choices (an input field with auto-fill is more helpful and time saving for the user),
 - should have several selectable options (use checkboxes instead), or
@@ -40,7 +42,7 @@ There is one basic type for the dropdown select
 
 ### Notification States
 
-There are two types of notifications within the dropdown field. 
+There are two types of notifications within the dropdown field.
 
 A message with an icon is required for any state as the outline or color may not be visible for people with color and vision disabilities.
 
@@ -56,7 +58,7 @@ A message with an icon is required for any state as the outline or color may not
 
 The label clearly indicates what kind of options the dropdown provides.
 
-### Icon (2)*
+### Icon (2)\*
 
 The direction of the arrow indicates whether the dropdown menu is open or closed.
 
