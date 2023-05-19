@@ -20,8 +20,6 @@
 </template>
 
 <script>
-import { action } from '@storybook/addon-actions';
-
 export default {
   props: {
     label: { type: String },
@@ -35,23 +33,8 @@ export default {
     hideLabelVisually: {type: Boolean, default: false},
     floatingStrategy: { type: String }
   },
-  methods: {
-    'scale-change'($event) {
-      action('scale-change');
-      this.$emit('scale-change', $event);
-    },
-    'scale-focus'($event) {
-      action('scale-focus');
-      this.$emit('scale-focus', $event);
-    },
-    'scale-blur'($event) {
-      action('scale-blur');
-      this.$emit('scale-blur', $event);
-    },
-    'scale-keydown'($event) {
-      action('scale-keydown');
-      this.$emit('scale-keydown', $event);
-    },
-  },
+  render() {
+    return this.$slots.default;
+  }
 };
 </script>
