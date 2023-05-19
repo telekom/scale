@@ -7,11 +7,9 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type      | Default     |
-| ---------- | ---------- | ----------- | --------- | ----------- |
-| `focused`  | `focused`  |             | `boolean` | `undefined` |
-| `selected` | `selected` |             | `boolean` | `undefined` |
-| `value`    | `value`    |             | `any`     | `undefined` |
+| Property | Attribute | Description | Type  | Default     |
+| -------- | --------- | ----------- | ----- | ----------- |
+| `value`  | `value`   |             | `any` | `undefined` |
 
 
 ## Shadow Parts
