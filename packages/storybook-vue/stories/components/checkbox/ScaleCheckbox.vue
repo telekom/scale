@@ -9,6 +9,7 @@
     :indeterminate="indeterminate"
     :value="value"
     :input-id="inputId"
+    :required="required"
     :aria-label-checkbox="ariaLabelCheckbox"
     @scaleChange="scaleChange"
   >
@@ -29,6 +30,7 @@ export default {
     indeterminate: { type: Boolean },
     value: { type: String },
     inputId: { type: String },
+    required: { type: Boolean },
     ariaLabelCheckbox: { type: String}
   },
   methods: {
