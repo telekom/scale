@@ -189,7 +189,7 @@ function isInView(element: HTMLElement) {
 export class DropdownSelect {
   @Element() hostElement: HTMLElement;
 
-  @Prop() comboboxId?: string = 'combobox';
+  @Prop() comboboxId?: string = 'combobox'; // we probably want to make this use `internalId` as well?
   @Prop() label: string;
   @Prop() name?: string;
   @Prop() helperText?: string = '';
@@ -217,6 +217,7 @@ export class DropdownSelect {
   @State() ignoreBlur: boolean = false;
   @State() hasFocus: boolean = false;
 
+  private readonly internalId = generateUniqueId();
   private comboEl: HTMLElement;
   private listboxEl: HTMLElement;
   private listboxPadEl: HTMLElement;
@@ -399,7 +400,7 @@ export class DropdownSelect {
       readOptions(this.hostElement).find(({ value }) => value === this.value) ||
       ({} as any)
     ).ItemElement;
-    const helperTextId = `helper-message-${generateUniqueId()}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
@@ -494,6 +495,8 @@ export class DropdownSelect {
 
           {this.helperText && (
             <scale-helper-text
+              id={helperTextId}
+              aria-label={this.helperText}
               helperText={this.helperText}
               variant={this.invalid ? 'danger' : this.variant}
             ></scale-helper-text>
