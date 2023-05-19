@@ -7,8 +7,7 @@ import { Component, Element, h, Prop } from '@stencil/core';
 })
 export class DropdownSelectItem {
   @Element() hostElement: HTMLElement;
-  @Prop() selected?: boolean;
-  @Prop() focused?: boolean;
+
   @Prop({ reflect: true }) value?: any;
 
   render() {
@@ -17,7 +16,6 @@ export class DropdownSelectItem {
         <div part="prefix">
           <slot name="prefix"></slot>
         </div>
-
         <div part="label">
           <slot></slot>
         </div>
