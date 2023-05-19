@@ -26,7 +26,7 @@ describe('Pagination', () => {
     );
     test('buttons disabled', async () => {
       await global.runSetup(`components-pagination--standard`);
-      await global.page.waitForSelector('html.hydrated'); // I don't know what I'm doing
+
       const firstButton = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
       );
