@@ -26,15 +26,16 @@ describe('Pagination', () => {
     );
     test('buttons disabled', async () => {
       await global.runSetup(`components-pagination--standard`);
+
       const firstButton = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
       );
       const lastButton = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-pagination").shadowRoot.querySelector("div > button.pagination__last-prompt")`
       );
-      firstButton.click();
+      await firstButton.click();
       await global.visualCheck();
-      lastButton.click();
+      await lastButton.click();
       await global.visualCheck();
     });
     test.each([['hidden-borders'], ['embedded-hidden-borders']])(
