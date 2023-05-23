@@ -23,10 +23,11 @@
 
 ## Events
 
-| Event         | Description | Type                |
-| ------------- | ----------- | ------------------- |
-| `scale-close` |             | `CustomEvent<void>` |
-| `scale-open`  |             | `CustomEvent<void>` |
+| Event                | Description                                                                                        | Type                                  |
+| -------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `scale-before-close` | Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing | `CustomEvent<BeforeCloseEventDetail>` |
+| `scale-close`        | Fires after the notification has been closed                                                       | `CustomEvent<void>`                   |
+| `scale-open`         | Fires after the notification has been opened                                                       | `CustomEvent<void>`                   |
 
 
 ## Shadow Parts
