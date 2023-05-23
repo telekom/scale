@@ -19,8 +19,8 @@
 
 | Part          | Description |
 | ------------- | ----------- |
+| `"base"`      |             |
 | `"container"` |             |
-| `"fieldset"`  |             |
 
 
 ## Dependencies
