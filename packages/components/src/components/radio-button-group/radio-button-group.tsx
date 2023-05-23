@@ -47,7 +47,7 @@ export class RadioButtonGroup {
   render() {
     const helperTextId = `helper-message-${this.internalId}`;
     return (
-      <fieldset class="radio-button-group">
+      <fieldset part="fieldset" class="radio-button-group">
         <legend class="radio-button-group__title">
           <label
             class="radio-button-group__title-label"
@@ -67,7 +67,7 @@ export class RadioButtonGroup {
             </div>
           ) : null}
         </legend>
-        <div class="radio-button-group__container">
+        <div part="container" class="radio-button-group__container">
           <slot />
         </div>
       </fieldset>
