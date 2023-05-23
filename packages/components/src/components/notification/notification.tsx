@@ -141,11 +141,14 @@ export class Notification {
               part="close-button"
               variant="ghost"
               onClick={this.close}
-              aria-label={this.closeButtonLabel}
-              title={this.closeButtonTitle}
             >
               <slot name="close-icon">
-                <scale-icon-action-circle-close size={ICON_SIZE} decorative />
+                <scale-icon-action-circle-close
+                  aria-label={this.closeButtonLabel}
+                  accessibilityTitle={this.closeButtonTitle}
+                  decorative
+                  size={ICON_SIZE}
+                />
               </slot>
             </scale-button>
           )}
