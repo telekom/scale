@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.134](https://github.com/telekom/scale/compare/v3.0.0-beta.133...v3.0.0-beta.134) (2023-05-09)
+
+
+### Bug Fixes
+
+* **grid:** 5 columns behavior on --l --xl ([#1798](https://github.com/telekom/scale/issues/1798)) ([b421e27](https://github.com/telekom/scale/commit/b421e276cf6e640610cd703a0b0848fe3f051e70))
+
+
+
+
+
+# [3.0.0-beta.133](https://github.com/telekom/scale/compare/v3.0.0-beta.132...v3.0.0-beta.133) (2023-05-09)
+
+
+### Bug Fixes
+
+* **link:** bust permanent aria-disabled state ([#1807](https://github.com/telekom/scale/issues/1807)) ([6d7d93e](https://github.com/telekom/scale/commit/6d7d93e5afc62360911a59ac14aa41044a1f1d29))
+* **telekom-header-mobile-menu:** proper meta nav link styles ([#1802](https://github.com/telekom/scale/issues/1802)) ([5e8dced](https://github.com/telekom/scale/commit/5e8dced050bc7774e9f93f116ed155153c20314b))
+
+
+
+
+
+# [3.0.0-beta.132](https://github.com/telekom/scale/compare/v3.0.0-beta.131...v3.0.0-beta.132) (2023-05-05)
+
+
+### Bug Fixes
+
+* **notification-toast:** text overflowing close button ([#1771](https://github.com/telekom/scale/issues/1771)) ([3bfb6b9](https://github.com/telekom/scale/commit/3bfb6b9e922e9c38977e3842eeec25525caa77f0))
+* **notification-toast:** z-index over telekom-header ([#1767](https://github.com/telekom/scale/issues/1767)) ([e7c4f3d](https://github.com/telekom/scale/commit/e7c4f3d274bc6fdfddf42ad38191e4bb0cd7b7b5))
+* **telekom-header:** add data-back-compat logoHref, more specific styling for nav-item ([#1779](https://github.com/telekom/scale/issues/1779)) ([8ae175b](https://github.com/telekom/scale/commit/8ae175b7f7b611a7793fd578944edc793d991c9a))
+* **telekom-header:** allow link for logo ([#1762](https://github.com/telekom/scale/issues/1762)) ([5dd544a](https://github.com/telekom/scale/commit/5dd544a5d8259a326b346e4bf7847be5cf0e9206))
+* **telekom-nav-flyout:** add variant prop (mobile) ([#1764](https://github.com/telekom/scale/issues/1764)) ([fa1ee1a](https://github.com/telekom/scale/commit/fa1ee1a329d99479d3aec1c349eeda8d14ba1f31))
+
+
+### Features
+
+* **header-back-compat:** add support for userMenu ([#1775](https://github.com/telekom/scale/issues/1775)) ([b5445cf](https://github.com/telekom/scale/commit/b5445cf384d06165207d6e664b4289bd005746f6))
+* **telekom-header-data-back-compat:** support for prop that hides label in iconNavigation and alternate text ([#1785](https://github.com/telekom/scale/issues/1785)) ([4d5bda4](https://github.com/telekom/scale/commit/4d5bda4e5390226c99ce0f41ac774c18d29c4a03))
+
+
+
+
+
 # [3.0.0-beta.131](https://github.com/telekom/scale/compare/v3.0.0-beta.130...v3.0.0-beta.131) (2023-04-18)
 
 

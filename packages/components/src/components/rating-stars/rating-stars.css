@@ -24,7 +24,7 @@
   --font-size-small: var(--telekom-typography-font-size-small);
   --infotext-color: var(--telekom-color-text-and-icon-additional);
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
 }
 
 :host([star-size='small']) {

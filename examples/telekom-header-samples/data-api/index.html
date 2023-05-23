@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
+    />
+    <script
+      type="module"
+      src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Vanilla</title>
+  </head>
+  <body>
+    <scale-telekom-header-data-back-compat
+    app-name="Telekom Header Data Api (Backwards Compatibility)"
+    app-name-link="https://example.com"
+    active-route-id="id"
+    ></scale-telekom-header-data-back-compat>
+    <br/>
+    <span class="notice">
+      Header content is provided by setting attributes via javascript as in the <a href="https://telekom.github.io/scale/?path=/docs/components-brand-header-navigation--standard">legacy brand header</a>.
+    </span>
+    <br/>
+    <script>
+      const header = window.document.querySelector(
+        'scale-telekom-header-data-back-compat'
+      );
+      header.appName = 'Header Data Api (Backwards Compatibility)';
+      header.mainNavigation = [{"name":"Topic One","id":"Topic One","children":[{"name":"Second Level","id":"Second Level 3","children":[{"name":"Third Level","id":"Third Level 4","href":"#third-level"},{"name":"Third Level","id":"Third Level 5","href":"#third-level"},{"name":"Third Level","id":"Third Level 6","href":"#third-level"},{"name":"Third Level","id":"Third Level 7","href":"#third-level"},{"name":"Third Level","id":"Third Level 8","href":"#third-level"},{"name":"Third Level","id":"Third Level 9","href":"#third-level"},{"name":"Third Level","id":"Third Level 10","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 4","children":[{"name":"Third Level","id":"Third Level 11","href":"#third-level"},{"name":"Third Level","id":"Third Level 12","href":"#third-level"},{"name":"Third Level","id":"Third Level 13","href":"#third-level"},{"name":"Third Level","id":"Third Level 14","href":"#third-level"},{"name":"Third Level","id":"Third Level 15","href":"#third-level"},{"name":"Third Level","id":"Third Level 16","href":"#third-level"},{"name":"Third Level","id":"Third Level 17","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 5","children":[{"name":"Third Level","id":"Third Level 18","href":"#third-level"},{"name":"Third Level","id":"Third Level 19","href":"#third-level"},{"name":"Third Level","id":"Third Level 20","href":"#third-level"},{"name":"Third Level","id":"Third Level 21","href":"#third-level"},{"name":"Third Level","id":"Third Level 22","href":"#third-level"},{"name":"Third Level","id":"Third Level 23","href":"#third-level"},{"name":"Third Level","id":"Third Level 24","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 6","children":[{"name":"Third Level","id":"Third Level 25","href":"#third-level"},{"name":"Third Level","id":"Third Level 26","href":"#third-level"},{"name":"Third Level","id":"Third Level 27","href":"#third-level"},{"name":"Third Level","id":"Third Level 28","href":"#third-level"},{"name":"Third Level","id":"Third Level 29","href":"#third-level"},{"name":"Third Level","id":"Third Level 30","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 7"}]},{"name":"Topic Two","id":"Topic Two","children":[{"name":"Second Level","id":"Second Level 1","children":[{"name":"Third Level","id":"Third Level 1","href":"#third-level"},{"name":"Third Level","id":"Third Level 2","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 2","children":[{"name":"Third Level","id":"Third Level 3","href":"#third-level"}]}]},{"name":"Topic Three","id":"Topic Three","href":"#topic-three"},{"name":"Topic Four","id":"Topic Four","href":"#topic-four"},{"name":"Topic Five","id":"Topic Five","href":"#topic-five"}];
+      // header.iconNavigation = [...[]];
+      // header.sectorNavigation = [...[]];
+      // header.addonNavigation = [...[]];
+      // header.userNavigation = [...[]];
+    </script>
+  </body>
+</html>

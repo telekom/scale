@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
+    />
+    <script
+      type="module"
+      src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Vanilla</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css" />
+        <script type="module" src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+        <title>Vanilla</title>
+      </head>
+      <body>
+        <scale-telekom-header type="slim">
+          <!-- meta-nav (desktop) -->
+          <scale-telekom-nav-list variant="meta-nav-external" slot="meta-nav-external">
+            <scale-telekom-nav-item>
+              <a href="#"> Metalink external <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link>
+              </a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#"> Metalink external <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link>
+              </a>
+            </scale-telekom-nav-item>
+          </scale-telekom-nav-list>
+          <scale-telekom-nav-list variant="meta-nav" slot="meta-nav">
+            <scale-telekom-nav-item>
+              <a href="#">Metalink internal</a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#">Metalink internal</a>
+            </scale-telekom-nav-item>
+          </scale-telekom-nav-list>
+          <!-- language switcher (desktop) -->
+          <scale-telekom-nav-list variant="lang-switcher" slot="lang-switcher" alignment="right">
+            <scale-telekom-nav-item active>
+              <a href="#">EN</a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#">SO</a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#">DE</a>
+            </scale-telekom-nav-item>
+          </scale-telekom-nav-list>
+          <!-- function navigation (desktop) -->
+          <scale-telekom-nav-list variant="functions" slot="functions" alignment="right">
+            <scale-telekom-nav-item>
+              <a href="#">
+                <scale-badge no-dot label="Search">
+                  <scale-icon-action-search></scale-icon-action-search>
+                </scale-badge>
+              </a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#">
+                <scale-badge count="1" label="Cart">
+                  <scale-icon-action-shopping-cart></scale-icon-action-shopping-cart>
+                </scale-badge>
+              </a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#">
+                <scale-badge no-dot label="Login">
+                  <scale-icon-user-file-user></scale-icon-user-file-user>
+                </scale-badge>
+              </a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item class="burger-item">
+              <button>
+                <scale-badge>
+                  <scale-icon-action-menu></scale-icon-action-menu>
+                </scale-badge>
+              </button>
+              <scale-telekom-nav-flyout class="mobile-nav-flyout">
+                <!-- the mobile navigation structure goes here -->
+                <scale-telekom-mobile-flyout-canvas>
+                  <!-- lang-switcher (mobile) -->
+                  <scale-telekom-nav-list variant="lang-switcher" slot="mobile-before-main-nav" alignment="left">
+                    <scale-telekom-nav-item active>
+                      <a href="#">EN</a>
+                    </scale-telekom-nav-item>
+                    <scale-telekom-nav-item>
+                      <a href="#">SO</a>
+                    </scale-telekom-nav-item>
+                    <scale-telekom-nav-item>
+                      <a href="#">DE</a>
+                    </scale-telekom-nav-item>
+                  </scale-telekom-nav-list>
+                  <!-- main-nav (mobile) -->
+                  <scale-telekom-mobile-menu slot="mobile-main-nav">
+                    <scale-telekom-mobile-menu-item active>
+                      <a href="#">Topic One</a>
+                    </scale-telekom-mobile-menu-item>
+                    <scale-telekom-mobile-menu-item>
+                      <a href="#">Topic Two</a>
+                    </scale-telekom-mobile-menu-item>
+                    <scale-telekom-mobile-menu-item>
+                      <a href="#">Topic Three</a>
+                    </scale-telekom-mobile-menu-item>
+                    <scale-telekom-mobile-menu-item>
+                      <a href="#">Topic Four</a>
+                    </scale-telekom-mobile-menu-item>
+                    <scale-telekom-mobile-menu-item>
+                      <a href="#">Topic Five</a>
+                    </scale-telekom-mobile-menu-item>
+                  </scale-telekom-mobile-menu>
+                  <!-- meta-nav (mobile) -->
+                  <scale-telekom-nav-list variant="meta-nav-external" slot="mobile-meta-nav-external" alignment="left" style="--flex-direction: column">
+                    <scale-telekom-nav-item>
+                      <a href="#"> Metanavigation external <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link>
+                      </a>
+                    </scale-telekom-nav-item>
+                    <scale-telekom-nav-item>
+                      <a href="#"> Metanavigation external <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link>
+                      </a>
+                    </scale-telekom-nav-item>
+                    <scale-telekom-nav-item>
+                      <a href="#">Metanavigation internal</a>
+                    </scale-telekom-nav-item>
+                    <scale-telekom-nav-item>
+                      <a href="#">Metanavigation internal</a>
+                    </scale-telekom-nav-item>
+                  </scale-telekom-nav-list>
+                </scale-telekom-mobile-flyout-canvas>
+              </scale-telekom-nav-flyout>
+            </scale-telekom-nav-item>
+          </scale-telekom-nav-list>
+          <!-- main navigation (desktop) -->
+          <scale-telekom-nav-list variant="main-nav" slot="main-nav">
+            <scale-telekom-nav-item active>
+              <a href="#">Topic One</a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#">Topic Two</a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#">Topic Three</a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#">Topic Four</a>
+            </scale-telekom-nav-item>
+            <scale-telekom-nav-item>
+              <a href="#">Topic Five</a>
+            </scale-telekom-nav-item>
+          </scale-telekom-nav-list>
+        </scale-telekom-header>
+
+        <br/>
+        <span class="notice">
+          Slim variant can be used by adding the attribute <code>type="slim"</code> to the <code>scale-telekom-header</code> component.
+        </span>        
+      </body>
+    </html>
+  </body>
+</html>

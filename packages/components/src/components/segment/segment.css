@@ -180,7 +180,7 @@ button.segment--large.segment--selected .segment--mask {
 .segment:focus {
   box-shadow: var(--telekom-shadow-raised-standard);
   outline: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   outline-offset: var(--telekom-spacing-unit-x025);
   z-index: 40;
   position: relative;
