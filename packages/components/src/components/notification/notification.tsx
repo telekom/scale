@@ -24,6 +24,12 @@ import cn from 'classnames';
 
 const ICON_SIZE = 20;
 
+type CloseEventTrigger = 'CLOSE_BUTTON' | 'ATTRIBUTE' | 'TIMEOUT';
+
+export interface BeforeCloseEventDetail {
+  trigger: CloseEventTrigger;
+}
+
 const iconVariantNameMap = {
   informational: 'scale-icon-alert-information',
   warning: 'scale-icon-alert-warning',
@@ -47,7 +53,7 @@ export class Notification {
   @Prop() variant?: 'danger' | 'warning' | 'success' | 'informational' =
     'informational';
   /** (optional) Visible */
-  @Prop({ reflect: true }) opened?: boolean;
+  @Prop({ reflect: true, mutable: true }) opened?: boolean;
   /** (optional) Show the close button */
   @Prop() dismissible?: boolean = false;
   /** (optional) Time in milliseconds until it closes by itself */
@@ -67,8 +73,15 @@ export class Notification {
   @State() hasTextSlot: boolean = false;
   // @State() hasActionSlot: boolean = false; // unused for now
 
+  /** Fires after the notification has been opened  */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<void>;
+  /** Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing */
+  @Event({ eventName: 'scale-before-close' })
+  scaleBeforeClose: EventEmitter<BeforeCloseEventDetail>;
+  /** Fires after the notification has been closed */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
+
+  private lastCloseEventTrigger: CloseEventTrigger | null = null;
 
   connectedCallback() {
     if (this.hostElement.hasAttribute('opened')) {
@@ -77,7 +90,7 @@ export class Notification {
       this.isOpen = true;
     }
     if (this.delay !== undefined) {
-      setTimeout(this.close, this.delay);
+      setTimeout(this.timeout, this.delay);
     }
     this.hasTextSlot = this.hostElement.querySelector('[slot="text"]') != null;
     // this.hasActionSlot =
@@ -88,6 +101,7 @@ export class Notification {
   openedChanged(newValue) {
     if (newValue === true) {
       this.open();
+      this.lastCloseEventTrigger = 'ATTRIBUTE';
     } else if (this.isOpen) {
       this.close();
     }
@@ -98,13 +112,27 @@ export class Notification {
     this.role = 'alert';
     this.scaleOpen.emit();
     if (this.delay !== undefined) {
-      setTimeout(this.close, this.delay);
+      setTimeout(this.timeout, this.delay);
     }
   };
 
   close = () => {
+    const event = this.scaleBeforeClose.emit({
+      trigger: this.lastCloseEventTrigger,
+    });
+    this.lastCloseEventTrigger = null;
+    const prevented = event.defaultPrevented;
+    if (prevented) {
+      this.opened = true;
+      return;
+    }
     this.isOpen = false;
     this.scaleClose.emit();
+  };
+
+  timeout = () => {
+    this.lastCloseEventTrigger = 'TIMEOUT';
+    this.opened = false;
   };
 
   render() {
@@ -140,7 +168,10 @@ export class Notification {
             <scale-button
               part="close-button"
               variant="ghost"
-              onClick={this.close}
+              onClick={() => {
+                this.lastCloseEventTrigger = 'CLOSE_BUTTON';
+                this.opened = false;
+              }}
             >
               <slot name="close-icon">
                 <scale-icon-action-circle-close

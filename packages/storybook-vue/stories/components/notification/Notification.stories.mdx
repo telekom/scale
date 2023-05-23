@@ -63,6 +63,24 @@ import ScaleNotification from './ScaleNotification.vue';
         type: 'text'
       }
     },
+    'scale-open': {
+      description: 'Fires after the notification has been opened',
+      table: {
+        category: 'Events',
+      },
+    },
+    'scale-before-close': {
+      description: 'Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing',
+      table: {
+        category: 'Events',
+      },
+    },
+    'scale-close': {
+      description: 'Fires after the notification has been closed',
+      table: {
+        category: 'Events',
+      },
+    }
   }}
 />
 
@@ -104,12 +122,14 @@ import ScaleNotification from './ScaleNotification.vue';
             :close-button-label="closeButtonLabel"
             :close-button-title="closeButtonTitle"
             @scale-open="emitOpen"
+            @scale-before-close="emitBeforeClose"
             @scale-close="emitClose"
           ></scale-notification>
         </div>
       `,
       methods: {
         emitOpen: action('scale-open'),
+        emitBeforeClose: action('scale-before-close'),
         emitClose: action('scale-close'),
       }
     }}
@@ -179,6 +199,7 @@ import ScaleNotification from './ScaleNotification.vue';
               :opened="isOpen"
               delay="3000"
               @scale-open="emitOpen"
+              @scale-before-close="emitBeforeClose"
               @scale-close="close"
             ></scale-notification>
           </div>
@@ -190,6 +211,7 @@ import ScaleNotification from './ScaleNotification.vue';
           this.emitClose();
         },
         emitOpen: action('scale-open'),
+        emitBeforeClose: action('scale-before-close'),
         emitClose: action('scale-close'),
       }
     }}
@@ -234,20 +256,30 @@ import ScaleNotification from './ScaleNotification.vue';
               variant: this.variants[this.currentVariant],
               delay: 5000,
               dismissible: true,
-              opened: true,
+              opened: false,
               // is this safe?
               innerHTML: '<span slot="text">Additional text goes in the `text` slot</span>'
             }
           );
-          const handleClose = () => {
-            this.emitClose()
-            toast.removeEventListener('scale-close', handleClose)
+          const handleBeforeClose = (event) => {
+            console.log(event.detail);
+            this.emitBeforeClose();
+            toast.removeEventListener('scale-before-close', handleBeforeClose);
           }
+          const handleClose = () => {
+            this.emitClose();
+            toast.removeEventListener('scale-close', handleClose);
+          }
+          toast.addEventListener('scale-open', () => this.emitOpen());
+          toast.addEventListener('scale-before-close', handleBeforeClose);
           toast.addEventListener('scale-close', handleClose);
           this.$refs.stack.appendChild(toast);
+          toast.opened = true;
           this.currentVariant = (this.currentVariant + 1) % this.variants.length;
         },
-        emitClose: action('scale-close')
+        emitOpen: action('scale-open'),
+        emitClose: action('scale-close'),
+        emitBeforeClose: action('scale-before-close'),
       }
     }}
   </Story>
