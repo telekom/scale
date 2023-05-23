@@ -19,6 +19,7 @@
 | `invalid`           | `invalid`             | (optional) Input status                                                                   | `boolean` | `false`     |
 | `label`             | `label`               | (optional) Input label                                                                    | `string`  | `''`        |
 | `name`              | `name`                | (optional) Input name                                                                     | `string`  | `undefined` |
+| `required`          | `required`            | (optional) Input required                                                                 | `boolean` | `undefined` |
 | `status`            | `status`              | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/> | `string`  | `''`        |
 | `styles`            | `styles`              | (optional) Injected CSS styles                                                            | `string`  | `undefined` |
 | `value`             | `value`               | (optional) Input value                                                                    | `string`  | `''`        |
