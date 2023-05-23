@@ -108,14 +108,17 @@
 }
 
 [part='close-button'] {
-  --color-ghost: var(--telekom-color-text-and-icon-standard);
   position: absolute;
-  /*
-    TODO this might need adjusment
-    (probably scale-button will change, or
-    we can set it up inside a flex container just like
-    one the left...)
-  */
-  right: calc(var(--telekom-spacing-unit-x2) - 2px);
-  top: calc(var(--telekom-spacing-unit-x2) - 2px);
+  right: var(--telekom-spacing-unit-x1);
+  top: var(--telekom-spacing-unit-x1);
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  [part~='base'] {
+    border: 1px solid white;
+  }
+  
+  [part='close-button'] {
+    --color-ghost: white;
+  }
 }
