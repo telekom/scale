@@ -26,4 +26,18 @@ describe('Notification ', () => {
     });
     expect(page.root).toMatchSnapshot();
   });
+  it('should match snapshot, type=banner', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification-toast opened type="banner"></scale-notification-toast>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+  it('should match snapshot, type=toast', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification-toast opened type="toast"></scale-notification-toast>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
 });
