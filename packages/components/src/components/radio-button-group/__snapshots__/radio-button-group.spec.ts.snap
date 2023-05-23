@@ -3,7 +3,7 @@
 exports[`RadioButtonGroup should match error snapshot 1`] = `
 <scale-radio-button-group helper-text="Error message" invalid="true" label="Radio Button Label">
   <mock:shadow-root>
-    <fieldset class="radio-button-group">
+    <fieldset class="radio-button-group" part="fieldset">
       <legend class="radio-button-group__title">
         <label aria-label="Radio Button Label" class="radio-button-group__title-label">
           Radio Button Label
@@ -15,7 +15,7 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
           </span>
         </div>
       </legend>
-      <div class="radio-button-group__container">
+      <div class="radio-button-group__container" part="container">
         <slot></slot>
       </div>
     </fieldset>
@@ -33,13 +33,13 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
 exports[`RadioButtonGroup should match selected snapshot 1`] = `
 <scale-radio-button-group label="Radio Button Label">
   <mock:shadow-root>
-    <fieldset class="radio-button-group">
+    <fieldset class="radio-button-group" part="fieldset">
       <legend class="radio-button-group__title">
         <label aria-label="Radio Button Label" class="radio-button-group__title-label">
           Radio Button Label
         </label>
       </legend>
-      <div class="radio-button-group__container">
+      <div class="radio-button-group__container" part="container">
         <slot></slot>
       </div>
     </fieldset>
@@ -57,13 +57,13 @@ exports[`RadioButtonGroup should match selected snapshot 1`] = `
 exports[`RadioButtonGroup should match standard snapshot 1`] = `
 <scale-radio-button-group label="Radio Button Label">
   <mock:shadow-root>
-    <fieldset class="radio-button-group">
+    <fieldset class="radio-button-group" part="fieldset">
       <legend class="radio-button-group__title">
         <label aria-label="Radio Button Label" class="radio-button-group__title-label">
           Radio Button Label
         </label>
       </legend>
-      <div class="radio-button-group__container">
+      <div class="radio-button-group__container" part="container">
         <slot></slot>
       </div>
     </fieldset>
