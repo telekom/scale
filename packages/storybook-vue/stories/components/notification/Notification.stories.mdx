@@ -8,8 +8,6 @@ import {
 import { action } from '@storybook/addon-actions';
 import ScaleNotification from './ScaleNotification.vue';
 
-<!-- TODO events -->
-
 <Meta
   title="Beta Components/Notification"
   component={ScaleNotification}
@@ -236,6 +234,7 @@ import ScaleNotification from './ScaleNotification.vue';
       data() {
         return {
           count: 1,
+          delay: 0,
           variants: ['informational', 'warning', 'success', 'danger'],
           currentVariant: 0,
         }
@@ -243,7 +242,16 @@ import ScaleNotification from './ScaleNotification.vue';
       template: `
         <div>
           <div ref="stack" class="scl-toast-stack"></div>
-          <scale-button variant="secondary" @click="create">Show</scale-button>
+          <scale-slider
+            @scale-change="$event => this.delay = $event.target.value"
+            label="Delay"
+            min="0"
+            max="10"
+            show-step-marks
+            unit="s"
+            helper-text="0 means no timeout."
+          ></scale-slider>
+          <p><scale-button variant="secondary" @click="create">Show</scale-button></p>
         </div>
       `,
       methods: {
@@ -251,18 +259,21 @@ import ScaleNotification from './ScaleNotification.vue';
           const toast = Object.assign(
             document.createElement('scale-notification'),
             {
-              heading: `Notification toast #${this.count++}`, 
+              heading: `Notification toast #${this.count++}. And a lot more text because we want to test how it behaves.`, 
               type: 'toast',
               variant: this.variants[this.currentVariant],
-              delay: 5000,
+              delay: this.delay === 0 ? undefined : this.delay * 1000,
               dismissible: true,
               opened: false,
               // is this safe?
               innerHTML: '<span slot="text">Additional text goes in the `text` slot</span>'
             }
           );
+          const handleOpen = () => {
+            this.emitOpen();
+            toast.removeEventListener('scale-open', handleOpen);
+          }
           const handleBeforeClose = (event) => {
-            console.log(event.detail);
             this.emitBeforeClose();
             toast.removeEventListener('scale-before-close', handleBeforeClose);
           }
@@ -270,7 +281,7 @@ import ScaleNotification from './ScaleNotification.vue';
             this.emitClose();
             toast.removeEventListener('scale-close', handleClose);
           }
-          toast.addEventListener('scale-open', () => this.emitOpen());
+          toast.addEventListener('scale-open', () => handleOpen);
           toast.addEventListener('scale-before-close', handleBeforeClose);
           toast.addEventListener('scale-close', handleClose);
           this.$refs.stack.appendChild(toast);
@@ -418,7 +429,7 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
             heading="Notification heading goes here"
             opened
           >
-            <span slot="text">Additional text</span>
+            <span slot="text">Additional text goes in the 'text' slot.<br /><scale-link to="#">Links can be inlined.</scale-link></span>
           </scale-notification>
         </div>
       `
@@ -428,6 +439,9 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
 
 ```html
 <scale-notification heading="Notification text goes here" opened>
-  <span slot="text">Additional text</span>
+  <span slot="text">
+    Additional text goes in the 'text' slot.
+    <br /><scale-link to="#">Links can be inlined.</scale-link>
+  </span>
 </scale-notification>
 ```
