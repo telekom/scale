@@ -97,12 +97,6 @@ scale-dropdown {
   visibility: hidden;
 }
 
-@-moz-document url-prefix() {
-  .dropdown .input__dropdown {
-    text-indent: -2px;
-  }
-}
-
 .dropdown .input__dropdown-wrapper {
   position: relative;
 }
