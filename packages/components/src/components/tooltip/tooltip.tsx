@@ -22,8 +22,15 @@ import {
   State,
   Listen,
 } from '@stencil/core';
-import { computePosition, offset, flip, shift, arrow, platform } from '@floating-ui/dom';
-import {offsetParent} from 'composed-offset-position';
+import {
+  computePosition,
+  offset,
+  flip,
+  shift,
+  arrow,
+  platform,
+} from '@floating-ui/dom';
+import { offsetParent } from 'composed-offset-position';
 import { isClickOutside } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
