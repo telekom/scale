@@ -15,7 +15,6 @@
   --spacing-y: var(--telekom-spacing-unit-x4);
   --spacing-y-inner: var(--telekom-spacing-unit-x2);
   --spacing-x-aside: var(--telekom-spacing-unit-x12);
-  --spacing-outer-toast: var(--telekom-spacing-unit-x4);
 
   --duration-in: var(--telekom-motion-duration-transition);
   --duration-out: var(--telekom-motion-duration-transition);
@@ -26,11 +25,6 @@
   --translate-z: 0;
 
   display: contents;
-}
-
-:host-context(.scl-toast-stack) {
-  display: block;
-  margin: var(--spacing-outer-toast);
 }
 
 [part~='base'] {

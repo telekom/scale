@@ -280,6 +280,7 @@ import ScaleNotification from './ScaleNotification.vue';
           const handleClose = () => {
             this.emitClose();
             toast.removeEventListener('scale-close', handleClose);
+            toast.remove();
           }
           toast.addEventListener('scale-open', handleOpen);
           toast.addEventListener('scale-before-close', handleBeforeClose);
