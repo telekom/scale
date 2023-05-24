@@ -18,6 +18,7 @@ import {
   Event,
   EventEmitter,
   Method,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -96,6 +97,7 @@ export class Segment {
     const hasIcon = nodeNames.includes('SCALE-ICON')
     this.iconOnly = hasIcon && !hasText;
     this.iconText = hasIcon && hasText;    
+    this.handleSelectedIcon();
   }
 
   componentDidLoad() {
@@ -105,6 +107,25 @@ export class Segment {
   componentWillLoad() {
     if (this.segmentId == null) {
       this.segmentId = 'segment-' + i++;
+    }
+  }
+
+  @Watch('selected')
+  handleSelectedIcon() {
+    if (this.iconOnly) {
+      Array.from(this.hostElement.childNodes).forEach((child) => {
+        if (
+          child.nodeType === 1 &&
+          child.nodeName.substr(0, 10) === 'SCALE-ICON'
+        ) {
+          const icon: HTMLElement = this.hostElement.querySelector(
+            child.nodeName
+          );
+          this.selected
+          ? icon.setAttribute('selected', '')
+          : icon.removeAttribute('selected');
+        }
+      })
     }
   }
 

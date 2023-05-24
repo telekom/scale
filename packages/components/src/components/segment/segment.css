@@ -80,7 +80,7 @@ button.segment--icon-only.segment--small .segment--mask {
   padding-right: var(--telekom-spacing-unit-x9);
 }
 
-button.segment--icon-only.segment--multi-select.segment--small .segment--mask {
+button.segment--icon-only.segment--multi-select .segment--mask {
   padding-left: var(--telekom-spacing-unit-x3);
   padding-right: var(--telekom-spacing-unit-x3);
 }
@@ -90,7 +90,7 @@ button.segment--small .segment--mask {
   padding-right: 10px;
 }
 
-button.segment--small.segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
+button.segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
   padding-left: 19px;
   padding-right: 19px;
 }
@@ -117,6 +117,12 @@ button.segment--medium .segment--mask {
 button.segment--large .segment--mask {
   padding-left: var(--telekom-spacing-unit-x4);
   padding-right: var(--telekom-spacing-unit-x5);
+}
+
+
+button.segment--icon-only .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x3);
+  padding-right: var(--telekom-spacing-unit-x3);
 }
 
 /* selected */
@@ -206,6 +212,12 @@ button.segment--large .segment--mask {
   margin-left: 18px;
 }
 
+.segment--medium:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container,
+.segment--large:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container {
+  margin-left: 20px;
+}
+
+
 .segment--selected .text-container {
   margin-left: 0;
 }
@@ -219,7 +231,6 @@ button.segment--large .segment--mask {
   display: none;
 }
 
-.segment--icon-only.segment--selected .icon-container,
 .segment--icon-text .success-icon-container{
   display: none;
 }
@@ -228,7 +239,7 @@ button.segment--large .segment--mask {
   display: none;
 }
 
-.segment--selected .success-icon-container {
+.segment--selected:not(.segment--icon-only) .success-icon-container {
   display: flex;
   visibility: visible;
   justify-content: center;
