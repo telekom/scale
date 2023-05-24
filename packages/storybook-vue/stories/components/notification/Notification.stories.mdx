@@ -281,10 +281,10 @@ import ScaleNotification from './ScaleNotification.vue';
             this.emitClose();
             toast.removeEventListener('scale-close', handleClose);
           }
-          toast.addEventListener('scale-open', () => handleOpen);
+          toast.addEventListener('scale-open', handleOpen);
           toast.addEventListener('scale-before-close', handleBeforeClose);
           toast.addEventListener('scale-close', handleClose);
-          this.$refs.stack.appendChild(toast);
+          this.$refs.stack.prepend(toast);
           toast.opened = true;
           this.currentVariant = (this.currentVariant + 1) % this.variants.length;
         },

@@ -21,6 +21,7 @@ import {
   Watch,
 } from '@stencil/core';
 import cn from 'classnames';
+import { animationsFinished } from '../../utils/utils';
 
 const ICON_SIZE = 20;
 
@@ -69,6 +70,7 @@ export class Notification {
 
   /** What actually triggers opening/closing the notification */
   @State() isOpen: boolean = this.opened || false;
+  @State() animationState: 'in' | 'out' | undefined;
   @State() role: string = 'alert';
   @State() hasTextSlot: boolean = false;
   // @State() hasActionSlot: boolean = false; // unused for now
@@ -110,10 +112,15 @@ export class Notification {
   open = () => {
     this.isOpen = true;
     this.role = 'alert';
-    this.scaleOpen.emit();
-    if (this.delay !== undefined) {
-      setTimeout(this.timeout, this.delay);
-    }
+    this.animationState = 'in';
+    requestAnimationFrame(async () => {
+      await animationsFinished(this.hostElement.shadowRoot);
+      this.animationState = undefined;
+      this.scaleOpen.emit();
+      if (this.delay !== undefined) {
+        setTimeout(this.timeout, this.delay);
+      }
+    });
   };
 
   close = () => {
@@ -126,8 +133,13 @@ export class Notification {
       this.opened = true;
       return;
     }
-    this.isOpen = false;
-    this.scaleClose.emit();
+    this.animationState = 'out';
+    requestAnimationFrame(async () => {
+      await animationsFinished(this.hostElement.shadowRoot);
+      this.animationState = undefined;
+      this.isOpen = false;
+      this.scaleClose.emit();
+    });
   };
 
   timeout = () => {
@@ -144,6 +156,7 @@ export class Notification {
         <div
           part={cn(
             'base',
+            this.animationState,
             `type-${this.type}`,
             `variant-${this.variant}`,
             this.isOpen && 'open'
