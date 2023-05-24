@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-:host {
+ :host {
   --background-color: var(--telekom-color-ui-faint);
   --radius: var(--telekom-radius-standard);
   --height: 32px;
@@ -22,6 +22,8 @@
 
   display: flex;
   flex-direction: column;
+
+  --colNum: 0;
 }
 
 .segmented-button {
@@ -32,6 +34,8 @@
   width: fit-content;
   height: var(--height);
   display: inline-grid;
+  grid-template-columns: repeat(var(--colNum), minmax(auto, 1fr));  
+  column-gap: 0;
 }
 
 .segmented-button--full-width {

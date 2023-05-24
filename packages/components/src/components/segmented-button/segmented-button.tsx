@@ -29,9 +29,6 @@ interface SegmentStatus {
   selected: boolean;
 }
 
-const CHECKMARK_WIDTH_SMALL = 14;
-const CHECKMARK_WIDTH_LARGE = 18;
-
 @Component({
   tag: 'scale-segmented-button',
   styleUrl: 'segmented-button.css',
@@ -50,8 +47,6 @@ export class SegmentedButton {
   @Prop() size?: 'small' | 'medium' | 'large' = 'small';
   /** (optional) Allow more than one button to be selected */
   @Prop() multiSelect: boolean = false;
-  /** (optional) the index of the selected segment */
-  @Prop() selectedIndex?: number;
   /** (optional) If `true`, the button is disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) If `true`, expand to container width */
@@ -62,6 +57,8 @@ export class SegmentedButton {
   @Prop() helperText?: string = 'Please select an option';
   /** (optional) Button label */
   @Prop() label?: string;
+  /** (optional) icon only */
+  @Prop() iconOnly?: boolean = false;  
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
@@ -76,6 +73,7 @@ export class SegmentedButton {
 
   container: HTMLElement;
   showHelperText = false;
+
   @Listen('scaleClick')
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
     let tempState: SegmentStatus[];
@@ -100,7 +98,6 @@ export class SegmentedButton {
 
   @Watch('disabled')
   @Watch('size')
-  @Watch('selectedIndex')
   handlePropsChange() {
     this.propagatePropsToChildren();
   }
@@ -109,68 +106,50 @@ export class SegmentedButton {
    * Keep props, needed in children buttons, in sync
    */
   propagatePropsToChildren() {
-    this.getAllSegments().forEach((segment) => {
-      segment.setAttribute('size', this.size);
-      segment.setAttribute('selected-index', this.selectedIndex.toString());
+    this.getAllSegmentedButtons().forEach((el) => {
+      el.setAttribute('size', this.size);
       if (this.disabled) {
-        segment.setAttribute('disabled', true && 'disabled');
+        el.setAttribute('disabled', '');
+      }
+      if (this.multiSelect) {
+        el.setAttribute('multi-select', '');
       }
     });
   }
 
+  connectedCallback() {
+    this.propagatePropsToChildren();
+  }
+
   componentDidLoad() {
     const tempState: SegmentStatus[] = [];
-    const segments = this.getAllSegments();
-    this.slottedSegments = segments.length;
-    const longestButtonWidth = this.getLongestButtonWidth();
-    segments.forEach((segment) => {
+    const segmentedButtons = this.getAllSegmentedButtons();
+    this.slottedSegments = segmentedButtons.length;
+    segmentedButtons.forEach((SegmentedButton) => {
       this.position++;
       tempState.push({
-        id: segment.getAttribute('segment-id') || segment.segmentId,
-        selected: segment.hasAttribute('selected') || segment.selected,
+        id: SegmentedButton.getAttribute('segment-id'),
+        selected: SegmentedButton.hasAttribute('selected'),
       });
-      segment.setAttribute('position', this.position.toString());
-      segment.setAttribute(
+      SegmentedButton.setAttribute('position', this.position.toString());
+      SegmentedButton.setAttribute(
         'aria-description-translation',
         '$position $selected'
       );
     });
-    if (!this.fullWidth) {
-      this.container.style.gridTemplateColumns = `repeat(${
-        this.hostElement.children.length
-      }, ${Math.ceil(longestButtonWidth)}px)`;
-    } else {
-      this.container.style.display = 'flex';
-    }
-
-    this.selectedIndex = this.getSelectedIndex();
-    this.propagatePropsToChildren();
+    this.hostElement.style.setProperty('--colNum', this.slottedSegments.toString())
     this.position = 0;
     this.status = tempState;
     this.setState(tempState);
   }
 
   componentWillUpdate() {
-    this.selectedIndex = this.getSelectedIndex();
     this.showHelperText = false;
     if (
       this.invalid &&
       this.status.filter((e) => e.selected === true).length <= 0
     ) {
       this.showHelperText = true;
-    }
-  }
-
-  getSelectedIndex() {
-    if (this.multiSelect) {
-      // in multi-select having no selected segments is allowed
-      return -1;
-    } else {
-      const allSegments = this.getAllSegments();
-      const selectedIndex = allSegments.findIndex(
-        (el: HTMLScaleSegmentElement) => el.selected === true
-      );
-      return selectedIndex;
     }
   }
 
@@ -191,39 +170,16 @@ export class SegmentedButton {
     return adjacentSiblings;
   };
 
-  // all segmented buttons should have the same width, based on the largest one
-  getLongestButtonWidth() {
-    let tempWidth = 0;
-    Array.from(this.hostElement.children).forEach((child) => {
-      const selected = child.hasAttribute('selected');
-      const iconOnly = child.hasAttribute('icon-only');
-      const checkmark =
-        this.size === 'small' ? CHECKMARK_WIDTH_SMALL : CHECKMARK_WIDTH_LARGE;
-      if (selected || iconOnly) {
-        tempWidth =
-          child.getBoundingClientRect().width > tempWidth
-            ? child.getBoundingClientRect().width
-            : tempWidth;
-      } else {
-        tempWidth =
-          child.getBoundingClientRect().width + checkmark > tempWidth
-            ? child.getBoundingClientRect().width + checkmark
-            : tempWidth;
-      }
-    });
-    return tempWidth;
-  }
-
   setState(tempState: SegmentStatus[]) {
-    const segments = Array.from(
+    const segmentedButtons = Array.from(
       this.hostElement.querySelectorAll('scale-segment')
     );
-    segments.forEach((segment, i) => {
-      segment.setAttribute(
+    segmentedButtons.forEach((segmentedButton, i) => {
+      segmentedButton.setAttribute(
         'adjacent-siblings',
         this.getAdjacentSiblings(tempState, i)
       );
-      segment.setAttribute(
+      segmentedButton.setAttribute(
         'selected',
         tempState[i].selected ? 'true' : 'false'
       );
@@ -232,7 +188,7 @@ export class SegmentedButton {
     emitEvent(this, 'scaleChange', this.status);
   }
 
-  getAllSegments() {
+  getAllSegmentedButtons() {
     return Array.from(this.hostElement.querySelectorAll('scale-segment'));
   }
 
