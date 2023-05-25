@@ -226,16 +226,18 @@ export const Template = (args, context) => ({
       template: `
         <div>
           <div ref="stack" class="scl-toast-stack"></div>
-          <scale-slider
-            @scale-change="$event => this.delay = $event.target.value"
-            label="Delay"
-            min="0"
-            max="10"
-            show-step-marks
-            unit="s"
-            helper-text="0 means no timeout."
-          ></scale-slider>
-          <p><scale-button variant="secondary" @click="create">Show</scale-button></p>
+          <div style="display: flex; gap: var(--telekom-spacing-unit-x12); align-items: center">
+            <scale-button variant="secondary" @click="create">Show</scale-button>
+            <scale-slider
+              @scale-change="$event => this.delay = $event.target.value"
+              label="Delay"
+              min="0"
+              max="10"
+              show-step-marks
+              unit="s"
+              helper-text="0 means no timeout."
+            ></scale-slider>
+          </div>
         </div>
       `,
       methods: {
