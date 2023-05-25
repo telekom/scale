@@ -15,6 +15,14 @@
 | `status`     | `status`      | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/> | `string`  | `''`    |
 
 
+## Shadow Parts
+
+| Part          | Description |
+| ------------- | ----------- |
+| `"base"`      |             |
+| `"container"` |             |
+
+
 ## Dependencies
 
 ### Depends on

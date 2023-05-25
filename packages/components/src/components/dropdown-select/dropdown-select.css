@@ -153,6 +153,15 @@
   background: var(--background-disabled);
 }
 
+/*combobox value*/
+[part='combobox_value'] {
+  width: calc(100%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
 /*meta*/
 [part='meta'] {
   display: flex;
@@ -179,10 +188,14 @@
 
 /*label*/
 [part='label'] {
+  width: calc(100% - 50px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   top: 0;
   left: 0;
   color: var(--color-label);
-  display: flex;
+  display: inline-block;
   z-index: var(--z-index-label);
   position: absolute;
   transition: var(--transition-label);
