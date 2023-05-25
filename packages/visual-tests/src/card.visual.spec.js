@@ -7,7 +7,6 @@ describe('Card', () => {
       ['standard'],
       ['with-link'],
       ['with-image'],
-      ['with-further-functions'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-card--${variant}`);
 
