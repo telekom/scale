@@ -199,7 +199,11 @@ export class SegmentedButton {
       const selected = child.hasAttribute('selected');
       const iconOnly = child.hasAttribute('icon-only');
       const checkmark =
-        this.size === 'small' ? CHECKMARK_WIDTH_SMALL : (this.size === 'medium' ? CHECKMARK_WIDTH_MEDIUM : CHECKMARK_WIDTH_LARGE);
+        this.size === 'small'
+          ? CHECKMARK_WIDTH_SMALL
+          : this.size === 'medium'
+          ? CHECKMARK_WIDTH_MEDIUM
+          : CHECKMARK_WIDTH_LARGE;
       if (selected || iconOnly) {
         tempWidth =
           child.getBoundingClientRect().width > tempWidth
