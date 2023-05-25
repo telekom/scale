@@ -1,22 +1,22 @@
-describe('NotificationMessage', () => {
+describe('Notification', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup(
-        'components-notification-message--standard',
+        'components-notification--standard',
         mode
       );
     });
     test.each([
       ['standard'],
-      ['warning'],
-      ['error'],
+      ['inline'],
+      ['banner'],
+      ['toast'],
       ['success'],
       ['informational'],
-      ['dismissible'],
-      ['timeout'],
-      ['with-text'],
+      ['danger'],
+      ['warning'],
     ])('%p', async (variant) => {
-      await global.runSetup(`beta-components-notification-message--${variant}`);
+      await global.runSetup(`beta-components-notification--${variant}`);
       await global.visualCheck();
     });
   });
