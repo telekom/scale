@@ -85,7 +85,7 @@ export class Breadcrumb {
                 ) : (
                   <span class="breadcrumb__separator" part="separator">
                     {this.separator || (
-                      <scale-icon-navigation-right size={12} />
+                      <scale-icon-navigation-right size={10} />
                     )}
                   </span>
                 );
