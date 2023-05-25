@@ -16,10 +16,29 @@
   Horizontal spacing is handled by `scale-nav-list`.
 */
 
+/*
+  TODO this is experimental (mostly the name)
+  it should be put in global.css since it's already global haha
+*/
+@media screen and (--not-lg) {
+  .scl-hide-on-mobile {
+    display: none;
+  }
+}
+@media screen and (--lg) {
+  .scl-hide-on-desktop {
+    display: none;
+  }
+}
+
 .scale-telekom-nav-item {
   --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
   --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
   --_font-size-main-nav: var(--telekom-typography-font-size-body);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
+  --color: var(--telekom-color-text-and-icon-standard);
+  color: var(--color);
 }
 
 @media screen and (--md) {
@@ -94,6 +113,10 @@
 }
 .scale-telekom-nav-item > :where(a, button):active {
   color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+
+.scale-telekom-nav-item > :where(a, button):focus {
+  outline: var(--focus-outline);
 }
 
 /* variants: main-nav, functions (bottom bar) */
@@ -214,6 +237,23 @@
   left: 0;
 }
 
+/* HCM active item */
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .scale-telekom-nav-list[variant='main-nav']
+    > .scale-telekom-nav-item[active]
+    > :where(a, button),
+  .scale-telekom-nav-list[variant='functions']
+    > .scale-telekom-nav-item[active]
+    > :where(a, button),
+  .scale-telekom-nav-list[variant='main-nav']
+    > scale-menu-flyout
+    > .scale-telekom-nav-item[active]
+    > :where(a, button) {
+    border-bottom: 2px solid hsl(0, 0%, 100%);
+  }
+}
+
 /* variants: meta-nav-external, meta-nav, lang-switcher (top bar) */
 
 .scale-telekom-nav-list[variant='meta-nav-external']
@@ -261,6 +301,13 @@
   font-weight: var(--telekom-typography-font-weight-extra-bold);
 }
 
+.scale-telekom-nav-list[slot='mobile-meta-nav-external']
+  > .scale-telekom-nav-item
+  > a,
+.scale-telekom-nav-list[slot='mobile-meta-nav'] > .scale-telekom-nav-item > a {
+  font-size: var(--telekom-typography-font-size-body);
+}
+
 @media screen and (--lg) {
   .scale-telekom-nav-list[variant='meta-nav'] {
     margin-right: var(--telekom-spacing-unit-x8);
@@ -294,6 +341,11 @@ scale-telekom-mobile-flyout-canvas
   .scale-icon {
   height: 12px;
   width: 12px;
+}
+
+[slot='mobile-meta-nav'] .scale-telekom-nav-item,
+[slot='mobile-meta-nav-external'] .scale-telekom-nav-item {
+  --_font-size-main-nav: 16px;
 }
 
 .scale-telekom-nav-list > scale-menu-flyout::part(trigger) {

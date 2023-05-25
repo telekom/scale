@@ -190,7 +190,9 @@ export class NotificationBanner {
       name,
       this.variant && `${prefix}variant-${this.variant}`,
       this.hasSlotText && `${prefix}has-text`,
-      !this.hasSlotText && `${prefix}has-no-text`
+      !this.hasSlotText && `${prefix}has-no-text`,
+      this.hasSlotLink && `${prefix}has-link`,
+      !this.hasSlotLink && `${prefix}has-no-link`
     );
   }
 }

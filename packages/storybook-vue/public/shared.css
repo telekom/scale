@@ -1,0 +1,22 @@
+/**
+ * We tried using our own scale-notification-banner/message but
+ * it won't render in .md files (Usage Text)
+ */
+.Notification {
+  background: var(--telekom-color-functional-informational-subtle);
+  font: var(--telekom-text-style-body-bold);
+  padding: var(--telekom-spacing-unit-x4);
+  border-radius: var(--telekom-radius-standard);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 54px;
+}
+
+.Notification svg {
+  width: 20px;
+  height: 20px;
+  color: var(--telekom-color-text-and-icon-functional-informational);
+  margin-inline-end: var(--telekom-spacing-unit-x3);
+}

@@ -3,7 +3,7 @@
 exports[`NotificationBanner handle variant prop 1`] = `
 <scale-notification-banner opened="">
   <mock:shadow-root>
-    <div class="notification-banner notification-banner--has-no-text notification-banner--variant-error" part="notification-banner variant-error has-no-text" role="alert" tabindex="0">
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--variant-error" part="notification-banner variant-error has-no-text has-no-link" role="alert" tabindex="0">
       <div class="notification-banner__container" part="container">
         <scale-icon-alert-error accessibility-title="error" aria-hidden="true" class="notification-banner__icon-error"></scale-icon-alert-error>
         <div class="notification-banner__heading" part="heading">
@@ -19,7 +19,7 @@ exports[`NotificationBanner handle variant prop 1`] = `
 exports[`NotificationBanner handle variant prop 2`] = `
 <scale-notification-banner opened="">
   <mock:shadow-root>
-    <div class="notification-banner notification-banner--has-no-text notification-banner--variant-warning" part="notification-banner variant-warning has-no-text" role="alert" tabindex="0">
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--variant-warning" part="notification-banner variant-warning has-no-text has-no-link" role="alert" tabindex="0">
       <div class="notification-banner__container" part="container">
         <scale-icon-alert-warning aria-hidden="true" class="notification-banner__icon-information" color="#AE461C"></scale-icon-alert-warning>
         <div class="notification-banner__heading" part="heading">
@@ -35,7 +35,7 @@ exports[`NotificationBanner handle variant prop 2`] = `
 exports[`NotificationBanner handle variant prop 3`] = `
 <scale-notification-banner opened="">
   <mock:shadow-root>
-    <div class="notification-banner notification-banner--has-no-text notification-banner--variant-informational" part="notification-banner variant-informational has-no-text" role="alert" tabindex="0">
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--variant-informational" part="notification-banner variant-informational has-no-text has-no-link" role="alert" tabindex="0">
       <div class="notification-banner__container" part="container">
         <scale-icon-alert-information accessibility-title="information" aria-hidden="true" class="notification-banner__icon-information"></scale-icon-alert-information>
         <div class="notification-banner__heading" part="heading">
@@ -51,7 +51,7 @@ exports[`NotificationBanner handle variant prop 3`] = `
 exports[`NotificationBanner handle variant prop 4`] = `
 <scale-notification-banner opened="">
   <mock:shadow-root>
-    <div class="notification-banner notification-banner--has-no-text notification-banner--variant-success" part="notification-banner variant-success has-no-text" role="alert" tabindex="0">
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--variant-success" part="notification-banner variant-success has-no-text has-no-link" role="alert" tabindex="0">
       <div class="notification-banner__container" part="container">
         <scale-icon-alert-success accessibility-title="success" aria-hidden="true" class="notification-banner__icon-success" color="#187431"></scale-icon-alert-success>
         <div class="notification-banner__heading" part="heading">
@@ -67,7 +67,7 @@ exports[`NotificationBanner handle variant prop 4`] = `
 exports[`NotificationBanner should match snapshot 1`] = `
 <scale-notification-banner opened="">
   <mock:shadow-root>
-    <div class="notification-banner notification-banner--has-no-text notification-banner--variant-informational" part="notification-banner variant-informational has-no-text" role="alert" tabindex="0">
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--variant-informational" part="notification-banner variant-informational has-no-text has-no-link" role="alert" tabindex="0">
       <div class="notification-banner__container" part="container">
         <scale-icon-alert-information accessibility-title="information" aria-hidden="true" class="notification-banner__icon-information"></scale-icon-alert-information>
         <div class="notification-banner__heading" part="heading">

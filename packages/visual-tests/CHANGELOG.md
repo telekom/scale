@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.134](https://github.com/telekom/scale/compare/v3.0.0-beta.133...v3.0.0-beta.134) (2023-05-09)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.133](https://github.com/telekom/scale/compare/v3.0.0-beta.132...v3.0.0-beta.133) (2023-05-09)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.132](https://github.com/telekom/scale/compare/v3.0.0-beta.131...v3.0.0-beta.132) (2023-05-05)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.131](https://github.com/telekom/scale/compare/v3.0.0-beta.130...v3.0.0-beta.131) (2023-04-18)
+
+
+### Bug Fixes
+
+* hide double logo ([#1627](https://github.com/telekom/scale/issues/1627)) ([83169a1](https://github.com/telekom/scale/commit/83169a1f853eba2d5b52b5f78019313b4abdcec1))
+
+
+
+
+
 # [3.0.0-beta.130](https://github.com/telekom/scale/compare/v3.0.0-beta.129...v3.0.0-beta.130) (2023-04-06)
 
 

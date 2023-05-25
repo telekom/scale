@@ -13,7 +13,7 @@
   --border-invalid: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-hovered);
   --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus);
+    var(--telekom-color-functional-focus-standard);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
@@ -66,7 +66,7 @@
   --z-index-listbox: 99;
 
   /*option  */
-  --outline-color-option: var(--telekom-color-functional-focus);
+  --outline-color-option: var(--telekom-color-functional-focus-standard);
 }
 
 /*combobox-container*/
@@ -153,6 +153,15 @@
   background: var(--background-disabled);
 }
 
+/*combobox value*/
+[part='combobox_value'] {
+  width: calc(100%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
 /*meta*/
 [part='meta'] {
   display: flex;
@@ -179,10 +188,14 @@
 
 /*label*/
 [part='label'] {
+  width: calc(100% - 50px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   top: 0;
   left: 0;
   color: var(--color-label);
-  display: flex;
+  display: inline-block;
   z-index: var(--z-index-label);
   position: absolute;
   transition: var(--transition-label);

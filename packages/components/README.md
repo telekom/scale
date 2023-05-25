@@ -113,7 +113,7 @@ npm install @telekom/scale-components@next
 
 ### Setup with a bundler or ES modules
 
-```js
+```javascript
 import "@telekom/scale-components/dist/scale-components/scale-components.css";
 import { defineCustomElements } from "@telekom/scale-components/loader";
 

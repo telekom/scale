@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property              | Attribute               | Description | Type      | Default     |
-| --------------------- | ----------------------- | ----------- | --------- | ----------- |
-| `count`               | `count`                 |             | `number`  | `undefined` |
-| `label`               | `label`                 |             | `string`  | `undefined` |
-| `labelVisuallyHidden` | `label-visually-hidden` |             | `boolean` | `undefined` |
+| Property               | Attribute                | Description                             | Type      | Default                  |
+| ---------------------- | ------------------------ | --------------------------------------- | --------- | ------------------------ |
+| `ariaLabelTranslation` | `aria-label-translation` | a11y text for getting meaningful value. | `string`  | `'$label - $count item'` |
+| `count`                | `count`                  |                                         | `number`  | `undefined`              |
+| `label`                | `label`                  |                                         | `string`  | `undefined`              |
+| `labelVisuallyHidden`  | `label-visually-hidden`  |                                         | `boolean` | `undefined`              |
 
 
 ## Shadow Parts
