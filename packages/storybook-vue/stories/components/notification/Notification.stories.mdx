@@ -82,6 +82,38 @@ import ScaleNotification from './ScaleNotification.vue';
   }}
 />
 
+export const Template = (args, context) => ({
+  props: {
+    text: String,
+    ...ScaleNotification.props,
+  },
+  template: `
+    <div>
+      <scale-notification
+        :heading="heading"
+        :type="type"
+        :variant="variant"
+        :opened="opened"
+        :dismissible="dismissible"
+        :delay="delay"
+        :inner-aria-live="innerAriaLive"
+        :close-button-label="closeButtonLabel"
+        :close-button-title="closeButtonTitle"
+        @scale-open="emitOpen"
+        @scale-before-close="emitBeforeClose"
+        @scale-close="emitClose"
+      >
+        <span v-if="text" slot="text">{{ text }}</span>
+      </scale-notification>
+    </div>
+  `,
+  methods: {
+    emitOpen: action('scale-open'),
+    emitBeforeClose: action('scale-before-close'),
+    emitClose: action('scale-close'),
+  }
+})
+
 <div
   style={{
     display: 'inline-flex',
@@ -100,44 +132,24 @@ import ScaleNotification from './ScaleNotification.vue';
   <Story
     name="Standard"
     args={{
-      heading: 'Notification heading goes here'
+      heading: 'Info notification with icon, title, copytext and close',
+      text: 'Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.',
     }}
   >
-    {{
-      props: {
-        ...ScaleNotification.props,
-      },
-      template: `
-        <div>
-          <scale-notification
-            :heading="heading"
-            :type="type"
-            :variant="variant"
-            :opened="opened"
-            :dismissible="dismissible"
-            :delay="delay"
-            :inner-aria-live="innerAriaLive"
-            :close-button-label="closeButtonLabel"
-            :close-button-title="closeButtonTitle"
-            @scale-open="emitOpen"
-            @scale-before-close="emitBeforeClose"
-            @scale-close="emitClose"
-          ></scale-notification>
-        </div>
-      `,
-      methods: {
-        emitOpen: action('scale-open'),
-        emitBeforeClose: action('scale-before-close'),
-        emitClose: action('scale-close'),
-      }
-    }}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Standard" />
 
 ```html
-<scale-notification heading="Notification text goes here" opened></scale-notification>
+<scale-notification
+  heading="Success notification with icon, title, copytext and close"
+  dismissible
+  opened
+>
+  <span slot="text">Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.</span>
+</scale-notification>
 ```
 
 ### Scoped CSS variables
@@ -158,72 +170,38 @@ import ScaleNotification from './ScaleNotification.vue';
 ### Inline (default)
 
 <Canvas withSource="none">
-  <Story name="Inline">
-    {{
-      template: `
-        <div>
-          <scale-notification
-            heading="Notification heading goes here"
-            opened
-          ></scale-notification>
-        </div>
-      `
-    }}
-  </Story>
-</Canvas>
-
-```html
-<scale-notification heading="Notification text goes here" opened></scale-notification>
-```
-
-### Banner
-
-<Canvas withSource="none">
-  <Story name="Banner">
-    {{
-      data() {
-        return {
-          isOpen: false,
-        }
-      },
-      template: `
-        <div>
-          <scale-button variant="secondary" @click="isOpen = true">Show</scale-button>
-          <div style="margin-top: 1rem">
-            <scale-notification
-              heading="Notification heading goes here"
-              type="banner"
-              variant="success"
-              :opened="isOpen"
-              delay="3000"
-              @scale-open="emitOpen"
-              @scale-before-close="emitBeforeClose"
-              @scale-close="close"
-            ></scale-notification>
-          </div>
-        </div>
-      `,
-      methods: {
-        close() {
-          this.isOpen = false;
-          this.emitClose();
-        },
-        emitOpen: action('scale-open'),
-        emitBeforeClose: action('scale-before-close'),
-        emitClose: action('scale-close'),
-      }
-    }}
+  <Story name="Inline" args={{
+    heading: 'Info notification with icon, title and close',
+  }}>
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-notification
-  heading="Notification text goes here"
+  heading="Info notification with icon, title and close"
+  opened
+></scale-notification>
+```
+
+### Banner
+
+<Canvas withSource="none">
+  <Story name="Banner" args={{
+    heading: 'Success notification with icon, title and close',
+    type: 'banner',
+    variant: 'success',
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  heading="Success notification with icon, title and close"
   type="banner"
   variant="success"
-  delay="3000"
->
-</scale-notification>
+></scale-notification>
 ```
 
 ### Toast
@@ -237,6 +215,12 @@ import ScaleNotification from './ScaleNotification.vue';
           delay: 0,
           variants: ['informational', 'warning', 'success', 'danger'],
           currentVariant: 0,
+        }
+      },
+      computed: {
+        variant() {
+          const s = this.variants[this.currentVariant]
+          return s.charAt(0).toUpperCase() + s.slice(1)
         }
       },
       template: `
@@ -259,14 +243,13 @@ import ScaleNotification from './ScaleNotification.vue';
           const toast = Object.assign(
             document.createElement('scale-notification'),
             {
-              heading: `Notification toast #${this.count++}. And a lot more text because we want to test how it behaves.`, 
+              heading: `${this.variant} toast headline #${this.count++}`, 
               type: 'toast',
               variant: this.variants[this.currentVariant],
               delay: this.delay === 0 ? undefined : this.delay * 1000,
               dismissible: true,
               opened: false,
-              // is this safe?
-              innerHTML: '<span slot="text">Additional text goes in the `text` slot</span>'
+              innerHTML: '<span slot="text">Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.</span>'
             }
           );
           const handleOpen = () => {
@@ -302,93 +285,55 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
 ```html
 <div class="scl-toast-stack">
   <scale-notification
-    heading="Notification toast #1"
+    heading="Informational toast headline"
     type="toast"
     dismissible
-    delay="5000"
+    delay="10000"
     opened
   >
-    <span slot="text">Additional text goes in the `text` slot</span>
+    <span slot="text">Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.</span>
   </scale-notification>
 </div>
 ```
 
 ## Variants
 
-### Informational (default)
-
-<Canvas withSource="none">
-  <Story name="Informational">
-    {{
-      template: `
-        <div>
-          <scale-notification
-            heading="Notification heading goes here"
-            variant="informational"
-            opened
-          ></scale-notification>
-        </div>
-      `
-    }}
-  </Story>
-</Canvas>
-
-```html
-<scale-notification
-  heading="Notification text goes here"
-  variant="informational"
-  opened
-></scale-notification>
-```
-
-### Warning
-
-<Canvas withSource="none">
-  <Story name="Warning">
-    {{
-      template: `
-        <div>
-          <scale-notification
-            heading="Notification heading goes here"
-            variant="warning"
-            opened
-          ></scale-notification>
-        </div>
-      `
-    }}
-  </Story>
-</Canvas>
-
-```html
-<scale-notification
-  heading="Notification text goes here"
-  variant="warning"
-  opened
-></scale-notification>
-```
-
 ### Success
 
 <Canvas withSource="none">
-  <Story name="Success">
-    {{
-      template: `
-        <div>
-          <scale-notification
-            heading="Notification heading goes here"
-            variant="success"
-            opened
-          ></scale-notification>
-        </div>
-      `
-    }}
+  <Story name="Success" args={{
+    heading: 'Success notification with icon and title',
+    variant: 'success',
+    dismissible: false,
+  }}>
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-notification
-  heading="Notification text goes here"
+  heading="Success notification with icon and title"
   variant="success"
+  opened
+></scale-notification>
+```
+
+### Informational (default)
+
+<Canvas withSource="none">
+  <Story name="Informational" args={{
+    heading: 'Informational notification with icon and title',
+    variant: 'informational',
+    dismissible: false,
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  heading="Informational notification with icon and title"
+  variant="informational"
   opened
 ></scale-notification>
 ```
@@ -396,53 +341,39 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
 ### Danger
 
 <Canvas withSource="none">
-  <Story name="Danger">
-    {{
-      template: `
-        <div>
-          <scale-notification
-            heading="Notification heading goes here"
-            variant="danger"
-            opened
-          ></scale-notification>
-        </div>
-      `
-    }}
+  <Story name="Danger" args={{
+    heading: 'Danger notification with icon and title',
+    variant: 'danger',
+    dismissible: false,
+  }}>
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-notification
-  heading="Notification text goes here"
+  heading="Danger notification with icon and title"
   variant="danger"
   opened
 ></scale-notification>
 ```
 
-## Text Slot
+### Warning
 
 <Canvas withSource="none">
-  <Story name="Text Slot">
-    {{
-      template: `
-        <div>
-          <scale-notification
-            heading="Notification heading goes here"
-            opened
-          >
-            <span slot="text">Additional text goes in the 'text' slot.<br /><scale-link to="#">Links can be inlined.</scale-link></span>
-          </scale-notification>
-        </div>
-      `
-    }}
+  <Story name="Warning" args={{
+    heading: 'Warning notification with icon and title',
+    variant: 'warning',
+    dismissible: false,
+  }}>
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-notification heading="Notification text goes here" opened>
-  <span slot="text">
-    Additional text goes in the 'text' slot.
-    <br /><scale-link to="#">Links can be inlined.</scale-link>
-  </span>
-</scale-notification>
+<scale-notification
+  heading="Warning notification with icon and title"
+  variant="warning"
+  opened
+></scale-notification>
 ```

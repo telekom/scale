@@ -3,4 +3,8 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-TODO
+Die standardmäßige Notification Komponente kann zum ausgeben von einer Mitteilung/ Meldung genutzt werden. Ergänzend kann dieser auch ein kurzer erklärender Text hinzugefügt werden.
+
+## Beta-Komponente
+
+Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
