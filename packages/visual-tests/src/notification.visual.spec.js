@@ -1,10 +1,7 @@
 describe('Notification', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.runColorSetup(
-        'components-notification--standard',
-        mode
-      );
+      await global.runColorSetup('components-notification--standard', mode);
     });
     test.each([
       ['standard'],
