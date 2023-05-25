@@ -127,7 +127,7 @@ export class SegmentedButton {
       this.position++;
       tempState.push({
         id: segment.getAttribute('segment-id') || segment.segmentId,
-        selected: segment.hasAttribute('selected') || segment.selected,
+        selected: segment.getAttribute('selected') === 'true',
       });
       segment.setAttribute('position', this.position.toString());
       segment.setAttribute(
