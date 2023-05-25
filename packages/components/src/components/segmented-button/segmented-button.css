@@ -61,3 +61,7 @@
 .segmented-button--helper-text {
   margin-top: var(--telekom-spacing-unit-x2);
 }
+
+.segmented-button--fieldset {
+  border: 0;
+}

@@ -19,8 +19,6 @@
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-caption);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
-  /* --transition: all var(--telekom-motion-duration-transition) */
-    /* var(--telekom-motion-easing-standard); */
   --color: var(--telekom-color-text-and-icon-standard);
 
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
@@ -175,11 +173,11 @@ button.segment--icon-only .segment--mask {
 }
 
 .segment:not(.segment--disabled):hover .segment--mask {
-  background-color: var(--background-color-hover);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
 .segment:not(.segment--disabled):active .segment--mask {
-  background-color: var(--background-color-active);
+  background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
 .segment:focus {
@@ -263,4 +261,17 @@ button.segment--icon-only .segment--mask {
 
 .segment--icon-text .icon-container ::slotted(*){
   margin-right: var(--telekom-spacing-unit-x1);
+}
+
+.segment--list-item {
+  list-style: none;
+  box-sizing: border-box;
+  position: relative;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--button-radius);
+  padding-top: var(--telekom-spacing-unit-x05);
+  transition: var(--transition);
+  background-color: transparent;
 }

@@ -47,8 +47,6 @@ export class Segment {
   @Prop() disabled?: boolean = false;
   /** (optional) segment's id */
   @Prop({ reflect: true, mutable: true }) segmentId?: string;
-  /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabelSegment: string;
   /** (optional) Button width set to ensure that all buttons have the same width */
   @Prop() width?: string;
   /** (optional) Injected CSS styles */
@@ -58,12 +56,8 @@ export class Segment {
     | 'left'
     | 'right'
     | 'leftright';
-  /** (optional) translation of 'selected */
-  @Prop() ariaLangSelected? = 'selected';
-  /** (optional) translation of 'deselected */
-  @Prop() ariaLangDeselected? = 'deselected';
   /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaDescriptionTranslation = '$selected';
+  @Prop() ariaDescriptionTranslation = '';
   /** (optional) position within group */
   @Prop() position?: number;
   /** (optional) icon only segment */
@@ -72,6 +66,8 @@ export class Segment {
   @Prop({ mutable: true }) multiSelect?: boolean = false;
   /** (optional) segment with icon and text */
   @Prop({ mutable: true }) iconText?: boolean = false;  
+  /** (optional) Icon aria-label for icon only */
+  @Prop() iconAriaLabel?: string;  
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -129,16 +125,6 @@ export class Segment {
     }
   }
 
-  getAriaDescriptionTranslation() {
-    const replaceSelected = this.selected
-      ? this.ariaLangSelected
-      : this.ariaLangDeselected;
-    const filledText = this.ariaDescriptionTranslation
-      .replace(/\$position/g, `${this.position}`)
-      .replace(/\$selected/g, `${replaceSelected}`);
-    return filledText;
-  }
-
   /*
   * Set any children icon's size according the button size.
   */
@@ -170,36 +156,36 @@ export class Segment {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <button
-          ref={(el) => (this.focusableElement = el)}
-          class={this.getCssClassMap()}
-          id={this.segmentId}
-          onClick={this.handleClick}
-          disabled={this.disabled}
-          type="button"
-          style={{ width: this.width }}
-          aria-label={this.ariaLabelSegment}
-          aria-pressed={this.selected}
-          part={this.getBasePartMap()}
-          aria-description={this.getAriaDescriptionTranslation()}
-        >
-          <div class="segment--mask">
-            <div class="success-icon-container">
-              <scale-icon-action-success
-                size={this.size === 'small' ? 14 : 16}
-                class="scale-icon-action-success"
-                accessibility-title="success"
-                selected
-              />
+        <li class="segment--list-item" role="option">
+          <button
+            ref={(el) => (this.focusableElement = el)}
+            class={this.getCssClassMap()}
+            id={this.segmentId}
+            onClick={this.handleClick}
+            disabled={this.disabled}
+            type="button"
+            style={{ width: this.width }}
+            aria-pressed={this.selected}
+            part={this.getBasePartMap()}
+          >
+            <div class="segment--mask">
+              <div class="success-icon-container">
+                <scale-icon-action-success
+                  size={this.size === 'small' ? 14 : 16}
+                  class="scale-icon-action-success"
+                  accessibility-title="success"
+                  selected
+                />
+              </div>
+              <div class="icon-container">
+                <slot name="segment-icon" />
+              </div>
+              <div class="text-container">
+                <slot />
+              </div>
             </div>
-            <div class="icon-container">
-              <slot name="segment-icon" />
-            </div>
-            <div class="text-container">
-              <slot />
-            </div>
-          </div>
-        </button>
+          </button>
+        </li>
       </Host>
     );
   }

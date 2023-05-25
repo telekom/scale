@@ -203,26 +203,30 @@ export class SegmentedButton {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-        {this.label && (
-          <span class="segmented-button--label"> {this.label} </span>
-        )}
-        <div
-          class={this.getCssClassMap()}
-          part={this.getBasePartMap()}
-          aria-label={this.getAriaLabelTranslation()}
-          role="group"
-          ref={(el) => (this.container = el as HTMLInputElement)}
-        >
-          <slot />
-        </div>
-        {this.showHelperText && (
-          <scale-helper-text
-            class="segmented-button--helper-text"
-            helperText={this.helperText}
-            variant={'danger'}
-          ></scale-helper-text>
-        )}
+        <fieldset class="segmented-button--fieldset">
+          {this.label && (
+            <legend class="segmented-button--label"> {this.label} </legend>
+          )}
+          <ul
+            class={this.getCssClassMap()}
+            part={this.getBasePartMap()}
+            aria-label={this.getAriaLabelTranslation()}
+            role="listbox"
+            ref={(el) => (this.container = el as HTMLUListElement)}
+            aria-description={
+              this.showHelperText && this.helperText ? this.helperText : null
+            }
+          >
+            <slot />
+          </ul>
+          {this.showHelperText && (
+            <scale-helper-text
+              class="segmented-button--helper-text"
+              helperText={this.helperText}
+              variant={'danger'}
+            ></scale-helper-text>
+          )}
+        </fieldset>
       </Host>
     );
   }
