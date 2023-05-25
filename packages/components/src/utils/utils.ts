@@ -120,3 +120,15 @@ export function readMaybeJSONData(data) {
 
   return parsedData;
 }
+
+/**
+ * Useful for waiting for animations to finish before doing something.
+ *
+ * @param el {HTMLElement | ShadowRoot} - The element to call `getAnimations` on
+ * @returns {Promise} - Resolves when all animations are finished
+ */
+export const animationsFinished = (el: HTMLElement | ShadowRoot) => {
+  return Promise.all(
+    el.getAnimations({ subtree: true }).map((x) => x.finished)
+  );
+};

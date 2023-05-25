@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification  should match snapshot 1`] = `
+<scale-notification-toast
+  opened=""
+/>
+`;
+
+exports[`Notification  should match snapshot, type=banner 1`] = `
+<scale-notification-toast
+  opened=""
+  type="banner"
+/>
+`;
+
+exports[`Notification  should match snapshot, type=toast 1`] = `
+<scale-notification-toast
+  opened=""
+  type="toast"
+/>
+`;
