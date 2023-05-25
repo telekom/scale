@@ -11,6 +11,7 @@
 
 :host {
   --width: 100%;
+  --width-toast: 25rem;
   --radius: var(--telekom-radius-standard);
   --spacing-y: var(--telekom-spacing-unit-x4);
   --spacing-y-inner: var(--telekom-spacing-unit-x2);
@@ -94,6 +95,7 @@
 [part~='type-toast'] {
   --translate-x: var(--telekom-spacing-unit-x3);
   --_shadow: var(--telekom-shadow-top);
+  width: var(--width-toast);
 }
 
 [part='icon'] {
