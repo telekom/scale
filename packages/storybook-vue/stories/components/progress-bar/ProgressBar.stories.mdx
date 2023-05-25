@@ -154,19 +154,25 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
 
 ```css
 :host {
-  --background: var(--telekom-color-primary-standard);
-  --background-color: var(--telekom-color-ui-faint);
-  --color-error: var(--telekom-color-text-and-icon-functional-danger);
-  --background-error: var(--telekom-color-functional-danger-subtle);
-  --color-success: var(--telekom-color-text-and-icon-functional-success);
+  --track-color: var(--telekom-color-ui-faint);
+  --bar-color: var(--telekom-color-primary-standard);
+  
+  --icon-color-error: var(--telekom-color-text-and-icon-functional-danger);
+  --track-color-error: var(--telekom-color-functional-danger-subtle);
+  --bar-color-error: var(--telekom-color-functional-danger-standard);
+
+  --icon-color-success: var(--telekom-color-text-and-icon-functional-success);
+  --track-color-success: var(--telekom-color-functional-success-subtle);
+  --bar-color-success: var(--telekom-color-functional-success-standard);
+  
+  --bar-color-disabled: var(--telekom-color-ui-disabled);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --progress-bar-outer-size: var(--telekom-spacing-unit-x2);
+
+  --progress-bar-outer-size: 6px;
   --progress-bar-inner-size: var(--telekom-spacing-unit-x1);
   --font-label: var(--telekom-text-style-ui);
-  --color-inner-status: var(--telekom-color-primary-standard);
-  --font-size-inner-status: var(--telekom-typography-font-size-small);
-  --font-size-status: var(--telekom-typography-font-size-small);
-  --font-weight-status: var(--telekom-typography-font-weight-extra-bold);
+  --color-label: var(--telekom-color-text-and-icon-standard);
+
   --color-status-description: var(--telekom-color-text-and-icon-additional);
   --font-size-status-description: var(--telekom-typography-font-size-small);
   --font-weight-status-description: var(--telekom-typography-font-weight-bold);
