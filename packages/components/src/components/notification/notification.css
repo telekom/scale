@@ -115,6 +115,9 @@
   color: var(--telekom-color-text-and-icon-white-standard);
   align-items: center;
 }
+[part~='type-toast'][part~='variant-warning'] [part='icon'] {
+  color: var(--telekom-color-text-and-icon-black-standard);
+}
 
 [part='body'] {
   margin-top: var(--spacing-y);
