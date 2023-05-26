@@ -288,16 +288,16 @@ scale-text-field {
 
 <script>
   const textField = document.getElementById('text-field');
-  textField.addEventListener('scaleChange', () => {
+  textField.addEventListener('scale-change', (event) => {
     /* ... */
   });
-  textField.addEventListener('scaleBlur', () => {
+  textField.addEventListener('scale-blur', (event) => {
     /* ... */
   });
-  textField.addEventListener('scaleFocus', () => {
+  textField.addEventListener('scale-focus', (event) => {
     /* ... */
   });
-  textField.addEventListener('scaleKeyDown', () => {
+  textField.addEventListener('scale-keydown', (event) => {
     /* ... */
   });
 </script>
@@ -353,7 +353,7 @@ scale-text-field {
     args={{
       label: 'With Error',
       invalid: true,
-      helperText: 'something is wrong',
+      helperText: 'Something is wrong',
     }}
   >
     {StorySectionsTemplate.bind({})}
@@ -363,7 +363,7 @@ scale-text-field {
 ```html
 <scale-text-field
   label="With Error"
-  helper-text="something is wrong"
+  helper-text="Something is wrong"
   invalid
 ></scale-text-field>
 ```
@@ -376,7 +376,7 @@ scale-text-field {
     args={{
       label: 'With Warning',
       variant: 'warning',
-      helperText: 'something with warning',
+      helperText: 'Something with warning',
     }}
   >
     {StorySectionsTemplate.bind({})}
@@ -386,7 +386,7 @@ scale-text-field {
 ```html
 <scale-text-field
   label="With Error"
-  helper-text="something with warning"
+  helper-text="Something with warning"
   variant="warning"
 ></scale-text-field>
 ```
@@ -399,7 +399,7 @@ scale-text-field {
     args={{
       label: 'With Success',
       variant: 'success',
-      helperText: 'something is successful',
+      helperText: 'Something is successful',
     }}
   >
     {StorySectionsTemplate.bind({})}
@@ -409,7 +409,7 @@ scale-text-field {
 ```html
 <scale-text-field
   label="With Success"
-  helper-text="something is successful"
+  helper-text="Something is successful"
   variant="success"
 ></scale-text-field>
 ```
