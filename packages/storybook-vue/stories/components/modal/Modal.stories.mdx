@@ -190,22 +190,23 @@ export const Template = (args, context) => ({
     -spacing-56 !== --telekom-spacing-unrelated-sm
   */
   --size-window-small: calc(
-    (6 * var(--telekom-spacing-unit-x14, 3.5rem)) + (5 * var(--telekom-spacing-unit-x8))
+    (6 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (5 * var(--telekom-spacing-unit-x8))
   );
   --size-window-default: calc(
-    (8 * var(--telekom-spacing-unit-x14, 3.5rem)) + (7 * var(--telekom-spacing-unit-x8))
+    (8 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (7 * var(--telekom-spacing-unit-x8))
   );
   --size-window-large: calc(
-    (12 * var(--telekom-spacing-unit-x14, 3.5rem)) + (11 * var(--telekom-spacing-unit-x8))
+    (12 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (11 * var(--telekom-spacing-unit-x8))
   );
 
   --spacing-x-header: var(--telekom-spacing-unit-x6);
   --spacing-y-header: var(--telekom-spacing-unit-x6);
 
-  --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid var(
-      --telekom-color-ui-general-subtle,
-      var(--telekom-color-ui-subtle)
-    );
+  --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
+    var(--telekom-color-ui-subtle);
 
   --font-family-heading: var(--telekom-typography-font-family-sans);
   --font-size-heading: var(--telekom-typography-font-size-callout);
@@ -213,12 +214,10 @@ export const Template = (args, context) => ({
 
   --spacing-close-button: var(--telekom-spacing-unit-x2);
   --radius-close-button: var(--telekom-radius-standard);
-  --transition-close-button: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
-    );
-  --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
+  --transition-close-button: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus-standard);
   --color-close-button: var(--telekom-color-text-and-icon-standard);
   --color-close-button-hover: var(--telekom-color-primary-hovered);
   --color-close-button-active: var(--telekom-color-primary-pressed);
@@ -226,7 +225,8 @@ export const Template = (args, context) => ({
   --spacing-x-body-wrapper: var(--telekom-spacing-unit-x6);
   --spacing-y-body: var(--telekom-spacing-unit-x6);
 
-  --spacing-actions: var(--telekom-spacing-unit-x6);
+  --spacing-actions: var(--telekom-spacing-unit-x4)
+    var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x6);
 
   --spacing-x-actions-slotted: var(--telekom-spacing-unit-x2);
   --background-actions-has-scroll: var(
