@@ -45,10 +45,9 @@ scale-textarea {
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
+
   /*counter*/
   --transition-counter: var(--transition);
-  --font-size-counter: var(--font-size-meta);
-  --line-height-counter: var(--line-height-meta);
   --color-counter-error: var(--color-meta-error);
 
   /*helper-text*/
@@ -104,20 +103,13 @@ scale-textarea {
   margin-top: var(--spacing-top-control);
 }
 
-.textarea .textarea__helper-text,
-.textarea .textarea__counter {
-  font-weight: var(--telekom-typography-font-weight-bold);
-}
-
 .textarea .textarea__counter {
   display: flex;
   transition: var(--transition-counter);
   margin-left: auto;
-  padding-right: var(--telekom-spacing-unit-x3);
   justify-content: flex-end;
-  font-size: var(--telekom-typography-font-size-small);
-  line-height: var(--telekom-typography-line-spacing-standard);
-  color: inherit;
+  font: var(--telekom-text-style-small);
+  color: var(--telekom-color-text-and-icon-additional);
 }
 .textarea .textarea__helper-text {
   transition: var(--transition-helper-text);

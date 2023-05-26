@@ -53,8 +53,6 @@ scale-text-field {
 
   /* counter */
   --transition-counter: var(--transition);
-  --font-size-counter: var(--font-size-meta);
-  --line-height-counter: var(--line-height-meta);
   --color-counter-error: var(--color-meta-error);
 
   /* helper-text */
@@ -93,10 +91,7 @@ scale-text-field {
 .text-field {
   position: relative;
 }
-.text-field .text-field__helper-text,
-.text-field .text-field__counter {
-  font-weight: var(--font-weight-meta);
-}
+
 .text-field .text-field__control {
   width: 100%;
   height: var(--height);
@@ -131,10 +126,8 @@ scale-text-field {
   transition: var(--transition-counter);
   margin-left: auto;
   justify-content: flex-end;
-  font-size: var(--font-size-counter);
-  line-height: var(--line-height-counter);
-  color: inherit;
-  font-weight: var(--telekom-typography-font-weight-medium);
+  font: var(--telekom-text-style-small);
+  color: var(--telekom-color-text-and-icon-additional);
 }
 .text-field scale-helper-text {
   --color-informational: var(--color-helper-text);
