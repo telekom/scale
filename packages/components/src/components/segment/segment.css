@@ -73,14 +73,14 @@
   color: var(--color);
 }
 
-button.segment--icon-only.segment--small .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x4);
-}
-
 button.segment--small.segment--selected .segment--mask {
   padding-left: var(--telekom-spacing-unit-x2);
   padding-right: var(--telekom-spacing-unit-x3);
+}
+
+button.segment--icon-only.segment--small .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x4);
 }
 
 button.segment--small .segment--mask {
