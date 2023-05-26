@@ -127,7 +127,7 @@ scale-text-field {
   margin-left: auto;
   justify-content: flex-end;
   font: var(--telekom-text-style-small);
-  color: var(--telekom-color-text-and-icon-additional);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 .text-field scale-helper-text {
   --color-informational: var(--color-helper-text);

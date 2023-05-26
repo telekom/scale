@@ -103,7 +103,7 @@ scale-textarea {
   margin-left: auto;
   justify-content: flex-end;
   font: var(--telekom-text-style-small);
-  color: var(--telekom-color-text-and-icon-additional);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 .textarea .textarea__meta {
   display: flex;
