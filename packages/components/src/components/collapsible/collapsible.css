@@ -123,3 +123,7 @@
   margin-top: var(--spacing-top-content);
   margin-bottom: var(--spacing-bottom-content);
 }
+
+::slotted(*:not([slot='heading'])) {
+  font: var(--telekom-text-style-body);
+}
