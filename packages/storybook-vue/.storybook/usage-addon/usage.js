@@ -179,8 +179,6 @@ const Usage = (props) => {
     pagination_de,
     'progress-bar_en': progressBar_en,
     'progress-bar_de': progressBar_de,
-    'radio-button_en': radioButton_en,
-    'radio-button_de': radioButton_de,
     'radio-button-group_en': radioButtonGroup_en,
     'radio-button-group_de': radioButtonGroup_de,
     'rating-stars_en': ratingStars_en,
