@@ -89,24 +89,20 @@ export const Template = (args, { argTypes }) => ({
 
 ```css
 scale-textarea {
-  --transition: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
-    );
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-line-weight-standard) solid var(
-      --telekom-color-ui-border-standard
-    );
-  --border-error: var(--telekom-line-weight-highlight) solid var(
-      --telekom-color-functional-danger-standard
-    );
+  --border: var(--telekom-line-weight-standard) solid
+    var(--telekom-color-ui-border-standard);
+  --border-error: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-danger-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-color-disabled: none;
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
   --spacing-x-control: var(--telekom-spacing-unit-x3);
   --spacing-bottom-control: var(--telekom-spacing-unit-x3);
   --spacing-top-control: var(--telekom-spacing-unit-x6);
@@ -128,18 +124,10 @@ scale-textarea {
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
+
   /*counter*/
   --transition-counter: var(--transition);
-  --font-size-counter: var(--font-size-meta);
-  --line-height-counter: var(--line-height-meta);
   --color-counter-error: var(--color-meta-error);
-
-  /*helper-text*/
-  --transition-helper-text: var(--transition);
-  --font-size-helper-text: var(--font-size-meta);
-  --line-height-helper-text: var(--line-height-meta);
-  --color-helper-text: var(--telekom-color-functional-informational-standard);
-  --color-helper-text-error: var(--color-meta-error);
 
   /*placeholder*/
   --transition-placeholder: var(--transition);
@@ -154,6 +142,7 @@ scale-textarea {
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+  --margin-top-label-focus: 1.5px;
 }
 ```
 
@@ -207,7 +196,7 @@ scale-textarea {
     args={{
       label: 'With Error',
       invalid: true,
-      helperText: 'something is wrong',
+      helperText: 'Something is wrong',
     }}
   >
     {Template.bind({})}
@@ -217,7 +206,7 @@ scale-textarea {
 ```html
 <scale-textarea
   label="With Error"
-  helper-text="something is wrong"
+  helper-text="Something is wrong"
   invalid="true"
 ></scale-textarea>
 ```
