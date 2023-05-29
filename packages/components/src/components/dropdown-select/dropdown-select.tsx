@@ -200,6 +200,8 @@ export class DropdownSelect {
   @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
     'informational';
   @Prop({ mutable: true, reflect: true }) value: any;
+  /** @see {@url https://floating-ui.com/docs/computePosition#strategy} */
+  @Prop() floatingStrategy: 'absolute' | 'fixed' = 'absolute';
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
@@ -236,8 +238,14 @@ export class DropdownSelect {
     if (!this.open) {
       return;
     }
+    if (this.floatingStrategy === 'fixed') {
+      this.listboxPadEl.style.width = `${
+        this.comboEl.getBoundingClientRect().width
+      }px`;
+    }
     computePosition(this.comboEl, this.listboxPadEl, {
       placement: 'bottom',
+      strategy: this.floatingStrategy,
     }).then(({ x, y }) => {
       Object.assign(this.listboxPadEl.style, {
         left: `${x}px`,
@@ -505,7 +513,8 @@ export class DropdownSelect {
       this.invalid && `invalid`,
       this.currentIndex > -1 && `steal-focus`,
       animated && 'animated',
-      this.helperText && 'has-helper-text'
+      this.helperText && 'has-helper-text',
+      this.floatingStrategy && `strategy-${this.floatingStrategy}`
     );
   }
 }
