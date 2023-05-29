@@ -244,12 +244,13 @@
   z-index: var(--z-index-listbox);
   display: none;
 }
-[part~='strategy-fixed'] [part='listbox-pad'] {
-  position: fixed;
-}
 
 [part~='open'] [part='listbox-pad'] {
   display: block;
+}
+
+[part~='strategy-fixed'] [part='listbox-pad'] {
+  position: fixed;
 }
 
 [part~='transparent'] [part='listbox'] {
