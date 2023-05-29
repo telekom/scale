@@ -30,54 +30,32 @@
   --line-thickness-visited: var(--line-thickness-initial);
   /* hover */
   --color-hover: var(--telekom-color-text-and-icon-link-hovered);
-  --color-line-hover: var(--telekom-color-functional-interaction-hovered);
-  --line-thickness-hover: var(--line-thickness-initial);
+  --color-line-hover: currentColor;
+  --line-thickness-hover: var(--telekom-line-weight-highlight);
   /* focus */
   --color-focus: var(--telekom-color-text-and-icon-link-standard);
-  --color-line-focus: var(--telekom-color-text-and-icon-link-standard);
-  --line-thickness-focus: var(--telekom-line-weight-bold);
+  --color-line-focus: transparent;
+  --line-thickness-focus: 0;
   /* active */
   --color-active: var(--telekom-color-text-and-icon-link-active);
-  --color-line-active: var(--telekom-color-functional-interaction-pressed);
-  --line-thickness-active: var(--line-thickness-initial);
+  --color-line-active: currentColor;
+  --line-thickness-active: var(--telekom-line-weight-highlight);
   /* disabled */
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --color-line-disabled: var(--telekom-color-ui-border-disabled);
+  --color-line-disabled: transparent;
   --line-thickness-disabled: var(--line-thickness-initial);
-}
-
-/* Quick fix for inaccessible link color when placed inside a scale-tooltip */
-:host-context(scale-tooltip) {
-  /* initial */
-  --color: currentColor;
-  --color-line-initial: currentColor;
-  /* visited */
-  --color-visited: currentColor;
-  --color-line-visited: currentColor;
-  /* hover */
-  --color-hover: currentColor;
-  --color-line-hover: currentColor;
-  /* focus */
-  --color-focus: currentColor;
-  --color-line-focus: currentColor;
-  /* active */
-  --color-active: currentColor;
-  --color-line-active: currentColor;
 }
 
 :host {
   display: inline;
   margin-bottom: calc(var(--line-offset) + var(--line-thickness-initial));
-  --anchor-color: var(--color);
-  --line-color: var(--color);
-  --line-thickness: var(--line-thickness-initial);
 }
 
 [part='anchor'] {
   cursor: pointer;
   outline: none;
   font-weight: var(--font-weight);
-  color: var(--anchor-color);
+  color: var(--color);
   position: relative;
   display: inline-flex;
   text-decoration: underline;
@@ -130,28 +108,43 @@ slot[name='icon']::slotted(*) {
   text-decoration: underline;
 }
 
-[part='anchor']:visited {
-  --anchor-color: var(--color-visited);
-  --line-color: var(--color-line-visited);
-  --line-thickness: var(--line-thickness-visited);
-}
-
 [part='anchor']:hover {
-  --anchor-color: var(--color-hover);
-  --line-color: var(--color-line-hover);
-  --line-thickness: var(--line-thickness-hover);
+  color: var(--color-hover);
+  text-decoration-color: var(--color-line-hover);
+  text-decoration-thickness: var(
+    --line-thickness-hover,
+    var(--line-thickness-initial)
+  );
 }
 
 [part='anchor']:focus {
-  --anchor-color: var(--color-focus);
-  --line-color: var(--color-line-focus);
-  --line-thickness: var(--line-thickness-focus);
+  color: var(--color-focus);
+  text-decoration-color: var(--color-line-focus);
+  text-decoration-thickness: var(
+    --line-thickness-focus,
+    var(--line-thickness-initial)
+  );
+  outline: var(--telekom-line-weight-highlight) solid currentColor;
+  outline-offset: var(--telekom-spacing-unit-x025);
+  border-radius: var(--telekom-radius-small);
 }
 
 [part='anchor']:active {
-  --anchor-color: var(--color-active);
-  --line-color: var(--color-line-active);
-  --line-thickness: var(--line-thickness-active);
+  color: var(--color-active);
+  text-decoration-color: var(--color-line-active);
+  text-decoration-thickness: var(
+    --line-thickness-active,
+    var(--line-thickness-initial)
+  );
+}
+
+[part='anchor']:visited {
+  color: var(--color-visited);
+  text-decoration-color: var(--color-line-visited);
+  text-decoration-thickness: var(
+    --line-thickness-visited,
+    var(--line-thickness-initial)
+  );
 }
 
 /* disabled */
@@ -164,9 +157,8 @@ slot[name='icon']::slotted(*) {
 :host(.disabled) [part='anchor']:visited,
 :host(.disabled) [part='anchor']:hover,
 :host(.disabled) [part='anchor']:active {
-  --anchor-color: var(--color-disabled);
-  --line-color: var(--color-line-disabled);
-
+  color: var(--color-disabled);
+  text-decoration-color: var(--color-line-disabled);
   cursor: not-allowed;
   pointer-events: none;
 }
