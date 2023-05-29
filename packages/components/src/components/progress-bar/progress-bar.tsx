@@ -110,7 +110,9 @@ export class ProgressBar {
               >
                 {this.label}
               </label>
-            ) : (<span>{' '}</span>)}
+            ) : (
+              <span> </span>
+            )}
             {!!this.showStatus && !this.hasError && this.percentage !== 100 && (
               <div
                 part="status"
