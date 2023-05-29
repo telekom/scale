@@ -388,6 +388,11 @@
   margin-right: var(--telekom-spacing-unit-x2);
 }
 
+.data-grid-progress-bar::part(progress-bar) {
+  min-width: 50px;
+  max-width: 200px;
+}
+
 /* Info block */
 .info {
   height: 44px;
