@@ -21,10 +21,10 @@ export const ActionsCell: Cell = {
           const { label, ...props } = action;
           if (typeof label === 'object' && '__html' in label) {
             return (
-              <scale-button innerHTML={label.__html} {...props}></scale-button>
+              <scale-button size="small" innerHTML={label.__html} {...props}></scale-button>
             );
           }
-          return <scale-button {...props}>{label}</scale-button>;
+          return <scale-button size="small" {...props}>{label}</scale-button>;
         })}
       </div>
     );
