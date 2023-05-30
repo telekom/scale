@@ -53,10 +53,6 @@
   margin-top: 0;
 }
 
-[part~='telekom-footer-extended-navigation'] :where(li:last-child) a {
-  margin-bottom: var(--telekom-spacing-unit-x5);
-}
-
 [part~='telekom-footer-extended-navigation'] :where(a):hover {
   color: var(--telekom-color-text-and-icon-primary-hovered);
   /* need to overwrite <a> border from telekom-footer.css */
