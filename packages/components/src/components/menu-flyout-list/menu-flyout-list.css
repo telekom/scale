@@ -31,7 +31,7 @@
   background: var(--telekom-color-background-surface);
   border-radius: var(--telekom-radius-standard);
   box-shadow: var(--telekom-shadow-overlay);
-  overflow-y: visible;
+  overflow-y: hidden;
   margin-top: var(--spacing-y-list, 0);
   margin-bottom: var(--spacing-y-list, 0);
   margin-left: var(--spacing-x-list, 0);
@@ -57,7 +57,8 @@
 
 .menu-flyout-list__list {
   padding: 20px 0;
-  overflow-y: visible;
+  overflow-y: auto;
+  overflow-y: overlay;
   overscroll-behavior: contain;
   width: 100%;
 }
