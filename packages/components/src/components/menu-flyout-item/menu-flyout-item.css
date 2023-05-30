@@ -62,7 +62,6 @@
 
 :host(:focus) .menu-flyout-item {
   outline: var(--focus-outline);
-  outline-offset: 2px;
   border-radius: var(--telekom-radius-small);
 }
 
