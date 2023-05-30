@@ -34,7 +34,7 @@ export class Icon {
    * Will be used for both `width` and `height`, all icons are square.
    * Keep in mind the `viewBox` attribute is set to "0 0 24 24".
    */
-  @Prop({ reflect: true }) size?: number = 24;
+  @Prop({ reflect: true }) size?: number = 20;
   /** The SVG `fill` attribute */
   @Prop() fill?: string = 'var(--icon-color, currentColor)';
   /** The SVG `stroke` attribute */
