@@ -126,10 +126,10 @@
 }
 
 .button.button--icon-before:not(.button--icon-only) ::slotted(*) {
-  margin-right: 8px;
-  margin-left: calc(4px * -1);
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-right: var(--spacing-icon-x);
+  margin-left: calc(var(--spacing-icon-x-small) * -1);
+  margin-top: var(--spacing-icon-x);
+  margin-bottom: var(--spacing-icon-x);
 }
 
 .button.button--icon-before:not(.button--icon-only).button--size-small
@@ -139,10 +139,10 @@
 }
 
 .button.button--icon-after:not(.button--icon-only) ::slotted(*) {
-  margin-left: 8px;
-  margin-right: calc(4px * -1);
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-left: var(--spacing-icon-x);
+  margin-right: calc(var(--spacing-icon-x-small) * -1);
+  margin-top: var(--spacing-icon-x);
+  margin-bottom: var(--spacing-icon-x);
 }
 
 .button.button--icon-after:not(.button--icon-only).button--size-small
