@@ -263,7 +263,7 @@ export class DatePicker {
     );
 
     if (calendarIcon) {
-      let icon = document.createElement('scale-icon-content-calendar');
+      const icon = document.createElement('scale-icon-content-calendar');
       icon.size = DEFAULT_ICON_SIZE;
       calendarIcon.replaceWith(icon);
     }
