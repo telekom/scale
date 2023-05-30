@@ -32,7 +32,7 @@
   --color-meta: var(--telekom-color-text-and-icon-standard);
 
   /*icon*/
-  --height-icon: var(--telekom-spacing-unit-x5);
+  --height-icon: 20px;
   --color-icon: var(--telekom-color-text-and-icon-standard);
   --color-icon-hover: var(--telekom-color-text-and-icon-standard);
   --color-icon-active: var(--telekom-color-text-and-icon-standard);
