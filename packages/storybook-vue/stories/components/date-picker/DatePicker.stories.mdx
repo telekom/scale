@@ -26,7 +26,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleDatePicker },
   props: ScaleDatePicker.props,
   template: `
-    <div style="height: 380px;">
+    <div style="height: 500px;">
         <scale-date-picker
             ref="picker"
             :name="name"
@@ -140,7 +140,7 @@ export const Template = (args, { argTypes }) => ({
 export const RangeTemplate = (args, { argTypes }) => ({
   components: { ScaleDatePicker },
   template: `
-    <div style="height: 380px;">
+    <div style="height: 500px;">
         <scale-date-picker
             ref="start"
             identifier="start"
@@ -417,7 +417,7 @@ duet-date-picker {
 const RangeTemplate = (args, { argTypes }) => ({
   components: { ScaleDatePicker },
   template: `
-    <div style="height: 380px; display: inline-flex;">
+    <div style="height: 500px; display: inline-flex;">
         <scale-date-picker
             ref="start"
             identifier="start"

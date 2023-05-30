@@ -261,25 +261,31 @@ export class DatePicker {
     );
 
     if (calendarIcon) {
-      calendarIcon.replaceWith(
-        document.createElement('scale-icon-content-calendar')
+      const scaleCalendarIcon = document.createElement(
+        'scale-icon-content-calendar'
       );
+      scaleCalendarIcon.size = 18;
+      calendarIcon.replaceWith(scaleCalendarIcon);
     }
 
     const navLeftIcon = this.duetInput.querySelector('.duet-date__prev svg');
 
     if (navLeftIcon) {
-      navLeftIcon.replaceWith(
-        document.createElement('scale-icon-navigation-left')
+      const scaleNavLeftIcon = document.createElement(
+        'scale-icon-navigation-left'
       );
+      scaleNavLeftIcon.size = 12;
+      navLeftIcon.replaceWith(scaleNavLeftIcon);
     }
 
     const navRightIcon = this.duetInput.querySelector('.duet-date__next svg');
 
     if (navRightIcon) {
-      navRightIcon.replaceWith(
-        document.createElement('scale-icon-navigation-right')
+      const scaleNavRightIcon = document.createElement(
+        'scale-icon-navigation-right'
       );
+      scaleNavRightIcon.size = 12;
+      navRightIcon.replaceWith(scaleNavRightIcon);
     }
 
     const selectIcon = this.duetInput.querySelectorAll(
