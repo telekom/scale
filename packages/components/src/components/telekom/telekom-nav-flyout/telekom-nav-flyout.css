@@ -16,10 +16,14 @@
   --height: auto;
   --position: fixed;
   --background: var(--telekom-color-background-surface);
+  --background-variant-mobile: var(--telekom-color-background-canvas);
+  --background-backdrop: var(--telekom-color-background-canvas);
   --shadow: none;
   --z-index: 7;
 
   --duration: var(--telekom-motion-duration-transition);
+  --duration-backdrop-in: var(--telekom-motion-duration-animation);
+  --duration-backdrop-out: var(--telekom-motion-duration-immediate);
   --translate-x: 0;
   --translate-y: var(--telekom-spacing-unit-x1);
   --translate-z: 0;
@@ -27,11 +31,11 @@
   display: contents;
 }
 
-[part~='mobile'] {
+[part~='variant-mobile'] {
   --height: 100vh;
   --top: 0;
   --duration: 0;
-  --background: var(--telekom-color-background-canvas);
+  --background: var(--background-variant-mobile);
 }
 
 :host([debug]) [part~='base'] {
@@ -57,6 +61,30 @@
   display: block;
 }
 
+[part~='backdrop'] {
+  display: none;
+  position: var(--position);
+  background-color: var(--telekom-color-background-backdrop);
+  top: var(--top);
+  left: var(--left);
+  width: var(--width);
+  height: 100vh;
+  animation-duration: var(--duration);
+}
+
+/* no backdrop for "mobile" variant */
+[part~='backdrop'][part~='expanded']:not([part~='variant-mobile']) {
+  display: block;
+}
+
+[part~='backdrop'][part~='expanded'][part~='in'] {
+  animation-duration: var(--duration-backdrop-in);
+}
+
+[part~='backdrop'][part~='expanded'][part~='out'] {
+  animation-duration: var(--duration-backdrop-out);
+}
+
 @keyframes toggle {
   from {
     opacity: 0;
@@ -75,6 +103,7 @@
 
 [part~='out'] {
   animation-name: toggle;
+  animation-fill-mode: forwards;
   animation-direction: reverse;
   animation-timing-function: var(--telekom-motion-easing-exit);
 }
