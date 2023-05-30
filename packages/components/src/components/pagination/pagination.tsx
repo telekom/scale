@@ -35,6 +35,8 @@ import { emitEvent } from '../../utils/utils';
   [ ] Add icons to the icon components ?
 */
 
+const DEFAULT_ICON_SIZE = 20;
+
 export type PaginationEventDirection = 'FIRST' | 'PREVIOUS' | 'NEXT' | 'LAST';
 
 const name = 'pagination';
@@ -208,7 +210,8 @@ export class Pagination {
               aria-label={this.ariaLabelFirstPage}
             >
               <svg
-                height="12"
+                height={DEFAULT_ICON_SIZE}
+                width={DEFAULT_ICON_SIZE}
                 viewBox="0 0 48 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -229,7 +232,8 @@ export class Pagination {
               aria-label={this.ariaLabelPreviousPage}
             >
               <svg
-                height="12"
+                height={DEFAULT_ICON_SIZE}
+                width={DEFAULT_ICON_SIZE}
                 viewBox="0 0 37 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -253,7 +257,8 @@ export class Pagination {
               aria-label={this.ariaLabelNextPage}
             >
               <svg
-                height="12"
+                height={DEFAULT_ICON_SIZE}
+                width={DEFAULT_ICON_SIZE}
                 viewBox="0 0 37 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -274,7 +279,8 @@ export class Pagination {
               aria-label={this.ariaLabelLastPage}
             >
               <svg
-                height="12"
+                height={DEFAULT_ICON_SIZE}
+                width={DEFAULT_ICON_SIZE}
                 viewBox="0 0 48 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

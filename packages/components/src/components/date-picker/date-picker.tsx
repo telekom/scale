@@ -42,6 +42,8 @@ if (
   customElements.define('duet-date-picker', DuetDatePickerCustomElement);
 }
 
+const DEFAULT_ICON_SIZE = 20;
+
 @Component({
   tag: 'scale-date-picker',
   shadow: false,
@@ -261,9 +263,9 @@ export class DatePicker {
     );
 
     if (calendarIcon) {
-      calendarIcon.replaceWith(
-        document.createElement('scale-icon-content-calendar')
-      );
+      const icon = document.createElement('scale-icon-content-calendar');
+      icon.size = DEFAULT_ICON_SIZE;
+      calendarIcon.replaceWith(icon);
     }
 
     const navLeftIcon = this.duetInput.querySelector('.duet-date__prev svg');

@@ -29,6 +29,6 @@ describe('scale-tab-header', () => {
        </scale-tab-header>
      `);
     const element = await page.find('scale-icon-home-home');
-    expect(element.getAttribute('size')).toBe('16');
+    expect(element.getAttribute('size')).toBe('20');
   });
 });

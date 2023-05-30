@@ -117,8 +117,11 @@ export class Segment {
           case 'small':
             icon.setAttribute('size', '14');
             break;
-          case 'medium' || 'large':
+          case 'medium':
             icon.setAttribute('size', '16');
+            break;
+          case 'large':
+            icon.setAttribute('size', '20');
             break;
         }
         icon.style.display = 'inline-flex';
@@ -182,7 +185,13 @@ export class Segment {
             {!this.iconOnly && (
               <div class="success-icon-container">
                 <scale-icon-action-success
-                  size={this.size === 'small' ? 14 : 16}
+                  size={
+                    this.size === 'small'
+                      ? 14
+                      : this.size === 'medium'
+                      ? 16
+                      : 20
+                  }
                   class="scale-icon-action-success"
                   aria-hidden="true"
                   selected

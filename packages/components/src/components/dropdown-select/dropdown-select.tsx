@@ -29,6 +29,8 @@ enum Actions {
   Type = 'Type',
 }
 
+const DEFAULT_ICON_SIZE = 20;
+
 const isElementValue = (x: unknown): x is Element & { value: string } =>
   typeof (x as { value: unknown }).value === 'string';
 const readValue = (element: Element) =>
@@ -467,9 +469,15 @@ export class DropdownSelect {
 
             <div part="icon">
               {this.open ? (
-                <scale-icon-navigation-collapse-up decorative />
+                <scale-icon-navigation-collapse-up
+                  decorative
+                  size={DEFAULT_ICON_SIZE}
+                />
               ) : (
-                <scale-icon-navigation-collapse-down decorative />
+                <scale-icon-navigation-collapse-down
+                  decorative
+                  size={DEFAULT_ICON_SIZE}
+                />
               )}
             </div>
           </div>
