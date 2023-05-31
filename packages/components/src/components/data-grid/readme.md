@@ -87,6 +87,10 @@ graph TD;
   scale-checkbox --> scale-icon-action-checkmark
   scale-checkbox --> scale-icon-alert-information
   scale-checkbox --> scale-icon-alert-error
+  scale-pagination --> scale-icon-navigation-double-left
+  scale-pagination --> scale-icon-navigation-left
+  scale-pagination --> scale-icon-navigation-right
+  scale-pagination --> scale-icon-navigation-double-right
   scale-switch --> scale-icon-action-checkmark
   scale-progress-bar --> scale-icon-alert-error
   scale-progress-bar --> scale-icon-action-success

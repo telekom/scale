@@ -33,19 +33,6 @@
 | `"heading"`     |             |
 
 
-## Dependencies
-
-### Depends on
-
-- [scale-icon-navigation-collapse-down](../icons/navigation-collapse-down)
-
-### Graph
-```mermaid
-graph TD;
-  scale-collapsible --> scale-icon-navigation-collapse-down
-  style scale-collapsible fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
