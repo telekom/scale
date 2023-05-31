@@ -245,21 +245,6 @@ export class DropdownSelect {
     });
   }
 
-  handleEmptyValueItem() {
-    for (const [key, object] of Object.entries(readOptions(this.hostElement))) {
-      if (object.value == '') {
-        //console.log(this.hostElement);
-        this.hostElement.children[key].value = this.hostElement.children[
-          key
-        ].innerHTML
-          .replace(/\W+/g, '')
-          .toLowerCase();
-        // console.log(this.hostElement.children[key].value);
-        // console.log(this.hostElement);
-      }
-    }
-  }
-
   selectOption = (index) => {
     this.currentIndex = index;
     this.value = readOptions(this.hostElement)[index].value;
@@ -403,10 +388,14 @@ export class DropdownSelect {
       readOptions(this.hostElement).find(({ value }) => value === this.value) ||
       ({} as any)
     ).ItemElement;
-    const hasEmptyValueElement = (
-      readOptions(this.hostElement).find(({ value }) => value === this.value) ||
-      ({} as any)
-    ).value;
+    const hasEmptyValueElement =
+      (
+        readOptions(this.hostElement).find(
+          ({ value }) => value === this.value
+        ) || ({} as any)
+      ).value === ''
+        ? true
+        : false;
     const helperTextId = `helper-message-${generateUniqueId()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
@@ -443,7 +432,7 @@ export class DropdownSelect {
               {...(this.invalid ? { 'aria-invalid': 'true' } : {})}
             >
               <span part="combobox-value">
-                {hasEmptyValueElement == '' ? '' : ValueElement}
+                {hasEmptyValueElement ? '' : ValueElement}
               </span>
             </div>
             <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
