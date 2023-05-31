@@ -90,29 +90,6 @@ scale-switch {
   --_color-thumb: var(--telekom-color-ui-white);
 }
 
-[data-platform='android'] .switch {
-  --_color-thumb: var(--telekom-color-ui-strong);
-}
-
-[data-platform='android'] .switch:hover {
-  --_background: var(--telekom-color-ui-faint);
-}
-
-[data-platform='android'] .switch:active {
-  --_background: var(--telekom-color-ui-faint);
-}
-
-[data-platform='android'] .switch:hover {
-  --_color-thumb: var(--telekom-color-ui-extra-strong);
-}
-[data-platform='android'] .switch:active {
-  --_color-thumb: var(--telekom-color-ui-extra-strong);
-}
-[data-platform='android'] .switch--checked:active,
-[data-platform='android'] .switch--checked:hover {
-  --_color-thumb: var(--telekom-color-ui-white);
-}
-
 [data-platform='android'] .switch--checked:hover,
 .switch--checked:hover {
   --_background: var(--telekom-color-primary-hovered);
@@ -252,16 +229,6 @@ scale-switch {
 }
 
 [data-platform='android'] .switch__thumb {
-  width: 18px;
-  height: 18px;
-}
-
-[data-platform='android'] scale-switch:not([disabled]):active .switch__thumb {
-  width: 28px;
-  height: 28px;
-  --offset: 2px;
-}
-[data-platform='android'] .switch--checked .switch__thumb {
   width: 24px;
   height: 24px;
   --offset: 4px;
@@ -272,6 +239,7 @@ scale-switch {
   justify-content: center;
   align-items: center;
   box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 scale-switch scale-icon-action-success {
@@ -282,7 +250,6 @@ scale-switch scale-icon-action-success {
   position: absolute;
   display: inline-block !important;
   margin-top: 2px;
-  margin-left: 1px;
 }
 
 [data-platform='android'] .switch--checked .switch__thumb {
