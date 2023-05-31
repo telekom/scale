@@ -36,6 +36,7 @@
 
 ### Used by
 
+ - [scale-date-picker](../date-picker)
  - [scale-dropdown](../dropdown)
  - [scale-dropdown-select](../dropdown-select)
  - [scale-segmented-button](../segmented-button)
@@ -53,6 +54,7 @@ graph TD;
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
   scale-helper-text --> scale-icon-alert-success
+  scale-date-picker --> scale-helper-text
   scale-dropdown --> scale-helper-text
   scale-dropdown-select --> scale-helper-text
   scale-segmented-button --> scale-helper-text

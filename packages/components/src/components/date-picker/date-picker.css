@@ -126,12 +126,6 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   color: var(--telekom-color-text-and-icon-functional-informational);
 }
 
-.scale-date-picker .date-picker__meta {
-  display: flex;
-  justify-content: space-between;
-  margin-top: var(--telekom-spacing-unit-x1);
-}
-
 .scale-date-picker .date-picker__label {
   top: -2px;
   color: var(--telekom-color-text-and-icon-additional);
@@ -206,9 +200,6 @@ duet-date-picker .duet-date__input:focus::placeholder {
   outline-offset: 1px;
   box-shadow: none;
 }
-.scale-date-picker--status-error .date-picker__helper-text {
-  color: var(--telekom-color-text-and-icon-functional-danger);
-}
 
 .scale-date-picker--status-error .duet-date__toggle {
   width: 47px;
@@ -237,9 +228,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
   scale-icon-content-calendar {
   color: var(--telekom-color-text-and-icon-disabled);
 }
-.scale-date-picker.scale-date-picker--disabled .date-picker__helper-text {
-  color: var(--telekom-color-text-and-icon-disabled);
-}
+
 .scale-date-picker.scale-date-picker--disabled .date-picker__label {
   color: var(--telekom-color-text-and-icon-disabled);
 }
@@ -399,14 +388,19 @@ duet-date-picker .duet-date__day:hover::before {
   color: var(--telekom-color-text-and-icon-white-standard);
 }
 
+duet-date-picker .scale-date-picker__popup-heading {
+  padding: var(--telekom-spacing-unit-x2);
+}
+
+scale-date-picker .has-helper-text scale-helper-text {
+  display: block;
+  margin-top: var(--telekom-spacing-unit-x1);
+}
+
 @media (max-width: 35.9375em) and (orientation: landscape) {
   duet-date-picker .duet-date__dialog-content {
     zoom: 70%;
   }
-}
-
-duet-date-picker .scale-date-picker__popup-heading {
-  padding: var(--telekom-spacing-unit-x2);
 }
 
 @media (max-width: 35.9375em) {
