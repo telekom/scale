@@ -131,9 +131,9 @@ export class ProgressBar {
               </div>
             ) : this.percentage === 100 ? (
               <div class="progress-bar__icon">
-                <scale-icon-alert-success
+                <scale-icon-action-success
                   size={ICON_SIZE}
-                ></scale-icon-alert-success>
+                ></scale-icon-action-success>
               </div>
             ) : null}
           </div>

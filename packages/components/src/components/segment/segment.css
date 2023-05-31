@@ -188,16 +188,17 @@ button.segment--large .segment--mask {
   clip-path: none;
 }
 
-.segment:not(.segment--icon-only) scale-icon-action-success,
+/* FIXME remove the hard-coded icon names */
+.segment:not(.segment--icon-only) scale-icon-action-checkmark,
 .segment scale-icon-action-close {
   margin-right: var(--telekom-spacing-unit-x1);
 }
 
-.segment:not(.segment--selected) scale-icon-action-success {
+.segment:not(.segment--selected) scale-icon-action-checkmark {
   visibility: hidden !important;
 }
 
-.segment scale-icon-action-success {
+.segment scale-icon-action-checkmark {
   vertical-align: middle;
 }
 

@@ -72,7 +72,7 @@ export class Switch {
             />
             <div class="switch__toggle" aria-hidden="true">
               <div class="switch__thumb">
-                <scale-icon-action-success size={12} decorative selected />
+                <scale-icon-action-checkmark size={12} decorative selected />
               </div>
               <div class="switch__io-text">
                 <span>{this.checked ? 'I' : '0'}</span>

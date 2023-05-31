@@ -47,14 +47,14 @@
 
 - [scale-icon-alert-information](../icons/alert-information)
 - [scale-icon-alert-error](../icons/alert-error)
-- [scale-icon-alert-success](../icons/alert-success)
+- [scale-icon-action-success](../icons/action-success)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
-  scale-helper-text --> scale-icon-alert-success
+  scale-helper-text --> scale-icon-action-success
   scale-date-picker --> scale-helper-text
   scale-dropdown --> scale-helper-text
   scale-dropdown-select --> scale-helper-text

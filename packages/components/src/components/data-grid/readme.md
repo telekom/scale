@@ -81,22 +81,22 @@ graph TD;
   scale-data-grid --> scale-dropdown-select-item
   scale-data-grid --> scale-tag
   scale-data-grid --> scale-text-field
-  scale-menu-flyout-item --> scale-icon-action-success
+  scale-menu-flyout-item --> scale-icon-action-checkmark
   scale-menu-flyout-item --> scale-icon-navigation-right
-  scale-checkbox --> scale-icon-action-indeterminate
-  scale-checkbox --> scale-icon-action-success
+  scale-checkbox --> scale-icon-action-minus
+  scale-checkbox --> scale-icon-action-checkmark
   scale-checkbox --> scale-icon-alert-information
   scale-checkbox --> scale-icon-alert-error
-  scale-switch --> scale-icon-action-success
+  scale-switch --> scale-icon-action-checkmark
   scale-progress-bar --> scale-icon-alert-error
-  scale-progress-bar --> scale-icon-alert-success
-  scale-dropdown-select --> scale-icon-action-success
+  scale-progress-bar --> scale-icon-action-success
+  scale-dropdown-select --> scale-icon-action-checkmark
   scale-dropdown-select --> scale-icon-navigation-collapse-up
   scale-dropdown-select --> scale-icon-navigation-collapse-down
   scale-dropdown-select --> scale-helper-text
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
-  scale-helper-text --> scale-icon-alert-success
+  scale-helper-text --> scale-icon-action-success
   scale-tag --> scale-icon-action-close
   scale-text-field --> scale-helper-text
   style scale-data-grid fill:#f9f,stroke:#333,stroke-width:4px
