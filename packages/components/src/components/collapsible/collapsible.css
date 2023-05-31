@@ -18,7 +18,7 @@
   --line-height-button: var(--telekom-typography-line-spacing-standard);
   --border-width-button: var(--telekom-spacing-unit-x05);
   --radius-button: var(--telekom-radius-small);
-  --spacing-left-button: var(--telekom-spacing-unit-x1);
+  --spacing-left-button: 0;
   --spacing-left-button-text: var(--telekom-spacing-unit-x2);
   --color-button-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-button-active: var(--telekom-color-text-and-icon-primary-pressed);
