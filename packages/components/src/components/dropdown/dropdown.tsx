@@ -276,7 +276,7 @@ export class Dropdown {
               {this.hasSlotIcon ? (
                 <slot name="icon" />
               ) : (
-                <scale-icon-navigation-collapse-down decorative />
+                <scale-icon-navigation-collapse-down size={20} decorative />
               )}
             </div>
           </div>

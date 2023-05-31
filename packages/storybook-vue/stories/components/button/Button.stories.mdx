@@ -65,9 +65,9 @@ export const Template = (args, { argTypes }) => ({
       :styles="styles"
       @click="action('clicked')"
     >
-      <scale-icon-action-search v-if="icon === 'before'" />
+      <scale-icon-content-heart v-if="icon === 'before'" />
       {{ iconOnly !== true ? label : null }}
-      <scale-icon-action-add accessibility-title="Add" v-if="iconOnly" />
+      <scale-icon-content-heart accessibility-title="Add" v-if="iconOnly" />
       <scale-icon-navigation-right accessibility-title="Next" v-if="icon === 'after'" />
       <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" v-if="icon === 'external'" />
     </scale-button>
@@ -272,7 +272,7 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-button>
-  <scale-icon-action-search></scale-icon-action-search> Label
+  <scale-icon-content-heart></scale-icon-content-heart> Label
 </scale-button>
 ```
 
@@ -311,7 +311,7 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-button icon-only>
-  <scale-icon-action-add accessibility-title="add" />
+  <scale-icon-content-heart accessibility-title="like" />
 </scale-button>
 ```
 
@@ -534,9 +534,9 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 </Canvas>
 
 ```html
-<scale-button size="small" href="https://example.com" target="_blank"
-  >Label</scale-button
->
+<scale-button size="small" href="https://example.com" target="_blank">
+  Label
+</scale-button>
 ```
 
 ## Small Link Download
@@ -557,6 +557,6 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 
 ```html
 <scale-button size="small" icon-only>
-  <scale-icon-action-add accessibility-title="add" />
+  <scale-icon-action-add accessibility-title="add"></scale-icon-action-add>
 </scale-button>
 ```

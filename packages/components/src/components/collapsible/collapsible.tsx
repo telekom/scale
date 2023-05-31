@@ -25,6 +25,8 @@ export interface CollapsibleEventDetail {
   expanded: boolean;
 }
 
+const DEFAULT_ICON_SIZE = 20;
+
 let i = 0;
 
 @Component({
@@ -74,8 +76,9 @@ export class Collapsible {
    * @see https://github.com/telekom/scale/pull/319
    */
   setHeadingFromLightDOM() {
-    const lightHeading: HTMLElement =
-      this.hostElement.querySelector(':first-child');
+    const lightHeading: HTMLElement = this.hostElement.querySelector(
+      ':first-child'
+    );
     if (lightHeading == null) {
       return;
     }
@@ -89,6 +92,9 @@ export class Collapsible {
   }
 
   render() {
+    const IconTag = this.expanded
+      ? 'scale-icon-navigation-collapse-down'
+      : 'scale-icon-navigation-right';
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -111,8 +117,8 @@ export class Collapsible {
               aria-controls={this.panelId}
             >
               {this.iconLocation === 'left' ? (
-                <scale-icon-navigation-collapse-down
-                  size={16}
+                <IconTag
+                  size={DEFAULT_ICON_SIZE}
                   decorative
                   class="collapsible__icon"
                   part={classNames('icon', this.expanded && 'expanded')}
@@ -126,8 +132,8 @@ export class Collapsible {
                 <slot name="heading"></slot>
               </span>
               {this.iconLocation === 'right' ? (
-                <scale-icon-navigation-collapse-down
-                  size={16}
+                <IconTag
+                  size={DEFAULT_ICON_SIZE}
                   decorative
                   class="collapsible__icon collapsible__icon-right"
                   part={classNames('icon', this.expanded && 'expanded')}

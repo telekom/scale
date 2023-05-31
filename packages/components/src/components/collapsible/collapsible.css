@@ -27,7 +27,7 @@
     var(--telekom-color-functional-focus-standard);
 
   /* icon */
-  --spacing-top-icon: calc(var(--telekom-spacing-unit-x1) + 1px);
+  --spacing-top-icon: var(--telekom-spacing-unit-x1);
 
   /* content */
   --spacing-right-content: var(--telekom-spacing-unit-x12);
@@ -103,7 +103,6 @@
 }
 
 .collapsible__icon {
-  transform: rotate(0.75turn);
   flex-shrink: 0;
   margin-top: var(--spacing-top-icon);
 }
@@ -113,7 +112,7 @@
 }
 
 .collapsible__button[aria-expanded='true'] .collapsible__icon {
-  transform: none;
+  /*  */
 }
 
 .collapsible__content {

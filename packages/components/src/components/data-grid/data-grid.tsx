@@ -277,9 +277,8 @@ export class DataGrid {
       if (this.rows[i].length !== this.fields.length) {
         // tslint:disable-next-line: no-console
         console.warn(
-          `Unable to render ${
-            this.heading && `"${this.heading}" `
-          }table: row data length not equal to supplied fields.`
+          `Unable to render ${this.heading &&
+            `"${this.heading}" `}table: row data length not equal to supplied fields.`
         );
         return false;
       }
@@ -854,8 +853,8 @@ export class DataGrid {
           {this.selectable && (
             <scale-menu-flyout-item
               onScale-select={() => {
-                this.elToggleSelectAll.checked =
-                  !this.elToggleSelectAll.checked;
+                this.elToggleSelectAll.checked = !this.elToggleSelectAll
+                  .checked;
                 this.toggleSelectAll();
               }}
             >

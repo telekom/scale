@@ -276,7 +276,7 @@
   position: relative;
 }
 
-[part~='option'][aria-selected='true'] scale-icon-action-success {
+[part~='option'][aria-selected='true'] scale-icon-action-checkmark {
   position: absolute;
   right: 16px;
   top: 12px;
