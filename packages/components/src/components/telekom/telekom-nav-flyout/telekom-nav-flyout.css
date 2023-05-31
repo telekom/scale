@@ -21,11 +21,11 @@
   --shadow: none;
   --z-index: 7;
 
-  --duration: var(--telekom-motion-duration-transition);
-  --duration-backdrop-in: var(--telekom-motion-duration-animation);
-  --duration-backdrop-out: var(--telekom-motion-duration-immediate);
+  --duration: 0;
+  --duration-backdrop-in: 0;
+  --duration-backdrop-out: 0;
   --translate-x: 0;
-  --translate-y: var(--telekom-spacing-unit-x1);
+  --translate-y: 0;
   --translate-z: 0;
 
   display: contents;
@@ -34,7 +34,6 @@
 [part~='variant-mobile'] {
   --height: 100vh;
   --top: 0;
-  --duration: 0;
   --background: var(--background-variant-mobile);
 }
 
