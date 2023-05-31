@@ -16,8 +16,8 @@ scale-switch {
   --radius: 1em;
   --transition-duration: var(--telekom-motion-duration-immediate);
   --transition-easing: var(--telekom-motion-easing-standard);
-  --shadow-thumb: 0 0 2px 0 rgba(0, 0, 0, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.24),
-    0 4px 12px 0 rgba(0, 0, 0, 0.26);
+  --shadow-thumb: 0px 8px 32px rgba(0, 0, 0, 0.1),
+    0px 4px 8px rgba(0, 0, 0, 0.1);
   --spacing-x-label: var(--telekom-spacing-unit-x2);
   --font-label: var(--telekom-text-style-ui);
   --font-io-text: var(--telekom-text-style-small-bold);
@@ -219,14 +219,13 @@ scale-switch {
   align-items: center;
   width: 50%;
   height: var(--height);
-  margin-left: calc(50% - var(--offset));
+  margin-left: calc(50%);
   font: var(--font-io-text);
   line-height: var(--telekom-typography-line-spacing-none);
 }
 
 .switch--size-large .switch__io-text {
-  margin-top: 1px;
-  font: var(--telekom-text-style-caption-bold);
+  font: var(--telekom-text-style-small-bold);
 }
 
 .switch--checked .switch__io-text {
