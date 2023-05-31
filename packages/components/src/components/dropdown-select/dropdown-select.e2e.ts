@@ -1,7 +1,7 @@
 import { newE2EPage } from '@stencil/core/testing';
 import { DropdownSelect } from './dropdown-select';
 
-describe('DropdownSelect', function() {
+describe('DropdownSelect', function () {
   it('should be able to change it`s value via keyboard nav', async () => {
     const page = await newE2EPage({
       components: [DropdownSelect],

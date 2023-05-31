@@ -364,8 +364,9 @@ export class DatePicker {
       '.duet-date__day.is-today span.duet-date__vhidden'
     );
     if (today) {
-      today.innerHTML = `${today.innerHTML}, ${this.localization?.today ||
-        'today'}`;
+      today.innerHTML = `${today.innerHTML}, ${
+        this.localization?.today || 'today'
+      }`;
     }
 
     this.adjustButtonsLabelsForA11y();

@@ -76,9 +76,8 @@ export class Collapsible {
    * @see https://github.com/telekom/scale/pull/319
    */
   setHeadingFromLightDOM() {
-    const lightHeading: HTMLElement = this.hostElement.querySelector(
-      ':first-child'
-    );
+    const lightHeading: HTMLElement =
+      this.hostElement.querySelector(':first-child');
     if (lightHeading == null) {
       return;
     }
