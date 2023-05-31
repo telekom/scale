@@ -70,6 +70,7 @@ duet-date-picker .duet-date__toggle {
   background: transparent;
   z-index: var(--duet-z-index-toggle);
   box-shadow: inset 1px 0 0 var(--telekom-color-ui-faint);
+  width: 44px;
 }
 
 duet-date-picker .duet-date__toggle:focus {
@@ -268,6 +269,7 @@ duet-date-picker .duet-date__select:nth-of-type(1) {
 
 duet-date-picker .duet-date__select-label {
   font-size: var(--font-size-select-label);
+  font: var(--telekom-text-style-ui);
 }
 
 duet-date-picker .duet-date__select-label svg {
