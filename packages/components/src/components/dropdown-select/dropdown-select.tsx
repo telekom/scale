@@ -231,7 +231,6 @@ export class DropdownSelect {
   }
 
   componentDidRender() {
-    //this.handleEmptyValueItem();
     if (!this.open) {
       return;
     }
