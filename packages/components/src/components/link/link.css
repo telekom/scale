@@ -67,7 +67,6 @@
   );
   /*FIXME:TOKEN color decoration should have 0.75 opacity*/
   text-decoration-color: var(--line-color);
-  transition: text-decoration var(--telekom-motion-duration-transition);
 }
 
 [part='anchor'] {
@@ -104,7 +103,6 @@ slot[name='icon']::slotted(*) {
 [part='anchor']:hover,
 [part='anchor']:focus,
 [part='anchor']:active {
-  transition: text-decoration var(--telekom-motion-duration-transition);
   text-decoration: underline;
 }
 
