@@ -28,9 +28,10 @@ export const Template = (args, { argTypes }) => ({
       :separator="separator"
       :styles="styles"
     >
-      <a href="#1">First Entry</a>
-      <a href="#2">Second Entry</a>
-      <a href="#3">Active Page</a>
+      <a href="#1">Home</a>
+      <a href="#2">Page 1</a>
+      <a href="#2">Page 2</a>
+      <a href="#3">Current Page</a>
       <template v-if="separator === true" #separator>
         <span slot="separator">
           <scale-icon-navigation-right size={12} color="#6B6B6B"></scale-icon-navigation-right>
@@ -91,6 +92,7 @@ export const Template = (args, { argTypes }) => ({
       --telekom-color-functional-focus
     );
 
+  --font-current: var(--telekom-text-style-caption-bold);
   --color-current: var(--telekom-color-text-and-icon-standard);
 }
 ```

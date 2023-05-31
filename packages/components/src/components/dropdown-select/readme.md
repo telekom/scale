@@ -7,18 +7,19 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type                                                    | Default           |
-| ------------- | ------------- | ----------- | ------------------------------------------------------- | ----------------- |
-| `comboboxId`  | `combobox-id` |             | `string`                                                | `'combobox'`      |
-| `disabled`    | `disabled`    |             | `boolean`                                               | `undefined`       |
-| `helperText`  | `helper-text` |             | `string`                                                | `''`              |
-| `invalid`     | `invalid`     |             | `boolean`                                               | `false`           |
-| `label`       | `label`       |             | `string`                                                | `undefined`       |
-| `name`        | `name`        |             | `string`                                                | `undefined`       |
-| `readonly`    | `readonly`    |             | `boolean`                                               | `undefined`       |
-| `transparent` | `transparent` |             | `boolean`                                               | `undefined`       |
-| `value`       | `value`       |             | `any`                                                   | `undefined`       |
-| `variant`     | `variant`     |             | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'` |
+| Property           | Attribute           | Description | Type                                                    | Default           |
+| ------------------ | ------------------- | ----------- | ------------------------------------------------------- | ----------------- |
+| `comboboxId`       | `combobox-id`       |             | `string`                                                | `'combobox'`      |
+| `disabled`         | `disabled`          |             | `boolean`                                               | `undefined`       |
+| `floatingStrategy` | `floating-strategy` |             | `"absolute" \| "fixed"`                                 | `'absolute'`      |
+| `helperText`       | `helper-text`       |             | `string`                                                | `''`              |
+| `invalid`          | `invalid`           |             | `boolean`                                               | `false`           |
+| `label`            | `label`             |             | `string`                                                | `undefined`       |
+| `name`             | `name`              |             | `string`                                                | `undefined`       |
+| `readonly`         | `readonly`          |             | `boolean`                                               | `undefined`       |
+| `transparent`      | `transparent`       |             | `boolean`                                               | `undefined`       |
+| `value`            | `value`             |             | `any`                                                   | `undefined`       |
+| `variant`          | `variant`           |             | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'` |
 
 
 ## Events
@@ -46,6 +47,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [scale-data-grid](../data-grid)
+
 ### Depends on
 
 - [scale-icon-action-success](../icons/action-success)
@@ -63,6 +68,7 @@ graph TD;
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
   scale-helper-text --> scale-icon-alert-success
+  scale-data-grid --> scale-dropdown-select
   style scale-dropdown-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

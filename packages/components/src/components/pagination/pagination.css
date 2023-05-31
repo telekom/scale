@@ -42,6 +42,7 @@
   color: var(--color);
   text-align: center;
   font-size: var(--font-size);
+  font-weight: var(--telekom-typography-font-weight-medium);
   line-height: var(--line-height-info);
   padding: 0 var(--padding-info);
   border: var(--border);
@@ -56,7 +57,8 @@
 }
 .pagination__info span,
 .pagination__info-responsive span {
-  font-weight: bold;
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  font-weight: var(--telekom-typography-font-weight-bold);
 }
 button {
   display: flex;
@@ -130,6 +132,13 @@ button:not(:disabled):active svg {
   border-radius: 0;
   border-top-width: 0;
   border-bottom-width: 0;
+}
+
+.pagination--hide-borders .pagination__first-prompt {
+  border-left-color: transparent;
+}
+.pagination--hide-borders .pagination__last-prompt {
+  border-right-color: transparent;
 }
 
 .pagination--hide-borders button:not(:disabled):hover {

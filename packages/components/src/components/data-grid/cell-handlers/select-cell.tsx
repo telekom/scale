@@ -58,15 +58,15 @@ export const SelectCell: Cell = {
     }
 
     return (
-      <scale-dropdown size="small" {...props}>
+      <scale-dropdown-select floatingStrategy="fixed" {...props}>
         {options.map((option) => {
           return (
-            <option value={option} selected={option === content}>
+            <scale-dropdown-select-item value={option}>
               {option}
-            </option>
+            </scale-dropdown-select-item>
           );
         })}
-      </scale-dropdown>
+      </scale-dropdown-select>
     );
   },
 };

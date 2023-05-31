@@ -33,26 +33,17 @@ export const GraphCell: Cell = {
       )
     );
 
+    // I really don't know the difference between bar and progress
     switch (style) {
       case 'bar':
         return (
           <div class={`tbody__bar-cell`}>
             <scale-progress-bar
+              class="data-grid-progress-bar"
               aria-hidden="true"
               percentage={progress}
               // showStatus={true}
               mute={true}
-              style={{ maxWidth: '200px' }}
-              styles={
-                /* css */ `.progress-bar__outer {
-                min-width: 50px;
-                max-width: 200px;
-              }
-              .progress-bar__inner {
-                background: var(--telekom-color-ui-faint) !important;
-              }
-              `
-              }
             ></scale-progress-bar>
             <p class={`scl-body`}>{content}</p>
           </div>
@@ -61,19 +52,10 @@ export const GraphCell: Cell = {
         // progress
         return (
           <scale-progress-bar
+            class="data-grid-progress-bar"
             percentage={progress}
             showStatus={true}
             mute={true}
-            styles={
-              /* css */ `.progress-bar__outer {
-              min-width: 50px;
-              max-width: 200px;
-            }
-            .progress-bar__inner {
-                background: var(--telekom-color-functional-informational-standard) !important;
-              }
-            `
-            }
           ></scale-progress-bar>
         );
     }

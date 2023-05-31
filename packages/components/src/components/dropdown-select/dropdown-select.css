@@ -249,6 +249,10 @@
   display: block;
 }
 
+[part~='strategy-fixed'] [part='listbox-pad'] {
+  position: fixed;
+}
+
 [part~='transparent'] [part='listbox'] {
   background-color: transparent;
 }

@@ -15,9 +15,7 @@
   --button-radius: 6px;
   --padding-top-bottom: var(--telekom-spacing-unit-x1);
   --height: 28px;
-  --font-family: var(--telekom-typography-font-family-sans);
-  --font-weight: var(--telekom-typography-font-weight-bold);
-  --font-size: var(--telekom-typography-font-size-caption);
+  --font: var(--telekom-text-style-caption-bold);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
@@ -26,11 +24,11 @@
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
 
   /* medium styles */
-  --font-size-medium: var(--telekom-typography-font-size-body);
+  --font-medium: var(--telekom-text-style-ui-bold);
   --height-medium: 36px;
 
   /* large styles */
-  --font-size-large: var(--telekom-typography-font-size-body);
+  --font-large: var(--telekom-text-style-ui-bold);
   --height-large: 40px;
 
   /* hover styles */
@@ -69,22 +67,20 @@
   width: 100%;
   border-radius: var(--button-radius);
   background-color: transparent;
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
+  font: var(--font);
   transition: var(--transition);
   white-space: nowrap;
   color: var(--color);
 }
 
-button.segment--icon-only.segment--small .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x4);
-}
-
 button.segment--small.segment--selected .segment--mask {
   padding-left: var(--telekom-spacing-unit-x2);
   padding-right: var(--telekom-spacing-unit-x3);
+}
+
+button.segment--icon-only.segment--small .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x4);
 }
 
 button.segment--small .segment--mask {
@@ -97,7 +93,6 @@ button.segment--small .segment--mask {
 }
 
 .segment--medium {
-  font-size: var(--font-size-medium);
   height: var(--height-medium);
 }
 
@@ -107,23 +102,24 @@ button.segment--medium.segment--selected .segment--mask {
 }
 
 button.segment--medium .segment--mask {
+  font: var(--font-medium);
   padding-left: 0.875rem;
   padding-right: 0.875rem;
 }
 
 .segment--large {
-  font-size: var(--font-size-large);
   height: var(--height-large);
-}
-
-button.segment--large .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x5);
 }
 
 button.segment--large.segment--selected .segment--mask {
   padding-left: 1.125rem;
   padding-right: 1.125rem;
+}
+
+button.segment--large .segment--mask {
+  font: var(--font-large);
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x5);
 }
 
 .segment--selected {

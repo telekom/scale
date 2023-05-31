@@ -139,8 +139,13 @@
 ::slotted(*) {
   font: var(--telekom-text-style-body);
 }
+::slotted(p) {
+  margin: 0;
+  margin-top: var(--spacing-y-inner);
+}
 
 [part='close-button'] {
+  --color-ghost: var(--telekom-text-and-icon-standard);
   position: absolute;
   right: var(--telekom-spacing-unit-x1);
   top: var(--telekom-spacing-unit-x1);

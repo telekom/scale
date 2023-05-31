@@ -58,6 +58,7 @@ exports[`ProgressBar should match snapshot 1`] = `
     </style>
     <div class="progress-bar" part="progress-bar">
       <div class="progress-bar__top-container">
+        <span></span>
         <div aria-hidden="true" class="progress-bar__status" part="status">
           0%
         </div>

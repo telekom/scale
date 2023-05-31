@@ -46,10 +46,6 @@
 
 ## Dependencies
 
-### Used by
-
- - [scale-data-grid](../data-grid)
-
 ### Depends on
 
 - [scale-icon-navigation-collapse-down](../icons/navigation-collapse-down)
@@ -63,7 +59,6 @@ graph TD;
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
   scale-helper-text --> scale-icon-alert-success
-  scale-data-grid --> scale-dropdown
   style scale-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

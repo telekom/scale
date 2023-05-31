@@ -38,7 +38,7 @@ export class Switch {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  @Prop() size?: string = 'large';
+  @Prop() size?: 'small' | 'large' = 'large';
 
   /** Emitted when the switch was clicked */
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;

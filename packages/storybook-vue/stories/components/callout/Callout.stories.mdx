@@ -7,7 +7,7 @@ import {
 } from '@storybook/addon-docs';
 import ScaleCallout from './ScaleCallout.vue';
 
-export const CANVAS_HEIGHT = 180
+export const CANVAS_HEIGHT = 204
 
 <Meta
   title="Beta Components/Callout"
@@ -82,8 +82,9 @@ export const CANVAS_HEIGHT = 180
             :bottom="bottom"
             :left="left"
           >
-            <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15&#8364;</span>
+            <span class="scl-callout-text-small">Starting at</span>
+            <span class="scl-callout-text-large">9.95 &#8364;</span>
+            <span class="scl-callout-text-small">for 4 weeks</span>
           </scale-callout>
         </div>
       `
@@ -95,8 +96,9 @@ export const CANVAS_HEIGHT = 180
 
 ```html
 <scale-callout variant="primary">
-  <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15&#8364;</span>
+  <span class="scl-callout-text-small">Starting at</span>
+  <span class="scl-callout-text-large">9.95 &#8364;</span>
+  <span class="scl-callout-text-small">for 4 weeks</span>
 </scale-callout>
 ```
 
@@ -107,11 +109,11 @@ export const CANVAS_HEIGHT = 180
   --position: absolute;
   --background: var(--telekom-color-ui-extra-strong);
   --color: var(--telekom-color-text-and-icon-inverted-standard);
-  --spacing: var(--telekom-spacing-unit-x6);
+  --spacing: var(--telekom-spacing-unit-x8);
   --min-width: 6rem;
   --aspect-ratio: 1;
   --rotation: 0deg;
-  --font-standard: var(--telekom-text-style-lead-text);
+  --font-standard: var(--telekom-text-style-body-bold);
   --font-small: var(--telekom-text-style-body-bold);
   --font-large: var(--telekom-text-style-heading-1);
 }
@@ -127,8 +129,7 @@ export const CANVAS_HEIGHT = 180
       template: `
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="primary">
-            <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15&#8364;</span>
+            <span class="scl-callout-text-large">9.95 &#8364;</span>
           </scale-callout>
         </div>
       `
@@ -138,8 +139,7 @@ export const CANVAS_HEIGHT = 180
 
 ```html
 <scale-callout variant="primary">
-  <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15&#8364;</span>
+  <span class="scl-callout-text-large">9.95 &#8364;</span>
 </scale-callout>
 ```
 
@@ -151,8 +151,7 @@ export const CANVAS_HEIGHT = 180
       template: `
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="black">
-            <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15&#8364;</span>
+            <span class="scl-callout-text-large">9.95 &#8364;</span>
           </scale-callout>
         </div>
       `
@@ -162,8 +161,7 @@ export const CANVAS_HEIGHT = 180
 
 ```html
 <scale-callout variant="black">
-  <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15&#8364;</span>
+  <span class="scl-callout-text-large">9.95 &#8364;</span>
 </scale-callout>
 ```
 
@@ -175,8 +173,7 @@ export const CANVAS_HEIGHT = 180
       template: `
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="white">
-            <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15&#8364;</span>
+            <span class="scl-callout-text-large">9.95 &#8364;</span>
           </scale-callout>
         </div>
       `
@@ -186,8 +183,7 @@ export const CANVAS_HEIGHT = 180
 
 ```html
 <scale-callout variant="white">
-  <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15&#8364;</span>
+  <span class="scl-callout-text-large">9.95 &#8364;</span>
 </scale-callout>
 ```
 
@@ -199,8 +195,7 @@ export const CANVAS_HEIGHT = 180
       template: `
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="blue">
-            <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15&#8364;</span>
+            <span class="scl-callout-text-large">9.95 &#8364;</span>
           </scale-callout>
         </div>
       `
@@ -210,8 +205,7 @@ export const CANVAS_HEIGHT = 180
 
 ```html
 <scale-callout variant="blue">
-  <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15&#8364;</span>
+  <span class="scl-callout-text-large">9.95 &#8364;</span>
 </scale-callout>
 ```
 
@@ -225,10 +219,10 @@ export const CANVAS_HEIGHT = 180
       template: `
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="black">
-            <span>Bis zu 200 &#8364;</span>
-            <span>Tauschprämie +</span>
-            <span>Altgerätewert</span>
-            <span>erhalten</span>
+            <span>Up to 200 &#8364;</span>
+            <span>Exchange premium +</span>
+            <span>receive old appliance</span>
+            <span>value *</span>
           </scale-callout>
         </div>
       `
@@ -238,10 +232,10 @@ export const CANVAS_HEIGHT = 180
 
 ```html
 <scale-callout variant="black">
-  <span>Bis zu 200 &#8364;</span>
-  <span>Tauschprämie +</span>
-  <span>Altgerätewert</span>
-  <span>erhalten</span>
+  <span>Up to 200 &#8364;</span>
+  <span>Exchange premium +</span>
+  <span>receive old appliance</span>
+  <span>value *</span>
 </scale-callout>
 ```
 
@@ -255,9 +249,8 @@ For convenience, two scoped CSS classes are provided for large and small text: `
       template: `
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="primary">
-            <span>LOREM</span>
-            <span class="scl-callout-text-large">ipsum</span>
-            <span class="scl-callout-text-small">dolor sit amet</span>
+            <span class="scl-callout-text-large">9.95 &#8364;</span>
+            <span class="scl-callout-text-small">for 4 weeks</span>
           </scale-callout>
         </div>
       `
@@ -267,8 +260,7 @@ For convenience, two scoped CSS classes are provided for large and small text: `
 
 ```html
 <scale-callout variant="primary">
-  <span>LOREM</span>
-  <span class="scl-callout-text-large">ipsum</span>
-  <span class="scl-callout-text-small">dolor sit amet</span>
+  <span class="scl-callout-text-large">9.95 &#8364;</span>
+  <span class="scl-callout-text-small">for 4 weeks</span>
 </scale-callout>
 ```

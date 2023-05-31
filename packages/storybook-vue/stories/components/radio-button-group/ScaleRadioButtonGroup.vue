@@ -1,18 +1,13 @@
-<template>
-  <scale-radio-button-group>
-    <slot></slot>
-  </scale-radio-button-group>
-</template>
-
 <script>
-import { action } from '@storybook/addon-actions';
-
 export default {
+  name: 'Radio Button Group',
   props: {
     helperText: { type: String },
     label: { type: String },
     invalid: { type: Boolean },
   },
-  methods: {},
+  render() {
+    return this.$slots.default;
+  }
 };
 </script>

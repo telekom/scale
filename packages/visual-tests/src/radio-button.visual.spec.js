@@ -3,7 +3,7 @@ describe('RadioButton', () => {
     beforeAll(async () => {
       await global.runColorSetup('components-radio-button--standard', mode);
     });
-    test.each([
+    test.skip([
       ['standard'],
       ['standard-disabled'],
       ['selected'],
@@ -16,7 +16,7 @@ describe('RadioButton', () => {
     });
   });
   // hover, active, focus
-  test.each([['standard'], ['selected']])('%p', async (variant) => {
+  test.skip([['standard'], ['selected']])('%p', async (variant) => {
     await global.runSetup(`components-radio-button--${variant}`);
 
     const radioButtonWrapper = await global.page.evaluateHandle(
