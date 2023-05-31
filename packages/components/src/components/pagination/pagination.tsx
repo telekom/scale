@@ -37,6 +37,8 @@ import { emitEvent } from '../../utils/utils';
 
 export type PaginationEventDirection = 'FIRST' | 'PREVIOUS' | 'NEXT' | 'LAST';
 
+const DEFAULT_ICON_SIZE = 20;
+
 const name = 'pagination';
 @Component({
   tag: 'scale-pagination',
@@ -207,19 +209,10 @@ export class Pagination {
               onClick={() => this.goFirstPage()}
               aria-label={this.ariaLabelFirstPage}
             >
-              <svg
-                height="12"
-                viewBox="0 0 48 52"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke="#cacaca"
-              >
-                <path
-                  d="M44.5 48.5L21.5 26L44.5 3.5M27.5 48.5L4.5 26L27.5 3.5"
-                  stroke-width="6"
-                  stroke-linecap="round"
-                />
-              </svg>
+              <scale-icon-navigation-double-left
+                size={DEFAULT_ICON_SIZE}
+                decorative
+              />
             </button>
             <button
               class={`${name}__prev-prompt`}
@@ -228,22 +221,7 @@ export class Pagination {
               onClick={() => this.goPreviousPage()}
               aria-label={this.ariaLabelPreviousPage}
             >
-              <svg
-                height="12"
-                viewBox="0 0 37 52"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke="#cacaca"
-              >
-                <path
-                  d="M33 48L6 26L33 4"
-                  stroke-width="7"
-                  stroke-linecap="round"
-                />
-              </svg>
-              {/* scale-icon behaves differently from inlined svg in HCM,
-                  and we want all four icons to be the same, so leaving that for now */}
-              {/*<scale-icon-navigation-left size={16} />*/}
+              <scale-icon-navigation-left size={DEFAULT_ICON_SIZE} decorative />
             </button>
             <button
               class={`${name}__next-prompt`}
@@ -252,19 +230,10 @@ export class Pagination {
               onClick={() => this.goNextPage()}
               aria-label={this.ariaLabelNextPage}
             >
-              <svg
-                height="12"
-                viewBox="0 0 37 52"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke="#cacaca"
-              >
-                <path
-                  d="M4 4L31 26L4 48"
-                  stroke-width="7"
-                  stroke-linecap="round"
-                />
-              </svg>
+              <scale-icon-navigation-right
+                size={DEFAULT_ICON_SIZE}
+                decorative
+              />
             </button>
             <button
               class={`${name}__last-prompt`}
@@ -273,19 +242,10 @@ export class Pagination {
               onClick={() => this.goLastPage()}
               aria-label={this.ariaLabelLastPage}
             >
-              <svg
-                height="12"
-                viewBox="0 0 48 52"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke="#cacaca"
-              >
-                <path
-                  d="M3.5 3.5L26.5 26L3.5 48.5M20.5 3.5L43.5 26L20.5 48.5"
-                  stroke-width="6"
-                  stroke-linecap="round"
-                />
-              </svg>
+              <scale-icon-navigation-double-right
+                size={DEFAULT_ICON_SIZE}
+                decorative
+              />
             </button>
           </div>
         </div>

@@ -97,11 +97,11 @@ button:not(:disabled) {
   cursor: pointer;
 }
 button:not(:disabled) svg {
-  stroke: var(--stroke-svg);
+  color: var(--stroke-svg);
 }
 
 button:disabled svg {
-  stroke: var(--telekom-color-text-and-icon-disabled);
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 
 button:not(:disabled):hover {
@@ -109,14 +109,14 @@ button:not(:disabled):hover {
   z-index: 1;
 }
 button:not(:disabled):hover svg {
-  stroke: var(--color-hover);
+  color: var(--color-hover);
 }
 button:not(:disabled):active {
   border-color: var(--color-active);
   z-index: 1;
 }
 button:not(:disabled):active svg {
-  stroke: var(--color-active);
+  color: var(--color-active);
 }
 
 /* Hide Borders option */
@@ -153,7 +153,7 @@ button:not(:disabled):active svg {
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   button:not(:disabled) svg {
-    stroke: var(--stroke-svg-high-contrast);
+    color: var(--stroke-svg-high-contrast);
   }
 }
 

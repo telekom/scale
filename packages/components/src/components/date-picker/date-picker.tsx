@@ -276,7 +276,7 @@ export class DatePicker {
       const scaleNavLeftIcon = document.createElement(
         'scale-icon-navigation-left'
       );
-      scaleNavLeftIcon.size = 12;
+      scaleNavLeftIcon.size = 16;
       navLeftIcon.replaceWith(scaleNavLeftIcon);
     }
 
@@ -286,7 +286,7 @@ export class DatePicker {
       const scaleNavRightIcon = document.createElement(
         'scale-icon-navigation-right'
       );
-      scaleNavRightIcon.size = 12;
+      scaleNavRightIcon.size = 16;
       navRightIcon.replaceWith(scaleNavRightIcon);
     }
 

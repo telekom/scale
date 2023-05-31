@@ -271,8 +271,8 @@ duet-date-picker .duet-date__select-label {
 }
 
 duet-date-picker .duet-date__select-label svg {
-  width: var(--telekom-spacing-unit-x3);
-  height: var(--telekom-spacing-unit-x3);
+  width: 16px;
+  height: 16px;
   margin-left: var(--telekom-spacing-unit-x2);
 }
 

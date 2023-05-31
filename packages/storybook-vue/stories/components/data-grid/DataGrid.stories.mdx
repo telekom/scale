@@ -317,41 +317,13 @@ Expected format: an array of objects, e.g. `[{ label: 'Edit', onClick: () => { /
                 type: 'actions',
                 label: 'Actions (secondary)',
             },
-            {
-                type: 'actions',
-                label: 'Actions (icon-only)',
-            }
         ];
         dataGrid.rows = [
             [
                 [{ label: 'edit', variant: 'secondary', onClick: () => {} }],
-                [
-                    {
-                        label: { __html: '<scale-icon-action-more accessibility-title="More"></scale-icon-action-more>' },
-                        iconOnly: true,
-                        variant: 'ghost'
-                    },
-                    {
-                        label: { __html: '<scale-icon-action-remove accessibility-title="Delete"></scale-icon-action-remove>' },
-                        iconOnly: true,
-                        variant: 'ghost'
-                    }
-                ]
             ],
             [
                 [{ label: 'edit', variant: 'secondary', onClick: () => {} }],
-                [
-                    {
-                        label: { __html: '<scale-icon-action-more accessibility-title="More"></scale-icon-action-more>' },
-                        iconOnly: true,
-                        variant: 'ghost'
-                    },
-                    {
-                        label: { __html: '<scale-icon-action-remove accessibility-title="Delete"></scale-icon-action-remove>' },
-                        iconOnly: true,
-                        variant: 'ghost'
-                    }
-                ]
             ]
         ];
     }
