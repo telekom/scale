@@ -55,7 +55,7 @@
     "file-loader": "^6.0.0",
     "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
-    "hast-util-to-html": "^7.1.1",
+    "hast-util-to-html": "^8.0.4",
     "jsx-dom": "^6.4.17",
     "lodash": "^4.17.15",
     "postcss-custom-media": "^9.0.1",

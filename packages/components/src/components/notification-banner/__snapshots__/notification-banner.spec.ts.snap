@@ -53,7 +53,7 @@ exports[`NotificationBanner handle variant prop 4`] = `
   <mock:shadow-root>
     <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--variant-success" part="notification-banner variant-success has-no-text has-no-link" role="alert" tabindex="0">
       <div class="notification-banner__container" part="container">
-        <scale-icon-alert-success accessibility-title="success" aria-hidden="true" class="notification-banner__icon-success" color="#187431"></scale-icon-alert-success>
+        <scale-icon-action-success accessibility-title="success" aria-hidden="true" class="notification-banner__icon-success" color="#187431"></scale-icon-action-success>
         <div class="notification-banner__heading" part="heading">
           <slot></slot>
         </div>

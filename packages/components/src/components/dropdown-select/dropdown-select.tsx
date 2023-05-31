@@ -464,9 +464,9 @@ export class DropdownSelect {
                       >
                         {ItemElement}
                         {value === this.value ? (
-                          <scale-icon-action-success
+                          <scale-icon-action-checkmark
                             size={16}
-                          ></scale-icon-action-success>
+                          ></scale-icon-action-checkmark>
                         ) : null}
                       </div>
                     )

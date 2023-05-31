@@ -222,7 +222,7 @@ exports[`NotificationToast  handle variant prop 4`] = `
     </style>
     <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-success" part="base --variant-success --opened --show" role="alert" tabindex="0">
       <div class="notification-toast__icon-container">
-        <scale-icon-alert-success aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-success>
+        <scale-icon-action-success aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-action-success>
       </div>
       <div class="notification-toast__text-container">
         <slot name="header"></slot>

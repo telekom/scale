@@ -34,7 +34,7 @@ export interface BeforeCloseEventDetail {
 const iconVariantNameMap = {
   informational: 'scale-icon-alert-information',
   warning: 'scale-icon-alert-warning',
-  success: 'scale-icon-alert-success',
+  success: 'scale-icon-action-success',
   danger: 'scale-icon-alert-error',
 };
 

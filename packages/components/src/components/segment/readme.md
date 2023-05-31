@@ -52,12 +52,12 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [scale-icon-action-success](../icons/action-success)
+- [scale-icon-action-checkmark](../icons/action-checkmark)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-segment --> scale-icon-action-success
+  scale-segment --> scale-icon-action-checkmark
   style scale-segment fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
