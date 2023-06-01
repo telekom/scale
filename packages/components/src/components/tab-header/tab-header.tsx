@@ -25,7 +25,7 @@ import classNames from 'classnames';
 import { ScaleIcon, isScaleIcon } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
-const PER_SPEC_ICON_SIZE = 20;
+const PER_SPEC_ICON_SIZE = 16;
 
 let i = 0;
 
