@@ -63,8 +63,7 @@
 
 .list-item--ordered:before {
   content: attr(data-index) '.';
-  font-size: var(--font-size-marker-ordered);
-  font-weight: var(--font-weight-marker-ordered);
+  font: var(--telekom-text-style-body);
 }
 
 .list-item--nested.list-item--ordered:before {
