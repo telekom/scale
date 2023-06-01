@@ -23,7 +23,7 @@
   --background-disabled: var(--telekom-color-ui-faint);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
-  --spacing-left-dismissable: var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x1) ;
+  --spacing-dismissable: var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x1) ;
 
   --height: 24px;
   --height-small: 20px;
@@ -100,7 +100,7 @@ dismissable
   outline: none;
   padding: 0;
   background: transparent;
-  margin: var(--spacing-left-dismissable);
+  margin: var(--spacing-dismissable);
   border-radius: var(--radius);
   align-items: center;
 }
