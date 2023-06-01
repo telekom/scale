@@ -59,6 +59,11 @@
   width: 100%;
 }
 
+.scale-telekom-mega-menu .scale-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .scale-telekom-mega-menu :where(a):hover {
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
