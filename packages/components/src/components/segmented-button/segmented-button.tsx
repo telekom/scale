@@ -30,8 +30,8 @@ interface SegmentStatus {
 }
 
 const CHECKMARK_WIDTH_SMALL = 14;
-const CHECKMARK_WIDTH_MEDIUM = 18;
-const CHECKMARK_WIDTH_LARGE = 20;
+const CHECKMARK_WIDTH_MEDIUM = 18 + 12;
+const CHECKMARK_WIDTH_LARGE = 20 + 18;
 
 @Component({
   tag: 'scale-segmented-button',
