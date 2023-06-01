@@ -16,6 +16,9 @@
   --color-circle-white: var(--telekom-color-ui-base);
   --color-circle-white-inner: var(--telekom-color-ui-regular);
   --color-text-white: var(--telekom-color-text-and-icon-white-standard);
+
+  --spacing-vertical: var(--telekom-spacing-unit-x3);
+  --spacing-horizontal: var(--telekom-spacing-unit-x4);
 }
 
 .sr-only {
@@ -45,35 +48,31 @@
 .spinner.spinner--alignment-horizontal .spinner__text {
   display: flex;
   align-self: center;
-  margin-left: var(--spacing);
+  margin-left: var(--spacing-horizontal);
   margin-top: 3px;
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-small .spinner__text {
   line-height: var(--line-height-size-small);
-  padding-left: var(--telekom-spacing-unit-x4);
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-large .spinner__text {
   line-height: var(--line-height-size-large);
   margin-top: 5px;
-  padding-left: var(--telekom-spacing-unit-x4);
 }
 
 .spinner.spinner--alignment-vertical .spinner__text {
-  margin-top: var(--spacing);
+  margin-top: var(--spacing-vertical);
 }
 
 .spinner.spinner--alignment-vertical.spinner--size-small .spinner__container {
   height: var(--size-inner-small);
   width: var(--size-inner-small);
-  padding-bottom: 4px;
 }
 
 .spinner.spinner--alignment-vertical.spinner--size-large .spinner__container {
   height: var(--size-outer-large);
   width: var(--size-outer-large);
-  padding-bottom: 4px;
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-small .spinner__container {
