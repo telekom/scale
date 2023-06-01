@@ -65,8 +65,8 @@
 }
 
 .spinner.spinner--alignment-vertical.spinner--size-small .spinner__container {
-  height: var(--size-inner-large);
-  width: var(--size-inner-large);
+  height: var(--size-inner-small);
+  width: var(--size-inner-small);
   padding-bottom: 4px;
 }
 
@@ -77,8 +77,8 @@
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-small .spinner__container {
-  height: var(--size-inner-large);
-  width: var(--size-inner-large);
+  height: var(--size-inner-small);
+  width: var(--size-inner-small);
   text-align: left;
 }
 
