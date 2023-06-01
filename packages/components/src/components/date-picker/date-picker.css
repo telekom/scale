@@ -9,6 +9,10 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/*
+  TODO clean up CSS variables, some are not used, new ones might be needed (fonts mostly, but also sizes/spacing)
+*/
+
 duet-date-picker {
   --duet-color-primary: var(--telekom-color-primary-standard);
   --duet-color-text: var(--telekom-color-text-and-icon-standard);
@@ -29,10 +33,10 @@ duet-date-picker {
 
   --spacing-heading: 0 0 var(--telekom-spacing-unit-x4) 0;
   --font-size-heading: var(--telekom-typography-font-size-body);
-  --font-size-select-label: var(--telekom-typography-font-size-body);
+  /* --font-size-select-label: var(--telekom-typography-font-size-body); */
   --radius-day: var(--telekom-radius-standard);
-  --font-size-day: var(--telekom-typography-font-size-caption);
-  --font-size-table-header: var(--font-size-day);
+  --font-size-day: var(--telekom-typography-font-size-body);
+  --font-size-table-header: var(--telekom-typography-font-size-caption);
   --font-weight-table-header: var(--telekom-typography-font-weight-extra-bold);
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
@@ -70,6 +74,7 @@ duet-date-picker .duet-date__toggle {
   background: transparent;
   z-index: var(--duet-z-index-toggle);
   box-shadow: inset 1px 0 0 var(--telekom-color-ui-faint);
+  width: var(--telekom-spacing-unit-x11);
 }
 
 duet-date-picker .duet-date__toggle:focus {
@@ -155,11 +160,24 @@ duet-date-picker .duet-date__input::placeholder {
     var(--telekom-motion-easing-standard);
 }
 
+duet-date-picker .duet-date__header {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+duet-date-picker .duet-date__select {
+  height: var(--telekom-spacing-unit-x8);
+}
+
 duet-date-picker .duet-date__prev,
-duet-date-picker .duet-date__next,
+duet-date-picker .duet-date__next {
+  width: var(--telekom-spacing-unit-x8);
+  height: var(--telekom-spacing-unit-x8);
+}
+
 duet-date-picker .duet-date__day {
-  width: 44px;
-  height: 44px;
+  width: var(--telekom-spacing-unit-x11);
+  height: var(--telekom-spacing-unit-x11);
 }
 
 .scale-date-picker.scale-date-picker--focus .date-picker__label,
@@ -181,6 +199,10 @@ duet-date-picker .duet-date__input:focus::placeholder {
   color: var(--telekom-color-text-and-icon-standard);
   transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
+}
+
+duet-date-picker .duet-date__table {
+  margin-top: var(--telekom-spacing-unit-x2);
 }
 
 /* Error state */
@@ -239,6 +261,8 @@ duet-date-picker .duet-date__input:focus::placeholder {
   text-align: center;
   padding: var(--spacing-heading);
   font-size: var(--font-size-heading);
+  /* FIXME this is overwriting the font-size rule above thus the variable is not doing anything */
+  font: var(--telekom-text-style-heading-6);
   /* FIXME remove !important (fix Storybook?) */
   color: var(--telekom-color-text-and-icon-standard) !important;
 }
@@ -267,7 +291,8 @@ duet-date-picker .duet-date__select:nth-of-type(1) {
 }
 
 duet-date-picker .duet-date__select-label {
-  font-size: var(--font-size-select-label);
+  /* font-size: var(--font-size-select-label); */
+  font: var(--telekom-text-style-ui);
 }
 
 duet-date-picker .duet-date__select-label svg {
@@ -320,6 +345,8 @@ duet-date-picker .duet-date__close:focus {
 }
 
 duet-date-picker .duet-date__table-header {
+  height: var(--telekom-spacing-unit-x12);
+  padding: 0;
   font-size: var(--font-size-table-header);
   font-weight: var(--font-weight-table-header);
 }
