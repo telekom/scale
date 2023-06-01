@@ -1,15 +1,14 @@
 :host {
   display: inline-flex;
-  --size-outer-small: 28px;
-  --size-outer-large: 56px;
-  --size-inner-small: 28px;
-  --size-inner-large: 56px;
+  --size-outer-small: 24px;
+  --size-outer-large: 48px;
+  --size-inner-small: 24px;
+  --size-inner-large: 48px;
 
   --line-height-size-small: 24px;
   --line-height-size-large: 48px;
 
-  --font-weight: var(--telekom-typography-font-weight-bold);
-  --font-size: var(--telekom-typography-font-size-body);
+  --font: var(--telekom-text-style-ui-bold);
 
   --color-circle-primary: var(--telekom-color-primary-standard);
   --color-circle-primary-inner: var(--telekom-color-ui-subtle);
@@ -35,8 +34,7 @@
 }
 
 .spinner .spinner__text {
-  font-weight: var(--font-weight);
-  font-size: var(--font-size);
+  font: var(--telekom-text-style-ui-bold);
   color: var(--color-text-primary);
 }
 
@@ -53,13 +51,13 @@
 
 .spinner.spinner--alignment-horizontal.spinner--size-small .spinner__text {
   line-height: var(--line-height-size-small);
-  padding-left: 12px;
+  padding-left: var(--telekom-spacing-unit-x4);
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-large .spinner__text {
   line-height: var(--line-height-size-large);
   margin-top: 5px;
-  padding-left: 12px;
+  padding-left: var(--telekom-spacing-unit-x4);
 }
 
 .spinner.spinner--alignment-vertical .spinner__text {
@@ -67,26 +65,26 @@
 }
 
 .spinner.spinner--alignment-vertical.spinner--size-small .spinner__container {
-  height: 28px;
-  width: 28px;
+  height: var(--size-inner-large);
+  width: var(--size-inner-large);
   padding-bottom: 4px;
 }
 
 .spinner.spinner--alignment-vertical.spinner--size-large .spinner__container {
-  height: 56px;
-  width: 56px;
+  height: var(--size-outer-large);
+  width: var(--size-outer-large);
   padding-bottom: 4px;
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-small .spinner__container {
-  height: 28px;
-  width: 28px;
+  height: var(--size-inner-large);
+  width: var(--size-inner-large);
   text-align: left;
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-large .spinner__container {
-  height: 56px;
-  width: 56px;
+  height: var(--size-outer-large);
+  width: var(--size-outer-large);
   text-align: left;
 }
 
