@@ -26,7 +26,6 @@ export class LoadingSpinner {
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <div part="container" class="spinner__container">
             <svg
-              preserveAspectRatio="none"
               class="spinner__circle"
               viewBox="0 0 50 50"
               aria-hidden="true"
@@ -41,7 +40,6 @@ export class LoadingSpinner {
               ></circle>
             </svg>
             <svg
-              preserveAspectRatio="none"
               class="spinner__circle-background"
               viewBox="0 0 50 50"
               aria-hidden="true"
