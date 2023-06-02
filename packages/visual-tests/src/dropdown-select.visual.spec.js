@@ -1,4 +1,4 @@
-describe.skip('DropdownSelect', () => {
+describe('DropdownSelect', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup(
