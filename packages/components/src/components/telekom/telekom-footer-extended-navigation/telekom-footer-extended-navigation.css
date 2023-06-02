@@ -43,6 +43,8 @@
   font-size: var(--telekom-typography-font-size-body);
   color: var(--link-color);
   margin-top: var(--telekom-spacing-unit-x5);
+  border: none;
+  line-height: 22px;
 }
 
 [part~='telekom-footer-extended-navigation'] :where(li:first-child) {
@@ -55,13 +57,9 @@
 
 [part~='telekom-footer-extended-navigation'] :where(a):hover {
   color: var(--telekom-color-text-and-icon-primary-hovered);
-  /* need to overwrite <a> border from telekom-footer.css */
-  border-bottom: 1px solid transparent;
 }
 [part~='telekom-footer-extended-navigation'] :where(a):active {
   color: var(--telekom-color-text-and-icon-primary-pressed);
-  /* need to overwrite <a> border from telekom-footer.css */
-  border-bottom: 1px solid transparent;
 }
 
 [part~='telekom-footer-extended-navigation']
@@ -88,7 +86,7 @@ scale-telekom-footer-extended-navigation-column:first-of-type {
 
 @media screen and (--md) {
   [part~='telekom-footer-extended-navigation'] :where(li:first-child) {
-    padding-top: var(--telekom-spacing-unit-x6);
+    padding-top: var(--telekom-spacing-unit-x5);
   }
   [part~='extended-navigation-container'] {
     display: grid;
