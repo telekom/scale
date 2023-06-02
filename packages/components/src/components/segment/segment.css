@@ -71,6 +71,7 @@
   transition: var(--transition);
   white-space: nowrap;
   color: var(--color);
+  line-height: 1;
 }
 
 button.segment--small.segment--selected .segment--mask {
