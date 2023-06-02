@@ -49,7 +49,6 @@
   display: flex;
   align-self: center;
   margin-left: var(--spacing-horizontal);
-  margin-top: 3px;
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-small .spinner__text {
@@ -58,7 +57,6 @@
 
 .spinner.spinner--alignment-horizontal.spinner--size-large .spinner__text {
   line-height: var(--line-height-size-large);
-  margin-top: 5px;
 }
 
 .spinner.spinner--alignment-vertical .spinner__text {
