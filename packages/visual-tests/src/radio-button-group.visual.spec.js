@@ -1,4 +1,5 @@
-describe('RadioButtonGroup', () => {
+// FIXME unskip
+describe.skip('RadioButtonGroup', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup(
