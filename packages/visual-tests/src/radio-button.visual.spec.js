@@ -1,9 +1,10 @@
-describe('RadioButton', () => {
+// FIXME unskip
+describe.skip('RadioButton', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-radio-button--standard', mode);
     });
-    test.skip([
+    test([
       ['standard'],
       ['standard-disabled'],
       ['selected'],
@@ -16,7 +17,7 @@ describe('RadioButton', () => {
     });
   });
   // hover, active, focus
-  test.skip([['standard'], ['selected']])('%p', async (variant) => {
+  test([['standard'], ['selected']])('%p', async (variant) => {
     await global.runSetup(`components-radio-button--${variant}`);
 
     const radioButtonWrapper = await global.page.evaluateHandle(
