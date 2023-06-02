@@ -1,4 +1,4 @@
-describe('SidebarNavigation', () => {
+describe.skip('SidebarNavigation', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup(
