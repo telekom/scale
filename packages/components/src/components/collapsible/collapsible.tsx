@@ -25,7 +25,7 @@ export interface CollapsibleEventDetail {
   expanded: boolean;
 }
 
-const DEFAULT_ICON_SIZE = 20;
+const DEFAULT_ICON_SIZE = 24;
 
 let i = 0;
 
