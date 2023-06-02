@@ -200,6 +200,8 @@ export class DropdownSelect {
   @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
     'informational';
   @Prop({ mutable: true, reflect: true }) value: any;
+  /** (optional) to hide the label */
+  @Prop() hideLabelVisually?: boolean = false;
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
@@ -396,9 +398,11 @@ export class DropdownSelect {
       <Host>
         <div part={this.getBasePartMap()}>
           <div part="combobox-container">
-            <label id={`${this.comboboxId}-label`} part="label">
-              {this.label}
-            </label>
+            {!this.hideLabelVisually && (
+              <label id={`${this.comboboxId}-label`} part="label">
+                {this.label}
+              </label>
+            )}
             <div
               ref={(el) => (this.comboEl = el)}
               aria-controls={`${this.comboboxId}-listbox`}
@@ -505,7 +509,8 @@ export class DropdownSelect {
       this.invalid && `invalid`,
       this.currentIndex > -1 && `steal-focus`,
       animated && 'animated',
-      this.helperText && 'has-helper-text'
+      this.helperText && 'has-helper-text',
+      this.hideLabelVisually && 'hide-label'
     );
   }
 }
