@@ -64,8 +64,7 @@
   vertical-align: baseline;
   justify-content: center;
   font: var(--font);
-  /* need to overwrite font-token line-height to center text */
-  line-height: var(--height);  
+  line-height: 1;  
   background: var(--background);
   color: var(--color);
   cursor: default;
