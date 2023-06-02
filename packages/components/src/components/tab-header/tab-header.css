@@ -21,7 +21,6 @@
   --spacing-right-slotted: var(--telekom-spacing-unit-x2);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);
-
   --font-size-large: var(--telekom-typography-font-size-callout);
 }
 
@@ -36,6 +35,10 @@
   height: var(--tab-height);
   font: var(--font);
   border-radius: var(--tab-radius);
+  padding-right: var(--tab-spacing-horizontal);
+  padding-left: var(--tab-spacing-horizontal);
+  padding-top: var(--tab-spacing-vertical);
+  padding-bottom: var(--tab-spacing-vertical);
 }
 
 .tab-header--disabled {
