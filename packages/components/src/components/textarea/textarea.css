@@ -26,7 +26,7 @@ scale-textarea {
     var(--telekom-color-functional-focus-standard);
   --spacing-x-control: var(--telekom-spacing-unit-x3);
   --spacing-bottom-control: var(--telekom-spacing-unit-x3);
-  --spacing-top-control: var(--telekom-spacing-unit-x6);
+  --spacing-top-control: var(--telekom-spacing-unit-x7);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: transparent;
@@ -61,9 +61,9 @@ scale-textarea {
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-small);
+  /* not sure if we should hard code 10px here, to qa feedback */
+  --font-size-label-focus: var(--telekom-typography-font-size-badge);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
-  --margin-top-label-focus: 1.5px;
 }
 
 .textarea {
@@ -146,18 +146,18 @@ scale-textarea {
   pointer-events: none;
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-label);
+  line-height: 100%;
   transform: translate(
     var(--spacing-x-control),
-    calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
+    var(--telekom-spacing-unit-x4)
   );
 }
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
-  line-height: var(--font-size-label-focus);
-  margin-top: var(--margin-top-label-focus);
+  line-height: 125%;
   transform: translate(
     var(--spacing-x-control),
-    var(--telekom-spacing-unit-x2)
+    var(--telekom-spacing-unit-x3)
   );
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
