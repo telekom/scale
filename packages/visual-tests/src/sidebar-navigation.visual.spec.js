@@ -1,4 +1,3 @@
-// FIXME unskip
 describe.skip('SidebarNavigation', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
