@@ -12,9 +12,6 @@
 :host {
   outline: none;
   --font: var(--telekom-text-style-ui-bold);
-  --font-size: var(--telekom-typography-font-size-body);
-  --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
-  --font-weight: var(--telekom-typography-font-weight-bold);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
@@ -37,10 +34,6 @@
   box-sizing: border-box;
   align-items: center;
   height: var(--tab-height);
-  padding-right: var(--tab-spacing-horizontal);
-  padding-left: var(--tab-spacing-horizontal);
-  padding-top: var(--tab-spacing-vertical);
-  padding-bottom: var(--tab-spacing-vertical);
   font: var(--font);
   border-radius: var(--tab-radius);
 }
