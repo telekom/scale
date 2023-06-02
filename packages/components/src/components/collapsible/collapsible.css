@@ -26,9 +26,6 @@
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
 
-  /* icon */
-  --icon-size: 24px;
-
   /* content */
   --spacing-right-content: var(--telekom-spacing-unit-x12);
   --spacing-left-content: 34px;
@@ -104,11 +101,6 @@
 
 .collapsible__icon {
   flex-shrink: 0;
-}
-
-.collapsible__icon .scale-icon {
-  height: var(--icon-size);
-  width: var(--icon-size);
 }
 
 .collapsible__icon-right {
