@@ -6,10 +6,10 @@ exports[`LoadingSpinner should match snapshot 1`] = `
     <div class="spinner spinner--alignment-horizontal spinner--size-small spinner--variant-primary" part="spinner alignment-horizontal variant-primary size-small">
       <div class="spinner__container" part="container">
         <svg aria-hidden="true" class="spinner__circle" viewBox="0 0 50 50">
-          <circle class="path" cx="25" cy="25" fill="none" r="20" stroke-width="4"></circle>
+          <circle class="path" cx="25" cy="25" fill="none" r="22.5" stroke-width="4"></circle>
         </svg>
         <svg aria-hidden="true" class="spinner__circle-background" viewBox="0 0 50 50">
-          <circle class="path" cx="25" cy="25" fill="none" r="20" stroke-width="4"></circle>
+          <circle class="path" cx="25" cy="25" fill="none" r="22.5" stroke-width="4"></circle>
         </svg>
       </div>
       <div aria-live="polite" class="sr-only" id="spinner-label-1">
