@@ -158,7 +158,6 @@ export const Template = (args, { argTypes }) => ({
     name="Info Text and custom Label"
     args={{
       rating: 3,
-      infoText: 'Info Text',
       label: 'Custom Rating Label',
     }}
   >
@@ -171,7 +170,6 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-rating-stars
   rating="3"
-  info-text="Info Text"
   label="Custom Rating Label"
 ></scale-rating-stars>
 ```
@@ -194,15 +192,14 @@ export const Template = (args, { argTypes }) => ({
 <scale-rating-stars rating="2" disabled></scale-rating-stars>
 ```
 
-## Small With Info Text
+## Small
 
 <Canvas withSource="none">
   <Story
-    name="Small With Info Text"
+    name="Small"
     args={{
       rating: 4,
-      starSize: 'small',
-      infoText: 'Info Text',
+      size: 'small',
     }}
   >
     {Template.bind({})}
@@ -217,7 +214,6 @@ export const Template = (args, { argTypes }) => ({
 <scale-rating-stars
   rating="4"
   size="small"
-  info-text="Info Text"
 ></scale-rating-stars>
 ```
 

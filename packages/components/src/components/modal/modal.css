@@ -66,7 +66,8 @@
   --spacing-x-body-wrapper: var(--telekom-spacing-unit-x6);
   --spacing-y-body: var(--telekom-spacing-unit-x6);
 
-  --spacing-actions: var(--telekom-spacing-unit-x6);
+  --spacing-actions: var(--telekom-spacing-unit-x4)
+    var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x6);
 
   --spacing-x-actions-slotted: var(--telekom-spacing-unit-x2);
   --background-actions-has-scroll: var(
@@ -223,11 +224,28 @@
   min-height: var(--telekom-spacing-related-lg);
 }
 
+/* we use `margin` and top padding because we want to allow "margin collapse" */
+/* @see https://web.dev/learn/css/spacing/#margin-collapse */
 .modal--has-body .modal__body {
-  /* we use `margin` and top padding because we want to allow "margin collapse" */
-  /* @see https://web.dev/learn/css/spacing/#margin-collapse */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.modal--has-body:not(.modal--has-actions) .modal__body {
+  margin-bottom: var(--spacing-y-body);
+}
+.modal--has-scroll.modal--has-body .modal__body {
   margin-top: var(--spacing-y-body);
   margin-bottom: var(--spacing-y-body);
+}
+
+.modal--has-body .modal__body ::slotted(*) {
+  font: var(--telekom-text-style-body);
+}
+.modal--has-body .modal__body ::slotted(*:not([slot]):first-child) {
+  margin-top: 0;
+}
+.modal--has-body .modal__body ::slotted(*:not([slot]):last-of-type) {
+  margin-bottom: 0;
 }
 
 .modal__actions {

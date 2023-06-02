@@ -198,12 +198,18 @@ export class TelekomNavItem {
     return (
       <Host>
         <div
-          part={cx('base', this.animationState, this.variant, {
+          part={cx('base', this.animationState, `variant-${this.variant}`, {
             expanded: this.isExpanded,
           })}
         >
           <slot></slot>
         </div>
+        <div
+          part={cx('backdrop', this.animationState, `variant-${this.variant}`, {
+            expanded: this.isExpanded,
+          })}
+          onClick={() => (this.expanded = false)}
+        ></div>
       </Host>
     );
   }

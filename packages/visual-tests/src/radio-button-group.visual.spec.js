@@ -6,7 +6,7 @@ describe('RadioButtonGroup', () => {
         mode
       );
     });
-    test.each([['standard'], ['error'], ['helper-text']])(
+    test.each([['standard'], ['helper-text'], ['error'], ['disabled']])(
       '%p',
       async (variant) => {
         await global.runSetup(`components-radio-button-group--${variant}`);

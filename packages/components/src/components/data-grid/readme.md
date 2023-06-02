@@ -54,9 +54,10 @@
 - [scale-switch](../switch)
 - [scale-link](../link)
 - [scale-progress-bar](../progress-bar)
-- [scale-text-field](../text-field)
-- [scale-dropdown](../dropdown)
+- [scale-dropdown-select](../dropdown-select)
+- [scale-dropdown-select-item](../dropdown-select-item)
 - [scale-tag](../tag)
+- [scale-text-field](../text-field)
 
 ### Graph
 ```mermaid
@@ -76,25 +77,32 @@ graph TD;
   scale-data-grid --> scale-switch
   scale-data-grid --> scale-link
   scale-data-grid --> scale-progress-bar
-  scale-data-grid --> scale-text-field
-  scale-data-grid --> scale-dropdown
+  scale-data-grid --> scale-dropdown-select
+  scale-data-grid --> scale-dropdown-select-item
   scale-data-grid --> scale-tag
-  scale-menu-flyout-item --> scale-icon-action-success
+  scale-data-grid --> scale-text-field
+  scale-menu-flyout-item --> scale-icon-action-checkmark
   scale-menu-flyout-item --> scale-icon-navigation-right
-  scale-checkbox --> scale-icon-action-indeterminate
-  scale-checkbox --> scale-icon-action-success
+  scale-checkbox --> scale-icon-action-minus
+  scale-checkbox --> scale-icon-action-checkmark
   scale-checkbox --> scale-icon-alert-information
   scale-checkbox --> scale-icon-alert-error
-  scale-switch --> scale-icon-action-success
+  scale-pagination --> scale-icon-navigation-double-left
+  scale-pagination --> scale-icon-navigation-left
+  scale-pagination --> scale-icon-navigation-right
+  scale-pagination --> scale-icon-navigation-double-right
+  scale-switch --> scale-icon-action-checkmark
   scale-progress-bar --> scale-icon-alert-error
-  scale-progress-bar --> scale-icon-alert-success
-  scale-text-field --> scale-helper-text
+  scale-progress-bar --> scale-icon-action-success
+  scale-dropdown-select --> scale-icon-action-checkmark
+  scale-dropdown-select --> scale-icon-navigation-collapse-up
+  scale-dropdown-select --> scale-icon-navigation-collapse-down
+  scale-dropdown-select --> scale-helper-text
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
-  scale-helper-text --> scale-icon-alert-success
-  scale-dropdown --> scale-icon-navigation-collapse-down
-  scale-dropdown --> scale-helper-text
+  scale-helper-text --> scale-icon-action-success
   scale-tag --> scale-icon-action-close
+  scale-text-field --> scale-helper-text
   style scale-data-grid fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

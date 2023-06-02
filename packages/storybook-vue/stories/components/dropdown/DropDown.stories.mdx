@@ -44,7 +44,7 @@ export const Template = (args, { argTypes }) => ({
       <optgroup label="Category Group 2">
         <option value="3">Category 3</option>
       </optgroup>
-      <scale-icon-content-calendar v-if="label === 'With Custom Icon'" slot="icon"></scale-icon-content-calendar>
+      <scale-icon-content-calendar v-if="label === 'With Custom Icon'" slot="icon" size="20"></scale-icon-content-calendar>
     </scale-dropdown>
   `,
   methods: {
@@ -273,6 +273,6 @@ The display error is on the browser side.
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
-  <scale-icon-content-calendar slot="icon"></scale-icon-content-calendar>
+  <scale-icon-content-calendar size="20" slot="icon"></scale-icon-content-calendar>
 </scale-dropdown>
 ```

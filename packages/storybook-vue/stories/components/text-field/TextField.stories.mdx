@@ -184,30 +184,24 @@ export const StorySectionsTemplate = (args, { argTypes }) => ({
 
 ```css
 scale-text-field {
-  --transition: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
-    );
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-spacing-unit-x025) solid var(
-      --telekom-color-ui-border-standard
-    );
-  --border-error: var(--telekom-spacing-unit-x05) solid var(
-      --telekom-color-functional-danger-standard
-    );
-  --border-success: var(--telekom-spacing-unit-x05) solid var(
-      --telekom-color-functional-success-standard
-    );
-  --border-warning: var(--telekom-spacing-unit-x05) solid var(
-      --telekom-color-functional-warning-standard
-    );
+  --border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-border-standard);
+  --border-error: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-danger-standard);
+  --border-success: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-success-standard);
+  --border-warning: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-warning-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-color-disabled: none;
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
   --height: var(--telekom-spacing-unit-x11);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
@@ -224,17 +218,15 @@ scale-text-field {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /* control */
-  --spacing-control: 21px var(--telekom-spacing-unit-x10) 5px calc(
-      var(--spacing-x) - 1px
-    );
+  --spacing-control: 21px var(--telekom-spacing-unit-x10) 7px
+    calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
+  --margin-bottom-control: var(--telekom-spacing-unit-x1);
 
   /* counter */
   --transition-counter: var(--transition);
-  --font-size-counter: var(--font-size-meta);
-  --line-height-counter: var(--line-height-meta);
   --color-counter-error: var(--color-meta-error);
 
   /* helper-text */
@@ -267,6 +259,7 @@ scale-text-field {
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+  --margin-top-label-focus: -0.5px;
 }
 ```
 
@@ -288,16 +281,16 @@ scale-text-field {
 
 <script>
   const textField = document.getElementById('text-field');
-  textField.addEventListener('scaleChange', () => {
+  textField.addEventListener('scale-change', (event) => {
     /* ... */
   });
-  textField.addEventListener('scaleBlur', () => {
+  textField.addEventListener('scale-blur', (event) => {
     /* ... */
   });
-  textField.addEventListener('scaleFocus', () => {
+  textField.addEventListener('scale-focus', (event) => {
     /* ... */
   });
-  textField.addEventListener('scaleKeyDown', () => {
+  textField.addEventListener('scale-keydown', (event) => {
     /* ... */
   });
 </script>
@@ -353,7 +346,7 @@ scale-text-field {
     args={{
       label: 'With Error',
       invalid: true,
-      helperText: 'something is wrong',
+      helperText: 'Something is wrong',
     }}
   >
     {StorySectionsTemplate.bind({})}
@@ -363,7 +356,7 @@ scale-text-field {
 ```html
 <scale-text-field
   label="With Error"
-  helper-text="something is wrong"
+  helper-text="Something is wrong"
   invalid
 ></scale-text-field>
 ```
@@ -376,7 +369,7 @@ scale-text-field {
     args={{
       label: 'With Warning',
       variant: 'warning',
-      helperText: 'something with warning',
+      helperText: 'Something with warning',
     }}
   >
     {StorySectionsTemplate.bind({})}
@@ -386,7 +379,7 @@ scale-text-field {
 ```html
 <scale-text-field
   label="With Error"
-  helper-text="something with warning"
+  helper-text="Something with warning"
   variant="warning"
 ></scale-text-field>
 ```
@@ -399,7 +392,7 @@ scale-text-field {
     args={{
       label: 'With Success',
       variant: 'success',
-      helperText: 'something is successful',
+      helperText: 'Something is successful',
     }}
   >
     {StorySectionsTemplate.bind({})}
@@ -409,7 +402,7 @@ scale-text-field {
 ```html
 <scale-text-field
   label="With Success"
-  helper-text="something is successful"
+  helper-text="Something is successful"
   variant="success"
 ></scale-text-field>
 ```
@@ -432,7 +425,7 @@ scale-text-field {
 <scale-text-field label="Disabled" disabled></scale-text-field>
 ```
 
-## Readonly
+## Read Only
 
 <Canvas withSource="none">
   <Story

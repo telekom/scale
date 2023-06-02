@@ -18,16 +18,16 @@
   --line-height-button: var(--telekom-typography-line-spacing-standard);
   --border-width-button: var(--telekom-spacing-unit-x05);
   --radius-button: var(--telekom-radius-small);
-  --spacing-left-button: var(--telekom-spacing-unit-x1);
+  --spacing-left-button: 0;
   --spacing-left-button-text: var(--telekom-spacing-unit-x2);
   --color-button-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-button-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --background-button-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-button-hover: none;
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
 
   /* icon */
-  --spacing-top-icon: calc(var(--telekom-spacing-unit-x1) + 1px);
+  --spacing-top-icon: var(--telekom-spacing-unit-x1);
 
   /* content */
   --spacing-right-content: var(--telekom-spacing-unit-x12);
@@ -103,7 +103,6 @@
 }
 
 .collapsible__icon {
-  transform: rotate(0.75turn);
   flex-shrink: 0;
   margin-top: var(--spacing-top-icon);
 }
@@ -113,7 +112,7 @@
 }
 
 .collapsible__button[aria-expanded='true'] .collapsible__icon {
-  transform: none;
+  /*  */
 }
 
 .collapsible__content {
@@ -122,4 +121,8 @@
   /* These should collapse with tags like p, that's what we want */
   margin-top: var(--spacing-top-content);
   margin-bottom: var(--spacing-bottom-content);
+}
+
+::slotted(*:not([slot='heading'])) {
+  font: var(--telekom-text-style-body);
 }

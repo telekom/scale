@@ -29,7 +29,7 @@ scale-textarea {
   --spacing-top-control: var(--telekom-spacing-unit-x6);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
-  --border-color-readonly: var(--telekom-color-ui-border-disabled);
+  --border-color-readonly: transparent;
   --background-readonly: var(--telekom-color-ui-disabled);
 
   /*meta*/
@@ -45,18 +45,10 @@ scale-textarea {
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
+
   /*counter*/
   --transition-counter: var(--transition);
-  --font-size-counter: var(--font-size-meta);
-  --line-height-counter: var(--line-height-meta);
   --color-counter-error: var(--color-meta-error);
-
-  /*helper-text*/
-  --transition-helper-text: var(--transition);
-  --font-size-helper-text: var(--font-size-meta);
-  --line-height-helper-text: var(--line-height-meta);
-  --color-helper-text: var(--telekom-color-functional-informational-standard);
-  --color-helper-text-error: var(--color-meta-error);
 
   /*placeholder*/
   --transition-placeholder: var(--transition);
@@ -104,27 +96,14 @@ scale-textarea {
   margin-top: var(--spacing-top-control);
 }
 
-.textarea .textarea__helper-text,
-.textarea .textarea__counter {
-  font-weight: var(--telekom-typography-font-weight-bold);
-}
-
 .textarea .textarea__counter {
   display: flex;
+  flex-shrink: 0;
   transition: var(--transition-counter);
   margin-left: auto;
-  padding-right: var(--telekom-spacing-unit-x3);
   justify-content: flex-end;
-  font-size: var(--telekom-typography-font-size-small);
-  line-height: var(--telekom-typography-line-spacing-standard);
-  color: inherit;
-}
-.textarea .textarea__helper-text {
-  transition: var(--transition-helper-text);
-  padding-left: var(--spacing-x);
-  font-size: var(--font-size-helper-text);
-  line-height: var(--line-height-helper-text);
-  color: var(--color-helper-text);
+  font: var(--telekom-text-style-small);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 .textarea .textarea__meta {
   display: flex;
@@ -194,9 +173,6 @@ scale-textarea {
   border-color: var(--telekom-color-functional-danger-hovered);
 }
 
-.textarea--status-error .textarea__helper-text {
-  color: var(--color-helper-text-error);
-}
 .textarea--status-error .textarea__counter {
   color: var(--color-counter-error);
 }
@@ -225,8 +201,7 @@ scale-textarea {
 .textarea--disabled textarea,
 .textarea--disabled .textarea__wrapper,
 .textarea--disabled .textarea__control,
-.textarea--disabled .textarea__meta,
-.textarea--disabled .textarea__helper-text {
+.textarea--disabled .textarea__meta {
   cursor: not-allowed;
   color: var(--color-disabled);
 }

@@ -200,6 +200,8 @@ export class DropdownSelect {
   @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
     'informational';
   @Prop({ mutable: true, reflect: true }) value: any;
+  /** @see {@url https://floating-ui.com/docs/computePosition#strategy} */
+  @Prop() floatingStrategy: 'absolute' | 'fixed' = 'absolute';
   /** (optional) to hide the label */
   @Prop() hideLabelVisually?: boolean = false;
 
@@ -238,8 +240,14 @@ export class DropdownSelect {
     if (!this.open) {
       return;
     }
+    if (this.floatingStrategy === 'fixed') {
+      this.listboxPadEl.style.width = `${
+        this.comboEl.getBoundingClientRect().width
+      }px`;
+    }
     computePosition(this.comboEl, this.listboxPadEl, {
       placement: 'bottom',
+      strategy: this.floatingStrategy,
     }).then(({ x, y }) => {
       Object.assign(this.listboxPadEl.style, {
         left: `${x}px`,
@@ -460,9 +468,9 @@ export class DropdownSelect {
                       >
                         {ItemElement}
                         {value === this.value ? (
-                          <scale-icon-action-success
+                          <scale-icon-action-checkmark
                             size={16}
-                          ></scale-icon-action-success>
+                          ></scale-icon-action-checkmark>
                         ) : null}
                       </div>
                     )
@@ -510,6 +518,7 @@ export class DropdownSelect {
       this.currentIndex > -1 && `steal-focus`,
       animated && 'animated',
       this.helperText && 'has-helper-text',
+      this.floatingStrategy && `strategy-${this.floatingStrategy}`,
       this.hideLabelVisually && 'hide-label'
     );
   }

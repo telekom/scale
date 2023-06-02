@@ -18,24 +18,16 @@ exports[`pagination should match snapshot 1`] = `
           / 1
         </div>
         <button aria-label="Go to first page" class="pagination__first-prompt" disabled="" part="first-prompt">
-          <svg fill="none" height="20" stroke="#cacaca" viewBox="0 0 48 52" width="20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M44.5 48.5L21.5 26L44.5 3.5M27.5 48.5L4.5 26L27.5 3.5" stroke-linecap="round" stroke-width="6"></path>
-          </svg>
+          <scale-icon-navigation-double-left decorative="" size="20"></scale-icon-navigation-double-left>
         </button>
         <button aria-label="Go to previous page" class="pagination__prev-prompt" disabled="" part="prev-prompt">
-          <svg fill="none" height="20" stroke="#cacaca" viewBox="0 0 37 52" width="20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M33 48L6 26L33 4" stroke-linecap="round" stroke-width="7"></path>
-          </svg>
+          <scale-icon-navigation-left decorative="" size="20"></scale-icon-navigation-left>
         </button>
         <button aria-label="Go to next page" class="pagination__next-prompt" disabled="" part="next-prompt">
-          <svg fill="none" height="20" stroke="#cacaca" viewBox="0 0 37 52" width="20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4L31 26L4 48" stroke-linecap="round" stroke-width="7"></path>
-          </svg>
+          <scale-icon-navigation-right decorative="" size="20"></scale-icon-navigation-right>
         </button>
         <button aria-label="Go to last page" class="pagination__last-prompt" disabled="" part="last-prompt">
-          <svg fill="none" height="20" stroke="#cacaca" viewBox="0 0 48 52" width="20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 3.5L26.5 26L3.5 48.5M20.5 3.5L43.5 26L20.5 48.5" stroke-linecap="round" stroke-width="6"></path>
-          </svg>
+          <scale-icon-navigation-double-right decorative="" size="20"></scale-icon-navigation-double-right>
         </button>
       </div>
     </div>

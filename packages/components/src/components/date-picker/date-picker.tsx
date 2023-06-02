@@ -149,6 +149,8 @@ export class DatePicker {
   /** @deprecated */
   @Prop() size?: string;
 
+  @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
+    'informational';
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
 
@@ -271,17 +273,21 @@ export class DatePicker {
     const navLeftIcon = this.duetInput.querySelector('.duet-date__prev svg');
 
     if (navLeftIcon) {
-      navLeftIcon.replaceWith(
-        document.createElement('scale-icon-navigation-left')
+      const scaleNavLeftIcon = document.createElement(
+        'scale-icon-navigation-left'
       );
+      scaleNavLeftIcon.size = 16;
+      navLeftIcon.replaceWith(scaleNavLeftIcon);
     }
 
     const navRightIcon = this.duetInput.querySelector('.duet-date__next svg');
 
     if (navRightIcon) {
-      navRightIcon.replaceWith(
-        document.createElement('scale-icon-navigation-right')
+      const scaleNavRightIcon = document.createElement(
+        'scale-icon-navigation-right'
       );
+      scaleNavRightIcon.size = 16;
+      navRightIcon.replaceWith(scaleNavRightIcon);
     }
 
     const selectIcon = this.duetInput.querySelectorAll(
@@ -435,7 +441,6 @@ export class DatePicker {
   }
 
   render() {
-    const helperTextId = `helper-message-${this.internalId}`;
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -446,7 +451,8 @@ export class DatePicker {
             this.invalid && `scale-date-picker--status-error`,
             this.hasFocus && 'scale-date-picker--focus',
             this.disabled && 'scale-date-picker--disabled',
-            this.hasValue && 'animated'
+            this.hasValue && 'animated',
+            this.helperText && 'has-helper-text'
           )}
         >
           <label class="date-picker__label" htmlFor={this.identifier}>
@@ -481,15 +487,11 @@ export class DatePicker {
               (this.duetInput = element)
             }
           ></duet-date-picker>
-          {!!this.helperText && (
-            <div
-              class="date-picker__meta"
-              id={helperTextId}
-              aria-live="polite"
-              aria-relevant="additions removals"
-            >
-              <div class="date-picker__helper-text">{this.helperText}</div>
-            </div>
+          {this.helperText && (
+            <scale-helper-text
+              helperText={this.helperText}
+              variant={this.invalid ? 'danger' : this.variant}
+            ></scale-helper-text>
           )}
         </div>
       </Host>

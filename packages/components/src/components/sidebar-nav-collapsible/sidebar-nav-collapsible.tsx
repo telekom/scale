@@ -91,7 +91,7 @@ export class SidebarNavCollapsible {
               <scale-icon-navigation-collapse-down
                 class="sidebar-nav-collapsible__icon"
                 selected={this.bold}
-                size={16}
+                size={20}
                 part="icon"
               />
             </a>

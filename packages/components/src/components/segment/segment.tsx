@@ -184,7 +184,7 @@ export class Segment {
           <div class="segment--mask">
             {!this.iconOnly && (
               <div class="success-icon-container">
-                <scale-icon-action-success
+                <scale-icon-action-checkmark
                   size={
                     this.size === 'small'
                       ? 14
@@ -192,7 +192,7 @@ export class Segment {
                       ? 16
                       : 20
                   }
-                  class="scale-icon-action-success"
+                  class="scale-icon-action-checkmark"
                   aria-hidden="true"
                   selected
                 />

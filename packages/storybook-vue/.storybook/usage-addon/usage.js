@@ -65,8 +65,6 @@ import pagination_en from 'raw-loader!../../stories/components/pagination/pagina
 import pagination_de from 'raw-loader!../../stories/components/pagination/pagination_de.md';
 import progressBar_en from 'raw-loader!../../stories/components/progress-bar/progress-bar.md';
 import progressBar_de from 'raw-loader!../../stories/components/progress-bar/progress-bar_de.md';
-import radioButton_en from 'raw-loader!../../stories/components/radio-button/radio-button.md';
-import radioButton_de from 'raw-loader!../../stories/components/radio-button/radio-button_de.md';
 import ratingStars_en from 'raw-loader!../../stories/components/rating-stars/rating-stars.md';
 import ratingStars_de from 'raw-loader!../../stories/components/rating-stars/rating-stars_de.md';
 import radioButtonGroup_de from 'raw-loader!../../stories/components/radio-button-group/radio-button-group_de.md';
@@ -181,8 +179,6 @@ const Usage = (props) => {
     pagination_de,
     'progress-bar_en': progressBar_en,
     'progress-bar_de': progressBar_de,
-    'radio-button_en': radioButton_en,
-    'radio-button_de': radioButton_de,
     'radio-button-group_en': radioButtonGroup_en,
     'radio-button-group_de': radioButtonGroup_de,
     'rating-stars_en': ratingStars_en,
