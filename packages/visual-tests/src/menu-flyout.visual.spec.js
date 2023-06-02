@@ -1,4 +1,4 @@
-describe.skip('Menu', () => {
+describe('Menu', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-flyout-menu--standard', mode);
