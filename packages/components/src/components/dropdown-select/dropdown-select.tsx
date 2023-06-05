@@ -406,11 +406,9 @@ export class DropdownSelect {
       <Host>
         <div part={this.getBasePartMap()}>
           <div part="combobox-container">
-            {!this.hideLabelVisually && (
-              <label id={`${this.comboboxId}-label`} part="label">
-                {this.label}
-              </label>
-            )}
+            <label id={`${this.comboboxId}-label`} part="label">
+              {this.label}
+            </label>
             <div
               ref={(el) => (this.comboEl = el)}
               aria-controls={`${this.comboboxId}-listbox`}
