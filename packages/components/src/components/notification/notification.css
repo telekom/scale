@@ -38,6 +38,7 @@
   background: var(--_background-subtle);
   box-shadow: var(--_shadow);
   animation-duration: var(--duration);
+  border: 1px solid transparent;
 }
 
 [part~='base'][part~='open'] {
