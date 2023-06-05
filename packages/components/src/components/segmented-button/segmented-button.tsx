@@ -206,7 +206,12 @@ export class SegmentedButton {
   render() {
     return (
       <Host>
-        <fieldset class="segmented-button--fieldset">
+        <fieldset
+          class="segmented-button--fieldset"
+          aria-label={
+            this.showHelperText && this.helperText ? this.helperText : null
+          }
+        >
           {this.label && (
             <legend class="segmented-button--label"> {this.label} </legend>
           )}
