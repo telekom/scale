@@ -65,9 +65,9 @@ export class Segment {
   /** (optional) multi select segment */
   @Prop({ mutable: true }) multiSelect?: boolean = false;
   /** (optional) segment with icon and text */
-  @Prop({ mutable: true }) iconText?: boolean = false;  
+  @Prop({ mutable: true }) iconText?: boolean = false;
   /** (optional) Icon aria-label for icon only */
-  @Prop() iconAriaLabel?: string;  
+  @Prop() iconAriaLabel?: string;
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -86,20 +86,20 @@ export class Segment {
     this.focusableElement.focus();
   }
 
-  connectedCallback() { 
+  connectedCallback() {
     const childNodes = Array.from(this.hostElement.childNodes);
-    const nodeNames = childNodes.map(el => el.nodeName.substring(0, 10))
+    const nodeNames = childNodes.map((el) => el.nodeName.substring(0, 10));
     const hasText = nodeNames.includes('#text');
-    const hasIcon = nodeNames.includes('SCALE-ICON')
+    const hasIcon = nodeNames.includes('SCALE-ICON');
     this.iconOnly = hasIcon && !hasText;
-    this.iconText = hasIcon && hasText;    
+    this.iconText = hasIcon && hasText;
     this.handleSelectedIcon();
   }
 
   componentDidLoad() {
     this.setChildrenIconSize();
   }
-  
+
   componentWillLoad() {
     if (this.segmentId == null) {
       this.segmentId = 'segment-' + i++;
@@ -118,16 +118,16 @@ export class Segment {
             child.nodeName
           );
           this.selected
-          ? icon.setAttribute('selected', '')
-          : icon.removeAttribute('selected');
+            ? icon.setAttribute('selected', '')
+            : icon.removeAttribute('selected');
         }
-      })
+      });
     }
   }
 
   /*
-  * Set any children icon's size according the button size.
-  */
+   * Set any children icon's size according the button size.
+   */
   setChildrenIconSize() {
     if (this.size != null && iconSizeMap[this.size] != null) {
       const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
@@ -153,6 +153,7 @@ export class Segment {
   };
 
   render() {
+    const checked = this.selected ? 'true' : 'false';
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -165,7 +166,7 @@ export class Segment {
             disabled={this.disabled}
             type="button"
             style={{ width: this.width }}
-            aria-pressed={this.selected}
+            aria-pressed={checked}
             part={this.getBasePartMap()}
           >
             <div class="segment--mask">
@@ -173,11 +174,11 @@ export class Segment {
                 <scale-icon-action-success
                   size={this.size === 'small' ? 14 : 16}
                   class="scale-icon-action-success"
-                  accessibility-title="success"
+                  aria-hidden={true}
                   selected
                 />
               </div>
-              <div class="icon-container">
+              <div class="icon-container" aria-label={this.iconAriaLabel}>
                 <slot name="segment-icon" />
               </div>
               <div class="text-container">

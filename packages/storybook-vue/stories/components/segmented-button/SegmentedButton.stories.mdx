@@ -72,10 +72,18 @@ export const IconOnlyTemplate = (args, { argTypes }) => ({
       :multi-select="multiSelect"
       :styles="styles"
     >
-      <scale-segment selected><scale-icon-weather-cloudy slot="segment-icon"></scale-icon-weather-cloudy></scale-segment>
-      <scale-segment><scale-icon-weather-rain slot="segment-icon"></scale-icon-weather-rain></scale-segment>
-      <scale-segment><scale-icon-weather-sunny slot="segment-icon"></scale-icon-weather-sunny></scale-segment>
-      <scale-segment><scale-icon-weather-heavy-snow slot="segment-icon"></scale-icon-weather-heavy-snow></scale-segment>
+      <scale-segment selected icon-aria-label="cloudy weather icon">
+        <scale-icon-weather-cloudy slot="segment-icon"></scale-icon-weather-cloudy>
+      </scale-segment>
+      <scale-segment icon-aria-label="rain weather icon">
+        <scale-icon-weather-rain slot="segment-icon"></scale-icon-weather-rain>
+      </scale-segment>
+      <scale-segment icon-aria-label="sunny weather icon">
+        <scale-icon-weather-sunny slot="segment-icon"></scale-icon-weather-sunny>
+      </scale-segment>
+      <scale-segment icon-aria-label="heavy snow weather icon">
+        <scale-icon-weahter-heavy-snow slot="segment-icon"></scale-icon-weahter-heavy-snow>
+      </scale-segment> 
     </scale-segmented-button>
   `,
 });
@@ -256,22 +264,16 @@ export const InvalidTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-segmented-button>
-  <scale-segment selected
-    ><scale-icon-weather-cloudy
-      slot="segment-icon"
-    ></scale-icon-weather-cloudy
+  <scale-segment selected icon-aria-label="cloudy weather icon"
+    ><scale-icon-weather-cloudy slot="segment-icon"></scale-icon-weather-cloudy
   ></scale-segment>
-  <scale-segmented-button
-    ><scale-icon-weather-rain
-      slot="segment-icon"
-    ></scale-icon-weather-rain
+  <scale-segment icon-aria-label="rain weather icon"
+    ><scale-icon-weather-rain slot="segment-icon"></scale-icon-weather-rain
   ></scale-segment>
-  <scale-segmented-button
-    ><scale-icon-weather-sunny
-      slot="segment-icon"
-    ></scale-icon-weather-sunny
+  <scale-segment icon-aria-label="sunny weather icon"
+    ><scale-icon-weather-sunny slot="segment-icon"></scale-icon-weather-sunny
   ></scale-segment>
-  <scale-segmented-button
+  <scale-segment icon-aria-label="heavy snow weather icon"
     ><scale-icon-weahter-heavy-snow
       slot="segment-icon"
     ></scale-icon-weahter-heavy-snow
@@ -289,29 +291,29 @@ export const InvalidTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-segmented-button>
-  <scale-segmented-button selected
+  <scale-segment selected
     ><scale-icon-device-device-phone
       slot="segment-icon"
     ></scale-icon-device-device-phone
-    >Apple</scale-segmented-button
-  >
-  <scale-segmented-button
-    ><scale-icon-device-device-phone
-      slot="segment-icon"
-    ></scale-icon-device-device-phone
-    >One+</scale-segmented-button
+    >Apple</scale-segment
   >
   <scale-segment
     ><scale-icon-device-device-phone
       slot="segment-icon"
     ></scale-icon-device-device-phone
-    >Samsung</scale-segmented-button
+    >One+</scale-segment
   >
   <scale-segment
     ><scale-icon-device-device-phone
       slot="segment-icon"
     ></scale-icon-device-device-phone
-    >Huawei</scale-segmented-button
+    >Samsung</scale-segment
+  >
+  <scale-segment
+    ><scale-icon-device-device-phone
+      slot="segment-icon"
+    ></scale-icon-device-device-phone
+    >Huawei</scale-segment
   >
 </scale-segmented-button>
 ```
