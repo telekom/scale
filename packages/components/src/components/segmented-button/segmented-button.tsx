@@ -58,12 +58,12 @@ export class SegmentedButton {
   /** (optional) Button label */
   @Prop() label?: string;
   /** (optional) icon only */
-  @Prop() iconOnly?: boolean = false;  
+  @Prop() iconOnly?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
-  ariaLabelTranslation = `segment button with $slottedSegments`;
+  ariaLabelTranslation = `segment button with $slottedSegments elements`;
   @Prop({ mutable: true })
   longestButtonWidth: string;
   /** Emitted when button is clicked */
@@ -137,7 +137,10 @@ export class SegmentedButton {
         '$position $selected'
       );
     });
-    this.hostElement.style.setProperty('--colNum', this.slottedSegments.toString())
+    this.hostElement.style.setProperty(
+      '--colNum',
+      this.slottedSegments.toString()
+    );
     this.position = 0;
     this.status = tempState;
     this.setState(tempState);
@@ -213,9 +216,6 @@ export class SegmentedButton {
             aria-label={this.getAriaLabelTranslation()}
             role="listbox"
             ref={(el) => (this.container = el as HTMLUListElement)}
-            aria-description={
-              this.showHelperText && this.helperText ? this.helperText : null
-            }
           >
             <slot />
           </ul>
