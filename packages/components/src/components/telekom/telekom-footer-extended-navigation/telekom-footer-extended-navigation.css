@@ -108,4 +108,8 @@ scale-telekom-footer-extended-navigation-column:first-of-type {
   [part~='telekom-footer-extended-navigation'] :where(ul) {
     padding-bottom: 20px;
   }
+
+  [part~='telekom-footer-extended-navigation'] :where(li:first-child) {
+    padding-top: 0px;
+  }
 }
