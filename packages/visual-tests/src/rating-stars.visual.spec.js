@@ -6,7 +6,7 @@ describe('RatingStars', () => {
     test.each([
       ['info-text-and-custom-label'],
       ['disabled'],
-      ['small-with-info-text'],
+      ['small'],
       ['hidden-label'],
       ['readonly'],
     ])('story %p', async (variant) => {
