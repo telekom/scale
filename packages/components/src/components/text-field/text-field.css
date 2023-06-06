@@ -187,7 +187,6 @@ scale-text-field {
   );
   font-weight: var(--font-weight-label);
   line-height: 1;
-
 }
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {

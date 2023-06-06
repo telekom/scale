@@ -146,10 +146,7 @@ scale-textarea {
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-label);
   line-height: 1;
-  transform: translate(
-    var(--spacing-x-control),
-    14px
-  );
+  transform: translate(var(--spacing-x-control), 14px);
 }
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
