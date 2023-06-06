@@ -129,14 +129,14 @@ export class SegmentedButton {
     const tempState: SegmentStatus[] = [];
     const segmentedButtons = this.getAllSegmentedButtons();
     this.slottedSegments = segmentedButtons.length;
-    segmentedButtons.forEach((SegmentedButton) => {
+    segmentedButtons.forEach((segment) => {
       this.position++;
       tempState.push({
-        id: SegmentedButton.getAttribute('segment-id'),
-        selected: SegmentedButton.hasAttribute('selected'),
+        id: segment.getAttribute('segment-id'),
+        selected: segment.hasAttribute('selected'),
       });
-      SegmentedButton.setAttribute('position', this.position.toString());
-      SegmentedButton.setAttribute(
+      segment.setAttribute('position', this.position.toString());
+      segment.setAttribute(
         'aria-description-translation',
         '$position $selected'
       );
