@@ -94,7 +94,7 @@ export class Tag {
               aria-label={this.dismissText}
               onClick={this.handleClose}
             >
-              <scale-icon-action-close part="icon-dismissable" size={15} />
+              <scale-icon-action-close part="icon-dismissable" size={16} />
             </button>
           )}
         </Element>
