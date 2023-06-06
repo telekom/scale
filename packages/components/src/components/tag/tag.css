@@ -23,8 +23,8 @@
   --background-disabled: var(--telekom-color-ui-faint);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
-  --spacing-dismissable: var(--telekom-spacing-unit-x1)
-    var(--telekom-spacing-unit-x1) var(--telekom-spacing-unit-x1)
+  --spacing-dismissable: var(--telekom-spacing-unit-x05)
+    var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05)
     var(--telekom-spacing-unit-x1);
   --spacing-dismissable-small: var(--telekom-spacing-unit-x05)
     var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05)
@@ -48,8 +48,10 @@
     --telekom-color-ui-state-fill-pressed
   );
 
-  --height-button-dismissable: 16px;
-  --width-button-dismissable: 16px;
+  --height-button-dismissable: 20px;
+  --width-button-dismissable: 20px;
+  --height-button-dismissable-small: 16px;
+  --width-button-dismissable-small: 16px;
 
   --spacing-small: 0 var(--telekom-spacing-unit-x2);
   --font-size-small: var(--telekom-typography-font-size-small);
@@ -110,10 +112,12 @@ dismissable
 .tag--dismissable scale-icon-action-close {
   display: flex !important;
   align-items: center;
+  justify-content: center;
 }
 .tag--dismissable button:focus {
   justify-content: center;
   outline: var(--focus-outline);
+  outline-offset: 1px;
 }
 .tag--dismissable:not(.tag--disabled) button:hover {
   background: var(--background-button-dismissable-hover);
@@ -148,8 +152,8 @@ size small
   padding-right: 0px;
 }
 .tag--size-small.tag--dismissable button {
-  height: var(--height-button-dismissable);
-  width: var(--width-button-dismissable);
+  height: var(--height-button-dismissable-small);
+  width: var(--width-button-dismissable-small);
   margin: var(--spacing-dismissable-small);
 }
 
