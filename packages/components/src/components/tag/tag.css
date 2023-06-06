@@ -24,8 +24,8 @@
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
   --spacing-dismissable: var(--telekom-spacing-unit-x1)
-  var(--telekom-spacing-unit-x1) var(--telekom-spacing-unit-x1)
-  var(--telekom-spacing-unit-x1);
+    var(--telekom-spacing-unit-x1) var(--telekom-spacing-unit-x1)
+    var(--telekom-spacing-unit-x1);
   --spacing-dismissable-small: var(--telekom-spacing-unit-x05)
     var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05)
     var(--telekom-spacing-unit-x1);
