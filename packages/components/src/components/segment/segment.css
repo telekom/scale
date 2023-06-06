@@ -129,7 +129,6 @@ button.segment--icon-only .segment--mask {
 .segment--selected {
   background-color: var(--background-color-selected);
   box-shadow: var(--telekom-shadow-raised-standard);
-  background-color: red;
 }
 
 .segment--selected .segment--mask {
