@@ -221,6 +221,15 @@
   background: var(--background-disabled);
 }
 
+/* hidden label */
+[part~='hide-label'] [part='combobox'] {
+  padding-top: 5px;
+}
+
+[part~='hide-label'] [part='label'] {
+  visibility: hidden;
+}
+
 /*listbox*/
 [part='listbox'] {
   position: relative;

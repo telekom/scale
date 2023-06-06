@@ -202,6 +202,8 @@ export class DropdownSelect {
   @Prop({ mutable: true, reflect: true }) value: any;
   /** @see {@url https://floating-ui.com/docs/computePosition#strategy} */
   @Prop() floatingStrategy: 'absolute' | 'fixed' = 'absolute';
+  /** (optional) to hide the label */
+  @Prop() hideLabelVisually?: boolean = false;
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
@@ -514,7 +516,8 @@ export class DropdownSelect {
       this.currentIndex > -1 && `steal-focus`,
       animated && 'animated',
       this.helperText && 'has-helper-text',
-      this.floatingStrategy && `strategy-${this.floatingStrategy}`
+      this.floatingStrategy && `strategy-${this.floatingStrategy}`,
+      this.hideLabelVisually && 'hide-label'
     );
   }
 }
