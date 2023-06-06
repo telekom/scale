@@ -396,6 +396,9 @@
   min-width: 50px;
   max-width: 200px;
 }
+.data-grid-progress-bar::part(status) {
+  padding-top: 0;
+}
 
 /* Info block */
 .info {
