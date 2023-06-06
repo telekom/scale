@@ -26,12 +26,9 @@
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
 
-  /* icon */
-  --spacing-top-icon: var(--telekom-spacing-unit-x1);
-
   /* content */
   --spacing-right-content: var(--telekom-spacing-unit-x12);
-  --spacing-left-content: var(--telekom-spacing-unit-x8);
+  --spacing-left-content: 34px;
   --spacing-top-content: var(--telekom-spacing-unit-x4);
   --spacing-bottom-content: var(--telekom-spacing-unit-x6);
 }
@@ -63,7 +60,7 @@
   width: 100%;
   display: flex;
   text-align: left;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 0;
   border-color: transparent;
   border-style: solid;
@@ -104,7 +101,6 @@
 
 .collapsible__icon {
   flex-shrink: 0;
-  margin-top: var(--spacing-top-icon);
 }
 
 .collapsible__icon-right {

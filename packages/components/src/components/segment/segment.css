@@ -71,6 +71,7 @@
   transition: var(--transition);
   white-space: nowrap;
   color: var(--color);
+  line-height: 1;
 }
 
 button.segment--small.segment--selected .segment--mask {
@@ -112,8 +113,8 @@ button.segment--medium .segment--mask {
 }
 
 button.segment--large.segment--selected .segment--mask {
-  padding-left: 1.125rem;
-  padding-right: 1.125rem;
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x5);
 }
 
 button.segment--large .segment--mask {

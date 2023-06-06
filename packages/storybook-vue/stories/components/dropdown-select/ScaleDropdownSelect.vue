@@ -9,6 +9,7 @@
     :value="value"
     :combobox-id="comboboxId"
     :hide-label-visually="hideLabelVisually"
+    :floating-strategy="floatingStrategy"
     @scaleChange="['scale-change']"
     @scaleFocus="['scale-focus']"
     @scaleBlur="['scale-blur']"
@@ -31,7 +32,8 @@ export default {
     value: { type: String },
     variant: { type: String },
     comboboxId: { type: String },
-    hideLabelVisually: {type: Boolean, default: false}
+    hideLabelVisually: {type: Boolean, default: false},
+    floatingStrategy: { type: String }
   },
   methods: {
     'scale-change'($event) {
