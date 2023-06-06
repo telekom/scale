@@ -28,7 +28,7 @@ scale-text-field {
   --background-color-disabled: none;
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
-  --height: var(--telekom-spacing-unit-x11);
+  --height: 44px;
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
@@ -44,7 +44,7 @@ scale-text-field {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /* control */
-  --spacing-control: 21px var(--telekom-spacing-unit-x10) 7px
+  --spacing-control: 19px var(--telekom-spacing-unit-x10) 5px
     calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
@@ -85,7 +85,6 @@ scale-text-field {
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
-  --margin-top-label-focus: -0.5px;
 }
 
 .text-field {
@@ -141,7 +140,6 @@ scale-text-field {
   --icon-size-helper-text: var(--helper-text-icon-size);
   font-weight: var(--telekom-typography-font-weight-bold);
   display: flex;
-  /* margin: var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1) 0; */
 }
 
 .text-field .text-field__meta {
@@ -175,7 +173,7 @@ scale-text-field {
 }
 
 .text-field__label {
-  top: -1px;
+  line-height: 1;
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);
@@ -188,11 +186,12 @@ scale-text-field {
     calc((var(--height) - var(--font-size-label)) / 2)
   );
   font-weight: var(--font-weight-label);
+  line-height: 1;
+
 }
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
   line-height: var(--font-size-label-focus);
-  margin-top: var(--margin-top-label-focus);
   transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
@@ -256,6 +255,7 @@ scale-text-field {
   color: var(--color-label-readonly);
   border: none;
   background: var(--background-readonly);
+  box-sizing: content-box;
 }
 
 .text-field--readonly .text-field__control:focus {

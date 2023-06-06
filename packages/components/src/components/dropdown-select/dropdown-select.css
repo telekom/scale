@@ -24,7 +24,7 @@
   --transition-combobox: var(--transition);
   --font-size-combobox: var(--telekom-typography-font-size-body);
   --background-combobox: var(--telekom-color-ui-state-fill-standard);
-  --spacing-combobox: 18px var(--telekom-spacing-unit-x10) 5px
+  --spacing-combobox: 19px var(--telekom-spacing-unit-x10) 5px
     calc(var(--spacing-x) - 1px);
 
   /*meta*/
@@ -46,8 +46,6 @@
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
-  --margin-top-label-focus: -1.5px;
-  --line-height-label: var(--telekom-typography-font-size-body);
   --line-height-label-animated: var(--telekom-typography-font-size-small);
   --transform-label: translate(
     var(--spacing-x),
@@ -203,11 +201,10 @@
   font-size: var(--font-size-label);
   transform: var(--transform-label);
   font-weight: var(--font-weight-label);
-  line-height: var(--line-height-label);
+  line-height: 1;
 }
 
 [part~='animated'] [part='label'] {
-  margin-top: var(--margin-top-label-focus);
   transform: var(--transform-label-animated);
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
