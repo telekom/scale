@@ -44,12 +44,14 @@ Type: `Promise<void>`
 
  - [app-navigation-user-menu](../telekom/app-navigation-user-menu)
  - [scale-data-grid](../data-grid)
+ - [scale-notification](../notification)
 
 ### Graph
 ```mermaid
 graph TD;
   app-navigation-user-menu --> scale-button
   scale-data-grid --> scale-button
+  scale-notification --> scale-button
   style scale-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

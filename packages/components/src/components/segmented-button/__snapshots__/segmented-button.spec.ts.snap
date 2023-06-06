@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SegmentedButton should match selected button snapshot 1`] = `
-<scale-segmented-button>
+<scale-segmented-button style="--colNum: 2;">
   <mock:shadow-root>
-    <div aria-label="segment button with 2" class="segmented-button segmented-button--small" part="segmented-button small" role="group" style="grid-template-columns: repeat(2, 0px);">
-      <slot></slot>
-    </div>
+    <fieldset class="segmented-button--fieldset">
+      <ul aria-label="segment button with 2 elements" class="segmented-button segmented-button--small" part="segmented-button small" role="listbox">
+        <slot></slot>
+      </ul>
+    </fieldset>
   </mock:shadow-root>
   <scale-segment adjacent-siblings="right" aria-description-translation="$position $selected" position="1" selected="true" size="small">
     Label
@@ -17,11 +19,13 @@ exports[`SegmentedButton should match selected button snapshot 1`] = `
 `;
 
 exports[`SegmentedButton should match standard snapshot 1`] = `
-<scale-segmented-button>
+<scale-segmented-button style="--colNum: 4;">
   <mock:shadow-root>
-    <div aria-label="segment button with 4" class="segmented-button segmented-button--small" part="segmented-button small" role="group" style="grid-template-columns: repeat(4, 14px);">
-      <slot></slot>
-    </div>
+    <fieldset class="segmented-button--fieldset">
+      <ul aria-label="segment button with 4 elements" class="segmented-button segmented-button--small" part="segmented-button small" role="listbox">
+        <slot></slot>
+      </ul>
+    </fieldset>
   </mock:shadow-root>
   <scale-segment adjacent-siblings="" aria-description-translation="$position $selected" position="1" selected="false" size="small">
     Label

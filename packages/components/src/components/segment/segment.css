@@ -15,20 +15,18 @@
   --button-radius: 6px;
   --padding-top-bottom: var(--telekom-spacing-unit-x1);
   --height: 28px;
-  --font-family: var(--telekom-typography-font-family-sans);
-  --font-weight: var(--telekom-typography-font-weight-bold);
-  --font-size: var(--telekom-typography-font-size-caption);
+  --font: var(--telekom-text-style-caption-bold);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
   --color: var(--telekom-color-text-and-icon-standard);
 
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
 
   /* medium styles */
-  --font-size-medium: var(--telekom-typography-font-size-body);
+  --font-medium: var(--telekom-text-style-ui-bold);
   --height-medium: 36px;
 
   /* large styles */
-  --font-size-large: var(--telekom-typography-font-size-body);
+  --font-large: var(--telekom-text-style-ui-bold);
   --height-large: 40px;
 
   /* hover styles */
@@ -68,21 +66,21 @@
   width: 100%;
   border-radius: var(--button-radius);
   background-color: transparent;
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
+  font: var(--font);
+  transition: var(--transition);
   white-space: nowrap;
   color: var(--color);
-}
-
-button.segment--icon-only.segment--small .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x9);
-  padding-right: var(--telekom-spacing-unit-x9);
+  line-height: 1;
 }
 
 button.segment--icon-only.segment--multi-select .segment--mask {
   padding-left: var(--telekom-spacing-unit-x3);
   padding-right: var(--telekom-spacing-unit-x3);
+}
+
+button.segment--icon-only.segment--small .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x4);
 }
 
 button.segment--small .segment--mask {
@@ -100,7 +98,6 @@ button.segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
 }
 
 .segment--medium {
-  font-size: var(--font-size-medium);
   height: var(--height-medium);
 }
 
@@ -109,19 +106,25 @@ button.segment--medium .segment--mask {
   padding-right: var(--telekom-spacing-unit-x4);
 }
 
+button.segment--medium .segment--mask {
+  font: var(--font-medium);
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+
 .segment--large {
-  font-size: var(--font-size-large);
   height: var(--height-large);
 }
 
-button.segment--large .segment--mask {
+button.segment--large.segment--selected .segment--mask {
   padding-left: var(--telekom-spacing-unit-x4);
   padding-right: var(--telekom-spacing-unit-x5);
 }
 
-button.segment--icon-only .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x3);
-  padding-right: var(--telekom-spacing-unit-x3);
+button.segment--large .segment--mask {
+  font: var(--font-large);
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x5);
 }
 
 /* selected */
@@ -196,31 +199,18 @@ button.segment--icon-only .segment--mask {
   clip-path: none;
 }
 
-/* icon placement */
-
-.segment:not(.segment--icon-only) scale-icon-action-success,
+/* FIXME remove the hard-coded icon names */
+.segment:not(.segment--icon-only) scale-icon-action-checkmark,
 .segment scale-icon-action-close {
   margin-right: var(--telekom-spacing-unit-x1);
 }
 
-.segment:not(.segment--selected) .success-icon-container {
-  display: none;
+.segment:not(.segment--selected) scale-icon-action-checkmark {
+  visibility: hidden !important;
 }
 
-.segment:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only)
-  .text-container {
-  margin-left: 18px;
-}
-
-.segment--medium:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only)
-  .text-container,
-.segment--large:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only)
-  .text-container {
-  margin-left: 20px;
-}
-
-.segment--selected .text-container {
-  margin-left: 0;
+.segment scale-icon-action-checkmark {
+  vertical-align: middle;
 }
 
 .segment--selected:not(.segment--icon-only) .icon-container {

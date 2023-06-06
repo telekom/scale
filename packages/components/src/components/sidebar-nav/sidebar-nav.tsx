@@ -132,7 +132,7 @@ export class SidebarNav {
               <scale-icon-navigation-collapse-down
                 part="icon"
                 class="sidebar-nav__icon"
-                size={16}
+                size={20}
               />
             </button>
           )}

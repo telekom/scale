@@ -24,7 +24,7 @@ import { hasShadowDom, ScaleIcon, isScaleIcon } from '../../utils/utils';
 const DEFAULT_ICON_SIZE = 24;
 const buttonIconSizeMap = {
   small: 16,
-  large: 24,
+  large: 20,
 };
 
 @Component({
@@ -180,7 +180,7 @@ export class Button {
       );
       icons.forEach((icon) => {
         if (icon.size === DEFAULT_ICON_SIZE) {
-          icon.size = buttonIconSizeMap['small'];
+          icon.size = buttonIconSizeMap[this.size];
         }
       });
     }

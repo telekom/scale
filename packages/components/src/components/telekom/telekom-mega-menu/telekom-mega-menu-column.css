@@ -37,7 +37,7 @@
 }
 
 [part~='icon'] {
-  transform: translateY(-0.25ch);
+  transform: translateY(-0.125ch);
 }
 
 @media screen and (--xl) {

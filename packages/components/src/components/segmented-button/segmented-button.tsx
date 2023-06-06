@@ -29,6 +29,10 @@ interface SegmentStatus {
   selected: boolean;
 }
 
+const CHECKMARK_WIDTH_SMALL = 14;
+const CHECKMARK_WIDTH_MEDIUM = 18 + 12;
+const CHECKMARK_WIDTH_LARGE = 20 + 18;
+
 @Component({
   tag: 'scale-segmented-button',
   styleUrl: 'segmented-button.css',
@@ -172,6 +176,33 @@ export class SegmentedButton {
     }
     return adjacentSiblings;
   };
+
+  // all segmented buttons should have the same width, based on the largest one
+  getLongestButtonWidth() {
+    let tempWidth = 0;
+    Array.from(this.hostElement.children).forEach((child) => {
+      const selected = child.hasAttribute('selected');
+      const iconOnly = child.hasAttribute('icon-only');
+      const checkmark =
+        this.size === 'small'
+          ? CHECKMARK_WIDTH_SMALL
+          : this.size === 'medium'
+          ? CHECKMARK_WIDTH_MEDIUM
+          : CHECKMARK_WIDTH_LARGE;
+      if (selected || iconOnly) {
+        tempWidth =
+          child.getBoundingClientRect().width > tempWidth
+            ? child.getBoundingClientRect().width
+            : tempWidth;
+      } else {
+        tempWidth =
+          child.getBoundingClientRect().width + checkmark > tempWidth
+            ? child.getBoundingClientRect().width + checkmark
+            : tempWidth;
+      }
+    });
+    return tempWidth;
+  }
 
   setState(tempState: SegmentStatus[]) {
     const segmentedButtons = Array.from(

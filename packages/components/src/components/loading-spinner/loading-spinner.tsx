@@ -30,7 +30,7 @@ export class LoadingSpinner {
                 class="path"
                 cx="25"
                 cy="25"
-                r="20"
+                r="22.5"
                 fill="none"
                 stroke-width="4"
               ></circle>
@@ -44,7 +44,7 @@ export class LoadingSpinner {
                 class="path"
                 cx="25"
                 cy="25"
-                r="20"
+                r="22.5"
                 fill="none"
                 stroke-width="4"
               ></circle>

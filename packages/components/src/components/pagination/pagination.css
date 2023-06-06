@@ -42,6 +42,7 @@
   color: var(--color);
   text-align: center;
   font-size: var(--font-size);
+  font-weight: var(--telekom-typography-font-weight-medium);
   line-height: var(--line-height-info);
   padding: 0 var(--padding-info);
   border: var(--border);
@@ -56,7 +57,8 @@
 }
 .pagination__info span,
 .pagination__info-responsive span {
-  font-weight: bold;
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  font-weight: var(--telekom-typography-font-weight-bold);
 }
 button {
   display: flex;
@@ -95,11 +97,11 @@ button:not(:disabled) {
   cursor: pointer;
 }
 button:not(:disabled) svg {
-  stroke: var(--stroke-svg);
+  color: var(--stroke-svg);
 }
 
 button:disabled svg {
-  stroke: var(--telekom-color-text-and-icon-disabled);
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 
 button:not(:disabled):hover {
@@ -107,14 +109,14 @@ button:not(:disabled):hover {
   z-index: 1;
 }
 button:not(:disabled):hover svg {
-  stroke: var(--color-hover);
+  color: var(--color-hover);
 }
 button:not(:disabled):active {
   border-color: var(--color-active);
   z-index: 1;
 }
 button:not(:disabled):active svg {
-  stroke: var(--color-active);
+  color: var(--color-active);
 }
 
 /* Hide Borders option */
@@ -132,6 +134,13 @@ button:not(:disabled):active svg {
   border-bottom-width: 0;
 }
 
+.pagination--hide-borders .pagination__first-prompt {
+  border-left-color: transparent;
+}
+.pagination--hide-borders .pagination__last-prompt {
+  border-right-color: transparent;
+}
+
 .pagination--hide-borders button:not(:disabled):hover {
   /* Important to override external changes to hide side borders - i.e. in scale-data-grid */
   border-width: 1px;
@@ -144,7 +153,7 @@ button:not(:disabled):active svg {
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   button:not(:disabled) svg {
-    stroke: var(--stroke-svg-high-contrast);
+    color: var(--stroke-svg-high-contrast);
   }
 }
 

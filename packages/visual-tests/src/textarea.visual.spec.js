@@ -9,6 +9,7 @@ describe('Textarea', () => {
       ['helper-text'],
       ['with-error'],
       ['disabled'],
+      ['read-only'],
       ['max-length-with-counter'],
       ['more-rows'],
     ])('%p', async (variant) => {

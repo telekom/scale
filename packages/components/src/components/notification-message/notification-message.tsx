@@ -74,7 +74,7 @@ export class NotificationMessage {
       switch (this.variant) {
         case 'success':
           return (
-            <scale-icon-alert-success
+            <scale-icon-action-success
               class="notification-message__icon-success"
               color="#187431"
               aria-hidden="true"

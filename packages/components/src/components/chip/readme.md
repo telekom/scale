@@ -42,13 +42,13 @@
 ### Depends on
 
 - [scale-icon-action-close](../icons/action-close)
-- [scale-icon-action-success](../icons/action-success)
+- [scale-icon-action-checkmark](../icons/action-checkmark)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-chip --> scale-icon-action-close
-  scale-chip --> scale-icon-action-success
+  scale-chip --> scale-icon-action-checkmark
   style scale-chip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

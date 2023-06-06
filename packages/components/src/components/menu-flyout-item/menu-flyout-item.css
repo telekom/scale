@@ -60,8 +60,13 @@
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
+:host(:focus) {
+  outline: none;
+}
+
 :host(:focus) .menu-flyout-item {
   outline: var(--focus-outline);
+  border-radius: var(--telekom-radius-small);
 }
 
 :host(:active) .menu-flyout-item:not(.menu-flyout-item--disabled) {

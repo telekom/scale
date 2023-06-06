@@ -118,19 +118,19 @@ export class Checkbox {
   renderIcon() {
     if (this.indeterminate) {
       return (
-        <scale-icon-action-indeterminate
+        <scale-icon-action-minus
           part="icon"
           decorative
-        ></scale-icon-action-indeterminate>
+        ></scale-icon-action-minus>
       );
     }
 
     if (this.checked) {
       return (
-        <scale-icon-action-success
+        <scale-icon-action-checkmark
           part="icon"
           decorative
-        ></scale-icon-action-success>
+        ></scale-icon-action-checkmark>
       );
     }
   }

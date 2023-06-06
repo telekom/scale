@@ -1,0 +1,406 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import ScaleNotification from './ScaleNotification.vue';
+
+<Meta
+  title="Beta Components/Notification"
+  component={ScaleNotification}
+  argTypes={{
+    heading: {
+      control: {
+        type: 'text',
+      },
+    },
+    type: {
+      options: ['inline', 'banner', 'toast'],
+      control: {
+        type: 'select',
+      },
+    },
+    variant: {
+      options: ['informational', 'warning', 'success', 'danger'],
+      control: {
+        type: 'select',
+      },
+    },
+    opened: {
+      defaultValue: true,
+      control: {
+        type: 'boolean'
+      }
+    },
+    dismissible: {
+      defaultValue: true,
+      control: {
+        type: 'boolean'
+      }
+    },
+    delay: {
+      control: {
+        type: 'number'
+      }
+    },
+    innerAriaLive: {
+      control: {
+        type: 'text'
+      }
+    },
+    closeButtonLabel: {
+      control: {
+        type: 'text'
+      }
+    },
+    closeButtonTitle: {
+      control: {
+        type: 'text'
+      }
+    },
+    'scale-open': {
+      description: 'Fires after the notification has been opened',
+      table: {
+        category: 'Events',
+      },
+    },
+    'scale-before-close': {
+      description: 'Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing',
+      table: {
+        category: 'Events',
+      },
+    },
+    'scale-close': {
+      description: 'Fires after the notification has been closed',
+      table: {
+        category: 'Events',
+      },
+    }
+  }}
+/>
+
+export const Template = (args, context) => ({
+  props: {
+    text: String,
+    ...ScaleNotification.props,
+  },
+  template: `
+    <div>
+      <scale-notification
+        :heading="heading"
+        :type="type"
+        :variant="variant"
+        :opened="opened"
+        :dismissible="dismissible"
+        :delay="delay"
+        :inner-aria-live="innerAriaLive"
+        :close-button-label="closeButtonLabel"
+        :close-button-title="closeButtonTitle"
+        @scale-open="emitOpen"
+        @scale-before-close="emitBeforeClose"
+        @scale-close="emitClose"
+      >
+        <span v-if="text" slot="text">{{ text }}</span>
+      </scale-notification>
+    </div>
+  `,
+  methods: {
+    emitOpen: action('scale-open'),
+    emitBeforeClose: action('scale-before-close'),
+    emitClose: action('scale-close'),
+  }
+})
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Notification</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      heading: 'Info notification with icon, title, copytext and close',
+      text: 'Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-notification
+  heading="Success notification with icon, title, copytext and close"
+  dismissible
+  opened
+>
+  <span slot="text">Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.</span>
+</scale-notification>
+```
+
+### Scoped CSS variables
+
+```css
+:host {
+  --width: 100%;
+  --radius: var(--telekom-radius-standard);
+  --spacing-y: var(--telekom-spacing-unit-x4);
+  --spacing-y-inner: var(--telekom-spacing-unit-x2);
+  --spacing-x-aside: var(--telekom-spacing-unit-x12);
+  --spacing-outer-toast: var(--telekom-spacing-unit-x4);
+}
+```
+
+## Types
+
+### Inline (default)
+
+<Canvas withSource="none">
+  <Story name="Inline" args={{
+    heading: 'Info notification with icon, title and close',
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  heading="Info notification with icon, title and close"
+  opened
+></scale-notification>
+```
+
+### Banner
+
+<Canvas withSource="none">
+  <Story name="Banner" args={{
+    heading: 'Success notification with icon, title and close',
+    type: 'banner',
+    variant: 'success',
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  heading="Success notification with icon, title and close"
+  type="banner"
+  variant="success"
+></scale-notification>
+```
+
+### Toast
+
+<Canvas withSource="none">
+  <Story name="Toast" args={{
+    heading: 'Warning toast headline',
+    type: 'toast',
+    variant: 'warning',
+    text: 'Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.'
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  heading="Warning toast headline"
+  type="toast"
+  variant="warning"
+  dismissible
+  opened
+>
+  <span slot="text">Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.</span>
+</scale-notification>
+```
+
+#### Toast Stack
+
+In order to "toast" a notification, append it to a div with the `.scl-toast-stack` class. Listen to the `scale-close` event if you'd like to remove them from the DOM after being dismissed.
+
+<Canvas withSource="none">
+  <Story name="Toast Stack">
+    {{
+      data() {
+        return {
+          count: 1,
+          delay: 0,
+          variants: ['informational', 'warning', 'success', 'danger'],
+          currentVariant: 0,
+        }
+      },
+      computed: {
+        variant() {
+          const s = this.variants[this.currentVariant]
+          return s.charAt(0).toUpperCase() + s.slice(1)
+        }
+      },
+      template: `
+        <div>
+          <div ref="stack" class="scl-toast-stack"></div>
+          <div style="display: flex; gap: var(--telekom-spacing-unit-x12); align-items: center">
+            <scale-button variant="secondary" @click="create">Show</scale-button>
+            <scale-slider
+              @scale-change="$event => this.delay = $event.target.value"
+              label="Delay"
+              min="0"
+              max="10"
+              show-step-marks
+              unit="s"
+              helper-text="0 means no timeout."
+            ></scale-slider>
+          </div>
+        </div>
+      `,
+      methods: {
+        create() {
+          const toast = Object.assign(
+            document.createElement('scale-notification'),
+            {
+              heading: `${this.variant} toast headline #${this.count++}`, 
+              type: 'toast',
+              variant: this.variants[this.currentVariant],
+              delay: this.delay === 0 ? undefined : this.delay * 1000,
+              dismissible: true,
+              opened: false,
+              innerHTML: '<span slot="text">Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.</span>'
+            }
+          );
+          const handleOpen = () => {
+            this.emitOpen();
+            toast.removeEventListener('scale-open', handleOpen);
+          }
+          const handleBeforeClose = (event) => {
+            this.emitBeforeClose();
+            toast.removeEventListener('scale-before-close', handleBeforeClose);
+          }
+          const handleClose = () => {
+            this.emitClose();
+            toast.removeEventListener('scale-close', handleClose);
+            toast.remove();
+          }
+          toast.addEventListener('scale-open', handleOpen);
+          toast.addEventListener('scale-before-close', handleBeforeClose);
+          toast.addEventListener('scale-close', handleClose);
+          this.$refs.stack.prepend(toast);
+          toast.opened = true;
+          this.currentVariant = (this.currentVariant + 1) % this.variants.length;
+        },
+        emitOpen: action('scale-open'),
+        emitClose: action('scale-close'),
+        emitBeforeClose: action('scale-before-close'),
+      }
+    }}
+  </Story>
+</Canvas>
+
+```html
+<div class="scl-toast-stack">
+  <scale-notification
+    heading="Informational toast headline"
+    type="toast"
+    dismissible
+    delay="10000"
+    opened
+  >
+    <span slot="text">Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.</span>
+  </scale-notification>
+</div>
+```
+
+## Variants
+
+### Success
+
+<Canvas withSource="none">
+  <Story name="Success" args={{
+    heading: 'Success notification with icon and title',
+    variant: 'success',
+    dismissible: false,
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  heading="Success notification with icon and title"
+  variant="success"
+  opened
+></scale-notification>
+```
+
+### Informational (default)
+
+<Canvas withSource="none">
+  <Story name="Informational" args={{
+    heading: 'Informational notification with icon and title',
+    variant: 'informational',
+    dismissible: false,
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  heading="Informational notification with icon and title"
+  variant="informational"
+  opened
+></scale-notification>
+```
+
+### Danger
+
+<Canvas withSource="none">
+  <Story name="Danger" args={{
+    heading: 'Danger notification with icon and title',
+    variant: 'danger',
+    dismissible: false,
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  heading="Danger notification with icon and title"
+  variant="danger"
+  opened
+></scale-notification>
+```
+
+### Warning
+
+<Canvas withSource="none">
+  <Story name="Warning" args={{
+    heading: 'Warning notification with icon and title',
+    variant: 'warning',
+    dismissible: false,
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  heading="Warning notification with icon and title"
+  variant="warning"
+  opened
+></scale-notification>
+```

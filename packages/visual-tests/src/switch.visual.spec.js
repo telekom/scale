@@ -59,6 +59,7 @@ describe('Switch', () => {
 >>>>>>> main
       await global.runSetup(`components-switch--${variant}`);
       await global.page.keyboard.press('Tab');
+      await global.page.waitFor(300);
       await global.visualCheck();
     });
 <<<<<<< HEAD

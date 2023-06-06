@@ -14,7 +14,7 @@
 
   --font-size-list-item: var(--telekom-typography-font-size-caption);
 
-  --color-separator: var(--telekom-color-ui-regular);
+  --color-separator: var(--telekom-color-text-and-icon-additional);
 
   --spacing-y-item: var(--telekom-spacing-unit-x1);
   --spacing-x-item: var(--telekom-spacing-unit-x2);
@@ -26,6 +26,7 @@
 
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
+  --font-current: var(--telekom-text-style-caption-bold);
   --color-current: var(--telekom-color-text-and-icon-standard);
 }
 
@@ -76,5 +77,6 @@
 }
 
 .breadcrumb__current {
+  font: var(--font-current);
   color: var(--color-current);
 }

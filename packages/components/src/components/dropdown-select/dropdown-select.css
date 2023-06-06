@@ -32,7 +32,7 @@
   --color-meta: var(--telekom-color-text-and-icon-standard);
 
   /*icon*/
-  --height-icon: var(--telekom-spacing-unit-x6);
+  --height-icon: 20px;
   --color-icon: var(--telekom-color-text-and-icon-standard);
   --color-icon-hover: var(--telekom-color-text-and-icon-standard);
   --color-icon-active: var(--telekom-color-text-and-icon-standard);
@@ -221,6 +221,15 @@
   background: var(--background-disabled);
 }
 
+/* hidden label */
+[part~='hide-label'] [part='combobox'] {
+  padding-top: 5px;
+}
+
+[part~='hide-label'] [part='label'] {
+  visibility: hidden;
+}
+
 /*listbox*/
 [part='listbox'] {
   position: relative;
@@ -249,6 +258,10 @@
   display: block;
 }
 
+[part~='strategy-fixed'] [part='listbox-pad'] {
+  position: fixed;
+}
+
 [part~='transparent'] [part='listbox'] {
   background-color: transparent;
 }
@@ -272,7 +285,7 @@
   position: relative;
 }
 
-[part~='option'][aria-selected='true'] scale-icon-action-success {
+[part~='option'][aria-selected='true'] scale-icon-action-checkmark {
   position: absolute;
   right: 16px;
   top: 12px;

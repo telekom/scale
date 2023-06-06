@@ -22,15 +22,8 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
-import { ScaleIcon, isScaleIcon } from '../../utils/utils';
 
 let i = 0;
-
-const iconSizeMap = {
-  small: 14,
-  medium: 16,
-  large: 16,
-};
 
 @Component({
   tag: 'scale-segment',
@@ -96,8 +89,8 @@ export class Segment {
     this.handleSelectedIcon();
   }
 
-  componentDidLoad() {
-    this.setChildrenIconSize();
+  componentDidUpdate() {
+    this.handleIcon();
   }
 
   componentWillLoad() {
@@ -125,22 +118,28 @@ export class Segment {
     }
   }
 
-  /*
-   * Set any children icon's size according the button size.
-   */
-  setChildrenIconSize() {
-    if (this.size != null && iconSizeMap[this.size] != null) {
-      const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
-        isScaleIcon
-      );
-      icons.forEach((icon) => {
-        if (this.size == 'small') {
-          icon.size = iconSizeMap['small'];
-        } else {
-          icon.size = iconSizeMap['large'];
+  handleIcon() {
+    Array.from(this.hostElement.childNodes).forEach((child) => {
+      if (
+        child.nodeType === 1 &&
+        child.nodeName.substr(0, 10) === 'SCALE-ICON'
+      ) {
+        const icon: HTMLElement = this.hostElement.querySelector(
+          child.nodeName
+        );
+        switch (this.size) {
+          case 'small':
+            icon.setAttribute('size', '14');
+            break;
+          case 'medium':
+            icon.setAttribute('size', '16');
+            break;
+          case 'large':
+            icon.setAttribute('size', '20');
+            break;
         }
-      });
-    }
+      }
+    });
   }
 
   handleClick = (event: MouseEvent) => {
@@ -171,10 +170,16 @@ export class Segment {
           >
             <div class="segment--mask">
               <div class="success-icon-container">
-                <scale-icon-action-success
-                  size={this.size === 'small' ? 14 : 16}
-                  class="scale-icon-action-success"
-                  aria-hidden={true}
+                <scale-icon-action-checkmark
+                  size={
+                    this.size === 'small'
+                      ? 14
+                      : this.size === 'medium'
+                      ? 16
+                      : 20
+                  }
+                  class="scale-icon-action-checkmark"
+                  aria-hidden="true"
                   selected
                 />
               </div>
