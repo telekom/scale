@@ -33,6 +33,7 @@
   --color-line-hover: currentColor;
   --line-thickness-hover: var(--telekom-line-weight-highlight);
   /* focus */
+  --color-focus-outline: var(--telekom-color-functional-focus-standard);
   --color-focus: var(--telekom-color-text-and-icon-link-standard);
   --color-line-focus: transparent;
   --line-thickness-focus: 0;
@@ -100,13 +101,21 @@ slot[name='icon']::slotted(*) {
   --line-color: transparent;
 }
 
+:host(.no-underline) [part='anchor'] {
+  text-decoration: none;
+}
+
 [part='anchor']:hover,
 [part='anchor']:focus,
-[part='anchor']:active {
+[part='anchor']:active,
+:host(.no-underline) [part='anchor']:focus,
+:host(.no-underline) [part='anchor']:hover,
+:host(.no-underline) [part='anchor']:active  {
   text-decoration: underline;
 }
 
-[part='anchor']:hover {
+[part='anchor']:hover,
+:host(.no-underline) [part='anchor']:hover {
   color: var(--color-hover);
   text-decoration-color: var(--color-line-hover);
   text-decoration-thickness: var(
@@ -115,19 +124,21 @@ slot[name='icon']::slotted(*) {
   );
 }
 
-[part='anchor']:focus {
+[part='anchor']:focus,
+[part='anchor']:focus-visible {
   color: var(--color-focus);
   text-decoration-color: var(--color-line-focus);
   text-decoration-thickness: var(
     --line-thickness-focus,
     var(--line-thickness-initial)
   );
-  outline: var(--telekom-line-weight-highlight) solid currentColor;
+  outline: var(--telekom-line-weight-highlight) solid var(--color-focus-outline);
   outline-offset: var(--telekom-spacing-unit-x025);
   border-radius: var(--telekom-radius-small);
 }
 
-[part='anchor']:active {
+[part='anchor']:active,
+:host(.no-underline) [part='anchor']:active {
   color: var(--color-active);
   text-decoration-color: var(--color-line-active);
   text-decoration-thickness: var(
@@ -156,7 +167,7 @@ slot[name='icon']::slotted(*) {
 :host(.disabled) [part='anchor']:hover,
 :host(.disabled) [part='anchor']:active {
   color: var(--color-disabled);
-  text-decoration-color: var(--color-line-disabled);
+  text-decoration: none;
   cursor: not-allowed;
   pointer-events: none;
 }
