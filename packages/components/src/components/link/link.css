@@ -109,7 +109,7 @@ slot[name='icon']::slotted(*) {
 [part='anchor']:focus,
 [part='anchor']:active,
 :host(.no-underline) [part='anchor']:hover,
-:host(.no-underline) [part='anchor']:active  {
+:host(.no-underline) [part='anchor']:active {
   text-decoration: underline;
 }
 
