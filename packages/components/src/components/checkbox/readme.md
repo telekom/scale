@@ -54,16 +54,16 @@
 
 ### Depends on
 
-- [scale-icon-action-indeterminate](../icons/action-indeterminate)
-- [scale-icon-action-success](../icons/action-success)
+- [scale-icon-action-minus](../icons/action-minus)
+- [scale-icon-action-checkmark](../icons/action-checkmark)
 - [scale-icon-alert-information](../icons/alert-information)
 - [scale-icon-alert-error](../icons/alert-error)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-checkbox --> scale-icon-action-indeterminate
-  scale-checkbox --> scale-icon-action-success
+  scale-checkbox --> scale-icon-action-minus
+  scale-checkbox --> scale-icon-action-checkmark
   scale-checkbox --> scale-icon-alert-information
   scale-checkbox --> scale-icon-alert-error
   scale-checkbox-group --> scale-checkbox

@@ -48,6 +48,9 @@ export class Textarea {
   @Prop() status?: string = '';
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
+  /** (optional) Variant */
+  @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
+    'informational';
   /** (optional) Input max length */
   @Prop() maxLength?: number;
   /** (optional) Input min length */
@@ -221,7 +224,10 @@ export class Textarea {
               aria-relevant="additions removals"
             >
               {!!this.helperText && (
-                <div class="textarea__helper-text">{this.helperText}</div>
+                <scale-helper-text
+                  helperText={this.helperText}
+                  variant={this.invalid ? 'danger' : this.variant}
+                ></scale-helper-text>
               )}
               {this.counter && (
                 <div class="textarea__counter">
@@ -245,6 +251,7 @@ export class Textarea {
       this.transparent && 'textarea--transparent',
       this.status && `textarea--status-${this.status}`,
       this.invalid && `textarea--status-error`,
+      this.variant && `textarea--variant-${this.variant}`,
       this.readonly && `textarea--readonly`,
       this.value != null && this.value !== '' && 'animated'
     );

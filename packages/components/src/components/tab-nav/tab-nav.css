@@ -10,15 +10,18 @@
  */
 
 :host {
-  --tab-height: var(--telekom-spacing-unit-x10);
+  --tab-height: 3rem;
   --tab-spacing-horizontal: var(--telekom-spacing-unit-x3);
   --tab-spacing-vertical: var(--telekom-spacing-unit-x4);
   --tab-radius: var(--telekom-radius-small);
   --tab-border-size: var(--telekom-line-weight-standard);
   --tab-border-size-selected: var(--telekom-line-weight-highlight);
+  --tab-border-size-selected: 3px;
+
   --tab-border-color: var(--telekom-color-ui-subtle);
 
-  --tab-height-large: var(--telekom-spacing-unit-x12);
+  --tab-height-large: 3.25rem;
+
   --tab-spacing-horizontal-large: var(--telekom-spacing-unit-x4);
   --tab-spacing-vertical-large: 0.875rem;
 }

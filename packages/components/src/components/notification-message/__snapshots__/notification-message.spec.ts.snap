@@ -53,7 +53,7 @@ exports[`NotificationMessage handle variant prop 4`] = `
   <mock:shadow-root>
     <div class="notification-message notification-message--variant-success" part="notification-message variant-success" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
-        <scale-icon-alert-success aria-hidden="true" class="notification-message__icon-success" color="#187431"></scale-icon-alert-success>
+        <scale-icon-action-success aria-hidden="true" class="notification-message__icon-success" color="#187431"></scale-icon-action-success>
         <div class="notification-message__heading" part="heading">
           <slot></slot>
         </div>

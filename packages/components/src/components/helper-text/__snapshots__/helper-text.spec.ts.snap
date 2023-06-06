@@ -62,7 +62,7 @@ exports[`Helper Text should render success text with success icon if success var
       <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-success></scale-icon-alert-success>
+      <scale-icon-action-success></scale-icon-action-success>
     </div>
   </mock:shadow-root>
   success

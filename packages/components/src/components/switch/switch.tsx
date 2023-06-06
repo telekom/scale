@@ -38,7 +38,7 @@ export class Switch {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  @Prop() size?: string = 'large';
+  @Prop() size?: 'small' | 'large' = 'large';
 
   /** Emitted when the switch was clicked */
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;
@@ -72,7 +72,7 @@ export class Switch {
             />
             <div class="switch__toggle" aria-hidden="true">
               <div class="switch__thumb">
-                <scale-icon-action-success size={12} decorative selected />
+                <scale-icon-action-checkmark size={12} decorative selected />
               </div>
               <div class="switch__io-text">
                 <span>{this.checked ? 'I' : '0'}</span>

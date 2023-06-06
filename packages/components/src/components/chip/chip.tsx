@@ -142,9 +142,16 @@ export class Chip {
         </button>
       );
     } else if (this.type === 'persistent' && this.selected) {
-      return <scale-icon-action-success decorative size={16} selected />;
+      return (
+        <scale-icon-action-checkmark
+          size={16}
+          selected
+        />
+      );
     } else if (this.type === 'persistent') {
-      return <scale-icon-action-success decorative size={16} />;
+      return (
+        <scale-icon-action-checkmark size={16} />
+      );
     }
   }
 

@@ -57,13 +57,13 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [scale-icon-action-success](../icons/action-success)
+- [scale-icon-action-checkmark](../icons/action-checkmark)
 - [scale-icon-navigation-right](../icons/navigation-right)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-menu-flyout-item --> scale-icon-action-success
+  scale-menu-flyout-item --> scale-icon-action-checkmark
   scale-menu-flyout-item --> scale-icon-navigation-right
   scale-data-grid --> scale-menu-flyout-item
   style scale-menu-flyout-item fill:#f9f,stroke:#333,stroke-width:4px

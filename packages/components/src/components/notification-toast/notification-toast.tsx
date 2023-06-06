@@ -106,7 +106,7 @@ export class NotificationToast {
       switch (this.variant) {
         case 'success':
           return (
-            <scale-icon-alert-success
+            <scale-icon-action-success
               class="notification-toast__icon"
               size={20}
               color="#ffffff"

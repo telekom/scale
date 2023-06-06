@@ -317,41 +317,13 @@ Expected format: an array of objects, e.g. `[{ label: 'Edit', onClick: () => { /
                 type: 'actions',
                 label: 'Actions (secondary)',
             },
-            {
-                type: 'actions',
-                label: 'Actions (icon-only)',
-            }
         ];
         dataGrid.rows = [
             [
                 [{ label: 'edit', variant: 'secondary', onClick: () => {} }],
-                [
-                    {
-                        label: { __html: '<scale-icon-action-more accessibility-title="More"></scale-icon-action-more>' },
-                        iconOnly: true,
-                        variant: 'ghost'
-                    },
-                    {
-                        label: { __html: '<scale-icon-action-remove accessibility-title="Delete"></scale-icon-action-remove>' },
-                        iconOnly: true,
-                        variant: 'ghost'
-                    }
-                ]
             ],
             [
                 [{ label: 'edit', variant: 'secondary', onClick: () => {} }],
-                [
-                    {
-                        label: { __html: '<scale-icon-action-more accessibility-title="More"></scale-icon-action-more>' },
-                        iconOnly: true,
-                        variant: 'ghost'
-                    },
-                    {
-                        label: { __html: '<scale-icon-action-remove accessibility-title="Delete"></scale-icon-action-remove>' },
-                        iconOnly: true,
-                        variant: 'ghost'
-                    }
-                ]
             ]
         ];
     }
@@ -588,7 +560,6 @@ Expected format: `number` or `string`, eg `120.0`
 - `precision?: number Infinity`
 - `prefix?: string`
 - `suffix?: string`
-- `editable?: boolean = false`
 
 <Canvas withSource="close">
   <Story name="Number Cell">
@@ -616,17 +587,12 @@ Expected format: `number` or `string`, eg `120.0`
                 prefix: '$',
                 suffix: ' USD',
             },
-            {
-                type: 'number',
-                label: 'Editable',
-                editable: true,
-            },
         ];
         dataGrid.rows = [
-            [11, 11, 11, 11],
-            [126.3, 126.3, 126.3, 126.3],
-            [0.032, 0.032, 0.032, 0.032],
-            [123045, 123045, 123045, 123045],
+            [11, 11, 11],
+            [126.3, 126.3, 126.3],
+            [0.032, 0.032, 0.032],
+            [123045, 123045, 123045],
         ];
     }
     </script>

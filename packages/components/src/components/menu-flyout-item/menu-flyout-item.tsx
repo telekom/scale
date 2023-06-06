@@ -136,10 +136,10 @@ export class MenuFlyoutItem {
             {this.checkable == null ? (
               <slot name="prefix" />
             ) : (
-              <scale-icon-action-success
+              <scale-icon-action-checkmark
                 class="menu-flyout-item__check"
                 size={16}
-              ></scale-icon-action-success>
+              ></scale-icon-action-checkmark>
             )}
           </span>
           <span part="label" class="menu-flyout-item__label">
