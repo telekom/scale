@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-describe('SegmentedButton', () => {
-=======
 describe.skip('SegmentedButton', () => {
->>>>>>> main
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-segmented-button--standard', mode);
