@@ -87,6 +87,8 @@ export const Template = (args, { argTypes }) => ({
       label: 'Disabled',
       value: 'cedric',
       disabled: true,
+      helperText: "This field is disabled",
+      variant: "neutral",
     }}
   >
     {Template.bind({})}
@@ -94,7 +96,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-dropdown-select label="Disabled" value="cedric" disabled>
+<scale-dropdown-select label="Disabled" value="cedric" disabled helper-text="This field is disabled" variant="neutral">
   <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
   <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
   <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
@@ -110,7 +112,7 @@ export const Template = (args, { argTypes }) => ({
       label: 'Error',
       value: 'cem',
       invalid: true,
-      helperText: 'Please select a different option',
+      helperText: 'Error: please select a different option',
     }}
   >
     {Template.bind({})}
@@ -121,7 +123,7 @@ export const Template = (args, { argTypes }) => ({
 <scale-dropdown-select
   label="Error"
   invalid
-  helper-text="Please select a different option"
+  helper-text="Error: please select a different option"
 >
   <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
   <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
