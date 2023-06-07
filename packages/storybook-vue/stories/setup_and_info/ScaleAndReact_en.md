@@ -37,7 +37,7 @@ const App = () => (
 export default App;
 ```
 
-If you use our automatically generated proxy package `@telekom/scale-components-react` (don't forget to install it first):
+If you use our automatically generated proxy package `@telekom/scale-components-react` (don't forget to install it first `npm install @telekom/scale-components-react@next`):
 
 ```jsx
 import React from 'react';
