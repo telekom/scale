@@ -160,13 +160,10 @@ export const TemplateInteractive = (args, { argTypes }) => ({
 :host {
   --background: var(--telekom-color-ui-faint);
   --color: var(--telekom-color-text-and-icon-standard);
-  --font-size: var(--telekom-typography-font-size-body);
-  --line-height: var(--telekom-typography-line-spacing-standard);
-  --font-weight: var(--telekom-typography-font-weight-bold);
-  --radius: var(--telekom-radius-small);
-  --focus-outline: var(--telekom-line-weight-highlight) solid var(
-      --telekom-color-functional-focus
-    );
+  --font: var(--telekom-text-style-caption-bold);
+  --radius: 2px;
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
 
   --icon-color: var(--telekom-color-text-and-icon-additional);
   --icon-color-hover: var(--color);
@@ -174,7 +171,10 @@ export const TemplateInteractive = (args, { argTypes }) => ({
   --background-disabled: var(--telekom-color-ui-faint);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
-  --spacing-left-dismissable: var(--telekom-spacing-unit-x05);
+  --spacing-dismissable: var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x1) ;
+
+  --height: 24px;
+  --height-small: 20px;
 
   --border-button-dismissable-focus: 1px solid transparent;
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
