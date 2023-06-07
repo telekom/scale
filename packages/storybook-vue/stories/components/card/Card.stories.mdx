@@ -58,13 +58,17 @@ export const Template = (args, { argTypes }) => ({
                       <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
                       <div style="padding: 24px;"> 
                         <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);">Blogpost Title </h4>
-                        <span> A card with a full width image</span>
+                        <span style="${'font: var(--telekom-text-style-body);'}"> A card</span>
                       </div>
                     </div>
                 </div>
-                <div v-if="!slot.startsWith('<div')">
-                  {{ slot }}
+                <div v-if="slot.startsWith('<span')">
+                  <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);">Blogpost Title </h4>
+                  <span style="${'font: var(--telekom-text-style-body);'}"> A card</span>
                 </div>
+                <div v-if="!slot.startsWith('<span') && !slot.startsWith('<div')">
+                  {{ slot }}
+                </div>                
         </scale-card>
     </div>
   `,
@@ -88,7 +92,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      slot: 'A card',
+      slot: `<span>A card</span>`,
       label: 'Example Card',
     }}
   >
