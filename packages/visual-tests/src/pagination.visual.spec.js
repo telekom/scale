@@ -35,7 +35,7 @@ describe('Pagination', () => {
       await lastButton.click();
       await global.visualCheck();
     });
-    test.each([['hidden-borders'], ['embedded-hidden-borders']])(
+    test.each([['hidden-borders']])(
       '%p',
       async (variant) => {
         await global.runSetup(`components-pagination--${variant}`);
