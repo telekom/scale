@@ -35,27 +35,24 @@ describe('Pagination', () => {
       await lastButton.click();
       await global.visualCheck();
     });
-    test.each([['hidden-borders']])(
-      '%p',
-      async (variant) => {
-        await global.runSetup(`components-pagination--${variant}`);
+    test.each([['hidden-borders']])('%p', async (variant) => {
+      await global.runSetup(`components-pagination--${variant}`);
 
-        const firstButton = await global.page.evaluateHandle(
-          `document.querySelector("#root scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
-        );
-        const base = await global.page.evaluateHandle(
-          `document.querySelector("#root")`
-        );
+      const firstButton = await global.page.evaluateHandle(
+        `document.querySelector("#root scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
+      );
+      const base = await global.page.evaluateHandle(
+        `document.querySelector("#root")`
+      );
 
-        firstButton.hover();
-        await global.visualCheck();
-        base.hover();
-        firstButton.focus();
-        await global.visualCheck();
-        await global.page.mouse.move(20, 30);
-        await global.page.mouse.down();
-        await global.visualCheck();
-      }
-    );
+      firstButton.hover();
+      await global.visualCheck();
+      base.hover();
+      firstButton.focus();
+      await global.visualCheck();
+      await global.page.mouse.move(20, 30);
+      await global.page.mouse.down();
+      await global.visualCheck();
+    });
   });
 });
