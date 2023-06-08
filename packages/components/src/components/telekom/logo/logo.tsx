@@ -24,7 +24,7 @@ export class Logo {
   @Prop() variant: 'magenta' | 'white' = 'magenta';
   /** (optional) Set transparent background */
   @Prop() transparent: boolean = false;
-  /** (optional) Language of the logo text/ claimOff showes just the T Logo */
+  /** @deprecated; (optional) Language of the logo text/ claimOff showes just the T Logo */
   @Prop() language:
     | 'de'
     | 'en'
@@ -66,6 +66,15 @@ export class Logo {
         source: this.hostElement,
       });
     }
+    if (this.language) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "language" is deprecated. Localized logo claim is not displayed anymore!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }    
   }
 
   render() {
@@ -91,7 +100,6 @@ export class Logo {
         >
           <scale-logo-svg
             part="icon"
-            language={this.language}
             color={this.variant}
             logoTitle={this.logoTitle}
             logoHideTitle={this.logoHideTitle}

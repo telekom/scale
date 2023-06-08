@@ -6,6 +6,12 @@ import { action } from '@storybook/addon-actions';
   title="Components/Logo"
   component={ScaleLogo}
   argTypes={{
+    variant: {
+      control: {
+        type: 'select',
+        options: ['magenta', 'white'],
+      },
+    },
     language: {
       control: {
         type: 'select',
@@ -23,6 +29,7 @@ import { action } from '@storybook/addon-actions';
           '',
         ],
       },
+      description: `DEPRECATED - localized brand claim is not shown anymore.`,
     },
   }}
 />
