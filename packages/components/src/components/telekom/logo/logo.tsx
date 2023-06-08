@@ -70,7 +70,7 @@ export class Logo {
       statusNote({
         tag: 'deprecated',
         message:
-          'Property "language" is deprecated. Localized logo claim is not displayed anymore!',
+          'Property "language" is deprecated. Localized brand claim is not shown anymore.',
         type: 'warn',
         source: this.hostElement,
       });
