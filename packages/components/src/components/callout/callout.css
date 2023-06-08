@@ -6,8 +6,8 @@
   --min-width: 6rem;
   --aspect-ratio: 1;
   --rotation: 0deg;
-  --font-standard: var(--telekom-text-style-body-bold);
   --font-small: var(--telekom-text-style-body-bold);
+  --font-medium: var(--telekom-text-style-body-bold);
   --font-large: var(--telekom-text-style-heading-1);
 
   box-sizing: border-box;
@@ -29,9 +29,7 @@
 [part='base'] {
   box-sizing: border-box;
   padding: var(--spacing);
-  font: var(--font-standard);
-  font-weight: var(--telekom-typography-font-weight-bold);
-  line-height: var(--telekom-typography-line-spacing-tight);
+  font: var(--font-medium);
 }
 
 /* Color variants */
