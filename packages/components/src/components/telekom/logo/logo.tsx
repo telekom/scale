@@ -38,7 +38,7 @@ export class Logo {
     | 'sk'
     | string = 'en';
   /** (optional) The height in pixels */
-  @Prop() size?: number = 36;
+  @Prop() size?: number = 38;
   /** (optional) Set a link */
   @Prop() href?: string = 'javascript:void(0);';
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
