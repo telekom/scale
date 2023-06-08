@@ -74,7 +74,7 @@ export class Logo {
         type: 'warn',
         source: this.hostElement,
       });
-    }    
+    }
   }
 
   render() {
