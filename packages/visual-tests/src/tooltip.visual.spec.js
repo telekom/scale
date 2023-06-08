@@ -8,7 +8,7 @@ describe('Tooltip', () => {
       const button = await global.page.evaluateHandle(
         'document.querySelector("#root > div > scale-tooltip > scale-button")'
       );
-      await button.hover();
+      await button.click();
       await global.visualCheck();
     });
   });

@@ -9,7 +9,8 @@
       :trigger="trigger"
       :flip="flip"
     >
-      <scale-button>Hover me</scale-button>
+      <scale-button v-if="disabled">Tooltip disabled</scale-button>
+      <scale-button v-if="!disabled">Click me</scale-button>
     </scale-tooltip>
   </div>
 </template>

@@ -59,7 +59,6 @@ Type: `Promise<void>`
 | Part        | Description |
 | ----------- | ----------- |
 | `"arrow"`   |             |
-| `"tooltip"` |             |
 | `"trigger"` |             |
 
 

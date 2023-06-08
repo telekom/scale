@@ -174,6 +174,7 @@ export class Tooltip {
     // Position arrow
     const { x: arrowX, y: arrowY } = middlewareData.arrow;
     const [side] = placement.split('-');
+
     const staticSide = {
       top: 'bottom',
       right: 'left',
@@ -304,12 +305,19 @@ export class Tooltip {
           <div
             part="tooltip"
             role="tooltip"
-            aria-hidden={this.opened ? 'false' : 'true'}
+            {...(!this.opened ? { ['aria-hidden']: true } : {})}
             ref={(el) => (this.tooltipEl = el)}
             onMouseOver={this.handleTooltipMouseOver}
             onMouseLeave={this.handleTooltipBlur}
           >
             {this.content}
+            <div
+              aria-live="assertive"
+              class="sr-only"
+              aria-relevant="additions"
+            >
+              {this.opened ? this.content : ''}
+            </div>
             <div
               aria-hidden="true"
               part="arrow"

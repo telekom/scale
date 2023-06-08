@@ -54,7 +54,7 @@
   transition-timing-function: var(--transition-timing-function-show);
 }
 
-[part='tooltip'][aria-hidden='true'] {
+[part='tooltip'][aria-hidden] {
   opacity: 0;
   transition-delay: var(--transition-delay-hide);
   transition-duration: var(--transition-duration-hide);
@@ -72,11 +72,45 @@
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-  [part='tooltip'] {
-    border: 1px solid transparent;
-  }
   [part='arrow'] {
     border-right: 1px solid transparent;
     border-bottom: 1px solid transparent;
   }
+
+  :host([placement='left']) [part='arrow'] {
+    border-right: 1px solid transparent;
+
+    border-left: none;
+    border-top: 1px solid transparent;
+    border-bottom: none;
+  }
+
+  :host([placement='right']) [part='arrow'] {
+    border-right: none;
+    border-left: 1px solid transparent;
+    border-top: none;
+    border-bottom: 1px solid transparent;
+  }
+  :host([placement='bottom']) [part='arrow'] {
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  [part='tooltip'] {
+    border: 1px solid transparent;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
