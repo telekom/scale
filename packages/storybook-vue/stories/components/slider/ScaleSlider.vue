@@ -18,6 +18,7 @@ export default {
     name: { type: String },
     sliderId: { type: String },
     helperText: String,
+    platform: { type: 'ios' | 'android' },
     styles: { type: String },
   },
   render() {
