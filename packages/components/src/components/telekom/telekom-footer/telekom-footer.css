@@ -3,6 +3,8 @@
 .scale-telekom-footer {
   --font-size: var(--telekom-typography-font-size-caption);
   --font-color: var(--telekom-color-text-and-icon-white-standard);
+
+  --font-large: var(--telekom-text-style-ui);
   --background-footer: var(--telekom-color-ui-black);
   --background-footer-minimal: var(--telekom-color-background-canvas);
 
@@ -100,7 +102,7 @@
     flex-direction: row;
     align-items: center;
     list-style: none;
-    column-gap: var(--telekom-spacing-unit-x2);
+    column-gap: var(--_nav-items-spacing);
     row-gap: var(--telekom-spacing-unit-x1);
   }
 }
@@ -108,7 +110,17 @@
 @media screen and (--lg) {
   .scale-telekom-footer :where(ul),
   .scale-telekom-footer[type='minimal'] :where(ul) {
-    column-gap: var(--_nav-items-spacing);
+    --_nav-items-spacing: var(--telekom-spacing-unit-x6);
     row-gap: var(--telekom-spacing-unit-x2);
+  }
+  .scale-telekom-footer :where(a, span) {
+    font: var(--font-large);
+  }
+}
+
+@media screen and (--xl) {
+  .scale-telekom-footer :where(ul),
+  .scale-telekom-footer[type='minimal'] :where(ul) {
+    --_nav-items-spacing: var(--telekom-spacing-unit-x12);
   }
 }
