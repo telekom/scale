@@ -72,7 +72,7 @@ export class Slider {
    * (e.g. data-platform="ios" on `body`)
    * but browser support is not yet sufficient.
    * @see @url(https://caniuse.com/mdn-css_selectors_host-context)
-   * */
+   */
   @Prop() platform?: 'ios' | 'android' | undefined = undefined;
   /** @deprecated (optional) slider custom color */
   @Prop() customColor?: string;
