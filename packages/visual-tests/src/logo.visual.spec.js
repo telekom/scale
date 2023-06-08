@@ -8,8 +8,6 @@ describe('Logo', () => {
       ['white'],
       ['sizing'],
       ['link'],
-      ['macedonia-cyrillic'],
-      ['macedonia-latin-script'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-logo--${variant}`);
       await global.visualCheck();
