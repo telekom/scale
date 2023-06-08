@@ -77,4 +77,4 @@
 
 .card__body ::slotted(*) {
   font: var(--font-body-slotted);
-}  
+}
