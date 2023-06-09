@@ -73,7 +73,7 @@ export class Slider {
    * but browser support is not yet sufficient.
    * @see @url(https://caniuse.com/mdn-css_selectors_host-context)
    */
-  @Prop() platform?: 'ios' | 'android' | undefined = undefined;
+  @Prop({ reflect: true }) platform?: 'ios' | 'android';
   /** @deprecated (optional) slider custom color */
   @Prop() customColor?: string;
   /** (optional) disabled  */
@@ -340,13 +340,7 @@ export class Slider {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div
-          part={classNames(
-            'base',
-            this.disabled && 'disabled',
-            this.platform && `platform-${this.platform}`
-          )}
-        >
+        <div part={classNames('base', this.disabled && 'disabled')}>
           <div part="label-wrapper">
             {!!this.label && (
               <label
