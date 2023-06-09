@@ -12,7 +12,7 @@
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --border-invalid: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-hovered);
-  --focus-outline: var(--telekom-line-weight-highlight) solid
+  --focus-outline: var(--telekom-spacing-unit-x1) solid
     var(--telekom-color-functional-focus-standard);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --transition: all var(--telekom-motion-duration-transition)
@@ -242,7 +242,7 @@
   box-shadow: var(--box-shadow-listbox);
   border-radius: var(--radius);
   padding: var(--radius) 0;
-  margin-top: var(--telekom-line-weight-highlight);
+  margin-top: var(--telekom-spacing-unit-x1);
   left: 0;
   position: absolute;
   top: 100%;
@@ -284,12 +284,12 @@
 
 [part~='option'][aria-selected='true'] scale-icon-action-checkmark {
   position: absolute;
-  right: 16px;
-  top: 12px;
+  right: var(--telekom-spacing-unit-x3);
+  top: var(--telekom-spacing-unit-x3);
 }
 
 [part~='option'] scale-dropdown-select-item::part(base) {
-  padding: 12px;
+  padding: var(--telekom-spacing-unit-x3);
 }
 
 /*helper-text*/

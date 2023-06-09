@@ -17,4 +17,5 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   line-height: 1;
+  font: var(--telekom-text-style-ui);
 }
