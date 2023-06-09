@@ -12,6 +12,9 @@ import { action } from '@storybook/addon-actions';
   title="Components/Slider"
   component={ScaleSlider}
   argTypes={{
+    platform: {
+      control: { type: 'text' },
+    },
     styles: {
       control: { disable: true },
     },
@@ -41,6 +44,7 @@ export const Template = (args, { argTypes }) => ({
       :name="name"
       :slider-id="sliderId"
       :helper-text="helperText"
+      :platform="platform"
       @scale-change="handleScaleChange"
       @scale-input="handleScaleInput"
       >
@@ -222,18 +226,14 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story name="Platform iOS">
     {{
       template: `
-        <div data-platform="ios">
-          <scale-slider label="iOS" value="25"></scale-slider>
-        </div>
+        <scale-slider label="iOS" value="25" platform="ios"></scale-slider>
       `
     }}
   </Story>
 </Canvas>
 
 ```html
-<div data-platform="ios">
-  <scale-slider label="Apple" value="25"></scale-slider>
-</div>
+<scale-slider label="Apple" value="25" platform="ios"></scale-slider>
 ```
 
 ## Platform Android
@@ -242,16 +242,15 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story name="Platform Android">
     {{
       template: `
-        <div data-platform="android">
-          <scale-slider label="Android" value="75"></scale-slider>
-        </div>
+        <scale-slider label="Android" value="75" platform="android"></scale-slider>
       `
     }}
   </Story>
 </Canvas>
 
 ```html
-<div data-platform="android">
+<!-- attribute data-platform="android" in parent element works in Chrome -->
+<body data-platform="android">
   <scale-slider label="Android" value="75"></scale-slider>
-</div>
+</body>
 ```

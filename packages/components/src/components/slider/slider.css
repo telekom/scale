@@ -176,9 +176,19 @@
   cursor: not-allowed;
 }
 
+/*
+  :host-context() is not widely supported yet
+  that's why the rules for the platform are duplicated
+*/
+
 /* PLATFORM iOS */
 
 :host-context([data-platform='ios']) {
+  --height-track: 4px;
+  --size-thumb: 26px;
+  --size-step-mark: 2px;
+}
+:host([platform='ios']) {
   --height-track: 4px;
   --size-thumb: 26px;
   --size-step-mark: 2px;
@@ -189,7 +199,13 @@
 :host-context([data-platform='android']) {
   --background-thumb: var(--telekom-color-primary-standard);
 }
+:host([platform='android']) {
+  --background-thumb: var(--telekom-color-primary-standard);
+}
 
 :host-context([data-platform='android']) [part~='thumb'] {
+  box-shadow: var(--_border), var(--telekom-shadow-raised-standard);
+}
+:host([platform='android']) [part~='thumb'] {
   box-shadow: var(--_border), var(--telekom-shadow-raised-standard);
 }
