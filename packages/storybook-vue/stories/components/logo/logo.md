@@ -10,19 +10,11 @@ In addition to color and typography, our logo is one of the three central Teleko
 We use our logo in combination with our claim to convey our central brand promise.
 Only use the logo for the brand header and footer.
 
-## Variants
-
-The Telekom logo with claim is available in 9 country-specific variants (International, German, Hungarian, Czech, Croatian, Montenegrin, Macedonian, Romanian, Slovak).
-
-![Image Name](assets/3_components/logo/Logo-Claim-Varianten-EN.png)
-
 ## Elements
 
 ![Image Name](assets/3_components/logo/Logo-Claim.png)
 
 #### Logo (1)
-
-#### Claim (2)
 
 ## Colors
 

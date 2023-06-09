@@ -10,19 +10,11 @@ Neben Farbe und Typografie ist das Logo eines der drei zentralen Telekom Gestalt
 Wir setzen das Logo in Kombination mit dem Claim ein, um unser zentrales Markenversprechen zu vermitteln.
 Verwende das Logo ausschließlich für den Brand-Header und Footer.
 
-## Varianten
-
-Das Telekom Logo mit Claim liegt in 9 länderspezifischen Varianten vor (für Deutschland, Ungarn, Tschechien, Kroatien, Montenegro, Mazedonien, Rumänien und Slovakei sowie als internationale Variante).
-
-![Image Name](assets/3_components/logo/Logo-Claim-Varianten-DE.png)
-
 ## Elemente
 
 ![Image Name](assets/3_components/logo/Logo-Claim.png)
 
 #### Logo (1)
-
-#### Claim (2)
 
 ## Farben
 
