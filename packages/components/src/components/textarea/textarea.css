@@ -26,7 +26,7 @@ scale-textarea {
     var(--telekom-color-functional-focus-standard);
   --spacing-x-control: var(--telekom-spacing-unit-x3);
   --spacing-bottom-control: var(--telekom-spacing-unit-x3);
-  --spacing-top-control: var(--telekom-spacing-unit-x6);
+  --spacing-top-control: 19px;
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: transparent;
@@ -63,7 +63,6 @@ scale-textarea {
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-small);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
-  --margin-top-label-focus: 1.5px;
 }
 
 .textarea {
@@ -146,15 +145,12 @@ scale-textarea {
   pointer-events: none;
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-label);
-  transform: translate(
-    var(--spacing-x-control),
-    calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
-  );
+  line-height: 1;
+  transform: translate(var(--spacing-x-control), 14px);
 }
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
-  line-height: var(--font-size-label-focus);
-  margin-top: var(--margin-top-label-focus);
+  line-height: 1;
   transform: translate(
     var(--spacing-x-control),
     var(--telekom-spacing-unit-x2)
