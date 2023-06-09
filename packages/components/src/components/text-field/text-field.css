@@ -254,7 +254,6 @@ scale-text-field {
   color: var(--color-label-readonly);
   border: none;
   background: var(--background-readonly);
-  box-sizing: content-box;
 }
 
 .text-field--readonly .text-field__control:focus {
