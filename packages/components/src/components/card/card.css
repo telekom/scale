@@ -24,6 +24,8 @@
 
   --spacing-body-slotted: 0;
   --spacing-body-slotted-interactive: 0;
+
+  --font-body-slotted: var(--telekom-text-style-body);
 }
 
 .card-border {
@@ -71,4 +73,8 @@
 
 .card--interactive .card__body ::slotted(*) {
   margin: var(--spacing-body-slotted-interactive);
+}
+
+.card__body ::slotted(*) {
+  font: var(--font-body-slotted);
 }

@@ -55,16 +55,20 @@ export const Template = (args, { argTypes }) => ({
             >
                 <div v-if="slot.startsWith('<div')">
                     <div style="margin: -24px;">
-                      <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
+                      <img style="display: block; width:100%;" src="assets/card-image.jpg" alt="placeholder" />
                       <div style="padding: 24px;"> 
                         <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);">Blogpost Title </h4>
-                        <span> A card with a full width image</span>
+                        <span style="${'font: var(--telekom-text-style-body);'}"> Lorem ipsur dolor sit amet </span>
                       </div>
                     </div>
                 </div>
-                <div v-if="!slot.startsWith('<div')">
-                  {{ slot }}
+                <div v-if="slot.startsWith('<span')">
+                  <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);">Blogpost Title </h4>
+                  <span> Lorem ipsur dolor sit amet </span>
                 </div>
+                <div v-if="!slot.startsWith('<span') && !slot.startsWith('<div')">
+                  {{ slot }}
+                </div>                
         </scale-card>
     </div>
   `,
@@ -88,7 +92,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      slot: 'A card',
+      slot: `<span>Lorem ipsur dolor sit amet</span>`,
       label: 'Example Card',
     }}
   >
@@ -129,7 +133,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="With Link"
     args={{
-      slot: 'A card with a link to example.com',
+      slot: 'Lorem ipsur dolor sit amet',
       to: 'https://example.com',
       target: '_blank',
       rel: 'noopener noreferrer',
@@ -146,7 +150,7 @@ For Shadow Parts, please inspect the element's #shadow.
   target="_blank"
   rel="noopener noreferrer"
   label="Example Card"
-  >A card with a link to example.com</scale-card
+  >Lorem ipsur dolor sit amet</scale-card
 >
 ```
 
@@ -157,9 +161,9 @@ For Shadow Parts, please inspect the element's #shadow.
     name="With Image"
     args={{
       slot: `<div style="margin: -24px;">
-        <img style="margin-bottom: -4px; width:100%;" src="https://placeimg.com/200/200/tech/grayscale" alt="placeholder" />
-        <h4> Title </h4>
-        <div style="padding: 24px;">A card with a full width image</div>
+        <img style="display:block; width:100%;" src="assets/card-image" alt="placeholder" />
+        <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);"> Title </h4>
+        <div style="padding: 24px;">Lorem ipsur dolor sit amet</div>
       </div>
       `,
       to: 'https://example.com',
@@ -177,12 +181,12 @@ For Shadow Parts, please inspect the element's #shadow.
     <div style="margin: -24px;">
       <img
         style="margin-bottom: -4px; width:100%;"
-        src="https://via.placeholder.com/150"
+        src="assets/card-image"
         alt="placeholder"
       />
       <div style="padding: 24px;"> 
         <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);">Blogpost Title </h4>
-        <span> A card with a full width image</span>
+        <span>Lorem ipsur dolor sit amet</span>
       </div>
     </div>
   </scale-card>
