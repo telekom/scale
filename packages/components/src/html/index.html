@@ -24,55 +24,6 @@
   </head>
 
   <body>
-    <p>Audio settings:</p>
-
-    <div>
-      <input type="range" id="rot" name="volume"
-             min="0" max="360">
-      <label for="volume">Rotation</label>
-    </div>
-
-    <br/>
-
-    <scale-callout variant="primary">
-      <span class="scl-callout-text-small">Starting at</span>
-      <span class="scl-callout-text-large">9.95 &#8364;</span>
-      <span class="scl-callout-text-small">for 4 weeks</span>
-    </scale-callout>
-    
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <scale-callout variant="primary" rotation="92">
-      <span class="scl-callout-text-small">Starting at</span>
-      <span class="scl-callout-text-large">9.95 &#8364;</span>
-      <span class="scl-callout-text-small">for 4 weeks</span>
-    </scale-callout>    
-
-
+    <h1 class="scl-font-variant-body">index.html</h1>
   </body>
-  <script>
-    const rot = document.getElementById('rot');
-    const callout = document.querySelectorAll('scale-callout');
-    rot.addEventListener('input', (event) => {
-      console.log('change')
-      // callout.style.setProperty('--rotation', `${event.target.value}deg`);
-    //  callout.setAttribute('rotation', `${event.target.value}`);
-     callout.forEach(el => {
-       el.setAttribute('rotation', `${event.target.value}`);
-     });
-    });
-  </script>
 </html>
