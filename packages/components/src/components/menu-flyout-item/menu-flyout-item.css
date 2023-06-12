@@ -35,7 +35,8 @@
   font-size: var(--telekom-typography-font-size-body);
   line-height: 2.635em;
   /* calc here to account for the extra padding for the outline */
-  padding: 0 calc(var(--telekom-spacing-unit-x6) - var(--telekom-spacing-unit-x05));
+  padding: 0
+    calc(var(--telekom-spacing-unit-x6) - var(--telekom-spacing-unit-x05));
   user-select: none;
   white-space: nowrap;
   border-radius: 0;
