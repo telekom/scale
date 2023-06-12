@@ -33,15 +33,18 @@
   position: relative;
   font-size: var(--font-size);
   line-height: var(--line-height);
-  padding-left: var(--spacing-left);
   margin-top: var(--telekom-spacing-unit-x1);
+}
+
+.list-item--unordered {
+  padding-left: var(--spacing-left);
 }
 
 .list-item:before {
   content: '';
-  position: absolute;
   top: 0;
   left: 0;
+  margin-right: var(--telekom-spacing-unit-x2);
 }
 
 .list-item--unordered:before {
@@ -54,6 +57,8 @@
   border-radius: 50%;
   width: var(--telekom-spacing-unit-x2);
   height: var(--telekom-spacing-unit-x2);
+  position: absolute;
+  margin-right: 0;
 }
 
 .list-item--nested.list-item--unordered:before {
