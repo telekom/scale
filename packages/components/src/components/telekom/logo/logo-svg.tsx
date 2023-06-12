@@ -74,7 +74,7 @@ export class LogoSvg {
       <Host>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 33 38"
+          viewBox="0 0 32 38"
           part="logo-svg"
           fill={this.getColor()}
           role={this.innerRole === 'link' ? null : 'img'}
