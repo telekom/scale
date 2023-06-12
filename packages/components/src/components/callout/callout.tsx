@@ -51,8 +51,6 @@ export class Callout {
       characterData: true,
     });
     this.mo = observer;
-    // Wait for full styles before measuring
-    window.requestAnimationFrame(this.adjustSize);
   }
 
   disconnectedCallback() {
