@@ -39,7 +39,7 @@ export class Callout {
     statusNote({ source: this.hostElement, tag: 'beta' });
     this.syncPropsToCSS();
   }
-  
+
   @Watch('rotation')
   @Watch('top')
   @Watch('right')
