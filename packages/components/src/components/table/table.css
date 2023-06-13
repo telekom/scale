@@ -83,7 +83,7 @@ scale-table {
   font-weight: var(--font-weight);
   border-bottom: var(--border-bottom-tfoot-td);
 }
-.table .scale-sort-indicator svg {
+.table .scale-sort-indicator-icon {
   display: none;
 }
 .table tbody tr:hover {
@@ -110,7 +110,7 @@ scale-table {
   box-shadow: var(--box-shadow-th-sortable-focus);
   border-radius: var(--radius);
 }
-.table--sortable th .scale-sort-indicator svg {
+.table--sortable th .scale-sort-indicator-icon {
   display: block;
 }
 .table--sortable th[aria-disabled] {
@@ -123,71 +123,50 @@ scale-table {
 .table--sortable th[aria-sort='none'] {
   padding: var(--padding);
 }
-.table--sortable
-  th[aria-sort='ascending']
-  .scale-sort-indicator
-  polygon:first-of-type {
-  fill: var(--color);
+.table--sortable th[aria-sort='ascending'] .scale-sort-indicator .up {
+  color: var(--color);
 }
-.table--sortable th:hover .scale-sort-indicator polygon:first-of-type {
-  fill: var(--color-hover);
+.table--sortable th:hover .scale-sort-indicator .up {
+  color: var(--color-hover);
 }
-.table--sortable
-  th:hover[aria-sort='ascending']
-  .scale-sort-indicator
-  polygon:first-of-type {
-  fill: var(--color-hover);
+.table--sortable th:hover[aria-sort='ascending'] .scale-sort-indicator-icon.up {
+  color: var(--color-hover);
 }
 .table--sortable
   th:active[aria-sort='ascending']
-  .scale-sort-indicator
-  polygon:first-of-type {
-  fill: var(--color-active);
+  .scale-sort-indicator-icon.up {
+  color: var(--color-active);
 }
-.table--sortable th[aria-sort='ascending'] .scale-sort-indicator polygon {
-  fill: transparent;
+.table--sortable th[aria-sort='ascending'] .scale-sort-indicator {
+  color: transparent;
 }
-.table--sortable th:hover[aria-sort='ascending'] .scale-sort-indicator polygon {
-  fill: transparent;
+.table--sortable th:hover[aria-sort='ascending'] .scale-sort-indicator {
+  color: transparent;
 }
-.table--sortable
-  th:active[aria-sort='ascending']
-  .scale-sort-indicator
-  polygon {
-  fill: transparent;
+.table--sortable th:active[aria-sort='ascending'] .scale-sort-indicator {
+  color: transparent;
 }
-.table--sortable
-  th[aria-sort='descending']
-  .scale-sort-indicator
-  polygon:first-of-type {
-  fill: transparent;
+.table--sortable th[aria-sort='descending'] .scale-sort-indicator-icon.up {
+  color: transparent;
 }
 .table--sortable
   th:hover[aria-sort='descending']
-  .scale-sort-indicator
-  polygon:first-of-type {
-  fill: transparent;
+  .scale-sort-indicator-icon.up {
+  color: transparent;
 }
 .table--sortable
   th:active[aria-sort='descending']
-  .scale-sort-indicator
-  polygon:first-of-type {
-  fill: transparent;
+  .scale-sort-indicator-icon.up {
+  color: transparent;
 }
-.table--sortable th[aria-sort='descending'] .scale-sort-indicator polygon {
-  fill: var(--color);
+.table--sortable th[aria-sort='descending'] .scale-sort-indicator-icon {
+  color: var(--color);
 }
-.table--sortable
-  th:hover[aria-sort='descending']
-  .scale-sort-indicator
-  polygon {
-  fill: var(--color-hover);
+.table--sortable th:hover[aria-sort='descending'] .scale-sort-indicator-icon {
+  color: var(--color-hover);
 }
-.table--sortable
-  th:active[aria-sort='descending']
-  .scale-sort-indicator
-  polygon {
-  fill: var(--color-active);
+.table--sortable th:active[aria-sort='descending'] .scale-sort-indicator-icon {
+  color: var(--color-active);
 }
 .table--sortable th .scale-sort-indicator {
   width: 16px;
@@ -196,15 +175,15 @@ scale-table {
   display: inline-block;
   position: relative;
 }
-.table--sortable th .scale-sort-indicator > svg {
+.table--sortable th .scale-sort-indicator .scale-sort-indicator-icon {
   top: 4px;
   left: 0;
   width: 16px;
   height: 16px;
   position: absolute;
 }
-.table--sortable th .scale-sort-indicator polygon {
-  fill: transparent;
+.table--sortable th .scale-sort-indicator {
+  color: transparent;
 }
 .table--sortable th[aria-sort='none']:hover {
   padding: 0 8px 0 0;
