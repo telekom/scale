@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: 'scale-sidebar-nav',
   props: {
     ariaLabel: { type: String },
     collapsible: { type: Boolean, default: false },

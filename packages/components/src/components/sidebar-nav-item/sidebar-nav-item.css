@@ -43,6 +43,17 @@
   border-left: 2px solid transparent;
 }
 
+/*:host([nesting-level='3']) .sidebar-nav-item--active::before {
+  transform: translateX(-0.5px);
+}*/
+
+.sidebar-nav-item:hover.sidebar-nav-item--active::before {
+  background-color: var(--color-hover);
+}
+.sidebar-nav-item:active.sidebar-nav-item--active::before {
+  background-color: var(--color-active);
+}
+
 .sidebar-nav-item--condensed.sidebar-nav-item--active::before {
   left: -1px;
 }
