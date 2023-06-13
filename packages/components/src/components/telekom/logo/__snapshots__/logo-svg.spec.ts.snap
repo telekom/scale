@@ -2,7 +2,7 @@
 
 exports[`component prop snapshots all props are not set 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-1" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 33 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-1" fill="#e20074" part="logo-svg" role="img" viewBox="0 0 32 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-1">
       Telekom Logo
     </title>
@@ -13,7 +13,7 @@ exports[`component prop snapshots all props are not set 1`] = `
 
 exports[`component prop snapshots all props are set 1`] = `
 <scale-logo-svg>
-  <svg aria-labelledby="logo-title-2" part="logo-svg" role="img" viewBox="0 0 33 38" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-labelledby="logo-title-2" part="logo-svg" role="img" viewBox="0 0 32 38" xmlns="http://www.w3.org/2000/svg">
     <title id="logo-title-2">
       title
     </title>
