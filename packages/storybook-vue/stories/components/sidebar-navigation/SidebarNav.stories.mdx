@@ -11,14 +11,6 @@ import ScaleSidebarNavItem from './SidebarNavItem.vue';
     'scale-sidebar-nav-item': ScaleSidebarNavItem,
   }}
   argTypes={{
-    width: {
-      control: {
-        type: 'radio',
-        options: ['256px', '25rem', '100%'],
-      },
-      defaultValue: '100%',
-      description: 'Example width for wrapper element',
-    },
     styles: {
       control: { disable: true },
     },
@@ -51,7 +43,7 @@ export const Template = (args, { argTypes }) => ({
         </scale-sidebar-nav-item>
         <scale-sidebar-nav-collapsible label="Reference" expanded>
           <scale-sidebar-nav-collapsible label="Function A" expanded>
-            <scale-sidebar-nav-item current>
+            <scale-sidebar-nav-item current active>
               <a href="#">Endpoint 1</a>
             </scale-sidebar-nav-item>
             <scale-sidebar-nav-item>
@@ -121,7 +113,7 @@ export const Template = (args, { argTypes }) => ({
   </scale-sidebar-nav-item>
   <scale-sidebar-nav-collapsible label="Reference" expanded>
     <scale-sidebar-nav-collapsible label="Function A" expanded>
-      <scale-sidebar-nav-item current>
+      <scale-sidebar-nav-item current active>
         <a href="#">Endpoint 1</a>
       </scale-sidebar-nav-item>
       <scale-sidebar-nav-item>
@@ -223,7 +215,7 @@ For Shadow Parts, please inspect the element's #shadow.
           <scale-sidebar-nav-item>
             <a href="#">Overview</a>
           </scale-sidebar-nav-item>
-          <scale-sidebar-nav-item current>
+          <scale-sidebar-nav-item current active>
             <a href="#">Resources</a>
           </scale-sidebar-nav-item>
           <scale-sidebar-nav-item>
@@ -240,7 +232,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <scale-sidebar-nav-item>
     <a href="#">Overview</a>
   </scale-sidebar-nav-item>
-  <scale-sidebar-nav-item current>
+  <scale-sidebar-nav-item current active>
     <a href="#">Resources</a>
   </scale-sidebar-nav-item>
   <scale-sidebar-nav-item>
@@ -260,7 +252,7 @@ For Shadow Parts, please inspect the element's #shadow.
             <a href="#">Overview</a>
           </scale-sidebar-nav-item>
           <scale-sidebar-nav-collapsible label="Reference" expanded>
-            <scale-sidebar-nav-item current>
+            <scale-sidebar-nav-item current active>
               <a href="#">Day</a>
             </scale-sidebar-nav-item>
             <scale-sidebar-nav-item>
@@ -282,7 +274,7 @@ For Shadow Parts, please inspect the element's #shadow.
     <a href="#">Overview</a>
   </scale-sidebar-nav-item>
   <scale-sidebar-nav-collapsible label="Reference" expanded>
-    <scale-sidebar-nav-item current>
+    <scale-sidebar-nav-item current active>
       <a href="#">Day</a>
     </scale-sidebar-nav-item>
     <scale-sidebar-nav-item>
@@ -292,6 +284,44 @@ For Shadow Parts, please inspect the element's #shadow.
   <scale-sidebar-nav-item>
     <a href="#">Console</a>
   </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+## Active on Level 3
+
+<Canvas withSource="none">
+  <Story name="Active on Level 3">
+    {{
+      template: `
+        <scale-sidebar-nav>
+          <scale-sidebar-nav-collapsible label="Reference" expanded>
+            <scale-sidebar-nav-collapsible label="Function A" expanded>
+              <scale-sidebar-nav-item current active>
+                <a href="#">Endpoint 1</a>
+              </scale-sidebar-nav-item>
+              <scale-sidebar-nav-item>
+                <a href="#">Endpoint 2</a>
+              </scale-sidebar-nav-item>
+            </scale-sidebar-nav-collapsible>
+          </scale-sidebar-nav-collapsible>
+        </scale-sidebar-nav>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav>
+  <scale-sidebar-nav-collapsible label="Reference" expanded>
+    <scale-sidebar-nav-collapsible label="Function A" expanded>
+      <scale-sidebar-nav-item current active>
+        <a href="#">Endpoint 1</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item>
+        <a href="#">Endpoint 2</a>
+      </scale-sidebar-nav-item>
+    </scale-sidebar-nav-collapsible>
+  </scale-sidebar-nav-collapsible>
 </scale-sidebar-nav>
 ```
 
