@@ -159,7 +159,7 @@ export const Template = (args, { argTypes }) => ({
         return 'ascending';
       };
       const ths = document.getElementsByClassName(className);
-      const th = ths[ths.length - 1];
+      const th = Array.from(ths).filter((x) => x.getAttribute('tabindex') === '0')[0];
       const currentSort = th.getAttribute('aria-sort');
       const nextSort = getNextSort(currentSort);
       const tableHeaders = Array.from(document.getElementsByTagName('TH'));
