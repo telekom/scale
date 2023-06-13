@@ -15,7 +15,7 @@
   display: block;
   position: relative;
   outline-color: transparent;
-  /* So box-shadow is visible on the sides */
+  /* So outline is visible on the sides */
   padding-left: var(--telekom-spacing-unit-x05);
   padding-right: var(--telekom-spacing-unit-x05);
 
@@ -34,7 +34,9 @@
   text-align: left;
   font-size: var(--telekom-typography-font-size-body);
   line-height: 2.635em;
-  padding: 0 var(--telekom-spacing-unit-x6);
+  /* calc here to account for the extra padding for the outline */
+  padding: 0
+    calc(var(--telekom-spacing-unit-x6) - var(--telekom-spacing-unit-x05));
   user-select: none;
   white-space: nowrap;
   border-radius: 0;
