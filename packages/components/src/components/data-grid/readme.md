@@ -49,6 +49,8 @@
 - [scale-icon-navigation-collapse-down](../icons/navigation-collapse-down)
 - [scale-icon-action-hide-password](../icons/action-hide-password)
 - [scale-icon](../icon)
+- [scale-icon-content-sort-indicator-up](../icons/content-sort-indicator-up)
+- [scale-icon-content-sort-indicator-down](../icons/content-sort-indicator-down)
 - [scale-checkbox](../checkbox)
 - [scale-pagination](../pagination)
 - [scale-switch](../switch)
@@ -72,6 +74,8 @@ graph TD;
   scale-data-grid --> scale-icon-navigation-collapse-down
   scale-data-grid --> scale-icon-action-hide-password
   scale-data-grid --> scale-icon
+  scale-data-grid --> scale-icon-content-sort-indicator-up
+  scale-data-grid --> scale-icon-content-sort-indicator-down
   scale-data-grid --> scale-checkbox
   scale-data-grid --> scale-pagination
   scale-data-grid --> scale-switch
