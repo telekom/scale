@@ -84,7 +84,7 @@ scale-table {
   border-bottom: var(--border-bottom-tfoot-td);
 }
 .table .scale-sort-indicator-icon {
-  display: none;
+  display: none !important;
 }
 .table tbody tr:hover {
   background: var(--background-tbody-tr-hover);
@@ -111,7 +111,7 @@ scale-table {
   border-radius: var(--radius);
 }
 .table--sortable th .scale-sort-indicator-icon {
-  display: block;
+  display: inline-flex !important;
 }
 .table--sortable th[aria-disabled] {
   padding: var(--padding);
@@ -175,7 +175,7 @@ scale-table {
   display: inline-block;
   position: relative;
 }
-.table--sortable th .scale-sort-indicator .scale-sort-indicator-icon {
+.table--sortable th .scale-sort-indicator-icon {
   top: 4px;
   left: 0;
   width: 16px;

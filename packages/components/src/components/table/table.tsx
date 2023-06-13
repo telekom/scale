@@ -37,8 +37,8 @@ export class Table {
         'afterbegin',
         `
           <span class="scale-sort-indicator" aria-hidden="true">
-            <scale-icon-content-sort-indicator-up class="scale-sort-indicator-icon up" size={16}></scale-icon-content-sort-indicator-up>
-            <scale-icon-content-sort-indicator-down class="scale-sort-indicator-icon down" size={16}></scale-icon-content-sort-indicator-down>
+            <scale-icon-content-sort-indicator-up class="scale-sort-indicator-icon up" size="16"></scale-icon-content-sort-indicator-up>
+            <scale-icon-content-sort-indicator-down class="scale-sort-indicator-icon down" size="16"></scale-icon-content-sort-indicator-down>
           </span>`
       );
     });
