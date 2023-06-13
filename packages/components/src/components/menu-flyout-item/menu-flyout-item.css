@@ -15,7 +15,7 @@
   display: block;
   position: relative;
   outline-color: transparent;
-  /* So outline s visible on the sides */
+  /* So outline is visible on the sides */
   padding-left: var(--telekom-spacing-unit-x05);
   padding-right: var(--telekom-spacing-unit-x05);
 
