@@ -138,9 +138,11 @@ label
   line-height: 100%;
 }
 
-.chip--type-dynamic.chip--selected .chip-label,
 .chip--selected .chip-label {
   padding-right: var(--telekom-spacing-unit-x2);
+}
+.chip--type-dynamic.chip--selected .chip-label {
+  padding-right: var(--telekom-spacing-unit-x1);
 }
 
 /**
@@ -177,7 +179,7 @@ disabled
 }
 
 /**
-variant outline 
+variant outline
 **/
 
 .chip.chip--variant-outline.chip--selected:not(.chip.chip--disabled):not(.chip--type-dynamic):hover {
