@@ -169,11 +169,19 @@
   padding-left: var(--spacing-x-icon-only);
   padding-right: var(--spacing-x-icon-only);
 }
+.button--icon-only.button--variant-secondary {
+  padding-left: calc(var(--spacing-x-icon-only) - 1px);
+  padding-right: calc(var(--spacing-x-icon-only) - 1px);
+}
 
 .button--icon-only.button--size-small {
   padding-left: var(--spacing-x-icon-only-small);
   padding-right: var(--spacing-x-icon-only-small);
   min-width: 32px;
+}
+.button--icon-only.button--size-small.button--variant-secondary {
+  padding-left: calc(var(--spacing-x-icon-only-small) - 1px);
+  padding-right: calc(var(--spacing-x-icon-only-small) - 1px);
 }
 
 .button--disabled {
