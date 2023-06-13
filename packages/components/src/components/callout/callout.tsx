@@ -39,26 +39,7 @@ export class Callout {
     statusNote({ source: this.hostElement, tag: 'beta' });
     this.syncPropsToCSS();
   }
-
-  componentDidLoad() {
-    const observer = new MutationObserver(() => {
-      this.adjustSize();
-    });
-    observer.observe(this.hostElement, {
-      attributes: false,
-      childList: true,
-      subtree: true,
-      characterData: true,
-    });
-    this.mo = observer;
-  }
-
-  disconnectedCallback() {
-    if (this.mo) {
-      this.mo.disconnect();
-    }
-  }
-
+  
   @Watch('rotation')
   @Watch('top')
   @Watch('right')
@@ -67,15 +48,6 @@ export class Callout {
   rotationChanged() {
     this.syncPropsToCSS();
   }
-
-  /**
-   * `aspect-ratio` is not enough when dealing with text :(
-   */
-  adjustSize = () => {
-    const { width, height } = this.baseEl.getBoundingClientRect();
-    const largest = Math.max(width, height);
-    this.hostElement.style.setProperty('--min-width', `${largest}px`);
-  };
 
   syncPropsToCSS() {
     this.hostElement.style.setProperty('--rotation', `${this.rotation}deg`);
