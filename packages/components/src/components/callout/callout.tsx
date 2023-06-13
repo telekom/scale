@@ -16,7 +16,7 @@ const numToPx = (val: string) => (Number.isNaN(Number(val)) ? val : val + 'px');
 })
 export class Callout {
   @Element() hostElement: HTMLElement;
-  
+
   /** (optional) Color variant of the callout */
   @Prop() variant?: 'primary' | 'blue' | 'white' | 'black' | string;
   /** (optional) Degree of rotation */
