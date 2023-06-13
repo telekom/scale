@@ -12,7 +12,7 @@
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --border-invalid: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-hovered);
-  --focus-outline: var(--telekom-spacing-unit-x1) solid
+  --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --transition: all var(--telekom-motion-duration-transition)
@@ -62,9 +62,6 @@
     0 4px 16px 0 rgba(0, 0, 0, 0.1);
   --max-height-listbox: 300px;
   --z-index-listbox: 99;
-
-  /*option  */
-  --outline-color-option: var(--telekom-color-functional-focus-standard);
 }
 
 /*combobox-container*/
@@ -273,8 +270,9 @@
 }
 
 [part~='option'][part~='current'] {
-  outline: 3px solid var(--outline-color-option);
-  outline-offset: -3px;
+  outline: var(--focus-outline);
+  outline-offset: -2px;
+  border-radius: var(--radius);
 }
 
 [part~='option'][aria-selected='true'] {
