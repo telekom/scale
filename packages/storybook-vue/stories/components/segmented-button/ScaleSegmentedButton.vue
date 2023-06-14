@@ -6,7 +6,6 @@
     :invalid="invalid"
     :label="label"
     :helper-text="helperText"
-    :full-width="fullWidth"
     :styles="styles"
     @scaleChange="scaleChange"
   >
@@ -24,7 +23,6 @@ export default {
     invalid: { type: Boolean, default: false },
     label: { type: String },
     helperText: { type: String },
-    fullWidth: { type: Boolean, default: false },
     styles: { type: String },
   },
   methods: {
