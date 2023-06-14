@@ -104,6 +104,7 @@ export class Chip {
   };
 
   handleClick = (event: MouseEvent) => {
+    console.log('click');
     this.emitChangeEvent(event);
   };
 
@@ -159,11 +160,6 @@ export class Chip {
             tabindex="-1"
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
-            onClick={
-              !this.disabled || this.type === 'dynamic'
-                ? this.handleClick
-                : null
-            }
           >
             <slot name="chip-icon"></slot>
             <span class="chip-label">{this.label ? this.label : <slot />}</span>
@@ -173,19 +169,11 @@ export class Chip {
           <span
             role={this.ariaRoleTitle ? this.ariaRoleTitle : 'switch'}
             aria-checked={checked}
-            tabindex={this.disabled ? '-1' : '0'}
+            tabindex={this.disabled || this.type === 'dynamic' ? '-1' : '0'}
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
-            onClick={
-              !this.disabled || this.type === 'dynamic'
-                ? this.handleClick
-                : null
-            }
-            onKeyDown={
-              !this.disabled || this.type === 'dynamic'
-                ? this.handleKeyDown
-                : null
-            }
+            onClick={!this.disabled ? this.handleClick : null}
+            onKeyDown={!this.disabled ? this.handleKeyDown : null}
           >
             <slot name="chip-icon"></slot>
             <span class="chip-label">{this.label ? this.label : <slot />}</span>
