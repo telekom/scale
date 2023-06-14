@@ -37,7 +37,12 @@ export class TelekomNavItem {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop({ reflect: true }) active?: boolean = false;
-  @Prop({ reflect: true }) variant?: string;
+  @Prop({ reflect: true }) variant?:
+    | 'meta-nav-external'
+    | 'meta-nav'
+    | 'lang-switcher'
+    | 'main-nav'
+    | 'functions' = 'main-nav';
   @Prop({ reflect: true }) role: string | null = 'none';
   @Prop({ reflect: true }) hideOnMobile?: boolean = false;
   @Prop({ reflect: true }) hideOnDesktop?: boolean = false;
@@ -48,11 +53,12 @@ export class TelekomNavItem {
     if (this.linkElement == null) {
       return;
     }
-    if (this.variant === 'lang-switcher' && this.active) {
-      toggleAriaCurrent(this.linkElement, newValue, 'true');
-    }
-    if (this.variant === 'main-nav' && this.active) {
-      toggleAriaCurrent(this.linkElement, newValue, 'true');
+    if (this.variant === 'lang-switcher' || this.variant === 'main-nav') {
+      toggleAriaCurrent(
+        this.linkElement,
+        newValue,
+        this.active ? 'true' : 'false'
+      );
     }
   }
 
