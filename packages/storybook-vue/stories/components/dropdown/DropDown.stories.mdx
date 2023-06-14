@@ -97,46 +97,40 @@ export const Template = (args, { argTypes }) => ({
   --font-weight: var(--telekom-typography-font-weight-bold);
   --height: var(--telekom-spacing-unit-x11);
   --spacing-x: var(--telekom-spacing-unit-x3);
-  --spacing-dropdown: 21px var(--telekom-spacing-unit-x10) 5px
+  --spacing-dropdown: 18px var(--telekom-spacing-unit-x10) 5px
     calc(var(--spacing-x) - 1px);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-border-standard);
-  --border-error: var(--telekom-spacing-unit-x05) solid
+  --border-danger: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
+  --border-success: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-success-standard);
+  --border-warning: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-warning-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
-  --color: var(--telekom-color-text-and-icon-standard)
+  --color: var(--telekom-color-text-and-icon-standard);
   --background-color: var(--telekom-color-ui-state-fill-standard);
+  --margin-bottom-helper-text: var(--telekom-spacing-unit-x1);
 
   /*input*/
   --transition-input: var(--transition);
   --font-size-input: var(--telekom-typography-font-size-body);
-
-  /*helper-text*/
-  --transition-helper-text: var(--transition);
-  --font-size-helper-text: var(--telekom-typography-font-size-small);
-  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
-  --color-helper-text: var(
-    --telekom-color-text-and-icon-functional-informational
-  );
-  --color-helper-text-error: var(
-    --telekom-color-text-and-icon-functional-danger
-  );
 
   /*meta*/
   --spacing-y-meta: var(--telekom-spacing-unit-x1);
   --color-meta: var(--telekom-color-text-and-icon-standard);
 
   /*icon*/
-  --height-icon: var(--telekom-spacing-unit-x6);
+  --height-icon: var(--telekom-spacing-unit-x5);
   --color-icon: var(--telekom-color-text-and-icon-standard);
   --color-icon-hover: var(--telekom-color-text-and-icon-standard);
   --color-icon-active: var(--telekom-color-text-and-icon-standard);

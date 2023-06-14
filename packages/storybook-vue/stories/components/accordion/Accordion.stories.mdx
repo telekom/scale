@@ -115,12 +115,13 @@ export const Template = (args, { argTypes }) => ({
   --line-height-button: var(--telekom-typography-line-spacing-standard);
   --border-width-button: var(--telekom-spacing-unit-x05);
   --radius-button: var(--telekom-radius-small);
-  --spacing-left-button: var(--telekom-spacing-unit-x1);
+  --spacing-left-button: 0;
   --spacing-left-button-text: var(--telekom-spacing-unit-x2);
   --color-button-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-button-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --background-button-hover: var(--telekom-color-ui-state-fill-hovered);
-  --border-color-button-focus: var(--telekom-color-functional-focus);
+  --background-button-hover: none;
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
 
   /* content */
   --spacing-right-content: var(--telekom-spacing-unit-x12);

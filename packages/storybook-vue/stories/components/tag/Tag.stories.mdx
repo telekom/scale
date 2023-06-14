@@ -171,7 +171,12 @@ export const TemplateInteractive = (args, { argTypes }) => ({
   --background-disabled: var(--telekom-color-ui-faint);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
-  --spacing-dismissable: var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x1) ;
+  --spacing-dismissable: var(--telekom-spacing-unit-x05)
+    var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05)
+    var(--telekom-spacing-unit-x1);
+  --spacing-dismissable-small: var(--telekom-spacing-unit-x05)
+    var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05)
+    var(--telekom-spacing-unit-x1);
 
   --height: 24px;
   --height-small: 20px;
@@ -190,10 +195,11 @@ export const TemplateInteractive = (args, { argTypes }) => ({
   --background-button-dismissable-active: var(
     --telekom-color-ui-state-fill-pressed
   );
+
   --height-button-dismissable: 20px;
   --width-button-dismissable: 20px;
-  --height-button-dismissable-small: 18px;
-  --width-button-dismissable-small: 18px;
+  --height-button-dismissable-small: 16px;
+  --width-button-dismissable-small: 16px;
 
   --spacing-small: 0 var(--telekom-spacing-unit-x2);
   --font-size-small: var(--telekom-typography-font-size-small);

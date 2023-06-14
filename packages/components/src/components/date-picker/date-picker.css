@@ -33,7 +33,6 @@ duet-date-picker {
 
   --spacing-heading: 0 0 var(--telekom-spacing-unit-x4) 0;
   --font-size-heading: var(--telekom-typography-font-size-body);
-  /* --font-size-select-label: var(--telekom-typography-font-size-body); */
   --radius-day: var(--telekom-radius-standard);
   --font-size-day: var(--telekom-typography-font-size-body);
   --font-size-table-header: var(--telekom-typography-font-size-caption);
@@ -59,8 +58,6 @@ duet-date-picker .duet-date__input:hover {
 }
 
 duet-date-picker .duet-date__input:focus {
-  /* border: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-border-pressed); */
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-border-pressed);
   outline: var(--focus-outline);
@@ -292,7 +289,6 @@ duet-date-picker .duet-date__select:nth-of-type(1) {
 }
 
 duet-date-picker .duet-date__select-label {
-  /* font-size: var(--font-size-select-label); */
   font: var(--telekom-text-style-ui);
 }
 

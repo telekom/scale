@@ -165,41 +165,38 @@ export const Template = (args, { argTypes }) => ({
 
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
   --color-toggle-button: var(--telekom-color-ui-regular);
-  --border-y-toggle-button: 1px solid var(--telekom-color-ui-subtle);
+  --border-y-toggle-button: 1px solid var(--telekom-color-ui-faint);
   --radius-toggle-button: var(--telekom-radius-small);
 }
 
 /* sidebar-nav-collapsible */
 :host {
   --opacity-chevron: 1;
-  --border-bottom-color: var(--telekom-color-ui-subtle);
-  --border-left-color-third-nesting: var(--telekom-color-ui-strong);
-  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
-  --color-primary: var(--telekom-color-text-and-icon-primary-hovered);
-  --background-color-before-active: var(--color-primary);
-  --font-weight-bold: var(--telekom-typography-font-weight-bold);
-  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
-}
-
-/* sidebar-nav-item */
-:host {
-  --border-bottom-color: var(--telekom-color-ui-subtle);
+  --border-bottom-color: var(--telekom-color-ui-faint);
   --border-left-color-third-nesting: var(--telekom-color-ui-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --background-color-before-active: var(--color-primary);
   --font-weight-bold: var(--telekom-typography-font-weight-bold);
-  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus-standard);
+}
+
+/* sidebar-nav-item */
+:host {
+  --border-bottom-color: var(--telekom-color-ui-faint);
+  --border-left-color-third-nesting: var(--telekom-color-ui-strong);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-primary: var(--telekom-color-text-and-icon-primary-standard);
+  --background-color-before-active: var(--color-primary);
+  --font-bold: var(--telekom-text-style-ui-bold);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus-standard);
 }
 ```
 
