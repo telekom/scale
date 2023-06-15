@@ -97,12 +97,19 @@ scale-text-field {
   margin: 0;
   display: flex;
   outline: none;
-  padding: var(--spacing-control);
+  /*padding: var(--spacing-control);*/
+  /*
+    18px 32px 4px 12px
+    (subtracting 1px from border)
+  */
+  padding: 1.125rem calc(2rem - var(--telekom-spacing-unit-x025)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-unit-x025));
   z-index: 1;
   box-sizing: border-box;
   transition: var(--transition-control);
-  font-family: inherit;
-  font-size: var(--font-size-control);
+  /*font-family: inherit;
+  font-size: var(--font-size-control);*/
+  font: var(--telekom-text-style-body);
   border-radius: var(--radius);
   border: var(--border);
   background-color: var(--background-control);
@@ -173,27 +180,34 @@ scale-text-field {
 }
 
 .text-field__label {
-  line-height: 1;
+  top: 0;
+  left: 0;
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);
   position: absolute;
   transition: var(--transition-label);
   pointer-events: none;
-  font-size: var(--font-size-label);
+  /*font-size: var(--font-size-label);
   transform: translate(
     var(--spacing-x),
     calc((var(--height) - var(--font-size-label)) / 2)
   );
-  font-weight: var(--font-weight-label);
-  line-height: 1;
+  font-weight: var(--font-weight-label);*/
+  font: var(--telekom-text-style-ui);
+  transform: translate(0.75rem, 0.875rem);
 }
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
-  line-height: var(--font-size-label-focus);
+  /*line-height: var(--font-size-label-focus);
   transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
   font-size: var(--font-size-label-focus);
-  font-weight: var(--font-weight-label-focus);
+  font-weight: var(--font-weight-label-focus);*/
+  font: var(--telekom-text-style-small-bold);
+  transform: translate(
+    0.75rem,
+    calc(0.25rem + var(--telekom-spacing-unit-x025))
+  );
 }
 .text-field--variant-danger .text-field__control {
   border: var(--border-error);

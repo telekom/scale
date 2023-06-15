@@ -84,14 +84,22 @@
   display: flex;
   align-items: center;
   outline: none;
-  padding: var(--spacing-combobox);
+  /*padding: var(--spacing-combobox);*/
+  /*
+    18px 32px 4px 12px
+    (subtracting 1px from border)
+  */
+  padding: 1.125rem calc(2rem - var(--telekom-spacing-unit-x025)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-unit-x025));
   z-index: 1;
   box-sizing: border-box;
   transition: var(--transition-combobox);
-  font-family: inherit;
-  font-size: var(--font-size-combobox);
+  /*font-family: inherit;
+  font-size: var(--font-size-combobox);*/
+  font: var(--telekom-text-style-body);
   border-radius: var(--radius);
   border: var(--border);
+  box-sizing: border-box;
   white-space: nowrap;
   text-overflow: ellipsis;
   appearance: none;
@@ -183,7 +191,7 @@
 
 /*label*/
 [part='label'] {
-  width: calc(100% - 50px);
+  width: calc(100% - 44px); /* 12px + 32px (x padding) */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -195,17 +203,23 @@
   position: absolute;
   transition: var(--transition-label);
   pointer-events: none;
-  font-size: var(--font-size-label);
-  transform: var(--transform-label);
+  /*font-size: var(--font-size-label);
   font-weight: var(--font-weight-label);
-  line-height: 1;
+  transform: var(--transform-label);*/
+  font: var(--telekom-text-style-ui);
+  transform: translate(0.75rem, 0.875rem);
 }
 
 [part~='animated'] [part='label'] {
-  transform: var(--transform-label-animated);
+  /*transform: var(--transform-label-animated);
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
-  line-height: var(--line-height-label-animated);
+  line-height: var(--line-height-label-animated);*/
+  font: var(--telekom-text-style-small-bold);
+  transform: translate(
+    0.75rem,
+    calc(0.25rem + var(--telekom-spacing-unit-x025))
+  );
 }
 
 [part~='disabled'] [part='label'] {
@@ -217,7 +231,7 @@
 
 /* hidden label */
 [part~='hide-label'] [part='combobox'] {
-  padding-top: 5px;
+  padding-top: 0.3125rem;
 }
 
 [part~='hide-label'] [part='label'] {

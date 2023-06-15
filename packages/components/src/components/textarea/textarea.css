@@ -83,16 +83,24 @@ scale-textarea {
   resize: vertical;
   display: flex;
   outline: none;
-  padding: var(--spacing-control);
+  /*padding: var(--spacing-control);*/
+  /*
+    18px 32px 4px 12px
+    (subtracting 1px from border)
+  */
+  padding: 0 calc(2rem - var(--telekom-spacing-unit-x025)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-unit-x025));
   z-index: 1;
   box-sizing: border-box;
   transition: var(--transition-control);
-  font-family: inherit;
-  font-size: var(--font-size-control);
+  /*font-family: inherit;
+  font-size: var(--font-size-control);*/
+  font: var(--telekom-text-style-body);
   border: none;
   background-color: transparent;
   color: var(--color-meta);
-  margin-top: var(--spacing-top-control);
+  /*margin-top: var(--spacing-top-control);*/
+  margin-top: calc(1.125rem - var(--telekom-spacing-unit-x025));
 }
 
 .textarea .textarea__counter {
@@ -143,20 +151,21 @@ scale-textarea {
   position: absolute;
   transition: var(--transition-label);
   pointer-events: none;
-  font-size: var(--font-size-label);
+  /*font-size: var(--font-size-label);
   font-weight: var(--font-weight-label);
-  line-height: 1;
-  transform: translate(var(--spacing-x-control), 14px);
+  line-height: 1;*/
+  font: var(--telekom-text-style-ui);
+  transform: translate(var(--spacing-x-control), 0.875rem);
 }
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
-  line-height: 1;
   transform: translate(
     var(--spacing-x-control),
-    var(--telekom-spacing-unit-x2)
+    calc(0.25rem + var(--telekom-spacing-unit-x025))
   );
-  font-size: var(--font-size-label-focus);
-  font-weight: var(--font-weight-label-focus);
+  /*font-size: var(--font-size-label-focus);
+  font-weight: var(--font-weight-label-focus);*/
+  font: var(--telekom-text-style-small-bold);
 }
 .textarea--status-error .textarea__wrapper {
   border: var(--border-error);
