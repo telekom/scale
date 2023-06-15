@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@types/react-dom": "^16.9.6",
-    "@types/vfile-message": "^2.0.0" 
+    "@types/vfile-message": "^2.0.0"
   },
   "peerDependencies": {
     "react": ">=16.13.1",
