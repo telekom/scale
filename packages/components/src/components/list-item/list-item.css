@@ -13,7 +13,8 @@
   --display: block;
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
-  --spacing-left: calc(0.25ch + var(--telekom-spacing-unit-x4));
+  --spacing-left: calc(0.5ch + var(--telekom-spacing-unit-x5));
+  --spacing-left-nested: calc(0.5ch + var(--telekom-spacing-unit-x4));
 
   --font-marker-ordered: var(--telekom-text-style-body);
   --font-marker-ordered-nested: var(--telekom-text-style-small-bold);
@@ -25,7 +26,6 @@
   );
 
   --spacing-right-no-marker: var(--telekom-spacing-unit-x2);
-
   display: var(--display);
 }
 
@@ -37,11 +37,15 @@
   margin-top: var(--telekom-spacing-unit-x1);
 }
 
+.list-item--nested {
+  padding-left: var(--spacing-left-nested);
+}
+
 .list-item:before {
   content: '';
-  position: absolute;
   top: 0;
   left: 0;
+  position: absolute;
 }
 
 .list-item--unordered:before {
@@ -64,6 +68,7 @@
 .list-item--ordered:before {
   content: attr(data-index) '.';
   font: var(--font-marker-ordered);
+  font-variant-numeric: tabular-nums;
 }
 
 .list-item--nested.list-item--ordered:before {
