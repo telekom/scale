@@ -17,7 +17,8 @@
     "clean": "rimraf dist",
     "compile": "yarn tsc",
     "tsc": "tsc -p .",
-    "format": "prettier --write \"package.json\""
+    "format": "prettier --write \"package.json\"",
+    "rollup": "rm -rf ./lib && rollup -c"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -27,11 +28,22 @@
   ],
   "devDependencies": {
     "rimraf": "^3.0.2",
-    "typescript": "^3.3.4000"
+    "typescript": "^3.3.4000",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "rollup": "2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-styles": "^4.0.0"
   },
   "dependencies": {
     "@types/react-dom": "^16.9.6",
-    "@types/vfile-message": "^2.0.0"
+    "@types/vfile-message": "^2.0.0" 
   },
   "peerDependencies": {
     "react": ">=16.13.1",
