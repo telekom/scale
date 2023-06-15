@@ -231,3 +231,14 @@ dynamic
   justify-content: center;
   outline: var(--focus-outline-close-button);
 }
+
+.chip-disabled-helper-text {
+  display: none;
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .chip-disabled-helper-text {
+    padding-left: 12px;
+    display: inline-flex;
+  }
+}

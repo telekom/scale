@@ -43,12 +43,17 @@
 
 - [scale-icon-action-close](../icons/action-close)
 - [scale-icon-action-checkmark](../icons/action-checkmark)
+- [scale-helper-text](../helper-text)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-chip --> scale-icon-action-close
   scale-chip --> scale-icon-action-checkmark
+  scale-chip --> scale-helper-text
+  scale-helper-text --> scale-icon-alert-information
+  scale-helper-text --> scale-icon-alert-error
+  scale-helper-text --> scale-icon-action-success
   style scale-chip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

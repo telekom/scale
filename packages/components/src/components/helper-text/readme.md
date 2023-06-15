@@ -36,6 +36,7 @@
 
 ### Used by
 
+ - [scale-chip](../chip)
  - [scale-date-picker](../date-picker)
  - [scale-dropdown](../dropdown)
  - [scale-dropdown-select](../dropdown-select)
@@ -55,6 +56,7 @@ graph TD;
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
   scale-helper-text --> scale-icon-action-success
+  scale-chip --> scale-helper-text
   scale-date-picker --> scale-helper-text
   scale-dropdown --> scale-helper-text
   scale-dropdown-select --> scale-helper-text

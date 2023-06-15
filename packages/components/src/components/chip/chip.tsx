@@ -91,7 +91,7 @@ export class Chip {
 
   getAccessibilityLabel() {
     const labelSlot = this.hostElement.childNodes[0];
-    this.accessibilityLabel = labelSlot ? this.label : labelSlot.textContent;
+    this.accessibilityLabel = !labelSlot ? this.label : labelSlot.textContent;
   }
 
   handleClose = (event: MouseEvent) => {
@@ -104,7 +104,6 @@ export class Chip {
   };
 
   handleClick = (event: MouseEvent) => {
-    console.log('click');
     this.emitChangeEvent(event);
   };
 
@@ -179,6 +178,13 @@ export class Chip {
             <span class="chip-label">{this.label ? this.label : <slot />}</span>
             {this.selected ? this.getIcon() : null}
           </span>
+        )}
+        {this.disabled && (
+          <scale-helper-text
+            class="chip-disabled-helper-text"
+            helperText="disabled"
+            variant="neutral"
+          ></scale-helper-text>
         )}
       </Host>
     );
