@@ -73,6 +73,7 @@
 
 .list-item--nested.list-item--ordered:before {
   font: var(--telekom-text-style-small-bold);
+  font-variant-numeric: tabular-nums;
   line-height: var(--line-height-marker-ordered-nested);
   padding-top: var(--spacing-top-marker-ordered-nested);
 }
