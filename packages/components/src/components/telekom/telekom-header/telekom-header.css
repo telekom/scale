@@ -82,6 +82,7 @@
     --_grid-template-columns-container: repeat(16, minmax(0, 1fr));
     --_grid-column-body: 3 / span 14;
     --_spacing-left-body: 0;
+    --_spacing-right-bottom-app-name: 52px;
     --_spacing-x-container: var(--telekom-spacing-unit-x6);
 
     --_justify-content-bottom-body: space-between;
@@ -339,6 +340,7 @@ slot[name='functions'] {
   display: var(--_display-bottom-app-name);
   margin-right: var(--_spacing-right-bottom-app-name);
   animation-duration: var(--telekom-motion-duration-animation);
+  min-width: 108px;
 }
 
 @media screen and (--lg) {
