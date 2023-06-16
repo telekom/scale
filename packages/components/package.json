@@ -34,6 +34,7 @@
     "lint:fix": "yarn lint:style --fix",
     "lint": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "generate": "node ./scripts/generate-icons.js",
+    "optimize-icons": "svgo -r -f src/telekom/icons",
     "process-angular-proxies": "node ./scripts/process-angular-proxies.js"
   },
   "devDependencies": {
