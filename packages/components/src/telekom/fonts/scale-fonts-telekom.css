@@ -11,6 +11,22 @@
 
 @font-face {
   font-family: 'TeleNeoWeb';
+  font-weight: 900;
+  font-style: normal;
+  src: url('./TeleNeoWeb/TeleNeoWeb-Ultra.eot');
+  src: url('./TeleNeoWeb/TeleNeoWeb-Ultra.woff') format('woff'),
+    url('./TeleNeoWeb/TeleNeoWeb-Ultra.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'TeleNeoWeb';
+  font-weight: 900;
+  font-style: italic;
+  src: url('./TeleNeoWeb/TeleNeoWeb-UltraItalic.eot');
+  src: url('./TeleNeoWeb/TeleNeoWeb-UltraItalic.woff') format('woff'),
+    url('./TeleNeoWeb/TeleNeoWeb-UltraItalic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'TeleNeoWeb';
   font-weight: 800;
   font-style: normal;
   src: url('./TeleNeoWeb/TeleNeoWeb-ExtraBold.eot');
