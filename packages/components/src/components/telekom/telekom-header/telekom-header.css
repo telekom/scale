@@ -92,8 +92,11 @@
 
   :host([type='slim']) {
     --_animation-name: none;
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x5);
   }
-
+  :host([type='slim'][scrolled]) {
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x5);
+  }
   :host([type='slim']),
   :host([scrolled]) {
     --_height: 72px;
@@ -131,7 +134,7 @@
     --_height-logo-svg: 44px;
     --_height-top-bar: 0;
     --_height-bottom-bar: 84px;
-    --_spacing-right-bottom-app-name: 56px;
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x12);
     --_spacing-left-body: 4px;
   }
   :host([type='slim'][scrolled]) {
@@ -139,7 +142,7 @@
     --_height-logo-svg: 40px;
     --_height-top-bar: 0;
     --_height-bottom-bar: 72px;
-    --_spacing-right-bottom-app-name: 56px;
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x13);
     --_spacing-left-body: 0;
   }
 }
@@ -151,6 +154,7 @@
     --_height-logo-svg: 60px;
     --_height-top-bar: 30px;
     --_height-bottom-bar: 90px;
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x10);
 
     --_left-logo: var(--_spacing-x-container);
 
@@ -170,7 +174,7 @@
     --_display-bottom-app-name: block;
 
     --_spacing-left-body: 24px;
-    --_spacing-right-bottom-app-name: 56px;
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x12);
 
     --scl-telekom-header-height: var(--_height);
     --scl-telekom-header-bottom-spacing: 36px;
@@ -187,6 +191,8 @@
     --_display-lang-switcher: none;
     --_display-top-app-name: none;
     --_display-bottom-app-name: block;
+
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x10);
 
     --scl-telekom-header-height: var(--_height);
   }
