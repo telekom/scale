@@ -110,6 +110,7 @@
     --_display-top-app-name: none;
     --_display-bottom-app-name: block;
 
+    --_spacing-left-body: var(--telekom-spacing-unit-x4);
     --scl-telekom-header-height: var(--_height);
   }
   :host([type='slim']),
