@@ -44,10 +44,13 @@ scale-text-field {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /* control */
-  --spacing-control: 19px var(--telekom-spacing-unit-x10) 5px
-    calc(var(--spacing-x) - 1px);
+  /*
+    18px 32px 4px 12px
+    (subtracting 1px from border)
+  */
+  --spacing-control: 1.125rem calc(2rem - var(--telekom-spacing-unit-x025))
+    0.25rem calc(0.75rem - var(--telekom-spacing-unit-x025));
   --transition-control: var(--transition);
-  --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
   --margin-bottom-control: var(--telekom-spacing-unit-x1);
 
@@ -81,10 +84,6 @@ scale-text-field {
   --color-label-readonly: var(--telekom-color-text-and-icon-standard);
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
-  --font-size-label: var(--telekom-typography-font-size-body);
-  --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-small);
-  --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
 }
 
 .text-field {
@@ -101,8 +100,7 @@ scale-text-field {
   z-index: 1;
   box-sizing: border-box;
   transition: var(--transition-control);
-  font-family: inherit;
-  font-size: var(--font-size-control);
+  font: var(--telekom-text-style-body);
   border-radius: var(--radius);
   border: var(--border);
   background-color: var(--background-control);
@@ -173,27 +171,24 @@ scale-text-field {
 }
 
 .text-field__label {
-  line-height: 1;
+  top: 0;
+  left: 0;
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);
   position: absolute;
   transition: var(--transition-label);
   pointer-events: none;
-  font-size: var(--font-size-label);
-  transform: translate(
-    var(--spacing-x),
-    calc((var(--height) - var(--font-size-label)) / 2)
-  );
-  font-weight: var(--font-weight-label);
-  line-height: 1;
+  font: var(--telekom-text-style-ui);
+  transform: translate(var(--spacing-x), 0.875rem);
 }
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
-  line-height: var(--font-size-label-focus);
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
-  font-size: var(--font-size-label-focus);
-  font-weight: var(--font-weight-label-focus);
+  font: var(--telekom-text-style-small-bold);
+  transform: translate(
+    var(--spacing-x),
+    calc(0.25rem + var(--telekom-spacing-unit-x025))
+  );
 }
 .text-field--variant-danger .text-field__control {
   border: var(--border-error);
