@@ -177,7 +177,10 @@ duet-date-picker .duet-date__day {
   transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   font: var(--telekom-text-style-small-bold);
-  transform: translate(0.75rem, calc(0.25rem + var(--telekom-spacing-unit-x025)));
+  transform: translate(
+    0.75rem,
+    calc(0.25rem + var(--telekom-spacing-unit-x025))
+  );
 }
 
 .scale-date-picker.animated .duet-date__input::placeholder,
