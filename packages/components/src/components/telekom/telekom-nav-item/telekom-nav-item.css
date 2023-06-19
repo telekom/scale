@@ -132,9 +132,22 @@
   > .scale-telekom-nav-item
   > :where(a, button) {
   font-size: var(--_font-size-main-nav);
-  line-height: var(--telekom-typography-line-spacing-standard);
+  line-height: var(--telekom-typography-line-spacing-loose);
   font-weight: var(--telekom-typography-font-weight-extra-bold);
   padding-bottom: var(--_spacing-bottom-slotted-bottom);
+}
+
+@media screen and (--2xl) {
+  .scale-telekom-nav-list[variant='main-nav']
+    > .scale-telekom-nav-item
+    > :where(a, button),
+  .scale-telekom-nav-list[variant='functions']
+    > .scale-telekom-nav-item
+    > :where(a, button) {
+    line-height: var(--telekom-typography-line-spacing-extra-tight);
+    /* Figma *shrug* */
+    line-height: 1.2;
+  }
 }
 
 .scale-telekom-nav-list[variant='main-nav']
@@ -346,6 +359,7 @@ scale-telekom-mobile-flyout-canvas
 [slot='mobile-meta-nav'] .scale-telekom-nav-item,
 [slot='mobile-meta-nav-external'] .scale-telekom-nav-item {
   --_font-size-main-nav: 16px;
+  line-height: var(--telekom-typography-line-spacing-standard);
 }
 
 .scale-telekom-nav-list > scale-menu-flyout::part(trigger) {
