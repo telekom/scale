@@ -8,8 +8,6 @@ import styles from 'rollup-plugin-styles';
 import babel from 'rollup-plugin-babel';
 import json from '@rollup/plugin-json';
 import pkg from './package.json';
-// this will insert the styles into style tag in html
-import postcss from 'rollup-plugin-postcss';
 
 const globals = {
     react: 'React',
@@ -21,8 +19,7 @@ const plugins = [
     externalDeps(), //prevents packages listed in peerDependencies from being bundled with our component library
     commonJS(), //convert common js modules to es6
     resolve(), // Locate and bundle third-party dependencies in node_modules
-    typescript(), // transpiles our TypeScript code into JavaScript.
-    postcss() // transforms our Sass into CSS
+    typescript() // transpiles our TypeScript code into JavaScript.
 ];
 
 export default {

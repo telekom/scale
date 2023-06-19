@@ -2,3 +2,4 @@ node_modules/
 coverage/
 src/components.ts
 lib/
+dist/
