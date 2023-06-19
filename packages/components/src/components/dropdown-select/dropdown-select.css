@@ -22,10 +22,13 @@
 
   /*combobox*/
   --transition-combobox: var(--transition);
-  --font-size-combobox: var(--telekom-typography-font-size-body);
   --background-combobox: var(--telekom-color-ui-state-fill-standard);
-  --spacing-combobox: 19px var(--telekom-spacing-unit-x10) 5px
-    calc(var(--spacing-x) - 1px);
+  /*
+    18px 32px 4px 12px
+    (subtracting 1px from border)
+  */
+  --spacing-combobox: 1.125rem calc(2rem - var(--telekom-spacing-unit-x025)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-unit-x025));
 
   /*meta*/
   --spacing-y-meta: var(--telekom-spacing-unit-x1);
@@ -42,18 +45,10 @@
   --color-label: var(--telekom-color-text-and-icon-additional);
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
-  --font-size-label: var(--telekom-typography-font-size-body);
-  --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-small);
-  --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
-  --line-height-label-animated: var(--telekom-typography-font-size-small);
-  --transform-label: translate(
-    var(--spacing-x),
-    calc((var(--telekom-spacing-unit-x11) - var(--font-size-label)) / 2)
-  );
+  --transform-label: translate(var(--spacing-x), 0.875rem);
   --transform-label-animated: translate(
     var(--spacing-x),
-    var(--telekom-spacing-unit-x2)
+    calc(0.25rem + var(--telekom-spacing-unit-x025))
   );
 
   /*listbox*/
@@ -84,18 +79,10 @@
   display: flex;
   align-items: center;
   outline: none;
-  /*padding: var(--spacing-combobox);*/
-  /*
-    18px 32px 4px 12px
-    (subtracting 1px from border)
-  */
-  padding: 1.125rem calc(2rem - var(--telekom-spacing-unit-x025)) 0.25rem
-    calc(0.75rem - var(--telekom-spacing-unit-x025));
+  padding: var(--spacing-combobox);
   z-index: 1;
   box-sizing: border-box;
   transition: var(--transition-combobox);
-  /*font-family: inherit;
-  font-size: var(--font-size-combobox);*/
   font: var(--telekom-text-style-body);
   border-radius: var(--radius);
   border: var(--border);
@@ -203,23 +190,13 @@
   position: absolute;
   transition: var(--transition-label);
   pointer-events: none;
-  /*font-size: var(--font-size-label);
-  font-weight: var(--font-weight-label);
-  transform: var(--transform-label);*/
   font: var(--telekom-text-style-ui);
-  transform: translate(0.75rem, 0.875rem);
+  transform: var(--transform-label);
 }
 
 [part~='animated'] [part='label'] {
-  /*transform: var(--transform-label-animated);
-  font-size: var(--font-size-label-focus);
-  font-weight: var(--font-weight-label-focus);
-  line-height: var(--line-height-label-animated);*/
   font: var(--telekom-text-style-small-bold);
-  transform: translate(
-    0.75rem,
-    calc(0.25rem + var(--telekom-spacing-unit-x025))
-  );
+  transform: var(--transform-label-animated);
 }
 
 [part~='disabled'] [part='label'] {
