@@ -5744,10 +5744,10 @@
   resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.2.tgz#b3e9eeef05417883315e509fb9a3686a89fa91b0"
   integrity sha512-FZ8XfT5drDPjpzYhHfJ7JIYumHeNN/C92aJIRILmD4052wNgUU7ormdD2rvTCprvvDFFQXwCDhrl+9kNEgtNLg==
 
-"@telekom/design-tokens@^1.0.0-beta.4":
-  version "1.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.4.tgz#5bde16205470657f4da62062e5b6ac6de2e1750d"
-  integrity sha512-g2a9GUI0xhTsPEGEQvmSRLPmYVN81nclamiNwc0QAMkArjF7m5jOYCK01+lodKziuwNLzYrffWV9BKFyRpDygQ==
+"@telekom/design-tokens@^1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.7.tgz#27ae7d6e96cfb198433fdfa0193bc94af65a802a"
+  integrity sha512-QwoE/7pcy8P5iLBeiK/VZQ9hcQ54BZPoKMWzKGjMzYeB4e0TKQer0rYHJg+eOO3Kg6B8v4hDVxMZK9KQ2ipvkw==
 
 "@testing-library/jest-dom@^5.8.0":
   version "5.11.4"
