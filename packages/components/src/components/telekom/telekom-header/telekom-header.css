@@ -113,6 +113,9 @@
     --_spacing-left-body: var(--telekom-spacing-unit-x4);
     --scl-telekom-header-height: var(--_height);
   }
+  :host([scrolled]) {
+    --_spacing-left-body: 0;
+  }
   :host([type='slim']),
   :host([scrolled][app-name]) {
     --_grid-column-body: 2 / span 15;
