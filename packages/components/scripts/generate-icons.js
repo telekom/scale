@@ -112,8 +112,8 @@ async function main() {
   });
 
   function JSXify(html) {
-    if (html.indexOf('use xlink:href')) {
-      return html.replace(/use xlink:href/g, 'use xlinkHref');
+    if (html.indexOf('xlink:href')) {
+      return html.replace(/xlink:href/g, 'xlinkHref');
     }
     return html;
   }
