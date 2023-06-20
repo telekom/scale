@@ -131,30 +131,26 @@ export const Template = (args, { argTypes }) => ({
   --color: var(--telekom-color-text-and-icon-link-standard);
   --color-line-initial: var(--telekom-color-functional-interaction-subtle);
   --line-thickness-initial: var(--telekom-line-weight-standard);
-
   /* visited */
   --color-visited: var(--telekom-color-text-and-icon-link-visited);
   --color-line-visited: currentColor;
   --line-thickness-visited: var(--line-thickness-initial);
-
   /* hover */
   --color-hover: var(--telekom-color-text-and-icon-link-hovered);
-  --color-line-hover: var(--telekom-color-functional-interaction-hovered);
-  --line-thickness-hover: var(--line-thickness-initial);
-
+  --color-line-hover: currentColor;
+  --line-thickness-hover: var(--telekom-line-weight-highlight);
   /* focus */
+  --color-focus-outline: var(--telekom-color-functional-focus-standard);
   --color-focus: var(--telekom-color-text-and-icon-link-standard);
-  --color-line-focus: var(--telekom-color-text-and-icon-link-standard);
-  --line-thickness-focus: var(--telekom-line-weight-bold);
-
+  --color-line-focus: transparent;
+  --line-thickness-focus: 0;
   /* active */
   --color-active: var(--telekom-color-text-and-icon-link-active);
-  --color-line-active: var(--telekom-color-functional-interaction-pressed);
-  --line-thickness-active: var(--line-thickness-initial);
-
+  --color-line-active: currentColor;
+  --line-thickness-active: var(--telekom-line-weight-highlight);
   /* disabled */
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --color-line-disabled: var(--telekom-color-ui-border-disabled);
+  --color-line-disabled: transparent;
   --line-thickness-disabled: var(--line-thickness-initial);
 }
 ```

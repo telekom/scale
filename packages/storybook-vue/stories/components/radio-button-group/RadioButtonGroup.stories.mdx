@@ -93,6 +93,44 @@ export const Template = (args, context) => ({
 ### Scoped CSS variables
 
 ```css
+:host {
+  /*label*/
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --font-size-label: var(--telekom-typography-font-size-body);
+
+  /*helper-text*/
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --color-helper-text: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+  --padding-bottom-helper-text: var(--telekom-spacing-unit-x2);
+  --margin-top-helper-text: var(--telekom-spacing-unit-x1);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
+
+  /*helper-text--status-error*/
+  --font-size-error-helper-text: var(--telekom-typography-font-size-small);
+  --color-error-helper-text: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
+  --padding-bottom-error-helper-text: var(--telekom-spacing-unit-x2);
+  --margin-top-error-helper-text: var(--telekom-spacing-unit-x1);
+  --font-weight-error-helper-text: var(--telekom-typography-font-weight-medium);
+  --color-error-helper-text-hcm: var(
+    --telekom-color-text-and-icon-white-standard
+  );
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+
+  /*title*/
+  --font-size-title: var(--font-size-label);
+  --font-weight-title: var(--telekom-typography-font-weight-medium);
+  --padding-bottom-title: var(--telekom-spacing-unit-x1);
+  --margin-left-title: var(--telekom-spacing-unit-x05);
+
+  /*slotted items*/
+  --margin-top-slotted-item: var(--telekom-spacing-unit-x3);  
+}
+
 scale-radio-button {
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: var(--telekom-color-ui-disabled);

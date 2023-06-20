@@ -234,6 +234,19 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" />
 
+### Scoped CSS variables
+
+```css
+:host {
+  --font-size: var(--telekom-typography-font-size-caption);
+  --font-color: var(--telekom-color-text-and-icon-white-standard);
+
+  --font-large: var(--telekom-text-style-ui);
+  --background-footer: var(--telekom-color-ui-black);
+  --background-footer-minimal: var(--telekom-color-background-canvas);
+}
+```
+
 ```html
 <scale-telekom-footer>
   <scale-telekom-footer-content>

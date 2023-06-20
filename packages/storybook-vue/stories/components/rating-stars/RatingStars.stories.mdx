@@ -167,6 +167,29 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Info Text and custom Label" />
 
+### Scoped CSS variables
+
+```css
+  :host {
+    --stars-color: var(--telekom-color-text-and-icon-primary-standard);
+    --stars-hover-color: var(--telekom-color-text-and-icon-primary-hovered);
+    --stars-active-color: var(--telekom-color-text-and-icon-primary-pressed);
+    --stars-inactive-color: transparent;
+    --stars-placeholder-color: var(--telekom-color-ui-border-standard);
+    --stars-placeholder-hover-color: var(--telekom-color-ui-border-hovered);
+    --stars-disabled-color: var(--telekom-color-text-and-icon-disabled);
+    --stars-spacing: var(--telekom-spacing-unit-x05);
+    --stars-transition: color var(--telekom-motion-duration-immediate);
+    --stars-size: 24px;
+    --label-font: var(--telekom-text-style-ui);
+    --infotext-font: var(--telekom-text-style-body);
+    --infotext-font-small: var(--telekom-text-style-body);
+    --infotext-color: var(--telekom-color-text-and-icon-additional);
+    --focus-outline: var(--telekom-line-weight-highlight) solid
+      var(--telekom-color-functional-focus-standard);
+  }
+```
+
 ```html
 <scale-rating-stars
   rating="3"
