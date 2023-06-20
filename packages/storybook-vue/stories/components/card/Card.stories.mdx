@@ -107,21 +107,21 @@ export const Template = (args, { argTypes }) => ({
 ```css
 :host {
   --background: var(--telekom-color-background-surface);
-  --transition: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
-    );
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-large);
   --box-shadow: var(--telekom-shadow-raised-standard);
   --box-shadow-hover: var(--telekom-shadow-raised-hover);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus-standard);
   --box-shadow-active: var(--telekom-shadow-raised-pressed);
 
   --spacing-body: var(--telekom-spacing-unit-x6);
 
   --spacing-body-slotted: 0;
   --spacing-body-slotted-interactive: 0;
+
+  --font-body-slotted: var(--telekom-text-style-body);
 }
 ```
 
