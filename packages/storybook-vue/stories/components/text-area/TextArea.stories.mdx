@@ -105,7 +105,7 @@ scale-textarea {
     var(--telekom-color-functional-focus-standard);
   --spacing-x-control: var(--telekom-spacing-unit-x3);
   --spacing-bottom-control: var(--telekom-spacing-unit-x3);
-  --spacing-top-control: 19px;
+  --spacing-top-control: calc(1.125rem - var(--telekom-spacing-unit-x025));
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: transparent;
@@ -120,9 +120,9 @@ scale-textarea {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /*control*/
-  --spacing-control: 0 var(--spacing-x-control) var(--spacing-top-control);
+  --spacing-control: 0 calc(2rem - var(--telekom-spacing-unit-x025)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-unit-x025));
   --transition-control: var(--transition);
-  --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
 
   /*counter*/
@@ -138,10 +138,6 @@ scale-textarea {
   --color-label-readonly: var(--telekom-color-text-and-icon-standard);
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
-  --font-size-label: var(--telekom-typography-font-size-body);
-  --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-focus: var(--telekom-typography-font-size-small);
-  --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
 }
 ```
 
