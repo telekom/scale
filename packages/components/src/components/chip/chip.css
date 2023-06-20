@@ -10,6 +10,8 @@
  */
 
 :host {
+  --height: 32px;
+
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
@@ -26,6 +28,7 @@
 }
 /**TODO: colors unexplained in figma  **/
 .chip {
+  box-sizing: border-box;
   border: var(--telekom-spacing-unit-x025) solid transparent;
   display: inline-flex;
   outline: none;
@@ -35,7 +38,7 @@
   white-space: nowrap;
   border-radius: 1rem;
   border-color: rgba(255, 255, 255, 0.14);
-  height: 32px;
+  height: var(--height);
   vertical-align: baseline;
   justify-content: center;
   cursor: default;
