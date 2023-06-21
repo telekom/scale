@@ -54,5 +54,5 @@ Interactive text with one icon on the left and one on the right.
 
 ## Related components
 
-[Brand Header & Navigation, ](?path=/story/components-brand-header-navigation)
-[Data Grid](?path=/story/beta-components-data-grid)
+[Brand Header & Navigation](?path=/usage/components-telekom-brand-header-navigation--standard-header)
+[Data Grid](?path=/usage/components-data-grid--standard)
