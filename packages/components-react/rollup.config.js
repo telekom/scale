@@ -20,6 +20,9 @@ const plugins = [
     commonJS(), //convert common js modules to es6
     resolve(), // Locate and bundle third-party dependencies in node_modules
     typescript() // transpiles our TypeScript code into JavaScript.
+    // ,babel({
+    //     excludes: 'dist/**',
+    // }),
 ];
 
 export default {
@@ -45,5 +48,5 @@ export default {
             globals,
         },
     ],
-    plugins,
+    plugins
 };
