@@ -65,11 +65,11 @@ export const Template = (args, { argTypes }) => ({
       :styles="styles"
       @click="action('clicked')"
     >
-      <scale-icon-action-search size="16" v-if="icon === 'before'" />
+      <scale-icon-content-heart v-if="icon === 'before'" />
       {{ iconOnly !== true ? label : null }}
-      <scale-icon-action-add accessibility-title="Add" size="16" v-if="iconOnly" />
-      <scale-icon-navigation-right accessibility-title="Next" size="16" v-if="icon === 'after'" />
-      <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" size="16" v-if="icon === 'external'" />
+      <scale-icon-content-heart accessibility-title="Add" v-if="iconOnly" />
+      <scale-icon-navigation-right accessibility-title="Next" v-if="icon === 'after'" />
+      <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" v-if="icon === 'external'" />
     </scale-button>
     </div>
   `,
@@ -117,10 +117,9 @@ export const Template = (args, { argTypes }) => ({
   --min-height: var(--telekom-spacing-unit-x11);
   --min-width: var(--telekom-spacing-unit-x11);
   --radius: var(--telekom-radius-standard);
-  --transition: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
-    );
-  --color-focus: var(--telekom-color-functional-focus);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --color-focus: var(--telekom-color-functional-focus-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-tight);
@@ -160,7 +159,7 @@ export const Template = (args, { argTypes }) => ({
   --border-secondary: var(--telekom-color-ui-border-standard);
   --border-secondary-hover: var(--telekom-color-ui-border-hovered);
   --border-secondary-active: var(--telekom-color-ui-border-pressed);
-  --border-secondary-focus: var(--telekom-color-functional-focus);
+  --border-secondary-focus: var(--telekom-color-functional-focus-standard);
 
   /* variant: secondary white */
   --border-secondary-white: var(--telekom-color-ui-white);
@@ -177,7 +176,7 @@ export const Template = (args, { argTypes }) => ({
   --radius-ghost: var(--radius);
   --border-width-ghost: var(--telekom-spacing-unit-x025);
   --spacing-x-ghost: var(--telekom-spacing-unit-x2);
-  --color-ghost: var(--telekom-color-text-and-icon-standard);
+  --color-ghost: var(--telekom-color-text-and-icon-primary-standard);
   --color-ghost-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-ghost-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-ghost-disabled: var(--telekom-color-text-and-icon-disabled);
@@ -272,7 +271,7 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-button>
-  <scale-icon-action-search></scale-icon-action-search> Label
+  <scale-icon-content-heart></scale-icon-content-heart> Label
 </scale-button>
 ```
 
@@ -311,7 +310,7 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-button icon-only>
-  <scale-icon-action-add accessibility-title="add" />
+  <scale-icon-content-heart accessibility-title="like" />
 </scale-button>
 ```
 
@@ -534,9 +533,9 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 </Canvas>
 
 ```html
-<scale-button size="small" href="https://example.com" target="_blank"
-  >Label</scale-button
->
+<scale-button size="small" href="https://example.com" target="_blank">
+  Label
+</scale-button>
 ```
 
 ## Small Link Download
@@ -557,6 +556,6 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 
 ```html
 <scale-button size="small" icon-only>
-  <scale-icon-action-add accessibility-title="add" />
+  <scale-icon-action-add accessibility-title="add"></scale-icon-action-add>
 </scale-button>
 ```

@@ -1,30 +1,5 @@
-<template>
-  <scale-link
-    :href="href"
-    :styles="styles"
-    :disabled="disabled"
-    :omit-underline="omitUnderline"
-    :icon-position="iconPosition"
-    :download="download"
-    :hreflang="hreflang"
-    :referrerpolicy="referrerpolicy"
-    :rel="rel"
-    :target="target"
-    :type="type"
-    :inner-tabindex="innerTabindex"
-  >
-    <slot></slot>
-    <slot name="icon"></slot>
-  </scale-link>
-</template>
-
 <script>
 export default {
-  data() {
-    return {
-      withIcon: false,
-    };
-  },
   props: {
     href: String,
     styles: String,
@@ -40,5 +15,14 @@ export default {
     type: { type: String, default: null },
     innerTabindex: Number,
   },
+  render() {
+    return this.$slots.default;
+  }
 };
 </script>
+
+<style>
+scale-link {
+  font: var(--telekom-text-style-body);
+}
+</style>

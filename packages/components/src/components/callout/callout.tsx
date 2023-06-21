@@ -17,9 +17,6 @@ const numToPx = (val: string) => (Number.isNaN(Number(val)) ? val : val + 'px');
 export class Callout {
   @Element() hostElement: HTMLElement;
 
-  baseEl: HTMLElement;
-  mo: MutationObserver;
-
   /** (optional) Color variant of the callout */
   @Prop() variant?: 'primary' | 'blue' | 'white' | 'black' | string;
   /** (optional) Degree of rotation */
@@ -40,27 +37,6 @@ export class Callout {
     this.syncPropsToCSS();
   }
 
-  componentDidLoad() {
-    const observer = new MutationObserver(() => {
-      this.adjustSize();
-    });
-    observer.observe(this.hostElement, {
-      attributes: false,
-      childList: true,
-      subtree: true,
-      characterData: true,
-    });
-    this.mo = observer;
-    // Wait for full styles before measuring
-    window.requestAnimationFrame(this.adjustSize);
-  }
-
-  disconnectedCallback() {
-    if (this.mo) {
-      this.mo.disconnect();
-    }
-  }
-
   @Watch('rotation')
   @Watch('top')
   @Watch('right')
@@ -69,15 +45,6 @@ export class Callout {
   rotationChanged() {
     this.syncPropsToCSS();
   }
-
-  /**
-   * `aspect-ratio` is not enough when dealing with text :(
-   */
-  adjustSize = () => {
-    const { width, height } = this.baseEl.getBoundingClientRect();
-    const largest = Math.max(width, height);
-    this.hostElement.style.setProperty('--min-width', `${largest}px`);
-  };
 
   syncPropsToCSS() {
     this.hostElement.style.setProperty('--rotation', `${this.rotation}deg`);
@@ -101,7 +68,7 @@ export class Callout {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div part="base" ref={(el) => (this.baseEl = el)}>
+        <div part="base">
           <slot></slot>
         </div>
       </Host>

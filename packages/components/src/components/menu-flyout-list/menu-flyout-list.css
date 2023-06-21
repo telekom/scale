@@ -29,7 +29,7 @@
   pointer-events: initial;
   z-index: var(--scl-z-index-20);
   background: var(--telekom-color-background-surface);
-  border-radius: var(--telekom-radius-large);
+  border-radius: var(--telekom-radius-standard);
   box-shadow: var(--telekom-shadow-overlay);
   overflow-y: hidden;
   margin-top: var(--spacing-y-list, 0);

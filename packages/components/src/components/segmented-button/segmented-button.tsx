@@ -30,7 +30,8 @@ interface SegmentStatus {
 }
 
 const CHECKMARK_WIDTH_SMALL = 14;
-const CHECKMARK_WIDTH_LARGE = 18;
+const CHECKMARK_WIDTH_MEDIUM = 18 + 12;
+const CHECKMARK_WIDTH_LARGE = 20 + 18;
 
 @Component({
   tag: 'scale-segmented-button',
@@ -198,7 +199,11 @@ export class SegmentedButton {
       const selected = child.hasAttribute('selected');
       const iconOnly = child.hasAttribute('icon-only');
       const checkmark =
-        this.size === 'small' ? CHECKMARK_WIDTH_SMALL : CHECKMARK_WIDTH_LARGE;
+        this.size === 'small'
+          ? CHECKMARK_WIDTH_SMALL
+          : this.size === 'medium'
+          ? CHECKMARK_WIDTH_MEDIUM
+          : CHECKMARK_WIDTH_LARGE;
       if (selected || iconOnly) {
         tempWidth =
           child.getBoundingClientRect().width > tempWidth

@@ -14,6 +14,16 @@ import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
     alignment: {
       control: { type: 'select', options: ['vertical', 'horizontal'] },
     },
+    accessibilityTitle: {
+      control: {
+        type: 'text',
+      },
+    },
+    text: {
+      control: {
+        type: 'text',
+      },
+    },
   }}
 />
 
@@ -64,7 +74,7 @@ export const Template = () => ({
   <Story
     name="Small Primary (horizontal)"
     args={{
-      text: 'Loading...',
+      text: 'Loading ...',
     }}
   >
     {Template.bind({})}
@@ -72,7 +82,7 @@ export const Template = () => ({
 </Canvas>
 
 ```html
-<scale-loading-spinner text="Loading..."></scale-loading-spinner>
+<scale-loading-spinner text="Loading ..."></scale-loading-spinner>
 ```
 
 ## Small Size & Vertical Text (Primary)
@@ -81,7 +91,7 @@ export const Template = () => ({
   <Story
     name="Small Primary (vertical)"
     args={{
-      text: 'Loading...',
+      text: 'Loading ...',
       alignment: 'vertical',
     }}
   >
@@ -91,7 +101,7 @@ export const Template = () => ({
 
 ```html
 <scale-loading-spinner
-  text="Loading..."
+  text="Loading ..."
   alignment="vertical"
 ></scale-loading-spinner>
 ```
@@ -103,7 +113,7 @@ export const Template = () => ({
     name="Large Primary (horizontal)"
     args={{
       size: 'large',
-      text: 'Loading...',
+      text: 'Loading ...',
     }}
   >
     {Template.bind({})}
@@ -111,7 +121,7 @@ export const Template = () => ({
 </Canvas>
 
 ```html
-<scale-loading-spinner size="large" text="Loading..."></scale-loading-spinner>
+<scale-loading-spinner size="large" text="Loading ..."></scale-loading-spinner>
 ```
 
 ## Large Size & Vertical Text (Primary)
@@ -121,7 +131,7 @@ export const Template = () => ({
     name="Large Primary (vertical)"
     args={{
       size: 'large',
-      text: 'Loading...',
+      text: 'Loading ...',
       alignment: 'vertical',
     }}
   >
@@ -132,7 +142,7 @@ export const Template = () => ({
 ```html
 <scale-loading-spinner
   size="large"
-  text="Loading..."
+  text="Loading ..."
   alignment="vertical"
 ></scale-loading-spinner>
 ```
@@ -162,7 +172,7 @@ export const Template = () => ({
     name="Small White (horizontal)"
     args={{
       size: 'small',
-      text: 'Loading...',
+      text: 'Loading ...',
       variant: 'white',
     }}
   >
@@ -173,7 +183,7 @@ export const Template = () => ({
 ```html
 <scale-loading-spinner
   size="small"
-  text="Loading..."
+  text="Loading ..."
   variant="white"
 ></scale-loading-spinner>
 ```
@@ -185,7 +195,7 @@ export const Template = () => ({
     name="Small White (vertical)"
     args={{
       size: 'small',
-      text: 'Loading...',
+      text: 'Loading ...',
       variant: 'white',
       alignment: 'vertical',
     }}
@@ -197,7 +207,7 @@ export const Template = () => ({
 ```html
 <scale-loading-spinner
   size="small"
-  text="Loading..."
+  text="Loading ..."
   variant="white"
   alignment="vertical"
 ></scale-loading-spinner>
@@ -228,7 +238,7 @@ export const Template = () => ({
     name="Large White (horizontal)"
     args={{
       size: 'large',
-      text: 'Loading...',
+      text: 'Loading ...',
       variant: 'white',
     }}
   >
@@ -239,7 +249,7 @@ export const Template = () => ({
 ```html
 <scale-loading-spinner
   size="large"
-  text="Loading..."
+  text="Loading ..."
   variant="white"
 ></scale-loading-spinner>
 ```
@@ -253,7 +263,7 @@ export const Template = () => ({
       size: 'large',
       variant: 'white',
       alignment: 'vertical',
-      text: 'Loading...',
+      text: 'Loading ...',
     }}
   >
     {Template.bind({})}
@@ -265,6 +275,6 @@ export const Template = () => ({
   size="large"
   variant="white"
   alignment="vertical"
-  text="Loading..."
+  text="Loading ..."
 ></scale-loading-spinner>
 ```

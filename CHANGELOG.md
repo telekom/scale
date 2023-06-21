@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.135](https://github.com/telekom/scale/compare/v3.0.0-beta.134...v3.0.0-beta.135) (2023-06-21)
+
+
+### Bug Fixes
+
+* icon generation ([#2030](https://github.com/telekom/scale/issues/2030)) ([7f6b9ae](https://github.com/telekom/scale/commit/7f6b9ae0c97b20375309bd5ab86f966e7a6e93e0))
+* **list:** spacing ([#2005](https://github.com/telekom/scale/issues/2005)) ([b5a501d](https://github.com/telekom/scale/commit/b5a501d2d12609ab980dae7c47c87770f5010867)), closes [#2006](https://github.com/telekom/scale/issues/2006) [#2012](https://github.com/telekom/scale/issues/2012)
+* accordion spacing and icon size ([#1936](https://github.com/telekom/scale/issues/1936)) ([bf3e60d](https://github.com/telekom/scale/commit/bf3e60d44669bac07d82e0ad2f676308362d4fa3))
+* checkbox group design alignment [#1998](https://github.com/telekom/scale/issues/1998)) ([ecbdcfa](https://github.com/telekom/scale/commit/ecbdcfabe352bb7b263b47cf5a312e7eecf84997))
+* design qa alignment ([#1932](https://github.com/telekom/scale/issues/1932)) ([8f1877c](https://github.com/telekom/scale/commit/8f1877cfdba51856cca926990ead3a8070a35b4d))
+* dropdown-select design qa ([#1995](https://github.com/telekom/scale/issues/1995)) ([87919c8](https://github.com/telekom/scale/commit/87919c8cd50587d13c494c8a80e4e1aca81d1a4a))
+* flyout design alignment ([#2001](https://github.com/telekom/scale/issues/2001)) ([0ed59c9](https://github.com/telekom/scale/commit/0ed59c949f18658a8c7a1eba9f4e506d43b8706e))
+* footer design alignment  ([#1982](https://github.com/telekom/scale/issues/1982)) ([00157b3](https://github.com/telekom/scale/commit/00157b36a314fa0adc6633563e2aa141ab13ab07))
+* link design alignment ([#1972](https://github.com/telekom/scale/issues/1972)) ([24c1d7d](https://github.com/telekom/scale/commit/24c1d7d1a9e003ee6befe6bb2950b3a6c640d6df))
+* loading spinner design qa alignment ([#1934](https://github.com/telekom/scale/issues/1934)) ([3c98c26](https://github.com/telekom/scale/commit/3c98c26f2217a83094859fb3491b37bd00b071a4))
+* logo design alignment ([#1999](https://github.com/telekom/scale/issues/1999)) ([6201c9b](https://github.com/telekom/scale/commit/6201c9b7ee75ef065e0659cb6f336d91a562f446))
+* more visual alignments 💅 ([#1929](https://github.com/telekom/scale/issues/1929)) ([73415ba](https://github.com/telekom/scale/commit/73415bacf09b38aaf5b8adddb4ea7c93ed7f81f3)), closes [#1931](https://github.com/telekom/scale/issues/1931) [#1938](https://github.com/telekom/scale/issues/1938)
+* some visual alignments 💅 ([#1884](https://github.com/telekom/scale/issues/1884)) ([8f668a8](https://github.com/telekom/scale/commit/8f668a8bf0a4d2b74c61dcb95f31249dbcb5be5a)), closes [#1886](https://github.com/telekom/scale/issues/1886)
+* table icon design alignment ([#1996](https://github.com/telekom/scale/issues/1996)) ([a2f7ac6](https://github.com/telekom/scale/commit/a2f7ac6fba991f4a99edce634ca4457b0d47f46f))
+* **button:** secondary icon-only width ([#1994](https://github.com/telekom/scale/issues/1994)) ([a4e2704](https://github.com/telekom/scale/commit/a4e270498953cf7a9c2ecf6493785571b948276f))
+* **grid-cell:** resolve floating point precision issue ([#1839](https://github.com/telekom/scale/issues/1839)) ([68c69f6](https://github.com/telekom/scale/commit/68c69f67cee29faeb7d13e75bff9b95e70823976))
+* **loading-spinner:** center the loading icon in alignment with text ([#1809](https://github.com/telekom/scale/issues/1809)) ([797c7fd](https://github.com/telekom/scale/commit/797c7fde04875590bf01e33298e67435e76cc268))
+* **radio-button:** fix disabled radio button clickable issue ([#1822](https://github.com/telekom/scale/issues/1822)) ([10accc0](https://github.com/telekom/scale/commit/10accc091d9e035fbd2b858bc0ab01fc7f45ad5c))
+* **sidebar-nav:** active state colors ([#2007](https://github.com/telekom/scale/issues/2007)) ([6a32239](https://github.com/telekom/scale/commit/6a32239d9354f24899e64b93bd91294a0ab9d907))
+* logo design alignment (SCL-153) ([#1986](https://github.com/telekom/scale/issues/1986)) ([a10306e](https://github.com/telekom/scale/commit/a10306ef0f3660e1f3e92ebf5253d92ed2344284))
+* segmented button spacing ([#1928](https://github.com/telekom/scale/issues/1928)) ([9c6fbce](https://github.com/telekom/scale/commit/9c6fbce52c1343ea563b714cbb77fe1e2b917110))
+* sidebar-nav-items design alignment ([#1981](https://github.com/telekom/scale/issues/1981)) ([46eb920](https://github.com/telekom/scale/commit/46eb920f1bd54c21a5162ed8a252d9cb3f234996))
+* tab navigation design qa alignment ([#1942](https://github.com/telekom/scale/issues/1942)) ([40bf169](https://github.com/telekom/scale/commit/40bf1693d11d2e3cd96f635088d9fb5f5c2ddc94))
+* textarea design alignment ([#1925](https://github.com/telekom/scale/issues/1925)) ([4280147](https://github.com/telekom/scale/commit/42801476411b7fbc11854bc140b4e8b9b57dff1b))
+* **data-grid:** top padding for progress-bar status ([#1971](https://github.com/telekom/scale/issues/1971)) ([1071eb1](https://github.com/telekom/scale/commit/1071eb139f37ce27a931913c79ccf2df1acd2dcd))
+* **date-picker:** sync code and figma ([#1899](https://github.com/telekom/scale/issues/1899)) ([305a42a](https://github.com/telekom/scale/commit/305a42ad1b3d399b9d0e067fffdf2a8916998af4)), closes [#1910](https://github.com/telekom/scale/issues/1910) [#1911](https://github.com/telekom/scale/issues/1911)
+* **icons:** polish after icon library update ([#1921](https://github.com/telekom/scale/issues/1921)) ([1652980](https://github.com/telekom/scale/commit/1652980a4d07be45cc90b818eb0852fb14d67111)), closes [#1922](https://github.com/telekom/scale/issues/1922) [#1923](https://github.com/telekom/scale/issues/1923)
+* **telekom-footer-extended-navigation:** css fixes ([#1952](https://github.com/telekom/scale/issues/1952)) ([5e3c2ba](https://github.com/telekom/scale/commit/5e3c2baf540e9a0dc6a139ac3691d0ed2cdda51c))
+* **visual-test:** rating stars variant ([#1962](https://github.com/telekom/scale/issues/1962)) ([6e89551](https://github.com/telekom/scale/commit/6e89551e1aa946f0c51b3d0bc1ed70a57368e41a)), closes [#1964](https://github.com/telekom/scale/issues/1964)
+* **visual-tests:** pagination buttons disabled ([#1855](https://github.com/telekom/scale/issues/1855)) ([d2068b9](https://github.com/telekom/scale/commit/d2068b9c94b5a148aaefe2d0ae5663bf5df3142a))
+* **visual-tests:** switch ([#1968](https://github.com/telekom/scale/issues/1968)) ([2a3ba70](https://github.com/telekom/scale/commit/2a3ba707d76a3f2fae7c25c89fe61f8b61a4308d))
+* removing unneeded firefox css ([#1876](https://github.com/telekom/scale/issues/1876)) ([d6def10](https://github.com/telekom/scale/commit/d6def10a1350ecdef3f1f138cad83e61756f5d32))
+* solving multi-line problems ([#1828](https://github.com/telekom/scale/issues/1828)) ([c3d4c23](https://github.com/telekom/scale/commit/c3d4c236b0f6ff0c9c6f488e63c3127f3cbd1efa))
+* visual alignments ([#1894](https://github.com/telekom/scale/issues/1894)) ([f1cd96b](https://github.com/telekom/scale/commit/f1cd96b3236288eb238e20900a57905c7f2c43e8))
+
+
+### Features
+
+* visual alignment, some more ([#2022](https://github.com/telekom/scale/issues/2022)) ([070df35](https://github.com/telekom/scale/commit/070df354a404a46e0cf2524ca23a08a1ce99f871)), closes [#2023](https://github.com/telekom/scale/issues/2023) [#2024](https://github.com/telekom/scale/issues/2024) [#2028](https://github.com/telekom/scale/issues/2028)
+* **checkbox:** add required attribute ([#1851](https://github.com/telekom/scale/issues/1851)) ([5f90c75](https://github.com/telekom/scale/commit/5f90c75133d0ef60a77db76bd1ab7a6021a6833c))
+* **grid:** container with max-width only in 2xl ([#1993](https://github.com/telekom/scale/issues/1993)) ([2bc74b7](https://github.com/telekom/scale/commit/2bc74b762e1df02f4a08ea5035df2b4bf60681ae))
+* use sort indicator icons ([#2010](https://github.com/telekom/scale/issues/2010)) ([953c198](https://github.com/telekom/scale/commit/953c198b84398a09d0f006dc7d246da7160e7f36)), closes [#2011](https://github.com/telekom/scale/issues/2011) [#2013](https://github.com/telekom/scale/issues/2013)
+* **chip:** better spacing ([#2008](https://github.com/telekom/scale/issues/2008)) ([e60a8aa](https://github.com/telekom/scale/commit/e60a8aa00fd0ebcf5eff64d09c61432bf40ca25f)), closes [#2009](https://github.com/telekom/scale/issues/2009)
+* **slider:** add `platform` prop because browsers ([#1989](https://github.com/telekom/scale/issues/1989)) ([de6648a](https://github.com/telekom/scale/commit/de6648a3453f15652f9419e23a2ad2368dcce0b2))
+* adding accessibility title ([#1830](https://github.com/telekom/scale/issues/1830)) ([52b2023](https://github.com/telekom/scale/commit/52b20230bff98ccd152adf8c2e5f4b75386aec75))
+* more visual alignments ([#1984](https://github.com/telekom/scale/issues/1984)) ([3c7ecfd](https://github.com/telekom/scale/commit/3c7ecfd6c5449b560f86a8a764427e0dfc1be1be)), closes [#1985](https://github.com/telekom/scale/issues/1985)
+* **notification:** banner, message and toast are now one single component ([#1180](https://github.com/telekom/scale/issues/1180)) ([89990af](https://github.com/telekom/scale/commit/89990af4003666f7b99d5439b48460d59b833158))
+
+
+
+
+
 # [3.0.0-beta.134](https://github.com/telekom/scale/compare/v3.0.0-beta.133...v3.0.0-beta.134) (2023-05-09)
 
 

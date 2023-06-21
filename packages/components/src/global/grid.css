@@ -56,8 +56,7 @@ scale-grid,
   padding-right: var(--spacing-sm, var(--telekom-spacing-unit-x4, 1em));
   column-gap: var(--gutter-y-sm, var(--telekom-spacing-unit-x8, 2em));
   row-gap: var(--gutter-x-sm, var(--telekom-spacing-unit-x8, 2em));
-  /* xxl: (64px * 16 cols) + (32px * 15 gutters) + 24px + 24px */
-  max-width: var(--max-width, var(--scl-grid-max-width));
+  max-width: none;
 }
 
 /*
@@ -139,6 +138,8 @@ scale-grid-item,
     padding-right: var(--spacing-xxl, var(--telekom-spacing-unit-x6, 1.5em));
     column-gap: var(--gutter-y-xxl, var(--telekom-spacing-unit-x8, 2em));
     row-gap: var(--gutter-x-xxl, var(--telekom-spacing-unit-x8, 2em));
+    /* xxl: (64px * 16 cols) + (32px * 15 gutters) + 24px + 24px */
+    max-width: var(--max-width, var(--scl-grid-max-width));
   }
 
   scale-grid-item,

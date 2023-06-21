@@ -29,6 +29,8 @@ enum Actions {
   Type = 'Type',
 }
 
+const DEFAULT_ICON_SIZE = 20;
+
 const isElementValue = (x: unknown): x is Element & { value: string } =>
   typeof (x as { value: unknown }).value === 'string';
 const readValue = (element: Element) =>
@@ -198,6 +200,10 @@ export class DropdownSelect {
   @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
     'informational';
   @Prop({ mutable: true, reflect: true }) value: any;
+  /** @see {@url https://floating-ui.com/docs/computePosition#strategy} */
+  @Prop() floatingStrategy: 'absolute' | 'fixed' = 'absolute';
+  /** (optional) to hide the label */
+  @Prop() hideLabelVisually?: boolean = false;
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
@@ -234,8 +240,14 @@ export class DropdownSelect {
     if (!this.open) {
       return;
     }
+    if (this.floatingStrategy === 'fixed') {
+      this.listboxPadEl.style.width = `${
+        this.comboEl.getBoundingClientRect().width
+      }px`;
+    }
     computePosition(this.comboEl, this.listboxPadEl, {
       placement: 'bottom',
+      strategy: this.floatingStrategy,
     }).then(({ x, y }) => {
       Object.assign(this.listboxPadEl.style, {
         left: `${x}px`,
@@ -422,7 +434,7 @@ export class DropdownSelect {
               {...(this.helperText ? ariaDescribedByAttr : {})}
               {...(this.invalid ? { 'aria-invalid': 'true' } : {})}
             >
-              {ValueElement}
+              <span part="combobox-value">{ValueElement}</span>
             </div>
             <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
               <div part="listbox-scroll-container">
@@ -454,9 +466,9 @@ export class DropdownSelect {
                       >
                         {ItemElement}
                         {value === this.value ? (
-                          <scale-icon-action-success
+                          <scale-icon-action-checkmark
                             size={16}
-                          ></scale-icon-action-success>
+                          ></scale-icon-action-checkmark>
                         ) : null}
                       </div>
                     )
@@ -467,9 +479,15 @@ export class DropdownSelect {
 
             <div part="icon">
               {this.open ? (
-                <scale-icon-navigation-collapse-up decorative />
+                <scale-icon-navigation-collapse-up
+                  decorative
+                  size={DEFAULT_ICON_SIZE}
+                />
               ) : (
-                <scale-icon-navigation-collapse-down decorative />
+                <scale-icon-navigation-collapse-down
+                  decorative
+                  size={DEFAULT_ICON_SIZE}
+                />
               )}
             </div>
           </div>
@@ -497,7 +515,9 @@ export class DropdownSelect {
       this.invalid && `invalid`,
       this.currentIndex > -1 && `steal-focus`,
       animated && 'animated',
-      this.helperText && 'has-helper-text'
+      this.helperText && 'has-helper-text',
+      this.floatingStrategy && `strategy-${this.floatingStrategy}`,
+      this.hideLabelVisually && 'hide-label'
     );
   }
 }

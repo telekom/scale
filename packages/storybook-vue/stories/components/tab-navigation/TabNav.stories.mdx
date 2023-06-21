@@ -98,37 +98,35 @@ export const Template = (args, { argTypes }) => ({
 
 ```css
 :host {
-  --tab-height: var(--telekom-spacing-unit-x12);
-  --tab-spacing-horizontal: var(--telekom-spacing-unit-x4);
-  --tab-spacing-vertical: 0.875rem;
+  --tab-height: 3rem;
+  --tab-spacing-horizontal: var(--telekom-spacing-unit-x3);
+  --tab-spacing-vertical: var(--telekom-spacing-unit-x4);
   --tab-radius: var(--telekom-radius-small);
   --tab-border-size: var(--telekom-line-weight-standard);
   --tab-border-size-selected: var(--telekom-line-weight-highlight);
+  --tab-border-size-selected: 3px;
+
   --tab-border-color: var(--telekom-color-ui-subtle);
 
-  --tab-height-small: var(--telekom-spacing-unit-x10);
-  --tab-spacing-horizontal-small: var(--telekom-spacing-unit-x3);
-  --tab-spacing-vertical-small: var(--telekom-spacing-unit-x4);
+  --tab-height-large: 3.25rem;
+
+  --tab-spacing-horizontal-large: var(--telekom-spacing-unit-x4);
+  --tab-spacing-vertical-large: 0.875rem;
 }
 
 /* tab-header */
 :host {
-  --font-size: var(--telekom-typography-font-size-callout);
-  --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
-  --font-weight: var(--telekom-typography-font-weight-bold);
-  --height: 3rem;
+  --font: var(--telekom-text-style-ui-bold);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
   --spacing-right-slotted: var(--telekom-spacing-unit-x2);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);
-
-  --font-size-small: var(--telekom-typography-font-size-body);
+  --font-size-large: var(--telekom-typography-font-size-callout);
 }
 
 /* tab-panel */

@@ -75,7 +75,7 @@ export class NotificationBanner {
       switch (this.variant) {
         case 'success':
           return (
-            <scale-icon-alert-success
+            <scale-icon-action-success
               class="notification-banner__icon-success"
               color="#187431"
               accessibility-title="success"
@@ -190,7 +190,9 @@ export class NotificationBanner {
       name,
       this.variant && `${prefix}variant-${this.variant}`,
       this.hasSlotText && `${prefix}has-text`,
-      !this.hasSlotText && `${prefix}has-no-text`
+      !this.hasSlotText && `${prefix}has-no-text`,
+      this.hasSlotLink && `${prefix}has-link`,
+      !this.hasSlotLink && `${prefix}has-no-link`
     );
   }
 }

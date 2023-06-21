@@ -49,7 +49,6 @@ import ScaleLink from './ScaleLink.vue';
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleLink },
   props: {
     label: String,
     withIcon: { type: Boolean, default: false },
@@ -57,28 +56,26 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-link
-        :href="href"
-        :disabled="disabled"
-        :styles="styles"
-        :omit-underline="omitUnderline"
-        :icon-position="iconPosition"
-        :download="download"
-        :hreflang="hreflang"
-        :referrerpolicy="referrerpolicy"
-        :rel="rel"
-        :target="target"
-        :type="type"
-        :inner-tabindex="innerTabindex"
+      :href="href"
+      :disabled="disabled"
+      :styles="styles"
+      :omit-underline="omitUnderline"
+      :icon-position="iconPosition"
+      :download="download"
+      :hreflang="hreflang"
+      :referrerpolicy="referrerpolicy"
+      :rel="rel"
+      :target="target"
+      :type="type"
+      :inner-tabindex="innerTabindex"
     >
-        {{ label }}
-        <template v-slot:icon v-if="withIcon">
-            <scale-icon-navigation-external-link
-            v-if="withIcon"
-            size="16"
-            slot="icon"
-            accessibility-title="open link in new tab"
-        ></scale-icon-navigation-external-link>
-        </template>
+      {{ label }}
+      <scale-icon-navigation-external-link
+        v-if="withIcon"
+        size="16"
+        slot="icon"
+        accessibility-title="open link in new tab"
+      ></scale-icon-navigation-external-link>
     </scale-link>
     `,
 });
@@ -126,7 +123,7 @@ export const Template = (args, { argTypes }) => ({
 
 ```css
 :host {
-  --font-weight: var(--telekom-typography-font-weight-medium);
+  --font-weight: ;
   --spacing-x-icon: var(--telekom-spacing-unit-x1);
   --line-offset: 0.0625em;
 
@@ -134,30 +131,26 @@ export const Template = (args, { argTypes }) => ({
   --color: var(--telekom-color-text-and-icon-link-standard);
   --color-line-initial: var(--telekom-color-functional-interaction-subtle);
   --line-thickness-initial: var(--telekom-line-weight-standard);
-
   /* visited */
   --color-visited: var(--telekom-color-text-and-icon-link-visited);
   --color-line-visited: currentColor;
   --line-thickness-visited: var(--line-thickness-initial);
-
   /* hover */
   --color-hover: var(--telekom-color-text-and-icon-link-hovered);
-  --color-line-hover: var(--telekom-color-functional-interaction-hovered);
-  --line-thickness-hover: var(--line-thickness-initial);
-
+  --color-line-hover: currentColor;
+  --line-thickness-hover: var(--telekom-line-weight-highlight);
   /* focus */
+  --color-focus-outline: var(--telekom-color-functional-focus-standard);
   --color-focus: var(--telekom-color-text-and-icon-link-standard);
-  --color-line-focus: var(--telekom-color-text-and-icon-link-standard);
-  --line-thickness-focus: var(--telekom-line-weight-bold);
-
+  --color-line-focus: transparent;
+  --line-thickness-focus: 0;
   /* active */
   --color-active: var(--telekom-color-text-and-icon-link-active);
-  --color-line-active: var(--telekom-color-functional-interaction-pressed);
-  --line-thickness-active: var(--line-thickness-initial);
-
+  --color-line-active: currentColor;
+  --line-thickness-active: var(--telekom-line-weight-highlight);
   /* disabled */
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --color-line-disabled: var(--telekom-color-ui-border-disabled);
+  --color-line-disabled: transparent;
   --line-thickness-disabled: var(--line-thickness-initial);
 }
 ```
@@ -217,6 +210,7 @@ For Shadow Parts, please inspect the element's #shadow.
     args={{
       label: 'A link, without an underline',
       omitUnderline: true,
+      innerTabindex: 0
     }}
   >
     {Template.bind({})}

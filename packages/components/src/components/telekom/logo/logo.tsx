@@ -24,7 +24,7 @@ export class Logo {
   @Prop() variant: 'magenta' | 'white' = 'magenta';
   /** (optional) Set transparent background */
   @Prop() transparent: boolean = false;
-  /** (optional) Language of the logo text/ claimOff showes just the T Logo */
+  /** @deprecated; (optional) Language of the logo text/ claimOff showes just the T Logo */
   @Prop() language:
     | 'de'
     | 'en'
@@ -38,7 +38,7 @@ export class Logo {
     | 'sk'
     | string = 'en';
   /** (optional) The height in pixels */
-  @Prop() size?: number = 36;
+  @Prop() size?: number = 38;
   /** (optional) Set a link */
   @Prop() href?: string = 'javascript:void(0);';
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
@@ -62,6 +62,15 @@ export class Logo {
         tag: 'deprecated',
         message:
           'Property "accessibilityTitle" is deprecated. Please use the "logoTitle" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.language) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "language" is deprecated. Localized brand claim is not shown anymore.',
         type: 'warn',
         source: this.hostElement,
       });
@@ -91,7 +100,6 @@ export class Logo {
         >
           <scale-logo-svg
             part="icon"
-            language={this.language}
             color={this.variant}
             logoTitle={this.logoTitle}
             logoHideTitle={this.logoHideTitle}

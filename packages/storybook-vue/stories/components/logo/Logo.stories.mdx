@@ -6,6 +6,12 @@ import { action } from '@storybook/addon-actions';
   title="Components/Logo"
   component={ScaleLogo}
   argTypes={{
+    variant: {
+      control: {
+        type: 'select',
+        options: ['magenta', 'white'],
+      },
+    },
     language: {
       control: {
         type: 'select',
@@ -23,6 +29,7 @@ import { action } from '@storybook/addon-actions';
           '',
         ],
       },
+      description: `DEPRECATED - localized brand claim is not shown anymore.`,
     },
   }}
 />
@@ -131,38 +138,4 @@ export const Template = (args, { argTypes }) => ({
   href="https://www.telekom.de/start"
   logo-title="Telekom Logo – Erleben, was verbindet – Zur Startseite"
 ></scale-logo>
-```
-
-## Macedonia Cyrillic
-
-<Canvas withSource="none">
-  <Story
-    name="Macedonia Cyrillic"
-    args={{
-      language: 'mk_kyr',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-logo language="mk_kyr"></scale-logo>
-```
-
-## Macedonia Latin Script
-
-<Canvas withSource="none">
-  <Story
-    name="Macedonia Latin Script"
-    args={{
-      language: 'mk_lat',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-logo language="mk_lat"></scale-logo>
 ```

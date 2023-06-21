@@ -6,7 +6,7 @@ exports[`SidebarNav should handle click 1`] = `
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
-        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="20"></scale-icon-navigation-collapse-down>
       </button>
       <nav hidden="" part="nav">
         <ul class="sidebar-nav__list" part="list" role="list">
@@ -25,7 +25,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child 1`] = `
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
-        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="20"></scale-icon-navigation-collapse-down>
       </button>
       <nav hidden="" part="nav">
         <ul class="sidebar-nav__list" part="list" role="list">
@@ -44,7 +44,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 1 1
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
-        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="20"></scale-icon-navigation-collapse-down>
       </button>
       <nav hidden="" part="nav">
         <ul class="sidebar-nav__list" part="list" role="list">
@@ -65,7 +65,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 2 1
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
-        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="20"></scale-icon-navigation-collapse-down>
       </button>
       <nav hidden="" part="nav">
         <ul class="sidebar-nav__list" part="list" role="list">
@@ -88,7 +88,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 2 2
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
-        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="20"></scale-icon-navigation-collapse-down>
       </button>
       <nav hidden="" part="nav">
         <ul class="sidebar-nav__list" part="list" role="list">
@@ -112,7 +112,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-item child 1`] = `
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
-        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="20"></scale-icon-navigation-collapse-down>
       </button>
       <nav hidden="" part="nav">
         <ul class="sidebar-nav__list" part="list" role="list">
@@ -131,7 +131,7 @@ exports[`SidebarNav should match snapshot 1`] = `
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
-        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+        <scale-icon-navigation-collapse-down class="sidebar-nav__icon" part="icon" size="20"></scale-icon-navigation-collapse-down>
       </button>
       <nav hidden="" part="nav">
         <ul class="sidebar-nav__list" part="list" role="list">

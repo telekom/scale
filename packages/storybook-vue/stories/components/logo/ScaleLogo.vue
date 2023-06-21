@@ -38,7 +38,7 @@ export default {
         '',
       default: 'de',
     },
-    size: { type: Number, default: 36 },
+    size: { type: Number, default: 38 },
     href: { type: String },
     styles: { type: String },
     logoAriaDescribedBy: { type: String },

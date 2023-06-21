@@ -194,49 +194,12 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<!--
-  Deprecated:
-   <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
--->
 <scale-pagination
   page-size="5"
   start-element="100"
   total-elements="200"
   hide-border
 ></scale-pagination>
-```
-
-## Embedded Hidden Borders
-
-<Canvas withSource="none">
-  <Story
-    name=" Embedded Hidden Borders"
-    args={{
-      pageSize: 5,
-      startElement: 100,
-      totalElements: 200,
-      hideBorder: true,
-    }}
-  >
-    {TemplateEmbedded.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<!--
-  Deprecated:
-   <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
--->
-<div
-  style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;"
->
-  <scale-pagination
-    page-size="5"
-    start-element="100"
-    total-elements="200"
-    hide-border
-  ></scale-pagination>
-</div>
 ```
 
 ## Translated Aria Labels

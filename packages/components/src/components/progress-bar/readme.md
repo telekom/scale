@@ -45,13 +45,13 @@
 ### Depends on
 
 - [scale-icon-alert-error](../icons/alert-error)
-- [scale-icon-alert-success](../icons/alert-success)
+- [scale-icon-action-success](../icons/action-success)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-progress-bar --> scale-icon-alert-error
-  scale-progress-bar --> scale-icon-alert-success
+  scale-progress-bar --> scale-icon-action-success
   scale-data-grid --> scale-progress-bar
   style scale-progress-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```

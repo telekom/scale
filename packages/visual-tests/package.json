@@ -1,7 +1,7 @@
 {
   "name": "@telekom/scale-visual-tests",
   "private": true,
-  "version": "3.0.0-beta.134",
+  "version": "3.0.0-beta.135",
   "main": "index.js",
   "license": "MPL-2.0",
   "scripts": {
@@ -9,6 +9,7 @@
     "copy": "rimraf ./storybook-static && cp -R ../storybook-vue/storybook-static ./",
     "test": "PUPPETEER_CHROMIUM_REVISION=1055161 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true jest --forceExit",
     "test:ci": "JEST_IMAGE_SNAPSHOT_TRACK_OBSOLETE=1 PUPPETEER_CHROMIUM_REVISION=1055161 jest --forceExit",
+    "test:m1": "DOCKER_DEFAULT_PLATFORM=linux/amd64 PUPPETEER_CHROMIUM_REVISION=1055161 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true jest --forceExit",
     "format": "prettier --write \"package.json\" \"src/**/*.js\" \"./*.js\""
   },
   "dependencies": {

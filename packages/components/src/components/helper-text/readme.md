@@ -36,27 +36,31 @@
 
 ### Used by
 
+ - [scale-date-picker](../date-picker)
  - [scale-dropdown](../dropdown)
  - [scale-dropdown-select](../dropdown-select)
  - [scale-segmented-button](../segmented-button)
  - [scale-text-field](../text-field)
+ - [scale-textarea](../textarea)
 
 ### Depends on
 
 - [scale-icon-alert-information](../icons/alert-information)
 - [scale-icon-alert-error](../icons/alert-error)
-- [scale-icon-alert-success](../icons/alert-success)
+- [scale-icon-action-success](../icons/action-success)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
-  scale-helper-text --> scale-icon-alert-success
+  scale-helper-text --> scale-icon-action-success
+  scale-date-picker --> scale-helper-text
   scale-dropdown --> scale-helper-text
   scale-dropdown-select --> scale-helper-text
   scale-segmented-button --> scale-helper-text
   scale-text-field --> scale-helper-text
+  scale-textarea --> scale-helper-text
   style scale-helper-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

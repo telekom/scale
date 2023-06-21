@@ -2,12 +2,12 @@
   --position: absolute;
   --background: var(--telekom-color-ui-extra-strong);
   --color: var(--telekom-color-text-and-icon-inverted-standard);
-  --spacing: var(--telekom-spacing-unit-x6);
+  --spacing: var(--telekom-spacing-unit-x8);
   --min-width: 6rem;
-  --aspect-ratio: 1;
+  --aspect-ratio: 1 / 1;
   --rotation: 0deg;
-  --font-standard: var(--telekom-text-style-lead-text);
   --font-small: var(--telekom-text-style-body-bold);
+  --font-medium: var(--telekom-text-style-body-bold);
   --font-large: var(--telekom-text-style-heading-1);
 
   box-sizing: border-box;
@@ -29,9 +29,7 @@
 [part='base'] {
   box-sizing: border-box;
   padding: var(--spacing);
-  font: var(--font-standard);
-  font-weight: var(--telekom-typography-font-weight-bold);
-  line-height: var(--telekom-typography-line-spacing-tight);
+  font: var(--font-medium);
 }
 
 /* Color variants */
@@ -52,7 +50,7 @@
 }
 
 :host([variant='blue']) {
-  --background: var(--telekom-color-additional-cyan-400);
+  --background: var(--telekom-color-additional-cyan-100);
   --color: var(--telekom-color-text-and-icon-black-standard);
 }
 
