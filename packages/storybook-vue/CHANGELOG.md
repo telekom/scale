@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.135](https://github.com/telekom/scale/compare/v3.0.0-beta.134...v3.0.0-beta.135) (2023-06-21)
+
+
+### Bug Fixes
+
+* **list:** spacing ([#2005](https://github.com/telekom/scale/issues/2005)) ([b5a501d](https://github.com/telekom/scale/commit/b5a501d2d12609ab980dae7c47c87770f5010867)), closes [#2006](https://github.com/telekom/scale/issues/2006) [#2012](https://github.com/telekom/scale/issues/2012)
+* table icon design alignment ([#1996](https://github.com/telekom/scale/issues/1996)) ([a2f7ac6](https://github.com/telekom/scale/commit/a2f7ac6fba991f4a99edce634ca4457b0d47f46f))
+* **sidebar-nav:** active state colors ([#2007](https://github.com/telekom/scale/issues/2007)) ([6a32239](https://github.com/telekom/scale/commit/6a32239d9354f24899e64b93bd91294a0ab9d907))
+* accordion spacing and icon size ([#1936](https://github.com/telekom/scale/issues/1936)) ([bf3e60d](https://github.com/telekom/scale/commit/bf3e60d44669bac07d82e0ad2f676308362d4fa3))
+* design qa alignment ([#1932](https://github.com/telekom/scale/issues/1932)) ([8f1877c](https://github.com/telekom/scale/commit/8f1877cfdba51856cca926990ead3a8070a35b4d))
+* link design alignment ([#1972](https://github.com/telekom/scale/issues/1972)) ([24c1d7d](https://github.com/telekom/scale/commit/24c1d7d1a9e003ee6befe6bb2950b3a6c640d6df))
+* loading spinner design qa alignment ([#1934](https://github.com/telekom/scale/issues/1934)) ([3c98c26](https://github.com/telekom/scale/commit/3c98c26f2217a83094859fb3491b37bd00b071a4))
+* logo design alignment (SCL-153) ([#1986](https://github.com/telekom/scale/issues/1986)) ([a10306e](https://github.com/telekom/scale/commit/a10306ef0f3660e1f3e92ebf5253d92ed2344284))
+* some visual alignments 💅 ([#1884](https://github.com/telekom/scale/issues/1884)) ([8f668a8](https://github.com/telekom/scale/commit/8f668a8bf0a4d2b74c61dcb95f31249dbcb5be5a)), closes [#1886](https://github.com/telekom/scale/issues/1886)
+* tab navigation design qa alignment ([#1942](https://github.com/telekom/scale/issues/1942)) ([40bf169](https://github.com/telekom/scale/commit/40bf1693d11d2e3cd96f635088d9fb5f5c2ddc94))
+* **date-picker:** sync code and figma ([#1899](https://github.com/telekom/scale/issues/1899)) ([305a42a](https://github.com/telekom/scale/commit/305a42ad1b3d399b9d0e067fffdf2a8916998af4)), closes [#1910](https://github.com/telekom/scale/issues/1910) [#1911](https://github.com/telekom/scale/issues/1911)
+* **icons:** polish after icon library update ([#1921](https://github.com/telekom/scale/issues/1921)) ([1652980](https://github.com/telekom/scale/commit/1652980a4d07be45cc90b818eb0852fb14d67111)), closes [#1922](https://github.com/telekom/scale/issues/1922) [#1923](https://github.com/telekom/scale/issues/1923)
+
+
+### Features
+
+* **slider:** add `platform` prop because browsers ([#1989](https://github.com/telekom/scale/issues/1989)) ([de6648a](https://github.com/telekom/scale/commit/de6648a3453f15652f9419e23a2ad2368dcce0b2))
+* more visual alignments ([#1984](https://github.com/telekom/scale/issues/1984)) ([3c7ecfd](https://github.com/telekom/scale/commit/3c7ecfd6c5449b560f86a8a764427e0dfc1be1be)), closes [#1985](https://github.com/telekom/scale/issues/1985)
+* **checkbox:** add required attribute ([#1851](https://github.com/telekom/scale/issues/1851)) ([5f90c75](https://github.com/telekom/scale/commit/5f90c75133d0ef60a77db76bd1ab7a6021a6833c))
+* **notification:** banner, message and toast are now one single component ([#1180](https://github.com/telekom/scale/issues/1180)) ([89990af](https://github.com/telekom/scale/commit/89990af4003666f7b99d5439b48460d59b833158))
+* adding accessibility title ([#1830](https://github.com/telekom/scale/issues/1830)) ([52b2023](https://github.com/telekom/scale/commit/52b20230bff98ccd152adf8c2e5f4b75386aec75))
+
+
+
+
+
 # [3.0.0-beta.134](https://github.com/telekom/scale/compare/v3.0.0-beta.133...v3.0.0-beta.134) (2023-05-09)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue
