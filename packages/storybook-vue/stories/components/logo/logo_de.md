@@ -16,5 +16,5 @@ Verwende das Logo ausschließlich für den Brand-Header und Footer.
 
 ## Verwandte Komponenten
 
-[Brand Header & Navigation, ](?path=/usage/components-brand-header-navigation--standard)
-[Footer](?path=/usage/components-footer--standard)
+[Brand Header & Navigation](?path=/usage/components-telekom-brand-header-navigation--standard-header)
+[Footer](?path=/usage/components-telekom-footer--standard)

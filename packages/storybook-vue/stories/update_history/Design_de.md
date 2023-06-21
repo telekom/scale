@@ -2,44 +2,6 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
-## Visual Design Updates
-
-21.06.2023
-
-Kleinere Bugfixes und Optimierungen des Visual Designs folgender Komponenten:
-
-- Accordion
-- Breadcrump
-- Button
-- Checkbox Group
-- Card
-- Data Grid
-- Date Picker
-- Dropdown Select
-- Footer
-- Flyout Menu
-- Link
-- List
-- Loading Spinner
-- Modal
-- Notification
-- Radio Button Group
-- Rating Stars
-- Sidebar Navigation
-- Switch
-- Tab Navigation
-- Table
-- Tag
-- Telekom Brand Header
-- Text Area
-- Text Field
-
-**Weitere Änderungen:**
-
-Die Beta-Komponenten Notification Banner, Messager und Toast wurden zu einer Komponente namens "Notification" zusammengefasst.
-
-Die Logovarianten mit Claim wurden aus Scale entfernt, da sie nicht für digitale Anwendungen vorgesehen sind. Das Logo mit Claim kann weiterhin über das Brand & Design-Portal heruntergeladen werden.
-
 ## Typografie-Update
 
 06.04.2023
