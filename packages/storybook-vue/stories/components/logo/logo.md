@@ -10,12 +10,6 @@ In addition to color and typography, our logo is one of the three central Teleko
 We use our logo in combination with our claim to convey our central brand promise.
 Only use the logo for the brand header and footer.
 
-## Elements
-
-![Image Name](assets/3_components/logo/Logo-Claim.png)
-
-#### Logo (1)
-
 ## Colors
 
 ![Image Name](assets/3_components/logo/Farben-EN.png)

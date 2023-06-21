@@ -10,12 +10,6 @@ Neben Farbe und Typografie ist das Logo eines der drei zentralen Telekom Gestalt
 Wir setzen das Logo in Kombination mit dem Claim ein, um unser zentrales Markenversprechen zu vermitteln.
 Verwende das Logo ausschließlich für den Brand-Header und Footer.
 
-## Elemente
-
-![Image Name](assets/3_components/logo/Logo-Claim.png)
-
-#### Logo (1)
-
 ## Farben
 
 ![Image Name](assets/3_components/logo/Farben-DE.png)
