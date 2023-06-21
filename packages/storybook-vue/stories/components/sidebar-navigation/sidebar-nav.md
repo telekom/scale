@@ -63,6 +63,6 @@ Since there is no mouse over on mobile devices, the arrow of a submenu is always
 
 ## Related components
 
-[Brand Header & Navigation, ](?path=/usage/components-brand-header-navigation--standard)
+[Brand Header & Navigation](?path=/usage/components-telekom-brand-header-navigation--standard-header)
 [Tab Navigation, ](?path=/usage/components-tab-navigation--text-icon)
 [Accordion ](?path=/usage/components-accordion--standard)
