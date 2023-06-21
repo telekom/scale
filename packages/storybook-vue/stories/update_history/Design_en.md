@@ -34,7 +34,7 @@ Minor bug fixes and optimizations of the visual design of the following componen
 - Text Area
 - Text Field
 
-Further changes:
+**Further changes:**
 
 The beta components Notification Banner, Messager, and Toast have been merged into a component named "Notification."
 

@@ -34,7 +34,7 @@ Kleinere Bugfixes und Optimierungen des Visual Designs folgender Komponenten:
 - Text Area
 - Text Field
 
-Weitere Änderungen:
+**Weitere Änderungen:**
 
 Die Beta-Komponenten Notification Banner, Messager und Toast wurden zu einer Komponente namens "Notification" zusammengefasst.
 
