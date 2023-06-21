@@ -418,7 +418,7 @@
 }
 .data-grid--mobile .data-grid__title-block {
   padding-left: 0;
-  padding-right: 46px;
+  padding-right: 0;
 }
 .data-grid--hide-menu.data-grid--mobile .data-grid__title-block {
   padding-right: 0;
