@@ -3,7 +3,7 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Notifications geben Nutzer*innen Feedback über den Status des Systems oder einer Aktion.
+Notifications geben Nutzer\*innen Feedback über den Status des Systems oder einer Aktion.
 
 ## Allgemein
 
@@ -11,13 +11,13 @@ Scale unterscheidet Toast, Banner und Inline Notifications.
 
 ### Verwende eine Notification, um
 
-- Nutzer*innen über den Status einer Aktion zu informieren, oder um
+- Nutzer\*innen über den Status einer Aktion zu informieren, oder um
 - eine Systemmeldung auszugeben, oder um
 - Updates wie "neue Nachrichten" zu kommunizieren.
 
 ### Verwende Notifications besser nicht, wenn
 
-- Nutzer*innen eine Entscheidung bestätigen müssen, um mögliche Fehler zu verhindern oder zu korrigieren. Verwende in diesem Fall ein Modal.
+- Nutzer\*innen eine Entscheidung bestätigen müssen, um mögliche Fehler zu verhindern oder zu korrigieren. Verwende in diesem Fall ein Modal.
 
 ## Basistypen
 
@@ -37,7 +37,7 @@ Banner Notifications zeigen Systemmeldungen an. Sie werden oberhalb des Seitenin
 
 ### Inline Notification
 
-Inline Notifications geben Nutzer*innen Feedback auf eine Aktion. Sie sind im entsprechenden Teilbereich der Seite verortet. 
+Inline Notifications geben Nutzer\*innen Feedback auf eine Aktion. Sie sind im entsprechenden Teilbereich der Seite verortet.
 
 ![Image Name](assets/3_components/notifications/inline.png)
 
@@ -45,7 +45,7 @@ Inline Notifications geben Nutzer*innen Feedback auf eine Aktion. Sie sind im en
 
 ### Informational Notification
 
-Die Informational Notification gibt Nutzer*innen zusätzliche und hilfreiche Informationen.
+Die Informational Notification gibt Nutzer\*innen zusätzliche und hilfreiche Informationen.
 
 ![Image Name](assets/3_components/notifications/variant_info.png)
 
@@ -57,13 +57,13 @@ Die Sucess Notification bestätigt eine erfolgreich durchgeführte Aktion.
 
 ### Warning Notification
 
-Die Warning Notification informiert Nutzer*innen über möglicherweise unerwünschte Ergebnisse
+Die Warning Notification informiert Nutzer\*innen über möglicherweise unerwünschte Ergebnisse
 
 ![Image Name](assets/3_components/notifications/variant_warning.png)
 
 ### Error Notification
 
-Die Error Notification informiert Nutzer*innen über eine fehlgeschlagene Aktion oder einen Fehler und verlangt möglicherweise eine Aktion, um fortfahren zu können.
+Die Error Notification informiert Nutzer\*innen über eine fehlgeschlagene Aktion oder einen Fehler und verlangt möglicherweise eine Aktion, um fortfahren zu können.
 
 ![Image Name](assets/3_components/notifications/variant_error.png)
 
@@ -99,7 +99,7 @@ Toast Notifications sitzen üblicherweise oben links oder rechts und können and
 
 ![Image Name](assets/3_components/notifications/position_toast.png)
 
-### Banner Notification 
+### Banner Notification
 
 Banner Notifications sitzen zentriert oberhalb des Seiteninhalts.
 

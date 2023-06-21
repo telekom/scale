@@ -41,7 +41,7 @@ Banner notifications communicate system messages. They are displayed above the p
 
 ### Inline notification
 
-Inline notifications give users feedback on an action. They are located in the corresponding section of the page. 
+Inline notifications give users feedback on an action. They are located in the corresponding section of the page.
 
 ![Image Name](assets/3_components/notifications/inline.png)
 
@@ -49,7 +49,7 @@ Inline notifications give users feedback on an action. They are located in the c
 
 ### Informational notification
 
-The informational notification gives users additional helpful information. 
+The informational notification gives users additional helpful information.
 
 ![Image Name](assets/3_components/notifications/variant_info.png)
 
@@ -103,7 +103,7 @@ Toast notifications are usually placed on the top left or top right and can cove
 
 ![Image Name](assets/3_components/notifications/position_toast.png)
 
-### Banner notification 
+### Banner notification
 
 Center banner notifications above the page content.
 
