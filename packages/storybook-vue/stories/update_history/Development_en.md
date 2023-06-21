@@ -2,6 +2,44 @@
 
 This page documents updates in `@telekom/scale-components` and related packages.
 
+## Visual Design Updates
+
+21.06.2023
+
+Minor bug fixes and optimizations of the visual design of the following components:
+
+- Accordion
+- Breadcrumb
+- Button
+- Checkbox Group
+- Card
+- Data Grid
+- Date Picker
+- Dropdown Select
+- Footer
+- Flyout Menu
+- Link
+- List
+- Loading Spinner
+- Modal
+- Notification
+- Radio Button Group
+- Rating Stars
+- Sidebar Navigation
+- Switch
+- Tab Navigation
+- Table
+- Tag
+- Telekom Brand Header
+- Text Area
+- Text Field
+
+**Further changes:**
+
+The beta components Notification Banner, Messager, and Toast have been merged into a component named "Notification."
+
+The logo variants with a claim have been removed from Scale as they are not intended for digital applications. The logo with a claim can still be downloaded via the [Brand & Design portal](https://www.brand-design.telekom.com/en/asset/logo-0-t-logo-with-claim/).
+
 ## Additional basic types of the Telekom Brand Header
 
 20.03.2023

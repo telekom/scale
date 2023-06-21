@@ -183,6 +183,10 @@ button.segment--large .segment--mask {
   position: relative;
 }
 
+.segment:not(.segment--selected):focus {
+  outline-offset: 0;
+}
+
 .segment--left-right-sibling-selected:focus,
 .segment--right-sibling-selected:focus,
 .segment--left-sibling-selected:focus {
