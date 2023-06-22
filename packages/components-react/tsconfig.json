@@ -14,7 +14,7 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "dist",
+    "outDir": ".",
     "removeComments": false,
     "sourceMap": true,
     "jsx": "react",

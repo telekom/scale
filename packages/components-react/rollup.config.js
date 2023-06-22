@@ -1,13 +1,7 @@
 import externalDeps from 'rollup-plugin-peer-deps-external';
 import typescript from '@rollup/plugin-typescript';
-import sourcemaps from 'rollup-plugin-sourcemaps';
 import resolve from '@rollup/plugin-node-resolve';
 import commonJS from 'rollup-plugin-commonjs';
-import replace from '@rollup/plugin-replace';
-import styles from 'rollup-plugin-styles';
-import babel from 'rollup-plugin-babel';
-import json from '@rollup/plugin-json';
-import pkg from './package.json';
 
 const globals = {
     react: 'React',
@@ -20,9 +14,6 @@ const plugins = [
     commonJS(), //convert common js modules to es6
     resolve(), // Locate and bundle third-party dependencies in node_modules
     typescript() // transpiles our TypeScript code into JavaScript.
-    // ,babel({
-    //     excludes: 'dist/**',
-    // }),
 ];
 
 export default {
@@ -30,19 +21,19 @@ export default {
     output: [
         {
             name: 'index',
-            file: `lib/index.cj.js`,
+            file: `dist/index.js`,
             format: 'cjs',
             sourcemap: true,
         },
         {
             name: 'index',
-            file: `lib/index.es.js`,
+            file: `dist/index.es.js`,
             format: 'esm',
             sourcemap: true,
         },
         {
             name: 'index',
-            file: `lib/index.umd.js`,
+            file: `dist/index.umd.js`,
             format: 'umd',
             sourcemap: true,
             globals,
