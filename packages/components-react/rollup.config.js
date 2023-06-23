@@ -10,10 +10,10 @@ const globals = {
 };
 
 const plugins = [
-    externalDeps(), //prevents packages listed in peerDependencies from being bundled with our component library
-    commonJS(), //convert common js modules to es6
-    resolve(), // Locate and bundle third-party dependencies in node_modules
-    typescript() // transpiles our TypeScript code into JavaScript.
+    externalDeps(), // Prevents packages listed in peerDependencies from being bundled with our component library.
+    commonJS(), // Convert common js modules to es6.
+    resolve(), // Locate and bundle third-party dependencies in node_modules.
+    typescript() // Transpiles our TypeScript code into JavaScript.
 ];
 
 export default {
