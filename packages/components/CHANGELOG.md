@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.136](https://github.com/telekom/scale/compare/v3.0.0-beta.135...v3.0.0-beta.136) (2023-06-27)
+
+
+### Bug Fixes
+
+* add missing fonts ([#2041](https://github.com/telekom/scale/issues/2041)) ([0d091c7](https://github.com/telekom/scale/commit/0d091c7e9fa40c628107948db9e98b57052edc41))
+
+
+
+
+
 # [3.0.0-beta.135](https://github.com/telekom/scale/compare/v3.0.0-beta.134...v3.0.0-beta.135) (2023-06-21)
 
 

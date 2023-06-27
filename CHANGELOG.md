@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.136](https://github.com/telekom/scale/compare/v3.0.0-beta.135...v3.0.0-beta.136) (2023-06-27)
+
+
+### Bug Fixes
+
+* add missing fonts ([#2041](https://github.com/telekom/scale/issues/2041)) ([0d091c7](https://github.com/telekom/scale/commit/0d091c7e9fa40c628107948db9e98b57052edc41))
+* add umd out for react wrapper ([#2018](https://github.com/telekom/scale/issues/2018)) ([1286756](https://github.com/telekom/scale/commit/12867561fb87e351c557bac017b32ae9aacc04e8)), closes [#2039](https://github.com/telekom/scale/issues/2039) [#2005](https://github.com/telekom/scale/issues/2005) [#2006](https://github.com/telekom/scale/issues/2006) [#2012](https://github.com/telekom/scale/issues/2012)
+
+
+
+
+
 # [3.0.0-beta.135](https://github.com/telekom/scale/compare/v3.0.0-beta.134...v3.0.0-beta.135) (2023-06-21)
 
 
