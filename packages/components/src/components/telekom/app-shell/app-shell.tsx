@@ -11,6 +11,13 @@
 
 import { Component, h, Prop, Host, State, Element } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
+import {
+  AddOnNavigation,
+  IconNavigation,
+  MainNavigation,
+  SectorNavigation,
+  UserNavigation,
+} from '../app-interfaces';
 
 @Component({
   tag: 'scale-app-shell',
@@ -26,11 +33,11 @@ export class Shell {
   @Prop() logoHideTitle?: boolean;
   @Prop() logoClick?: any;
   @Prop() logoAriaDescribedBy?: string;
-  @Prop() mainNavigation?: any = [];
-  @Prop() iconNavigation?: any = [];
-  @Prop() userNavigation?: any = [];
-  @Prop() sectorNavigation?: any = [];
-  @Prop() addonNavigation?: any = [];
+  @Prop() mainNavigation?: MainNavigation[] = [];
+  @Prop() iconNavigation?: IconNavigation[] = [];
+  @Prop() userNavigation?: UserNavigation[] = [];
+  @Prop() sectorNavigation?: SectorNavigation[] = [];
+  @Prop() addonNavigation?: AddOnNavigation[] = [];
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
   @Prop() userMenuAriaLabel?: string;

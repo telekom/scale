@@ -18,3 +18,62 @@ export interface MenuItem {
   level: number;
   onClick?: (event: MouseEvent | KeyboardEvent) => void;
 }
+
+export interface MainNavigation {
+  name: string;
+  id: string;
+  href: string;
+  target?: string;
+  children?: MainNavigation[];
+  onClick?: (event: MouseEvent | KeyboardEvent) => void;
+}
+
+export interface IconNavigation {
+  name: string;
+  id: string;
+  href: string;
+  children?: MainNavigation[];
+  onClick?: (event: MouseEvent | KeyboardEvent) => void;
+  icon: string;
+  badge?: boolean;
+  badgeLabel?: number;
+}
+
+export interface UserNavigation {
+  type: string;
+  id?: string;
+  href?: string;
+  shortName?: string;
+  name?: string;
+  email?: string;
+  badge?: boolean;
+  badgeLabel?: number;
+  icon?: string;
+  iconPosition?: string;
+  onClick?: (event: MouseEvent | KeyboardEvent) => void;
+  variant?: string;
+}
+
+export interface SectorNavigation {
+  name: string;
+  id: string;
+  href: string;
+  onClick?: (event: MouseEvent | KeyboardEvent) => void;
+}
+
+export interface AddOnNavigation {
+  name: string;
+  id: string;
+  href?: string;
+  target?: string;
+  onClick?: (event: MouseEvent | KeyboardEvent) => void;
+}
+
+export interface FooterNavigation {
+  name: string;
+  id: string;
+  icon?: string;
+  href?: string;
+  target?: string;
+  onClick?: (event: MouseEvent | KeyboardEvent) => void;
+}

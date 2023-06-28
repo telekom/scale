@@ -23,6 +23,13 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
 import { findRootNode } from '../../../utils/menu-utils';
 import statusNote from '../../../utils/status-note';
+import {
+  AddOnNavigation,
+  IconNavigation,
+  MainNavigation,
+  SectorNavigation,
+  UserNavigation,
+} from '../app-interfaces';
 
 const readData = (data) => {
   let parsedData;
@@ -52,11 +59,11 @@ export class Header {
   @Prop() logoAriaDescribedBy?: string;
   @Prop() claimLang: string;
   @Prop() portalName?: string = '';
-  @Prop() mainNavigation?: any = [];
-  @Prop() iconNavigation?: any = [];
-  @Prop() userNavigation?: any = [];
-  @Prop() sectorNavigation?: any = [];
-  @Prop() addonNavigation?: any = [];
+  @Prop() mainNavigation?: MainNavigation[] = [];
+  @Prop() iconNavigation?: IconNavigation[] = [];
+  @Prop() userNavigation?: UserNavigation[] = [];
+  @Prop() sectorNavigation?: SectorNavigation[] = [];
+  @Prop() addonNavigation?: AddOnNavigation[] = [];
   @Prop() activeRouteId: string;
   @Prop() activeSectorId?: string;
   @Prop() sticky?: boolean = false;

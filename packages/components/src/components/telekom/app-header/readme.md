@@ -7,28 +7,28 @@
 
 ## Properties
 
-| Property              | Attribute                | Description | Type      | Default     |
-| --------------------- | ------------------------ | ----------- | --------- | ----------- |
-| `activeRouteId`       | `active-route-id`        |             | `string`  | `undefined` |
-| `activeSectorId`      | `active-sector-id`       |             | `string`  | `undefined` |
-| `addonNavigation`     | `addon-navigation`       |             | `any`     | `[]`        |
-| `claimLang`           | `claim-lang`             |             | `string`  | `undefined` |
-| `iconNavigation`      | `icon-navigation`        |             | `any`     | `[]`        |
-| `isMegaMenuVisible`   | `is-mega-menu-visible`   |             | `boolean` | `false`     |
-| `isMobileMenuVisible` | `is-mobile-menu-visible` |             | `boolean` | `false`     |
-| `logoAriaDescribedBy` | `logo-aria-described-by` |             | `string`  | `undefined` |
-| `logoClick`           | `logo-click`             |             | `any`     | `undefined` |
-| `logoHideTitle`       | `logo-hide-title`        |             | `boolean` | `undefined` |
-| `logoHref`            | `logo-href`              |             | `string`  | `undefined` |
-| `logoTitle`           | `logo-title`             |             | `string`  | `undefined` |
-| `mainNavigation`      | `main-navigation`        |             | `any`     | `[]`        |
-| `megaMenuVisible`     | `mega-menu-visible`      |             | `boolean` | `false`     |
-| `mobileMenuVisible`   | `mobile-menu-visible`    |             | `boolean` | `false`     |
-| `portalName`          | `portal-name`            |             | `string`  | `''`        |
-| `sectorNavigation`    | `sector-navigation`      |             | `any`     | `[]`        |
-| `sticky`              | `sticky`                 |             | `boolean` | `false`     |
-| `userMenuAriaLabel`   | `user-menu-aria-label`   |             | `string`  | `undefined` |
-| `userNavigation`      | `user-navigation`        |             | `any`     | `[]`        |
+| Property              | Attribute                | Description | Type                 | Default     |
+| --------------------- | ------------------------ | ----------- | -------------------- | ----------- |
+| `activeRouteId`       | `active-route-id`        |             | `string`             | `undefined` |
+| `activeSectorId`      | `active-sector-id`       |             | `string`             | `undefined` |
+| `addonNavigation`     | --                       |             | `AddOnNavigation[]`  | `[]`        |
+| `claimLang`           | `claim-lang`             |             | `string`             | `undefined` |
+| `iconNavigation`      | --                       |             | `IconNavigation[]`   | `[]`        |
+| `isMegaMenuVisible`   | `is-mega-menu-visible`   |             | `boolean`            | `false`     |
+| `isMobileMenuVisible` | `is-mobile-menu-visible` |             | `boolean`            | `false`     |
+| `logoAriaDescribedBy` | `logo-aria-described-by` |             | `string`             | `undefined` |
+| `logoClick`           | `logo-click`             |             | `any`                | `undefined` |
+| `logoHideTitle`       | `logo-hide-title`        |             | `boolean`            | `undefined` |
+| `logoHref`            | `logo-href`              |             | `string`             | `undefined` |
+| `logoTitle`           | `logo-title`             |             | `string`             | `undefined` |
+| `mainNavigation`      | --                       |             | `MainNavigation[]`   | `[]`        |
+| `megaMenuVisible`     | `mega-menu-visible`      |             | `boolean`            | `false`     |
+| `mobileMenuVisible`   | `mobile-menu-visible`    |             | `boolean`            | `false`     |
+| `portalName`          | `portal-name`            |             | `string`             | `''`        |
+| `sectorNavigation`    | --                       |             | `SectorNavigation[]` | `[]`        |
+| `sticky`              | `sticky`                 |             | `boolean`            | `false`     |
+| `userMenuAriaLabel`   | `user-menu-aria-label`   |             | `string`             | `undefined` |
+| `userNavigation`      | --                       |             | `UserNavigation[]`   | `[]`        |
 
 
 ## Dependencies

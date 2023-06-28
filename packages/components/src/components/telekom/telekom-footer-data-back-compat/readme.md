@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property           | Attribute           | Description | Type                      | Default                   |
-| ------------------ | ------------------- | ----------- | ------------------------- | ------------------------- |
-| `copyright`        | `copyright`         |             | `string`                  | `'© Deutsche Telekom AG'` |
-| `footerNavigation` | `footer-navigation` |             | `any`                     | `[]`                      |
-| `type`             | `type`              |             | `"minimal" \| "standard"` | `'standard'`              |
+| Property           | Attribute   | Description | Type                      | Default                   |
+| ------------------ | ----------- | ----------- | ------------------------- | ------------------------- |
+| `copyright`        | `copyright` |             | `string`                  | `'© Deutsche Telekom AG'` |
+| `footerNavigation` | --          |             | `FooterNavigation[]`      | `[]`                      |
+| `type`             | `type`      |             | `"minimal" \| "standard"` | `'standard'`              |
 
 
 ## Dependencies

@@ -10,6 +10,7 @@
  */
 
 import { Component, h, Prop } from '@stencil/core';
+import { FooterNavigation } from '../app-interfaces';
 // import { findRootNode, findSelected } from '../../../utils/menu-utils';
 // import { renderIcon } from '../../../utils/render-icon';
 
@@ -31,7 +32,7 @@ const readData = (data) => {
 })
 export class TelekomFooterDataBackCompat {
   @Prop({ reflect: true }) type: 'standard' | 'minimal' = 'standard';
-  @Prop() footerNavigation?: any = [];
+  @Prop() footerNavigation?: FooterNavigation[] = [];
   @Prop() copyright?: string = '© Deutsche Telekom AG';
 
   render() {

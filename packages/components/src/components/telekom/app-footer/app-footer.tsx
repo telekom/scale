@@ -13,6 +13,7 @@ import { Component, h, Prop, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
 import { renderIcon } from '../../../utils/render-icon';
 import { HTMLStencilElement } from '@stencil/core/internal';
+import { FooterNavigation } from '../app-interfaces';
 
 const readData = (data) => {
   let parsedData;
@@ -31,7 +32,7 @@ const readData = (data) => {
 })
 export class AppFooter {
   @Element() hostElement: HTMLStencilElement;
-  @Prop() footerNavigation?: any = [];
+  @Prop() footerNavigation?: FooterNavigation[] = [];
   @Prop() variant?: string = 'standard';
   @Prop() copyright?: string = '© Deutsche Telekom AG';
   @Prop() logoHref?: string;
