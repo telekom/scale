@@ -12,6 +12,13 @@
 import { Component, h, Prop } from '@stencil/core';
 import { findRootNode, findSelected } from '../../../utils/menu-utils';
 import { renderIcon } from '../../../utils/render-icon';
+import {
+  AddOnNavigation,
+  IconNavigation,
+  MainNavigation,
+  SectorNavigation,
+  UserNavigation,
+} from '../app-interfaces';
 
 const readData = (data) => {
   let parsedData;
@@ -38,11 +45,11 @@ export class TelekomHeaderDataBackCompat {
   @Prop() logoTitle?: string;
   @Prop() logoHideTitle?: boolean;
 
-  @Prop() mainNavigation: any;
-  @Prop() iconNavigation: any;
-  @Prop() addonNavigation: any;
-  @Prop() sectorNavigation: any;
-  @Prop() userNavigation: any;
+  @Prop() mainNavigation: MainNavigation[];
+  @Prop() iconNavigation: IconNavigation[];
+  @Prop() addonNavigation: AddOnNavigation[];
+  @Prop() sectorNavigation: SectorNavigation[];
+  @Prop() userNavigation: UserNavigation[];
   @Prop() activeRouteId: string;
 
   userMenuMobileTrigger?: HTMLButtonElement;
