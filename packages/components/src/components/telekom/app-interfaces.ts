@@ -22,7 +22,7 @@ export interface MenuItem {
 export interface MainNavigation {
   name: string;
   id: string;
-  href: string;
+  href?: string;
   target?: string;
   children?: MainNavigation[];
   onClick?: (event: MouseEvent | KeyboardEvent) => void;
@@ -31,10 +31,11 @@ export interface MainNavigation {
 export interface IconNavigation {
   name: string;
   id: string;
-  href: string;
+  icon: string;
+  href?: string;
+  target?: string;
   children?: MainNavigation[];
   onClick?: (event: MouseEvent | KeyboardEvent) => void;
-  icon: string;
   badge?: boolean;
   badgeLabel?: number;
 }
@@ -57,7 +58,8 @@ export interface UserNavigation {
 export interface SectorNavigation {
   name: string;
   id: string;
-  href: string;
+  href?: string;
+  target?: string;
   onClick?: (event: MouseEvent | KeyboardEvent) => void;
 }
 

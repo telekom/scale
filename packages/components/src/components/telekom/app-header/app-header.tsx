@@ -245,7 +245,7 @@ export class Header {
         ) : (
           readData(this.mainNavigation).map((item) => (
             <scale-nav-main
-              href={item.href}
+              href={item.href || 'javascript:void(0);'}
               active={isActive(item)}
               megaMenuVisible={this.visibleMegaMenu === item.id}
               innerId={item.id}
@@ -308,7 +308,7 @@ export class Header {
             .map((item) => (
               <scale-nav-icon
                 icon={item.icon}
-                href={item.href}
+                href={item.href || 'javascript:void(0);'}
                 badge={item.badge}
                 badgeLabel={item.badgeLabel}
                 clickLink={(event) => {
@@ -419,7 +419,7 @@ export class Header {
           readData(this.sectorNavigation).map((item) => (
             <scale-nav-segment
               active={this.activeSegment.id === item.id}
-              href={item.href}
+              href={item.href || 'javascript:void(0);'}
               onClick={(event) => this.handleSelectedSegment(event, item)}
               onFocus={() => {
                 window.scrollTo({ top: 0 });

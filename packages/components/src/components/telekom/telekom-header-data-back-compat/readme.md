@@ -7,20 +7,20 @@
 
 ## Properties
 
-| Property           | Attribute           | Description | Type      | Default     |
-| ------------------ | ------------------- | ----------- | --------- | ----------- |
-| `activeRouteId`    | `active-route-id`   |             | `string`  | `undefined` |
-| `addonNavigation`  | `addon-navigation`  |             | `any`     | `undefined` |
-| `appName`          | `app-name`          |             | `string`  | `undefined` |
-| `appNameClick`     | `app-name-click`    |             | `any`     | `undefined` |
-| `appNameLink`      | `app-name-link`     |             | `string`  | `undefined` |
-| `iconNavigation`   | `icon-navigation`   |             | `any`     | `undefined` |
-| `logoHideTitle`    | `logo-hide-title`   |             | `boolean` | `undefined` |
-| `logoHref`         | `logo-href`         |             | `string`  | `undefined` |
-| `logoTitle`        | `logo-title`        |             | `string`  | `undefined` |
-| `mainNavigation`   | `main-navigation`   |             | `any`     | `undefined` |
-| `sectorNavigation` | `sector-navigation` |             | `any`     | `undefined` |
-| `userNavigation`   | `user-navigation`   |             | `any`     | `undefined` |
+| Property           | Attribute         | Description | Type                 | Default     |
+| ------------------ | ----------------- | ----------- | -------------------- | ----------- |
+| `activeRouteId`    | `active-route-id` |             | `string`             | `undefined` |
+| `addonNavigation`  | --                |             | `AddOnNavigation[]`  | `undefined` |
+| `appName`          | `app-name`        |             | `string`             | `undefined` |
+| `appNameClick`     | `app-name-click`  |             | `any`                | `undefined` |
+| `appNameLink`      | `app-name-link`   |             | `string`             | `undefined` |
+| `iconNavigation`   | --                |             | `IconNavigation[]`   | `undefined` |
+| `logoHideTitle`    | `logo-hide-title` |             | `boolean`            | `undefined` |
+| `logoHref`         | `logo-href`       |             | `string`             | `undefined` |
+| `logoTitle`        | `logo-title`      |             | `string`             | `undefined` |
+| `mainNavigation`   | --                |             | `MainNavigation[]`   | `undefined` |
+| `sectorNavigation` | --                |             | `SectorNavigation[]` | `undefined` |
+| `userNavigation`   | --                |             | `UserNavigation[]`   | `undefined` |
 
 
 ## Dependencies
