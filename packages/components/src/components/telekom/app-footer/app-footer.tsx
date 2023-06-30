@@ -83,7 +83,7 @@ export class AppFooter {
                   <slot name="navigation"></slot>
                 ) : (
                   <ul>
-                    {this.footerNavigation.map((item) => (
+                    {readData(this.footerNavigation).map((item) => (
                       <li class="footer-navigation__item">
                         <a
                           class="footer-navigation__item-link"
