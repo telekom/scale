@@ -339,7 +339,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
     inline={false}
     height={500}
     args={{
-      footerNavigation: footerNavigation,
+      footerNavigation: JSON.stringify(footerNavigation),
       type: 'minimal',
     }}
   >
