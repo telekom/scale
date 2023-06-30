@@ -282,7 +282,6 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
     name="Minimal"
     args={{
       type: 'minimal',
-      footerNavigation: JSON.stringify(footerNavigation)
     }}
   >
     {Template.bind({})}
@@ -341,7 +340,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
     height={500}
     args={{
       footerNavigation: JSON.stringify(footerNavigation),
-      type: 'minimal'
+      type: 'minimal',
     }}
   >
     {() => ({
