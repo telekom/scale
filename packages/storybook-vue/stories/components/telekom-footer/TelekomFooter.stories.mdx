@@ -31,7 +31,8 @@ export const Template = (args, { argTypes }) => ({
   components: { TelekomFooter },
   props: TelekomFooter.props,
   template: `
-    <scale-telekom-footer 
+    <scale-telekom-footer
+        :footer-navigation:"footerNavigation"
         :type="type"
     >
       <scale-telekom-footer-content>
@@ -78,7 +79,8 @@ export const TemplateMinimal = (args, { argTypes }) => ({
   props: TelekomFooter.props,
   template: `
   <div style="position: relative; height: 100%;">
-    <scale-telekom-footer 
+    <scale-telekom-footer
+        :footer-navigation: "footerNavigation"
         :type="type"
         style="position:absolute; bottom: 0;  width: 100%;"
     >
@@ -127,6 +129,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
   props: TelekomFooter.props,
   template: `
     <scale-telekom-footer
+      :footer-navigation: "footerNavigation"
       :type="type"
     >
       <scale-telekom-footer-content>
@@ -282,6 +285,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
     name="Minimal"
     args={{
       type: 'minimal',
+      footerNavigation: JSON.stringify(footerNavigation),
     }}
   >
     {Template.bind({})}
@@ -360,6 +364,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-telekom-footer-data-back-compat
+  footerNavigation: "JSON.stringify(footerNavigation)",
   type="minimal"
   copyright="© Deutsche Telekom AG"
 ></scale-telekom-footer-data-back-compat>
