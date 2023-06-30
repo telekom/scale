@@ -285,7 +285,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
     name="Minimal"
     args={{
       type: 'minimal',
-      footerNavigation: JSON.stringify(footerNavigation),
+      footerNavigation: JSON.stringify(footerNavigation)
     }}
   >
     {Template.bind({})}
@@ -344,7 +344,7 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
     height={500}
     args={{
       footerNavigation: JSON.stringify(footerNavigation),
-      type: 'minimal',
+      type: 'minimal'
     }}
   >
     {() => ({
@@ -364,7 +364,6 @@ export const ExtendedTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-telekom-footer-data-back-compat
-  footerNavigation: "JSON.stringify(footerNavigation)",
   type="minimal"
   copyright="© Deutsche Telekom AG"
 ></scale-telekom-footer-data-back-compat>
