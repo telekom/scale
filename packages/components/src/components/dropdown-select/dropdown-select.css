@@ -285,3 +285,30 @@
 [part~='has-helper-text'] [part~='combobox-container'] {
   margin-bottom: var(--spacing-x-for-helper-text);
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hcm-disabled {
+  display: none;
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  [part='listbox-pad'] {
+    outline: var(--focus-outline);
+    outline-offset: -2px;
+    border-radius: var(--radius);
+  }
+  .hcm-disabled {
+    display: block;
+  }
+}
