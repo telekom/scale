@@ -10,7 +10,7 @@
       :flip="flip"
     >
       <slot name="content"></slot>
-      <scale-button>Hover me</scale-button>
+      <scale-button :disabled="disabled">Hover me</scale-button>
     </scale-tooltip>
   </div>
 </template>
