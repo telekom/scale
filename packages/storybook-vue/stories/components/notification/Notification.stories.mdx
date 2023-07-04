@@ -51,6 +51,17 @@ import ScaleNotification from './ScaleNotification.vue';
         type: 'text'
       }
     },
+    headingLevel: {
+      control: {
+        type: 'number'
+      }
+    },    
+    ariaHeading: {
+      defaultValue: 'Information',
+      control: {
+        type: 'text'
+      }
+    },
     closeButtonLabel: {
       control: {
         type: 'text'
@@ -95,6 +106,7 @@ export const Template = (args, context) => ({
         :variant="variant"
         :opened="opened"
         :dismissible="dismissible"
+        :aria-heading="ariaHeading"
         :delay="delay"
         :inner-aria-live="innerAriaLive"
         :close-button-label="closeButtonLabel"
@@ -372,6 +384,7 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
     heading: 'Danger notification with icon and title',
     variant: 'danger',
     dismissible: false,
+    ariaHeading: 'Danger'
   }}>
     {Template.bind({})}
   </Story>
@@ -392,6 +405,7 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
     heading: 'Warning notification with icon and title',
     variant: 'warning',
     dismissible: false,
+    ariaHeading: 'Warning'
   }}>
     {Template.bind({})}
   </Story>

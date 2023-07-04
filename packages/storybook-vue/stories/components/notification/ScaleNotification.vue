@@ -16,7 +16,8 @@ export default {
     innerAriaLive: { type: String },
     closeButtonLabel: { type: String },
     closeButtonTitle: { type: String },
-    styles: { type: String }
+    styles: { type: String },
+    ariaHeading: { type: String }  
   },
   render() {
     return this.$slots.default
