@@ -65,6 +65,8 @@ export class Notification {
   @Prop() closeButtonLabel?: string = 'Close Pop-up';
   /** (optional) `title` for close button */
   @Prop() closeButtonTitle?: string = 'Close';
+  /** Default aria-level for heading */
+  @Prop() headingLevel: number = 2;  
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
@@ -170,7 +172,7 @@ export class Notification {
             </slot>
           </div>
           <div part="body">
-            <div part="heading">{this.heading}</div>
+            <div part="heading" role="heading" aria-level={this.headingLevel}>{this.heading}</div>
             {this.hasTextSlot && (
               <div part="text">
                 <slot name="text"></slot>
