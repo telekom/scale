@@ -9,7 +9,7 @@
 
 | Property           | Attribute            | Description                                               | Type                                                    | Default           |
 | ------------------ | -------------------- | --------------------------------------------------------- | ------------------------------------------------------- | ----------------- |
-| `closeButtonLabel` | `close-button-label` | (optional) Label for close button                         | `string`                                                | `'Close Pop-up'`  |
+| `closeButtonLabel` | `close-button-label` | (optional) Label for close button                         | `string`                                                | `'Close'`  |
 | `closeButtonTitle` | `close-button-title` | (optional) `title` for close button                       | `string`                                                | `'Close'`         |
 | `delay`            | `delay`              | (optional) Time in milliseconds until it closes by itself | `number`                                                | `undefined`       |
 | `dismissible`      | `dismissible`        | (optional) Show the close button                          | `boolean`                                               | `false`           |

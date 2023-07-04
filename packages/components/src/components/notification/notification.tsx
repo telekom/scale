@@ -62,7 +62,7 @@ export class Notification {
   /** (optional) `aria-live` of element */
   @Prop() innerAriaLive?: string = 'assertive';
   /** (optional) Label for close button */
-  @Prop() closeButtonLabel?: string = 'Close Pop-up';
+  @Prop() closeButtonLabel?: string = 'Close';
   /** (optional) `title` for close button */
   @Prop() closeButtonTitle?: string = 'Close';
   /** Default aria-level for heading */

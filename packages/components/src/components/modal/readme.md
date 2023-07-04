@@ -9,7 +9,7 @@
 | --------------------------- | ------------------------------- | ---------------------------------------------------------------------------------- | ------------------- | ---------------- |
 | `alignActions`              | `align-actions`                 | (optional) Alignment of action buttons                                             | `"left" \| "right"` | `'right'`        |
 | `allowInjectingStyleToBody` | `allow-injecting-style-to-body` | (optional) allow to inject css style {overflow: hidden} to body when modal is open | `boolean`           | `false`          |
-| `closeButtonLabel`          | `close-button-label`            | (optional) Label for close button                                                  | `string`            | `'Close Pop-up'` |
+| `closeButtonLabel`          | `close-button-label`            | (optional) Label for close button                                                  | `string`            | `'Close'` |
 | `closeButtonTitle`          | `close-button-title`            | (optional) title for close button                                                  | `string`            | `'Close'`        |
 | `duration`                  | `duration`                      | (optional) Transition duration                                                     | `number`            | `200`            |
 | `heading`                   | `heading`                       | Modal heading                                                                      | `string`            | `undefined`      |
