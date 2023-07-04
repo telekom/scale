@@ -136,6 +136,12 @@
   border-radius: var(--telekom-radius-circle);
 }
 
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  [part='step-mark'] {
+    border: 2px solid;
+  }
+}
+
 [part='meta'] {
   display: flex;
   justify-content: space-between;
