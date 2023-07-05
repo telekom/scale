@@ -67,7 +67,7 @@ export class Notification {
   @Prop() closeButtonTitle?: string = 'Close';
   /** Default aria-level for heading */
   @Prop() headingLevel: number = 2;
-  /** (optional) string prepended to the heading*/
+  /** (optional) string prepended to the heading */
   @Prop() ariaHeading?: string = 'Information';
   /** (optional) Injected styles */
   @Prop() styles?: string;
