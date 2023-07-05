@@ -6,114 +6,56 @@ import {
   Description,
 } from '@storybook/addon-docs';
 import ScaleRadioButtonGroup from './ScaleRadioButtonGroup.vue';
+import ScaleRadioButton from './ScaleRadioButton.vue';
 import { action } from '@storybook/addon-actions';
 
 <Meta
   title="Components/Radio Button Group"
   component={ScaleRadioButtonGroup}
+  subcomponents={{ 'Radio Button': ScaleRadioButton }}
   argTypes={{}}
 />
 
-export const StandardTemplate = (args, { argTypes }) => ({
+export const Template = (args, context) => ({
   props: {
-    width: { type: String },
+    groupName: { default: 'example' },
+    itemProps: { default: {} },
     ...ScaleRadioButtonGroup.props,
   },
-  computed: {
-    wrapperStyles() {
-      return {
-        maxWidth: this.width,
-      };
-    },
+  data() {
+    return {
+      items: Array.from({ length: 3 }, (_, i) => ({
+        id: `choice-${i}`,
+        label: 'Radio Label',
+        value: i,
+      })),
+    };
+  },
+  methods: {
+    emitChange: action('scale-change'),
   },
   template: `
-    <div :style="wrapperStyles">
-    <scale-radio-button-group :label="label" :invalid="invalid" :helper-text="helperText">
+    <scale-radio-button-group
+      :label="label"
+      :invalid="invalid"
+      :helper-text="helperText"
+      @scale-change="emitChange"
+    >
       <scale-radio-button
-        value="1"
-        label="Radio Button"
-        name="radioStandard"
-        transparent="true"
-        input-id="choiceStandardOne"
-      ></scale-radio-button>
-      <scale-radio-button
-        value="2"
-        label="Radio Button"
-        name="radioStandard"
-        input-id="choiceStandardTwo"
-      ></scale-radio-button>
-    </scale-radio-button-group>
-    </div>
-  `,
-});
-
-export const HelperTextTemplate = (args, { argTypes }) => ({
-  props: {
-    width: { type: String },
-    ...ScaleRadioButtonGroup.props,
-  },
-  computed: {
-    wrapperStyles() {
-      return {
-        maxWidth: this.width,
-      };
-    },
-  },
-  template: `
-    <div :style="wrapperStyles">
-    <scale-radio-button-group :label="label" :invalid="invalid" :helper-text="helperText">
-      <scale-radio-button
-        value="1"
-        label="Radio Button"
-        name="RadioButtonHelperText"
-        transparent="true"
-        input-id="choiceHelperTextOne"
-      ></scale-radio-button>
-      <scale-radio-button
-        value="2"
-        label="Radio Button"
-        name="RadioButtonHelperText"
-        input-id="choiceHelperTextTwo"
+        v-for="(item, index) in items"
+        :key="item.id"
+        :input-id="item.id"
+        :name="groupName"
+        :value="item.value"
+        :label="item.label"
+        :checked="itemProps[index]?.checked"
+        :invalid="itemProps[index]?.invalid"
+        :helper-text="itemProps[index]?.helperText"
+        :disabled="itemProps[index]?.disabled"
       ></scale-radio-button>
     </scale-radio-button-group>
-    </div>
-  `,
-});
-
-export const ErrorTemplate = (args, { argTypes }) => ({
-  props: {
-    width: { type: String },
-    ...ScaleRadioButtonGroup.props,
-  },
-  computed: {
-    wrapperStyles() {
-      return {
-        maxWidth: this.width,
-      };
-    },
-  },
-  template: `
-    <div :style="wrapperStyles">
-    <scale-radio-button-group :label="label" :invalid="invalid" :helper-text="helperText">
-      <scale-radio-button
-        invalid="true"
-        value="1"
-        label="Radio Button"
-        name="radioButtonError"
-        transparent="true"
-        input-id="choiceErrorOne"
-      ></scale-radio-button>
-      <scale-radio-button
-        invalid="true"
-        value="2"
-        label="Radio Button"
-        name="radioButtonError"
-        input-id="choiceErrorTwo"
-      ></scale-radio-button>
-    </scale-radio-button-group>
-    </div>
-  `,
-});
+  `
+})
 
 <div
   style={{
@@ -132,30 +74,139 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 <Canvas withSource="none">
   <Story
     name="Standard"
+    parameters={{
+      controls: { 
+        exclude: ['groupName'] 
+      }
+    }}
     args={{
       label: 'Group Label',
+      groupName: 'standard'
     }}
   >
-    {StandardTemplate.bind({})}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Standard" />
 
+### Scoped CSS variables
+
+```css
+:host {
+  /*label*/
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --font-size-label: var(--telekom-typography-font-size-body);
+
+  /*helper-text*/
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --color-helper-text: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+  --padding-bottom-helper-text: var(--telekom-spacing-unit-x2);
+  --margin-top-helper-text: var(--telekom-spacing-unit-x1);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
+
+  /*helper-text--status-error*/
+  --font-size-error-helper-text: var(--telekom-typography-font-size-small);
+  --color-error-helper-text: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
+  --padding-bottom-error-helper-text: var(--telekom-spacing-unit-x2);
+  --margin-top-error-helper-text: var(--telekom-spacing-unit-x1);
+  --font-weight-error-helper-text: var(--telekom-typography-font-weight-medium);
+  --color-error-helper-text-hcm: var(
+    --telekom-color-text-and-icon-white-standard
+  );
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+
+  /*title*/
+  --font-size-title: var(--font-size-label);
+  --font-weight-title: var(--telekom-typography-font-weight-medium);
+  --padding-bottom-title: var(--telekom-spacing-unit-x1);
+  --margin-left-title: var(--telekom-spacing-unit-x05);
+
+  /*slotted items*/
+  --margin-top-slotted-item: var(--telekom-spacing-unit-x3);  
+}
+
+scale-radio-button {
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-disabled: var(--telekom-color-ui-disabled);
+  --color-error: var(--telekom-color-text-and-icon-functional-danger);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --color-primary: var(--telekom-color-text-and-icon-primary-standard);
+  --color-primary-hover: var(--telekom-color-text-and-icon-standard);
+  --color-primary-active: var(--telekom-color-text-and-icon-standard);
+  --color-focus: var(--telekom-color-functional-focus-standard);
+  --color-text: var(--telekom-color-text-and-icon-standard);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+  --color-helper-text: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+  --spacing-left-helper-text: calc(
+    var(--width-control) + var(--telekom-spacing-unit-x2)
+  );
+  --spacing-top-helper-text: var(--telekom-spacing-unit-x1);
+  --color-helper-text-error: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
+  /*label*/
+  --transition-label: var(--transition);
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --color-label: var(--color-text);
+
+  /*control*/
+  --width-control: var(--telekom-spacing-unit-x5);
+  --height-control: var(--telekom-spacing-unit-x5);
+  --transition-control: var(--transition);
+  --spacing-control: 0 var(--telekom-spacing-unit-x2) 0 0;
+  --background-color-control: var(--telekom-color-ui-base);
+  --border-control: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-border-standard);
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+  --border-control-checked: calc(0.25 * var(--telekom-spacing-unit-x3)) solid
+    var(--telekom-color-background-canvas);
+  --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x3))
+    solid var(--telekom-color-ui-border-disabled);
+  --background-control-checked-disabled: none;
+  --border-control-active: var(--telekom-spacing-unit-x2) solid
+    var(--telekom-color-primary-pressed);
+  --border-control-disabled: 0 0 0 var(--telekom-spacing-unit-x025)
+    var(--telekom-color-ui-border-disabled);
+  --border-control-error: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-danger-standard);
+  --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-unit-x1)
+    var(--color-focus);
+}
+```
+
 ```html
 <scale-radio-button-group label="Group Label">
   <scale-radio-button
-    value="1"
-    label="Radio Button"
-    name="radioStandard"
-    transparent="true"
-    input-id="choiceStandardOne"
+    label="Radio Label"
+    name="standard"
+    input-id="choice-0"
+    value="0"
   ></scale-radio-button>
   <scale-radio-button
+    label="Radio Label"
+    name="standard"
+    input-id="choice-1"
+    value="1"
+  ></scale-radio-button>
+  <scale-radio-button
+    label="Radio Label"
+    name="standard"
+    input-id="choice-2"
     value="2"
-    label="Radio Button"
-    name="radioStandard"
-    input-id="choiceStandardTwo"
   ></scale-radio-button>
 </scale-radio-button-group>
 ```
@@ -167,27 +218,33 @@ export const ErrorTemplate = (args, { argTypes }) => ({
     name="Helper Text"
     args={{
       label: 'Group Label',
-      helperText: 'Helper message',
+      groupName: 'helper-text',
+      helperText: 'Make sure to fill this',
     }}
   >
-    {HelperTextTemplate.bind({})}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-radio-button-group label="Group Label" helper-text="Helper message">
+<scale-radio-button-group label="Group Label" helper-text="Make sure to fill this">
   <scale-radio-button
-    value="1"
-    label="Radio Button"
-    name="RadioButtonHelperText"
-    transparent="true"
-    input-id="choiceHelperTextOne"
+    label="Radio Label"
+    name="helper-text"
+    input-id="choice-0"
+    value="0"
   ></scale-radio-button>
   <scale-radio-button
+    label="Radio Label"
+    name="helper-text"
+    input-id="choice-1"
+    value="1"
+  ></scale-radio-button>
+  <scale-radio-button
+    label="Radio Label"
+    name="helper-text"
+    input-id="choice-2"
     value="2"
-    label="Radio Button"
-    name="RadioButtonHelperText"
-    input-id="choiceHelperTextTwo"
   ></scale-radio-button>
 </scale-radio-button-group>
 ```
@@ -198,35 +255,88 @@ export const ErrorTemplate = (args, { argTypes }) => ({
   <Story
     name="Error"
     args={{
-      label: 'RadioButton Group',
+      label: 'Group Label',
+      groupName: 'error',
       invalid: true,
-      helperText: 'Error message',
+      helperText: 'Something is wrong',
+      itemProps: {
+        0: {
+          invalid: true,
+          checked: true,
+          helperText: 'Error message',
+        },
+      }
     }}
   >
-    {ErrorTemplate.bind({})}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-radio-button-group
-  label="RadioButton Group"
-  invalid="true"
-  helper-text="Error message"
->
+<scale-radio-button-group label="Group Label" invalid helper-text="Something is wrong">
   <scale-radio-button
-    invalid="true"
-    value="1"
-    label="Radio Button"
-    name="radioButtonError"
-    transparent="true"
-    input-id="choiceErrorOne"
+    label="Radio Label"
+    name="error"
+    input-id="choice-0"
+    value="0"
+    invalid
+    checked
+    helper-text="Error message"
   ></scale-radio-button>
   <scale-radio-button
-    invalid="true"
+    label="Radio Label"
+    name="error"
+    input-id="choice-1"
+    value="1"
+  ></scale-radio-button>
+  <scale-radio-button
+    label="Radio Label"
+    name="error"
+    input-id="choice-2"
     value="2"
-    label="Radio Button"
-    name="radioButtonError"
-    input-id="choiceErrorTwo"
+  ></scale-radio-button>
+</scale-radio-button-group>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: 'Group Label',
+      groupName: 'disabled',
+      itemProps: {
+        0: {
+          disabled: true,
+        },
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-radio-button-group label="Group Label">
+  <scale-radio-button
+    label="Radio Label"
+    name="disabled"
+    input-id="choice-0"
+    value="0"
+    disabled
+  ></scale-radio-button>
+  <scale-radio-button
+    label="Radio Label"
+    name="disabled"
+    input-id="choice-1"
+    value="1"
+  ></scale-radio-button>
+  <scale-radio-button
+    label="Radio Label"
+    name="disabled"
+    input-id="choice-2"
+    value="2"
   ></scale-radio-button>
 </scale-radio-button-group>
 ```

@@ -1,6 +1,6 @@
 {
   "name": "@telekom/scale-components",
-  "version": "3.0.0-beta.134",
+  "version": "3.0.0-beta.136",
   "description": "Scale is the digital design system for Telekom products and experiences.",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
@@ -34,6 +34,7 @@
     "lint:fix": "yarn lint:style --fix",
     "lint": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "generate": "node ./scripts/generate-icons.js",
+    "optimize-icons": "svgo -r -f src/telekom/icons",
     "process-angular-proxies": "node ./scripts/process-angular-proxies.js"
   },
   "devDependencies": {
@@ -55,7 +56,7 @@
     "file-loader": "^6.0.0",
     "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
-    "hast-util-to-html": "^7.1.1",
+    "hast-util-to-html": "^8.0.4",
     "jsx-dom": "^6.4.17",
     "lodash": "^4.17.15",
     "postcss-custom-media": "^9.0.1",
@@ -70,8 +71,8 @@
     "@duetds/date-picker": "1.2.0",
     "@floating-ui/dom": "^0.5.4",
     "@stencil/core": "^2.17.0",
-    "@telekom/design-tokens": "^1.0.0-beta.4",
-    "@telekom/scale-design-tokens": "^3.0.0-beta.134",
+    "@telekom/design-tokens": "^1.0.0-beta.7",
+    "@telekom/scale-design-tokens": "^3.0.0-beta.136",
     "classnames": "^2.2.6",
     "stencil-inline-svg": "^1.0.1"
   }

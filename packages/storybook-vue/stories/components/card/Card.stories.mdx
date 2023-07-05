@@ -55,13 +55,20 @@ export const Template = (args, { argTypes }) => ({
             >
                 <div v-if="slot.startsWith('<div')">
                     <div style="margin: -24px;">
-                      <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
-                      <div style="padding: 24px;">A card with a full width image</div>
+                      <img style="display: block; width:100%;" src="assets/card-image.jpg" alt="placeholder" />
+                      <div style="padding: 24px;"> 
+                        <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);">Blogpost Title </h4>
+                        <span style="${'font: var(--telekom-text-style-body);'}"> Lorem ipsur dolor sit amet </span>
+                      </div>
                     </div>
                 </div>
-                <div v-if="!slot.startsWith('<div')">
-                  {{ slot }}
+                <div v-if="slot.startsWith('<span')">
+                  <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);">Blogpost Title </h4>
+                  <span> Lorem ipsur dolor sit amet </span>
                 </div>
+                <div v-if="!slot.startsWith('<span') && !slot.startsWith('<div')">
+                  {{ slot }}
+                </div>                
         </scale-card>
     </div>
   `,
@@ -85,7 +92,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      slot: 'A card',
+      slot: `<span>Lorem ipsur dolor sit amet</span>`,
       label: 'Example Card',
     }}
   >
@@ -100,21 +107,21 @@ export const Template = (args, { argTypes }) => ({
 ```css
 :host {
   --background: var(--telekom-color-background-surface);
-  --transition: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
-    );
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-large);
   --box-shadow: var(--telekom-shadow-raised-standard);
   --box-shadow-hover: var(--telekom-shadow-raised-hover);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus-standard);
   --box-shadow-active: var(--telekom-shadow-raised-pressed);
 
   --spacing-body: var(--telekom-spacing-unit-x6);
 
   --spacing-body-slotted: 0;
   --spacing-body-slotted-interactive: 0;
+
+  --font-body-slotted: var(--telekom-text-style-body);
 }
 ```
 
@@ -126,7 +133,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="With Link"
     args={{
-      slot: 'A card with a link to example.com',
+      slot: 'Lorem ipsur dolor sit amet',
       to: 'https://example.com',
       target: '_blank',
       rel: 'noopener noreferrer',
@@ -143,7 +150,7 @@ For Shadow Parts, please inspect the element's #shadow.
   target="_blank"
   rel="noopener noreferrer"
   label="Example Card"
-  >A card with a link to example.com</scale-card
+  >Lorem ipsur dolor sit amet</scale-card
 >
 ```
 
@@ -154,8 +161,9 @@ For Shadow Parts, please inspect the element's #shadow.
     name="With Image"
     args={{
       slot: `<div style="margin: -24px;">
-        <img style="margin-bottom: -4px; width:100%;" src="https://placeimg.com/200/200/tech/grayscale" alt="placeholder" />
-        <div style="padding: 24px;">A card with a full width image</div>
+        <img style="display:block; width:100%;" src="assets/card-image" alt="placeholder" />
+        <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);"> Title </h4>
+        <div style="padding: 24px;">Lorem ipsur dolor sit amet</div>
       </div>
       `,
       to: 'https://example.com',
@@ -173,79 +181,14 @@ For Shadow Parts, please inspect the element's #shadow.
     <div style="margin: -24px;">
       <img
         style="margin-bottom: -4px; width:100%;"
-        src="https://via.placeholder.com/150"
+        src="assets/card-image"
         alt="placeholder"
       />
-      <div style="padding: 24px;">A card with a full width image</div>
-    </div>
-  </scale-card>
-</div>
-```
-
-## With Further Functions
-
-<Canvas withSource="none">
-  <Story
-    name="With Further Functions"
-    args={{
-      label: 'Example Card with further functions',
-    }}
-  >
-    {(args, { argTypes }) => ({
-      components: { ScaleCard },
-      props: {
-        slot: String,
-        ...ScaleCard.props,
-      },
-      template: `
-                <div :style="{ maxWidth: '300px' }">
-                    <scale-card
-                          :to="to"
-                          :target="target"
-                          :label="label"
-                          :rel="rel"
-                          :styles="JSON.stringify(styles)"
-                        >
-                          <div style="margin: -24px;">
-                              <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
-                              <div style="padding: 24px;">
-                                <div style="padding: 0 0 24px 0;">A card with with further functions</div>
-                                <div style="padding: 0 0 24px 0; display: flex; justify-content: center;"><scale-button>Label</scale-button></div>
-                                <div style="display: flex; justify-content: flex-end;"><scale-link href="https://example.com" tabindex=0>More...</scale-link></div>
-                              </div>
-                          </div>
-                    </scale-card>
-                </div>
-              `,
-    })}
-  </Story>
-</Canvas>
-
-```html
-<div style="max-width: 300px">
-  <scale-card label="Example Card with further functions">
-    <article style="margin: -24px;">
-      <img
-        style="margin-bottom: -4px; width:100%;"
-        src="assets/card-grayscale.jpeg"
-        alt="placeholder"
-      />
-      <div style="padding: 24px;">
-        <div style="padding: 0 0 24px 0;">
-          A card with with further functions
-        </div>
-        <div
-          style="padding: 0 0 24px 0; display: flex; justify-content: center;"
-        >
-          <scale-button>Label</scale-button>
-        </div>
-        <div style="display: flex; justify-content: flex-end;">
-          <scale-link href="https://example.com" tabindex="0"
-            >More...</scale-link
-          >
-        </div>
+      <div style="padding: 24px;"> 
+        <h4 style="margin: 0px 0 16px 0; font: var(--telekom-text-style-heading-4);">Blogpost Title </h4>
+        <span>Lorem ipsur dolor sit amet</span>
       </div>
-    </article>
+    </div>
   </scale-card>
 </div>
 ```

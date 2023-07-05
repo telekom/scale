@@ -15,7 +15,7 @@
   --border-left-color-third-nesting: var(--telekom-color-ui-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
-  --color-primary: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --background-color-before-active: var(--color-primary);
   --font-weight-bold: var(--telekom-typography-font-weight-bold);
   --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
@@ -88,6 +88,15 @@
   background-color: var(--color-primary);
   /* Accessibility: extra transparent line for Windows HCM */
   border-left: 2px solid transparent;
+}
+
+.sidebar-nav-collapsible--active:hover
+  .sidebar-nav-collapsible__button::before {
+  background-color: var(--color-hover);
+}
+.sidebar-nav-collapsible--active:active
+  .sidebar-nav-collapsible__button::before {
+  background-color: var(--color-active);
 }
 
 :host([nesting-level='1']) .sidebar-nav-collapsible__button,

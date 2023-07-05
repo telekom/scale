@@ -42,7 +42,7 @@ graph TD;
   scale-segmented-button --> scale-helper-text
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
-  scale-helper-text --> scale-icon-alert-success
+  scale-helper-text --> scale-icon-action-success
   style scale-segmented-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

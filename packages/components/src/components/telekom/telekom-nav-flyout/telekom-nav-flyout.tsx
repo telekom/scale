@@ -23,14 +23,7 @@ import {
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import cx from 'classnames';
-import { emitEvent } from '../../../utils/utils';
-
-// TODO make util
-const animFinished = (el: HTMLElement | ShadowRoot) => {
-  return Promise.all(
-    el.getAnimations({ subtree: true }).map((x) => x.finished)
-  );
-};
+import { emitEvent, animationsFinished } from '../../../utils/utils';
 
 /*
 TODO add something like this with a better-named prop defaulting to false
@@ -168,7 +161,7 @@ export class TelekomNavItem {
     this.isExpanded = true;
     this.animationState = 'in';
     requestAnimationFrame(async () => {
-      await animFinished(this.hostElement.shadowRoot);
+      await animationsFinished(this.hostElement.shadowRoot);
       this.animationState = undefined;
       this.triggerElement.setAttribute('aria-expanded', 'true');
       emitEvent(this, 'scaleExpanded', { expanded: true });
@@ -179,7 +172,7 @@ export class TelekomNavItem {
   async hide() {
     this.animationState = 'out';
     requestAnimationFrame(async () => {
-      await animFinished(this.hostElement.shadowRoot);
+      await animationsFinished(this.hostElement.shadowRoot);
       this.animationState = undefined;
       this.isExpanded = false;
       this.triggerElement.setAttribute('aria-expanded', 'false');
@@ -205,12 +198,18 @@ export class TelekomNavItem {
     return (
       <Host>
         <div
-          part={cx('base', this.animationState, this.variant, {
+          part={cx('base', this.animationState, `variant-${this.variant}`, {
             expanded: this.isExpanded,
           })}
         >
           <slot></slot>
         </div>
+        <div
+          part={cx('backdrop', this.animationState, `variant-${this.variant}`, {
+            expanded: this.isExpanded,
+          })}
+          onClick={() => (this.expanded = false)}
+        ></div>
       </Host>
     );
   }

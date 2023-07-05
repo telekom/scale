@@ -102,7 +102,7 @@ export class ProgressBar {
 
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <div class="progress-bar__top-container">
-            {!!this.label && (
+            {!!this.label ? (
               <label
                 part="label"
                 class="progress-bar__label"
@@ -110,16 +110,21 @@ export class ProgressBar {
               >
                 {this.label}
               </label>
+            ) : (
+              <span> </span>
             )}
-            {!!this.showStatus && !this.hasError && this.percentage !== 100 && (
-              <div
-                part="status"
-                class="progress-bar__status"
-                aria-hidden="true"
-              >
-                {this.percentage}%
-              </div>
-            )}
+            {!!this.showStatus &&
+              !this.hasError &&
+              this.percentage <= 100 &&
+              this.percentage !== 100 && (
+                <div
+                  part="status"
+                  class="progress-bar__status"
+                  aria-hidden="true"
+                >
+                  {this.percentage}%
+                </div>
+              )}
 
             {this.hasError ? (
               <div class="progress-bar__icon">
@@ -127,11 +132,11 @@ export class ProgressBar {
                   size={ICON_SIZE}
                 ></scale-icon-alert-error>
               </div>
-            ) : this.percentage === 100 ? (
+            ) : this.percentage >= 100 ? (
               <div class="progress-bar__icon">
-                <scale-icon-alert-success
+                <scale-icon-action-success
                   size={ICON_SIZE}
-                ></scale-icon-alert-success>
+                ></scale-icon-action-success>
               </div>
             ) : null}
           </div>
@@ -195,7 +200,7 @@ export class ProgressBar {
       component,
       this.hasError && `${prefix}has-error`,
       this.disabled && `${prefix}disabled`,
-      this.percentage === 100 && `${prefix}completed`
+      this.percentage >= 100 && `${prefix}completed`
     );
   }
 }

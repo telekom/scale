@@ -60,6 +60,20 @@
   --telekom-color-functional-focus-inverted: #2238df;
 }
 
+/** Thank you sholace.style */
+.scl-toast-stack {
+  position: fixed;
+  top: var(--telekom-spacing-unit-x4);
+  inset-inline-end: var(--telekom-spacing-unit-x4);
+  z-index: var(--scl-z-index-70);
+  z-index: 100; /* https://github.com/telekom/scale/pull/1767/files */
+  max-height: 100%;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: var(--telekom-spacing-unit-x2);
+}
+
 /**
  * Upgrade the legacy .scl-font-variant- to use the latest design values.
  * @deprecated in v3

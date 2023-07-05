@@ -28,9 +28,10 @@ export const Template = (args, { argTypes }) => ({
       :separator="separator"
       :styles="styles"
     >
-      <a href="#1">First Entry</a>
-      <a href="#2">Second Entry</a>
-      <a href="#3">Active Page</a>
+      <a href="#1">Home</a>
+      <a href="#2">Page 1</a>
+      <a href="#2">Page 2</a>
+      <a href="#3">Current Page</a>
       <template v-if="separator === true" #separator>
         <span slot="separator">
           <scale-icon-navigation-right size={12} color="#6B6B6B"></scale-icon-navigation-right>
@@ -78,7 +79,7 @@ export const Template = (args, { argTypes }) => ({
 
   --font-size-list-item: var(--telekom-typography-font-size-caption);
 
-  --color-separator: var(--telekom-color-ui-regular);
+  --color-separator: var(--telekom-color-text-and-icon-additional);
 
   --spacing-y-item: var(--telekom-spacing-unit-x1);
   --spacing-x-item: var(--telekom-spacing-unit-x2);
@@ -87,10 +88,10 @@ export const Template = (args, { argTypes }) => ({
   --radius-link: var(--telekom-radius-standard);
   --color-link-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-link-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --box-shadow-link-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
 
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
+  --font-current: var(--telekom-text-style-caption-bold);
   --color-current: var(--telekom-color-text-and-icon-standard);
 }
 ```

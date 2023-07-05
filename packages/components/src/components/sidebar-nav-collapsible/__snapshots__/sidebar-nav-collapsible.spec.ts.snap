@@ -6,7 +6,7 @@ exports[`SidebarNavCollapsible emitter exit handleKeydown if event metaKey 1`] =
     <li class="sidebar-nav-collapsible" part="sidebar-nav-collapsible" role="listitem">
       <div class="sidebar-nav-collapsible__wrapper" part="wrapper">
         <a aria-expanded="false" class="sidebar-nav-collapsible__button" href="#" part="button" role="button">
-          <scale-icon-navigation-collapse-down class="sidebar-nav-collapsible__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+          <scale-icon-navigation-collapse-down class="sidebar-nav-collapsible__icon" part="icon" size="20"></scale-icon-navigation-collapse-down>
         </a>
       </div>
       <ul class="sidebar-nav-collapsible__list" hidden="" part="list">
@@ -23,7 +23,7 @@ exports[`SidebarNavCollapsible snapshots smoke test 1`] = `
     <li class="sidebar-nav-collapsible" part="sidebar-nav-collapsible" role="listitem">
       <div class="sidebar-nav-collapsible__wrapper" part="wrapper">
         <a aria-expanded="false" class="sidebar-nav-collapsible__button" href="#" part="button" role="button">
-          <scale-icon-navigation-collapse-down class="sidebar-nav-collapsible__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+          <scale-icon-navigation-collapse-down class="sidebar-nav-collapsible__icon" part="icon" size="20"></scale-icon-navigation-collapse-down>
         </a>
       </div>
       <ul class="sidebar-nav-collapsible__list" hidden="" part="list">

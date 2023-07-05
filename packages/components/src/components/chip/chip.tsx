@@ -117,7 +117,7 @@ export class Chip {
       );
     } else if (this.type === 'persistent' && this.selected) {
       return (
-        <scale-icon-action-success
+        <scale-icon-action-checkmark
           accessibility-title="success"
           size={16}
           selected
@@ -125,7 +125,7 @@ export class Chip {
       );
     } else if (this.type === 'persistent') {
       return (
-        <scale-icon-action-success accessibility-title="success" size={16} />
+        <scale-icon-action-checkmark accessibility-title="success" size={16} />
       );
     }
   }

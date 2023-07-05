@@ -24,6 +24,19 @@
 | `"suffix"` |             |
 
 
+## Dependencies
+
+### Used by
+
+ - [scale-data-grid](../data-grid)
+
+### Graph
+```mermaid
+graph TD;
+  scale-data-grid --> scale-dropdown-select-item
+  style scale-dropdown-select-item fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

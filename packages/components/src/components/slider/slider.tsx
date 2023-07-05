@@ -66,6 +66,14 @@ export class Slider {
   @Prop() unitPosition?: 'before' | 'after' = 'after';
   /** (optional) number of decimal places */
   @Prop() decimals?: 0 | 1 | 2 = 0;
+  /**
+   * (optional) adapt styles for a specific platform.
+   * Ideally done via a global `data-platform` attribute
+   * (e.g. data-platform="ios" on `body`)
+   * but browser support is not yet sufficient.
+   * @see @url(https://caniuse.com/mdn-css_selectors_host-context)
+   */
+  @Prop({ reflect: true }) platform?: 'ios' | 'android';
   /** @deprecated (optional) slider custom color */
   @Prop() customColor?: string;
   /** (optional) disabled  */

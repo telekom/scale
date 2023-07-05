@@ -72,7 +72,7 @@ graph TD;
   scale-text-field --> scale-helper-text
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
-  scale-helper-text --> scale-icon-alert-success
+  scale-helper-text --> scale-icon-action-success
   scale-data-grid --> scale-text-field
   style scale-text-field fill:#f9f,stroke:#333,stroke-width:4px
 ```

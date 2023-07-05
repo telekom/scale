@@ -16,7 +16,7 @@
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --background-color-before-active: var(--color-primary);
-  --font-weight-bold: var(--telekom-typography-font-weight-bold);
+  --font-bold: var(--telekom-text-style-ui-bold);
   --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus-standard);
 }
@@ -43,13 +43,24 @@
   border-left: 2px solid transparent;
 }
 
+/*:host([nesting-level='3']) .sidebar-nav-item--active::before {
+  transform: translateX(-0.5px);
+}*/
+
+.sidebar-nav-item:hover.sidebar-nav-item--active::before {
+  background-color: var(--color-hover);
+}
+.sidebar-nav-item:active.sidebar-nav-item--active::before {
+  background-color: var(--color-active);
+}
+
 .sidebar-nav-item--condensed.sidebar-nav-item--active::before {
   left: -1px;
 }
 
 :host([nesting-level='1']) .sidebar-nav-item,
 .sidebar-nav-item--bold {
-  font-weight: var(--font-weight-bold);
+  font: var(--font-bold);
 }
 
 :host([nesting-level='3']) .sidebar-nav-item {
@@ -60,7 +71,8 @@
 
 ::slotted(a) {
   color: currentColor;
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
@@ -68,6 +80,7 @@
   border-radius: var(--telekom-radius-small);
   text-decoration: none;
   outline: none;
+  min-height: 20px;
 }
 
 :host([nesting-level='2']) ::slotted(a) {

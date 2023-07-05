@@ -49,9 +49,20 @@
 
  - [scale-data-grid](../data-grid)
 
+### Depends on
+
+- [scale-icon-navigation-double-left](../icons/navigation-double-left)
+- [scale-icon-navigation-left](../icons/navigation-left)
+- [scale-icon-navigation-right](../icons/navigation-right)
+- [scale-icon-navigation-double-right](../icons/navigation-double-right)
+
 ### Graph
 ```mermaid
 graph TD;
+  scale-pagination --> scale-icon-navigation-double-left
+  scale-pagination --> scale-icon-navigation-left
+  scale-pagination --> scale-icon-navigation-right
+  scale-pagination --> scale-icon-navigation-double-right
   scale-data-grid --> scale-pagination
   style scale-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```

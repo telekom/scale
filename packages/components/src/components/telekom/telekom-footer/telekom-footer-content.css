@@ -1,7 +1,7 @@
 @import url('../../../global/custom-media.css');
 
 :host {
-  --_max-width-container: var(--scl-grid-max-width, 1680px);
+  --_max-width-container: none;
   --_spacing-x-container: var(--telekom-spacing-unit-x4);
 
   --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
@@ -141,6 +141,7 @@ footer {
 }
 @media screen and (--2xl) {
   :host {
+    --_max-width-container: var(--scl-grid-max-width, 1504px);
     --_logo-top-margin: var(--telekom-spacing-unit-x18);
     /* too bad spacing tokens don't go beyond 5 rem */
     --_logo-bottom-margin: 96px;

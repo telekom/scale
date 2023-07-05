@@ -10,23 +10,27 @@
  */
 
 :host {
-  --background: var(--telekom-color-primary-standard);
-  --background-disabled: var(--telekom-color-ui-disabled);
-  --background-color: var(--telekom-color-ui-faint);
-  --color-error: var(--telekom-color-text-and-icon-functional-danger);
-  --background-error: var(--telekom-color-functional-danger-subtle);
-  --color-success: var(--telekom-color-text-and-icon-functional-success);
+  --track-color: var(--telekom-color-ui-faint);
+  --bar-color: var(--telekom-color-primary-standard);
+
+  --icon-color-error: var(--telekom-color-text-and-icon-functional-danger);
+  --track-color-error: var(--telekom-color-functional-danger-subtle);
+  --bar-color-error: var(--telekom-color-functional-danger-standard);
+
+  --icon-color-success: var(--telekom-color-text-and-icon-functional-success);
+  --track-color-success: var(--telekom-color-functional-success-subtle);
+  --bar-color-success: var(--telekom-color-functional-success-standard);
+
+  --bar-color-disabled: var(--telekom-color-ui-disabled);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
+
   --progress-bar-outer-size: 6px;
   --progress-bar-inner-size: var(--telekom-spacing-unit-x1);
   --font-label: var(--telekom-text-style-ui);
-  --color-inner-status: var(--telekom-color-primary-standard);
-  --font-size-inner-status: var(--telekom-typography-font-size-small);
-  --font-size-status: var(--telekom-typography-font-size-small);
-  --font-weight-status: var(--telekom-typography-font-weight-extra-bold);
+  --color-label: var(--telekom-color-text-and-icon-standard);
+
   --color-status-description: var(--telekom-color-text-and-icon-additional);
-  --font-size-status-description: var(--telekom-typography-font-size-small);
-  --font-weight-status-description: var(--telekom-typography-font-weight-bold);
+  --font-status-description: var(--telekom-text-style-small-bold);
 }
 
 .progress-bar {
@@ -52,6 +56,7 @@
 .progress-bar__label {
   display: block;
   padding: var(--telekom-spacing-unit-x3) 0;
+  color: var(--color-label);
   font: var(--font-label);
 }
 
@@ -69,7 +74,7 @@
   overflow: hidden;
   position: relative;
   border-radius: var(--telekom-radius-pill);
-  background-color: var(--background-color);
+  background: var(--track-color);
 }
 
 .progress-bar__inner {
@@ -84,13 +89,13 @@
   justify-content: flex-end;
   border-radius: var(--telekom-radius-pill);
   border: 1px solid transparent;
-  background: var(--background);
+  background: var(--bar-color);
   transition: width var(--telekom-motion-duration-immediate)
     var(--telekom-motion-easing-standard);
 }
 
 .progress-bar--disabled .progress-bar__inner {
-  background: var(--background-disabled);
+  background: var(--bar-color-disabled);
 }
 
 .progress-bar__status {
@@ -100,27 +105,28 @@
 }
 
 .progress-bar--completed .progress-bar__icon {
-  color: var(--color-success);
+  color: var(--icon-color-success);
+}
+.progress-bar--completed .progress-bar__outer {
+  background: var(--track-color-success);
 }
 .progress-bar--completed .progress-bar__inner {
-  --background: var(--color-success);
+  background: var(--bar-color-success);
 }
 
 .progress-bar--has-error .progress-bar__icon {
-  color: var(--color-error);
+  color: var(--icon-color-error);
+}
+.progress-bar--has-error .progress-bar__outer {
+  background: var(--track-color-error);
 }
 .progress-bar--has-error .progress-bar__inner {
-  --background: var(--color-error);
-}
-
-.progress-bar--has-error .progress-bar__outer {
-  background-color: var(--background-error);
+  background: var(--bar-color-error);
 }
 
 .progress-bar__status-description {
   color: var(--color-status-description);
-  font-size: var(--font-size-status-description);
-  font-weight: var(--font-weight-status-description);
+  font: var(--font-status-description);
   margin-top: var(--telekom-spacing-unit-x2);
 }
 

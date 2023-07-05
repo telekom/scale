@@ -1027,8 +1027,18 @@ export class DataGrid {
                 >
                   <div class={`thead__title`}>
                     <span class={`thead__text`}>
-                      {sortable && <span class={`thead__arrow-top`}></span>}
-                      {sortable && <span class={`thead__arrow-bottom`}></span>}
+                      {sortable && (
+                        <scale-icon-content-sort-indicator-up
+                          size={16}
+                          class={`thead__arrow-top`}
+                        ></scale-icon-content-sort-indicator-up>
+                      )}
+                      {sortable && (
+                        <scale-icon-content-sort-indicator-down
+                          size={16}
+                          class={`thead__arrow-bottom`}
+                        ></scale-icon-content-sort-indicator-down>
+                      )}
                       {label}
                     </span>
                   </div>

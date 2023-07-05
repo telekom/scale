@@ -41,3 +41,6 @@ Display problem with one Cyrillic character solved.
 ##V1.7 – 13.07.2022
 - Addition new corporate T logo .T.
 
+##V1.8 - 19.05.2023
+- New Ultra font weight integrated in TeleNeo family. Available for all characters.
+- Desktop (OTF), Office (TTF), Web and variable font available

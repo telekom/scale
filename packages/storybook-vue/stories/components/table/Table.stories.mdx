@@ -66,7 +66,7 @@ export const Template = (args, { argTypes }) => ({
                 <span style="margin-right: 8px;">9.356</span>
                 <scale-progress-bar
                   variant="info"
-                  style="width: 120px; --background: var(--telekom-color-ui-extra-strong)"
+                  style="width: 120px"
                   stroke-width="6"
                   percentage="90"
                   show-status="false"
@@ -94,7 +94,7 @@ export const Template = (args, { argTypes }) => ({
                 <span style="margin-right: 8px;">3.356</span>
                 <scale-progress-bar
                   variant="info"
-                  style="width: 120px; --background: var(--telekom-color-ui-extra-strong)"
+                  style="width: 120px"
                   stroke-width="6"
                   percentage="30"
                   show-status="false"
@@ -122,7 +122,7 @@ export const Template = (args, { argTypes }) => ({
                 <span style="margin-right: 8px;">6.356</span>
                 <scale-progress-bar
                   variant="info"
-                  style="width: 120px; --background: var(--telekom-color-ui-extra-strong)"
+                  style="width: 120px"
                   stroke-width="6"
                   percentage="60"
                   show-status="false"
@@ -159,7 +159,7 @@ export const Template = (args, { argTypes }) => ({
         return 'ascending';
       };
       const ths = document.getElementsByClassName(className);
-      const th = ths[ths.length - 1];
+      const th = Array.from(ths).filter((x) => x.getAttribute('tabindex') === '0')[0];
       const currentSort = th.getAttribute('aria-sort');
       const nextSort = getNextSort(currentSort);
       const tableHeaders = Array.from(document.getElementsByTagName('TH'));
@@ -238,25 +238,21 @@ scale-table {
   --font-size: var(--telekom-typography-font-size-small);
   --font-weight: var(--telekom-typography-font-weight-bold);
 
-  --spacing-tbody-td: var(--telekom-spacing-unit-x4) var(
-      --telekom-spacing-unit-x2
-    );
-  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid var(
-      --telekom-color-ui-faint
-    );
+  --spacing-tbody-td: var(--telekom-spacing-unit-x4)
+    var(--telekom-spacing-unit-x2);
+  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-faint);
   --background-tbody: var(--telekom-color-ui-state-fill-standard);
   --background-tbody-tr-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-tfoot: var(--telekom-color-ui-state-fill-standard);
-  --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid var(
-      --telekom-color-ui-extra-strong
-    );
+  --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-extra-strong);
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
   --background-th-sortable-hover: var(--telekom-color-ui-subtle);
   --background-th-sortable-active: var(--telekom-color-ui-faint);
-  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05) var(
-      --telekom-color-functional-focus
-    );
+  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus-standard);
   --background-tr-striped: var(--telekom-color-ui-subtle);
   --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }

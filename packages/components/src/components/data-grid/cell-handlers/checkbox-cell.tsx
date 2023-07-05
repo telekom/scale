@@ -47,7 +47,7 @@ export const CheckboxCell: Cell = {
 
     switch (style) {
       case 'switch':
-        return <scale-switch {...props}></scale-switch>;
+        return <scale-switch size="small" {...props}></scale-switch>;
       default:
         // 'checkbox'
         return <scale-checkbox {...props}></scale-checkbox>;

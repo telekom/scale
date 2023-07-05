@@ -22,6 +22,8 @@ export const Template = (args, { argTypes }) => ({
         :size="size"
         :value="value"
         :combobox-id="comboboxId"
+        :hide-label-visually="hideLabelVisually"
+        :floating-strategy="floatingStrategy"
         @scaleChange="['scale-change']"
         @scaleFocus="['scale-focus']"
         @scaleBlur="['scale-blur']"
@@ -75,6 +77,68 @@ export const Template = (args, { argTypes }) => ({
   <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
   <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
 </scale-dropdown-select>
+```
+
+### Scoped CSS variables
+
+```css
+:host {
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --height: var(--telekom-spacing-unit-x11);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-disabled: none;
+  --background-hover: var(--telekom-color-ui-state-fill-hovered);
+  --border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-border-standard);
+  --border-color-hover: var(--telekom-color-ui-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-border-hovered);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --border-invalid: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-danger-hovered);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
+  --spacing-x: var(--telekom-spacing-unit-x3);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --radius: var(--telekom-radius-standard);
+  --spacing-x-for-helper-text: var(--telekom-spacing-unit-x1);
+
+  /*combobox*/
+  --transition-combobox: var(--transition);
+  --background-combobox: var(--telekom-color-ui-state-fill-standard);
+  --spacing-combobox: 1.125rem calc(2rem - var(--telekom-spacing-unit-x025))
+    0.25rem calc(0.75rem - var(--telekom-spacing-unit-x025));
+
+  /*meta*/
+  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --color-meta: var(--telekom-color-text-and-icon-standard);
+
+  /*icon*/
+  --height-icon: 20px;
+  --color-icon: var(--telekom-color-text-and-icon-standard);
+  --color-icon-hover: var(--telekom-color-text-and-icon-standard);
+  --color-icon-active: var(--telekom-color-text-and-icon-standard);
+  --transition-icon: var(--transition);
+
+  /*label*/
+  --color-label: var(--telekom-color-text-and-icon-additional);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+  --transform-label: translate(var(--spacing-x), 0.875rem);
+  --transform-label-animated: translate(
+    var(--spacing-x),
+    calc(0.25rem + var(--telekom-spacing-unit-x025))
+  );
+
+  /*listbox*/
+  --background-listbox: var(--telekom-color-background-surface);
+  --box-shadow-listbox: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  --max-height-listbox: 300px;
+  --z-index-listbox: 99;
+}
+
 ```
 
 ## Disabled

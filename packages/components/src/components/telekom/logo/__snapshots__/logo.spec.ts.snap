@@ -4,10 +4,10 @@ exports[`component prop snapshots all props are not set 1`] = `
 <scale-logo exportparts="logo-svg">
   <mock:shadow-root>
     <style>
-      :host { --logo-size: 36px; }
+      :host { --logo-size: 38px; }
     </style>
     <a href="javascript:void(0);" part="logo variant-magenta" tabindex="0" title="Telekom Logo">
-      <scale-logo-svg color="magenta" language="en" logotitle="Telekom Logo" part="icon"></scale-logo-svg>
+      <scale-logo-svg color="magenta" logotitle="Telekom Logo" part="icon"></scale-logo-svg>
     </a>
   </mock:shadow-root>
 </scale-logo>
@@ -20,7 +20,7 @@ exports[`component prop snapshots all props are set 1`] = `
       :host { --logo-size: 100px; }
     </style>
     <a href="https://www.telekom.de/start" part="logo variant-white transparent" tabindex="0" title="Telekom Logo">
-      <scale-logo-svg color="white" language="hr" logotitle="Telekom Logo" part="icon"></scale-logo-svg>
+      <scale-logo-svg color="white" logotitle="Telekom Logo" part="icon"></scale-logo-svg>
     </a>
   </mock:shadow-root>
 </scale-logo>
@@ -30,10 +30,10 @@ exports[`component prop snapshots all props should handle no link 1`] = `
 <scale-logo exportparts="logo-svg">
   <mock:shadow-root>
     <style>
-      :host { --logo-size: 36px; }
+      :host { --logo-size: 38px; }
     </style>
     <a href="" part="logo variant-magenta" tabindex="0" title="Telekom Logo">
-      <scale-logo-svg color="magenta" language="en" logotitle="Telekom Logo" part="icon"></scale-logo-svg>
+      <scale-logo-svg color="magenta" logotitle="Telekom Logo" part="icon"></scale-logo-svg>
     </a>
   </mock:shadow-root>
 </scale-logo>

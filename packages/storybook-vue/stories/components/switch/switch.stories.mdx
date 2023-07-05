@@ -57,6 +57,26 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" />
 
+
+### Scoped CSS variables
+
+```css
+:host {
+  --width: 42px;
+  --height: 24px;
+  --offset: 2px;
+  --radius: 1em;
+  --transition-duration: var(--telekom-motion-duration-immediate);
+  --transition-easing: var(--telekom-motion-easing-standard);
+  --shadow-thumb: 0 0 2px 0 rgba(0, 0, 0, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.24),
+    0 4px 12px 0 rgba(0, 0, 0, 0.26);
+  --spacing-x-label: var(--telekom-spacing-unit-x2);
+  --font-label: var(--telekom-text-style-ui);
+  --font-io-text: var(--telekom-text-style-small-bold);
+  --color-label: var(--telekom-color-text-and-icon-standard);  
+}
+```
+
 ## Small
 
 <Canvas withSource="none">

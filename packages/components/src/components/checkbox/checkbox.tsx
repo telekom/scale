@@ -63,6 +63,8 @@ export class Checkbox {
   @Prop({ mutable: true }) inputId?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) Input required */
+  @Prop() required?: boolean;
 
   /** Emitted when the value has changed. */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
@@ -116,19 +118,19 @@ export class Checkbox {
   renderIcon() {
     if (this.indeterminate) {
       return (
-        <scale-icon-action-indeterminate
+        <scale-icon-action-minus
           part="icon"
           decorative
-        ></scale-icon-action-indeterminate>
+        ></scale-icon-action-minus>
       );
     }
 
     if (this.checked) {
       return (
-        <scale-icon-action-success
+        <scale-icon-action-checkmark
           part="icon"
           decorative
-        ></scale-icon-action-success>
+        ></scale-icon-action-checkmark>
       );
     }
   }
@@ -189,6 +191,7 @@ export class Checkbox {
           aria-invalid={this.status === 'error' || this.invalid}
           aria-describedBy={helperText.id}
           disabled={this.disabled}
+          required={this.required}
           onChange={this.handleChange}
         />
         <label part="container" htmlFor={this.inputId}>

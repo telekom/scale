@@ -23,26 +23,13 @@ describe('component prop snapshots', () => {
   });
 
   const variant: 'magenta' | 'white' = 'magenta';
-  const language:
-    | 'de'
-    | 'en'
-    | 'cz'
-    | 'hr'
-    | 'hu'
-    | 'me'
-    | 'mk_lat'
-    | 'mk_kyr'
-    | 'ro'
-    | 'sk'
-    | '' = 'en';
   const transparent: boolean = false;
-  const size: number = 36;
+  const size: number = 38;
 
   describe('all props', () => {
     it('are not set', async () => {
       await page.waitForChanges();
       expect(page.rootInstance.variant).toBe(variant);
-      expect(page.rootInstance.language).toBe(language);
       expect(page.rootInstance.transparent).toBe(transparent);
       expect(page.rootInstance.size).toBe(size);
 
@@ -50,20 +37,17 @@ describe('component prop snapshots', () => {
     });
     it('are set', async () => {
       const setVariant = 'white';
-      const setLanguage = 'hr';
       const setTransparent = true;
       const setSize = 100;
       const setHref = 'https://www.telekom.de/start';
 
       page.rootInstance.variant = setVariant;
-      page.rootInstance.language = setLanguage;
       page.rootInstance.transparent = setTransparent;
       page.rootInstance.size = setSize;
       page.rootInstance.href = setHref;
 
       await page.waitForChanges();
       expect(page.rootInstance.variant).toBe(setVariant);
-      expect(page.rootInstance.language).toBe(setLanguage);
       expect(page.rootInstance.transparent).toBe(setTransparent);
       expect(page.rootInstance.size).toBe(setSize);
       expect(page.rootInstance.href).toBe(setHref);

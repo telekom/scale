@@ -28,7 +28,7 @@ const {
 const Handlebars = require('handlebars'); // using Handlebars for consistency with components-sketch
 
 const { parse } = require('svg-parser');
-const toHTML = require('hast-util-to-html');
+// const toHTML = require('hast-util-to-html');
 
 const svgo = new SVGO({
   plugins: [{ removeViewBox: false }, { removeXMLNS: true }],
@@ -45,6 +45,8 @@ const EXT = '.svg';
 main();
 
 async function main() {
+  const { toHtml } = await import('hast-util-to-html');
+
   /* Get SVG data from source files */
 
   const entries = await fg(INPUT_GLOB);
@@ -61,9 +63,9 @@ async function main() {
         .dirname(filepath)
         .replace(INPUT_GLOB.replace('**/*.svg', ''), '');
       const pathParts = cleanPath.split('/');
-      const key = cleanPath.replace(/\//gi, '-');
-      const category = pathParts[0];
-      const name = pathParts[pathParts.length - 1];
+      const key = nolo(cleanPath.replace(/\//gi, '-'));
+      const category = nolo(pathParts[0]);
+      const name = nolo(pathParts[pathParts.length - 1]);
 
       return {
         ...item,
@@ -75,6 +77,11 @@ async function main() {
       };
     })
   );
+
+  /* Replace low dashes with normal dashes */
+  function nolo(str) {
+    return str.replace(/_/g, '-');
+  }
 
   /* Parse, define names and markup */
 
@@ -97,12 +104,19 @@ async function main() {
       tagName,
       className,
       markup: {
-        default: toHTML(adaptTree(parse(defaultItem.data))),
-        selected: toHTML(adaptTree(parse(selectedItem.data))),
+        default: JSXify(toHtml(adaptTree(parse(defaultItem.data)))),
+        selected: JSXify(toHtml(adaptTree(parse(selectedItem.data)))),
       },
       viewBox: getViewBox(parse(defaultItem.data)),
     };
   });
+
+  function JSXify(html) {
+    if (html.indexOf('xlink:href')) {
+      return html.replace(/xlink:href/g, 'xlinkHref');
+    }
+    return html;
+  }
 
   /* Generate an "index" JSON file */
 

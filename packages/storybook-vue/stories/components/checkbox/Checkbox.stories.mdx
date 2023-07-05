@@ -26,6 +26,7 @@ export const Template = (args, { argTypes }) => ({
       :indeterminate="indeterminate"
       :value="value"
       :input-id="inputId"
+      :required="required"
       @scaleChange="action('scaleChange')($event)"
       @scale-change="action('scale-change')($event)"
     ></scale-checkbox>
@@ -67,22 +68,22 @@ export const Template = (args, { argTypes }) => ({
 ```css
 scale-checkbox {
   --spacing-x: var(--telekom-spacing-unit-x2);
-  --transition: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
-    );
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
   --color-text: var(--telekom-color-text-and-icon-standard);
   --color-error: var(--telekom-color-functional-danger-standard);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  /* FIXME unused variable */
   --color-standard: var(--telekom-color-background-surface);
   --background-disabled: none;
   --color-primary: var(--telekom-color-primary-standard);
-  --color-focus: var(--telekom-color-functional-focus);
+  --color-focus: var(--telekom-color-functional-focus-standard);
   --color-primary-hover: var(--telekom-color-text-and-icon-standard);
   --color-primary-active: var(--telekom-color-text-and-icon-standard);
 
   /*control*/
-  --width-control: var(--telekom-spacing-unit-x4);
-  --height-control: var(--telekom-spacing-unit-x4);
+  --width-control: var(--telekom-spacing-unit-x5);
+  --height-control: var(--telekom-spacing-unit-x5);
   --transition-control: var(--transition);
   --spacing-control: var(--telekom-spacing-unit-x05);
   --spacing-left-control: var(--telekom-spacing-unit-x1);
@@ -98,7 +99,6 @@ scale-checkbox {
   --color-helper-text: var(
     --telekom-color-text-and-icon-functional-informational
   );
-
   /*label*/
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --transition-label: var(--transition);
@@ -108,8 +108,9 @@ scale-checkbox {
   --color-icon-checked-active: var(
     --telekom-color-text-and-icon-white-standard
   );
-  --width-icon: var(--telekom-spacing-unit-x3);
-  --height-icon: var(--telekom-spacing-unit-x3);
+  --width-icon: var(--telekom-spacing-unit-x4);
+  --height-icon: var(--telekom-spacing-unit-x4);
+  --stroke-width: var(--stroke-width-checkbox, 0.5px);
 }
 ```
 

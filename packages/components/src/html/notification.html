@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+      body > *:not(script) + *:not(script) {
+        display: block;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <scale-notification
+      heading="The heading is mandatory, yes"
+    ></scale-notification>
+
+    <scale-notification
+      heading="The heading is mandatory, this is a banner (danger)"
+      type="banner"
+      variant="danger"
+      opened
+      dismissible
+    ></scale-notification>
+
+    <scale-notification
+      heading="The heading is mandatory, this is a toast (success)"
+      type="toast"
+      variant="success"
+      dismissible
+      opened
+    >
+      <span slot="text"
+        >Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et
+        dolore.</span
+      >
+    </scale-notification>
+
+    <script>
+      let n = document.querySelector('scale-notification');
+      setTimeout(() => {
+        n.opened = true;
+      }, 1000);
+
+      setTimeout(() => {
+        let n2 = Object.assign(document.createElement('scale-notification'), {
+          opened: true,
+          heading: 'This is madness…',
+          variant: 'warning',
+          delay: 4000,
+        });
+        document.body.appendChild(n2);
+      }, 2000);
+    </script>
+  </body>
+</html>

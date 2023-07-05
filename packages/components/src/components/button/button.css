@@ -76,7 +76,7 @@
   --radius-ghost: var(--radius);
   --border-width-ghost: var(--telekom-spacing-unit-x025);
   --spacing-x-ghost: var(--telekom-spacing-unit-x2);
-  --color-ghost: var(--telekom-color-text-and-icon-standard);
+  --color-ghost: var(--telekom-color-text-and-icon-primary-standard);
   --color-ghost-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-ghost-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-ghost-disabled: var(--telekom-color-text-and-icon-disabled);
@@ -127,7 +127,9 @@
 
 .button.button--icon-before:not(.button--icon-only) ::slotted(*) {
   margin-right: var(--spacing-icon-x);
-  margin-left: calc(var(--spacing-icon-x) * -1);
+  margin-left: calc(var(--spacing-icon-x-small) * -1);
+  margin-top: var(--spacing-icon-x);
+  margin-bottom: var(--spacing-icon-x);
 }
 
 .button.button--icon-before:not(.button--icon-only).button--size-small
@@ -138,7 +140,9 @@
 
 .button.button--icon-after:not(.button--icon-only) ::slotted(*) {
   margin-left: var(--spacing-icon-x);
-  margin-right: calc(var(--spacing-icon-x) * -1);
+  margin-right: calc(var(--spacing-icon-x-small) * -1);
+  margin-top: var(--spacing-icon-x);
+  margin-bottom: var(--spacing-icon-x);
 }
 
 .button.button--icon-after:not(.button--icon-only).button--size-small
@@ -165,11 +169,19 @@
   padding-left: var(--spacing-x-icon-only);
   padding-right: var(--spacing-x-icon-only);
 }
+.button--icon-only.button--variant-secondary {
+  padding-left: calc(var(--spacing-x-icon-only) - 1px);
+  padding-right: calc(var(--spacing-x-icon-only) - 1px);
+}
 
 .button--icon-only.button--size-small {
   padding-left: var(--spacing-x-icon-only-small);
   padding-right: var(--spacing-x-icon-only-small);
   min-width: 32px;
+}
+.button--icon-only.button--size-small.button--variant-secondary {
+  padding-left: calc(var(--spacing-x-icon-only-small) - 1px);
+  padding-right: calc(var(--spacing-x-icon-only-small) - 1px);
 }
 
 .button--disabled {

@@ -46,7 +46,7 @@ export class HelperText {
       return <scale-icon-alert-error></scale-icon-alert-error>;
     }
     if (variant === 'success') {
-      return <scale-icon-alert-success></scale-icon-alert-success>;
+      return <scale-icon-action-success></scale-icon-action-success>;
     }
   }
 

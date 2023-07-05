@@ -51,20 +51,20 @@ import menuFlyout_en from 'raw-loader!../../stories/components/flyout-menu/menu-
 import menuFlyout_de from 'raw-loader!../../stories/components/flyout-menu/menu-flyout_de.md';
 import modal_en from 'raw-loader!../../stories/components/modal/modal.md';
 import modal_de from 'raw-loader!../../stories/components/modal/modal_de.md';
+import notification_de from 'raw-loader!../../stories/components/notification/notification_de.md';
+import notification_en from 'raw-loader!../../stories/components/notification/notification.md';
 import notificationBadge_de from 'raw-loader!../../stories/components/notification-badge/notification-badge_de.md';
 import notificationBadge_en from 'raw-loader!../../stories/components/notification-badge/notification-badge.md';
-import notificationBanner_de from 'raw-loader!../../stories/components/notification-banner/notification-banner_de.md';
-import notificationBanner_en from 'raw-loader!../../stories/components/notification-banner/notification-banner.md';
-import notificationMessage_de from 'raw-loader!../../stories/components/notification-message/notification-message_de.md';
-import notificationMessage_en from 'raw-loader!../../stories/components/notification-message/notification-message.md';
-import notificationToast_de from 'raw-loader!../../stories/components/notification-toast/notification-toast_de.md';
-import notificationToast_en from 'raw-loader!../../stories/components/notification-toast/notification-toast.md';
+import notificationBanner_de from 'raw-loader!../../stories/deprecated/notification-banner/notification-banner_de.md';
+import notificationBanner_en from 'raw-loader!../../stories/deprecated/notification-banner/notification-banner.md';
+import notificationMessage_de from 'raw-loader!../../stories/deprecated/notification-message/notification-message_de.md';
+import notificationMessage_en from 'raw-loader!../../stories/deprecated/notification-message/notification-message.md';
+import notificationToast_de from 'raw-loader!../../stories/deprecated/notification-toast/notification-toast_de.md';
+import notificationToast_en from 'raw-loader!../../stories/deprecated/notification-toast/notification-toast.md';
 import pagination_en from 'raw-loader!../../stories/components/pagination/pagination.md';
 import pagination_de from 'raw-loader!../../stories/components/pagination/pagination_de.md';
 import progressBar_en from 'raw-loader!../../stories/components/progress-bar/progress-bar.md';
 import progressBar_de from 'raw-loader!../../stories/components/progress-bar/progress-bar_de.md';
-import radioButton_en from 'raw-loader!../../stories/components/radio-button/radio-button.md';
-import radioButton_de from 'raw-loader!../../stories/components/radio-button/radio-button_de.md';
 import ratingStars_en from 'raw-loader!../../stories/components/rating-stars/rating-stars.md';
 import ratingStars_de from 'raw-loader!../../stories/components/rating-stars/rating-stars_de.md';
 import radioButtonGroup_de from 'raw-loader!../../stories/components/radio-button-group/radio-button-group_de.md';
@@ -165,6 +165,8 @@ const Usage = (props) => {
     'flyout-menu_de': menuFlyout_de,
     modal_en,
     modal_de,
+    notification_en,
+    notification_de,
     'notification-badge_en': notificationBadge_en,
     'notification-badge_de': notificationBadge_de,
     'notification-banner_en': notificationBanner_en,
@@ -177,8 +179,6 @@ const Usage = (props) => {
     pagination_de,
     'progress-bar_en': progressBar_en,
     'progress-bar_de': progressBar_de,
-    'radio-button_en': radioButton_en,
-    'radio-button_de': radioButton_de,
     'radio-button-group_en': radioButtonGroup_en,
     'radio-button-group_de': radioButtonGroup_de,
     'rating-stars_en': ratingStars_en,

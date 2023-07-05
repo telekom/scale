@@ -12,6 +12,9 @@ import { action } from '@storybook/addon-actions';
   title="Components/Slider"
   component={ScaleSlider}
   argTypes={{
+    platform: {
+      control: { type: 'text' },
+    },
     styles: {
       control: { disable: true },
     },
@@ -41,6 +44,7 @@ export const Template = (args, { argTypes }) => ({
       :name="name"
       :slider-id="sliderId"
       :helper-text="helperText"
+      :platform="platform"
       @scale-change="handleScaleChange"
       @scale-input="handleScaleInput"
       >
@@ -96,7 +100,9 @@ export const Template = (args, { argTypes }) => ({
   --size-thumb: 24px;
   --border-color-thumb: rgba(0, 0, 0, 0.05);
   --background-thumb: var(--telekom-color-ui-white);
-  --color-focus: var(--telekom-color-functional-focus);
+  --shadow-thumb: 0 0 2px 0 rgba(0, 0, 0, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.24),
+    0 4px 12px 0 rgba(0, 0, 0, 0.26);
+  --color-focus: var(--telekom-color-functional-focus-standard);
   --spacing-x-step-marks: 8px;
   --color-step-mark: var(--telekom-color-text-and-icon-additional);
   --radius-step-mark: var(--telekom-radius-circle);
@@ -222,18 +228,14 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story name="Platform iOS">
     {{
       template: `
-        <div data-platform="ios">
-          <scale-slider label="iOS" value="25"></scale-slider>
-        </div>
+        <scale-slider label="iOS" value="25" platform="ios"></scale-slider>
       `
     }}
   </Story>
 </Canvas>
 
 ```html
-<div data-platform="ios">
-  <scale-slider label="Apple" value="25"></scale-slider>
-</div>
+<scale-slider label="Apple" value="25" platform="ios"></scale-slider>
 ```
 
 ## Platform Android
@@ -242,16 +244,15 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story name="Platform Android">
     {{
       template: `
-        <div data-platform="android">
-          <scale-slider label="Android" value="75"></scale-slider>
-        </div>
+        <scale-slider label="Android" value="75" platform="android"></scale-slider>
       `
     }}
   </Story>
 </Canvas>
 
 ```html
-<div data-platform="android">
+<!-- attribute data-platform="android" in parent element works in Chrome -->
+<body data-platform="android">
   <scale-slider label="Android" value="75"></scale-slider>
-</div>
+</body>
 ```
