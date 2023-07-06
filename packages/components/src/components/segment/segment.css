@@ -86,8 +86,8 @@ button.segment--icon-only.segment--multi-select .segment--mask {
 }
 
 button.segment--small .segment--mask {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 8px;
+  padding-right: 12px;
 }
 
 button.segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
@@ -204,6 +204,10 @@ button.segment--icon-only .segment--mask {
   margin-right: var(--telekom-spacing-unit-x1);
 }
 
+.success-icon-container {
+  margin-right: 4px;
+}
+
 .segment:not(.segment--selected) .success-icon-container {
   display: none;
 }
@@ -220,6 +224,7 @@ button.segment--icon-only .segment--mask {
 
 .segment--selected .text-container {
   margin-left: 0;
+  /* transform: translateX(3px); */
 }
 
 .segment--selected:not(.segment--icon-only) .icon-container {

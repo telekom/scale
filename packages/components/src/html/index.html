@@ -24,40 +24,44 @@
   </head>
 
   <body data-mode="light">
-    <h1 class="scl-font-variant-body">SEGMENTED MERGED</h1>
-
-
+    <h1 class="scl-font-variant-body">REFACTORED</h1>
+    <div>
     <scale-segmented-button>
       <scale-segment selected>Apple</scale-segment>
       <scale-segment>One+</scale-segment>
       <scale-segment>Samsung</scale-segment>
       <scale-segment>Huawei</scale-segment>
     </scale-segmented-button>
+    </div>
     <br />
+    <div>
     <scale-segmented-button multi-select>
       <scale-segment>Apple</scale-segment>
       <scale-segment>One+</scale-segment>
       <scale-segment selected>Samsung</scale-segment>
       <scale-segment>Huawei</scale-segment>
     </scale-segmented-button>
+    </div>
     <br/>
-
+    <div>
     <scale-segmented-button>
       <scale-segment disabled>Apple</scale-segment>
       <scale-segment>One+</scale-segment>
       <scale-segment>Samsung</scale-segment>
       <scale-segment>Huawei</scale-segment>
     </scale-segmented-button>
+    </div>
     <br/>
-
+    <div>
     <scale-segmented-button disabled>
       <scale-segment>Apple</scale-segment>
       <scale-segment selected>One+</scale-segment>
       <scale-segment>Samsung</scale-segment>
       <scale-segment>Huawei</scale-segment>
     </scale-segmented-button>
+    </div>
     <br/>
-
+    <div>
     <scale-segmented-button>
       <scale-segment selected
         ><scale-icon-weather-cloudy
@@ -77,8 +81,9 @@
         ></scale-icon-weahter-heavy-snow
       ></scale-segment>
     </scale-segmented-button>
+    </div>
     <br/>
-
+    <div>
     <scale-segmented-button multi-select>
       <scale-segment selected
         ><scale-icon-weather-cloudy
@@ -98,9 +103,10 @@
         ></scale-icon-weahter-heavy-snow
       ></scale-segment>
     </scale-segmented-button>
+    </div>
     <br/>
 
-
+    <div>
     <scale-segmented-button>
       <scale-segment selected><scale-icon-device-device-phone
           slot="segment-icon">
@@ -124,6 +130,7 @@
         >Huawei</scale-segment
       >
     </scale-segmented-button>
+    </div>
     <br/>
 
     <scale-segmented-button invalid>
@@ -151,7 +158,28 @@
         ></scale-icon-device-device-phone
         >Huawei</scale-segment
       >
-    </scale-segmented-button>                   
+    </scale-segmented-button>
+    </div>                   
 
   </body>
+  <script>
+    const buttons = document.querySelectorAll('scale-segmented-button');
+    setTimeout(() => {
+      buttons.forEach(button => {
+      const size = button.shadowRoot.querySelector('.segmented-button').getBoundingClientRect();
+      console.log('size', size)
+
+      const firstChild = button.shadowRoot.querySelector('slot').assignedElements()[0];
+      const childSize = firstChild.getBoundingClientRect();
+      console.log('firstChild', childSize)
+
+      // const size = button.getBoundingClientRect();
+      const width = button.offsetWidth;
+      const sizeEl = document.createElement('span');
+      sizeEl.innerHTML = `TOTAL WIDTH: ${size.width}, SINGLE WIDTH: ${childSize.width}`;
+      button.parentElement.appendChild(sizeEl);
+    });
+    },200)
+
+  </script>
 </html>

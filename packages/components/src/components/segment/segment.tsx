@@ -185,12 +185,18 @@ export class Segment {
         >
           <div class="segment--mask">
             <div class="success-icon-container">
-              <scale-icon-action-success
-                size={this.size === 'small' ? 14 : 16}
-                class="scale-icon-action-success"
-                accessibility-title="success"
-                selected
-              />
+            <scale-icon-action-checkmark
+                  size={
+                    this.size === 'small'
+                      ? 14
+                      : this.size === 'medium'
+                      ? 16
+                      : 20
+                  }
+                  class="scale-icon-action-checkmark"
+                  aria-hidden="true"
+                  selected
+                />
             </div>
             <div class="icon-container">
               <slot name="segment-icon" />
