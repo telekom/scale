@@ -29,7 +29,7 @@ let i = 0;
 const iconSizeMap = {
   small: 14,
   medium: 16,
-  large: 16,
+  large: 20,
 };
 
 @Component({

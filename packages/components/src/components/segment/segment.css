@@ -15,22 +15,20 @@
   --button-radius: 6px;
   --padding-top-bottom: var(--telekom-spacing-unit-x1);
   --height: 28px;
-  --font-family: var(--telekom-typography-font-family-sans);
-  --font-weight: var(--telekom-typography-font-weight-bold);
-  --font-size: var(--telekom-typography-font-size-caption);
+  --font: var(--telekom-text-style-caption-bold);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
-  /* --transition: all var(--telekom-motion-duration-transition) */
-    /* var(--telekom-motion-easing-standard); */
   --color: var(--telekom-color-text-and-icon-standard);
 
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
 
   /* medium styles */
   --font-size-medium: var(--telekom-typography-font-size-body);
+  --font-medium: var(--telekom-text-style-ui-bold);
   --height-medium: 36px;
 
   /* large styles */
   --font-size-large: var(--telekom-typography-font-size-body);
+  --font-large: var(--telekom-text-style-ui-bold);
   --height-large: 40px;
 
   /* hover styles */
@@ -68,21 +66,24 @@
   width: 100%;
   border-radius: var(--button-radius);
   background-color: transparent;
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
+  font: var(--font);
   white-space: nowrap;
   color: var(--color);
 }
 
 button.segment--icon-only.segment--small .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x9);
-  padding-right: var(--telekom-spacing-unit-x9);
-}
-
-button.segment--icon-only.segment--multi-select .segment--mask {
   padding-left: var(--telekom-spacing-unit-x3);
   padding-right: var(--telekom-spacing-unit-x3);
+}
+
+button.segment--icon-only.segment--medium .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x4);
+}
+
+button.segment--icon-only.segment--large .segment--mask {
+  padding-left: var(--telekom-spacing-unit-x5);
+  padding-right: var(--telekom-spacing-unit-x5);
 }
 
 button.segment--small .segment--mask {
@@ -100,8 +101,11 @@ button.segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
 }
 
 .segment--medium {
-  font-size: var(--font-size-medium);
   height: var(--height-medium);
+}
+
+.segment--medium .text-container {
+  font: var(--font-medium);
 }
 
 button.segment--medium .segment--mask {
@@ -110,8 +114,10 @@ button.segment--medium .segment--mask {
 }
 
 .segment--large {
-  font-size: var(--font-size-large);
   height: var(--height-large);
+}
+.segment--large .text-container {
+  font: var(--font-large)
 }
 
 button.segment--large .segment--mask {
@@ -208,6 +214,10 @@ button.segment--icon-only .segment--mask {
   margin-right: 4px;
 }
 
+.segment--large .success-icon-container {
+  margin-right: 6px;
+}
+
 .segment:not(.segment--selected) .success-icon-container {
   display: none;
 }
@@ -216,15 +226,16 @@ button.segment--icon-only .segment--mask {
   margin-left: 18px;
 }
 
-.segment--medium:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container,
-.segment--large:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container {
+.segment--medium:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container {
   margin-left: 20px;
 }
 
+.segment--large:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container {
+  margin-left: 26px;
+}
 
 .segment--selected .text-container {
   margin-left: 0;
-  /* transform: translateX(3px); */
 }
 
 .segment--selected:not(.segment--icon-only) .icon-container {
@@ -264,6 +275,10 @@ button.segment--icon-only .segment--mask {
 
 .segment:not(.segment--selected).segment:not(.segment--icon-only):not(.segment--icon-text) .text-container {
   transform: translateX(-9px);
+}
+
+.segment.segment--large:not(.segment--selected).segment:not(.segment--icon-only):not(.segment--icon-text) .text-container {
+  transform: translateX(-13px);
 }
 
 .segment--icon-text .icon-container ::slotted(*){

@@ -20,146 +20,456 @@
         margin: 0;
         padding: 4rem;
       }
+
+      .container {
+        border: 2px solid red;
+        display: flex;
+        gap: 10px;
+      }
+
+      .container > div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container > div > div {
+        height: 62px;
+        border: 1px solid;
+      }
+
+      .container > div > div > scale-segmented-button {
+        margin-bottom: 2px;
+      }
     </style>
   </head>
 
   <body data-mode="light">
     <h1 class="scl-font-variant-body">REFACTORED</h1>
-    <div>
-    <scale-segmented-button>
-      <scale-segment selected>Apple</scale-segment>
-      <scale-segment>One+</scale-segment>
-      <scale-segment>Samsung</scale-segment>
-      <scale-segment>Huawei</scale-segment>
-    </scale-segmented-button>
-    </div>
-    <br />
-    <div>
-    <scale-segmented-button multi-select>
-      <scale-segment>Apple</scale-segment>
-      <scale-segment>One+</scale-segment>
-      <scale-segment selected>Samsung</scale-segment>
-      <scale-segment>Huawei</scale-segment>
-    </scale-segmented-button>
-    </div>
-    <br/>
-    <div>
-    <scale-segmented-button>
-      <scale-segment disabled>Apple</scale-segment>
-      <scale-segment>One+</scale-segment>
-      <scale-segment>Samsung</scale-segment>
-      <scale-segment>Huawei</scale-segment>
-    </scale-segmented-button>
-    </div>
-    <br/>
-    <div>
-    <scale-segmented-button disabled>
-      <scale-segment>Apple</scale-segment>
-      <scale-segment selected>One+</scale-segment>
-      <scale-segment>Samsung</scale-segment>
-      <scale-segment>Huawei</scale-segment>
-    </scale-segmented-button>
-    </div>
-    <br/>
-    <div>
-    <scale-segmented-button>
-      <scale-segment selected
-        ><scale-icon-weather-cloudy
-          slot="segment-icon"
-        ></scale-icon-weather-cloudy
-      ></scale-segment>
-      <scale-segment><scale-icon-weather-rain
-          slot="segment-icon"
-        ></scale-icon-weather-rain
-      ></scale-segment>
-      <scale-segment><scale-icon-weather-sunny
-          slot="segment-icon"
-        ></scale-icon-weather-sunny
-      ></scale-segment>
-      <scale-segment><scale-icon-weahter-heavy-snow
-          slot="segment-icon"
-        ></scale-icon-weahter-heavy-snow
-      ></scale-segment>
-    </scale-segmented-button>
-    </div>
-    <br/>
-    <div>
-    <scale-segmented-button multi-select>
-      <scale-segment selected
-        ><scale-icon-weather-cloudy
-          slot="segment-icon"
-        ></scale-icon-weather-cloudy
-      ></scale-segment>
-      <scale-segment><scale-icon-weather-rain
-          slot="segment-icon"
-        ></scale-icon-weather-rain
-      ></scale-segment>
-      <scale-segment><scale-icon-weather-sunny
-          slot="segment-icon"
-        ></scale-icon-weather-sunny
-      ></scale-segment>
-      <scale-segment><scale-icon-weahter-heavy-snow
-          slot="segment-icon"
-        ></scale-icon-weahter-heavy-snow
-      ></scale-segment>
-    </scale-segmented-button>
-    </div>
-    <br/>
 
-    <div>
-    <scale-segmented-button>
-      <scale-segment selected><scale-icon-device-device-phone
-          slot="segment-icon">
-          </scale-icon-device-device-phone>Apple</scale-segment>
-      <scale-segment
-        ><scale-icon-device-device-phone
-          slot="segment-icon"
-        ></scale-icon-device-device-phone
-        >One+</scale-segment
-      >
-      <scale-segment
-        ><scale-icon-device-device-phone
-          slot="segment-icon"
-        ></scale-icon-device-device-phone
-        >Samsung</scale-segment
-      >
-      <scale-segment
-        ><scale-icon-device-device-phone
-          slot="segment-icon"
-        ></scale-icon-device-device-phone
-        >Huawei</scale-segment
-      >
-    </scale-segmented-button>
-    </div>
-    <br/>
+    <div class="container">
+      <div>
+        <h2>SMALL</h2>
+        <div>
+          <scale-segmented-button>
+            <scale-segment selected>Apple</scale-segment>
+            <scale-segment>One+</scale-segment>
+            <scale-segment>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br />
+          <div>
+          <scale-segmented-button multi-select>
+            <scale-segment>Apple</scale-segment>
+            <scale-segment>One+</scale-segment>
+            <scale-segment selected>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button>
+            <scale-segment disabled>Apple</scale-segment>
+            <scale-segment>One+</scale-segment>
+            <scale-segment>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button disabled>
+            <scale-segment>Apple</scale-segment>
+            <scale-segment selected>One+</scale-segment>
+            <scale-segment>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button>
+            <scale-segment selected
+              ><scale-icon-weather-cloudy
+                slot="segment-icon"
+              ></scale-icon-weather-cloudy
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-rain
+                slot="segment-icon"
+              ></scale-icon-weather-rain
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-sunny
+                slot="segment-icon"
+              ></scale-icon-weather-sunny
+            ></scale-segment>
+            <scale-segment><scale-icon-weahter-heavy-snow
+                slot="segment-icon"
+              ></scale-icon-weahter-heavy-snow
+            ></scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button multi-select>
+            <scale-segment selected
+              ><scale-icon-weather-cloudy
+                slot="segment-icon"
+              ></scale-icon-weather-cloudy
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-rain
+                slot="segment-icon"
+              ></scale-icon-weather-rain
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-sunny
+                slot="segment-icon"
+              ></scale-icon-weather-sunny
+            ></scale-segment>
+            <scale-segment><scale-icon-weahter-heavy-snow
+                slot="segment-icon"
+              ></scale-icon-weahter-heavy-snow
+            ></scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+      
+          <div>
+          <scale-segmented-button>
+            <scale-segment selected><scale-icon-device-device-phone
+                slot="segment-icon">
+                </scale-icon-device-device-phone>Apple</scale-segment>
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >One+</scale-segment
+            >
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >Samsung</scale-segment
+            >
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >Huawei</scale-segment
+            >
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+            <scale-segmented-button invalid>
+              <scale-segment
+                ><scale-icon-device-device-phone
+                  slot="segment-icon"
+                ></scale-icon-device-device-phone
+                >Apple</scale-segment
+              >
+              <scale-segment
+                ><scale-icon-device-device-phone
+                  slot="segment-icon"
+                ></scale-icon-device-device-phone
+                >One+</scale-segment
+              >
+              <scale-segment
+                ><scale-icon-device-device-phone
+                  slot="segment-icon"
+                ></scale-icon-device-device-phone
+                >Samsung</scale-segment
+              >
+              <scale-segment
+                ><scale-icon-device-device-phone
+                  slot="segment-icon"
+                ></scale-icon-device-device-phone
+                >Huawei</scale-segment
+              >
+            </scale-segmented-button>
+          </div>
 
-    <scale-segmented-button invalid>
-      <scale-segment
-        ><scale-icon-device-device-phone
-          slot="segment-icon"
-        ></scale-icon-device-device-phone
-        >Apple</scale-segment
-      >
-      <scale-segment
-        ><scale-icon-device-device-phone
-          slot="segment-icon"
-        ></scale-icon-device-device-phone
-        >One+</scale-segment
-      >
-      <scale-segment
-        ><scale-icon-device-device-phone
-          slot="segment-icon"
-        ></scale-icon-device-device-phone
-        >Samsung</scale-segment
-      >
-      <scale-segment
-        ><scale-icon-device-device-phone
-          slot="segment-icon"
-        ></scale-icon-device-device-phone
-        >Huawei</scale-segment
-      >
-    </scale-segmented-button>
-    </div>                   
+       
+      </div>
+  
+      <div>
+        <h2>MEDIUM</h2>
+        <div>
+          <scale-segmented-button size="medium">
+            <scale-segment selected>Apple</scale-segment>
+            <scale-segment>One+</scale-segment>
+            <scale-segment>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br />
+          <div>
+          <scale-segmented-button size="medium" multi-select>
+            <scale-segment>Apple</scale-segment>
+            <scale-segment>One+</scale-segment>
+            <scale-segment selected>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button size="medium">
+            <scale-segment disabled>Apple</scale-segment>
+            <scale-segment>One+</scale-segment>
+            <scale-segment>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button size="medium" disabled>
+            <scale-segment>Apple</scale-segment>
+            <scale-segment selected>One+</scale-segment>
+            <scale-segment>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button size="medium">
+            <scale-segment selected
+              ><scale-icon-weather-cloudy
+                slot="segment-icon"
+              ></scale-icon-weather-cloudy
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-rain
+                slot="segment-icon"
+              ></scale-icon-weather-rain
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-sunny
+                slot="segment-icon"
+              ></scale-icon-weather-sunny
+            ></scale-segment>
+            <scale-segment><scale-icon-weahter-heavy-snow
+                slot="segment-icon"
+              ></scale-icon-weahter-heavy-snow
+            ></scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button size="medium" multi-select>
+            <scale-segment selected
+              ><scale-icon-weather-cloudy
+                slot="segment-icon"
+              ></scale-icon-weather-cloudy
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-rain
+                slot="segment-icon"
+              ></scale-icon-weather-rain
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-sunny
+                slot="segment-icon"
+              ></scale-icon-weather-sunny
+            ></scale-segment>
+            <scale-segment><scale-icon-weahter-heavy-snow
+                slot="segment-icon"
+              ></scale-icon-weahter-heavy-snow
+            ></scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+      
+          <div>
+          <scale-segmented-button size="medium">
+            <scale-segment selected><scale-icon-device-device-phone
+                slot="segment-icon">
+                </scale-icon-device-device-phone>Apple</scale-segment>
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >One+</scale-segment
+            >
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >Samsung</scale-segment
+            >
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >Huawei</scale-segment
+            >
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+            <scale-segmented-button size="medium" invalid>
+              <scale-segment
+                ><scale-icon-device-device-phone
+                  slot="segment-icon"
+                ></scale-icon-device-device-phone
+                >Apple</scale-segment
+              >
+              <scale-segment
+                ><scale-icon-device-device-phone
+                  slot="segment-icon"
+                ></scale-icon-device-device-phone
+                >One+</scale-segment
+              >
+              <scale-segment
+                ><scale-icon-device-device-phone
+                  slot="segment-icon"
+                ></scale-icon-device-device-phone
+                >Samsung</scale-segment
+              >
+              <scale-segment
+                ><scale-icon-device-device-phone
+                  slot="segment-icon"
+                ></scale-icon-device-device-phone
+                >Huawei</scale-segment
+              >
+            </scale-segmented-button>      
+          </div>
+                  
+      </div>    
+      <div>
+        <h2> LARGE </h2>
+        <div>
+          <scale-segmented-button size="large">
+            <scale-segment selected>Apple</scale-segment>
+            <scale-segment>One+</scale-segment>
+            <scale-segment>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br />
+          <div>
+          <scale-segmented-button size="large" multi-select>
+            <scale-segment>Apple</scale-segment>
+            <scale-segment>One+</scale-segment>
+            <scale-segment selected>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button size="large">
+            <scale-segment disabled>Apple</scale-segment>
+            <scale-segment>One+</scale-segment>
+            <scale-segment>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button size="large" disabled>
+            <scale-segment>Apple</scale-segment>
+            <scale-segment selected>One+</scale-segment>
+            <scale-segment>Samsung</scale-segment>
+            <scale-segment>Huawei</scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button size="large">
+            <scale-segment selected
+              ><scale-icon-weather-cloudy
+                slot="segment-icon"
+              ></scale-icon-weather-cloudy
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-rain
+                slot="segment-icon"
+              ></scale-icon-weather-rain
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-sunny
+                slot="segment-icon"
+              ></scale-icon-weather-sunny
+            ></scale-segment>
+            <scale-segment><scale-icon-weahter-heavy-snow
+                slot="segment-icon"
+              ></scale-icon-weahter-heavy-snow
+            ></scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button size="large" multi-select>
+            <scale-segment selected
+              ><scale-icon-weather-cloudy
+                slot="segment-icon"
+              ></scale-icon-weather-cloudy
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-rain
+                slot="segment-icon"
+              ></scale-icon-weather-rain
+            ></scale-segment>
+            <scale-segment><scale-icon-weather-sunny
+                slot="segment-icon"
+              ></scale-icon-weather-sunny
+            ></scale-segment>
+            <scale-segment><scale-icon-weahter-heavy-snow
+                slot="segment-icon"
+              ></scale-icon-weahter-heavy-snow
+            ></scale-segment>
+          </scale-segmented-button>
+          </div>
+          <br/>
+      
+          <div>
+          <scale-segmented-button size="large">
+            <scale-segment selected><scale-icon-device-device-phone
+                slot="segment-icon">
+                </scale-icon-device-device-phone>Apple</scale-segment>
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >One+</scale-segment
+            >
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >Samsung</scale-segment
+            >
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >Huawei</scale-segment
+            >
+          </scale-segmented-button>
+          </div>
+          <br/>
+          <div>
+          <scale-segmented-button size="large" invalid>
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >Apple</scale-segment
+            >
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >One+</scale-segment
+            >
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >Samsung</scale-segment
+            >
+            <scale-segment
+              ><scale-icon-device-device-phone
+                slot="segment-icon"
+              ></scale-icon-device-device-phone
+              >Huawei</scale-segment
+            >
+          </scale-segmented-button>
+          </div>    
+    </div>
+
+
+
+
+      
 
   </body>
   <script>
