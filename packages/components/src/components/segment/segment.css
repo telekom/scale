@@ -284,3 +284,16 @@ button.segment--icon-only .segment--mask {
 .segment--icon-text .icon-container ::slotted(*){
   margin-right: var(--telekom-spacing-unit-x1);
 }
+
+.segment--list-item {
+  list-style: none;
+  box-sizing: border-box;
+  position: relative;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--button-radius);
+  padding-top: var(--telekom-spacing-unit-x05);
+  transition: var(--transition);
+  background-color: transparent;
+}
