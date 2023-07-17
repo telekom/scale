@@ -173,7 +173,12 @@ export class Notification {
             </slot>
           </div>
           <div part="body">
-            <div part="heading" role="heading" aria-level={this.headingLevel} aria-label={`${this.ariaHeading} ${this.heading}`}>
+            <div
+              part="heading"
+              role="heading"
+              aria-level={this.headingLevel}
+              aria-label={`${this.ariaHeading} ${this.heading}`}
+            >
               <span>{this.heading}</span>
             </div>
             {this.hasTextSlot && (
