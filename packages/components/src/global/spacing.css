@@ -1,0 +1,66 @@
+:root {
+  /* TODO remove after upgrading @telekom/design-tokens package */
+  --telekom-spacing-composition-space-00: 0rem;
+  --telekom-spacing-composition-space-01: 0.0625rem;
+  --telekom-spacing-composition-space-02: 0.125rem;
+  --telekom-spacing-composition-space-03: 0.25rem;
+  --telekom-spacing-composition-space-04: 0.5rem;
+  --telekom-spacing-composition-space-05: 0.75rem;
+  --telekom-spacing-composition-space-06: 1rem;
+  --telekom-spacing-composition-space-07: 1.25rem;
+  --telekom-spacing-composition-space-08: 1.5rem;
+  --telekom-spacing-composition-space-09: 1.75rem;
+  --telekom-spacing-composition-space-10: 2rem;
+  --telekom-spacing-composition-space-11: 2.25rem;
+  --telekom-spacing-composition-space-12: 2.5rem;
+  --telekom-spacing-composition-space-13: 2.75rem;
+  --telekom-spacing-composition-space-14: 3rem;
+  --telekom-spacing-composition-space-15: 3.25rem;
+  --telekom-spacing-composition-space-16: 3.5rem;
+  --telekom-spacing-composition-space-17: 4rem;
+  --telekom-spacing-composition-space-18: 4.5rem;
+  --telekom-spacing-composition-space-19: 5rem;
+  --telekom-spacing-composition-space-20: 6rem;
+  --telekom-spacing-baseline-space-00: 0rem;
+  --telekom-spacing-baseline-space-01: 0.25rem;
+  --telekom-spacing-baseline-space-02: 0.5rem;
+  --telekom-spacing-baseline-space-03: 0.75rem;
+  --telekom-spacing-baseline-space-04: 1rem;
+  --telekom-spacing-baseline-space-05: 1.5rem;
+  --telekom-spacing-baseline-space-06: 2rem;
+  --telekom-spacing-baseline-space-07: 3rem;
+  --telekom-spacing-baseline-space-08: 4rem;
+  --telekom-spacing-baseline-space-09: 6rem;
+  --telekom-spacing-baseline-space-10: 8rem;
+  --telekom-spacing-baseline-space-11: 12rem;
+  --telekom-spacing-baseline-space-12: 16rem;
+  --telekom-spacing-baseline-space-13: 24rem;
+  --telekom-spacing-baseline-space-14: 32rem;
+  --telekom-spacing-baseline-space-15: 64rem;
+
+  /* Legacy, should remove in v4 (probably should go in a legacy.css file?) */
+  --telekom-spacing-unit-base: 4px;
+  --telekom-spacing-unit-x0: calc(var(--base) * 0);
+  --telekom-spacing-unit-x025: calc(var(--base) * 0.25);
+  --telekom-spacing-unit-x05: calc(var(--base) * 0.5);
+  --telekom-spacing-unit-x1: calc(var(--base) * 1);
+  --telekom-spacing-unit-x2: calc(var(--base) * 2);
+  --telekom-spacing-unit-x3: calc(var(--base) * 3);
+  --telekom-spacing-unit-x4: calc(var(--base) * 4);
+  --telekom-spacing-unit-x5: calc(var(--base) * 5);
+  --telekom-spacing-unit-x6: calc(var(--base) * 6);
+  --telekom-spacing-unit-x7: calc(var(--base) * 7);
+  --telekom-spacing-unit-x8: calc(var(--base) * 8);
+  --telekom-spacing-unit-x9: calc(var(--base) * 9);
+  --telekom-spacing-unit-x10: calc(var(--base) * 10);
+  --telekom-spacing-unit-x11: calc(var(--base) * 11);
+  --telekom-spacing-unit-x12: calc(var(--base) * 12);
+  --telekom-spacing-unit-x13: calc(var(--base) * 13);
+  --telekom-spacing-unit-x14: calc(var(--base) * 14);
+  --telekom-spacing-unit-x15: calc(var(--base) * 15);
+  --telekom-spacing-unit-x16: calc(var(--base) * 16);
+  --telekom-spacing-unit-x17: calc(var(--base) * 17);
+  --telekom-spacing-unit-x18: calc(var(--base) * 18);
+  --telekom-spacing-unit-x19: calc(var(--base) * 19);
+  --telekom-spacing-unit-x20: calc(var(--base) * 20);
+}

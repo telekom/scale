@@ -31,6 +31,11 @@
 @import '~@telekom/design-tokens/dist/telekom/css/telekom-design-tokens.all.css';
 
 /**
+ * New semantic spacing tokens (testing)
+ */
+@import './spacing.css';
+
+/**
  * Styles for scale-grid and scale-grid-item are global
  * because one should be able to use the CSS only, without the custom elements being upgraded.
  */
@@ -38,7 +43,7 @@
 
 /**
  * --telekom tokens have no z-index, by design, so we keep this here for now.
- * 
+ *
  */
 :root {
   --scl-z-index-10: 10;
