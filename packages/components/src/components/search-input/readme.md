@@ -23,7 +23,6 @@
 | `name`                   | `name`                    | (optional) Input name                                                                                            | `string`                                                | `'search'`        |
 | `placeholder`            | `placeholder`             | (optional) Input placeHolder                                                                                     | `string`                                                | `'Search'`        |
 | `required`               | `required`                | (optional) Input required                                                                                        | `boolean`                                               | `undefined`       |
-| `transparent`            | `transparent`             | (optional) input background transparent                                                                          | `boolean`                                               | `undefined`       |
 | `value`                  | `value`                   | (optional) Input value                                                                                           | `string`                                                | `''`              |
 | `variant`                | `variant`                 | (optional) Variant                                                                                               | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'` |
 

@@ -7,16 +7,15 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type                                                    | Default           |
-| ------------- | ------------- | ----------- | ------------------------------------------------------- | ----------------- |
-| `comboboxId`  | `combobox-id` |             | `string`                                                | `'combobox'`      |
-| `disabled`    | `disabled`    |             | `boolean`                                               | `undefined`       |
-| `helperText`  | `helper-text` |             | `string`                                                | `''`              |
-| `label`       | `label`       |             | `string`                                                | `undefined`       |
-| `name`        | `name`        |             | `string`                                                | `undefined`       |
-| `transparent` | `transparent` |             | `boolean`                                               | `undefined`       |
-| `value`       | `value`       |             | `any`                                                   | `undefined`       |
-| `variant`     | `variant`     |             | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'` |
+| Property     | Attribute     | Description | Type                                                    | Default           |
+| ------------ | ------------- | ----------- | ------------------------------------------------------- | ----------------- |
+| `comboboxId` | `combobox-id` |             | `string`                                                | `'combobox'`      |
+| `disabled`   | `disabled`    |             | `boolean`                                               | `undefined`       |
+| `helperText` | `helper-text` |             | `string`                                                | `''`              |
+| `label`      | `label`       |             | `string`                                                | `undefined`       |
+| `name`       | `name`        |             | `string`                                                | `undefined`       |
+| `value`      | `value`       |             | `any`                                                   | `undefined`       |
+| `variant`    | `variant`     |             | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'` |
 
 
 ## Events
