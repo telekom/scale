@@ -34,7 +34,7 @@ scale-table {
   --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus-standard);
   --background-tr-striped: var(--telekom-color-ui-subtle);
-  --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
+  --padding: var(--telekom-spacing-composition-space-00) var(--telekom-spacing-unit-x2);
 }
 .table {
   display: block;
