@@ -187,7 +187,7 @@ scale-dropdown {
   font-size: var(--font-size-label);
   transform: translate(
     var(--spacing-x),
-    calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
+    calc((var(--telekom-spacing-composition-space-14) - var(--font-size-label)) / 2)
   );
   font-weight: var(--font-weight-label);
 }

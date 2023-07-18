@@ -335,7 +335,7 @@ duet-date-picker .duet-date__close:focus {
 }
 
 duet-date-picker .duet-date__table-header {
-  height: var(--telekom-spacing-unit-x12);
+  height: var(--telekom-spacing-composition-space-14);
   padding: 0;
   font-size: var(--font-size-table-header);
   font-weight: var(--font-weight-table-header);

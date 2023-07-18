@@ -97,8 +97,8 @@ scale-telekom-footer-extended-navigation-column:first-of-type {
   scale-telekom-footer-extended-navigation-column:first-of-type,
   scale-telekom-footer-extended-navigation-column:last-of-type,
   scale-telekom-footer-extended-navigation-column[expanded]:last-of-type {
-    margin-bottom: var(--telekom-spacing-unit-x12);
-    margin-top: var(--telekom-spacing-unit-x12);
+    margin-bottom: var(--telekom-spacing-composition-space-14);
+    margin-top: var(--telekom-spacing-composition-space-14);
     padding-bottom: 0;
     border-bottom: 0;
   }

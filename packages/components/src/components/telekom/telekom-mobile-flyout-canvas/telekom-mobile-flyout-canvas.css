@@ -16,7 +16,7 @@
 
   --max-width: 572px;
   --spacing: var(--telekom-spacing-composition-space-07) var(--telekom-spacing-composition-space-06)
-    var(--telekom-spacing-unit-x12);
+    var(--telekom-spacing-composition-space-14);
 
   background: var(--telekom-color-background-surface);
 }

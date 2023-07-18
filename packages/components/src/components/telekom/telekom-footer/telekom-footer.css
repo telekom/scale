@@ -121,6 +121,6 @@
 @media screen and (--xl) {
   .scale-telekom-footer :where(ul),
   .scale-telekom-footer[type='minimal'] :where(ul) {
-    --_nav-items-spacing: var(--telekom-spacing-unit-x12);
+    --_nav-items-spacing: var(--telekom-spacing-composition-space-14);
   }
 }
