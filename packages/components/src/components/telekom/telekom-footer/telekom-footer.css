@@ -103,7 +103,7 @@
     align-items: center;
     list-style: none;
     column-gap: var(--_nav-items-spacing);
-    row-gap: var(--telekom-spacing-unit-x1);
+    row-gap: var(--telekom-spacing-composition-space-03);
   }
 }
 

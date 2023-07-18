@@ -147,8 +147,8 @@
 [part='close-button'] {
   --color-ghost: var(--telekom-text-and-icon-standard);
   position: absolute;
-  right: var(--telekom-spacing-unit-x1);
-  top: var(--telekom-spacing-unit-x1);
+  right: var(--telekom-spacing-composition-space-03);
+  top: var(--telekom-spacing-composition-space-03);
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {

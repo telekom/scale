@@ -39,7 +39,7 @@ scale-text-field {
   --font-weight-meta: var(--telekom-line-weight-bold);
   --font-size-meta: var(--telekom-typography-font-size-small);
   --line-height-meta: var(--telekom-typography-line-spacing-standard);
-  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
@@ -52,7 +52,7 @@ scale-text-field {
     0.25rem calc(0.75rem - var(--telekom-spacing-composition-space-01));
   --transition-control: var(--transition);
   --background-control: var(--telekom-color-ui-state-fill-standard);
-  --margin-bottom-control: var(--telekom-spacing-unit-x1);
+  --margin-bottom-control: var(--telekom-spacing-composition-space-03);
 
   /* counter */
   --transition-counter: var(--transition);

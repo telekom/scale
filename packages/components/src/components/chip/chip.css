@@ -48,7 +48,7 @@
 }
 
 .chip.chip--selected.chip--type-dynamic {
-  padding-right: var(--telekom-spacing-unit-x1);
+  padding-right: var(--telekom-spacing-composition-space-03);
 }
 
 .chip.chip--selected.chip--type-dynamic button {
@@ -135,7 +135,7 @@ label
 **/
 
 .chip-label {
-  padding: 0 var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1);
+  padding: 0 var(--telekom-spacing-composition-space-03) 0 var(--telekom-spacing-composition-space-03);
   font-weight: var(--telekom-typography-font-weight-bold);
   font-size: 1rem;
   line-height: 100%;
@@ -145,7 +145,7 @@ label
   padding-right: var(--telekom-spacing-unit-x2);
 }
 .chip--type-dynamic.chip--selected .chip-label {
-  padding-right: var(--telekom-spacing-unit-x1);
+  padding-right: var(--telekom-spacing-composition-space-03);
 }
 
 /**
@@ -153,8 +153,8 @@ icon front (slot)
 **/
 
 .chip slot[name='chip-icon']::slotted(*) {
-  padding-right: var(--telekom-spacing-unit-x1);
-  padding-top: var(--telekom-spacing-unit-x1);
+  padding-right: var(--telekom-spacing-composition-space-03);
+  padding-top: var(--telekom-spacing-composition-space-03);
 }
 
 /**

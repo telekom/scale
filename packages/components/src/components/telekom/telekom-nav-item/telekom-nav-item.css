@@ -242,7 +242,7 @@
   > :where(a, button):after {
   content: '';
   width: 100%;
-  height: var(--telekom-spacing-unit-x1);
+  height: var(--telekom-spacing-composition-space-03);
   background: var(--telekom-color-text-and-icon-primary-standard);
   display: block;
   position: absolute;

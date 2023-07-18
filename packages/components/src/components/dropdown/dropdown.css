@@ -35,14 +35,14 @@ scale-dropdown {
   --background-disabled: none;
   --color: var(--telekom-color-text-and-icon-standard);
   --background-color: var(--telekom-color-ui-state-fill-standard);
-  --margin-bottom-helper-text: var(--telekom-spacing-unit-x1);
+  --margin-bottom-helper-text: var(--telekom-spacing-composition-space-03);
 
   /*input*/
   --transition-input: var(--transition);
   --font-size-input: var(--telekom-typography-font-size-body);
 
   /*meta*/
-  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
 
   /*icon*/

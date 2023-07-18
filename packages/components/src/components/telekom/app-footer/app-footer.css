@@ -129,7 +129,7 @@
   margin: calc(-1 * var(--spacing-navigation-standard)) 0;
 }
 .footer-navigation li span {
-  padding: var(--telekom-spacing-unit-x1) 0;
+  padding: var(--telekom-spacing-composition-space-03) 0;
 }
 
 .footer-navigation li a:hover {
@@ -206,9 +206,9 @@
     line-height: var(--telekom-spacing-unit-x8);
   }
   .footer-navigation li a {
-    padding: var(--telekom-spacing-unit-x1);
+    padding: var(--telekom-spacing-composition-space-03);
     margin: calc(-1 * var(--spacing-navigation-standard))
-      calc(-1 * var(--telekom-spacing-unit-x1));
+      calc(-1 * var(--telekom-spacing-composition-space-03));
   }
 }
 

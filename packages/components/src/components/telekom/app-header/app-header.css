@@ -14,7 +14,7 @@ scale-app-header {
   --header-brand-height: var(--telekom-spacing-unit-x18);
   --header-border-radius: var(--telekom-radius-large);
   --header-transition-speed: var(--telekom-motion-duration-transition);
-  --header-brand-collapsed-height: var(--telekom-spacing-unit-x1);
+  --header-brand-collapsed-height: var(--telekom-spacing-composition-space-03);
   --header-max-width: inherit;
 
   --background: var(--telekom-color-primary-standard);

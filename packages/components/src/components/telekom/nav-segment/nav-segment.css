@@ -12,7 +12,7 @@
 scale-nav-segment {
   --transition: all 0.2s ease-in-out;
   --color: var(--telekom-color-text-and-icon-white-standard);
-  --spacing-y: var(--telekom-spacing-unit-x1);
+  --spacing-y: var(--telekom-spacing-composition-space-03);
   --font-size: var(--telekom-typography-font-size-caption);
   --font-weight: var(--telekom-typography-font-weight-extra-bold);
   --line-height: var(--telekom-typography-line-spacing-extra-tight);

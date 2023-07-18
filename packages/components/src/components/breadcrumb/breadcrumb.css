@@ -16,7 +16,7 @@
 
   --color-separator: var(--telekom-color-text-and-icon-additional);
 
-  --spacing-y-item: var(--telekom-spacing-unit-x1);
+  --spacing-y-item: var(--telekom-spacing-composition-space-03);
   --spacing-x-item: var(--telekom-spacing-unit-x2);
 
   --color-link: var(--telekom-color-text-and-icon-additional);

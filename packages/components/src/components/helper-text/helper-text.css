@@ -32,7 +32,7 @@ scale-icon-alert-success {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: var(--telekom-spacing-unit-x1);
+  margin-right: var(--telekom-spacing-composition-space-03);
   margin-top: 0.1666em; /* magic */
 }
 

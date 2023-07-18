@@ -72,7 +72,7 @@
   background-color: var(--scl-chart-stack-card-color);
   border-radius: 100%;
   align-self: center;
-  margin-right: var(--telekom-spacing-unit-x1);
+  margin-right: var(--telekom-spacing-composition-space-03);
 }
 
 .chart-stack-card .legend .legend__label {

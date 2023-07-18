@@ -18,7 +18,7 @@
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
-  --spacing-x-for-helper-text: var(--telekom-spacing-unit-x1);
+  --spacing-x-for-helper-text: var(--telekom-spacing-composition-space-03);
 
   /*combobox*/
   --transition-combobox: var(--transition);
@@ -31,7 +31,7 @@
     0.25rem calc(0.75rem - var(--telekom-spacing-composition-space-01));
 
   /*meta*/
-  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
 
   /*icon*/
@@ -230,7 +230,7 @@
   box-shadow: var(--box-shadow-listbox);
   border-radius: var(--radius);
   padding: var(--radius) 0;
-  margin-top: var(--telekom-spacing-unit-x1);
+  margin-top: var(--telekom-spacing-composition-space-03);
   left: 0;
   position: absolute;
   top: 100%;

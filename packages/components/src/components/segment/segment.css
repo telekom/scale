@@ -13,7 +13,7 @@
   /* not selected */
   --background-color-selected: var(--telekom-color-ui-base);
   --button-radius: 6px;
-  --padding-top-bottom: var(--telekom-spacing-unit-x1);
+  --padding-top-bottom: var(--telekom-spacing-composition-space-03);
   --height: 28px;
   --font: var(--telekom-text-style-caption-bold);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
@@ -196,7 +196,7 @@ button.segment--large .segment--mask {
 /* FIXME remove the hard-coded icon names */
 .segment:not(.segment--icon-only) scale-icon-action-checkmark,
 .segment scale-icon-action-close {
-  margin-right: var(--telekom-spacing-unit-x1);
+  margin-right: var(--telekom-spacing-composition-space-03);
 }
 
 .segment:not(.segment--selected) scale-icon-action-checkmark {

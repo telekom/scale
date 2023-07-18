@@ -32,7 +32,7 @@ scale-checkbox {
   --height-control: var(--telekom-spacing-unit-x5);
   --transition-control: var(--transition);
   --spacing-control: var(--telekom-spacing-composition-space-02);
-  --spacing-left-control: var(--telekom-spacing-unit-x1);
+  --spacing-left-control: var(--telekom-spacing-composition-space-03);
   --radius-control: var(--telekom-radius-small);
   --border-width-control: var(--telekom-spacing-composition-space-01);
 
@@ -235,7 +235,7 @@ scale-icon-alert-error {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: var(--telekom-spacing-unit-x1);
+  margin-right: var(--telekom-spacing-composition-space-03);
 }
 
 /* error states */

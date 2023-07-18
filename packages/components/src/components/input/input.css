@@ -80,7 +80,7 @@
 .input .input__meta {
   display: flex;
   justify-content: space-between;
-  margin-top: var(--telekom-spacing-unit-x1);
+  margin-top: var(--telekom-spacing-composition-space-03);
 }
 .input:not(.input--disabled):hover .input__select-wrapper {
   --icon-color: var(--telekom-color-text-and-icon-primary-hovered, #f90984);
@@ -221,7 +221,7 @@
   color: var(--telekom-color-text-and-icon-additional);
   transform: translate(
     var(--telekom-spacing-unit-x3),
-    var(--telekom-spacing-unit-x1)
+    var(--telekom-spacing-composition-space-03)
   );
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
@@ -431,7 +431,7 @@
   width: 100%;
 }
 .input--type-radio .input__helper-text {
-  margin-top: var(--telekom-spacing-unit-x1);
+  margin-top: var(--telekom-spacing-composition-space-03);
   padding-left: var(--telekom-spacing-unit-x6);
 }
 .input--type-radio label {

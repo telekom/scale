@@ -46,7 +46,7 @@
 
 .app-navigation-user-menu__user-info--name {
   font: var(--telekom-text-style-heading-5);
-  margin-bottom: var(--telekom-spacing-unit-x1);
+  margin-bottom: var(--telekom-spacing-composition-space-03);
 }
 .app-navigation-user-menu__user-info--email {
   color: var(--telekom-color-text-and-icon-additional);
@@ -99,6 +99,6 @@
 }
 @media (min-width: 1040px) {
   .app-navigation-user-menu {
-    padding-bottom: var(--telekom-spacing-unit-x1);
+    padding-bottom: var(--telekom-spacing-composition-space-03);
   }
 }

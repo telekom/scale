@@ -25,10 +25,10 @@
 
   --spacing-dismissable: var(--telekom-spacing-composition-space-02)
     var(--telekom-spacing-composition-space-02) var(--telekom-spacing-composition-space-02)
-    var(--telekom-spacing-unit-x1);
+    var(--telekom-spacing-composition-space-03);
   --spacing-dismissable-small: var(--telekom-spacing-composition-space-02)
     var(--telekom-spacing-composition-space-02) var(--telekom-spacing-composition-space-02)
-    var(--telekom-spacing-unit-x1);
+    var(--telekom-spacing-composition-space-03);
 
   --height: 24px;
   --height-small: 20px;

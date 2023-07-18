@@ -36,7 +36,7 @@ scale-textarea {
   --font-weight-meta: var(--telekom-typography-font-weight-bold);
   --font-size-meta: var(--telekom-typography-font-size-small);
   --line-height-meta: var(--telekom-typography-line-spacing-standard);
-  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 

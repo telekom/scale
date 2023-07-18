@@ -82,7 +82,7 @@ input[type='range']::-webkit-slider-thumb {
 
 [part='wrapper'] {
   display: inline-flex;
-  border-radius: var(--telekom-spacing-unit-x1);
+  border-radius: var(--telekom-spacing-composition-space-03);
   margin-left: calc(-1 * var(--stars-spacing));
 }
 
