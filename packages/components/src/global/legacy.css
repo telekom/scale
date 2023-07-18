@@ -1,0 +1,72 @@
+:root {  
+  /* Can remove in v4 */
+  --telekom-spacing-unit-base: 0.25rem;
+  --telekom-spacing-unit-x0: calc(var(--telekom-spacing-unit-base) * 0);
+  --telekom-spacing-unit-x025: calc(var(--telekom-spacing-unit-base) * 0.25);
+  --telekom-spacing-unit-x05: calc(var(--telekom-spacing-unit-base) * 0.5);
+  --telekom-spacing-unit-x1: calc(var(--telekom-spacing-unit-base) * 1);
+  --telekom-spacing-unit-x2: calc(var(--telekom-spacing-unit-base) * 2);
+  --telekom-spacing-unit-x3: calc(var(--telekom-spacing-unit-base) * 3);
+  --telekom-spacing-unit-x4: calc(var(--telekom-spacing-unit-base) * 4);
+  --telekom-spacing-unit-x5: calc(var(--telekom-spacing-unit-base) * 5);
+  --telekom-spacing-unit-x6: calc(var(--telekom-spacing-unit-base) * 6);
+  --telekom-spacing-unit-x7: calc(var(--telekom-spacing-unit-base) * 7);
+  --telekom-spacing-unit-x8: calc(var(--telekom-spacing-unit-base) * 8);
+  --telekom-spacing-unit-x9: calc(var(--telekom-spacing-unit-base) * 9);
+  --telekom-spacing-unit-x10: calc(var(--telekom-spacing-unit-base) * 10);
+  --telekom-spacing-unit-x11: calc(var(--telekom-spacing-unit-base) * 11);
+  --telekom-spacing-unit-x12: calc(var(--telekom-spacing-unit-base) * 12);
+  --telekom-spacing-unit-x13: calc(var(--telekom-spacing-unit-base) * 13);
+  --telekom-spacing-unit-x14: calc(var(--telekom-spacing-unit-base) * 14);
+  --telekom-spacing-unit-x15: calc(var(--telekom-spacing-unit-base) * 15);
+  --telekom-spacing-unit-x16: calc(var(--telekom-spacing-unit-base) * 16);
+  --telekom-spacing-unit-x17: calc(var(--telekom-spacing-unit-base) * 17);
+  --telekom-spacing-unit-x18: calc(var(--telekom-spacing-unit-base) * 18);
+  --telekom-spacing-unit-x19: calc(var(--telekom-spacing-unit-base) * 19);
+  --telekom-spacing-unit-x20: calc(var(--telekom-spacing-unit-base) * 20);
+}
+
+/**
+ * Upgrade the legacy .scl-font-variant- to use the latest design values.
+ * @deprecated in v3
+ *
+ * We don't create new classes for all --telekom-text-style tokens yet, because
+ * we want to figure out how a possible CSS framework would look like first…
+ */
+ .scl-font-variant-body {
+  font: var(--telekom-text-style-body);
+}
+.scl-font-variant-body-short {
+  font: var(--telekom-text-style-body);
+  line-height: var(--telekom-typography-line-spacing-tight);
+}
+.scl-font-variant-body-large {
+  font: var(--telekom-text-style-lead-text);
+}
+.scl-font-variant-smaller {
+  font: var(--telekom-text-style-small);
+}
+.scl-font-variant-label {
+  font: var(--telekom-text-style-small);
+}
+.scl-font-variant-caption {
+  font: var(--telekom-text-style-caption);
+}
+.scl-font-variant-heading-6 {
+  font: var(--telekom-text-style-heading-6);
+}
+.scl-font-variant-heading-5 {
+  font: var(--telekom-text-style-heading-5);
+}
+.scl-font-variant-heading-4 {
+  font: var(--telekom-text-style-heading-4);
+}
+.scl-font-variant-heading-3 {
+  font: var(--telekom-text-style-heading-3);
+}
+.scl-font-variant-heading-2 {
+  font: var(--telekom-text-style-heading-2);
+}
+.scl-font-variant-heading-1 {
+  font: var(--telekom-text-style-heading-1);
+}
