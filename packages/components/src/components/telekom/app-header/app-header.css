@@ -10,7 +10,7 @@
  */
 
 scale-app-header {
-  --header-nav-height: var(--telekom-spacing-unit-x14);
+  --header-nav-height: var(--telekom-spacing-composition-space-16);
   --header-brand-height: var(--telekom-spacing-unit-x18);
   --header-border-radius: var(--telekom-radius-large);
   --header-transition-speed: var(--telekom-motion-duration-transition);

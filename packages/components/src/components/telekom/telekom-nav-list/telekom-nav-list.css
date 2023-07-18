@@ -59,7 +59,7 @@
 
 @media screen and (--2xl) {
   .scale-telekom-nav-list {
-    --_spacing-x-slotted-main-nav: var(--telekom-spacing-unit-x14);
+    --_spacing-x-slotted-main-nav: var(--telekom-spacing-composition-space-16);
   }
 
   .scale-telekom-nav-list[debug] {
