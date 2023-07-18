@@ -185,10 +185,10 @@
   color: var(--telekom-color-text-and-icon-functional-danger);
 }
 .input--size-small .input__input {
-  height: var(--telekom-spacing-unit-x10);
+  height: var(--telekom-spacing-composition-space-12);
 }
 .input--size-small .input__select {
-  height: var(--telekom-spacing-unit-x10);
+  height: var(--telekom-spacing-composition-space-12);
 }
 .input--size-small .input__label {
   top: 0;
@@ -209,7 +209,7 @@
     var(--telekom-spacing-composition-space-05),
     calc(
       (
-          var(--telekom-spacing-unit-x10) -
+          var(--telekom-spacing-composition-space-12) -
             var(--telekom-typography-font-size-body)
         ) / 2
     )

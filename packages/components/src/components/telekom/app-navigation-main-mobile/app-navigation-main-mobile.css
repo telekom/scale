@@ -158,5 +158,5 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__child-menu-item-wrapper svg {
-  margin-right: var(--telekom-spacing-unit-x10);
+  margin-right: var(--telekom-spacing-composition-space-12);
 }

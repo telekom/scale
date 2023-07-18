@@ -108,7 +108,7 @@ scale-text-field {
 }
 
 .text-field--hide-label .text-field__control {
-  padding: 5px var(--telekom-spacing-unit-x10) 5px calc(var(--spacing-x) - 1px);
+  padding: 5px var(--telekom-spacing-composition-space-12) 5px calc(var(--spacing-x) - 1px);
 }
 
 .text-field--hide-label .text-field__label {

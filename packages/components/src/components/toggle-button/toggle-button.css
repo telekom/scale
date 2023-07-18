@@ -16,7 +16,7 @@
   --min-height: var(--telekom-spacing-composition-space-08);
   --height-xs: var(--telekom-spacing-composition-space-08);
   --height-small: var(--telekom-spacing-composition-space-10);
-  --height-regular: var(--telekom-spacing-unit-x10);
+  --height-regular: var(--telekom-spacing-composition-space-12);
   --height-large: var(--telekom-spacing-unit-x12);
   --radius: var(--telekom-radius-small);
   --transition: all var(--telekom-motion-duration-transition)

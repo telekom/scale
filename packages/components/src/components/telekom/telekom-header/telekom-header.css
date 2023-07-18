@@ -158,7 +158,7 @@
     --_height-logo-svg: 60px;
     --_height-top-bar: 30px;
     --_height-bottom-bar: 90px;
-    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x10);
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-composition-space-12);
 
     --_left-logo: var(--_spacing-x-container);
 
@@ -200,7 +200,7 @@
     --_display-top-app-name: none;
     --_display-bottom-app-name: block;
 
-    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x10);
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-composition-space-12);
 
     --scl-telekom-header-height: var(--_height);
   }
