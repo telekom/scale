@@ -26,7 +26,7 @@ scale-textarea {
     var(--telekom-color-functional-focus-standard);
   --spacing-x-control: var(--telekom-spacing-unit-x3);
   --spacing-bottom-control: var(--telekom-spacing-unit-x3);
-  --spacing-top-control: calc(1.125rem - var(--telekom-spacing-unit-x025));
+  --spacing-top-control: calc(1.125rem - var(--telekom-spacing-composition-space-01));
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: transparent;
@@ -45,8 +45,8 @@ scale-textarea {
     18px 32px 4px 12px
     (subtracting 1px from border)
   */
-  --spacing-control: 0 calc(2rem - var(--telekom-spacing-unit-x025)) 0.25rem
-    calc(0.75rem - var(--telekom-spacing-unit-x025));
+  --spacing-control: 0 calc(2rem - var(--telekom-spacing-composition-space-01)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-composition-space-01));
   --transition-control: var(--transition);
   --background-control: var(--telekom-color-ui-state-fill-standard);
 
@@ -150,7 +150,7 @@ scale-textarea {
   font: var(--telekom-text-style-small-bold);
   transform: translate(
     var(--spacing-x-control),
-    calc(0.25rem + var(--telekom-spacing-unit-x025))
+    calc(0.25rem + var(--telekom-spacing-composition-space-01))
   );
 }
 .textarea--status-error .textarea__wrapper {

@@ -34,7 +34,7 @@ scale-checkbox {
   --spacing-control: var(--telekom-spacing-unit-x05);
   --spacing-left-control: var(--telekom-spacing-unit-x1);
   --radius-control: var(--telekom-radius-small);
-  --border-width-control: var(--telekom-spacing-unit-x025);
+  --border-width-control: var(--telekom-spacing-composition-space-01);
 
   /*helper-text*/
   --transition-helper-text: var(--transition);
@@ -190,7 +190,7 @@ scale-checkbox [part='container']:active
 
 scale-checkbox [part='input']:focus ~ [part='container'] [part='checkbox'] {
   outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
-  outline-offset: var(--telekom-spacing-unit-x025);
+  outline-offset: var(--telekom-spacing-composition-space-01);
 }
 
 /* hover states */

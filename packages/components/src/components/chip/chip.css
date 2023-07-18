@@ -29,7 +29,7 @@
 /**TODO: colors unexplained in figma  **/
 .chip {
   box-sizing: border-box;
-  border: var(--telekom-spacing-unit-x025) solid transparent;
+  border: var(--telekom-spacing-composition-space-01) solid transparent;
   display: inline-flex;
   outline: none;
   padding: 0 var(--telekom-spacing-unit-x3);
@@ -88,7 +88,7 @@
 .chip:not(.chip--disabled):not(.chip--type-dynamic):focus,
 .chip.chip--type-dynamic:not(.chip--selected):focus {
   outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
-  outline-offset: var(--telekom-spacing-unit-x025);
+  outline-offset: var(--telekom-spacing-composition-space-01);
 }
 
 .chip:not(.chip--disabled):not(.chip--type-dynamic):hover,

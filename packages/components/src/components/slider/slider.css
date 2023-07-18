@@ -105,7 +105,7 @@
 }
 
 [part~='thumb'] {
-  --_border: 0 0 0 var(--telekom-spacing-unit-x025) var(--border-color-thumb);
+  --_border: 0 0 0 var(--telekom-spacing-composition-space-01) var(--border-color-thumb);
   width: var(--size-thumb);
   height: var(--size-thumb);
   box-sizing: border-box;

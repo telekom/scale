@@ -50,7 +50,7 @@
 
 .list-item--unordered:before {
   top: 0.5em;
-  border: var(--telekom-spacing-unit-x025) solid currentColor;
+  border: var(--telekom-spacing-composition-space-01) solid currentColor;
   display: block;
   transform: scale(0.66);
   background: currentColor;
@@ -61,7 +61,7 @@
 }
 
 .list-item--nested.list-item--unordered:before {
-  border: var(--telekom-spacing-unit-x025) solid currentColor;
+  border: var(--telekom-spacing-composition-space-01) solid currentColor;
   background: transparent;
 }
 

@@ -10,7 +10,7 @@
  */
 
 :host {
-  --border-width-divider: var(--telekom-spacing-unit-x025);
+  --border-width-divider: var(--telekom-spacing-composition-space-01);
   --color-divider: var(--telekom-color-ui-subtle);
   --color-menu-item-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-menu-item-active: var(--telekom-color-text-and-icon-primary-pressed);

@@ -182,7 +182,7 @@ scale-switch {
 :focus-visible ~ .switch__toggle {
   outline: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-focus-standard);
-  outline-offset: var(--telekom-spacing-unit-x025);
+  outline-offset: var(--telekom-spacing-composition-space-01);
 }
 
 .switch__thumb {

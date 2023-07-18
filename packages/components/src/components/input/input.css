@@ -48,7 +48,7 @@
   font-family: inherit;
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
-  border: var(--telekom-spacing-unit-x025) solid
+  border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-standard);
 }
 .input .input__select {
@@ -320,7 +320,7 @@
   input:checked:not([disabled])
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  border: var(--telekom-spacing-unit-x025) solid
+  border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-primary-standard, #e20074);
   background: var(--telekom-color-primary-standard, #e20074);
 }
@@ -398,7 +398,7 @@
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   border-radius: var(--telekom-radius-standard);
-  border: var(--telekom-spacing-unit-x025) solid
+  border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-text-and-icon-standard);
   background: var(--telekom-color-background-surface);
 }
@@ -472,7 +472,7 @@
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 .input--type-radio input:disabled {
-  border: var(--telekom-spacing-unit-x025) solid
+  border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-disabled);
 }
 .input--type-radio input:disabled ~ label {

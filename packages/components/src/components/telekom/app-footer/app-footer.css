@@ -19,7 +19,7 @@
   --radius: var(--telekom-radius-large);
   --max-width: inherit;
 
-  --border-top-minimal: var(--telekom-spacing-unit-x025) solid
+  --border-top-minimal: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-faint);
   --color-minimal: var(--telekom-color-text-and-icon-additional);
   --background-minimal: var(--telekom-color-background-surface);

@@ -18,7 +18,7 @@ scale-dropdown {
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-spacing-unit-x025) solid
+  --border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-standard);
   --border-danger: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);

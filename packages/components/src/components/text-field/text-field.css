@@ -13,7 +13,7 @@ scale-text-field {
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-spacing-unit-x025) solid
+  --border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
@@ -48,8 +48,8 @@ scale-text-field {
     18px 32px 4px 12px
     (subtracting 1px from border)
   */
-  --spacing-control: 1.125rem calc(2rem - var(--telekom-spacing-unit-x025))
-    0.25rem calc(0.75rem - var(--telekom-spacing-unit-x025));
+  --spacing-control: 1.125rem calc(2rem - var(--telekom-spacing-composition-space-01))
+    0.25rem calc(0.75rem - var(--telekom-spacing-composition-space-01));
   --transition-control: var(--transition);
   --background-control: var(--telekom-color-ui-state-fill-standard);
   --margin-bottom-control: var(--telekom-spacing-unit-x1);
@@ -187,7 +187,7 @@ scale-text-field {
   font: var(--telekom-text-style-small-bold);
   transform: translate(
     var(--spacing-x),
-    calc(0.25rem + var(--telekom-spacing-unit-x025))
+    calc(0.25rem + var(--telekom-spacing-composition-space-01))
   );
 }
 .text-field--variant-danger .text-field__control {

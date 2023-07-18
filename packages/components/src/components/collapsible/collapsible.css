@@ -43,7 +43,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  border: var(--telekom-spacing-unit-x025) solid transparent;
+  border: var(--telekom-spacing-composition-space-01) solid transparent;
   content: '';
   display: block;
   position: absolute;

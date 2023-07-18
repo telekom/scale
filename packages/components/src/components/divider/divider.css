@@ -15,7 +15,7 @@
   --spacing: var(--telekom-spacing-unit-x3);
   /* FIXME this should be called --border-color */
   --color: var(--telekom-color-ui-faint);
-  --border-width: var(--telekom-spacing-unit-x025);
+  --border-width: var(--telekom-spacing-composition-space-01);
   --min-height-vertical: var(--telekom-spacing-unit-x6);
 
   width: var(--width);

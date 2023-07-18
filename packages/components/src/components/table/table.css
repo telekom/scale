@@ -20,12 +20,12 @@ scale-table {
 
   --spacing-tbody-td: var(--telekom-spacing-unit-x4)
     var(--telekom-spacing-unit-x2);
-  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
+  --border-bottom-tbody-td: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-faint);
   --background-tbody: var(--telekom-color-ui-state-fill-standard);
   --background-tbody-tr-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-tfoot: var(--telekom-color-ui-state-fill-standard);
-  --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
+  --border-bottom-tfoot-td: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-extra-strong);
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;

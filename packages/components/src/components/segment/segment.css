@@ -178,7 +178,7 @@ button.segment--large .segment--mask {
   box-shadow: var(--telekom-shadow-raised-standard);
   outline: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-focus-standard);
-  outline-offset: var(--telekom-spacing-unit-x025);
+  outline-offset: var(--telekom-spacing-composition-space-01);
   z-index: 40;
   position: relative;
 }
