@@ -24,9 +24,11 @@ scale-textarea {
   --background-color-disabled: none;
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
-  --spacing-x-control: var(--telekom-spacing-unit-x3);
-  --spacing-bottom-control: var(--telekom-spacing-unit-x3);
-  --spacing-top-control: calc(1.125rem - var(--telekom-spacing-unit-x025));
+  --spacing-x-control: var(--telekom-spacing-composition-space-05);
+  --spacing-bottom-control: var(--telekom-spacing-composition-space-05);
+  --spacing-top-control: calc(
+    1.125rem - var(--telekom-spacing-composition-space-01)
+  );
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: transparent;
@@ -36,7 +38,7 @@ scale-textarea {
   --font-weight-meta: var(--telekom-typography-font-weight-bold);
   --font-size-meta: var(--telekom-typography-font-size-small);
   --line-height-meta: var(--telekom-typography-line-spacing-standard);
-  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
@@ -45,8 +47,8 @@ scale-textarea {
     18px 32px 4px 12px
     (subtracting 1px from border)
   */
-  --spacing-control: 0 calc(2rem - var(--telekom-spacing-unit-x025)) 0.25rem
-    calc(0.75rem - var(--telekom-spacing-unit-x025));
+  --spacing-control: 0 calc(2rem - var(--telekom-spacing-composition-space-01))
+    0.25rem calc(0.75rem - var(--telekom-spacing-composition-space-01));
   --transition-control: var(--transition);
   --background-control: var(--telekom-color-ui-state-fill-standard);
 
@@ -150,7 +152,7 @@ scale-textarea {
   font: var(--telekom-text-style-small-bold);
   transform: translate(
     var(--spacing-x-control),
-    calc(0.25rem + var(--telekom-spacing-unit-x025))
+    calc(0.25rem + var(--telekom-spacing-composition-space-01))
   );
 }
 .textarea--status-error .textarea__wrapper {

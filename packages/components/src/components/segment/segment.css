@@ -13,7 +13,7 @@
   /* not selected */
   --background-color-selected: var(--telekom-color-ui-base);
   --button-radius: 6px;
-  --padding-top-bottom: var(--telekom-spacing-unit-x1);
+  --padding-top-bottom: var(--telekom-spacing-composition-space-03);
   --height: 28px;
   --font: var(--telekom-text-style-caption-bold);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
@@ -75,13 +75,13 @@
 }
 
 button.segment--small.segment--selected .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x2);
-  padding-right: var(--telekom-spacing-unit-x3);
+  padding-left: var(--telekom-spacing-composition-space-04);
+  padding-right: var(--telekom-spacing-composition-space-05);
 }
 
 button.segment--icon-only.segment--small .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x4);
+  padding-left: var(--telekom-spacing-composition-space-06);
+  padding-right: var(--telekom-spacing-composition-space-06);
 }
 
 button.segment--small .segment--mask {
@@ -98,8 +98,8 @@ button.segment--small .segment--mask {
 }
 
 button.segment--medium.segment--selected .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x3);
-  padding-right: var(--telekom-spacing-unit-x4);
+  padding-left: var(--telekom-spacing-composition-space-05);
+  padding-right: var(--telekom-spacing-composition-space-06);
 }
 
 button.segment--medium .segment--mask {
@@ -113,14 +113,14 @@ button.segment--medium .segment--mask {
 }
 
 button.segment--large.segment--selected .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x5);
+  padding-left: var(--telekom-spacing-composition-space-06);
+  padding-right: var(--telekom-spacing-composition-space-07);
 }
 
 button.segment--large .segment--mask {
   font: var(--font-large);
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x5);
+  padding-left: var(--telekom-spacing-composition-space-06);
+  padding-right: var(--telekom-spacing-composition-space-07);
 }
 
 .segment--selected {
@@ -176,9 +176,9 @@ button.segment--large .segment--mask {
 
 .segment:focus {
   box-shadow: var(--telekom-shadow-raised-standard);
-  outline: var(--telekom-spacing-unit-x05) solid
+  outline: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-focus-standard);
-  outline-offset: var(--telekom-spacing-unit-x025);
+  outline-offset: var(--telekom-spacing-composition-space-01);
   z-index: 40;
   position: relative;
 }
@@ -196,7 +196,7 @@ button.segment--large .segment--mask {
 /* FIXME remove the hard-coded icon names */
 .segment:not(.segment--icon-only) scale-icon-action-checkmark,
 .segment scale-icon-action-close {
-  margin-right: var(--telekom-spacing-unit-x1);
+  margin-right: var(--telekom-spacing-composition-space-03);
 }
 
 .segment:not(.segment--selected) scale-icon-action-checkmark {

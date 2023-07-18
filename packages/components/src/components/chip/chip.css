@@ -29,10 +29,10 @@
 /**TODO: colors unexplained in figma  **/
 .chip {
   box-sizing: border-box;
-  border: var(--telekom-spacing-unit-x025) solid transparent;
+  border: var(--telekom-spacing-composition-space-01) solid transparent;
   display: inline-flex;
   outline: none;
-  padding: 0 var(--telekom-spacing-unit-x3);
+  padding: 0 var(--telekom-spacing-composition-space-05);
   text-align: center;
   align-items: center;
   white-space: nowrap;
@@ -48,7 +48,7 @@
 }
 
 .chip.chip--selected.chip--type-dynamic {
-  padding-right: var(--telekom-spacing-unit-x1);
+  padding-right: var(--telekom-spacing-composition-space-03);
 }
 
 .chip.chip--selected.chip--type-dynamic button {
@@ -87,8 +87,8 @@
 
 .chip:not(.chip--disabled):not(.chip--type-dynamic):focus,
 .chip.chip--type-dynamic:not(.chip--selected):focus {
-  outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
-  outline-offset: var(--telekom-spacing-unit-x025);
+  outline: var(--telekom-spacing-composition-space-02) solid var(--color-focus);
+  outline-offset: var(--telekom-spacing-composition-space-01);
 }
 
 .chip:not(.chip--disabled):not(.chip--type-dynamic):hover,
@@ -135,17 +135,18 @@ label
 **/
 
 .chip-label {
-  padding: 0 var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1);
+  padding: 0 var(--telekom-spacing-composition-space-03) 0
+    var(--telekom-spacing-composition-space-03);
   font-weight: var(--telekom-typography-font-weight-bold);
   font-size: 1rem;
   line-height: 100%;
 }
 
 .chip--selected .chip-label {
-  padding-right: var(--telekom-spacing-unit-x2);
+  padding-right: var(--telekom-spacing-composition-space-04);
 }
 .chip--type-dynamic.chip--selected .chip-label {
-  padding-right: var(--telekom-spacing-unit-x1);
+  padding-right: var(--telekom-spacing-composition-space-03);
 }
 
 /**
@@ -153,8 +154,8 @@ icon front (slot)
 **/
 
 .chip slot[name='chip-icon']::slotted(*) {
-  padding-right: var(--telekom-spacing-unit-x1);
-  padding-top: var(--telekom-spacing-unit-x1);
+  padding-right: var(--telekom-spacing-composition-space-03);
+  padding-top: var(--telekom-spacing-composition-space-03);
 }
 
 /**

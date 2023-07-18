@@ -12,19 +12,19 @@
 :host {
   --background: var(--telekom-color-background-surface-highlight);
   --color: var(--telekom-color-text-and-icon-white-standard);
-  --spacing-top: var(--telekom-spacing-unit-x8);
-  --spacing-bottom: var(--telekom-spacing-unit-x6);
-  --spacing-x: var(--telekom-spacing-unit-x6);
+  --spacing-top: var(--telekom-spacing-composition-space-10);
+  --spacing-bottom: var(--telekom-spacing-composition-space-08);
+  --spacing-x: var(--telekom-spacing-composition-space-08);
   --background-container: var(--telekom-color-background-canvas);
   --radius: var(--telekom-radius-large);
   --max-width: inherit;
 
-  --border-top-minimal: var(--telekom-spacing-unit-x025) solid
+  --border-top-minimal: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-faint);
   --color-minimal: var(--telekom-color-text-and-icon-additional);
   --background-minimal: var(--telekom-color-background-surface);
-  --spacing-angular: var(--telekom-spacing-unit-x6);
-  --spacing-minimal: var(--telekom-spacing-unit-x6);
+  --spacing-angular: var(--telekom-spacing-composition-space-08);
+  --spacing-minimal: var(--telekom-spacing-composition-space-08);
 
   --background-mask: var(--telekom-color-background-canvas);
   --radius-mask: 0 0 var(--telekom-radius-large) var(--telekom-radius-large);
@@ -42,7 +42,7 @@
     --telekom-typography-font-weight-medium
   );
 
-  --spacing-navigation-standard: var(--telekom-spacing-unit-x2);
+  --spacing-navigation-standard: var(--telekom-spacing-composition-space-04);
   --color-navigation-standard-hover: var(
     --telekom-color-text-and-icon-white-standard
   );
@@ -52,7 +52,8 @@
   --color-navigation-active-focus: var(
     --telekom-color-text-and-icon-primary-pressed
   );
-  --box-shadow-navigation-focus: 0 0 0 var(--telekom-spacing-unit-x05)
+  --box-shadow-navigation-focus: 0 0 0
+    var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-focus-standard);
   --border-color-standard-hover: var(
     --telekom-color-text-and-icon-white-standard
@@ -129,7 +130,7 @@
   margin: calc(-1 * var(--spacing-navigation-standard)) 0;
 }
 .footer-navigation li span {
-  padding: var(--telekom-spacing-unit-x1) 0;
+  padding: var(--telekom-spacing-composition-space-03) 0;
 }
 
 .footer-navigation li a:hover {
@@ -179,7 +180,7 @@
 
 .footer-navigation svg {
   width: auto;
-  height: var(--telekom-spacing-unit-x4);
+  height: var(--telekom-spacing-composition-space-06);
   margin-right: var(--spacing-navigation-standard);
 }
 
@@ -200,15 +201,15 @@
     margin-bottom: var(--spacing-angular);
   }
   .footer-copyright {
-    margin-bottom: var(--telekom-spacing-unit-x4);
+    margin-bottom: var(--telekom-spacing-composition-space-06);
   }
   .footer-navigation ul {
-    line-height: var(--telekom-spacing-unit-x8);
+    line-height: var(--telekom-spacing-composition-space-10);
   }
   .footer-navigation li a {
-    padding: var(--telekom-spacing-unit-x1);
+    padding: var(--telekom-spacing-composition-space-03);
     margin: calc(-1 * var(--spacing-navigation-standard))
-      calc(-1 * var(--telekom-spacing-unit-x1));
+      calc(-1 * var(--telekom-spacing-composition-space-03));
   }
 }
 

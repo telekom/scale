@@ -10,11 +10,11 @@
  */
 
 scale-app-header {
-  --header-nav-height: var(--telekom-spacing-unit-x14);
-  --header-brand-height: var(--telekom-spacing-unit-x18);
+  --header-nav-height: var(--telekom-spacing-composition-space-16);
+  --header-brand-height: var(--telekom-spacing-composition-space-18);
   --header-border-radius: var(--telekom-radius-large);
   --header-transition-speed: var(--telekom-motion-duration-transition);
-  --header-brand-collapsed-height: var(--telekom-spacing-unit-x1);
+  --header-brand-collapsed-height: var(--telekom-spacing-composition-space-03);
   --header-max-width: inherit;
 
   --background: var(--telekom-color-primary-standard);
@@ -29,7 +29,7 @@ scale-app-header {
   --background-nav-sticky: var(--telekom-color-background-surface);
   --background-header-sticky: var(--telekom-color-background-canvas);
 
-  --spacing-nav: 0 var(--telekom-spacing-unit-x4);
+  --spacing-nav: 0 var(--telekom-spacing-composition-space-06);
 }
 @keyframes keyframes-slideUp {
   from {
@@ -243,7 +243,7 @@ scale-app-header {
   }
   .header .header__brand {
     height: var(--header-brand-height);
-    padding: 0 var(--telekom-spacing-unit-x6);
+    padding: 0 var(--telekom-spacing-composition-space-08);
     transition: height var(--header-transition-speed) ease-in-out;
     justify-content: space-between;
   }
@@ -259,7 +259,7 @@ scale-app-header {
   }
   .header .header__nav {
     height: var(--header-nav-height);
-    padding: 0 var(--telekom-spacing-unit-x6);
+    padding: 0 var(--telekom-spacing-composition-space-08);
     position: relative;
   }
   .header .header__nav-logo {
@@ -267,12 +267,12 @@ scale-app-header {
     opacity: 0;
     transition: none;
     font-weight: var(--telekom-typography-font-weight-bold);
-    margin-right: var(--telekom-spacing-unit-x4);
+    margin-right: var(--telekom-spacing-composition-space-06);
     pointer-events: none;
   }
   .header.header--sticky .header__nav-logo {
     pointer-events: all;
-    margin-right: var(--telekom-spacing-unit-x8);
+    margin-right: var(--telekom-spacing-composition-space-10);
   }
 
   .header scale-nav-main:first-child li {
@@ -287,7 +287,7 @@ scale-app-header {
     list-style: none;
     transition: margin-left var(--header-transition-speed) ease-in-out;
     align-items: center;
-    margin-left: calc(-50px - var(--telekom-spacing-unit-x4));
+    margin-left: calc(-50px - var(--telekom-spacing-composition-space-06));
   }
   .header *[slot='menu-sector'],
   .header *[slot='menu-addon'],

@@ -12,8 +12,8 @@
 app-mega-menu {
   --box-shadow: var(--telekom-shadow-top);
   --spacing-y: 2.125rem;
-  --spacing-right: var(--telekom-spacing-unit-x4);
-  --spacing-left: var(--telekom-spacing-unit-x6);
+  --spacing-right: var(--telekom-spacing-composition-space-06);
+  --spacing-left: var(--telekom-spacing-composition-space-08);
   --background: var(--telekom-color-background-surface);
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
@@ -25,7 +25,7 @@ app-mega-menu {
   --line-height-row-item: var(--telekom-typography-line-spacing-loose);
   --font-weight-row-item: var(--telekom-typography-font-weight-medium);
   --color-row-item: var(--telekom-color-text-and-icon-standard);
-  --spacing-bottom-row-item: var(--telekom-spacing-unit-x2);
+  --spacing-bottom-row-item: var(--telekom-spacing-composition-space-04);
 }
 .mega-menu {
   width: 100%;
@@ -52,7 +52,7 @@ app-mega-menu {
   display: grid;
   grid-template-columns: repeat(5, minmax(min-content, 240px));
   list-style: none;
-  padding-left: var(--telekom-spacing-unit-x8);
+  padding-left: var(--telekom-spacing-composition-space-10);
 }
 
 .mega-menu__row-title {

@@ -16,11 +16,11 @@
 @import url('../../../global/custom-media.css');
 
 .scale-telekom-mega-menu {
-  --spacing-y: var(--telekom-spacing-unit-x18);
+  --spacing-y: var(--telekom-spacing-composition-space-18);
   /* matches grid.css */
-  --column-gap: var(--telekom-spacing-unit-x8);
+  --column-gap: var(--telekom-spacing-composition-space-10);
   --max-width-container: var(--scl-grid-max-width, 1504px);
-  --spacing-x: var(--telekom-spacing-unit-x6);
+  --spacing-x: var(--telekom-spacing-composition-space-08);
   --grid-template-columns: repeat(16, minmax(0, 1fr));
 
   display: block;
@@ -79,10 +79,10 @@
 }
 
 .scale-telekom-mega-menu :where(li + li) {
-  margin-top: var(--telekom-spacing-unit-x5);
+  margin-top: var(--telekom-spacing-composition-space-07);
 }
 @media screen and (--lg) {
   .scale-telekom-mega-menu {
-    --spacing-x: var(--telekom-spacing-unit-x6);
+    --spacing-x: var(--telekom-spacing-composition-space-08);
   }
 }

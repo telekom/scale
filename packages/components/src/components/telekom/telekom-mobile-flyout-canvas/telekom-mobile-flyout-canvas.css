@@ -15,8 +15,9 @@
   overflow-y: auto;
 
   --max-width: 572px;
-  --spacing: var(--telekom-spacing-unit-x5) var(--telekom-spacing-unit-x4)
-    var(--telekom-spacing-unit-x12);
+  --spacing: var(--telekom-spacing-composition-space-07)
+    var(--telekom-spacing-composition-space-06)
+    var(--telekom-spacing-composition-space-14);
 
   background: var(--telekom-color-background-surface);
 }
@@ -48,7 +49,7 @@
 
 [part~='close-button'] {
   position: absolute;
-  right: var(--telekom-spacing-unit-x4);
+  right: var(--telekom-spacing-composition-space-06);
   color: var(--telekom-color-text-and-icon-standard);
 }
 
@@ -62,12 +63,12 @@
 
 [part~='body'],
 slot[name='row']::slotted(*) {
-  margin-top: var(--telekom-spacing-unit-x6);
+  margin-top: var(--telekom-spacing-composition-space-08);
 }
 
 :host([type='subtle']) [part~='body'] {
-  margin-top: var(--telekom-spacing-unit-x4);
+  margin-top: var(--telekom-spacing-composition-space-06);
 }
 :host([type='subtle']) [part~='meta'] {
-  margin-top: var(--telekom-spacing-unit-x3);
+  margin-top: var(--telekom-spacing-composition-space-05);
 }

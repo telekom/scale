@@ -17,7 +17,8 @@
   --font-weight: var(--telekom-typography-font-weight-regular);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
-  --spacing: var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x2);
+  --spacing: var(--telekom-spacing-composition-space-02)
+    var(--telekom-spacing-composition-space-04);
 
   /* arrow */
   --arrow-size: 12px;

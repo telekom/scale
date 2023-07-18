@@ -11,11 +11,11 @@
 
 :host {
   --width: auto;
-  --spacing-x-right: var(--telekom-spacing-unit-x5);
-  --spacing-x-left: var(--telekom-spacing-unit-x5);
-  --spacing-x-icon-only: var(--telekom-spacing-unit-x3);
-  --min-height: var(--telekom-spacing-unit-x11);
-  --min-width: var(--telekom-spacing-unit-x11);
+  --spacing-x-right: var(--telekom-spacing-composition-space-07);
+  --spacing-x-left: var(--telekom-spacing-composition-space-07);
+  --spacing-x-icon-only: var(--telekom-spacing-composition-space-05);
+  --min-height: var(--telekom-spacing-composition-space-13);
+  --min-width: var(--telekom-spacing-composition-space-13);
   --radius: var(--telekom-radius-standard);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
@@ -23,17 +23,17 @@
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-tight);
-  --spacing-icon-x: var(--telekom-spacing-unit-x2);
+  --spacing-icon-x: var(--telekom-spacing-composition-space-04);
   --vertical-align: middle;
 
   /* size: small */
   --font-size-small: var(--telekom-typography-font-size-caption);
   --line-height-small: 1.125rem;
-  --min-height-small: var(--telekom-spacing-unit-x8);
-  --spacing-x-right-small: var(--telekom-spacing-unit-x4);
-  --spacing-x-left-small: var(--telekom-spacing-unit-x4);
-  --spacing-x-icon-only-small: var(--telekom-spacing-unit-x0);
-  --spacing-icon-x-small: var(--telekom-spacing-unit-x1);
+  --min-height-small: var(--telekom-spacing-composition-space-10);
+  --spacing-x-right-small: var(--telekom-spacing-composition-space-06);
+  --spacing-x-left-small: var(--telekom-spacing-composition-space-06);
+  --spacing-x-icon-only-small: var(--telekom-spacing-composition-space-00);
+  --spacing-icon-x-small: var(--telekom-spacing-composition-space-03);
 
   /* variant: primary */
   --radius-primary: var(--radius);
@@ -46,7 +46,7 @@
 
   /* variant: secondary */
   --radius-secondary: var(--radius);
-  --border-width-secondary: var(--telekom-spacing-unit-x025);
+  --border-width-secondary: var(--telekom-spacing-composition-space-01);
   --background-secondary: transparent;
   --color-secondary: var(--telekom-color-text-and-icon-standard);
   --color-secondary-hover: var(--telekom-color-text-and-icon-standard);
@@ -74,8 +74,8 @@
 
   /* variant: ghost */
   --radius-ghost: var(--radius);
-  --border-width-ghost: var(--telekom-spacing-unit-x025);
-  --spacing-x-ghost: var(--telekom-spacing-unit-x2);
+  --border-width-ghost: var(--telekom-spacing-composition-space-01);
+  --spacing-x-ghost: var(--telekom-spacing-composition-space-04);
   --color-ghost: var(--telekom-color-text-and-icon-primary-standard);
   --color-ghost-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-ghost-active: var(--telekom-color-text-and-icon-primary-pressed);
@@ -121,8 +121,8 @@
 }
 
 .button:not(.button--disabled):focus {
-  outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
-  outline-offset: var(--telekom-spacing-unit-x025);
+  outline: var(--telekom-line-weight-highlight) solid var(--color-focus);
+  outline-offset: var(--telekom-spacing-composition-space-01);
 }
 
 .button.button--icon-before:not(.button--icon-only) ::slotted(*) {
@@ -155,7 +155,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  border: var(--telekom-spacing-unit-x025) solid transparent;
+  border: var(--telekom-spacing-composition-space-01) solid transparent;
   height: 100%;
   content: '';
   display: block;
