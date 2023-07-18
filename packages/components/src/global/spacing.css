@@ -39,7 +39,7 @@
   --telekom-spacing-baseline-space-15: 64rem;
 
   /* Legacy, should remove in v4 (probably should go in a legacy.css file?) */
-  --telekom-spacing-unit-base: 4px;
+  /* --telekom-spacing-unit-base: 4px;
   --telekom-spacing-unit-x0: calc(var(--base) * 0);
   --telekom-spacing-unit-x025: calc(var(--base) * 0.25);
   --telekom-spacing-unit-x05: calc(var(--base) * 0.5);
@@ -62,5 +62,5 @@
   --telekom-spacing-unit-x17: calc(var(--base) * 17);
   --telekom-spacing-unit-x18: calc(var(--base) * 18);
   --telekom-spacing-unit-x19: calc(var(--base) * 19);
-  --telekom-spacing-unit-x20: calc(var(--base) * 20);
+  --telekom-spacing-unit-x20: calc(var(--base) * 20); */
 }
