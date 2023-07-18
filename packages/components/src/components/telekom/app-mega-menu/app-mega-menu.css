@@ -52,7 +52,7 @@ app-mega-menu {
   display: grid;
   grid-template-columns: repeat(5, minmax(min-content, 240px));
   list-style: none;
-  padding-left: var(--telekom-spacing-unit-x8);
+  padding-left: var(--telekom-spacing-composition-space-10);
 }
 
 .mega-menu__row-title {

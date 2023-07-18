@@ -272,7 +272,7 @@ scale-app-header {
   }
   .header.header--sticky .header__nav-logo {
     pointer-events: all;
-    margin-right: var(--telekom-spacing-unit-x8);
+    margin-right: var(--telekom-spacing-composition-space-10);
   }
 
   .header scale-nav-main:first-child li {

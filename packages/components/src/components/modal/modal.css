@@ -32,15 +32,15 @@
   */
   --size-window-small: calc(
     (6 * var(--telekom-spacing-unit-x14, 3.5rem)) +
-      (5 * var(--telekom-spacing-unit-x8))
+      (5 * var(--telekom-spacing-composition-space-10))
   );
   --size-window-default: calc(
     (8 * var(--telekom-spacing-unit-x14, 3.5rem)) +
-      (7 * var(--telekom-spacing-unit-x8))
+      (7 * var(--telekom-spacing-composition-space-10))
   );
   --size-window-large: calc(
     (12 * var(--telekom-spacing-unit-x14, 3.5rem)) +
-      (11 * var(--telekom-spacing-unit-x8))
+      (11 * var(--telekom-spacing-composition-space-10))
   );
 
   --spacing-x-header: var(--telekom-spacing-composition-space-08);

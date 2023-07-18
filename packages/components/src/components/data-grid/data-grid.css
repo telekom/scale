@@ -160,7 +160,7 @@
 .thead__cell {
   display: inline-flex;
   align-items: center;
-  height: var(--telekom-spacing-unit-x8);
+  height: var(--telekom-spacing-composition-space-10);
   text-align: left;
   user-select: none;
   position: relative;

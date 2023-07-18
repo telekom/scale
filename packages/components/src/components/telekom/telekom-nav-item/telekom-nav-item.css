@@ -66,14 +66,14 @@
   }
   [type='slim'] .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: calc(
-      var(--telekom-spacing-unit-x8) - 2px
+      var(--telekom-spacing-composition-space-10) - 2px
     );
   }
 }
 @media screen and (--2xl) {
   .scale-telekom-nav-item {
     --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x8);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-10);
     --_font-size-main-nav: var(--telekom-typography-font-size-callout);
   }
   [type='slim'] .scale-telekom-nav-item,
@@ -323,7 +323,7 @@
 
 @media screen and (--lg) {
   .scale-telekom-nav-list[variant='meta-nav'] {
-    margin-right: var(--telekom-spacing-unit-x8);
+    margin-right: var(--telekom-spacing-composition-space-10);
   }
 
   .scale-telekom-nav-list[variant='lang-switcher']

@@ -249,7 +249,7 @@
   width: 100%;
 }
 .input--type-checkbox .input__helper-text {
-  padding-left: var(--telekom-spacing-unit-x8);
+  padding-left: var(--telekom-spacing-composition-space-10);
 }
 .input--type-checkbox label {
   color: var(--telekom-color-text-and-icon-standard);

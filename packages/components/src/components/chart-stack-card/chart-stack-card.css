@@ -32,7 +32,7 @@
 
 .chart-stack-card .bar__item {
   background-color: var(--scl-chart-stack-card-color);
-  height: var(--telekom-spacing-unit-x8);
+  height: var(--telekom-spacing-composition-space-10);
   flex: 1;
 }
 
@@ -63,7 +63,7 @@
   justify-content: space-between;
 }
 .chart-stack-card .legend .legend__row:last-child {
-  padding-bottom: var(--telekom-spacing-unit-x8);
+  padding-bottom: var(--telekom-spacing-composition-space-10);
 }
 
 .chart-stack-card .legend .legend__item {

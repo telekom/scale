@@ -86,7 +86,7 @@ footer {
 
 @media screen and (--md) {
   :host {
-    --_logo-top-margin: var(--telekom-spacing-unit-x8);
+    --_logo-top-margin: var(--telekom-spacing-composition-space-10);
     --_logo-bottom-margin: var(--telekom-spacing-unit-x12);
     --_nav-items-spacing: var(--telekom-spacing-composition-space-06);
   }
@@ -130,9 +130,9 @@ footer {
   :host {
     --_logo-top-margin: var(--telekom-spacing-unit-x14);
     --_logo-bottom-margin: var(--telekom-spacing-unit-x20);
-    --_nav-items-bottom-margin: var(--telekom-spacing-unit-x8);
+    --_nav-items-bottom-margin: var(--telekom-spacing-composition-space-10);
     --_nav-items-spacing: var(--telekom-spacing-unit-x12);
-    --_slim-padding: var(--telekom-spacing-unit-x8);
+    --_slim-padding: var(--telekom-spacing-composition-space-10);
   }
   /* todo: should i use spacing token for logo size? */
   :host [part~='app-logo'] {

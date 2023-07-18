@@ -40,13 +40,13 @@
   /* value matches scale-grid — ideally we'd have this in a global var *sigh* */
   --_max-width-container: none;
   --_spacing-x-container: var(--telekom-spacing-composition-space-06);
-  --_column-gap-container: var(--telekom-spacing-unit-x8);
+  --_column-gap-container: var(--telekom-spacing-composition-space-10);
   --_grid-template-columns-container: auto;
   --_grid-column-body: auto;
 
   --_spacing-left-body: 0;
-  --_spacing-right-top-app-name: var(--telekom-spacing-unit-x8);
-  --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x8);
+  --_spacing-right-top-app-name: var(--telekom-spacing-composition-space-10);
+  --_spacing-right-bottom-app-name: var(--telekom-spacing-composition-space-10);
   --_left-logo: 0;
 
   --_justify-content-bottom-body: end;

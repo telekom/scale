@@ -6,7 +6,7 @@
   );
   --_max-width-container: var(--scl-grid-max-width, 1680px);
   --spacing-x: var(--telekom-spacing-composition-space-08);
-  --column-gap: var(--telekom-spacing-unit-x8);
+  --column-gap: var(--telekom-spacing-composition-space-10);
 
   --heading-color: var(--telekom-color-text-and-icon-standard);
   --heading-weight: var(--telekom-typography-font-weight-bold);

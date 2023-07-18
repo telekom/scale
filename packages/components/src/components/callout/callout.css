@@ -2,7 +2,7 @@
   --position: absolute;
   --background: var(--telekom-color-ui-extra-strong);
   --color: var(--telekom-color-text-and-icon-inverted-standard);
-  --spacing: var(--telekom-spacing-unit-x8);
+  --spacing: var(--telekom-spacing-composition-space-10);
   --min-width: 6rem;
   --aspect-ratio: 1 / 1;
   --rotation: 0deg;

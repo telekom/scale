@@ -12,7 +12,7 @@
 :host {
   --background: var(--telekom-color-background-surface-highlight);
   --color: var(--telekom-color-text-and-icon-white-standard);
-  --spacing-top: var(--telekom-spacing-unit-x8);
+  --spacing-top: var(--telekom-spacing-composition-space-10);
   --spacing-bottom: var(--telekom-spacing-composition-space-08);
   --spacing-x: var(--telekom-spacing-composition-space-08);
   --background-container: var(--telekom-color-background-canvas);
@@ -203,7 +203,7 @@
     margin-bottom: var(--telekom-spacing-composition-space-06);
   }
   .footer-navigation ul {
-    line-height: var(--telekom-spacing-unit-x8);
+    line-height: var(--telekom-spacing-composition-space-10);
   }
   .footer-navigation li a {
     padding: var(--telekom-spacing-composition-space-03);

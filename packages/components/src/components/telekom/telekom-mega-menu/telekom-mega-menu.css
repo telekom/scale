@@ -18,7 +18,7 @@
 .scale-telekom-mega-menu {
   --spacing-y: var(--telekom-spacing-unit-x18);
   /* matches grid.css */
-  --column-gap: var(--telekom-spacing-unit-x8);
+  --column-gap: var(--telekom-spacing-composition-space-10);
   --max-width-container: var(--scl-grid-max-width, 1504px);
   --spacing-x: var(--telekom-spacing-composition-space-08);
   --grid-template-columns: repeat(16, minmax(0, 1fr));

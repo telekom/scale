@@ -157,13 +157,13 @@ duet-date-picker .duet-date__header {
 }
 
 duet-date-picker .duet-date__select {
-  height: var(--telekom-spacing-unit-x8);
+  height: var(--telekom-spacing-composition-space-10);
 }
 
 duet-date-picker .duet-date__prev,
 duet-date-picker .duet-date__next {
-  width: var(--telekom-spacing-unit-x8);
-  height: var(--telekom-spacing-unit-x8);
+  width: var(--telekom-spacing-composition-space-10);
+  height: var(--telekom-spacing-composition-space-10);
 }
 
 duet-date-picker .duet-date__day {
@@ -366,7 +366,7 @@ duet-date-picker .duet-date__day.is-today::before {
   background-color: var(--telekom-color-primary-standard);
   opacity: 1;
   left: var(--telekom-spacing-composition-space-07);
-  top: var(--telekom-spacing-unit-x8);
+  top: var(--telekom-spacing-composition-space-10);
 }
 
 duet-date-picker [aria-selected='true'] .duet-date__day.is-today::before,
