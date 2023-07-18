@@ -1,4 +1,4 @@
-:root {  
+:root {
   /* Can remove in v4 */
   --telekom-spacing-unit-base: 0.25rem;
   --telekom-spacing-unit-x0: calc(var(--telekom-spacing-unit-base) * 0);
@@ -33,7 +33,7 @@
  * We don't create new classes for all --telekom-text-style tokens yet, because
  * we want to figure out how a possible CSS framework would look like first…
  */
- .scl-font-variant-body {
+.scl-font-variant-body {
   font: var(--telekom-text-style-body);
 }
 .scl-font-variant-body-short {
