@@ -11,7 +11,7 @@
 
 :host {
   --spacing-left: 0;
-  --spacing-left-nested: var(--telekom-spacing-unit-x2);
+  --spacing-left-nested: var(--telekom-spacing-composition-space-04);
 }
 
 .list {

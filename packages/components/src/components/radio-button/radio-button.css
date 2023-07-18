@@ -30,7 +30,7 @@ scale-radio-button {
     --telekom-color-text-and-icon-functional-informational
   );
   --spacing-left-helper-text: calc(
-    var(--width-control) + var(--telekom-spacing-unit-x2)
+    var(--width-control) + var(--telekom-spacing-composition-space-04)
   );
   --spacing-top-helper-text: var(--telekom-spacing-composition-space-03);
   --color-helper-text-error: var(
@@ -45,7 +45,7 @@ scale-radio-button {
   --width-control: var(--telekom-spacing-unit-x5);
   --height-control: var(--telekom-spacing-unit-x5);
   --transition-control: var(--transition);
-  --spacing-control: 0 var(--telekom-spacing-unit-x2) 0 0;
+  --spacing-control: 0 var(--telekom-spacing-composition-space-04) 0 0;
   --background-color-control: var(--telekom-color-ui-base);
   --border-control: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-standard);
@@ -55,7 +55,7 @@ scale-radio-button {
   --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x3))
     solid var(--telekom-color-ui-border-disabled);
   --background-control-checked-disabled: none;
-  --border-control-active: var(--telekom-spacing-unit-x2) solid
+  --border-control-active: var(--telekom-spacing-composition-space-04) solid
     var(--telekom-color-primary-pressed);
   --border-control-disabled: 0 0 0 var(--telekom-spacing-composition-space-01)
     var(--telekom-color-ui-border-disabled);

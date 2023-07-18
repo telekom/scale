@@ -76,7 +76,7 @@
   overflow: visible;
   display: flex;
   flex-direction: column;
-  gap: var(--telekom-spacing-unit-x2);
+  gap: var(--telekom-spacing-composition-space-04);
 }
 
 /**

@@ -193,7 +193,7 @@ scale-dropdown {
 }
 
 .animated .input__label {
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
+  transform: translate(var(--spacing-x), var(--telekom-spacing-composition-space-04));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
   line-height: var(--telekom-typography-font-size-small);

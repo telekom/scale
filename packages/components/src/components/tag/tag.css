@@ -53,7 +53,7 @@
   --height-button-dismissable-small: 16px;
   --width-button-dismissable-small: 16px;
 
-  --spacing-small: 0 var(--telekom-spacing-unit-x2);
+  --spacing-small: 0 var(--telekom-spacing-composition-space-04);
   --font-size-small: var(--telekom-typography-font-size-small);
   --line-height-small: var(--telekom-typography-line-spacing-loose);
 }

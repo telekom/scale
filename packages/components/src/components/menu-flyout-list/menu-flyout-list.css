@@ -129,12 +129,12 @@
   left: 50%;
 }
 .menu-flyout-list__scroll-up-indicator {
-  top: var(--telekom-spacing-unit-x2);
+  top: var(--telekom-spacing-composition-space-04);
   border-bottom: 5px solid var(--telekom-color-ui-faint);
   border-top: 0;
 }
 .menu-flyout-list__scroll-down-indicator {
-  bottom: var(--telekom-spacing-unit-x2);
+  bottom: var(--telekom-spacing-composition-space-04);
   border-top: 5px solid var(--telekom-color-ui-faint);
   border-bottom: 0;
 }

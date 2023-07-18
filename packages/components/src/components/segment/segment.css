@@ -75,7 +75,7 @@
 }
 
 button.segment--small.segment--selected .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x2);
+  padding-left: var(--telekom-spacing-composition-space-04);
   padding-right: var(--telekom-spacing-unit-x3);
 }
 

@@ -52,7 +52,7 @@
   height: calc(var(--telekom-spacing-unit-x4) * 10);
 }
 .chart-stack-card .spacer {
-  padding: 0 var(--telekom-spacing-unit-x2);
+  padding: 0 var(--telekom-spacing-composition-space-04);
 }
 .chart-stack-card .legend .legend__row__item {
   display: flex;

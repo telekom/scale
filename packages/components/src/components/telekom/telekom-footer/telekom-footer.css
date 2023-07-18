@@ -111,7 +111,7 @@
   .scale-telekom-footer :where(ul),
   .scale-telekom-footer[type='minimal'] :where(ul) {
     --_nav-items-spacing: var(--telekom-spacing-unit-x6);
-    row-gap: var(--telekom-spacing-unit-x2);
+    row-gap: var(--telekom-spacing-composition-space-04);
   }
   .scale-telekom-footer :where(a, span) {
     font: var(--font-large);

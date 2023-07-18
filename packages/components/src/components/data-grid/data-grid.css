@@ -99,11 +99,11 @@
 
 .data-grid__title-block ::slotted(*) {
   /* --spacing-x-actions-slotted */
-  margin-left: var(--telekom-spacing-unit-x2);
+  margin-left: var(--telekom-spacing-composition-space-04);
 }
 
 .data-grid__settings-menu {
-  margin-left: var(--telekom-spacing-unit-x2);
+  margin-left: var(--telekom-spacing-composition-space-04);
 }
 
 .data-grid__scroll-container {
@@ -214,10 +214,10 @@
 
 .thead__divider {
   position: absolute;
-  right: calc(-1 * var(--telekom-spacing-unit-x2));
+  right: calc(-1 * var(--telekom-spacing-composition-space-04));
   bottom: 0px;
   height: 100%;
-  padding: 19px var(--telekom-spacing-unit-x2) 0px;
+  padding: 19px var(--telekom-spacing-composition-space-04) 0px;
   box-sizing: border-box;
   cursor: col-resize;
   z-index: 1;
@@ -378,7 +378,7 @@
   flex-grow: 1;
 }
 .tbody__actions scale-button {
-  margin-right: var(--telekom-spacing-unit-x2);
+  margin-right: var(--telekom-spacing-composition-space-04);
 }
 
 .data-grid-progress-bar::part(progress-bar) {
@@ -443,7 +443,7 @@
   display: block;
   position: relative;
   white-space: initial;
-  margin: 0 0 var(--telekom-spacing-unit-x2);
+  margin: 0 0 var(--telekom-spacing-composition-space-04);
   padding: var(--telekom-spacing-unit-x6);
   border-radius: var(--telekom-radius-standard);
   background: var(--telekom-color-background-surface);
@@ -454,7 +454,7 @@
 }
 .data-grid--mobile .tbody__mobile-title {
   display: block;
-  margin-bottom: var(--telekom-spacing-unit-x2);
+  margin-bottom: var(--telekom-spacing-composition-space-04);
 }
 .data-grid--mobile .tbody__mobile-label {
   display: block;
@@ -504,7 +504,7 @@
 }
 .data-grid--mobile .tbody__nested-cell {
   padding: 0;
-  margin-bottom: var(--telekom-spacing-unit-x2);
+  margin-bottom: var(--telekom-spacing-composition-space-04);
 }
 .data-grid--mobile.data-grid--shade-alternate .tbody__row:nth-of-type(even) {
   background: var(--telekom-color-background-surface);

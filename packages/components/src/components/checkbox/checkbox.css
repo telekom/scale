@@ -13,7 +13,7 @@
 
 :host,
 scale-checkbox {
-  --spacing-x: var(--telekom-spacing-unit-x2);
+  --spacing-x: var(--telekom-spacing-composition-space-04);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --color-text: var(--telekom-color-text-and-icon-standard);

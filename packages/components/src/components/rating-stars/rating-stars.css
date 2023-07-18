@@ -97,12 +97,12 @@ input[type='range']::-webkit-slider-thumb {
 
 [part='label'] {
   font: var(--label-font);
-  margin-bottom: var(--telekom-spacing-unit-x2);
+  margin-bottom: var(--telekom-spacing-composition-space-04);
   white-space: nowrap;
 }
 
 [part='infotext'] {
-  margin-left: var(--telekom-spacing-unit-x2);
+  margin-left: var(--telekom-spacing-composition-space-04);
   display: flex;
   align-items: center;
   font: var(--infotext-font);

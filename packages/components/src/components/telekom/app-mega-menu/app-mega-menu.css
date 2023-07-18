@@ -25,7 +25,7 @@ app-mega-menu {
   --line-height-row-item: var(--telekom-typography-line-spacing-loose);
   --font-weight-row-item: var(--telekom-typography-font-weight-medium);
   --color-row-item: var(--telekom-color-text-and-icon-standard);
-  --spacing-bottom-row-item: var(--telekom-spacing-unit-x2);
+  --spacing-bottom-row-item: var(--telekom-spacing-composition-space-04);
 }
 .mega-menu {
   width: 100%;

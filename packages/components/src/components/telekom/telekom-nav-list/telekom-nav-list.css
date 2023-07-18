@@ -29,7 +29,7 @@
 
   --_spacing-x-slotted-meta-nav-external: var(--telekom-spacing-unit-x5);
   --_spacing-x-slotted-meta-nav: var(--telekom-spacing-unit-x5);
-  --_spacing-x-slotted-lang-switcher: var(--telekom-spacing-unit-x2);
+  --_spacing-x-slotted-lang-switcher: var(--telekom-spacing-composition-space-04);
   --_spacing-x-slotted-main-nav: var(--telekom-spacing-unit-x8);
   --_spacing-x-slotted-functions: var(--telekom-spacing-unit-x6);
 
@@ -78,7 +78,7 @@
 }
 @media screen and (--lg) {
   .scale-telekom-nav-list[variant='lang-switcher'] {
-    --_spacing-x-slotted: var(--telekom-spacing-unit-x2);
+    --_spacing-x-slotted: var(--telekom-spacing-composition-space-04);
   }
 }
 .scale-telekom-nav-list[variant='main-nav'] {

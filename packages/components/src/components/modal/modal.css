@@ -53,7 +53,7 @@
   --font-size-heading: var(--telekom-typography-font-size-callout);
   --font-weight-heading: var(--telekom-typography-font-weight-extra-bold);
 
-  --spacing-close-button: var(--telekom-spacing-unit-x2);
+  --spacing-close-button: var(--telekom-spacing-composition-space-04);
   --radius-close-button: var(--telekom-radius-standard);
   --transition-close-button: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
@@ -69,7 +69,7 @@
   --spacing-actions: var(--telekom-spacing-unit-x4)
     var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x6);
 
-  --spacing-x-actions-slotted: var(--telekom-spacing-unit-x2);
+  --spacing-x-actions-slotted: var(--telekom-spacing-composition-space-04);
   --background-actions-has-scroll: var(
     --telekom-color-background-surface-subtle
   );

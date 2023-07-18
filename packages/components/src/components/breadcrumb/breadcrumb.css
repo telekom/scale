@@ -10,14 +10,14 @@
  */
 
 :host {
-  --spacing-left: calc(-1 * var(--telekom-spacing-unit-x2));
+  --spacing-left: calc(-1 * var(--telekom-spacing-composition-space-04));
 
   --font-size-list-item: var(--telekom-typography-font-size-caption);
 
   --color-separator: var(--telekom-color-text-and-icon-additional);
 
   --spacing-y-item: var(--telekom-spacing-composition-space-03);
-  --spacing-x-item: var(--telekom-spacing-unit-x2);
+  --spacing-x-item: var(--telekom-spacing-composition-space-04);
 
   --color-link: var(--telekom-color-text-and-icon-additional);
   --radius-link: var(--telekom-radius-standard);

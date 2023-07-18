@@ -100,7 +100,7 @@ footer {
     align-items: center;
   }
   [part~='notice'] {
-    margin-bottom: var(--telekom-spacing-unit-x2);
+    margin-bottom: var(--telekom-spacing-composition-space-04);
   }
 }
 

@@ -142,7 +142,7 @@ label
 }
 
 .chip--selected .chip-label {
-  padding-right: var(--telekom-spacing-unit-x2);
+  padding-right: var(--telekom-spacing-composition-space-04);
 }
 .chip--type-dynamic.chip--selected .chip-label {
   padding-right: var(--telekom-spacing-composition-space-03);

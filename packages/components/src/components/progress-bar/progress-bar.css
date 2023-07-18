@@ -127,7 +127,7 @@
 .progress-bar__status-description {
   color: var(--color-status-description);
   font: var(--font-status-description);
-  margin-top: var(--telekom-spacing-unit-x2);
+  margin-top: var(--telekom-spacing-composition-space-04);
 }
 
 .progress-bar__aria-live {

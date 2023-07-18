@@ -125,7 +125,7 @@
 
 .menu-flyout-item__check,
 slot[name='prefix']::slotted(:last-of-type) {
-  margin-right: var(--telekom-spacing-unit-x2);
+  margin-right: var(--telekom-spacing-composition-space-04);
 }
 
 .menu-flyout-item__check {

@@ -42,7 +42,7 @@
     --telekom-typography-font-weight-medium
   );
 
-  --spacing-navigation-standard: var(--telekom-spacing-unit-x2);
+  --spacing-navigation-standard: var(--telekom-spacing-composition-space-04);
   --color-navigation-standard-hover: var(
     --telekom-color-text-and-icon-white-standard
   );

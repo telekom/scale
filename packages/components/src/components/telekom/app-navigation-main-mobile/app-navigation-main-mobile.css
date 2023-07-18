@@ -110,7 +110,7 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__child-menu-current app-icon {
-  margin-right: var(--telekom-spacing-unit-x2);
+  margin-right: var(--telekom-spacing-composition-space-04);
 }
 
 .main-navigation-mobile__child-menu-current .icon-back {
