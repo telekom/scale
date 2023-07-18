@@ -8,7 +8,7 @@
   --background-footer: var(--telekom-color-ui-black);
   --background-footer-minimal: var(--telekom-color-background-canvas);
 
-  --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
+  --_nav-items-bottom-margin: var(--telekom-spacing-composition-space-08);
   --_nav-items-spacing: var(--telekom-spacing-composition-space-05);
 }
 
@@ -110,7 +110,7 @@
 @media screen and (--lg) {
   .scale-telekom-footer :where(ul),
   .scale-telekom-footer[type='minimal'] :where(ul) {
-    --_nav-items-spacing: var(--telekom-spacing-unit-x6);
+    --_nav-items-spacing: var(--telekom-spacing-composition-space-08);
     row-gap: var(--telekom-spacing-composition-space-04);
   }
   .scale-telekom-footer :where(a, span) {

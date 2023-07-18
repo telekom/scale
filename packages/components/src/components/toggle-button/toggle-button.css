@@ -11,10 +11,10 @@
 
 :host {
   --width: auto;
-  --spacing-x: var(--telekom-spacing-unit-x6);
+  --spacing-x: var(--telekom-spacing-composition-space-08);
   --spacing-x-icon-only: var(--telekom-spacing-composition-space-04);
-  --min-height: var(--telekom-spacing-unit-x6);
-  --height-xs: var(--telekom-spacing-unit-x6);
+  --min-height: var(--telekom-spacing-composition-space-08);
+  --height-xs: var(--telekom-spacing-composition-space-08);
   --height-small: var(--telekom-spacing-unit-x8);
   --height-regular: var(--telekom-spacing-unit-x10);
   --height-large: var(--telekom-spacing-unit-x12);

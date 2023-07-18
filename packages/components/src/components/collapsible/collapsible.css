@@ -30,7 +30,7 @@
   --spacing-right-content: var(--telekom-spacing-unit-x12);
   --spacing-left-content: 34px;
   --spacing-top-content: var(--telekom-spacing-composition-space-06);
-  --spacing-bottom-content: var(--telekom-spacing-unit-x6);
+  --spacing-bottom-content: var(--telekom-spacing-composition-space-08);
 }
 
 .collapsible {

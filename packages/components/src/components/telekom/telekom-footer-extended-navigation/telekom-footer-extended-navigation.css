@@ -5,7 +5,7 @@
     --telekom-color-background-surface-subtle
   );
   --_max-width-container: var(--scl-grid-max-width, 1680px);
-  --spacing-x: var(--telekom-spacing-unit-x6);
+  --spacing-x: var(--telekom-spacing-composition-space-08);
   --column-gap: var(--telekom-spacing-unit-x8);
 
   --heading-color: var(--telekom-color-text-and-icon-standard);

@@ -4,7 +4,7 @@
   --_max-width-container: none;
   --_spacing-x-container: var(--telekom-spacing-composition-space-06);
 
-  --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
+  --_nav-items-bottom-margin: var(--telekom-spacing-composition-space-08);
   --_nav-items-spacing: var(--telekom-spacing-composition-space-05);
 
   --_logo-top-margin: var(--telekom-spacing-unit-x10);
@@ -108,10 +108,10 @@ footer {
   :host {
     --_logo-top-margin: var(--telekom-spacing-unit-x12);
     --_logo-bottom-margin: var(--telekom-spacing-unit-x18);
-    --_nav-items-spacing: var(--telekom-spacing-unit-x6);
-    --_slim-padding: var(--telekom-spacing-unit-x6);
+    --_nav-items-spacing: var(--telekom-spacing-composition-space-08);
+    --_slim-padding: var(--telekom-spacing-composition-space-08);
     --_font-size: var(--telekom-typography-font-size-body);
-    --_spacing-x-container: var(--telekom-spacing-unit-x6);
+    --_spacing-x-container: var(--telekom-spacing-composition-space-08);
   }
   [part~='body'] {
     flex-direction: row;

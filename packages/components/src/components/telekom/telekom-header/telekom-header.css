@@ -83,7 +83,7 @@
     --_grid-column-body: 3 / span 14;
     --_spacing-left-body: 0;
     --_spacing-right-bottom-app-name: 52px;
-    --_spacing-x-container: var(--telekom-spacing-unit-x6);
+    --_spacing-x-container: var(--telekom-spacing-composition-space-08);
 
     --_justify-content-bottom-body: space-between;
 

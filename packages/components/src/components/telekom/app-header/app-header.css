@@ -243,7 +243,7 @@ scale-app-header {
   }
   .header .header__brand {
     height: var(--header-brand-height);
-    padding: 0 var(--telekom-spacing-unit-x6);
+    padding: 0 var(--telekom-spacing-composition-space-08);
     transition: height var(--header-transition-speed) ease-in-out;
     justify-content: space-between;
   }
@@ -259,7 +259,7 @@ scale-app-header {
   }
   .header .header__nav {
     height: var(--header-nav-height);
-    padding: 0 var(--telekom-spacing-unit-x6);
+    padding: 0 var(--telekom-spacing-composition-space-08);
     position: relative;
   }
   .header .header__nav-logo {

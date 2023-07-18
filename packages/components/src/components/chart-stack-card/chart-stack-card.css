@@ -17,11 +17,11 @@
   --scl-chart-stack-card-color: var(--telekom-color-additional-blue-600);
 }
 .chart-stack-card .header {
-  height: var(--telekom-spacing-unit-x6);
+  height: var(--telekom-spacing-composition-space-08);
   font-size: var(--telekom-typography-font-size-headline-3);
   font-weight: var(--telekom-typography-font-weight-extra-bold);
   line-height: var(--telekom-typography-line-spacing-tight);
-  margin-bottom: var(--telekom-spacing-unit-x6);
+  margin-bottom: var(--telekom-spacing-composition-space-08);
 }
 
 .chart-stack-card .bar {

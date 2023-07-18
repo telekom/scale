@@ -90,7 +90,7 @@
   align-items: center;
   justify-content: flex-end;
   padding-right: var(--telekom-spacing-composition-space-06);
-  padding-left: var(--telekom-spacing-unit-x6);
+  padding-left: var(--telekom-spacing-composition-space-08);
 }
 
 .data-grid__heading {
@@ -231,7 +231,7 @@
 }
 
 .thead__cell:first-child {
-  padding-left: var(--telekom-spacing-unit-x6);
+  padding-left: var(--telekom-spacing-composition-space-08);
 }
 
 .thead__cell:focus {
@@ -314,7 +314,7 @@
 
 .tbody__cell:first-of-type {
   margin-left: var(--telekom-spacing-composition-space-06);
-  /* padding-left: var(--telekom-spacing-unit-x6); */
+  /* padding-left: var(--telekom-spacing-composition-space-08); */
 }
 
 .tbody__nested-cell:first-child {
@@ -403,7 +403,7 @@
   position: absolute;
   bottom: 0;
   line-height: 54px;
-  left: var(--telekom-spacing-unit-x6);
+  left: var(--telekom-spacing-composition-space-08);
 }
 
 .data-grid--hide-border:not(.data-grid--mobile) .info__pagination {
@@ -444,7 +444,7 @@
   position: relative;
   white-space: initial;
   margin: 0 0 var(--telekom-spacing-composition-space-04);
-  padding: var(--telekom-spacing-unit-x6);
+  padding: var(--telekom-spacing-composition-space-08);
   border-radius: var(--telekom-radius-standard);
   background: var(--telekom-color-background-surface);
   border: 1px solid var(--telekom-color-ui-faint);
@@ -466,8 +466,8 @@
   padding: 5px 0;
   margin: 0;
   /* 24 to match text component, otherwise will not be centered */
-  min-height: var(--telekom-spacing-unit-x6);
-  line-height: var(--telekom-spacing-unit-x6);
+  min-height: var(--telekom-spacing-composition-space-08);
+  line-height: var(--telekom-spacing-composition-space-08);
   overflow: auto;
   overflow-x: hidden;
 }

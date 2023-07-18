@@ -10,7 +10,7 @@
  */
 
 :host {
-  --spacing-top: var(--telekom-spacing-unit-x6);
+  --spacing-top: var(--telekom-spacing-composition-space-08);
 }
 
 .tab-panel {

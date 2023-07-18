@@ -52,17 +52,17 @@
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-06);
   }
   [scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-08);
   }
   [type='slim'] .scale-telekom-nav-item,
   [type='slim'][scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-08);
   }
 }
 @media screen and (--xl) {
   .scale-telekom-nav-item {
     --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-08);
   }
   [type='slim'] .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: calc(
@@ -81,7 +81,7 @@
     --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x9));
   }
   [type='slim'][scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x6));
+    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-composition-space-08));
   }
 }
 

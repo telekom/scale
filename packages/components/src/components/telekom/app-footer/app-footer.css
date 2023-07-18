@@ -13,8 +13,8 @@
   --background: var(--telekom-color-background-surface-highlight);
   --color: var(--telekom-color-text-and-icon-white-standard);
   --spacing-top: var(--telekom-spacing-unit-x8);
-  --spacing-bottom: var(--telekom-spacing-unit-x6);
-  --spacing-x: var(--telekom-spacing-unit-x6);
+  --spacing-bottom: var(--telekom-spacing-composition-space-08);
+  --spacing-x: var(--telekom-spacing-composition-space-08);
   --background-container: var(--telekom-color-background-canvas);
   --radius: var(--telekom-radius-large);
   --max-width: inherit;
@@ -23,8 +23,8 @@
     var(--telekom-color-ui-faint);
   --color-minimal: var(--telekom-color-text-and-icon-additional);
   --background-minimal: var(--telekom-color-background-surface);
-  --spacing-angular: var(--telekom-spacing-unit-x6);
-  --spacing-minimal: var(--telekom-spacing-unit-x6);
+  --spacing-angular: var(--telekom-spacing-composition-space-08);
+  --spacing-minimal: var(--telekom-spacing-composition-space-08);
 
   --background-mask: var(--telekom-color-background-canvas);
   --radius-mask: 0 0 var(--telekom-radius-large) var(--telekom-radius-large);

@@ -62,7 +62,7 @@
 
 [part~='body'],
 slot[name='row']::slotted(*) {
-  margin-top: var(--telekom-spacing-unit-x6);
+  margin-top: var(--telekom-spacing-composition-space-08);
 }
 
 :host([type='subtle']) [part~='body'] {

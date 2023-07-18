@@ -20,7 +20,7 @@
   /* matches grid.css */
   --column-gap: var(--telekom-spacing-unit-x8);
   --max-width-container: var(--scl-grid-max-width, 1504px);
-  --spacing-x: var(--telekom-spacing-unit-x6);
+  --spacing-x: var(--telekom-spacing-composition-space-08);
   --grid-template-columns: repeat(16, minmax(0, 1fr));
 
   display: block;
@@ -83,6 +83,6 @@
 }
 @media screen and (--lg) {
   .scale-telekom-mega-menu {
-    --spacing-x: var(--telekom-spacing-unit-x6);
+    --spacing-x: var(--telekom-spacing-composition-space-08);
   }
 }

@@ -135,7 +135,7 @@
     calc(var(--telekom-spacing-composition-space-05) - 1px);
 }
 .input--variant-animated .input__textarea {
-  padding-top: var(--telekom-spacing-unit-x6);
+  padding-top: var(--telekom-spacing-composition-space-08);
 }
 .input--variant-animated .input__label {
   top: 0;
@@ -432,7 +432,7 @@
 }
 .input--type-radio .input__helper-text {
   margin-top: var(--telekom-spacing-composition-space-03);
-  padding-left: var(--telekom-spacing-unit-x6);
+  padding-left: var(--telekom-spacing-composition-space-08);
 }
 .input--type-radio label {
   color: var(--telekom-color-text-and-icon-standard);
@@ -505,7 +505,7 @@
   position: absolute;
   pointer-events: none;
   border-radius: var(--telekom-radius-standard);
-  height: var(--telekom-spacing-unit-x6);
+  height: var(--telekom-spacing-composition-space-08);
   background-color: var(--telekom-color-background-surface, #ffffff);
 }
 .input--disabled .input__textarea-label-safety-background {

@@ -13,7 +13,7 @@ app-mega-menu {
   --box-shadow: var(--telekom-shadow-top);
   --spacing-y: 2.125rem;
   --spacing-right: var(--telekom-spacing-composition-space-06);
-  --spacing-left: var(--telekom-spacing-unit-x6);
+  --spacing-left: var(--telekom-spacing-composition-space-08);
   --background: var(--telekom-color-background-surface);
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);

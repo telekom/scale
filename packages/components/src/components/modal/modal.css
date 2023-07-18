@@ -43,8 +43,8 @@
       (11 * var(--telekom-spacing-unit-x8))
   );
 
-  --spacing-x-header: var(--telekom-spacing-unit-x6);
-  --spacing-y-header: var(--telekom-spacing-unit-x6);
+  --spacing-x-header: var(--telekom-spacing-composition-space-08);
+  --spacing-y-header: var(--telekom-spacing-composition-space-08);
 
   --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-subtle);
@@ -63,11 +63,11 @@
   --color-close-button-hover: var(--telekom-color-primary-hovered);
   --color-close-button-active: var(--telekom-color-primary-pressed);
 
-  --spacing-x-body-wrapper: var(--telekom-spacing-unit-x6);
-  --spacing-y-body: var(--telekom-spacing-unit-x6);
+  --spacing-x-body-wrapper: var(--telekom-spacing-composition-space-08);
+  --spacing-y-body: var(--telekom-spacing-composition-space-08);
 
   --spacing-actions: var(--telekom-spacing-composition-space-06)
-    var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x6);
+    var(--telekom-spacing-composition-space-08) var(--telekom-spacing-composition-space-08);
 
   --spacing-x-actions-slotted: var(--telekom-spacing-composition-space-04);
   --background-actions-has-scroll: var(
@@ -140,7 +140,7 @@
 
 @media (max-height: 30em) {
   .modal__window {
-    max-height: calc(100vh - var(--telekom-spacing-unit-x6));
+    max-height: calc(100vh - var(--telekom-spacing-composition-space-08));
   }
 }
 
