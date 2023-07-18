@@ -119,7 +119,7 @@ footer {
 
   /* todo: should i use spacing token for logo size? */
   :host [part~='app-logo'] {
-    --logo-size: var(--telekom-spacing-unit-x11);
+    --logo-size: var(--telekom-spacing-composition-space-13);
   }
   :host [part~='notice'] {
     margin-bottom: 0;

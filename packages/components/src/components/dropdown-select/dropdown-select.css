@@ -1,6 +1,6 @@
 :host {
   --font-weight: var(--telekom-typography-font-weight-bold);
-  --height: var(--telekom-spacing-unit-x11);
+  --height: var(--telekom-spacing-composition-space-13);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;

@@ -11,7 +11,7 @@
 
 scale-dropdown {
   --font-weight: var(--telekom-typography-font-weight-bold);
-  --height: var(--telekom-spacing-unit-x11);
+  --height: var(--telekom-spacing-composition-space-13);
   --spacing-x: var(--telekom-spacing-composition-space-05);
   --spacing-dropdown: 18px var(--telekom-spacing-composition-space-12) 5px
     calc(var(--spacing-x) - 1px);
