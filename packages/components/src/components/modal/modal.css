@@ -16,7 +16,9 @@
     rgba(108, 108, 108, 0.7)
   );
 
-  --max-height-window: calc(100vh - (2 * var(--telekom-spacing-composition-space-19)));
+  --max-height-window: calc(
+    100vh - (2 * var(--telekom-spacing-composition-space-19))
+  );
   --min-height-window: ; /* undefined by design */
   --radius-window: var(--telekom-radius-large);
   --box-shadow-window: var(--telekom-shadow-top);
@@ -67,7 +69,8 @@
   --spacing-y-body: var(--telekom-spacing-composition-space-08);
 
   --spacing-actions: var(--telekom-spacing-composition-space-06)
-    var(--telekom-spacing-composition-space-08) var(--telekom-spacing-composition-space-08);
+    var(--telekom-spacing-composition-space-08)
+    var(--telekom-spacing-composition-space-08);
 
   --spacing-x-actions-slotted: var(--telekom-spacing-composition-space-04);
   --background-actions-has-scroll: var(

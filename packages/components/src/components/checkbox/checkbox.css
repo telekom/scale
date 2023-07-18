@@ -251,7 +251,8 @@ scale-checkbox.error [part='helper-text'] scale-icon-alert-error {
 
 /* :host(.error) [part='checkbox'], */
 scale-checkbox.error [part='checkbox'] {
-  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02) var(--color-error);
+  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02)
+    var(--color-error);
   border: none;
 }
 
@@ -259,7 +260,8 @@ scale-checkbox.error
   [part='input']:focus
   ~ [part='container']
   [part='checkbox'] {
-  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02) var(--color-error);
+  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02)
+    var(--color-error);
 }
 
 scale-checkbox.error [part='checkbox']:hover {

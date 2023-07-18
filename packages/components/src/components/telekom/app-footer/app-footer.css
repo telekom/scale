@@ -52,7 +52,8 @@
   --color-navigation-active-focus: var(
     --telekom-color-text-and-icon-primary-pressed
   );
-  --box-shadow-navigation-focus: 0 0 0 var(--telekom-spacing-composition-space-02)
+  --box-shadow-navigation-focus: 0 0 0
+    var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-focus-standard);
   --border-color-standard-hover: var(
     --telekom-color-text-and-icon-white-standard

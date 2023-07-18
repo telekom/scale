@@ -15,7 +15,8 @@
   overflow-y: auto;
 
   --max-width: 572px;
-  --spacing: var(--telekom-spacing-composition-space-07) var(--telekom-spacing-composition-space-06)
+  --spacing: var(--telekom-spacing-composition-space-07)
+    var(--telekom-spacing-composition-space-06)
     var(--telekom-spacing-composition-space-14);
 
   background: var(--telekom-color-background-surface);

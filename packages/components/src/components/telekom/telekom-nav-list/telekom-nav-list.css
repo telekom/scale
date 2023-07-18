@@ -27,9 +27,13 @@
 
   --_spacing-x-slotted: var(--_spacing-x-slotted-main-nav, 24px);
 
-  --_spacing-x-slotted-meta-nav-external: var(--telekom-spacing-composition-space-07);
+  --_spacing-x-slotted-meta-nav-external: var(
+    --telekom-spacing-composition-space-07
+  );
   --_spacing-x-slotted-meta-nav: var(--telekom-spacing-composition-space-07);
-  --_spacing-x-slotted-lang-switcher: var(--telekom-spacing-composition-space-04);
+  --_spacing-x-slotted-lang-switcher: var(
+    --telekom-spacing-composition-space-04
+  );
   --_spacing-x-slotted-main-nav: var(--telekom-spacing-composition-space-10);
   --_spacing-x-slotted-functions: var(--telekom-spacing-composition-space-08);
 
@@ -49,7 +53,9 @@
   .scale-telekom-nav-list {
     --_spacing-x-slotted-main-nav: var(--telekom-spacing-composition-space-14);
     --_spacing-x-slotted-meta-nav: var(--telekom-spacing-composition-space-07);
-    --_spacing-x-slotted-meta-nav-external: var(--telekom-spacing-composition-space-07);
+    --_spacing-x-slotted-meta-nav-external: var(
+      --telekom-spacing-composition-space-07
+    );
   }
 
   .scale-telekom-nav-list[debug] {

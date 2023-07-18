@@ -90,7 +90,8 @@ scale-dropdown {
 }
 
 .dropdown--hide-label .input__dropdown {
-  padding: 5px var(--telekom-spacing-composition-space-12) 5px calc(var(--spacing-x) - 1px);
+  padding: 5px var(--telekom-spacing-composition-space-12) 5px
+    calc(var(--spacing-x) - 1px);
 }
 
 .dropdown--hide-label .input__label {
@@ -187,13 +188,18 @@ scale-dropdown {
   font-size: var(--font-size-label);
   transform: translate(
     var(--spacing-x),
-    calc((var(--telekom-spacing-composition-space-14) - var(--font-size-label)) / 2)
+    calc(
+      (var(--telekom-spacing-composition-space-14) - var(--font-size-label)) / 2
+    )
   );
   font-weight: var(--font-weight-label);
 }
 
 .animated .input__label {
-  transform: translate(var(--spacing-x), var(--telekom-spacing-composition-space-04));
+  transform: translate(
+    var(--spacing-x),
+    var(--telekom-spacing-composition-space-04)
+  );
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
   line-height: var(--telekom-typography-font-size-small);

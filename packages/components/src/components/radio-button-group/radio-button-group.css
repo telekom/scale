@@ -18,7 +18,9 @@
   --color-error-helper-text: var(
     --telekom-color-text-and-icon-functional-danger
   );
-  --padding-bottom-error-helper-text: var(--telekom-spacing-composition-space-04);
+  --padding-bottom-error-helper-text: var(
+    --telekom-spacing-composition-space-04
+  );
   --margin-top-error-helper-text: var(--telekom-spacing-composition-space-03);
   --font-weight-error-helper-text: var(--telekom-typography-font-weight-medium);
   --color-error-helper-text-hcm: var(

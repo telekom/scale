@@ -48,8 +48,9 @@ scale-text-field {
     18px 32px 4px 12px
     (subtracting 1px from border)
   */
-  --spacing-control: 1.125rem calc(2rem - var(--telekom-spacing-composition-space-01))
-    0.25rem calc(0.75rem - var(--telekom-spacing-composition-space-01));
+  --spacing-control: 1.125rem
+    calc(2rem - var(--telekom-spacing-composition-space-01)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-composition-space-01));
   --transition-control: var(--transition);
   --background-control: var(--telekom-color-ui-state-fill-standard);
   --margin-bottom-control: var(--telekom-spacing-composition-space-03);
@@ -108,7 +109,8 @@ scale-text-field {
 }
 
 .text-field--hide-label .text-field__control {
-  padding: 5px var(--telekom-spacing-composition-space-12) 5px calc(var(--spacing-x) - 1px);
+  padding: 5px var(--telekom-spacing-composition-space-12) 5px
+    calc(var(--spacing-x) - 1px);
 }
 
 .text-field--hide-label .text-field__label {

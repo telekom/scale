@@ -23,7 +23,8 @@
   margin: 0;
   display: flex;
   outline: none;
-  padding: var(--telekom-spacing-composition-space-05) var(--telekom-spacing-composition-space-05);
+  padding: var(--telekom-spacing-composition-space-05)
+    var(--telekom-spacing-composition-space-05);
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
@@ -40,7 +41,8 @@
   resize: vertical;
   display: flex;
   outline: none;
-  padding: var(--telekom-spacing-composition-space-05) var(--telekom-spacing-composition-space-05);
+  padding: var(--telekom-spacing-composition-space-05)
+    var(--telekom-spacing-composition-space-05);
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
@@ -131,7 +133,8 @@
 }
 .input--variant-animated .input__input,
 .input--variant-animated .input__select {
-  padding: var(--telekom-spacing-composition-space-05) var(--telekom-spacing-composition-space-05) 0
+  padding: var(--telekom-spacing-composition-space-05)
+    var(--telekom-spacing-composition-space-05) 0
     calc(var(--telekom-spacing-composition-space-05) - 1px);
 }
 .input--variant-animated .input__textarea {

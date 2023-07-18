@@ -135,7 +135,8 @@ label
 **/
 
 .chip-label {
-  padding: 0 var(--telekom-spacing-composition-space-03) 0 var(--telekom-spacing-composition-space-03);
+  padding: 0 var(--telekom-spacing-composition-space-03) 0
+    var(--telekom-spacing-composition-space-03);
   font-weight: var(--telekom-typography-font-weight-bold);
   font-size: 1rem;
   line-height: 100%;

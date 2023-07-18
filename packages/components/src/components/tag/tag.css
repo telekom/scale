@@ -24,10 +24,12 @@
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
   --spacing-dismissable: var(--telekom-spacing-composition-space-02)
-    var(--telekom-spacing-composition-space-02) var(--telekom-spacing-composition-space-02)
+    var(--telekom-spacing-composition-space-02)
+    var(--telekom-spacing-composition-space-02)
     var(--telekom-spacing-composition-space-03);
   --spacing-dismissable-small: var(--telekom-spacing-composition-space-02)
-    var(--telekom-spacing-composition-space-02) var(--telekom-spacing-composition-space-02)
+    var(--telekom-spacing-composition-space-02)
+    var(--telekom-spacing-composition-space-02)
     var(--telekom-spacing-composition-space-03);
 
   --height: 24px;

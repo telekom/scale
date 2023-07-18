@@ -32,14 +32,16 @@
 
 @media (min-width: 1040px) {
   .app-navigation-user-menu__user-info {
-    margin: var(--telekom-spacing-composition-space-05) var(--telekom-spacing-composition-space-08) 0
+    margin: var(--telekom-spacing-composition-space-05)
+      var(--telekom-spacing-composition-space-08) 0
       var(--telekom-spacing-composition-space-08);
   }
 }
 
 @media (max-width: 1039px) {
   .app-navigation-user-menu__user-info {
-    margin: var(--telekom-spacing-composition-space-08) var(--telekom-spacing-composition-space-06) 0
+    margin: var(--telekom-spacing-composition-space-08)
+      var(--telekom-spacing-composition-space-06) 0
       var(--telekom-spacing-composition-space-06);
   }
 }
@@ -56,7 +58,8 @@
 .app-navigation-user-menu__item {
   display: flex;
   font: var(--telekom-text-style-heading-6);
-  padding: var(--telekom-spacing-composition-space-04) var(--telekom-spacing-composition-space-06);
+  padding: var(--telekom-spacing-composition-space-04)
+    var(--telekom-spacing-composition-space-06);
   border-radius: calc(var(--telekom-radius-small) / 2);
   color: var(--telekom-color-text-and-icon-standard);
   text-decoration: none;
@@ -64,7 +67,8 @@
 
 @media (min-width: 1040px) {
   .app-navigation-user-menu__item {
-    padding: var(--telekom-spacing-composition-space-04) var(--telekom-spacing-composition-space-08);
+    padding: var(--telekom-spacing-composition-space-04)
+      var(--telekom-spacing-composition-space-08);
   }
 }
 
@@ -89,12 +93,14 @@
 }
 
 .app-navigation-user-menu__button {
-  padding: var(--telekom-spacing-composition-space-04) var(--telekom-spacing-composition-space-06);
+  padding: var(--telekom-spacing-composition-space-04)
+    var(--telekom-spacing-composition-space-06);
 }
 
 @media (min-width: 1040px) {
   .app-navigation-user-menu__button {
-    padding: var(--telekom-spacing-composition-space-04) var(--telekom-spacing-composition-space-08);
+    padding: var(--telekom-spacing-composition-space-04)
+      var(--telekom-spacing-composition-space-08);
   }
 }
 @media (min-width: 1040px) {

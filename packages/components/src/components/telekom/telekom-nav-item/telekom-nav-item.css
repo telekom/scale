@@ -43,26 +43,36 @@
 
 @media screen and (--md) {
   .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-07);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-07
+    );
   }
 }
 @media screen and (--lg) {
   .scale-telekom-nav-item {
     --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-06);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-06
+    );
   }
   [scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-08);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-08
+    );
   }
   [type='slim'] .scale-telekom-nav-item,
   [type='slim'][scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-08);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-08
+    );
   }
 }
 @media screen and (--xl) {
   .scale-telekom-nav-item {
     --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-08);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-08
+    );
   }
   [type='slim'] .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: calc(
@@ -73,15 +83,21 @@
 @media screen and (--2xl) {
   .scale-telekom-nav-item {
     --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-10);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-10
+    );
     --_font-size-main-nav: var(--telekom-typography-font-size-callout);
   }
   [type='slim'] .scale-telekom-nav-item,
   [type='slim'][scrolled-back] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-composition-space-11));
+    --_spacing-bottom-slotted-bottom: calc(
+      var(--telekom-spacing-composition-space-11)
+    );
   }
   [type='slim'][scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-composition-space-08));
+    --_spacing-bottom-slotted-bottom: calc(
+      var(--telekom-spacing-composition-space-08)
+    );
   }
 }
 

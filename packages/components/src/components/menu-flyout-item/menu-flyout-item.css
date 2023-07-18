@@ -36,14 +36,19 @@
   line-height: 2.635em;
   /* calc here to account for the extra padding for the outline */
   padding: 0
-    calc(var(--telekom-spacing-composition-space-08) - var(--telekom-spacing-composition-space-02));
+    calc(
+      var(--telekom-spacing-composition-space-08) -
+        var(--telekom-spacing-composition-space-02)
+    );
   user-select: none;
   white-space: nowrap;
   border-radius: 0;
   cursor: pointer;
   color: var(--telekom-color-text-and-icon-standard);
   /* 10px relates to the PAD value in Menu component */
-  max-width: calc(100vw - 2 * var(--telekom-spacing-composition-space-08) - 2 * 10px);
+  max-width: calc(
+    100vw - 2 * var(--telekom-spacing-composition-space-08) - 2 * 10px
+  );
   overflow: hidden;
   min-width: var(--_min-width-moz);
   min-width: var(--_min-width);

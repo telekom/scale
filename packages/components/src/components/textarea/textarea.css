@@ -26,7 +26,9 @@ scale-textarea {
     var(--telekom-color-functional-focus-standard);
   --spacing-x-control: var(--telekom-spacing-composition-space-05);
   --spacing-bottom-control: var(--telekom-spacing-composition-space-05);
-  --spacing-top-control: calc(1.125rem - var(--telekom-spacing-composition-space-01));
+  --spacing-top-control: calc(
+    1.125rem - var(--telekom-spacing-composition-space-01)
+  );
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: transparent;
@@ -45,8 +47,8 @@ scale-textarea {
     18px 32px 4px 12px
     (subtracting 1px from border)
   */
-  --spacing-control: 0 calc(2rem - var(--telekom-spacing-composition-space-01)) 0.25rem
-    calc(0.75rem - var(--telekom-spacing-composition-space-01));
+  --spacing-control: 0 calc(2rem - var(--telekom-spacing-composition-space-01))
+    0.25rem calc(0.75rem - var(--telekom-spacing-composition-space-01));
   --transition-control: var(--transition);
   --background-control: var(--telekom-color-ui-state-fill-standard);
 
