@@ -176,7 +176,7 @@ button.segment--large .segment--mask {
 
 .segment:focus {
   box-shadow: var(--telekom-shadow-raised-standard);
-  outline: var(--telekom-spacing-unit-x05) solid
+  outline: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-focus-standard);
   outline-offset: var(--telekom-spacing-composition-space-01);
   z-index: 40;

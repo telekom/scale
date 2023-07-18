@@ -59,7 +59,7 @@ scale-radio-button {
     var(--telekom-color-primary-pressed);
   --border-control-disabled: 0 0 0 var(--telekom-spacing-composition-space-01)
     var(--telekom-color-ui-border-disabled);
-  --border-control-error: var(--telekom-spacing-unit-x05) solid
+  --border-control-error: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
   --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-unit-x1)
     var(--color-focus);

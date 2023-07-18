@@ -16,8 +16,8 @@
   position: relative;
   outline-color: transparent;
   /* So outline is visible on the sides */
-  padding-left: var(--telekom-spacing-unit-x05);
-  padding-right: var(--telekom-spacing-unit-x05);
+  padding-left: var(--telekom-spacing-composition-space-02);
+  padding-right: var(--telekom-spacing-composition-space-02);
 
   --_min-width: fit-content;
   --_min-width-moz: -moz-fit-content;
@@ -36,7 +36,7 @@
   line-height: 2.635em;
   /* calc here to account for the extra padding for the outline */
   padding: 0
-    calc(var(--telekom-spacing-unit-x6) - var(--telekom-spacing-unit-x05));
+    calc(var(--telekom-spacing-unit-x6) - var(--telekom-spacing-composition-space-02));
   user-select: none;
   white-space: nowrap;
   border-radius: 0;
@@ -95,7 +95,7 @@
   width: 0;
   background-color: var(--telekom-color-primary-standard);
   /* a11y: HCM */
-  border-left: var(--telekom-spacing-unit-x05) solid transparent;
+  border-left: var(--telekom-spacing-composition-space-02) solid transparent;
 }
 
 .menu-flyout-item--active {

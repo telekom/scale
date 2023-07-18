@@ -28,7 +28,7 @@
   background-color: var(--background-color);
   border: 0;
   border-radius: var(--radius);
-  padding: 0 var(--telekom-spacing-unit-x05);
+  padding: 0 var(--telekom-spacing-composition-space-02);
   width: fit-content;
   height: var(--height);
   display: inline-grid;
@@ -40,12 +40,12 @@
 
 .segmented-button--medium {
   height: var(--height-medium);
-  padding: 0 var(--telekom-spacing-unit-x05);
+  padding: 0 var(--telekom-spacing-composition-space-02);
 }
 
 .segmented-button--large {
   height: var(--height-large);
-  padding: 0 var(--telekom-spacing-unit-x05);
+  padding: 0 var(--telekom-spacing-composition-space-02);
 }
 
 .segmented-button--label {

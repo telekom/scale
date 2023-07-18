@@ -20,7 +20,7 @@
   --font-size-header: var(--telekom-text-style-heading-4);
   --font-size-header-small: var(--telekom-typography-font-size-small);
   /*progress*/
-  --height-progress: var(--telekom-spacing-unit-x05);
+  --height-progress: var(--telekom-spacing-composition-space-02);
 }
 .toast {
   width: var(--width);

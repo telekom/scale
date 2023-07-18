@@ -16,7 +16,7 @@
   --font-size-button: var(--telekom-typography-font-size-callout);
   --font-weight-button: var(--telekom-typography-font-weight-extra-bold);
   --line-height-button: var(--telekom-typography-line-spacing-standard);
-  --border-width-button: var(--telekom-spacing-unit-x05);
+  --border-width-button: var(--telekom-spacing-composition-space-02);
   --radius-button: var(--telekom-radius-small);
   --spacing-left-button: 0;
   --spacing-left-button-text: var(--telekom-spacing-unit-x2);

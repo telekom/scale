@@ -87,7 +87,7 @@
 
 .chip:not(.chip--disabled):not(.chip--type-dynamic):focus,
 .chip.chip--type-dynamic:not(.chip--selected):focus {
-  outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
+  outline: var(--telekom-spacing-composition-space-02) solid var(--color-focus);
   outline-offset: var(--telekom-spacing-composition-space-01);
 }
 

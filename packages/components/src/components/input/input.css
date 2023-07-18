@@ -99,7 +99,7 @@
 .input:not(.input--disabled) .input__input:focus,
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: 0 0 0 var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-focus-standard);
 }
 .input:not(.input--disabled) .input__input:focus::placeholder,
@@ -175,7 +175,7 @@
 .input--status-error .input__input,
 .input--status-error .input__textarea,
 .input--status-error .input__select {
-  border: var(--telekom-spacing-unit-x05) solid
+  border: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
 }
 .input--status-error .input__helper-text {
@@ -334,7 +334,7 @@
   input:focus
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: 0 0 0 var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-focus-standard);
 }
 .input--type-checkbox
@@ -419,7 +419,7 @@
 .input--type-checkbox.input--status-error
   .input__checkbox-container
   .input__checkbox-placeholder {
-  border: var(--telekom-spacing-unit-x05) solid
+  border: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
 }
 .input--type-radio {
@@ -479,7 +479,7 @@
   color: var(--telekom-color-text-and-icon-disabled);
 }
 .input--type-radio.input--status-error input {
-  border: var(--telekom-spacing-unit-x05) solid
+  border: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
 }
 .input--type-radio input:checked {
@@ -499,9 +499,9 @@
   color: var(--telekom-color-text-and-icon-disabled);
 }
 .input__textarea-label-safety-background {
-  top: var(--telekom-spacing-unit-x05);
-  left: var(--telekom-spacing-unit-x05);
-  right: var(--telekom-spacing-unit-x05);
+  top: var(--telekom-spacing-composition-space-02);
+  left: var(--telekom-spacing-composition-space-02);
+  right: var(--telekom-spacing-composition-space-02);
   position: absolute;
   pointer-events: none;
   border-radius: var(--telekom-radius-standard);

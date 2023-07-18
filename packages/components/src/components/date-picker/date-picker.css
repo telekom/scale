@@ -200,11 +200,11 @@ duet-date-picker .duet-date__table {
 .scale-date-picker--status-error duet-date-picker .duet-date__input {
   margin-top: -1px;
   margin-bottom: -1px;
-  border: var(--telekom-spacing-unit-x05) solid
+  border: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:hover {
-  border: var(--telekom-spacing-unit-x05) solid
+  border: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-hovered);
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:focus {
@@ -308,7 +308,7 @@ duet-date-picker .duet-date__select select:active + .duet-date__select-label {
 duet-date-picker .duet-date__prev,
 duet-date-picker .duet-date__next {
   border-radius: var(--duet-radius);
-  margin-left: var(--telekom-spacing-unit-x05);
+  margin-left: var(--telekom-spacing-composition-space-02);
 }
 
 duet-date-picker .duet-date__prev:hover,

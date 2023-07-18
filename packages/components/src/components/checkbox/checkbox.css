@@ -31,7 +31,7 @@ scale-checkbox {
   --width-control: var(--telekom-spacing-unit-x5);
   --height-control: var(--telekom-spacing-unit-x5);
   --transition-control: var(--transition);
-  --spacing-control: var(--telekom-spacing-unit-x05);
+  --spacing-control: var(--telekom-spacing-composition-space-02);
   --spacing-left-control: var(--telekom-spacing-unit-x1);
   --radius-control: var(--telekom-radius-small);
   --border-width-control: var(--telekom-spacing-composition-space-01);
@@ -189,7 +189,7 @@ scale-checkbox [part='container']:active
 /* focus states */
 
 scale-checkbox [part='input']:focus ~ [part='container'] [part='checkbox'] {
-  outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
+  outline: var(--telekom-spacing-composition-space-02) solid var(--color-focus);
   outline-offset: var(--telekom-spacing-composition-space-01);
 }
 
@@ -251,7 +251,7 @@ scale-checkbox.error [part='helper-text'] scale-icon-alert-error {
 
 /* :host(.error) [part='checkbox'], */
 scale-checkbox.error [part='checkbox'] {
-  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05) var(--color-error);
+  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02) var(--color-error);
   border: none;
 }
 
@@ -259,30 +259,30 @@ scale-checkbox.error
   [part='input']:focus
   ~ [part='container']
   [part='checkbox'] {
-  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05) var(--color-error);
+  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02) var(--color-error);
 }
 
 scale-checkbox.error [part='checkbox']:hover {
   background-color: var(--telekom-color-ui-state-fill-hovered);
-  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-danger-hovered);
 }
 
 scale-checkbox.error [part='checkbox']:active {
   background-color: var(--telekom-color-ui-state-fill-pressed);
-  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-danger-pressed);
 }
 
 scale-checkbox.error:not(.checked) [part='container']:active [part='checkbox'] {
   background: var(--telekom-color-ui-state-fill-pressed);
-  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-danger-pressed);
 }
 
 scale-checkbox.checked.error [part='container']:hover [part='checkbox'] {
   background-color: var(--telekom-color-primary-hovered);
-  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-danger-hovered);
 }
 

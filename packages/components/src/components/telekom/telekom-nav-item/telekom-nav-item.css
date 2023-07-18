@@ -181,7 +181,7 @@
   > :where(a, button):hover:after {
   content: '';
   width: 100%;
-  height: var(--telekom-spacing-unit-x05);
+  height: var(--telekom-spacing-composition-space-02);
   background: var(--telekom-color-text-and-icon-primary-hovered);
   display: block;
   position: absolute;
@@ -222,7 +222,7 @@
   > :where(a, button):active:after {
   content: '';
   width: 100%;
-  height: var(--telekom-spacing-unit-x05);
+  height: var(--telekom-spacing-composition-space-02);
   background: var(--telekom-color-text-and-icon-primary-pressed);
   display: block;
   position: absolute;

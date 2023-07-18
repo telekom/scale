@@ -15,11 +15,11 @@ scale-text-field {
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-standard);
-  --border-error: var(--telekom-spacing-unit-x05) solid
+  --border-error: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
-  --border-success: var(--telekom-spacing-unit-x05) solid
+  --border-success: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-success-standard);
-  --border-warning: var(--telekom-spacing-unit-x05) solid
+  --border-warning: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-warning-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);

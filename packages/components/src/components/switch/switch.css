@@ -180,7 +180,7 @@ scale-switch {
 /* I don't like the ~ */
 .switch--focus-visible-not-supported :focus ~ .switch__toggle,
 :focus-visible ~ .switch__toggle {
-  outline: var(--telekom-spacing-unit-x05) solid
+  outline: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-focus-standard);
   outline-offset: var(--telekom-spacing-composition-space-01);
 }

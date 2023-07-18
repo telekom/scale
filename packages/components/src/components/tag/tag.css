@@ -23,11 +23,11 @@
   --background-disabled: var(--telekom-color-ui-faint);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
-  --spacing-dismissable: var(--telekom-spacing-unit-x05)
-    var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05)
+  --spacing-dismissable: var(--telekom-spacing-composition-space-02)
+    var(--telekom-spacing-composition-space-02) var(--telekom-spacing-composition-space-02)
     var(--telekom-spacing-unit-x1);
-  --spacing-dismissable-small: var(--telekom-spacing-unit-x05)
-    var(--telekom-spacing-unit-x05) var(--telekom-spacing-unit-x05)
+  --spacing-dismissable-small: var(--telekom-spacing-composition-space-02)
+    var(--telekom-spacing-composition-space-02) var(--telekom-spacing-composition-space-02)
     var(--telekom-spacing-unit-x1);
 
   --height: 24px;

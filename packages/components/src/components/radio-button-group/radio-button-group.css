@@ -30,7 +30,7 @@
   --font-size-title: var(--font-size-label);
   --font-weight-title: var(--telekom-typography-font-weight-medium);
   --padding-bottom-title: var(--telekom-spacing-unit-x1);
-  --margin-left-title: var(--telekom-spacing-unit-x05);
+  --margin-left-title: var(--telekom-spacing-composition-space-02);
 
   /*slotted items*/
   --margin-top-slotted-item: var(--telekom-spacing-unit-x3);
