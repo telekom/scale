@@ -114,13 +114,13 @@ button.segment--medium .segment--mask {
 
 button.segment--large.segment--selected .segment--mask {
   padding-left: var(--telekom-spacing-composition-space-06);
-  padding-right: var(--telekom-spacing-unit-x5);
+  padding-right: var(--telekom-spacing-composition-space-07);
 }
 
 button.segment--large .segment--mask {
   font: var(--font-large);
   padding-left: var(--telekom-spacing-composition-space-06);
-  padding-right: var(--telekom-spacing-unit-x5);
+  padding-right: var(--telekom-spacing-composition-space-07);
 }
 
 .segment--selected {

@@ -46,7 +46,7 @@ scale-dropdown {
   --color-meta: var(--telekom-color-text-and-icon-standard);
 
   /*icon*/
-  --height-icon: var(--telekom-spacing-unit-x5);
+  --height-icon: var(--telekom-spacing-composition-space-07);
   --color-icon: var(--telekom-color-text-and-icon-standard);
   --color-icon-hover: var(--telekom-color-text-and-icon-standard);
   --color-icon-active: var(--telekom-color-text-and-icon-standard);

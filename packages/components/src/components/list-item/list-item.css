@@ -13,7 +13,7 @@
   --display: block;
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
-  --spacing-left: calc(0.5ch + var(--telekom-spacing-unit-x5));
+  --spacing-left: calc(0.5ch + var(--telekom-spacing-composition-space-07));
   --spacing-left-nested: calc(0.5ch + var(--telekom-spacing-composition-space-06));
 
   --font-marker-ordered: var(--telekom-text-style-body);

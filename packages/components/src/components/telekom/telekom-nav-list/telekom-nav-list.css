@@ -27,8 +27,8 @@
 
   --_spacing-x-slotted: var(--_spacing-x-slotted-main-nav, 24px);
 
-  --_spacing-x-slotted-meta-nav-external: var(--telekom-spacing-unit-x5);
-  --_spacing-x-slotted-meta-nav: var(--telekom-spacing-unit-x5);
+  --_spacing-x-slotted-meta-nav-external: var(--telekom-spacing-composition-space-07);
+  --_spacing-x-slotted-meta-nav: var(--telekom-spacing-composition-space-07);
   --_spacing-x-slotted-lang-switcher: var(--telekom-spacing-composition-space-04);
   --_spacing-x-slotted-main-nav: var(--telekom-spacing-unit-x8);
   --_spacing-x-slotted-functions: var(--telekom-spacing-unit-x6);
@@ -48,8 +48,8 @@
 @media screen and (--xl) {
   .scale-telekom-nav-list {
     --_spacing-x-slotted-main-nav: var(--telekom-spacing-unit-x12);
-    --_spacing-x-slotted-meta-nav: var(--telekom-spacing-unit-x5);
-    --_spacing-x-slotted-meta-nav-external: var(--telekom-spacing-unit-x5);
+    --_spacing-x-slotted-meta-nav: var(--telekom-spacing-composition-space-07);
+    --_spacing-x-slotted-meta-nav-external: var(--telekom-spacing-composition-space-07);
   }
 
   .scale-telekom-nav-list[debug] {

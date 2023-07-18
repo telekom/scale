@@ -32,8 +32,8 @@
 }
 
 .scale-telekom-nav-item {
-  --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
-  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+  --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-07);
+  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-07);
   --_font-size-main-nav: var(--telekom-typography-font-size-body);
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
@@ -43,7 +43,7 @@
 
 @media screen and (--md) {
   .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-07);
   }
 }
 @media screen and (--lg) {

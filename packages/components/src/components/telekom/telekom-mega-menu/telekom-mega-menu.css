@@ -79,7 +79,7 @@
 }
 
 .scale-telekom-mega-menu :where(li + li) {
-  margin-top: var(--telekom-spacing-unit-x5);
+  margin-top: var(--telekom-spacing-composition-space-07);
 }
 @media screen and (--lg) {
   .scale-telekom-mega-menu {

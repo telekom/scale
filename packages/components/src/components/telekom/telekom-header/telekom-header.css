@@ -92,10 +92,10 @@
 
   :host([type='slim']) {
     --_animation-name: none;
-    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x5);
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-composition-space-07);
   }
   :host([type='slim'][scrolled]) {
-    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x5);
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-composition-space-07);
   }
   :host([type='slim']),
   :host([scrolled]) {
