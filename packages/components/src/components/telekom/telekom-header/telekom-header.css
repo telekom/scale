@@ -146,7 +146,7 @@
     --_height-logo-svg: 40px;
     --_height-top-bar: 0;
     --_height-bottom-bar: 72px;
-    --_spacing-right-bottom-app-name: var(--telekom-spacing-unit-x13);
+    --_spacing-right-bottom-app-name: var(--telekom-spacing-composition-space-15);
     --_spacing-left-body: 0;
   }
 }
