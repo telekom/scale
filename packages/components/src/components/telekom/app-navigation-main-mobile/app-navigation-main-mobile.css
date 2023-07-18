@@ -153,7 +153,7 @@ app-navigation-main-mobile {
   justify-content: space-between;
   align-items: center;
   border-bottom: var(--border-bottom);
-  margin-left: var(--telekom-spacing-unit-x16);
+  margin-left: var(--telekom-spacing-composition-space-17);
   box-sizing: border-box;
 }
 
