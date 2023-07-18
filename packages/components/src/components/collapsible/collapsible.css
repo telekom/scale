@@ -10,7 +10,7 @@
  */
 
 :host {
-  --spacing-y: var(--telekom-spacing-unit-x4);
+  --spacing-y: var(--telekom-spacing-composition-space-06);
 
   /* button */
   --font-size-button: var(--telekom-typography-font-size-callout);
@@ -29,7 +29,7 @@
   /* content */
   --spacing-right-content: var(--telekom-spacing-unit-x12);
   --spacing-left-content: 34px;
-  --spacing-top-content: var(--telekom-spacing-unit-x4);
+  --spacing-top-content: var(--telekom-spacing-composition-space-06);
   --spacing-bottom-content: var(--telekom-spacing-unit-x6);
 }
 

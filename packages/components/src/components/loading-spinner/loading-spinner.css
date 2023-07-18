@@ -18,7 +18,7 @@
   --color-text-white: var(--telekom-color-text-and-icon-white-standard);
 
   --spacing-vertical: var(--telekom-spacing-composition-space-05);
-  --spacing-horizontal: var(--telekom-spacing-unit-x4);
+  --spacing-horizontal: var(--telekom-spacing-composition-space-06);
 }
 
 .sr-only {

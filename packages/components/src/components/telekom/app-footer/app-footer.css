@@ -179,7 +179,7 @@
 
 .footer-navigation svg {
   width: auto;
-  height: var(--telekom-spacing-unit-x4);
+  height: var(--telekom-spacing-composition-space-06);
   margin-right: var(--spacing-navigation-standard);
 }
 
@@ -200,7 +200,7 @@
     margin-bottom: var(--spacing-angular);
   }
   .footer-copyright {
-    margin-bottom: var(--telekom-spacing-unit-x4);
+    margin-bottom: var(--telekom-spacing-composition-space-06);
   }
   .footer-navigation ul {
     line-height: var(--telekom-spacing-unit-x8);

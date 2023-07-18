@@ -49,7 +49,7 @@
 @media screen and (--lg) {
   .scale-telekom-nav-item {
     --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x4);
+    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-06);
   }
   [scrolled] .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);

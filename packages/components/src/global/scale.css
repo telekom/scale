@@ -68,8 +68,8 @@
 /** Thank you sholace.style */
 .scl-toast-stack {
   position: fixed;
-  top: var(--telekom-spacing-unit-x4);
-  inset-inline-end: var(--telekom-spacing-unit-x4);
+  top: var(--telekom-spacing-composition-space-06);
+  inset-inline-end: var(--telekom-spacing-composition-space-06);
   z-index: var(--scl-z-index-70);
   z-index: 100; /* https://github.com/telekom/scale/pull/1767/files */
   max-height: 100%;

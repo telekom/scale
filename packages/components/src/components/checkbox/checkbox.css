@@ -54,8 +54,8 @@ scale-checkbox {
   --color-icon-checked-active: var(
     --telekom-color-text-and-icon-white-standard
   );
-  --width-icon: var(--telekom-spacing-unit-x4);
-  --height-icon: var(--telekom-spacing-unit-x4);
+  --width-icon: var(--telekom-spacing-composition-space-06);
+  --height-icon: var(--telekom-spacing-composition-space-06);
   --stroke-width: var(--stroke-width-checkbox, 0.5px);
 }
 

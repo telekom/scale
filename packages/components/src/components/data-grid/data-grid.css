@@ -89,7 +89,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-composition-space-06);
   padding-left: var(--telekom-spacing-unit-x6);
 }
 
@@ -131,7 +131,7 @@
   min-height: 72px;
 }
 .data-grid--hide-menu .data-grid__title-block {
-  padding-right: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-composition-space-06);
 }
 
 /* Head block */
@@ -164,7 +164,7 @@
   text-align: left;
   user-select: none;
   position: relative;
-  padding: 0 var(--telekom-spacing-unit-x4);
+  padding: 0 var(--telekom-spacing-composition-space-06);
   color: var(--telekom-color-text-and-icon-additional);
 }
 
@@ -308,12 +308,12 @@
 }
 .tbody__nested-cell {
   display: block;
-  padding: var(--telekom-spacing-unit-x4);
+  padding: var(--telekom-spacing-composition-space-06);
   margin: 0px;
 }
 
 .tbody__cell:first-of-type {
-  margin-left: var(--telekom-spacing-unit-x4);
+  margin-left: var(--telekom-spacing-composition-space-06);
   /* padding-left: var(--telekom-spacing-unit-x6); */
 }
 

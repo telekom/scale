@@ -13,7 +13,7 @@
   --width: 100%;
   --width-toast: 25rem;
   --radius: var(--telekom-radius-standard);
-  --spacing-y: var(--telekom-spacing-unit-x4);
+  --spacing-y: var(--telekom-spacing-composition-space-06);
   --spacing-y-inner: var(--telekom-spacing-composition-space-04);
   --spacing-x-aside: var(--telekom-spacing-unit-x12);
 

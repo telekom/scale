@@ -25,7 +25,7 @@
 }
 
 .app-navigation-user-menu__divider {
-  margin: var(--telekom-spacing-unit-x4) 0;
+  margin: var(--telekom-spacing-composition-space-06) 0;
   border: 0;
   border-top: var(--border-width-divider) solid var(--color-divider);
 }
@@ -39,8 +39,8 @@
 
 @media (max-width: 1039px) {
   .app-navigation-user-menu__user-info {
-    margin: var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x4) 0
-      var(--telekom-spacing-unit-x4);
+    margin: var(--telekom-spacing-unit-x6) var(--telekom-spacing-composition-space-06) 0
+      var(--telekom-spacing-composition-space-06);
   }
 }
 
@@ -56,7 +56,7 @@
 .app-navigation-user-menu__item {
   display: flex;
   font: var(--telekom-text-style-heading-6);
-  padding: var(--telekom-spacing-composition-space-04) var(--telekom-spacing-unit-x4);
+  padding: var(--telekom-spacing-composition-space-04) var(--telekom-spacing-composition-space-06);
   border-radius: calc(var(--telekom-radius-small) / 2);
   color: var(--telekom-color-text-and-icon-standard);
   text-decoration: none;
@@ -89,7 +89,7 @@
 }
 
 .app-navigation-user-menu__button {
-  padding: var(--telekom-spacing-composition-space-04) var(--telekom-spacing-unit-x4);
+  padding: var(--telekom-spacing-composition-space-04) var(--telekom-spacing-composition-space-06);
 }
 
 @media (min-width: 1040px) {

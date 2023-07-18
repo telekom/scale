@@ -18,7 +18,7 @@ scale-table {
   --font-size: var(--telekom-typography-font-size-small);
   --font-weight: var(--telekom-typography-font-weight-bold);
 
-  --spacing-tbody-td: var(--telekom-spacing-unit-x4)
+  --spacing-tbody-td: var(--telekom-spacing-composition-space-06)
     var(--telekom-spacing-composition-space-04);
   --border-bottom-tbody-td: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-faint);

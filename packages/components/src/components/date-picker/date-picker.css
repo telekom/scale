@@ -31,7 +31,7 @@ duet-date-picker {
 
   --spacing-x: var(--telekom-spacing-composition-space-05);
 
-  --spacing-heading: 0 0 var(--telekom-spacing-unit-x4) 0;
+  --spacing-heading: 0 0 var(--telekom-spacing-composition-space-06) 0;
   --font-size-heading: var(--telekom-typography-font-size-body);
   --radius-day: var(--telekom-radius-standard);
   --font-size-day: var(--telekom-typography-font-size-body);

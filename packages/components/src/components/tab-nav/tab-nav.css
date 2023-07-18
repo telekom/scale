@@ -12,7 +12,7 @@
 :host {
   --tab-height: 3rem;
   --tab-spacing-horizontal: var(--telekom-spacing-composition-space-05);
-  --tab-spacing-vertical: var(--telekom-spacing-unit-x4);
+  --tab-spacing-vertical: var(--telekom-spacing-composition-space-06);
   --tab-radius: var(--telekom-radius-small);
   --tab-border-size: var(--telekom-line-weight-standard);
   --tab-border-size-selected: var(--telekom-line-weight-highlight);
@@ -22,6 +22,6 @@
 
   --tab-height-large: 3.25rem;
 
-  --tab-spacing-horizontal-large: var(--telekom-spacing-unit-x4);
+  --tab-spacing-horizontal-large: var(--telekom-spacing-composition-space-06);
   --tab-spacing-vertical-large: 0.875rem;
 }

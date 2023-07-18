@@ -14,7 +14,7 @@
   --radius: var(--telekom-radius-small);
   --background: var(--scl-color-background-standard);
   --box-shadow: var(--telekom-shadow-app-bar-top-raised);
-  --spacing: var(--telekom-spacing-unit-x4);
+  --spacing: var(--telekom-spacing-composition-space-06);
   /*header*/
   --border-header: 1px solid var(--scl-color-grey-20);
   --font-size-header: var(--telekom-text-style-heading-4);

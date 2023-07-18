@@ -256,8 +256,8 @@
   font-weight: var(--telekom-typography-font-weight-medium);
 }
 .input--type-checkbox .input__checkbox-container {
-  width: var(--telekom-spacing-unit-x4);
-  height: var(--telekom-spacing-unit-x4);
+  width: var(--telekom-spacing-composition-space-06);
+  height: var(--telekom-spacing-composition-space-06);
   display: flex;
   position: relative;
   align-items: center;
@@ -391,8 +391,8 @@
   color: var(--telekom-color-text-and-icon-primary-pressed, #cb0068);
 }
 .input--type-checkbox .input__checkbox-container .input__checkbox-placeholder {
-  width: var(--telekom-spacing-unit-x4);
-  height: var(--telekom-spacing-unit-x4);
+  width: var(--telekom-spacing-composition-space-06);
+  height: var(--telekom-spacing-composition-space-06);
   margin: 0;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
@@ -441,8 +441,8 @@
   font-weight: var(--telekom-typography-font-weight-medium);
 }
 .input--type-radio input {
-  width: var(--telekom-spacing-unit-x4);
-  height: var(--telekom-spacing-unit-x4);
+  width: var(--telekom-spacing-composition-space-06);
+  height: var(--telekom-spacing-composition-space-06);
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   border-radius: var(--telekom-radius-circle);

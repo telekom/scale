@@ -80,8 +80,8 @@ button.segment--small.segment--selected .segment--mask {
 }
 
 button.segment--icon-only.segment--small .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
-  padding-right: var(--telekom-spacing-unit-x4);
+  padding-left: var(--telekom-spacing-composition-space-06);
+  padding-right: var(--telekom-spacing-composition-space-06);
 }
 
 button.segment--small .segment--mask {
@@ -99,7 +99,7 @@ button.segment--small .segment--mask {
 
 button.segment--medium.segment--selected .segment--mask {
   padding-left: var(--telekom-spacing-composition-space-05);
-  padding-right: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-composition-space-06);
 }
 
 button.segment--medium .segment--mask {
@@ -113,13 +113,13 @@ button.segment--medium .segment--mask {
 }
 
 button.segment--large.segment--selected .segment--mask {
-  padding-left: var(--telekom-spacing-unit-x4);
+  padding-left: var(--telekom-spacing-composition-space-06);
   padding-right: var(--telekom-spacing-unit-x5);
 }
 
 button.segment--large .segment--mask {
   font: var(--font-large);
-  padding-left: var(--telekom-spacing-unit-x4);
+  padding-left: var(--telekom-spacing-composition-space-06);
   padding-right: var(--telekom-spacing-unit-x5);
 }
 

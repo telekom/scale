@@ -39,7 +39,7 @@
 
   /* value matches scale-grid — ideally we'd have this in a global var *sigh* */
   --_max-width-container: none;
-  --_spacing-x-container: var(--telekom-spacing-unit-x4);
+  --_spacing-x-container: var(--telekom-spacing-composition-space-06);
   --_column-gap-container: var(--telekom-spacing-unit-x8);
   --_grid-template-columns-container: auto;
   --_grid-column-body: auto;
@@ -110,7 +110,7 @@
     --_display-top-app-name: none;
     --_display-bottom-app-name: block;
 
-    --_spacing-left-body: var(--telekom-spacing-unit-x4);
+    --_spacing-left-body: var(--telekom-spacing-composition-space-06);
     --scl-telekom-header-height: var(--_height);
   }
   :host([scrolled]) {

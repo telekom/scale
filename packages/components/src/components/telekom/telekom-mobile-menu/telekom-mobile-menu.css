@@ -1,5 +1,5 @@
 :host {
-  --spacing: var(--telekom-spacing-unit-x4);
+  --spacing: var(--telekom-spacing-composition-space-06);
   --background: var(--telekom-color-background-surface);
   --max-width: 572px;
 

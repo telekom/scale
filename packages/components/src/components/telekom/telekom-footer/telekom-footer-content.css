@@ -2,7 +2,7 @@
 
 :host {
   --_max-width-container: none;
-  --_spacing-x-container: var(--telekom-spacing-unit-x4);
+  --_spacing-x-container: var(--telekom-spacing-composition-space-06);
 
   --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
   --_nav-items-spacing: var(--telekom-spacing-composition-space-05);
@@ -88,7 +88,7 @@ footer {
   :host {
     --_logo-top-margin: var(--telekom-spacing-unit-x8);
     --_logo-bottom-margin: var(--telekom-spacing-unit-x12);
-    --_nav-items-spacing: var(--telekom-spacing-unit-x4);
+    --_nav-items-spacing: var(--telekom-spacing-composition-space-06);
   }
   [part~='body'] {
     flex-direction: column;

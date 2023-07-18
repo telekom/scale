@@ -15,7 +15,7 @@ scale-nav-icon {
   --line-height-mobile: var(--telekom-typography-line-spacing-tight);
   --font-weight-mobile: var(--telekom-typography-font-weight-bold);
 
-  --spacing-desktop: 0 0 0 var(--telekom-spacing-unit-x4);
+  --spacing-desktop: 0 0 0 var(--telekom-spacing-composition-space-06);
   --font-size-desktop: var(--telekom-typography-font-size-small);
   --line-height-desktop: var(--telekom-typography-line-spacing-standard);
 

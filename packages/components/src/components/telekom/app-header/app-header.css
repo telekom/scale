@@ -29,7 +29,7 @@ scale-app-header {
   --background-nav-sticky: var(--telekom-color-background-surface);
   --background-header-sticky: var(--telekom-color-background-canvas);
 
-  --spacing-nav: 0 var(--telekom-spacing-unit-x4);
+  --spacing-nav: 0 var(--telekom-spacing-composition-space-06);
 }
 @keyframes keyframes-slideUp {
   from {
@@ -267,7 +267,7 @@ scale-app-header {
     opacity: 0;
     transition: none;
     font-weight: var(--telekom-typography-font-weight-bold);
-    margin-right: var(--telekom-spacing-unit-x4);
+    margin-right: var(--telekom-spacing-composition-space-06);
     pointer-events: none;
   }
   .header.header--sticky .header__nav-logo {
@@ -287,7 +287,7 @@ scale-app-header {
     list-style: none;
     transition: margin-left var(--header-transition-speed) ease-in-out;
     align-items: center;
-    margin-left: calc(-50px - var(--telekom-spacing-unit-x4));
+    margin-left: calc(-50px - var(--telekom-spacing-composition-space-06));
   }
   .header *[slot='menu-sector'],
   .header *[slot='menu-addon'],

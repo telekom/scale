@@ -31,8 +31,8 @@
   --background-footer: var(--background-footer-minimal);
   --_font-color: var(--telekom-color-text-and-icon-additional);
   --_display-logo: none;
-  --_navigation-container-padding: var(--telekom-spacing-unit-x4) 0
-    var(--telekom-spacing-unit-x4) 0;
+  --_navigation-container-padding: var(--telekom-spacing-composition-space-06) 0
+    var(--telekom-spacing-composition-space-06) 0;
   --_nav-items-bottom-margin: 0;
 }
 

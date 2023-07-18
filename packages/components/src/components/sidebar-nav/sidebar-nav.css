@@ -12,7 +12,7 @@
 :host {
   --max-width: 15rem;
   --spacing-indent: var(--telekom-spacing-unit-x6);
-  --spacing-collapsible: var(--telekom-spacing-unit-x4);
+  --spacing-collapsible: var(--telekom-spacing-composition-space-06);
   --opacity-chevron: 0;
   --left-current-border: 0;
 

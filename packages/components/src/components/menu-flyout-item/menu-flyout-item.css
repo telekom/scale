@@ -144,5 +144,5 @@ slot[name='prefix']::slotted(:last-of-type) {
 
 .menu-flyout-item__cascade,
 slot[name='suffix']::slotted(:first-of-type) {
-  margin-left: var(--telekom-spacing-unit-x4);
+  margin-left: var(--telekom-spacing-composition-space-06);
 }

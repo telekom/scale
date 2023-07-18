@@ -10,7 +10,7 @@
  */
 
 :host {
-  --spacing-x: var(--telekom-spacing-unit-x4);
+  --spacing-x: var(--telekom-spacing-composition-space-06);
   --background-overlay: var(
     --telekom-color-background-backdrop,
     rgba(108, 108, 108, 0.7)
@@ -66,7 +66,7 @@
   --spacing-x-body-wrapper: var(--telekom-spacing-unit-x6);
   --spacing-y-body: var(--telekom-spacing-unit-x6);
 
-  --spacing-actions: var(--telekom-spacing-unit-x4)
+  --spacing-actions: var(--telekom-spacing-composition-space-06)
     var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x6);
 
   --spacing-x-actions-slotted: var(--telekom-spacing-composition-space-04);
