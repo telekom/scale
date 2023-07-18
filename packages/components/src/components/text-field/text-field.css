@@ -29,7 +29,7 @@ scale-text-field {
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
   --height: 44px;
-  --spacing-x: var(--telekom-spacing-unit-x3);
+  --spacing-x: var(--telekom-spacing-composition-space-05);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
   --border-color-readonly: var(--telekom-color-ui-border-disabled);

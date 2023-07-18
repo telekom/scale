@@ -50,9 +50,9 @@ scale-radio-button {
   --border-control: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-standard);
   --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
-  --border-control-checked: calc(0.25 * var(--telekom-spacing-unit-x3)) solid
+  --border-control-checked: calc(0.25 * var(--telekom-spacing-composition-space-05)) solid
     var(--telekom-color-background-canvas);
-  --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x3))
+  --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-composition-space-05))
     solid var(--telekom-color-ui-border-disabled);
   --background-control-checked-disabled: none;
   --border-control-active: var(--telekom-spacing-composition-space-04) solid

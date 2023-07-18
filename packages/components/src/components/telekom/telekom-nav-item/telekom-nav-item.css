@@ -48,7 +48,7 @@
 }
 @media screen and (--lg) {
   .scale-telekom-nav-item {
-    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
+    --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x4);
   }
   [scrolled] .scale-telekom-nav-item {
@@ -61,7 +61,7 @@
 }
 @media screen and (--xl) {
   .scale-telekom-nav-item {
-    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
+    --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
   }
   [type='slim'] .scale-telekom-nav-item {
@@ -72,7 +72,7 @@
 }
 @media screen and (--2xl) {
   .scale-telekom-nav-item {
-    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
+    --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
     --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x8);
     --_font-size-main-nav: var(--telekom-typography-font-size-callout);
   }

@@ -32,7 +32,7 @@
 
 @media (min-width: 1040px) {
   .app-navigation-user-menu__user-info {
-    margin: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x6) 0
+    margin: var(--telekom-spacing-composition-space-05) var(--telekom-spacing-unit-x6) 0
       var(--telekom-spacing-unit-x6);
   }
 }

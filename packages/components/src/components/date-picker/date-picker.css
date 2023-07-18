@@ -29,7 +29,7 @@ duet-date-picker {
   --duet-z-index: 600;
   --duet-z-index-toggle: 2;
 
-  --spacing-x: var(--telekom-spacing-unit-x3);
+  --spacing-x: var(--telekom-spacing-composition-space-05);
 
   --spacing-heading: 0 0 var(--telekom-spacing-unit-x4) 0;
   --font-size-heading: var(--telekom-typography-font-size-body);
@@ -124,7 +124,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   font-weight: var(--telekom-typography-font-weight-bold);
   transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
-  padding-left: var(--telekom-spacing-unit-x3);
+  padding-left: var(--telekom-spacing-composition-space-05);
   font-size: var(--telekom-typography-font-size-small);
   line-height: var(--telekom-typography-line-spacing-standard);
   color: var(--telekom-color-text-and-icon-functional-informational);
@@ -270,7 +270,7 @@ duet-date-picker .duet-date__cell {
 }
 duet-date-picker .duet-date__mobile {
   margin-left: 0;
-  padding: var(--telekom-spacing-composition-space-03) 0 var(--telekom-spacing-unit-x3) 0;
+  padding: var(--telekom-spacing-composition-space-03) 0 var(--telekom-spacing-composition-space-05) 0;
 }
 
 duet-date-picker .duet-date__select {

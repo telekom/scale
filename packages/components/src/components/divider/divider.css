@@ -12,7 +12,7 @@
 :host {
   --width: 100%;
   --height: 100%;
-  --spacing: var(--telekom-spacing-unit-x3);
+  --spacing: var(--telekom-spacing-composition-space-05);
   /* FIXME this should be called --border-color */
   --color: var(--telekom-color-ui-faint);
   --border-width: var(--telekom-spacing-composition-space-01);

@@ -55,7 +55,7 @@
 
 .progress-bar__label {
   display: block;
-  padding: var(--telekom-spacing-unit-x3) 0;
+  padding: var(--telekom-spacing-composition-space-05) 0;
   color: var(--color-label);
   font: var(--font-label);
 }
@@ -99,7 +99,7 @@
 }
 
 .progress-bar__status {
-  padding: var(--telekom-spacing-unit-x3) 0;
+  padding: var(--telekom-spacing-composition-space-05) 0;
   font: var(--font-label);
   font-variant-numeric: tabular-nums;
 }

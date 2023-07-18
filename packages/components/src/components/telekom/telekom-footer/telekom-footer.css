@@ -9,7 +9,7 @@
   --background-footer-minimal: var(--telekom-color-background-canvas);
 
   --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
-  --_nav-items-spacing: var(--telekom-spacing-unit-x3);
+  --_nav-items-spacing: var(--telekom-spacing-composition-space-05);
 }
 
 .scale-telekom-footer :where(ul),

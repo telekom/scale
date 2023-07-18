@@ -5,7 +5,7 @@
   --_spacing-x-container: var(--telekom-spacing-unit-x4);
 
   --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
-  --_nav-items-spacing: var(--telekom-spacing-unit-x3);
+  --_nav-items-spacing: var(--telekom-spacing-composition-space-05);
 
   --_logo-top-margin: var(--telekom-spacing-unit-x10);
   --_logo-bottom-margin: var(--telekom-spacing-unit-x10);

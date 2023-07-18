@@ -93,7 +93,7 @@
   --_shadow: var(--telekom-shadow-floating-standard);
 }
 [part~='type-toast'] {
-  --translate-x: var(--telekom-spacing-unit-x3);
+  --translate-x: var(--telekom-spacing-composition-space-05);
   --_shadow: var(--telekom-shadow-top);
   width: var(--width-toast);
 }

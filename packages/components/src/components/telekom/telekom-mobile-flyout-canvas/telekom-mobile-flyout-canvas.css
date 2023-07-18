@@ -69,5 +69,5 @@ slot[name='row']::slotted(*) {
   margin-top: var(--telekom-spacing-unit-x4);
 }
 :host([type='subtle']) [part~='meta'] {
-  margin-top: var(--telekom-spacing-unit-x3);
+  margin-top: var(--telekom-spacing-composition-space-05);
 }

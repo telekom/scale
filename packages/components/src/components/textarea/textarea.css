@@ -24,8 +24,8 @@ scale-textarea {
   --background-color-disabled: none;
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
-  --spacing-x-control: var(--telekom-spacing-unit-x3);
-  --spacing-bottom-control: var(--telekom-spacing-unit-x3);
+  --spacing-x-control: var(--telekom-spacing-composition-space-05);
+  --spacing-bottom-control: var(--telekom-spacing-composition-space-05);
   --spacing-top-control: calc(1.125rem - var(--telekom-spacing-composition-space-01));
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;

@@ -22,7 +22,7 @@
     --telekom-typography-line-spacing-standard
   );
   --spacing-top-marker-ordered-nested: calc(
-    var(--telekom-spacing-unit-x4) - var(--telekom-spacing-unit-x3)
+    var(--telekom-spacing-unit-x4) - var(--telekom-spacing-composition-space-05)
   );
 
   --spacing-right-no-marker: var(--telekom-spacing-composition-space-04);

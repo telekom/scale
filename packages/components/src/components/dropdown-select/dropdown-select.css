@@ -14,7 +14,7 @@
     var(--telekom-color-functional-danger-hovered);
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
-  --spacing-x: var(--telekom-spacing-unit-x3);
+  --spacing-x: var(--telekom-spacing-composition-space-05);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
@@ -273,12 +273,12 @@
 
 [part~='option'][aria-selected='true'] scale-icon-action-checkmark {
   position: absolute;
-  right: var(--telekom-spacing-unit-x3);
-  top: var(--telekom-spacing-unit-x3);
+  right: var(--telekom-spacing-composition-space-05);
+  top: var(--telekom-spacing-composition-space-05);
 }
 
 [part~='option'] scale-dropdown-select-item::part(base) {
-  padding: var(--telekom-spacing-unit-x3);
+  padding: var(--telekom-spacing-composition-space-05);
 }
 
 /*helper-text*/

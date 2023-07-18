@@ -23,7 +23,7 @@
   margin: 0;
   display: flex;
   outline: none;
-  padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3);
+  padding: var(--telekom-spacing-composition-space-05) var(--telekom-spacing-composition-space-05);
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
@@ -40,7 +40,7 @@
   resize: vertical;
   display: flex;
   outline: none;
-  padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3);
+  padding: var(--telekom-spacing-composition-space-05) var(--telekom-spacing-composition-space-05);
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
@@ -63,7 +63,7 @@
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   margin-left: auto;
-  padding-right: var(--telekom-spacing-unit-x3);
+  padding-right: var(--telekom-spacing-composition-space-05);
   justify-content: flex-end;
   font-size: var(--telekom-typography-font-size-small);
   line-height: var(--telekom-typography-line-spacing-standard);
@@ -72,7 +72,7 @@
 .input .input__helper-text {
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
-  padding-left: var(--telekom-spacing-unit-x3);
+  padding-left: var(--telekom-spacing-composition-space-05);
   font-size: var(--telekom-typography-font-size-small);
   line-height: var(--telekom-typography-line-spacing-standard);
   color: var(--telekom-color-text-and-icon-functional-informational);
@@ -111,7 +111,7 @@
 }
 .input .input__select-wrapper scale-icon {
   top: 50%;
-  right: var(--telekom-spacing-unit-x3);
+  right: var(--telekom-spacing-composition-space-05);
   position: absolute;
   transform: translateY(-50%);
   pointer-events: none;
@@ -131,8 +131,8 @@
 }
 .input--variant-animated .input__input,
 .input--variant-animated .input__select {
-  padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3) 0
-    calc(var(--telekom-spacing-unit-x3) - 1px);
+  padding: var(--telekom-spacing-composition-space-05) var(--telekom-spacing-composition-space-05) 0
+    calc(var(--telekom-spacing-composition-space-05) - 1px);
 }
 .input--variant-animated .input__textarea {
   padding-top: var(--telekom-spacing-unit-x6);
@@ -150,7 +150,7 @@
   font-size: var(--telekom-typography-font-size-body);
   /* previously: transform: translate(13px, calc((48px - 1rem) / 2)); */
   transform: translate(
-    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-composition-space-05),
     calc(
       (
           var(--telekom-spacing-unit-x12) -
@@ -164,7 +164,7 @@
 .input--variant-animated.animated .input__label {
   color: var(--telekom-color-text-and-icon-additional);
   transform: translate(
-    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-composition-space-05),
     var(--telekom-spacing-composition-space-04)
   );
   transition: all var(--telekom-motion-duration-transition)
@@ -206,7 +206,7 @@
     calc((var(--input-small-height, 40px) - 1rem) / 2)
   ); */
   transform: translate(
-    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-composition-space-05),
     calc(
       (
           var(--telekom-spacing-unit-x10) -
@@ -220,7 +220,7 @@
 .input--size-small.animated .input__label {
   color: var(--telekom-color-text-and-icon-additional);
   transform: translate(
-    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-composition-space-05),
     var(--telekom-spacing-composition-space-03)
   );
   transition: all var(--telekom-motion-duration-transition)
@@ -403,10 +403,10 @@
   background: var(--telekom-color-background-surface);
 }
 .input--type-checkbox .input__checkbox-container scale-icon {
-  top: calc(0.5 * var(--telekom-spacing-unit-x3));
-  left: calc(0.5 * var(--telekom-spacing-unit-x3));
-  width: var(--telekom-spacing-unit-x3);
-  height: var(--telekom-spacing-unit-x3);
+  top: calc(0.5 * var(--telekom-spacing-composition-space-05));
+  left: calc(0.5 * var(--telekom-spacing-composition-space-05));
+  width: var(--telekom-spacing-composition-space-05);
+  height: var(--telekom-spacing-composition-space-05);
   position: absolute;
   user-select: none;
   /* TODO this could removed once scale-icon is removed */
@@ -483,16 +483,16 @@
     var(--telekom-color-functional-danger-standard);
 }
 .input--type-radio input:checked {
-  border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
+  border: calc(0.5 * var(--telekom-spacing-composition-space-05)) solid
     var(--telekom-color-primary-standard);
 }
 .input--type-radio input:checked:active {
-  border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
+  border: calc(0.5 * var(--telekom-spacing-composition-space-05)) solid
     var(--telekom-color-primary-pressed, #cb0068);
 }
 .input--type-radio input:checked:disabled {
   background: var(--telekom-color-ui-disabled);
-  border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
+  border: calc(0.5 * var(--telekom-spacing-composition-space-05)) solid
     var(--telekom-color-ui-border-disabled);
 }
 .input--type-radio input:checked:disabled ~ label {

@@ -33,7 +33,7 @@
   --margin-left-title: var(--telekom-spacing-composition-space-02);
 
   /*slotted items*/
-  --margin-top-slotted-item: var(--telekom-spacing-unit-x3);
+  --margin-top-slotted-item: var(--telekom-spacing-composition-space-05);
 
   margin-top: var(--margin-top-slotted-item);
 }
