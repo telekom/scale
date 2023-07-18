@@ -16,7 +16,7 @@
 @import url('../../../global/custom-media.css');
 
 .scale-telekom-mega-menu {
-  --spacing-y: var(--telekom-spacing-unit-x18);
+  --spacing-y: var(--telekom-spacing-composition-space-18);
   /* matches grid.css */
   --column-gap: var(--telekom-spacing-composition-space-10);
   --max-width-container: var(--scl-grid-max-width, 1504px);

@@ -107,7 +107,7 @@ footer {
 @media screen and (--lg) {
   :host {
     --_logo-top-margin: var(--telekom-spacing-composition-space-14);
-    --_logo-bottom-margin: var(--telekom-spacing-unit-x18);
+    --_logo-bottom-margin: var(--telekom-spacing-composition-space-18);
     --_nav-items-spacing: var(--telekom-spacing-composition-space-08);
     --_slim-padding: var(--telekom-spacing-composition-space-08);
     --_font-size: var(--telekom-typography-font-size-body);
@@ -142,7 +142,7 @@ footer {
 @media screen and (--2xl) {
   :host {
     --_max-width-container: var(--scl-grid-max-width, 1504px);
-    --_logo-top-margin: var(--telekom-spacing-unit-x18);
+    --_logo-top-margin: var(--telekom-spacing-composition-space-18);
     /* too bad spacing tokens don't go beyond 5 rem */
     --_logo-bottom-margin: 96px;
   }
