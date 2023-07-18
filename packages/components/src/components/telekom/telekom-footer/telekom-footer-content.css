@@ -74,7 +74,7 @@ footer {
 
 /* todo: should i use spacing token for logo size? */
 [part~='app-logo'] {
-  --logo-size: var(--telekom-spacing-unit-x9);
+  --logo-size: var(--telekom-spacing-composition-space-11);
 }
 
 /* Leave this just in case?  */

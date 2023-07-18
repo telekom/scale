@@ -78,7 +78,7 @@
   }
   [type='slim'] .scale-telekom-nav-item,
   [type='slim'][scrolled-back] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x9));
+    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-composition-space-11));
   }
   [type='slim'][scrolled] .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-composition-space-08));
