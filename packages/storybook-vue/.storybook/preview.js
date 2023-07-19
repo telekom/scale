@@ -40,7 +40,6 @@ export const parameters = {
     storySort: {
       order: [
         'Scale Design System',
-        'About Scale',
         'FAQ',
         'New Release',
         ['Release Notes', 'Sketch Library Update'],
