@@ -53,7 +53,9 @@ addons.register('@telekom/scale-sidebar-links-addon', (api) => {
         if (!locale) {
           return;
         }
-
+        if (!sidebarLinksContainer) {
+          return
+        }
         if (sidebarLinksContainer) {
           sidebarLinksContainer.remove();
         }
