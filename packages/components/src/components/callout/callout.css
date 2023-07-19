@@ -32,6 +32,12 @@
   font: var(--font-medium);
 }
 
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  [part='base'] {
+    border: 1px solid;
+  }
+}
+
 /* Color variants */
 
 :host([variant='primary']) {
