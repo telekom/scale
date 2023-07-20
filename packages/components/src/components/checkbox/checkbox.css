@@ -34,7 +34,7 @@ scale-checkbox {
   --spacing-control: var(--telekom-spacing-composition-space-02);
   --spacing-left-control: var(--telekom-spacing-composition-space-03);
   --radius-control: var(--telekom-radius-small);
-  --border-width-control: var(--telekom-spacing-composition-space-01);
+  --border-width-control: var(--telekom-line-weight-standard);
 
   /*helper-text*/
   --transition-helper-text: var(--transition);
