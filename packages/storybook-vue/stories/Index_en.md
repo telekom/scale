@@ -1,5 +1,3 @@
-## About Scale
-
 ### Scale is the Telekom Digital Design System
 
 Scale is a part of Brand & Design. All components are brand compliant and help create a coherent brand experience.
@@ -29,23 +27,3 @@ By including design tokens, Scale is particularly adaptable. Changes and additio
 ### For better collaboration
 
 A design system encourages collaboration between teams and stakeholders. It creates a common foundation on which everyone can build together. As a designer or developer, you can help improve Scale. Send us your new or improved components to share with your colleagues in Scale.
-
-## Scale for designers
-
-Designers use Scale components to build outstanding digital experiences in Sketch.
-
-[Get started for Designers](./?path=/docs/setup-info-getting-started-for-designers--page)
-
-## Scale for developers
-
-Developers use Scale web components in HTML, Angular, React and Vue Interfaces.
-
-[Get started for Developers](./?path=/docs/setup-info-getting-started-for-developers--page)
-
-## Any questions?
-
-Review our [FAQ](./?path=/story/faq--page) or [Leave feedback.](./?path=/story/contact-your-feedback--page)
-
-## Contribute to Scale
-
-Read about [contributing to Scale.](./?path=/story/contact-contributing-to-scale--page)
