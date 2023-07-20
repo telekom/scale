@@ -1,10 +1,11 @@
 # New: Scale Figma Libraries
 
-## Für alle Designer*innen, die bereits mit Figma arbeiten, stellen wir nun auch Figma Libraries zur Verfügung.
+<img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
-<p><a href="https://www.figma.com/file/3xCcfn6sawB7EcfUjpr7OE/%E2%98%80%EF%B8%8F-Telekom-Scale-Beta-Light-1.0.0?type=design&node-id=11505%3A145418&mode=design&t=nAdhrYOpRNgurAwy-1" rel="nofollow" class="matomo_download">Telekom Scale Components Light </a></p>
+Für alle Designer*innen, die bereits mit Figma arbeiten, stellen wir nun auch Figma Libraries zur Verfügung.
 
-<p><a href="https://www.figma.com/file/tdmMhhu1FbA0GTapn3cGb1/%F0%9F%8C%92Telekom-Scale-Beta-Dark-1.0.0?type=design&node-id=13102%3A157996&mode=design&t=ne7mjHvtsCeTlqjL-1" rel="nofollow" class="matomo_download">Telekom Scale Components Dark </a></p>
+Telekom Scale Components Light  
+Telekom Scale Components Dark
 
 ## Light und Dark Mode
 
