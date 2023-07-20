@@ -93,10 +93,6 @@ Add an icon if it makes it easier for users to understand the function of the ch
 - Chips arranged horizontally are often located above the content they refer to.
 - Word the label as precisely as possible.
 
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
-
 ## Related components
 
 [Tag](?path=/usage/components-tag--standard),

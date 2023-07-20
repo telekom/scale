@@ -110,7 +110,3 @@ Banner Notifications sitzen zentriert oberhalb des Seiteninhalts.
 Positioniere Inline Notifications im entsprechenden Seitenbereich.
 
 ![Image Name](assets/3_components/notifications/position_inline.png)
-
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.

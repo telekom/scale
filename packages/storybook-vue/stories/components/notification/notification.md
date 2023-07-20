@@ -114,7 +114,3 @@ Center banner notifications above the page content.
 Position inline notifications in the appropriate page area.
 
 ![Image Name](assets/3_components/notifications/position_inline.png)
-
-## Beta component
-
-This component is still in the beta phase. When testing it, keep in mind that it might not have gone through all quality control checks, and it might not yet have WCAG accessibility certification. This component might change in the future.
