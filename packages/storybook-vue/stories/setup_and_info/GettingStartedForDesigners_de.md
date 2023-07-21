@@ -10,6 +10,8 @@ Die folgende Schrift gehört zu den Marken- und Design-Assets der Telekom. Sie i
 
 ## 2. Aktiviere die Komponenten-Libraries in deinem Design Tool
 
+<br/>
+
 ### Light und Dark Mode
 
 Scale beinhaltet für Light und Dark Mode jeweils eine eigene Library. So kannst du dein Interface entweder im hellen oder dunklen Modus gestalten. Ein Wechsel ist jederzeit per Knopfdruck möglich, sodass du die Wirkung im jeweils anderen Modus beurteilen kannst. Aber auch ohne zusätzliche Designs kann das Entwicklungsteam den anderen Modus aktivieren.
@@ -22,6 +24,8 @@ Scale beinhaltet für Light und Dark Mode jeweils eine eigene Library. So kannst
 
 Übrigens: Mit einer Pro Lizenz von Figma erhältst du sogar ganz automatisch künftige Updates. Gehe dafür in die Library zur Seite “Getting started” und hinterlasse deine E-Mail Adresse in dem dafür vorgesehenen Bereich. Wir laden dich dann zur Library ein.
 
+<br/>
+
 ### Sketch Libraries
 <img src="assets/1_setup/2_scale-for-designers/Sketch.png" alt={alt} style={{ width: '100%' }} />
 
@@ -30,6 +34,8 @@ Scale beinhaltet für Light und Dark Mode jeweils eine eigene Library. So kannst
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 Wichtiger Hinweis: das aktuellste Release beinhaltet kein Update der Sketch Library.
+
+<br/>
 
 ### Rechtliche Hinweise
 
@@ -40,6 +46,8 @@ Die Deutsche Telekom behält sich alle Rechte an der Marke Telekom vor. Für jed
 Zu jeder Komponente gibt es ausführliche Informationen zur Verwendung sowie zu den unterschiedlichen Varianten. Gehe dazu einfach in der linken Seitenleiste zur gewünschten Komponente und wähle dort die Registerkarte „Usage“ (1) aus.
 
 ![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
+
+<br/>
 
 # Dein Feedback ist willkommen!
 
