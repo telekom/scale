@@ -49,7 +49,7 @@ duet-date-picker .duet-date__input {
   background-color: var(--telekom-color-ui-state-fill-standard);
   padding: 1.125rem calc(2rem - var(--telekom-spacing-composition-space-01))
     0.25rem calc(var(--spacing-x) - var(--telekom-spacing-composition-space-01));
-  /* height: var(--telekom-spacing-composition-space-13); */
+  height: var(--telekom-spacing-composition-space-13);
   font: var(--telekom-text-style-body);
 }
 
@@ -141,7 +141,6 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
     var(--telekom-motion-easing-standard);
   pointer-events: none;
   font: var(--telekom-text-style-ui);
-  color: var(--telekom-color-text-and-icon-additional);
   transform: translate(var(--telekom-spacing-composition-space-05), 0.875rem); 
 }
 
