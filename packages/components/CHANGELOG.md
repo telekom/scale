@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.137](https://github.com/telekom/scale/compare/v3.0.0-beta.136...v3.0.0-beta.137) (2023-07-21)
+
+
+### Bug Fixes
+
+* a11y feedback ([#2049](https://github.com/telekom/scale/issues/2049)) ([3db8a8f](https://github.com/telekom/scale/commit/3db8a8fad8f80a7e94831394fb5c37225f0e9562))
+
+
+### Features
+
+* adding handler for 100+ percentage ([#2043](https://github.com/telekom/scale/issues/2043)) ([989b89c](https://github.com/telekom/scale/commit/989b89cad9921e4a9f9f0ab9682ffe35b31e4c72))
+* use new spacing tokens ([#2059](https://github.com/telekom/scale/issues/2059)) ([e432efd](https://github.com/telekom/scale/commit/e432efd6754d52bf0ed9a3fe9e28be11f954766a))
+
+
+
+
+
 # [3.0.0-beta.136](https://github.com/telekom/scale/compare/v3.0.0-beta.135...v3.0.0-beta.136) (2023-06-27)
 
 
