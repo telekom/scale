@@ -1,7 +1,7 @@
 describe('Dropdown', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.runColorSetup('components-dropdown--standard', mode);
+      await global.runColorSetup('deprecated-components-dropdown--standard', mode);
     });
     // screenshots of stories
     test.each([
@@ -13,7 +13,7 @@ describe('Dropdown', () => {
       ['with-custom-icon'],
     ])('%p', async (variant) => {
       await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-dropdown--${variant}&viewMode=story`
+        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-dropdown--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
       const previewHtml = await page.$('body');
@@ -32,7 +32,7 @@ describe('Dropdown', () => {
     });
     // hover, active, focus
     test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`components-dropdown--${variant}`);
+      await global.runSetup(`deprecated-components-dropdown--${variant}`);
 
       const dropdown = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-dropdown .input__dropdown")`
