@@ -1,7 +1,10 @@
 describe('Dropdown', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.runColorSetup('deprecated-components-dropdown--standard', mode);
+      await global.runColorSetup(
+        'deprecated-components-dropdown--standard',
+        mode
+      );
     });
     // screenshots of stories
     test.each([
