@@ -26,4 +26,4 @@ Durch die Verwendung von Design Tokens ist Scale besonders anpassungsfähig. Än
 
 ### Für bessere Kollaboration
 
-Ein Designsytsem fördert die Zusammenarbeit zwischen Teams und Stakeholdern. Es schafft eine gemeinsame Grundlage, auf die alle Beteiligten gemeinsam aufbauen können. Als Designer*in oder Entwickler*in kannst du dazu beitragen, Scale zu verbessern. Schicke uns deine neuen oder verbesserten Komponenten, um sie mit deinen Kolleg*innen in Scale zu teilen.
+Ein Designsytsem fördert die Zusammenarbeit zwischen Teams und Stakeholdern. Es schafft eine gemeinsame Grundlage, auf die alle Beteiligten gemeinsam aufbauen können. Als Designer*in oder Entwickler*in kannst du dazu beitragen, Scale zu verbessern. Schicke uns deine neuen oder verbesserten Komponenten, um sie mit deinen Kolleg\*innen in Scale zu teilen.

@@ -20,11 +20,9 @@ The UI libraries are available in Figma and Sketch. You can use the code compone
 
 Scale saves you time throughout the entire design and development process: for the design of user interfaces, prototyping, design handover, front-end development, and in the approval process with Brand & Design. This leaves more time to create specific features and functionality.
 
-
 ### Flexibility and scalability through design tokens
 
 By including design tokens, Scale is particularly adaptable. Changes and additions can be implemented quickly. Other themes for third-party brands can also be created quickly.
-
 
 ### For better collaboration
 

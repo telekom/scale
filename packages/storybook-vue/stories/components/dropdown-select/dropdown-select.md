@@ -62,4 +62,3 @@ The dropdown menu contains the available options or groups of options.
 [Switch, ](?path=/usage/components-switch--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)
 [Date Picker](?path=/usage/components-date-picker--standard)
-

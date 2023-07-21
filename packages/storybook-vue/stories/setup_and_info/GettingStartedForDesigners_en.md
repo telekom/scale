@@ -1,7 +1,5 @@
 # Getting started for designers
 
-
-
 With Scale, you can develop brand-compliant, intuitive, and accessible products and services – in a simple and efficient way. The component library contains everything you need to do this.
 
 ## 1. Install TeleNeo
@@ -15,10 +13,12 @@ The following font is part of the Telekom brand and design assets. It is not ope
 <br/>
 
 ### Light and dark mode
+
 r
 Scale contains its own library for light and dark mode. This way, you can design your interface in either light or dark mode. It’s possible to change this anytime at the push of a button, so you can assess a given effect in the other mode. But even without additional designs, the development team can activate the other mode.
 
 ### Figma libraries
+
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
 <p><a href="https://www.figma.com/file/3xCcfn6sawB7EcfUjpr7OE/%E2%98%80%EF%B8%8F-Telekom-Scale-Beta-Light-1.0.0?type=design&node-id=11505%3A145418&mode=design&t=nAdhrYOpRNgurAwy-1" rel="nofollow" class="matomo_download">Telekom Scale Components Light </a></p>
@@ -30,6 +30,7 @@ By the way, with a Pro license from Figma, you will automatically receive future
 <br/>
 
 ### Sketch libraries
+
 <img src="assets/1_setup/2_scale-for-designers/Sketch.png" alt={alt} style={{ width: '100%' }} />
 
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
@@ -42,7 +43,7 @@ Important note: the latest release doesn’t include an update of the Sketch lib
 
 ### Legal notes
 
-Deutsche Telekom reserves all rights to the Telekom brand. The Telekom theme must be completely replaced for any usage that is not explicitly intended for the Telekom. 
+Deutsche Telekom reserves all rights to the Telekom brand. The Telekom theme must be completely replaced for any usage that is not explicitly intended for the Telekom.
 
 ## Design documentation
 
@@ -51,7 +52,6 @@ For each component, there is detailed information on its usage as well as on the
 ![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
 
 <br/>
-
 
 # Your feedback is welcome!
 

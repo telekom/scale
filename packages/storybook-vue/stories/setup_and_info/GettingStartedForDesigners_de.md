@@ -1,4 +1,4 @@
-# Erste Schritte für Designer*innen
+# Erste Schritte für Designer\*innen
 
 Mit Scale entwickelst du markenkonforme, intuitive und barrierefreie Produkte und Services – einfach und effizient. Die Komponenten-Library enthält alles, was du dafür benötigst.
 
@@ -17,6 +17,7 @@ Die folgende Schrift gehört zu den Marken- und Design-Assets der Telekom. Sie i
 Scale beinhaltet für Light und Dark Mode jeweils eine eigene Library. So kannst du dein Interface entweder im hellen oder dunklen Modus gestalten. Ein Wechsel ist jederzeit per Knopfdruck möglich, sodass du die Wirkung im jeweils anderen Modus beurteilen kannst. Aber auch ohne zusätzliche Designs kann das Entwicklungsteam den anderen Modus aktivieren.
 
 ### Figma Libraries
+
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
 <p><a href="https://www.figma.com/file/3xCcfn6sawB7EcfUjpr7OE/%E2%98%80%EF%B8%8F-Telekom-Scale-Beta-Light-1.0.0?type=design&node-id=11505%3A145418&mode=design&t=nAdhrYOpRNgurAwy-1" rel="nofollow" class="matomo_download">Telekom Scale Components Light </a></p>
@@ -27,6 +28,7 @@ Scale beinhaltet für Light und Dark Mode jeweils eine eigene Library. So kannst
 <br/>
 
 ### Sketch Libraries
+
 <img src="assets/1_setup/2_scale-for-designers/Sketch.png" alt={alt} style={{ width: '100%' }} />
 
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>

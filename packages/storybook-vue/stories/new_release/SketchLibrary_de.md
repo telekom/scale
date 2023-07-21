@@ -2,7 +2,7 @@
 
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
-Für alle Designer*innen, die bereits mit Figma arbeiten, stellen wir nun auch Figma Libraries zur Verfügung.
+Für alle Designer\*innen, die bereits mit Figma arbeiten, stellen wir nun auch Figma Libraries zur Verfügung.
 
 <p><a href="https://www.figma.com/file/3xCcfn6sawB7EcfUjpr7OE/%E2%98%80%EF%B8%8F-Telekom-Scale-Beta-Light-1.0.0?type=design&node-id=11505%3A145418&mode=design&t=nAdhrYOpRNgurAwy-1" rel="nofollow" class="matomo_download">Telekom Scale Components Light </a></p>
 
