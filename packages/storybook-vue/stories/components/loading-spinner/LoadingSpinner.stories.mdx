@@ -85,6 +85,32 @@ export const Template = () => ({
 <scale-loading-spinner text="Loading ..."></scale-loading-spinner>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  --size-outer-small: 24px;
+  --size-outer-large: 48px;
+  --size-inner-small: 24px;
+  --size-inner-large: 48px;
+
+  --line-height-size-small: 24px;
+  --line-height-size-large: 48px;
+
+  --font: var(--telekom-text-style-ui-bold);
+
+  --color-circle-primary: var(--telekom-color-primary-standard);
+  --color-circle-primary-inner: var(--telekom-color-ui-subtle);
+  --color-text-primary: var(--telekom-color-text-and-icon-additional);
+  --color-circle-white: var(--telekom-color-ui-base);
+  --color-circle-white-inner: var(--telekom-color-ui-regular);
+  --color-text-white: var(--telekom-color-text-and-icon-white-standard);
+
+  --spacing-vertical: var(--telekom-spacing-composition-space-05);
+  --spacing-horizontal: var(--telekom-spacing-composition-space-06);
+}
+```
+
 ## Small Size & Vertical Text (Primary)
 
 <Canvas withSource="none">
