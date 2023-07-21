@@ -1,58 +1,59 @@
-# Getting Started for Designers
+# Getting started for designers
 
-Quickly create beautiful, intuitive, and accessible experiences. The Scale components kit contains all the resources you need to get started.
+With Scale, you can develop brand-compliant, intuitive, and accessible products and services – in a simple and efficient way. The component library contains everything you need to do this.
 
-## 1. Install Sketch
+## 1. Install TeleNeo
 
-To work with the design system components, you need the latest version of <a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer">Sketch</a>.
-
-## 2. Download and install the TeleNeo font
-
-> Please note that the following font is a part of Telekom brand and design assets and is **not open source** and **not available for free use**. Commercial usage requires Deutsche Telekom's express permission.
-
-TeleNeo is the Telekom company font:
+The following font is part of the Telekom brand and design assets. It is not open source and may not be used freely. The express consent of Deutsche Telekom is required for commercial use.
 
 [Download TeleNeo](https://www.brand-design.telekom.com/asset/font-0-teleneo/)
 
-## 3. Import the Components Kit
+## 2. Activate the component libraries in your design tool
 
-> Please note that the following components make use of Telekom brand and design assets — including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components — and are **not open source** and **not available for free use**. They require Deutsche Telekom's express permission for use in commerce.
+<br/>
 
-Scale components exist as a Sketch library:
+### Light and dark mode
+
+r
+Scale contains its own library for light and dark mode. This way, you can design your interface in either light or dark mode. It’s possible to change this anytime at the push of a button, so you can assess a given effect in the other mode. But even without additional designs, the development team can activate the other mode.
+
+### Figma libraries
+
+<img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
+
+<p><a href="https://www.figma.com/file/3xCcfn6sawB7EcfUjpr7OE/%E2%98%80%EF%B8%8F-Telekom-Scale-Beta-Light-1.0.0?type=design&node-id=11505%3A145418&mode=design&t=nAdhrYOpRNgurAwy-1" rel="nofollow" class="matomo_download">Telekom Scale Components Light </a></p>
+
+<p><a href="https://www.figma.com/file/tdmMhhu1FbA0GTapn3cGb1/%F0%9F%8C%92Telekom-Scale-Beta-Dark-1.0.0?type=design&node-id=13102%3A157996&mode=design&t=ne7mjHvtsCeTlqjL-1" rel="nofollow" class="matomo_download">Telekom Scale Components Dark </a></p>
+
+By the way, with a Pro license from Figma, you will automatically receive future updates. To get this, go to “Getting started” in the library and leave your email address in the space provided. We will then invite you to the library.
+
+<br/>
+
+### Sketch libraries
+
+<img src="assets/1_setup/2_scale-for-designers/Sketch.png" alt={alt} style={{ width: '100%' }} />
 
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
 
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
-&nbsp;
+Important note: the latest release doesn’t include an update of the Sketch library.
 
-### Importing the components library
+<br/>
 
-If your browser prompts you to choose an application, confirm to open the link in Sketch.
+### Legal notes
 
-The library should now show up in "Sketch → Preferences → Libraries".
+Deutsche Telekom reserves all rights to the Telekom brand. The Telekom theme must be completely replaced for any usage that is not explicitly intended for the Telekom.
 
-![Scale for Designers](assets/1_setup/2_scale-for-designers/preferences.png)
+## Design documentation
 
-### Accessing the components in Sketch
-
-Select "Insert → Symbols", find the Scale Sketch library, and hover over it. Then you will see a list of all components. Move the mouse to a component to display further variants and states. After making your selection, simply drag the corresponding component onto your artboard.
-
-![Scale for Designers](assets/1_setup/2_scale-for-designers/insert.png)
-
-### Component usage
-
-This site provides you with information on the components Scale currently offers, as well as their variants and how to use them.
-Just navigate to the component you want to learn more about in the left sidebar and select the "Usage" (1) tab in Storybook.
+For each component, there is detailed information on its usage as well as on the different variants. To access this, simply go to the desired component in the left sidebar and select the Usage tab (1).
 
 ![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
 
-## 4. Leave feedback
+<br/>
 
-Find out how to provide [feedback](./?path=/story/contact-your-feedback--page) and make Scale better for everyone.
+# Your feedback is welcome!
 
-Share your designs so we can learn from each other.
-
-## Get help with Sketch
-
-Sketch provides outstanding <a href="https://www.sketch.com/docs/" target="_blank" rel="noopener noreferrer">tutorials and help docs</a>.
+With your feedback, we can make Scale even better. You can also share your designs with us so everyone can benefit from them.
+Feel free to reach out to the Scale team at [contact@brand-design.telekom.com](mailto:contact@brand-design.telekom.com).

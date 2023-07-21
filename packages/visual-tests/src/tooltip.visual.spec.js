@@ -4,7 +4,7 @@ describe('Tooltip', () => {
       await global.runColorSetup('components-tooltip--standard', mode);
     });
     test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`beta-components-tooltip--${variant}`);
+      await global.runSetup(`components-tooltip--${variant}`);
       const button = await global.page.evaluateHandle(
         'document.querySelector("#root > div > scale-tooltip > scale-button")'
       );

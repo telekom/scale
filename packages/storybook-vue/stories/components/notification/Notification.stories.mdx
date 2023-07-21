@@ -9,7 +9,7 @@ import { action } from '@storybook/addon-actions';
 import ScaleNotification from './ScaleNotification.vue';
 
 <Meta
-  title="Beta Components/Notification"
+  title="Components/Notification"
   component={ScaleNotification}
   argTypes={{
     heading: {
@@ -56,8 +56,8 @@ import ScaleNotification from './ScaleNotification.vue';
         type: 'number'
       }
     },    
-    ariaHeading: {
-      defaultValue: 'Information',
+    ariaHeading:{
+      defaultValue: 'Information:',
       control: {
         type: 'text'
       }
@@ -135,7 +135,7 @@ export const Template = (args, context) => ({
   }}
 >
   <h1>Notification</h1>
-  <img src="assets/beta.png" alt="Beta Component" />
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
@@ -211,6 +211,7 @@ export const Template = (args, context) => ({
     heading: 'Success notification with icon, title and close',
     type: 'banner',
     variant: 'success',
+    ariaHeading: 'Success:'
   }}>
     {Template.bind({})}
   </Story>
@@ -232,7 +233,7 @@ export const Template = (args, context) => ({
     type: 'toast',
     variant: 'warning',
     text: 'Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et dolore.',
-    ariaHeading: 'Warning'
+    ariaHeading: 'Warning:'
   }}>
     {Template.bind({})}
   </Story>
@@ -353,6 +354,7 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
     heading: 'Success notification with icon and title',
     variant: 'success',
     dismissible: false,
+    ariaHeading: 'Success:'
   }}>
     {Template.bind({})}
   </Story>
@@ -393,7 +395,7 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
     heading: 'Danger notification with icon and title',
     variant: 'danger',
     dismissible: false,
-    ariaHeading: 'Danger'
+    ariaHeading: 'Danger:'
   }}>
     {Template.bind({})}
   </Story>
@@ -414,7 +416,7 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
     heading: 'Warning notification with icon and title',
     variant: 'warning',
     dismissible: false,
-    ariaHeading: 'Warning'
+    ariaHeading: 'Warning:'
   }}>
     {Template.bind({})}
   </Story>

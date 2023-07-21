@@ -13,7 +13,7 @@ describe('Notification', () => {
       ['danger'],
       ['warning'],
     ])('%p', async (variant) => {
-      await global.runSetup(`beta-components-notification--${variant}`);
+      await global.runSetup(`components-notification--${variant}`);
       await global.visualCheck();
     });
   });

@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Tooltip</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 Tooltips provide additional information or a definition for an element to help users interact with it.
 
@@ -42,7 +42,3 @@ The container is gray by default. If you want to use a different color, make sur
 
 <h5>Text (2)</h5>
 The text contains a short, simple and precise description.
-
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
