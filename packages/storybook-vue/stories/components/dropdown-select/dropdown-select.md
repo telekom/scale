@@ -50,7 +50,7 @@ If users have to select an option, submitting a form without a selection will re
 
 ### Label and Value (5)
 
-When a Value from the dropdown is selected, it takes the place of the Label and the Label collapses into a smaller size
+When a Value from the dropdown is selected, it takes the place of the Label and the Label collapses into a smaller size.
 
 ### Dropdown menu (6)
 

@@ -1,3 +1,5 @@
+<br/>
+
 ### Scale ist das digitale Design System der Telekom
 
 Scale ist Teil von Brand & Design. Alle Komponenten sind markenkonform und helfen, ein kohärentes Markenerlebnis zu schaffen.

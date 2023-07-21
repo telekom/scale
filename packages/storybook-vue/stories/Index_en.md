@@ -1,3 +1,5 @@
+<br/>
+
 ### Scale is the Telekom Digital Design System
 
 Scale is a part of Brand & Design. All components are brand compliant and help create a coherent brand experience.
