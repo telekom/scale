@@ -187,13 +187,13 @@ scale-text-field {
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-spacing-unit-x025) solid
+  --border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-standard);
-  --border-error: var(--telekom-spacing-unit-x05) solid
+  --border-error: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
-  --border-success: var(--telekom-spacing-unit-x05) solid
+  --border-success: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-success-standard);
-  --border-warning: var(--telekom-spacing-unit-x05) solid
+  --border-warning: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-warning-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
@@ -203,7 +203,7 @@ scale-text-field {
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
   --height: 44px;
-  --spacing-x: var(--telekom-spacing-unit-x3);
+  --spacing-x: var(--telekom-spacing-composition-space-05);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
   --border-color-readonly: var(--telekom-color-ui-border-disabled);
@@ -213,16 +213,17 @@ scale-text-field {
   --font-weight-meta: var(--telekom-line-weight-bold);
   --font-size-meta: var(--telekom-typography-font-size-small);
   --line-height-meta: var(--telekom-typography-line-spacing-standard);
-  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /* control */
-  --spacing-control: 1.125rem calc(2rem - var(--telekom-spacing-unit-x025))
-    0.25rem calc(0.75rem - var(--telekom-spacing-unit-x025));
+  --spacing-control: 1.125rem
+    calc(2rem - var(--telekom-spacing-composition-space-01)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-composition-space-01));
   --transition-control: var(--transition);
   --background-control: var(--telekom-color-ui-state-fill-standard);
-  --margin-bottom-control: var(--telekom-spacing-unit-x1);
+  --margin-bottom-control: var(--telekom-spacing-composition-space-03);
 
   /* counter */
   --transition-counter: var(--transition);

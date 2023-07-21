@@ -169,11 +169,19 @@ export const Template = (args, context) => ({
 ```css
 :host {
   --width: 100%;
+  --width-toast: 25rem;
   --radius: var(--telekom-radius-standard);
-  --spacing-y: var(--telekom-spacing-unit-x4);
-  --spacing-y-inner: var(--telekom-spacing-unit-x2);
-  --spacing-x-aside: var(--telekom-spacing-unit-x12);
-  --spacing-outer-toast: var(--telekom-spacing-unit-x4);
+  --spacing-y: var(--telekom-spacing-composition-space-06);
+  --spacing-y-inner: var(--telekom-spacing-composition-space-04);
+  --spacing-x-aside: var(--telekom-spacing-composition-space-14);
+
+  --duration-in: var(--telekom-motion-duration-transition);
+  --duration-out: var(--telekom-motion-duration-transition);
+  --easing-in: var(--telekom-motion-easing-enter);
+  --easing-out: var(--telekom-motion-easing-exit);
+  --translate-x: 0;
+  --translate-y: 0;
+  --translate-z: 0;
 }
 ```
 

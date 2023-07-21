@@ -105,6 +105,11 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
   --spacing-x-list: 0;
 }
 
+:host(menu-flyout-item) {
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);  
+}
+
 /* menu-flyout-divider */
 :host(scale-menu-flyout-divider) {
   --color: var(--telekom-color-ui-faint);

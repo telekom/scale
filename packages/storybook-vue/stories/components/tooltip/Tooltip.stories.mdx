@@ -136,6 +136,35 @@ export const FocusTemplate = (args, { argTypes }) => ({
 </scale-tooltip>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  /* tooltip */
+  --radius: var(--telekom-radius-small);
+  --background: var(--telekom-color-background-surface-highlight);
+  --color: var(--telekom-color-text-and-icon-white-standard);
+  --font-weight: var(--telekom-typography-font-weight-regular);
+  --font-size: var(--telekom-typography-font-size-body);
+  --line-height: var(--telekom-typography-line-spacing-standard);
+  --spacing: var(--telekom-spacing-composition-space-02)
+    var(--telekom-spacing-composition-space-04);
+
+  /* arrow */
+  --arrow-size: 12px;
+
+  /* tooltip hide */
+  --transition-delay-hide: var(--telekom-motion-duration-instant);
+  --transition-duration-hide: var(--telekom-motion-duration-immediate);
+  --transition-timing-function-hide: var(--telekom-motion-easing-standard);
+
+  /* tooltip show */
+  --transition-duration-show: var(--telekom-motion-duration-immediate);
+  --transition-timing-function-show: var(--telekom-motion-easing-standard);
+  --z-index: var(--scl-z-index-70);  
+}
+```
+
 ## Placement
 
 ### Left

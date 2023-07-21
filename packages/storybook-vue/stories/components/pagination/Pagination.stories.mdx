@@ -177,6 +177,33 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 ></scale-pagination>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  --color: var(--telekom-color-text-and-icon-standard);
+  --radius: var(--telekom-radius-standard);
+  --font-size: var(--telekom-typography-font-size-small);
+  --border: 1px solid var(--telekom-color-ui-faint);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-button: var(--telekom-color-ui-subtle);
+  --border-button: var(--border);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
+  --radius-first-prompt: var(--radius) 0 0 var(--radius);
+  --radius-last-prompt: 0 var(--radius) var(--radius) 0;
+  --radius-first-prompt-stack: 0 0 0 var(--radius);
+  --radius-last-prompt-stack: 0 0 var(--radius) 0;
+  --stroke-svg: var(--telekom-color-ui-extra-strong);
+  --stroke-svg-high-contrast: #fff;
+  --width-button: 44px;
+  --padding-info: var(--telekom-spacing-composition-space-04);
+  --height-button: 44px;
+  --line-height-info: calc(var(--height-button) - 2px);
+}
+```
+
 ## Hidden Borders
 
 <Canvas withSource="none">
