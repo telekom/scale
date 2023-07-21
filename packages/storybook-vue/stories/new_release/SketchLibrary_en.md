@@ -4,7 +4,7 @@
 
 We now also provide Figma libraries for all designers who already work with Figma. 
 
-Telekom Scale Components Light
+Telekom Scale Components Light  
 Telekom Scale Components Dark
 
 ## Light and dark mode
