@@ -2,7 +2,7 @@
 
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
-## We now also provide Figma libraries for all designers who already work with Figma. 
+We now also provide Figma libraries for all designers who already work with Figma. 
 
 Telekom Scale Components Light
 Telekom Scale Components Dark
