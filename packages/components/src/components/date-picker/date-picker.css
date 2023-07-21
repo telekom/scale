@@ -133,7 +133,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
 .scale-date-picker .date-picker__label {
   top: 0;
   left: 0;
-  color: var(--telekom-color-text-and-icon-additional); 
+  color: var(--telekom-color-text-and-icon-additional);
   display: flex;
   z-index: var(--z-index-label);
   position: absolute;
@@ -141,7 +141,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
     var(--telekom-motion-easing-standard);
   pointer-events: none;
   font: var(--telekom-text-style-ui);
-  transform: translate(var(--telekom-spacing-composition-space-05), 0.875rem); 
+  transform: translate(var(--telekom-spacing-composition-space-05), 0.875rem);
 }
 
 duet-date-picker .duet-date__input::placeholder {
@@ -154,7 +154,7 @@ duet-date-picker .duet-date__input::placeholder {
 duet-date-picker .duet-date__header {
   margin-top: var(--telekom-spacing-composition-space-04);
   margin-bottom: var(--telekom-spacing-composition-space-04);
-  font: var(--telekom-text-style-ui)
+  font: var(--telekom-text-style-ui);
 }
 
 duet-date-picker .duet-date__select {
@@ -262,7 +262,10 @@ duet-date-picker .duet-date__dialog-content {
   border: none;
   box-shadow: var(--telekom-shadow-raised-standard);
   max-width: 324px;
-  padding: var(--telekom-spacing-composition-space-06) var(--telekom-spacing-composition-space-04) var(--telekom-spacing-composition-space-04) var(--telekom-spacing-composition-space-04);
+  padding: var(--telekom-spacing-composition-space-06)
+    var(--telekom-spacing-composition-space-04)
+    var(--telekom-spacing-composition-space-04)
+    var(--telekom-spacing-composition-space-04);
   margin-top: var(--telekom-spacing-composition-space-03);
 }
 
