@@ -19,11 +19,12 @@
 .input .input__input,
 .input .input__select {
   width: 100%;
-  height: var(--telekom-spacing-unit-x12);
+  height: var(--telekom-spacing-composition-space-14);
   margin: 0;
   display: flex;
   outline: none;
-  padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3);
+  padding: var(--telekom-spacing-composition-space-05)
+    var(--telekom-spacing-composition-space-05);
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
@@ -40,7 +41,8 @@
   resize: vertical;
   display: flex;
   outline: none;
-  padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3);
+  padding: var(--telekom-spacing-composition-space-05)
+    var(--telekom-spacing-composition-space-05);
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
@@ -48,7 +50,7 @@
   font-family: inherit;
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
-  border: var(--telekom-spacing-unit-x025) solid
+  border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-standard);
 }
 .input .input__select {
@@ -63,7 +65,7 @@
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   margin-left: auto;
-  padding-right: var(--telekom-spacing-unit-x3);
+  padding-right: var(--telekom-spacing-composition-space-05);
   justify-content: flex-end;
   font-size: var(--telekom-typography-font-size-small);
   line-height: var(--telekom-typography-line-spacing-standard);
@@ -72,7 +74,7 @@
 .input .input__helper-text {
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
-  padding-left: var(--telekom-spacing-unit-x3);
+  padding-left: var(--telekom-spacing-composition-space-05);
   font-size: var(--telekom-typography-font-size-small);
   line-height: var(--telekom-typography-line-spacing-standard);
   color: var(--telekom-color-text-and-icon-functional-informational);
@@ -80,7 +82,7 @@
 .input .input__meta {
   display: flex;
   justify-content: space-between;
-  margin-top: var(--telekom-spacing-unit-x1);
+  margin-top: var(--telekom-spacing-composition-space-03);
 }
 .input:not(.input--disabled):hover .input__select-wrapper {
   --icon-color: var(--telekom-color-text-and-icon-primary-hovered, #f90984);
@@ -99,7 +101,7 @@
 .input:not(.input--disabled) .input__input:focus,
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: 0 0 0 var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-focus-standard);
 }
 .input:not(.input--disabled) .input__input:focus::placeholder,
@@ -111,7 +113,7 @@
 }
 .input .input__select-wrapper scale-icon {
   top: 50%;
-  right: var(--telekom-spacing-unit-x3);
+  right: var(--telekom-spacing-composition-space-05);
   position: absolute;
   transform: translateY(-50%);
   pointer-events: none;
@@ -131,11 +133,12 @@
 }
 .input--variant-animated .input__input,
 .input--variant-animated .input__select {
-  padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3) 0
-    calc(var(--telekom-spacing-unit-x3) - 1px);
+  padding: var(--telekom-spacing-composition-space-05)
+    var(--telekom-spacing-composition-space-05) 0
+    calc(var(--telekom-spacing-composition-space-05) - 1px);
 }
 .input--variant-animated .input__textarea {
-  padding-top: var(--telekom-spacing-unit-x6);
+  padding-top: var(--telekom-spacing-composition-space-08);
 }
 .input--variant-animated .input__label {
   top: 0;
@@ -150,10 +153,10 @@
   font-size: var(--telekom-typography-font-size-body);
   /* previously: transform: translate(13px, calc((48px - 1rem) / 2)); */
   transform: translate(
-    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-composition-space-05),
     calc(
       (
-          var(--telekom-spacing-unit-x12) -
+          var(--telekom-spacing-composition-space-14) -
             var(--telekom-typography-font-size-body)
         ) / 2
     )
@@ -164,8 +167,8 @@
 .input--variant-animated.animated .input__label {
   color: var(--telekom-color-text-and-icon-additional);
   transform: translate(
-    var(--telekom-spacing-unit-x3),
-    var(--telekom-spacing-unit-x2)
+    var(--telekom-spacing-composition-space-05),
+    var(--telekom-spacing-composition-space-04)
   );
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
@@ -175,7 +178,7 @@
 .input--status-error .input__input,
 .input--status-error .input__textarea,
 .input--status-error .input__select {
-  border: var(--telekom-spacing-unit-x05) solid
+  border: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
 }
 .input--status-error .input__helper-text {
@@ -185,10 +188,10 @@
   color: var(--telekom-color-text-and-icon-functional-danger);
 }
 .input--size-small .input__input {
-  height: var(--telekom-spacing-unit-x10);
+  height: var(--telekom-spacing-composition-space-12);
 }
 .input--size-small .input__select {
-  height: var(--telekom-spacing-unit-x10);
+  height: var(--telekom-spacing-composition-space-12);
 }
 .input--size-small .input__label {
   top: 0;
@@ -206,10 +209,10 @@
     calc((var(--input-small-height, 40px) - 1rem) / 2)
   ); */
   transform: translate(
-    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-composition-space-05),
     calc(
       (
-          var(--telekom-spacing-unit-x10) -
+          var(--telekom-spacing-composition-space-12) -
             var(--telekom-typography-font-size-body)
         ) / 2
     )
@@ -220,8 +223,8 @@
 .input--size-small.animated .input__label {
   color: var(--telekom-color-text-and-icon-additional);
   transform: translate(
-    var(--telekom-spacing-unit-x3),
-    var(--telekom-spacing-unit-x1)
+    var(--telekom-spacing-composition-space-05),
+    var(--telekom-spacing-composition-space-03)
   );
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
@@ -249,19 +252,19 @@
   width: 100%;
 }
 .input--type-checkbox .input__helper-text {
-  padding-left: var(--telekom-spacing-unit-x8);
+  padding-left: var(--telekom-spacing-composition-space-10);
 }
 .input--type-checkbox label {
   color: var(--telekom-color-text-and-icon-standard);
   font-weight: var(--telekom-typography-font-weight-medium);
 }
 .input--type-checkbox .input__checkbox-container {
-  width: var(--telekom-spacing-unit-x4);
-  height: var(--telekom-spacing-unit-x4);
+  width: var(--telekom-spacing-composition-space-06);
+  height: var(--telekom-spacing-composition-space-06);
   display: flex;
   position: relative;
   align-items: center;
-  margin-right: var(--telekom-spacing-unit-x2);
+  margin-right: var(--telekom-spacing-composition-space-04);
 }
 .input--type-checkbox input:disabled ~ label {
   color: var(--telekom-color-ui-disabled);
@@ -320,7 +323,7 @@
   input:checked:not([disabled])
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  border: var(--telekom-spacing-unit-x025) solid
+  border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-primary-standard, #e20074);
   background: var(--telekom-color-primary-standard, #e20074);
 }
@@ -334,7 +337,7 @@
   input:focus
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: 0 0 0 var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-focus-standard);
 }
 .input--type-checkbox
@@ -391,22 +394,22 @@
   color: var(--telekom-color-text-and-icon-primary-pressed, #cb0068);
 }
 .input--type-checkbox .input__checkbox-container .input__checkbox-placeholder {
-  width: var(--telekom-spacing-unit-x4);
-  height: var(--telekom-spacing-unit-x4);
+  width: var(--telekom-spacing-composition-space-06);
+  height: var(--telekom-spacing-composition-space-06);
   margin: 0;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   border-radius: var(--telekom-radius-standard);
-  border: var(--telekom-spacing-unit-x025) solid
+  border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-text-and-icon-standard);
   background: var(--telekom-color-background-surface);
 }
 .input--type-checkbox .input__checkbox-container scale-icon {
-  top: calc(0.5 * var(--telekom-spacing-unit-x3));
-  left: calc(0.5 * var(--telekom-spacing-unit-x3));
-  width: var(--telekom-spacing-unit-x3);
-  height: var(--telekom-spacing-unit-x3);
+  top: calc(0.5 * var(--telekom-spacing-composition-space-05));
+  left: calc(0.5 * var(--telekom-spacing-composition-space-05));
+  width: var(--telekom-spacing-composition-space-05);
+  height: var(--telekom-spacing-composition-space-05);
   position: absolute;
   user-select: none;
   /* TODO this could removed once scale-icon is removed */
@@ -419,7 +422,7 @@
 .input--type-checkbox.input--status-error
   .input__checkbox-container
   .input__checkbox-placeholder {
-  border: var(--telekom-spacing-unit-x05) solid
+  border: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
 }
 .input--type-radio {
@@ -431,8 +434,8 @@
   width: 100%;
 }
 .input--type-radio .input__helper-text {
-  margin-top: var(--telekom-spacing-unit-x1);
-  padding-left: var(--telekom-spacing-unit-x6);
+  margin-top: var(--telekom-spacing-composition-space-03);
+  padding-left: var(--telekom-spacing-composition-space-08);
 }
 .input--type-radio label {
   color: var(--telekom-color-text-and-icon-standard);
@@ -441,8 +444,8 @@
   font-weight: var(--telekom-typography-font-weight-medium);
 }
 .input--type-radio input {
-  width: var(--telekom-spacing-unit-x4);
-  height: var(--telekom-spacing-unit-x4);
+  width: var(--telekom-spacing-composition-space-06);
+  height: var(--telekom-spacing-composition-space-06);
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   border-radius: var(--telekom-radius-circle);
@@ -450,7 +453,7 @@
   background-color: #fff;
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-border-standard);
-  margin: 0 var(--telekom-spacing-unit-x2) 0 0;
+  margin: 0 var(--telekom-spacing-composition-space-04) 0 0;
 }
 .input--type-radio input:focus {
   outline: none;
@@ -465,47 +468,47 @@
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 .input--type-radio input:active {
-  border: var(--telekom-spacing-unit-x2) solid
+  border: var(--telekom-spacing-composition-space-04) solid
     var(--telekom-color-primary-pressed);
 }
 .input--type-radio input:not(:checked):not([disabled]):active ~ label {
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 .input--type-radio input:disabled {
-  border: var(--telekom-spacing-unit-x025) solid
+  border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-disabled);
 }
 .input--type-radio input:disabled ~ label {
   color: var(--telekom-color-text-and-icon-disabled);
 }
 .input--type-radio.input--status-error input {
-  border: var(--telekom-spacing-unit-x05) solid
+  border: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
 }
 .input--type-radio input:checked {
-  border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
+  border: calc(0.5 * var(--telekom-spacing-composition-space-05)) solid
     var(--telekom-color-primary-standard);
 }
 .input--type-radio input:checked:active {
-  border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
+  border: calc(0.5 * var(--telekom-spacing-composition-space-05)) solid
     var(--telekom-color-primary-pressed, #cb0068);
 }
 .input--type-radio input:checked:disabled {
   background: var(--telekom-color-ui-disabled);
-  border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
+  border: calc(0.5 * var(--telekom-spacing-composition-space-05)) solid
     var(--telekom-color-ui-border-disabled);
 }
 .input--type-radio input:checked:disabled ~ label {
   color: var(--telekom-color-text-and-icon-disabled);
 }
 .input__textarea-label-safety-background {
-  top: var(--telekom-spacing-unit-x05);
-  left: var(--telekom-spacing-unit-x05);
-  right: var(--telekom-spacing-unit-x05);
+  top: var(--telekom-spacing-composition-space-02);
+  left: var(--telekom-spacing-composition-space-02);
+  right: var(--telekom-spacing-composition-space-02);
   position: absolute;
   pointer-events: none;
   border-radius: var(--telekom-radius-standard);
-  height: var(--telekom-spacing-unit-x6);
+  height: var(--telekom-spacing-composition-space-08);
   background-color: var(--telekom-color-background-surface, #ffffff);
 }
 .input--disabled .input__textarea-label-safety-background {

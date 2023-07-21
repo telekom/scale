@@ -1,57 +1,56 @@
 # Erste Schritte für Designer\*innen
 
-Mit Scale entwickelst du ästhetische, intuitive und barrierefreie Produkte und Services – einfach und effizient. Die Komponenten-Library enthält alles, was du dafür benötigst.
+Mit Scale entwickelst du markenkonforme, intuitive und barrierefreie Produkte und Services – einfach und effizient. Die Komponenten-Library enthält alles, was du dafür benötigst.
 
-## 1. Installiere Sketch
+## 1. Installiere TeleNeo
 
-Um mit der Scale Design System Library zu arbeiten, benötigst du die aktuelle Version von <a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer">Sketch</a>.
-
-## 2. Lade und installiere die TeleNeo Schrift
-
-> Bitte beachte: Die folgende Schrift gehört zu den Marken- und Design-Assets der Telekom. Sie ist **nicht Open Source** und **darf nicht frei verwendet werden**. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
-
-TeleNeo ist die Telekom Hausschrift.
+Die folgende Schrift gehört zu den Marken- und Design-Assets der Telekom. Sie ist nicht Open Source und darf nicht frei verwendet werden. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
 
 [Download TeleNeo](https://www.brand-design.telekom.com/asset/font-0-teleneo/)
 
-## 3. Importiere die Scale Sketch Library
+## 2. Aktiviere die Komponenten-Libraries in deinem Design Tool
 
-> Bitte beachte: Die folgenden Komponenten enthalten Marken- und Design-Assets der Telekom – beispielsweise Logos, die Farbe Magenta, die Schrift, Icons sowie Footer und Header. Die Komponenten sind **nicht Open Source** und dürfen **nicht frei verwendet werden**. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
+<br/>
 
-Jetzt musst du nur noch die Scale Sketch Library mit den Komponenten importieren:
+### Light und Dark Mode
+
+Scale beinhaltet für Light und Dark Mode jeweils eine eigene Library. So kannst du dein Interface entweder im hellen oder dunklen Modus gestalten. Ein Wechsel ist jederzeit per Knopfdruck möglich, sodass du die Wirkung im jeweils anderen Modus beurteilen kannst. Aber auch ohne zusätzliche Designs kann das Entwicklungsteam den anderen Modus aktivieren.
+
+### Figma Libraries
+
+<img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
+
+<p><a href="https://www.figma.com/file/3xCcfn6sawB7EcfUjpr7OE/%E2%98%80%EF%B8%8F-Telekom-Scale-Beta-Light-1.0.0?type=design&node-id=11505%3A145418&mode=design&t=nAdhrYOpRNgurAwy-1" rel="nofollow" class="matomo_download">Telekom Scale Components Light </a></p>
+<p><a href="https://www.figma.com/file/tdmMhhu1FbA0GTapn3cGb1/%F0%9F%8C%92Telekom-Scale-Beta-Dark-1.0.0?type=design&node-id=13102%3A157996&mode=design&t=ne7mjHvtsCeTlqjL-1" rel="nofollow" class="matomo_download">Telekom Scale Components Dark </a></p>
+
+Übrigens: Mit einer Pro Lizenz von Figma erhältst du sogar ganz automatisch künftige Updates. Gehe dafür in die Library zur Seite “Getting started” und hinterlasse deine E-Mail Adresse in dem dafür vorgesehenen Bereich. Wir laden dich dann zur Library ein.
+
+<br/>
+
+### Sketch Libraries
+
+<img src="assets/1_setup/2_scale-for-designers/Sketch.png" alt={alt} style={{ width: '100%' }} />
 
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
 
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
-&nbsp;
+Wichtiger Hinweis: das aktuellste Release beinhaltet kein Update der Sketch Library.
 
-Im Folgenden erfährst du, wie das geht:
+<br/>
 
-### Import der Sketch Library
+### Rechtliche Hinweise
 
-Klicke zunächst auf den obigen Link. Fragt dich dein Browser nach einem Programm, mit dem du den Link öffnen möchtest, dann wähle Sketch aus.
+Die Deutsche Telekom behält sich alle Rechte an der Marke Telekom vor. Für jede Nutzung, die nicht explizit für die Telekom bestimmt ist, muss das Telekom Theme komplett ersetzt werden.
 
-Danach solltest du die Library in Sketch unter "Sketch → Preferences → Libraries" finden.
+## Designdokumentationen
 
-![Scale for Designers](assets/1_setup/2_scale-for-designers/preferences.png)
-
-### Zugriff auf die Komponenten in Sketch
-
-Wähle "Insert → Symbols", aus und gehe mit der Maus auf die Scale Sketch Library. Dort siehst du eine Liste aller Komponenten. Gehst du mit der Maus über eine Komponente, siehst du zusätzliche Varianten und Zustände. Wenn du eine Auswahl getroffen hast, kannst du die entsprechende Komponente einfach auf dein Artboard ziehen.
-
-![Scale for Designers](assets/1_setup/2_scale-for-designers/insert.png)
-
-### Benutzung der Komponenten
-
-Zu jeder Komponente gibt es ausführliche Informationen zur Verwendung sowie unterschiedliche Varianten. Gehe dazu einfach in der linken Seitenleiste zur gewünschten Komponente und wähle dort die Registerkarte „Usage“ (1) aus.
+Zu jeder Komponente gibt es ausführliche Informationen zur Verwendung sowie zu den unterschiedlichen Varianten. Gehe dazu einfach in der linken Seitenleiste zur gewünschten Komponente und wähle dort die Registerkarte „Usage“ (1) aus.
 
 ![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
 
-## 4. Wir freuen uns auf dein Feedback
+<br/>
 
-Mit deinem [Feedback](./?path=/story/contact-your-feedback--page) können wir Scale noch besser machen. Du kannst auch deine Designs mit uns teilen, damit alle davon profitieren können.
+# Dein Feedback ist willkommen!
 
-## Brauchst du Hilfe bei Sketch?
-
-Sketch bietet sehr gute <a href="https://www.sketch.com/docs/" target="_blank" rel="noopener noreferrer">Tutorials und Hilfe-Dokumente</a> an.
+Mit deinem Feedback können wir Scale noch besser machen. Du kannst auch deine Designs mit uns teilen, damit alle davon profitieren können. Du erreichst das Scale Team unter [contact@brand-design.telekom.com](mailto:contact@brand-design.telekom.com).

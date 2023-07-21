@@ -62,9 +62,13 @@ export class Notification {
   /** (optional) `aria-live` of element */
   @Prop() innerAriaLive?: string = 'assertive';
   /** (optional) Label for close button */
-  @Prop() closeButtonLabel?: string = 'Close Pop-up';
+  @Prop() closeButtonLabel?: string = 'Close';
   /** (optional) `title` for close button */
   @Prop() closeButtonTitle?: string = 'Close';
+  /** Default aria-level for heading */
+  @Prop() headingLevel: number = 2;
+  /** (optional) string prepended to the heading */
+  @Prop() ariaHeading?: string = 'Information';
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
@@ -149,7 +153,6 @@ export class Notification {
 
   render() {
     const IconTag = iconVariantNameMap[this.variant];
-
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -170,7 +173,14 @@ export class Notification {
             </slot>
           </div>
           <div part="body">
-            <div part="heading">{this.heading}</div>
+            <div
+              part="heading"
+              role="heading"
+              aria-level={this.headingLevel}
+              aria-label={`${this.ariaHeading} ${this.heading}`}
+            >
+              <span>{this.heading}</span>
+            </div>
             {this.hasTextSlot && (
               <div part="text">
                 <slot name="text"></slot>

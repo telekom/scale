@@ -56,7 +56,7 @@ export class Modal {
   /** (optional) Transition duration */
   @Prop() duration?: number = 200;
   /** (optional) Label for close button */
-  @Prop() closeButtonLabel?: string = 'Close Pop-up';
+  @Prop() closeButtonLabel?: string = 'Close';
   /** (optional) title for close button */
   @Prop() closeButtonTitle?: string = 'Close';
   /** (optional) hide close button */

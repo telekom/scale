@@ -11,20 +11,20 @@
 
 scale-dropdown {
   --font-weight: var(--telekom-typography-font-weight-bold);
-  --height: var(--telekom-spacing-unit-x11);
-  --spacing-x: var(--telekom-spacing-unit-x3);
-  --spacing-dropdown: 18px var(--telekom-spacing-unit-x10) 5px
+  --height: var(--telekom-spacing-composition-space-13);
+  --spacing-x: var(--telekom-spacing-composition-space-05);
+  --spacing-dropdown: 18px var(--telekom-spacing-composition-space-12) 5px
     calc(var(--spacing-x) - 1px);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-spacing-unit-x025) solid
+  --border: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-border-standard);
-  --border-danger: var(--telekom-spacing-unit-x05) solid
+  --border-danger: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-standard);
-  --border-success: var(--telekom-spacing-unit-x05) solid
+  --border-success: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-success-standard);
-  --border-warning: var(--telekom-spacing-unit-x05) solid
+  --border-warning: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-warning-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
@@ -35,18 +35,18 @@ scale-dropdown {
   --background-disabled: none;
   --color: var(--telekom-color-text-and-icon-standard);
   --background-color: var(--telekom-color-ui-state-fill-standard);
-  --margin-bottom-helper-text: var(--telekom-spacing-unit-x1);
+  --margin-bottom-helper-text: var(--telekom-spacing-composition-space-03);
 
   /*input*/
   --transition-input: var(--transition);
   --font-size-input: var(--telekom-typography-font-size-body);
 
   /*meta*/
-  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
 
   /*icon*/
-  --height-icon: var(--telekom-spacing-unit-x5);
+  --height-icon: var(--telekom-spacing-composition-space-07);
   --color-icon: var(--telekom-color-text-and-icon-standard);
   --color-icon-hover: var(--telekom-color-text-and-icon-standard);
   --color-icon-active: var(--telekom-color-text-and-icon-standard);
@@ -90,7 +90,8 @@ scale-dropdown {
 }
 
 .dropdown--hide-label .input__dropdown {
-  padding: 5px var(--telekom-spacing-unit-x10) 5px calc(var(--spacing-x) - 1px);
+  padding: 5px var(--telekom-spacing-composition-space-12) 5px
+    calc(var(--spacing-x) - 1px);
 }
 
 .dropdown--hide-label .input__label {
@@ -187,13 +188,18 @@ scale-dropdown {
   font-size: var(--font-size-label);
   transform: translate(
     var(--spacing-x),
-    calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
+    calc(
+      (var(--telekom-spacing-composition-space-14) - var(--font-size-label)) / 2
+    )
   );
   font-weight: var(--font-weight-label);
 }
 
 .animated .input__label {
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
+  transform: translate(
+    var(--spacing-x),
+    var(--telekom-spacing-composition-space-04)
+  );
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
   line-height: var(--telekom-typography-font-size-small);

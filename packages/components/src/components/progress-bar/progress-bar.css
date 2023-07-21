@@ -25,7 +25,7 @@
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
   --progress-bar-outer-size: 6px;
-  --progress-bar-inner-size: var(--telekom-spacing-unit-x1);
+  --progress-bar-inner-size: var(--telekom-spacing-composition-space-03);
   --font-label: var(--telekom-text-style-ui);
   --color-label: var(--telekom-color-text-and-icon-standard);
 
@@ -55,7 +55,7 @@
 
 .progress-bar__label {
   display: block;
-  padding: var(--telekom-spacing-unit-x3) 0;
+  padding: var(--telekom-spacing-composition-space-05) 0;
   color: var(--color-label);
   font: var(--font-label);
 }
@@ -99,7 +99,7 @@
 }
 
 .progress-bar__status {
-  padding: var(--telekom-spacing-unit-x3) 0;
+  padding: var(--telekom-spacing-composition-space-05) 0;
   font: var(--font-label);
   font-variant-numeric: tabular-nums;
 }
@@ -127,7 +127,7 @@
 .progress-bar__status-description {
   color: var(--color-status-description);
   font: var(--font-status-description);
-  margin-top: var(--telekom-spacing-unit-x2);
+  margin-top: var(--telekom-spacing-composition-space-04);
 }
 
 .progress-bar__aria-live {

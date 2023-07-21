@@ -17,7 +17,7 @@
   --stars-placeholder-color: var(--telekom-color-ui-border-standard);
   --stars-placeholder-hover-color: var(--telekom-color-ui-border-hovered);
   --stars-disabled-color: var(--telekom-color-text-and-icon-disabled);
-  --stars-spacing: var(--telekom-spacing-unit-x05);
+  --stars-spacing: var(--telekom-spacing-composition-space-02);
   --stars-transition: color var(--telekom-motion-duration-immediate);
   --stars-size: 24px;
   --label-font: var(--telekom-text-style-ui);
@@ -82,7 +82,7 @@ input[type='range']::-webkit-slider-thumb {
 
 [part='wrapper'] {
   display: inline-flex;
-  border-radius: var(--telekom-spacing-unit-x1);
+  border-radius: var(--telekom-spacing-composition-space-03);
   margin-left: calc(-1 * var(--stars-spacing));
 }
 
@@ -97,12 +97,12 @@ input[type='range']::-webkit-slider-thumb {
 
 [part='label'] {
   font: var(--label-font);
-  margin-bottom: var(--telekom-spacing-unit-x2);
+  margin-bottom: var(--telekom-spacing-composition-space-04);
   white-space: nowrap;
 }
 
 [part='infotext'] {
-  margin-left: var(--telekom-spacing-unit-x2);
+  margin-left: var(--telekom-spacing-composition-space-04);
   display: flex;
   align-items: center;
   font: var(--infotext-font);

@@ -20,7 +20,7 @@
     var(--telekom-color-functional-focus-standard);
   --box-shadow-active: var(--telekom-shadow-raised-pressed);
 
-  --spacing-body: var(--telekom-spacing-unit-x6);
+  --spacing-body: var(--telekom-spacing-composition-space-08);
 
   --spacing-body-slotted: 0;
   --spacing-body-slotted-interactive: 0;

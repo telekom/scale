@@ -110,7 +110,7 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__child-menu-current app-icon {
-  margin-right: var(--telekom-spacing-unit-x2);
+  margin-right: var(--telekom-spacing-composition-space-04);
 }
 
 .main-navigation-mobile__child-menu-current .icon-back {
@@ -153,10 +153,10 @@ app-navigation-main-mobile {
   justify-content: space-between;
   align-items: center;
   border-bottom: var(--border-bottom);
-  margin-left: var(--telekom-spacing-unit-x16);
+  margin-left: var(--telekom-spacing-composition-space-17);
   box-sizing: border-box;
 }
 
 .main-navigation-mobile__child-menu-item-wrapper svg {
-  margin-right: var(--telekom-spacing-unit-x10);
+  margin-right: var(--telekom-spacing-composition-space-12);
 }

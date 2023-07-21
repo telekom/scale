@@ -8,8 +8,8 @@
   --background-footer: var(--telekom-color-ui-black);
   --background-footer-minimal: var(--telekom-color-background-canvas);
 
-  --_nav-items-bottom-margin: var(--telekom-spacing-unit-x6);
-  --_nav-items-spacing: var(--telekom-spacing-unit-x3);
+  --_nav-items-bottom-margin: var(--telekom-spacing-composition-space-08);
+  --_nav-items-spacing: var(--telekom-spacing-composition-space-05);
 }
 
 .scale-telekom-footer :where(ul),
@@ -31,8 +31,8 @@
   --background-footer: var(--background-footer-minimal);
   --_font-color: var(--telekom-color-text-and-icon-additional);
   --_display-logo: none;
-  --_navigation-container-padding: var(--telekom-spacing-unit-x4) 0
-    var(--telekom-spacing-unit-x4) 0;
+  --_navigation-container-padding: var(--telekom-spacing-composition-space-06) 0
+    var(--telekom-spacing-composition-space-06) 0;
   --_nav-items-bottom-margin: 0;
 }
 
@@ -103,15 +103,15 @@
     align-items: center;
     list-style: none;
     column-gap: var(--_nav-items-spacing);
-    row-gap: var(--telekom-spacing-unit-x1);
+    row-gap: var(--telekom-spacing-composition-space-03);
   }
 }
 
 @media screen and (--lg) {
   .scale-telekom-footer :where(ul),
   .scale-telekom-footer[type='minimal'] :where(ul) {
-    --_nav-items-spacing: var(--telekom-spacing-unit-x6);
-    row-gap: var(--telekom-spacing-unit-x2);
+    --_nav-items-spacing: var(--telekom-spacing-composition-space-08);
+    row-gap: var(--telekom-spacing-composition-space-04);
   }
   .scale-telekom-footer :where(a, span) {
     font: var(--font-large);
@@ -121,6 +121,6 @@
 @media screen and (--xl) {
   .scale-telekom-footer :where(ul),
   .scale-telekom-footer[type='minimal'] :where(ul) {
-    --_nav-items-spacing: var(--telekom-spacing-unit-x12);
+    --_nav-items-spacing: var(--telekom-spacing-composition-space-14);
   }
 }

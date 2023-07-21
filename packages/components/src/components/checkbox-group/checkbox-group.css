@@ -1,13 +1,13 @@
 :host,
 .checkbox-group {
   /* checkbox-group container */
-  --spacing-left-container: var(--telekom-spacing-unit-x8);
+  --spacing-left-container: var(--telekom-spacing-composition-space-10);
 
   /* checkbox-group checkbox */
-  --spacing-left-checkbox: var(--telekom-spacing-unit-x2);
+  --spacing-left-checkbox: var(--telekom-spacing-composition-space-04);
 
   /* slotted item */
-  --spacing-top-slotted-item: var(--telekom-spacing-unit-x3);
+  --spacing-top-slotted-item: var(--telekom-spacing-composition-space-05);
 }
 
 .checkbox-group {

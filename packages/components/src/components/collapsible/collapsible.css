@@ -10,16 +10,14 @@
  */
 
 :host {
-  --spacing-y: var(--telekom-spacing-unit-x4);
+  --spacing-y: var(--telekom-spacing-composition-space-06);
 
   /* button */
-  --font-size-button: var(--telekom-typography-font-size-callout);
-  --font-weight-button: var(--telekom-typography-font-weight-extra-bold);
-  --line-height-button: var(--telekom-typography-line-spacing-standard);
-  --border-width-button: var(--telekom-spacing-unit-x05);
+  --font: var(--telekom-text-style-heading-5);
+  --border-width-button: var(--telekom-spacing-composition-space-02);
   --radius-button: var(--telekom-radius-small);
   --spacing-left-button: 0;
-  --spacing-left-button-text: var(--telekom-spacing-unit-x2);
+  --spacing-left-button-text: var(--telekom-spacing-composition-space-04);
   --color-button-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-button-active: var(--telekom-color-text-and-icon-primary-pressed);
   --background-button-hover: none;
@@ -27,10 +25,10 @@
     var(--telekom-color-functional-focus-standard);
 
   /* content */
-  --spacing-right-content: var(--telekom-spacing-unit-x12);
+  --spacing-right-content: var(--telekom-spacing-composition-space-14);
   --spacing-left-content: 34px;
-  --spacing-top-content: var(--telekom-spacing-unit-x4);
-  --spacing-bottom-content: var(--telekom-spacing-unit-x6);
+  --spacing-top-content: var(--telekom-spacing-composition-space-06);
+  --spacing-bottom-content: var(--telekom-spacing-composition-space-08);
 }
 
 .collapsible {
@@ -43,7 +41,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  border: var(--telekom-spacing-unit-x025) solid transparent;
+  border: var(--telekom-spacing-composition-space-01) solid transparent;
   content: '';
   display: block;
   position: absolute;
@@ -67,9 +65,7 @@
   padding-right: 0;
   padding-bottom: 0;
   background-color: transparent;
-  font-size: var(--font-size-button);
-  font-weight: var(--font-weight-button);
-  line-height: var(--line-height-button);
+  font: var(--font);
   border-width: var(--border-width-button);
   border-radius: var(--radius-button);
   padding-left: var(--spacing-left-button);

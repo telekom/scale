@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Chip</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 Chips sind kontextabhängige Komponenten mit denen Nutzer\*innen Inhalte filtern oder Aktionen auslösen können.
@@ -88,10 +88,6 @@ Füge ein Icon hinzu, wenn Nutzer\*innen die Funktion des Chips dadurch leichter
 - Vertikale Layouts eigenen sich zum Beispiel für ein Seitenmenü, das Chips-Gruppierungen integrieren soll.
 - Horizontal angeordnete Chips befinden sich häufig oberhalb vom Inhalt auf den sie sich beziehen.
 - Formuliere das Label so präzise wie möglich.
-
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
 
 ## Verwandte Komponenten
 

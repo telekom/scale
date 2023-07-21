@@ -13,8 +13,10 @@
   --display: block;
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
-  --spacing-left: calc(0.5ch + var(--telekom-spacing-unit-x5));
-  --spacing-left-nested: calc(0.5ch + var(--telekom-spacing-unit-x4));
+  --spacing-left: calc(0.5ch + var(--telekom-spacing-composition-space-07));
+  --spacing-left-nested: calc(
+    0.5ch + var(--telekom-spacing-composition-space-06)
+  );
 
   --font-marker-ordered: var(--telekom-text-style-body);
   --font-marker-ordered-nested: var(--telekom-text-style-small-bold);
@@ -22,10 +24,11 @@
     --telekom-typography-line-spacing-standard
   );
   --spacing-top-marker-ordered-nested: calc(
-    var(--telekom-spacing-unit-x4) - var(--telekom-spacing-unit-x3)
+    var(--telekom-spacing-composition-space-06) -
+      var(--telekom-spacing-composition-space-05)
   );
 
-  --spacing-right-no-marker: var(--telekom-spacing-unit-x2);
+  --spacing-right-no-marker: var(--telekom-spacing-composition-space-04);
   display: var(--display);
 }
 
@@ -34,7 +37,7 @@
   font-size: var(--font-size);
   line-height: var(--line-height);
   padding-left: var(--spacing-left);
-  margin-top: var(--telekom-spacing-unit-x1);
+  margin-top: var(--telekom-spacing-composition-space-03);
 }
 
 .list-item--nested {
@@ -50,18 +53,18 @@
 
 .list-item--unordered:before {
   top: 0.5em;
-  border: var(--telekom-spacing-unit-x025) solid currentColor;
+  border: var(--telekom-spacing-composition-space-01) solid currentColor;
   display: block;
   transform: scale(0.66);
   background: currentColor;
   box-sizing: border-box;
   border-radius: 50%;
-  width: var(--telekom-spacing-unit-x2);
-  height: var(--telekom-spacing-unit-x2);
+  width: var(--telekom-spacing-composition-space-04);
+  height: var(--telekom-spacing-composition-space-04);
 }
 
 .list-item--nested.list-item--unordered:before {
-  border: var(--telekom-spacing-unit-x025) solid currentColor;
+  border: var(--telekom-spacing-composition-space-01) solid currentColor;
   background: transparent;
 }
 

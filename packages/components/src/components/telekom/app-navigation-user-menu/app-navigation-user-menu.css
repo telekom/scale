@@ -10,7 +10,7 @@
  */
 
 :host {
-  --border-width-divider: var(--telekom-spacing-unit-x025);
+  --border-width-divider: var(--telekom-spacing-composition-space-01);
   --color-divider: var(--telekom-color-ui-subtle);
   --color-menu-item-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-menu-item-active: var(--telekom-color-text-and-icon-primary-pressed);
@@ -25,28 +25,30 @@
 }
 
 .app-navigation-user-menu__divider {
-  margin: var(--telekom-spacing-unit-x4) 0;
+  margin: var(--telekom-spacing-composition-space-06) 0;
   border: 0;
   border-top: var(--border-width-divider) solid var(--color-divider);
 }
 
 @media (min-width: 1040px) {
   .app-navigation-user-menu__user-info {
-    margin: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x6) 0
-      var(--telekom-spacing-unit-x6);
+    margin: var(--telekom-spacing-composition-space-05)
+      var(--telekom-spacing-composition-space-08) 0
+      var(--telekom-spacing-composition-space-08);
   }
 }
 
 @media (max-width: 1039px) {
   .app-navigation-user-menu__user-info {
-    margin: var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x4) 0
-      var(--telekom-spacing-unit-x4);
+    margin: var(--telekom-spacing-composition-space-08)
+      var(--telekom-spacing-composition-space-06) 0
+      var(--telekom-spacing-composition-space-06);
   }
 }
 
 .app-navigation-user-menu__user-info--name {
   font: var(--telekom-text-style-heading-5);
-  margin-bottom: var(--telekom-spacing-unit-x1);
+  margin-bottom: var(--telekom-spacing-composition-space-03);
 }
 .app-navigation-user-menu__user-info--email {
   color: var(--telekom-color-text-and-icon-additional);
@@ -56,7 +58,8 @@
 .app-navigation-user-menu__item {
   display: flex;
   font: var(--telekom-text-style-heading-6);
-  padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x4);
+  padding: var(--telekom-spacing-composition-space-04)
+    var(--telekom-spacing-composition-space-06);
   border-radius: calc(var(--telekom-radius-small) / 2);
   color: var(--telekom-color-text-and-icon-standard);
   text-decoration: none;
@@ -64,7 +67,8 @@
 
 @media (min-width: 1040px) {
   .app-navigation-user-menu__item {
-    padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x6);
+    padding: var(--telekom-spacing-composition-space-04)
+      var(--telekom-spacing-composition-space-08);
   }
 }
 
@@ -82,23 +86,25 @@
 }
 
 .app-navigation-user-menu__item--icon-prefix {
-  margin-right: var(--telekom-spacing-unit-x2);
+  margin-right: var(--telekom-spacing-composition-space-04);
 }
 .app-navigation-user-menu__item--icon-suffix {
-  margin-left: var(--telekom-spacing-unit-x2);
+  margin-left: var(--telekom-spacing-composition-space-04);
 }
 
 .app-navigation-user-menu__button {
-  padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x4);
+  padding: var(--telekom-spacing-composition-space-04)
+    var(--telekom-spacing-composition-space-06);
 }
 
 @media (min-width: 1040px) {
   .app-navigation-user-menu__button {
-    padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x6);
+    padding: var(--telekom-spacing-composition-space-04)
+      var(--telekom-spacing-composition-space-08);
   }
 }
 @media (min-width: 1040px) {
   .app-navigation-user-menu {
-    padding-bottom: var(--telekom-spacing-unit-x1);
+    padding-bottom: var(--telekom-spacing-composition-space-03);
   }
 }

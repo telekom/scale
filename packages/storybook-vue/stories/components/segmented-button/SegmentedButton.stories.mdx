@@ -206,6 +206,51 @@ export const InvalidTemplate = (args, { argTypes }) => ({
 </scale-segmented-button>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  --background-color: var(--telekom-color-ui-faint);
+  --radius: var(--telekom-radius-standard);
+  --height: 32px;
+
+  /* medium styles */
+  --height-medium: 40px;
+
+  /* large styles */
+  --height-large: 44px;
+}
+
+:host(scale-segmented) {
+  /* not selected */
+  --background-color-selected: var(--telekom-color-ui-base);
+  --button-radius: 6px;
+  --padding-top-bottom: var(--telekom-spacing-composition-space-03);
+  --height: 28px;
+  --font: var(--telekom-text-style-caption-bold);
+  --label-disabled: var(--telekom-color-text-and-icon-disabled);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --color: var(--telekom-color-text-and-icon-standard);
+
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+
+  /* medium styles */
+  --font-medium: var(--telekom-text-style-ui-bold);
+  --height-medium: 36px;
+
+  /* large styles */
+  --font-large: var(--telekom-text-style-ui-bold);
+  --height-large: 40px;
+
+  /* hover styles */
+  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+
+  /* active styles */
+  --background-color-active: var(--telekom-color-ui-state-fill-pressed);
+}
+```
+
 ## Multi Select
 
 <Canvas withSource="none">

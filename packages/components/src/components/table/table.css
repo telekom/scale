@@ -18,23 +18,25 @@ scale-table {
   --font-size: var(--telekom-typography-font-size-small);
   --font-weight: var(--telekom-typography-font-weight-bold);
 
-  --spacing-tbody-td: var(--telekom-spacing-unit-x4)
-    var(--telekom-spacing-unit-x2);
-  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
+  --spacing-tbody-td: var(--telekom-spacing-composition-space-06)
+    var(--telekom-spacing-composition-space-04);
+  --border-bottom-tbody-td: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-faint);
   --background-tbody: var(--telekom-color-ui-state-fill-standard);
   --background-tbody-tr-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-tfoot: var(--telekom-color-ui-state-fill-standard);
-  --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
+  --border-bottom-tfoot-td: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-extra-strong);
 
-  --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
+  --spacing-th-sortable: 0 var(--telekom-spacing-composition-space-04) 0 0;
   --background-th-sortable-hover: var(--telekom-color-ui-subtle);
   --background-th-sortable-active: var(--telekom-color-ui-faint);
-  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
+  --box-shadow-th-sortable-focus: inset 0 0 0
+    var(--telekom-spacing-composition-space-02)
     var(--telekom-color-functional-focus-standard);
   --background-tr-striped: var(--telekom-color-ui-subtle);
-  --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
+  --padding: var(--telekom-spacing-composition-space-00)
+    var(--telekom-spacing-composition-space-04);
 }
 .table {
   display: block;

@@ -1,8 +1,9 @@
 :host {
   --border-color: var(--telekom-color-ui-border-standard);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
-  --border: var(--telekom-spacing-unit-x025) solid var(--border-color);
-  --border-disabled: var(--telekom-spacing-unit-x025) solid
+  --border: var(--telekom-spacing-composition-space-01) solid
+    var(--border-color);
+  --border-disabled: var(--telekom-spacing-composition-space-01) solid
     var(--border-color-disabled);
   --radius: var(--telekom-radius-standard);
 }

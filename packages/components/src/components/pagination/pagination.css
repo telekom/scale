@@ -28,7 +28,7 @@
   /* FIXME is this needed? */
   --stroke-svg-high-contrast: #fff;
   --width-button: 44px;
-  --padding-info: var(--telekom-spacing-unit-x2);
+  --padding-info: var(--telekom-spacing-composition-space-04);
   --height-button: 44px;
   --line-height-info: calc(var(--height-button) - 2px);
 }

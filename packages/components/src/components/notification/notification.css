@@ -13,9 +13,9 @@
   --width: 100%;
   --width-toast: 25rem;
   --radius: var(--telekom-radius-standard);
-  --spacing-y: var(--telekom-spacing-unit-x4);
-  --spacing-y-inner: var(--telekom-spacing-unit-x2);
-  --spacing-x-aside: var(--telekom-spacing-unit-x12);
+  --spacing-y: var(--telekom-spacing-composition-space-06);
+  --spacing-y-inner: var(--telekom-spacing-composition-space-04);
+  --spacing-x-aside: var(--telekom-spacing-composition-space-14);
 
   --duration-in: var(--telekom-motion-duration-transition);
   --duration-out: var(--telekom-motion-duration-transition);
@@ -93,7 +93,7 @@
   --_shadow: var(--telekom-shadow-floating-standard);
 }
 [part~='type-toast'] {
-  --translate-x: var(--telekom-spacing-unit-x3);
+  --translate-x: var(--telekom-spacing-composition-space-05);
   --_shadow: var(--telekom-shadow-top);
   width: var(--width-toast);
 }
@@ -147,8 +147,8 @@
 [part='close-button'] {
   --color-ghost: var(--telekom-text-and-icon-standard);
   position: absolute;
-  right: var(--telekom-spacing-unit-x1);
-  top: var(--telekom-spacing-unit-x1);
+  right: var(--telekom-spacing-composition-space-03);
+  top: var(--telekom-spacing-composition-space-03);
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {

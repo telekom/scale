@@ -204,6 +204,10 @@ export class DropdownSelect {
   @Prop() floatingStrategy: 'absolute' | 'fixed' = 'absolute';
   /** (optional) to hide the label */
   @Prop() hideLabelVisually?: boolean = false;
+  /** (optional) Screen reader text appended to the selected element */
+  @Prop() ariaLabelSelected?: string = 'selected';
+  /** (optional) Text displayed in high contrast mode only to indicate disabled state */
+  @Prop() hcmLabelDisabled?: string = 'this field is disabled';
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
@@ -476,9 +480,14 @@ export class DropdownSelect {
                       >
                         {ItemElement}
                         {value === this.value ? (
-                          <scale-icon-action-checkmark
-                            size={16}
-                          ></scale-icon-action-checkmark>
+                          <div>
+                            <scale-icon-action-checkmark
+                              size={16}
+                            ></scale-icon-action-checkmark>
+                            <span class="sr-only">
+                              {this.ariaLabelSelected}
+                            </span>
+                          </div>
                         ) : null}
                       </div>
                     )
@@ -506,7 +515,12 @@ export class DropdownSelect {
             <scale-helper-text
               helperText={this.helperText}
               variant={this.invalid ? 'danger' : this.variant}
+              id={helperTextId}
             ></scale-helper-text>
+          )}
+
+          {this.disabled && (
+            <div class="hcm-disabled">{this.hcmLabelDisabled}</div>
           )}
         </div>
       </Host>

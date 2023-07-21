@@ -32,8 +32,8 @@
 }
 
 .scale-telekom-nav-item {
-  --_spacing-top-slotted-top: var(--telekom-spacing-unit-x5);
-  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+  --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-07);
+  --_spacing-bottom-slotted-bottom: var(--telekom-spacing-composition-space-07);
   --_font-size-main-nav: var(--telekom-typography-font-size-body);
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
@@ -43,45 +43,61 @@
 
 @media screen and (--md) {
   .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x5);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-07
+    );
   }
 }
 @media screen and (--lg) {
   .scale-telekom-nav-item {
-    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x4);
+    --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-06
+    );
   }
   [scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-08
+    );
   }
   [type='slim'] .scale-telekom-nav-item,
   [type='slim'][scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-08
+    );
   }
 }
 @media screen and (--xl) {
   .scale-telekom-nav-item {
-    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x6);
+    --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-08
+    );
   }
   [type='slim'] .scale-telekom-nav-item {
     --_spacing-bottom-slotted-bottom: calc(
-      var(--telekom-spacing-unit-x8) - 2px
+      var(--telekom-spacing-composition-space-10) - 2px
     );
   }
 }
 @media screen and (--2xl) {
   .scale-telekom-nav-item {
-    --_spacing-top-slotted-top: var(--telekom-spacing-unit-x3);
-    --_spacing-bottom-slotted-bottom: var(--telekom-spacing-unit-x8);
+    --_spacing-top-slotted-top: var(--telekom-spacing-composition-space-05);
+    --_spacing-bottom-slotted-bottom: var(
+      --telekom-spacing-composition-space-10
+    );
     --_font-size-main-nav: var(--telekom-typography-font-size-callout);
   }
   [type='slim'] .scale-telekom-nav-item,
   [type='slim'][scrolled-back] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x9));
+    --_spacing-bottom-slotted-bottom: calc(
+      var(--telekom-spacing-composition-space-11)
+    );
   }
   [type='slim'][scrolled] .scale-telekom-nav-item {
-    --_spacing-bottom-slotted-bottom: calc(var(--telekom-spacing-unit-x6));
+    --_spacing-bottom-slotted-bottom: calc(
+      var(--telekom-spacing-composition-space-08)
+    );
   }
 }
 
@@ -181,7 +197,7 @@
   > :where(a, button):hover:after {
   content: '';
   width: 100%;
-  height: var(--telekom-spacing-unit-x05);
+  height: var(--telekom-spacing-composition-space-02);
   background: var(--telekom-color-text-and-icon-primary-hovered);
   display: block;
   position: absolute;
@@ -222,7 +238,7 @@
   > :where(a, button):active:after {
   content: '';
   width: 100%;
-  height: var(--telekom-spacing-unit-x05);
+  height: var(--telekom-spacing-composition-space-02);
   background: var(--telekom-color-text-and-icon-primary-pressed);
   display: block;
   position: absolute;
@@ -242,7 +258,7 @@
   > :where(a, button):after {
   content: '';
   width: 100%;
-  height: var(--telekom-spacing-unit-x1);
+  height: var(--telekom-spacing-composition-space-03);
   background: var(--telekom-color-text-and-icon-primary-standard);
   display: block;
   position: absolute;
@@ -323,7 +339,7 @@
 
 @media screen and (--lg) {
   .scale-telekom-nav-list[variant='meta-nav'] {
-    margin-right: var(--telekom-spacing-unit-x8);
+    margin-right: var(--telekom-spacing-composition-space-10);
   }
 
   .scale-telekom-nav-list[variant='lang-switcher']

@@ -105,7 +105,7 @@ export const TemplateCustomIcon = (args) => ({
 ```css
 :host {
   --spacing-left: 0;
-  --spacing-left-nested: var(--telekom-spacing-unit-x2);
+  --spacing-left-nested: var(--telekom-spacing-composition-space-04);
 }
 
 /* scale-list-item */
@@ -113,8 +113,10 @@ export const TemplateCustomIcon = (args) => ({
   --display: block;
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
-  --spacing-left: calc(0.5ch + var(--telekom-spacing-unit-x5));
-  --spacing-left-nested: calc(0.5ch + var(--telekom-spacing-unit-x4));
+  --spacing-left: calc(0.5ch + var(--telekom-spacing-composition-space-07));
+  --spacing-left-nested: calc(
+    0.5ch + var(--telekom-spacing-composition-space-06)
+  );
 
   --font-marker-ordered: var(--telekom-text-style-body);
   --font-marker-ordered-nested: var(--telekom-text-style-small-bold);
@@ -122,10 +124,11 @@ export const TemplateCustomIcon = (args) => ({
     --telekom-typography-line-spacing-standard
   );
   --spacing-top-marker-ordered-nested: calc(
-    var(--telekom-spacing-unit-x4) - var(--telekom-spacing-unit-x3)
+    var(--telekom-spacing-composition-space-06) -
+      var(--telekom-spacing-composition-space-05)
   );
 
-  --spacing-right-no-marker: var(--telekom-spacing-unit-x2);
+  --spacing-right-no-marker: var(--telekom-spacing-composition-space-04);
 }
 ```
 

@@ -17,22 +17,22 @@
   --scl-chart-stack-card-color: var(--telekom-color-additional-blue-600);
 }
 .chart-stack-card .header {
-  height: var(--telekom-spacing-unit-x6);
+  height: var(--telekom-spacing-composition-space-08);
   font-size: var(--telekom-typography-font-size-headline-3);
   font-weight: var(--telekom-typography-font-weight-extra-bold);
   line-height: var(--telekom-typography-line-spacing-tight);
-  margin-bottom: var(--telekom-spacing-unit-x6);
+  margin-bottom: var(--telekom-spacing-composition-space-08);
 }
 
 .chart-stack-card .bar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: var(--telekom-spacing-unit-x4);
+  margin-bottom: var(--telekom-spacing-composition-space-06);
 }
 
 .chart-stack-card .bar__item {
   background-color: var(--scl-chart-stack-card-color);
-  height: var(--telekom-spacing-unit-x8);
+  height: var(--telekom-spacing-composition-space-10);
   flex: 1;
 }
 
@@ -49,10 +49,10 @@
 .chart-stack-card .legend {
   display: flex;
   flex-direction: column;
-  height: calc(var(--telekom-spacing-unit-x4) * 10);
+  height: calc(var(--telekom-spacing-composition-space-06) * 10);
 }
 .chart-stack-card .spacer {
-  padding: 0 var(--telekom-spacing-unit-x2);
+  padding: 0 var(--telekom-spacing-composition-space-04);
 }
 .chart-stack-card .legend .legend__row__item {
   display: flex;
@@ -63,7 +63,7 @@
   justify-content: space-between;
 }
 .chart-stack-card .legend .legend__row:last-child {
-  padding-bottom: var(--telekom-spacing-unit-x8);
+  padding-bottom: var(--telekom-spacing-composition-space-10);
 }
 
 .chart-stack-card .legend .legend__item {
@@ -72,11 +72,11 @@
   background-color: var(--scl-chart-stack-card-color);
   border-radius: 100%;
   align-self: center;
-  margin-right: var(--telekom-spacing-unit-x1);
+  margin-right: var(--telekom-spacing-composition-space-03);
 }
 
 .chart-stack-card .legend .legend__label {
   font-weight: var(--type-weight-bold);
-  font-size: var(--telekom-spacing-unit-x4);
+  font-size: var(--telekom-spacing-composition-space-06);
   line-height: 200%;
 }

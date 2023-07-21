@@ -16,8 +16,8 @@
   position: relative;
   outline-color: transparent;
   /* So outline is visible on the sides */
-  padding-left: var(--telekom-spacing-unit-x05);
-  padding-right: var(--telekom-spacing-unit-x05);
+  padding-left: var(--telekom-spacing-composition-space-02);
+  padding-right: var(--telekom-spacing-composition-space-02);
 
   --_min-width: fit-content;
   --_min-width-moz: -moz-fit-content;
@@ -36,14 +36,19 @@
   line-height: 2.635em;
   /* calc here to account for the extra padding for the outline */
   padding: 0
-    calc(var(--telekom-spacing-unit-x6) - var(--telekom-spacing-unit-x05));
+    calc(
+      var(--telekom-spacing-composition-space-08) -
+        var(--telekom-spacing-composition-space-02)
+    );
   user-select: none;
   white-space: nowrap;
   border-radius: 0;
   cursor: pointer;
   color: var(--telekom-color-text-and-icon-standard);
   /* 10px relates to the PAD value in Menu component */
-  max-width: calc(100vw - 2 * var(--telekom-spacing-unit-x6) - 2 * 10px);
+  max-width: calc(
+    100vw - 2 * var(--telekom-spacing-composition-space-08) - 2 * 10px
+  );
   overflow: hidden;
   min-width: var(--_min-width-moz);
   min-width: var(--_min-width);
@@ -95,7 +100,7 @@
   width: 0;
   background-color: var(--telekom-color-primary-standard);
   /* a11y: HCM */
-  border-left: var(--telekom-spacing-unit-x05) solid transparent;
+  border-left: var(--telekom-spacing-composition-space-02) solid transparent;
 }
 
 .menu-flyout-item--active {
@@ -125,7 +130,7 @@
 
 .menu-flyout-item__check,
 slot[name='prefix']::slotted(:last-of-type) {
-  margin-right: var(--telekom-spacing-unit-x2);
+  margin-right: var(--telekom-spacing-composition-space-04);
 }
 
 .menu-flyout-item__check {
@@ -144,5 +149,5 @@ slot[name='prefix']::slotted(:last-of-type) {
 
 .menu-flyout-item__cascade,
 slot[name='suffix']::slotted(:first-of-type) {
-  margin-left: var(--telekom-spacing-unit-x4);
+  margin-left: var(--telekom-spacing-composition-space-06);
 }

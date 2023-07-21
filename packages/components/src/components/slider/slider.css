@@ -14,8 +14,8 @@
   --height-track: 6px;
   --background-track: var(--telekom-color-ui-faint);
   --radius-track: var(--telekom-radius-pill);
-  --spacing-track: var(--telekom-spacing-unit-x5) 0
-    var(--telekom-spacing-unit-x4);
+  --spacing-track: var(--telekom-spacing-composition-space-07) 0
+    var(--telekom-spacing-composition-space-06);
   --spacing-x-inner-track: 10px;
   --background-bar: var(--telekom-color-primary-standard);
   --radius-thumb: var(--telekom-radius-circle);
@@ -105,7 +105,8 @@
 }
 
 [part~='thumb'] {
-  --_border: 0 0 0 var(--telekom-spacing-unit-x025) var(--border-color-thumb);
+  --_border: 0 0 0 var(--telekom-spacing-composition-space-01)
+    var(--border-color-thumb);
   width: var(--size-thumb);
   height: var(--size-thumb);
   box-sizing: border-box;
@@ -134,6 +135,12 @@
   height: var(--size-step-mark);
   background: var(--color-step-mark);
   border-radius: var(--telekom-radius-circle);
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  [part='step-mark'] {
+    border: 2px solid;
+  }
 }
 
 [part='meta'] {

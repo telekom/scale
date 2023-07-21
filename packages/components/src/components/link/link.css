@@ -17,7 +17,7 @@
 
 :host {
   --font-weight: ;
-  --spacing-x-icon: var(--telekom-spacing-unit-x1);
+  --spacing-x-icon: var(--telekom-spacing-composition-space-03);
   --line-offset: 0.0625em;
 
   /* initial */
@@ -132,7 +132,7 @@ slot[name='icon']::slotted(*) {
     var(--line-thickness-initial)
   );
   outline: var(--telekom-line-weight-highlight) solid var(--color-focus-outline);
-  outline-offset: var(--telekom-spacing-unit-x025);
+  outline-offset: var(--telekom-spacing-composition-space-01);
   border-radius: var(--telekom-radius-small);
 }
 

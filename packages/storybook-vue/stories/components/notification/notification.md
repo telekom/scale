@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Notification</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 Notifications give users feedback about the status of the system or an action.
@@ -114,7 +114,3 @@ Center banner notifications above the page content.
 Position inline notifications in the appropriate page area.
 
 ![Image Name](assets/3_components/notifications/position_inline.png)
-
-## Beta component
-
-This component is still in the beta phase. When testing it, keep in mind that it might not have gone through all quality control checks, and it might not yet have WCAG accessibility certification. This component might change in the future.
