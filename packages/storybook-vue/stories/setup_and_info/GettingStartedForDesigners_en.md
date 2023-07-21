@@ -42,6 +42,8 @@ Deutsche Telekom reserves all rights to the Telekom brand. The Telekom theme mus
 
 For each component, there is detailed information on its usage as well as on the different variants. To access this, simply go to the desired component in the left sidebar and select the Usage tab (1).
 
+![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
+
 # Your feedback is welcome!
 
 With your feedback, we can make Scale even better. You can also share your designs with us so everyone can benefit from them.

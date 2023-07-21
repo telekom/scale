@@ -39,6 +39,8 @@ Die Deutsche Telekom behält sich alle Rechte an der Marke Telekom vor. Für jed
 
 Zu jeder Komponente gibt es ausführliche Informationen zur Verwendung sowie zu den unterschiedlichen Varianten. Gehe dazu einfach in der linken Seitenleiste zur gewünschten Komponente und wähle dort die Registerkarte „Usage“ (1) aus.
 
+![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
+
 # Dein Feedback ist willkommen!
 
 Mit deinem Feedback können wir Scale noch besser machen. Du kannst auch deine Designs mit uns teilen, damit alle davon profitieren können. Du erreichst das Scale Team unter [contact@brand-design.telekom.com](mailto:contact@brand-design.telekom.com).
