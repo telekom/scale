@@ -108,7 +108,7 @@ scale-icon-alert-error {
   color: var(--color-helper-text-error);
 }
 
-.radio-button label {
+.radio-button {
   color: var(--color-label);
   transition: var(--transition-label);
   font-weight: var(--font-weight-label);
@@ -132,20 +132,20 @@ scale-icon-alert-error {
   border-color: var(--telekom-color-ui-border-hovered);
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
-.radio-button:hover input:not(:checked):not([disabled]) ~ label {
+.radio-button:hover input:not(:checked):not([disabled]) {
   color: var(--color-primary-hover);
 }
 .radio-button:active input:not(:checked):not([disabled]) {
   border-color: var(--telekom-color-ui-border-pressed);
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
-.radio-button input:not(:checked):not([disabled]):active ~ label {
+.radio-button input:not(:checked):not([disabled]):active {
   color: var(--color-primary-active);
 }
 .radio-button input:disabled {
   box-shadow: var(--border-control-disabled);
 }
-.radio-button input:disabled ~ label {
+.radio-button input:disabled {
   color: var(--color-disabled);
 }
 .radio-button.radio-button--status-error input {
@@ -171,13 +171,13 @@ scale-icon-alert-error {
   border: var(--border-control-checked);
   box-shadow: var(--border-control-disabled);
 }
-.radio-button input:checked:disabled ~ label {
+.radio-button input:checked:disabled {
   color: var(--color-disabled);
   border: var(--border-control-disabled);
 }
 
 .radio-button--disabled,
-.radio-button--disabled label,
+.radio-button--disabled,
 .radio-button--disabled .radio-button__label,
 .radio-button--disabled input,
 .radio-button--disabled .radio-button__helper-text {

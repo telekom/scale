@@ -137,7 +137,7 @@ export class RadioButton {
 
     return (
       <Host>
-        <div class={this.getCssClassMap()} onClick={this.handleClick}>
+        <label class={this.getCssClassMap()} onClick={this.handleClick}>
           <input
             type="radio"
             name={this.name}
@@ -149,9 +149,8 @@ export class RadioButton {
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
           />
-          <label htmlFor={this.inputId} onClick={this.handleClick}>
             {this.label}
-          </label>
+        </label>
           {!!this.helperText && (
             <div
               class="radio-button__meta"
@@ -163,7 +162,6 @@ export class RadioButton {
               <div class="radio-button__helper-text">{this.helperText}</div>
             </div>
           )}
-        </div>
       </Host>
     );
   }
