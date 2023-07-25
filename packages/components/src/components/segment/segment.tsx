@@ -158,12 +158,15 @@ export class Segment {
   }
 
   handleClick = (event: MouseEvent) => {
-    event.preventDefault();
-    this.selected = !this.selected;
-    emitEvent(this, 'scaleClick', {
-      id: this.segmentId,
-      selected: this.selected,
-    });
+    if (!this.disabled) {
+      event.preventDefault();
+      this.selected = !this.selected;
+      emitEvent(this, 'scaleClick', {
+        id: this.segmentId,
+        selected: this.selected,
+      });
+    }
+
   };
 
   render() {

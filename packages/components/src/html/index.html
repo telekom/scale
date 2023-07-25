@@ -22,7 +22,6 @@
       }
 
       .container {
-        border: 2px solid red;
         display: flex;
         gap: 10px;
       }
@@ -33,7 +32,7 @@
       }
 
       .container > div > div {
-        height: 62px;
+        height: 96px;
         border: 1px solid;
       }
 
@@ -477,7 +476,11 @@
     setTimeout(() => {
       buttons.forEach(button => {
       const size = button.shadowRoot.querySelector('.segmented-button').getBoundingClientRect();
-      console.log('size', size)
+      // console.log('button', button.getAttribute('multi-select'))
+      
+      const multiSelect = button.getAttribute('multi-select')
+      const disabled = button.getAttribute('multi-select')
+
 
       const firstChild = button.shadowRoot.querySelector('slot').assignedElements()[0];
       const childSize = firstChild.getBoundingClientRect();
@@ -485,8 +488,12 @@
 
       // const size = button.getBoundingClientRect();
       const width = button.offsetWidth;
+      const attributesEl = document.createElement('span');
+      attributesEl.innerHTML = `${multiSelect !== null ? 'MULTISELECT' : 'SINGLE SELCT'} -- ${disabled !== null ? 'DISABLED' : 'ENABLED'}`;
       const sizeEl = document.createElement('span');
       sizeEl.innerHTML = `TOTAL WIDTH: ${size.width}, SINGLE WIDTH: ${childSize.width}`;
+      button.parentElement.appendChild(attributesEl);
+      button.parentElement.appendChild(document.createElement('br'));
       button.parentElement.appendChild(sizeEl);
     });
     },200)
