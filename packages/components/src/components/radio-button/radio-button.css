@@ -38,7 +38,7 @@ scale-radio-button {
   );
   /*label*/
   --transition-label: var(--transition);
-  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --font-label: var(--telekom-text-style-ui);
   --color-label: var(--color-text);
 
   /*control*/
@@ -108,12 +108,12 @@ scale-icon-alert-error {
   color: var(--color-helper-text-error);
 }
 
-.radio-button {
+.radio-button label {
   color: var(--color-label);
   transition: var(--transition-label);
-  font-weight: var(--font-weight-label);
   cursor: pointer;
-  line-height: var(--telekom-typography-line-spacing-standard);
+  font: var(--font-label);
+  padding-left: var(--telekom-spacing-composition-space-04);
 }
 .radio-button input {
   width: var(--width-control);
@@ -123,7 +123,7 @@ scale-icon-alert-error {
   -webkit-appearance: none;
   background-color: var(--telekom-color-ui-state-fill-standard);
   border: var(--border-control);
-  margin: var(--spacing-control);
+  margin: 0;
   cursor: pointer;
 }
 
@@ -132,20 +132,20 @@ scale-icon-alert-error {
   border-color: var(--telekom-color-ui-border-hovered);
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
-.radio-button:hover input:not(:checked):not([disabled]) {
+.radio-button:hover input:not(:checked):not([disabled]) ~ label {
   color: var(--color-primary-hover);
 }
 .radio-button:active input:not(:checked):not([disabled]) {
   border-color: var(--telekom-color-ui-border-pressed);
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
-.radio-button input:not(:checked):not([disabled]):active {
+.radio-button input:not(:checked):not([disabled]):active ~ label {
   color: var(--color-primary-active);
 }
 .radio-button input:disabled {
   box-shadow: var(--border-control-disabled);
 }
-.radio-button input:disabled {
+.radio-button input:disabled ~ label {
   color: var(--color-disabled);
 }
 .radio-button.radio-button--status-error input {
@@ -171,13 +171,13 @@ scale-icon-alert-error {
   border: var(--border-control-checked);
   box-shadow: var(--border-control-disabled);
 }
-.radio-button input:checked:disabled {
+.radio-button input:checked:disabled ~ label {
   color: var(--color-disabled);
   border: var(--border-control-disabled);
 }
 
 .radio-button--disabled,
-.radio-button--disabled,
+.radio-button--disabled label,
 .radio-button--disabled .radio-button__label,
 .radio-button--disabled input,
 .radio-button--disabled .radio-button__helper-text {
