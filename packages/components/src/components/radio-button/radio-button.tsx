@@ -149,19 +149,19 @@ export class RadioButton {
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
           />
-            {this.label}
+          {this.label}
         </label>
-          {!!this.helperText && (
-            <div
-              class="radio-button__meta"
-              id={helperTextId}
-              aria-live="polite"
-              aria-relevant="additions removals"
-            >
-              {this.renderHelperIcon()}
-              <div class="radio-button__helper-text">{this.helperText}</div>
-            </div>
-          )}
+        {!!this.helperText && (
+          <div
+            class="radio-button__meta"
+            id={helperTextId}
+            aria-live="polite"
+            aria-relevant="additions removals"
+          >
+            {this.renderHelperIcon()}
+            <div class="radio-button__helper-text">{this.helperText}</div>
+          </div>
+        )}
       </Host>
     );
   }

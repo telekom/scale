@@ -2,18 +2,16 @@
 
 exports[`RadioButton should handle change of checked 1`] = `
 <scale-radio-button checked="false" inputid="testing">
-  <div class="radio-button">
+  <label class="radio-button">
     <input id="input-1" type="radio" value="">
-    <label htmlfor="input-1"></label>
-  </div>
+  </label>
 </scale-radio-button>
 `;
 
 exports[`RadioButton should match snapshot 1`] = `
 <scale-radio-button>
-  <div class="radio-button">
+  <label class="radio-button">
     <input id="input-0" type="radio" value="">
-    <label htmlfor="input-0"></label>
-  </div>
+  </label>
 </scale-radio-button>
 `;
