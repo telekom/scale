@@ -35,7 +35,9 @@
   height: var(--height);
   display: inline-grid;
   grid-template-columns: repeat(var(--colNum), minmax(auto, 1fr));  
-  column-gap: 0;
+  column-gap: 0; 
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .segmented-button--full-width {

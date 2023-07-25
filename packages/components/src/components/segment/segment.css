@@ -71,27 +71,27 @@
   color: var(--color);
 }
 
-button.segment--icon-only.segment--small .segment--mask {
+.segment--icon-only.segment--small .segment--mask {
   padding-left: var(--telekom-spacing-unit-x3);
   padding-right: var(--telekom-spacing-unit-x3);
 }
 
-button.segment--icon-only.segment--medium .segment--mask {
+.segment--icon-only.segment--medium .segment--mask {
   padding-left: var(--telekom-spacing-unit-x4);
   padding-right: var(--telekom-spacing-unit-x4);
 }
 
-button.segment--icon-only.segment--large .segment--mask {
+.segment--icon-only.segment--large .segment--mask {
   padding-left: var(--telekom-spacing-unit-x5);
   padding-right: var(--telekom-spacing-unit-x5);
 }
 
-button.segment--small .segment--mask {
+.segment--small .segment--mask {
   padding-left: 8px;
   padding-right: 12px;
 }
 
-button.segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
+.segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
   padding-left: 19px;
   padding-right: 19px;
 }
@@ -108,7 +108,7 @@ button.segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
   font: var(--font-medium);
 }
 
-button.segment--medium .segment--mask {
+.segment--medium .segment--mask {
   padding-left: var(--telekom-spacing-unit-x3);
   padding-right: var(--telekom-spacing-unit-x4);
 }
@@ -120,13 +120,13 @@ button.segment--medium .segment--mask {
   font: var(--font-large)
 }
 
-button.segment--large .segment--mask {
+.segment--large .segment--mask {
   padding-left: var(--telekom-spacing-unit-x4);
   padding-right: var(--telekom-spacing-unit-x5);
 }
 
 
-button.segment--icon-only .segment--mask {
+.segment--icon-only .segment--mask {
   padding-left: var(--telekom-spacing-unit-x3);
   padding-right: var(--telekom-spacing-unit-x3);
 }
@@ -296,4 +296,10 @@ button.segment--icon-only .segment--mask {
   padding-top: var(--telekom-spacing-unit-x05);
   transition: var(--transition);
   background-color: transparent;
+}
+
+.segment--input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
 }

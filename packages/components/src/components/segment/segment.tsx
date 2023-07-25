@@ -129,15 +129,15 @@ export class Segment {
     }
   }
 
-  getAriaDescriptionTranslation() {
-    const replaceSelected = this.selected
-      ? this.ariaLangSelected
-      : this.ariaLangDeselected;
-    const filledText = this.ariaDescriptionTranslation
-      .replace(/\$position/g, `${this.position}`)
-      .replace(/\$selected/g, `${replaceSelected}`);
-    return filledText;
-  }
+  // getAriaDescriptionTranslation() {
+  //   const replaceSelected = this.selected
+  //     ? this.ariaLangSelected
+  //     : this.ariaLangDeselected;
+  //   const filledText = this.ariaDescriptionTranslation
+  //     .replace(/\$position/g, `${this.position}`)
+  //     .replace(/\$selected/g, `${replaceSelected}`);
+  //   return filledText;
+  // }
 
   /*
   * Set any children icon's size according the button size.
@@ -170,43 +170,79 @@ export class Segment {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <li class="segment--list-item" role="option">
-          <button
-            ref={(el) => (this.focusableElement = el)}
-            class={this.getCssClassMap()}
-            id={this.segmentId}
-            onClick={this.handleClick}
-            disabled={this.disabled}
-            type="button"
-            style={{ width: this.width }}
-            aria-label={this.ariaLabelSegment}
-            aria-pressed={this.selected}
-            part={this.getBasePartMap()}
-            aria-description={this.getAriaDescriptionTranslation()}
-          >
-            <div class="segment--mask">
-              <div class="success-icon-container">
-              <scale-icon-action-checkmark
-                    size={
-                      this.size === 'small'
-                        ? 14
-                        : this.size === 'medium'
-                        ? 16
-                        : 20
-                    }
-                    class="scale-icon-action-checkmark"
-                    aria-hidden="true"
-                    selected
-                  />
-              </div>
-              <div class="icon-container">
-                <slot name="segment-icon" />
-              </div>
-              <div class="text-container">
-                <slot />
-              </div>
-            </div>
-          </button>
+        <li 
+          // class="segment--list-item" 
+          class={this.getListItemCssClasses()}
+          role="option">
+                <label
+                  onClick={this.handleClick}
+                  class={this.getCssClassMap()}
+                  ref={(el) => (this.focusableElement = el)}
+                  id={this.segmentId}
+                  part={this.getBasePartMap()}
+                >
+                    <div class="segment--mask">
+                    {
+                      !this.multiSelect ? 
+                        <input
+                          type="radio"
+                          checked={this.selected}
+                          class="segment--input"
+                          // ref={(el) => (this.focusableElement = el)}
+                          // id={this.segmentId}
+                          // name={this.name}
+                          // id={this.inputId}
+                          // onChange={this.handleCheckedChange}
+                          // value={this.value}
+                          // checked={this.checked}
+                          disabled={this.disabled}
+                          // {...ariaInvalidAttr}
+                          // {...(this.helperText ? ariaDescribedByAttr : {})}
+                          aria-label={this.ariaLabelSegment}
+                          // part={this.getBasePartMap()}                  
+                        /> 
+                        : 
+                          <input
+                          type="checkbox"
+                          class="segment--input"
+                          // onClick={this.handleClick}
+                          checked={this.selected}
+                          // ref={(el) => (this.focusableElement = el)}
+                          // id={this.segmentId}
+                          // name={this.name}
+                          // id={this.inputId}
+                          // onChange={this.handleCheckedChange}
+                          // value={this.value}
+                          // checked={this.checked}
+                          disabled={this.disabled}
+                          // {...ariaInvalidAttr}
+                          // {...(this.helperText ? ariaDescribedByAttr : {})}
+                          aria-label={this.ariaLabelSegment}
+                          // part={this.getBasePartMap()}             
+                        />
+                      }                      
+                      <div class="success-icon-container">
+                        <scale-icon-action-checkmark
+                              size={
+                                this.size === 'small'
+                                  ? 14
+                                  : this.size === 'medium'
+                                  ? 16
+                                  : 20
+                              }
+                              class="scale-icon-action-checkmark"
+                              aria-hidden="true"
+                              selected
+                            />
+                      </div>
+                      <div class="icon-container">
+                        <slot name="segment-icon" />
+                      </div>
+                      <div class="text-container">
+                        <slot />
+                      </div>     
+                    </div>
+                </label>
         </li>
       </Host>
     );
@@ -220,6 +256,14 @@ export class Segment {
     return this.getCssOrBasePartMap('css');
   }
 
+  getListItemCssClasses() {
+    return classNames(
+      "segment--list-item",
+      this.adjacentSiblings &&
+        `segment--list-item-${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
+    );
+  }
+
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
     const prefix = mode === 'basePart' ? '' : 'segment--';
 
@@ -228,8 +272,6 @@ export class Segment {
       this.size && `${prefix}${this.size}`,
       this.selected && `${prefix}selected`,
       this.disabled && `${prefix}disabled`,
-      this.adjacentSiblings &&
-        `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
       this.iconOnly && `${prefix}icon-only`,
       this.iconText && `${prefix}icon-text`,
       this.multiSelect && `${prefix}multi-select`
