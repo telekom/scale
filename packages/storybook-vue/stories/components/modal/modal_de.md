@@ -54,9 +54,9 @@ Ein Overlay grenzt den Aktionsbereich vom scrollbaren Bereich ab. Unter dem Tite
 
 Für Desktop-Anwendungen stehen modale Dialoge in den Größen S, L oder XL zur Verfügung. Sie umfassen jeweils 6, 8 oder 12 Spalten. Wähle die Größe, die am besten zur Menge des Inhalts und den jeweiligen Anwendungsfall passt.
 
-![Image Name](assets/3_components/modal/desktop_12columns.png)
-![Image Name](assets/3_components/modal/desktop_8columns.png)
-![Image Name](assets/3_components/modal/desktop_6columns.png)
+![Image Name](assets/3_components/modal/modal-large.png)
+![Image Name](assets/3_components/modal/modal-medium.png)
+![Image Name](assets/3_components/modal/modal-small.png)
 
 ### Mobil
 

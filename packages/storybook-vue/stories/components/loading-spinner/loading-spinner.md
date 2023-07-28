@@ -24,11 +24,11 @@ Don't use a loading spinner if:
 
 Scale contains a spinner with a horizontal alignment and a vertical alignment.
 
-![Image Name](assets/3_components/loading-spinner/Loading-Spinner-Varianten-EN.png)
+![Image Name](assets/3_components/loading-spinner/loading-spinner-variants-en.png)
 
 ## Elements
 
-![Image Name](assets/3_components/loading-spinner/Loading-spinner-elemente.png)
+![Image Name](assets/3_components/loading-spinner/Elements.png)
 
 #### Loading symbol (1)
 
@@ -42,13 +42,13 @@ The description gives users a quick status of the background process.
 
 Use the white spinner on dark backgrounds.
 
-![Image Name](assets/3_components/loading-spinner/Loading-Spinner-Farben-EN.png)
+![Image Name](assets/3_components/loading-spinner/loading-spinner-colors-en.png)
 
 ## Sizes
 
 If there isn't much space (e.g., if you use the spinner within a component), choose the small size.
 
-![Image Name](assets/3_components/loading-spinner/Loading-Spinner-Groeßen-EN.png)
+![Image Name](assets/3_components/loading-spinner/loading-spinner-sizes-en.png)
 
 ## Related components
 
