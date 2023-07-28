@@ -23,7 +23,9 @@ The default number displayed will vary depending on the context.
 
 ## Variants
 
-![Image Name](assets/3_components/pagination/Basic-types-en.png)
+![Image Name](assets/3_components/pagination/pagination-en.png)
+
+![Image Name](assets/3_components/pagination/pagination-mobile-en.png)
 
 ## Elements
 

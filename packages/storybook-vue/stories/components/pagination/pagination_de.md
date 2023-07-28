@@ -21,7 +21,9 @@ Die Paginierung ist ein interaktives Element, mit dem Nutzer\*innen durch mehrer
 
 ## Varianten
 
-![Image Name](assets/3_components/pagination/Basic-types-de.png)
+![Image Name](assets/3_components/pagination/pagination-de.png)
+
+![Image Name](assets/3_components/pagination/pagination-mobile-de.png)
 
 ## Elemente
 
