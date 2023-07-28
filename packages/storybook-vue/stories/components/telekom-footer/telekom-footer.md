@@ -9,7 +9,7 @@ The footer finishes off all Telekom websites. Users can find important informati
 
 Scale offers different variations of the footer. Links to the legal notice and data protection information, as well as the acknowledgement of Deutsche Telekom as the content provider, are required for all variations.
 
-## Basic Types
+## Variant
 
 Depending on the scope and orientation of your product, decide on a variation of the Telekom footer: minimal, standard, or extended.
 
