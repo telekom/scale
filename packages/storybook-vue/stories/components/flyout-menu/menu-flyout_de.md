@@ -9,7 +9,7 @@ Flyout Menus lassen sich temporär einblenden. Nutzer\*innen können so auf eine
 
 Das Flyout Menu öffnet sich per Klick/Tap auf einen Button. Es kann unterschiedliche Elemente enthalten.
 
-![Flyout Menu](assets/3_components/flyout-menu/Flyout_Menu.png)
+![Flyout Menu](assets/3_components/flyout-menu/flyout-menu.png)
 
 ### Nutze das Flyout Menu, um
 
@@ -22,7 +22,7 @@ Das Flyout Menu öffnet sich per Klick/Tap auf einen Button. Es kann unterschied
 
 ## Elemente
 
-![Elements des Flyout Menus](assets/3_components/flyout-menu/Flyout_Menu_Elements.png)
+![Elements des Flyout Menus](assets/3_components/flyout-menu/Elements.png)
 
 #### Trigger (1)
 

@@ -9,7 +9,7 @@ Flyout menus can appear temporarily. This gives users access to a range of funct
 
 Clicking/tapping a button opens the flyout menu. It can contain different elements.
 
-![Flyout Menu](assets/3_components/flyout-menu/Flyout_Menu.png)
+![Flyout Menu](assets/3_components/flyout-menu/flyout-menu.png)
 
 ### When to use
 
@@ -26,7 +26,7 @@ Don't use a flyout menu for:
 
 ## Elements
 
-![Elements of Flyout Menu](assets/3_components/flyout-menu/Flyout_Menu_Elements.png)
+![Elements of Flyout Menu](assets/3_components/flyout-menu/Elements.png)
 
 #### Trigger (1)
 
