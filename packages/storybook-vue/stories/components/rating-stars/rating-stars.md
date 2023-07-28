@@ -26,7 +26,7 @@ Don't use rating stars if:
 - the amount of products/content is quite small and
 - you don't have a significant number of users.
 
-## Types
+## Basic Type
 
 Rating stars can be interactive or static. Only use one of the two types within a product or service.
 
