@@ -53,4 +53,12 @@ Telekom progress bars use Magenta as an accent color. If you need to use a diffe
 
 ### Progress states
 
-![Image Name](assets/3_components/progress-bar/pb_states.png)
+![Image Name](assets/3_components/progress-bar/pb_states-processing.png)
+
+![Image Name](assets/3_components/progress-bar/pb_states-success.png)
+
+![Image Name](assets/3_components/progress-bar/pb_states-error.png)
+
+## Disabled state
+
+![Image Name](assets/3_components/progress-bar/pb_disabled.png)

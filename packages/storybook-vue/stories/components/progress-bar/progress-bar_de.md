@@ -53,4 +53,12 @@ Nutze bei Telekom Progress-Bars Magenta als Akzentfarbe. Wenn du aus einem besti
 
 ### Fortschritt-Status
 
-![Image Name](assets/3_components/progress-bar/pb_states.png)
+![Image Name](assets/3_components/progress-bar/pb_states-processing.png)
+
+![Image Name](assets/3_components/progress-bar/pb_states-success.png)
+
+![Image Name](assets/3_components/progress-bar/pb_states-error.png)
+
+## Deaktivierter Zustand
+
+![Image Name](assets/3_components/progress-bar/pb_disabled.png)
