@@ -87,7 +87,7 @@ When disabled, remove the knobs to show that the value can’t be changed.
 
 ## Elements
 
-![slider-elements-EN.png](assets/3_components/slider/slider-elements-EN.png)
+![slider-elements-EN.png](assets/3_components/slider/slider-elements.png)
 
 #### Label (1)
 

@@ -83,7 +83,7 @@ Wenn der Slider deaktiviert ist, werden die Regler entfernt, um anzuzeigen, dass
 
 ## Elemente
 
-![slider-elements-DE.png](assets/3_components/slider/slider-elements-DE.png)
+![slider-elements-DE.png](assets/3_components/slider/slider-elements.png)
 
 #### Label (1)
 
