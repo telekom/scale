@@ -25,17 +25,17 @@ Ein Accordion besteht aus einer Liste von Headlines. Per Klick/Tap öffnen bezie
 
 ## Elemente
 
-![Image Name](assets/3_components/accordion/accordion.png)
+![Image Name](assets/3_components/accordion/Elements.png)
 
 #### Icon (1)
 
 Das Pfeilsymbol zeigt an, ob ein Inhalt geöffnet oder geschlossen ist.
 
-#### Titel (2)
+#### Label (2)
 
 Wähle einen kurzen und aussagekräftigen Titel, den die Nutzer\*innen schnell erfassen können. Der Titel und das Icon sind die Steuerelemente zum Öffnen des Inhalts.
 
-#### Text (3)
+#### Text expanded Area(3)
 
 Du kannst sowohl einen einfachen Fließtext als auch Überschriften einfügen, Texte in Absätze einteilen und Bilder oder Illustrationen hinzufügen. Der Text sollte so einfach und verständlich wie möglich sein.
 
