@@ -7,7 +7,7 @@ A checkbox group combines checkboxes with related selection options to form a gr
 
 ## General
 
-Clicking on the parent checkbox activates or deactivates a checkbox group. By grouping the content of checkboxes and describing the group, you can present contextual relationships to users more quickly. Interfaces with many options appear smoother and tidier overall.
+Clicking on the parent checkbox activates or disables a checkbox group. By grouping the content of checkboxes and describing the group, you can present contextual relationships to users more quickly. Interfaces with many options appear smoother and tidier overall.
 
 ![Checkbox Group](assets/3_components/checkbox-group/checkbox-group.png)
 
@@ -16,7 +16,7 @@ Clicking on the parent checkbox activates or deactivates a checkbox group. By gr
 Use a checkbox group when:
 
 - users should select one or more options from a list (e.g., filters in an online shop or a number of settings) and
-- users should have the opportunity to activate or deactivate all options at the same time.
+- users should have the opportunity to activate or disable all options at the same time.
 
 ### When not to use
 
@@ -30,7 +30,7 @@ Don't use a checkbox group when:
 
 #### Parent checkbox (indeterminate state) (1)
 
-Clicking/tapping on the parent checkbox activates or deactivates the whole group. The status of this checkbox shows whether all or only some options are activated or all options are deactivated.
+Clicking/tapping on the parent checkbox activates or disables the whole group. The status of this checkbox shows whether all or only some options are activated or all options are disabled.
 
 #### Group label (2)
 
@@ -42,7 +42,7 @@ If necessary, you can also provide additional information.
 
 #### Child checkbox (4)
 
-The child checkboxes can be activated or deactivated individually.
+The child checkboxes can be activated or disabled individually.
 
 #### Label (5)
 
@@ -56,18 +56,18 @@ If a mandatory option isn't activated (e.g., when it's required to carry out the
 
 If an error message affects the entire group, place it below the group label.
 
-## Deactivated state
+## Disabled state
 
-A checkbox group or an individual checkbox is deactivated if:
+A checkbox group or an individual checkbox is disabled if:
 
 - users have to take another action before using the checkbox or
 - the option must be listed but users can't currently select it.
 
-The deactivated state of the entire group occurs automatically when all individual checkboxes are deactivated.
+The disabled state of the entire group occurs automatically when all individual checkboxes are disabled.
 
-![A deactivated checkbox group](assets/3_components/checkbox-group/checkbox-group-disabled-en.png)
+![A disabled checkbox group](assets/3_components/checkbox-group/checkbox-group-disabled-en.png)
 
-![A deactivated checkbox](assets/3_components/checkbox-group/checkbox-group-disabled-single-en.png)
+![A disabled checkbox](assets/3_components/checkbox-group/checkbox-group-disabled-single-en.png)
 
 > The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
