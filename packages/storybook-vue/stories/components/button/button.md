@@ -9,7 +9,7 @@ Buttons offer the most important interaction options on the user interface. The 
 
 We provide two button types to support a clear visual hierarchy. Using icons creates an additional point of emphasis. Select the button type and variant based on the context.
 
-![Image Name](assets/3_components/button/Button_BasicTypes.png)
+![Image Name](assets/3_components/button/button.png)
 
 ### When to use
 
@@ -59,13 +59,13 @@ In certain cases, you can also use an icon without text, for example when space 
 
 We typically use the large button to ensure a good visual balance between the content and button. In special cases, you might not have enough space, so we also offer a smaller variant.
 
-![Image Name](assets/3_components/button/Button_Sizes.png)
+![Image Name](assets/3_components/button/button-sizes.png)
 
 ## Disabled state
 
 When disabled, the interactive function of the button is removed. Use this state if an interaction is not allowed due to permissions or dependencies.
 
-![Image Name](assets/3_components/button/Button_Disabled.png)
+![Image Name](assets/3_components/button/button-disabled.png)
 
 > The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
@@ -90,13 +90,13 @@ To learn more about the usage and construction of our interface icons, read our 
 If buttons are directly related to each other, align them as a group. Use only one primary button for each button group.
 In processes and modal dialogs, buttons are aligned to the right to indicate progress. The button farthest to the right is the primary button; the secondary button is placed on the left. In forms, we align buttons to the left side of the form content. The primary button is placed on the left and the secondary button on the right.
 
-![Image Name](assets/3_components/button/ButtonGroup_Modal.png)
+![Image Name](assets/3_components/button/button-best-practice.png)
 
 ### Icon & text label
 
 Icons make it easier to grasp information when positioned in the right place. Following the direction of reading, we place icons to the left of the text label. However, there is one exception: a Next button with an arrow. In this case, we place the icon on the right side to help people process the information intuitively.
 
-![Image Name](assets/3_components/button/Button_Icon_position.png)
+![Image Name](assets/3_components/button/button-best-practice2.png)
 
 ## Related components
 

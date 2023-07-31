@@ -9,7 +9,7 @@ Der Button ist das wichtigste Interaktionselement eines User Interfaces. Per Kli
 
 Es gibt zwei Basistypen und drei Varianten, um eine klare visuelle Hierarchie herzustellen. Mit der Verwendung eines passenden Icons kannst du die Funktion eines Buttons zusätzlich verdeutlichen. Wähle Button-Typ und -Variante passend für den jeweiligen Kontext aus.
 
-![Image Name](assets/3_components/button/Button_BasicTypes.png)
+![Image Name](assets/3_components/button/button.png)
 
 ### Verwende einen Button, wenn
 
@@ -62,13 +62,13 @@ In manchen Fällen kannst du auch ein Icon ohne Text verwenden. Das ist zum Beis
 
 Nutze den großen Button, um eine gute visuelle Balance zwischen Inhalt und Button zu erreichen. Wenn nur wenig Platz zur Verfügung steht, kannst du die kleinere Variante verwenden.
 
-![Image Name](assets/3_components/button/Button_Sizes.png)
+![Image Name](assets/3_components/button/button-sizes.png)
 
 ## Deaktivierter Zustand
 
 Im deaktivierten Zustand ist die interaktive Funktion des Buttons ausgeschaltet. Verwende diesen Zustand, wenn eine Interaktion aufgrund von Berechtigungen oder Abhängigkeiten nicht erfolgen kann.
 
-![Image Name](assets/3_components/button/Button_Disabled.png)
+![Image Name](assets/3_components/button/button-disabled.png)
 
 > Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
@@ -94,13 +94,13 @@ Stehen Buttons in direkter Beziehung zueinander, dann ordne sie als Gruppe an. W
 
 In Prozessen und modalen Dialogen sind Buttons rechtsbündig angeordnet, um den Fortschritt anzuzeigen. Platziere den Primär-Button rechts und den Sekundär-Button links. Bei Formularen sind Buttons linksbündig am Inhalt ausgerichtet. Hier setzt du den Primär-Button links und den Sekundär-Button rechts.
 
-![Image Name](assets/3_components/button/ButtonGroup_Modal.png)
+![Image Name](assets/3_components/button/button-best-practice.png)
 
 ### Anordnung von Icon und Label
 
 Icons erleichtern das Erfassen von Informationen, wenn sie an der richtigen Stelle positioniert sind. Der Leserichtung folgend setzen wir Icons demnach links neben dem Label ein. Es gibt eine Ausnahme: Der Weiter-Button mit einem Pfeil. In diesem Fall positionierst du das Icon rechts, um das intuitive Erfassen der Information zu erleichtern.
 
-![Image Name](assets/3_components/button/Button_Icon_position.png)
+![Image Name](assets/3_components/button/button-best-practice2.png)
 
 ## Verwandte Komponenten
 
