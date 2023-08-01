@@ -39,7 +39,7 @@ Choose a topic title which is as clear and descriptive as possible. Try to keep 
 
 The title and icon are the control for opening the panel.
 
-#### Text expanded Area (3)
+#### Text Expanded Area (3)
 
 You can add a simple body text or also insert headlines, split text into paragraphs, and add images or illustrations. Keep it as simple and clear as possible.
 

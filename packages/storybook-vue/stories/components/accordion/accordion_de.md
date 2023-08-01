@@ -35,7 +35,7 @@ Das Pfeilsymbol zeigt an, ob ein Inhalt geöffnet oder geschlossen ist.
 
 Wähle einen kurzen und aussagekräftigen Titel, den die Nutzer\*innen schnell erfassen können. Der Titel und das Icon sind die Steuerelemente zum Öffnen des Inhalts.
 
-#### Text expanded Area(3)
+#### Text Inhalt (3)
 
 Du kannst sowohl einen einfachen Fließtext als auch Überschriften einfügen, Texte in Absätze einteilen und Bilder oder Illustrationen hinzufügen. Der Text sollte so einfach und verständlich wie möglich sein.
 
