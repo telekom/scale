@@ -38,6 +38,14 @@ Der Sekundär-Button ist weniger auffällig. Nutze ihn für alle weiteren Aktion
 
 ![Image Name](assets/3_components/button/Button_Secondary.png)
 
+### Sekundär-Button Weiß
+
+![Image Name](assets/3_components/button/button-secondary-white.png)
+
+<!-- ### Ghost Button
+
+![Image Name](assets/3_components/button/button-ghost.png) -->
+
 ## Varianten
 
 ### Button mit Text

@@ -35,6 +35,14 @@ The secondary button has less emphasis than the main call to action. Use it for 
 
 ![Image Name](assets/3_components/button/Button_Secondary.png)
 
+### Secondary White
+
+![Image Name](assets/3_components/button/button-secondary-white.png)
+
+<!-- ### Ghost Button
+
+![Image Name](assets/3_components/button/button-ghost.png) -->
+
 ## Variants
 
 ### Text only
