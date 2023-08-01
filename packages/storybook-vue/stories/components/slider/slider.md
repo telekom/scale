@@ -109,6 +109,10 @@ Knob 2 indicates the end point of the range the user wants to select.
 
 Display error or informational messages here.
 
+## Platforms
+
+![slider-platforms.png](assets/3_components/slider/slider-platforms.png)
+
 ## Related components
 
 <a href="?path=/usage/components-text-field--standard">Text Field</a>

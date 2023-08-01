@@ -105,6 +105,10 @@ Regler 2 zeigt den Endpunkt des Wertebereichs an.
 
 Hier werden Fehler und Hinweise angezeigt.
 
+## Plattformen
+
+![slider-platforms.png](assets/3_components/slider/slider-platforms.png)
+
 ## Verwandte Komponenten
 
 <a href="?path=/usage/components-text-field--standard">Text-Field</a>
