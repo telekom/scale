@@ -49,8 +49,16 @@ Show a description whenever you can. It gives more information about the ongoing
 
 Telekom progress bars use Magenta as an accent color. If you need to use a different color for a particular reason, you can either use colors from the Telekom color palette or create a custom one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
 
-![Image Name](assets/3_components/progress-bar/pb-in-custom-color.png)
+<!-- ![Image Name](assets/3_components/progress-bar/pb-in-custom-color.png) -->
 
 ### Progress states
 
-![Image Name](assets/3_components/progress-bar/pb_states.png)
+![Image Name](assets/3_components/progress-bar/pb_states-processing.png)
+
+![Image Name](assets/3_components/progress-bar/pb_states-success.png)
+
+![Image Name](assets/3_components/progress-bar/pb_states-error.png)
+
+## Disabled state
+
+![Image Name](assets/3_components/progress-bar/pb_disabled.png)

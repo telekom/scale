@@ -22,7 +22,7 @@ Rating Stars sind ein kundenorientiertes, sehr visuelles Bewertungssystem, mit d
 - die Menge der Produkte/Inhalte eher gering ist und
 - du nicht ausreichend viele Nutzer\*innen hast.
 
-## Typen
+## Basistypen
 
 Rating Stars können interaktiv oder statisch sein. Setze nur einen der beiden Typen innerhalb eines Produkts oder Services ein.
 

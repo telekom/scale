@@ -26,18 +26,18 @@ Don’t use chips when:
 
 ## Basic types
 
-![Image Name](assets/3_components/chip/Chips-Types.png)
+![Image Name](assets/3_components/chip/chip-types.png)
 
 ### Persistent chips
 
 Persistent chips are an integral part of the UI and can be selected and deselected.
 
-![Image Name](assets/3_components/chip/Chips-Persistent-Default.png)
+![Image Name](assets/3_components/chip/chip-persistent-default.png)
 
 **Example 1 – Default** <br/>
 A group of filter options as an integral part of the UI.
 
-![Image Name](assets/3_components/chip/Chips-Persistent-Selected.png)
+![Image Name](assets/3_components/chip/chip-persistent-selected.png)
 
 **Example 1 – Filter selected** <br/>
 Users can recognize selected filters with the checkmark icon.
@@ -46,31 +46,31 @@ Users can recognize selected filters with the checkmark icon.
 
 Dynamic chips fade in or out after a user action.
 
-![Image Name](assets/3_components/chip/Chips-Dynamic-Example1.png)
+![Image Name](assets/3_components/chip/chip-dynamic.png)
 
 **Example 1** <br/>
 The chip appears after users set a filter. Clicking/tapping on the close icon hides it again and resets the filter.
 
-![Image Name](assets/3_components/chip/Chips-Dynamic-Example_Chatbot2.png)
+![Image Name](assets/3_components/chip/chip-dynamic-chatbot.png)
 
 **Example 2** <br/>
 A set of possible responses in a chat. After clicking/tapping on the chip, it fades out again.
 
 ## Variants
 
-![Image Name](assets/3_components/chip/Standard_Chip.png)
+![Image Name](assets/3_components/chip/chip-standard.png)
 
 Chips can be displayed in two variants: standard and outline.
 
 ### Disabled state
 
-![Image Name](assets/3_components/chip/chips-disabled-en.png)
+![Image Name](assets/3_components/chip/chip-disabled-en.png)
 
 In the disabled state, the chip's interactive function is switched off. Use this state when an interaction can’t occur due to permissions or dependencies.
 
 ### Element
 
-![Image Name](assets/3_components/chip/Chips-elements.png)
+![Image Name](assets/3_components/chip/Elements.png)
 
 #### Label (1)
 

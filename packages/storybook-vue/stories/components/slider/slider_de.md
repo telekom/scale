@@ -83,7 +83,7 @@ Wenn der Slider deaktiviert ist, werden die Regler entfernt, um anzuzeigen, dass
 
 ## Elemente
 
-![slider-elements-DE.png](assets/3_components/slider/slider-elements-DE.png)
+![slider-elements-DE.png](assets/3_components/slider/slider-elements.png)
 
 #### Label (1)
 
@@ -104,6 +104,10 @@ Regler 2 zeigt den Endpunkt des Wertebereichs an.
 #### Meldung (5)
 
 Hier werden Fehler und Hinweise angezeigt.
+
+## Plattformen
+
+![slider-platforms.png](assets/3_components/slider/slider-platforms.png)
 
 ## Verwandte Komponenten
 

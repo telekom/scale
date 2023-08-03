@@ -12,7 +12,7 @@ Only use the logo for the brand header and footer.
 
 ## Colors
 
-![Image Name](assets/3_components/logo/Farben-EN.png)
+![Image Name](assets/3_components/logo/Colors.png)
 
 ## Related components
 

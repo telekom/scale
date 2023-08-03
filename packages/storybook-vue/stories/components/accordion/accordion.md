@@ -27,19 +27,19 @@ Bear in mind that accordions require a great deal of interaction. Don't use an a
 
 ## Elements
 
-![Image Name](assets/3_components/accordion/accordion.png)
+![Image Name](assets/3_components/accordion/Elements.png)
 
 #### Icon (1)
 
 The arrow icon indicates whether the panel is open or closed.
 
-#### Title (2)
+#### Label (2)
 
 Choose a topic title which is as clear and descriptive as possible. Try to keep it short so users can grasp the content quickly.
 
 The title and icon are the control for opening the panel.
 
-#### Body text (3)
+#### Text Expanded Area (3)
 
 You can add a simple body text or also insert headlines, split text into paragraphs, and add images or illustrations. Keep it as simple and clear as possible.
 

@@ -46,7 +46,7 @@ Scale is currently an open beta. It is growing and evolving every day. And the c
 Our open-source design system is currently an open beta.
 We are excited to receive your feedback! And we are delighted if you help us improve Scale with your ideas, experience and skills for developing new components and features.
 
-You can find the [Scale Sourcecode on GitHub](https://github.com/telekom/scale/).
+You can find the <a href="https://github.com/telekom/scale" target="_blank">Scale Sourcecode on GitHub</a>
 
 ## What if I need a new component?
 

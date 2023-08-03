@@ -9,7 +9,7 @@ A checkbox group combines checkboxes with related selection options to form a gr
 
 Clicking on the parent checkbox activates or deactivates a checkbox group. By grouping the content of checkboxes and describing the group, you can present contextual relationships to users more quickly. Interfaces with many options appear smoother and tidier overall.
 
-![Checkbox Group](assets/3_components/checkbox-group/Checkbox_Group.png)
+![Checkbox Group](assets/3_components/checkbox-group/checkbox-group.png)
 
 ### When to use
 
@@ -26,7 +26,7 @@ Don't use a checkbox group when:
 
 ## Elements
 
-![Elements of Checkbox Group](assets/3_components/checkbox-group/Checkbox_Group_Elements.png)
+![Elements of Checkbox Group](assets/3_components/checkbox-group/Elements.png)
 
 #### Parent checkbox (indeterminate state) (1)
 
@@ -56,18 +56,18 @@ If a mandatory option isn't activated (e.g., when it's required to carry out the
 
 If an error message affects the entire group, place it below the group label.
 
-## Deactivated state
+## Disabled state
 
-A checkbox group or an individual checkbox is deactivated if:
+A checkbox group or an individual checkbox is disabled if:
 
 - users have to take another action before using the checkbox or
 - the option must be listed but users can't currently select it.
 
-The deactivated state of the entire group occurs automatically when all individual checkboxes are deactivated.
+The disabled state of the entire group occurs automatically when all individual checkboxes are disabled.
 
-![A deactivated checkbox group](assets/3_components/checkbox-group/Checkbox_Group_Disabled_State_EN.png)
+![A disabled checkbox group](assets/3_components/checkbox-group/checkbox-group-disabled-en.png)
 
-![A deactivated checkbox](assets/3_components/checkbox-group/Checkbox_Group_single_Disabled_State_EN.png)
+![A disabled checkbox](assets/3_components/checkbox-group/checkbox-group-disabled-single-en.png)
 
 > The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 

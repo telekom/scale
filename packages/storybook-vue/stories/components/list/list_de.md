@@ -9,7 +9,7 @@ Eine Liste gliedert zusammengehörige Inhalte in einer vertikalen Struktur. Sie 
 
 Es gibt drei Arten von Listen: sortierte Listen, Aufzählungslisten und Definitionslisten.
 
-![Image Name](assets/3_components/text-list/text-list_general.png)
+![Image Name](assets/3_components/text-list/text-list-general.png)
 
 ### Nutze eine Liste, um
 
@@ -28,21 +28,13 @@ Es gibt drei Arten von Listen: sortierte Listen, Aufzählungslisten und Definiti
 
 Die Liste mit Nummerierung eignet sich vor allem für Schritt-für-Schritt-Anleitungen und aufeinanderfolgende Inhalte. Du kannst Unterpunkte einfügen, die eingerückt unter den Hauptpunkten dargestellt werden.
 
-![Image Name](assets/3_components/text-list/ordered_list.png)
+![Image Name](assets/3_components/text-list/text-list-detail-ordered.png)
 
 ### Aufzählungsliste
 
 Die Elemente dieser Liste sind gleichrangig. Die Liste gibt also keine Reihenfolge vor. Dennoch solltest du die Einträge in einer logischen, für Nutzer\*innen leicht verständlichen Weise organisieren (zum Beispiel alphabetisch oder chronologisch). Auch wenn es keine bestimmte Reihenfolge gibt, kannst du durch Einrücken Hierarchieebenen darstellen.
 
-![Image Name](assets/3_components/text-list/unordered_list.png)
-
-### Definitionsliste
-
-> Diese Funktion ist bald verfügbar.
-
-Diese Liste beinhaltet Begriffe und darunter die jeweilige Definition.
-
-![Image Name](assets/3_components/text-list/definition_list.png)
+![Image Name](assets/3_components/text-list/text-list-detail-unordered.png)
 
 ## Verwandte Komponenten
 

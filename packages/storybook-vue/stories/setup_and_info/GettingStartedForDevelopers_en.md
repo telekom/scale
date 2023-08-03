@@ -74,4 +74,4 @@ defineCustomElementScaleButton();
 
 ## Source Code on GitHub
 
-Here you find [Telekom Scale on GitHub](https://github.com/telekom/scale/).
+Here you find <a href="https://github.com/telekom/scale" target="_blank">Telekom Scale on GitHub</a>

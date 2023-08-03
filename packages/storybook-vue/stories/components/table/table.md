@@ -24,7 +24,7 @@ Don't use a table when:
 
 ## Elements
 
-![Image Name](assets/3_components/data-table/data-table-elements.png)
+![Image Name](assets/3_components/data-table/Elements.png)
 
 #### Column header (1)
 
@@ -43,11 +43,19 @@ A mouse over highlights the rows to make them more readable.
 
 The dividing line separates the table rows from one another.
 
+## Row backgrounds
+
+You can use alternating backgrounds to make the content more readable.
+
+![Image Name](assets/3_components/data-table/table-single-en.png)
+
+![Image Name](assets/3_components/data-table/table-alternating-en.png)
+
 ## Mobile
 
 The table structure and display are the same for both mobile and desktops. To see the entire table, the user can swipe horizontally.
 
-![Image Name](assets/3_components/data-table/data-table-mobile.png)
+![Image Name](assets/3_components/data-table/table-mobile.png)
 
 ## Best practices
 

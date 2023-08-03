@@ -56,6 +56,10 @@ Clearly label the switch and keep it short. For some use cases, a single noun pr
 
 ![Image Name](assets/3_components/switch/switch_label.png)
 
+## Disabled
+
+![Image Name](assets/3_components/switch/switch_disabled.png)
+
 ## Related components
 
 [Checkbox, ](?path=/usage/components-checkbox--standard)

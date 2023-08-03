@@ -9,7 +9,7 @@ Mit einem Dropdown wählen Nutzer\*innen eine Option aus einer Liste aus.
 
 Die Auswahlliste des Dropdowns wird temporär angezeigt. Das macht ein Dropdown zu einer platzsparenden Lösung, wenn viele Optionen zur Auswahl stehen.
 
-![Image Name](assets/3_components/dropdown-select/Dropdown_select.png)
+![Image Name](assets/3_components/dropdown-select/dropdown-select.png)
 
 ### Verwende ein Dropdown, wenn
 
@@ -26,7 +26,7 @@ Die Auswahlliste des Dropdowns wird temporär angezeigt. Das macht ein Dropdown 
 
 ## Elemente
 
-![Image Name](assets/3_components/dropdown-select/Dropdown_select_elements.png)
+![Image Name](assets/3_components/dropdown-select/Elements.png)
 
 ### Label (1)
 
