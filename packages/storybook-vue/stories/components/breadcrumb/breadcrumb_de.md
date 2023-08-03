@@ -9,7 +9,7 @@ Die Breadcrumb ist ein sekundäres Navigationselement, das zusätzliche Orientie
 
 Die Breadcrumb spiegelt die Informationshierarchie des Produkts oder Services wider. Der erste Punkt ist in der Regel die Startseite der Webseite, der letzte Punkt die aktuelle Seite.
 
-![Image Name](assets/3_components/breadcrumb/breadcrumb-general.png)
+![Image Name](assets/3_components/breadcrumb/breadcrumb.png)
 
 ### Verwende die Breadcrumb
 
@@ -23,7 +23,7 @@ Die Breadcrumb spiegelt die Informationshierarchie des Produkts oder Services wi
 
 ## Elemente
 
-![Image Name](assets/3_components/breadcrumb/elements.png)
+![Image Name](assets/3_components/breadcrumb/Elements.png)
 
 #### Links (1)
 

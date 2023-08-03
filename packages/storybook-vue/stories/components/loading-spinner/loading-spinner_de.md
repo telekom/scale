@@ -22,11 +22,11 @@ Ein Loading Spinner ist ein kreisförmiges Symbol, das sich in Dauerschleife dre
 
 Scale enthält einen horizontal und einen vertikal ausgerichteten Spinner.
 
-![Image Name](assets/3_components/loading-spinner/Loading-Spinner-Varianten-DE.png)
+![Image Name](assets/3_components/loading-spinner/loading-spinner-variants-de.png)
 
 ## Elemente
 
-![Image Name](assets/3_components/loading-spinner/Loading-spinner-elemente.png)
+![Image Name](assets/3_components/loading-spinner/Elements.png)
 
 #### Loading-Symbol (1)
 
@@ -40,13 +40,13 @@ Die Beschreibung gibt Nutzer\*innen ein kurzes Feedback über den Hintergrundpro
 
 Auf dunklen Hintergründen setze den weißen Spinner ein.
 
-![Image Name](assets/3_components/loading-spinner/Loading-Spinner-Farben-DE.png)
+![Image Name](assets/3_components/loading-spinner/loading-spinner-colors-de.png)
 
 ## Größen
 
 Bei wenig Raum, bspw. wenn du den Spinner innerhalb einer Komponente einsetzt, wähle die kleine Größe.
 
-![Image Name](assets/3_components/loading-spinner/Loading-Spinner-Groeßen-DE.png)
+![Image Name](assets/3_components/loading-spinner/loading-spinner-sizes-de.png)
 
 ## Verwandte Komponenten
 

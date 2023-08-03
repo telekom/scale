@@ -22,18 +22,18 @@ Chips bestehen aus relevanten Schlüsselwörtern in einem Container. Sie erschei
 
 ## Basistypen
 
-![Image Name](assets/3_components/chip/Chips-Types.png)
+![Image Name](assets/3_components/chip/chip-types.png)
 
 ### Persistente Chips
 
 Persistente Chips sind fester Bestandteil des UIs und lassen sich aus- und abwählen.
 
-![Image Name](assets/3_components/chip/Chips-Persistent-Default.png)
+![Image Name](assets/3_components/chip/chip-persistent-default.png)
 
 **Beispiel 1 – Default** <br/>
 Eine Gruppe von Filtermöglichkeiten als fester Bestandteil des UI
 
-![Image Name](assets/3_components/chip/Chips-Persistent-Selected.png)
+![Image Name](assets/3_components/chip/chip-persistent-selected.png)
 
 **Beispiel 2 - Filter ausgewählt** <br/>
 Ausgewählte Filter erkennen Nutzer\*innen am Checkmark Icon.
@@ -42,31 +42,31 @@ Ausgewählte Filter erkennen Nutzer\*innen am Checkmark Icon.
 
 Dynamische Chips blenden sich nach einer Aktion der Nutzer\*innen ein oder aus.
 
-![Image Name](assets/3_components/chip/Chips-Dynamic-Example1.png)
+![Image Name](assets/3_components/chip/chip-dynamic.png)
 
 **Beispiel 1** <br/>
 Der Chip blendet sich ein, nachdem Nutzer\*innen einen Filter gesetzt haben. Per Klick/Tap auf das Schließen-Icon blendet er sich wieder aus und der Filter ist zurückgesetzt.
 
-![Image Name](assets/3_components/chip/Chips-Dynamic-Example_Chatbot2.png)
+![Image Name](assets/3_components/chip/chip-dynamic-chatbot.png)
 
 **Beispiel 2** <br/>
 Eine Gruppe von Antwortmöglichkeiten in einem Chat. Nach Klick/Tap auf den Chip blendet er sich wieder aus.
 
 ## Varianten
 
-![Image Name](assets/3_components/chip/Standard_Chip.png)
+![Image Name](assets/3_components/chip/chip-standard.png)
 
 Chips lassen sich in zwei Varianten darstellen: Standard und Outline.
 
 ### Deaktivierter Zustand
 
-![Image Name](assets/3_components/chip/chips-disabled-de.png)
+![Image Name](assets/3_components/chip/chip-disabled-de.png)
 
 Im deaktivierten Zustand ist die interaktive Funktion des Chips ausgeschaltet. Verwende diesen Zustand, wenn eine Interaktion aufgrund von Berechtigungen oder Abhängigkeiten nicht möglich ist.
 
 ### Elemente
 
-![Image Name](assets/3_components/chip/Chips-elements.png)
+![Image Name](assets/3_components/chip/Elements.png)
 
 #### Label (1)
 

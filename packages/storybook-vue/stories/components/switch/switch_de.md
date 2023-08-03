@@ -54,6 +54,10 @@ Das Label des Switch sollte kurz und verständlich sein. Für einige Fälle eign
 
 ![Image Name](assets/3_components/switch/switch_label.png)
 
+## Deaktivierter Zustand
+
+![Image Name](assets/3_components/switch/switch_disabled.png)
+
 ## Verwandte Komponenten
 
 [Checkbox, ](?path=/usage/components-checkbox--standard)

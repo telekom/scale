@@ -58,9 +58,9 @@ To frame the scrollable area, an overlay highlights the action bar. A divider ap
 
 For desktops, modals come in sizes S, L, or XL and span 6, 8, or 12 columns, respectively. Select the modal size that best fits the amount of content for your use case.
 
-![Image Name](assets/3_components/modal/desktop_12columns.png)
-![Image Name](assets/3_components/modal/desktop_8columns.png)
-![Image Name](assets/3_components/modal/desktop_6columns.png)
+![Image Name](assets/3_components/modal/modal-large.png)
+![Image Name](assets/3_components/modal/modal-medium.png)
+![Image Name](assets/3_components/modal/modal-small.png)
 
 ### Mobile
 

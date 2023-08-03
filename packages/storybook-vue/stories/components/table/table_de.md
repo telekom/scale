@@ -20,7 +20,7 @@ Eine Tabelle organisiert Daten in Zeilen und Spalten. Zusätzliche Funktionen wi
 
 ## Elemente
 
-![Image Name](assets/3_components/data-table/data-table-elements.png)
+![Image Name](assets/3_components/data-table/Elements.png)
 
 #### Spalten-Header (1)
 
@@ -40,11 +40,17 @@ Für eine Unterstützung der Lesbarkeit können die Zeilen bei Mouseover hervorg
 
 Eine Trennlinie trennt die Tabellenzeilen voneinander.
 
+## Zeilenhintergründe
+
+![Image Name](assets/3_components/data-table/table-single-de.png)
+
+![Image Name](assets/3_components/data-table/table-alternating-de.png)
+
 ## Mobil
 
 Die Tabellenstruktur und -darstellung auf mobilen Geräten entspricht der Darstellung auf Desktop-Geräten. Um die gesamte Tabelle zu sehen, können Nutzer\*innen horizontal swipen.
 
-![Image Name](assets/3_components/data-table/data-table-mobile.png)
+![Image Name](assets/3_components/data-table/table-mobile.png)
 
 ## Best Practices
 

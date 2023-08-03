@@ -12,7 +12,7 @@ Verwende das Logo ausschließlich für den Brand-Header und Footer.
 
 ## Farben
 
-![Image Name](assets/3_components/logo/Farben-DE.png)
+![Image Name](assets/3_components/logo/Colors.png)
 
 ## Verwandte Komponenten
 

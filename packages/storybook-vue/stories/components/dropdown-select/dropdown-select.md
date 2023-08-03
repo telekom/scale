@@ -9,7 +9,7 @@ With a dropdown, users select a single option from a collapsible list of availab
 
 The dropdown temporarily displays a selection list. Thus, the dropdown helps save space when there are multiple options to choose from.
 
-![Image Name](assets/3_components/dropdown-select/Dropdown_select.png)
+![Image Name](assets/3_components/dropdown-select/dropdown-select.png)
 
 ### When to use
 
@@ -30,7 +30,7 @@ Don’t use dropdowns, when users:
 
 ## Elements
 
-![Image Name](assets/3_components/dropdown-select/Dropdown_select_elements.png)
+![Image Name](assets/3_components/dropdown-select/Elements.png)
 
 ### Label (1)
 

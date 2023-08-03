@@ -42,7 +42,7 @@ Wie du mitmachen kannst, [erfährst du hier](./?path=/story/contact-contributing
 **Ja.**
 Unser open-source Designsystem ist derzeit eine Open Beta. Deshalb freuen wir uns über dein Feedback! Und auch darüber, wenn du mit deiner Erfahrung und mit deinen Fähigkeiten und Ideen für neue Komponenten und Funktionen mithilfst, Scale weiter zu verbessern.
 
-Du findest den [Scale Sourcecode auf GitHub.](https://github.com/telekom/scale/)
+Du findest den <a href="https://github.com/telekom/scale" target="_blank"> Scale Sourcecode auf GitHub.</a>
 
 ## Ich benötige eine Komponente, die noch nicht in Scale verfügbar ist. Was kann ich tun?
 
