@@ -297,3 +297,11 @@ input[type='month']::-webkit-calendar-picker-indicator {
   position: absolute;
   right: 12px;
 }
+
+/* this is a hack to remove the default background color on chrome autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: all 5000s ease-in-out 0s;
+}
