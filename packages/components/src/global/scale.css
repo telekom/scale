@@ -28,7 +28,9 @@
 /**
  * Include --telekom tokens (including dark mode).
  */
-@import '~@telekom/design-tokens/dist/telekom/css/telekom-design-tokens.all.css';
+/* @import '~@telekom/design-tokens/dist/telekom/css/telekom-design-tokens.all.css'; */
+
+@import './test-theme.css';
 
 /**
  * Legacy stuff kept for backward-compat.
