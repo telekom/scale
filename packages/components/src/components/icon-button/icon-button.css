@@ -87,3 +87,90 @@
 slot {
   color: var(--color);
 }
+/* <label> */
+.icon-button--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font: var(--telekom-text-style-small);
+}
+
+.icon-button--label-position-bottom {
+  border: 1px solid red;
+  flex-direction: column;
+}
+
+.icon-button--label-position-right {
+  border: 1px solid green;
+  
+}
+
+input {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  width: var(--width);
+  height: var(--height);
+  opacity: 0;
+}
+
+.icon-button--toggle, .icon-button--activate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button--icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+/* type: activate */
+
+.icon-button--activate:hover:not(.icon-button-active) .icon-button--icon-wrapper {
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+}
+
+.icon-button--activate:active:not(.icon-button-active) .icon-button--icon-wrapper {
+  background-color: var(--telekom-color-ui-state-fill-pressed);
+}
+
+.icon-button--activate.icon-button--active:not(:active) .icon-button--icon-wrapper {
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+}
+
+.icon-button--activate:hover.icon-button--active .icon-button--icon-wrapper{
+  background-color: var(--telekom-color-ui-state-fill-pressed);
+  background-color: green;
+}
+
+.icon-button--activate.icon-button--active:active .icon-button--icon-wrapper {
+  background-color: transparent;
+}
+
+
+/* type: toggle */
+
+.icon-button--toggle.icon-button--active .icon-button--icon-wrapper {
+  --color: var(--telekom-color-text-and-icon-primary-standard);
+}
+
+.icon-button--toggle:hover {
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+} 
+
+.icon-button--toggle:hover.icon-button--active .icon-button--icon-wrapper {
+  --color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+.icon-button--toggle:active {
+  background-color: var(--telekom-color-ui-state-fill-pressed);
+}
+
+.icon-button--toggle:active.icon-button--active .icon-button--icon-wrapper {
+  --color: var(--telekom-color-text-and-icon-primary-pressed);
+}

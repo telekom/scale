@@ -9,8 +9,9 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Element, Method } from '@stencil/core';
+import { Component, Prop, h, Host, Element, Method, Event, EventEmitter } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 @Component({
   tag: 'scale-icon-button',
@@ -21,9 +22,9 @@ export class IconButton {
   @Element() hostElement: HTMLElement;
 
   /** (optional) The size of the element */
-  @Prop() size?: 'small' | 'medium' = 'medium';
+  @Prop() size?: 'small' | 'medium' | 'large' = 'medium';
   /** (optional) Button type */
-  @Prop() type?: 'reset' | 'submit' | 'button';
+  @Prop() type?: 'standard' | 'activate' | 'toggle' = 'standard';
   /** (optional) The name of the button, submitted as a pair with the button's `value` as part of the form data */
   @Prop() name?: string;
   /** (optional) Defines the value associated with the button's `name` */
@@ -34,6 +35,12 @@ export class IconButton {
   @Prop() innerTabindex?: number;
   /** (optional) Set the element to active state  */
   @Prop() active?: boolean;
+  /** (optional) Element label  */
+  @Prop() label?: string;  
+  /** (optional) Label placement  */
+  @Prop() labelPlacement?: 'bottom' | 'right' = 'bottom';    
+  /** Emitted when the switch was clicked */
+  @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;
 
   private focusableElement: HTMLElement;
 
@@ -49,20 +56,52 @@ export class IconButton {
       this.active && `active`
     );
 
+
+
     return (
       <Host>
-        <button
+        {this.type === "standard" ? 
+          <button
           ref={(el) => (this.focusableElement = el)}
-          type={this.type}
+          type='button'
           part={basePart}
           tabIndex={this.innerTabindex}
           name={this.name}
           value={this.value}
+          // active={this.active ? this.active.toString() : ''}
           aria-pressed={this.active ? 'true' : 'false'}
-        >
+          >
           <slot />
         </button>
+        :
+        <label class={`icon-button--wrapper icon-button--label-position-${this.labelPlacement}`}>
+          <div class={this.getCssClassMap()}>
+            <input
+              type="checkbox"
+              checked={this.active}
+              onChange={(event: any) => {
+                this.active = event.target.checked;
+                emitEvent(this, 'scaleChange', { value: this.active });
+              }}            
+            />
+            <div class={'icon-button--icon-wrapper'}>
+              <slot/>
+            </div>
+          </div>
+          {this.label}
+        </label>        
+        
+        }
+
       </Host>
     );
   }
+  getCssClassMap() {
+    return classNames(
+      'icon-button',
+      this.type === 'activate' && 'icon-button--activate',
+      this.type === 'toggle' && 'icon-button--toggle',
+      this.active && 'icon-button--active',
+    );
+  }  
 }
