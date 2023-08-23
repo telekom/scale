@@ -10,10 +10,9 @@
  */
 
 :host {
-  --width: var(--telekom-spacing-unit-x6);
-  --height: var(--telekom-spacing-unit-x6);
-  --width-medium: var(--telekom-spacing-unit-x8);
-  --height-medium: var(--telekom-spacing-unit-x8);
+  --icon-dimensions: 16px;
+  --icon-dimensions-medium: 20px;
+  --icon-dimensions-large: 24px;
   --radius: var(--telekom-radius-standard);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
@@ -45,8 +44,8 @@
   text-decoration: none;
   padding: 0;
   background: var(--background);
-  width: var(--width);
-  height: var(--height);
+  width: var(--icon-dimensions);
+  height: var(--icon-dimensions);
   vertical-align: var(--vertical-align);
 }
 
@@ -87,23 +86,26 @@
 slot {
   color: var(--color);
 }
+
+
 /* <label> */
+
 .icon-button--wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.icon-button--label-wrapper {
   font: var(--telekom-text-style-small);
 }
 
 .icon-button--label-position-bottom {
-  border: 1px solid red;
   flex-direction: column;
 }
 
 .icon-button--label-position-right {
-  border: 1px solid green;
-  
 }
 
 input {
@@ -115,7 +117,23 @@ input {
   opacity: 0;
 }
 
-.icon-button--toggle, .icon-button--activate {
+.icon-button--activate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button--activate.icon-button--label-position-bottom,
+.icon-button--toggle.icon-button--label-position-bottom {
+  align-items: start;
+}
+
+.icon-button--activate.icon-button--label-position-bottom .icon-button--label-wrapper,
+.icon-button--toggle.icon-button--label-position-bottom .icon-button--label-wrapper {
+  padding-left: 4px;
+}
+
+.icon-button--toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,7 +163,6 @@ input {
 
 .icon-button--activate:hover.icon-button--active .icon-button--icon-wrapper{
   background-color: var(--telekom-color-ui-state-fill-pressed);
-  background-color: green;
 }
 
 .icon-button--activate.icon-button--active:active .icon-button--icon-wrapper {
@@ -159,7 +176,7 @@ input {
   --color: var(--telekom-color-text-and-icon-primary-standard);
 }
 
-.icon-button--toggle:hover {
+.icon-button--toggle:hover .icon-button--icon-wrapper {
   background-color: var(--telekom-color-ui-state-fill-hovered);
 } 
 
@@ -167,10 +184,29 @@ input {
   --color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
-.icon-button--toggle:active {
+.icon-button--toggle:active .icon-button--icon-wrapper {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
 .icon-button--toggle:active.icon-button--active .icon-button--icon-wrapper {
   --color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+
+.icon-button--size-small .icon-button--icon-wrapper {
+  /* border: 1px solid orange; */
+}
+
+.icon-button--size-medium .icon-button--icon-wrapper {
+  /* border: 1px solid red; */
+}
+
+.icon-button--size-large .icon-button--icon-wrapper {
+  /* border: 1px solid purple; */
+}
+
+.icon-button--size-large .icon-button--label-wrapper {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
 }

@@ -49,6 +49,32 @@ export class IconButton {
     this.focusableElement.focus();
   }
 
+  // connectedCallback() {
+  //   console.log('loaded')
+  //   Array.from(this.hostElement.childNodes).forEach((child) => {
+  //     if (
+  //       child.nodeType === 1 &&
+  //       child.nodeName.substr(0, 10) === 'SCALE-ICON'
+  //     ) {
+  //       const icon: HTMLElement = this.hostElement.querySelector(
+  //         child.nodeName
+  //       );
+  //       switch (this.size) {
+  //         case 'small':
+  //           icon.setAttribute('size', '16');
+  //           break;
+  //         case 'medium':
+  //           icon.setAttribute('size', '20');
+  //           break;
+  //         case 'large':
+  //           icon.setAttribute('size', '24');
+  //           break;
+  //       }    
+  //   }
+  // })
+  // }
+
+
   render() {
     const basePart = classNames(
       'base',
@@ -61,6 +87,7 @@ export class IconButton {
     return (
       <Host>
         {this.type === "standard" ? 
+        <div class="icon-button-standard">
           <button
           ref={(el) => (this.focusableElement = el)}
           type='button'
@@ -71,11 +98,15 @@ export class IconButton {
           // active={this.active ? this.active.toString() : ''}
           aria-pressed={this.active ? 'true' : 'false'}
           >
-          <slot />
-        </button>
+            <slot />
+          </button>
+          <div class={'icon-button--label-wrapper'}>
+            {this.label}
+          </div>
+        </div>
         :
-        <label class={`icon-button--wrapper icon-button--label-position-${this.labelPlacement}`}>
-          <div class={this.getCssClassMap()}>
+        <label class={this.getCssClassMap()}>
+          <div>
             <input
               type="checkbox"
               checked={this.active}
@@ -88,7 +119,9 @@ export class IconButton {
               <slot/>
             </div>
           </div>
-          {this.label}
+          <div class={'icon-button--label-wrapper'}>
+            {this.label}
+          </div>
         </label>        
         
         }
@@ -102,6 +135,8 @@ export class IconButton {
       this.type === 'activate' && 'icon-button--activate',
       this.type === 'toggle' && 'icon-button--toggle',
       this.active && 'icon-button--active',
+      this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
+      this.size && `icon-button--size-${this.size}`
     );
   }  
 }

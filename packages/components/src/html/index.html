@@ -20,10 +20,225 @@
         margin: 0;
         padding: 4rem;
       }
+
+
+      .small,
+      .medium,
+      .large {
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+      }      
+
+      .content {
+        display: flex;
+      }
+
+      .container {
+        border: 1px solid green;
+      }
+
+      .small *,
+      .medium *,
+      .large * {
+        /* margin-right: 8px; */
+
+      }
     </style>
   </head>
 
   <body>
     <h1 class="scl-font-variant-body">index.html</h1>
+    <div class="small">
+      <h2> SMALL</h2>
+      <div class="content">
+        <div class="container">
+          <h3> Standard </h3>
+          <scale-icon-button size="small">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="16"
+            ></scale-icon-alert-help>
+          </scale-icon-button>
+      
+          <scale-icon-button size="small" label="hello">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="16"
+            ></scale-icon-alert-help>
+          </scale-icon-button>
+      
+          <scale-icon-button size="small" label="hello" label-placement="right">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="16"
+            ></scale-icon-alert-help>
+          </scale-icon-button>
+        </div>
+        <div class="container">
+          <h3> Activate </h3>
+          <scale-icon-button size="small" type="activate">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="16"
+            ></scale-icon-alert-help>
+          </scale-icon-button>    
+      
+          <scale-icon-button size="small" type="activate" label="foobar" label-placement="bottom">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="16"
+            ></scale-icon-alert-help>
+          </scale-icon-button>
+      
+          <scale-icon-button size="small" type="activate" label="foobar" label-placement="right">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="16"
+            ></scale-icon-alert-help>
+          </scale-icon-button>
+        </div>
+        <div class="container">
+          <h3> Toggle </h3>
+          <scale-icon-button size="small" type="toggle" label="hoohaa" label-placement="bottom">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="16"
+            ></scale-icon-alert-help>
+          </scale-icon-button>    
+          <scale-icon-button size="small" type="toggle" label="hoohaa" label-placement="right">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="16"
+            ></scale-icon-alert-help>
+          </scale-icon-button>           
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    <div class="medium">
+      <h2> MEDIUM</h2>
+      <div class="content">
+        <div class="container">
+          <h3> Standard</h3>
+          <scale-icon-button size="medium">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="20"
+            ></scale-icon-alert-help>
+          </scale-icon-button>
+      
+          <scale-icon-button size="medium" label="hello">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="20"
+            ></scale-icon-alert-help>
+          </scale-icon-button>
+      
+          <scale-icon-button size="medium" label="hello" label-placement="right">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="20"
+            ></scale-icon-alert-help>
+          </scale-icon-button>        
+        </div>
+        <div class="container">
+          <h3> Activate </h3>
+    
+          <scale-icon-button size="medium" type="activate" label="foobar" label-placement="bottom">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="20"
+            ></scale-icon-alert-help>
+          </scale-icon-button>
+      
+          <scale-icon-button size="medium" type="activate" label="foobar" label-placement="right">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="20"
+            ></scale-icon-alert-help>
+          </scale-icon-button>    
+              
+        </div>
+        <div class="container">
+          <h3> Toggle </h3>
+          <scale-icon-button size="medium" type="toggle" label="hoohaa" label-placement="bottom">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="20"
+            ></scale-icon-alert-help>
+          </scale-icon-button>    
+      
+          <scale-icon-button size="medium" type="toggle" label="hoohaa" label-placement="right">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="20"
+            ></scale-icon-alert-help>
+          </scale-icon-button>              
+        </div>    
+      </div>
+  
+
+
+
+    </div>
+    
+    <div class="large">
+      <h2> LARGE</h2>
+      <div class="content">
+        <div class="container">
+          <h3> Standard </h3>
+          <scale-icon-button size="large" label="gudbye">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="24"
+            ></scale-icon-alert-help>
+          </scale-icon-button>
+      
+          <scale-icon-button size="large" label="gudbye" label-placement="right">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="24"
+            ></scale-icon-alert-help>
+          </scale-icon-button>       
+        </div>
+        <div class="container">
+          <h3> Activate </h3>
+          <scale-icon-button size="large" type="activate" label="foobar" label-placement="bottom">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="24"
+            ></scale-icon-alert-help>
+          </scale-icon-button>       
+    
+          <scale-icon-button size="large" type="activate" label="foobar" label-placement="right">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="24"
+            ></scale-icon-alert-help>
+          </scale-icon-button>              
+        </div>
+        <div class="container">
+          <h3> Toggle </h3>
+          <scale-icon-button size="large" type="toggle" label="hoohaa" label-placement="bottom">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="24"
+            ></scale-icon-alert-help>
+          </scale-icon-button>      
+      
+          <scale-icon-button size="large" type="toggle" label="hoohaa" label-placement="right">
+            <scale-icon-alert-help
+              accessibility-title="help"
+              size="24"
+            ></scale-icon-alert-help>
+          </scale-icon-button>            
+        </div>       
+      </div>  
+    </div>      
   </body>
 </html>
