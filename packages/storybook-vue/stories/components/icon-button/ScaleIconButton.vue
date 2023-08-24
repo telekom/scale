@@ -2,11 +2,10 @@
 <template>
   <scale-icon-button
     :size="size"
-    :active="active"
-    :innerTabindex="innerTabindex"
-    :download="download"
-    :value="value"
+    :active="active" 
     :name="name"
+    :label="label"
+    :labelPlacement="labelPlacement"
     :type="type"
   >
     <slot></slot>
@@ -18,12 +17,16 @@
 export default {
   props: {
     size: { type: String },
-    type: { type: String },
-    name: { type: String },
-    value: { type: String },
-    download: { type: String },
-    innerTabindex: { type: String },
+    type: { type: 'toggle' | 'standard' | 'activate'},
+    // name: { type: String },
+    // value: { type: String },
+    // download: { type: String },
+    // innerTabindex: { type: String },
     active: { type: String },
+    disabled: { type: Boolean, default: false },
+    active: { type: Boolean, default: false },
+    label: {type: String, default: 'asd'},
+    labelPlacement: {type: 'bottom' | 'right', default: ''},
   },
 };
 </script>

@@ -4,8 +4,42 @@ import ScaleIconButton from './ScaleIconButton';
 <Meta
   title="Beta Components/Icon Button"
   component={ScaleIconButton}
-  argTypes={{}}
+  argTypes={{
+    type: {
+      options: ['standard', 'activate', 'toggle'],
+      defaultValue: 'standard',
+      control: {
+        type: 'select',
+      },
+    },
+    label: {
+      defaultValue: 'asdf',
+      control: {
+        type: 'text',
+      },
+    }, 
+    labelPlacement: {
+      options: [ 'right', 'bottom'],
+      defaultValue: 'bottom',
+      control: {
+        type: 'select',
+      },
+    },
+  }}  
 />
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Callout</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
+</div>
+
 
 ## Standard
 
@@ -13,8 +47,16 @@ import ScaleIconButton from './ScaleIconButton';
   <Story name="Standard" args={{}}>
     {() => ({
       template: `
-        <scale-icon-button size="medium">
-          <scale-icon-alert-help accessibility-title="help" size="24"></scale-icon-alert-help>
+        <scale-icon-button
+          :disabled="disabled"
+          :active="active"
+          :type="type"
+          :label="label"
+          :size="size"
+          :labelPlacement="labelPlacement"
+          @scaleChange="scaleChange"        
+        >
+          <scale-icon-alert-help accessibility-title="help" size="20"></scale-icon-alert-help>
         </scale-icon-button>
       `,
     })}
@@ -23,14 +65,14 @@ import ScaleIconButton from './ScaleIconButton';
 
 <ArgsTable story="Standard" />
 
-## Selected
+## Toggle
 
 <Canvas withSource="none">
   <Story name="Selected" args={{}}>
     {() => ({
       template: `
-        <scale-icon-button size="medium">
-          <scale-icon-alert-help accessibility-title="help" size="24" selected></scale-icon-alert-help>
+        <scale-icon-button type="toggle" size="medium">
+          <scale-icon-alert-help accessibility-title="help" size="20"></scale-icon-alert-help>
         </scale-icon-button>
       `,
     })}
@@ -41,19 +83,19 @@ import ScaleIconButton from './ScaleIconButton';
 <scale-icon-button size="medium">
   <scale-icon-alert-help
     accessibility-title="help"
-    size="24"
+    size="20"
   ></scale-icon-alert-help>
 </scale-icon-button>
 ```
 
-## Active
+## Activate
 
 <Canvas withSource="none">
   <Story name="Active" args={{}}>
     {() => ({
       template: `
-        <scale-icon-button size="medium" active="true">
-          <scale-icon-alert-help accessibility-title="help" size="24"></scale-icon-alert-help>
+        <scale-icon-button size="medium" type="activate">
+          <scale-icon-alert-help accessibility-title="help" size="20"></scale-icon-alert-help>
         </scale-icon-button>
       `,
     })}
@@ -64,7 +106,7 @@ import ScaleIconButton from './ScaleIconButton';
 <scale-icon-button size="medium" active="true">
   <scale-icon-alert-help
     accessibility-title="help"
-    size="24"
+    size="20"
   ></scale-icon-alert-help>
 </scale-icon-button>
 ```
@@ -76,7 +118,7 @@ import ScaleIconButton from './ScaleIconButton';
     {() => ({
       template: `
         <scale-icon-button size="medium" active="true">
-          <scale-icon-alert-help accessibility-title="help" size="24" selected></scale-icon-alert-help>
+          <scale-icon-alert-help accessibility-title="help" size="20"></scale-icon-alert-help>
         </scale-icon-button>
       `,
     })}
@@ -87,101 +129,7 @@ import ScaleIconButton from './ScaleIconButton';
 <scale-icon-button size="medium" active="true">
   <scale-icon-alert-help
     accessibility-title="help"
-    size="24"
-    selected
-  ></scale-icon-alert-help>
-</scale-icon-button>
-```
-
-## Small
-
-<Canvas withSource="none">
-  <Story name="Small" args={{}}>
-    {() => ({
-      template: `
-        <scale-icon-button size="small">
-          <scale-icon-alert-help accessibility-title="help" size="16"></scale-icon-alert-help>
-        </scale-icon-button>
-      `,
-    })}
-  </Story>
-</Canvas>
-
-```html
-<scale-icon-button size="small">
-  <scale-icon-alert-help
-    accessibility-title="help"
-    size="16"
-  ></scale-icon-alert-help>
-</scale-icon-button>
-```
-
-## Small Selected
-
-<Canvas withSource="none">
-  <Story name="Small Selected" args={{}}>
-    {() => ({
-      template: `
-        <scale-icon-button size="small">
-          <scale-icon-alert-help accessibility-title="help" size="16" selected></scale-icon-alert-help>
-        </scale-icon-button>
-      `,
-    })}
-  </Story>
-</Canvas>
-
-```html
-<scale-icon-button size="small">
-  <scale-icon-alert-help
-    accessibility-title="help"
-    size="16"
-    selected
-  ></scale-icon-alert-help>
-</scale-icon-button>
-```
-
-## Small Active
-
-<Canvas withSource="none">
-  <Story name="Small Active" args={{}}>
-    {() => ({
-      template: `
-        <scale-icon-button size="small" active="true">
-          <scale-icon-alert-help accessibility-title="help" size="16"></scale-icon-alert-help>
-        </scale-icon-button>
-      `,
-    })}
-  </Story>
-</Canvas>
-
-```html
-<scale-icon-button size="small" active="true">
-  <scale-icon-alert-help
-    accessibility-title="help"
-    size="16"
-  ></scale-icon-alert-help>
-</scale-icon-button>
-```
-
-## Small Active Selected
-
-<Canvas withSource="none">
-  <Story name="Small Active Selected" args={{}}>
-    {() => ({
-      template: `
-        <scale-icon-button size="small" active="true">
-          <scale-icon-alert-help accessibility-title="help" size="16" selected></scale-icon-alert-help>
-        </scale-icon-button>
-      `,
-    })}
-  </Story>
-</Canvas>
-
-```html
-<scale-icon-button size="small" active="true">
-  <scale-icon-alert-help
-    accessibility-title="help"
-    size="16"
+    size="20"
     selected
   ></scale-icon-alert-help>
 </scale-icon-button>
