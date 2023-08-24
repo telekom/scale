@@ -46,6 +46,7 @@ export class IconButton {
 
   @Method()
   async setFocus() {
+    console.log('focusing')
     this.focusableElement.focus();
   }
 
@@ -96,9 +97,12 @@ export class IconButton {
           name={this.name}
           value={this.value}
           // active={this.active ? this.active.toString() : ''}
-          aria-pressed={this.active ? 'true' : 'false'}
-          >
-            <slot />
+          aria-pressed={this.active ? 'true' : 'false'}>
+            <div class={'icon-button--plate'}>
+              <div class={'icon-button--icon-wrapper'}>
+                <slot />
+              </div>
+            </div>
           </button>
           <div class={'icon-button--label-wrapper'}>
             {this.label}
@@ -114,9 +118,12 @@ export class IconButton {
                 this.active = event.target.checked;
                 emitEvent(this, 'scaleChange', { value: this.active });
               }}            
+              ref={(el) => (this.focusableElement = el)}
             />
-            <div class={'icon-button--icon-wrapper'}>
-              <slot/>
+            <div class={'icon-button--plate'}>
+              <div class={'icon-button--icon-wrapper'}>
+                <slot/>
+              </div>
             </div>
           </div>
           <div class={'icon-button--label-wrapper'}>
