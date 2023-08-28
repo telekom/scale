@@ -3,7 +3,6 @@
   <scale-icon-button
     :size="size"
     :active="active" 
-    :name="name"
     :label="label"
     :label-placement="labelPlacement"
     :type="type"
