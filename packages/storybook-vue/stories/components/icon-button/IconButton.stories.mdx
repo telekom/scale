@@ -13,7 +13,7 @@ import ScaleIconButton from './ScaleIconButton';
       },
     },
     label: {
-      defaultValue: 'foobar',
+      defaultValue: 'label',
       control: {
         type: 'text',
       },
@@ -122,30 +122,6 @@ export const Template = (args, { argTypes }) => ({
   <scale-icon-alert-help
     accessibility-title="help"
     size="20"
-  ></scale-icon-alert-help>
-</scale-icon-button>
-```
-
-## Active Selected
-
-<Canvas withSource="none">
-  <Story name="Active Selected" args={{}}>
-    {() => ({
-      template: `
-        <scale-icon-button size="medium" active="true">
-          <scale-icon-alert-help accessibility-title="help" size="20"></scale-icon-alert-help>
-        </scale-icon-button>
-      `,
-    })}
-  </Story>
-</Canvas>
-
-```html
-<scale-icon-button size="medium" active="true">
-  <scale-icon-alert-help
-    accessibility-title="help"
-    size="20"
-    selected
   ></scale-icon-alert-help>
 </scale-icon-button>
 ```
