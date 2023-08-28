@@ -5,7 +5,7 @@
     :active="active" 
     :name="name"
     :label="label"
-    :labelPlacement="labelPlacement"
+    :label-placement="labelPlacement"
     :type="type"
   >
     <slot></slot>
@@ -16,7 +16,7 @@
 
 export default {
   props: {
-    size: { type: String },
+    size: { type: 'small' | 'medium' | 'large', default: 'medium' },
     type: { type: 'toggle' | 'standard' | 'activate'},
     // name: { type: String },
     // value: { type: String },
@@ -25,8 +25,8 @@ export default {
     active: { type: String },
     disabled: { type: Boolean, default: false },
     active: { type: Boolean, default: false },
-    label: {type: String, default: 'asd'},
-    labelPlacement: {type: 'bottom' | 'right', default: ''},
+    label: {type: String},
+    labelPlacement: {type: 'bottom' | 'right'},
   },
 };
 </script>

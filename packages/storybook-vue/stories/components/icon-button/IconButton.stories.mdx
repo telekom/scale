@@ -13,20 +13,50 @@ import ScaleIconButton from './ScaleIconButton';
       },
     },
     label: {
-      defaultValue: 'asdf',
+      defaultValue: 'foobar',
       control: {
         type: 'text',
       },
     }, 
     labelPlacement: {
       options: [ 'right', 'bottom'],
-      defaultValue: 'bottom',
+      defaultValue: 'right',
       control: {
         type: 'select',
       },
     },
+    size: {
+      options: [ 'small', 'medium', 'large'],
+      defaultValue: 'medium',
+      control: {
+        type: 'select',
+      },
+    },
+        
   }}  
 />
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleIconButton },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleIconButton.props,
+  },
+  template: `
+    <scale-icon-button
+      :disabled="disabled"
+      :active="active"
+      :type="type"
+      :label="label"
+      :size="size"
+      :label-placement="labelPlacement"
+      @scaleChange="scaleChange"        
+    >
+      <scale-icon-alert-help accessibility-title="help" size="24"></scale-icon-alert-help>
+    </scale-icon-button>
+  `,
+});
 
 <div
   style={{
@@ -45,21 +75,7 @@ import ScaleIconButton from './ScaleIconButton';
 
 <Canvas withSource="none">
   <Story name="Standard" args={{}}>
-    {() => ({
-      template: `
-        <scale-icon-button
-          :disabled="disabled"
-          :active="active"
-          :type="type"
-          :label="label"
-          :size="size"
-          :labelPlacement="labelPlacement"
-          @scaleChange="scaleChange"        
-        >
-          <scale-icon-alert-help accessibility-title="help" size="20"></scale-icon-alert-help>
-        </scale-icon-button>
-      `,
-    })}
+    {Template.bind({})}
   </Story>
 </Canvas>
 

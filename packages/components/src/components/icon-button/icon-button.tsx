@@ -50,37 +50,43 @@ export class IconButton {
     this.focusableElement.focus();
   }
 
-  // connectedCallback() {
-  //   console.log('loaded')
-  //   Array.from(this.hostElement.childNodes).forEach((child) => {
-  //     if (
-  //       child.nodeType === 1 &&
-  //       child.nodeName.substr(0, 10) === 'SCALE-ICON'
-  //     ) {
-  //       const icon: HTMLElement = this.hostElement.querySelector(
-  //         child.nodeName
-  //       );
-  //       switch (this.size) {
-  //         case 'small':
-  //           icon.setAttribute('size', '16');
-  //           break;
-  //         case 'medium':
-  //           icon.setAttribute('size', '20');
-  //           break;
-  //         case 'large':
-  //           icon.setAttribute('size', '24');
-  //           break;
-  //       }    
-  //   }
-  // })
-  // }
+  connectedCallback() {
+    console.log('loaded')
+    Array.from(this.hostElement.childNodes).forEach((child) => {
+      if (
+        child.nodeType === 1 &&
+        child.nodeName.substr(0, 10) === 'SCALE-ICON'
+      ) {
+        const icon: HTMLElement = this.hostElement.querySelector(
+          child.nodeName
+        );
+        switch (this.size) {
+          case 'small':
+            icon.setAttribute('size', '16');
+            break;
+          case 'medium':
+            icon.setAttribute('size', '20');
+            break;
+          case 'large':
+            icon.setAttribute('size', '24');
+            break;
+        }    
+    }
+  })
+  }
 
 
   render() {
     const basePart = classNames(
       'base',
-      this.size && `size-${this.size}`,
-      this.active && `active`
+      this.size && `icon-button--size-${this.size}`,
+      this.active && `active`,
+      this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
+    );
+
+    const wrapperPart = classNames(
+      'icon-button--standard',
+      this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
     );
 
 
@@ -88,7 +94,7 @@ export class IconButton {
     return (
       <Host>
         {this.type === "standard" ? 
-        <div class="icon-button-standard">
+        <div class={wrapperPart}>
           <button
           ref={(el) => (this.focusableElement = el)}
           type='button'
@@ -96,7 +102,6 @@ export class IconButton {
           tabIndex={this.innerTabindex}
           name={this.name}
           value={this.value}
-          // active={this.active ? this.active.toString() : ''}
           aria-pressed={this.active ? 'true' : 'false'}>
             <div class={'icon-button--plate'}>
               <div class={'icon-button--icon-wrapper'}>
