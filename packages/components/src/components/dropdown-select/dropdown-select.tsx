@@ -233,7 +233,7 @@ export class DropdownSelect {
   }
 
   connectedCallback() {
-    if (this.hostElement.parentElement.tagName === 'SCALE-TAB-PANEL') {
+    if (this.hostElement.closest("scale-tab-panel")) {
       this.ignoreBlur = true;
     }
     statusNote({ source: this.hostElement, tag: 'beta' });
