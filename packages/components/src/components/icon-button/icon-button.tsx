@@ -79,7 +79,7 @@ export class IconButton {
   render() {
     const basePart = classNames(
       'base',
-      this.size && `icon-button--size-${this.size}`,
+      // this.size && `icon-button--size-${this.size}`,
       this.active && `active`,
       this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
     );
@@ -87,6 +87,7 @@ export class IconButton {
     const wrapperPart = classNames(
       'icon-button--standard',
       this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
+      this.size && `icon-button--size-${this.size}`
     );
 
     const alternatePart = classNames(
@@ -103,7 +104,7 @@ export class IconButton {
     return (
       <Host>
         {this.type === "standard" ? 
-        <div class={wrapperPart}>
+        <div part={wrapperPart}>
           <button
           ref={(el) => (this.focusableElement = el)}
           type='button'
@@ -118,7 +119,7 @@ export class IconButton {
               </div>
             </div>
           </button>
-          <div class={'icon-button--label-wrapper'}>
+          <div part={'icon-button--label-wrapper'} class={'icon-button--label-wrapper'}>
             {this.label}
           </div>
         </div>
