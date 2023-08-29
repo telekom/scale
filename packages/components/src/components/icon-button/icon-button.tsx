@@ -85,27 +85,20 @@ export class IconButton {
   render() {
     const basePart = classNames(
       'base',
-      // this.size && `icon-button--size-${this.size}`,
-      this.active && `active`,
       this.labelPlacement &&
-        `icon-button--label-position-${this.labelPlacement}`
+        `label-${this.labelPlacement}`
     );
 
     const wrapperPart = classNames(
-      'icon-button--standard',
       this.labelPlacement &&
-        `icon-button--label-position-${this.labelPlacement}`,
-      this.size && `icon-button--size-${this.size}`
+        `label-${this.labelPlacement}`,
     );
 
     const alternatePart = classNames(
-      'icon-button',
-      this.type === 'activate' && 'icon-button--activate',
-      this.type === 'toggle' && 'icon-button--toggle',
-      this.active && 'icon-button--active',
-      this.labelPlacement &&
-        `icon-button--label-position-${this.labelPlacement}`,
-      this.size && `icon-button--size-${this.size}`
+      this.type === 'activate' && 'activate',
+      this.type === 'toggle' && 'toggle',
+      this.active && 'active',
+      this.size && `size-${this.size}`
     );
 
     return (

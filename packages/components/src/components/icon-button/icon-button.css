@@ -41,7 +41,7 @@
   vertical-align: var(--vertical-align);
 }
 
-[part~='icon-button--size-medium'] [part~='base'] {
+[part~='size-medium'] [part~='base'] {
   height: var(--height-medium);
   width: var(--width-medium);
 }
@@ -70,12 +70,11 @@ slot {
   flex-direction: column;
 }
 
-[part~='icon-button--label-position-bottom'],
-[part~='icon-button--label-position-bottom'] {
+[part~='label-bottom'] {
   flex-direction: column;
 }
 
-[part~='icon-button--label-position-right'] {
+[part~='label-right'] {
   flex-direction: row;
   display: flex;
 }
@@ -92,25 +91,25 @@ input {
   appearance: none;
 }
 
-[part~='icon-button--activate'] {
+[part~='activate'] {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-[part~='icon-button--activate'][part~='icon-button--label-position-bottom'],
-[part~='icon-button--toggle'][part~='icon-button--label-position-bottom'] {
+[part~='activate'][part~='label-bottom'],
+[part~='toggle'][part~='label-bottom'] {
   align-items: start;
 }
 
-[part~='icon-button--activate'][part~='icon-button--label-position-bottom']
+[part~='activate'][part~='label-bottom']
   .icon-button--label-wrapper,
-[part~='icon-button--toggle'][part~='icon-button--label-position-bottom']
+[part~='toggle'][part~='label-bottom']
   .icon-button--label-wrapper {
   padding-left: 4px;
 }
 
-[part~='icon-button--toggle'] {
+[part~='toggle'] {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,31 +123,31 @@ input {
   border-radius: 4px;
 }
 
-[part~='icon-button--activate'].icon-button--plate {
+[part~='activate'].icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-standard);
 }
 
 /* type: activate */
 
-[part~='icon-button--activate']:hover:not(.icon-button-active)
+[part~='activate']:hover:not(.icon-button-active)
   .icon-button--icon-wrapper,
 [part~='base']:hover .icon-button--icon-wrapper {
   background-color: var(--telekom-color-ui-state-fill-hovered);
   /* background-color: yellow; */
 }
 
-[part~='icon-button--activate'][part~='icon-button--active']
+[part~='activate'][part~='active']
   .icon-button--plate {
   background-color: var(--telekom-color-ui-state-hovered);
 }
 
-[part~='icon-button--activate']:active:not(.icon-button-active)
+[part~='activate']:active:not(.icon-button-active)
   .icon-button--icon-wrapper,
 [part~='base']:active .icon-button--icon-wrapper {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
-[part~='icon-button--activate']input:focus,
-[part~='icon-button--toggle'] input:focus,
+[part~='activate']input:focus,
+[part~='toggle'] input:focus,
 [part~='base'] button:focus {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
@@ -161,48 +160,48 @@ input {
   border-radius: 4px;
 }
 
-[part~='icon-button--activate'][part~='icon-button--active']:not(:active)
+[part~='activate'][part~='active']:not(:active)
   .icon-button--icon-wrapper {
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
-[part~='icon-button--activate']:hover[part~='icon-button--active']
+[part~='activate']:hover[part~='active']
   .icon-button--icon-wrapper {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
-[part~='icon-button--activate'][part~='icon-button--active']:active
+[part~='activate'][part~='active']:active
   .icon-button--icon-wrapper {
   background-color: transparent;
 }
 
 /* type: toggle */
 
-[part~='icon-button--toggle'][part~='icon-button--active']
+[part~='toggle'][part~='active']
   .icon-button--icon-wrapper {
   --color: var(--telekom-color-text-and-icon-primary-standard);
 }
 
-[part~='icon-button--toggle']:hover .icon-button--icon-wrapper {
+[part~='toggle']:hover .icon-button--icon-wrapper {
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
-[part~='icon-button--toggle']:hover[part~='icon-button--active']
+[part~='toggle']:hover[part~='active']
   .icon-button--icon-wrapper {
   --color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
-[part~='icon-button--toggle']:active .icon-button--icon-wrapper {
+[part~='toggle']:active .icon-button--icon-wrapper {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
-[part~='icon-button--toggle']:active[part~='icon-button--active']
+[part~='toggle']:active[part~='active']
   .icon-button--icon-wrapper {
   --color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
-[part~='icon-button--size-large'] .icon-button--label-wrapper,
-[part~='icon-button--size-large'] .icon-button--label-wrapper {
+[part~='size-large'] .icon-button--label-wrapper,
+[part~='size-large'] .icon-button--label-wrapper {
   font-size: 14px;
   font-weight: 400;
   line-height: 140%;
