@@ -89,6 +89,15 @@ export class IconButton {
       this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
     );
 
+    const alternatePart = classNames(
+      'icon-button',
+      this.type === 'activate' && 'icon-button--activate',
+      this.type === 'toggle' && 'icon-button--toggle',
+      this.active && 'icon-button--active',
+      this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
+      this.size && `icon-button--size-${this.size}`     
+    )
+
 
 
     return (
@@ -114,7 +123,7 @@ export class IconButton {
           </div>
         </div>
         :
-        <label class={this.getCssClassMap()}>
+        <label part={alternatePart}>
           <div>
             <input
               type="checkbox"
