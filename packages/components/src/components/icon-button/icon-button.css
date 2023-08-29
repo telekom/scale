@@ -103,7 +103,7 @@ slot {
   font: var(--telekom-text-style-small);
 }
 
-.icon-button-standard {
+[part~=icon-button-standard] {
   display: flex;
   flex-direction: column;
   /* border: 1px solid blue; */
@@ -115,7 +115,7 @@ slot {
   /* border: 1px solid red; */
 }
 
-.icon-button--label-position-right {
+[part~=icon-button--label-position-right] {
   flex-direction: row;
   display: flex;
   /* border: 2px solid orange; */
@@ -141,13 +141,13 @@ input {
   height: calc(var(--icon-dimensions) + 8px);
 } */
 
-.icon-button--size-medium input,
+[part~=icon-button--size-medium] input,
 [part~='base'][part~='icon-button--size-medium']{
   width: calc(var(--icon-dimensions-medium) + 8px);
   height: calc(var(--icon-dimensions-medium) + 8px);  
 }
 
-.icon-button--size-large input,
+[part~=icon-button--size-large] input,
 [part~='base'][part~='icon-button--size-large']{
   width: calc(var(--icon-dimensions-large) + 8px);
   height: calc(var(--icon-dimensions-large) + 8px);  
@@ -195,7 +195,7 @@ input {
   /* background-color: yellow; */
 }
 
-[part~=icon-button--activate].icon-button--active .icon-button--plate {
+[part~=icon-button--activate][part~=icon-button--active] .icon-button--plate {
   background-color: var(--telekom-color-ui-state-hovered);
 }
 
@@ -226,22 +226,22 @@ input {
   border: 5px solid purple;
 } */
 
-[part~=icon-button--activate].icon-button--active:not(:active) .icon-button--icon-wrapper {
+[part~=icon-button--activate][part~=icon-button--active]:not(:active) .icon-button--icon-wrapper {
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
-[part~=icon-button--activate]:hover.icon-button--active .icon-button--icon-wrapper{
+[part~=icon-button--activate]:hover[part~=icon-button--active] .icon-button--icon-wrapper{
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
-[part~=icon-button--activate].icon-button--active:active .icon-button--icon-wrapper {
+[part~=icon-button--activate][part~=icon-button--active]:active .icon-button--icon-wrapper {
   background-color: transparent;
 }
 
 
 /* type: toggle */
 
-[part~=icon-button--toggle].icon-button--active .icon-button--icon-wrapper {
+[part~=icon-button--toggle][part~=icon-button--active] .icon-button--icon-wrapper {
   --color: var(--telekom-color-text-and-icon-primary-standard);
 }
 
@@ -250,7 +250,7 @@ input {
   /* background-color: blue; */
 } 
 
-[part~=icon-button--toggle]:hover.icon-button--active .icon-button--icon-wrapper {
+[part~=icon-button--toggle]:hover[part~=icon-button--active] .icon-button--icon-wrapper {
   --color: var(--telekom-color-text-and-icon-primary-hovered);
   /* background-color: green; */
 }
@@ -259,7 +259,7 @@ input {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
-[part~=icon-button--toggle]:active.icon-button--active .icon-button--icon-wrapper {
+[part~=icon-button--toggle]:active[part~=icon-button--active] .icon-button--icon-wrapper {
   --color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
@@ -267,15 +267,15 @@ input {
   /* border: 1px solid orange; */
 }
 
-.icon-button--size-medium .icon-button--icon-wrapper {
+[part~=icon-button--size-medium] .icon-button--icon-wrapper {
   /* border: 1px solid red; */
 }
 
-.icon-button--size-large .icon-button--icon-wrapper {
+[part~=icon-button--size-large] .icon-button--icon-wrapper {
   /* border: 1px solid purple; */
 }
 
-.icon-button--size-large .icon-button--label-wrapper
+[part~=icon-button--size-large] .icon-button--label-wrapper
 {
   font-size: 14px;
   font-weight: 400;
