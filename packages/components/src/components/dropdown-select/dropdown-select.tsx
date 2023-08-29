@@ -233,11 +233,15 @@ export class DropdownSelect {
   }
 
   connectedCallback() {
+    if (this.hostElement.parentElement.tagName === 'SCALE-TAB-PANEL') {
+      this.ignoreBlur = true;
+    }
     statusNote({ source: this.hostElement, tag: 'beta' });
     this.currentIndex =
       readOptions(this.hostElement).findIndex(
         ({ value }) => value === this.value
       ) || -1;
+
   }
 
   componentDidRender() {
