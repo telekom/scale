@@ -9,7 +9,16 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Element, Method, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  h,
+  Host,
+  Element,
+  Method,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 
@@ -36,9 +45,9 @@ export class IconButton {
   /** (optional) Set the element to active state  */
   @Prop() active?: boolean;
   /** (optional) Element label  */
-  @Prop() label?: string;  
+  @Prop() label?: string;
   /** (optional) Label placement  */
-  @Prop() labelPlacement?: 'bottom' | 'right' = 'bottom';    
+  @Prop() labelPlacement?: 'bottom' | 'right' = 'bottom';
   /** Emitted when the switch was clicked */
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;
 
@@ -46,12 +55,10 @@ export class IconButton {
 
   @Method()
   async setFocus() {
-    console.log('focusing')
     this.focusableElement.focus();
   }
 
   connectedCallback() {
-    console.log('loaded')
     Array.from(this.hostElement.childNodes).forEach((child) => {
       if (
         child.nodeType === 1 &&
@@ -70,23 +77,24 @@ export class IconButton {
           case 'large':
             icon.setAttribute('size', '24');
             break;
-        }    
-    }
-  })
+        }
+      }
+    });
   }
-
 
   render() {
     const basePart = classNames(
       'base',
       // this.size && `icon-button--size-${this.size}`,
       this.active && `active`,
-      this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
+      this.labelPlacement &&
+        `icon-button--label-position-${this.labelPlacement}`
     );
 
     const wrapperPart = classNames(
       'icon-button--standard',
-      this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
+      this.labelPlacement &&
+        `icon-button--label-position-${this.labelPlacement}`,
       this.size && `icon-button--size-${this.size}`
     );
 
@@ -95,59 +103,58 @@ export class IconButton {
       this.type === 'activate' && 'icon-button--activate',
       this.type === 'toggle' && 'icon-button--toggle',
       this.active && 'icon-button--active',
-      this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
-      this.size && `icon-button--size-${this.size}`     
-    )
-
-
+      this.labelPlacement &&
+        `icon-button--label-position-${this.labelPlacement}`,
+      this.size && `icon-button--size-${this.size}`
+    );
 
     return (
       <Host>
-        {this.type === "standard" ? 
-        <div part={wrapperPart}>
-          <button
-          ref={(el) => (this.focusableElement = el)}
-          type='button'
-          part={basePart}
-          tabIndex={this.innerTabindex}
-          name={this.name}
-          value={this.value}
-          aria-pressed={this.active ? 'true' : 'false'}>
-            <div class={'icon-button--plate'}>
-              <div class={'icon-button--icon-wrapper'}>
-                <slot />
-              </div>
-            </div>
-          </button>
-          <div part={'icon-button--label-wrapper'} class={'icon-button--label-wrapper'}>
-            {this.label}
-          </div>
-        </div>
-        :
-        <label part={alternatePart}>
-          <div>
-            <input
-              type="checkbox"
-              checked={this.active}
-              onChange={(event: any) => {
-                this.active = event.target.checked;
-                emitEvent(this, 'scaleChange', { value: this.active });
-              }}            
+        {this.type === 'standard' ? (
+          <div part={wrapperPart}>
+            <button
               ref={(el) => (this.focusableElement = el)}
-            />
-            <div class={'icon-button--plate'}>
-              <div class={'icon-button--icon-wrapper'}>
-                <slot/>
+              type="button"
+              part={basePart}
+              tabIndex={this.innerTabindex}
+              name={this.name}
+              value={this.value}
+              aria-pressed={this.active ? 'true' : 'false'}
+            >
+              <div class={'icon-button--plate'}>
+                <div class={'icon-button--icon-wrapper'}>
+                  <slot />
+                </div>
               </div>
+            </button>
+            <div
+              part={'icon-button--label-wrapper'}
+              class={'icon-button--label-wrapper'}
+            >
+              {this.label}
             </div>
           </div>
-          <div class={'icon-button--label-wrapper'}>
-            {this.label}
-          </div>
-        </label>        
-        
-        }
-
+        ) : (
+          <label part={alternatePart}>
+            <div>
+              <input
+                type="checkbox"
+                checked={this.active}
+                onChange={(event: any) => {
+                  this.active = event.target.checked;
+                  emitEvent(this, 'scaleChange', { value: this.active });
+                }}
+                ref={(el) => (this.focusableElement = el)}
+              />
+              <div class={'icon-button--plate'}>
+                <div class={'icon-button--icon-wrapper'}>
+                  <slot />
+                </div>
+              </div>
+            </div>
+            <div class={'icon-button--label-wrapper'}>{this.label}</div>
+          </label>
+        )}
       </Host>
     );
   }
@@ -157,8 +164,9 @@ export class IconButton {
       this.type === 'activate' && 'icon-button--activate',
       this.type === 'toggle' && 'icon-button--toggle',
       this.active && 'icon-button--active',
-      this.labelPlacement && `icon-button--label-position-${this.labelPlacement}`,
+      this.labelPlacement &&
+        `icon-button--label-position-${this.labelPlacement}`,
       this.size && `icon-button--size-${this.size}`
     );
-  }  
+  }
 }
