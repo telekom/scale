@@ -46,6 +46,15 @@
   width: var(--width-medium);
 }
 
+
+[part~='size-medium'] {
+  --icon-dimensions: var(--icon-dimensions-medium);
+}
+
+[part~='size-large'] {
+  --icon-dimensions: var(--icon-dimensions-medium);
+}
+
 slot {
   color: var(--color);
 }
@@ -233,4 +242,8 @@ input {
   padding: 2px;
   margin: -2px;
   cursor: pointer;
+}
+
+label {
+  position: relative;
 }
