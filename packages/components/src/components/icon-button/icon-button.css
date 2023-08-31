@@ -38,7 +38,7 @@
   text-decoration: none;
   padding: 0;
   background: var(--background);
-  vertical-align: var(--vertical-align);
+  vertical-align: var(--vertical-align); 
 }
 
 [part~='size-medium'] [part~='base'] {
@@ -53,6 +53,12 @@ slot {
 /* <label> */
 .icon-button {
   position: relative;
+  /* display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 2em;
+  margin: -2em;
+  border: 2px solid red; */
 }
 .icon-button--wrapper {
   display: flex;
@@ -77,6 +83,7 @@ slot {
 [part~='label-right'] {
   flex-direction: row;
   display: flex;
+  align-items: center;
 }
 
 input {
@@ -95,6 +102,10 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+[part~='activate'], [part~='toggle'] {
+  cursor: pointer;
 }
 
 [part~='activate'][part~='label-bottom'],
@@ -211,4 +222,15 @@ input {
 .icon-button--label-wrapper {
   display: flex;
   align-items: center;
+  /* border: 2px solid purple; */
+}
+
+
+.icon-button--plate {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 2px;
+  margin: -2px;
+  cursor: pointer;
 }

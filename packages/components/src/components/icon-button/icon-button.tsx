@@ -98,7 +98,8 @@ export class IconButton {
       this.type === 'activate' && 'activate',
       this.type === 'toggle' && 'toggle',
       this.active && 'active',
-      this.size && `size-${this.size}`
+      this.size && `size-${this.size}`,
+      `label-${this.labelPlacement}`,
     );
 
     return (
@@ -119,13 +120,13 @@ export class IconButton {
                   <slot />
                 </div>
               </div>
-            </button>
-            <div
+              <div
               part={'icon-button--label-wrapper'}
               class={'icon-button--label-wrapper'}
             >
               {this.label}
-            </div>
+            </div>              
+            </button>
           </div>
         ) : (
           <label part={alternatePart}>
