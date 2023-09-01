@@ -116,9 +116,7 @@ export class IconButton {
               aria-pressed={this.active ? 'true' : 'false'}
             >
               <div class={'icon-button--plate'}>
-                <div class={'icon-button--icon-wrapper'}>
                   <slot />
-                </div>
               </div>
               <div
               part={'icon-button--label-wrapper'}
@@ -141,9 +139,7 @@ export class IconButton {
                 ref={(el) => (this.focusableElement = el)}
               />
               <div class={'icon-button--plate'}>
-                <div class={'icon-button--icon-wrapper'}>
                   <slot />
-                </div>
               </div>
             </div>
             <div class={'icon-button--label-wrapper'}>{this.label}</div>

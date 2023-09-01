@@ -80,13 +80,20 @@ slot {
   font: var(--telekom-text-style-small);
 }
 
+.icon-button--plate {
+  border-radius: 4px;
+}
+
 [part~='icon-button-standard'] {
   display: flex;
   flex-direction: column;
 }
 
 [part~='label-bottom'] {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 [part~='label-right'] {
@@ -95,12 +102,20 @@ slot {
   align-items: center;
 }
 
+
+[part~='label-right'] .icon-button--label-wrapper{
+  padding-left: 4px;
+  height: 100%;
+  display: flex;
+  /* border: 1px solid orchid; */
+}
+
 input {
   position: absolute;
   margin: 0;
   top: 0;
-  width: calc(var(--icon-dimensions) + 8px);
-  height: calc(var(--icon-dimensions) + 8px);
+  width: calc(var(--icon-dimensions));
+  height: calc(var(--icon-dimensions));
   border: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -119,14 +134,14 @@ input {
 
 [part~='activate'][part~='label-bottom'],
 [part~='toggle'][part~='label-bottom'] {
-  align-items: start;
+  align-items: center;
 }
 
 [part~='activate'][part~='label-bottom']
   .icon-button--label-wrapper,
 [part~='toggle'][part~='label-bottom']
   .icon-button--label-wrapper {
-  padding-left: 4px;
+  /* padding-left: 4px; */
 }
 
 [part~='toggle'] {
@@ -139,7 +154,8 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  /* padding: 4px;
+  margin: -4px; */
   border-radius: 4px;
 }
 
@@ -150,8 +166,8 @@ input {
 /* type: activate */
 
 [part~='activate']:hover:not(.icon-button-active)
-  .icon-button--icon-wrapper,
-[part~='base']:hover .icon-button--icon-wrapper {
+  .icon-button--plate,
+[part~='base']:hover .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-hovered);
   /* background-color: yellow; */
 }
@@ -162,16 +178,21 @@ input {
 }
 
 [part~='activate']:active:not(.icon-button-active)
-  .icon-button--icon-wrapper,
-[part~='base']:active .icon-button--icon-wrapper {
+  .icon-button--plate,
+[part~='base']:active .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
-[part~='activate']input:focus,
-[part~='toggle'] input:focus,
+[part~='activate']:focus-within,
+[part~='toggle']:focus-within,
 [part~='base'] button:focus {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
   border-radius: 4px;
+}
+
+[part~='activate'] input:focus,
+[part~='toggle'] input:focus {
+  outline: none;
 }
 
 [part~='base']:focus {
@@ -181,42 +202,43 @@ input {
 }
 
 [part~='activate'][part~='active']:not(:active)
-  .icon-button--icon-wrapper {
+  .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
 [part~='activate']:hover[part~='active']
-  .icon-button--icon-wrapper {
+  .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
 [part~='activate'][part~='active']:active
-  .icon-button--icon-wrapper {
+  .icon-button--plate {
   background-color: transparent;
 }
 
 /* type: toggle */
 
 [part~='toggle'][part~='active']
-  .icon-button--icon-wrapper {
+  .icon-button--plate {
   --color: var(--telekom-color-text-and-icon-primary-standard);
 }
 
-[part~='toggle']:hover .icon-button--icon-wrapper {
+[part~='toggle']:hover .icon-button--plate,
+[part~='activate']:hover .icon-button--plate  {
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
 [part~='toggle']:hover[part~='active']
-  .icon-button--icon-wrapper {
+  .icon-button--plate {
   --color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
-[part~='toggle']:active .icon-button--icon-wrapper {
+[part~='toggle']:active .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
 [part~='toggle']:active[part~='active']
-  .icon-button--icon-wrapper {
+  .icon-button--plate {
   --color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
@@ -236,14 +258,17 @@ input {
 
 
 .icon-button--plate {
-  display: inline-block;
+  display: flex;
   position: relative;
   z-index: 1;
-  padding: 2px;
-  margin: -2px;
+  padding: 4px;
+  margin: -4px;
   cursor: pointer;
 }
 
 label {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
