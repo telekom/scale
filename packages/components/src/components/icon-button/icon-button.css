@@ -28,7 +28,7 @@
 
 [part~='base'] {
   border: 0;
-  border-radius: var(--radius);
+  /* border-radius: var(--radius); */
   outline: none;
   cursor: pointer;
   user-select: none;
@@ -182,24 +182,47 @@ input {
 [part~='base']:active .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
+
 [part~='activate']:focus-within,
 [part~='toggle']:focus-within,
-[part~='base'] button:focus {
+[part~='base']:focus {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
-  border-radius: 4px;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
+
+
+[part~='size-medium'][part~='activate']:focus-within,
+[part~='size-medium'][part~='toggle']:focus-within,
+[part~='size-medium'] [part~='base']:focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--telekom-spacing-composition-space-01);
+  outline-offset: 6px;
+  /* border-radius: 2px; */
+}
+
+
+[part~='size-large'][part~='activate']:focus-within,
+[part~='size-large'][part~='toggle']:focus-within,
+[part~='size-large'] [part~='base']:focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--telekom-spacing-composition-space-01);
+  outline-offset: 9px;
+  border-radius: 2px;
+}
+
 
 [part~='activate'] input:focus,
 [part~='toggle'] input:focus {
   outline: none;
 }
 
-[part~='base']:focus {
+/* [part~='base']:focus {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
   border-radius: 4px;
-}
+} */
 
 [part~='activate'][part~='active']:not(:active)
   .icon-button--plate {
@@ -261,10 +284,21 @@ input {
   display: flex;
   position: relative;
   z-index: 1;
-  padding: 4px;
-  margin: -4px;
+  padding: 2px;
+  margin: -2px;
   cursor: pointer;
 }
+
+[part~='size-medium'] .icon-button--plate {
+  padding: 4px;
+  margin: -4px;
+}
+
+[part~='size-large'] .icon-button--plate {
+  padding: 8px;
+  margin: -8px;
+}
+
 
 label {
   position: relative;

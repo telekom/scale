@@ -59,6 +59,7 @@ export class IconButton {
   }
 
   connectedCallback() {
+    console.log('connected callback')
     Array.from(this.hostElement.childNodes).forEach((child) => {
       if (
         child.nodeType === 1 &&
@@ -82,6 +83,26 @@ export class IconButton {
     });
   }
 
+  componentDidUpdate() {
+    console.log('Update')
+    if (this.type == 'toggle') {
+      Array.from(this.hostElement.childNodes).forEach((child) => {
+        if (
+          child.nodeType === 1 &&
+          child.nodeName.substr(0, 10) === 'SCALE-ICON'
+        ) {
+          const icon: HTMLElement = this.hostElement.querySelector(
+            child.nodeName
+          );
+          if (this.active) {
+            console.log('toggle active')
+            icon.setAttribute('selected', 'true');
+          }
+        }
+      });    
+    }
+  }
+
   render() {
     const basePart = classNames(
       'base',
@@ -92,6 +113,8 @@ export class IconButton {
     const wrapperPart = classNames(
       this.labelPlacement &&
         `label-${this.labelPlacement}`,
+      this.size && `size-${this.size}`,
+
     );
 
     const alternatePart = classNames(
