@@ -11,7 +11,7 @@
 
 :host {
   --icon-dimensions: 16px;
-  --icon-dimensions-medium: 20px;
+  --icon-dimensions-standard: 20px;
   --icon-dimensions-large: 24px;
   --radius: var(--telekom-radius-standard);
   --background: var(--telekom-color-background-canvas);
@@ -40,19 +40,16 @@
   background: var(--background);
   vertical-align: var(--vertical-align); 
 }
-
-[part~='size-medium'] [part~='base'] {
-  height: var(--height-medium);
-  width: var(--width-medium);
+[part~='activate'], [part~='toggle'] {
+  cursor: pointer;
 }
 
-
-[part~='size-medium'] {
-  --icon-dimensions: var(--icon-dimensions-medium);
+[part~='size-standard'] {
+  --icon-dimensions: var(--icon-dimensions-standard);
 }
 
 [part~='size-large'] {
-  --icon-dimensions: var(--icon-dimensions-medium);
+  --icon-dimensions: var(--icon-dimensions-standard);
 }
 
 slot {
@@ -73,7 +70,7 @@ slot {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .icon-button--label-wrapper {
@@ -128,9 +125,7 @@ input {
   justify-content: center;
 }
 
-[part~='activate'], [part~='toggle'] {
-  cursor: pointer;
-}
+
 
 [part~='activate'][part~='label-bottom'],
 [part~='toggle'][part~='label-bottom'] {
@@ -189,16 +184,16 @@ input {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 
-[part~='size-medium'][part~='activate']:focus-within,
-[part~='size-medium'][part~='toggle']:focus-within,
-[part~='size-medium'] [part~='base']:focus {
+[part~='size-standard'][part~='activate']:focus-within,
+[part~='size-standard'][part~='toggle']:focus-within,
+[part~='size-standard'] [part~='base']:focus {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
-  outline-offset: 6px;
+  outline-offset: 5px;
   /* border-radius: 2px; */
 }
 
@@ -208,8 +203,8 @@ input {
 [part~='size-large'] [part~='base']:focus {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
-  outline-offset: 9px;
-  border-radius: 2px;
+  outline-offset: 5px;
+  border-radius: 4px;
 }
 
 
@@ -265,13 +260,13 @@ input {
   --color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
-[part~='size-large'] .icon-button--label-wrapper,
+/* [part~='size-large'] .icon-button--label-wrapper,
 [part~='size-large'] .icon-button--label-wrapper {
   font-size: 14px;
   font-weight: 400;
   line-height: 140%;
   letter-spacing: 0;
-}
+} */
 
 .icon-button--label-wrapper {
   display: flex;
@@ -289,14 +284,14 @@ input {
   cursor: pointer;
 }
 
-[part~='size-medium'] .icon-button--plate {
+[part~='size-standard'] .icon-button--plate {
   padding: 4px;
   margin: -4px;
 }
 
 [part~='size-large'] .icon-button--plate {
-  padding: 8px;
-  margin: -8px;
+  padding: 4px;
+  margin: -4px;
 }
 
 
@@ -305,4 +300,29 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+[part~='disabled'] [part~='base'],
+[part~='toggle'][part~='disabled'],
+[part~='activate'][part~='disabled'], 
+[part~='disabled'] .icon-button--plate {
+  cursor: not-allowed;
+}
+
+[part~='disabled'] ::slotted(*),
+[part~='disabled'] .icon-button--label-wrapper {
+ color: var(--telekom-color-text-and-icon-disabled);  
+}
+
+[part~='disabled'] [part~='base']:hover .icon-button--plate,
+[part~='toggle'][part~='disabled']:hover .icon-button--plate,
+[part~='activate'][part~='disabled']:hover .icon-button--plate{
+  background-color: transparent;
+}
+
+[part~='disabled'][part~='activate']:focus-within,
+[part~='disabled'][part~='toggle']:focus-within,
+[part~='disabled'] [part~='base']:focus {
+  outline: none;
+  border-radius: 0;
 }

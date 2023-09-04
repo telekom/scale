@@ -15,7 +15,7 @@
 
 export default {
   props: {
-    size: { type: 'small' | 'medium' | 'large', default: 'medium' },
+    size: { type: 'small' | 'standard' | 'large', default: 'standard' },
     type: { type: 'toggle' | 'standard' | 'activate'},
     // name: { type: String },
     // value: { type: String },

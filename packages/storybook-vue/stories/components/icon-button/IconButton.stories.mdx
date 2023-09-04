@@ -26,8 +26,8 @@ import ScaleIconButton from './ScaleIconButton';
       },
     },
     size: {
-      options: [ 'small', 'medium', 'large'],
-      defaultValue: 'medium',
+      options: [ 'small', 'standard', 'large'],
+      defaultValue: 'standard',
       control: {
         type: 'select',
       },
@@ -65,7 +65,7 @@ export const Template = (args, { argTypes }) => ({
     width: '100%',
   }}
 >
-  <h1>Callout</h1>
+  <h1>Icon Button</h1>
   <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
@@ -86,7 +86,7 @@ export const Template = (args, { argTypes }) => ({
   <Story name="Selected" args={{}}>
     {() => ({
       template: `
-        <scale-icon-button type="toggle" size="medium">
+        <scale-icon-button type="toggle" size="standard">
           <scale-icon-alert-help accessibility-title="help" size="20"></scale-icon-alert-help>
         </scale-icon-button>
       `,
@@ -95,7 +95,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-icon-button size="medium">
+<scale-icon-button size="standard">
   <scale-icon-alert-help
     accessibility-title="help"
     size="20"
@@ -109,7 +109,7 @@ export const Template = (args, { argTypes }) => ({
   <Story name="Active" args={{}}>
     {() => ({
       template: `
-        <scale-icon-button size="medium" type="activate">
+        <scale-icon-button size="standard" type="activate">
           <scale-icon-alert-help accessibility-title="help" size="20"></scale-icon-alert-help>
         </scale-icon-button>
       `,
@@ -118,7 +118,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-icon-button size="medium" active="true">
+<scale-icon-button size="standard" active="true">
   <scale-icon-alert-help
     accessibility-title="help"
     size="20"

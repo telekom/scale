@@ -47,7 +47,7 @@ export class SearchListItem {
   getClearIconButton() {
     return (
       <scale-icon-button
-        size="medium"
+        size="standard"
         part="clear-icon-button"
         onClick={this.handleClick}
       >

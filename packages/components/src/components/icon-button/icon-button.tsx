@@ -31,7 +31,7 @@ export class IconButton {
   @Element() hostElement: HTMLElement;
 
   /** (optional) The size of the element */
-  @Prop() size?: 'small' | 'medium' | 'large' = 'medium';
+  @Prop() size?: 'small' | 'standard' | 'large' = 'standard';
   /** (optional) Button type */
   @Prop() type?: 'standard' | 'activate' | 'toggle' = 'standard';
   /** (optional) The name of the button, submitted as a pair with the button's `value` as part of the form data */
@@ -48,6 +48,8 @@ export class IconButton {
   @Prop() label?: string;
   /** (optional) Label placement  */
   @Prop() labelPlacement?: 'bottom' | 'right' = 'bottom';
+  /** (optional) If `true`, the button is disabled */
+  @Prop() disabled?: boolean = false;  
   /** Emitted when the switch was clicked */
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;
 
@@ -72,7 +74,7 @@ export class IconButton {
           case 'small':
             icon.setAttribute('size', '16');
             break;
-          case 'medium':
+          case 'standard':
             icon.setAttribute('size', '20');
             break;
           case 'large':
@@ -97,9 +99,30 @@ export class IconButton {
           if (this.active) {
             console.log('toggle active')
             icon.setAttribute('selected', 'true');
+          } else {
+            icon.removeAttribute('selected');
           }
         }
       });    
+    }
+
+    if (this.disabled) {
+      Array.from(this.hostElement.childNodes).forEach((child) => {
+        if (
+          child.nodeType === 1 &&
+          child.nodeName.substr(0, 10) === 'SCALE-ICON'
+        ) {
+          const icon: HTMLElement = this.hostElement.querySelector(
+            child.nodeName
+          );
+          if (this.disabled) {
+            console.log('toggle active')
+            icon.setAttribute('disabled', 'true');
+          } else {
+            icon.removeAttribute('disabled');
+          }
+        }
+      });        
     }
   }
 
@@ -114,7 +137,7 @@ export class IconButton {
       this.labelPlacement &&
         `label-${this.labelPlacement}`,
       this.size && `size-${this.size}`,
-
+      this.disabled && 'disabled',
     );
 
     const alternatePart = classNames(
@@ -123,6 +146,7 @@ export class IconButton {
       this.active && 'active',
       this.size && `size-${this.size}`,
       `label-${this.labelPlacement}`,
+      this.disabled && 'disabled',
     );
 
     return (
@@ -137,6 +161,7 @@ export class IconButton {
               name={this.name}
               value={this.value}
               aria-pressed={this.active ? 'true' : 'false'}
+              disabled={this.disabled}
             >
               <div class={'icon-button--plate'}>
                   <slot />
@@ -155,9 +180,12 @@ export class IconButton {
               <input
                 type="checkbox"
                 checked={this.active}
+                disabled={this.disabled}
                 onChange={(event: any) => {
-                  this.active = event.target.checked;
-                  emitEvent(this, 'scaleChange', { value: this.active });
+                  if (!this.disabled) {
+                    this.active = event.target.checked;
+                    emitEvent(this, 'scaleChange', { value: this.active });
+                  }
                 }}
                 ref={(el) => (this.focusableElement = el)}
               />
