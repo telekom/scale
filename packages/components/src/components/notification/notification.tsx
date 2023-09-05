@@ -171,7 +171,8 @@ export class Notification {
               <IconTag size={ICON_SIZE} selected={this.type === 'toast'} />
             </slot>
           </div>
-          <div part="body" 
+          <div
+            part="body"
             aria-live={this.role === undefined ? undefined : this.innerAriaLive}
           >
             <div
