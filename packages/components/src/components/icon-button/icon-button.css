@@ -260,20 +260,10 @@ input {
   --color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
-/* [part~='size-large'] .icon-button--label-wrapper,
-[part~='size-large'] .icon-button--label-wrapper {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0;
-} */
-
 .icon-button--label-wrapper {
   display: flex;
   align-items: center;
-  /* border: 2px solid purple; */
 }
-
 
 .icon-button--plate {
   display: flex;
@@ -283,12 +273,6 @@ input {
   margin: -2px;
   cursor: pointer;
 }
-
-/* [part~='size-standard'] .icon-button--plate,
-[part~='size-large'] .icon-button--plate  {
-  padding: 2px;
-  margin: -2px;
-} */
 
 label {
   position: relative;
