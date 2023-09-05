@@ -269,7 +269,7 @@ export class TextField {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
             onKeyDown={this.handleKeyDown}
-            {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
+            {...(!!this.placeholder && !this.readonly ? { placeholder: this.placeholder } : {})}
             disabled={this.disabled}
             readonly={this.readonly}
             autocomplete={this.inputAutocomplete}
