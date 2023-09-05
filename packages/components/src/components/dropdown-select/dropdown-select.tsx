@@ -233,7 +233,7 @@ export class DropdownSelect {
   }
 
   connectedCallback() {
-    if (this.hostElement.closest("scale-tab-panel")) {
+    if (this.hostElement.closest('scale-tab-panel')) {
       this.ignoreBlur = true;
     }
     statusNote({ source: this.hostElement, tag: 'beta' });
@@ -241,7 +241,6 @@ export class DropdownSelect {
       readOptions(this.hostElement).findIndex(
         ({ value }) => value === this.value
       ) || -1;
-
   }
 
   componentDidRender() {
