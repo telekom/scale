@@ -284,16 +284,11 @@ input {
   cursor: pointer;
 }
 
-[part~='size-standard'] .icon-button--plate {
-  padding: 4px;
-  margin: -4px;
-}
-
-[part~='size-large'] .icon-button--plate {
-  padding: 4px;
-  margin: -4px;
-}
-
+/* [part~='size-standard'] .icon-button--plate,
+[part~='size-large'] .icon-button--plate  {
+  padding: 2px;
+  margin: -2px;
+} */
 
 label {
   position: relative;
