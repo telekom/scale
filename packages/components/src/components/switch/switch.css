@@ -301,3 +301,13 @@ scale-switch scale-icon-action-success {
 [data-platform='android'] .switch--disabled .switch__thumb {
   color: var(--telekom-color-ui-strong);
 }
+
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) { 
+  .switch__toggle {
+    border: 1px solid;
+  }
+  scale-icon-action-checkmark {
+    visibility: hidden !important;
+  }
+}
