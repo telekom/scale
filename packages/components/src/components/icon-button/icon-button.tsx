@@ -61,7 +61,6 @@ export class IconButton {
   }
 
   connectedCallback() {
-    console.log('connected callback')
     Array.from(this.hostElement.childNodes).forEach((child) => {
       if (
         child.nodeType === 1 &&
@@ -81,12 +80,18 @@ export class IconButton {
             icon.setAttribute('size', '24');
             break;
         }
+        if (this.type == 'toggle') { 
+          if (this.active) {
+            icon.setAttribute('selected', 'true');
+          } else {
+            icon.removeAttribute('selected');
+          }        
+        }              
       }
     });
   }
 
   componentDidUpdate() {
-    console.log('Update')
     if (this.type == 'toggle') {
       Array.from(this.hostElement.childNodes).forEach((child) => {
         if (
@@ -97,7 +102,6 @@ export class IconButton {
             child.nodeName
           );
           if (this.active) {
-            console.log('toggle active')
             icon.setAttribute('selected', 'true');
           } else {
             icon.removeAttribute('selected');
@@ -116,7 +120,6 @@ export class IconButton {
             child.nodeName
           );
           if (this.disabled) {
-            console.log('toggle active')
             icon.setAttribute('disabled', 'true');
           } else {
             icon.removeAttribute('disabled');
