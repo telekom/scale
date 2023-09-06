@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.139](https://github.com/telekom/scale/compare/v3.0.0-beta.138...v3.0.0-beta.139) (2023-09-06)
+
+
+### Bug Fixes
+
+* ignore blur when inside a tab panel ([#2111](https://github.com/telekom/scale/issues/2111)) ([3de029b](https://github.com/telekom/scale/commit/3de029b92458e135b9eafa3a7ed7015503fe41a7))
+* set aria live on body part ([#2116](https://github.com/telekom/scale/issues/2116)) ([4c00769](https://github.com/telekom/scale/commit/4c00769ba49448a1ac2b8d8cb0d5874585b9ad24))
+* set aria-current to false when changed ([#2015](https://github.com/telekom/scale/issues/2015)) ([51c9019](https://github.com/telekom/scale/commit/51c9019b2a5bd0dfd96905ee804a1af321547dac))
+* set aria-label on nested button instead of scale-button ([#2115](https://github.com/telekom/scale/issues/2115)) ([fa502cf](https://github.com/telekom/scale/commit/fa502cfcc17fca54d87899901629c4eb29920493))
+* tk-network ([#2117](https://github.com/telekom/scale/issues/2117)) ([3747093](https://github.com/telekom/scale/commit/374709357745cfa7d1618e445a0b175581ff3ddd))
+
+
+
+
+
 # [3.0.0-beta.138](https://github.com/telekom/scale/compare/v3.0.0-beta.137...v3.0.0-beta.138) (2023-08-29)
 
 
