@@ -302,8 +302,7 @@ scale-switch scale-icon-action-success {
   color: var(--telekom-color-ui-strong);
 }
 
-
-@media screen and (forced-colors: active), (-ms-high-contrast: active) { 
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .switch__toggle {
     border: 1px solid;
   }
