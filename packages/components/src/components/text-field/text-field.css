@@ -297,3 +297,17 @@ input[type='month']::-webkit-calendar-picker-indicator {
   position: absolute;
   right: 12px;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  color-scheme: dark;
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .text-field--readonly input,
+  .text-field--readonly .text-field__control {
+    border: 1px solid;
+  }
+}

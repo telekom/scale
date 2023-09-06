@@ -165,14 +165,16 @@ export class Notification {
             this.isOpen && 'open'
           )}
           role={this.role}
-          aria-live={this.role === undefined ? undefined : this.innerAriaLive}
         >
           <div part="icon" aria-hidden="true">
             <slot name="icon">
               <IconTag size={ICON_SIZE} selected={this.type === 'toast'} />
             </slot>
           </div>
-          <div part="body">
+          <div
+            part="body"
+            aria-live={this.role === undefined ? undefined : this.innerAriaLive}
+          >
             <div
               part="heading"
               role="heading"
