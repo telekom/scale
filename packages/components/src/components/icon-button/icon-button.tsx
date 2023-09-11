@@ -49,7 +49,7 @@ export class IconButton {
   /** (optional) Label placement  */
   @Prop() labelPlacement?: 'bottom' | 'right' = 'bottom';
   /** (optional) If `true`, the button is disabled */
-  @Prop() disabled?: boolean = false;  
+  @Prop() disabled?: boolean = false;
   /** Emitted when the switch was clicked */
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;
 
@@ -80,13 +80,13 @@ export class IconButton {
             icon.setAttribute('size', '24');
             break;
         }
-        if (this.type == 'toggle') { 
+        if (this.type == 'toggle') {
           if (this.active) {
             icon.setAttribute('selected', 'true');
           } else {
             icon.removeAttribute('selected');
-          }        
-        }              
+          }
+        }
       }
     });
     if (this.disabled) {
@@ -104,8 +104,8 @@ export class IconButton {
             icon.removeAttribute('disabled');
           }
         }
-      });        
-    }    
+      });
+    }
   }
 
   componentDidUpdate() {
@@ -124,7 +124,7 @@ export class IconButton {
             icon.removeAttribute('selected');
           }
         }
-      });    
+      });
     }
 
     if (this.disabled) {
@@ -142,22 +142,20 @@ export class IconButton {
             icon.removeAttribute('disabled');
           }
         }
-      });        
+      });
     }
   }
 
   render() {
     const basePart = classNames(
       'base',
-      this.labelPlacement &&
-        `label-${this.labelPlacement}`
+      this.labelPlacement && `label-${this.labelPlacement}`
     );
 
     const wrapperPart = classNames(
-      this.labelPlacement &&
-        `label-${this.labelPlacement}`,
+      this.labelPlacement && `label-${this.labelPlacement}`,
       this.size && `size-${this.size}`,
-      this.disabled && 'disabled',
+      this.disabled && 'disabled'
     );
 
     const alternatePart = classNames(
@@ -166,7 +164,7 @@ export class IconButton {
       this.active && 'active',
       this.size && `size-${this.size}`,
       `label-${this.labelPlacement}`,
-      this.disabled && 'disabled',
+      this.disabled && 'disabled'
     );
 
     return (
@@ -184,14 +182,14 @@ export class IconButton {
               disabled={this.disabled}
             >
               <div class={'icon-button--plate'}>
-                  <slot />
+                <slot />
               </div>
               <div
-              part={'icon-button--label-wrapper'}
-              class={'icon-button--label-wrapper'}
-            >
-              {this.label}
-            </div>              
+                part={'icon-button--label-wrapper'}
+                class={'icon-button--label-wrapper'}
+              >
+                {this.label}
+              </div>
             </button>
           </div>
         ) : (
@@ -210,7 +208,7 @@ export class IconButton {
                 ref={(el) => (this.focusableElement = el)}
               />
               <div class={'icon-button--plate'}>
-                  <slot />
+                <slot />
               </div>
             </div>
             <div class={'icon-button--label-wrapper'}>{this.label}</div>

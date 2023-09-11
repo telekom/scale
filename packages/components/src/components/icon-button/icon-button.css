@@ -38,9 +38,10 @@
   text-decoration: none;
   padding: 0;
   background: var(--background);
-  vertical-align: var(--vertical-align); 
+  vertical-align: var(--vertical-align);
 }
-[part~='activate'], [part~='toggle'] {
+[part~='activate'],
+[part~='toggle'] {
   cursor: pointer;
 }
 
@@ -99,8 +100,7 @@ slot {
   align-items: center;
 }
 
-
-[part~='label-right'] .icon-button--label-wrapper{
+[part~='label-right'] .icon-button--label-wrapper {
   padding-left: 4px;
   height: 100%;
   display: flex;
@@ -125,17 +125,13 @@ input {
   justify-content: center;
 }
 
-
-
 [part~='activate'][part~='label-bottom'],
 [part~='toggle'][part~='label-bottom'] {
   align-items: center;
 }
 
-[part~='activate'][part~='label-bottom']
-  .icon-button--label-wrapper,
-[part~='toggle'][part~='label-bottom']
-  .icon-button--label-wrapper {
+[part~='activate'][part~='label-bottom'] .icon-button--label-wrapper,
+[part~='toggle'][part~='label-bottom'] .icon-button--label-wrapper {
   /* padding-left: 4px; */
 }
 
@@ -160,20 +156,17 @@ input {
 
 /* type: activate */
 
-[part~='activate']:hover:not(.icon-button-active)
-  .icon-button--plate,
+[part~='activate']:hover:not(.icon-button-active) .icon-button--plate,
 [part~='base']:hover .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-hovered);
   /* background-color: yellow; */
 }
 
-[part~='activate'][part~='active']
-  .icon-button--plate {
+[part~='activate'][part~='active'] .icon-button--plate {
   background-color: var(--telekom-color-ui-state-hovered);
 }
 
-[part~='activate']:active:not(.icon-button-active)
-  .icon-button--plate,
+[part~='activate']:active:not(.icon-button-active) .icon-button--plate,
 [part~='base']:active .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
@@ -187,7 +180,6 @@ input {
   border-radius: 4px;
 }
 
-
 [part~='size-standard'][part~='activate']:focus-within,
 [part~='size-standard'][part~='toggle']:focus-within,
 [part~='size-standard'] [part~='base']:focus {
@@ -197,7 +189,6 @@ input {
   /* border-radius: 2px; */
 }
 
-
 [part~='size-large'][part~='activate']:focus-within,
 [part~='size-large'][part~='toggle']:focus-within,
 [part~='size-large'] [part~='base']:focus {
@@ -206,7 +197,6 @@ input {
   outline-offset: 5px;
   border-radius: 4px;
 }
-
 
 [part~='activate'] input:focus,
 [part~='toggle'] input:focus {
@@ -219,35 +209,30 @@ input {
   border-radius: 4px;
 } */
 
-[part~='activate'][part~='active']:not(:active)
-  .icon-button--plate {
+[part~='activate'][part~='active']:not(:active) .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
-[part~='activate']:hover[part~='active']
-  .icon-button--plate {
+[part~='activate']:hover[part~='active'] .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
-[part~='activate'][part~='active']:active
-  .icon-button--plate {
+[part~='activate'][part~='active']:active .icon-button--plate {
   background-color: transparent;
 }
 
 /* type: toggle */
 
-[part~='toggle'][part~='active']
-  .icon-button--plate {
+[part~='toggle'][part~='active'] .icon-button--plate {
   --color: var(--telekom-color-text-and-icon-primary-standard);
 }
 
 [part~='toggle']:hover .icon-button--plate,
-[part~='activate']:hover .icon-button--plate  {
+[part~='activate']:hover .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
-[part~='toggle']:hover[part~='active']
-  .icon-button--plate {
+[part~='toggle']:hover[part~='active'] .icon-button--plate {
   --color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
@@ -255,8 +240,7 @@ input {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
-[part~='toggle']:active[part~='active']
-  .icon-button--plate {
+[part~='toggle']:active[part~='active'] .icon-button--plate {
   --color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
@@ -283,19 +267,19 @@ label {
 
 [part~='disabled'] [part~='base'],
 [part~='toggle'][part~='disabled'],
-[part~='activate'][part~='disabled'], 
+[part~='activate'][part~='disabled'],
 [part~='disabled'] .icon-button--plate {
   cursor: not-allowed;
 }
 
 [part~='disabled'] ::slotted(*),
 [part~='disabled'] .icon-button--label-wrapper {
- color: var(--telekom-color-text-and-icon-disabled);  
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 
 [part~='disabled'] [part~='base']:hover .icon-button--plate,
 [part~='toggle'][part~='disabled']:hover .icon-button--plate,
-[part~='activate'][part~='disabled']:hover .icon-button--plate{
+[part~='activate'][part~='disabled']:hover .icon-button--plate {
   background-color: transparent;
 }
 
