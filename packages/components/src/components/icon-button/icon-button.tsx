@@ -89,6 +89,23 @@ export class IconButton {
         }              
       }
     });
+    if (this.disabled) {
+      Array.from(this.hostElement.childNodes).forEach((child) => {
+        if (
+          child.nodeType === 1 &&
+          child.nodeName.substr(0, 10) === 'SCALE-ICON'
+        ) {
+          const icon: HTMLElement = this.hostElement.querySelector(
+            child.nodeName
+          );
+          if (this.disabled) {
+            icon.setAttribute('disabled', 'true');
+          } else {
+            icon.removeAttribute('disabled');
+          }
+        }
+      });        
+    }    
   }
 
   componentDidUpdate() {
