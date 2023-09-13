@@ -99,6 +99,13 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       description: `(optional) Set to true to add selection column`,
       control: { type: null },
     },
+    localization: {
+      table: {
+        type: { summary: 'object' },
+      },
+      description: `(optional) localization object for sort by, toogle visibility and select/deselect all. The default value is English`,
+      control: { type: null },
+    },
     shadeAlternate: {
       table: {
         type: { summary: 'boolean' },
@@ -228,6 +235,11 @@ export const Template = (args, {}) => ({
             [4, 'Heidi', '3:15'],
             [5, 'Muhammad', '21:45'],
         ];
+        dataGrid.localization = {
+          sortBy: 'Sort By',
+          toggle: 'Toogle Visibility',
+          select: 'Select / Deselect All'
+        }
     }
     </script>
 </content>`}
