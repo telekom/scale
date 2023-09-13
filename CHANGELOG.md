@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.140](https://github.com/telekom/scale/compare/v3.0.0-beta.139...v3.0.0-beta.140) (2023-09-13)
+
+
+### Bug Fixes
+
+* **radio-button:** ensure change event is emitted when clicking input-label gap ([#2123](https://github.com/telekom/scale/issues/2123)) ([5423cb8](https://github.com/telekom/scale/commit/5423cb80520f93aae52eab4ff6a5477dcd072f09))
+
+
+### Features
+
+* **data-grid:** enable localization for flyout menu ([#1411](https://github.com/telekom/scale/issues/1411)) ([053b10d](https://github.com/telekom/scale/commit/053b10d4e75616059a889b6e1d26012645eda97d))
+
+
+
+
+
 # [3.0.0-beta.139](https://github.com/telekom/scale/compare/v3.0.0-beta.138...v3.0.0-beta.139) (2023-09-06)
 
 

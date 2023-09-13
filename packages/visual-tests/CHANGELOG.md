@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.140](https://github.com/telekom/scale/compare/v3.0.0-beta.139...v3.0.0-beta.140) (2023-09-13)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
 # [3.0.0-beta.139](https://github.com/telekom/scale/compare/v3.0.0-beta.138...v3.0.0-beta.139) (2023-09-06)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests

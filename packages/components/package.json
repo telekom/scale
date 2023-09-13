@@ -1,6 +1,6 @@
 {
   "name": "@telekom/scale-components",
-  "version": "3.0.0-beta.139",
+  "version": "3.0.0-beta.140",
   "description": "Scale is the digital design system for Telekom products and experiences.",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
@@ -72,7 +72,7 @@
     "@floating-ui/dom": "^0.5.4",
     "@stencil/core": "^2.17.0",
     "@telekom/design-tokens": "1.0.0-beta.8",
-    "@telekom/scale-design-tokens": "^3.0.0-beta.139",
+    "@telekom/scale-design-tokens": "^3.0.0-beta.140",
     "classnames": "^2.2.6",
     "stencil-inline-svg": "^1.0.1"
   }
