@@ -107,7 +107,15 @@ export class DataGrid {
   @Prop() styles: any;
   /** (optional) Set to false to hide table, used for nested tables to re-render upon toggle */
   @Prop() visible?: boolean = true;
-
+  /**
+   * (optional) set localization for sort, toggle and select/deselect table
+   * Default is English.
+   */
+  @Prop() localization?: {
+    sortBy: string;
+    toggle: string;
+    select: string;
+  };
   /* 4. Events (alphabetical) */
   /** Event triggered every time the editable cells are changed, updating the original rows data */
   @Event({ eventName: 'scale-edit' })
@@ -767,7 +775,7 @@ export class DataGrid {
               onClick={this.handleMenuListClick}
             >
               <scale-icon-action-sort slot="prefix"></scale-icon-action-sort>
-              Sort By
+              {this.localization?.sortBy || 'Sort By'}
               <scale-menu-flyout-list slot="sublist" id="sortByList">
                 {this.fields.map(
                   (
@@ -819,7 +827,7 @@ export class DataGrid {
             onClick={this.handleMenuListClick}
           >
             <scale-icon-action-hide-password slot="prefix"></scale-icon-action-hide-password>
-            Toggle Visibility
+            {this.localization?.toggle || 'Toggle Visibility'}
             <scale-menu-flyout-list
               slot="sublist"
               close-on-select="false"
@@ -863,7 +871,7 @@ export class DataGrid {
                 slot="prefix"
                 path="M20.9328 10.6668C20.5132 10.6668 20.1731 11.0069 20.1731 11.4265V20.3269H1.5194V1.67309H16.5049C16.9245 1.67309 17.2646 1.33292 17.2646 0.913386C17.2646 0.49385 16.9245 0.153687 16.5049 0.153687H0.759699C0.340163 0.153687 0 0.49385 0 0.913386V21.0866C0 21.5062 0.340163 21.8463 0.759699 21.8463H20.9328C21.3523 21.8463 21.6925 21.5062 21.6925 21.0866V11.4265C21.6925 11.0069 21.3524 10.6668 20.9328 10.6668ZM23.7774 0.653387C23.4807 0.356739 22.9997 0.356739 22.703 0.653387L10.3293 13.0272L7.25501 9.9529C6.9583 9.65625 6.47732 9.65625 6.18061 9.9529C5.88396 10.2496 5.88396 10.7306 6.18061 11.0273L9.7921 14.6388C9.94045 14.7871 10.1349 14.8613 10.3293 14.8613C10.5237 14.8613 10.7181 14.7871 10.8665 14.6388L23.7774 1.72778C24.0741 1.43108 24.0741 0.950095 23.7774 0.653387Z"
               ></scale-icon>
-              Select / Deselect All
+              {this.localization?.select || 'Select / Deselect All'}
             </scale-menu-flyout-item>
           )}
           <slot name="menu"></slot>
