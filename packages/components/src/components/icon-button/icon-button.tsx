@@ -60,6 +60,24 @@ export class IconButton {
     this.focusableElement.focus();
   }
 
+  setDisabled() {
+    Array.from(this.hostElement.childNodes).forEach((child) => {
+      if (
+        child.nodeType === 1 &&
+        child.nodeName.substr(0, 10) === 'SCALE-ICON'
+      ) {
+        const icon: HTMLElement = this.hostElement.querySelector(
+          child.nodeName
+        );
+        if (this.disabled) {
+          icon.setAttribute('disabled', 'true');
+        } else {
+          icon.removeAttribute('disabled');
+        }
+      }
+    });
+  }
+
   connectedCallback() {
     Array.from(this.hostElement.childNodes).forEach((child) => {
       if (
@@ -69,6 +87,7 @@ export class IconButton {
         const icon: HTMLElement = this.hostElement.querySelector(
           child.nodeName
         );
+        //set icon size
         switch (this.size) {
           case 'small':
             icon.setAttribute('size', '16');
@@ -90,21 +109,7 @@ export class IconButton {
       }
     });
     if (this.disabled) {
-      Array.from(this.hostElement.childNodes).forEach((child) => {
-        if (
-          child.nodeType === 1 &&
-          child.nodeName.substr(0, 10) === 'SCALE-ICON'
-        ) {
-          const icon: HTMLElement = this.hostElement.querySelector(
-            child.nodeName
-          );
-          if (this.disabled) {
-            icon.setAttribute('disabled', 'true');
-          } else {
-            icon.removeAttribute('disabled');
-          }
-        }
-      });
+      this.setDisabled();
     }
   }
 
@@ -128,21 +133,7 @@ export class IconButton {
     }
 
     if (this.disabled) {
-      Array.from(this.hostElement.childNodes).forEach((child) => {
-        if (
-          child.nodeType === 1 &&
-          child.nodeName.substr(0, 10) === 'SCALE-ICON'
-        ) {
-          const icon: HTMLElement = this.hostElement.querySelector(
-            child.nodeName
-          );
-          if (this.disabled) {
-            icon.setAttribute('disabled', 'true');
-          } else {
-            icon.removeAttribute('disabled');
-          }
-        }
-      });
+      this.setDisabled();      
     }
   }
 
@@ -184,10 +175,7 @@ export class IconButton {
               <div class={'icon-button--plate'}>
                 <slot />
               </div>
-              <div
-                part={'icon-button--label-wrapper'}
-                class={'icon-button--label-wrapper'}
-              >
+              <div class={'icon-button--label-wrapper'}>
                 {this.label}
               </div>
             </button>

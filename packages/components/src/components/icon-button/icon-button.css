@@ -28,7 +28,6 @@
 
 [part~='base'] {
   border: 0;
-  /* border-radius: var(--radius); */
   outline: none;
   cursor: pointer;
   user-select: none;
@@ -60,18 +59,12 @@ slot {
 /* <label> */
 .icon-button {
   position: relative;
-  /* display: inline-block;
-  position: relative;
-  z-index: 1;
-  padding: 2em;
-  margin: -2em;
-  border: 2px solid red; */
 }
+
 .icon-button--wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* cursor: pointer; */
 }
 
 .icon-button--label-wrapper {
@@ -79,7 +72,8 @@ slot {
 }
 
 .icon-button--plate {
-  border-radius: 4px;
+  border-radius: 5px;
+  border: 0.1px solid orangered;
 }
 
 [part~='icon-button-standard'] {
@@ -104,7 +98,6 @@ slot {
   padding-left: 4px;
   height: 100%;
   display: flex;
-  /* border: 1px solid orchid; */
 }
 
 input {
@@ -130,11 +123,6 @@ input {
   align-items: center;
 }
 
-[part~='activate'][part~='label-bottom'] .icon-button--label-wrapper,
-[part~='toggle'][part~='label-bottom'] .icon-button--label-wrapper {
-  /* padding-left: 4px; */
-}
-
 [part~='toggle'] {
   display: flex;
   align-items: center;
@@ -145,9 +133,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: 4px;
-  margin: -4px; */
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 [part~='activate'].icon-button--plate {
@@ -159,7 +145,6 @@ input {
 [part~='activate']:hover:not(.icon-button-active) .icon-button--plate,
 [part~='base']:hover .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-hovered);
-  /* background-color: yellow; */
 }
 
 [part~='activate'][part~='active'] .icon-button--plate {
@@ -171,43 +156,35 @@ input {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
-[part~='activate']:focus-within,
-[part~='toggle']:focus-within,
-[part~='base']:focus {
+[part~='activate']:focus-within .icon-button--plate,
+[part~='toggle']:focus-within .icon-button--plate,
+[part~='base']:focus .icon-button--plate {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
   outline-offset: 3px;
-  border-radius: 4px;
+  outline-offset: 1px;
 }
 
-[part~='size-standard'][part~='activate']:focus-within,
-[part~='size-standard'][part~='toggle']:focus-within,
-[part~='size-standard'] [part~='base']:focus {
+[part~='size-standard'][part~='activate']:focus-within .icon-button--plate,
+[part~='size-standard'][part~='toggle']:focus-within .icon-button--plate,
+[part~='size-standard'] [part~='base']:focus .icon-button--plate{
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
-  outline-offset: 5px;
-  /* border-radius: 2px; */
+  outline-offset: 1px;
 }
 
-[part~='size-large'][part~='activate']:focus-within,
-[part~='size-large'][part~='toggle']:focus-within,
-[part~='size-large'] [part~='base']:focus {
+[part~='size-large'][part~='activate']:focus-within .icon-button--plate,
+[part~='size-large'][part~='toggle']:focus-within .icon-button--plate,
+[part~='size-large'] [part~='base']:focus .icon-button--plate {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
-  outline-offset: 5px;
-  border-radius: 4px;
+  outline-offset: 1px;
 }
 
 [part~='activate'] input:focus,
 [part~='toggle'] input:focus {
   outline: none;
 }
-
-/* [part~='base']:focus {
-  outline: var(--focus-outline);
-  outline-offset: var(--telekom-spacing-composition-space-01);
-  border-radius: 4px;
-} */
 
 [part~='activate'][part~='active']:not(:active) .icon-button--plate {
   background-color: var(--telekom-color-ui-state-fill-hovered);
