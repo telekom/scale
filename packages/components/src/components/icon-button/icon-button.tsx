@@ -87,7 +87,7 @@ export class IconButton {
         const icon: HTMLElement = this.hostElement.querySelector(
           child.nodeName
         );
-        //set icon size
+        // set icon size
         switch (this.size) {
           case 'small':
             icon.setAttribute('size', '16');
@@ -99,7 +99,7 @@ export class IconButton {
             icon.setAttribute('size', '24');
             break;
         }
-        if (this.type == 'toggle') {
+        if (this.type === 'toggle') {
           if (this.active) {
             icon.setAttribute('selected', 'true');
           } else {
@@ -114,7 +114,7 @@ export class IconButton {
   }
 
   componentDidUpdate() {
-    if (this.type == 'toggle') {
+    if (this.type === 'toggle') {
       Array.from(this.hostElement.childNodes).forEach((child) => {
         if (
           child.nodeType === 1 &&
