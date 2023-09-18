@@ -93,15 +93,6 @@ export class RadioButton {
     }
   };
 
-  // Prevent click event being fired twice when the target is the label.
-  handleClick = (event: any) => {
-    event.stopPropagation();
-    if (!this.disabled) {
-      this.checked = true;
-      this.uncheckSiblings();
-    }
-  };
-
   // We manually set `checked` to false on sibling <scale-radio-button> elements,
   // otherwise they stayed `checked` after being clicked once, forever.
   uncheckSiblings() {
@@ -137,7 +128,7 @@ export class RadioButton {
 
     return (
       <Host>
-        <div class={this.getCssClassMap()} onClick={this.handleClick}>
+        <div class={this.getCssClassMap()}>
           <input
             type="radio"
             name={this.name}
@@ -149,9 +140,7 @@ export class RadioButton {
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
           />
-          <label htmlFor={this.inputId} onClick={this.handleClick}>
-            {this.label}
-          </label>
+          <label htmlFor={this.inputId}>{this.label}</label>
           {!!this.helperText && (
             <div
               class="radio-button__meta"

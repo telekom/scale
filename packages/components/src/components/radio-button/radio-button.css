@@ -74,7 +74,6 @@ scale-radio-button {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  cursor: pointer;
   width: fit-content;
 }
 
@@ -128,15 +127,15 @@ scale-icon-alert-error {
   cursor: pointer;
 }
 
-.radio-button:hover input:not(:checked):not([disabled]) {
+.radio-button input:not(:checked):not([disabled]):hover {
   box-shadow: none;
   border-color: var(--telekom-color-ui-border-hovered);
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
-.radio-button:hover input:not(:checked):not([disabled]) ~ label {
+.radio-button input:not(:checked):not([disabled]):hover ~ label {
   color: var(--color-primary-hover);
 }
-.radio-button:active input:not(:checked):not([disabled]) {
+.radio-button input:not(:checked):not([disabled]):active {
   border-color: var(--telekom-color-ui-border-pressed);
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
