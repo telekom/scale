@@ -133,7 +133,7 @@ export class IconButton {
     }
 
     if (this.disabled) {
-      this.setDisabled();      
+      this.setDisabled();
     }
   }
 
@@ -175,9 +175,7 @@ export class IconButton {
               <div class={'icon-button--plate'}>
                 <slot />
               </div>
-              <div class={'icon-button--label-wrapper'}>
-                {this.label}
-              </div>
+              <div class={'icon-button--label-wrapper'}>{this.label}</div>
             </button>
           </div>
         ) : (

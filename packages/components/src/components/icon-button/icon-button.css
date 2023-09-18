@@ -167,7 +167,7 @@ input {
 
 [part~='size-standard'][part~='activate']:focus-within .icon-button--plate,
 [part~='size-standard'][part~='toggle']:focus-within .icon-button--plate,
-[part~='size-standard'] [part~='base']:focus .icon-button--plate{
+[part~='size-standard'] [part~='base']:focus .icon-button--plate {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
   outline-offset: 1px;
