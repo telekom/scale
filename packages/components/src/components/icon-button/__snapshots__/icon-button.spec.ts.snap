@@ -3,32 +3,47 @@
 exports[`IconButton should handle click 1`] = `
 <scale-icon-button>
   <mock:shadow-root>
-    <button aria-pressed="false" part="base size-medium">
-      <slot></slot>
-    </button>
+    <div part="label-bottom size-standard">
+      <button aria-pressed="false" part="base label-bottom" type="button">
+        <div class="icon-button--plate">
+          <slot></slot>
+        </div>
+        <div class="icon-button--label-wrapper"></div>
+      </button>
+    </div>
   </mock:shadow-root>
-  <scale-icon-action-search></scale-icon-action-search>
+  <scale-icon-action-search size="20"></scale-icon-action-search>
 </scale-icon-button>
 `;
 
 exports[`IconButton should handle click 2`] = `
 <scale-icon-button>
   <mock:shadow-root>
-    <button aria-pressed="false" part="base size-medium">
-      <slot></slot>
-    </button>
+    <div part="label-bottom size-standard">
+      <button aria-pressed="false" part="base label-bottom" type="button">
+        <div class="icon-button--plate">
+          <slot></slot>
+        </div>
+        <div class="icon-button--label-wrapper"></div>
+      </button>
+    </div>
   </mock:shadow-root>
-  <scale-icon-action-search></scale-icon-action-search>
+  <scale-icon-action-search size="20"></scale-icon-action-search>
 </scale-icon-button>
 `;
 
 exports[`IconButton should match snapshot 1`] = `
 <scale-icon-button>
   <mock:shadow-root>
-    <button aria-pressed="false" part="base size-medium">
-      <slot></slot>
-    </button>
+    <div part="label-bottom size-standard">
+      <button aria-pressed="false" part="base label-bottom" type="button">
+        <div class="icon-button--plate">
+          <slot></slot>
+        </div>
+        <div class="icon-button--label-wrapper"></div>
+      </button>
+    </div>
   </mock:shadow-root>
-  <scale-icon-action-search></scale-icon-action-search>
+  <scale-icon-action-search size="20"></scale-icon-action-search>
 </scale-icon-button>
 `;
