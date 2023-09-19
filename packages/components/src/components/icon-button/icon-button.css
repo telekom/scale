@@ -13,7 +13,7 @@
   --icon-dimensions: 16px;
   --icon-dimensions-standard: 20px;
   --icon-dimensions-large: 24px;
-  --radius: var(--telekom-radius-standard);
+  --radius: var(--telekom-radius-small);
   --background: var(--telekom-color-background-canvas);
   --background-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-pressed: var(--telekom-color-ui-state-fill-pressed);
@@ -72,7 +72,7 @@ slot {
 }
 
 .icon-button--plate {
-  border-radius: 5px;
+  border-radius: var(--telekom-radius-small);
 }
 
 [part~='icon-button-standard'] {
@@ -132,7 +132,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: var(--telekom-radius-small)
 }
 
 [part~='activate'].icon-button--plate {
@@ -155,29 +155,31 @@ input {
   background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
-[part~='activate']:focus-within .icon-button--plate,
-[part~='toggle']:focus-within .icon-button--plate,
-[part~='base']:focus .icon-button--plate {
+[part~='activate']:focus-within,
+[part~='toggle']:focus-within,
+[part~='base']:focus {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
   outline-offset: 3px;
-  outline-offset: 1px;
+  border-radius: calc(var(--telekom-radius-small) - 2px);
 }
 
-[part~='size-standard'][part~='activate']:focus-within .icon-button--plate,
-[part~='size-standard'][part~='toggle']:focus-within .icon-button--plate,
-[part~='size-standard'] [part~='base']:focus .icon-button--plate {
+[part~='size-standard'][part~='activate']:focus-within,
+[part~='size-standard'][part~='toggle']:focus-within,
+[part~='size-standard'] [part~='base']:focus {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
-  outline-offset: 1px;
+  outline-offset: 3px;
+  border-radius: calc(var(--telekom-radius-small) - 2px);
 }
 
-[part~='size-large'][part~='activate']:focus-within .icon-button--plate,
-[part~='size-large'][part~='toggle']:focus-within .icon-button--plate,
-[part~='size-large'] [part~='base']:focus .icon-button--plate {
+[part~='size-large'][part~='activate']:focus-within,
+[part~='size-large'][part~='toggle']:focus-within,
+[part~='size-large'] [part~='base']:focus {
   outline: var(--focus-outline);
   outline-offset: var(--telekom-spacing-composition-space-01);
-  outline-offset: 1px;
+  outline-offset: 3px;
+  border-radius: calc(var(--telekom-radius-small) - 2px);
 }
 
 [part~='activate'] input:focus,
