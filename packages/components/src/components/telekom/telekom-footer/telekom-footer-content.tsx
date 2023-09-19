@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
   tag: 'scale-telekom-footer-content',
@@ -17,6 +17,13 @@ import { Component, h, Host } from '@stencil/core';
   shadow: true,
 })
 export class TelekomFooterContent {
+  /** (optional) Logo link */
+  @Prop() logoHref?: string = 'javascript:void(0);';
+  /** (optional) set logo specific title */
+  @Prop() logoTitle?: string = 'Telekom Logo';
+  /** (optional) set logo specific title */
+  @Prop() logoHideTitle?: boolean = false;
+
   render() {
     return (
       <Host>
@@ -32,6 +39,8 @@ export class TelekomFooterContent {
                     'var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus-on-dark-background)',
                 }}
                 transparent
+                href={this.logoHref}
+                title={this.logoHideTitle ? '' : this.logoTitle}
               ></scale-logo>
             </div>
             <div part="body">
