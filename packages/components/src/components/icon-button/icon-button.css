@@ -132,7 +132,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--telekom-radius-small)
+  border-radius: var(--telekom-radius-small);
 }
 
 [part~='activate'].icon-button--plate {
