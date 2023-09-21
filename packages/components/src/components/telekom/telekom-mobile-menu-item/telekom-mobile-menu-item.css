@@ -67,7 +67,7 @@
 }
 
 ::slotted(a) {
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center;
   height: var(--height);
