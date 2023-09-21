@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>/svg/icon/home/home/selected</title>
-    <g id="icon/home/home/selected" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M12,0.85 L0.45,12.45 L1.5,13.5 L12,3 L22.5,13.5 L23.55,12.45 L12,0.85 Z M3.5,13.6 L3.5,19 L3.505,19.176 C3.597,20.745 4.909,22 6.5,22 L11.25,22 L11.25,16.75 C11.25,16.35 11.6,16 12,16 C12.367,16 12.691,16.294 12.743,16.651 L12.75,16.75 L12.75,22 L17.5,22 L17.676,21.995 C19.245,21.903 20.5,20.591 20.5,19 L20.5,13.6 L12,5.1 L3.5,13.6 Z" id="Icon" fill="#000000"></path>
-    </g>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .85L.45 12.45 1.5 13.5 12 3l10.5 10.5 1.05-1.05L12 .85zM3.5 13.6V19l.005.176A3.01 3.01 0 006.5 22h4.75v-5.25c0-.4.35-.75.75-.75.367 0 .691.294.743.651l.007.099V22h4.75l.176-.005A3.01 3.01 0 0020.5 19v-5.4L12 5.1l-8.5 8.5z" fill="#000" fill-rule="evenodd"/></svg>

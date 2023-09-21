@@ -31,7 +31,7 @@ const { parse } = require('svg-parser');
 // const toHTML = require('hast-util-to-html');
 
 const svgo = new SVGO({
-  plugins: [{ removeViewBox: false }, { removeXMLNS: true }],
+  plugins: [{ removeViewBox: false }, { removeXMLNS: true }, {cleanupIDs: false}],
 });
 
 const INPUT_GLOB = process.env.WHITELABEL
