@@ -467,7 +467,6 @@ export class Header {
                   ) : (
                     <scale-logo
                       transparent
-                      language={this.claimLang}
                       href={this.logoHref}
                       logoTitle={this.logoTitle}
                       logoHideTitle={this.logoHideTitle}
