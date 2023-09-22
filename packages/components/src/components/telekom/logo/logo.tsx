@@ -93,7 +93,7 @@ export class Logo {
               window.scrollTo({ top: 0 });
             }
           }}
-          title={this.logoHideTitle ? '' : this.logoTitle}
+          title={this.logoHideTitle ? undefined : this.logoTitle}
           aria-describedby={this.logoAriaDescribedBy}
           aria-hidden={this.logoAriaHidden}
           tabindex={this.logoAriaHidden ? -1 : 0}

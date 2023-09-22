@@ -40,7 +40,8 @@ export class TelekomFooterContent {
                 }}
                 transparent
                 href={this.logoHref}
-                title={this.logoHideTitle ? '' : this.logoTitle}
+                logoHideTitle={this.logoHideTitle}
+                logoTitle={this.logoHideTitle ? undefined : this.logoTitle}
               ></scale-logo>
             </div>
             <div part="body">
