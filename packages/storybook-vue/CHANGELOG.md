@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.141](https://github.com/telekom/scale/compare/v3.0.0-beta.140...v3.0.0-beta.141) (2023-09-22)
+
+
+### Bug Fixes
+
+* allow setting href on footer logo ([#2132](https://github.com/telekom/scale/issues/2132)) ([502f9ae](https://github.com/telekom/scale/commit/502f9ae7eb69ef7e1a049d34fb9d95da2f739f24))
+
+
+
+
+
 # [3.0.0-beta.140](https://github.com/telekom/scale/compare/v3.0.0-beta.139...v3.0.0-beta.140) (2023-09-13)
 
 

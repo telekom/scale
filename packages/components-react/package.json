@@ -1,7 +1,7 @@
 {
   "name": "@telekom/scale-components-react",
   "sideEffects": false,
-  "version": "3.0.0-beta.140",
+  "version": "3.0.0-beta.141",
   "description": "React proxy for @telekom/scale-components",
   "license": "MPL-2.0",
   "homepage": "https://github.com/telekom/scale",
