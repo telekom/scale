@@ -35,6 +35,14 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       description: `(optional) Heading string`,
       control: { type: null },
     },
+    sortableColumnTitle: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'Activate to sort column' },
+      },
+      description: `(optional) Title for sortable columns`,
+      control: { type: null },
+    },    
     height: {
       table: {
         type: { summary: 'string' },
