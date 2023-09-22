@@ -47,7 +47,9 @@ export class TelekomHeader {
 
   @Listen('scroll', { target: 'document' })
   onScroll() {
-    this.scrolled = window.pageYOffset > 2;
+    // 48px is the height of the header, set scrolled when the user scrolls past it
+    // todo: calculate this value dynamically (for slim header, smaller viewports, etc)
+    this.scrolled = window.pageYOffset > 48;
     this.scrolledBack =
       this.pageYOffset !== window.pageYOffset && window.pageYOffset <= 0;
     this.pageYOffset = pageYOffset;

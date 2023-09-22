@@ -25,7 +25,7 @@ export class Logo {
   /** (optional) Set transparent background */
   @Prop() transparent: boolean = false;
   /** @deprecated; (optional) Language of the logo text/ claimOff showes just the T Logo */
-  @Prop() language:
+  @Prop() language?:
     | 'de'
     | 'en'
     | 'cz'
@@ -36,7 +36,7 @@ export class Logo {
     | 'mk_kyr'
     | 'ro'
     | 'sk'
-    | string = 'en';
+    | string;
   /** (optional) The height in pixels */
   @Prop() size?: number = 38;
   /** (optional) Set a link */
@@ -93,7 +93,7 @@ export class Logo {
               window.scrollTo({ top: 0 });
             }
           }}
-          title={this.logoHideTitle ? '' : this.logoTitle}
+          title={this.logoHideTitle ? undefined : this.logoTitle}
           aria-describedby={this.logoAriaDescribedBy}
           aria-hidden={this.logoAriaHidden}
           tabindex={this.logoAriaHidden ? -1 : 0}

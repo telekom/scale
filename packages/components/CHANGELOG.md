@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.141](https://github.com/telekom/scale/compare/v3.0.0-beta.140...v3.0.0-beta.141) (2023-09-22)
+
+
+### Bug Fixes
+
+* add font-display strategy for performance ([#2135](https://github.com/telekom/scale/issues/2135)) ([ae354cf](https://github.com/telekom/scale/commit/ae354cf0600f9e9329fb9e79fb7969d59b25d185))
+* allow setting href on footer logo ([#2132](https://github.com/telekom/scale/issues/2132)) ([502f9ae](https://github.com/telekom/scale/commit/502f9ae7eb69ef7e1a049d34fb9d95da2f739f24))
+* nav-item positioning ([#2141](https://github.com/telekom/scale/issues/2141)) ([0640ebc](https://github.com/telekom/scale/commit/0640ebcfdab8597ca846838678b57d39a2221bb4))
+* remove default language from logo to avoid deprecation warning ([#2139](https://github.com/telekom/scale/issues/2139)) ([c1589e8](https://github.com/telekom/scale/commit/c1589e8d080ce3c2b0f74c39ea5ba1fb9ec79e1f))
+* set scrolled attribute only when offset is larger than the header ([#2133](https://github.com/telekom/scale/issues/2133)) ([df45405](https://github.com/telekom/scale/commit/df454054bea2d2fb3da259d786cf112b9718433c))
+* **radio-button:** polish click handling and hover/active states ([#2131](https://github.com/telekom/scale/issues/2131)) ([9ea4c6a](https://github.com/telekom/scale/commit/9ea4c6a96d4e0a0b5f8824fc144049baf548988d))
+
+
+
+
+
 # [3.0.0-beta.140](https://github.com/telekom/scale/compare/v3.0.0-beta.139...v3.0.0-beta.140) (2023-09-13)
 
 
