@@ -16,6 +16,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Ultra.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Ultra.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-Ultra.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -24,6 +25,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-UltraItalic.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-UltraItalic.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-UltraItalic.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -32,6 +34,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBold.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBold.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBold.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -40,6 +43,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -48,6 +52,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Bold.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Bold.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-Bold.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -56,6 +61,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-BoldItalic.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-BoldItalic.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-BoldItalic.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -64,6 +70,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Medium.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Medium.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-Medium.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -72,6 +79,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-MediumItalic.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-MediumItalic.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-MediumItalic.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -80,6 +88,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Regular.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Regular.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-Regular.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -88,6 +97,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-RegularItalic.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-RegularItalic.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-RegularItalic.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -96,6 +106,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Thin.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Thin.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-Thin.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'TeleNeoWeb';
@@ -104,6 +115,7 @@
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ThinItalic.eot');
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ThinItalic.woff') format('woff'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-ThinItalic.woff2') format('woff2');
+  font-display: swap;
 }
 
 :root {
