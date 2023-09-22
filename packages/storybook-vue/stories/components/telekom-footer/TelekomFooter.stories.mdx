@@ -2,10 +2,12 @@ import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
 import TelekomFooter from './Footer.vue';
 import TelekomFooterDataBackCompat from './TelekomFooterDataBackCompat.vue';
 import { footerNavigation } from './fixtures';
+import FooterContent from './FooterContent.vue';
 
 <Meta
   title="Components/Telekom Footer"
   component={TelekomFooter}
+  subcomponents={{'Telekom Footer Content': FooterContent}}
   argTypes={{
     type: {
       control: { type: 'select' },
