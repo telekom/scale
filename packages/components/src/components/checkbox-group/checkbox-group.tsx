@@ -58,6 +58,8 @@ export class CheckboxGroup {
   private groupNode;
   private actionText: string;
 
+  private observer: MutationObserver;
+
   @Listen('scaleChange')
   handleCheckboxChange(ev) {
     const el = ev.composedPath()[0];
@@ -92,6 +94,23 @@ export class CheckboxGroup {
         type: 'warn',
         source: this.host,
       });
+    }
+  }
+
+  componentDidLoad() {
+    this.updateParentCheckboxState();
+    const slot = this.host.querySelector('fieldset');
+    this.observer = new MutationObserver(() => {
+      this.updateParentCheckboxState();
+    });
+    this.observer.observe(slot, {
+      childList: true,
+    });
+  }
+
+  disconnectedCallback() {
+    if (this.observer) {
+      this.observer.disconnect();
     }
   }
 
@@ -160,9 +179,5 @@ export class CheckboxGroup {
         </fieldset>
       </Host>
     );
-  }
-
-  componentDidLoad() {
-    this.updateParentCheckboxState();
   }
 }
