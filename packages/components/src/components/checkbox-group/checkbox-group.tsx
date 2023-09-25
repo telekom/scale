@@ -99,11 +99,11 @@ export class CheckboxGroup {
 
   componentDidLoad() {
     this.updateParentCheckboxState();
-    const slot = this.host.querySelector('fieldset');
+    const fieldset = this.host.querySelector('fieldset');
     this.observer = new MutationObserver(() => {
       this.updateParentCheckboxState();
     });
-    this.observer.observe(slot, {
+    this.observer.observe(fieldset, {
       childList: true,
     });
   }
