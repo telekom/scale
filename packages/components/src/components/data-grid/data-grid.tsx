@@ -1021,12 +1021,17 @@ export class DataGrid {
                             );
                           }
                         },
-                        onClick: () => {
-                          this.toggleTableSorting(
-                            sortDirection,
-                            columnIndex,
-                            type
-                          );
+                        onClick: (e) => {
+                          if (
+                            e.target instanceof HTMLElement &&
+                            !e.target.matches('.thead__divider')
+                          ) {
+                            this.toggleTableSorting(
+                              sortDirection,
+                              columnIndex,
+                              type
+                            );
+                          }
                         },
                         tabindex: 0,
                         class: `${props.class} thead-sortable`,
