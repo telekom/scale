@@ -27,6 +27,7 @@
     "build:whitelabel": "WHITELABEL=1 stencil build --docs-readme",
     "build:watch": "stencil build --watch --serve --config stencil-dev.config.ts",
     "build:staging": "stencil build --config stencil-staging.config.ts",
+    "zip": "zip -vr telekom-scale-components-$npm_package_version.zip dist/ -x '*.DS_Store' 'dist/collection/**'",
     "start": "stencil build --dev --watch --serve --config stencil-dev.config.ts",
     "dev": "yarn start",
     "test": "stencil test --max-workers=2",
