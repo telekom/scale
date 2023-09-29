@@ -1022,9 +1022,9 @@ export class DataGrid {
                           }
                         },
                         onClick: (e) => {
+                          const clickedElement = e.target as HTMLElement;
                           if (
-                            e.target instanceof HTMLElement &&
-                            !e.target.matches('.thead__divider')
+                            !clickedElement.matches('.thead__divider')
                           ) {
                             this.toggleTableSorting(
                               sortDirection,
