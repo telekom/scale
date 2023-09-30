@@ -3,6 +3,12 @@ import { CheckboxGroup } from './checkbox-group';
 
 describe('CheckboxGroup', () => {
   it('should match standard snapshot', async () => {
+    const MutationObserver = class {
+      constructor(callback) {}
+      disconnect() {}
+      observe(element, initObject) {}
+    };
+  
     const page = await newSpecPage({
       components: [CheckboxGroup],
       html: ` <scale-checkbox-group>

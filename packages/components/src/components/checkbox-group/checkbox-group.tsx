@@ -26,7 +26,10 @@ import statusNote from '../../utils/status-note';
   styleUrl: './checkbox-group.css',
   shadow: false,
 })
+
 export class CheckboxGroup {
+  observer: MutationObserver;
+
   @Element() host: HTMLElement;
 
   /** (optional) Input name */
@@ -58,7 +61,6 @@ export class CheckboxGroup {
   private groupNode;
   private actionText: string;
 
-  private observer: MutationObserver;
 
   @Listen('scaleChange')
   handleCheckboxChange(ev) {
@@ -100,12 +102,13 @@ export class CheckboxGroup {
   componentDidLoad() {
     this.updateParentCheckboxState();
     const fieldset = this.host.querySelector('fieldset');
-    this.observer = new MutationObserver(() => {
+    const mo = new MutationObserver(() => {
       this.updateParentCheckboxState();
     });
-    this.observer.observe(fieldset, {
+    mo.observe(fieldset, {
       childList: true,
     });
+    this.observer = mo;
   }
 
   disconnectedCallback() {
