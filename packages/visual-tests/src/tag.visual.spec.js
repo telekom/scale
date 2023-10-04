@@ -1,5 +1,5 @@
 describe('Tag', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-tag--standard', mode);
     });
@@ -12,7 +12,7 @@ describe('Tag', () => {
       ['colors'],
       ['color-standard-tag'],
       ['color-strong-tag'],
-    ])('%p', async variant => {
+    ])('%p', async (variant) => {
       await global.runSetup(`components-tag--${variant}`);
       await global.visualCheck();
     });

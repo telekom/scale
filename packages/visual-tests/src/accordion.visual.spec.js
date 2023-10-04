@@ -1,17 +1,17 @@
 describe('Accordion', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-accordion--standard', mode);
     });
     test.each([['standard'], ['dependent'], ['expanded'], ['heading-level']])(
       '%p',
-      async variant => {
+      async (variant) => {
         await global.runSetup(`components-accordion--${variant}`);
 
         await global.visualCheck();
       }
     );
-    test.each([['standard'], ['dependent']])('%p', async variant => {
+    test.each([['standard'], ['dependent']])('%p', async (variant) => {
       await global.runSetup(`components-accordion--${variant}`);
 
       const firstButton = await global.page.evaluateHandle(

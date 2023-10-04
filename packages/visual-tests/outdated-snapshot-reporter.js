@@ -42,7 +42,7 @@ class OutdatedSnapshotReporter {
         fs
           .readFileSync(TOUCHED_FILE_LIST_PATH, 'utf-8')
           .split('\n')
-          .filter(file => file && fs.existsSync(file))
+          .filter((file) => file && fs.existsSync(file))
       )
     );
   }
@@ -60,19 +60,21 @@ class OutdatedSnapshotReporter {
     if (!IS_ENABLED) return;
     const touchedFiles = OutdatedSnapshotReporter.readTouchedFileListFromDisk();
     const imageSnapshotDirectories = Array.from(
-      new Set(touchedFiles.map(file => path.dirname(file)))
+      new Set(touchedFiles.map((file) => path.dirname(file)))
     );
     const allFiles = imageSnapshotDirectories
-      .map(dir => fs.readdirSync(dir).map(file => path.join(dir, file)))
+      .map((dir) => fs.readdirSync(dir).map((file) => path.join(dir, file)))
       .reduce((a, b) => a.concat(b), [])
-      .filter(file => file.endsWith('-snap.png'));
-    const obsoleteFiles = allFiles.filter(file => !touchedFiles.includes(file));
+      .filter((file) => file.endsWith('-snap.png'));
+    const obsoleteFiles = allFiles.filter(
+      (file) => !touchedFiles.includes(file)
+    );
 
     if (fs.existsSync(TOUCHED_FILE_LIST_PATH)) {
       fs.unlinkSync(TOUCHED_FILE_LIST_PATH);
     }
 
-    obsoleteFiles.forEach(file => {
+    obsoleteFiles.forEach((file) => {
       process.stderr.write(`Deleting outdated snapshot "${file}"...\n`);
       fs.unlinkSync(file);
     });

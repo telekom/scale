@@ -1,5 +1,5 @@
 describe('Dropdown', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup(
         'deprecated-components-dropdown--standard',
@@ -14,7 +14,7 @@ describe('Dropdown', () => {
       ['success'],
       ['warning'],
       ['with-custom-icon'],
-    ])('%p', async variant => {
+    ])('%p', async (variant) => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=deprecated-components-dropdown--${variant}&viewMode=story`
       );
@@ -26,7 +26,7 @@ describe('Dropdown', () => {
           '--telekom-motion-duration-transition',
           '--telekom-motion-duration-animation',
           '--telekom-motion-duration-animation-deliberate',
-        ].forEach(transitionSpeed => {
+        ].forEach((transitionSpeed) => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
@@ -34,7 +34,7 @@ describe('Dropdown', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     // hover, active, focus
-    test.each([['standard']])('%p', async variant => {
+    test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`deprecated-components-dropdown--${variant}`);
 
       const dropdown = await global.page.evaluateHandle(

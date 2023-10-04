@@ -1,5 +1,5 @@
 describe('Checkbox', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-checkbox--standard', mode);
     });
@@ -11,7 +11,7 @@ describe('Checkbox', () => {
       ['helper-text'],
       ['error'],
       ['custom-label'],
-    ])('%p', async variant => {
+    ])('%p', async (variant) => {
       await global.runSetup(`components-checkbox--${variant}`);
       await global.visualCheck();
     });

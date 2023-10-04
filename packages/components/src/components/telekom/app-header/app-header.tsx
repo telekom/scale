@@ -128,13 +128,11 @@ export class Header {
   }
 
   componentWillLoad() {
-    this.hasSlotMenuMain = !!this.hostElement.querySelector(
-      '[slot="menu-main"]'
-    );
+    this.hasSlotMenuMain =
+      !!this.hostElement.querySelector('[slot="menu-main"]');
 
-    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
-      '[slot="menu-icon"]'
-    );
+    this.hasSlotMenuIcon =
+      !!this.hostElement.querySelector('[slot="menu-icon"]');
     this.hasSlotMenuSector = !!this.hostElement.querySelector(
       '[slot="menu-sector"]'
     );
@@ -151,13 +149,11 @@ export class Header {
   }
 
   componentDidUpdate() {
-    this.hasSlotMenuMain = !!this.hostElement.querySelector(
-      '[slot="menu-main"]'
-    );
+    this.hasSlotMenuMain =
+      !!this.hostElement.querySelector('[slot="menu-main"]');
 
-    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
-      '[slot="menu-icon"]'
-    );
+    this.hasSlotMenuIcon =
+      !!this.hostElement.querySelector('[slot="menu-icon"]');
     this.hasSlotMenuSector = !!this.hostElement.querySelector(
       '[slot="menu-sector"]'
     );
@@ -285,9 +281,13 @@ export class Header {
     const { defaultName, openedName } = readData(this.iconNavigation).find(
       ({ id }) => id === 'menu'
     ) || { defaultName: 'Menu', openedName: 'Close' };
-    const { shortName = 'Login', badge, badgeLabel } = readData(
-      this.userNavigation
-    ).find(({ type }) => type === 'userInfo') || {
+    const {
+      shortName = 'Login',
+      badge,
+      badgeLabel,
+    } = readData(this.userNavigation).find(
+      ({ type }) => type === 'userInfo'
+    ) || {
       shortName: 'Login',
     };
 

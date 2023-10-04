@@ -1,17 +1,17 @@
 describe.skip('Menu', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-flyout-menu--standard', mode);
     });
     test.each([['standard'], ['cascading-menu'], ['checked-toggle']])(
       '%p',
-      async variant => {
+      async (variant) => {
         await global.runSetup(`components-flyout-menu--${variant}`);
         await global.visualCheck();
       }
     );
     // open menu on click
-    test.each([['standard'], ['cascading-menu']])('%p', async variant => {
+    test.each([['standard'], ['cascading-menu']])('%p', async (variant) => {
       await global.runSetup(`components-flyout-menu--${variant}`);
       await global.page.waitForSelector('html.hydrated');
       await global.page.$('body');
@@ -24,7 +24,7 @@ describe.skip('Menu', () => {
     });
     // open 2nd and 3rd level of cascading menu on click
     // hover, active, focus
-    test.each([['cascading-menu']])('%p', async variant => {
+    test.each([['cascading-menu']])('%p', async (variant) => {
       await global.runSetup(`components-flyout-menu--${variant}`);
       await global.page.waitForSelector('html.hydrated');
       await global.page.$('body');

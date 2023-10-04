@@ -132,11 +132,11 @@
     const Select = document.getElementById('person-select');
     const ChooseDarioBtn = document.getElementById('choose-dario');
 
-    Select.addEventListener('scale-change', function(event) {
+    Select.addEventListener('scale-change', function (event) {
       console.log(event.target.name, event.detail.value);
     });
 
-    ChooseDarioBtn.addEventListener('click', function() {
+    ChooseDarioBtn.addEventListener('click', function () {
       Select.value = 'dario';
       const newOption = document.createElement('option');
 

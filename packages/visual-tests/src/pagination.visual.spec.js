@@ -1,9 +1,9 @@
 describe('Pagination', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-pagination--standard', mode);
     });
-    test.each([['standard'], ['hidden-borders']])('%p', async variant => {
+    test.each([['standard'], ['hidden-borders']])('%p', async (variant) => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-pagination--${variant}&viewMode=story`
       );
@@ -15,7 +15,7 @@ describe('Pagination', () => {
           '--telekom-motion-duration-transition',
           '--telekom-motion-duration-animation',
           '--telekom-motion-duration-animation-deliberate',
-        ].forEach(transitionSpeed => {
+        ].forEach((transitionSpeed) => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
@@ -35,7 +35,7 @@ describe('Pagination', () => {
       await lastButton.click();
       await global.visualCheck();
     });
-    test.each([['hidden-borders']])('%p', async variant => {
+    test.each([['hidden-borders']])('%p', async (variant) => {
       await global.runSetup(`components-pagination--${variant}`);
 
       const firstButton = await global.page.evaluateHandle(

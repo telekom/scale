@@ -1,18 +1,18 @@
 describe('Link', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-link--standard', mode);
     });
     test.each([['standard'], ['disabled'], ['with-icon']])(
       '%p',
-      async variant => {
+      async (variant) => {
         await global.runSetup(`components-link--${variant}`);
 
         await global.visualCheck();
       }
     );
     // hover, active, focus
-    test.each([['with-icon']])('%p', async variant => {
+    test.each([['with-icon']])('%p', async (variant) => {
       await global.runSetup(`components-link--${variant}`);
 
       const link = await global.page.evaluateHandle(

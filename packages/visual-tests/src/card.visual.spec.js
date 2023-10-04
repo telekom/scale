@@ -1,11 +1,11 @@
 describe('Card', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup('components-card--standard', mode);
     });
     test.each([['standard'], ['with-link'], ['with-image']])(
       '%p',
-      async variant => {
+      async (variant) => {
         await global.runSetup(`components-card--${variant}`);
 
         const anchor = await global.page.evaluateHandle(

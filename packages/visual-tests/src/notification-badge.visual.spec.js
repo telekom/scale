@@ -1,5 +1,5 @@
 describe('NotificationBadge', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup(
         'components-notification-badge--standard',
@@ -12,7 +12,7 @@ describe('NotificationBadge', () => {
       ['text'],
       ['icon'],
       ['standard'],
-    ])('%p', async variant => {
+    ])('%p', async (variant) => {
       await global.runSetup(`beta-components-notification-badge--${variant}`);
       await global.visualCheck();
     });

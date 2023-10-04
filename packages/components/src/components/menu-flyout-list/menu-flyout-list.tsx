@@ -446,10 +446,9 @@ export class MenuFlyoutList {
   }
 
   getListItems() {
-    return Array.from(
-      this.hostElement.children
-    ).filter((el: HTMLScaleMenuFlyoutItemElement) =>
-      ITEM_ROLES.includes(el.getAttribute('role'))
+    return Array.from(this.hostElement.children).filter(
+      (el: HTMLScaleMenuFlyoutItemElement) =>
+        ITEM_ROLES.includes(el.getAttribute('role'))
     );
   }
 

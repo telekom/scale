@@ -1,5 +1,5 @@
 describe.skip('Deprecated Brand Header', () => {
-  describe.each(['light', 'dark'])('%p', mode => {
+  describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
       await global.runColorSetup(
         'deprecated-components-brand-header-navigation--standard',
@@ -19,7 +19,7 @@ describe.skip('Deprecated Brand Header', () => {
           '--telekom-motion-duration-transition',
           '--telekom-motion-duration-animation',
           '--telekom-motion-duration-animation-deliberate',
-        ].forEach(transitionSpeed => {
+        ].forEach((transitionSpeed) => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
@@ -47,7 +47,7 @@ describe.skip('Deprecated Brand Header', () => {
           '--telekom-motion-duration-transition',
           '--telekom-motion-duration-animation',
           '--telekom-motion-duration-animation-deliberate',
-        ].forEach(transitionSpeed => {
+        ].forEach((transitionSpeed) => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
@@ -67,7 +67,7 @@ describe.skip('Deprecated Brand Header', () => {
       ['custom-sector-navigation'],
       ['custom-addon-navigation'],
       ['custom-logo'],
-    ])('%p', async variant => {
+    ])('%p', async (variant) => {
       await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--${variant}&viewMode=story`
       );
@@ -80,7 +80,7 @@ describe.skip('Deprecated Brand Header', () => {
           '--telekom-motion-duration-transition',
           '--telekom-motion-duration-animation',
           '--telekom-motion-duration-animation-deliberate',
-        ].forEach(transitionSpeed => {
+        ].forEach((transitionSpeed) => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
