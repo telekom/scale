@@ -26,7 +26,6 @@ import statusNote from '../../utils/status-note';
   styleUrl: './checkbox-group.css',
   shadow: false,
 })
-
 export class CheckboxGroup {
   observer: MutationObserver;
 
@@ -60,7 +59,6 @@ export class CheckboxGroup {
 
   private groupNode;
   private actionText: string;
-
 
   @Listen('scaleChange')
   handleCheckboxChange(ev) {
