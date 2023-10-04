@@ -23,10 +23,10 @@ import {
   MOTION,
 } from '../src/tokens.js';
 
-const pxToRem = (x) => `${x / 16}rem`;
-const pctToUnitless = (x) => `${parseFloat(x, 10) / 100}`;
-const px = (x) => `${x}px`;
-const ms = (x) => `${x}ms`;
+const pxToRem = x => `${x / 16}rem`;
+const pctToUnitless = x => `${parseFloat(x, 10) / 100}`;
+const px = x => `${x}px`;
+const ms = x => `${x}ms`;
 
 const fontKeyPropMap = {
   family: 'font-family',
@@ -87,7 +87,7 @@ export const outputCSS = {
  */
 function getDeclaration(path, key, val) {
   const pathString = path
-    .filter((x) => x !== 'DEFAULT')
+    .filter(x => x !== 'DEFAULT')
     .map(kebabCase)
     .join('-');
 

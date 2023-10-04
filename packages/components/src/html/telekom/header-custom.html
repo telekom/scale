@@ -532,15 +532,15 @@ width: 100%; */
         },
       ];
       footer.claimLang = 'de';
-      navMainWithMegaMenu.addEventListener('mouseenter', function () {
+      navMainWithMegaMenu.addEventListener('mouseenter', function() {
         navMainWithMegaMenu.isMegaMenuVisible = true;
         header.isMegaMenuVisible = true;
       });
-      navMainWithMegaMenu.addEventListener('mouseleave', function () {
+      navMainWithMegaMenu.addEventListener('mouseleave', function() {
         navMainWithMegaMenu.isMegaMenuVisible = false;
         header.isMegaMenuVisible = false;
       });
-      document.body.addEventListener('keydown', function (event) {
+      document.body.addEventListener('keydown', function(event) {
         if (['Escape', 'Esc'].includes(event.key)) {
           event.preventDefault();
           header.dispatchEvent(new Event('closeMenu'));

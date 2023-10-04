@@ -50,13 +50,9 @@ export class TelekomHeaderDataBackCompat {
   userMenuDesktopLink?: HTMLAnchorElement;
 
   render() {
-    const {
-      shortName = 'Login',
-      badge,
-      badgeLabel,
-    } = (readData(this.userNavigation) || []).find(
-      ({ type }) => type === 'userInfo'
-    ) || {
+    const { shortName = 'Login', badge, badgeLabel } = (
+      readData(this.userNavigation) || []
+    ).find(({ type }) => type === 'userInfo') || {
       shortName: 'Login',
     };
 

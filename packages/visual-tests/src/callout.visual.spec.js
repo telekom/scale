@@ -1,6 +1,6 @@
 // FIXME layout shift
 describe.skip('Callout', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-callout--standard', mode);
     });
@@ -12,7 +12,7 @@ describe.skip('Callout', () => {
       ['blue'],
       ['medium'],
       ['large-and-small'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`beta-components-callout--${variant}`);
       await global.page.waitFor(500);
       await global.visualCheck();

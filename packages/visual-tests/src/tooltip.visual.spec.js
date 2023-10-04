@@ -1,9 +1,9 @@
 describe('Tooltip', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-tooltip--standard', mode);
     });
-    test.each([['standard']])('%p', async (variant) => {
+    test.each([['standard']])('%p', async variant => {
       await global.runSetup(`components-tooltip--${variant}`);
       const button = await global.page.evaluateHandle(
         'document.querySelector("#root > div > scale-tooltip > scale-button")'

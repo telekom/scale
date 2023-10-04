@@ -1,5 +1,5 @@
 describe('Button', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-accordion--standard', mode);
     });
@@ -21,7 +21,7 @@ describe('Button', () => {
       ['small-with-icon-after'],
       ['small-icon-only'],
       ['small-link'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`components-button--${variant}`);
 
       const button = await global.page.evaluateHandle(
@@ -37,7 +37,7 @@ describe('Button', () => {
       ['secondary'],
       ['with-icon-before'],
       ['icon-only'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`components-button--${variant}`);
 
       const button = await global.page.evaluateHandle(

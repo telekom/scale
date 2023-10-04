@@ -1,5 +1,5 @@
 describe('TabNavigation', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-tab-navigation--standard', mode);
     });
@@ -9,7 +9,7 @@ describe('TabNavigation', () => {
       ['disabled-tabs'],
       ['large-text-only'],
       ['large-text-icon'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
       );
@@ -22,7 +22,7 @@ describe('TabNavigation', () => {
           '--telekom-motion-duration-transition',
           '--telekom-motion-duration-animation',
           '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
+        ].forEach(transitionSpeed => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
@@ -30,7 +30,7 @@ describe('TabNavigation', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     // hover, focus, active
-    test.each([['text-icon'], ['text-only']])('%p', async (variant) => {
+    test.each([['text-icon'], ['text-only']])('%p', async variant => {
       await global.runSetup(`components-tab-navigation--${variant}`);
       const tabHeader = await global.page.evaluateHandle(
         'document.querySelector("#scale-tab-header-1").shadowRoot.querySelector(".tab-header")'

@@ -1,5 +1,5 @@
 describe('Textfield', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-text-field--standard', mode);
     });
@@ -13,12 +13,12 @@ describe('Textfield', () => {
       ['disabled'],
       ['read-only'],
       ['max-length-with-counter'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`components-text-field--${variant}`);
       await global.visualCheck();
     });
     // hover, focus, active
-    test.each([['standard']])('%p', async (variant) => {
+    test.each([['standard']])('%p', async variant => {
       await global.runSetup(`components-text-field--${variant}`);
 
       const textfield = await global.page.evaluateHandle(

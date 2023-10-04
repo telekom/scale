@@ -1,11 +1,11 @@
 describe('Logo', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-logo--standard', mode);
     });
     test.each([['standard'], ['white'], ['sizing'], ['link']])(
       '%p',
-      async (variant) => {
+      async variant => {
         await global.runSetup(`components-logo--${variant}`);
         await global.visualCheck();
         const image = await global.page.evaluateHandle(

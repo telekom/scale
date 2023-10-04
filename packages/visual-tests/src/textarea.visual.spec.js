@@ -1,5 +1,5 @@
 describe('Textarea', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-text-area--standard', mode);
     });
@@ -12,12 +12,12 @@ describe('Textarea', () => {
       ['read-only'],
       ['max-length-with-counter'],
       ['more-rows'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`components-text-area--${variant}`);
       await global.visualCheck();
     });
     // hover, focus, active
-    test.each([['standard']])('%p', async (variant) => {
+    test.each([['standard']])('%p', async variant => {
       await global.runSetup(`components-text-area--${variant}`);
       const textarea = await global.page.evaluateHandle(
         'document.querySelector("#input-textarea-0")'

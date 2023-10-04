@@ -1,5 +1,5 @@
 describe('ProgressBar', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-progress-bar--standard', mode);
     });
@@ -9,7 +9,7 @@ describe('ProgressBar', () => {
       ['completed'],
       ['error'],
       ['interactive'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`components-progress-bar--${variant}`);
 
       await global.page.waitFor(3000);

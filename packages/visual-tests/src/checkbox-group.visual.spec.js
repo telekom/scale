@@ -1,5 +1,5 @@
 describe('CheckboxGroup', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-checkbox-group--standard', mode);
     });
@@ -8,12 +8,12 @@ describe('CheckboxGroup', () => {
       ['checkbox-disabled'],
       ['group-error'],
       ['helper-text'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`components-checkbox-group--${variant}`);
       await global.page.waitFor(500);
       await global.visualCheck();
     });
-    test.each([['standard']])('%p', async (variant) => {
+    test.each([['standard']])('%p', async variant => {
       await global.runSetup(`components-checkbox-group--${variant}`);
       await global.page.waitForSelector('html.hydrated');
       await global.page.$('body');

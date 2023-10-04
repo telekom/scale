@@ -1,5 +1,5 @@
 describe('DataGrid', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-data-grid--standard', mode);
     });
@@ -17,7 +17,7 @@ describe('DataGrid', () => {
       ['tags-cell'],
       ['telephone-cell'],
       ['selection-export'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`components-data-grid--${variant}`);
 
       await global.visualCheck({ failureThreshold: 1000 });

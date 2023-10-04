@@ -275,8 +275,9 @@ export class DropdownSelect {
   }
 
   bringIntoView(index) {
-    const options: NodeListOf<HTMLElement> =
-      this.listboxEl.querySelectorAll('[role=option]');
+    const options: NodeListOf<HTMLElement> = this.listboxEl.querySelectorAll(
+      '[role=option]'
+    );
 
     if (hasOverflow(this.listboxEl)) {
       keepInView(options[index], this.listboxEl);

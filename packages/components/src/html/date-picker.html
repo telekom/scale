@@ -56,9 +56,8 @@
           }
         },
         format(date) {
-          return `${date.getDate()}.${
-            date.getMonth() + 1
-          }.${date.getFullYear()}`;
+          return `${date.getDate()}.${date.getMonth() +
+            1}.${date.getFullYear()}`;
         },
       };
 
@@ -125,14 +124,14 @@
       });
 
       // Listen for when date is selected
-      picker.addEventListener('scaleChange', function (e) {
+      picker.addEventListener('scaleChange', function(e) {
         console.log('scaleChange selected date', e.detail.valueAsDate);
       });
-      picker.addEventListener('scaleFocus', function (e) {
+      picker.addEventListener('scaleFocus', function(e) {
         console.log('scaleFocus', e);
       });
 
-      picker.addEventListener('scaleBlur', function (e) {
+      picker.addEventListener('scaleBlur', function(e) {
         console.log('scaleBlur', e);
       });
     </script>

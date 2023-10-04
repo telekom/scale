@@ -1,9 +1,9 @@
 describe('Breadcrumb', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-breadcrumb--standard', mode);
     });
-    test.each([['standard']])('%p', async (variant) => {
+    test.each([['standard']])('%p', async variant => {
       await global.runSetup(`components-breadcrumb--${variant}`);
 
       const firstLink = await global.page.evaluateHandle(

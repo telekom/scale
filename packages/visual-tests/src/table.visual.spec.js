@@ -1,11 +1,11 @@
 describe('Table', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-table--standard', mode);
     });
     test.each([['standard'], ['with-sorting-icons'], ['with-striped-rows']])(
       '%p',
-      async (variant) => {
+      async variant => {
         await page.goto(
           `http://host.docker.internal:3123/iframe.html?id=components-table--${variant}&viewMode=story`
         );
@@ -18,14 +18,14 @@ describe('Table', () => {
             '--telekom-motion-duration-transition',
             '--telekom-motion-duration-animation',
             '--telekom-motion-duration-animation-deliberate',
-          ].forEach((transitionSpeed) => {
+          ].forEach(transitionSpeed => {
             document.body.style.setProperty(transitionSpeed, '0s');
           });
         });
         expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       }
     );
-    test.each([['standard']])('%p', async (variant) => {
+    test.each([['standard']])('%p', async variant => {
       await global.runSetup(`components-table--${variant}`);
       await global.page.waitFor(5000);
       const row = await global.page.evaluateHandle(

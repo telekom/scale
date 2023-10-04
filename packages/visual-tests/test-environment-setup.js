@@ -24,7 +24,7 @@ const toMatchImageSnapshot = configureToMatchImageSnapshot({
 
 expect.extend({ toMatchImageSnapshot });
 
-global.visualCheck = async (options) => {
+global.visualCheck = async options => {
   await global.page.waitForSelector('html.hydrated');
   const previewHtml = await global.page.$('body');
   expect(await previewHtml.screenshot()).toMatchImageSnapshot(options);
@@ -32,7 +32,7 @@ global.visualCheck = async (options) => {
 
 global.extensions = initExtensions(global.page);
 
-global.runSetup = async (id) => {
+global.runSetup = async id => {
   await global.page.goto(
     `http://host.docker.internal:3123/iframe.html?id=${id}&viewMode=story`
   );
@@ -43,14 +43,14 @@ global.runSetup = async (id) => {
       '--telekom-motion-duration-transition',
       '--telekom-motion-duration-animation',
       '--telekom-motion-duration-animation-deliberate',
-    ].forEach((transitionSpeed) => {
+    ].forEach(transitionSpeed => {
       document.body.style.setProperty(transitionSpeed, '0s');
     });
     [
       '--telekom-motion-easing-standard',
       '--telekom-motion-easing-enter',
       '--telekom-motion-easing-leave',
-    ].forEach((motion) => {
+    ].forEach(motion => {
       document.body.style.setProperty(motion, 'unset');
     });
   });
@@ -60,7 +60,7 @@ global.runColorSetup = async (id, mode) => {
   await global.page.goto(
     `http://host.docker.internal:3123/iframe.html?id=${id}&viewMode=story`
   );
-  await global.page.evaluate((colorMode) => {
+  await global.page.evaluate(colorMode => {
     localStorage.setItem('persistedColorMode', JSON.stringify(colorMode));
   }, mode);
 };

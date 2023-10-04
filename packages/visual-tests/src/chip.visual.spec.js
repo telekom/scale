@@ -1,5 +1,5 @@
 describe('Chip', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup('components-chip--standard', mode);
     });
@@ -15,7 +15,7 @@ describe('Chip', () => {
       ['dynamic-suggestion'],
       ['dynamic-selection-standard'],
       ['dynamic-selection-outline'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`components-chip--${variant}`);
       await global.page.waitFor(3000);
       await global.visualCheck();

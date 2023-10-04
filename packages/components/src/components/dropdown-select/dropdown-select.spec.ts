@@ -1,7 +1,7 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { DropdownSelect } from './dropdown-select';
 
-describe('DropdownSelect', function () {
+describe('DropdownSelect', function() {
   it('should take options via slots', async () => {
     const page = await newSpecPage({
       components: [DropdownSelect],
@@ -65,8 +65,8 @@ describe('DropdownSelect', function () {
     const selectEl = page.doc.querySelector('scale-dropdown-select');
     selectEl.addEventListener('scale-change', changeSpy);
     const comboboxEl = selectEl.shadowRoot.querySelector('[part="combobox"]');
-    comboboxEl.scrollIntoView = function () {};
-    comboboxEl.focus = function () {};
+    comboboxEl.scrollIntoView = function() {};
+    comboboxEl.focus = function() {};
     const optionsEls = selectEl.shadowRoot.querySelectorAll('[role="option"]');
 
     comboboxEl.click();

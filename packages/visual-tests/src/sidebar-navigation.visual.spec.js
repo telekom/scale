@@ -1,5 +1,5 @@
 describe.skip('SidebarNavigation', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', mode => {
     beforeAll(async () => {
       await global.runColorSetup(
         'components-sidebar-navigation--standard',
@@ -11,11 +11,11 @@ describe.skip('SidebarNavigation', () => {
       ['active-on-level-1'],
       ['active-on-level-2'],
       ['custom-media-query'],
-    ])('%p', async (variant) => {
+    ])('%p', async variant => {
       await global.runSetup(`components-sidebar-navigation--${variant}`);
       await global.visualCheck();
     });
-    test.each([['standard']])('%p', async (variant) => {
+    test.each([['standard']])('%p', async variant => {
       await global.runSetup(`components-sidebar-navigation--${variant}`);
 
       const collabsibleButton = await global.page.evaluateHandle(
@@ -34,7 +34,7 @@ describe.skip('SidebarNavigation', () => {
   });
   // hover, active, focus SidebarNavItem
   describe('SidebarNavItem', () => {
-    test.each([['standard']])('%p', async (variant) => {
+    test.each([['standard']])('%p', async variant => {
       await global.runSetup(`components-sidebar-navigation--${variant}`);
       const sidebarNavItem = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-item:nth-child(1) > a")`
@@ -57,7 +57,7 @@ describe.skip('SidebarNavigation', () => {
   });
   // hover, active, focus SidebarNavCollapsible
   describe('SidebarNavCollapsible', () => {
-    test.each([['standard']])('%p', async (variant) => {
+    test.each([['standard']])('%p', async variant => {
       await global.runSetup(`components-sidebar-navigation--${variant}`);
 
       const sidebarNavCollapsible = await global.page.evaluateHandle(
