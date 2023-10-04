@@ -437,7 +437,7 @@ tokens[Z_INDEX] = {
   },
 };
 
-export default function() {
+export default function () {
   // a copy to avoid any outputs accidentally mutating it
   return { ...tokens };
 }
