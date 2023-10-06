@@ -426,14 +426,14 @@ export class DataGrid {
       ) {
         if (sortDirection === 'ascending') {
           this.rows.sort((a, b) => {
-            var aDateParts = a[columnIndex].split(splitRegex);
-            var aDateObject = new Date(
+            const aDateParts = a[columnIndex].split(splitRegex);
+            const aDateObject = new Date(
               +aDateParts[2],
               aDateParts[1] - 1,
               +aDateParts[0]
             );
-            var bDateParts = b[columnIndex].split(splitRegex);
-            var bDateObject = new Date(
+            const bDateParts = b[columnIndex].split(splitRegex);
+            const bDateObject = new Date(
               +bDateParts[2],
               bDateParts[1] - 1,
               +bDateParts[0]
@@ -446,14 +446,14 @@ export class DataGrid {
           });
         } else if (sortDirection === 'descending') {
           this.rows.sort((a, b) => {
-            var aDateParts = a[columnIndex].split(splitRegex);
-            var aDateObject = new Date(
+            const aDateParts = a[columnIndex].split(splitRegex);
+            const aDateObject = new Date(
               +aDateParts[2],
               aDateParts[1] - 1,
               +aDateParts[0]
             );
-            var bDateParts = b[columnIndex].split(splitRegex);
-            var bDateObject = new Date(
+            const bDateParts = b[columnIndex].split(splitRegex);
+            const bDateObject = new Date(
               +bDateParts[2],
               bDateParts[1] - 1,
               +bDateParts[0]
