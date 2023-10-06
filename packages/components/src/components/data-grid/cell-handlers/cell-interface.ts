@@ -16,7 +16,7 @@ export interface Cell {
     mobileTitle?: boolean;
     resizable?: boolean;
     sortable?: boolean;
-    sortBy?: 'number' | 'text';
+    sortBy?: 'number' | 'text' | 'date';
     stretchWeight?: number;
     textAlign?: 'left' | 'center' | 'right';
     visible?: boolean;

@@ -413,10 +413,32 @@ export class DataGrid {
   }
 
   sortTable(sortDirection, type, columnIndex) {
+    const format = this.fields[columnIndex].format;
     if (sortDirection === 'none') {
       this.rows.sort((a, b) => {
         return a.initialIndex - b.initialIndex;
       });
+    } else if (type === 'date' && format) {
+      const splitRegex = /[./]/
+      if (format && format === 'DD.MM.YYYY' || format && format === 'DD/MM/YYYY')  {
+        if (sortDirection === 'ascending') {
+          this.rows.sort((a, b) => {
+            var aDateParts = a[columnIndex].split(splitRegex)
+            var aDateObject = new Date(+aDateParts[2], aDateParts[1] - 1, +aDateParts[0]); 
+            var bDateParts = b[columnIndex].split(splitRegex)
+            var bDateObject = new Date(+bDateParts[2], bDateParts[1] - 1, +bDateParts[0]); 
+            return aDateObject.valueOf() > bDateObject.valueOf() ? -1 : aDateObject.valueOf() < bDateObject.valueOf() ? 1 : 0;
+          })            
+        } else if (sortDirection === 'descending') {
+          this.rows.sort((a, b) => {
+            var aDateParts = a[columnIndex].split(splitRegex)
+            var aDateObject = new Date(+aDateParts[2], aDateParts[1] - 1, +aDateParts[0]); 
+            var bDateParts = b[columnIndex].split(splitRegex)
+            var bDateObject = new Date(+bDateParts[2], bDateParts[1] - 1, +bDateParts[0]); 
+            return aDateObject.valueOf() < bDateObject.valueOf() ? -1 : aDateObject.valueOf() >  bDateObject.valueOf() ? 1 : 0;
+          })                
+        }
+      }
     } else {
       switch (
         (CELL_TYPES[type] &&
@@ -425,6 +447,7 @@ export class DataGrid {
         CELL_DEFAULTS.sortBy
       ) {
         case 'text':
+        case 'date':
           if (sortDirection === 'ascending') {
             this.rows.sort((a, b) => {
               const textA = a[columnIndex].toLowerCase();

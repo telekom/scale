@@ -21,7 +21,7 @@ import { Cell } from './cell-interface';
 
 export const DateCell: Cell = {
   defaults: {
-    sortBy: 'text',
+    sortBy: 'date',
   },
   render: ({ content, isAutoWidthCheck }) => {
     let value = content;
