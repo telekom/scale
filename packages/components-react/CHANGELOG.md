@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.142](https://github.com/telekom/scale/compare/v3.0.0-beta.141...v3.0.0-beta.142) (2023-10-09)
+
+
+### Features
+
+* new gha workflow to create releases with bundled assets ([#2153](https://github.com/telekom/scale/issues/2153)) ([ca22494](https://github.com/telekom/scale/commit/ca2249487dd69741c4fff3877e4b00a4a7424ba1))
+
+
+
+
+
 # [3.0.0-beta.141](https://github.com/telekom/scale/compare/v3.0.0-beta.140...v3.0.0-beta.141) (2023-09-22)
 
 **Note:** Version bump only for package @telekom/scale-components-react

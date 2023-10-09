@@ -2,7 +2,7 @@
   "homepage": "https://telekom.github.io/scale",
   "name": "@telekom/scale-storybook-vue",
   "private": true,
-  "version": "3.0.0-beta.141",
+  "version": "3.0.0-beta.142",
   "main": "index.js",
   "license": "MPL-2.0",
   "devDependencies": {
@@ -32,8 +32,8 @@
   "dependencies": {
     "@storybook/addon-viewport": "^6.4.22",
     "@telekom/design-tokens": "^1.0.0-beta.2",
-    "@telekom/scale-components": "^3.0.0-beta.141",
-    "@telekom/scale-components-vue": "^3.0.0-beta.141"
+    "@telekom/scale-components": "^3.0.0-beta.142",
+    "@telekom/scale-components-vue": "^3.0.0-beta.142"
   },
   "scripts": {
     "prestart": "rm -rf node_modules/.cache/ && yes | cp -a ../components/dist/scale-components/fonts/* public/fonts/ && yes | cp -a ../components/dist/scale-components/scale-components.css public/",
