@@ -439,6 +439,11 @@ Email label is partially beautified by automatically removing the protocol (`mai
 
 Expected format: date/time `string`, eg `'10:23:00'`
 
+##### Unique options, and their defaults
+
+- `format?: string = 'MM.dd.yyyy'`
+the date is parsed via date-fn, see [date-fn docs](https://date-fns.org/v2.30.0/docs/parse) for more info and additional formatting options, eg: `'dd.MM.yyyy'`
+
 <Canvas withSource="close">
   <Story name="Date Cell">
     {`<content>

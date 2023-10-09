@@ -28,6 +28,11 @@ import {
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 
+import { 
+  parse
+ } from 'date-fns'
+
+
 // [ ] add options to show nested content without the html column
 // [ ] add options to pre-expand all html content
 // [ ] Uber cell type where all options are available for user
@@ -418,55 +423,21 @@ export class DataGrid {
       this.rows.sort((a, b) => {
         return a.initialIndex - b.initialIndex;
       });
-    } else if (type === 'date' && format) {
-      const splitRegex = /[./]/;
-      if (
-        (format && format === 'DD.MM.YYYY') ||
-        (format && format === 'DD/MM/YYYY')
-      ) {
-        if (sortDirection === 'ascending') {
-          this.rows.sort((a, b) => {
-            const aDateParts = a[columnIndex].split(splitRegex);
-            const aDateObject = new Date(
-              +aDateParts[2],
-              aDateParts[1] - 1,
-              +aDateParts[0]
-            );
-            const bDateParts = b[columnIndex].split(splitRegex);
-            const bDateObject = new Date(
-              +bDateParts[2],
-              bDateParts[1] - 1,
-              +bDateParts[0]
-            );
-            return aDateObject.valueOf() > bDateObject.valueOf()
-              ? -1
-              : aDateObject.valueOf() < bDateObject.valueOf()
-              ? 1
-              : 0;
-          });
-        } else if (sortDirection === 'descending') {
-          this.rows.sort((a, b) => {
-            const aDateParts = a[columnIndex].split(splitRegex);
-            const aDateObject = new Date(
-              +aDateParts[2],
-              aDateParts[1] - 1,
-              +aDateParts[0]
-            );
-            const bDateParts = b[columnIndex].split(splitRegex);
-            const bDateObject = new Date(
-              +bDateParts[2],
-              bDateParts[1] - 1,
-              +bDateParts[0]
-            );
-            return aDateObject.valueOf() < bDateObject.valueOf()
-              ? -1
-              : aDateObject.valueOf() > bDateObject.valueOf()
-              ? 1
-              : 0;
-          });
-        }
-      }
-    } else {
+    }
+    else if (type === 'date' && format) {
+      this.rows.sort((a, b) => {
+        const getDateObject = (dateString) => {
+          const parsed = parse(dateString, format, new Date())
+          return parsed
+        };
+  
+        const dateObjectA = getDateObject(a[columnIndex]);
+        const dateObjectB = getDateObject(b[columnIndex]);
+        //valueOf here for typescript to not complain about dateObjectA and dateObjectB not being numbers
+        return sortDirection === 'ascending' ? dateObjectA.valueOf() - dateObjectB.valueOf() : dateObjectB.valueOf() - dateObjectA.valueOf();
+      });
+    }    
+     else {
       switch (
         (CELL_TYPES[type] &&
           CELL_TYPES[type].defaults &&
