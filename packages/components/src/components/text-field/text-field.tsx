@@ -286,6 +286,13 @@ export class TextField {
               aria-live="polite"
               aria-relevant="additions removals"
             >
+              {this.helperText && (
+                <scale-helper-text
+                  id={helperTextId}
+                  helperText={this.helperText}
+                  variant={this.invalid ? 'danger' : this.variant}
+                ></scale-helper-text>
+              )}
               {this.counter && (
                 <div class="text-field__counter">
                   {!!this.value ? String(this.value).length : 0} /{' '}
@@ -293,13 +300,6 @@ export class TextField {
                 </div>
               )}
             </div>
-          )}
-          {this.helperText && (
-            <scale-helper-text
-              id={helperTextId}
-              helperText={this.helperText}
-              variant={this.invalid ? 'danger' : this.variant}
-            ></scale-helper-text>
           )}
         </div>
       </Host>

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.142](https://github.com/telekom/scale/compare/v3.0.0-beta.141...v3.0.0-beta.142) (2023-10-09)
+
+
+### Bug Fixes
+
+* align counter and helper-text ([#2150](https://github.com/telekom/scale/issues/2150)) ([8e729ca](https://github.com/telekom/scale/commit/8e729ca1900d581ff115017dd4f5eaf374dc38d6))
+* prevent sorting when resizing column ([#2149](https://github.com/telekom/scale/issues/2149)) ([e78af7c](https://github.com/telekom/scale/commit/e78af7c012ae910b6c421c760bf193ffdb1bf4e5))
+
+
+### Features
+
+* new gha workflow to create releases with bundled assets ([#2153](https://github.com/telekom/scale/issues/2153)) ([ca22494](https://github.com/telekom/scale/commit/ca2249487dd69741c4fff3877e4b00a4a7424ba1))
+
+
+
+
+
 # [3.0.0-beta.141](https://github.com/telekom/scale/compare/v3.0.0-beta.140...v3.0.0-beta.141) (2023-09-22)
 
 

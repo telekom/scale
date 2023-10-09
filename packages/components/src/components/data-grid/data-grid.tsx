@@ -107,6 +107,8 @@ export class DataGrid {
   @Prop() styles: any;
   /** (optional) Set to false to hide table, used for nested tables to re-render upon toggle */
   @Prop() visible?: boolean = true;
+  /** (optional) Title for sortable columns */
+  @Prop() sortableColumnTitle?: string = 'Activate to sort column';
   /**
    * (optional) set localization for sort, toggle and select/deselect table
    * Default is English.
@@ -1008,7 +1010,7 @@ export class DataGrid {
               }
               return (
                 <th
-                  title="Activate to sort column"
+                  title={sortable ? this.sortableColumnTitle : undefined}
                   {...props}
                   {...(sortable
                     ? {
@@ -1021,12 +1023,15 @@ export class DataGrid {
                             );
                           }
                         },
-                        onClick: () => {
-                          this.toggleTableSorting(
-                            sortDirection,
-                            columnIndex,
-                            type
-                          );
+                        onClick: (e) => {
+                          const clickedElement = e.target as HTMLElement;
+                          if (!clickedElement.matches('.thead__divider')) {
+                            this.toggleTableSorting(
+                              sortDirection,
+                              columnIndex,
+                              type
+                            );
+                          }
                         },
                         tabindex: 0,
                         class: `${props.class} thead-sortable`,

@@ -1,0 +1,62 @@
+name: release
+on:
+  push:
+    tags:
+      - "v*"
+  # workflow_dispatch: {}
+
+jobs:
+  release:
+    runs-on: ubuntu-20.04
+    # environment: RELEASE
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
+
+      - name: Build Components
+        run: |
+          yarn workspace @telekom/scale-components build
+          yarn workspace @telekom/scale-components zip
+    
+      - name: Build React Proxy
+        run: |
+          yarn workspace @telekom/scale-components-react build
+          yarn workspace @telekom/scale-components-react zip
+  
+      - name: Get Package Version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+        with:
+          path: packages/components
+  
+      - name: Create GitHub Release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: ${{ steps.package-version.outputs.current-version }}
+          files: |
+            LICENSE
+            packages/components/telekom-scale-components-${{ steps.package-version.outputs.current-version }}.zip
+            packages/components-react/telekom-scale-components-react-${{ steps.package-version.outputs.current-version }}.zip
