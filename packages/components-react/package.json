@@ -14,6 +14,7 @@
   },
   "scripts": {
     "build": "yarn clean && yarn rollup",
+    "zip": "zip -vr telekom-scale-components-react-$npm_package_version.zip dist/ -x '*.DS_Store'",
     "clean": "rimraf dist",
     "format": "prettier --write \"package.json\"",
     "rollup": "rollup -c"
