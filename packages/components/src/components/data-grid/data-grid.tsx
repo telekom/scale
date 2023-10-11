@@ -429,7 +429,7 @@ export class DataGrid {
 
         const dateObjectA = getDateObject(a[columnIndex]);
         const dateObjectB = getDateObject(b[columnIndex]);
-        //valueOf here for typescript to not complain about dateObjectA and dateObjectB not being numbers
+        // valueOf here for typescript to not complain about dateObjectA and dateObjectB not being numbers
         return sortDirection === 'ascending'
           ? dateObjectA.valueOf() - dateObjectB.valueOf()
           : dateObjectB.valueOf() - dateObjectA.valueOf();
