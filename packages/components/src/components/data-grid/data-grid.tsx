@@ -28,10 +28,7 @@ import {
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 
-import { 
-  parse
- } from 'date-fns'
-
+import { parse } from 'date-fns';
 
 // [ ] add options to show nested content without the html column
 // [ ] add options to pre-expand all html content
@@ -423,21 +420,21 @@ export class DataGrid {
       this.rows.sort((a, b) => {
         return a.initialIndex - b.initialIndex;
       });
-    }
-    else if (type === 'date' && format) {
+    } else if (type === 'date' && format) {
       this.rows.sort((a, b) => {
         const getDateObject = (dateString) => {
-          const parsed = parse(dateString, format, new Date())
-          return parsed
+          const parsed = parse(dateString, format, new Date());
+          return parsed;
         };
-  
+
         const dateObjectA = getDateObject(a[columnIndex]);
         const dateObjectB = getDateObject(b[columnIndex]);
         //valueOf here for typescript to not complain about dateObjectA and dateObjectB not being numbers
-        return sortDirection === 'ascending' ? dateObjectA.valueOf() - dateObjectB.valueOf() : dateObjectB.valueOf() - dateObjectA.valueOf();
+        return sortDirection === 'ascending'
+          ? dateObjectA.valueOf() - dateObjectB.valueOf()
+          : dateObjectB.valueOf() - dateObjectA.valueOf();
       });
-    }    
-     else {
+    } else {
       switch (
         (CELL_TYPES[type] &&
           CELL_TYPES[type].defaults &&
