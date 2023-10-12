@@ -18,6 +18,7 @@ export const config: Config = {
       '!**/node_modules/**',
       '!**/*.{d,esm,iife,styles}.ts',
     ],
+    setupFilesAfterEnv: ['./test-setup.ts'],
   },
   namespace: 'scale-components',
   globalScript: 'src/global/scale.ts',
