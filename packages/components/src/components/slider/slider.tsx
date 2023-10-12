@@ -315,7 +315,7 @@ export class Slider {
   };
 
   addGlobalListeners(e) {
-    this.lastThumbZ = this.lastThumbZIndex + 1;
+    this.lastThumbZIndex = this.lastThumbZIndex + 1;
     e.target.parentNode.style.zIndex = this.lastThumbZIndex.toString();
     window.addEventListener('mousemove', this.onDragging);
     window.addEventListener('mouseup', this.onDragEnd);
