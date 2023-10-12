@@ -110,6 +110,8 @@ export class Slider {
   private activeRangeThumb: null | 'From' | 'To' = null;
   private readonly internalId = generateUniqueId();
 
+  private lastThumbZIndex: number = 3
+
   constructor() {
     this.onDragging = this.onDragging.bind(this);
     this.onDragEnd = this.onDragEnd.bind(this);
@@ -174,7 +176,7 @@ export class Slider {
     }
     this.setActiveRangeThumbFromEvent(event);
     this.onDragStart();
-    this.addGlobalListeners();
+    this.addGlobalListeners(event);
   };
 
   onKeyDown = (event: KeyboardEvent) => {
@@ -312,7 +314,9 @@ export class Slider {
     return Math.min(Math.max(val, min), max);
   };
 
-  addGlobalListeners() {
+  addGlobalListeners(e) {
+    this.lastThumbZ = this.lastThumbZIndex + 1
+    e.target.parentNode.style.zIndex = this.lastThumbZIndex.toString()
     window.addEventListener('mousemove', this.onDragging);
     window.addEventListener('mouseup', this.onDragEnd);
     window.addEventListener('touchmove', this.onDragging);
