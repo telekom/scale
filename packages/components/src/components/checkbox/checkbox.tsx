@@ -188,7 +188,7 @@ export class Checkbox {
           indeterminate={this.indeterminate}
           aria-label={this.ariaLabelCheckbox}
           aria-checked={this.indeterminate ? 'mixed' : false}
-          aria-invalid={this.status === 'error' || this.invalid}
+          aria-invalid={this.status === 'error' || this.invalid ? 'true' : null}
           aria-describedBy={helperText.id}
           disabled={this.disabled}
           required={this.required}
