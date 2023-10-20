@@ -402,18 +402,12 @@ export class DropdownSelect {
   };
 
   render() {
-    const ValueElement = (
-      readOptions(this.hostElement).find(({ value }) => value === this.value) ||
-      ({} as any)
-    ).ItemElement;
-    const hasEmptyValueElement =
-      (
-        readOptions(this.hostElement).find(
-          ({ value }) => value === this.value
-        ) || ({} as any)
-      ).value === ''
-        ? true
-        : false;
+    const element =
+      readOptions(this.hostElement).find(({ value }) => value === this.value) ??
+      ({} as any);
+
+    const ValueElement = element.ItemElement;
+    const hasEmptyValueElement = element.value === '';
     const helperTextId = `helper-message-${generateUniqueId()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
