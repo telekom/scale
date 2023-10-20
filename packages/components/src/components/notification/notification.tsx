@@ -62,7 +62,7 @@ export class Notification {
   /** @deprecated - ariaRole should replace innerAriaLive */
   @Prop() innerAriaLive?: string = 'assertive';
   /** (optional) string prepended to the heading */
-  @Prop() innerRole?: 'alert' | 'status' = 'alert';  
+  @Prop() innerRole?: 'alert' | 'status' = 'alert';
   /** (optional) Label for close button */
   @Prop() closeButtonLabel?: string = 'Close';
   /** (optional) `title` for close button */
@@ -93,7 +93,11 @@ export class Notification {
 
   connectedCallback() {
     if (this.hostElement.hasAttribute('opened')) {
-      if (this.innerAriaLive === 'polite' || this.innerRole === undefined || this.innerRole === 'status') { 
+      if (
+        this.innerAriaLive === 'polite' ||
+        this.innerRole === undefined ||
+        this.innerRole === 'status'
+      ) {
         this.innerRole = 'status';
       }
       this.isOpen = true;
@@ -173,9 +177,7 @@ export class Notification {
               <IconTag size={ICON_SIZE} selected={this.type === 'toast'} />
             </slot>
           </div>
-          <div
-            part="body"
-          >
+          <div part="body">
             <div
               part="heading"
               role="heading"
