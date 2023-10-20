@@ -59,8 +59,10 @@ export class Notification {
   @Prop() dismissible?: boolean = false;
   /** (optional) Time in milliseconds until it closes by itself */
   @Prop() delay?: number;
-  /** (optional) `aria-live` of element */
+  /** @deprecated - ariaRole should replace innerAriaLive */
   @Prop() innerAriaLive?: string = 'assertive';
+  /** (optional) string prepended to the heading */
+  @Prop() innerRole?: 'alert' | 'status' = 'alert';  
   /** (optional) Label for close button */
   @Prop() closeButtonLabel?: string = 'Close';
   /** (optional) `title` for close button */
@@ -69,13 +71,13 @@ export class Notification {
   @Prop() headingLevel: number = 2;
   /** (optional) string prepended to the heading */
   @Prop() ariaHeading?: string = 'Information';
+
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
   /** What actually triggers opening/closing the notification */
   @State() isOpen: boolean = this.opened || false;
   @State() animationState: 'in' | 'out' | undefined;
-  @State() role: string = 'alert';
   @State() hasTextSlot: boolean = false;
   // @State() hasActionSlot: boolean = false; // unused for now
 
@@ -91,8 +93,9 @@ export class Notification {
 
   connectedCallback() {
     if (this.hostElement.hasAttribute('opened')) {
-      // Do not use `role="alert"` if opened/visible on page load
-      this.role = undefined;
+      if (this.innerAriaLive === 'polite' || this.innerRole === undefined || this.innerRole === 'status') { 
+        this.innerRole = 'status';
+      }
       this.isOpen = true;
     }
     if (this.delay !== undefined) {
@@ -115,7 +118,6 @@ export class Notification {
 
   open = () => {
     this.isOpen = true;
-    this.role = 'alert';
     this.animationState = 'in';
     requestAnimationFrame(async () => {
       await animationsFinished(this.hostElement.shadowRoot);
@@ -164,7 +166,7 @@ export class Notification {
             `variant-${this.variant}`,
             this.isOpen && 'open'
           )}
-          role={this.role}
+          role={this.innerRole}
         >
           <div part="icon" aria-hidden="true">
             <slot name="icon">
@@ -173,7 +175,6 @@ export class Notification {
           </div>
           <div
             part="body"
-            aria-live={this.role === undefined ? undefined : this.innerAriaLive}
           >
             <div
               part="heading"
