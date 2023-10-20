@@ -255,6 +255,11 @@
 /*option*/
 [part~='option'] {
   color: var(--color);
+
+  &[part~='disabled'] {
+    color: var(--color-disabled);
+    cursor: not-allowed;
+  }
 }
 
 [part~='option']:hover {
