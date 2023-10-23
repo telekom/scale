@@ -127,9 +127,11 @@
   padding-left: var(--spacing-y);
 }
 
-[part='heading'] {
+[part='heading'],
+[part='heading'] ::slotted(*) {
   font: var(--telekom-text-style-heading-6);
   line-height: var(--telekom-typography-line-spacing-tight);
+  margin: 0;
 }
 
 [part='text'] {

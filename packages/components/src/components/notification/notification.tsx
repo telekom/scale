@@ -115,6 +115,8 @@ export class Notification {
     if (newValue === true) {
       this.open();
       this.lastCloseEventTrigger = 'ATTRIBUTE';
+
+
     } else if (this.isOpen) {
       this.close();
     }
@@ -131,6 +133,15 @@ export class Notification {
         setTimeout(this.timeout, this.delay);
       }
     });
+    // workaround: when role is status, the inner text needs to be changed in order to be announced by the screen reader correctly
+    if (this.innerRole === "status") {
+      const text = this.hostElement.querySelector('[slot="text"]').innerHTML;
+      const heading = this.hostElement.querySelector('[slot="heading"]').innerHTML;
+      setTimeout( () => {
+        this.hostElement.querySelector('[slot="text"]').innerHTML = text;
+        this.hostElement.querySelector('[slot="heading"]').innerHTML = heading;
+      }, 10)
+    }
   };
 
   close = () => {
@@ -177,7 +188,10 @@ export class Notification {
               <IconTag size={ICON_SIZE} selected={this.type === 'toast'} />
             </slot>
           </div>
-          <div part="body">
+          <div part="body"
+            role={this.innerRole}
+            aria-live="polite"
+          >
             <div
               part="heading"
               role="heading"
@@ -185,6 +199,7 @@ export class Notification {
               aria-label={`${this.ariaHeading} ${this.heading}`}
             >
               <span>{this.heading}</span>
+              <slot name="heading"></slot>
             </div>
             {this.hasTextSlot && (
               <div part="text">
