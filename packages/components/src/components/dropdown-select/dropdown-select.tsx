@@ -137,7 +137,8 @@ function jumpToIndex(from: number, action: Actions, options: SelectOption[]) {
       nearest = findNearestEnabled(options.length, -1);
       return nearest === options.length ? -1 : nearest; // rare case when all options are disabled
     case Actions['Previous']:
-      return findNearestEnabled(from, -1);
+      nearest = findNearestEnabled(from, from === -1 ? 1 : -1);
+      return nearest === options.length ? -1 : nearest; // rare case when all options are disabled
     case Actions['Next']:
       return findNearestEnabled(from, 1);
     case Actions['PageUp']:
