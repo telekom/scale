@@ -446,8 +446,11 @@ export class DropdownSelect {
               </span>
             </div>
             <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
-              <div part="listbox-scroll-container"
-                onMouseDown={(e) => {e.preventDefault()}}
+              <div
+                part="listbox-scroll-container"
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                }}
               >
                 <div
                   ref={(el) => (this.listboxEl = el)}
