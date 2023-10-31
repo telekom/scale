@@ -32,5 +32,10 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "engines": {
+    "node": ">=16.0.0 <17.0.0",
+    "npm": "please-use-yarn",
+    "yarn": ">=1.22.0 <2.0.0"
   }
 }
