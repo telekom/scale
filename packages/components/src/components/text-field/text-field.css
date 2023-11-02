@@ -302,7 +302,8 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  color-scheme: dark;
+  -webkit-box-shadow: 0 0 0px 100px var(--telekom-color-text-and-icon-inverted-additional) inset !important;
+  -webkit-text-fill-color: var(--color-meta);
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
