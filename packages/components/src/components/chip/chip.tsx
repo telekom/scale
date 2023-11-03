@@ -140,9 +140,7 @@ export class Chip {
             tabindex={this.selected ? '0' : '-1'}
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
-            aria-checked={
-              this.selected.toString()
-            }            
+            aria-checked={this.selected.toString()}
             onClick={
               !this.disabled || this.type === 'dynamic'
                 ? this.handleClick
@@ -158,9 +156,7 @@ export class Chip {
         ) : (
           <span
             role={this.ariaRoleTitle ? this.ariaRoleTitle : 'switch'}
-            aria-checked={
-              this.selected.toString()
-            }
+            aria-checked={this.selected.toString()}
             tabindex={this.selected ? '0' : '-1'}
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
