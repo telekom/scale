@@ -9,7 +9,6 @@
 
 | Property              | Attribute                | Description                    | Type     | Default                   |
 | --------------------- | ------------------------ | ------------------------------ | -------- | ------------------------- |
-| `claimLang`           | `claim-lang`             |                                | `string` | `undefined`               |
 | `copyright`           | `copyright`              |                                | `string` | `'© Deutsche Telekom AG'` |
 | `footerNavigation`    | `footer-navigation`      |                                | `any`    | `[]`                      |
 | `logoAriaDescribedBy` | `logo-aria-described-by` |                                | `string` | `undefined`               |
