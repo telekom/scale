@@ -171,7 +171,7 @@ export class Textarea {
 
   render() {
     const ariaInvalidAttr =
-      this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
+      this.status === 'error' || this.invalid ? { 'aria-invalid': 'true' } : {};
     const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     const readonlyAttr = this.readonly ? { readonly: 'readonly' } : {};
