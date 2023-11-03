@@ -132,6 +132,7 @@
 }
 
 .scale-telekom-nav-item > :where(a, button):focus {
+  border-radius: var(--telekom-radius-extra-small);
   outline: var(--focus-outline);
 }
 

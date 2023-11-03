@@ -5768,10 +5768,10 @@
     vue-docgen-loader "^1.5.0"
     webpack "4"
 
-"@telekom/design-tokens@1.0.0-beta.8":
-  version "1.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.8.tgz#afee8cf9c3a1fafc2fed230ab02a5bb79c7abc97"
-  integrity sha512-8wVJyKXHjEyv7MZgAIGN0pUvZgI2wK5MGC5QxH/YSUgnp6baxC3iBaoMATfatt1krdBu7TGKwmHEdUOefJhQWA==
+"@telekom/design-tokens@1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.10.tgz#381956d229bd1c4d096c96e51de371323a60de10"
+  integrity sha512-57BFgDxDkvOOrQf7wmS1u5jQmPRdhh6Y/qOHwTvYlS5GwGlkr3EeGeuwePL5pJ7z0jTnxEIVhmwbZnIx9AIX8w==
 
 "@telekom/design-tokens@^1.0.0-beta.2":
   version "1.0.0-beta.2"
