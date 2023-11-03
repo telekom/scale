@@ -15,7 +15,7 @@ import {
   h,
   Host,
   Event,
-  EventEmitter, 
+  EventEmitter,
   Element,
 } from '@stencil/core';
 import classNames from 'classnames';
