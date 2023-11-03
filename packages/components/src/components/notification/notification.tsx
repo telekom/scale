@@ -131,16 +131,6 @@ export class Notification {
         setTimeout(this.timeout, this.delay);
       }
     });
-    // workaround: when role is status, the inner text needs to be changed in order to be announced by the screen reader correctly
-    if (this.innerRole === 'status') {
-      const text = this.hostElement.querySelector('[slot="text"]').innerHTML;
-      const heading =
-        this.hostElement.querySelector('[slot="heading"]').innerHTML;
-      setTimeout(() => {
-        this.hostElement.querySelector('[slot="text"]').innerHTML = text;
-        this.hostElement.querySelector('[slot="heading"]').innerHTML = heading;
-      }, 10);
-    }
   };
 
   close = () => {
