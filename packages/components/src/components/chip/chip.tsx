@@ -15,7 +15,7 @@ import {
   h,
   Host,
   Event,
-  EventEmitter,
+  EventEmitter, 
   Element,
 } from '@stencil/core';
 import classNames from 'classnames';
@@ -35,7 +35,7 @@ export class Chip {
   @Prop() selected?: boolean = false;
   /** (optional) chip aria-role */
   @Prop() ariaRoleTitle?: string;
-  /** @deprecated (optional) chip aria-checked - should be derived from selected state attribute*/
+  /** @deprecated (optional) chip aria-checked - should be derived from selected state attribute */
   @Prop() ariaCheckedState?: boolean = false;
   /** (optional) chip label */
   @Prop() label?: string;
