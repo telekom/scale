@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.143](https://github.com/telekom/scale/compare/v3.0.0-beta.142...v3.0.0-beta.143) (2023-11-03)
+
+
+### Bug Fixes
+
+* add border radius to focussed nav item ([#2175](https://github.com/telekom/scale/issues/2175)) ([2d9795c](https://github.com/telekom/scale/commit/2d9795cbeba4308cd464e15b3cbdaba3e65b0109))
+* blur behavior ([#2177](https://github.com/telekom/scale/issues/2177)) ([4f86750](https://github.com/telekom/scale/commit/4f86750c0e4ba2ad2dd5c8f9d983d12c907b90d8))
+* set aria-invalid true when invalid ([#2168](https://github.com/telekom/scale/issues/2168)) ([90b8bb9](https://github.com/telekom/scale/commit/90b8bb9a1579fa55f4dc0e84617a37401171fc45))
+* update parent checkbox state when new children are added dynamically ([#2145](https://github.com/telekom/scale/issues/2145)) ([5d8d71f](https://github.com/telekom/scale/commit/5d8d71fbc08db15c2d47784f579e2ec4077aafc0))
+
+
+
+
+
 # [3.0.0-beta.142](https://github.com/telekom/scale/compare/v3.0.0-beta.141...v3.0.0-beta.142) (2023-10-09)
 
 

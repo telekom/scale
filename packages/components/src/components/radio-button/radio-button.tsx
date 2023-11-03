@@ -122,7 +122,7 @@ export class RadioButton {
 
   render() {
     const ariaInvalidAttr =
-      this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
+      this.status === 'error' || this.invalid ? { 'aria-invalid': 'true' } : {};
     const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 

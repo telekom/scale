@@ -218,7 +218,6 @@ export class DropdownSelect {
   @State() currentIndex: number = -1;
   @State() queryString: string = '';
   @State() queryTimeout: any = null;
-  @State() ignoreBlur: boolean = false;
   @State() hasFocus: boolean = false;
 
   private comboEl: HTMLElement;
@@ -233,9 +232,6 @@ export class DropdownSelect {
   }
 
   connectedCallback() {
-    if (this.hostElement.closest('scale-tab-panel')) {
-      this.ignoreBlur = true;
-    }
     statusNote({ source: this.hostElement, tag: 'beta' });
     this.currentIndex =
       readOptions(this.hostElement).findIndex(
@@ -375,10 +371,6 @@ export class DropdownSelect {
   };
 
   handleBlur = () => {
-    if (this.ignoreBlur) {
-      this.ignoreBlur = false;
-      return;
-    }
     this.setOpen(false);
     emitEvent(this, 'scaleBlur');
   };
@@ -454,7 +446,12 @@ export class DropdownSelect {
               </span>
             </div>
             <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
-              <div part="listbox-scroll-container">
+              <div
+                part="listbox-scroll-container"
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                }}
+              >
                 <div
                   ref={(el) => (this.listboxEl = el)}
                   part="listbox"
@@ -473,9 +470,6 @@ export class DropdownSelect {
                         id={value}
                         onClick={(event) => {
                           this.handleOptionClick(event, index);
-                        }}
-                        onMouseDown={() => {
-                          this.ignoreBlur = true;
                         }}
                         {...(value === this.value
                           ? { 'aria-selected': 'true' }
