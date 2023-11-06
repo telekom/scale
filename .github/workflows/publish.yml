@@ -45,9 +45,9 @@ jobs:
         run: |
           yarn workspace @telekom/scale-storybook-vue build --quiet
 
-      - name: Deploy Storybook
-        run: |
-          yarn workspace @telekom/scale-storybook-vue deploy
+      # - name: Deploy Storybook
+      #   run: |
+      #     yarn workspace @telekom/scale-storybook-vue deploy
 
   publish-telekom:
     runs-on: ubuntu-20.04
@@ -102,21 +102,21 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components-vue build
 
-      - name: Publish to NPM
-        run: |
-          yarn publish-telekom
+      # - name: Publish to NPM
+      #   run: |
+      #     yarn publish-telekom
 
-      - name: Deprecate Angular Package
-        run: |
-          npm deprecate @telekom/scale-components-angular@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
+      # - name: Deprecate Angular Package
+      #   run: |
+      #     npm deprecate @telekom/scale-components-angular@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
 
-      - name: Deprecate Vue Package
-        run: |
-          npm deprecate @telekom/scale-components-vue@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
+      # - name: Deprecate Vue Package
+      #   run: |
+      #     npm deprecate @telekom/scale-components-vue@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
 
-      - name: Deprecate Scale Design Tokens Package
-        run: |
-          npm deprecate @telekom/scale-design-tokens@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."
+      # - name: Deprecate Scale Design Tokens Package
+      #   run: |
+      #     npm deprecate @telekom/scale-design-tokens@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."
 
   publish-neutral:
     runs-on: ubuntu-20.04
@@ -181,18 +181,18 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components-vue-neutral build
 
-      - name: Publish to NPM
-        run: |
-          yarn publish-neutral
+      # - name: Publish to NPM
+      #   run: |
+      #     yarn publish-neutral
 
-      - name: Deprecate Angular Package
-        run: |
-          npm deprecate @telekom/scale-components-angular-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
+      # - name: Deprecate Angular Package
+      #   run: |
+      #     npm deprecate @telekom/scale-components-angular-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
 
-      - name: Deprecate Vue Package
-        run: |
-          npm deprecate @telekom/scale-components-vue-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
+      # - name: Deprecate Vue Package
+      #   run: |
+      #     npm deprecate @telekom/scale-components-vue-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
 
-      - name: Deprecate Scale Design Tokens Package
-        run: |
-          npm deprecate @telekom/scale-design-tokens-neutral@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."
+      # - name: Deprecate Scale Design Tokens Package
+      #   run: |
+      #     npm deprecate @telekom/scale-design-tokens-neutral@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."
