@@ -33,7 +33,6 @@ jobs:
         run: yarn
 
       - name: Bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           yarn bootstrap
 
@@ -81,7 +80,6 @@ jobs:
         run: yarn
 
       - name: Bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           yarn bootstrap
 
@@ -156,7 +154,6 @@ jobs:
         run: yarn
 
       - name: Bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           WHITELABEL=1 yarn bootstrap
 
