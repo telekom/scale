@@ -2,7 +2,7 @@ name: publish to NPM
 on:
   push:
     branches:
-      - release
+      - main
 
 jobs:
   deploy-storybook:
