@@ -262,7 +262,7 @@
   }
 }
 
-[part~='option']:hover {
+[part~='option']:not([part~='disabled']):hover {
   background-color: var(--background-hover);
 }
 
