@@ -95,7 +95,6 @@ export class Notification {
     if (this.hostElement.hasAttribute('opened')) {
       if (
         this.innerAriaLive === 'polite' ||
-        this.innerRole === undefined ||
         this.innerRole === 'status'
       ) {
         this.innerRole = 'status';
@@ -177,14 +176,14 @@ export class Notification {
               <IconTag size={ICON_SIZE} selected={this.type === 'toast'} />
             </slot>
           </div>
-          <div part="body" role={this.innerRole} aria-live="polite">
+          <div part="body">
             <div
               part="heading"
               role="heading"
               aria-level={this.headingLevel}
               aria-label={`${this.ariaHeading} ${this.heading}`}
             >
-              <span>{this.heading}</span>
+              {this.heading ? <span>{this.heading}</span> : null}
               <slot name="heading"></slot>
             </div>
             {this.hasTextSlot && (
