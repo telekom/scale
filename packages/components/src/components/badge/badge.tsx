@@ -53,7 +53,9 @@ export class Badge {
             aria-hidden="true"
             part={cx(`circle`, this.count ? `has-count` : 'no-count')}
           >
-            {!this.count ? '' : this.formatter.format(this.count)}
+            <slot name="dot">
+              {!this.count ? '' : this.formatter.format(this.count)}
+            </slot>
           </span>
           <span aria-hidden="true" id="raw-count" part="visually-hidden">
             {this.count}

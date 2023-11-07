@@ -353,6 +353,11 @@
   }
 }
 
+.scale-telekom-nav-list[variant='functions'] [slot="dot"] .scale-icon {
+  height: 8px;
+  width: 8px;
+}
+
 .scale-telekom-nav-list[variant='functions'] .scale-icon {
   height: 20px;
   width: 20px;
