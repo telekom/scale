@@ -70,11 +70,12 @@
   "license": "MPL-2.0",
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
-    "@floating-ui/dom": "^0.5.4",
+    "@floating-ui/dom": "^1.2.8",
     "@stencil/core": "^2.17.0",
     "@telekom/design-tokens": "1.0.0-beta.10",
     "@telekom/scale-design-tokens": "^3.0.0-beta.143",
-    "classnames": "^2.2.6",    
+    "classnames": "^2.2.6",
+    "composed-offset-position": "^0.0.4",    
     "stencil-inline-svg": "^1.0.1"
   }
 }
