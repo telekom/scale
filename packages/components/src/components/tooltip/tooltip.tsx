@@ -173,7 +173,7 @@ export class Tooltip {
           ...platform,
           getOffsetParent: (element) =>
             platform.getOffsetParent(element, offsetParent),
-        },        
+        },
       }
     );
     Object.assign(this.tooltipEl.style, {
