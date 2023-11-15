@@ -22,15 +22,7 @@ import {
   State,
   Listen,
 } from '@stencil/core';
-import {
-  computePosition,
-  offset,
-  flip,
-  shift,
-  arrow,
-  platform,
-} from '@floating-ui/dom';
-import { offsetParent } from 'composed-offset-position';
+import { computePosition, offset, flip, shift, arrow } from '@floating-ui/dom';
 import { isClickOutside } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
@@ -169,11 +161,6 @@ export class Tooltip {
           arrow({ element: this.arrowEl, padding: this.arrowPadding }),
           shift({ crossAxis: true }),
         ],
-        platform: {
-          ...platform,
-          getOffsetParent: (element) =>
-            platform.getOffsetParent(element, offsetParent),
-        },
       }
     );
     Object.assign(this.tooltipEl.style, {
