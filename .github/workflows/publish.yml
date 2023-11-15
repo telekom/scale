@@ -25,7 +25,7 @@ jobs:
         with:
           path: |
             node_modules
-            **/node_modules
+            */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install project dependencies
@@ -33,6 +33,7 @@ jobs:
         run: yarn
 
       - name: Bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           yarn bootstrap
 
@@ -72,7 +73,7 @@ jobs:
         with:
           path: |
             node_modules
-            **/node_modules
+            */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install project dependencies
@@ -80,6 +81,7 @@ jobs:
         run: yarn
 
       - name: Bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           yarn bootstrap
 
@@ -146,7 +148,7 @@ jobs:
         with:
           path: |
             node_modules
-            **/node_modules
+            */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install project dependencies
@@ -154,6 +156,7 @@ jobs:
         run: yarn
 
       - name: Bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           WHITELABEL=1 yarn bootstrap
 
