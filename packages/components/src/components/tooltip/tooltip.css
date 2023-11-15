@@ -34,12 +34,12 @@
   --z-index: var(--scl-z-index-70);
 
   display: contents;
-  position: relative;
   box-sizing: border-box;
 }
 
 [part='tooltip'] {
   position: absolute;
+  width: min-content;
   z-index: var(--z-index);
   top: 0;
   left: 0;
