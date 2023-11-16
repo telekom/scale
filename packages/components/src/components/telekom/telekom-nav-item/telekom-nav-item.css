@@ -358,6 +358,11 @@
   width: 20px;
 }
 
+.scale-telekom-nav-list[variant='functions'] [slot='dot'] .scale-icon {
+  height: 12px;
+  width: 12px;
+}
+
 @media screen and (--2xl) {
   .scale-telekom-nav-list[variant='functions'] .scale-icon {
     height: 24px;

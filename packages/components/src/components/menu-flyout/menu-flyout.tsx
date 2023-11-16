@@ -112,6 +112,9 @@ export class MenuFlyout {
 
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
+
+    // TODO DaSu fix onClose bug
+
     if (
       'Tab' === event.key &&
       !this.hostElement.querySelector('app-navigation-user-menu')
