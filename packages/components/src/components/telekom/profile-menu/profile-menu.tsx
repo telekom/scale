@@ -71,9 +71,6 @@ export class ProfileMenu {
   @Prop() logoutLabel: string;
   @Prop() logoutUrl?: string;
 
-  // TODO DaSu @ Arturo js error bei Schließen des Menüs
-  // uncaught typeError: i.setFocus is not a function
-
   @State()
   menuOpen = false;
 

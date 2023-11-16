@@ -93,7 +93,7 @@ export class MenuFlyout {
     if (parent) {
       window.requestAnimationFrame(() => {
         parent.active = true;
-        parent.setFocus();
+        parent.focus();
       });
     }
   }
@@ -112,9 +112,6 @@ export class MenuFlyout {
 
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
-
-    // TODO DaSu fix onClose bug
-
     if (
       'Tab' === event.key &&
       !this.hostElement.querySelector('app-navigation-user-menu')
