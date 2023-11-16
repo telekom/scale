@@ -74,6 +74,7 @@ export class TelekomHeader {
                   part="app-logo"
                   variant="white"
                   href={this.logoHref}
+                  tabindex={this.logoHref ? '0' : '-1'}
                   logoTitle={this.logoTitle}
                   logoHideTitle={this.logoHideTitle}
                 ></scale-logo>
