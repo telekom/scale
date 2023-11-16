@@ -211,7 +211,6 @@ export class DropdownSelect {
   /** (optional) is the element used in a form */
   @Prop() formAssociated?: boolean = false;
 
-
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
@@ -230,9 +229,9 @@ export class DropdownSelect {
   @Watch('value')
   valueChange(newValue) {
     this.currentIndex = readOptions(this.hostElement).findIndex(
-      ({ value }) => value === newValue     
+      ({ value }) => value === newValue
     );
-    this.updateInputHidden(newValue) 
+    this.updateInputHidden(newValue);
   }
 
   connectedCallback() {
@@ -277,12 +276,14 @@ export class DropdownSelect {
       input.value = this.value;
       input.type = 'hidden';
       this.hostElement.appendChild(input);
-      }
+    }
   }
 
   private updateInputHidden(value: string = this.value): void {
     if (this.formAssociated) {
-      this.hostElement.querySelector<HTMLInputElement>(`input[name=${this.name}]`).value = value;
+      this.hostElement.querySelector<HTMLInputElement>(
+        `input[name=${this.name}]`
+      ).value = value;
     }
   }
 
