@@ -28,6 +28,8 @@ import {
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 
+import { parse } from 'date-fns';
+
 // [ ] add options to show nested content without the html column
 // [ ] add options to pre-expand all html content
 // [ ] Uber cell type where all options are available for user
@@ -413,9 +415,24 @@ export class DataGrid {
   }
 
   sortTable(sortDirection, type, columnIndex) {
+    const format = this.fields[columnIndex].format;
     if (sortDirection === 'none') {
       this.rows.sort((a, b) => {
         return a.initialIndex - b.initialIndex;
+      });
+    } else if (type === 'date' && format) {
+      this.rows.sort((a, b) => {
+        const getDateObject = (dateString) => {
+          const parsed = parse(dateString, format, new Date());
+          return parsed;
+        };
+
+        const dateObjectA = getDateObject(a[columnIndex]);
+        const dateObjectB = getDateObject(b[columnIndex]);
+        // valueOf here for typescript to not complain about dateObjectA and dateObjectB not being numbers
+        return sortDirection === 'ascending'
+          ? dateObjectA.valueOf() - dateObjectB.valueOf()
+          : dateObjectB.valueOf() - dateObjectA.valueOf();
       });
     } else {
       switch (
@@ -425,6 +442,7 @@ export class DataGrid {
         CELL_DEFAULTS.sortBy
       ) {
         case 'text':
+        case 'date':
           if (sortDirection === 'ascending') {
             this.rows.sort((a, b) => {
               const textA = a[columnIndex].toLowerCase();
