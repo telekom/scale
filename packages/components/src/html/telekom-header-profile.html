@@ -26,17 +26,15 @@
         margin: 2em;
         padding: 1em 2em;
       }
-      main ul {
-        font-family: monospace;
-        font-size: 1.2em;
-        list-style: none;
-      }
-      main ul li {
-        margin: 0.5em 0;
-      }
 
-      .workflow {
-        white-space: pre-wrap;
+      .buttons {
+        display: flex;
+        gap: 2em;
+        align-items: center;
+        background: #EEE;
+        padding: 2em;
+        margin: 2em 0;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -174,9 +172,6 @@
 
         <!-- /mainMenu mobile -->
 
-
-
-
       </scale-telekom-nav-list>
 
     </scale-telekom-header>
@@ -185,83 +180,27 @@
       <h1>Telekom Scale Header - Profile Trigger Demo</h1>
 
       <div id="playground">
-        <button id="clear-items">clear items</button>
-        <button id="reset-items">reset items</button>
-
-        <button id="hide-login-settings">hide login settings</button>
-        <button id="show-login-settings">show login settings</button>
-
+        <div class="buttons">
+          <span>services:</span>
+          <scale-button id="clear-items">hide</scale-button>
+          <scale-button id="reset-items">show</scale-button>
+        </div>
+        <div class="buttons">
+          <span>login settings:</span>
+          <scale-button id="hide-login-settings">hide</scale-button>
+          <scale-button id="show-login-settings">show</scale-button>
+        </div>
 
         <script>
           let profileMenu = document.querySelector('telekom-profile-menu');
 
-          let clear = document.getElementById('clear-items');
-          let reset = document.getElementById('reset-items');
+          document.getElementById('clear-items').onclick = () => { profileMenu.serviceLinks = []; }
+          document.getElementById('reset-items').onclick = () => { profileMenu.serviceLinks = serviceLinks; }
 
-          clear.onclick = () => { profileMenu.serviceLinks = []; }
-          reset.onclick = () => { profileMenu.serviceLinks = serviceLinks; }
-
-          document.getElementById('hide-login-settings').onclick = () => {
-            profileMenu.hideLoginSettings = true;
-          }
-
-          document.getElementById('show-login-settings').onclick = () => {
-            profileMenu.hideLoginSettings = false;
-          }
+          document.getElementById('hide-login-settings').onclick = () => { profileMenu.hideLoginSettings = true; }
+          document.getElementById('show-login-settings').onclick = () => { profileMenu.hideLoginSettings = false; }
         </script>
       </div>
-
-      <scale-accordion>
-        <scale-collapsible>
-          <span slot="heading">TODOs</span>
-          <ul>
-            <li>a11y</li>
-            <li>documentation</li>
-            <li>tests</li>
-            <li>MR</li>
-            <li>...</li>
-          </ul>
-        </scale-collapsible>
-        <scale-collapsible>
-          <span slot="heading">workflow</span>
-          <div class="workflow">
-            // Prototyping
-
-            - git pull origin main
-            - yarn bootstrap
-            - cd packages/components/
-            - yarn build:watch -> dev server
-
-            // Storybook
-
-            - yarn build:watch
-            - cd ../storybook-vue
-            - yarn start # oder `yarn start (storybook-vue)`
-
-            // ...
-
-            - yarn format # einheitlich formatieren
-            - yarn lint
-
-            // commit msg
-
-            fix(something-something): ewqfasd
-            feat: wesadgfd
-            chore:
-
-            // feature branch
-
-            - von main abbranchen
-            - name: feat/...
-            - MR als draft erstellen
-
-            // test
-
-            - yarn test --spec
-            - yarn test --e2e
-          </div>
-        </scale-collapsible>
-      </scale-accordion>
 
       <p>&nbsp;</p>
       <p>&nbsp;</p>
