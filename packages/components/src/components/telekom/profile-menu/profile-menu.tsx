@@ -12,12 +12,11 @@
 
 import {Component, Prop, h, Host, Element, State} from '@stencil/core';
 
-// TODO DaSu @ Eileen/Max default URLs
 const LOGIN_DEFAULT = 'https://www.telekom.de';
 const LOGIN_HELP_DEFAULT = 'https://www.telekom.de';
 const REGISTER_DEFAULT = 'https://www.telekom.de';
 
-const LOGIN_SETTINGS_DEFAULT = 'https://www.telekom.de/Accountmanager';
+const LOGIN_SETTINGS_DEFAULT = 'https://account.idm.telekom.com/account-manager/';
 const LOGOUT_DEFAULT = 'https://accounts.login.idm.telekom.com/sessionmessage/logout';
 
 const readData = (data) => {
