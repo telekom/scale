@@ -69,7 +69,7 @@ export const Template = (args, { argTypes }) => ({
       :logo-href="logoHref"
       :logo-title="logoTitle"
       :logo-hide-title="logoHideTitle"
-      :meta-nav-aria-label="metaNavAriaLabel" 
+      :meta-nav-aria-label="metaNavAriaLabel"
       :meta-nav-external-aria-label="metaNavExternalAriaLabel"
       :lang-switcher-aria-label="langSwitcherAriaLabel"
       :main-nav-aria-label="mainNavAriaLabel"
@@ -273,6 +273,32 @@ scale-telekom-nav-item {
   main-nav-aria-label="Main navigation section"
 >
   <!-- … -->
+</scale-telekom-header>
+```
+
+## Profile Menu
+
+<Canvas withSource="none">
+  <Story
+    name="Profile Menu"
+    args={{ storyName: 'StoryProfile', appName: 'Application Name' }}
+    inline={false}
+    height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header
+  app-name="Application Name"
+  app-name-link="https://example.com"
+  meta-nav-aria-label="Meta navigation section"
+  meta-nav-external-aria-label="External navigation section"
+  lang-switcher-aria-label="Language switcher section"
+  main-nav-aria-label="Main navigation section"
+>
+  <!-- TODO ... -->
 </scale-telekom-header>
 ```
 
