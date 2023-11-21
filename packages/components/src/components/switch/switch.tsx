@@ -70,15 +70,15 @@ export class Switch {
                 emitEvent(this, 'scaleChange', { value: this.checked });
               }}
             />
-            <div class="switch__toggle" aria-hidden="true">
-              <div class="switch__thumb">
+            <span class="switch__toggle" aria-hidden="true">
+              <span class="switch__thumb">
                 <scale-icon-action-checkmark size={12} decorative selected />
-              </div>
-              <div class="switch__io-text">
+              </span>
+              <span class="switch__io-text">
                 <span>{this.checked ? 'I' : '0'}</span>
-              </div>
-            </div>
-            <div class="switch__toggle--overlay" aria-hidden="true"></div>
+              </span>
+            </span>
+            <span class="switch__toggle--overlay" aria-hidden="true"></span>
             {this.label && <span class="switch__label-text">{this.label}</span>}
           </label>
         </div>

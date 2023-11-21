@@ -142,15 +142,15 @@ export class RadioButton {
           />
           <label htmlFor={this.inputId}>{this.label}</label>
           {!!this.helperText && (
-            <div
+            <span
               class="radio-button__meta"
               id={helperTextId}
               aria-live="polite"
               aria-relevant="additions removals"
             >
               {this.renderHelperIcon()}
-              <div class="radio-button__helper-text">{this.helperText}</div>
-            </div>
+              <span class="radio-button__helper-text">{this.helperText}</span>
+            </span>
           )}
         </div>
       </Host>
