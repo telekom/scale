@@ -29,6 +29,8 @@ export class TabPanel {
   /** (optional) size  */
   /** @deprecated  - no more size difference */
   @Prop() size: 'small' | 'large' = 'small';
+  /** (optional) adds tab-index="0" to the panel, set to false to exclude the tab-panel from the tab sequence, e.g. if the first element in the panel is a focusable button */
+  @Prop() tabbablePanel?: boolean = true;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -43,12 +45,18 @@ export class TabPanel {
     }
   }
 
+  setTabIndex() {
+    if (this.tabbablePanel === true) {
+      return { tabindex: '0' };
+    }
+  }
+
   render() {
     return (
       <Host
         id={`scale-tab-panel-${this.generatedId}`}
         role="tabpanel"
-        tabindex="0"
+        {...this.setTabIndex()}
       >
         {this.styles && <style>{this.styles}</style>}
         <div part="tab-panel" class="tab-panel">
