@@ -268,7 +268,7 @@ export class DropdownSelect {
     this.appendInputHidden();
   }
 
-  private appendInputHidden(): void {
+  appendInputHidden(): void {
     if (this.formAssociated) {
       const input = document.createElement('input');
       input.name = this.name;
@@ -279,7 +279,7 @@ export class DropdownSelect {
     }
   }
 
-  private updateInputHidden(value: string = this.value): void {
+  updateInputHidden(value: string = this.value): void {
     if (this.formAssociated) {
       this.hostElement.querySelector<HTMLInputElement>(
         `input[name=${this.name}]`
