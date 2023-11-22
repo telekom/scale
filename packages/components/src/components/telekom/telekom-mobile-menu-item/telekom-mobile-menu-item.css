@@ -99,4 +99,5 @@
 :host::part(icon-right-container) {
   display: flex;
   align-items: center;
+  position: absolute;
 }
