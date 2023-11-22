@@ -93,10 +93,7 @@ export class Notification {
 
   connectedCallback() {
     if (this.hostElement.hasAttribute('opened')) {
-      if (
-        this.innerAriaLive === 'polite' ||
-        this.innerRole === 'status'
-      ) {
+      if (this.innerAriaLive === 'polite' || this.innerRole === 'status') {
         this.innerRole = 'status';
       }
       this.isOpen = true;
