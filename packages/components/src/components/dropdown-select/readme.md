@@ -13,6 +13,7 @@
 | `comboboxId`        | `combobox-id`         |                                                                                 | `string`                                                | `'combobox'`               |
 | `disabled`          | `disabled`            |                                                                                 | `boolean`                                               | `undefined`                |
 | `floatingStrategy`  | `floating-strategy`   |                                                                                 | `"absolute" \| "fixed"`                                 | `'absolute'`               |
+| `formAssociated`    | `form-associated`     | (optional) is the element used in a form                                        | `boolean`                                               | `false`                    |
 | `hcmLabelDisabled`  | `hcm-label-disabled`  | (optional) Text displayed in high contrast mode only to indicate disabled state | `string`                                                | `'this field is disabled'` |
 | `helperText`        | `helper-text`         |                                                                                 | `string`                                                | `''`                       |
 | `hideLabelVisually` | `hide-label-visually` | (optional) to hide the label                                                    | `boolean`                                               | `false`                    |
