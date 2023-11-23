@@ -132,7 +132,6 @@ export class TelekomNavItem {
       this.show();
     }
   };
-  private timer;
   handleTriggerClick = (event: MouseEvent) => {
     if (event.ctrlKey) {
       return;
@@ -144,7 +143,6 @@ export class TelekomNavItem {
   };
 
   handlePointerIn = () => {
-    clearTimeout(this.timer);
     if (this.isExpanded) {
       return;
     }
@@ -153,10 +151,8 @@ export class TelekomNavItem {
   };
 
   handlePointerOut = () => {
-    this.timer = setTimeout(() => {
-      this.expanded = false;
-      this.parentElement.removeEventListener('mouseleave', this.handlePointerOut);
-    }, 500)
+    this.expanded = false;
+    this.parentElement.removeEventListener('mouseleave', this.handlePointerOut);
   };
 
   @Method()

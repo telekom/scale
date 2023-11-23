@@ -104,9 +104,16 @@
   justify-content: center;
 }
 
-.scale-telekom-nav-list[alignment='left'] > *:not(:last-child) {
-  margin-inline-end: var(--_spacing-x-slotted);
+.scale-telekom-nav-list[alignment='left'] > .scale-telekom-nav-item:not(:last-child) button,
+.scale-telekom-nav-list[alignment='left'] > .scale-telekom-nav-item:not(:last-child) a {
+  padding-inline-end: var(--_spacing-x-slotted);
 }
+
+.scale-telekom-nav-list[alignment='left'] > .scale-telekom-nav-item:not(:last-child) button::after,
+.scale-telekom-nav-list[alignment='left'] > .scale-telekom-nav-item:not(:last-child) a::after  {
+  width: calc(100% - var(--_spacing-x-slotted));
+}
+
 .scale-telekom-nav-list[alignment='right'] > *:not(:first-child) {
   margin-inline-start: var(--_spacing-x-slotted);
 }
