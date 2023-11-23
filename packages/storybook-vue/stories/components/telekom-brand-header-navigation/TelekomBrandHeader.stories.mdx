@@ -62,6 +62,8 @@ export const Template = (args, { argTypes }) => ({
     metaNavAriaLabel: 'Meta Navigation',
     metaNavExternalAriaLabel: 'External Meta Navigation',
     langSwitcherAriaLabel: 'Language Switcher',
+    userInfo: String,
+    serviceLinks: String,
   },
   template: `
     <TelekomHeaderTemplate
@@ -75,6 +77,8 @@ export const Template = (args, { argTypes }) => ({
       :meta-nav-external-aria-label="metaNavExternalAriaLabel"
       :lang-switcher-aria-label="langSwitcherAriaLabel"
       :main-nav-aria-label="mainNavAriaLabel"
+      :user-info="userInfo"
+      :service-links="serviceLinks"
     />
   `,
 });
