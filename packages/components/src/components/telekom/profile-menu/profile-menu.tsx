@@ -120,9 +120,16 @@ export class ProfileMenu {
     const divider = [{type: 'divider'}];
 
     const userInfo = readData(this.userInfo);
+    if(!userInfo) {
+      console.error("userInfo missing");
+    }
     userInfo.type = 'userInfo';
 
     const serviceLinks = readData(this.serviceLinks);
+    if(!serviceLinks) {
+      console.error("serviceLinks missing");
+    }
+
     for(const el of serviceLinks) { el.type = 'item' }
 
     const loginSettings = {

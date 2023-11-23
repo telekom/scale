@@ -376,7 +376,7 @@ export const sectorNavigation = [
 export const userInfo = {
   name: 'Alexander Dreyer',
   email: 'alexander.dreyer@t-online.de',
-}
+};
 
 export const serviceLinks = [
   {
@@ -409,4 +409,4 @@ export const serviceLinks = [
     href: 'https://cockpit.telekom.net',
     icon: 'home-smarthome',
   }
-]
+];
