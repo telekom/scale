@@ -25,6 +25,8 @@ const readData = (data) => {
   try {
     parsedData = JSON.parse(data);
   } catch (error) {
+    console.error("Error parsing data! error: " + error);
+    console.error("data: " + data);
     parsedData = data;
   }
 
@@ -247,6 +249,7 @@ export class ProfileMenu {
 
         <scale-telekom-nav-item class="user-menu-mobile">
 
+          {/*TODO a11y label*/}
           <button>{this.printProfileTrigger()}</button>
 
           <scale-telekom-nav-flyout variant="mobile">
