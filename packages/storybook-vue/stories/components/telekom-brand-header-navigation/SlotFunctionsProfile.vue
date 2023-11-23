@@ -1,8 +1,19 @@
 <template>
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
-    <scale-telekom-nav-item>
-      <span>TODO</span>
-    </scale-telekom-nav-item>
+    <telekom-profile-menu
+      app-name="Application Name"
+      service-name="Dienstname"
+      short-descr="Short Description: Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen."
+      login-label="Zum Login"
+      login-help-label="Hilfe zum Login"
+      no-login-yet-label="Noch kein Telekom Login?"
+      register-label="Jetzt registrieren"
+      login-settings-label="Login-Einstellungen"
+      logout-label="Logout"
+      logged-in="true"
+      label="Alexander"
+      accessibility-label="Benutzerprofil: Alexander"
+    ></telekom-profile-menu>
   </scale-telekom-nav-list>
 </template>
 
