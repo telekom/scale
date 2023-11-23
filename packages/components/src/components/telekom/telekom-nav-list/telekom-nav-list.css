@@ -104,8 +104,12 @@
   justify-content: center;
 }
 
-.scale-telekom-nav-list[alignment='left']:not([variant="main-nav"]) > .scale-telekom-nav-item button,
-.scale-telekom-nav-list[alignment='left']:not([variant="main-nav"]) > .scale-telekom-nav-item a {
+.scale-telekom-nav-list[alignment='left']:not([variant='main-nav'])
+  > .scale-telekom-nav-item
+  button,
+.scale-telekom-nav-list[alignment='left']:not([variant='main-nav'])
+  > .scale-telekom-nav-item
+  a {
   margin-inline-end: var(--_spacing-x-slotted);
 }
 
@@ -121,16 +125,21 @@
 }
 .scale-telekom-nav-list[variant='main-nav'] > .scale-telekom-nav-item button,
 .scale-telekom-nav-list[variant='main-nav'] > .scale-telekom-nav-item a {
-  padding-inline-end: calc(var(--_spacing-x-slotted) - var(--telekom-spacing-composition-space-06));
+  padding-inline-end: calc(
+    var(--_spacing-x-slotted) - var(--telekom-spacing-composition-space-06)
+  );
 }
 
-.scale-telekom-nav-list[variant='main-nav'] > .scale-telekom-nav-item button::after,
-.scale-telekom-nav-list[variant='main-nav'] > .scale-telekom-nav-item a::after  {
-  margin-left: var(--telekom-spacing-composition-space-06); 
+.scale-telekom-nav-list[variant='main-nav']
+  > .scale-telekom-nav-item
+  button::after,
+.scale-telekom-nav-list[variant='main-nav'] > .scale-telekom-nav-item a::after {
+  margin-left: var(--telekom-spacing-composition-space-06);
   width: calc(100% - var(--_spacing-x-slotted));
 }
 
-.scale-telekom-nav-list[alignment='right']:not([variant='main-nav']) > *:not(:first-child) {
+.scale-telekom-nav-list[alignment='right']:not([variant='main-nav'])
+  > *:not(:first-child) {
   margin-inline-start: var(--_spacing-x-slotted);
 }
 
