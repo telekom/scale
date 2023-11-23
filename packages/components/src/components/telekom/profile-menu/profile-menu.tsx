@@ -62,7 +62,7 @@ export class ProfileMenu {
   @Prop() registerLabel: string;
 
   @Prop() userInfo: any;
-  @Prop() serviceLinks: [any];
+  @Prop() serviceLinks: any;
 
   @Prop() loginSettingsLabel?: string;
   @Prop() loginSettingsUrl?: string;
