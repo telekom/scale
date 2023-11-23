@@ -10,22 +10,27 @@
     <SlotMetaNavExternal />
     <SlotMetaNav />
     <SlotLangSwitcher />
-    <SlotFunctionsProfile :app-name="appName" :app-name-link="appNameLink" />
+    <SlotMainNav />
+    <SlotFunctionsProfile
+      :app-name="appName"
+      :app-name-link="appNameLink"
+      :user-info="userInfo"
+      :service-links="serviceLinks" />
   </scale-telekom-header>
 </template>
 
 <script>
 import SlotMetaNavExternal from './SlotMetaNavExternal.vue';
 import SlotMetaNav from './SlotMetaNav.vue';
-import SlotMainNavWithFlyout from './SlotMainNavWithFlyout.vue';
 import SlotLangSwitcher from './SlotLangSwitcher.vue';
 import SlotFunctionsProfile from './SlotFunctionsProfile.vue';
+import SlotMainNav from "./SlotMainNav.vue";
 
 export default {
   components: {
     SlotMetaNavExternal,
     SlotMetaNav,
-    SlotMainNavWithFlyout,
+    SlotMainNav,
     SlotLangSwitcher,
     SlotFunctionsProfile,
   },
@@ -36,6 +41,8 @@ export default {
     metaNavExternalAriaLabel: String,
     langSwitcherAriaLabel: String,
     mainNavAriaLabel: String,
+    userInfo: String,
+    serviceLinks: String,
   },
 };
 </script>

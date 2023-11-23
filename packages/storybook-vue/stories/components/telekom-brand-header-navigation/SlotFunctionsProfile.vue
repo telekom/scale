@@ -13,6 +13,8 @@
       logged-in="true"
       label="Alexander"
       accessibility-label="Benutzerprofil: Alexander"
+      :user-info="userInfo"
+      :service-links="serviceLinks"
     ></telekom-profile-menu>
   </scale-telekom-nav-list>
 </template>
@@ -22,6 +24,8 @@ export default {
   props: {
     appName: String,
     appNameLink: String,
+    userInfo: String,
+    serviceLinks: String,
   }
 };
 </script>

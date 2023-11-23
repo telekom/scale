@@ -8,6 +8,8 @@ import {
   addonNavigation,
   sectorNavigation,
   userNavigation,
+  userInfo,
+  serviceLinks,
 } from './fixtures';
 
 <Meta
@@ -281,7 +283,12 @@ scale-telekom-nav-item {
 <Canvas withSource="none">
   <Story
     name="Profile Menu"
-    args={{ storyName: 'StoryProfile', appName: 'Application Name' }}
+    args={{
+      storyName: 'StoryProfile',
+      appName: 'Application Name',
+      userInfo: JSON.stringify(userInfo),
+      serviceLinks: JSON.stringify(serviceLinks),
+  }}
     inline={false}
     height={500}
   >
