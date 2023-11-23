@@ -125,9 +125,10 @@ export class ProfileMenu {
     }
     userInfo.type = 'userInfo';
 
-    const serviceLinks = readData(this.serviceLinks);
+    let serviceLinks = readData(this.serviceLinks);
     if(!serviceLinks) {
       console.error("serviceLinks missing");
+      serviceLinks = [];
     }
 
     for(const el of serviceLinks) { el.type = 'item' }
