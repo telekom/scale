@@ -104,13 +104,31 @@
   justify-content: center;
 }
 
-.scale-telekom-nav-list[alignment='left'] > .scale-telekom-nav-item:not(:last-child) button,
-.scale-telekom-nav-list[alignment='left'] > .scale-telekom-nav-item:not(:last-child) a {
-  padding-inline-end: var(--_spacing-x-slotted);
+.scale-telekom-nav-list[alignment='left']:not([variant='meta-nav-external'], [variant='meta-nav']) > .scale-telekom-nav-item {
+  position: relative;
+  left: calc(-1 * var(--telekom-spacing-composition-space-06));
+  margin-inline-end: 0;
 }
 
-.scale-telekom-nav-list[alignment='left'] > .scale-telekom-nav-item:not(:last-child) button::after,
-.scale-telekom-nav-list[alignment='left'] > .scale-telekom-nav-item:not(:last-child) a::after  {
+.scale-telekom-nav-list[alignment='left']:not([variant='meta-nav-external'], [variant='meta-nav']) > .scale-telekom-nav-item button,
+.scale-telekom-nav-list[alignment='left']:not([variant='meta-nav-external'], [variant='meta-nav']) > .scale-telekom-nav-item a {
+  padding-inline-start: var(--telekom-spacing-composition-space-06);
+}
+
+.scale-telekom-nav-list[alignment='left']:not([variant='meta-nav-external'], [variant='meta-nav']) > .scale-telekom-nav-item button,
+.scale-telekom-nav-list[alignment='left']:not([variant='meta-nav-external'], [variant='meta-nav']) > .scale-telekom-nav-item a {
+  padding-inline-end: calc(var(--_spacing-x-slotted) - var(--telekom-spacing-composition-space-06));
+}
+
+.scale-telekom-nav-list[alignment='left']:not([variant='meta-nav-external'], [variant='meta-nav']) > .scale-telekom-nav-item:last-child button::after,
+.scale-telekom-nav-list[alignment='left']:not([variant='meta-nav-external'], [variant='meta-nav']) > .scale-telekom-nav-item:last-child a::after  {
+  margin-left: var(--telekom-spacing-composition-space-06); 
+  width: calc(100% - var(--telekom-spacing-composition-space-06));
+}
+
+.scale-telekom-nav-list[alignment='left']:not([variant='meta-nav-external'], [variant='meta-nav']) > .scale-telekom-nav-item:not(:last-child) button::after,
+.scale-telekom-nav-list[alignment='left']:not([variant='meta-nav-external'], [variant='meta-nav']) > .scale-telekom-nav-item:not(:last-child) a::after  {
+  margin-left: var(--telekom-spacing-composition-space-06); 
   width: calc(100% - var(--_spacing-x-slotted));
 }
 
