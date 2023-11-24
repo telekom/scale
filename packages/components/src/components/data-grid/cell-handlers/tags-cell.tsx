@@ -25,11 +25,10 @@ export const TagsCell: Cell = {
     if (typeof content === 'string') {
       tags = content.split(',').map((el) => ({
         content: el,
-        color: 'standard'
+        color: 'standard',
       }));
-    }
-    else {
-      tags = content
+    } else {
+      tags = content;
     }
     return (
       <ul class={`tbody__tag-list`}>
