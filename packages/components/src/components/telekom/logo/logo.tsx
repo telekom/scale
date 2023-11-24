@@ -87,7 +87,7 @@ export class Logo {
         <a
           href={this.href}
           part={this.getCssClassMap()}
-          tabIndex={this.focusable === false ? -1 : 0}
+          tabindex={this.focusable === false ? '-1' : '0'}
           onFocus={() => {
             if (this.scrollIntoViewOnFocus === true) {
               window.scrollTo({ top: 0 });
@@ -96,7 +96,6 @@ export class Logo {
           title={this.logoHideTitle ? undefined : this.logoTitle}
           aria-describedby={this.logoAriaDescribedBy}
           aria-hidden={this.logoAriaHidden}
-          tabindex={this.logoAriaHidden ? -1 : 0}
         >
           <scale-logo-svg
             part="icon"
