@@ -221,6 +221,23 @@ For Shadow Parts, please inspect the element's #shadow.
 <scale-button variant="secondary-white">Label</scale-button>
 ```
 
+## Ghost Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Ghost Standard"
+    args={{
+      variant: 'ghost',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button variant="secondary-white">Label</scale-button>
+```
+
 ## Disabled
 
 <Canvas withSource="none">
@@ -255,6 +272,25 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-button variant="secondary" disabled>Label</scale-button>
 ```
+
+## Ghost Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Ghost Disabled"
+    args={{
+      variant: 'ghost',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button variant="secondary" disabled>Label</scale-button>
+```
+
 
 ## With Icon Before
 
