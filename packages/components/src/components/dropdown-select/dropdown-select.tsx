@@ -267,18 +267,18 @@ export class DropdownSelect {
   }
 
   appendInputHidden(): void {
-      const input = document.createElement('input');
-      input.name = this.name;
-      input.id = this.name;
-      input.value = this.value;
-      input.type = 'hidden';
-      this.hostElement.appendChild(input);
+    const input = document.createElement('input');
+    input.name = this.name;
+    input.id = this.name;
+    input.value = this.value;
+    input.type = 'hidden';
+    this.hostElement.appendChild(input);
   }
 
   updateInputHidden(value: string = this.value): void {
-      this.hostElement.querySelector<HTMLInputElement>(
-        `input[name=${this.name}]`
-      ).value = value;
+    this.hostElement.querySelector<HTMLInputElement>(
+      `input[name=${this.name}]`
+    ).value = value;
   }
 
   selectOption = (index) => {
