@@ -229,6 +229,7 @@ export class DropdownSelect {
     this.currentIndex = readOptions(this.hostElement).findIndex(
       ({ value }) => value === newValue
     );
+    this.updateInputHidden(newValue);
   }
 
   connectedCallback() {
@@ -257,6 +258,27 @@ export class DropdownSelect {
         top: `${y}px`,
       });
     });
+  }
+
+  // this workaround is needed to make the component work with form
+  // https://github.com/ionic-team/stencil/issues/2284
+  componentDidLoad() {
+    this.appendInputHidden();
+  }
+
+  appendInputHidden(): void {
+    const input = document.createElement('input');
+    input.name = this.name;
+    input.id = this.name;
+    input.value = this.value;
+    input.type = 'hidden';
+    this.hostElement.appendChild(input);
+  }
+
+  updateInputHidden(value: string = this.value): void {
+    this.hostElement.querySelector<HTMLInputElement>(
+      `input[name=${this.name}]`
+    ).value = value;
   }
 
   selectOption = (index) => {
