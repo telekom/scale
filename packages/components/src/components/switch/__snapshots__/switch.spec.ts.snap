@@ -5,17 +5,17 @@ exports[`Switch should match snapshot 1`] = `
   <div class="switch switch--focus-visible-not-supported switch--size-large">
     <label class="switch__wrapper" id="switch-0-label">
       <input aria-labelledby="switch-0-label" class="switch__control" id="switch-0" type="checkbox">
-      <div aria-hidden="true" class="switch__toggle">
-        <div class="switch__thumb">
+      <span aria-hidden="true" class="switch__toggle">
+        <span class="switch__thumb">
           <scale-icon-action-checkmark decorative="" selected="" size="12"></scale-icon-action-checkmark>
-        </div>
-        <div class="switch__io-text">
+        </span>
+        <span class="switch__io-text">
           <span>
             0
           </span>
-        </div>
-      </div>
-      <div aria-hidden="true" class="switch__toggle--overlay"></div>
+        </span>
+      </span>
+      <span aria-hidden="true" class="switch__toggle--overlay"></span>
     </label>
   </div>
 </scale-switch>
