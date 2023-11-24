@@ -19,6 +19,7 @@
   --line-height: var(--telekom-typography-line-spacing-standard);
   --spacing: var(--telekom-spacing-composition-space-02)
     var(--telekom-spacing-composition-space-04);
+  --width: 'min-content';
 
   /* arrow */
   --arrow-size: 12px;
@@ -39,7 +40,7 @@
 
 [part='tooltip'] {
   position: absolute;
-  width: min-content;
+  width: var(--width);
   z-index: var(--z-index);
   top: 0;
   left: 0;
