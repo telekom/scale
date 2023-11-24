@@ -208,8 +208,6 @@ export class DropdownSelect {
   @Prop() ariaLabelSelected?: string = 'selected';
   /** (optional) Text displayed in high contrast mode only to indicate disabled state */
   @Prop() hcmLabelDisabled?: string = 'this field is disabled';
-  /** (optional) is the element used in a form */
-  @Prop() formAssociated?: boolean = false;
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
@@ -269,22 +267,18 @@ export class DropdownSelect {
   }
 
   appendInputHidden(): void {
-    if (this.formAssociated) {
       const input = document.createElement('input');
       input.name = this.name;
       input.id = this.name;
       input.value = this.value;
       input.type = 'hidden';
       this.hostElement.appendChild(input);
-    }
   }
 
   updateInputHidden(value: string = this.value): void {
-    if (this.formAssociated) {
       this.hostElement.querySelector<HTMLInputElement>(
         `input[name=${this.name}]`
       ).value = value;
-    }
   }
 
   selectOption = (index) => {
