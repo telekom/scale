@@ -52,6 +52,17 @@ Wenn ein Wert aus der Dropdown-Liste ausgewählt wird, nimmt er den Platz des La
 
 Das Dropdown Menü beinhaltet die verfügbaren Optionen oder Optionsgruppen.
 
+## Deaktivierter Zustand
+
+Deaktiviere einen Dropdown-Select Item, wenn
+
+- eine andere Aktion erfolgen muss, bevor der Dropdown-Select Item nutzbar ist oder
+- die Option aufgeführt werden muss, aber aktuell nicht auswählbar ist.
+
+![Deaktivierte Dropdown Select](assets/3_components/dropdown-select/dropdown-select-items-disabled.png)
+
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Verwandte Komponenten
 
 [Checkbox, ](?path=/usage/components-checkbox--standard)

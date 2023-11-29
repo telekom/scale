@@ -23,6 +23,7 @@
 import { action } from '@storybook/addon-actions';
 
 export default {
+  name: 'Dropdown Select',
   props: {
     label: { type: String },
     helperText: { type: String },
@@ -32,8 +33,8 @@ export default {
     value: { type: String },
     variant: { type: String },
     comboboxId: { type: String },
-    hideLabelVisually: {type: Boolean, default: false},
-    floatingStrategy: { type: String }
+    hideLabelVisually: { type: Boolean, default: false },
+    floatingStrategy: { type: String },
   },
   methods: {
     'scale-change'($event) {

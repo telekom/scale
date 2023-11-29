@@ -257,7 +257,12 @@
   color: var(--color);
 }
 
-[part~='option']:hover {
+[part~='option'][part~='disabled'] {
+  color: var(--color-disabled);
+  cursor: not-allowed;
+}
+
+[part~='option']:not([part~='disabled']):hover {
   background-color: var(--background-hover);
 }
 

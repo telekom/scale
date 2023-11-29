@@ -82,4 +82,41 @@ describe('DropdownSelect', function () {
       })
     );
   });
+
+  describe('when clicking on disabled option', () => {
+    it('should neither change it`s value, nor emit an event', async () => {
+      const page = await newSpecPage({
+        components: [DropdownSelect],
+        html: `
+        <scale-dropdown-select value="">
+            <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cedric" disabled>Cedric</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cem" disabled>Cem</scale-dropdown-select-item>
+        </scale-dropdown-select>`,
+      });
+
+      const clickSpy = jest.fn();
+      const changeSpy = jest.fn();
+
+      const selectEl = page.doc.querySelector('scale-dropdown-select');
+      selectEl.addEventListener('scale-change', changeSpy);
+      const comboboxEl: HTMLElement =
+        selectEl.shadowRoot.querySelector('[part="combobox"]');
+      comboboxEl.scrollIntoView = function () {};
+      comboboxEl.focus = function () {};
+      const optionsEls: NodeListOf<HTMLElement> =
+        selectEl.shadowRoot.querySelectorAll('[role="option"]');
+      optionsEls[1].addEventListener('click', clickSpy);
+
+      comboboxEl.click();
+      optionsEls[1].click();
+
+      await page.waitForChanges();
+
+      expect(comboboxEl.textContent).not.toBe('Cem');
+      expect(selectEl.value).not.toBe('cem');
+      expect(clickSpy).toBeCalledTimes(1);
+      expect(changeSpy).not.toBeCalled();
+    });
+  });
 });
