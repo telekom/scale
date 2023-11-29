@@ -15,7 +15,8 @@
       :app-name="appName"
       :app-name-link="appNameLink"
       :user-info="userInfo"
-      :service-links="serviceLinks" />
+      :service-links="serviceLinks"
+      :logged-in="loggedIn" />
   </scale-telekom-header>
 </template>
 
@@ -43,6 +44,7 @@ export default {
     mainNavAriaLabel: String,
     userInfo: String,
     serviceLinks: String,
+    loggedIn: { type: Boolean, default: true },
   },
 };
 </script>

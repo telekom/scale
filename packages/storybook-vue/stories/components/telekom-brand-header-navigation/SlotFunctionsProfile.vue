@@ -10,7 +10,7 @@
       register-label="Jetzt registrieren"
       login-settings-label="Login-Einstellungen"
       logout-label="Logout"
-      logged-in="true"
+      :logged-in="loggedIn"
       label="Alexander"
       accessibility-label="Benutzerprofil: Alexander"
       close-menu-accessibility-label="Menü schließen"
@@ -27,6 +27,7 @@ export default {
     appNameLink: String,
     userInfo: String,
     serviceLinks: String,
+    loggedIn: Boolean,
   }
 };
 </script>
