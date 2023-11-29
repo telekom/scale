@@ -93,7 +93,6 @@ export const TemplateProfile = (args, { argTypes }) => ({
     langSwitcherAriaLabel: 'Language Switcher',
     userInfo: String,
     serviceLinks: String,
-    loggedIn: Boolean,
   },
   template: `
     <TelekomHeaderTemplate
@@ -322,7 +321,7 @@ scale-telekom-nav-item {
       appName: 'Application Name',
       userInfo: JSON.stringify(userInfo),
       serviceLinks: JSON.stringify(serviceLinks),
-      loggedIn: true
+      loggedIn: true,
   }}
     inline={false}
     height={500}
@@ -331,6 +330,7 @@ scale-telekom-nav-item {
   </Story>
 </Canvas>
 
+[//]: # (TODO DaSu profile-menu args instead of T-header)
 <ArgsTable story="Profile Menu" />
 
 ```html
