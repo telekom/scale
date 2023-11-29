@@ -76,6 +76,7 @@ export class TelekomHeader {
                   href={this.logoHref}
                   logoTitle={this.logoTitle}
                   logoHideTitle={this.logoHideTitle}
+                  focusable={this.logoHref ? true : false}
                 ></scale-logo>
               </slot>
 

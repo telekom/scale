@@ -2,7 +2,7 @@
   export default {
     name: 'FooterContent',
     props: {
-        logoHref: { type: String, default: 'javascript:void(0);' },
+        logoHref: { type: String, default: '' },
         logoTitle: { type: String, default: 'Telekom Logo' },
         logoHideTitle: { type: Boolean, default: false }
     }
