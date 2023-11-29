@@ -300,6 +300,8 @@ scale-telekom-nav-item {
   </Story>
 </Canvas>
 
+<ArgsTable story="Profile Menu" />
+
 ```html
 <scale-telekom-header
   app-name="Application Name"
@@ -325,6 +327,8 @@ scale-telekom-nav-item {
       logged-in="true"
       label="Alexander"
       accessibility-label="Benutzerprofil: Alexander"
+
+      <!-- set via script, see below -->
       user-info="..."
       service-links="..."
     ></telekom-profile-menu>
@@ -332,7 +336,7 @@ scale-telekom-nav-item {
 </scale-telekom-header>
 
 <script>
-  // TODO
+  // TODO DaSu user-info & service-links
 </script>
 ```
 
