@@ -44,7 +44,7 @@ export default {
     mainNavAriaLabel: String,
     userInfo: String,
     serviceLinks: String,
-    loggedIn: { type: Boolean, default: true },
+    loggedIn: Boolean,
   },
 };
 </script>
