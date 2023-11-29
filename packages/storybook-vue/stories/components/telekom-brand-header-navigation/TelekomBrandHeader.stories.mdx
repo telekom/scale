@@ -56,6 +56,13 @@ export const Template = (args, { argTypes }) => ({
   components: { TelekomHeaderTemplate },
   props: {
     ...TelekomHeaderTemplate.props,
+    // TODO remove these from here since they're included already in TelekomHeaderTemplate
+    mainNavAriaLabel: 'Main Navigation',
+    metaNavAriaLabel: 'Meta Navigation',
+    metaNavExternalAriaLabel: 'External Meta Navigation',
+    langSwitcherAriaLabel: 'Language Switcher',
+    userInfo: String,
+    serviceLinks: String,
   },
   template: `
     <TelekomHeaderTemplate
@@ -79,6 +86,13 @@ export const TemplateProfile = (args, { argTypes }) => ({
   components: { TelekomHeaderTemplate },
   props: {
     ...TelekomHeaderTemplate.props,
+    // TODO remove these from here since they're included already in TelekomHeaderTemplate
+    mainNavAriaLabel: 'Main Navigation',
+    metaNavAriaLabel: 'Meta Navigation',
+    metaNavExternalAriaLabel: 'External Meta Navigation',
+    langSwitcherAriaLabel: 'Language Switcher',
+    userInfo: String,
+    serviceLinks: String,
     loggedIn: Boolean,
   },
   template: `
