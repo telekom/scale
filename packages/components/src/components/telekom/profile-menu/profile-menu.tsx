@@ -251,8 +251,10 @@ export class ProfileMenu {
 
         <scale-telekom-nav-item class="user-menu-mobile">
 
-          {/*TODO a11y label*/}
-          <button>{this.printProfileTrigger()}</button>
+          <button>
+            {this.printProfileTrigger()}
+            {this.printLabel()}
+          </button>
 
           <scale-telekom-nav-flyout variant="mobile">
             <scale-telekom-mobile-flyout-canvas appName={this.appName} closeButtonLabel={this.closeMenuAccessibilityLabel}>
