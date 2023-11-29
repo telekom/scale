@@ -13,6 +13,7 @@
       logged-in="true"
       label="Alexander"
       accessibility-label="Benutzerprofil: Alexander"
+      close-menu-accessibility-label="Menü schließen"
       :user-info="userInfo"
       :service-links="serviceLinks"
     ></telekom-profile-menu>

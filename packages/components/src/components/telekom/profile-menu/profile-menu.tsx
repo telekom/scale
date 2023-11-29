@@ -46,6 +46,8 @@ export class ProfileMenu {
   @Prop() label: string;
   @Prop() accessibilityLabel?: string;
 
+  @Prop() closeMenuAccessibilityLabel: string;
+
   @Prop() appName: string;
   @Prop() serviceName: string;
   @Prop() shortDescr: string;
@@ -253,7 +255,7 @@ export class ProfileMenu {
           <button>{this.printProfileTrigger()}</button>
 
           <scale-telekom-nav-flyout variant="mobile">
-            <scale-telekom-mobile-flyout-canvas appName={this.appName}>
+            <scale-telekom-mobile-flyout-canvas appName={this.appName} closeButtonLabel={this.closeMenuAccessibilityLabel}>
 
               {this.loggedIn && ([
                 <app-navigation-user-menu

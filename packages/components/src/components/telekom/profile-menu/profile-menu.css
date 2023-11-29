@@ -52,6 +52,9 @@ scale-menu-flyout {
   display: flex;
   height: 100%;
 }
+.user-menu-mobile .flyout-label [aria-hidden="true"] {
+  display: none;
+}
 
 .scale-telekom-nav-item > button {
   padding-bottom: var(--_spacing-bottom-slotted-bottom);
