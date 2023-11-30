@@ -14,6 +14,7 @@ export default {
     dismissible: { type: Boolean },
     delay: { type: Number },
     innerAriaLive: { type: String },
+    innerRole: { type: String, default: 'alert' },
     closeButtonLabel: { type: String },
     closeButtonTitle: { type: String },
     styles: { type: String },
