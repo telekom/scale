@@ -55,7 +55,7 @@ const readDisabled = (element: Element) => {
 };
 
 const readOptions = (hostElement: HTMLElement): SelectOption[] => {
-  const children = Array.from(hostElement.children)
+  const children = Array.from(hostElement.children);
   const options = children.filter((x) => x.tagName !== 'INPUT');
   return options.map((x) => ({
     label: x.textContent.trim(),
