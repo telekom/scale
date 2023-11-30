@@ -96,6 +96,11 @@
   color: var(--color);
 }
 
+[part='combobox-value']{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 [part~='select']:not([part~='disabled'])
   [part='combobox']:hover
   ~ [part='icon'] {
