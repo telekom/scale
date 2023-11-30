@@ -2,6 +2,12 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
+## Aktualisierung des Ghost Buttons
+
+30.11.2023
+
+Wir haben die Farbe des Ghost Buttons geändert, um die Barrierefreiheit im Dark Mode zu optimieren.
+
 ## Typografie-Update
 
 06.04.2023
