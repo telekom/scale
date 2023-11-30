@@ -55,7 +55,9 @@ const readDisabled = (element: Element) => {
 };
 
 const readOptions = (hostElement: HTMLElement): SelectOption[] => {
-  return Array.from(hostElement.children).map((x) => ({
+  const children = Array.from(hostElement.children)
+  const options = children.filter((x) => x.tagName !== 'INPUT');
+  return options.map((x) => ({
     label: x.textContent.trim(),
     value: x.getAttribute('value') ?? readValue(x),
     disabled: readDisabled(x),
@@ -458,11 +460,9 @@ export class DropdownSelect {
 
   handleClick = () => {
     this.setOpen(!this.open);
-
     const indexOfValue = readOptions(this.hostElement).findIndex(
       ({ value }) => value === this.value
     );
-
     if (indexOfValue > -1) {
       setTimeout(() => {
         this.bringIntoView(indexOfValue);
