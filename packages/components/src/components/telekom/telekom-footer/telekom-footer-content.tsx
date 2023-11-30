@@ -18,7 +18,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 })
 export class TelekomFooterContent {
   /** (optional) Logo link */
-  @Prop() logoHref?: string = 'javascript:void(0);';
+  @Prop() logoHref?: string = '';
   /** (optional) set logo specific title */
   @Prop() logoTitle?: string = 'Telekom Logo';
   /** (optional) set logo specific title */
@@ -42,6 +42,7 @@ export class TelekomFooterContent {
                 href={this.logoHref}
                 logoHideTitle={this.logoHideTitle}
                 logoTitle={this.logoHideTitle ? undefined : this.logoTitle}
+                focusable={this.logoHref ? true : false}
               ></scale-logo>
             </div>
             <div part="body">

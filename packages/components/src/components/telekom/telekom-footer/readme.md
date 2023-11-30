@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property        | Attribute         | Description                        | Type      | Default                 |
-| --------------- | ----------------- | ---------------------------------- | --------- | ----------------------- |
-| `logoHideTitle` | `logo-hide-title` | (optional) set logo specific title | `boolean` | `false`                 |
-| `logoHref`      | `logo-href`       | (optional) Logo link               | `string`  | `'javascript:void(0);'` |
-| `logoTitle`     | `logo-title`      | (optional) set logo specific title | `string`  | `'Telekom Logo'`        |
+| Property        | Attribute         | Description                        | Type      | Default          |
+| --------------- | ----------------- | ---------------------------------- | --------- | ---------------- |
+| `logoHideTitle` | `logo-hide-title` | (optional) set logo specific title | `boolean` | `false`          |
+| `logoHref`      | `logo-href`       | (optional) Logo link               | `string`  | `''`             |
+| `logoTitle`     | `logo-title`      | (optional) set logo specific title | `string`  | `'Telekom Logo'` |
 
 
 ## Shadow Parts
