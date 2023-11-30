@@ -7,20 +7,21 @@
 
 ## Properties
 
-| Property           | Attribute            | Description                                               | Type                                                    | Default           |
-| ------------------ | -------------------- | --------------------------------------------------------- | ------------------------------------------------------- | ----------------- |
-| `ariaHeading`      | `aria-heading`       | (optional) string prepended to the heading                | `string`                                                | `'Information'`   |
-| `closeButtonLabel` | `close-button-label` | (optional) Label for close button                         | `string`                                                | `'Close'`         |
-| `closeButtonTitle` | `close-button-title` | (optional) `title` for close button                       | `string`                                                | `'Close'`         |
-| `delay`            | `delay`              | (optional) Time in milliseconds until it closes by itself | `number`                                                | `undefined`       |
-| `dismissible`      | `dismissible`        | (optional) Show the close button                          | `boolean`                                               | `false`           |
-| `heading`          | `heading`            | Heading                                                   | `string`                                                | `undefined`       |
-| `headingLevel`     | `heading-level`      | Default aria-level for heading                            | `number`                                                | `2`               |
-| `innerAriaLive`    | `inner-aria-live`    | (optional) `aria-live` of element                         | `string`                                                | `'assertive'`     |
-| `opened`           | `opened`             | (optional) Visible                                        | `boolean`                                               | `undefined`       |
-| `styles`           | `styles`             | (optional) Injected styles                                | `string`                                                | `undefined`       |
-| `type`             | `type`               | (optional) Type                                           | `"banner" \| "inline" \| "toast"`                       | `'inline'`        |
-| `variant`          | `variant`            | (optional) Variant                                        | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'` |
+| Property           | Attribute            | Description                                                                                       | Type                                                    | Default           |
+| ------------------ | -------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------------- |
+| `ariaHeading`      | `aria-heading`       | (optional) string prepended to the heading                                                        | `string`                                                | `'Information'`   |
+| `closeButtonLabel` | `close-button-label` | (optional) Label for close button                                                                 | `string`                                                | `'Close'`         |
+| `closeButtonTitle` | `close-button-title` | (optional) `title` for close button                                                               | `string`                                                | `'Close'`         |
+| `delay`            | `delay`              | (optional) Time in milliseconds until it closes by itself                                         | `number`                                                | `undefined`       |
+| `dismissible`      | `dismissible`        | (optional) Show the close button                                                                  | `boolean`                                               | `false`           |
+| `heading`          | `heading`            | Heading                                                                                           | `string`                                                | `undefined`       |
+| `headingLevel`     | `heading-level`      | Default aria-level for heading                                                                    | `number`                                                | `2`               |
+| `innerAriaLive`    | `inner-aria-live`    | <span style="color:red">**[DEPRECATED]**</span> - ariaRole should replace innerAriaLive<br/><br/> | `string`                                                | `'assertive'`     |
+| `innerRole`        | `inner-role`         | (optional) string prepended to the heading                                                        | `"alert" \| "status"`                                   | `'alert'`         |
+| `opened`           | `opened`             | (optional) Visible                                                                                | `boolean`                                               | `undefined`       |
+| `styles`           | `styles`             | (optional) Injected styles                                                                        | `string`                                                | `undefined`       |
+| `type`             | `type`               | (optional) Type                                                                                   | `"banner" \| "inline" \| "toast"`                       | `'inline'`        |
+| `variant`          | `variant`            | (optional) Variant                                                                                | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'` |
 
 
 ## Events

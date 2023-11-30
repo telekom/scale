@@ -10,6 +10,7 @@ export class DropdownSelectItem {
   @Prop() selected?: boolean;
   @Prop() focused?: boolean;
   @Prop({ reflect: true }) value?: any;
+  @Prop({ reflect: true }) disabled?: boolean;
 
   render() {
     return (

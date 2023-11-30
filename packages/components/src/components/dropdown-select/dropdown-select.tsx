@@ -31,17 +31,38 @@ enum Actions {
 
 const DEFAULT_ICON_SIZE = 20;
 
+interface SelectOption {
+  label: string;
+  value: any;
+  disabled: boolean;
+  ItemElement: VNode;
+}
+
 const isElementValue = (x: unknown): x is Element & { value: string } =>
   typeof (x as { value: unknown }).value === 'string';
 const readValue = (element: Element) =>
   isElementValue(element) ? element.value : null;
 
-const readOptions = (
-  hostElement: HTMLElement
-): Array<{ label: string; value: any; ItemElement: VNode }> => {
-  return Array.from(hostElement.children).map((x) => ({
+const isElementDisabled = (x: unknown): x is Element & { disable: boolean } => {
+  return typeof (x as { disable: unknown }).disable === 'boolean';
+};
+const readDisabled = (element: Element) => {
+  const attr = element.getAttribute('disabled');
+  return (
+    (attr !== null && `${attr}` !== 'false') ||
+    (isElementDisabled(element) ? element.disable : false)
+  );
+};
+
+const readOptions = (hostElement: HTMLElement): SelectOption[] => {
+  const children = Array.from(hostElement.children);
+  const options = children.filter(
+    (x: HTMLElement) => x.tagName !== 'INPUT' && x.hidden === false
+  );
+  return options.map((x) => ({
     label: x.textContent.trim(),
     value: x.getAttribute('value') ?? readValue(x),
+    disabled: readDisabled(x),
     ItemElement: <span innerHTML={x.outerHTML}></span>,
   }));
 };
@@ -95,39 +116,65 @@ function getActionFromKey(event: KeyboardEvent, open: boolean) {
   }
 }
 
-function jumpToIndex(currentIndex: number, maxIndex: number, action: Actions) {
+function jumpToIndex(from: number, action: Actions, options: SelectOption[]) {
   const JUMP_SIZE = 10;
+  const findNearestEnabled = (current: number, step: number) => {
+    let nextIndex: number = current;
+    let nextOption: SelectOption;
 
+    do {
+      nextIndex += step;
+      nextOption = options[nextIndex];
+      if (nextOption === undefined) {
+        break;
+      }
+    } while (nextOption?.disabled);
+
+    return nextOption ? nextIndex : current;
+  };
+
+  let nearest: number;
   switch (action) {
     case Actions['First']:
-      return 0;
+      return options[0]?.disabled ? findNearestEnabled(-1, 1) : 0;
     case Actions['Last']:
-      return maxIndex;
+      nearest = findNearestEnabled(options.length, -1);
+      return nearest === options.length ? -1 : nearest; // rare case when all options are disabled
     case Actions['Previous']:
-      return Math.max(0, currentIndex - 1);
+      nearest = findNearestEnabled(from, from === -1 ? 1 : -1);
+      return nearest === options.length ? -1 : nearest; // rare case when all options are disabled
     case Actions['Next']:
-      return Math.min(maxIndex, currentIndex + 1);
+      return findNearestEnabled(from, 1);
     case Actions['PageUp']:
-      return Math.max(0, currentIndex - JUMP_SIZE);
+      const lowerBound = Math.max(from - JUMP_SIZE, -1);
+      return findNearestEnabled(lowerBound, 1);
     case Actions['PageDown']:
-      return Math.min(maxIndex, currentIndex + JUMP_SIZE);
+      const upperBound = Math.min(from + JUMP_SIZE, options.length);
+      nearest = findNearestEnabled(upperBound, -1);
+      return nearest === options.length ? -1 : nearest; // rare case when all options are disabled
     default:
-      return currentIndex;
+      return from;
   }
 }
 
-function matchOptions(options: string[] = [], filter: string) {
+function matchEnabledOptions(options: SelectOption[] = [], filter: string) {
   return options.filter(
-    (option) => option.toLowerCase().indexOf(filter.toLowerCase()) === 0
+    (option) =>
+      !option.disabled &&
+      option.label.toLowerCase().indexOf(filter.toLowerCase()) === 0
   );
 }
 
-function getIndexByChar(values: string[], filter: string, startIndex = 0) {
-  const sortedValues = [
+function getIndexByChar(
+  values: SelectOption[],
+  filter: string,
+  startIndex = 0
+) {
+  const sortedOptions = [
     ...values.slice(startIndex),
     ...values.slice(0, startIndex),
   ];
-  const firstHit = matchOptions(sortedValues, filter)[0];
+  const firstHit = matchEnabledOptions(sortedOptions, filter)[0];
   const allMatchingChars = (array) => array.every((char) => char === array[0]);
 
   if (firstHit) {
@@ -135,7 +182,7 @@ function getIndexByChar(values: string[], filter: string, startIndex = 0) {
   }
 
   if (allMatchingChars(filter.split(''))) {
-    const hits = matchOptions(sortedValues, filter[0]);
+    const hits = matchEnabledOptions(sortedOptions, filter[0]);
     return values.indexOf(hits[0]);
   }
 
@@ -229,6 +276,7 @@ export class DropdownSelect {
     this.currentIndex = readOptions(this.hostElement).findIndex(
       ({ value }) => value === newValue
     );
+    this.updateInputHidden(newValue);
   }
 
   connectedCallback() {
@@ -259,6 +307,27 @@ export class DropdownSelect {
     });
   }
 
+  // this workaround is needed to make the component work with form
+  // https://github.com/ionic-team/stencil/issues/2284
+  componentDidLoad() {
+    this.appendInputHidden();
+  }
+
+  appendInputHidden(): void {
+    const input = document.createElement('input');
+    input.name = this.name;
+    input.id = this.name;
+    input.value = this.value;
+    input.type = 'hidden';
+    this.hostElement.appendChild(input);
+  }
+
+  updateInputHidden(value: string = this.value): void {
+    this.hostElement.querySelector<HTMLInputElement>(
+      `input[name=${this.name}]`
+    ).value = value;
+  }
+
   selectOption = (index) => {
     this.currentIndex = index;
     this.value = readOptions(this.hostElement)[index].value;
@@ -267,7 +336,10 @@ export class DropdownSelect {
 
   handleOptionChange(index) {
     this.currentIndex = index;
-    this.bringIntoView(index);
+
+    if (index > -1) {
+      this.bringIntoView(index);
+    }
   }
 
   bringIntoView(index) {
@@ -302,6 +374,10 @@ export class DropdownSelect {
 
   handleOptionClick(event, index) {
     event.stopPropagation();
+    if (readOptions(this.hostElement)[index].disabled) {
+      return;
+    }
+
     this.handleOptionChange(index);
     this.selectOption(index);
     this.setOpen(false);
@@ -325,7 +401,7 @@ export class DropdownSelect {
 
     const queryString = this.getSearchString(char);
     const queryIndex = getIndexByChar(
-      readOptions(this.hostElement).map(({ label }) => label),
+      readOptions(this.hostElement),
       queryString,
       this.currentIndex + 1
     );
@@ -340,7 +416,7 @@ export class DropdownSelect {
 
   handleKeyDown = (event) => {
     const { key } = event;
-    const max = readOptions(this.hostElement).length - 1;
+    const options = readOptions(this.hostElement);
     const action = getActionFromKey(event, this.open);
     emitEvent(this, 'scaleKeydown', event);
 
@@ -354,11 +430,16 @@ export class DropdownSelect {
       case Actions['PageDown']:
         event.preventDefault();
         return this.handleOptionChange(
-          jumpToIndex(this.currentIndex, max, action)
+          jumpToIndex(this.currentIndex, action, options)
         );
       case Actions['CloseSelect']:
         event.preventDefault();
-        this.selectOption(this.currentIndex);
+        if (options[this.currentIndex]?.disabled) {
+          return;
+        }
+        if (this.currentIndex !== -1) {
+          this.selectOption(this.currentIndex);
+        }
       case Actions['Close']:
         event.preventDefault();
         return this.setOpen(false);
@@ -381,11 +462,9 @@ export class DropdownSelect {
 
   handleClick = () => {
     this.setOpen(!this.open);
-
     const indexOfValue = readOptions(this.hostElement).findIndex(
       ({ value }) => value === this.value
     );
-
     if (indexOfValue > -1) {
       setTimeout(() => {
         this.bringIntoView(indexOfValue);
@@ -394,18 +473,12 @@ export class DropdownSelect {
   };
 
   render() {
-    const ValueElement = (
-      readOptions(this.hostElement).find(({ value }) => value === this.value) ||
-      ({} as any)
-    ).ItemElement;
-    const hasEmptyValueElement =
-      (
-        readOptions(this.hostElement).find(
-          ({ value }) => value === this.value
-        ) || ({} as any)
-      ).value === ''
-        ? true
-        : false;
+    const element =
+      readOptions(this.hostElement).find(({ value }) => value === this.value) ??
+      ({} as any);
+
+    const ValueElement = element.ItemElement;
+    const hasEmptyValueElement = element.value === '';
     const helperTextId = `helper-message-${generateUniqueId()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
@@ -461,12 +534,10 @@ export class DropdownSelect {
                   tabindex="-1"
                 >
                   {readOptions(this.hostElement).map(
-                    ({ value, ItemElement }, index) => (
+                    ({ value, disabled, ItemElement }, index) => (
                       <div
                         role="option"
-                        part={`option${
-                          index === this.currentIndex ? ' current' : ''
-                        }`}
+                        part={this.getOptionPartMap(index, disabled)}
                         id={value}
                         onClick={(event) => {
                           this.handleOptionClick(event, index);
@@ -474,6 +545,7 @@ export class DropdownSelect {
                         {...(value === this.value
                           ? { 'aria-selected': 'true' }
                           : {})}
+                        {...(disabled ? { 'aria-disabled': 'true' } : {})}
                       >
                         {ItemElement}
                         {value === this.value ? (
@@ -539,6 +611,14 @@ export class DropdownSelect {
       this.helperText && 'has-helper-text',
       this.floatingStrategy && `strategy-${this.floatingStrategy}`,
       this.hideLabelVisually && 'hide-label'
+    );
+  }
+
+  getOptionPartMap(index: number, disabled: boolean) {
+    return classNames(
+      'option',
+      index === this.currentIndex && `current`,
+      disabled && `disabled`
     );
   }
 }

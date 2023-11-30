@@ -56,6 +56,18 @@ When a Value from the dropdown is selected, it takes the place of the Label and 
 
 The dropdown menu contains the available options or groups of options.
 
+## Deactivated state
+
+Deactivate a dropdown select item when:
+
+- users have to complete another action before selecting the
+  dropdown select item or
+- the option must be listed but users can\'t currently select it.
+
+![Disabled Dropdown Select](assets/3_components/dropdown-select/dropdown-select-items-disabled.png)
+
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Related components
 
 [Checkbox, ](?path=/usage/components-checkbox--standard)

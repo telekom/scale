@@ -9,6 +9,7 @@
 
 | Property   | Attribute  | Description | Type      | Default     |
 | ---------- | ---------- | ----------- | --------- | ----------- |
+| `disabled` | `disabled` |             | `boolean` | `undefined` |
 | `focused`  | `focused`  |             | `boolean` | `undefined` |
 | `selected` | `selected` |             | `boolean` | `undefined` |
 | `value`    | `value`    |             | `any`     | `undefined` |

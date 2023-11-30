@@ -195,9 +195,9 @@ export class Checkbox {
           onChange={this.handleChange}
         />
         <label part="container" htmlFor={this.inputId}>
-          <div part="checkbox">{this.renderIcon()}</div>
+          <span part="checkbox">{this.renderIcon()}</span>
           {/* TODO: discuss deprecation of the slot (move closer so W3C spec) */}
-          <div part="label">{this.label || <slot></slot>}</div>
+          <span part="label">{this.label || <slot></slot>}</span>
         </label>
         {this.renderHelperText(helperText)}
       </Host>

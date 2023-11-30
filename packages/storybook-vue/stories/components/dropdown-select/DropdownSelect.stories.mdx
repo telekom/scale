@@ -1,16 +1,30 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
 import ScaleDropdownSelect from './ScaleDropdownSelect.vue';
+import ScaleDropdownSelectItem from './ScaleDropdownSelectItem.vue';
 import { action } from '@storybook/addon-actions';
 
 <Meta
   title="Components/Dropdown Select"
   component={ScaleDropdownSelect}
+  subcomponents={{ 'Dropdown Select Item': ScaleDropdownSelectItem }}
   argTypes={{}}
 />
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleDropdownSelect },
-  props: ScaleDropdownSelect.props,
+  props: {
+  itemProps: { default: {} },
+  ...ScaleDropdownSelect.props,
+  },
+  data() {
+    return {
+      items: [
+        { value: 'caspar', label: 'Caspar' },
+        { value: 'cedric', label: 'Cedric' },
+        { value: 'cem', label: 'Cem' },
+      ],
+    };
+  },
   template: `
     <div style="min-height: 350px;">
     <scale-dropdown-select
@@ -29,9 +43,12 @@ export const Template = (args, { argTypes }) => ({
         @scaleBlur="['scale-blur']"
         @scaleKeyDown="['scale-keydown']"
     >
-      <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
-      <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
-      <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+      <scale-dropdown-select-item
+        v-for="(item, index) in items"
+        :key="index"
+        :value="item.value"
+        :disabled="itemProps[index]?.disabled"
+      >{{ item.label }}</scale-dropdown-select-item>
 </scale-dropdown-select>
 </div>
   `,
@@ -148,6 +165,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Disabled
 
+### Whole Dropdown Select disabled
 <Canvas withSource="none">
   <Story
     name="Disabled"
@@ -164,6 +182,30 @@ export const Template = (args, { argTypes }) => ({
 <scale-dropdown-select label="Disabled" disabled>
   <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
   <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+  <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+</scale-dropdown-select>
+```
+
+### Individual items disabled
+<Canvas withSource="none">
+  <Story
+    name="Disabled items"
+    args={{
+      label: 'Individual items disabled',
+      itemProps: {
+        0: { disabled: true },
+        1: { disabled: true },
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-dropdown-select label="Disabled items">
+  <scale-dropdown-select-item value="caspar" disabled>Caspar</scale-dropdown-select-item>
+  <scale-dropdown-select-item value="cedric" disabled>Cedric</scale-dropdown-select-item>
   <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
 </scale-dropdown-select>
 ```

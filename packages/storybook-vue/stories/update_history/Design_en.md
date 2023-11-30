@@ -2,6 +2,12 @@
 
 This page documents updates to the visual appearance of Scale.
 
+## Ghost Button Update
+
+30.11.2023
+
+We have changed the color of the Ghost Button to optimize accessibility in dark mode.
+
 ## Type Update
 
 06.04.2023

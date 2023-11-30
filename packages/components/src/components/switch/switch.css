@@ -202,6 +202,7 @@ scale-switch {
   transition-timing-function: var(--transition-easing);
   color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.04);
+  display: inline-block;
 }
 
 .switch--checked .switch__thumb {
