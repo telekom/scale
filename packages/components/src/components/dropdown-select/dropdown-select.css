@@ -96,7 +96,7 @@
   color: var(--color);
 }
 
-[part='combobox-value']{
+[part='combobox-value'] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
