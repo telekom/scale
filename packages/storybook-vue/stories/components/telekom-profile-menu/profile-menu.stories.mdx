@@ -1,0 +1,65 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+} from '@storybook/addon-docs';
+import ProfileMenu from "./ProfileMenu.vue";
+
+<Meta title="Components/Telekom Profile Menu" component={ProfileMenu} />
+
+export const Template = (args, { argTypes }) => ({
+  components: { ProfileMenu },
+  props: ProfileMenu.props,
+  template: `
+    <div>
+      <div>{{name}}</div>
+      <div>logged {{loggedIn ? "IN" : "OUT"}}</div>
+    </div>
+  `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Telekom Profile Menu</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Logged out
+
+<Canvas withSource="none">
+  <Story
+    name="Logged out"
+    args={{
+      name: 'Name: Logged out',
+      loggedIn: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+<p>TODO DaSu</p>
+
+## Logged in
+
+<Canvas withSource="none">
+  <Story
+    name="Logged in"
+    args={{
+      name: 'Name: Logged In',
+      loggedIn: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
