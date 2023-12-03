@@ -1,32 +1,30 @@
 <template>
   <div class="wrapper">
     <scale-telekom-app-shell>
-      <scale-telekom-header
-        slot="header"
-        app-name="appName-vue"
-        app-name-link="appNameLink"
-        meta-nav-aria-label="metaNavAriaLabel"
-        meta-nav-external-aria-label="metaNavExternalAriaLabel"
-        lang-switcher-aria-label="langSwitcherAriaLabel"
-        main-nav-aria-label="mainNavAriaLabel"
-      >
+      <scale-telekom-header slot="header" :app-name="appName">
         <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
           <telekom-profile-menu
-            app-name="Application Name"
-            service-name="Dienstname"
-            short-descr="Short Description: Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen."
-            login-label="Zum Login"
-            login-help-label="Hilfe zum Login"
-            no-login-yet-label="Noch kein Telekom Login?"
-            register-label="Jetzt registrieren"
-            login-settings-label="Login-Einstellungen"
-            logout-label="Logout"
+            :app-name="appName"
+            :label="label"
+            :accessibility-label="accessibilityLabel"
+            :close-menu-accessibility-label="closeMenuAccessibilityLabel"
+            :service-name="serviceName"
+            :short-descr="shortDescr"
+            :login-label="loginLabel"
+            :login-help-label="loginHelpLabel"
+            :no-login-yet-label="noLoginYetLabel"
+            :register-label="registerLabel"
+            :login-settings-label="loginSettingsLabel"
+            :logout-label="logoutLabel"
             :logged-in="loggedIn"
-            label="Alexander"
-            accessibility-label="Benutzerprofil: Alexander"
-            close-menu-accessibility-label="Menü schließen"
             :user-info="userInfo"
             :service-links="serviceLinks"
+            :login-url="loginUrl"
+            :login-help-url="loginHelpUrl"
+            :register-url="registerUrl"
+            :login-settings-url="loginSettingsUrl"
+            :hide-login-settings="hideLoginSettings"
+            :logout-url="logoutUrl"
           ></telekom-profile-menu>
         </scale-telekom-nav-list>
       </scale-telekom-header>

@@ -14,31 +14,30 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div class="wrapper">
       <scale-telekom-app-shell>
-        <scale-telekom-header
-              app-name="appName-mdx"
-              app-name-link="appNameLink"
-              meta-nav-aria-label="metaNavAriaLabel"
-              meta-nav-external-aria-label="metaNavExternalAriaLabel"
-              lang-switcher-aria-label="langSwitcherAriaLabel"
-              main-nav-aria-label="mainNavAriaLabel"
-            >
+        <scale-telekom-header slot="header" :app-name="appName">
               <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
                 <telekom-profile-menu
-                  app-name="Application Name"
-                  service-name="Dienstname"
-                  short-descr="Short Description: Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen."
-                  login-label="Zum Login"
-                  login-help-label="Hilfe zum Login"
-                  no-login-yet-label="Noch kein Telekom Login?"
-                  register-label="Jetzt registrieren"
-                  login-settings-label="Login-Einstellungen"
-                  logout-label="Logout"
+                  :app-name="appName"
+                  :label="label"
+                  :accessibility-label="accessibilityLabel"
+                  :close-menu-accessibility-label="closeMenuAccessibilityLabel"
+                  :service-name="serviceName"
+                  :short-descr="shortDescr"
+                  :login-label="loginLabel"
+                  :login-help-label="loginHelpLabel"
+                  :no-login-yet-label="noLoginYetLabel"
+                  :register-label="registerLabel"
+                  :login-settings-label="loginSettingsLabel"
+                  :logout-label="logoutLabel"
                   :logged-in="loggedIn"
-                  label="Alexander"
-                  accessibility-label="Benutzerprofil: Alexander"
-                  close-menu-accessibility-label="Menü schließen"
                   :user-info="userInfo"
                   :service-links="serviceLinks"
+                  :login-url="loginUrl"
+                  :login-help-url="loginHelpUrl"
+                  :register-url="registerUrl"
+                  :login-settings-url="loginSettingsUrl"
+                  :hide-login-settings="hideLoginSettings"
+                  :logout-url="logoutUrl"
                 ></telekom-profile-menu>
               </scale-telekom-nav-list>
             </scale-telekom-header>
@@ -65,7 +64,25 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
+      loginUrl: "https://www.telekom.de/todo/login",
+      loginHelpUrl: "https://www.telekom.de/todo/loginHelp",
+      registerUrl: "https://www.telekom.de/todo/register",
+      loginSettingsUrl: "https://www.telekom.de/todo/loginSettings",
+      hideLoginSettings: false,
+      logoutUrl: "https://www.telekom.de/todo/logout",
       loggedIn: false,
+      appName: "Application",
+      label: "Login",
+      accessibilityLabel: "Login",
+      closeMenuAccessibilityLabel: "Menü schließen",
+      serviceName: "Kundencenter",
+      shortDescr: "Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen.",
+      loginLabel: "Zum Login",
+      loginHelpLabel: "Hilfe zum Login",
+      noLoginYetLabel: "Noch kein Telekom Login?",
+      registerLabel: "Jetzt registrieren",
+      loginSettingsLabel: "Login-Einstellungen",
+      logoutLabel: "Logout",
       userInfo: JSON.stringify({
         name: 'Alexander Dreyer',
         email: 'alexander.dreyer@t-online.de',
