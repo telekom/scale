@@ -2,6 +2,7 @@
   <div class="wrapper">
     <scale-telekom-app-shell>
       <scale-telekom-header
+        slot="header"
         app-name="appName-vue"
         app-name-link="appNameLink"
         meta-nav-aria-label="metaNavAriaLabel"
