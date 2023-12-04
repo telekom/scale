@@ -95,6 +95,8 @@ import footer_en from 'raw-loader!../../stories/deprecated/footer/footer.md';
 import footer_de from 'raw-loader!../../stories/deprecated/footer/footer_de.md';
 import telekomFooter_en from 'raw-loader!../../stories/components/telekom-footer/telekom-footer.md';
 import telekomFooter_de from 'raw-loader!../../stories/components/telekom-footer/telekom-footer_de.md';
+import telekomProfileMenu_en from 'raw-loader!../../stories/components/telekom-profile-menu/profile-menu.md';
+import telekomProfileMenu_de from 'raw-loader!../../stories/components/telekom-profile-menu/profile-menu_de.md';
 import callout_en from 'raw-loader!../../stories/components/callout/callout.md';
 import callout_de from 'raw-loader!../../stories/components/callout/callout_de.md';
 import toggleGroup_de from 'raw-loader!../../stories/deprecated/toggle-group/toggle-group_de.md';
@@ -209,6 +211,8 @@ const Usage = (props) => {
     footer_de,
     'telekom-footer_en': telekomFooter_en,
     'telekom-footer_de': telekomFooter_de,
+    'telekom-profile-menu_en': telekomProfileMenu_en,
+    'telekom-profile-menu_de': telekomProfileMenu_de,
     'toggle-group_en': toggleGroup_en,
     'toggle-group_de': toggleGroup_de,
     tooltip_en,

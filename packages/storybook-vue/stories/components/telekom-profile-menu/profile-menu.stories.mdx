@@ -58,18 +58,15 @@ export const Template = (args, { argTypes }) => ({
   <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-## Standard
+## Logged out
 
 <Canvas withSource="none">
   <Story
-    name="Standard"
+    name="Logged out"
     args={{
       loginUrl: "https://www.telekom.de/todo/login",
       loginHelpUrl: "https://www.telekom.de/todo/loginHelp",
       registerUrl: "https://www.telekom.de/todo/register",
-      loginSettingsUrl: "https://www.telekom.de/todo/loginSettings",
-      hideLoginSettings: false,
-      logoutUrl: "https://www.telekom.de/todo/logout",
       loggedIn: false,
       appName: "Application",
       label: "Login",
@@ -81,6 +78,52 @@ export const Template = (args, { argTypes }) => ({
       loginHelpLabel: "Hilfe zum Login",
       noLoginYetLabel: "Noch kein Telekom Login?",
       registerLabel: "Jetzt registrieren",
+    }}
+    inline={false}
+    height={500}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-telekom-header>
+  <!-- ... -->
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
+    <telekom-profile-menu
+      login-url="https://www.telekom.de/todo/login"
+      login-help-url="https://www.telekom.de/todo/loginHelp"
+      register-url="https://www.telekom.de/todo/register"
+      logged-in="false"
+      app-name="Application"
+      label="Login"
+      accessibility-label="Login"
+      close-menu-accessibility-label="Menü schließen"
+      service-name="Kundencenter"
+      short-descr="Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen."
+      login-label="Zum Login"
+      login-help-label="Hilfe zum Login"
+      no-login-yet-label="Noch kein Telekom Login?"
+      register-label="Jetzt registrieren"
+    ></telekom-profile-menu>
+  </scale-telekom-nav-list>
+</scale-telekom-header>
+```
+
+## Logged in
+
+<Canvas withSource="none">
+  <Story
+    name="Logged in"
+    args={{
+      loginSettingsUrl: "https://www.telekom.de/todo/loginSettings",
+      hideLoginSettings: false,
+      logoutUrl: "https://www.telekom.de/todo/logout",
+      loggedIn: true,
+      appName: "Application",
+      label: "Alexander",
+      accessibilityLabel: "Benutzermenü öffnen: Alexander",
+      closeMenuAccessibilityLabel: "Menü schließen",
       loginSettingsLabel: "Login-Einstellungen",
       logoutLabel: "Logout",
       userInfo: JSON.stringify({
@@ -127,4 +170,68 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<p>TODO DaSu</p>
+```html
+<scale-telekom-header>
+  <!-- ... -->
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
+    <telekom-profile-menu
+      login-settings-url="https://www.telekom.de/todo/loginSettings"
+      hide-login-settings="false"
+      logout-url="https://www.telekom.de/todo/logout"
+      logged-in="true"
+      app-name="Application"
+      label="Alexander"
+      accessibilityLabel="Benutzermenü öffnen: Alexander"
+      close-menu-accessibility-label="Menü schließen"
+      login-settings-label="Login-Einstellungen"
+      logout-label="Logout"
+      <!-- set user-info & service-links via script, see below -->
+    ></telekom-profile-menu>
+  </scale-telekom-nav-list>
+</scale-telekom-header>
+
+<script>
+let serviceLinks = [
+  {
+    name: 'My Account',
+    href: 'https://www.telekom.de/mein-kundencenter',
+    icon: 't-product-measure-internet-speed',
+  },
+  {
+    name: 'E-Mail Center',
+    href: 'https://www.telekom.de/e-mail/e-mail-center',
+    icon: 'communication-mail-opened',
+  },
+  {
+    name: 'MagentaTV',
+    href: 'https://web.magentatv.de/EPG/',
+    icon: 't-product-magenta-tv',
+  },
+  {
+    name: 'MagentaSport',
+    href: 'https://www.magentasport.de',
+    icon: 't-product-telekom-1t1',
+  },
+  {
+    name: 'MagentaCloud',
+    href: 'https://magentacloud.de',
+    icon: 'action-upload-to-cloud',
+  },
+  {
+    name: 'MagentaHome Web',
+    href: 'https://cockpit.telekom.net',
+    icon: 'home-smarthome',
+  }
+];
+
+window.onload = () => {
+  let profileMenu = document.querySelector('telekom-profile-menu');
+
+  profileMenu.userInfo = {
+    name: 'Alexander Dreyer',
+    email: 'alexander.dreyer@t-online.de',
+  };
+  profileMenu.serviceLinks = serviceLinks;
+};
+</script>
+```
