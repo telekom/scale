@@ -88,6 +88,8 @@
     --_justify-content-bottom-body: space-between;
 
     --scl-telekom-header-height: var(--_height);
+
+    --_scrolled-offset: 12px
   }
 
   :host([type='slim']) {
@@ -96,6 +98,26 @@
       --telekom-spacing-composition-space-07
     );
   }
+
+  :host([scrolled])::after{
+    content: '';
+    height: var(--_scrolled-offset);
+    display: block;
+  }
+
+  @media screen and (--xl) {
+    :host {
+      --_scrolled-offset: 24px
+    }
+  } 
+
+  @media screen and (--2xl) {
+    :host {
+      --_scrolled-offset: 48px
+    }
+  } 
+  
+
   :host([type='slim'][scrolled]) {
     --_spacing-right-bottom-app-name: var(
       --telekom-spacing-composition-space-07
