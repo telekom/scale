@@ -20,7 +20,6 @@ export const TagsCell: Cell = {
   },
   render: ({ content }) => {
     let tags = [];
-    console.log('content', content, typeof content);
     // for backwards compatibility
     if (typeof content === 'string') {
       tags = content.split(',').map((el) => ({
