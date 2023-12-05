@@ -14,6 +14,7 @@
   --left: 0;
   --width: 100vw;
   --height: auto;
+  --min-height: 25vh;
   --position: fixed;
   --background: var(--telekom-color-background-surface);
   --background-variant-mobile: var(--telekom-color-background-canvas);
@@ -49,7 +50,7 @@
   left: var(--left);
   width: var(--width);
   height: var(--height);
-  min-height: 25vh;
+  min-height: var(--min-height);
   background: var(--background);
   box-shadow: var(--shadow);
   animation-duration: var(--duration);
