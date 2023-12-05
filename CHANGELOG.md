@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.144](https://github.com/telekom/scale/compare/v3.0.0-beta.143...v3.0.0-beta.144) (2023-11-30)
+
+
+### Bug Fixes
+
+* add hidden input with name attribute ([#2212](https://github.com/telekom/scale/issues/2212)) ([ebd325f](https://github.com/telekom/scale/commit/ebd325f26c208f8fb8f0803835d5571461730631))
+* add prop for removing tabindex ([#2215](https://github.com/telekom/scale/issues/2215)) ([3fdafab](https://github.com/telekom/scale/commit/3fdafab34f567056044918228b84fcb6c30869d1))
+* allow sorting by german date format ([#2159](https://github.com/telekom/scale/issues/2159)) ([4229de7](https://github.com/telekom/scale/commit/4229de7588dbaacf6b6be07d7694c2b88b14bd3a))
+* aria role behavior ([#2171](https://github.com/telekom/scale/issues/2171)) ([59c57bc](https://github.com/telekom/scale/commit/59c57bc08d98957675bd210927cf028ceb275f89))
+* exclude hidden input from dropdown select options ([#2224](https://github.com/telekom/scale/issues/2224)) ([d5e2e5b](https://github.com/telekom/scale/commit/d5e2e5bdfc82baa7cdf8bcfcc7ba74fe67731f9b))
+* logo only focusable if href provided ([#2207](https://github.com/telekom/scale/issues/2207)) ([63c8657](https://github.com/telekom/scale/commit/63c8657348f99a2494c68d95e36b0fc087ebcc86))
+* modal tooltip placement ([07061ef](https://github.com/telekom/scale/commit/07061ef596f1f3e821af3db8ee6ef2c2c9b13353))
+* remove language from app-footer logo ([#2183](https://github.com/telekom/scale/issues/2183)) ([f8200de](https://github.com/telekom/scale/commit/f8200def12e576c343d71cab9d4f4fe3cc302714))
+* revert unwanted changes on main ([78f3009](https://github.com/telekom/scale/commit/78f30093182ee2d4c64f65d8e01a34815e2b23c7))
+* tooltip within modal ([#2206](https://github.com/telekom/scale/issues/2206)) ([ed10e49](https://github.com/telekom/scale/commit/ed10e49e109748d439d98ae81f7cb33246906e22))
+* use spans inside labels for correct html ([#2217](https://github.com/telekom/scale/issues/2217)) ([6d1d3f7](https://github.com/telekom/scale/commit/6d1d3f795dcd7e37c431bdf830f2a3867b7ebd3a))
+
+
+### Features
+
+* **dropdown-select:** add disabled state for individual options ([#2174](https://github.com/telekom/scale/issues/2174)) ([b53b711](https://github.com/telekom/scale/commit/b53b7113ddf73725ae30cb28f39868caf2d05683))
+* update ghost button color ([#2181](https://github.com/telekom/scale/issues/2181)) ([60d33c4](https://github.com/telekom/scale/commit/60d33c4fb15c5f79b43b386d077c11ea7e0c9dde))
+
+
+
+
+
 # [3.0.0-beta.143](https://github.com/telekom/scale/compare/v3.0.0-beta.142...v3.0.0-beta.143) (2023-11-03)
 
 
