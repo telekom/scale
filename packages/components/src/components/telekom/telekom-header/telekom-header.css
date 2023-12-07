@@ -91,7 +91,6 @@
     --_justify-content-bottom-body: space-between;
 
     --scl-telekom-header-height: var(--_height);
-
   }
 
   :host([type='slim']) {
@@ -148,7 +147,6 @@
   :host([type='slim']) {
     --_height: 84px;
     --_base-height: 84px;
-
 
     --_height-logo-svg: 44px;
     --_height-top-bar: 0;
