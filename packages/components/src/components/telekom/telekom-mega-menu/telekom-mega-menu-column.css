@@ -21,16 +21,6 @@
   grid-column: 3 / span 3;
 }
 
-:host-context([children-too-many]):host(:first-child) {
-  grid-column: 2 / span 3;
-}
-
-@media screen and (--2xl) {
-  :host-context([children-too-many]):host(:first-child) {
-    grid-column: 1 / span 3;
-  }
-}
-
 [part~='base'] {
   display: flex;
   flex-direction: column;
