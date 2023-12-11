@@ -26,6 +26,7 @@
   --font-weight-app-name: var(--telekom-typography-font-weight-extra-bold);
 
   --_height: 60px;
+  --_base-height: 60px;
   --_height-logo-svg: 36px;
   --_height-bottom-bar: 60px;
   --_height-top-bar: 0;
@@ -68,6 +69,8 @@
   :host,
   :host([scrolled-back]) {
     --_height: 84px;
+    --_base-height: 84px;
+
     --_height-logo-svg: 44px;
     --_height-top-bar: 30px;
     --_height-bottom-bar: 54px;
@@ -96,6 +99,7 @@
       --telekom-spacing-composition-space-07
     );
   }
+
   :host([type='slim'][scrolled]) {
     --_spacing-right-bottom-app-name: var(
       --telekom-spacing-composition-space-07
@@ -104,6 +108,7 @@
   :host([type='slim']),
   :host([scrolled]) {
     --_height: 72px;
+
     --_height-logo-svg: 40px;
     --_height-top-bar: 0;
     --_height-bottom-bar: 72px;
@@ -130,6 +135,8 @@
   :host,
   :host([scrolled-back]) {
     --_height: 96px;
+    --_base-height: 96px;
+
     --_height-logo-svg: 48px;
     --_height-top-bar: 30px;
     --_height-bottom-bar: 66px;
@@ -139,6 +146,8 @@
 
   :host([type='slim']) {
     --_height: 84px;
+    --_base-height: 84px;
+
     --_height-logo-svg: 44px;
     --_height-top-bar: 0;
     --_height-bottom-bar: 84px;
@@ -163,6 +172,8 @@
   :host,
   :host([scrolled-back]) {
     --_height: 120px;
+    --_base-height: 120px;
+
     --_height-logo-svg: 60px;
     --_height-top-bar: 30px;
     --_height-bottom-bar: 90px;
@@ -181,6 +192,8 @@
 
   :host([type='slim']) {
     --_height: 96px;
+    --_base-height: 96px;
+
     --_height-logo-svg: 48px;
     --_height-top-bar: 0;
     --_height-bottom-bar: 96px;
@@ -202,6 +215,7 @@
 
   :host([type='slim'][scrolled]) {
     --_height: 72px;
+
     --_height-logo-svg: 40px;
     --_height-top-bar: 0;
     --_height-bottom-bar: 72px;
@@ -269,7 +283,8 @@ slot[name='functions'] {
 }
 
 [part~='base'] {
-  height: var(--_height);
+  /* height: var(--_height); */
+  height: var(--_base-height);
   width: 100%;
   transition: var(--transition-common-scrolled);
 }
