@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.145](https://github.com/telekom/scale/compare/v3.0.0-beta.144...v3.0.0-beta.145) (2023-12-11)
+
+
+### Bug Fixes
+
+* **telekom-header:** prevent flicker that could make the footer unreachable ([#2230](https://github.com/telekom/scale/issues/2230)) ([03cdd4c](https://github.com/telekom/scale/commit/03cdd4ce049121edae9acda38235389464bfb785))
+
+
+
+
+
 # [3.0.0-beta.144](https://github.com/telekom/scale/compare/v3.0.0-beta.143...v3.0.0-beta.144) (2023-11-30)
 
 
