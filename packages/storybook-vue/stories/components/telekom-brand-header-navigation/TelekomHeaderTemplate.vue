@@ -23,7 +23,6 @@ import StoryMegaMenu from './StoryMegaMenu.vue';
 import StoryDropdown from './StoryDropdown.vue';
 import StorySlim from './StorySlim.vue';
 import StorySubtle from './StorySubtle.vue';
-import StoryProfile from "./StoryProfile.vue";
 
 export default {
   components: {
@@ -31,8 +30,7 @@ export default {
     StoryMegaMenu,
     StoryDropdown,
     StorySlim,
-    StorySubtle,
-    StoryProfile
+    StorySubtle
   },
   props: {
     appName: String,
