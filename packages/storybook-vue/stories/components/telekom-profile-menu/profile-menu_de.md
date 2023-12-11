@@ -3,4 +3,8 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-TODO DaSu (DE)
+Das Profilmenü bietet ein einheitliches Verhalten des Login-/Benutzerprofilmenüs für alle unsere Produkte und Services.
+
+Setze den Parameter `logged-in` auf `true` / `false`, um zwischen den beiden Status des Menüs umzuschalten, sowie die restlichen Parameter, um das Erscheinungsbild den Anforderungen des Produktes/Services anzupassen.
+
+In den Codebeispielen im *Docs*-Abschnitt sind default-Werte für die einzelnen Parameter aufgeführt.

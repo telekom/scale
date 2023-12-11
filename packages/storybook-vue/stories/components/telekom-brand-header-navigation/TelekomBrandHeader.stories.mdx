@@ -82,36 +82,6 @@ export const Template = (args, { argTypes }) => ({
   `,
 });
 
-export const TemplateProfile = (args, { argTypes }) => ({
-  components: { TelekomHeaderTemplate },
-  props: {
-    ...TelekomHeaderTemplate.props,
-    // TODO remove these from here since they're included already in TelekomHeaderTemplate
-    mainNavAriaLabel: 'Main Navigation',
-    metaNavAriaLabel: 'Meta Navigation',
-    metaNavExternalAriaLabel: 'External Meta Navigation',
-    langSwitcherAriaLabel: 'Language Switcher',
-    userInfo: String,
-    serviceLinks: String,
-  },
-  template: `
-    <TelekomHeaderTemplate
-      :story-name="storyName"
-      :app-name="appName"
-      :app-name-link="appNameLink"
-      :logo-href="logoHref"
-      :logo-title="logoTitle"
-      :logo-hide-title="logoHideTitle"
-      :meta-nav-aria-label="metaNavAriaLabel"
-      :meta-nav-external-aria-label="metaNavExternalAriaLabel"
-      :lang-switcher-aria-label="langSwitcherAriaLabel"
-      :main-nav-aria-label="mainNavAriaLabel"
-      :user-info="userInfo"
-      :service-links="serviceLinks"
-    />
-  `,
-});
-
 ## Standard Header
 
 <Canvas withSource="none">
@@ -309,66 +279,6 @@ scale-telekom-nav-item {
 >
   <!-- … -->
 </scale-telekom-header>
-```
-
-## Profile Menu
-
-<Canvas withSource="none">
-  <Story
-    name="Profile Menu"
-    args={{
-      storyName: 'StoryProfile',
-      appName: 'Application Name',
-      userInfo: JSON.stringify(userInfo),
-      serviceLinks: JSON.stringify(serviceLinks),
-      loggedIn: true,
-  }}
-    inline={false}
-    height={500}
-  >
-    {TemplateProfile.bind({})}
-  </Story>
-</Canvas>
-
-[//]: # (TODO DaSu profile-menu args instead of T-header)
-<ArgsTable story="Profile Menu" />
-
-```html
-<scale-telekom-header
-  app-name="Application Name"
-  app-name-link="https://example.com"
-  meta-nav-aria-label="Meta navigation section"
-  meta-nav-external-aria-label="External navigation section"
-  lang-switcher-aria-label="Language switcher section"
-  main-nav-aria-label="Main navigation section"
->
-  <!-- ... -->
-  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
-    <telekom-profile-menu
-      app-name="Application Name"
-      service-name="Dienstname"
-      short-descr="Short Description: Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen."
-      login-label="Zum Login"
-      login-help-label="Hilfe zum Login"
-      no-login-yet-label="Noch kein Telekom Login?"
-      register-label="Jetzt registrieren"
-      login-settings-label="Login-Einstellungen"
-      logout-label="Logout"
-      close-menu-accessibility-label="Menü schließen"
-      logged-in="true"
-      label="Alexander"
-      accessibility-label="Benutzerprofil: Alexander"
-
-      <!-- set via script, see below -->
-      user-info="..."
-      service-links="..."
-    ></telekom-profile-menu>
-  </scale-telekom-nav-list>
-</scale-telekom-header>
-
-<script>
-  // TODO DaSu user-info & service-links
-</script>
 ```
 
 ## Data API (Backward compatibility)
