@@ -23,6 +23,8 @@ In den Codebeispielen im [Docs-Abschnitt](?path=/docs/components-telekom-profile
 <telekom-profile-menu logged-in="false" ... >
 ```
 
+In diesem Status bietet das Menü dem Nutzer die Möglichkeit zur Registrierung / Anmeldung an seinem Account.
+
 ![Image Name](assets/3_components/profile-menu/profile-menu-logged-out.png)
 
 ## Nutzer eingeloggt
@@ -30,5 +32,7 @@ In den Codebeispielen im [Docs-Abschnitt](?path=/docs/components-telekom-profile
 ```
 <telekom-profile-menu logged-in="true" ... >
 ```
+
+In diesem Status bietet das Menü dem Nutzer eine Liste von Verweisen zu wichtigen Telekom Services und die Möglichkeit zum Logout aus seinem Account.
 
 ![Image Name](assets/3_components/profile-menu/profile-menu-logged-in.png)

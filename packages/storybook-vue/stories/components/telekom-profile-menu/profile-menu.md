@@ -23,6 +23,8 @@ You'll find default values in the code examples in the [Docs section](?path=/doc
 <telekom-profile-menu logged-in="false" ... >
 ```
 
+In this state the menu offers the user the possibility sign up / log in to his account.
+
 ![Image Name](assets/3_components/profile-menu/profile-menu-logged-out.png)
 
 ## Logged in
@@ -30,5 +32,7 @@ You'll find default values in the code examples in the [Docs section](?path=/doc
 ```
 <telekom-profile-menu logged-in="true" ... >
 ```
+
+In this state the menu offers the user links to a set of important Telekom services and the possibility to log out from his account.
 
 ![Image Name](assets/3_components/profile-menu/profile-menu-logged-in.png)
