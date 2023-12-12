@@ -15,4 +15,20 @@ Es ist eine Subkomponente von `scale-telekom-header` und muss in dessen `functio
 
 Setze den Parameter `logged-in` des Profilmenüs auf `true` / `false`, um zwischen den beiden Status des Menüs umzuschalten, sowie die restlichen Parameter, um das Erscheinungsbild den Anforderungen des Produktes/Services anzupassen.
 
-In den Codebeispielen im *Docs*-Abschnitt sind default-Werte für die einzelnen Parameter aufgeführt.
+In den Codebeispielen im [Docs-Abschnitt](?path=/docs/components-telekom-profile-menu--logged-out) sind default-Werte für die einzelnen Parameter aufgeführt.
+
+## Nutzer ausgeloggt
+
+```
+<telekom-profile-menu logged-in="false" ... >
+```
+
+![Image Name](assets/3_components/profile-menu/profile-menu-logged-out.png)
+
+## Nutzer eingeloggt
+
+```
+<telekom-profile-menu logged-in="true" ... >
+```
+
+![Image Name](assets/3_components/profile-menu/profile-menu-logged-in.png)
