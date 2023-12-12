@@ -5,6 +5,14 @@
 
 Das Profilmenü bietet ein einheitliches Verhalten des Login-/Benutzerprofilmenüs für alle unsere Produkte und Services.
 
-Setze den Parameter `logged-in` auf `true` / `false`, um zwischen den beiden Status des Menüs umzuschalten, sowie die restlichen Parameter, um das Erscheinungsbild den Anforderungen des Produktes/Services anzupassen.
+Es ist eine Subkomponente von `scale-telekom-header` und muss in dessen `functions` Slot platziert werden:
+
+```
+<scale-telekom-header>
+  <scale-telekom-nav-list variant="functions" slot="functions">
+    <telekom-profile-menu ... >
+```
+
+Setze den Parameter `logged-in` des Profilmenüs auf `true` / `false`, um zwischen den beiden Status des Menüs umzuschalten, sowie die restlichen Parameter, um das Erscheinungsbild den Anforderungen des Produktes/Services anzupassen.
 
 In den Codebeispielen im *Docs*-Abschnitt sind default-Werte für die einzelnen Parameter aufgeführt.

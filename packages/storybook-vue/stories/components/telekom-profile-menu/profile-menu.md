@@ -5,7 +5,15 @@
 
 The profile menu ensures a consistent behaviour for the login / user profile menu in all our products and services.
 
-Set the `logged-in` parameter to `true` / `false` to change between the two states, set the remaining parameters to match the menu's appearance according to your products' needs.
+It is a subcomponent of `scale-telekom-header` and must be placed inside its `functions` slot:
+
+```
+<scale-telekom-header>
+  <scale-telekom-nav-list variant="functions" slot="functions">
+    <telekom-profile-menu ... >
+```
+
+Set the profile menu's `logged-in` parameter to `true` / `false` to change between the two states, set the remaining parameters to match the menu's appearance according to your products' needs.
 
 You'll find default values in the code examples in the *Docs* section.
 
