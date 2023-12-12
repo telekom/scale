@@ -222,7 +222,7 @@ export class ProfileMenu {
               {this.printLabel()}
             </a>
 
-            <scale-menu-flyout-list id="user-menu-desktop">
+            <scale-menu-flyout-list id="user-menu-desktop" preventFlipVertical={true}>
               {this.loggedIn && ([
                 <app-navigation-user-menu
                   hide={() => { this.userMenuDesktopTrigger.click(); }}

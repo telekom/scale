@@ -59,6 +59,8 @@ export class MenuFlyoutList {
   @Prop() brandHeaderDropdown: boolean = false;
   /** (optional) Injected styles */
   @Prop() styles?: string;
+  /** (optional) set to true to prevent flipping orientation when off the screen vertically  */
+  @Prop() preventFlipVertical: boolean = false;
 
   /** Event triggered when menu list opened */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
@@ -341,14 +343,14 @@ export class MenuFlyoutList {
     if (rect.top < PAD) {
       // console.log('off top edge');
       isOutOfBounds = true;
-      if (this.direction.includes('top')) {
+      if (this.direction.includes('top') && !this.preventFlipVertical) {
         this.flipVertical = true;
       }
     }
     if (rect.bottom > this.windowHeight - PAD) {
       // console.log('off bottom edge');
       isOutOfBounds = true;
-      if (this.direction.includes('bottom')) {
+      if (this.direction.includes('bottom') && !this.preventFlipVertical) {
         this.flipVertical = true;
       }
     }
