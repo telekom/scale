@@ -1,220 +1,231 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-    />
-    <title>Telekom Header</title>
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+  />
+  <title>Telekom Header</title>
 
-    <script type="module" src="/build/scale-components.esm.js"></script>
-    <link rel="stylesheet" href="/build/scale-components.css" />
-    <style media="screen, print">
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 200vh;
-        background: var(--telekom-color-background-surface-subtle);
+  <script type="module" src="/build/scale-components.esm.js"></script>
+  <link rel="stylesheet" href="/build/scale-components.css" />
+  <style media="screen, print">
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 200vh;
+      background: var(--telekom-color-background-surface-subtle);
+    }
+
+    main {
+      background: #FFF;
+      border: 1px solid #DDD;
+      border-radius: 2px;
+      margin: 2em;
+      padding: 1em 2em;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+      background: #EEE;
+      padding: 2em;
+      margin: 2em 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+<scale-telekom-header app-name="Login-Einstellungen" app-name-link="https://example.com">
+
+  <!-- nav.main -->
+  <scale-telekom-nav-list variant="main-nav" slot="main-nav">
+    <scale-telekom-nav-item active><a href="#">Übersicht</a></scale-telekom-nav-item>
+    <scale-telekom-nav-item><a href="#">Login-Daten</a></scale-telekom-nav-item>
+    <scale-telekom-nav-item><a href="#">Sicherheit</a></scale-telekom-nav-item>
+    <scale-telekom-nav-item><a href="#">Verträge</a></scale-telekom-nav-item>
+    <scale-telekom-nav-item><a href="#">Optionen</a></scale-telekom-nav-item>
+  </scale-telekom-nav-list>
+
+  <!-- meta -->
+  <scale-telekom-nav-list variant="meta-nav" slot="meta-nav" alignment="right">
+    <scale-telekom-nav-item><a href="#">Contact</a></scale-telekom-nav-item>
+  </scale-telekom-nav-list>
+
+  <!-- lang -->
+  <!--
+  <scale-telekom-nav-list variant="lang-switcher" slot="lang-switcher" alignment="right">
+    <scale-telekom-nav-item active><a href="#">DE</a></scale-telekom-nav-item>
+    <scale-telekom-nav-item><a href="#">HU</a></scale-telekom-nav-item>
+  </scale-telekom-nav-list>
+  -->
+
+  <!-- functions -->
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right">
+    <!--
+    <scale-telekom-nav-item><a href="#"><scale-icon-action-search> </scale-icon-action-search></a></scale-telekom-nav-item>
+    <scale-telekom-nav-item><a href="#"><scale-icon-content-credit-card> </scale-icon-content-credit-card></a></scale-telekom-nav-item>
+    <scale-telekom-nav-item><a href="#"><scale-icon-action-shopping-cart> </scale-icon-action-shopping-cart></a></scale-telekom-nav-item>
+    -->
+
+    <scale-telekom-nav-item style="--_font-size-main-nav: var(--scl-font-size-12);">
+      <a href="#">
+        <scale-icon-alert-help></scale-icon-alert-help>
+        <span style="margin-left: var(--scl-spacing-8); font-weight: var(--telekom-typography-font-weight-regular);">Help</span>
+      </a>
+    </scale-telekom-nav-item>
+
+    <telekom-profile-menu
+      app-name="Application Name"
+      service-name="Dienstname"
+      short-descr="Short Description: Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen."
+      login-label="Zum Login"
+      login-help-label="Hilfe zum Login"
+      no-login-yet-label="Noch kein Telekom Login?"
+      register-label="Jetzt registrieren"
+      login-settings-label="Login-Einstellungen"
+      logout-label="Logout"
+      close-menu-accessibility-label="Menü schließen"
+    ></telekom-profile-menu>
+
+
+    <!-- mainMenu mobile -->
+
+    <scale-telekom-nav-item class="burger-item" hide-on-desktop>
+      <button><scale-icon-action-menu></scale-icon-action-menu></button>
+      <scale-telekom-nav-flyout variant="mobile" class="mobile-nav-flyout">
+        <!-- the mobile navigation structure goes here -->
+        <scale-telekom-mobile-flyout-canvas>
+
+          <!-- main-nav (mobile) -->
+          <scale-telekom-mobile-menu slot="mobile-main-nav">
+            <scale-telekom-mobile-menu-item active><a href="#">Übersicht</a></scale-telekom-mobile-menu-item>
+            <scale-telekom-mobile-menu-item><a href="#">Login-Daten</a></scale-telekom-mobile-menu-item>
+            <scale-telekom-mobile-menu-item><a href="#">Sicherheit</a></scale-telekom-mobile-menu-item>
+            <scale-telekom-mobile-menu-item><a href="#">Verträge</a></scale-telekom-mobile-menu-item>
+            <scale-telekom-mobile-menu-item><a href="#">Optionen</a></scale-telekom-mobile-menu-item>
+          </scale-telekom-mobile-menu>
+
+          <!-- meta-nav (mobile) -->
+          <scale-telekom-nav-list variant="meta-nav-external" slot="mobile-meta-nav-external" alignment="left" style="--flex-direction: column">
+            <scale-telekom-nav-item><a href="#">Contact <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link></a></scale-telekom-nav-item>
+          </scale-telekom-nav-list>
+
+        </scale-telekom-mobile-flyout-canvas>
+      </scale-telekom-nav-flyout>
+    </scale-telekom-nav-item>
+
+    <!-- /mainMenu mobile -->
+
+  </scale-telekom-nav-list>
+
+</scale-telekom-header>
+
+<main>
+  <h1>Telekom Scale Header - Profile Trigger Demo</h1>
+
+  <div id="playground">
+    <div class="buttons">
+      <span>services:</span>
+      <scale-button id="clear-items">hide</scale-button>
+      <scale-button id="reset-items">show</scale-button>
+    </div>
+    <div class="buttons">
+      <span>login settings:</span>
+      <scale-button id="hide-login-settings">hide</scale-button>
+      <scale-button id="show-login-settings">show</scale-button>
+    </div>
+
+    <div class="buttons">
+      <span>logged in?</span>
+      <scale-button id="loggedin-true">true</scale-button>
+      <scale-button id="loggedin-false">false</scale-button>
+    </div>
+
+    <script>
+      let serviceLinks = [
+        {
+          name: 'My Account',
+          href: 'https://www.telekom.de/mein-kundencenter',
+          icon: 't-product-measure-internet-speed',
+        },
+        {
+          name: 'E-Mail Center',
+          href: 'https://www.telekom.de/e-mail/e-mail-center',
+          icon: 'communication-mail-opened',
+        },
+        {
+          name: 'MagentaTV',
+          href: 'https://web.magentatv.de/EPG/',
+          icon: 't-product-magenta-tv',
+        },
+        {
+          name: 'MagentaSport',
+          href: 'https://www.magentasport.de',
+          icon: 't-product-telekom-1t1',
+        },
+        {
+          name: 'MagentaCloud',
+          href: 'https://magentacloud.de',
+          icon: 'action-upload-to-cloud',
+        },
+        {
+          name: 'MagentaHome Web',
+          href: 'https://cockpit.telekom.net',
+          icon: 'home-smarthome',
+        }
+      ];
+
+      function setLoggedIn(val) {
+        let profileMenu = document.querySelector('telekom-profile-menu');
+
+        profileMenu.loggedIn = val;
+
+        profileMenu.label = val ? "Alexander" : "Login";
+        profileMenu.accessibilityLabel = val ? "Benutzerprofil: Alexander" : "Login";
+
+        console.log("set loggedIn");
       }
 
-      main {
-        background: #FFF;
-        border: 1px solid #DDD;
-        border-radius: 2px;
-        margin: 2em;
-        padding: 1em 2em;
-      }
+      window.onload = () => {
+        let profileMenu = document.querySelector('telekom-profile-menu');
 
-      .buttons {
-        display: flex;
-        gap: 2em;
-        align-items: center;
-        background: #EEE;
-        padding: 2em;
-        margin: 2em 0;
-        font-weight: bold;
-      }
-    </style>
-  </head>
+        profileMenu.userInfo = JSON.stringify({
+          name: 'Alexander Dreyer',
+          email: 'alexander.dreyer@t-online.de',
+        });
+        profileMenu.serviceLinks = JSON.stringify(serviceLinks);
 
-  <body>
-    <scale-telekom-header app-name="Login-Einstellungen" app-name-link="https://example.com">
+        document.getElementById('clear-items').onclick = () => { profileMenu.serviceLinks = JSON.stringify([]); }
+        document.getElementById('reset-items').onclick = () => { profileMenu.serviceLinks = JSON.stringify(serviceLinks); }
 
-      <!-- nav.main -->
-      <scale-telekom-nav-list variant="main-nav" slot="main-nav">
-        <scale-telekom-nav-item active><a href="#">Übersicht</a></scale-telekom-nav-item>
-        <scale-telekom-nav-item><a href="#">Login-Daten</a></scale-telekom-nav-item>
-        <scale-telekom-nav-item><a href="#">Sicherheit</a></scale-telekom-nav-item>
-        <scale-telekom-nav-item><a href="#">Verträge</a></scale-telekom-nav-item>
-        <scale-telekom-nav-item><a href="#">Optionen</a></scale-telekom-nav-item>
-      </scale-telekom-nav-list>
+        document.getElementById('hide-login-settings').onclick = () => { profileMenu.hideLoginSettings = true; }
+        document.getElementById('show-login-settings').onclick = () => { profileMenu.hideLoginSettings = false; }
 
-      <!-- meta -->
-      <scale-telekom-nav-list variant="meta-nav" slot="meta-nav" alignment="right">
-        <scale-telekom-nav-item><a href="#">Contact</a></scale-telekom-nav-item>
-      </scale-telekom-nav-list>
+        document.getElementById('loggedin-false').onclick = () => { this.setLoggedIn(false); }
+        document.getElementById('loggedin-true').onclick = () => { this.setLoggedIn(true); }
 
-      <!-- lang -->
-      <!--
-      <scale-telekom-nav-list variant="lang-switcher" slot="lang-switcher" alignment="right">
-        <scale-telekom-nav-item active><a href="#">DE</a></scale-telekom-nav-item>
-        <scale-telekom-nav-item><a href="#">HU</a></scale-telekom-nav-item>
-      </scale-telekom-nav-list>
-      -->
+        setLoggedIn(false);
+      };
+    </script>
+  </div>
 
-      <!-- functions -->
-      <scale-telekom-nav-list variant="functions" slot="functions" alignment="right">
-        <!--
-        <scale-telekom-nav-item><a href="#"><scale-icon-action-search> </scale-icon-action-search></a></scale-telekom-nav-item>
-        <scale-telekom-nav-item><a href="#"><scale-icon-content-credit-card> </scale-icon-content-credit-card></a></scale-telekom-nav-item>
-        <scale-telekom-nav-item><a href="#"><scale-icon-action-shopping-cart> </scale-icon-action-shopping-cart></a></scale-telekom-nav-item>
-        -->
-
-        <scale-telekom-nav-item style="--_font-size-main-nav: var(--scl-font-size-12);">
-          <a href="#">
-            <scale-icon-alert-help></scale-icon-alert-help>
-            <span style="margin-left: var(--scl-spacing-8); font-weight: var(--telekom-typography-font-weight-regular);">Help</span>
-          </a>
-        </scale-telekom-nav-item>
-
-
-        <script>
-          let serviceLinks = [
-            {
-              name: 'My Account',
-              href: 'https://www.telekom.de/mein-kundencenter',
-              icon: 't-product-measure-internet-speed',
-            },
-            {
-              name: 'E-Mail Center',
-              href: 'https://www.telekom.de/e-mail/e-mail-center',
-              icon: 'communication-mail-opened',
-            },
-            {
-              name: 'MagentaTV',
-              href: 'https://web.magentatv.de/EPG/',
-              icon: 't-product-magenta-tv',
-            },
-            {
-              name: 'MagentaSport',
-              href: 'https://www.magentasport.de',
-              icon: 't-product-telekom-1t1',
-            },
-            {
-              name: 'MagentaCloud',
-              href: 'https://magentacloud.de',
-              icon: 'action-upload-to-cloud',
-            },
-            {
-              name: 'MagentaHome Web',
-              href: 'https://cockpit.telekom.net',
-              icon: 'home-smarthome',
-            }
-          ];
-
-          window.onload = () => {
-            let loggedIn = true;
-            let profileMenu = document.querySelector('telekom-profile-menu');
-
-            profileMenu.userInfo = {
-              name: 'Alexander Dreyer',
-              email: 'alexander.dreyer@t-online.de',
-            };
-            profileMenu.serviceLinks = serviceLinks;
-
-            profileMenu.loggedIn = loggedIn;
-
-            profileMenu.label = loggedIn ? "Alexander" : "Login";
-            profileMenu.accessibilityLabel = loggedIn ? "Benutzerprofil: Alexander" : "Login";
-          };
-        </script>
-
-        <telekom-profile-menu
-          app-name="Application Name"
-          service-name="Dienstname"
-          short-descr="Short Description: Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen."
-          login-label="Zum Login"
-          login-help-label="Hilfe zum Login"
-          no-login-yet-label="Noch kein Telekom Login?"
-          register-label="Jetzt registrieren"
-          login-settings-label="Login-Einstellungen"
-          logout-label="Logout"
-          close-menu-accessibility-label="Menü schließen"
-        ></telekom-profile-menu>
-
-
-        <!-- mainMenu mobile -->
-
-        <scale-telekom-nav-item class="burger-item" hide-on-desktop>
-          <button><scale-icon-action-menu></scale-icon-action-menu></button>
-          <scale-telekom-nav-flyout variant="mobile" class="mobile-nav-flyout">
-            <!-- the mobile navigation structure goes here -->
-            <scale-telekom-mobile-flyout-canvas>
-
-              <!-- main-nav (mobile) -->
-              <scale-telekom-mobile-menu slot="mobile-main-nav">
-                <scale-telekom-mobile-menu-item active><a href="#">Übersicht</a></scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item><a href="#">Login-Daten</a></scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item><a href="#">Sicherheit</a></scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item><a href="#">Verträge</a></scale-telekom-mobile-menu-item>
-                <scale-telekom-mobile-menu-item><a href="#">Optionen</a></scale-telekom-mobile-menu-item>
-              </scale-telekom-mobile-menu>
-
-              <!-- meta-nav (mobile) -->
-              <scale-telekom-nav-list variant="meta-nav-external" slot="mobile-meta-nav-external" alignment="left" style="--flex-direction: column">
-                <scale-telekom-nav-item><a href="#">Contact <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link></a></scale-telekom-nav-item>
-              </scale-telekom-nav-list>
-
-            </scale-telekom-mobile-flyout-canvas>
-          </scale-telekom-nav-flyout>
-        </scale-telekom-nav-item>
-
-        <!-- /mainMenu mobile -->
-
-      </scale-telekom-nav-list>
-
-    </scale-telekom-header>
-
-    <main>
-      <h1>Telekom Scale Header - Profile Trigger Demo</h1>
-
-      <div id="playground">
-        <div class="buttons">
-          <span>services:</span>
-          <scale-button id="clear-items">hide</scale-button>
-          <scale-button id="reset-items">show</scale-button>
-        </div>
-        <div class="buttons">
-          <span>login settings:</span>
-          <scale-button id="hide-login-settings">hide</scale-button>
-          <scale-button id="show-login-settings">show</scale-button>
-        </div>
-
-        <script>
-          let profileMenu = document.querySelector('telekom-profile-menu');
-
-          document.getElementById('clear-items').onclick = () => { profileMenu.serviceLinks = []; }
-          document.getElementById('reset-items').onclick = () => { profileMenu.serviceLinks = serviceLinks; }
-
-          document.getElementById('hide-login-settings').onclick = () => { profileMenu.hideLoginSettings = true; }
-          document.getElementById('show-login-settings').onclick = () => { profileMenu.hideLoginSettings = false; }
-        </script>
-      </div>
-
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-    </main>
-  </body>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</main>
+</body>
 </html>

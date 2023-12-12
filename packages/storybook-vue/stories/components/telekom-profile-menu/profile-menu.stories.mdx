@@ -227,11 +227,11 @@ let serviceLinks = [
 window.onload = () => {
   let profileMenu = document.querySelector('telekom-profile-menu');
 
-  profileMenu.userInfo = {
+  profileMenu.userInfo = JSON.stringify({
     name: 'Alexander Dreyer',
     email: 'alexander.dreyer@t-online.de',
-  };
-  profileMenu.serviceLinks = serviceLinks;
+  });
+  profileMenu.serviceLinks = JSON.stringify(serviceLinks);
 };
 </script>
 ```
