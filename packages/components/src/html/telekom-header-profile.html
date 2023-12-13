@@ -20,8 +20,8 @@
     }
 
     main {
-      background: #FFF;
-      border: 1px solid #DDD;
+      background: #fff;
+      border: 1px solid #ddd;
       border-radius: 2px;
       margin: 2em;
       padding: 1em 2em;
@@ -31,7 +31,7 @@
       display: flex;
       gap: 2em;
       align-items: center;
-      background: #EEE;
+      background: #eee;
       padding: 2em;
       margin: 2em 0;
       font-weight: bold;
@@ -40,19 +40,35 @@
 </head>
 
 <body>
-<scale-telekom-header app-name="Login-Einstellungen" app-name-link="https://example.com">
-
+<scale-telekom-header
+  app-name="Login-Einstellungen"
+  app-name-link="https://example.com"
+>
   <!-- nav.main -->
   <scale-telekom-nav-list variant="main-nav" slot="main-nav">
-    <scale-telekom-nav-item active><a href="#">Übersicht</a></scale-telekom-nav-item>
-    <scale-telekom-nav-item><a href="#">Login-Daten</a></scale-telekom-nav-item>
-    <scale-telekom-nav-item><a href="#">Sicherheit</a></scale-telekom-nav-item>
-    <scale-telekom-nav-item><a href="#">Verträge</a></scale-telekom-nav-item>
-    <scale-telekom-nav-item><a href="#">Optionen</a></scale-telekom-nav-item>
+    <scale-telekom-nav-item active
+    ><a href="#">Übersicht</a></scale-telekom-nav-item
+    >
+    <scale-telekom-nav-item
+    ><a href="#">Login-Daten</a></scale-telekom-nav-item
+    >
+    <scale-telekom-nav-item
+    ><a href="#">Sicherheit</a></scale-telekom-nav-item
+    >
+    <scale-telekom-nav-item
+    ><a href="#">Verträge</a></scale-telekom-nav-item
+    >
+    <scale-telekom-nav-item
+    ><a href="#">Optionen</a></scale-telekom-nav-item
+    >
   </scale-telekom-nav-list>
 
   <!-- meta -->
-  <scale-telekom-nav-list variant="meta-nav" slot="meta-nav" alignment="right">
+  <scale-telekom-nav-list
+    variant="meta-nav"
+    slot="meta-nav"
+    alignment="right"
+  >
     <scale-telekom-nav-item><a href="#">Contact</a></scale-telekom-nav-item>
   </scale-telekom-nav-list>
 
@@ -65,17 +81,29 @@
   -->
 
   <!-- functions -->
-  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right">
+  <scale-telekom-nav-list
+    variant="functions"
+    slot="functions"
+    alignment="right"
+  >
     <!--
     <scale-telekom-nav-item><a href="#"><scale-icon-action-search> </scale-icon-action-search></a></scale-telekom-nav-item>
     <scale-telekom-nav-item><a href="#"><scale-icon-content-credit-card> </scale-icon-content-credit-card></a></scale-telekom-nav-item>
     <scale-telekom-nav-item><a href="#"><scale-icon-action-shopping-cart> </scale-icon-action-shopping-cart></a></scale-telekom-nav-item>
     -->
 
-    <scale-telekom-nav-item style="--_font-size-main-nav: var(--scl-font-size-12);">
+    <scale-telekom-nav-item
+      style="--_font-size-main-nav: var(--scl-font-size-12)"
+    >
       <a href="#">
         <scale-icon-alert-help></scale-icon-alert-help>
-        <span style="margin-left: var(--scl-spacing-8); font-weight: var(--telekom-typography-font-weight-regular);">Help</span>
+        <span
+          style="
+                margin-left: var(--scl-spacing-8);
+                font-weight: var(--telekom-typography-font-weight-regular);
+              "
+        >Help</span
+        >
       </a>
     </scale-telekom-nav-item>
 
@@ -92,7 +120,6 @@
       close-menu-accessibility-label="Menü schließen"
     ></telekom-profile-menu>
 
-
     <!-- mainMenu mobile -->
 
     <scale-telekom-nav-item class="burger-item" hide-on-desktop>
@@ -100,29 +127,46 @@
       <scale-telekom-nav-flyout variant="mobile" class="mobile-nav-flyout">
         <!-- the mobile navigation structure goes here -->
         <scale-telekom-mobile-flyout-canvas>
-
           <!-- main-nav (mobile) -->
           <scale-telekom-mobile-menu slot="mobile-main-nav">
-            <scale-telekom-mobile-menu-item active><a href="#">Übersicht</a></scale-telekom-mobile-menu-item>
-            <scale-telekom-mobile-menu-item><a href="#">Login-Daten</a></scale-telekom-mobile-menu-item>
-            <scale-telekom-mobile-menu-item><a href="#">Sicherheit</a></scale-telekom-mobile-menu-item>
-            <scale-telekom-mobile-menu-item><a href="#">Verträge</a></scale-telekom-mobile-menu-item>
-            <scale-telekom-mobile-menu-item><a href="#">Optionen</a></scale-telekom-mobile-menu-item>
+            <scale-telekom-mobile-menu-item active
+            ><a href="#">Übersicht</a></scale-telekom-mobile-menu-item
+            >
+            <scale-telekom-mobile-menu-item
+            ><a href="#">Login-Daten</a></scale-telekom-mobile-menu-item
+            >
+            <scale-telekom-mobile-menu-item
+            ><a href="#">Sicherheit</a></scale-telekom-mobile-menu-item
+            >
+            <scale-telekom-mobile-menu-item
+            ><a href="#">Verträge</a></scale-telekom-mobile-menu-item
+            >
+            <scale-telekom-mobile-menu-item
+            ><a href="#">Optionen</a></scale-telekom-mobile-menu-item
+            >
           </scale-telekom-mobile-menu>
 
           <!-- meta-nav (mobile) -->
-          <scale-telekom-nav-list variant="meta-nav-external" slot="mobile-meta-nav-external" alignment="left" style="--flex-direction: column">
-            <scale-telekom-nav-item><a href="#">Contact <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link></a></scale-telekom-nav-item>
+          <scale-telekom-nav-list
+            variant="meta-nav-external"
+            slot="mobile-meta-nav-external"
+            alignment="left"
+            style="--flex-direction: column"
+          >
+            <scale-telekom-nav-item
+            ><a href="#"
+            >Contact
+              <scale-icon-navigation-external-link
+                size="11"
+              ></scale-icon-navigation-external-link></a
+            ></scale-telekom-nav-item>
           </scale-telekom-nav-list>
-
         </scale-telekom-mobile-flyout-canvas>
       </scale-telekom-nav-flyout>
     </scale-telekom-nav-item>
 
     <!-- /mainMenu mobile -->
-
   </scale-telekom-nav-list>
-
 </scale-telekom-header>
 
 <main>
@@ -177,7 +221,7 @@
           name: 'MagentaHome Web',
           href: 'https://cockpit.telekom.net',
           icon: 'home-smarthome',
-        }
+        },
       ];
 
       function setLoggedIn(val) {
@@ -185,10 +229,12 @@
 
         profileMenu.loggedIn = val;
 
-        profileMenu.label = val ? "Alexander" : "Login";
-        profileMenu.accessibilityLabel = val ? "Benutzerprofil: Alexander" : "Login";
+        profileMenu.label = val ? 'Alexander' : 'Login';
+        profileMenu.accessibilityLabel = val
+          ? 'Benutzerprofil: Alexander'
+          : 'Login';
 
-        console.log("set loggedIn");
+        console.log('set loggedIn');
       }
 
       window.onload = () => {
@@ -200,14 +246,26 @@
         });
         profileMenu.serviceLinks = JSON.stringify(serviceLinks);
 
-        document.getElementById('clear-items').onclick = () => { profileMenu.serviceLinks = JSON.stringify([]); }
-        document.getElementById('reset-items').onclick = () => { profileMenu.serviceLinks = JSON.stringify(serviceLinks); }
+        document.getElementById('clear-items').onclick = () => {
+          profileMenu.serviceLinks = JSON.stringify([]);
+        };
+        document.getElementById('reset-items').onclick = () => {
+          profileMenu.serviceLinks = JSON.stringify(serviceLinks);
+        };
 
-        document.getElementById('hide-login-settings').onclick = () => { profileMenu.hideLoginSettings = true; }
-        document.getElementById('show-login-settings').onclick = () => { profileMenu.hideLoginSettings = false; }
+        document.getElementById('hide-login-settings').onclick = () => {
+          profileMenu.hideLoginSettings = true;
+        };
+        document.getElementById('show-login-settings').onclick = () => {
+          profileMenu.hideLoginSettings = false;
+        };
 
-        document.getElementById('loggedin-false').onclick = () => { this.setLoggedIn(false); }
-        document.getElementById('loggedin-true').onclick = () => { this.setLoggedIn(true); }
+        document.getElementById('loggedin-false').onclick = () => {
+          this.setLoggedIn(false);
+        };
+        document.getElementById('loggedin-true').onclick = () => {
+          this.setLoggedIn(true);
+        };
 
         setLoggedIn(false);
       };

@@ -27,7 +27,8 @@ scale-menu-flyout {
     border: none;
     text-decoration: none;
     cursor: pointer;
-    transition: padding-bottom var(--telekom-motion-duration-immediate) var(--telekom-motion-easing-standard);
+    transition: padding-bottom var(--telekom-motion-duration-immediate)
+      var(--telekom-motion-easing-standard);
 
     line-height: var(--telekom-typography-line-spacing-loose);
     font-weight: var(--telekom-typography-font-weight-extra-bold);
@@ -35,15 +36,19 @@ scale-menu-flyout {
     > .flyout-label {
       font-size: var(--scl-font-size-12);
       font-weight: var(--telekom-typography-font-weight-regular);
-      margin-left: var(--scl-spacing-8)
+      margin-left: var(--scl-spacing-8);
     }
   }
 
   > a:hover,
-  > a:hover svg { color: var(--telekom-color-text-and-icon-primary-hovered); }
+  > a:hover svg {
+    color: var(--telekom-color-text-and-icon-primary-hovered);
+  }
 
-  > a[aria-expanded="true"],
-  > a[aria-expanded="true"] svg { color: var(--telekom-color-text-and-icon-primary-standard); }
+  > a[aria-expanded='true'],
+  > a[aria-expanded='true'] svg {
+    color: var(--telekom-color-text-and-icon-primary-standard);
+  }
 }
 
 @import url('../../../global/custom-media.css');
@@ -52,7 +57,7 @@ scale-menu-flyout {
   display: flex;
   height: 100%;
 }
-.user-menu-mobile .flyout-label [aria-hidden="true"] {
+.user-menu-mobile .flyout-label [aria-hidden='true'] {
   display: none;
 }
 
@@ -112,29 +117,44 @@ scale-menu-flyout {
 }
 
 .profile-menu-login > strong {
-    display: flex;
-    font: var(--telekom-text-style-heading-5);
-    padding: var(--telekom-spacing-composition-space-04) 0;
+  display: flex;
+  font: var(--telekom-text-style-heading-5);
+  padding: var(--telekom-spacing-composition-space-04) 0;
 }
 @media screen and (--md) {
-  .profile-menu-login > strong { padding-top: var(--telekom-spacing-composition-space-10); }
-  .profile-menu-login .footer { padding-top: var(--telekom-spacing-composition-space-04); }
+  .profile-menu-login > strong {
+    padding-top: var(--telekom-spacing-composition-space-10);
+  }
+  .profile-menu-login .footer {
+    padding-top: var(--telekom-spacing-composition-space-04);
+  }
 }
 @media screen and (--lg) {
-  .profile-menu-login { padding: 12px 24px 4px 24px; }
-  .profile-menu-login > strong { padding-top: 0; }
-  .profile-menu-login > scale-button { margin: 16px 0; }
-  .profile-menu-login .footer { padding-top: 0; }
+  .profile-menu-login {
+    padding: 12px 24px 4px 24px;
+  }
+  .profile-menu-login > strong {
+    padding-top: 0;
+  }
+  .profile-menu-login > scale-button {
+    margin: 16px 0;
+  }
+  .profile-menu-login .footer {
+    padding-top: 0;
+  }
 }
-
 
 .profile-menu-login p {
   line-height: 1.4em;
   color: var(--telekom-color-text-and-icon-additional);
   margin: 0;
 }
-.profile-menu-login #signUp { margin-top: var(--telekom-spacing-composition-space-04); }
-.profile-menu-login #signUp p { margin: 0; }
+.profile-menu-login #signUp {
+  margin-top: var(--telekom-spacing-composition-space-04);
+}
+.profile-menu-login #signUp p {
+  margin: 0;
+}
 
 .scale-telekom-nav-list[variant='functions']::part(circle) .scale-icon {
   height: 12px;
@@ -143,9 +163,9 @@ scale-menu-flyout {
 
 .mydot {
   background: var(--telekom-color-functional-success-standard);
-  border: 2px solid #FFF;
+  border: 2px solid #fff;
   border-radius: 50%;
-  color: #FFF;
+  color: #fff;
   display: flex;
   height: 12px;
   width: 12px;
@@ -154,22 +174,32 @@ scale-menu-flyout {
   right: -6px;
 }
 scale-menu-flyout a .mydot .scale-icon {
-  color: #FFF !important;
+  color: #fff !important;
 }
 
-app-navigation-user-menu { --color-divider: transparent; }
+app-navigation-user-menu {
+  --color-divider: transparent;
+}
 
-app-navigation-user-menu::part(userInfo) { margin: 0; }
-app-navigation-user-menu::part(userInfo) .app-navigation-user-menu__user-info--name { margin-bottom: 0; }
+app-navigation-user-menu::part(userInfo) {
+  margin: 0;
+}
+app-navigation-user-menu::part(userInfo)
+  .app-navigation-user-menu__user-info--name {
+  margin-bottom: 0;
+}
 
 app-navigation-user-menu::part(rule-horizontal) {
   margin: var(--telekom-spacing-composition-space-05) 0;
 }
 
 @media screen and (--md) {
-  app-navigation-user-menu::part(userInfo) { padding-top: var(--telekom-spacing-composition-space-08); }
+  app-navigation-user-menu::part(userInfo) {
+    padding-top: var(--telekom-spacing-composition-space-08);
+  }
   app-navigation-user-menu::part(rule-horizontal) {
-    margin: var(--telekom-spacing-composition-space-08) 0 var(--telekom-spacing-composition-space-06) 0;
+    margin: var(--telekom-spacing-composition-space-08) 0
+      var(--telekom-spacing-composition-space-06) 0;
   }
 }
 
@@ -186,7 +216,9 @@ app-navigation-user-menu::part(button) {
   padding-left: 0;
 }
 @media screen and (--md) {
-  app-navigation-user-menu::part(button) { margin-top: -10px; }
+  app-navigation-user-menu::part(button) {
+    margin-top: -10px;
+  }
 }
 
 @media screen and (--lg) {
@@ -199,7 +231,9 @@ app-navigation-user-menu::part(button) {
     border: 0;
   }
 
-  app-navigation-user-menu::part(userInfo) { padding-top: 0; }
+  app-navigation-user-menu::part(userInfo) {
+    padding-top: 0;
+  }
   app-navigation-user-menu::part(rule-horizontal) {
     padding-top: 16px;
     padding-bottom: 6px;

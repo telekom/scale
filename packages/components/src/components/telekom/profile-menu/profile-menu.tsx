@@ -10,14 +10,16 @@
  *
  */
 
-import {Component, Prop, h, Host, Element, State} from '@stencil/core';
+import { Component, Prop, h, Host, Element, State } from '@stencil/core';
 
 const LOGIN_DEFAULT = 'https://www.telekom.de';
 const LOGIN_HELP_DEFAULT = 'https://www.telekom.de';
 const REGISTER_DEFAULT = 'https://www.telekom.de';
 
-const LOGIN_SETTINGS_DEFAULT = 'https://account.idm.telekom.com/account-manager/';
-const LOGOUT_DEFAULT = 'https://accounts.login.idm.telekom.com/sessionmessage/logout';
+const LOGIN_SETTINGS_DEFAULT =
+  'https://account.idm.telekom.com/account-manager/';
+const LOGOUT_DEFAULT =
+  'https://accounts.login.idm.telekom.com/sessionmessage/logout';
 
 const readData = (data) => {
   let parsedData;
@@ -25,8 +27,8 @@ const readData = (data) => {
   try {
     parsedData = JSON.parse(data);
   } catch (error) {
-    console.error("Error parsing data! error: " + error);
-    console.error("data: " + data);
+    // console.error("Error parsing data! error: " + error);
+    // console.error("data: " + data);
     parsedData = data;
   }
 
@@ -35,10 +37,9 @@ const readData = (data) => {
 
 @Component({
   tag: 'telekom-profile-menu',
-  styleUrl: 'profile-menu.css'
+  styleUrl: 'profile-menu.css',
 })
 export class ProfileMenu {
-
   @Element() hostElement: HTMLElement;
 
   userMenuDesktopTrigger?: HTMLSpanElement;
@@ -77,65 +78,91 @@ export class ProfileMenu {
   menuOpen = false;
 
   openMenu(event: any) {
-    if(event.target.id === "user-menu-desktop") {
+    if (event.target.id === 'user-menu-desktop') {
       this.menuOpen = true;
     }
   }
 
   closeMenu(event: any) {
-    if(event.target.id === "user-menu-desktop") {
+    if (event.target.id === 'user-menu-desktop') {
       this.menuOpen = false;
     }
   }
 
   printSignInMenu() {
-    return <div class="profile-menu-login">
-              <strong>{this.serviceName}</strong>
-              <p>{this.shortDescr}</p>
+    return (
+      <div class="profile-menu-login">
+        <strong>{this.serviceName}</strong>
+        <p>{this.shortDescr}</p>
 
-              <scale-button href={this.loginUrl || LOGIN_DEFAULT}>{this.loginLabel}</scale-button>
-              <div class="footer">
-                <p><scale-link omit-underline="true" href={this.loginHelpUrl || LOGIN_HELP_DEFAULT}>{this.loginHelpLabel}</scale-link></p>
-                <div id="signUp">
-                  <p>{this.noLoginYetLabel}</p>
-                  <p><scale-link omit-underline="true" href={this.registerUrl || REGISTER_DEFAULT}>{this.registerLabel}</scale-link></p>
-                </div>
-              </div>
-            </div>;
+        <scale-button href={this.loginUrl || LOGIN_DEFAULT}>
+          {this.loginLabel}
+        </scale-button>
+        <div class="footer">
+          <p>
+            <scale-link
+              omit-underline="true"
+              href={this.loginHelpUrl || LOGIN_HELP_DEFAULT}
+            >
+              {this.loginHelpLabel}
+            </scale-link>
+          </p>
+          <div id="signUp">
+            <p>{this.noLoginYetLabel}</p>
+            <p>
+              <scale-link
+                omit-underline="true"
+                href={this.registerUrl || REGISTER_DEFAULT}
+              >
+                {this.registerLabel}
+              </scale-link>
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   printProfileTrigger() {
-
-    if(!this.loggedIn) {
-      return <scale-icon-user-file-user selected={this.menuOpen}></scale-icon-user-file-user>;
+    if (!this.loggedIn) {
+      return (
+        <scale-icon-user-file-user
+          selected={this.menuOpen}
+        ></scale-icon-user-file-user>
+      );
     }
 
     // logged in
-    return <scale-badge no-dot="true">
-              <scale-icon-user-file-user selected={this.menuOpen}></scale-icon-user-file-user>
-              <div slot="dot" class="mydot">
-                <scale-icon-action-checkmark></scale-icon-action-checkmark>
-              </div>
-            </scale-badge>;
+    return (
+      <scale-badge no-dot="true">
+        <scale-icon-user-file-user
+          selected={this.menuOpen}
+        ></scale-icon-user-file-user>
+        <div slot="dot" class="mydot">
+          <scale-icon-action-checkmark></scale-icon-action-checkmark>
+        </div>
+      </scale-badge>
+    );
   }
 
   buildUserNavigation() {
-
-    const divider = [{type: 'divider'}];
+    const divider = [{ type: 'divider' }];
 
     const userInfo = readData(this.userInfo);
-    if(!userInfo) {
-      console.error("userInfo missing");
+    if (!userInfo) {
+      // console.error("userInfo missing");
     }
     userInfo.type = 'userInfo';
 
     let serviceLinks = readData(this.serviceLinks);
-    if(!serviceLinks) {
-      console.error("serviceLinks missing");
+    if (!serviceLinks) {
+      // console.error("serviceLinks missing");
       serviceLinks = [];
     }
 
-    for(const el of serviceLinks) { el.type = 'item' }
+    for (const el of serviceLinks) {
+      el.type = 'item';
+    }
 
     const loginSettings = {
       type: 'item',
@@ -155,12 +182,18 @@ export class ProfileMenu {
 
     menu = menu.concat(userInfo);
 
-    if(!this.serviceLinksEmpty()) { menu = menu.concat(divider); }
+    if (!this.serviceLinksEmpty()) {
+      menu = menu.concat(divider);
+    }
 
     menu = menu.concat(serviceLinks);
 
-    if(!this.hideLoginSettings) { menu = menu.concat(loginSettings); }
-    if(!this.serviceLinksEmpty()) { menu = menu.concat(divider); }
+    if (!this.hideLoginSettings) {
+      menu = menu.concat(loginSettings);
+    }
+    if (!this.serviceLinksEmpty()) {
+      menu = menu.concat(divider);
+    }
 
     menu = menu.concat(logout);
 
@@ -172,71 +205,76 @@ export class ProfileMenu {
   }
 
   buildDesktopMenuStyles() {
+    let style =
+      '.app-navigation-user-menu { padding: 12px 24px 4px 24px; box-sizing: border-box; }';
+    style +=
+      '.scale-icon { width: 20px; height: 20px; display: flex; align-self: center; }';
 
-    let style = ".app-navigation-user-menu { padding: 12px 24px 4px 24px; box-sizing: border-box; }";
-    style += ".scale-icon { width: 20px; height: 20px; display: flex; align-self: center; }";
-
-    if(this.serviceLinksEmpty()) {
-      style += "scale-button { margin-top: 32px !important; }";
+    if (this.serviceLinksEmpty()) {
+      style += 'scale-button { margin-top: 32px !important; }';
     }
 
     return style;
   }
 
   buildMobileMenuStyles() {
+    let style =
+      '.app-navigation-user-menu__user-info--name { margin-bottom: 0 !important; }';
+    style += '.scale-icon { width: 20px; height: 20px; }';
 
-    let style = ".app-navigation-user-menu__user-info--name { margin-bottom: 0 !important; }";
-    style += ".scale-icon { width: 20px; height: 20px; }";
-
-    if(this.serviceLinksEmpty()) {
-      style += "scale-button { margin-top: 32px !important; }";
+    if (this.serviceLinksEmpty()) {
+      style += 'scale-button { margin-top: 32px !important; }';
     }
 
     return style;
   }
 
   printLabel() {
-
-    if(!this.accessibilityLabel) {
+    if (!this.accessibilityLabel) {
       return <span class="flyout-label">{this.label}</span>;
     }
 
-    return <div class="flyout-label">
-              <span aria-hidden="true">{this.label}</span>
-              <span class="visually-hidden">{this.accessibilityLabel}</span>
-          </div>;
+    return (
+      <div class="flyout-label">
+        <span aria-hidden="true">{this.label}</span>
+        <span class="visually-hidden">{this.accessibilityLabel}</span>
+      </div>
+    );
   }
 
   render() {
     return (
       <Host>
         <scale-telekom-nav-item class="user-menu-desktop">
-
           <scale-menu-flyout
             direction="bottom-left"
             onScale-open={(event: any) => this.openMenu(event)}
-            onScale-close={(event: any) => this.closeMenu(event)}>
-
+            onScale-close={(event: any) => this.closeMenu(event)}
+          >
             <a href="javascript:void(0);" slot="trigger">
               {this.printProfileTrigger()}
               {this.printLabel()}
             </a>
 
-            <scale-menu-flyout-list id="user-menu-desktop" preventFlipVertical={true}>
+            <scale-menu-flyout-list
+              id="user-menu-desktop"
+              preventFlipVertical={true}
+            >
               {this.loggedIn && ([
                 <app-navigation-user-menu
-                  hide={() => { this.userMenuDesktopTrigger.click(); }}
+                  hide={() => {
+                    this.userMenuDesktopTrigger.click();
+                  }}
                   navigation={this.buildUserNavigation()}
                   styles={this.buildDesktopMenuStyles()}
-                >
-                </app-navigation-user-menu>
-              ])}
+                ></app-navigation-user-menu>,
+              ]}
 
-              {!this.loggedIn && ([
+              {!this.loggedIn && [
                 <app-navigation-user-menu navigation={[]}>
                   {this.printSignInMenu()}
-                </app-navigation-user-menu>
-              ])}
+                </app-navigation-user-menu>,
+              ]}
             </scale-menu-flyout-list>
             <div
               slot="trigger"
@@ -244,41 +282,38 @@ export class ProfileMenu {
               ref={(el) => (this.userMenuDesktopTrigger = el)}
             ></div>
           </scale-menu-flyout>
-
         </scale-telekom-nav-item>
 
-
-
         <scale-telekom-nav-item class="user-menu-mobile">
-
           <button>
             {this.printProfileTrigger()}
             {this.printLabel()}
           </button>
 
           <scale-telekom-nav-flyout variant="mobile">
-            <scale-telekom-mobile-flyout-canvas appName={this.appName} closeButtonLabel={this.closeMenuAccessibilityLabel}>
-
-              {this.loggedIn && ([
+            <scale-telekom-mobile-flyout-canvas
+              appName={this.appName}
+              closeButtonLabel={this.closeMenuAccessibilityLabel}
+            >
+              {this.loggedIn && [
                 <app-navigation-user-menu
                   slot="mobile-main-nav"
                   navigation={this.buildUserNavigation()}
                   styles={this.buildMobileMenuStyles()}
+                ></app-navigation-user-menu>,
+              ]}
+
+              {!this.loggedIn && [
+                <app-navigation-user-menu
+                  slot="mobile-main-nav"
+                  navigation={[]}
                 >
-                </app-navigation-user-menu>
-              ])}
-
-              {!this.loggedIn && ([
-                <app-navigation-user-menu slot="mobile-main-nav" navigation={[]}>
                   {this.printSignInMenu()}
-                </app-navigation-user-menu>
-              ])}
-
+                </app-navigation-user-menu>,
+              ]}
             </scale-telekom-mobile-flyout-canvas>
           </scale-telekom-nav-flyout>
-
         </scale-telekom-nav-item>
-
       </Host>
     );
   }
