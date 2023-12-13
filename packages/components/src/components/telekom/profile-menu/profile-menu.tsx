@@ -260,7 +260,7 @@ export class ProfileMenu {
               id="user-menu-desktop"
               preventFlipVertical={true}
             >
-              {this.loggedIn && ([
+              {this.loggedIn && [
                 <app-navigation-user-menu
                   hide={() => {
                     this.userMenuDesktopTrigger.click();
