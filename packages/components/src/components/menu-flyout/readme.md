@@ -28,7 +28,7 @@
  - [scale-app-header](../telekom/app-header)
  - [scale-data-grid](../data-grid)
  - [scale-telekom-header-data-back-compat](../telekom/telekom-header-data-back-compat)
- - [telekom-profile-menu](../telekom/profile-menu)
+ - [telekom-profile-menu](../telekom/telekom-profile-menu)
 
 ### Graph
 ```mermaid

@@ -45,7 +45,7 @@ Type: `Promise<void>`
  - [app-navigation-user-menu](../telekom/app-navigation-user-menu)
  - [scale-data-grid](../data-grid)
  - [scale-notification](../notification)
- - [telekom-profile-menu](../telekom/profile-menu)
+ - [telekom-profile-menu](../telekom/telekom-profile-menu)
 
 ### Graph
 ```mermaid

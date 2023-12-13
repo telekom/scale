@@ -108,7 +108,7 @@ Type: `Promise<void>`
  - [scale-data-grid](../data-grid)
  - [scale-notification-banner](../notification-banner)
  - [scale-notification-toast](../notification-toast)
- - [telekom-profile-menu](../telekom/profile-menu)
+ - [telekom-profile-menu](../telekom/telekom-profile-menu)
 
 ### Graph
 ```mermaid

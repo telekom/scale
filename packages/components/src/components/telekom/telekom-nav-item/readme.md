@@ -21,7 +21,7 @@
 ### Used by
 
  - [scale-telekom-header-data-back-compat](../telekom-header-data-back-compat)
- - [telekom-profile-menu](../profile-menu)
+ - [telekom-profile-menu](../telekom-profile-menu)
 
 ### Graph
 ```mermaid
