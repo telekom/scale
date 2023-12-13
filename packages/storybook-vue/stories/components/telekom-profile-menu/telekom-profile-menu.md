@@ -1,5 +1,5 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Profile Menu</h1>
+    <h1>Telekom Profile Menu</h1>
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
@@ -25,7 +25,7 @@ You'll find default values in the code examples in the [Docs section](?path=/doc
 
 In this state the menu offers the user the possibility sign up / log in to his account.
 
-![Image Name](assets/3_components/profile-menu/profile-menu-logged-out.png)
+![Image Name](assets/3_components/telekom-profile-menu/telekom-profile-menu-logged-out.png)
 
 ## Logged in
 
@@ -35,4 +35,4 @@ In this state the menu offers the user the possibility sign up / log in to his a
 
 In this state the menu offers the user links to a set of important Telekom services and the possibility to log out from his account.
 
-![Image Name](assets/3_components/profile-menu/profile-menu-logged-in.png)
+![Image Name](assets/3_components/telekom-profile-menu/telekom-profile-menu-logged-in.png)

@@ -1,5 +1,5 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Profile Menu</h1>
+    <h1>Telekom Profile Menu</h1>
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
@@ -25,7 +25,7 @@ In den Codebeispielen im [Docs-Abschnitt](?path=/docs/components-telekom-profile
 
 In diesem Status bietet das Menü dem Nutzer die Möglichkeit zur Registrierung / Anmeldung an seinem Account.
 
-![Image Name](assets/3_components/profile-menu/profile-menu-logged-out.png)
+![Image Name](assets/3_components/telekom-profile-menu/telekom-profile-menu-logged-out.png)
 
 ## Nutzer eingeloggt
 
@@ -35,4 +35,4 @@ In diesem Status bietet das Menü dem Nutzer die Möglichkeit zur Registrierung 
 
 In diesem Status bietet das Menü dem Nutzer eine Liste von Verweisen zu wichtigen Telekom Services und die Möglichkeit zum Logout aus seinem Account.
 
-![Image Name](assets/3_components/profile-menu/profile-menu-logged-in.png)
+![Image Name](assets/3_components/telekom-profile-menu/telekom-profile-menu-logged-in.png)

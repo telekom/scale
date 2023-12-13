@@ -37,9 +37,9 @@ const readData = (data) => {
 
 @Component({
   tag: 'telekom-profile-menu',
-  styleUrl: 'profile-menu.css',
+  styleUrl: 'telekom-profile-menu.css',
 })
-export class ProfileMenu {
+export class TelekomProfileMenu {
   @Element() hostElement: HTMLElement;
 
   userMenuDesktopTrigger?: HTMLSpanElement;
