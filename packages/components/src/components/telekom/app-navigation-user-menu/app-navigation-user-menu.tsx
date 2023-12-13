@@ -101,21 +101,21 @@ export class AppNavigationUserMenu {
                   {item.icon &&
                   (!item.iconPosition || item.iconPosition === 'prefix')
                     ? renderIcon({
-                      tag: `scale-icon-${item.icon}`,
-                      attributes: {
-                        class: `app-navigation-user-menu__item--icon-prefix`,
-                      },
-                    })
+                        tag: `scale-icon-${item.icon}`,
+                        attributes: {
+                          class: `app-navigation-user-menu__item--icon-prefix`,
+                        },
+                      })
                     : null}
 
                   {item.name}
                   {item.icon && item.iconPosition === 'suffix'
                     ? renderIcon({
-                      tag: `scale-icon-${item.icon}`,
-                      attributes: {
-                        class: `app-navigation-user-menu__item--icon-suffix`,
-                      },
-                    })
+                        tag: `scale-icon-${item.icon}`,
+                        attributes: {
+                          class: `app-navigation-user-menu__item--icon-suffix`,
+                        },
+                      })
                     : null}
                 </a>
               );
@@ -149,18 +149,18 @@ export class AppNavigationUserMenu {
                   {item.icon &&
                   (!item.iconPosition || item.iconPosition === 'prefix')
                     ? renderIcon({
-                      tag: `scale-icon-${item.icon}`,
-                      attributes: {},
-                    })
+                        tag: `scale-icon-${item.icon}`,
+                        attributes: {},
+                      })
                     : null}
 
                   {item.name}
 
                   {item.icon && item.iconPosition === 'suffix'
                     ? renderIcon({
-                      tag: `scale-icon-${item.icon}`,
-                      attributes: {},
-                    })
+                        tag: `scale-icon-${item.icon}`,
+                        attributes: {},
+                      })
                     : null}
                 </scale-button>
               );
