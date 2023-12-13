@@ -22,10 +22,10 @@ export const Template = (args, { argTypes }) => ({
                   :accessibility-label="accessibilityLabel"
                   :close-menu-accessibility-label="closeMenuAccessibilityLabel"
                   :service-name="serviceName"
-                  :short-descr="shortDescr"
+                  :service-description="serviceDescription"
                   :login-label="loginLabel"
                   :login-help-label="loginHelpLabel"
-                  :no-login-yet-label="noLoginYetLabel"
+                  :register-headline="registerHeadline"
                   :register-label="registerLabel"
                   :login-settings-label="loginSettingsLabel"
                   :logout-label="logoutLabel"
@@ -73,10 +73,10 @@ export const Template = (args, { argTypes }) => ({
       accessibilityLabel: "Login",
       closeMenuAccessibilityLabel: "Menü schließen",
       serviceName: "Kundencenter",
-      shortDescr: "Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen.",
+      serviceDescription: "Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen.",
       loginLabel: "Zum Login",
       loginHelpLabel: "Hilfe zum Login",
-      noLoginYetLabel: "Noch kein Telekom Login?",
+      registerHeadline: "Noch kein Telekom Login?",
       registerLabel: "Jetzt registrieren",
     }}
     inline={false}
@@ -100,10 +100,10 @@ export const Template = (args, { argTypes }) => ({
       accessibility-label="Login"
       close-menu-accessibility-label="Menü schließen"
       service-name="Kundencenter"
-      short-descr="Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen."
+      service-description="Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen."
       login-label="Zum Login"
       login-help-label="Hilfe zum Login"
-      no-login-yet-label="Noch kein Telekom Login?"
+      register-headline="Noch kein Telekom Login?"
       register-label="Jetzt registrieren"
     ></telekom-profile-menu>
   </scale-telekom-nav-list>

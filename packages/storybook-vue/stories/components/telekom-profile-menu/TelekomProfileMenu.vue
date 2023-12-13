@@ -9,10 +9,10 @@
             :accessibility-label="accessibilityLabel"
             :close-menu-accessibility-label="closeMenuAccessibilityLabel"
             :service-name="serviceName"
-            :short-descr="shortDescr"
+            :service-description="serviceDescription"
             :login-label="loginLabel"
             :login-help-label="loginHelpLabel"
-            :no-login-yet-label="noLoginYetLabel"
+            :register-headline="registerHeadline"
             :register-label="registerLabel"
             :login-settings-label="loginSettingsLabel"
             :logout-label="logoutLabel"
@@ -41,7 +41,7 @@ export default {
 
     appName: String,
     serviceName: String,
-    shortDescr: String,
+    serviceDescription: String,
 
     loggedIn: Boolean,
 
@@ -51,7 +51,7 @@ export default {
     loginHelpUrl: String,
     loginHelpLabel: String,
 
-    noLoginYetLabel: String,
+    registerHeadline: String,
     registerUrl: String,
     registerLabel: String,
 

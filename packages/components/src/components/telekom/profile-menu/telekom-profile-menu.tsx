@@ -51,7 +51,7 @@ export class TelekomProfileMenu {
 
   @Prop() appName: string;
   @Prop() serviceName: string;
-  @Prop() shortDescr: string;
+  @Prop() serviceDescription: string;
   @Prop() loggedIn: boolean;
 
   @Prop() loginUrl?: string;
@@ -60,7 +60,7 @@ export class TelekomProfileMenu {
   @Prop() loginHelpUrl?: string;
   @Prop() loginHelpLabel: string;
 
-  @Prop() noLoginYetLabel: string;
+  @Prop() registerHeadline: string;
   @Prop() registerUrl?: string;
   @Prop() registerLabel: string;
 
@@ -93,7 +93,7 @@ export class TelekomProfileMenu {
     return (
       <div class="profile-menu-login">
         <strong>{this.serviceName}</strong>
-        <p>{this.shortDescr}</p>
+        <p>{this.serviceDescription}</p>
 
         <scale-button href={this.loginUrl || LOGIN_DEFAULT}>
           {this.loginLabel}
@@ -108,7 +108,7 @@ export class TelekomProfileMenu {
             </scale-link>
           </p>
           <div id="signUp">
-            <p>{this.noLoginYetLabel}</p>
+            <p>{this.registerHeadline}</p>
             <p>
               <scale-link
                 omit-underline="true"

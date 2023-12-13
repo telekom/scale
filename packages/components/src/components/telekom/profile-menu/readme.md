@@ -23,12 +23,12 @@
 | `loginUrl`                    | `login-url`                      |             | `string`  | `undefined` |
 | `logoutLabel`                 | `logout-label`                   |             | `string`  | `undefined` |
 | `logoutUrl`                   | `logout-url`                     |             | `string`  | `undefined` |
-| `noLoginYetLabel`             | `no-login-yet-label`             |             | `string`  | `undefined` |
+| `registerHeadline`            | `register-headline`              |             | `string`  | `undefined` |
 | `registerLabel`               | `register-label`                 |             | `string`  | `undefined` |
 | `registerUrl`                 | `register-url`                   |             | `string`  | `undefined` |
+| `serviceDescription`          | `service-description`            |             | `string`  | `undefined` |
 | `serviceLinks`                | `service-links`                  |             | `any`     | `undefined` |
 | `serviceName`                 | `service-name`                   |             | `string`  | `undefined` |
-| `shortDescr`                  | `short-descr`                    |             | `string`  | `undefined` |
 | `userInfo`                    | `user-info`                      |             | `any`     | `undefined` |
 
 
