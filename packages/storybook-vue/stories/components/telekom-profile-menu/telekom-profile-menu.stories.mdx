@@ -78,6 +78,22 @@ export const Template = (args, { argTypes }) => ({
       loginHelpLabel: "Hilfe zum Login",
       registerHeadline: "Noch kein Telekom Login?",
       registerLabel: "Jetzt registrieren",
+      userInfo: JSON.stringify({
+        name: 'Firstname Lastname',
+        email: 'example@example.com',
+      }),
+      serviceLinks: JSON.stringify([
+        {
+          name: 'Service 1',
+          href: 'https://www.telekom.de/service-1',
+          icon: 't-product-measure-internet-speed',
+        },
+        {
+          name: 'Service 2',
+          href: 'https://www.telekom.de/service-2',
+          icon: 'communication-mail-opened',
+        }
+      ])
     }}
     inline={false}
     height={500}
