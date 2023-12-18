@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
+import { Element, Component, h, Prop, Host, Listen, Watch } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -42,7 +42,7 @@ export class TabNav {
   handleSelect(event) {
     const nextTab = event.target as HTMLScaleTabHeaderElement;
     // Act only if it's a direct child
-    if (this.getAllEnabledTabs().includes(nextTab)) {
+    if (this.getAllEnabledTabs().includes(nextTab) && !nextTab.disabled) {
       this.selectTab(nextTab);
     }
   }
@@ -143,8 +143,8 @@ export class TabNav {
   }
 
   linkPanels() {
-    const tabs = this.getAllEnabledTabs();
-    const selectedTab = tabs.find((x) => x.selected) || tabs[0];
+    const tabs = this.getAllTabs();
+    const selectedTab = tabs.find((x) => x.selected) || tabs.filter((x) => !x.disabled)[0];
 
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
@@ -169,7 +169,6 @@ export class TabNav {
 
   selectTab(nextTab: HTMLScaleTabHeaderElement) {
     const nextPanel = this.findPanelForTab(nextTab);
-
     this.reset();
     nextPanel.hidden = false;
     nextTab.selected = true;
