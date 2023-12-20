@@ -134,7 +134,7 @@
   > .scale-telekom-nav-item
   button::after,
 .scale-telekom-nav-list[variant='main-nav'] > .scale-telekom-nav-item a::after {
-  margin-left: var(--telekom-spacing-composition-space-06);
+  margin-inline-start: var(--telekom-spacing-composition-space-06);
   width: calc(100% - var(--_spacing-x-slotted));
 }
 
