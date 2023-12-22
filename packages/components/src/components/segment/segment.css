@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-:host {
+ :host {
   /* not selected */
   --background-color-selected: var(--telekom-color-ui-base);
   --button-radius: 6px;
@@ -17,25 +17,27 @@
   --height: 28px;
   --font: var(--telekom-text-style-caption-bold);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
-  --transition: all var(--telekom-motion-duration-transition)
-    var(--telekom-motion-easing-standard);
   --color: var(--telekom-color-text-and-icon-standard);
+  --transition: all var(--telekom-motion-duration-transition)
+  var(--telekom-motion-easing-standard);
 
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
 
   /* medium styles */
+  --font-size-medium: var(--telekom-typography-font-size-body);
   --font-medium: var(--telekom-text-style-ui-bold);
   --height-medium: 36px;
 
   /* large styles */
+  --font-size-large: var(--telekom-typography-font-size-body);
   --font-large: var(--telekom-text-style-ui-bold);
   --height-large: 40px;
 
   /* hover styles */
-  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-color-hover: var(--telekom-color-ui-state-fill-hovered-inverted);
 
   /* active styles */
-  --background-color-active: var(--telekom-color-ui-state-fill-pressed);
+  --background-color-active: var(--telekom-color-ui-state-fill-pressed-inverted);
 
   display: flex;
   align-items: center;
@@ -57,6 +59,19 @@
   padding: 0;
 }
 
+.segment--list-item {
+  list-style: none;
+  box-sizing: border-box;
+  position: relative;
+  border: 0;
+  width: 100%;
+  border-radius: var(--button-radius);
+  /* padding-top: var(--telekom-spacing-composition-space-02); */
+  transition: var(--transition);
+  background-color: transparent;
+  display: flex;
+}
+
 .segment--mask {
   box-sizing: border-box;
   display: flex;
@@ -68,26 +83,37 @@
   border-radius: var(--button-radius);
   background-color: transparent;
   font: var(--font);
-  transition: var(--transition);
   white-space: nowrap;
+  padding: 8px;
   color: var(--color);
-  line-height: 1;
 }
 
-button.segment--small.segment--selected .segment--mask {
-  padding-left: var(--telekom-spacing-composition-space-04);
-  padding-right: var(--telekom-spacing-composition-space-05);
+.segment--icon-only.segment--small .segment--mask {
+  /* padding-left: var(--telekom-spacing-composition-space-05);
+  padding-right: var(--telekom-spacing-composition-space-05); */
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;  
 }
 
-button.segment--icon-only.segment--small .segment--mask {
+.segment--icon-only.segment--medium .segment--mask {
   padding-left: var(--telekom-spacing-composition-space-06);
   padding-right: var(--telekom-spacing-composition-space-06);
 }
 
-button.segment--small .segment--mask {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+.segment--icon-only.segment--large .segment--mask {
+  padding-left: var(--telekom-spacing-composition-space-07);
+  padding-right: var(--telekom-spacing-composition-space-07);
 }
+
+.segment--small .segment--mask {
+  padding-left: 8px;
+  padding-right: 12px;
+}
+
+/* .segment--multi-select.segment:not(.segment--icon-only) .segment--mask {
+  padding-left: 19px;
+  padding-right: 19px;
+} */
 
 .segment--small {
   height: var(--height);
@@ -97,31 +123,34 @@ button.segment--small .segment--mask {
   height: var(--height-medium);
 }
 
-button.segment--medium.segment--selected .segment--mask {
-  padding-left: var(--telekom-spacing-composition-space-05);
-  padding-right: var(--telekom-spacing-composition-space-06);
+.segment--medium .text-container {
+  font: var(--font-medium);
 }
 
-button.segment--medium .segment--mask {
-  font: var(--font-medium);
-  padding-left: 0.875rem;
-  padding-right: 0.875rem;
+.segment--medium .segment--mask {
+  padding-left: var(--telekom-spacing-composition-space-05);
+  padding-right: var(--telekom-spacing-composition-space-06);
 }
 
 .segment--large {
   height: var(--height-large);
 }
+.segment--large .text-container {
+  font: var(--font-large)
+}
 
-button.segment--large.segment--selected .segment--mask {
+.segment--large .segment--mask {
   padding-left: var(--telekom-spacing-composition-space-06);
   padding-right: var(--telekom-spacing-composition-space-07);
 }
 
-button.segment--large .segment--mask {
-  font: var(--font-large);
-  padding-left: var(--telekom-spacing-composition-space-06);
-  padding-right: var(--telekom-spacing-composition-space-07);
+
+.segment--icon-only .segment--mask {
+  padding-left: var(--telekom-spacing-composition-space-05);
+  padding-right: var(--telekom-spacing-composition-space-05);
 }
+
+/* selected */
 
 .segment--selected {
   background-color: var(--background-color-selected);
@@ -132,6 +161,8 @@ button.segment--large .segment--mask {
   color: var(--color-selected);
 }
 
+/* disabled */
+
 .segment--disabled.segment--selected .segment--mask {
   color: var(--label-disabled);
 }
@@ -141,7 +172,9 @@ button.segment--large .segment--mask {
   background-color: transparent;
 }
 
-.segment--left-sibling-selected {
+/* shadows left and right */
+
+.segment--list-item--left-sibling-selected {
   border-radius: 0 var(--button-radius) var(--button-radius) 0;
   margin-left: 0;
   clip-path: inset(-2.75rem -2.75rem -2.75rem 0);
@@ -149,7 +182,7 @@ button.segment--large .segment--mask {
   overflow: hidden;
 }
 
-.segment--right-sibling-selected {
+.segment--list-item--right-sibling-selected {
   border-radius: var(--button-radius) 0 0 var(--button-radius);
   clip-path: inset(-2.75rem 0 -2.75rem -2.75rem);
   margin-right: 0;
@@ -158,7 +191,7 @@ button.segment--large .segment--mask {
   position: relative;
 }
 
-.segment--left-right-sibling-selected {
+.segment--list-item--left-right-sibling-selected {
   clip-path: inset(-2.75rem 0 -2.75rem 0);
   border-radius: 0;
   margin-left: 0;
@@ -183,40 +216,68 @@ button.segment--large .segment--mask {
   position: relative;
 }
 
-.segment:not(.segment--selected):focus {
-  outline-offset: 0;
-}
-
 .segment--left-right-sibling-selected:focus,
 .segment--right-sibling-selected:focus,
 .segment--left-sibling-selected:focus {
   clip-path: none;
 }
 
-/* FIXME remove the hard-coded icon names */
+ /* icon placement */
+
 .segment:not(.segment--icon-only) scale-icon-action-checkmark,
 .segment scale-icon-action-close {
   margin-right: var(--telekom-spacing-composition-space-03);
 }
 
-.segment:not(.segment--selected) scale-icon-action-checkmark {
-  visibility: hidden !important;
+/* .success-icon-container {
+  margin-right: 4px;
+} */
+
+.segment--large .success-icon-container {
+  margin-right: 6px;
 }
 
-.segment scale-icon-action-checkmark {
-  vertical-align: middle;
-}
-
-.segment--selected:not(.segment--icon-only) .icon-container {
-  display: none !important;
-}
-
-.segment .success-icon-container {
+.segment:not(.segment--selected) .success-icon-container {
   display: none;
 }
 
-.segment--selected .success-icon-container {
+.segment:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container {
+  margin-left: 18px;
+  /* border: 1px solid purple; */
+}
+
+.segment--medium:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container {
+  margin-left: 20px;
+}
+
+.segment--large:not(.segment--selected):not(.segment--icon-text).segment:not(.segment--icon-only) .text-container {
+  margin-left: 26px;
+}
+
+.segment--selected .text-container {
+  margin-left: 0;
+}
+
+.segment--selected:not(.segment--icon-only) .icon-container {
+  visibility: hidden;
+}
+
+.segment--icon-only .success-icon-container,
+.segment--icon-text .success-icon-container {
+  display: none;
+}
+
+.segment--icon-text .success-icon-container{
+  display: none;
+}
+
+.segment.segment--selected:not(.segment--icon-only) .icon-container {
+  display: none;
+}
+
+.segment--selected:not(.segment--icon-only) .success-icon-container {
   display: flex;
+  visibility: visible;
   justify-content: center;
   align-items: center;
 }
@@ -230,4 +291,27 @@ button.segment--large .segment--mask {
 
 .segment--selected .icon-container {
   color: var(--color-selected);
+}
+
+.segment:not(.segment--selected).segment:not(.segment--icon-only):not(.segment--icon-text) .text-container {
+  transform: translateX(-9px);
+}
+
+.segment.segment--large:not(.segment--selected).segment:not(.segment--icon-only):not(.segment--icon-text) .text-container {
+  transform: translateX(-13px);
+}
+
+.segment--icon-text .icon-container ::slotted(*){
+  margin-right: var(--telekom-spacing-composition-space-03);
+}
+
+
+.segment--input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+
+.segment--list-item--left-sibling-selected {
 }
