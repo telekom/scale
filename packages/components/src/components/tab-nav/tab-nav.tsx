@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Element, Component, h, Prop, Host, Listen, Watch } from '@stencil/core';
+import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -144,7 +144,8 @@ export class TabNav {
 
   linkPanels() {
     const tabs = this.getAllTabs();
-    const selectedTab = tabs.find((x) => x.selected) || tabs.filter((x) => !x.disabled)[0];
+    const selectedTab =
+      tabs.find((x) => x.selected) || tabs.filter((x) => !x.disabled)[0];
 
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
