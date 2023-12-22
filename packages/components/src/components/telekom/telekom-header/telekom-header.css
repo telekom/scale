@@ -282,6 +282,27 @@ slot[name='functions'] {
   /* TODO inline margin */
 }
 
+@media screen and (--lg) {
+  slot[name='main-nav'],
+  slot[name='functions'] {
+    padding-top: var(--telekom-spacing-composition-space-06);
+  }
+}
+
+@media screen and (--xl) {
+  slot[name='main-nav'],
+  slot[name='functions'] {
+    padding-top: var(--telekom-spacing-composition-space-07);
+  }
+}
+
+@media screen and (--2xl) {
+  slot[name='main-nav'],
+  slot[name='functions'] {
+    padding-top: var(--telekom-spacing-composition-space-10);
+  }
+}
+
 [part~='base'] {
   /* height: var(--_height); */
   height: var(--_base-height);
