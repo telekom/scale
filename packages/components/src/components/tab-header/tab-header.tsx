@@ -40,7 +40,7 @@ export class TabHeader {
   @Element() hostElement: HTMLElement;
 
   /** True for a disabled Tabnavigation */
-  @Prop() disabled?: boolean = false;
+  @Prop({ reflect: true }) disabled?: boolean = false;
   /** True for smaller height and font size */
   /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
@@ -76,6 +76,13 @@ export class TabHeader {
         this.hostElement.focus();
       }
       this.updateSlottedIcon();
+    }
+  }
+
+  @Watch('disabled')
+  disabledChanged() {
+    if (this.disabled) {
+      this.selected = false;
     }
   }
 
