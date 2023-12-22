@@ -89,12 +89,14 @@
 
 /* this is a workaround to host-context not working in FF and safari */
 
-.scale-telekom-mega-menu[children-too-many] scale-telekom-mega-menu-column:first-child {
+.scale-telekom-mega-menu[children-too-many]
+  scale-telekom-mega-menu-column:first-child {
   grid-column: 2 / span 3;
 }
 
 @media screen and (--2xl) {
-  .scale-telekom-mega-menu[children-too-many] scale-telekom-mega-menu-column:first-child {
+  .scale-telekom-mega-menu[children-too-many]
+    scale-telekom-mega-menu-column:first-child {
     grid-column: 1 / span 3;
   }
 }
