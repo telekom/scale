@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.146](https://github.com/telekom/scale/compare/v3.0.0-beta.145...v3.0.0-beta.146) (2023-12-22)
+
+
+### Bug Fixes
+
+* add id to nav items ([#2235](https://github.com/telekom/scale/issues/2235)) ([3349e8d](https://github.com/telekom/scale/commit/3349e8da50a896b847fa84d40274934f18206c96))
+* add min height css var ([#2233](https://github.com/telekom/scale/issues/2233)) ([84cc37b](https://github.com/telekom/scale/commit/84cc37b9ed26a13439a796b44eefc29c827d0063))
+* focus outline on header bottom-bar ([#2205](https://github.com/telekom/scale/issues/2205)) ([949c2d7](https://github.com/telekom/scale/commit/949c2d7a8696b39b768fedc7b43f350c213f000e))
+* handle setting disabled programatically ([#2240](https://github.com/telekom/scale/issues/2240)) ([6dcfdd1](https://github.com/telekom/scale/commit/6dcfdd1f3c89f85bcb73cc4cedfdc48b1cceb8fb))
+* mega menu grid ([#2237](https://github.com/telekom/scale/issues/2237)) ([1c707b8](https://github.com/telekom/scale/commit/1c707b80025b77152cc930106b8101770cdbe75f))
+
+
+
+
+
 # [3.0.0-beta.145](https://github.com/telekom/scale/compare/v3.0.0-beta.144...v3.0.0-beta.145) (2023-12-11)
 
 
