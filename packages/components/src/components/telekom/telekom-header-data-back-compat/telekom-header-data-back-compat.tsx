@@ -80,6 +80,7 @@ export class TelekomHeaderDataBackCompat {
                 <scale-telekom-nav-item>
                   <a
                     href={item.href || 'javascript:void(0);'}
+                    id={item.id}
                     target={item.target || '_self'}
                     onClick={(event) => {
                       if (typeof item.onClick === 'function') {
@@ -106,6 +107,7 @@ export class TelekomHeaderDataBackCompat {
                 <scale-telekom-nav-item>
                   <a
                     href={item.href || 'javascript:void(0);'}
+                    id={item.id}
                     target={item.target || '_self'}
                     onClick={(event) => {
                       if (typeof item.onClick === 'function') {
@@ -132,11 +134,11 @@ export class TelekomHeaderDataBackCompat {
                 selected &&
                 findRootNode(readData(this.mainNavigation), selected.id);
               const isActive = (itemId) => rootNode && rootNode.id === itemId;
-
               return (
                 <scale-telekom-nav-item active={isActive(item.id)}>
                   <a
                     href={item.href || 'javascript:void(0);'}
+                    id={item.id}
                     target={item.target || '_self'}
                     onClick={(event) => {
                       if (typeof item.onClick === 'function') {
@@ -296,6 +298,7 @@ export class TelekomHeaderDataBackCompat {
                     <a
                       href={item.href || 'javascript:void(0);'}
                       target={item.target || '_self'}
+                      id={item.id}
                       onClick={(event) => {
                         if (typeof item.onClick === 'function') {
                           item.onClick(event);
@@ -452,6 +455,7 @@ export class TelekomHeaderDataBackCompat {
                           return (
                             <scale-telekom-nav-item>
                               <a
+                                id={item.id}
                                 href={item.href || 'javascript:void(0);'}
                                 target={item.target || '_self'}
                                 onClick={(event) => {
@@ -478,6 +482,7 @@ export class TelekomHeaderDataBackCompat {
                             <scale-telekom-nav-item>
                               <a
                                 href={item.href || 'javascript:void(0);'}
+                                id={item.id}
                                 target={item.target || '_self'}
                                 onClick={(event) => {
                                   if (typeof item.onClick === 'function') {
