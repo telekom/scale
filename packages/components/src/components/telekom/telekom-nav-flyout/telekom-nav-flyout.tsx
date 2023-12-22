@@ -132,7 +132,6 @@ export class TelekomNavItem {
       this.show();
     }
   };
-
   handleTriggerClick = (event: MouseEvent) => {
     if (event.ctrlKey) {
       return;
