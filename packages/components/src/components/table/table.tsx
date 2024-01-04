@@ -31,7 +31,7 @@ export class Table {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** "forceUpdate" hack, set it to trigger and re-render */
-  @State() forceUpdate: string;  
+  @State() forceUpdate: string;
   /** object of the slots in use */
   slots: { header?: Element; table?: Element } = {};
 
@@ -43,7 +43,7 @@ export class Table {
           <scale-icon-content-sort-indicator-up class="scale-sort-indicator-icon up" size="16"></scale-icon-content-sort-indicator-up>
           <scale-icon-content-sort-indicator-down class="scale-sort-indicator-icon down" size="16"></scale-icon-content-sort-indicator-down>
         </span>`
-    )
+    );
   }
 
   componentWillLoad() {
@@ -55,9 +55,9 @@ export class Table {
   componentWillUpdate() {
     this.hostElement.querySelectorAll('th').forEach((th) => {
       // only cols that are NOT added dynamically have children (the sorting icon), added on componentWillLoad
-      if (th.children.length == 0) {
+      if (th.children.length === 0) {
         // this may not be needed
-        th.classList.add('dynamically-added')
+        th.classList.add('dynamically-added');
         this.addSortIndicator(th);
       }
     });
@@ -71,13 +71,13 @@ export class Table {
         el.showStatus = false;
       });
     }
-    this.mutationObserver = new MutationObserver(() => { 
+    this.mutationObserver = new MutationObserver(() => {
       this.forceUpdate = String(Date.now());
     });
     this.mutationObserver.observe(this.hostElement, {
       childList: true,
       subtree: true,
-    });    
+    });
   }
 
   componentDidRender() {

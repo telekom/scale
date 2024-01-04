@@ -109,12 +109,7 @@
             >
               Title
             </th>
-            <th 
-              aria-disabled="true"
-              width="18%"
-            >
-              Tags
-            </th>
+            <th aria-disabled="true" width="18%">Tags</th>
             <th
               onclick="sortTable(this)"
               onkeydown="handleKeyDown(event, this)"
@@ -222,7 +217,6 @@
             <td style="text-align: right">00:00:20</td>
             <td style="text-align: right">100.245,10</td>
             <td style="text-align: right">lol</td>
-
           </tr>
         </tfoot>
       </table>
@@ -230,30 +224,29 @@
   </body>
   <script>
     const foo = document.getElementById('foo');
-    const newCol = document.createElement('th')
-    newCol.innerHTML = 'New Column'
+    const newCol = document.createElement('th');
+    newCol.innerHTML = 'New Column';
 
-
-    const tbody = document.querySelector('tbody')
-    let newData = 0
-    const children = tbody.children
-    console.log('CHILDREN',children)
+    const tbody = document.querySelector('tbody');
+    let newData = 0;
+    const children = tbody.children;
+    console.log('CHILDREN', children);
 
     setTimeout(() => {
-      foo.appendChild(newCol)
-      console.log('foo', foo, newCol)
+      foo.appendChild(newCol);
+      console.log('foo', foo, newCol);
       for (const child of children) {
         console.log(child.tagName);
-        const newTd = document.createElement('td')
+        const newTd = document.createElement('td');
         // newTd.style = "text-align: right"
-        console.log('newTD', newTd)
-        newData = newData + 1
-        newTd.innerHTML = newData
-        child.appendChild(newTd)    
-        newCol.setAttribute('style', 'text-align: right')
-        newCol.setAttribute('width', '10%')
-        newCol.setAttribute('onClick', "sortTable(this)")
+        console.log('newTD', newTd);
+        newData = newData + 1;
+        newTd.innerHTML = newData;
+        child.appendChild(newTd);
+        newCol.setAttribute('style', 'text-align: right');
+        newCol.setAttribute('width', '10%');
+        newCol.setAttribute('onClick', 'sortTable(this)');
       }
-    }, 2000)
+    }, 2000);
   </script>
 </html>
