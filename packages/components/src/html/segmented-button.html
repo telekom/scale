@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="scl-font-variant-body">Segmented Button</h1>
+
+
+
+    <h2> Standard</h2>
+
+    <scale-segmented-button>
+        <scale-segment selected>Apple</scale-segment>
+        <scale-segment>One+</scale-segment>
+        <scale-segment>Samsung</scale-segment>
+        <scale-segment>Huawei</scale-segment>
+    </scale-segmented-button>
+
+    <h2> Multi select</h2>
+
+    <scale-segmented-button multi-select>
+        <scale-segment selected>Apple</scale-segment>
+        <scale-segment selected>One+</scale-segment>
+        <scale-segment>Samsung</scale-segment>
+        <scale-segment>Huawei</scale-segment>
+    </scale-segmented-button>
+
+    <h2> Icon Only </h2>
+
+    <scale-segmented-button>
+        <scale-segment selected>
+          <scale-icon-weather-cloudy slot="segment-icon"> </scale-icon-weather-cloudy>
+        </scale-segment>
+        <scale-segment>
+          <scale-icon-weather-rain slot="segment-icon"> </scale-icon-weather-rain>
+        </scale-segment>
+        <scale-segment>
+          <scale-icon-weather-sunny slot="segment-icon"> </scale-icon-weather-sunny>
+        </scale-segment>
+        <scale-segment>
+          <scale-icon-weahter-heavy-snow slot="segment-icon">
+          </scale-icon-weahter-heavy-snow>
+        </scale-segment>
+    </scale-segmented-button>
+
+
+    <h2> Icon Text</h2>
+
+    <scale-segmented-button>
+        <scale-segment selected>
+          <scale-icon-device-device-phone slot="segment-icon">
+          </scale-icon-device-device-phone>
+          Apple
+        </scale-segment>
+        <scale-segment>
+          <scale-icon-device-device-phone slot="segment-icon">
+          </scale-icon-device-device-phone>
+          One+
+        </scale-segment>
+        <scale-segment>
+          <scale-icon-device-device-phone slot="segment-icon">
+          </scale-icon-device-device-phone>
+          Samsung
+        </scale-segment>
+        <scale-segment>
+          <scale-icon-device-device-phone slot="segment-icon">
+          </scale-icon-device-device-phone>
+          Huawei
+        </scale-segment>
+    </scale-segmented-button>      
+  </body>
+</html>
