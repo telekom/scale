@@ -302,7 +302,8 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  color-scheme: dark;
+  /* hack to remove autocomplete colors in chrome, as they conflict with scale dark/light mode styles https://stackoverflow.com/a/68240841 */
+  transition: background-color 0s 600000s, color 0s 600000s;
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
