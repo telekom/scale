@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+  </head>
+
+  <body>
+    <h3>Table</h3>
+
+    <script>
+      const getNextSort = (sort) => {
+        // if (!sort || ['none', 'other'].includes(sort)) {
+        //   return 'descending';
+        // }
+        if (sort === 'descending') {
+          return 'ascending';
+        } else {
+          return 'descending';
+        }
+      };
+
+      function sortTable(th) {
+        const currentSort = th.getAttribute('aria-sort');
+        const nextSort = getNextSort(currentSort);
+        const tableHeaders = Array.from(document.getElementsByTagName('TH'));
+        const columnIndex = tableHeaders.findIndex((x) => x === th);
+
+        // clean up previous aria-sort value
+        tableHeaders.forEach((tableHeader) => {
+          tableHeader.setAttribute('aria-sort', 'none');
+        });
+
+        // set actual sort
+        th.setAttribute('aria-sort', nextSort);
+
+        // Taken from:
+        // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById('sortable-table');
+        switching = true;
+        /*Make a loop that will continue until
+  no switching has been done:*/
+        while (switching) {
+          //start by saying: no switching is done:
+          switching = false;
+          rows = table.rows;
+          /*Loop through all table rows (except the
+        first, which contains table headers):*/
+          for (i = 1; i < rows.length - 1; i++) {
+            //start by saying there should be no switching:
+            shouldSwitch = false;
+
+            /*Get the two elements you want to compare,
+              one from current row and one from the next:*/
+            x = rows[i].getElementsByTagName('TD')[columnIndex];
+            y = rows[i + 1].getElementsByTagName('TD')[columnIndex];
+
+            if (
+              !['ascending', 'descending'].includes(nextSort) ||
+              x.parentElement.parentElement.tagName === 'TFOOT' ||
+              y.parentElement.parentElement.tagName === 'TFOOT'
+            ) {
+              break;
+            }
+
+            //check if the two rows should switch place:
+            if (
+              (nextSort === 'descending' ? y : x).innerHTML.toLowerCase() >
+              (nextSort === 'descending' ? x : y).innerHTML.toLowerCase()
+            ) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+              and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      }
+      function handleKeyDown(e, th) {
+        if (['Space', 'Enter'].includes(e.code)) {
+          sortTable(th);
+        }
+      }
+    </script>
+
+    <scale-table size="default" show-sort="true">
+      <table id="sortable-table">
+        <thead>
+          <tr id="foo">
+            <th
+              aria-sort="descending"
+              onclick="sortTable(this)"
+              onkeydown="handleKeyDown(event, this)"
+              tabindex="0"
+              width="13%"
+            >
+              Title
+            </th>
+            <th 
+              aria-disabled="true"
+              width="18%"
+            >
+              Tags
+            </th>
+            <th
+              onclick="sortTable(this)"
+              onkeydown="handleKeyDown(event, this)"
+              tabindex="0"
+              width="23%"
+            >
+              Stats
+            </th>
+            <th
+              onclick="sortTable(this)"
+              onkeydown="handleKeyDown(event, this)"
+              style="text-align: right"
+              tabindex="0"
+              width="18%"
+            >
+              Time
+            </th>
+            <th
+              onclick="sortTable(this)"
+              onkeydown="handleKeyDown(event, this)"
+              style="text-align: right"
+              tabindex="0"
+              width="18%"
+            >
+              Euros
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jane</td>
+            <td>
+              <scale-tag size="small" style="margin-right: 8px"
+                >Other</scale-tag
+              >
+              <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
+              <scale-tag size="small">Demo</scale-tag>
+            </td>
+            <td>
+              <div style="display: inline-flex; align-items: center">
+                <span style="margin-right: 8px">9.356</span>
+                <scale-progress-bar
+                  variant="info"
+                  style="max-width: 120px"
+                  stroke-width="6"
+                  percentage="90"
+                />
+              </div>
+            </td>
+            <td style="text-align: right; font-weight: 100">00:00:20</td>
+            <td style="text-align: right; font-weight: 100">100.245,10</td>
+          </tr>
+          <tr>
+            <td>Jack</td>
+            <td>
+              <scale-tag size="small" style="margin-right: 8px"
+                >Other</scale-tag
+              >
+              <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
+              <scale-tag size="small">Demo</scale-tag>
+            </td>
+            <td>
+              <div style="display: inline-flex; align-items: center">
+                <span style="margin-right: 8px">3.356</span>
+                <scale-progress-bar
+                  variant="info"
+                  style="max-width: 120px"
+                  stroke-width="6"
+                  percentage="90"
+                />
+              </div>
+            </td>
+            <td style="text-align: right; font-weight: 100">00:00:30</td>
+            <td style="text-align: right; font-weight: 100">100.345,10</td>
+          </tr>
+          <tr>
+            <td>John</td>
+            <td>
+              <scale-tag size="small" style="margin-right: 8px"
+                >Other</scale-tag
+              >
+              <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
+              <scale-tag size="small">Demo</scale-tag>
+            </td>
+            <td>
+              <div style="display: inline-flex; align-items: center">
+                <span style="margin-right: 8px">6.356</span>
+                <scale-progress-bar
+                  variant="info"
+                  style="max-width: 120px"
+                  stroke-width="6"
+                  percentage="90"
+                />
+              </div>
+            </td>
+            <td style="text-align: right; font-weight: 100">00:00:40</td>
+            <td style="text-align: right; font-weight: 100">100.445,10</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td />
+            <td />
+            <td style="text-align: right">00:00:20</td>
+            <td style="text-align: right">100.245,10</td>
+            <td style="text-align: right">lol</td>
+
+          </tr>
+        </tfoot>
+      </table>
+    </scale-table>
+  </body>
+  <script>
+    const foo = document.getElementById('foo');
+    const newCol = document.createElement('th')
+    newCol.innerHTML = 'New Column'
+
+
+    const tbody = document.querySelector('tbody')
+    let newData = 0
+    const children = tbody.children
+    console.log('CHILDREN',children)
+
+    setTimeout(() => {
+      foo.appendChild(newCol)
+      console.log('foo', foo, newCol)
+      for (const child of children) {
+        console.log(child.tagName);
+        const newTd = document.createElement('td')
+        // newTd.style = "text-align: right"
+        console.log('newTD', newTd)
+        newData = newData + 1
+        newTd.innerHTML = newData
+        child.appendChild(newTd)    
+        newCol.setAttribute('style', 'text-align: right')
+        newCol.setAttribute('width', '10%')
+        newCol.setAttribute('onClick', "sortTable(this)")
+      }
+    }, 2000)
+  </script>
+</html>
