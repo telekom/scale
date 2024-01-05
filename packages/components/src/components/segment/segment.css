@@ -43,6 +43,10 @@
   align-items: center;
   justify-content: center;
   flex: 1;
+
+  /* TODO: remove this, used for debugging shadow and clip-path */
+  /* --telekom-shadow-raised-standard: 0px 8px 32px 0px red, 0px 4px 8px 0px red; */
+
 }
 
 .segment {
