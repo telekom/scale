@@ -92,7 +92,12 @@ export class Segment {
 
   connectedCallback() { 
     const childNodes = Array.from(this.hostElement.childNodes);
-    const nodeNames = childNodes.map(el => el.nodeName.substring(0, 10))
+    let nodeNames = []
+    for (let el of childNodes) {
+      if ( (el.nodeValue && el.nodeValue.replace('\n', '\\n').trim() !== '\\n') || el.nodeType !== 3 ) {
+        nodeNames.push(el.nodeName.substring(0, 10))
+      }
+    }
     const hasText = nodeNames.includes('#text');
     const hasIcon = nodeNames.includes('SCALE-ICON')
     this.iconOnly = hasIcon && !hasText;

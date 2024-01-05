@@ -92,23 +92,6 @@
   color: var(--color);
 }
 
-.segment--icon-only.segment--small .segment--mask {
-  /* padding-left: var(--telekom-spacing-composition-space-05);
-  padding-right: var(--telekom-spacing-composition-space-05); */
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;  
-}
-
-.segment--icon-only.segment--medium .segment--mask {
-  padding-left: var(--telekom-spacing-composition-space-06);
-  padding-right: var(--telekom-spacing-composition-space-06);
-}
-
-.segment--icon-only.segment--large .segment--mask {
-  padding-left: var(--telekom-spacing-composition-space-07);
-  padding-right: var(--telekom-spacing-composition-space-07);
-}
-
 .segment--small .segment--mask {
   padding-left: 8px;
   padding-right: 12px;
@@ -141,12 +124,6 @@
 .segment--large .segment--mask {
   padding-left: var(--telekom-spacing-composition-space-06);
   padding-right: var(--telekom-spacing-composition-space-07);
-}
-
-
-.segment--icon-only .segment--mask {
-  padding-left: var(--telekom-spacing-composition-space-05);
-  padding-right: var(--telekom-spacing-composition-space-05);
 }
 
 /* selected */
@@ -321,4 +298,28 @@
 
 
 .segment--list-item--left-sibling-selected {
+}
+
+ /* icon only */
+
+ .segment--icon-only.segment--small .segment--mask {
+  /* padding-left: var(--telekom-spacing-composition-space-05);
+  padding-right: var(--telekom-spacing-composition-space-05); */
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;  
+}
+
+.segment--icon-only.segment--medium .segment--mask {
+  padding-left: var(--telekom-spacing-composition-space-06);
+  padding-right: var(--telekom-spacing-composition-space-06);
+}
+
+.segment--icon-only.segment--large .segment--mask {
+  padding-left: var(--telekom-spacing-composition-space-07);
+  padding-right: var(--telekom-spacing-composition-space-07);
+}
+
+.segment--icon-only .segment--mask {
+  padding-left: var(--telekom-spacing-composition-space-05);
+  padding-right: var(--telekom-spacing-composition-space-05);
 }
