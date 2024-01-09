@@ -40,4 +40,8 @@ export class BaseValueAccessorDirective implements ControlValueAccessor {
     this.onChange(value);
   }
 
+  _handleDatePickerSelect(target: any): void {
+    const value = target.querySelector('duet-date-picker').value;
+    this.onChange(value);
+  }
 }

@@ -16,7 +16,9 @@ export class ReactiveFormComponent implements OnInit {
   signupForm = new UntypedFormGroup({
     username: new UntypedFormControl('admin'),
     password: new UntypedFormControl({ value: '', disabled: false }),
-    consent: new UntypedFormControl()
+    consent: new UntypedFormControl(),
+    select: new UntypedFormControl('foo'),
+    date: new UntypedFormControl(),
   });
 
   onSubmit() {
