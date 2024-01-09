@@ -93,7 +93,7 @@ export class MenuFlyout {
     if (parent) {
       window.requestAnimationFrame(() => {
         parent.active = true;
-        parent.focus();
+        parent.setFocus();
       });
     }
   }
