@@ -19,13 +19,22 @@ export const TagsCell: Cell = {
     sortBy: 'text',
   },
   render: ({ content }) => {
-    const tags = content.split(',').map((s) => s.trim());
+    let tags = [];
+    // for backwards compatibility
+    if (typeof content === 'string') {
+      tags = content.split(',').map((el) => ({
+        content: el,
+        color: 'standard',
+      }));
+    } else {
+      tags = content;
+    }
     return (
       <ul class={`tbody__tag-list`}>
         {tags.map((tag) => (
           <li>
-            <scale-tag size="small" type="strong">
-              {tag}
+            <scale-tag size="small" type="strong" color={tag.color}>
+              {tag.content}
             </scale-tag>
           </li>
         ))}
