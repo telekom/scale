@@ -112,7 +112,7 @@ export class TabNav {
 
   getAllEnabledTabs(): HTMLScaleTabHeaderElement[] {
     return Array.from(
-      this.el.querySelectorAll('scale-tab-header:not(disabled)')
+      this.el.querySelectorAll('scale-tab-header:not([disabled]), scale-tab-header[disabled="false"]')
     );
   }
 
