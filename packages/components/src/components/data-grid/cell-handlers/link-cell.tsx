@@ -19,12 +19,24 @@ export const LinkCell: Cell = {
     sortBy: 'text',
   },
   render: ({ content }) => {
-    // Remove protocol (http/https)
-    const urlNoProtocol = content.replace(/^https?\:\/\//i, '');
-    return (
-      <scale-link href={content} target="_blank">
-        {urlNoProtocol}
-      </scale-link>
-    );
+    if (typeof content === 'string') {
+      // Remove protocol (http/https)
+      const urlNoProtocol = content.replace(/^https?\:\/\//i, '');
+      return (
+        <scale-link href={content} target="_blank">
+          {urlNoProtocol}
+        </scale-link>
+      );
+    } else {
+      // if the type of content is not a string, the content is handled as
+      // object of text and props (spread) which are passed as attributes to
+      // the scale-link element
+      const { text, ...props } = content;
+      return (
+        <scale-link {...props}>
+          {text}
+        </scale-link>
+      );
+    }
   },
 };
