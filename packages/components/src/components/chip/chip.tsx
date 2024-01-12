@@ -34,9 +34,15 @@ export class Chip {
   /** (optional) */
   @Prop() selected?: boolean = false;
   /** (optional) chip aria-role */
-  @Prop() ariaRoleTitle?: string;
-  /** (optional) chip aria-checked */
-  @Prop() ariaCheckedState?: boolean;
+  @Prop() ariaRoleTitle?:
+    | 'switch'
+    | 'radio'
+    | 'option'
+    | 'menuitemreadio'
+    | 'menuitemcheckbox'
+    | 'checkbox' = 'switch';
+  /** @deprecated (optional) chip aria-checked - should be derived from selected state attribute */
+  @Prop() ariaCheckedState?: boolean = false;
   /** (optional) chip label */
   @Prop() label?: string;
   /** (optional) chip disabled */
@@ -140,6 +146,7 @@ export class Chip {
             tabindex={this.selected ? '0' : '-1'}
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
+            aria-checked={this.selected.toString()}
             onClick={
               !this.disabled || this.type === 'dynamic'
                 ? this.handleClick
@@ -154,10 +161,8 @@ export class Chip {
           </span>
         ) : (
           <span
-            role={this.ariaRoleTitle ? this.ariaRoleTitle : 'switch'}
-            aria-checked={
-              this.ariaCheckedState ? this.ariaCheckedState : this.selected
-            }
+            role={this.ariaRoleTitle}
+            aria-checked={this.selected.toString()}
             tabindex={this.selected ? '0' : '-1'}
             part={this.getBasePartMap()}
             class={this.getCssClassMap()}
