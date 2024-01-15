@@ -32,11 +32,7 @@ export const LinkCell: Cell = {
       // object of text and props (spread) which are passed as attributes to
       // the scale-link element
       const { text, ...props } = content;
-      return (
-        <scale-link {...props}>
-          {text}
-        </scale-link>
-      );
+      return <scale-link {...props}>{text}</scale-link>;
     }
   },
 };
