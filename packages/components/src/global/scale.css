@@ -72,10 +72,10 @@
   gap: var(--telekom-spacing-composition-space-04);
 }
 
-[data-mode="light"] {
+[data-mode='light'] {
   color-scheme: light;
 }
 
-[data-mode="dark"] {
+[data-mode='dark'] {
   color-scheme: dark;
 }
