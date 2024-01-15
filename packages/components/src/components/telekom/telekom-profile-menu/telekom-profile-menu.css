@@ -175,6 +175,8 @@ scale-menu-flyout {
 }
 scale-menu-flyout a .mydot .scale-icon {
   color: #fff !important;
+  height: 12px;
+  width: 12px;
 }
 
 app-navigation-user-menu {
