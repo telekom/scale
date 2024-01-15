@@ -7,17 +7,17 @@
 
 ## Properties
 
-| Property           | Attribute            | Description                    | Type                        | Default        |
-| ------------------ | -------------------- | ------------------------------ | --------------------------- | -------------- |
-| `ariaCheckedState` | `aria-checked-state` | (optional) chip aria-checked   | `boolean`                   | `undefined`    |
-| `ariaRoleTitle`    | `aria-role-title`    | (optional) chip aria-role      | `string`                    | `undefined`    |
-| `disabled`         | `disabled`           | (optional) chip disabled       | `boolean`                   | `false`        |
-| `dismissText`      | `dismiss-text`       | (optional) Dismiss label       | `string`                    | `'dismiss'`    |
-| `label`            | `label`              | (optional) chip label          | `string`                    | `undefined`    |
-| `selected`         | `selected`           | (optional)                     | `boolean`                   | `false`        |
-| `styles`           | `styles`             | (optional) Injected CSS styles | `string`                    | `undefined`    |
-| `type`             | `type`               | (optional)                     | `"dynamic" \| "persistent"` | `'persistent'` |
-| `variant`          | `variant`            | (optional)                     | `"outline" \| "standard"`   | `'standard'`   |
+| Property           | Attribute            | Description                                                                                                                              | Type                                                                                      | Default        |
+| ------------------ | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------- |
+| `ariaCheckedState` | `aria-checked-state` | <span style="color:red">**[DEPRECATED]**</span> (optional) chip aria-checked - should be derived from selected state attribute<br/><br/> | `boolean`                                                                                 | `false`        |
+| `ariaRoleTitle`    | `aria-role-title`    | (optional) chip aria-role                                                                                                                | `"checkbox" \| "menuitemcheckbox" \| "menuitemreadio" \| "option" \| "radio" \| "switch"` | `'switch'`     |
+| `disabled`         | `disabled`           | (optional) chip disabled                                                                                                                 | `boolean`                                                                                 | `false`        |
+| `dismissText`      | `dismiss-text`       | (optional) Dismiss label                                                                                                                 | `string`                                                                                  | `'dismiss'`    |
+| `label`            | `label`              | (optional) chip label                                                                                                                    | `string`                                                                                  | `undefined`    |
+| `selected`         | `selected`           | (optional)                                                                                                                               | `boolean`                                                                                 | `false`        |
+| `styles`           | `styles`             | (optional) Injected CSS styles                                                                                                           | `string`                                                                                  | `undefined`    |
+| `type`             | `type`               | (optional)                                                                                                                               | `"dynamic" \| "persistent"`                                                               | `'persistent'` |
+| `variant`          | `variant`            | (optional)                                                                                                                               | `"outline" \| "standard"`                                                                 | `'standard'`   |
 
 
 ## Events
