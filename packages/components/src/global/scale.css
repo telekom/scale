@@ -54,6 +54,8 @@
   --scl-z-index-50: 50;
   --scl-z-index-60: 60;
   --scl-z-index-70: 70;
+  /* TODO: we can try to set this rule in design tokens :root */
+  color-scheme: light dark;
 }
 
 /** Thank you sholace.style */
@@ -68,4 +70,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--telekom-spacing-composition-space-04);
+}
+
+[data-mode="light"] {
+  color-scheme: light;
+}
+
+[data-mode="dark"] {
+  color-scheme: dark;
 }
