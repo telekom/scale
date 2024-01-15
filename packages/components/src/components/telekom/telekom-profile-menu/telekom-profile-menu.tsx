@@ -10,7 +10,7 @@
  *
  */
 
-import { Component, Prop, h, Host, Element, State } from '@stencil/core';
+import {Component, Prop, h, Host, Element, State, Listen} from '@stencil/core';
 
 const LOGIN_DEFAULT = 'https://www.telekom.de';
 const LOGIN_HELP_DEFAULT = 'https://www.telekom.de';
@@ -77,6 +77,13 @@ export class TelekomProfileMenu {
 
   @State()
   menuOpen = false;
+
+  @Listen('keydown')
+  onKeydown(event: KeyboardEvent) {
+    if(this.menuOpen && 'Escape' === event.key) {
+      this.userMenuDesktopTrigger.click();
+    }
+  }
 
   openMenu(event: any) {
     if (event.target.id === 'user-menu-desktop') {
