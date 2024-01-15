@@ -49,6 +49,10 @@ scale-menu-flyout {
   > a[aria-expanded='true'] svg {
     color: var(--telekom-color-text-and-icon-primary-standard);
   }
+
+  > a[aria-expanded='true'] .flyout-label {
+    color: var(--telekom-color-text-and-icon-standard);
+  }
 }
 
 @import url('../../../global/custom-media.css');
