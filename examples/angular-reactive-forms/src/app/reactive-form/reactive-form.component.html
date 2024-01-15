@@ -8,6 +8,21 @@
   <p>
     <scale-checkbox label="I agree with the privacy policy" formControlName="consent"></scale-checkbox>
   </p>
+  <p>
+    <scale-dropdown-select label="select" formControlName="select">
+      <scale-dropdown-select-item value="foo">Foo</scale-dropdown-select-item>
+      <scale-dropdown-select-item value="bar">Bar</scale-dropdown-select-item>
+    </scale-dropdown-select>
+  </p>
+
+  <p>
+    <scale-date-picker
+    label="Standard"
+    value="2020-12-31"
+    placeholder="Select date"
+    formControlName="date"
+    ></scale-date-picker>
+  </p>
   <scale-button type="submit">console.log</scale-button>
   <scale-button type="reset" variant="secondary">Reset</scale-button>
 </form>

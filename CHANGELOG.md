@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.147](https://github.com/telekom/scale/compare/v3.0.0-beta.146...v3.0.0-beta.147) (2024-01-15)
+
+
+### Bug Fixes
+
+* allow sorting of dynamically added columns2 ([#2246](https://github.com/telekom/scale/issues/2246)) ([c33b083](https://github.com/telekom/scale/commit/c33b083d3895abe65545da6e0b3e62be4c3a9525))
+* enable programmatic disabled [#2248](https://github.com/telekom/scale/issues/2248) ([bab9369](https://github.com/telekom/scale/commit/bab9369d8761664454c74847b8d652929d21d743))
+* remove unnecessary prop, add required aria attribute ([#2192](https://github.com/telekom/scale/issues/2192)) ([e63dbc1](https://github.com/telekom/scale/commit/e63dbc16f9eec9fd35e9a5146a984be3035a89b7))
+* set color scheme ([#2257](https://github.com/telekom/scale/issues/2257)) ([0f4bdee](https://github.com/telekom/scale/commit/0f4bdee5aa2942d17c98ad002bdff599cbc73050))
+
+
+
+
+
 # [3.0.0-beta.146](https://github.com/telekom/scale/compare/v3.0.0-beta.145...v3.0.0-beta.146) (2023-12-22)
 
 

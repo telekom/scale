@@ -23,7 +23,7 @@ export default {
     variant: { type: 'standard' | 'outline', default: 'standard' },
     selected: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
-    styles: { type: String },
+    styles: { type: 'switch' | 'radio' | 'option' | 'menuitemreadio' | 'menuitemcheckbox' | 'checkbox', default: 'switch'},
     ariaRoleTitle: { type: String },
     ariaCheckedState: { type: Boolean },
   },

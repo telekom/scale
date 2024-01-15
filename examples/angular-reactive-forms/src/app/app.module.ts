@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { TextValueAccessorDirective } from 'src/directives/text-value-accessor';
 import { CheckedValueAccessorDirective } from 'src/directives/checked-value-accessor';
 import { NumberValueAccessorDirective } from 'src/directives/number-value-accessor';
+import { SelectValueAccessorDirective } from 'src/directives/select-value-accessor';
+import { DateValueAccessorDirective } from 'src/directives/date-value-accessor';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SimpleBindingComponent } from './simple-binding/simple-binding.component';
 import { TestingComponent } from './testing/testing.component';
@@ -17,18 +19,20 @@ import { VanillaExampleComponent } from './vanilla-example/vanilla-example.compo
   declarations: [
     AppComponent,
     TextValueAccessorDirective,
+    SelectValueAccessorDirective,
+    DateValueAccessorDirective,
     CheckedValueAccessorDirective,
     NumberValueAccessorDirective,
     ReactiveFormComponent,
     SimpleBindingComponent,
     TestingComponent,
-    VanillaExampleComponent
+    VanillaExampleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Element, Host } from '@stencil/core';
+import { Component, Prop, h, Element, Host, State } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -19,6 +19,8 @@ import statusNote from '../../utils/status-note';
   shadow: false,
 })
 export class Table {
+  mutationObserver: MutationObserver;
+
   @Element() hostElement: HTMLElement;
   /** (optional) Display sort arrows on/off */
   @Prop() showSort?: boolean = false;
@@ -28,19 +30,36 @@ export class Table {
   @Prop() striped?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** "forceUpdate" hack, set it to trigger and re-render */
+  @State() forceUpdate: string;
   /** object of the slots in use */
   slots: { header?: Element; table?: Element } = {};
 
+  addSortIndicator(el) {
+    el.insertAdjacentHTML(
+      'afterbegin',
+      `
+        <span class="scale-sort-indicator" aria-hidden="true">
+          <scale-icon-content-sort-indicator-up class="scale-sort-indicator-icon up" size="16"></scale-icon-content-sort-indicator-up>
+          <scale-icon-content-sort-indicator-down class="scale-sort-indicator-icon down" size="16"></scale-icon-content-sort-indicator-down>
+        </span>`
+    );
+  }
+
   componentWillLoad() {
     this.hostElement.querySelectorAll('th').forEach((th) => {
-      th.insertAdjacentHTML(
-        'afterbegin',
-        `
-          <span class="scale-sort-indicator" aria-hidden="true">
-            <scale-icon-content-sort-indicator-up class="scale-sort-indicator-icon up" size="16"></scale-icon-content-sort-indicator-up>
-            <scale-icon-content-sort-indicator-down class="scale-sort-indicator-icon down" size="16"></scale-icon-content-sort-indicator-down>
-          </span>`
-      );
+      this.addSortIndicator(th);
+    });
+  }
+
+  componentWillUpdate() {
+    this.hostElement.querySelectorAll('th').forEach((th) => {
+      // only cols that are NOT added dynamically have children (the sorting icon), added on componentWillLoad
+      if (th.children.length === 0) {
+        // this may not be needed
+        th.classList.add('dynamically-added');
+        this.addSortIndicator(th);
+      }
     });
   }
 
@@ -52,6 +71,13 @@ export class Table {
         el.showStatus = false;
       });
     }
+    this.mutationObserver = new MutationObserver(() => {
+      this.forceUpdate = String(Date.now());
+    });
+    this.mutationObserver.observe(this.hostElement, {
+      childList: true,
+      subtree: true,
+    });
   }
 
   componentDidRender() {
@@ -63,6 +89,12 @@ export class Table {
         type: 'warn',
         source: this.hostElement,
       });
+    }
+  }
+
+  disconnectedCallback() {
+    if (this.mutationObserver) {
+      this.mutationObserver.disconnect();
     }
   }
 
