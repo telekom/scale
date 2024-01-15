@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.147](https://github.com/telekom/scale/compare/v3.0.0-beta.146...v3.0.0-beta.147) (2024-01-15)
+
+
+### Bug Fixes
+
+* remove unnecessary prop, add required aria attribute ([#2192](https://github.com/telekom/scale/issues/2192)) ([e63dbc1](https://github.com/telekom/scale/commit/e63dbc16f9eec9fd35e9a5146a984be3035a89b7))
+
+
+
+
+
 # [3.0.0-beta.146](https://github.com/telekom/scale/compare/v3.0.0-beta.145...v3.0.0-beta.146) (2023-12-22)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue
