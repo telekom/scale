@@ -64,6 +64,10 @@ scale-menu-flyout {
 .user-menu-mobile .flyout-label [aria-hidden='true'] {
   display: none;
 }
+.user-menu-mobile .mydot .scale-icon {
+  width: 12px;
+  height: 12px;
+}
 
 .scale-telekom-nav-item > button {
   padding-bottom: var(--_spacing-bottom-slotted-bottom);
