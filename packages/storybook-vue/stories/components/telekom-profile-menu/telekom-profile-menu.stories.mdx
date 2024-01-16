@@ -65,8 +65,8 @@ export const Template = (args, { argTypes }) => ({
     name="Logged out"
     args={{
       loginUrl: "https://www.telekom.de/todo/login",
-      loginHelpUrl: "https://www.telekom.de/todo/loginHelp",
-      registerUrl: "https://www.telekom.de/todo/register",
+      loginHelpUrl: "https://www.telekom.de/hilfe/telekom-login",
+      registerUrl: "https://meinkonto.telekom-dienste.de/telekom/account/registration/assistant/userstatus.xhtml",
       loggedIn: false,
       appName: "Application",
       label: "Login",
@@ -103,15 +103,17 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
+### deutsche Version
+
 ```html
-<!-- deutsche Version -->
 <scale-telekom-header>
   <!-- ... -->
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
+    <!-- login-url: dynamic link - OpenID connect discovery -->
     <telekom-profile-menu
       login-url="https://www.telekom.de/todo/login"
-      login-help-url="https://www.telekom.de/todo/loginHelp"
-      register-url="https://www.telekom.de/todo/register"
+      login-help-url="https://www.telekom.de/hilfe/telekom-login"
+      register-url="https://meinkonto.telekom-dienste.de/telekom/account/registration/assistant/userstatus.xhtml"
       logged-in="false"
       app-name="Application"
       label="Login"
@@ -128,15 +130,17 @@ export const Template = (args, { argTypes }) => ({
 </scale-telekom-header>
 ```
 
+### English version
+
 ```html
-<!-- English version -->
 <scale-telekom-header>
   <!-- ... -->
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
+    <!-- login-url: dynamic link - OpenID connect discovery -->
     <telekom-profile-menu
       login-url="https://www.telekom.de/todo/login"
-      login-help-url="https://www.telekom.de/todo/loginHelp"
-      register-url="https://www.telekom.de/todo/register"
+      login-help-url="https://www.telekom.de/hilfe/telekom-login"
+      register-url="https://meinkonto.telekom-dienste.de/telekom/account/registration/assistant/userstatus.xhtml"
       logged-in="false"
       app-name="Application"
       label="Login"
@@ -213,8 +217,9 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
+### deutsche Version
+
 ```html
-<!-- deutsche Version -->
 <scale-telekom-header>
   <!-- ... -->
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
@@ -280,8 +285,9 @@ window.onload = () => {
 </script>
 ```
 
+### English version
+
 ```html
-<!-- English version -->
 <scale-telekom-header>
   <!-- ... -->
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
