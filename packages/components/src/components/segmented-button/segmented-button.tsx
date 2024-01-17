@@ -107,40 +107,36 @@ export class SegmentedButton {
    */
   propagatePropsToChildren() {
     this.getAllSegmentedButtons().forEach((el) => {
-      el.setAttribute('size', this.size);
       if (this.disabled) {
-        el.setAttribute('disabled', '');
+        el.setAttribute('disabled', true && 'disabled');
       }
-      if (this.multiSelect) {
-        el.setAttribute('multi-select', '');
-      }
+      if (this.iconOnly) {
+        el.setAttribute('icon-only', 'true');
+      }      
     });
-  }
-
-  connectedCallback() {
-    this.propagatePropsToChildren();
   }
 
   componentDidLoad() {
     const tempState: SegmentStatus[] = [];
     const segmentedButtons = this.getAllSegmentedButtons();
     this.slottedSegments = segmentedButtons.length;
-    segmentedButtons.forEach((SegmentedButton) => {
+    segmentedButtons.forEach((segment) => {
       this.position++;
       tempState.push({
-        id: SegmentedButton.getAttribute('segment-id'),
-        selected: SegmentedButton.hasAttribute('selected'),
+        id: segment.getAttribute('segment-id'),
+        selected: segment.hasAttribute('selected') && segment.getAttribute('selected') !== 'false' 
       });
-      SegmentedButton.setAttribute('position', this.position.toString());
-      SegmentedButton.setAttribute(
+      segment.setAttribute('position', this.position.toString());
+      segment.setAttribute(
         'aria-description-translation',
         '$position $selected'
       );
     });
     this.hostElement.style.setProperty('--colNum', this.slottedSegments.toString())
+    this.propagatePropsToChildren();
     this.position = 0;
     this.status = tempState;
-    this.setState(tempState);
+
   }
 
   componentWillUpdate() {
@@ -204,31 +200,25 @@ export class SegmentedButton {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <fieldset class="segmented-button--fieldset">
-          {this.label && (
-            <legend class="segmented-button--label"> {this.label} </legend>
-          )}
-          <ul
-            class={this.getCssClassMap()}
-            part={this.getBasePartMap()}
-            aria-label={this.getAriaLabelTranslation()}
-            role="listbox"
-            ref={(el) => (this.container = el as HTMLElement)}
-            aria-description={
-              this.showHelperText && this.helperText ? this.helperText : null
-            }            
-          >
-            <slot />
-          </ul>
-          {this.showHelperText && (
-            <scale-helper-text
-              class="segmented-button--helper-text"
-              helperText={this.helperText}
-              variant={'danger'}
-            ></scale-helper-text>
-          )}
-        </fieldset>
-
+        {this.label && (
+          <span class="segmented-button--label"> {this.label} </span>
+        )}
+        <div
+          class={this.getCssClassMap()}
+          part={this.getBasePartMap()}
+          aria-label={this.getAriaLabelTranslation()}
+          role="group"
+          ref={(el) => (this.container = el as HTMLInputElement)}
+        >
+          <slot />
+        </div>
+        {this.showHelperText && (
+          <scale-helper-text
+            class="segmented-button--helper-text"
+            helperText={this.helperText}
+            variant={'danger'}
+          ></scale-helper-text>
+        )}
       </Host>
     );
   }
