@@ -205,6 +205,15 @@
   left: 0;
 }
 
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(a, button):hover:after,
+.scale-telekom-nav-list[variant='functions']
+  > .scale-telekom-nav-item
+  > :where(button[aria-expanded='true']):after {
+    width: 100%;
+  }
+
 .scale-telekom-nav-list[variant='main-nav']
   > .scale-telekom-nav-item
   > :where(a, button):has(scale-badge[label]):hover:after,
