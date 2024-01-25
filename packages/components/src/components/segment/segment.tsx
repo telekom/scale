@@ -76,14 +76,17 @@ export class Segment {
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
     selected: boolean;
+    value: string;
   }>;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
     id: string;
     selected: boolean;
+    value: string;
   }>;
 
   private focusableElement: HTMLElement;
+  private value: string;
 
   @Method()
   async setFocus() {
@@ -101,8 +104,9 @@ export class Segment {
     const hasText = nodeNames.includes('#text');
     const hasIcon = nodeNames.includes('SCALE-ICON')
     this.iconOnly = hasIcon && !hasText;
-    this.iconText = hasIcon && hasText;    
+    this.iconText = hasIcon && hasText;
     this.handleSelectedIcon();
+    this.value = this.hostElement.textContent.trim();
   }
 
   componentDidLoad() {
@@ -169,6 +173,7 @@ export class Segment {
       emitEvent(this, 'scaleClick', {
         id: this.segmentId,
         selected: this.selected,
+        value: this.value,
       });
     }
 

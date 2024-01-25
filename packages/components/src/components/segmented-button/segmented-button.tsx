@@ -27,6 +27,7 @@ import { emitEvent } from '../../utils/utils';
 interface SegmentStatus {
   id: string;
   selected: boolean;
+  value?: string;
 }
 
 @Component({
@@ -136,7 +137,6 @@ export class SegmentedButton {
     this.propagatePropsToChildren();
     this.position = 0;
     this.status = tempState;
-
   }
 
   componentWillUpdate() {
