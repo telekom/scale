@@ -12,7 +12,7 @@
 import { Component, Prop, h, Host, Element, Listen } from '@stencil/core';
 import { isClickOutside } from '../../utils/utils';
 
-const MENU_SELECTOR = '[role="menu"]';
+const MENU_SELECTOR = '.scale-menu';
 
 const isButtonOrLink = (el: HTMLElement) => {
   if (

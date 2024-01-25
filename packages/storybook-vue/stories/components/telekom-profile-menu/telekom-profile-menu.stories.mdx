@@ -15,7 +15,7 @@ export const Template = (args, { argTypes }) => ({
     <div class="wrapper">
       <scale-telekom-app-shell>
         <scale-telekom-header slot="header" :app-name="appName">
-              <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
+              <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
                 <telekom-profile-menu
                   :app-name="appName"
                   :label="label"
@@ -108,7 +108,7 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-telekom-header>
   <!-- ... -->
-  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <!-- login-url: dynamic link - OpenID connect discovery -->
     <telekom-profile-menu
       login-url="https://www.telekom.de/todo/login"
@@ -135,7 +135,7 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-telekom-header>
   <!-- ... -->
-  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <!-- login-url: dynamic link - OpenID connect discovery -->
     <telekom-profile-menu
       login-url="https://www.telekom.de/todo/login"
@@ -222,7 +222,7 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-telekom-header>
   <!-- ... -->
-  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <telekom-profile-menu
       login-settings-url="https://idm.account.telekom.com/account-manager"
       hide-login-settings="false"
@@ -290,7 +290,7 @@ window.onload = () => {
 ```html
 <scale-telekom-header>
   <!-- ... -->
-  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu">
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <telekom-profile-menu
       login-settings-url="https://idm.account.telekom.com/account-manager"
       hide-login-settings="false"

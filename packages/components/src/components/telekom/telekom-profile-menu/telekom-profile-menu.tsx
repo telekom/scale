@@ -267,6 +267,7 @@ export class TelekomProfileMenu {
             <scale-menu-flyout-list
               id="user-menu-desktop"
               preventFlipVertical={true}
+              role="none"
             >
               {this.loggedIn && [
                 <app-navigation-user-menu

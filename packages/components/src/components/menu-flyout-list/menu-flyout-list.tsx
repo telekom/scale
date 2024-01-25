@@ -62,6 +62,9 @@ export class MenuFlyoutList {
   /** (optional) set to true to prevent flipping orientation when off the screen vertically  */
   @Prop() preventFlipVertical: boolean = false;
 
+  /** (optional) override to set a custom role */
+  @Prop() role? = "menu";
+
   /** Event triggered when menu list opened */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
     list: HTMLElement;
@@ -469,7 +472,7 @@ export class MenuFlyoutList {
 
   render() {
     return (
-      <Host role="menu">
+      <Host role={this.role} class="scale-menu">
         {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
