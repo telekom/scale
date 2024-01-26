@@ -34,6 +34,8 @@ export class MenuFlyout {
 
   /** (optional) Determines whether the flyout should close when a menu item is selected */
   @Prop() closeOnSelect = true;
+  /** (optional) Determines whether the flyout trigger should get the aria-haspopup attribute */
+  @Prop() hasPopup = true;
   /** (optional) Set preference for where the menu appears, space permitting */
   @Prop() direction:
     | 'bottom-right'
@@ -152,7 +154,14 @@ export class MenuFlyout {
       .concat([isButtonOrLink(this.trigger)])
       .filter((x) => x != null);
     triggers.forEach((el) => {
-      el.setAttribute('aria-haspopup', 'true');
+
+      if(this.hasPopup) {
+        el.setAttribute('aria-haspopup', 'true');
+      }
+
+      el.setAttribute('class', 'scale-menu-trigger');
+
+
       el.setAttribute('aria-expanded', 'false');
     });
   }

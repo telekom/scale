@@ -258,8 +258,9 @@ export class TelekomProfileMenu {
             direction="bottom-left"
             onScale-open={(event: any) => this.openMenu(event)}
             onScale-close={(event: any) => this.closeMenu(event)}
+            hasPopup={false}
           >
-            <a href="javascript:void(0);" slot="trigger">
+            <a href="javascript:void(0);" slot="trigger" role="button" aria-controls="user-menu-desktop">
               {this.printProfileTrigger()}
               {this.printLabel()}
             </a>
