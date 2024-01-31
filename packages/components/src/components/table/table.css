@@ -86,7 +86,7 @@ scale-table {
   border-bottom: var(--border-bottom-tfoot-td);
 }
 .table .scale-sort-indicator-icon {
-  display: none !important;
+  visibility: hidden;
 }
 .table tbody tr:hover {
   background: var(--background-tbody-tr-hover);
@@ -113,17 +113,10 @@ scale-table {
   border-radius: var(--radius);
 }
 .table--sortable th .scale-sort-indicator-icon {
-  display: inline-flex !important;
+  visibility: visible;
 }
 .table--sortable th[aria-disabled] {
-  padding: var(--padding);
   pointer-events: none;
-}
-.table--sortable th:not([aria-sort]) {
-  padding: var(--padding);
-}
-.table--sortable th[aria-sort='none'] {
-  padding: var(--padding);
 }
 .table--sortable th[aria-sort='ascending'] .scale-sort-indicator .up {
   color: var(--color);
@@ -187,20 +180,17 @@ scale-table {
 .table--sortable th .scale-sort-indicator {
   color: transparent;
 }
-.table--sortable th[aria-sort='none']:hover {
-  padding: 0 8px 0 0;
-}
 .table--sortable th[aria-sort='none'] .scale-sort-indicator {
-  display: none;
+  visibility: hidden;
 }
 .table--sortable th:not([aria-sort]):hover {
   padding: 0 8px 0 0;
 }
 .table--sortable th:not([aria-sort]) .scale-sort-indicator {
-  display: none;
+  visibility: hidden;
 }
 .table--sortable th:hover .scale-sort-indicator {
-  display: inline-block;
+  visibility: visible;
 }
 .table--striped table tr:nth-child(even) {
   background: var(--background-tr-striped);
