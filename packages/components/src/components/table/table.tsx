@@ -60,7 +60,9 @@ export class Table {
       if (th.children.length === 0) {
         // this may not be needed
         th.classList.add('dynamically-added');
-        this.addSortIndicator(th);
+        if (this.showSort) {
+          this.addSortIndicator(th);
+        }
       }
     });
   }
