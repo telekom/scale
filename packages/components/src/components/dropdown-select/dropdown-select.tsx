@@ -324,7 +324,7 @@ export class DropdownSelect {
 
   updateInputHidden(value: string = this.value): void {
     this.hostElement.querySelector<HTMLInputElement>(
-      `input[name=${this.name}]`
+      `input[name="${this.name}"]`
     ).value = value;
   }
 
