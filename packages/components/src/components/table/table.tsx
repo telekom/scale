@@ -47,9 +47,11 @@ export class Table {
   }
 
   componentWillLoad() {
-    this.hostElement.querySelectorAll('th').forEach((th) => {
-      this.addSortIndicator(th);
-    });
+    if (this.showSort)  {
+      this.hostElement.querySelectorAll('th').forEach((th) => {
+        this.addSortIndicator(th);
+      });
+    }
   }
 
   componentWillUpdate() {
