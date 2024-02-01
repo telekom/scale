@@ -200,6 +200,7 @@ app-navigation-user-menu::part(userInfo)
 }
 
 app-navigation-user-menu::part(rule-horizontal) {
+  visibility: hidden;
   margin: var(--telekom-spacing-composition-space-05) 0;
 }
 
