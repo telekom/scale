@@ -127,7 +127,8 @@
   display: none;
 }
 
-.data-grid:not(.data-grid--hide-menu.data-grid--no-heading) .data-grid__title-block {
+.data-grid:not(.data-grid--hide-menu.data-grid--no-heading)
+  .data-grid__title-block {
   min-height: var(--telekom-spacing-composition-space-18, 72px);
 }
 .data-grid--hide-menu .data-grid__title-block {
