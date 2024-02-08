@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property        | Attribute         | Description                                                                        | Type                                                                                | Default          |
-| --------------- | ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------- |
-| `closeOnSelect` | `close-on-select` | (optional) Determines whether the flyout should close when a menu item is selected | `boolean`                                                                           | `true`           |
-| `direction`     | `direction`       | (optional) Set preference for where the menu appears, space permitting             | `"bottom-left" \| "bottom-right" \| "left" \| "right" \| "top-left" \| "top-right"` | `'bottom-right'` |
-| `styles`        | `styles`          | (optional) Injected styles                                                         | `string`                                                                            | `undefined`      |
+| Property        | Attribute         | Description                                                                             | Type                                                                                | Default          |
+| --------------- | ----------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------- |
+| `closeOnSelect` | `close-on-select` | (optional) Determines whether the flyout should close when a menu item is selected      | `boolean`                                                                           | `true`           |
+| `direction`     | `direction`       | (optional) Set preference for where the menu appears, space permitting                  | `"bottom-left" \| "bottom-right" \| "left" \| "right" \| "top-left" \| "top-right"` | `'bottom-right'` |
+| `hasPopup`      | `has-popup`       | (optional) Determines whether the flyout trigger should get the aria-haspopup attribute | `boolean`                                                                           | `true`           |
+| `styles`        | `styles`          | (optional) Injected styles                                                              | `string`                                                                            | `undefined`      |
 
 
 ## Shadow Parts

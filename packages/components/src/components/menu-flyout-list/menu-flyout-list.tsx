@@ -59,6 +59,8 @@ export class MenuFlyoutList {
   @Prop() brandHeaderDropdown: boolean = false;
   /** (optional) Injected styles */
   @Prop() styles?: string;
+  /** (optional) set to true to prevent flipping orientation when off the screen vertically  */
+  @Prop() preventFlipVertical: boolean = false;
 
   /** Event triggered when menu list opened */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
@@ -282,7 +284,10 @@ export class MenuFlyoutList {
 
   updateTriggerAttributes() {
     const trigger = this.trigger();
-    if (trigger && trigger.getAttribute('aria-haspopup') === 'true') {
+    if (
+      (trigger && trigger.getAttribute('aria-haspopup') === 'true') ||
+      trigger.getAttribute('class') === 'scale-menu-trigger'
+    ) {
       trigger.setAttribute('aria-expanded', String(this.opened));
     }
   }
