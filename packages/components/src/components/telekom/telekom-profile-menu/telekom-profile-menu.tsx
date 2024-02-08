@@ -44,7 +44,7 @@ const readData = (data) => {
 };
 
 @Component({
-  tag: 'telekom-profile-menu',
+  tag: 'scale-telekom-profile-menu',
   styleUrl: 'telekom-profile-menu.css',
   shadow: true,
 })
