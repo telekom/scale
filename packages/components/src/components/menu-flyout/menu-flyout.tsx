@@ -12,7 +12,7 @@
 import { Component, Prop, h, Host, Element, Listen } from '@stencil/core';
 import { isClickOutside } from '../../utils/utils';
 
-const MENU_SELECTOR = '[role="menu"]';
+const MENU_SELECTOR = '.scale-menu-flyout-list';
 
 const isButtonOrLink = (el: HTMLElement) => {
   if (
@@ -153,13 +153,13 @@ export class MenuFlyout {
       .filter((el) => el.querySelector('[slot="sublist"]') != null)
       .concat([isButtonOrLink(this.trigger)])
       .filter((x) => x != null);
-      triggers.forEach((el) => {
-        if (this.triggerHasPopup) {
-          el.setAttribute('aria-haspopup', 'true');
-        }
-        el.classList.add('scale-menu-trigger');
-        el.setAttribute('aria-expanded', 'false');
-      });
+    triggers.forEach((el) => {
+      if (this.triggerHasPopup) {
+        el.setAttribute('aria-haspopup', 'true');
+      }
+      el.classList.add('scale-menu-trigger');
+      el.setAttribute('aria-expanded', 'false');
+    });
   }
 
   closeAll = () => {

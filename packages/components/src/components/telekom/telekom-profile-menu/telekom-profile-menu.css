@@ -1,0 +1,269 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+ */
+
+@import url('../../../global/custom-media.css');
+
+scale-menu-flyout {
+  display: flex;
+  height: 100%;
+
+  > a {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    position: relative;
+    font: inherit;
+    color: inherit;
+    background: none;
+    appearance: none;
+    padding: 0 0 var(--_spacing-bottom-slotted-bottom) 0;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: padding-bottom var(--telekom-motion-duration-immediate)
+      var(--telekom-motion-easing-standard);
+
+    line-height: var(--telekom-typography-line-spacing-loose);
+    font-weight: var(--telekom-typography-font-weight-extra-bold);
+
+    > .flyout-label {
+      font-size: var(--scl-font-size-12);
+      font-weight: var(--telekom-typography-font-weight-regular);
+      margin-left: var(--scl-spacing-8);
+    }
+  }
+
+  > a:hover,
+  > a:hover svg {
+    color: var(--telekom-color-text-and-icon-primary-hovered);
+  }
+
+  > a[aria-expanded='true'],
+  > a[aria-expanded='true'] svg {
+    color: var(--telekom-color-text-and-icon-primary-standard);
+  }
+
+  > a[aria-expanded='true'] .flyout-label {
+    color: var(--telekom-color-text-and-icon-standard);
+  }
+}
+
+.user-menu-mobile {
+  display: flex;
+  height: 100%;
+}
+.user-menu-mobile .flyout-label [aria-hidden='true'] {
+  display: none;
+}
+.user-menu-mobile .mydot .scale-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.scale-telekom-nav-item > button {
+  padding-bottom: var(--_spacing-bottom-slotted-bottom);
+}
+
+.user-menu-desktop {
+  display: none;
+}
+
+.user-menu-desktop scale-menu-flyout {
+  display: flex;
+}
+
+.user-menu-trigger {
+  position: relative;
+  left: 24px;
+}
+
+@media screen and (--md) {
+  .user-menu-trigger {
+    top: calc(var(--_spacing-bottom-slotted-bottom) + 8px);
+  }
+}
+
+@media screen and (--lg) {
+  .user-menu-mobile {
+    display: none;
+  }
+
+  .user-menu-desktop {
+    display: flex;
+    height: 100%;
+  }
+
+  scale-menu-flyout-list::part(base) {
+    top: calc(100% + var(--telekom-spacing-composition-space-03) - 16px);
+  }
+}
+
+@media screen and (--xl) {
+  scale-telekom-header-data-back-compat .user-menu-trigger {
+    top: calc(var(--_spacing-bottom-slotted-bottom) + 12px);
+  }
+}
+
+.profile-menu-login {
+  min-width: 15em;
+  padding-right: var(--telekom-spacing-composition-space-06);
+
+  > scale-button {
+    display: block;
+    --width: 100%;
+    margin: 1.5em 0;
+  }
+}
+
+.profile-menu-login > strong {
+  display: flex;
+  font: var(--telekom-text-style-heading-5);
+  padding: var(--telekom-spacing-composition-space-04) 0;
+}
+@media screen and (--md) {
+  .profile-menu-login > strong {
+    padding-top: var(--telekom-spacing-composition-space-10);
+  }
+  .profile-menu-login .footer {
+    padding-top: var(--telekom-spacing-composition-space-04);
+  }
+}
+@media screen and (--lg) {
+  .profile-menu-login {
+    padding: 12px 24px 4px 24px;
+  }
+  .profile-menu-login > strong {
+    padding-top: 0;
+  }
+  .profile-menu-login > scale-button {
+    margin: 16px 0;
+  }
+  .profile-menu-login .footer {
+    padding-top: 0;
+  }
+}
+
+.profile-menu-login p {
+  line-height: 1.4em;
+  color: var(--telekom-color-text-and-icon-additional);
+  margin: 0;
+}
+.profile-menu-login #signUp {
+  margin-top: var(--telekom-spacing-composition-space-04);
+}
+.profile-menu-login #signUp p {
+  margin: 0;
+}
+
+.scale-telekom-nav-list[variant='functions']::part(circle) .scale-icon {
+  height: 12px;
+  width: 12px;
+}
+
+.mydot {
+  background: var(--telekom-color-functional-success-standard);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: -4px;
+  right: -6px;
+}
+scale-menu-flyout a .mydot .scale-icon {
+  color: #fff !important;
+  height: 12px;
+  width: 12px;
+}
+
+app-navigation-user-menu {
+  --color-divider: transparent;
+}
+
+app-navigation-user-menu::part(userInfo) {
+  margin: 0;
+}
+app-navigation-user-menu::part(userInfo)
+  .app-navigation-user-menu__user-info--name {
+  margin-bottom: 0;
+}
+
+app-navigation-user-menu::part(rule-horizontal) {
+  visibility: hidden;
+  margin: var(--telekom-spacing-composition-space-05) 0;
+}
+
+@media screen and (--md) {
+  app-navigation-user-menu::part(userInfo) {
+    padding-top: var(--telekom-spacing-composition-space-08);
+  }
+  app-navigation-user-menu::part(rule-horizontal) {
+    margin: var(--telekom-spacing-composition-space-08) 0
+      var(--telekom-spacing-composition-space-06) 0;
+  }
+}
+
+app-navigation-user-menu::part(item) {
+  margin-top: var(--telekom-spacing-composition-space-05);
+  margin-bottom: var(--telekom-spacing-composition-space-05);
+  padding: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+app-navigation-user-menu::part(button) {
+  padding-top: 0;
+  padding-left: 0;
+}
+@media screen and (--md) {
+  app-navigation-user-menu::part(button) {
+    margin-top: -10px;
+  }
+}
+
+@media screen and (--lg) {
+  app-navigation-user-menu::part(item) {
+    line-height: 200%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 0;
+  }
+
+  app-navigation-user-menu::part(userInfo) {
+    padding-top: 0;
+  }
+  app-navigation-user-menu::part(rule-horizontal) {
+    padding-top: 16px;
+    padding-bottom: 6px;
+    margin: 0;
+  }
+  app-navigation-user-menu::part(button) {
+    margin-top: 7px;
+    padding-bottom: 0;
+  }
+}
+
+.visually-hidden {
+  /* see https://www.a11yproject.com/posts/how-to-hide-content/ */
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

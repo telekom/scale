@@ -266,7 +266,7 @@ export class TelekomProfileMenu {
             direction="bottom-left"
             onScale-open={(event: any) => this.openMenu(event)}
             onScale-close={(event: any) => this.closeMenu(event)}
-            hasPopup={false}
+            triggerHasPopup={false}
           >
             <a
               href="javascript:void(0);"

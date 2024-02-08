@@ -104,6 +104,12 @@ export class MenuFlyoutList {
     return this.trigger().getBoundingClientRect();
   }
 
+  componentDidLoad() {
+    if (!this.hostElement.hasAttribute('role')) {
+      this.hostElement.setAttribute('role', 'menu');
+    }
+  }
+
   componentDidRender() {
     if (this.opened && this.needsCheckPlacement) {
       this.setSize();
@@ -472,7 +478,7 @@ export class MenuFlyoutList {
 
   render() {
     return (
-      <Host role="menu">
+      <Host class="scale-menu-flyout-list">
         {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
