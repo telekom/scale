@@ -292,7 +292,7 @@ export class MenuFlyoutList {
     const trigger = this.trigger();
     if (
       (trigger && trigger.getAttribute('aria-haspopup') === 'true') ||
-      trigger.getAttribute('class') === 'scale-menu-trigger'
+      trigger.classList.contains('scale-menu-trigger')
     ) {
       trigger.setAttribute('aria-expanded', String(this.opened));
     }
