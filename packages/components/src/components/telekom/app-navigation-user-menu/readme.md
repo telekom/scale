@@ -33,6 +33,7 @@
 
  - [scale-app-header](../app-header)
  - [scale-telekom-header-data-back-compat](../telekom-header-data-back-compat)
+ - [scale-telekom-profile-menu](../telekom-profile-menu)
 
 ### Depends on
 
@@ -46,6 +47,7 @@ graph TD;
   app-navigation-user-menu --> scale-icon
   scale-app-header --> app-navigation-user-menu
   scale-telekom-header-data-back-compat --> app-navigation-user-menu
+  scale-telekom-profile-menu --> app-navigation-user-menu
   style app-navigation-user-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
