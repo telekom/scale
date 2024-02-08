@@ -28,7 +28,6 @@
  - [scale-app-header](../telekom/app-header)
  - [scale-data-grid](../data-grid)
  - [scale-telekom-header-data-back-compat](../telekom/telekom-header-data-back-compat)
- - [telekom-profile-menu](../telekom/telekom-profile-menu)
 
 ### Graph
 ```mermaid
@@ -36,7 +35,6 @@ graph TD;
   scale-app-header --> scale-menu-flyout
   scale-data-grid --> scale-menu-flyout
   scale-telekom-header-data-back-compat --> scale-menu-flyout
-  telekom-profile-menu --> scale-menu-flyout
   style scale-menu-flyout fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

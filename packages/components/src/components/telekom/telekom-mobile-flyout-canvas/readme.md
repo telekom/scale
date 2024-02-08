@@ -40,7 +40,6 @@
 ### Used by
 
  - [scale-telekom-header-data-back-compat](../telekom-header-data-back-compat)
- - [telekom-profile-menu](../telekom-profile-menu)
 
 ### Depends on
 
@@ -51,7 +50,6 @@
 graph TD;
   scale-telekom-mobile-flyout-canvas --> scale-icon-action-close
   scale-telekom-header-data-back-compat --> scale-telekom-mobile-flyout-canvas
-  telekom-profile-menu --> scale-telekom-mobile-flyout-canvas
   style scale-telekom-mobile-flyout-canvas fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

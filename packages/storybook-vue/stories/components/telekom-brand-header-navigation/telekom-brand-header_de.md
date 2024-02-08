@@ -103,8 +103,7 @@ Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenk
 
 ## Verwandte Komponenten
 
-* [Breadcrumb](?path=/usage/components-breadcrumb--standard)
-* [Sidebar Navigation](?path=/usage/components-sidebar-navigation--standard)
-* [Tab Navigation](?path=/usage/components-tab-navigation--text-icon)
-* [Accordion](?path=/usage/components-accordion--standard)
-* [Profile Menu](?path=/docs/components-telekom-profile-menu--logged-out)
+[Breadcrumb, ](?path=/usage/components-breadcrumb--standard)
+[Sidebar-Navigation, ](?path=/usage/components-sidebar-navigation--standard)
+[Tab-Navigation, ](?path=/usage/components-tab-navigation--text-icon)
+[Accordion](?path=/usage/components-accordion--standard)

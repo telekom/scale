@@ -29,7 +29,6 @@ export class AppNavigationUserMenu {
   @Element() hostElement: HTMLElement;
   @Prop() hide: () => void;
   @Prop() navigation: any;
-  @Prop() styles: string;
   @Event({
     eventName: 'closeMenu',
     composed: true,
@@ -41,10 +40,7 @@ export class AppNavigationUserMenu {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div class="app-navigation-user-menu">
-          <slot />
-
           {this.navigation.map((item) => {
             if (item.type === 'divider') {
               return (
@@ -57,10 +53,7 @@ export class AppNavigationUserMenu {
 
             if (item.type === 'userInfo') {
               return (
-                <div
-                  class="app-navigation-user-menu__user-info"
-                  part="userInfo"
-                >
+                <div class="app-navigation-user-menu__user-info">
                   <div class="app-navigation-user-menu__user-info--name scl-font-variant-heading-4">
                     {item.name}
                   </div>
@@ -78,7 +71,6 @@ export class AppNavigationUserMenu {
                   target={item.target || '_self'}
                   tabindex={0}
                   class="app-navigation-user-menu__item"
-                  part="item"
                   onClick={(e) => {
                     e.stopImmediatePropagation();
                     if (item.onClick) {
@@ -125,7 +117,6 @@ export class AppNavigationUserMenu {
               return (
                 <scale-button
                   class="app-navigation-user-menu__button"
-                  part="button"
                   onClick={(e) => {
                     if (item.onClick) {
                       item.onClick(e);

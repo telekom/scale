@@ -50,13 +50,11 @@ Type: `Promise<void>`
 ### Used by
 
  - [scale-telekom-header-data-back-compat](../telekom-header-data-back-compat)
- - [telekom-profile-menu](../telekom-profile-menu)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-telekom-header-data-back-compat --> scale-telekom-nav-flyout
-  telekom-profile-menu --> scale-telekom-nav-flyout
   style scale-telekom-nav-flyout fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
