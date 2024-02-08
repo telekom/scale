@@ -9,9 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
  */
-
 @import url('../../../global/custom-media.css');
-
 scale-menu-flyout {
   display: flex;
   height: 100%;

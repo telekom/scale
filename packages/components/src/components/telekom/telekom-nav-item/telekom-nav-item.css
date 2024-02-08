@@ -12,14 +12,14 @@
 @import url('../../../global/custom-media.css');
 
 /*
-  Spacing is handled only vertically.
-  Horizontal spacing is handled by `scale-nav-list`.
-*/
+   Spacing is handled only vertically.
+   Horizontal spacing is handled by `scale-nav-list`.
+ */
 
 /*
-  TODO this is experimental (mostly the name)
-  it should be put in global.css since it's already global haha
-*/
+   TODO this is experimental (mostly the name)
+   it should be put in global.css since it's already global haha
+ */
 @media screen and (--not-lg) {
   .scl-hide-on-mobile {
     display: none;
@@ -197,6 +197,7 @@
   > .scale-telekom-nav-item
   > :where(a, button):hover:after {
   content: '';
+  width: 100%;
   height: var(--telekom-spacing-composition-space-02);
   background: var(--telekom-color-text-and-icon-primary-hovered);
   display: block;
@@ -257,6 +258,7 @@
   > .scale-telekom-nav-item[active]
   > :where(a, button):after {
   content: '';
+  width: 100%;
   height: var(--telekom-spacing-composition-space-03);
   background: var(--telekom-color-text-and-icon-primary-standard);
   display: block;
@@ -354,6 +356,11 @@
 .scale-telekom-nav-list[variant='functions'] .scale-icon {
   height: 20px;
   width: 20px;
+}
+
+.scale-telekom-nav-list[variant='functions'] [slot='dot'] .scale-icon {
+  height: 12px;
+  width: 12px;
 }
 
 @media screen and (--2xl) {
