@@ -103,7 +103,7 @@ Auf kleinen Viewports gibt es nur eine Art der Navigation.
 
 ### Nutzerprofilmenü
 
-Mithilfe des Profilmenüs können sich Nutzer*innen an- und abmelden. Wenn dein Dienst den Telekom Login verwendet, solltest du es in deinen Header einbinden.
+Mithilfe des Profilmenüs können sich Nutzer\*innen an- und abmelden. Wenn dein Dienst den Telekom Login verwendet, solltest du es in deinen Header einbinden.
 
 #### Abgemeldeter Zustand
 

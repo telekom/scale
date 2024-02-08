@@ -2,6 +2,12 @@
 
 This page documents updates in `@telekom/scale-components` and related packages.
 
+## New profile menu
+
+12.02.2024
+
+The "Telekom Brand Header & Navigation" is complemented by the new profile menu. Users can log in and out using this menu. You can find more information in the Usage Text of the [new Brand Header](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
+
 ## Visual Design Updates
 
 21.06.2023
@@ -176,12 +182,12 @@ Read more about <a href="https://github.com/telekom/scale/blob/main/docs/dark-mo
 
 ### Affected content
 
-All components  
-[Release Notes](./?path=/docs/new-release-release-notes--page)  
-[Sketch Library Update](./?path=/docs/new-release-sketch-library-update--page)  
-[Design Tokens](./?path=/docs/guidelines-design-tokens--page)  
-[Typography](./?path=/docs/guidelines-typography--page)  
-[Colors](./?path=/docs/guidelines-colors--page)  
+All components
+[Release Notes](./?path=/docs/new-release-release-notes--page)
+[Sketch Library Update](./?path=/docs/new-release-sketch-library-update--page)
+[Design Tokens](./?path=/docs/guidelines-design-tokens--page)
+[Typography](./?path=/docs/guidelines-typography--page)
+[Colors](./?path=/docs/guidelines-colors--page)
 [Shadows](./?path=/docs/guidelines-shadows--page)
 
 ## v1 to v2 Migration
