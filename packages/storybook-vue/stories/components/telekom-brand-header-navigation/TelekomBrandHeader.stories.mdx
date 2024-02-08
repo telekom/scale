@@ -8,6 +8,8 @@ import {
   addonNavigation,
   sectorNavigation,
   userNavigation,
+  userInfo,
+  serviceLinks,
 } from './fixtures';
 
 <Meta
@@ -54,12 +56,13 @@ export const Template = (args, { argTypes }) => ({
   components: { TelekomHeaderTemplate },
   props: {
     ...TelekomHeaderTemplate.props,
-    storyName: String,
     // TODO remove these from here since they're included already in TelekomHeaderTemplate
     mainNavAriaLabel: 'Main Navigation',
     metaNavAriaLabel: 'Meta Navigation',
     metaNavExternalAriaLabel: 'External Meta Navigation',
     langSwitcherAriaLabel: 'Language Switcher',
+    userInfo: String,
+    serviceLinks: String,
   },
   template: `
     <TelekomHeaderTemplate
@@ -69,10 +72,12 @@ export const Template = (args, { argTypes }) => ({
       :logo-href="logoHref"
       :logo-title="logoTitle"
       :logo-hide-title="logoHideTitle"
-      :meta-nav-aria-label="metaNavAriaLabel" 
+      :meta-nav-aria-label="metaNavAriaLabel"
       :meta-nav-external-aria-label="metaNavExternalAriaLabel"
       :lang-switcher-aria-label="langSwitcherAriaLabel"
       :main-nav-aria-label="mainNavAriaLabel"
+      :user-info="userInfo"
+      :service-links="serviceLinks"
     />
   `,
 });

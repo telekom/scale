@@ -9,6 +9,8 @@
         :logo-href="logoHref"
         :logo-title="logoTitle"
         :logo-hide-title="logoHideTitle"
+        :user-info="userInfo"
+        :service-links="serviceLinks"
       ></component>
       <!-- content goes here -->
     </scale-telekom-app-shell>
@@ -38,6 +40,8 @@ export default {
     logoTitle: String,
     logoHideTitle: String,
     storyName: String,
+    userInfo: String,
+    serviceLinks: String
   },
 };
 </script>

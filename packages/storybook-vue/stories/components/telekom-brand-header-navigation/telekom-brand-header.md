@@ -31,6 +31,10 @@ The subtle brand header has no main navigation or features and is pinned to the 
 
 ![Image Name](assets/3_components/beta-brand-header/3_brandheader_brandbar_subtle.png)
 
+### Profile Menu
+
+TODO DaSu
+
 ## Elements
 
 ![Image Name](assets/3_components/beta-brand-header/4_brandheader_brandbar_elements.png)
@@ -102,7 +106,8 @@ This component is still in the beta phase. When testing it, keep in mind that it
 
 ## Related components
 
-[Breadcrumb, ](?path=/usage/components-breadcrumb--standard)
-[Sidebar Navigation, ](?path=/usage/components-sidebar-navigation--standard)
-[Tab Navigation, ](?path=/usage/components-tab-navigation--text-icon)
-[Accordion](?path=/usage/components-accordion--standard)
+* [Breadcrumb](?path=/usage/components-breadcrumb--standard)
+* [Sidebar Navigation](?path=/usage/components-sidebar-navigation--standard)
+* [Tab Navigation](?path=/usage/components-tab-navigation--text-icon)
+* [Accordion](?path=/usage/components-accordion--standard)
+* [Profile Menu](?path=/docs/components-telekom-profile-menu--logged-out)

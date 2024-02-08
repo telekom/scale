@@ -355,7 +355,7 @@ export const mainNavigationFlyout = [
 ];
 export const iconNavigation = [
   { name: 'Search', id: 'Search35', href: '#search', icon: 'action-search' },
-  { 
+  {
     name: 'Cart',
     id: 'Cart36',
     href: '#cart',
@@ -371,4 +371,42 @@ export const iconNavigation = [
 
 export const sectorNavigation = [
   { name: 'Business', id: 'Business39', href: '#business' },
+];
+
+export const userInfo = {
+  name: 'Alexander Dreyer',
+  email: 'alexander.dreyer@t-online.de',
+};
+
+export const serviceLinks = [
+  {
+    name: 'My Account',
+    href: 'https://www.telekom.de/mein-kundencenter',
+    icon: 't-product-measure-internet-speed',
+  },
+  {
+    name: 'E-Mail Center',
+    href: 'https://www.telekom.de/e-mail/e-mail-center',
+    icon: 'communication-mail-opened',
+  },
+  {
+    name: 'MagentaTV',
+    href: 'https://web.magentatv.de/EPG/',
+    icon: 't-product-magenta-tv',
+  },
+  {
+    name: 'MagentaSport',
+    href: 'https://www.magentasport.de',
+    icon: 't-product-telekom-1t1',
+  },
+  {
+    name: 'MagentaCloud',
+    href: 'https://magentacloud.de',
+    icon: 'action-upload-to-cloud',
+  },
+  {
+    name: 'MagentaHome Web',
+    href: 'https://cockpit.telekom.net',
+    icon: 'home-smarthome',
+  }
 ];

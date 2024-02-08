@@ -49,6 +49,7 @@ export class Badge {
           aria-label={this.count ? this.getAriaLabel() : this.label}
         >
           <slot />
+          <slot name="dot" />
           <span
             aria-hidden="true"
             part={cx(`circle`, this.count ? `has-count` : 'no-count')}
