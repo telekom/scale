@@ -317,13 +317,9 @@ scale-telekom-nav-item {
 
 ## Profile Menu
 
-The profile menu ensures a consistent behaviour for the login / user profile menu in all our products and services.
-
-Set the profile menu's `logged-in` parameter to `true` / `false` to change between the two states, set the remaining parameters to match the menu's appearance according to your products' needs.
+Set the profile menu's `logged-in` property to `true` or `false` to switch between the two states:
 
 ### Logged out
-
-In this state the menu offers the user the possibility sign up / log in to his account.
 
 <Canvas withSource="none">
   <Story
@@ -336,14 +332,13 @@ In this state the menu offers the user the possibility sign up / log in to his a
       appName: "Application",
       label: "Login",
       accessibilityLabel: "Login",
-      closeMenuAccessibilityLabel: "Menü schließen",
-      serviceName: "Kundencenter",
-      serviceDescription: "Hier können Sie Ihre Verträge verwalten oder auf Rechnungen, Verbrauchsanzeigen, Einstellungen und weitere Informationen zugreifen.",
-      loginLabel: "Zum Login",
-      loginHelpLabel: "Hilfe zum Login",
-      registerHeadline: "Noch kein Telekom Login?",
-      registerLabel: "Jetzt registrieren",
-      logoutLabel: "Logout",
+      closeMenuAccessibilityLabel: "Close menu",
+      serviceName: "Customer Center",
+      serviceDescription: "Manage your contracts, bills, usage overviews, settings, and more.",
+      loginLabel: "Log in",
+      loginHelpLabel: "Help logging in",
+      registerHeadline: "Need an account?",
+      registerLabel: "Register now",
       userInfo: JSON.stringify({
         name: 'Firstname Lastname',
         email: 'example@example.com',
@@ -424,8 +419,6 @@ In this state the menu offers the user the possibility sign up / log in to his a
 
 ### Logged in
 
-In this state the menu offers the user links to a set of important Telekom services and the possibility to log out from his account.
-
 <Canvas withSource="none">
   <Story
     name="Profile Menu / Logged in"
@@ -436,17 +429,17 @@ In this state the menu offers the user links to a set of important Telekom servi
       loggedIn: true,
       appName: "Application",
       label: "Alexander",
-      accessibilityLabel: "Benutzermenü öffnen: Alexander",
-      closeMenuAccessibilityLabel: "Menü schließen",
-      loginSettingsLabel: "Login-Einstellungen",
-      logoutLabel: "Logout",
+      accessibilityLabel: "open user menu: Alexander",
+      closeMenuAccessibilityLabel: "close menu",
+      loginSettingsLabel: "Login Settings",
+      logoutLabel: "Log out",
       userInfo: JSON.stringify({
         name: 'Alexander Dreyer',
         email: 'alexander.dreyer@t-online.de',
       }),
       serviceLinks: JSON.stringify([
         {
-          name: 'Kundencenter',
+          name: 'My Account',
           href: 'https://www.telekom.de/mein-kundencenter',
           icon: 't-product-measure-internet-speed',
         },
@@ -471,7 +464,7 @@ In this state the menu offers the user links to a set of important Telekom servi
           icon: 'action-upload-to-cloud',
         },
         {
-          name: 'MagentaZuhause Web',
+          name: 'MagentaHome Web',
           href: 'https://cockpit.telekom.net',
           icon: 'home-smarthome',
         }
