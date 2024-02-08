@@ -12,7 +12,7 @@
 import { Component, Prop, h, Host, Element, Listen } from '@stencil/core';
 import { isClickOutside } from '../../utils/utils';
 
-const MENU_SELECTOR = '.scale-menu';
+const MENU_SELECTOR = '[role="menu"]';
 
 const isButtonOrLink = (el: HTMLElement) => {
   if (
@@ -34,8 +34,6 @@ export class MenuFlyout {
 
   /** (optional) Determines whether the flyout should close when a menu item is selected */
   @Prop() closeOnSelect = true;
-  /** (optional) Determines whether the flyout trigger should get the aria-haspopup attribute */
-  @Prop() hasPopup = true;
   /** (optional) Set preference for where the menu appears, space permitting */
   @Prop() direction:
     | 'bottom-right'
@@ -154,14 +152,7 @@ export class MenuFlyout {
       .concat([isButtonOrLink(this.trigger)])
       .filter((x) => x != null);
     triggers.forEach((el) => {
-
-      if(this.hasPopup) {
-        el.setAttribute('aria-haspopup', 'true');
-      }
-
-      el.setAttribute('class', 'scale-menu-trigger');
-
-
+      el.setAttribute('aria-haspopup', 'true');
       el.setAttribute('aria-expanded', 'false');
     });
   }

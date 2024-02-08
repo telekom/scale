@@ -59,11 +59,6 @@ export class MenuFlyoutList {
   @Prop() brandHeaderDropdown: boolean = false;
   /** (optional) Injected styles */
   @Prop() styles?: string;
-  /** (optional) set to true to prevent flipping orientation when off the screen vertically  */
-  @Prop() preventFlipVertical: boolean = false;
-
-  /** (optional) override to set a custom role */
-  @Prop() role? = "menu";
 
   /** Event triggered when menu list opened */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
@@ -287,7 +282,7 @@ export class MenuFlyoutList {
 
   updateTriggerAttributes() {
     const trigger = this.trigger();
-    if (trigger && trigger.getAttribute('aria-haspopup') === 'true' || trigger.getAttribute('class') === 'scale-menu-trigger') {
+    if (trigger && trigger.getAttribute('aria-haspopup') === 'true') {
       trigger.setAttribute('aria-expanded', String(this.opened));
     }
   }
@@ -346,14 +341,14 @@ export class MenuFlyoutList {
     if (rect.top < PAD) {
       // console.log('off top edge');
       isOutOfBounds = true;
-      if (this.direction.includes('top') && !this.preventFlipVertical) {
+      if (this.direction.includes('top')) {
         this.flipVertical = true;
       }
     }
     if (rect.bottom > this.windowHeight - PAD) {
       // console.log('off bottom edge');
       isOutOfBounds = true;
-      if (this.direction.includes('bottom') && !this.preventFlipVertical) {
+      if (this.direction.includes('bottom')) {
         this.flipVertical = true;
       }
     }
@@ -472,7 +467,7 @@ export class MenuFlyoutList {
 
   render() {
     return (
-      <Host role={this.role} class="scale-menu">
+      <Host role="menu">
         {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
