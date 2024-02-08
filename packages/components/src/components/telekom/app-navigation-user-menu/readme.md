@@ -11,6 +11,7 @@
 | ------------ | ------------ | ----------- | ------------ | ----------- |
 | `hide`       | --           |             | `() => void` | `undefined` |
 | `navigation` | `navigation` |             | `any`        | `undefined` |
+| `styles`     | `styles`     |             | `string`     | `undefined` |
 
 
 ## Events
@@ -24,7 +25,10 @@
 
 | Part                | Description |
 | ------------------- | ----------- |
+| `"button"`          |             |
+| `"item"`            |             |
 | `"rule-horizontal"` |             |
+| `"userinfo"`        |             |
 
 
 ## Dependencies
