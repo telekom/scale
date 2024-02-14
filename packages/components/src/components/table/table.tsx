@@ -47,7 +47,7 @@ export class Table {
   }
 
   componentWillLoad() {
-    if (this.showSort)  {
+    if (this.showSort) {
       this.hostElement.querySelectorAll('th').forEach((th) => {
         this.addSortIndicator(th);
       });
