@@ -157,7 +157,6 @@ export class TelekomNavItem {
   };
 
   handlePointerOut = () => {
-    console.log('handlePointerOut!!!', this.parentElement, this.hostElement);
     this.expanded = false;
     this.hostElement.removeEventListener('mouseleave', this.handlePointerOut);
     this.hostElement
