@@ -270,6 +270,8 @@ export class DropdownSelect {
   private comboEl: HTMLElement;
   private listboxEl: HTMLElement;
   private listboxPadEl: HTMLElement;
+  private hiddenInput: HTMLInputElement;
+  s;
 
   @Watch('value')
   valueChange(newValue) {
@@ -320,12 +322,11 @@ export class DropdownSelect {
     input.value = this.value;
     input.type = 'hidden';
     this.hostElement.appendChild(input);
+    this.hiddenInput = input;
   }
 
   updateInputHidden(value: string = this.value): void {
-    this.hostElement.querySelector<HTMLInputElement>(
-      'input[name="' + this.name + '"]'
-    ).value = value;
+    this.hiddenInput.value = value;
   }
 
   selectOption = (index) => {
