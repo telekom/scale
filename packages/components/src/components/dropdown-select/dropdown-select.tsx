@@ -271,7 +271,6 @@ export class DropdownSelect {
   private listboxEl: HTMLElement;
   private listboxPadEl: HTMLElement;
   private hiddenInput: HTMLInputElement;
-  s;
 
   @Watch('value')
   valueChange(newValue) {
