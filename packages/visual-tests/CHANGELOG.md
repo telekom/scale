@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.148](https://github.com/telekom/scale/compare/v3.0.0-beta.147...v3.0.0-beta.148) (2024-02-15)
+
+
+### Bug Fixes
+
+* **table:** prevent jumping headers when sorting ([#2265](https://github.com/telekom/scale/issues/2265)) ([94f0cd4](https://github.com/telekom/scale/commit/94f0cd4a197872d19c1e4334fe797c262c57de0e))
+
+
+
+
+
 # [3.0.0-beta.147](https://github.com/telekom/scale/compare/v3.0.0-beta.146...v3.0.0-beta.147) (2024-01-15)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests

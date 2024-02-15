@@ -334,7 +334,8 @@ export class DataGrid {
       this.shadeAlternate && `${name}--shade-alternate`,
       this.freezeHeader && `${name}--freeze-header`,
       this.hideBorder && `${name}--hide-border`,
-      this.hideMenu && `${name}--hide-menu`
+      this.hideMenu && `${name}--hide-menu`,
+      !this.heading && `${name}--no-heading`
     );
   }
 

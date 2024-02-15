@@ -27,9 +27,27 @@ describe('Table', () => {
         <table>
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Time</th>
-              <th>Euros</th>
+              <th>
+                <span aria-hidden="true" class="scale-sort-indicator">
+                  <scale-icon-content-sort-indicator-up class="scale-sort-indicator-icon up" size="16"></scale-icon-content-sort-indicator-up>
+                  <scale-icon-content-sort-indicator-down class="down scale-sort-indicator-icon" size="16"></scale-icon-content-sort-indicator-down>
+                </span>              
+                Title
+              </th>
+              <th>
+                <span aria-hidden="true" class="scale-sort-indicator">
+                  <scale-icon-content-sort-indicator-up class="scale-sort-indicator-icon up" size="16"></scale-icon-content-sort-indicator-up>
+                  <scale-icon-content-sort-indicator-down class="down scale-sort-indicator-icon" size="16"></scale-icon-content-sort-indicator-down>
+                </span>                    
+                Time
+              </th>
+              <th>
+                <span aria-hidden="true" class="scale-sort-indicator">
+                  <scale-icon-content-sort-indicator-up class="scale-sort-indicator-icon up" size="16"></scale-icon-content-sort-indicator-up>
+                  <scale-icon-content-sort-indicator-down class="down scale-sort-indicator-icon" size="16"></scale-icon-content-sort-indicator-down>
+                </span>                 
+                Euros
+              </th>
             </tr>
           </thead>
           <tbody>

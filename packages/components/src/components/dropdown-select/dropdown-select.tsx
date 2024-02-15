@@ -270,6 +270,7 @@ export class DropdownSelect {
   private comboEl: HTMLElement;
   private listboxEl: HTMLElement;
   private listboxPadEl: HTMLElement;
+  private hiddenInput: HTMLInputElement;
 
   @Watch('value')
   valueChange(newValue) {
@@ -320,12 +321,11 @@ export class DropdownSelect {
     input.value = this.value;
     input.type = 'hidden';
     this.hostElement.appendChild(input);
+    this.hiddenInput = input;
   }
 
   updateInputHidden(value: string = this.value): void {
-    this.hostElement.querySelector<HTMLInputElement>(
-      `input[name=${this.name}]`
-    ).value = value;
+    this.hiddenInput.value = value;
   }
 
   selectOption = (index) => {
@@ -498,7 +498,7 @@ export class DropdownSelect {
               id={this.comboboxId}
               part="combobox"
               role="combobox"
-              tabindex="0"
+              tabindex={this.disabled ? '-1' : '0'}
               onBlur={this.handleBlur}
               onFocus={this.handleFocus}
               onClick={this.handleClick}
