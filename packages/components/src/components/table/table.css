@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-scale-table {
+ scale-table {
   --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
   --background: var(--telekom-color-ui-state-fill-standard);
   --color: var(--telekom-color-text-and-icon-standard);
@@ -28,7 +28,7 @@ scale-table {
   --border-bottom-tfoot-td: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-extra-strong);
 
-  --spacing-th-sortable: 0 var(--telekom-spacing-composition-space-04) 0 0;
+  --spacing-th-sortable: 0 0 0 0;
   --background-th-sortable-hover: var(--telekom-color-ui-subtle);
   --background-th-sortable-active: var(--telekom-color-ui-faint);
   --box-shadow-th-sortable-focus: inset 0 0 0
@@ -86,7 +86,7 @@ scale-table {
   border-bottom: var(--border-bottom-tfoot-td);
 }
 .table .scale-sort-indicator-icon {
-  visibility: hidden;
+  display: none !important;
 }
 .table tbody tr:hover {
   background: var(--background-tbody-tr-hover);
@@ -100,6 +100,7 @@ scale-table {
 .table--sortable th {
   cursor: pointer;
   padding: var(--spacing-th-sortable);
+  padding-right: 0;
 }
 .table--sortable th:hover {
   padding: var(--spacing-th-sortable);
@@ -113,10 +114,19 @@ scale-table {
   border-radius: var(--radius);
 }
 .table--sortable th .scale-sort-indicator-icon {
-  visibility: visible;
+  display: inline-flex !important;
 }
 .table--sortable th[aria-disabled] {
+  padding: var(--padding);
   pointer-events: none;
+}
+.table--sortable th:not([aria-sort]) {
+  padding: var(--padding);
+  padding-right: var(--telekom-spacing-composition-space-07);
+}
+.table--sortable th[aria-sort='none'] {
+  padding: var(--padding);
+  padding-right: var(--telekom-spacing-composition-space-05)
 }
 .table--sortable th[aria-sort='ascending'] .scale-sort-indicator .up {
   color: var(--color);
@@ -180,17 +190,20 @@ scale-table {
 .table--sortable th .scale-sort-indicator {
   color: transparent;
 }
+.table--sortable th[aria-sort='none']:hover {
+  padding: 0 0 0 0;
+}
 .table--sortable th[aria-sort='none'] .scale-sort-indicator {
-  visibility: hidden;
+  display: none;
 }
 .table--sortable th:not([aria-sort]):hover {
   padding: 0 8px 0 0;
 }
 .table--sortable th:not([aria-sort]) .scale-sort-indicator {
-  visibility: hidden;
+  display: none;
 }
 .table--sortable th:hover .scale-sort-indicator {
-  visibility: visible;
+  display: inline-block;
 }
 .table--striped table tr:nth-child(even) {
   background: var(--background-tr-striped);
