@@ -151,17 +151,21 @@ export class TelekomNavItem {
       'mouseleave',
       this.handlePointerOut
     );
-    this.hostElement
-      .querySelector('scale-telekom-mega-menu')
-      .addEventListener('mouseleave', this.handlePointerOut);
+    if (this.hostElement.querySelector('scale-telekom-mega-menu') !== null) {
+      this.hostElement
+        .querySelector('scale-telekom-mega-menu')
+        .addEventListener('mouseleave', this.handlePointerOut);
+    }
   };
 
   handlePointerOut = () => {
     this.expanded = false;
     this.hostElement.removeEventListener('mouseleave', this.handlePointerOut);
-    this.hostElement
-      .querySelector('scale-telekom-mega-menu')
-      .removeEventListener('mouseleave', this.handlePointerOut);
+    if (this.hostElement.querySelector('scale-telekom-mega-menu') !== null) {
+      this.hostElement
+        .querySelector('scale-telekom-mega-menu')
+        .addEventListener('mouseleave', this.handlePointerOut);
+    }
   };
 
   @Method()
