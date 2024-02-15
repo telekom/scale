@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- scale-table {
+scale-table {
   --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
   --background: var(--telekom-color-ui-state-fill-standard);
   --color: var(--telekom-color-text-and-icon-standard);
@@ -126,7 +126,7 @@
 }
 .table--sortable th[aria-sort='none'] {
   padding: var(--padding);
-  padding-right: var(--telekom-spacing-composition-space-05)
+  padding-right: var(--telekom-spacing-composition-space-05);
 }
 .table--sortable th[aria-sort='ascending'] .scale-sort-indicator .up {
   color: var(--color);
