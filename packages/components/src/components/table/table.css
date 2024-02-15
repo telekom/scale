@@ -28,7 +28,7 @@ scale-table {
   --border-bottom-tfoot-td: var(--telekom-spacing-composition-space-01) solid
     var(--telekom-color-ui-extra-strong);
 
-  --spacing-th-sortable: 0 var(--telekom-spacing-composition-space-04) 0 0;
+  --spacing-th-sortable: 0 0 0 0;
   --background-th-sortable-hover: var(--telekom-color-ui-subtle);
   --background-th-sortable-active: var(--telekom-color-ui-faint);
   --box-shadow-th-sortable-focus: inset 0 0 0
@@ -100,6 +100,7 @@ scale-table {
 .table--sortable th {
   cursor: pointer;
   padding: var(--spacing-th-sortable);
+  padding-right: 0;
 }
 .table--sortable th:hover {
   padding: var(--spacing-th-sortable);
@@ -121,9 +122,11 @@ scale-table {
 }
 .table--sortable th:not([aria-sort]) {
   padding: var(--padding);
+  padding-right: var(--telekom-spacing-composition-space-07);
 }
 .table--sortable th[aria-sort='none'] {
   padding: var(--padding);
+  padding-right: var(--telekom-spacing-composition-space-05);
 }
 .table--sortable th[aria-sort='ascending'] .scale-sort-indicator .up {
   color: var(--color);
@@ -188,7 +191,7 @@ scale-table {
   color: transparent;
 }
 .table--sortable th[aria-sort='none']:hover {
-  padding: 0 8px 0 0;
+  padding: 0 0 0 0;
 }
 .table--sortable th[aria-sort='none'] .scale-sort-indicator {
   display: none;
