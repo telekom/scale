@@ -140,7 +140,6 @@ export class TelekomNavItem {
     event.stopImmediatePropagation();
     this.expanded = !this.expanded;
     this.parentElement.removeEventListener('mouseleave', this.handlePointerOut);
-
   };
 
   handlePointerIn = () => {
@@ -148,15 +147,22 @@ export class TelekomNavItem {
       return;
     }
     this.expanded = true;
-    this.hostElement.parentElement.addEventListener('mouseleave', this.handlePointerOut);
-    this.hostElement.querySelector('scale-telekom-mega-menu').addEventListener('mouseleave', this.handlePointerOut);
+    this.hostElement.parentElement.addEventListener(
+      'mouseleave',
+      this.handlePointerOut
+    );
+    this.hostElement
+      .querySelector('scale-telekom-mega-menu')
+      .addEventListener('mouseleave', this.handlePointerOut);
   };
 
   handlePointerOut = () => {
     console.log('handlePointerOut!!!', this.parentElement, this.hostElement);
     this.expanded = false;
     this.hostElement.removeEventListener('mouseleave', this.handlePointerOut);
-    this.hostElement.querySelector('scale-telekom-mega-menu').removeEventListener('mouseleave', this.handlePointerOut);
+    this.hostElement
+      .querySelector('scale-telekom-mega-menu')
+      .removeEventListener('mouseleave', this.handlePointerOut);
   };
 
   @Method()
