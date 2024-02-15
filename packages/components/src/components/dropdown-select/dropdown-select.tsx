@@ -498,7 +498,7 @@ export class DropdownSelect {
               id={this.comboboxId}
               part="combobox"
               role="combobox"
-              tabindex="0"
+              tabindex={this.disabled ? '-1' : '0'}
               onBlur={this.handleBlur}
               onFocus={this.handleFocus}
               onClick={this.handleClick}
