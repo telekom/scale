@@ -15,9 +15,9 @@
     "new-version": "lerna version --conventional-commits --no-push",
     "force-version": "lerna version --conventional-commits --force-publish",
     "format": "lerna run format",
-    "publish-telekom": "lerna publish -y from-package --no-verify-access --no-git-tag-version --no-push --force-publish @telekom/scale-components,@telekom/scale-components-react,@telekom/scale-components-angular,@telekom/scale-components-vue,@telekom/scale-design-tokens --dist-tag next",
+    "publish-telekom": "lerna publish -y from-package --no-verify-access --no-git-tag-version --no-push --force-publish @telekom/scale-components,@telekom/scale-components-react,@telekom/scale-components-angular,@telekom/scale-components-vue --dist-tag next",
     "prepare-neutral": "node scripts/prepare-neutral-release.js && git commit . -m 'chore: temp commit'",
-    "publish-neutral": "lerna publish -y from-package --no-verify-access --no-git-tag-version --no-push --force-publish @telekom/scale-components-neutral,@telekom/scale-components-react-neutral,@telekom/scale-components-angular-neutral,@telekom/scale-components-vue-neutral,@telekom/scale-design-tokens-neutral --dist-tag next"
+    "publish-neutral": "lerna publish -y from-package --no-verify-access --no-git-tag-version --no-push --force-publish @telekom/scale-components-neutral,@telekom/scale-components-react-neutral,@telekom/scale-components-angular-neutral,@telekom/scale-components-vue-neutral --dist-tag next"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
