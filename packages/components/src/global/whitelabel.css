@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-@import '~@telekom/scale-design-tokens/dist/design-tokens.css';
+@import './legacy-scale-design-tokens.css';
 @import '~@telekom/design-tokens/dist/css/design-tokens.all.css';
 @import './grid.css';
 

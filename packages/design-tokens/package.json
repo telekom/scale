@@ -8,9 +8,7 @@
     "type": "git",
     "url": "https://github.com/telekom/scale.git"
   },
-  "publishConfig": {
-    "access": "public"
-  },
+  "private": true,
   "files": [
     "dist/",
     "src/"

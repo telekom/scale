@@ -1,0 +1,407 @@
+:root {
+  /* SPACING */
+  --scl-spacing-1: 0.0625rem;
+  --scl-spacing-2: 0.125rem;
+  --scl-spacing-4: 0.25rem;
+  --scl-spacing-8: 0.5rem;
+  --scl-spacing-12: 0.75rem;
+  --scl-spacing-16: 1rem;
+  --scl-spacing-24: 1.5rem;
+  --scl-spacing-32: 2rem;
+  --scl-spacing-40: 2.5rem;
+  --scl-spacing-48: 3rem;
+  --scl-spacing-64: 4rem;
+  --scl-spacing-80: 5rem;
+  /* FONT */
+  --scl-font-family-sans: TeleNeoWeb, sans-serif;
+  --scl-font-family-mono: monospace;
+  --scl-font-size-10: 0.625rem;
+  --scl-font-size-12: 0.75rem;
+  --scl-font-size-14: 0.875rem;
+  --scl-font-size-16: 1rem;
+  --scl-font-size-20: 1.25rem;
+  --scl-font-size-24: 1.5rem;
+  --scl-font-size-32: 2rem;
+  --scl-font-size-40: 2.5rem;
+  --scl-font-size-56: 3.5rem;
+  --scl-font-weight-thin: 200;
+  --scl-font-weight-regular: 400;
+  --scl-font-weight-medium: 500;
+  --scl-font-weight-bold: 700;
+  --scl-font-weight-extrabold: 800;
+  --scl-font-line-height-114: 114%;
+  --scl-font-line-height-120: 120%;
+  --scl-font-line-height-125: 125%;
+  --scl-font-line-height-133: 133%;
+  --scl-font-line-height-150: 150%;
+  --scl-font-line-height-160: 160%;
+  /* FONT-VARIANT */
+  --scl-font-variant-body-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-body-size: 1rem;
+  --scl-font-variant-body-weight: 500;
+  --scl-font-variant-body-line-height: 150%;
+  --scl-font-variant-body-letter-spacing: normal;
+  --scl-font-variant-body-short-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-body-short-size: 1rem;
+  --scl-font-variant-body-short-weight: 500;
+  --scl-font-variant-body-short-line-height: 125%;
+  --scl-font-variant-body-short-letter-spacing: normal;
+  --scl-font-variant-body-large-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-body-large-size: 1.25rem;
+  --scl-font-variant-body-large-weight: 500;
+  --scl-font-variant-body-large-line-height: 160%;
+  --scl-font-variant-body-large-letter-spacing: normal;
+  --scl-font-variant-smaller-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-smaller-size: 0.75rem;
+  --scl-font-variant-smaller-weight: 500;
+  --scl-font-variant-smaller-line-height: 125%;
+  --scl-font-variant-smaller-letter-spacing: normal;
+  --scl-font-variant-label-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-label-size: 0.75rem;
+  --scl-font-variant-label-weight: 500;
+  --scl-font-variant-label-line-height: 120%;
+  --scl-font-variant-label-letter-spacing: normal;
+  --scl-font-variant-caption-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-caption-size: 0.75rem;
+  --scl-font-variant-caption-weight: 500;
+  --scl-font-variant-caption-line-height: 133%;
+  --scl-font-variant-caption-letter-spacing: normal;
+  --scl-font-variant-heading-6-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-heading-6-size: 1rem;
+  --scl-font-variant-heading-6-weight: 700;
+  --scl-font-variant-heading-6-line-height: 150%;
+  --scl-font-variant-heading-6-letter-spacing: normal;
+  --scl-font-variant-heading-5-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-heading-5-size: 1.25rem;
+  --scl-font-variant-heading-5-weight: 800;
+  --scl-font-variant-heading-5-line-height: 125%;
+  --scl-font-variant-heading-5-letter-spacing: normal;
+  --scl-font-variant-heading-4-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-heading-4-size: 1.5rem;
+  --scl-font-variant-heading-4-weight: 800;
+  --scl-font-variant-heading-4-line-height: 133%;
+  --scl-font-variant-heading-4-letter-spacing: normal;
+  --scl-font-variant-heading-3-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-heading-3-size: 2rem;
+  --scl-font-variant-heading-3-weight: 800;
+  --scl-font-variant-heading-3-line-height: 125%;
+  --scl-font-variant-heading-3-letter-spacing: normal;
+  --scl-font-variant-heading-2-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-heading-2-size: 2.5rem;
+  --scl-font-variant-heading-2-weight: 800;
+  --scl-font-variant-heading-2-line-height: 120%;
+  --scl-font-variant-heading-2-letter-spacing: normal;
+  --scl-font-variant-heading-1-family: TeleNeoWeb, sans-serif;
+  --scl-font-variant-heading-1-size: 3.5rem;
+  --scl-font-variant-heading-1-weight: 800;
+  --scl-font-variant-heading-1-line-height: 114%;
+  --scl-font-variant-heading-1-letter-spacing: normal;
+  /* COLOR */
+  --scl-color-primary: hsl(329.20000000000005, 100%, 44.3%);
+  --scl-color-black: hsl(0, 0%, 0%);
+  --scl-color-white: hsl(0, 0%, 100%);
+  --scl-color-grey-0: hsl(0, 0%, 94.9%);
+  --scl-color-grey-10: hsl(0, 0%, 89.8%);
+  --scl-color-grey-20: hsl(0, 0%, 80%);
+  --scl-color-grey-30: hsl(0, 0%, 69.8%);
+  --scl-color-grey-40: hsl(0, 0%, 60%);
+  --scl-color-grey-50: hsl(0, 0%, 49.8%);
+  --scl-color-grey-60: hsl(0, 0%, 40%);
+  --scl-color-grey-70: hsl(0, 0%, 29.8%);
+  --scl-color-grey-80: hsl(0, 0%, 20%);
+  --scl-color-grey-90: hsl(0, 0%, 9.8%);
+  --scl-color-grey-100: hsl(0, 0%, 0%);
+  --scl-color-orange-0: hsl(54.39999999999998, 100%, 93.7%);
+  --scl-color-orange-10: hsl(48.39999999999998, 100%, 88.8%);
+  --scl-color-orange-20: hsl(43.69999999999999, 100%, 84.1%);
+  --scl-color-orange-30: hsl(38.69999999999999, 100%, 79.6%);
+  --scl-color-orange-40: hsl(33.5, 100%, 75.1%);
+  --scl-color-orange-50: hsl(29, 100%, 70.8%);
+  --scl-color-orange-60: hsl(24.80000000000001, 96.5%, 66.1%);
+  --scl-color-orange-70: hsl(17.30000000000001, 71.4%, 56.1%);
+  --scl-color-orange-80: hsl(17.30000000000001, 72.3%, 39.6%);
+  --scl-color-orange-90: hsl(17.30000000000001, 88.8%, 31.4%);
+  --scl-color-orange-100: hsl(11.399999999999977, 86.6%, 26.3%);
+  --scl-color-red-0: hsl(353.79999999999995, 100%, 88.6%);
+  --scl-color-red-10: hsl(351.5, 100%, 83.3%);
+  --scl-color-red-20: hsl(350.4, 98.1%, 78.8%);
+  --scl-color-red-30: hsl(350.6, 91%, 73.9%);
+  --scl-color-red-40: hsl(350.4, 85.1%, 68.4%);
+  --scl-color-red-50: hsl(350.29999999999995, 82.8%, 63.5%);
+  --scl-color-red-60: hsl(351.20000000000005, 82.6%, 59.4%);
+  --scl-color-red-70: hsl(349.70000000000005, 69%, 50.6%);
+  --scl-color-red-80: hsl(348.9, 74.9%, 43.7%);
+  --scl-color-red-90: hsl(347.1, 84%, 36.9%);
+  --scl-color-red-100: hsl(345.9, 100%, 30%);
+  --scl-color-blue-0: hsl(190.20000000000005, 100%, 92%);
+  --scl-color-blue-10: hsl(196.20000000000005, 100%, 85.5%);
+  --scl-color-blue-20: hsl(200.89999999999998, 100%, 79.2%);
+  --scl-color-blue-30: hsl(206, 100%, 73.3%);
+  --scl-color-blue-40: hsl(210.70000000000005, 100%, 67.5%);
+  --scl-color-blue-50: hsl(215.60000000000002, 100%, 62%);
+  --scl-color-blue-60: hsl(220, 100%, 56.5%);
+  --scl-color-blue-70: hsl(227.39999999999998, 89%, 46.3%);
+  --scl-color-blue-80: hsl(236.5, 100%, 37.5%);
+  --scl-color-blue-90: hsl(241.10000000000002, 100%, 31.2%);
+  --scl-color-blue-100: hsl(249.39999999999998, 100%, 25.1%);
+  --scl-color-teal-0: hsl(176.10000000000002, 63.3%, 90.4%);
+  --scl-color-teal-10: hsl(178.89999999999998, 60%, 82.4%);
+  --scl-color-teal-20: hsl(180, 58.5%, 74.5%);
+  --scl-color-teal-30: hsl(181.20000000000005, 57.6%, 66.7%);
+  --scl-color-teal-40: hsl(182.10000000000002, 55.2%, 58.8%);
+  --scl-color-teal-50: hsl(183.60000000000002, 53.8%, 50.8%);
+  --scl-color-teal-60: hsl(184.79999999999995, 68.9%, 42.9%);
+  --scl-color-teal-70: hsl(182.89999999999998, 80.1%, 35.5%);
+  --scl-color-teal-80: hsl(180.5, 91.5%, 27.8%);
+  --scl-color-teal-90: hsl(178.89999999999998, 100%, 20.6%);
+  --scl-color-teal-100: hsl(176.5, 100%, 16.9%);
+  --scl-color-green-0: hsl(78.30000000000001, 59%, 92.4%);
+  --scl-color-green-10: hsl(82.5, 55.6%, 85.9%);
+  --scl-color-green-20: hsl(86.30000000000001, 55.3%, 79.8%);
+  --scl-color-green-30: hsl(90.39999999999998, 52.6%, 73.5%);
+  --scl-color-green-40: hsl(95.30000000000001, 50.9%, 67.3%);
+  --scl-color-green-50: hsl(98.80000000000001, 49.7%, 61%);
+  --scl-color-green-60: hsl(103.19999999999999, 48.1%, 54.7%);
+  --scl-color-green-70: hsl(111.5, 46.1%, 48%);
+  --scl-color-green-80: hsl(120, 52.4%, 41.2%);
+  --scl-color-green-90: hsl(127.60000000000002, 58.9%, 34.3%);
+  --scl-color-green-100: hsl(136.3, 65.7%, 27.5%);
+  --scl-color-clay-0: hsl(15.800000000000011, 42.2%, 91.2%);
+  --scl-color-clay-10: hsl(19.399999999999977, 46.3%, 86.9%);
+  --scl-color-clay-20: hsl(20.899999999999977, 49.4%, 82.9%);
+  --scl-color-clay-30: hsl(21.899999999999977, 48.1%, 78.8%);
+  --scl-color-clay-40: hsl(22.30000000000001, 48.4%, 74.9%);
+  --scl-color-clay-50: hsl(22.80000000000001, 48.3%, 71.2%);
+  --scl-color-clay-60: hsl(25.100000000000023, 46.7%, 66.9%);
+  --scl-color-clay-70: hsl(22.899999999999977, 35.8%, 58.4%);
+  --scl-color-clay-80: hsl(21.399999999999977, 27.6%, 50.2%);
+  --scl-color-clay-90: hsl(18.899999999999977, 26.8%, 41.8%);
+  --scl-color-clay-100: hsl(18.600000000000023, 24.7%, 33.3%);
+  --scl-color-rose-0: hsl(338.79999999999995, 48.6%, 93.1%);
+  --scl-color-rose-10: hsl(341.4, 46%, 87.6%);
+  --scl-color-rose-20: hsl(341.4, 45.7%, 82%);
+  --scl-color-rose-30: hsl(341.9, 43.8%, 76.3%);
+  --scl-color-rose-40: hsl(343.79999999999995, 42.3%, 70.8%);
+  --scl-color-rose-50: hsl(346, 41.2%, 65.3%);
+  --scl-color-rose-60: hsl(346.79999999999995, 39.8%, 59.6%);
+  --scl-color-rose-70: hsl(344.79999999999995, 31.5%, 49.2%);
+  --scl-color-rose-80: hsl(342.9, 35.4%, 38.8%);
+  --scl-color-rose-90: hsl(340.29999999999995, 40.3%, 28.2%);
+  --scl-color-rose-100: hsl(338.4, 44.6%, 22%);
+  --scl-color-lilac-0: hsl(307.5, 33.3%, 95.3%);
+  --scl-color-lilac-10: hsl(310, 27.3%, 91.4%);
+  --scl-color-lilac-20: hsl(310.6, 28.8%, 88.4%);
+  --scl-color-lilac-30: hsl(310, 30.8%, 84.7%);
+  --scl-color-lilac-40: hsl(300, 28.2%, 77.1%);
+  --scl-color-lilac-50: hsl(293.6, 30.7%, 70%);
+  --scl-color-lilac-60: hsl(292.9, 30.9%, 62.5%);
+  --scl-color-lilac-70: hsl(292.79999999999995, 24.4%, 53.3%);
+  --scl-color-lilac-80: hsl(293.20000000000005, 23.8%, 43.7%);
+  --scl-color-lilac-90: hsl(291.79999999999995, 29.1%, 34.3%);
+  --scl-color-lilac-100: hsl(291.1, 37%, 24.9%);
+  --scl-color-pigeon-0: hsl(226.20000000000005, 41.9%, 93.9%);
+  --scl-color-pigeon-10: hsl(227.5, 42.9%, 89%);
+  --scl-color-pigeon-20: hsl(227.60000000000002, 41.5%, 83.9%);
+  --scl-color-pigeon-30: hsl(228.60000000000002, 38.9%, 78.8%);
+  --scl-color-pigeon-40: hsl(230.60000000000002, 38.3%, 73.9%);
+  --scl-color-pigeon-50: hsl(230.79999999999995, 37.1%, 68.8%);
+  --scl-color-pigeon-60: hsl(232.70000000000005, 35.9%, 63.9%);
+  --scl-color-pigeon-70: hsl(239.10000000000002, 29.8%, 55.9%);
+  --scl-color-pigeon-80: hsl(244.60000000000002, 26.5%, 48%);
+  --scl-color-pigeon-90: hsl(251.60000000000002, 30.4%, 40%);
+  --scl-color-pigeon-100: hsl(257.5, 33.7%, 32%);
+  --scl-color-neptune-0: hsl(176, 29.4%, 90%);
+  --scl-color-neptune-10: hsl(180, 31.6%, 85.1%);
+  --scl-color-neptune-20: hsl(178.29999999999995, 34.7%, 80.2%);
+  --scl-color-neptune-30: hsl(180, 34.4%, 74.9%);
+  --scl-color-neptune-40: hsl(182.29999999999995, 34.6%, 70%);
+  --scl-color-neptune-50: hsl(184, 33.7%, 65.1%);
+  --scl-color-neptune-60: hsl(184.39999999999998, 33.3%, 60%);
+  --scl-color-neptune-70: hsl(182.70000000000005, 27.5%, 52.9%);
+  --scl-color-neptune-80: hsl(180, 25.3%, 45.7%);
+  --scl-color-neptune-90: hsl(178.79999999999995, 24.9%, 38.6%);
+  --scl-color-neptune-100: hsl(178.20000000000005, 21.2%, 31.4%);
+  --scl-color-olive-0: hsl(95, 33.3%, 92.9%);
+  --scl-color-olive-10: hsl(96, 30.3%, 87.1%);
+  --scl-color-olive-20: hsl(98.60000000000002, 29.8%, 81.6%);
+  --scl-color-olive-30: hsl(100, 29%, 75.7%);
+  --scl-color-olive-40: hsl(101.89999999999998, 28.1%, 70%);
+  --scl-color-olive-50: hsl(103.19999999999999, 27.5%, 64.3%);
+  --scl-color-olive-60: hsl(103.89999999999998, 26.4%, 58.4%);
+  --scl-color-olive-70: hsl(102.19999999999999, 22%, 48.2%);
+  --scl-color-olive-80: hsl(100, 24.7%, 38%);
+  --scl-color-olive-90: hsl(97.5, 28.2%, 27.8%);
+  --scl-color-olive-100: hsl(97.69999999999999, 32.7%, 21%);
+  --scl-color-primary-hover: hsl(329.29999999999995, 95.2%, 50.6%);
+  --scl-color-primary-active: hsl(329.29999999999995, 100%, 39.8%);
+  --scl-color-focus: hsl(215.60000000000002, 100%, 62%);
+  --scl-color-text-standard: hsl(0, 0%, 9.8%);
+  --scl-color-text-additional: hsl(0, 0%, 40%);
+  --scl-color-text-link: hsl(227.39999999999998, 89%, 46.3%);
+  --scl-color-text-link-hover: hsl(236.5, 100%, 37.5%);
+  --scl-color-text-link-active: hsl(220, 100%, 56.5%);
+  --scl-color-text-link-visited: hsl(227.39999999999998, 89%, 46.3%);
+  --scl-color-text-info: hsl(227.39999999999998, 89%, 46.3%);
+  --scl-color-text-disabled: hsl(0, 0%, 49.8%);
+  --scl-color-text-success: hsl(136.3, 65.7%, 27.5%);
+  --scl-color-text-error: hsl(349.70000000000005, 69%, 50.6%);
+  --scl-color-background-standard: hsl(0, 0%, 100%);
+  --scl-color-background-light: hsl(0, 0%, 94.9%);
+  --scl-color-background-darker: hsl(0, 0%, 80%);
+  --scl-color-background-overlay: hsla(0, 0%, 42.4%, 0.7);
+  --scl-color-background-disabled: hsl(0, 0%, 80%);
+  --scl-color-background-success: hsl(136.3, 65.7%, 27.5%);
+  --scl-color-background-error: hsl(349.70000000000005, 69%, 50.6%);
+  --scl-color-functional-red: hsl(349.70000000000005, 69%, 50.6%);
+  --scl-color-functional-green: hsl(136.3, 65.7%, 27.5%);
+  --scl-color-functional-blue: hsl(227.39999999999998, 89%, 46.3%);
+  /* SHADOW */
+  --scl-shadow-level-0: 0px 2px 8px 0px hsla(0, 0%, 0%, 0.1),
+    0px 1px 2px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-1: 0px 4px 16px 0px hsla(0, 0%, 0%, 0.1),
+    0px 2px 4px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-2: 0px 8px 32px 0px hsla(0, 0%, 0%, 0.1),
+    0px 4px 8px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-3: 0px 12px 48px 0px hsla(0, 0%, 0%, 0.1),
+    0px 6px 12px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-4: 0px 16px 64px 0px hsla(0, 0%, 0%, 0.1),
+    0px 8px 16px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-5: 0px 20px 80px 0px hsla(0, 0%, 0%, 0.1),
+    0px 10px 20px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-1-hover: 0px 6px 24px 0px hsla(0, 0%, 0%, 0.1),
+    0px 3px 6px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-1-active: 0px 2px 8px 0px hsla(0, 0%, 0%, 0.1),
+    0px 1px 2px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-2-hover: 0px 10px 40px 0px hsla(0, 0%, 0%, 0.1),
+    0px 5px 10px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-2-active: 0px 6px 24px 0px hsla(0, 0%, 0%, 0.1),
+    0px 3px 6px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-3-hover: 0px 14px 56px 0px hsla(0, 0%, 0%, 0.1),
+    0px 7px 14px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-3-active: 0px 10px 40px 0px hsla(0, 0%, 0%, 0.1),
+    0px 5px 10px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-4-hover: 0px 18px 72px 0px hsla(0, 0%, 0%, 0.1),
+    0px 9px 18px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-4-active: 0px 14px 56px 0px hsla(0, 0%, 0%, 0.1),
+    0px 7px 14px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-5-hover: 0px 22px 88px 0px hsla(0, 0%, 0%, 0.1),
+    0px 11px 22px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-5-active: 0px 18px 72px 0px hsla(0, 0%, 0%, 0.1),
+    0px 9px 18px 0px hsla(0, 0%, 0%, 0.1);
+  /* RADIUS */
+  --scl-radius-1: 1px;
+  --scl-radius-2: 2px;
+  --scl-radius-4: 4px;
+  --scl-radius-8: 8px;
+  --scl-radius-12: 12px;
+  /* OPACITY */
+  --scl-opacity-50: 0.5;
+  /* MOTION */
+  --scl-motion-duration-immediate: 100ms;
+  --scl-motion-duration-fast: 200ms;
+  --scl-motion-duration-slower: 600ms;
+  --scl-motion-duration-deliberate: 800ms;
+  --scl-motion-easing-standard: cubic-bezier(0.42, 0, 0.58, 1);
+  --scl-motion-easing-enter: cubic-bezier(0.39, 0.575, 0.565, 1);
+  /* Z-INDEX */
+  --scl-z-index-10: 10;
+  --scl-z-index-20: 20;
+  --scl-z-index-30: 30;
+  --scl-z-index-40: 40;
+  --scl-z-index-50: 50;
+  --scl-z-index-60: 60;
+  --scl-z-index-70: 70;
+}
+/* FONT VARIANT CLASSES */
+.scl-font-variant-body {
+  font-family: var(--scl-font-variant-body-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-body-size, 1rem);
+  font-weight: var(--scl-font-variant-body-weight, 500);
+  line-height: var(--scl-font-variant-body-line-height, 150%);
+  letter-spacing: var(--scl-font-variant-body-letter-spacing, normal);
+}
+.scl-font-variant-body-short {
+  font-family: var(
+    --scl-font-variant-body-short-family,
+    TeleNeoWeb,
+    sans-serif
+  );
+  font-size: var(--scl-font-variant-body-short-size, 1rem);
+  font-weight: var(--scl-font-variant-body-short-weight, 500);
+  line-height: var(--scl-font-variant-body-short-line-height, 125%);
+  letter-spacing: var(--scl-font-variant-body-short-letter-spacing, normal);
+}
+.scl-font-variant-body-large {
+  font-family: var(
+    --scl-font-variant-body-large-family,
+    TeleNeoWeb,
+    sans-serif
+  );
+  font-size: var(--scl-font-variant-body-large-size, 1.25rem);
+  font-weight: var(--scl-font-variant-body-large-weight, 500);
+  line-height: var(--scl-font-variant-body-large-line-height, 160%);
+  letter-spacing: var(--scl-font-variant-body-large-letter-spacing, normal);
+}
+.scl-font-variant-smaller {
+  font-family: var(--scl-font-variant-smaller-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-smaller-size, 0.75rem);
+  font-weight: var(--scl-font-variant-smaller-weight, 500);
+  line-height: var(--scl-font-variant-smaller-line-height, 125%);
+  letter-spacing: var(--scl-font-variant-smaller-letter-spacing, normal);
+}
+.scl-font-variant-label {
+  font-family: var(--scl-font-variant-label-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-label-size, 0.75rem);
+  font-weight: var(--scl-font-variant-label-weight, 500);
+  line-height: var(--scl-font-variant-label-line-height, 120%);
+  letter-spacing: var(--scl-font-variant-label-letter-spacing, normal);
+}
+.scl-font-variant-caption {
+  font-family: var(--scl-font-variant-caption-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-caption-size, 0.75rem);
+  font-weight: var(--scl-font-variant-caption-weight, 500);
+  line-height: var(--scl-font-variant-caption-line-height, 133%);
+  letter-spacing: var(--scl-font-variant-caption-letter-spacing, normal);
+}
+.scl-font-variant-heading-6 {
+  font-family: var(--scl-font-variant-heading-6-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-heading-6-size, 1rem);
+  font-weight: var(--scl-font-variant-heading-6-weight, 700);
+  line-height: var(--scl-font-variant-heading-6-line-height, 150%);
+  letter-spacing: var(--scl-font-variant-heading-6-letter-spacing, normal);
+}
+.scl-font-variant-heading-5 {
+  font-family: var(--scl-font-variant-heading-5-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-heading-5-size, 1.25rem);
+  font-weight: var(--scl-font-variant-heading-5-weight, 800);
+  line-height: var(--scl-font-variant-heading-5-line-height, 125%);
+  letter-spacing: var(--scl-font-variant-heading-5-letter-spacing, normal);
+}
+.scl-font-variant-heading-4 {
+  font-family: var(--scl-font-variant-heading-4-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-heading-4-size, 1.5rem);
+  font-weight: var(--scl-font-variant-heading-4-weight, 800);
+  line-height: var(--scl-font-variant-heading-4-line-height, 133%);
+  letter-spacing: var(--scl-font-variant-heading-4-letter-spacing, normal);
+}
+.scl-font-variant-heading-3 {
+  font-family: var(--scl-font-variant-heading-3-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-heading-3-size, 2rem);
+  font-weight: var(--scl-font-variant-heading-3-weight, 800);
+  line-height: var(--scl-font-variant-heading-3-line-height, 125%);
+  letter-spacing: var(--scl-font-variant-heading-3-letter-spacing, normal);
+}
+.scl-font-variant-heading-2 {
+  font-family: var(--scl-font-variant-heading-2-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-heading-2-size, 2.5rem);
+  font-weight: var(--scl-font-variant-heading-2-weight, 800);
+  line-height: var(--scl-font-variant-heading-2-line-height, 120%);
+  letter-spacing: var(--scl-font-variant-heading-2-letter-spacing, normal);
+}
+.scl-font-variant-heading-1 {
+  font-family: var(--scl-font-variant-heading-1-family, TeleNeoWeb, sans-serif);
+  font-size: var(--scl-font-variant-heading-1-size, 3.5rem);
+  font-weight: var(--scl-font-variant-heading-1-weight, 800);
+  line-height: var(--scl-font-variant-heading-1-line-height, 114%);
+  letter-spacing: var(--scl-font-variant-heading-1-letter-spacing, normal);
+}

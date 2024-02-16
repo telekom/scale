@@ -48,8 +48,3 @@ replace.sync({
   from: /\"name\": \"@telekom\/scale\-components\-vue\"/g,
   to: `"name": "@telekom/scale-components-vue-neutral"`,
 });
-replace.sync({
-  files: 'packages/design-tokens/package.json',
-  from: /\"name\": \"@telekom\/scale\-design\-tokens\"/g,
-  to: `"name": "@telekom/scale-design-tokens-neutral"`,
-});
