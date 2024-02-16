@@ -147,12 +147,25 @@ export class TelekomNavItem {
       return;
     }
     this.expanded = true;
-    this.parentElement.addEventListener('mouseleave', this.handlePointerOut);
+    this.hostElement.parentElement.addEventListener(
+      'mouseleave',
+      this.handlePointerOut
+    );
+    if (this.hostElement.querySelector('scale-telekom-mega-menu') !== null) {
+      this.hostElement
+        .querySelector('scale-telekom-mega-menu')
+        .addEventListener('mouseleave', this.handlePointerOut);
+    }
   };
 
   handlePointerOut = () => {
     this.expanded = false;
-    this.parentElement.removeEventListener('mouseleave', this.handlePointerOut);
+    this.hostElement.removeEventListener('mouseleave', this.handlePointerOut);
+    if (this.hostElement.querySelector('scale-telekom-mega-menu') !== null) {
+      this.hostElement
+        .querySelector('scale-telekom-mega-menu')
+        .addEventListener('mouseleave', this.handlePointerOut);
+    }
   };
 
   @Method()

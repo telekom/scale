@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.148](https://github.com/telekom/scale/compare/v3.0.0-beta.147...v3.0.0-beta.148) (2024-02-15)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
 # [3.0.0-beta.147](https://github.com/telekom/scale/compare/v3.0.0-beta.146...v3.0.0-beta.147) (2024-01-15)
 
 **Note:** Version bump only for package @telekom/scale-components-vue

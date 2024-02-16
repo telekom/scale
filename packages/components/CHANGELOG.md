@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.148](https://github.com/telekom/scale/compare/v3.0.0-beta.147...v3.0.0-beta.148) (2024-02-15)
+
+
+### Bug Fixes
+
+* **data-grid:** heading height with hidden menu ([#2270](https://github.com/telekom/scale/issues/2270)) ([736a301](https://github.com/telekom/scale/commit/736a3013214540c8fe4cb7a7b62e30015fcf4e57))
+* **dropdown-select:** disable keyboard navigation when disabled ([#2271](https://github.com/telekom/scale/issues/2271)) ([cc1bf66](https://github.com/telekom/scale/commit/cc1bf66ebc006ca1b07333b06be1a0c238456f0e))
+* **dropdown-select:** escape name of hidden input in dropdown-select to support square brackets ([#2267](https://github.com/telekom/scale/issues/2267)) ([97b1297](https://github.com/telekom/scale/commit/97b129704d36733a650cad99229b475a3f92937c))
+* **dropdown-select:** remove querySelector, store the hidden input in a variable instead ([#2279](https://github.com/telekom/scale/issues/2279)) ([6ed6c2a](https://github.com/telekom/scale/commit/6ed6c2a86aade135cbc1d9fe7ccd80ab95f824cc))
+* **table:** prevent jumping headers when sorting ([#2265](https://github.com/telekom/scale/issues/2265)) ([94f0cd4](https://github.com/telekom/scale/commit/94f0cd4a197872d19c1e4334fe797c262c57de0e))
+* **telekom-header:** listen for mouseleave on mega menu to close mega when moving cursor beyond mega menu ([#2280](https://github.com/telekom/scale/issues/2280)) ([ae5812a](https://github.com/telekom/scale/commit/ae5812afd64c471bd95d2292e3c4364ec29b4541))
+
+
+### Features
+
+* **telekom-profile-menu:** WIP ([#2208](https://github.com/telekom/scale/issues/2208)) ([41374f0](https://github.com/telekom/scale/commit/41374f0b8bb847507e0fd8565d01ad314d467fb6))
+
+
+
+
+
 # [3.0.0-beta.147](https://github.com/telekom/scale/compare/v3.0.0-beta.146...v3.0.0-beta.147) (2024-01-15)
 
 
