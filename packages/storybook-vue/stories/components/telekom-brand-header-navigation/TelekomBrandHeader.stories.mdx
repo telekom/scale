@@ -70,7 +70,7 @@ export const Template = (args, { argTypes }) => ({
       :logo-href="logoHref"
       :logo-title="logoTitle"
       :logo-hide-title="logoHideTitle"
-      :meta-nav-aria-label="metaNavAriaLabel" 
+      :meta-nav-aria-label="metaNavAriaLabel"
       :meta-nav-external-aria-label="metaNavExternalAriaLabel"
       :lang-switcher-aria-label="langSwitcherAriaLabel"
       :main-nav-aria-label="mainNavAriaLabel"
@@ -370,7 +370,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
   <!-- ... -->
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <!-- login-url: dynamic link - OpenID connect discovery -->
-    <telekom-profile-menu
+    <scale-telekom-profile-menu
       login-url="https://www.telekom.de/todo/login"
       login-help-url="https://www.telekom.de/hilfe/telekom-login"
       register-url="https://meinkonto.telekom-dienste.de/telekom/account/registration/assistant/userstatus.xhtml"
@@ -385,7 +385,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
       login-help-label="Hilfe zum Login"
       register-headline="Noch kein Telekom Login?"
       register-label="Jetzt registrieren"
-    ></telekom-profile-menu>
+    ></scale-telekom-profile-menu>
   </scale-telekom-nav-list>
 </scale-telekom-header>
 ```
@@ -397,7 +397,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
   <!-- ... -->
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <!-- login-url: dynamic link - OpenID connect discovery -->
-    <telekom-profile-menu
+    <scale-telekom-profile-menu
       login-url="https://www.telekom.de/todo/login"
       login-help-url="https://www.telekom.de/hilfe/telekom-login"
       register-url="https://meinkonto.telekom-dienste.de/telekom/account/registration/assistant/userstatus.xhtml"
@@ -412,7 +412,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
       login-help-label="Help logging in"
       register-headline="Need an account?"
       register-label="Register now"
-    ></telekom-profile-menu>
+    ></scale-telekom-profile-menu>
   </scale-telekom-nav-list>
 </scale-telekom-header>
 ```
@@ -483,7 +483,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
 <scale-telekom-header>
   <!-- ... -->
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
-    <telekom-profile-menu
+    <scale-telekom-profile-menu
       login-settings-url="https://idm.account.telekom.com/account-manager"
       hide-login-settings="false"
       logout-url="https://accounts.login.idm.telekom.com/sessionmessage/logout?post_logout_redirect_uri=$Target-URL"
@@ -495,7 +495,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
       login-settings-label="Login-Einstellungen"
       logout-label="Logout"
       <!-- set user-info & service-links via script, see below -->
-    ></telekom-profile-menu>
+    ></scale-telekom-profile-menu>
   </scale-telekom-nav-list>
 </scale-telekom-header>
 
@@ -534,7 +534,7 @@ let serviceLinks = [
 ];
 
 window.onload = () => {
-  let profileMenu = document.querySelector('telekom-profile-menu');
+  let profileMenu = document.querySelector('scale-telekom-profile-menu');
 
   profileMenu.userInfo = JSON.stringify({
     name: 'Alexander Dreyer',
@@ -551,7 +551,7 @@ window.onload = () => {
 <scale-telekom-header>
   <!-- ... -->
   <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
-    <telekom-profile-menu
+    <scale-telekom-profile-menu
       login-settings-url="https://idm.account.telekom.com/account-manager"
       hide-login-settings="false"
       logout-url="https://accounts.login.idm.telekom.com/sessionmessage/logout?post_logout_redirect_uri=$Target-URL"
@@ -563,7 +563,7 @@ window.onload = () => {
       login-settings-label="Login Settings"
       logout-label="Log out"
       <!-- set user-info & service-links via script, see below -->
-    ></telekom-profile-menu>
+    ></scale-telekom-profile-menu>
   </scale-telekom-nav-list>
 </scale-telekom-header>
 
@@ -602,7 +602,7 @@ let serviceLinks = [
 ];
 
 window.onload = () => {
-  let profileMenu = document.querySelector('telekom-profile-menu');
+  let profileMenu = document.querySelector('scale-telekom-profile-menu');
 
   profileMenu.userInfo = JSON.stringify({
     name: 'Alexander Dreyer',
