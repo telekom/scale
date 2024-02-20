@@ -10,7 +10,7 @@
 
  */
 @import url('../../../global/custom-media.css');
-scale-menu-flyout {
+scale-telekom-profile-menu scale-menu-flyout {
   display: flex;
   height: 100%;
 
@@ -101,7 +101,7 @@ scale-menu-flyout {
     height: 100%;
   }
 
-  scale-menu-flyout-list::part(base) {
+  scale-telekom-profile-menu scale-menu-flyout-list::part(base) {
     top: calc(100% + var(--telekom-spacing-composition-space-03) - 16px);
   }
 }
@@ -180,7 +180,7 @@ scale-menu-flyout {
   top: -4px;
   right: -6px;
 }
-scale-menu-flyout a .mydot .scale-icon {
+scale-telekom-profile-menu scale-menu-flyout a .mydot .scale-icon {
   color: #fff !important;
   height: 12px;
   width: 12px;
