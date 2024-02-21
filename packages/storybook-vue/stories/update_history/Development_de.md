@@ -2,6 +2,12 @@
 
 Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und verwandten Paketen.
 
+## Neues Profilmenü
+
+12.02.2024
+
+Der "Telekom Brand Header & Navigation" wird durch das neue Profilmenü ergänzt. Nutzer\*innen können sich über dieses Menü an- und abmelden. Mehr Informationen findest du im Usage Text des [neuen Brand Headers](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
+
 ## Visual Design Updates
 
 21.06.2023
@@ -177,12 +183,12 @@ Mehr zu den Änderungen findest du <a href="https://github.com/telekom/scale/blo
 
 ### Betroffene Inhalte:
 
-Alle Komponenten  
-[Hinweise zum Release](./?path=/docs/new-release-release-notes--page)  
-[Sketch Library Update](./?path=/docs/new-release-sketch-library-update--page)  
-[Design Tokens](./?path=/docs/guidelines-design-tokens--page)  
-[Typografie](./?path=/docs/guidelines-typography--page)  
-[Farben](./?path=/docs/guidelines-colors--page)  
+Alle Komponenten
+[Hinweise zum Release](./?path=/docs/new-release-release-notes--page)
+[Sketch Library Update](./?path=/docs/new-release-sketch-library-update--page)
+[Design Tokens](./?path=/docs/guidelines-design-tokens--page)
+[Typografie](./?path=/docs/guidelines-typography--page)
+[Farben](./?path=/docs/guidelines-colors--page)
 [Schatten](./?path=/docs/guidelines-shadows--page)
 
 ## v1 zu v2 Migration

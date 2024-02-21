@@ -33,7 +33,7 @@ The subtle brand header has no main navigation or features and is pinned to the 
 
 ## Elements
 
-![Image Name](assets/3_components/beta-brand-header/4_brandheader_brandbar_elements.png)
+![Image Name](assets/3_components/brand-header/4_brandheader_brandbar_elements.jpg)
 
 #### Brand area with logo (1) (required)
 
@@ -62,6 +62,10 @@ The primary navigation contains all items from the first navigation level.
 #### Functions (7)
 
 Global functions such as search, shopping cart, or login are listed here. The login is always on the right side. If possible, add a label to the icons.
+
+#### Profile Menu (8)
+
+Provides the options for logging in and out, along with related features such as registration or links to services.
 
 ## Size
 
@@ -96,13 +100,30 @@ Small viewports only have one type of navigation.
 
 ![Image Name](assets/3_components/beta-brand-header/6_brandheader_nav_mobile.png)
 
+### Profile Menu
+
+The profile menu allows users to log in and out. It should be integrated into all services that use the Telekom Login.
+
+#### Logged out
+
+In the logged-out state, a brief description explains what functions are available after logging in. In addition to the button that leads to the login mask, there are additional links to a help page and the registration process.
+
+![](assets/3_components/brand-header/BrandHeader-LoggedOut.png)
+
+#### Logged in
+
+In the logged-in state, the icon gets a green badge and the first name of the logged-in person can be read. In addition to the option to log out, various Telekom services can optionally be displayed.
+
+![](assets/3_components/brand-header/BrandHeader-LoggedIn.png)
+
 ## Beta components
 
 This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
 
 ## Related components
 
-[Breadcrumb, ](?path=/usage/components-breadcrumb--standard)
-[Sidebar Navigation, ](?path=/usage/components-sidebar-navigation--standard)
-[Tab Navigation, ](?path=/usage/components-tab-navigation--text-icon)
-[Accordion](?path=/usage/components-accordion--standard)
+- [Breadcrumb](?path=/usage/components-breadcrumb--standard)
+- [Sidebar Navigation](?path=/usage/components-sidebar-navigation--standard)
+- [Tab Navigation](?path=/usage/components-tab-navigation--text-icon)
+- [Accordion](?path=/usage/components-accordion--standard)
+- [Profile Menu](?path=/docs/components-telekom-profile-menu--logged-out)

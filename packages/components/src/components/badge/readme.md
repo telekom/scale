@@ -28,11 +28,13 @@
 ### Used by
 
  - [scale-telekom-header-data-back-compat](../telekom/telekom-header-data-back-compat)
+ - [scale-telekom-profile-menu](../telekom/telekom-profile-menu)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-telekom-header-data-back-compat --> scale-badge
+  scale-telekom-profile-menu --> scale-badge
   style scale-badge fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

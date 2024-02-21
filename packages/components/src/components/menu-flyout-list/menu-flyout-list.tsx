@@ -59,6 +59,8 @@ export class MenuFlyoutList {
   @Prop() brandHeaderDropdown: boolean = false;
   /** (optional) Injected styles */
   @Prop() styles?: string;
+  /** (optional) set to true to prevent flipping orientation when off the screen vertically  */
+  @Prop() preventFlipVertical: boolean = false;
 
   /** Event triggered when menu list opened */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
@@ -100,6 +102,12 @@ export class MenuFlyoutList {
 
   get triggerRect() {
     return this.trigger().getBoundingClientRect();
+  }
+
+  componentDidLoad() {
+    if (!this.hostElement.hasAttribute('role')) {
+      this.hostElement.setAttribute('role', 'menu');
+    }
   }
 
   componentDidRender() {
@@ -282,7 +290,10 @@ export class MenuFlyoutList {
 
   updateTriggerAttributes() {
     const trigger = this.trigger();
-    if (trigger && trigger.getAttribute('aria-haspopup') === 'true') {
+    if (
+      (trigger && trigger.getAttribute('aria-haspopup') === 'true') ||
+      trigger.classList.contains('scale-menu-trigger')
+    ) {
       trigger.setAttribute('aria-expanded', String(this.opened));
     }
   }
@@ -341,14 +352,14 @@ export class MenuFlyoutList {
     if (rect.top < PAD) {
       // console.log('off top edge');
       isOutOfBounds = true;
-      if (this.direction.includes('top')) {
+      if (this.direction.includes('top') && !this.preventFlipVertical) {
         this.flipVertical = true;
       }
     }
     if (rect.bottom > this.windowHeight - PAD) {
       // console.log('off bottom edge');
       isOutOfBounds = true;
-      if (this.direction.includes('bottom')) {
+      if (this.direction.includes('bottom') && !this.preventFlipVertical) {
         this.flipVertical = true;
       }
     }
@@ -467,7 +478,7 @@ export class MenuFlyoutList {
 
   render() {
     return (
-      <Host role="menu">
+      <Host class="scale-menu-flyout-list">
         {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
