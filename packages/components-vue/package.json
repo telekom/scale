@@ -1,7 +1,7 @@
 {
   "name": "@telekom/scale-components-vue",
   "sideEffects": false,
-  "version": "3.0.0-beta.148",
+  "version": "3.0.0-beta.149",
   "description": "Vue specific wrapper for @telekom/scale-components",
   "license": "MPL-2.0",
   "homepage": "https://github.com/telekom/scale",
