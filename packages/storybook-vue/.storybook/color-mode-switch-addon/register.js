@@ -20,7 +20,6 @@ const inactiveBtnClassName = 'css-am1h1h';
 const separatorClassName = 'css-14kbt3m';
 
 function switchMode(mode) {
-  console.log('switchMode', document.querySelector('#storybook-preview-iframe'), window.location.href)
   const currentURL = window.location.href;
   // avoid changing the mode for following pages (we use a scale component there and it's not working properly with dark mode)
   if (currentURL.includes('/new-release-sketch-library-update') || currentURL.includes('setup-info-getting-started-for-designers')) {
