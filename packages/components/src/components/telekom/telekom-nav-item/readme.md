@@ -21,11 +21,13 @@
 ### Used by
 
  - [scale-telekom-header-data-back-compat](../telekom-header-data-back-compat)
+ - [scale-telekom-profile-menu](../telekom-profile-menu)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-telekom-header-data-back-compat --> scale-telekom-nav-item
+  scale-telekom-profile-menu --> scale-telekom-nav-item
   style scale-telekom-nav-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

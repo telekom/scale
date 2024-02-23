@@ -96,3 +96,7 @@
 .sbdocs-ol[type='a'] {
   list-style-type: lower-alpha;
 }
+
+.magenta {
+  color: var(--telekom-color-text-and-icon-primary-standard) !important;
+}

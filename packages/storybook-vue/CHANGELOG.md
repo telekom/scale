@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.149](https://github.com/telekom/scale/compare/v3.0.0-beta.148...v3.0.0-beta.149) (2024-02-23)
+
+
+### Bug Fixes
+
+* **telekom-profile-menu:** stories and flyout menu fixes ([#2273](https://github.com/telekom/scale/issues/2273)) ([aa0e237](https://github.com/telekom/scale/commit/aa0e2371305515f0e37fd06acc5d3c9c381d47ac))
+
+
+
+
+
 # [3.0.0-beta.148](https://github.com/telekom/scale/compare/v3.0.0-beta.147...v3.0.0-beta.148) (2024-02-15)
 
 

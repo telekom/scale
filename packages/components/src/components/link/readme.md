@@ -108,6 +108,7 @@ Type: `Promise<void>`
  - [scale-data-grid](../data-grid)
  - [scale-notification-banner](../notification-banner)
  - [scale-notification-toast](../notification-toast)
+ - [scale-telekom-profile-menu](../telekom/telekom-profile-menu)
 
 ### Graph
 ```mermaid
@@ -115,6 +116,7 @@ graph TD;
   scale-data-grid --> scale-link
   scale-notification-banner --> scale-link
   scale-notification-toast --> scale-link
+  scale-telekom-profile-menu --> scale-link
   style scale-link fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

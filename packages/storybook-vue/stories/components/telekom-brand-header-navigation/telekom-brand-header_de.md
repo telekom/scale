@@ -34,7 +34,7 @@ Der Brand Header Subtle hat keine Hauptnavigation oder Funktionen und ist am obe
 
 ## Elemente
 
-![Image Name](assets/3_components/beta-brand-header/4_brandheader_brandbar_elements.png)
+![Image Name](assets/3_components/brand-header/4_brandheader_brandbar_elements.jpg)
 
 #### Brand Area mit Logo (1) (verpflichtend)
 
@@ -63,6 +63,10 @@ Die Hauptnavigation enthält alle Navigationspunkte der ersten Ebene.
 #### Funktionen (7)
 
 Hier sind globale Funktionen wie Suche, Warenkorb oder Login aufgeführt. Der Login befindet sich dabei immer rechts. Ergänze die Icons wenn möglich mit einem Label.
+
+#### Nutzerprofilmenü (8)
+
+Bietet die Möglichkeit zur An- und Abmeldung und verwandte Funktionen wie Registrierung oder Links zu Diensten.
 
 ## Größen
 
@@ -97,13 +101,30 @@ Auf kleinen Viewports gibt es nur eine Art der Navigation.
 
 ![Image Name](assets/3_components/beta-brand-header/6_brandheader_nav_mobile.png)
 
+### Nutzerprofilmenü
+
+Mithilfe des Profilmenüs können sich Nutzer\*innen an- und abmelden. Wenn dein Dienst den Telekom Login verwendet, solltest du es in deinen Header einbinden.
+
+#### Abgemeldeter Zustand
+
+Ein kurzer Beschreibungstext erläutert, welche Funktionen nach dem Login zur Verfügung stehen werden. Neben dem Button, der zur Login-Maske führt, gibt es ergänzende Links zu einer Hilfeseite und zum Registrierungsprozess.
+
+![](assets/3_components/brand-header/BrandHeader-LoggedOut.png)
+
+#### Angemeldeter Zustand
+
+Das Icon bekommt einen grünen Badge und der Vorname der angemeldeten Person ist zu lesen. Neben der Option, sich abzumelden, können optional verschiedene Dienste der Telekom angezeigt werden.
+
+![](assets/3_components/brand-header/BrandHeader-LoggedIn.png)
+
 ## Beta-Komponente
 
 Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
 
 ## Verwandte Komponenten
 
-[Breadcrumb, ](?path=/usage/components-breadcrumb--standard)
-[Sidebar-Navigation, ](?path=/usage/components-sidebar-navigation--standard)
-[Tab-Navigation, ](?path=/usage/components-tab-navigation--text-icon)
-[Accordion](?path=/usage/components-accordion--standard)
+- [Breadcrumb](?path=/usage/components-breadcrumb--standard)
+- [Sidebar Navigation](?path=/usage/components-sidebar-navigation--standard)
+- [Tab Navigation](?path=/usage/components-tab-navigation--text-icon)
+- [Accordion](?path=/usage/components-accordion--standard)
+- [Profile Menu](?path=/docs/components-telekom-profile-menu--logged-out)
