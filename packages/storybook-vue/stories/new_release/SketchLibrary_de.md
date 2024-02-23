@@ -40,7 +40,7 @@ Schritt 1: <br/>
 Richte dir ein Telekom Figma Enterprise Konto ein. [So geht’s](https://seu30.gdc-dmst01.t-systems.com/confluence/display/SETOOLSBETRIEB/Figma@DT+How+to+add+User).
 
 Schritt 2: <br/>
-Migriere deine Arbeitsdateien von einem externen Konto in unser Telekom Figma Konto, um die Bibliothek zu nutzen und die Komponenten wieder zu verbinden.  Benötigst du Hilfe, wende dich an den [Telekom Figma Admin](seu-operation@t-systems.com) oder sende ein Ticket an den [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).
+Migriere deine Arbeitsdateien von einem externen Konto in unser Telekom Figma Konto, um die Bibliothek zu nutzen und die Komponenten wieder zu verbinden.  Benötigst du Hilfe, wende dich an den <a href="mailto:seu-operation@t-systems.com"> Telekom Figma Admin </a> oder sende ein Ticket an den [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).
 
 Schritt 3: <br/>
 Nach der Migration der Dateien sind die enthaltenen Komponenten automatisch wieder mit der Scale Library in unserem Figma Workspace verbunden. Du kannst die Library auch wieder über das Library Panel aktivieren.
@@ -56,7 +56,7 @@ Alle internen Nutzer mit einer Telekom Figma Enterprise Lizenz können nach der 
 Externe Nutzer*innen können die Scale Libraries ausschließlich mit einem Telekom Figma Enterprise Account nutzen.
 
 Schritt 1: <br/>
-Migriere deine Arbeitsdateien von einem externen Konto in unser Telekom Figma Konto, um die Bibliothek zu nutzen und die Komponenten wieder zu verbinden.  Benötigst du Hilfe, wende dich an den [Telekom Figma Admin](seu-operation@t-systems.com) oder sende ein Ticket an den [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).
+Migriere deine Arbeitsdateien von einem externen Konto in unser Telekom Figma Konto, um die Bibliothek zu nutzen und die Komponenten wieder zu verbinden.  Benötigst du Hilfe, wende dich an den <a href="mailto:seu-operation@t-systems.com"> Telekom Figma Admin </a> oder sende ein Ticket an den [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).
 
 Schritt 2: <br/>
 Nach der Migration deines Projektes solltest du dem Telekom Enterprise Account automatisch als Gast hinzugefügt werden. Sollte das nicht geschehen, kontaktiere deine Telekom internen Ansprechpartner im Projekt, um eine Einladung zu erhalten. Gib bitte unbedingt das Projekt an, an dem du arbeitest, und nenne den Namen eines internen Ansprechpartners.
@@ -65,4 +65,4 @@ Schritt 3: <br/>
 Nach der Migration der Dateien sind die enthaltenen Komponenten automatisch wieder mit der Scale Library in unserem Figma Workspace verbunden. Du kannst die Library auch wieder über das Library Panel aktivieren.
 
 Hinweis: <br/>
-Alle externen Nutzer*innen verlieren nach der Migration den Zugriff auf die Scale Libraries.  Wenn du weiterhin Zugriff benötigst, [kontaktiere uns](contact@brand-design.telekom.com), um eine Einladung zu erhalten. Gib bitte unbedingt das Projekt an, an dem du arbeitest, und nenne den Namen eines internen Ansprechpartners.
+Alle externen Nutzer*innen verlieren nach der Migration den Zugriff auf die Scale Libraries.  Wenn du weiterhin Zugriff benötigst, <a href="mailto:contact@brand-design.telekom.com"> kontaktiere uns </a>, um eine Einladung zu erhalten. Gib bitte unbedingt das Projekt an, an dem du arbeitest, und nenne den Namen eines internen Ansprechpartners.
