@@ -8,7 +8,6 @@
 
 <br/>
 
-
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
 We now also provide Figma libraries for all designers who already work with Figma.
@@ -49,7 +48,7 @@ After migrating the files, the components will automatically reconnect to the Sc
 Step 4: <br/> Invite external collaborators to the files using the share feature in Figma. External collaborators will require edit rights in the Telekom Figma Account to collaborate, and any associated costs will be charged to the project cost center.
 
 Note: <br/>
-Scale Figma link: All internal employee with a Telekom Figma Enterprise License can access the file through the existing link after Scale migration. 
+Scale Figma link: All internal employee with a Telekom Figma Enterprise License can access the file through the existing link after Scale migration.
 
 <br/>
 
@@ -58,7 +57,7 @@ Scale Figma link: All internal employee with a Telekom Figma Enterprise License 
 Externals can utilize the Scale library exclusively with a Telekom Figma Enterprise Account.
 
 Step 1: <br/>
-Migrate your working files to your Telekom Figma account to utilize the library and reconnect the components. If you need assistance, contact your <a href="mailto:seu-operation@t-systems.com"> Telekom Figma Admin </a> or submit a ticket to [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).  
+Migrate your working files to your Telekom Figma account to utilize the library and reconnect the components. If you need assistance, contact your <a href="mailto:seu-operation@t-systems.com"> Telekom Figma Admin </a> or submit a ticket to [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).
 
 Step 2: <br/>
 Obtain a guest account with the Telekom Figma Enterprise Account. Typically, after migrating your project, all collaborators in the files are automatically added as guests to Telekom. If you do not yet have access to Telekom Figma, please contact your Telekom internal project contacts to get an invitation. Be sure to mention the project you are working on and provide the name of an internal contact person you are collaborating with.

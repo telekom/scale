@@ -43,8 +43,7 @@ Die Sketch-Bibliotheken sind nicht auf dem neuesten Stand und werden nicht weite
 
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
-
-<br/> 
+<br/>
 
 ### Rechtliche Hinweise
 
