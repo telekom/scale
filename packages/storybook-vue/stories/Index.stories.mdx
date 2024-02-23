@@ -15,7 +15,7 @@ import text_de from './Index_de.md';
             : 'Wilkommen beim Scale Design System';
         return (
           <DocsContainer context={context}>
-            <img src="assets/welcome.png" alt={alt} style={{ width: '100%' }} />
+            
             {locale && (
               <Description markdown={locale === 'en' ? text_en : text_de} />
             )}
