@@ -1,4 +1,4 @@
-# New: Scale Figma Libraries
+# Scale Figma Libraries
 
 
 <scale-notification-banner variant="warning" opened>
