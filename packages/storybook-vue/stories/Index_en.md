@@ -34,6 +34,8 @@ We’ll migrate the scale Figma libraries in our Telekom enterprise workspace. A
 
 If you want to have the libraries visible in your draft folder: Click on the link “enable libraries for all files in your drafts” under settings. Activate the libraries you need and you will find them in your personal draft.
 
+<br/>
+
 ### Access to Figma libraries
 
 **Telekom employees**
@@ -68,4 +70,4 @@ Step 3: <br/>
 After migrating the files, the components will automatically reconnect to the Scale library hosted in the Telekom Figma space. You have the option to enable the library in your files directly from the library panel.
 
 Note: <br/>
-Scale Figma Link: All external collaborators will not be able to access the Scale Figma library file via the existing link after migration. If you require access to the file, please <a href="mailto:contact@brand-design.telekom.com"> get in touch with us </a>to be invited. Please ensure to specify the project you are involved in and provide the name of an internal contact person you are collaborating with.
+Scale Figma Link: All external collaborators will not be able to access the Scale Figma library file via the existing link after migration. If you require access to the file, please <a href="mailto:contact@brand-design.telekom.com"> get in touch with us</a> to be invited. Please ensure to specify the project you are involved in and provide the name of an internal contact person you are collaborating with.

@@ -33,6 +33,8 @@ Wir werden die Scale Design-Libraries in unseren Telekom Enterprise Workspace mi
 
 Wenn du die Libraries in deinem Draft-Ordner sichtbar haben möchtest: Klicke unter Settings auf den Link "enable libraries for all files in your drafts". Aktiviere die benötigten Libraries und du findest sie in deinem Draft-Ordner.
 
+<br/>
+
 ### Zugang zu den Scale Figma Libraries
 
 **Telekom Mitarbeiter**

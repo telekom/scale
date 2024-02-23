@@ -67,4 +67,4 @@ Schritt 3: <br/>
 Nach der Migration der Dateien sind die enthaltenen Komponenten automatisch wieder mit der Scale Library in unserem Figma Workspace verbunden. Du kannst die Library auch wieder über das Library Panel aktivieren.
 
 Hinweis: <br/>
-Alle externen Nutzer\*innen verlieren nach der Migration den Zugriff auf die Scale Libraries. Wenn du weiterhin Zugriff benötigst, <a href="mailto:contact@brand-design.telekom.com"> kontaktiere uns </a>, um eine Einladung zu erhalten. Gib bitte unbedingt das Projekt an, an dem du arbeitest, und nenne den Namen eines internen Ansprechpartners.
+Alle externen Nutzer\*innen verlieren nach der Migration den Zugriff auf die Scale Libraries. Wenn du weiterhin Zugriff benötigst, <a href="mailto:contact@brand-design.telekom.com">kontaktiere uns </a>, um eine Einladung zu erhalten. Gib bitte unbedingt das Projekt an, an dem du arbeitest, und nenne den Namen eines internen Ansprechpartners.

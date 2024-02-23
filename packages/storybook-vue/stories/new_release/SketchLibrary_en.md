@@ -66,4 +66,4 @@ Step 3: <br/>
 After migrating the files, the components will automatically reconnect to the Scale library hosted in the Telekom Figma space. You have the option to enable the library in your files directly from the library panel.
 
 Note: <br/>
-Scale Figma Link: All external collaborators will not be able to access the Scale Figma library file via the existing link after migration. If you require access to the file, please <a href="mailto:contact@brand-design.telekom.com"> get in touch with us </a>to be invited. Please ensure to specify the project you are involved in and provide the name of an internal contact person you are collaborating with.
+Scale Figma Link: All external collaborators will not be able to access the Scale Figma library file via the existing link after migration. If you require access to the file, please <a href="mailto:contact@brand-design.telekom.com"> get in touch with us</a> to be invited. Please ensure to specify the project you are involved in and provide the name of an internal contact person you are collaborating with.
