@@ -1,12 +1,13 @@
 # Scale Figma Libraries
 
 
-<scale-notification-banner variant="warning" opened>
-    Wir ziehen um!
+<scale-notification variant="warning" opened heading="Wir ziehen um!">
     <p slot="text">
         Wir migrieren die Scale Design Libraries in unser Telekom Unternehmenskonto. Dateien, die sich außerhalb unseres Kontos befinden, werden dadurch die Verbindung zur Library verlieren. Alle Telekom Projekte, die extern gespeichert sind, müssen in den Telekom Account migriert werden. Sobald das geschehen ist, werden die Komponenten automatisch mit der Bibliothek verknüpft.<br/><a href="#access">Mehr erfahren  </a>
     </p>
-</scale-notification-banner>
+</scale-notification>
+
+<br/>
 
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
@@ -30,9 +31,9 @@ Jede Komponente beinhaltet eine Kurzbeschreibung und einen Link zur ausführlich
 
 ## Updates
 
-Mit einer Pro Lizenz von Figma erhältst du sogar ganz automatisch künftige Updates. Gehe dafür in die Library zur Seite “Getting started” und hinterlasse deine E-Mail Adresse in dem dafür vorgesehenen Bereich. Wir laden dich dann zur Library ein.
+Benutzer, die im Telekom Account arbeiten, erhalten regelmäßig Updates. Um auf die veröffentlichten Libraries zugreifen zu können, müssen externe Benutzer dem Telekom Account hinzugefügt werden.
 
-<h2 id="access"> Zugang zu den Libraries </h2>
+<h2 id="access"> Zugang zu den Scale Figma Libraries </h2>
 
 **Telekom Mitarbeiter**
 
@@ -50,6 +51,8 @@ Lade externe Nutzer*innen zu den Dateien ein, indem du die Freigabefunktion in F
 
 Hinweis: <br/>
 Alle internen Nutzer mit einer Telekom Figma Enterprise Lizenz können nach der Migration von Scale über den bestehenden Link auf die Datei zugreifen.
+
+<br/>
 
 **Externe Nutzer*innen**
 

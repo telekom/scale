@@ -1,11 +1,12 @@
 # Scale Figma Libraries
 
-<scale-notification-banner variant="warning" opened>
-    We are migrating
+<scale-notification variant="warning" opened heading="We are migrating">
     <p slot="text">
         We will migrate the scale design libraries to our Telekom enterprise account. Files outside of our account, will get disconnected . All Telekom projects stored externally have to migrate to the Telekom account. Once that's done, the components will automatically link to the library.<br/><a href="#access">learn more </a>
     </p>
-</scale-notification-banner>
+</scale-notification>
+
+<br/>
 
 
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
@@ -30,9 +31,9 @@ Each component includes a short description and a link to the detailed documenta
 
 ## Updates
 
-With a Pro license from Figma, you will automatically receive future updates. To get this, go to “Getting started” in the library and leave your email address in the space provided. We will then invite you to the library.
+Users working on the Telekom account will receive regular updates from the library. To access the published libraries, ensure that external users are added to the Telekom account.
 
-<h2 id="access"> Access to libraries </h2>
+<h2 id="access"> Access to Figma libraries </h2>
 
 **Telekom employees**
 
@@ -49,6 +50,8 @@ Step 4: <br/> Invite external collaborators to the files using the share feature
 
 Note: <br/>
 Scale Figma link: All internal employee with a Telekom Figma Enterprise License can access the file through the existing link after Scale migration. 
+
+<br/>
 
 **Externals**
 

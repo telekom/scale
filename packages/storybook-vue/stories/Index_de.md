@@ -13,10 +13,6 @@ Gemeinsam mit unserer internen Design-System-Community haben wir bestehende Lös
 
 **Wir freuen uns sehr, verkünden zu können, dass wir bereits mit der Arbeit an der nächsten Evolutionsstufe des Telekom Design Systems begonnen haben. Es ist darauf ausgerichtet, alle wichtigen kundenbezogenen Produkte der DT Gruppe in Europa zu unterstützen.**
 
-Yes, this is ambitious, but we grew as a team and firmly believe we can do it. Bear with us.
-
-**With this new focus, we also must leave the Scale Design System evolution to those who already helped to grow it: The Open-Source Community.**
-
 Ja, das ist ambitioniert, aber wir sind als Team gewachsen und glauben fest daran, dass wir es schaffen können. 
 
 Mit diesem neuen Fokus müssen wir auch die Weiterentwicklung des Scale Design Systems denen überlassen, die bereits dazu beigetragen haben, es zu entwickeln: der Open-Source-Community. Obwohl wir leider nicht mehr unterstützen und keine neuen Komponenten mehr erstellen werden: Scale existiert weiter. Veröffentliche gerne Fixes und verbessere das solide Fundament, das wir gemeinsam geschaffen haben.
@@ -29,6 +25,8 @@ Perfekt.
 
 Weitere Details folgen.
 
+<br/>
+
 ### Was sich jetzt ändert:
 
 Wir werden die Scale Design-Libraries in unseren Telekom Enterprise Workspace migrieren. Danach werden deine Produktdateien von der Library getrennt sein. Alle extern gespeicherten Telekomprojekte müssen ebenfalls in den Telekom Workspace migrieren. Sobald du dies getan hast, werden die Komponenten in den Produktdateien automatisch mit der Library verknüpft sein.
@@ -36,7 +34,7 @@ Wir werden die Scale Design-Libraries in unseren Telekom Enterprise Workspace mi
 Wenn du die Libraries in deinem Draft-Ordner sichtbar haben möchtest: Klicke unter Settings auf den Link "enable libraries for all files in your drafts". Aktiviere die benötigten Libraries und du findest sie in deinem Draft-Ordner.
 
 
-### Zugang zu den Libraries
+### Zugang zu den Scale Figma Libraries
 
 **Telekom Mitarbeiter**
 
@@ -54,6 +52,8 @@ Lade externe Nutzer*innen zu den Dateien ein, indem du die Freigabefunktion in F
 
 Hinweis: <br/>
 Alle internen Nutzer mit einer Telekom Figma Enterprise Lizenz können nach der Migration von Scale über den bestehenden Link auf die Datei zugreifen.
+
+<br/>
 
 **Externe Nutzer*innen**
 

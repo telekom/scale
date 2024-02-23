@@ -26,15 +26,16 @@ Perfect.
 
 Stay tuned, more details to follow.
 
+<br/>
+
 ### What is changing now:
 
-We'll migrate the scale design libraries in our telekom enterprise workspace. Afterward, your product files will be disconnected from the library. All Telekom projects stored externally have to migrate to the Telekom account as well. Once that's done, the components will automatically link to the library.
+We’ll migrate the scale Figma libraries in our Telekom enterprise workspace. Afterward, your product files will be disconnected from the library. All Telekom projects stored externally have to migrate to the Telekom account as well. Once that’s done, the components will automatically link to the library.
 
-If you want to have the libraries visible in your Draft Folder: 
-Click on the link “enable libraries for all files in your drafts” under settings. Activate the libraries you need and you will find them in your personal draft.
+If you want to have the libraries visible in your draft folder: Click on the link “enable libraries for all files in your drafts” under settings. Activate the libraries you need and you will find them in your personal draft.
 
 
-### Access to libraries
+### Access to Figma libraries
 
 **Telekom employees**
 
@@ -51,6 +52,8 @@ Step 4: <br/> Invite external collaborators to the files using the share feature
 
 Note: <br/>
 Scale Figma link: All internal employee with a Telekom Figma Enterprise License can access the file through the existing link after Scale migration. 
+
+<br/>
 
 **Externals**
 
