@@ -19,6 +19,13 @@ Scale contains its own library for light and dark mode. This way, you can design
 
 ### Figma libraries
 
+<scale-notification-banner variant="warning" opened>
+    We are migrating
+    <p slot="text">
+        We will migrate the scale design libraries to our Telekom enterprise account. Files outside of our account, will get disconnected . All Telekom projects stored externally have to migrate to the Telekom account. Once that's done, the components will automatically link to the library.<br/><a href="https://telekom.github.io/scale/?path=/docs/new-release-sketch-library-update--page#access">learn more </a>
+    </p>
+</scale-notification-banner>
+
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
 <p><a href="https://www.figma.com/file/3xCcfn6sawB7EcfUjpr7OE/%E2%98%80%EF%B8%8F-Telekom-Scale-Beta-Light-1.0.0?type=design&node-id=11505%3A145418&mode=design&t=nAdhrYOpRNgurAwy-1" rel="nofollow" class="matomo_download">Telekom Scale Components Light </a></p>
@@ -38,22 +45,3 @@ By the way, with a Pro license from Figma, you will automatically receive future
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 Important note: the latest release doesn’t include an update of the Sketch library.
-
-<br/>
-
-### Legal notes
-
-Deutsche Telekom reserves all rights to the Telekom brand. The Telekom theme must be completely replaced for any usage that is not explicitly intended for the Telekom.
-
-## Design documentation
-
-For each component, there is detailed information on its usage as well as on the different variants. To access this, simply go to the desired component in the left sidebar and select the Usage tab (1).
-
-![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
-
-<br/>
-
-# Your feedback is welcome!
-
-With your feedback, we can make Scale even better. You can also share your designs with us so everyone can benefit from them.
-Feel free to reach out to the Scale team at [contact@brand-design.telekom.com](mailto:contact@brand-design.telekom.com).

@@ -1,4 +1,12 @@
-# New: Scale Figma Libraries
+# Scale Figma Libraries
+
+<scale-notification-banner variant="warning" opened>
+    We are migrating
+    <p slot="text">
+        We will migrate the scale design libraries to our Telekom enterprise account. Files outside of our account, will get disconnected . All Telekom projects stored externally have to migrate to the Telekom account. Once that's done, the components will automatically link to the library.<br/><a href="#access">learn more </a>
+    </p>
+</scale-notification-banner>
+
 
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
@@ -23,3 +31,37 @@ Each component includes a short description and a link to the detailed documenta
 ## Updates
 
 With a Pro license from Figma, you will automatically receive future updates. To get this, go to “Getting started” in the library and leave your email address in the space provided. We will then invite you to the library.
+
+<h2 id="access"> Access to libraries </h2>
+
+**Telekom employees**
+
+Step 1: <br/>
+Get a Telekom Enterprise account [by following these instructions](https://seu30.gdc-dmst01.t-systems.com/confluence/display/SETOOLSBETRIEB/Figma@DT+How+to+add+User).
+
+Step 2: <br/>
+Migrate your working files from an external account into our Telekom Figma account in order to utilize the library and reconnect the components. Reach out to the [Telekom Figma Admin](seu-operation@t-systems.com) for assistance, or submit a ticket to [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).
+
+Step 3: <br/>
+After migrating the files, the components will automatically reconnect to the Scale library hosted in the Telekom Figma space. You have the option to enable the library in your files directly from the library panel.
+
+Step 4: <br/> Invite external collaborators to the files using the share feature in Figma. External collaborators will require edit rights in the Telekom Figma Account to collaborate, and any associated costs will be charged to the project cost center.
+
+Note: <br/>
+Scale Figma link: All internal employee with a Telekom Figma Enterprise License can access the file through the existing link after Scale migration. 
+
+**Externals**
+
+Externals can utilize the Scale library exclusively with a Telekom Figma Enterprise Account.
+
+Step 1: <br/>
+Migrate your working files to your Telekom Figma account to utilize the library and reconnect the components. If you need assistance, contact your [Telekom Figma Admin](seu-operation@t-systems.com) or submit a ticket to [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).  
+
+Step 2: <br/>
+Obtain a guest account with the Telekom Figma Enterprise Account. Typically, after migrating your project, all collaborators in the files are automatically added as guests to Telekom. If you do not yet have access to Telekom Figma, please contact your Telekom internal project contacts to get an invitation. Be sure to mention the project you are working on and provide the name of an internal contact person you are collaborating with.
+
+Step 3: <br/>
+After migrating the files, the components will automatically reconnect to the Scale library hosted in the Telekom Figma space. You have the option to enable the library in your files directly from the library panel.
+
+Note: <br/>
+Scale Figma Link: All external collaborators will not be able to access the Scale Figma library file via the existing link after migration. If you require access to the file, please [get in touch with us](contact@brand-design.telekom.com) to be invited. Please ensure to specify the project you are involved in and provide the name of an internal contact person you are collaborating with.

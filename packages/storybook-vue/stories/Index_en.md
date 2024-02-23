@@ -1,29 +1,69 @@
 <br/>
 
-### Scale is the Telekom Digital Design System
+<h1 class="magenta"> Important Information for all Users of Scale! </h1>
+<br/>
+<br/>
+<br/>
 
-Scale is a part of Brand & Design. All components are brand compliant and help create a coherent brand experience.
+### We, the team, that build the Scale Design System, want to share some exciting updates with you.
 
-### Code and design for consistent products
+After many years, where Scale has been built by a very small team, enabling others to build their products and prototypes, **we were given the opportunity to make a huge leap on the matter.** 
 
-Based on our brand identity, the Scale design system helps you develop consistent products. This is how you contribute to strengthening the Telekom brand.
+In collaboration with our internal design system community, we have assessed current solutions against leading design systems, identifying areas for improvement that we aim to address with this next step. Thanks again to everyone involved so far.
 
-### Accessibility out of the box
+**We could not be happier to announce that we already started working on the next evolution of the Telekom Design System, planned to support all major customer related products of DT Group in Europe.**
 
-Scale components meet the technical requirements for the accessibility level AA. They are just as suitable for customer-focused products as they are for internal use cases.
+Yes, this is ambitious, but we grew as a team and firmly believe we can do it. Bear with us.
 
-### Compatible with the relevant framework and design tools
+**With this new focus, we also must leave the Scale Design System evolution to those who already helped to grow it: The Open-Source Community.**
 
-The UI libraries are available in Figma and Sketch. You can use the code components as pure web components or in the framework for Vue, React, and Angular.
+While sadly, we are not able to provide support anymore and will not build new components, keep in mind Scale is alive and all well
+and can be used as is. Feel free to publish fixes and improve the solid foundation, we built. Even better, for those interested, since we are now working on a larger scale than ever before, we will try to enable an update path to the next evolution of the Design System.
 
-### For the best user experience
+We made you curious?
 
-Scale saves you time throughout the entire design and development process: for the design of user interfaces, prototyping, design handover, front-end development, and in the approval process with Brand & Design. This leaves more time to create specific features and functionality.
+Perfect.
 
-### Flexibility and scalability through design tokens
+Stay tuned, more details to follow.
 
-By including design tokens, Scale is particularly adaptable. Changes and additions can be implemented quickly. Other themes for third-party brands can also be created quickly.
+### What is changing now:
 
-### For better collaboration
+We'll migrate the scale design libraries in our telekom enterprise workspace. Afterward, your product files will be disconnected from the library. All Telekom projects stored externally have to migrate to the Telekom account as well. Once that's done, the components will automatically link to the library.
 
-A design system encourages collaboration between teams and stakeholders. It creates a common foundation on which everyone can build together. As a designer or developer, you can help improve Scale. Send us your new or improved components to share with your colleagues in Scale.
+If you want to have the libraries visible in your Draft Folder: 
+Click on the link “enable libraries for all files in your drafts” under settings. Activate the libraries you need and you will find them in your personal draft.
+
+
+### Access to libraries
+
+**Telekom employees**
+
+Step 1: <br/>
+Get a Telekom Enterprise account [by following these instructions](https://seu30.gdc-dmst01.t-systems.com/confluence/display/SETOOLSBETRIEB/Figma@DT+How+to+add+User).
+
+Step 2: <br/>
+Migrate your working files from an external account into our Telekom Figma account in order to utilize the library and reconnect the components. Reach out to the [Telekom Figma Admin](seu-operation@t-systems.com) for assistance, or submit a ticket to [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).
+
+Step 3: <br/>
+After migrating the files, the components will automatically reconnect to the Scale library hosted in the Telekom Figma space. You have the option to enable the library in your files directly from the library panel.
+
+Step 4: <br/> Invite external collaborators to the files using the share feature in Figma. External collaborators will require edit rights in the Telekom Figma Account to collaborate, and any associated costs will be charged to the project cost center.
+
+Note: <br/>
+Scale Figma link: All internal employee with a Telekom Figma Enterprise License can access the file through the existing link after Scale migration. 
+
+**Externals**
+
+Externals can utilize the Scale library exclusively with a Telekom Figma Enterprise Account.
+
+Step 1: <br/>
+Migrate your working files to your Telekom Figma account to utilize the library and reconnect the components. If you need assistance, contact your [Telekom Figma Admin](seu-operation@t-systems.com) or submit a ticket to [Figma Support](https://help.figma.com/hc/en-us/requests/new?ticket_form_id=360001731233).  
+
+Step 2: <br/>
+Obtain a guest account with the Telekom Figma Enterprise Account. Typically, after migrating your project, all collaborators in the files are automatically added as guests to Telekom. If you do not yet have access to Telekom Figma, please contact your Telekom internal project contacts to get an invitation. Be sure to mention the project you are working on and provide the name of an internal contact person you are collaborating with.
+
+Step 3: <br/>
+After migrating the files, the components will automatically reconnect to the Scale library hosted in the Telekom Figma space. You have the option to enable the library in your files directly from the library panel.
+
+Note: <br/>
+Scale Figma Link: All external collaborators will not be able to access the Scale Figma library file via the existing link after migration. If you require access to the file, please [get in touch with us](contact@brand-design.telekom.com) to be invited. Please ensure to specify the project you are involved in and provide the name of an internal contact person you are collaborating with.

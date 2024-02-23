@@ -18,6 +18,13 @@ Scale beinhaltet für Light und Dark Mode jeweils eine eigene Library. So kannst
 
 ### Figma Libraries
 
+<scale-notification-banner variant="warning" opened>
+    Wir ziehen um!
+    <p slot="text">
+        Wir migrieren die Scale Design Libraries in unser Telekom Unternehmenskonto. Dateien, die sich außerhalb unseres Kontos befinden, werden dadurch die Verbindung zur Library verlieren. Alle Telekom Projekte, die extern gespeichert sind, müssen in den Telekom Account migriert werden. Sobald das geschehen ist, werden die Komponenten automatisch mit der Bibliothek verknüpft.<br/><a href="https://telekom.github.io/scale/?path=/docs/new-release-sketch-library-update--page#access">Mehr erfahren  </a>
+    </p>
+</scale-notification-banner>
+
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
 <p><a href="https://www.figma.com/file/3xCcfn6sawB7EcfUjpr7OE/%E2%98%80%EF%B8%8F-Telekom-Scale-Beta-Light-1.0.0?type=design&node-id=11505%3A145418&mode=design&t=nAdhrYOpRNgurAwy-1" rel="nofollow" class="matomo_download">Telekom Scale Components Light </a></p>
@@ -36,21 +43,3 @@ Scale beinhaltet für Light und Dark Mode jeweils eine eigene Library. So kannst
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 Wichtiger Hinweis: das aktuellste Release beinhaltet kein Update der Sketch Library.
-
-<br/>
-
-### Rechtliche Hinweise
-
-Die Deutsche Telekom behält sich alle Rechte an der Marke Telekom vor. Für jede Nutzung, die nicht explizit für die Telekom bestimmt ist, muss das Telekom Theme komplett ersetzt werden.
-
-## Designdokumentationen
-
-Zu jeder Komponente gibt es ausführliche Informationen zur Verwendung sowie zu den unterschiedlichen Varianten. Gehe dazu einfach in der linken Seitenleiste zur gewünschten Komponente und wähle dort die Registerkarte „Usage“ (1) aus.
-
-![Scale for Designers](assets/1_setup/2_scale-for-designers/storybook-Usage-tab.png)
-
-<br/>
-
-# Dein Feedback ist willkommen!
-
-Mit deinem Feedback können wir Scale noch besser machen. Du kannst auch deine Designs mit uns teilen, damit alle davon profitieren können. Du erreichst das Scale Team unter [contact@brand-design.telekom.com](mailto:contact@brand-design.telekom.com).
