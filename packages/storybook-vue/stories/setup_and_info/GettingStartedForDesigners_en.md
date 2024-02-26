@@ -14,7 +14,6 @@ The following font is part of the Telekom brand and design assets. It is not ope
 
 ### Light and dark mode
 
-r
 Scale contains its own library for light and dark mode. This way, you can design your interface in either light or dark mode. It’s possible to change this anytime at the push of a button, so you can assess a given effect in the other mode. But even without additional designs, the development team can activate the other mode.
 
 ### Figma libraries

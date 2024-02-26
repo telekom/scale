@@ -10,7 +10,7 @@
 
 <img src="assets/1_setup/2_scale-for-designers/Figma.png" alt={alt} style={{ width: '100%' }} />
 
-Für alle Designer\*innen, die bereits mit Figma arbeiten, stellen wir nun auch Figma Libraries zur Verfügung.
+Verfügbare Libraries
 
 <p><a href="https://www.figma.com/file/3xCcfn6sawB7EcfUjpr7OE/%E2%98%80%EF%B8%8F-Telekom-Scale-Beta-Light-1.0.0?type=design&node-id=11505%3A145418&mode=design&t=nAdhrYOpRNgurAwy-1" rel="nofollow" class="matomo_download">Telekom Scale Components Light </a></p>
 
@@ -34,7 +34,7 @@ Benutzer, die im Telekom Account arbeiten, erhalten regelmäßig Updates. Um auf
 
 <h2 id="access"> Zugang zu den Scale Figma Libraries </h2>
 
-**Telekom Mitarbeiter**
+### Telekom Mitarbeiter
 
 Schritt 1: <br/>
 Richte dir ein Telekom Figma Enterprise Konto ein. [So geht’s](https://seu30.gdc-dmst01.t-systems.com/confluence/display/SETOOLSBETRIEB/Figma@DT+How+to+add+User).
@@ -53,7 +53,7 @@ Alle internen Nutzer mit einer Telekom Figma Enterprise Lizenz können nach der 
 
 <br/>
 
-**Externe Nutzer\*innen**
+### Externe Nutzer\*innen
 
 Externe Nutzer\*innen können die Scale Libraries ausschließlich mit einem Telekom Figma Enterprise Account nutzen.
 

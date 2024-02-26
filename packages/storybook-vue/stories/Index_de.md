@@ -17,7 +17,7 @@ Ja, das ist ambitioniert, aber wir sind als Team gewachsen und glauben fest dara
 
 Mit diesem neuen Fokus müssen wir auch die Weiterentwicklung des Scale Design Systems denen überlassen, die bereits dazu beigetragen haben, es zu entwickeln: der Open-Source-Community. Obwohl wir leider nicht mehr unterstützen und keine neuen Komponenten mehr erstellen werden: Scale existiert weiter. Veröffentliche gerne Fixes und verbessere das solide Fundament, das wir gemeinsam geschaffen haben.
 
-Für Interessierte, die bisher mit Scale gearbeitet haben, werden wir den Übergang zur nächsten Evolutionsstufe des Design Systems so einfach wie möglich zu machen.
+Für Interessierte, die bisher mit Scale gearbeitet haben, werden wir den Übergang zur nächsten Evolutionsstufe des Design Systems so einfach wie möglich machen.
 
 Haben wir dein Interesse geweckt?
 
@@ -37,7 +37,7 @@ Wenn du die Libraries in deinem Draft-Ordner sichtbar haben möchtest: Klicke un
 
 ### Zugang zu den Scale Figma Libraries
 
-**Telekom Mitarbeiter**
+### Telekom Mitarbeiter
 
 Schritt 1: <br/>
 Richte dir ein Telekom Figma Enterprise Konto ein. [So geht’s](https://seu30.gdc-dmst01.t-systems.com/confluence/display/SETOOLSBETRIEB/Figma@DT+How+to+add+User).
@@ -56,7 +56,7 @@ Alle internen Nutzer mit einer Telekom Figma Enterprise Lizenz können nach der 
 
 <br/>
 
-**Externe Nutzer\*innen**
+### Externe Nutzer\*innen
 
 Externe Nutzer\*innen können die Scale Libraries ausschließlich mit einem Telekom Figma Enterprise Account nutzen.
 
