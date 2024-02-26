@@ -6,7 +6,7 @@ This page documents updates in `@telekom/scale-components` and related packages.
 
 26.02.2024
 
-The "Telekom Brand Header & Navigation" is complemented by the new profile menu. Users can log in and out using this menu. You can find more information in the Usage Text of the [new Brand Header](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
+The "Telekom Brand Header & Navigation" is complemented by the new profile menu. Users can log in and out using this menu. You can find more information in the Usage Text of the [new Brand Header](./?path=/docs/components-telekom-brand-header-navigation--standard-header).
 
 ## Visual Design Updates
 
