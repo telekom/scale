@@ -34,7 +34,7 @@ Users working on the Telekom account will receive regular updates from the libra
 
 <h2 id="access"> Access to Figma libraries </h2>
 
-**Telekom employees**
+### Telekom employees
 
 Step 1: <br/>
 Get a Telekom Enterprise account [by following these instructions](https://seu30.gdc-dmst01.t-systems.com/confluence/display/SETOOLSBETRIEB/Figma@DT+How+to+add+User).
@@ -52,7 +52,7 @@ Scale Figma link: All internal employee with a Telekom Figma Enterprise License 
 
 <br/>
 
-**Externals**
+### Externals
 
 Externals can utilize the Scale library exclusively with a Telekom Figma Enterprise Account.
 

@@ -34,7 +34,7 @@ Benutzer, die im Telekom Account arbeiten, erhalten regelmäßig Updates. Um auf
 
 <h2 id="access"> Zugang zu den Scale Figma Libraries </h2>
 
-**Telekom Mitarbeiter**
+### Telekom Mitarbeiter
 
 Schritt 1: <br/>
 Richte dir ein Telekom Figma Enterprise Konto ein. [So geht’s](https://seu30.gdc-dmst01.t-systems.com/confluence/display/SETOOLSBETRIEB/Figma@DT+How+to+add+User).
@@ -53,7 +53,7 @@ Alle internen Nutzer mit einer Telekom Figma Enterprise Lizenz können nach der 
 
 <br/>
 
-**Externe Nutzer\*innen**
+### Externe Nutzer\*innen
 
 Externe Nutzer\*innen können die Scale Libraries ausschließlich mit einem Telekom Figma Enterprise Account nutzen.
 
