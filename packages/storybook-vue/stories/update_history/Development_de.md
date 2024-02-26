@@ -4,7 +4,7 @@ Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und ver
 
 ## Neues Profilmenü
 
-12.02.2024
+26.02.2024
 
 Der "Telekom Brand Header & Navigation" wird durch das neue Profilmenü ergänzt. Nutzer\*innen können sich über dieses Menü an- und abmelden. Mehr Informationen findest du im Usage Text des [neuen Brand Headers](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
 
