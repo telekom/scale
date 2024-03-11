@@ -12,6 +12,7 @@
 import { h } from '@stencil/core';
 import { Cell } from './cell-interface';
 
+
 export const ActionsCell: Cell = {
   defaults: {},
   render: ({ content }) => {
