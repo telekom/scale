@@ -12,24 +12,30 @@
 import { h } from '@stencil/core';
 import { Cell } from './cell-interface';
 
+
 export const ActionsCell: Cell = {
   defaults: {},
   render: ({ content }) => {
     return (
       <div class={`tbody__actions`}>
         {content.map((action) => {
-          const { label, ...props } = action;
+          const { label, iconName, tooltip, ...props } = action;
+          const tooltipProps = tooltip ? { title: tooltip } : {};
+          const IconComponent = resolveIconComponent(iconName);
           if (typeof label === 'object' && '__html' in label) {
             return (
               <scale-button
                 size="small"
                 innerHTML={label.__html}
+
                 {...props}
+                {...tooltipProps}
               ></scale-button>
             );
           }
           return (
-            <scale-button size="small" {...props}>
+            <scale-button size="small" {...props} {...tooltipProps}>
+              {IconComponent}
               {label}
             </scale-button>
           );
@@ -38,3 +44,18 @@ export const ActionsCell: Cell = {
     );
   },
 };
+
+function resolveIconComponent(iconName) {
+  switch (iconName) {
+    case 'edit':
+      return <scale-icon-action-edit></scale-icon-action-edit>;
+    case 'delete':
+      return <scale-icon-action-remove></scale-icon-action-remove>;
+
+    default:
+      return null;
+  }
+}
+
+
+
