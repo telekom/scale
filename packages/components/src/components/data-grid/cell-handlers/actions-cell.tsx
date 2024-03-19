@@ -59,14 +59,3 @@ function resolveIconComponent(iconName) {
 
 
 
-function resolveIconComponent(iconName) {
-  switch (iconName) {
-    case 'edit':
-      return <scale-icon-action-edit></scale-icon-action-edit>;
-    case 'delete':
-      return <scale-icon-action-remove></scale-icon-action-remove>;
-    
-    default:
-      return null; 
-  }
-}
