@@ -12,6 +12,7 @@
 import { h } from '@stencil/core';
 import { Cell } from './cell-interface';
 
+
 export const ActionsCell: Cell = {
   defaults: {},
   render: ({ content }) => {
@@ -26,6 +27,7 @@ export const ActionsCell: Cell = {
               <scale-button
                 size="small"
                 innerHTML={label.__html}
+
                 {...props}
                 {...tooltipProps}
               ></scale-button>
@@ -56,3 +58,15 @@ function resolveIconComponent(iconName) {
 }
 
 
+
+function resolveIconComponent(iconName) {
+  switch (iconName) {
+    case 'edit':
+      return <scale-icon-action-edit></scale-icon-action-edit>;
+    case 'delete':
+      return <scale-icon-action-remove></scale-icon-action-remove>;
+    
+    default:
+      return null; 
+  }
+}
