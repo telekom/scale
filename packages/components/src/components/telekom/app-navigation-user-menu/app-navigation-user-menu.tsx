@@ -88,10 +88,9 @@ export class AppNavigationUserMenu {
                   }}
                   onKeyDown={(e) => {
                     if ([' ', 'Enter'].includes(e.key)) {
-                      e.stopImmediatePropagation();
-                      e.preventDefault();
-
                       if (item.onClick) {
+                        e.stopImmediatePropagation();
+                        e.preventDefault();
                         item.onClick(e);
                       }
                       this.hide();
@@ -128,16 +127,17 @@ export class AppNavigationUserMenu {
                   part="button"
                   onClick={(e) => {
                     if (item.onClick) {
+                      e.stopImmediatePropagation();
+                      e.preventDefault();
                       item.onClick(e);
                     }
                     this.hide();
                   }}
                   onKeyDown={(e) => {
                     if ([' ', 'Enter'].includes(e.key)) {
-                      e.stopImmediatePropagation();
-                      e.preventDefault();
-
                       if (item.onClick) {
+                        e.stopImmediatePropagation();
+                        e.preventDefault();
                         item.onClick(e);
                       }
                       this.hide();
