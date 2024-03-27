@@ -7,8 +7,8 @@ import {
   State,
   Watch,
   Event,
-  EventEmitter,
-  VNode,
+  type EventEmitter,
+  type VNode,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -227,6 +227,8 @@ function isInView(element: HTMLElement) {
     rect.right <= parentRect.right
   );
 }
+
+let activeDropdown = null;
 
 @Component({
   tag: 'scale-dropdown-select',
@@ -461,7 +463,15 @@ export class DropdownSelect {
   };
 
   handleClick = () => {
+    // * This is a fix to prevent the dropdown from being opened when the user clicks on another combobox.
+    // ! https://github.com/telekom/scale/issues/2285
+    if (activeDropdown && activeDropdown !== this) {
+      activeDropdown.setOpen(false);
+    }
+
     this.setOpen(!this.open);
+    activeDropdown = this;
+
     const indexOfValue = readOptions(this.hostElement).findIndex(
       ({ value }) => value === this.value
     );
