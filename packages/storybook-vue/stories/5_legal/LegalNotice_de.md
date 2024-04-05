@@ -6,7 +6,7 @@ Deutsche Telekom AG<br>
 Friedrich-Ebert-Allee 140<br>
 53113 Bonn
 
-E-Mail: [contact-NOSPAM-brand-design.telekom.com](mailto:contact-NOSPAM-brand-design.telekom.com)<br>
+E-Mail: [contact@brand-design.telekom.com](mailto:contact@brand-design.telekom.com)<br>
 Phone: +49 228 181-24299
 
 **Handelsregister:**
