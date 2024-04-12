@@ -21,6 +21,7 @@
 | `loginSettingsLabel`          | `login-settings-label`           |             | `string`  | `undefined` |
 | `loginSettingsUrl`            | `login-settings-url`             |             | `string`  | `undefined` |
 | `loginUrl`                    | `login-url`                      |             | `string`  | `undefined` |
+| `logoutHandler`               | `logout-handler`                 |             | `string`  | `undefined` |
 | `logoutLabel`                 | `logout-label`                   |             | `string`  | `undefined` |
 | `logoutUrl`                   | `logout-url`                     |             | `string`  | `undefined` |
 | `registerHeadline`            | `register-headline`              |             | `string`  | `undefined` |
