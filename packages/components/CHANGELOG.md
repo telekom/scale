@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.151](https://github.com/telekom/scale/compare/v3.0.0-beta.150...v3.0.0-beta.151) (2024-04-12)
+
+
+### Bug Fixes
+
+* **telekom-profile-menu:** keyboard accessibility & optional logout handler ([#2306](https://github.com/telekom/scale/issues/2306)) ([bb7aabd](https://github.com/telekom/scale/commit/bb7aabdb0a56ccdce245947bd35e69861bf3bc17))
+
+
+### Features
+
+* **dropdown-select:** ensure single dropdown open at a time ([#2307](https://github.com/telekom/scale/issues/2307)) ([2ad95bd](https://github.com/telekom/scale/commit/2ad95bdae1f8fb8e2ae785ba3cea4e52de075f57))
+
+
+
+
+
 # [3.0.0-beta.150](https://github.com/telekom/scale/compare/v3.0.0-beta.149...v3.0.0-beta.150) (2024-02-26)
 
 **Note:** Version bump only for package @telekom/scale-components
