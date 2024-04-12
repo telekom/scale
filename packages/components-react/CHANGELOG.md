@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.151](https://github.com/telekom/scale/compare/v3.0.0-beta.150...v3.0.0-beta.151) (2024-04-12)
+
+**Note:** Version bump only for package @telekom/scale-components-react
+
+
+
+
+
 # [3.0.0-beta.150](https://github.com/telekom/scale/compare/v3.0.0-beta.149...v3.0.0-beta.150) (2024-02-26)
 
 **Note:** Version bump only for package @telekom/scale-components-react
