@@ -7,8 +7,8 @@ import {
   State,
   Watch,
   Event,
-  type EventEmitter,
-  type VNode,
+  EventEmitter,
+  VNode,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
