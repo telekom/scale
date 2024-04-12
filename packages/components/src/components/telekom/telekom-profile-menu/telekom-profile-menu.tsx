@@ -82,6 +82,7 @@ export class TelekomProfileMenu {
 
   @Prop() logoutLabel: string;
   @Prop() logoutUrl?: string;
+  @Prop() logoutHandler?: string;
 
   @State()
   menuOpen = false;
@@ -161,6 +162,16 @@ export class TelekomProfileMenu {
     );
   }
 
+  buildLogoutButton() {
+    return {
+      type: 'button',
+      name: this.logoutLabel,
+      href: this.logoutUrl || LOGOUT_DEFAULT,
+      variant: 'secondary',
+      onClick: this.logoutHandler,
+    };
+  }
+
   buildUserNavigation() {
     const divider = [{ type: 'divider' }];
 
@@ -187,13 +198,6 @@ export class TelekomProfileMenu {
       icon: 'service-settings',
     };
 
-    const logout = {
-      type: 'button',
-      name: this.logoutLabel,
-      href: this.logoutUrl || LOGOUT_DEFAULT,
-      variant: 'secondary',
-    };
-
     let menu = [];
 
     menu = menu.concat(userInfo);
@@ -211,7 +215,7 @@ export class TelekomProfileMenu {
       menu = menu.concat(divider);
     }
 
-    menu = menu.concat(logout);
+    menu = menu.concat(this.buildLogoutButton());
 
     return menu;
   }

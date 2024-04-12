@@ -539,6 +539,11 @@ window.onload = () => {
     email: 'alexander.dreyer@t-online.de',
   });
   profileMenu.serviceLinks = JSON.stringify(serviceLinks);
+
+  // optional: set a custom handler for clicks on logout button
+  profileMenu.logoutHandler = () => {
+    // ...
+  }
 };
 </script>
 ```
@@ -605,6 +610,11 @@ window.onload = () => {
     email: 'alexander.dreyer@t-online.de',
   });
   profileMenu.serviceLinks = JSON.stringify(serviceLinks);
+
+  // optional: set a custom handler for clicks on logout button
+  profileMenu.logoutHandler = () => {
+    // ...
+  }
 };
 </script>
 ```
