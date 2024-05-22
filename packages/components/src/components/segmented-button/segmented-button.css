@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-:host {
+ :host {
   --background-color: var(--telekom-color-ui-faint);
   --radius: var(--telekom-radius-standard);
   --height: 32px;
@@ -22,16 +22,23 @@
 
   display: flex;
   flex-direction: column;
+  flex-flow:column nowrap;
+
+  --colNum: 0;
 }
 
 .segmented-button {
   background-color: var(--background-color);
   border: 0;
   border-radius: var(--radius);
-  padding: 0 var(--telekom-spacing-composition-space-02);
+  padding: 0 var(--telekom-spacing-unit-x05);
   width: fit-content;
   height: var(--height);
   display: inline-grid;
+  grid-template-columns: repeat(var(--colNum), minmax(auto, 1fr));  
+  column-gap: 0; 
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .segmented-button--full-width {
@@ -40,20 +47,26 @@
 
 .segmented-button--medium {
   height: var(--height-medium);
-  padding: 0 var(--telekom-spacing-composition-space-02);
+  padding: 0 var(--telekom-spacing-unit-x05);
 }
 
 .segmented-button--large {
   height: var(--height-large);
-  padding: 0 var(--telekom-spacing-composition-space-02);
+  padding: 0 var(--telekom-spacing-unit-x05);
 }
 
 .segmented-button--label {
   font-size: var(--telekom-typography-font-size-body);
   font-weight: var(--telekom-typography-font-weight-bold);
-  margin-bottom: var(--telekom-spacing-composition-space-04);
+  margin-bottom: var(--telekom-spacing-unit-x2);
 }
 
 .segmented-button--helper-text {
-  margin-top: var(--telekom-spacing-composition-space-04);
+  margin-top: var(--telekom-spacing-unit-x2);
+}
+
+.segmented-button--fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
