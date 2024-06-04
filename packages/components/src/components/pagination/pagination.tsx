@@ -177,9 +177,9 @@ export class Pagination {
   /* 10. Render */
   render() {
     const total = this.totalElements;
-    const start = this.startElement + 1;
+    const start = total === 0 ? 0 : this.startElement + 1;
     const end = Math.min(this.startElement + this.pageSize, total);
-    const isAtStart = start === 1;
+    const isAtStart = start === 1 || total === 0;
     const isAtEnd = end === total;
     return (
       <Host>
