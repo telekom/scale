@@ -11,6 +11,7 @@
 
 import { newSpecPage } from '@stencil/core/testing';
 import { TabNav } from './tab-nav';
+import { TabHeader } from '../tab-header/tab-header';
 
 describe('TabNav', () => {
   let page;
@@ -29,5 +30,24 @@ describe('TabNav', () => {
   // since we can never be certain the name of the element will be <scale-tab-nav>.
   it('should have default scale-tab-nav class', async () => {
     expect(page.root.classList.contains('scale-tab-nav')).toBe(true);
+  });
+
+  it('should preselect tab having prop "selected" on tab-header', async () => {
+    const pageWithTabs = await newSpecPage({
+      components: [TabNav, TabHeader],
+      html: `<scale-tab-nav>
+              <scale-tab-header slot="tab">Tab 1</scale-tab-header>
+              <scale-tab-panel slot="panel">
+                Tab Content 1
+              </scale-tab-panel>
+              <scale-tab-header selected slot="tab">Tab 2</scale-tab-header>
+              <scale-tab-panel slot="panel">
+                Tab Content 2
+              </scale-tab-panel>
+            </scale-tab-nav>`,
+    });
+    const tabElements = pageWithTabs.root.querySelectorAll('scale-tab-header');
+    expect(tabElements[0]).toEqualAttribute('aria-selected', 'false');
+    expect(tabElements[1]).toEqualAttribute('aria-selected', 'true');
   });
 });
