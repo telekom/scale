@@ -41,7 +41,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleTabNav },
   props: ScaleTabNav.props,
   template: `
-    <scale-tab-nav :disabled="disabled ? true : false" :size="size" :with-icon="withIcon"></scale-tab-nav>
+    <scale-tab-nav :disabled="disabled ? true : false" :preselected="preselected ? true : false" :size="size" :with-icon="withIcon"></scale-tab-nav>
   `,
 });
 
@@ -181,7 +181,7 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-tab-nav>
-  <scale-tab-header disabled slot="tab">General0000</scale-tab-header>
+  <scale-tab-header disabled slot="tab">General</scale-tab-header>
   <scale-tab-panel slot="panel">
     Freegan kinfolk farm-to-table humblebrag cred…
   </scale-tab-panel>
@@ -205,7 +205,7 @@ For Shadow Parts, please inspect the element's #shadow.
 <Canvas withSource="none">
   <Story
     name="Preselected Tab"
-    args={{ withIcon: false, size: 'small' }}
+    args={{ preselected: true, withIcon: false, size: 'small' }}
   >
     {Template.bind({})}
   </Story>
@@ -213,7 +213,7 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-tab-nav>
-  <scale-tab-header slot="tab">General11111</scale-tab-header>
+  <scale-tab-header slot="tab">General</scale-tab-header>
   <scale-tab-panel slot="panel">
     Freegan kinfolk farm-to-table humblebrag cred…
   </scale-tab-panel>
