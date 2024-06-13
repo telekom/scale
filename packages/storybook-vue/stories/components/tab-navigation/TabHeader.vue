@@ -6,8 +6,8 @@ export default {
     disabled: {type: Boolean, default: 'false'},
     selected: {type: Boolean, default: 'false'},
     size: {
-      control: {type: 'select', options: ['large', 'small'], defaultValue: 'small'},
-    },
+      control: {type: ['large', 'small'], defaultValue: 'small'}
+    }
   }
 };
 </script>
