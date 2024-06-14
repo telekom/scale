@@ -239,7 +239,11 @@ export class DataGrid {
 
     // If the table was sorted and the data has changed then apply the existing sorting again
     if (this.activeSortingIndex !== -1) {
-      this.sortTable(this.fields[this.activeSortingIndex].sortDirection, this.fields[this.activeSortingIndex].type, this.activeSortingIndex);
+      this.sortTable(
+        this.fields[this.activeSortingIndex].sortDirection,
+        this.fields[this.activeSortingIndex].type,
+        this.activeSortingIndex
+      );
     }
   }
 
