@@ -66,7 +66,7 @@ export class Accordion {
     /**
      * Handle `expanded`
      */
-    if (!this.dependent) {
+    if (this.expanded && !this.dependent) {
       this.getCollapsibleChildren().forEach((child) => {
         child.expanded = this.expanded;
       });
