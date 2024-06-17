@@ -1,827 +1,805 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-    />
-    <title>Data-Grid Component Examples</title>
 
-    <script type="module" src="/build/scale-components.esm.js"></script>
-    <script nomodule src="/build/scale-components.js"></script>
-    <link rel="stylesheet" href="/build/scale-components.css" />
-    <style>
-      html {
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Data-Grid Component Examples</title>
 
-      body {
-        margin: 0;
-        padding: 20px;
-      }
-    </style>
-  </head>
+  <script type="module" src="/build/scale-components.esm.js"></script>
+  <script nomodule src="/build/scale-components.js"></script>
+  <link rel="stylesheet" href="/build/scale-components.css" />
+  <style>
+    html {
+      margin: 0;
+      padding: 0;
+    }
 
-  <body>
-    <p>Required Options Only</p>
-    <!-- fields -->
-    <!-- rows -->
+    body {
+      margin: 0;
+      padding: 20px;
+    }
+  </style>
+</head>
 
-    <!-- freezeHeader -->
-    <!-- heading -->
-    <!-- height -->
-    <!-- hideBorder -->
-    <!-- hideInfo -->
-    <!-- hideHeader -->
-    <!-- hideMenu -->
-    <!-- numbered -->
-    <!-- pageSize -->
-    <!-- selectable -->
-    <!-- shadeAlternate -->
+<body>
+  <p>Required Options Only</p>
+  <!-- fields -->
+  <!-- rows -->
 
-    <!-- common cell properties -->
-    <!-- maxWidth?: number; -->
-    <!-- minWidth?: number; -->
-    <!-- mobileTitle?: boolean; -->
-    <!-- resizable?: boolean; -->
-    <!-- sortable?: boolean; -->
-    <!-- sortBy?: 'number' | 'text'; -->
-    <!-- textAlign?: 'left' | 'center' | 'right'; -->
-    <!-- visible?: boolean; -->
-    <!-- width?: number; -->
+  <!-- freezeHeader -->
+  <!-- heading -->
+  <!-- height -->
+  <!-- hideBorder -->
+  <!-- hideInfo -->
+  <!-- hideHeader -->
+  <!-- hideMenu -->
+  <!-- numbered -->
+  <!-- pageSize -->
+  <!-- selectable -->
+  <!-- shadeAlternate -->
 
-    <!-- menu slot example -->
-    <!-- selection example -->
-    <!-- show-more pagination example -->
-    <!-- manual pagination example -->
-    <!-- search filtering example -->
-    <!-- custom data end-point example -->
+  <!-- common cell properties -->
+  <!-- maxWidth?: number; -->
+  <!-- minWidth?: number; -->
+  <!-- mobileTitle?: boolean; -->
+  <!-- resizable?: boolean; -->
+  <!-- sortable?: boolean; -->
+  <!-- sortBy?: 'number' | 'text'; -->
+  <!-- textAlign?: 'left' | 'center' | 'right'; -->
+  <!-- visible?: boolean; -->
+  <!-- width?: number; -->
 
-    <scale-data-grid id="table1" numbered selectable page-size="5">
-      <scale-menu-flyout slot="menu">
-        <scale-menu-flyout-item slot="trigger" cascade
-          >Menu</scale-menu-flyout-item
-        >
-        <scale-menu-flyout-list>
-          <scale-menu-flyout-item>Item 1 </scale-menu-flyout-item>
-          <scale-menu-flyout>
-            <scale-menu-flyout-item slot="trigger" cascade
-              >More Options</scale-menu-flyout-item
-            >
-            <scale-menu-flyout-list>
-              <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
-              <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
-              <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
-              <scale-menu-flyout>
-                <scale-menu-flyout-item slot="trigger" cascade
-                  >Even More</scale-menu-flyout-item
-                >
-                <scale-menu-flyout-list>
-                  <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
-                  <scale-menu-flyout>
-                    <scale-menu-flyout-item slot="trigger" cascade
-                      >Very Specific Options</scale-menu-flyout-item
-                    >
-                    <scale-menu-flyout-list>
-                      <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
-                      <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
-                      <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
-                    </scale-menu-flyout-list>
-                  </scale-menu-flyout>
-                  <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
-                </scale-menu-flyout-list>
-              </scale-menu-flyout>
-            </scale-menu-flyout-list>
-          </scale-menu-flyout>
-          <scale-menu-flyout close-on-select="false">
-            <scale-menu-flyout-item slot="trigger" cascade
-              >Toggle Visibility</scale-menu-flyout-item
-            >
-            <scale-menu-flyout-list>
-              <scale-menu-flyout-item checked="true"
-                >Column 1</scale-menu-flyout-item
-              >
-              <scale-menu-flyout-item checked="true"
-                >Column 2</scale-menu-flyout-item
-              >
-              <scale-menu-flyout-item checked="true"
-                >Column 3</scale-menu-flyout-item
-              >
-              <scale-menu-flyout-item checked="true"
-                >Column 4</scale-menu-flyout-item
-              >
-              <scale-menu-flyout-item checked="true"
-                >Column 5</scale-menu-flyout-item
-              >
-            </scale-menu-flyout-list>
-          </scale-menu-flyout>
-          <scale-menu-flyout-item disabled
-            >Item 5
-            <span slot="suffix">⌘Space</span>
-          </scale-menu-flyout-item>
-        </scale-menu-flyout-list>
-      </scale-menu-flyout>
-      <!-- <scale-button
+  <!-- menu slot example -->
+  <!-- selection example -->
+  <!-- show-more pagination example -->
+  <!-- manual pagination example -->
+  <!-- search filtering example -->
+  <!-- custom data end-point example -->
+
+  <scale-data-grid id="table1" numbered selectable page-size="5">
+    <scale-menu-flyout slot="menu">
+      <scale-menu-flyout-item slot="trigger" cascade>Menu</scale-menu-flyout-item>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1 </scale-menu-flyout-item>
+        <scale-menu-flyout>
+          <scale-menu-flyout-item slot="trigger" cascade>More Options</scale-menu-flyout-item>
+          <scale-menu-flyout-list>
+            <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+            <scale-menu-flyout>
+              <scale-menu-flyout-item slot="trigger" cascade>Even More</scale-menu-flyout-item>
+              <scale-menu-flyout-list>
+                <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                <scale-menu-flyout>
+                  <scale-menu-flyout-item slot="trigger" cascade>Very Specific Options</scale-menu-flyout-item>
+                  <scale-menu-flyout-list>
+                    <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                    <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                    <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                  </scale-menu-flyout-list>
+                </scale-menu-flyout>
+                <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+              </scale-menu-flyout-list>
+            </scale-menu-flyout>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout>
+        <scale-menu-flyout close-on-select="false">
+          <scale-menu-flyout-item slot="trigger" cascade>Toggle Visibility</scale-menu-flyout-item>
+          <scale-menu-flyout-list>
+            <scale-menu-flyout-item checked="true">Column 1</scale-menu-flyout-item>
+            <scale-menu-flyout-item checked="true">Column 2</scale-menu-flyout-item>
+            <scale-menu-flyout-item checked="true">Column 3</scale-menu-flyout-item>
+            <scale-menu-flyout-item checked="true">Column 4</scale-menu-flyout-item>
+            <scale-menu-flyout-item checked="true">Column 5</scale-menu-flyout-item>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout>
+        <scale-menu-flyout-item disabled>Item 5
+          <span slot="suffix">⌘Space</span>
+        </scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+    <!-- <scale-button
         onClick="console.log(document.querySelector('#table1').selection)"
       >
         Export Selection
       </scale-button> -->
-    </scale-data-grid>
+  </scale-data-grid>
 
-    <script>
-      const fields = [
-        {
-          type: 'text',
-          label: 'Title',
-          sortable: true,
-          variant: 'h6',
-          iconPrefix: 'action-download',
-          mobileTitle: true,
+  <script>
+    const fields = [
+      {
+        type: 'text',
+        label: 'Title',
+        sortable: true,
+        variant: 'h6',
+        iconPrefix: 'action-download',
+        mobileTitle: true,
 
-          stretchWeight: 1,
-        },
-        {
-          type: 'select',
-          label: 'Drop Down',
-          options: ['One', 'Two', 'Three'],
-          editable: true,
-        },
-        {
-          type: 'text',
-          label: 'Description',
-          // visible: false,
+        stretchWeight: 1,
+      },
+      {
+        type: 'select',
+        label: 'Drop Down',
+        options: ['One', 'Two', 'Three'],
+        editable: true,
+      },
+      {
+        type: 'text',
+        label: 'Description',
+        // visible: false,
 
-          editable: true,
-        },
-        {
-          type: 'link',
-          label: 'Link',
-        },
-        {
-          type: 'tags',
-          label: 'Tags',
-        },
-        {
-          type: 'date',
-          label: 'Time',
-          sortable: true,
-        },
-        {
-          type: 'number',
-          label: 'Numbers',
-          sortable: true,
-          presort: true,
-          presortDirection: 'descending',
-          precision: 2,
-          decimalSymbol: '.',
-          groupSymbol: ',',
-          prefix: '$',
-          suffix: ' USD',
-          // visible: false,
-          // editable: true,
-        },
-        {
-          type: 'checkbox',
-          label: 'On/Off',
-          sortable: true,
-          style: 'switch',
-          editable: true,
-        },
-        {
-          type: 'graph',
-          label: 'Progress',
-          sortable: true,
-          style: 'progress',
-          // style: 'bar',
-          min: 0,
-          max: 100,
-        },
-        {
-          type: 'html',
-        },
-        {
-          type: 'actions',
-          label: 'Actions',
-        },
-      ];
+        editable: true,
+      },
+      {
+        type: 'link',
+        label: 'Link',
+      },
+      {
+        type: 'tags',
+        label: 'Tags',
+      },
+      {
+        type: 'date',
+        label: 'Time',
+        sortable: true,
+      },
+      {
+        type: 'number',
+        label: 'Numbers',
+        sortable: true,
+        presort: true,
+        presortDirection: 'descending',
+        precision: 2,
+        decimalSymbol: '.',
+        groupSymbol: ',',
+        prefix: '$',
+        suffix: ' USD',
+        // visible: false,
+        // editable: true,
+      },
+      {
+        type: 'checkbox',
+        label: 'On/Off',
+        sortable: true,
+        style: 'switch',
+        editable: true,
+      },
+      {
+        type: 'graph',
+        label: 'Progress',
+        sortable: true,
+        style: 'progress',
+        // style: 'bar',
+        min: 0,
+        max: 100,
+      },
+      {
+        type: 'html',
+      },
+      {
+        type: 'actions',
+        label: 'Actions',
+      },
+    ];
 
-      const rows = [
-        // Row 1
-        [
-          'Row lorem title',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:00:20',
-          101045.0,
-          false,
-          15,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+    const rows = [
+      // Row 1
+      [
+        'Row lorem title',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:00:20',
+        101045.0,
+        false,
+        15,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           1 External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 2
+          return demoNestedContent;
+        })(),
         [
-          'dolor sit amet',
-          'Two',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:01:15',
-          43.2,
-          true,
-          73.2,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 2
+      [
+        'dolor sit amet',
+        'Two',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:01:15',
+        43.2,
+        true,
+        73.2,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           2 External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 3
+          return demoNestedContent;
+        })(),
         [
-          'consectetur adipiscing',
-          'Three',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:00:20',
-          102045.0,
-          false,
-          15,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 3
+      [
+        'consectetur adipiscing',
+        'Three',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:00:20',
+        102045.0,
+        false,
+        15,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           3 External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-            {
-              label: 'Third action',
-              variant: 'secondary',
-              onClick: () => alert('Third action'),
-            },
-          ],
-        ],
-
-        // Row 4
+          return demoNestedContent;
+        })(),
         [
-          'sed do eiusmod',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:01:15',
-          45.2,
-          true,
-          73.2,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+          {
+            label: 'Third action',
+            variant: 'secondary',
+            onClick: () => alert('Third action'),
+          },
+        ],
+      ],
+
+      // Row 4
+      [
+        'sed do eiusmod',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:01:15',
+        45.2,
+        true,
+        73.2,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           4 External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 5
+          return demoNestedContent;
+        })(),
         [
-          'tempor incididunt',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:00:20',
-          103045.0,
-          false,
-          15,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 5
+      [
+        'tempor incididunt',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:00:20',
+        103045.0,
+        false,
+        15,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           5 External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 6
+          return demoNestedContent;
+        })(),
         [
-          'ut labore et',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:01:15',
-          47.2,
-          true,
-          73.2,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 6
+      [
+        'ut labore et',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:01:15',
+        47.2,
+        true,
+        73.2,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           6 External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 1
+          return demoNestedContent;
+        })(),
         [
-          'Row lorem title',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:00:20',
-          105045.0,
-          false,
-          15,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 1
+      [
+        'Row lorem title',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:00:20',
+        105045.0,
+        false,
+        15,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           7 External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 2
+          return demoNestedContent;
+        })(),
         [
-          'dolor sit amet',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:01:15',
-          48.2,
-          true,
-          73.2,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 2
+      [
+        'dolor sit amet',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:01:15',
+        48.2,
+        true,
+        73.2,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
            8External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 3
+          return demoNestedContent;
+        })(),
         [
-          'consectetur adipiscing',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:00:20',
-          109045.0,
-          false,
-          15,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 3
+      [
+        'consectetur adipiscing',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:00:20',
+        109045.0,
+        false,
+        15,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           9 External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 4
+          return demoNestedContent;
+        })(),
         [
-          'sed do eiusmod',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:01:15',
-          40.2,
-          true,
-          73.2,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 4
+      [
+        'sed do eiusmod',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:01:15',
+        40.2,
+        true,
+        73.2,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           10 External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 5
+          return demoNestedContent;
+        })(),
         [
-          'tempor incididunt',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:00:20',
-          108045.0,
-          false,
-          15,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 5
+      [
+        'tempor incididunt',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:00:20',
+        108045.0,
+        false,
+        15,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 6
+          return demoNestedContent;
+        })(),
         [
-          'ut labore et',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:01:15',
-          43.2,
-          true,
-          73.2,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 6
+      [
+        'ut labore et',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:01:15',
+        43.2,
+        true,
+        73.2,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-        // Row 1
+          return demoNestedContent;
+        })(),
         [
-          'Row lorem title',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:00:20',
-          102045.0,
-          false,
-          15,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+      // Row 1
+      [
+        'Row lorem title',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:00:20',
+        102045.0,
+        false,
+        15,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 2
+          return demoNestedContent;
+        })(),
         [
-          'dolor sit amet',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:01:15',
-          43.2,
-          true,
-          73.2,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 2
+      [
+        'dolor sit amet',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:01:15',
+        43.2,
+        true,
+        73.2,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 3
+          return demoNestedContent;
+        })(),
         [
-          'consectetur adipiscing',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:00:20',
-          102045.0,
-          false,
-          15,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 3
+      [
+        'consectetur adipiscing',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:00:20',
+        102045.0,
+        false,
+        15,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 4
+          return demoNestedContent;
+        })(),
         [
-          'sed do eiusmod',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:01:15',
-          43.2,
-          true,
-          73.2,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 4
+      [
+        'sed do eiusmod',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:01:15',
+        43.2,
+        true,
+        73.2,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 5
+          return demoNestedContent;
+        })(),
         [
-          'tempor incididunt',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:00:20',
-          102045.0,
-          false,
-          15,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 5
+      [
+        'tempor incididunt',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:00:20',
+        102045.0,
+        false,
+        15,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
-        ],
-
-        // Row 6
+          return demoNestedContent;
+        })(),
         [
-          'ut labore et',
-          'One',
-          'Lorem ipsum dolor sit amet sime',
-          'http://example.com',
-          'Simple, Short',
-          '00:01:15',
-          43.2,
-          true,
-          73.2,
-          (() => {
-            const demoNestedContent = document.createElement('div');
-            demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
+        ],
+      ],
+
+      // Row 6
+      [
+        'ut labore et',
+        'One',
+        'Lorem ipsum dolor sit amet sime',
+        'http://example.com',
+        'Simple, Short',
+        '00:01:15',
+        43.2,
+        true,
+        73.2,
+        (() => {
+          const demoNestedContent = document.createElement('div');
+          demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
           External link, opens in new tab
           <scale-icon-navigation-external-link size="24" />
           </scale-button>`;
-            return demoNestedContent;
-          })(),
-          [
-            {
-              label: 'Edit',
-              variant: 'secondary',
-              onClick: () => alert('Edit'),
-            },
-            {
-              label: 'Delete',
-              variant: 'secondary',
-              onClick: () => alert('Delete'),
-            },
-          ],
+          return demoNestedContent;
+        })(),
+        [
+          {
+            label: 'Edit',
+            variant: 'secondary',
+            onClick: () => alert('Edit'),
+          },
+          {
+            label: 'Delete',
+            variant: 'secondary',
+            onClick: () => alert('Delete'),
+          },
         ],
-      ];
+      ],
+    ];
 
-      // Pass in data
-      const table = document.querySelector('#table1');
+    // Pass in data
+    const table = document.querySelector('#table1');
 
-      table.fields = fields;
-      table.rows = rows;
+    table.fields = fields;
+    table.rows = rows;
 
-      // table.addEventListener('scaleEdit', ({ detail }) => {
-      //   const { rows, rowIndex, columnIndex, value } = detail;
-      //   console.log(detail);
-      // });
+    // table.addEventListener('scaleEdit', ({ detail }) => {
+    //   const { rows, rowIndex, columnIndex, value } = detail;
+    //   console.log(detail);
+    // });
 
-      // table.addEventListener('scaleSort', ({ detail }) => {
-      //   const { rows, sorting, type } = detail;
-      //   // console.log(detail);
-      // });
-    </script>
-  </body>
+    // table.addEventListener('scaleSort', ({ detail }) => {
+    //   const { rows, sorting, type } = detail;
+    //   // console.log(detail);
+    // });
+  </script>
+</body>
+
 </html>
