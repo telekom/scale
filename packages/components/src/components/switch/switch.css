@@ -307,7 +307,7 @@ scale-switch scale-icon-action-success {
   .switch__toggle {
     border: 1px solid;
   }
-  scale-icon-action-checkmark {
+  scale-switch scale-icon-action-checkmark {
     visibility: hidden !important;
   }
 }
