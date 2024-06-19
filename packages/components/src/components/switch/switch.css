@@ -26,6 +26,7 @@ scale-switch {
 
 .switch {
   --_background: var(--telekom-color-ui-faint);
+  --_on-background: var(--telekom-color-text-and-icon-standard);
   --_color-thumb: var(--telekom-color-ui-white, #fff);
   --_overlay-background: transparent;
 
@@ -55,6 +56,7 @@ scale-switch {
   width: var(--width);
   height: var(--height);
   background: var(--_background);
+  color: var(--_on-background);
   border-radius: var(--radius);
   transition-property: background;
   transition-duration: var(--transition-duration);
