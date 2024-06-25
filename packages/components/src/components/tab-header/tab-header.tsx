@@ -53,7 +53,10 @@ export class TabHeader {
 
   @State() hasFocus: boolean = false;
 
+  /** Emitted on header select */
   @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter;
+  /** Emitted when currently selected tab got disabled */
+  @Event({ eventName: 'scale-got-disabled' }) scaleGotDisabled: EventEmitter;
 
   @Listen('click')
   handleClick(event: MouseEvent) {
@@ -81,8 +84,9 @@ export class TabHeader {
 
   @Watch('disabled')
   disabledChanged() {
-    if (this.disabled) {
+    if (this.disabled && this.selected) {
       this.selected = false;
+      this.scaleGotDisabled.emit();
     }
   }
 
