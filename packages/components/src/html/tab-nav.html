@@ -24,24 +24,31 @@
 <body>
 	<p>
 		<scale-tab-nav>
-			<scale-tab-header disabled slot="tab">General</scale-tab-header>
+			<scale-tab-header slot="tab">General</scale-tab-header>
 			<scale-tab-panel slot="panel">
-				Freegan kinfolk farm-to-table humblebrag cred…
+				1 Freegan kinfolk farm-to-table humblebrag cred…
 			</scale-tab-panel>
-			<scale-tab-header slot="tab">Usage</scale-tab-header>
+			<scale-tab-header selected slot="tab">Usage</scale-tab-header>
 			<scale-tab-panel slot="panel">
-				Bespoke austin pork belly yuccie pop-up. Before they sold out…
+				2 Bespoke austin pork belly yuccie pop-up. Before they sold out…
 			</scale-tab-panel>
-			<scale-tab-header selected slot="tab">Style</scale-tab-header>
+			<scale-tab-header slot="tab">Style</scale-tab-header>
 			<scale-tab-panel slot="panel">
-				Biodiesel chia af hoodie tumeric bespoke letterpress…
+				3 Biodiesel chia af hoodie tumeric bespoke letterpress…
 			</scale-tab-panel>
 			<scale-tab-header slot="tab">Code</scale-tab-header>
 			<scale-tab-panel slot="panel">
-				Asymmetrical tattooed chia, banh mi blog microdosing…
+				4 Asymmetrical tattooed chia, banh mi blog microdosing…
 			</scale-tab-panel>
 		</scale-tab-nav>
 	</p>
 </body>
+<script>
+	setTimeout(() => {
+		let tabs = document.querySelectorAll('scale-tab-header');
+		tabs[1].disabled = true;
+		tabs[0].disabled = true;
+	}, 1000);
+</script>
 
 </html>

@@ -47,6 +47,11 @@ export class TabNav {
     }
   }
 
+  @Listen('scale-got-disabled')
+  handleDisabledTabHeader() {
+    this.selectProperTab();
+  }
+
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
     const target = event.target as HTMLScaleTabHeaderElement;
@@ -94,6 +99,7 @@ export class TabNav {
     ]).then(() => {
       this.linkPanels();
       this.propagateSizeToTabs();
+      this.selectProperTab();
     });
 
     if (this.small !== false) {
@@ -146,15 +152,18 @@ export class TabNav {
 
   linkPanels() {
     const tabs = this.getAllTabs();
-    const selectedTab =
-      tabs.find((x) => x.selected) || tabs.filter((x) => !x.disabled)[0];
-
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
       tab.setAttribute('aria-controls', panel.id);
       panel.setAttribute('aria-labelledby', tab.id);
     });
-    this.selectTab(selectedTab);
+  }
+
+  selectProperTab(): void {
+    const tabs = this.getAllTabs();
+    const tabToSelect =
+      tabs.find(tab => tab.selected) || tabs.filter(tab => !tab.disabled)[0];
+    this.selectTab(tabToSelect);
   }
 
   reset() {
