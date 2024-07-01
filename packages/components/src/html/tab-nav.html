@@ -28,7 +28,7 @@
 			<scale-tab-panel slot="panel">
 				1 Freegan kinfolk farm-to-table humblebrag cred…
 			</scale-tab-panel>
-			<scale-tab-header selected slot="tab">Usage</scale-tab-header>
+			<scale-tab-header slot="tab">Usage</scale-tab-header>
 			<scale-tab-panel slot="panel">
 				2 Bespoke austin pork belly yuccie pop-up. Before they sold out…
 			</scale-tab-panel>
@@ -46,9 +46,12 @@
 <script>
 	setTimeout(() => {
 		let tabs = document.querySelectorAll('scale-tab-header');
-		tabs[1].disabled = true;
 		tabs[0].disabled = true;
-	}, 1000);
+	}, 2000);
+	setTimeout(() => {
+		let tabs = document.querySelectorAll('scale-tab-header');
+		tabs[3].selected = true;
+	}, 4000);
 </script>
 
 </html>

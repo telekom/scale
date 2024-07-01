@@ -47,7 +47,7 @@ export class TabHeader {
   /** (optional) size  */
   @Prop() size?: 'small' | 'large' = 'small';
   /** (optional) Whether the tab is selected */
-  @Prop() selected?: boolean;
+  @Prop({ mutable: true }) selected?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -64,7 +64,7 @@ export class TabHeader {
     if (this.disabled) {
       return;
     }
-    this.scaleSelect.emit();
+    this.selected = true;
   }
 
   @Watch('selected')
@@ -73,6 +73,9 @@ export class TabHeader {
       return;
     }
     if (!this.disabled) {
+      if (newValue === true) {
+        this.scaleSelect.emit();
+      }
       if (newValue === true && this.tabsHaveFocus()) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
