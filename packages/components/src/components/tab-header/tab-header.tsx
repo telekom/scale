@@ -47,13 +47,16 @@ export class TabHeader {
   /** (optional) size  */
   @Prop() size?: 'small' | 'large' = 'small';
   /** (optional) Whether the tab is selected */
-  @Prop() selected?: boolean;
+  @Prop({ mutable: true }) selected?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
   @State() hasFocus: boolean = false;
 
+  /** Emitted on header select */
   @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter;
+  /** Emitted when currently selected tab got disabled */
+  @Event({ eventName: 'scale-got-disabled' }) scaleGotDisabled: EventEmitter;
 
   @Listen('click')
   handleClick(event: MouseEvent) {
@@ -61,7 +64,7 @@ export class TabHeader {
     if (this.disabled) {
       return;
     }
-    this.scaleSelect.emit();
+    this.selected = true;
   }
 
   @Watch('selected')
@@ -70,6 +73,9 @@ export class TabHeader {
       return;
     }
     if (!this.disabled) {
+      if (newValue === true) {
+        this.scaleSelect.emit();
+      }
       if (newValue === true && this.tabsHaveFocus()) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
@@ -81,8 +87,9 @@ export class TabHeader {
 
   @Watch('disabled')
   disabledChanged() {
-    if (this.disabled) {
+    if (this.disabled && this.selected) {
       this.selected = false;
+      this.scaleGotDisabled.emit();
     }
   }
 
