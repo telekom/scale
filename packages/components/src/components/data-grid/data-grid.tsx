@@ -209,6 +209,8 @@ export class DataGrid {
     this.parseFields();
     this.checkForMobileTitle();
     this.checkForSortableFields();
+    // if the fields have changed then reset the sorting as the field may no longer be sortable
+    this.resetSortingToggle();
     this.dataNeedsCheck = true;
   }
   @Watch('rows')
@@ -220,7 +222,6 @@ export class DataGrid {
     }
     this.parseRows();
     this.setInitialRowProps();
-    this.resetSortingToggle();
     this.dataNeedsCheck = true;
     // Set flag to dirty to redo column width with new data
     this.needsAutoWidthParse = true;
@@ -234,6 +235,15 @@ export class DataGrid {
     ) {
       // step back one page
       this.paginationStart = this.paginationStart - this.pageSize;
+    }
+
+    // If the table was sorted and the data has changed then apply the existing sorting again
+    if (this.activeSortingIndex !== -1) {
+      this.sortTable(
+        this.fields[this.activeSortingIndex].sortDirection,
+        this.fields[this.activeSortingIndex].type,
+        this.activeSortingIndex
+      );
     }
   }
 

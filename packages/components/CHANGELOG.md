@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.152](https://github.com/telekom/scale/compare/v3.0.0-beta.151...v3.0.0-beta.152) (2024-07-10)
+
+
+### Bug Fixes
+
+* **data-grid:** allow empty date ([#2322](https://github.com/telekom/scale/issues/2322)) ([116b50e](https://github.com/telekom/scale/commit/116b50e7a8712722f76edb9727ae0d9996aa516f))
+* **data-grid:** re-apply sort on data change ([#2324](https://github.com/telekom/scale/issues/2324)) ([3558e4b](https://github.com/telekom/scale/commit/3558e4b3ffd0b39fa34e7674c94482b8f82707f9))
+* **dropdown-select:** remove type keyword in import ([#2310](https://github.com/telekom/scale/issues/2310)) ([7304444](https://github.com/telekom/scale/commit/7304444f9dfee131496db39b28d99d46538946bb))
+
+
+
+
+
 # [3.0.0-beta.151](https://github.com/telekom/scale/compare/v3.0.0-beta.150...v3.0.0-beta.151) (2024-04-12)
 
 
