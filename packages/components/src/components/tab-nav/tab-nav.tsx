@@ -164,13 +164,14 @@ export class TabNav {
   selectProperTab(): void {
     const tabs = this.getAllTabs();
     const tabToSelect =
-      tabs.find(tab => tab.selected) || tabs.filter(tab => !tab.disabled)[0];
+      tabs.find((tab) => tab.selected) ||
+      tabs.filter((tab) => !tab.disabled)[0];
     this.selectTab(tabToSelect);
   }
 
   resetTabs() {
     const tabs = this.getAllEnabledTabs();
-    tabs.forEach(tab => tab.selected = false);
+    tabs.forEach((tab) => (tab.selected = false));
   }
 
   resetPanels() {
@@ -197,8 +198,10 @@ export class TabNav {
 
   deselectTabs(nextTab: HTMLScaleTabHeaderElement) {
     const tabs = this.getAllEnabledTabs();
-    tabs.forEach(tab => {
-      if (tab !== nextTab) { tab.selected = false }
+    tabs.forEach((tab) => {
+      if (tab !== nextTab) {
+        tab.selected = false;
+      }
     });
   }
 
