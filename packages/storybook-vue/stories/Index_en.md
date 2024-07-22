@@ -2,8 +2,46 @@
 
 <h1 class="magenta"> Important Information for all Users of Scale! </h1>
 <br/>
-<br/>
-<br/>
+
+---
+
+### UPDATE July 2024
+
+Dear All,
+
+we are more than happy to announce the **beta release of our new Design System (DS)**.
+
+This **ODS (One Experience Design System)** will be available to employees of the whole DT Group and contracted and validated suppliers behind a login.
+
+Given our **initial scope is to support 3 focus products**, this means our active support has to be focused on those solely until further notice. We will **not provide active support outside this scope in re. of the ODS**, except providing access to existing materials in the Design and Development repositories.
+
+Nevertheless, we are keen to hear about your experience in using the system as-is,via the channel mentioned below.
+
+**How to gain access:**
+
+- You can request access to our [One Experience MS Teams Channel](https://teams.microsoft.com/l/team/19%3ACyQM8cE8KLBlgqf0fYMDe141p4hhkv7uKcXcgCpUCzo1%40thread.tacv2/conversations?groupId=a33112f9-30a0-4c3c-9c06-30b2f80a3349&tenantId=bde4dffc-4b60-4cf6-8b04-a5eeb25f5c4f). We usually will grant access within a day.
+
+  - Here you will find detailed information on how to access our storybook pages for both themes. The storybook contains a lot more in-depth info on how to implement the system, the components included demos etc.
+
+  - The Teams Channel also includes a [Design](https://teams.microsoft.com/l/channel/19%3A10294cb8e39546ce93981a176e432e37%40thread.tacv2/☀%EF%B8%8F_Design%20Chat?groupId=a33112f9-30a0-4c3c-9c06-30b2f80a3349&tenantId=bde4dffc-4b60-4cf6-8b04-a5eeb25f5c4f) and [Development](https://teams.microsoft.com/l/channel/19%3A9ca3051a9b154d4285c1102aa4b63da0%40thread.tacv2/⭐%EF%B8%8F_Development%20Chat?groupId=a33112f9-30a0-4c3c-9c06-30b2f80a3349&tenantId=bde4dffc-4b60-4cf6-8b04-a5eeb25f5c4f) chats where you can exchange with likeminded people and we will inform about new releases.
+
+  - A first understanding of the new ODS can be gained by watching the ODS intro videos under the Video tab in the channel.
+
+- Any Info/Access Requests/Demands/Bugs can be raised in our [ODQ Jira board](https://jira.telekom.de/projects/ODQ/summary). Please keep in mind that we cannot provide active support to other than the 3 products.
+
+Have fun to **experiment** with what is available as of now and **understand the implications the ODS will have** on workflow.
+
+At last, keep in mind:  
+**This is a Beta release**. We are by no means done and fully stable. Expect updates to come, bugs to be fixed and repos to be filled as time passes.
+
+Thanks for your interest and keep feedback coming, even if replies are nothing we can promise as of now.
+
+We do listen and learn.
+
+Best  
+your One Experience Design System Team
+
+---
 
 ### We, the team, that build the Scale Design System, want to share some exciting updates with you.
 
