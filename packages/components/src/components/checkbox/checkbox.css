@@ -147,6 +147,13 @@ scale-checkbox.indeterminate [part='checkbox'] {
   border: none;
   color: var(--color-icon-checked-active);
 }
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  scale-checkbox.indeterminate [part='checkbox'] {
+    border: 1px solid;
+  }
+}
+
 scale-checkbox.indeterminate [part='icon'] {
   color: var(--color-icon-checked-active);
 }
@@ -254,6 +261,12 @@ scale-checkbox.error [part='checkbox'] {
   box-shadow: inset 0 0 0 var(--telekom-spacing-composition-space-02)
     var(--color-error);
   border: none;
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  scale-checkbox.error [part='checkbox'] {
+    border: 1px solid;
+  }
 }
 
 scale-checkbox.error
