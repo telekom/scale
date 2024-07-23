@@ -149,7 +149,7 @@ scale-checkbox.indeterminate [part='checkbox'] {
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-  scale-checkbox.indeterminate [part='checkbox']  {
+  scale-checkbox.indeterminate [part='checkbox'] {
     border: 1px solid;
   }
 }
