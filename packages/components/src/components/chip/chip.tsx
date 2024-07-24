@@ -94,6 +94,19 @@ export class Chip {
   };
 
   handleClick = (event: MouseEvent) => {
+    this.handleChangeEvent(event);
+  };
+
+  handleKeyDown = (event: KeyboardEvent) => {
+    if (event.code === 'Space') {
+      this.handleChangeEvent(event);
+    }
+  };
+
+  handleChangeEvent = (event: MouseEvent | KeyboardEvent): void => {
+    if (this.disabled && this.type === 'dynamic') {
+      return;
+    }
     if (this.type !== 'dynamic') {
       this.selected = !this.selected;
     }
@@ -140,45 +153,21 @@ export class Chip {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        {this.type === 'dynamic' && this.selected ? (
-          <span
-            role={this.ariaRoleTitle}
-            tabindex={this.selected ? '0' : '-1'}
-            part={this.getBasePartMap()}
-            class={this.getCssClassMap()}
-            aria-checked={this.selected.toString()}
-            onClick={
-              !this.disabled || this.type === 'dynamic'
-                ? this.handleClick
-                : null
-            }
-          >
-            <slot name="chip-icon"></slot>
-            <span class="chip-label">
-              <slot />
-            </span>
-            {this.selected ? this.getIcon() : null}
+        <span
+          role={this.ariaRoleTitle}
+          aria-checked={this.selected.toString()}
+          tabindex={this.disabled ? '-1' : '0'}
+          part={this.getBasePartMap()}
+          class={this.getCssClassMap()}
+          onClick={this.handleClick}
+          onKeyDown={this.handleKeyDown}
+        >
+          <slot name="chip-icon"></slot>
+          <span class="chip-label">
+            <slot />
           </span>
-        ) : (
-          <span
-            role={this.ariaRoleTitle}
-            aria-checked={this.selected.toString()}
-            tabindex={this.selected ? '0' : '-1'}
-            part={this.getBasePartMap()}
-            class={this.getCssClassMap()}
-            onClick={
-              !this.disabled || this.type === 'dynamic'
-                ? this.handleClick
-                : null
-            }
-          >
-            <slot name="chip-icon"></slot>
-            <span class="chip-label">
-              <slot />
-            </span>
-            {this.selected ? this.getIcon() : null}
-          </span>
-        )}
+          {this.selected ? this.getIcon() : null}
+        </span>
       </Host>
     );
   }
