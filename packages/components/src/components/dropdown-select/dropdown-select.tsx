@@ -270,7 +270,7 @@ export class DropdownSelect {
   @State() hasFocus: boolean = false;
 
   private comboEl: HTMLElement;
-  private listboxEl: HTMLElement;
+  private scrollContainer: HTMLElement;
   private listboxPadEl: HTMLElement;
   private hiddenInput: HTMLInputElement;
 
@@ -346,10 +346,10 @@ export class DropdownSelect {
 
   bringIntoView(index) {
     const options: NodeListOf<HTMLElement> =
-      this.listboxEl.querySelectorAll('[role=option]');
+      this.scrollContainer.querySelectorAll('[role=option]');
 
-    if (hasOverflow(this.listboxEl)) {
-      keepInView(options[index], this.listboxEl);
+    if (hasOverflow(this.scrollContainer)) {
+      keepInView(options[index], this.scrollContainer);
     }
 
     if (!isInView(options[index])) {
@@ -530,13 +530,13 @@ export class DropdownSelect {
             </div>
             <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
               <div
+                ref={(el) => (this.scrollContainer = el)}
                 part="listbox-scroll-container"
                 onMouseDown={(e) => {
                   e.preventDefault();
                 }}
               >
                 <div
-                  ref={(el) => (this.listboxEl = el)}
                   part="listbox"
                   role="listbox"
                   id={`${this.comboboxId}-listbox`}
