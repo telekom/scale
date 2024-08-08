@@ -223,6 +223,7 @@ export class DataGrid {
     this.parseRows();
     this.setInitialRowProps();
     this.presortIfNeeded();
+    this.presortIfNeeded();
     this.dataNeedsCheck = true;
     // Set flag to dirty to redo column width with new data
     this.needsAutoWidthParse = true;
