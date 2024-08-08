@@ -179,10 +179,12 @@ export class DataGrid {
     this.applyResponsiveClasses = this.applyResponsiveClasses.bind(this);
     this.updateColumnStretching = this.updateColumnStretching.bind(this);
   }
+
   componentWillLoad() {
     this.fieldsHandler();
     this.rowsHandler();
   }
+
   componentDidRender() {
     if (this.needsAutoWidthParse) {
       this.calculateAutoWidths();
@@ -194,6 +196,7 @@ export class DataGrid {
       }
     });
   }
+
   componentDidLoad() {
     this.addResizeObserver();
   }
@@ -212,6 +215,7 @@ export class DataGrid {
     this.resetSortingToggle();
     this.dataNeedsCheck = true;
   }
+
   @Watch('rows')
   rowsHandler() {
     // Reset pagination to the last page of the new records if new records are less than previous.
