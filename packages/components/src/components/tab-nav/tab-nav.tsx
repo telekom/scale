@@ -42,16 +42,12 @@ export class TabNav {
   handleSelect(event) {
     const nextTab = event.target as HTMLScaleTabHeaderElement;
     // Act only if it's a direct child
-    if (!this.getAllEnabledTabs().includes(nextTab) || nextTab.disabled) {
-      return;
-    }
-    this.deselectTabs(nextTab);
-    this.selectPanel(nextTab);
+    this.selectNextTab(nextTab);
   }
 
-  @Listen('scale-got-disabled')
+  @Listen('scale-disabled')
   handleDisabledTabHeader() {
-    this.selectProperTab();
+    this.selectNextTab();
   }
 
   @Listen('keydown')
@@ -101,7 +97,7 @@ export class TabNav {
     ]).then(() => {
       this.linkPanels();
       this.propagateSizeToTabs();
-      this.selectProperTab();
+      this.selectNextTab();
     });
 
     if (this.small !== false) {
@@ -161,17 +157,22 @@ export class TabNav {
     });
   }
 
-  selectProperTab(): void {
+  selectNextTab(nextTab?: HTMLScaleTabHeaderElement): void {
     const tabs = this.getAllTabs();
     const tabToSelect =
+      (!nextTab?.disabled && nextTab) ||
       tabs.find((tab) => tab.selected) ||
       tabs.filter((tab) => !tab.disabled)[0];
     this.selectTab(tabToSelect);
   }
 
-  resetTabs() {
+  resetTabs(nextTab?: HTMLScaleTabHeaderElement) {
     const tabs = this.getAllEnabledTabs();
-    tabs.forEach((tab) => (tab.selected = false));
+    tabs.forEach((tab) => {
+      if (tab !== nextTab) {
+        tab.selected = false;
+      }
+    });
   }
 
   resetPanels() {
@@ -185,24 +186,13 @@ export class TabNav {
   }
 
   selectTab(nextTab: HTMLScaleTabHeaderElement) {
-    this.resetTabs();
-    nextTab.selected = true;
-    this.selectPanel(nextTab);
-  }
-
-  selectPanel(nextTab: HTMLScaleTabHeaderElement) {
+    this.resetTabs(nextTab);
     this.resetPanels();
+    if (!nextTab.selected) {
+      nextTab.selected = true;
+    }
     const nextPanel = this.findPanelForTab(nextTab);
     nextPanel.hidden = false;
-  }
-
-  deselectTabs(nextTab: HTMLScaleTabHeaderElement) {
-    const tabs = this.getAllEnabledTabs();
-    tabs.forEach((tab) => {
-      if (tab !== nextTab) {
-        tab.selected = false;
-      }
-    });
   }
 
   /**
