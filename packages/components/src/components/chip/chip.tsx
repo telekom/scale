@@ -32,7 +32,7 @@ export class Chip {
   /** (optional) */
   @Prop() type?: 'dynamic' | 'persistent' = 'persistent';
   /** (optional) */
-  @Prop() selected?: boolean = false;
+  @Prop({ mutable: true }) selected?: boolean = false;
   /** (optional) chip aria-role */
   @Prop() ariaRoleTitle?:
     | 'switch'
@@ -52,7 +52,7 @@ export class Chip {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  /** (optional) Change icon click event */
+  /** (optional) Change event */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<MouseEvent>;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' })
@@ -87,34 +87,26 @@ export class Chip {
   handleClose = (event: MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    if (this.disabled && this.type !== 'dynamic') {
-      return;
-    }
     emitEvent(this, 'scaleClose', event);
   };
 
   handleClick = (event: MouseEvent) => {
-    this.handleChangeEvent(event);
+    this.handleChange(event);
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
     if (event.code === 'Space') {
-      this.handleChangeEvent(event);
+      this.handleChange(event);
     }
   };
 
-  handleChangeEvent = (event: MouseEvent | KeyboardEvent): void => {
-    if (this.disabled && this.type === 'dynamic') {
-      return;
-    }
-    if (this.type !== 'dynamic') {
-      this.selected = !this.selected;
-    }
+  handleChange = (event: MouseEvent | KeyboardEvent): void => {
     event.preventDefault();
     event.stopPropagation();
-    if (this.disabled && this.type !== 'dynamic') {
+    if (this.disabled || this.type === 'dynamic') {
       return;
     }
+    this.selected = !this.selected;
     emitEvent(this, 'scaleChange', event);
   };
 
