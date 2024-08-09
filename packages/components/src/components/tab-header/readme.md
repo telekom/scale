@@ -18,10 +18,10 @@
 
 ## Events
 
-| Event                | Description                                      | Type               |
-| -------------------- | ------------------------------------------------ | ------------------ |
-| `scale-got-disabled` | Emitted when currently selected tab got disabled | `CustomEvent<any>` |
-| `scale-select`       | Emitted on header select                         | `CustomEvent<any>` |
+| Event            | Description                                      | Type               |
+| ---------------- | ------------------------------------------------ | ------------------ |
+| `scale-disabled` | Emitted when currently selected tab got disabled | `CustomEvent<any>` |
+| `scale-select`   | Emitted on header select                         | `CustomEvent<any>` |
 
 
 ----------------------------------------------
