@@ -138,12 +138,10 @@ export class SegmentedButton {
   }
   componentDidLoad() {
     const longestButtonWidth = this.getLongestButtonWidth();
-    if (!this.fullWidth) {
-      this.container.style.gridTemplateColumns = longestButtonWidth
-        ? `repeat(${this.hostElement.children.length}, ${Math.ceil(
-            longestButtonWidth
-          )}px)`
-        : `repeat(${this.hostElement.children.length}, auto)`;
+    if (!this.fullWidth && this.longestButtonWidth) {
+      this.container.style.gridTemplateColumns = `repeat(${
+        this.hostElement.children.length
+      }, ${Math.ceil(longestButtonWidth)}px)`;
     } else {
       this.container.style.display = 'flex';
     }
@@ -193,8 +191,9 @@ export class SegmentedButton {
   getLongestButtonWidth() {
     let tempWidth = 0;
     Array.from(this.hostElement.children)
-      .filter((child) => child.getBoundingClientRect().width)
-      .forEach((child) => {
+      .filter((child: HTMLScaleSegmentElement) => this.getWidth(child))
+      .forEach((child: HTMLScaleSegmentElement) => {
+        const width = this.getWidth(child);
         const selected = child.hasAttribute('selected');
         const iconOnly = child.hasAttribute('icon-only');
         const checkmark =
@@ -204,20 +203,25 @@ export class SegmentedButton {
             ? CHECKMARK_WIDTH_MEDIUM
             : CHECKMARK_WIDTH_LARGE;
         if (selected || iconOnly) {
-          tempWidth =
-            child.getBoundingClientRect().width > tempWidth
-              ? child.getBoundingClientRect().width
-              : tempWidth;
+          tempWidth = width > tempWidth ? width : tempWidth;
         } else {
           tempWidth =
-            child.getBoundingClientRect().width + checkmark > tempWidth
-              ? child.getBoundingClientRect().width + checkmark
-              : tempWidth;
+            width + checkmark > tempWidth ? width + checkmark : tempWidth;
         }
       });
     return tempWidth;
   }
-
+  getWidth = (element: HTMLScaleSegmentElement) => {
+    const rect = element.getBoundingClientRect();
+    let width = rect.width;
+    if (!width) {
+      const widthString = element.width || element.getAttribute('width');
+      if (widthString && widthString.includes('px')) {
+        width = parseFloat(widthString.replace('px', ''));
+      }
+    }
+    return width;
+  };
   setState(tempState: SegmentStatus[]) {
     const segments = Array.from(
       this.hostElement.querySelectorAll('scale-segment')
