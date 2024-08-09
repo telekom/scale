@@ -29,8 +29,23 @@
       <scale-chip disabled>Label</scale-chip>
       <scale-chip selected>Label</scale-chip>
       <scale-chip type="dynamic">Label</scale-chip>
-      <scale-chip disabled type="dynamic">Label</scale-chip>
       <scale-chip selected type="dynamic">Label</scale-chip>
+    </p>
+    <span>
+      <scale-chip
+        >Label
+        <div slot="chip-icon">
+          <scale-icon-action-favorite accessibility-title="favorite" />
+        </div>
+      </scale-chip>
+    </span>
+    <p>
+      <scale-chip
+        >Label
+        <span slot="chip-icon">
+          <scale-icon-action-favorite accessibility-title="favorite" />
+        </span>
+      </scale-chip>
     </p>
   </body>
 </html>
