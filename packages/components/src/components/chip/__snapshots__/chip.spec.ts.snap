@@ -3,7 +3,7 @@
 exports[`Chip should match snapshot 1`] = `
 <scale-chip>
   <mock:shadow-root>
-    <span aria-checked="false" class="chip chip--type-persistent chip--variant-standard" part="base type-persistent variant-standard" role="switch" tabindex="-1">
+    <span aria-checked="false" class="chip chip--type-persistent chip--variant-standard" part="base type-persistent variant-standard" role="switch" tabindex="0">
       <slot name="chip-icon"></slot>
       <span class="chip-label">
         <slot></slot>

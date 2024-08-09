@@ -32,7 +32,7 @@ export class Chip {
   /** (optional) */
   @Prop() type?: 'dynamic' | 'persistent' = 'persistent';
   /** (optional) */
-  @Prop() selected?: boolean = false;
+  @Prop({ mutable: true }) selected?: boolean = false;
   /** (optional) chip aria-role */
   @Prop() ariaRoleTitle?:
     | 'switch'
@@ -52,7 +52,7 @@ export class Chip {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  /** (optional) Change icon click event */
+  /** (optional) Change event */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<MouseEvent>;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' })
@@ -87,21 +87,26 @@ export class Chip {
   handleClose = (event: MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    if (this.disabled && this.type !== 'dynamic') {
-      return;
-    }
     emitEvent(this, 'scaleClose', event);
   };
 
   handleClick = (event: MouseEvent) => {
-    if (this.type !== 'dynamic') {
-      this.selected = !this.selected;
+    this.handleChange(event);
+  };
+
+  handleKeyDown = (event: KeyboardEvent) => {
+    if (event.code === 'Space') {
+      this.handleChange(event);
     }
+  };
+
+  handleChange = (event: MouseEvent | KeyboardEvent): void => {
     event.preventDefault();
     event.stopPropagation();
-    if (this.disabled && this.type !== 'dynamic') {
+    if (this.disabled || this.type === 'dynamic') {
       return;
     }
+    this.selected = !this.selected;
     emitEvent(this, 'scaleChange', event);
   };
 
@@ -140,45 +145,21 @@ export class Chip {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        {this.type === 'dynamic' && this.selected ? (
-          <span
-            role={this.ariaRoleTitle}
-            tabindex={this.selected ? '0' : '-1'}
-            part={this.getBasePartMap()}
-            class={this.getCssClassMap()}
-            aria-checked={this.selected.toString()}
-            onClick={
-              !this.disabled || this.type === 'dynamic'
-                ? this.handleClick
-                : null
-            }
-          >
-            <slot name="chip-icon"></slot>
-            <span class="chip-label">
-              <slot />
-            </span>
-            {this.selected ? this.getIcon() : null}
+        <span
+          role={this.ariaRoleTitle}
+          aria-checked={this.selected.toString()}
+          tabindex={this.disabled ? '-1' : '0'}
+          part={this.getBasePartMap()}
+          class={this.getCssClassMap()}
+          onClick={this.handleClick}
+          onKeyDown={this.handleKeyDown}
+        >
+          <slot name="chip-icon"></slot>
+          <span class="chip-label">
+            <slot />
           </span>
-        ) : (
-          <span
-            role={this.ariaRoleTitle}
-            aria-checked={this.selected.toString()}
-            tabindex={this.selected ? '0' : '-1'}
-            part={this.getBasePartMap()}
-            class={this.getCssClassMap()}
-            onClick={
-              !this.disabled || this.type === 'dynamic'
-                ? this.handleClick
-                : null
-            }
-          >
-            <slot name="chip-icon"></slot>
-            <span class="chip-label">
-              <slot />
-            </span>
-            {this.selected ? this.getIcon() : null}
-          </span>
-        )}
+          {this.selected ? this.getIcon() : null}
+        </span>
       </Host>
     );
   }
