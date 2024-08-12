@@ -187,8 +187,8 @@ export class TabNav {
     if (!nextTab.selected) {
       nextTab.selected = true;
     }
-    const targetPanel = this.findPanelForTab(nextTab);
-    targetPanel.hidden = false;
+    const nextPanel = this.findPanelForTab(nextTab);
+    nextPanel.hidden = false;
   }
 
   /**
