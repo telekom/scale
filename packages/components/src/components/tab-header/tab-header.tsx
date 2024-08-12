@@ -76,8 +76,7 @@ export class TabHeader {
       this.scaleSelect.emit();
     }
     if (newValue && this.tabsHaveFocus()) {
-      // Having focus on the host element, and not on inner elements,
-      // is required because screen readers.
+      // Having focus on the host element and not on inner elements is required because of screen readers
       this.hostElement.focus();
     }
     this.updateSlottedIcon();

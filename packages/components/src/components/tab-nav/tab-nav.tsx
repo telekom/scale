@@ -166,16 +166,13 @@ export class TabNav {
     this.selectTab(tabToSelect);
   }
 
-  resetTabs(nextTab?: HTMLScaleTabHeaderElement) {
+  reset(nextTab?: HTMLScaleTabHeaderElement) {
     const tabs = this.getAllEnabledTabs();
     tabs.forEach((tab) => {
       if (tab !== nextTab) {
         tab.selected = false;
       }
     });
-  }
-
-  resetPanels() {
     const panels = this.getAllPanels();
     panels.forEach((panel) => (panel.hidden = true));
   }
@@ -186,13 +183,12 @@ export class TabNav {
   }
 
   selectTab(nextTab: HTMLScaleTabHeaderElement) {
-    this.resetTabs(nextTab);
-    this.resetPanels();
+    this.reset(nextTab);
     if (!nextTab.selected) {
       nextTab.selected = true;
     }
-    const nextPanel = this.findPanelForTab(nextTab);
-    nextPanel.hidden = false;
+    const targetPanel = this.findPanelForTab(nextTab);
+    targetPanel.hidden = false;
   }
 
   /**
