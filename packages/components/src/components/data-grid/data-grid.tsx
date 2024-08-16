@@ -225,7 +225,7 @@ export class DataGrid {
     }
     this.parseRows();
     this.setInitialRowProps();
-    this.presortIfNeeded();
+    this.presortTable();
     this.dataNeedsCheck = true;
     // Set flag to dirty to redo column width with new data
     this.needsAutoWidthParse = true;
@@ -429,12 +429,6 @@ export class DataGrid {
     this.sortTable(newSortDirection, type, columnIndex);
   }
 
-  presortTable(sortDirection, columnIndex, type): void {
-    this.activeSortingIndex = columnIndex;
-    this.fields[columnIndex].sortDirection = sortDirection;
-    this.sortTable(sortDirection, type, columnIndex);
-  }
-
   sortTable(sortDirection, type, columnIndex) {
     const format = this.fields[columnIndex].format;
     if (sortDirection === 'none') {
@@ -503,7 +497,7 @@ export class DataGrid {
     this.activeSortingIndex = -1;
   }
 
-  presortIfNeeded(): void {
+  presortTable(): void {
     const columnToPresort = this.fields.find(
       (col) => col.sortable && col.presort
     );
@@ -515,7 +509,9 @@ export class DataGrid {
       columnToPresort.presortDirection === 'descending'
         ? 'descending'
         : 'ascending';
-    this.presortTable(direction, columnIndex, columnToPresort.type);
+    this.activeSortingIndex = columnIndex;
+    this.fields[columnIndex].sortDirection = direction;
+    this.sortTable(direction, columnToPresort.type, columnIndex);
   }
 
   // Column resize handlers
