@@ -38,7 +38,7 @@ export class Segment {
   /** (optional) If `true`, the segment is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) segment's id */
-  @Prop({ reflect: true, mutable: true }) segmentId?: string;
+  @Prop({ reflect: true }) segmentId?: string = 'segment-' + i++;
   /** (optional) aria-label attribute needed for icon-only segments */
   @Prop() ariaLabelSegment: string;
   /** (optional) Segment width set to ensure that all segments have the same width */
@@ -85,12 +85,7 @@ export class Segment {
     this.focusableElement.focus();
   }
 
-  componentWillLoad() {
-    if (this.segmentId == null) {
-      this.segmentId = 'segment-' + i++;
-    }
-  }
-  componentDidUpdate() {
+  componentWillUpdate() {
     this.handleIcon();
   }
 
