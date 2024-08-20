@@ -179,7 +179,6 @@ jobs:
       - name: Run visual tests
         id: visual-tests
         run: |
-          ln -s /usr/bin/docker /usr/bin/docker-compose
           yarn workspace @telekom/scale-visual-tests test:ci -u
 
       - name: Check for any snapshots changes
