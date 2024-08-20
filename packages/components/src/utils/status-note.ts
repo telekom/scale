@@ -17,8 +17,10 @@ const tagTypes = {
 };
 
 const defaultMessages = {
-  beta: 'This component is currently in beta status. Some things may be refactored. Watch the change log for now.',
-  WIP: "This component is currently under development and is prone to change. Please wait for its release.\nIt will be available in Storybook once it's finished and documented.",
+  beta:
+    'This component is currently in beta status. Some things may be refactored. Watch the change log for now.',
+  WIP:
+    "This component is currently under development and is prone to change. Please wait for its release.\nIt will be available in Storybook once it's finished and documented.",
   deprecated: 'This component is deprecated.',
 };
 

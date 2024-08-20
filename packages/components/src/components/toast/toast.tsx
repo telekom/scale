@@ -183,8 +183,8 @@ export class Toast {
   };
 
   getToastHeightWithOffset() {
-    const toastHeight =
-      this.element.shadowRoot.querySelector('.toast').scrollHeight;
+    const toastHeight = this.element.shadowRoot.querySelector('.toast')
+      .scrollHeight;
     this.toastHeightWithOffset = toastHeight + this.positionTop;
   }
 
