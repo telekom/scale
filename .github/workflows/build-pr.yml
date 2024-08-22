@@ -173,13 +173,16 @@ jobs:
       - name: Copy Storybook for visual tests
         run: |
           yarn workspace @telekom/scale-visual-tests copy
-
+          
+      - name: Ensure docker-compose exists and has correct permissions
+        run: |
+          sudo touch /usr/bin/docker-compose
+          sudo chmod 755 /usr/bin/docker-compose
+          sudo ln -sf /usr/bin/docker /usr/bin/docker-compose
+          
       - name: Run visual tests
         id: visual-tests
         run: |
-          chmod 755 /usr/bin/docker-compose
-          ln -s /usr/bin/docker /usr/bin/docker-compose 
-          docker-compose -v
           yarn workspace @telekom/scale-visual-tests test:ci -u
 
       - name: Check for any snapshots changes
