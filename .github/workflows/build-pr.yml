@@ -181,6 +181,9 @@ jobs:
          
       - name: Run visual tests
         id: visual-tests
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+          PUPPETEER_EXECUTABLE_PATH: "/usr/bin/chromium-browser"        
         run: |
           yarn workspace @telekom/scale-visual-tests test:ci -u
 
