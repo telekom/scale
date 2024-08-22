@@ -176,8 +176,8 @@ jobs:
           
       - name: Ensure docker-compose exists and has correct permissions
         run: |
-          touch /usr/bin/docker-compose
-          chmod 755 /usr/bin/docker-compose
+          sudo touch /usr/bin/docker-compose
+          sudo chmod 755 /usr/bin/docker-compose
          
       - name: Run visual tests
         id: visual-tests
