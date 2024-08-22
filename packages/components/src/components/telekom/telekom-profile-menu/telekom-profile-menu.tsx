@@ -180,7 +180,7 @@ export class TelekomProfileMenu {
       userInfo.type = 'userInfo';
     }
 
-    let serviceLinks = readData(this.serviceLinks) || [];
+    const serviceLinks = readData(this.serviceLinks) || [];
     for (const el of serviceLinks) {
       el.type = 'item';
     }
