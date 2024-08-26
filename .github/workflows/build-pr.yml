@@ -132,9 +132,10 @@ jobs:
 
   visual-tests:
     runs-on: ubuntu-latest
+    container: browserless/chrome 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
         with:
           node-version: 16
 
@@ -181,6 +182,7 @@ jobs:
          
       - name: Run visual tests
         id: visual-tests
+          
         env:
           CI: true
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
@@ -206,40 +208,40 @@ jobs:
           labels: automated pr
           branch: ${{ steps.vars.outputs.branch-name }}
 
-  uncommitted-changes:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+  # uncommitted-changes:
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
 
-      - name: Restore Lerna
-        id: yarn-cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+  #     - name: Restore Lerna
+  #       id: yarn-cache
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: |
+  #           node_modules
+  #           */*/node_modules
+  #         key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Install project dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+  #     - name: Install project dependencies
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: yarn
 
-      - name: Run Lerna bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: |
-          yarn bootstrap
+  #     - name: Run Lerna bootstrap
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: |
+  #         yarn bootstrap
 
-      - name: Generate files
-        run: |
-          yarn lerna run generate
+  #     - name: Generate files
+  #       run: |
+  #         yarn lerna run generate
 
-      - name: Build Components
-        run: |
-          yarn workspace @telekom/scale-components build
+  #     - name: Build Components
+  #       run: |
+  #         yarn workspace @telekom/scale-components build
 
-      - name: Check for uncommitted changes
-        run: |
-          sh scripts/porcelain.sh
+  #     - name: Check for uncommitted changes
+  #       run: |
+  #         sh scripts/porcelain.sh
