@@ -134,8 +134,8 @@ jobs:
     runs-on: ubuntu-latest
     container: node:16
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 16
 
@@ -185,7 +185,6 @@ jobs:
         env:
           CI: true
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
-          PUPPETEER_EXECUTABLE_PATH: "/usr/bin/chromium-browser"        
         run: |
           yarn workspace @telekom/scale-visual-tests test:ci -u
 
