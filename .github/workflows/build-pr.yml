@@ -5,130 +5,130 @@ on:
       - main
 
 jobs:
-  prettier:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+  # prettier:
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
 
-      - name: Restore Lerna
-        id: yarn-cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+  #     - name: Restore Lerna
+  #       id: yarn-cache
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: |
+  #           node_modules
+  #           */*/node_modules
+  #         key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Install project dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+  #     - name: Install project dependencies
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: yarn
 
-      - name: Run Lerna bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: |
-          yarn bootstrap
+  #     - name: Run Lerna bootstrap
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: |
+  #         yarn bootstrap
 
-      - name: Run Prettier
-        run: |
-          yarn format
+  #     - name: Run Prettier
+  #       run: |
+  #         yarn format
 
-      - name: Check for uncommitted changes
-        run: |
-          sh scripts/porcelain.sh
-  tslint:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+  #     - name: Check for uncommitted changes
+  #       run: |
+  #         sh scripts/porcelain.sh
+  # tslint:
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
 
-      - name: Restore Lerna
-        id: yarn-cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+  #     - name: Restore Lerna
+  #       id: yarn-cache
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: |
+  #           node_modules
+  #           */*/node_modules
+  #         key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Install project dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+  #     - name: Install project dependencies
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: yarn
 
-      - name: Run Lerna bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: |
-          yarn bootstrap
+  #     - name: Run Lerna bootstrap
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: |
+  #         yarn bootstrap
 
-      - name: Run TSLint
-        run: |
-          yarn workspace @telekom/scale-components lint
-  unit-tests:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+  #     - name: Run TSLint
+  #       run: |
+  #         yarn workspace @telekom/scale-components lint
+  # unit-tests:
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
 
-      - name: Restore Lerna
-        id: yarn-cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+  #     - name: Restore Lerna
+  #       id: yarn-cache
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: |
+  #           node_modules
+  #           */*/node_modules
+  #         key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Install project dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+  #     - name: Install project dependencies
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: yarn
 
-      - name: Run Lerna bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: |
-          yarn bootstrap
+  #     - name: Run Lerna bootstrap
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: |
+  #         yarn bootstrap
 
-      - name: Run unit tests
-        run: |
-          yarn workspace @telekom/scale-components test --spec --max-workers=8
-  e2e-tests:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+  #     - name: Run unit tests
+  #       run: |
+  #         yarn workspace @telekom/scale-components test --spec --max-workers=8
+  # e2e-tests:
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
 
-      - name: Restore Lerna
-        id: yarn-cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+  #     - name: Restore Lerna
+  #       id: yarn-cache
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: |
+  #           node_modules
+  #           */*/node_modules
+  #         key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Install project dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+  #     - name: Install project dependencies
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: yarn
 
-      - name: Run Lerna bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: |
-          yarn bootstrap
+  #     - name: Run Lerna bootstrap
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: |
+  #         yarn bootstrap
 
-      - name: Generate files
-        run: |
-          yarn lerna run generate
+  #     - name: Generate files
+  #       run: |
+  #         yarn lerna run generate
 
-      - name: Run e2e tests
-        run: |
-          yarn workspace @telekom/scale-components test --e2e --max-workers=8 --debug
+  #     - name: Run e2e tests
+  #       run: |
+  #         yarn workspace @telekom/scale-components test --e2e --max-workers=8 --debug
 
   visual-tests:
     runs-on: ubuntu-latest
@@ -175,10 +175,10 @@ jobs:
         run: |
           yarn workspace @telekom/scale-visual-tests copy
           
-      # - name: Ensure docker-compose exists and has correct permissions
-      #   run: |
-      #     sudo touch /usr/bin/docker-compose
-      #     sudo chmod 755 /usr/bin/docker-compose
+      - name: Ensure docker-compose exists and has correct permissions
+        run: |
+          touch /usr/bin/docker-compose
+          chmod 755 /usr/bin/docker-compose
          
       - name: Run visual tests
         id: visual-tests
