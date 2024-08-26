@@ -132,7 +132,7 @@ jobs:
 
   visual-tests:
     runs-on: ubuntu-latest
-    container: browserless/chrome 
+    container: node:16
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
