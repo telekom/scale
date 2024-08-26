@@ -131,7 +131,8 @@ jobs:
           yarn workspace @telekom/scale-components test --e2e --max-workers=8 --debug
 
   visual-tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    container: node:16
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -182,6 +183,7 @@ jobs:
       - name: Run visual tests
         id: visual-tests
         env:
+          CI: true
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
           PUPPETEER_EXECUTABLE_PATH: "/usr/bin/chromium-browser"        
         run: |
