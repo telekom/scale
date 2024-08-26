@@ -217,7 +217,10 @@ export class TelekomProfileMenu {
   }
 
   serviceLinksEmpty() {
-    return (this.hideLoginSettings && this.serviceLinks.length < 1) === true;
+    return (
+      this.hideLoginSettings &&
+      (!this.serviceLinks || this.serviceLinks.length < 1)
+    );
   }
 
   buildDesktopMenuStyles() {

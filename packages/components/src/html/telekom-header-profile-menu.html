@@ -242,12 +242,11 @@
             <scale-icon-action-shopping-cart> </scale-icon-action-shopping-cart>
           </a>
         </scale-telekom-nav-item>
-        <!-- login-url: dynamic link - OpenID connect discovery -->
         <scale-telekom-profile-menu
           login-url="https://www.telekom.de/todo/login"
           login-help-url="https://www.telekom.de/hilfe/telekom-login"
           register-url="https://meinkonto.telekom-dienste.de/telekom/account/registration/assistant/userstatus.xhtml"
-          logged-in="false"
+          logged-in="true"
           app-name="Application"
           label="Login"
           accessibility-label="Login"
@@ -258,6 +257,7 @@
           login-help-label="Help logging in"
           register-headline="Need an account?"
           register-label="Register now"
+          hide-login-settings="true"
         ></scale-telekom-profile-menu>
       </scale-telekom-nav-list>
       <scale-telekom-nav-flyout
