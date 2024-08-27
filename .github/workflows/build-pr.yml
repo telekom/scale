@@ -132,7 +132,6 @@ jobs:
 
   visual-tests:
     runs-on: ubuntu-latest
-    container: node:16
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -178,7 +177,7 @@ jobs:
       - name: Ensure docker-compose exists and has correct permissions
         run: |
           touch /usr/bin/docker-compose
-          chmod 755 /usr/bin/docker-compose
+          docker -v
          
       - name: Run visual tests
         id: visual-tests
