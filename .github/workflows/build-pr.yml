@@ -178,10 +178,10 @@ jobs:
       - name: Copy Storybook for visual tests
         run: |
           yarn workspace @telekom/scale-visual-tests copy
-          
+
       - name: Run visual tests
         id: visual-tests
-        run: |        
+        run: |
           yarn workspace @telekom/scale-visual-tests test:ci -u
 
       - name: Check for any snapshots changes
