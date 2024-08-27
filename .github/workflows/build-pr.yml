@@ -141,7 +141,7 @@ jobs:
         run: |
           sudo mkdir -p /usr/.docker/cli-plugins
           sudo curl -SL https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-linux-x86_64 -o /usr/.docker/cli-plugins/docker-compose  
-          chmod +x /usr/.docker/cli-plugins/docker-compose
+          sudo chmod +x /usr/.docker/cli-plugins/docker-compose
           sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
           docker-compose -v 
 
