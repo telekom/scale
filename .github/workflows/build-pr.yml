@@ -139,10 +139,6 @@ jobs:
           node-version: 16
       - name: Set up Docker Compose
         run: |
-          sudo mkdir -p /usr/.docker/cli-plugins
-          sudo curl -SL https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-linux-x86_64 -o /usr/.docker/cli-plugins/docker-compose  
-          sudo chmod +x /usr/.docker/cli-plugins/docker-compose
-          docker compose version
           sudo touch /usr/bin/docker-compose
           echo 'docker compose --compatibility "$@"' | sudo tee /usr/bin/docker-compose
           sudo chmod +x /usr/bin/docker-compose
