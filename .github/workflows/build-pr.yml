@@ -139,7 +139,7 @@ jobs:
           node-version: 16
       - name: Set up Docker Compose
         run: |
-          mkdir -p /usr/.docker/cli-plugins
+          sudo mkdir -p /usr/.docker/cli-plugins
           curl -SL https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-linux-x86_64 -o /usr/.docker/cli-plugins/docker-compose  
           chmod +x /usr/.docker/cli-plugins/docker-compose
           sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
