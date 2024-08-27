@@ -137,6 +137,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
+      - name: Ensure docker-compose exists and has correct permissions
+        run: |
+          sudo touch /usr/bin/docker-compose
+          sudo chmod 755 /usr/bin/docker-compose
+          sudo apt-get update && apt-get install gnupg wget -y &&  wget --quiet --output-document=- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor > /etc/apt/trusted.gpg.d/google-archive.gpg && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && apt-get update && apt-get install google-chrome-stable -y --no-install-recommends && rm -rf /var/lib/apt/lists/*
+                   
 
       - name: Restore Lerna
         id: yarn-cache
@@ -174,11 +180,7 @@ jobs:
         run: |
           yarn workspace @telekom/scale-visual-tests copy
           
-      - name: Ensure docker-compose exists and has correct permissions
-        run: |
-          sudo touch /usr/bin/docker-compose
-          docker -v
-         
+
       - name: Run visual tests
         id: visual-tests
           
