@@ -179,15 +179,9 @@ jobs:
         run: |
           yarn workspace @telekom/scale-visual-tests copy
           
-
       - name: Run visual tests
         id: visual-tests
-        env:
-          CI: true
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
-        run: |
-          # sudo ln -s /usr/bin/docker /usr/bin/docker-compose
-          # # sudo chmod 755 /usr/bin/docker-compose
+        run: |        
           yarn workspace @telekom/scale-visual-tests test:ci -u
 
       - name: Check for any snapshots changes
