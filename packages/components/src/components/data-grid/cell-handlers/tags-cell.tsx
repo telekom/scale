@@ -33,7 +33,11 @@ export const TagsCell: Cell = {
       <ul class={`tbody__tag-list`}>
         {tags.map((tag) => (
           <li>
-            <scale-tag size="small" type="strong" color={tag.color}>
+            <scale-tag
+              size={tag.size || 'small'}
+              type={tag.type || 'strong'}
+              color={tag.color || 'standard'}
+            >
               {tag.content}
             </scale-tag>
           </li>

@@ -42,7 +42,7 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       },
       description: `(optional) Title for sortable columns`,
       control: { type: null },
-    },    
+    },
     height: {
       table: {
         type: { summary: 'string' },
@@ -669,7 +669,7 @@ Expected format: string
 
 ## Tags Cell
 
-Expected format: comma delimited `string`, eg `'one, two, three'` or array of objects with content and color keys, e.g. `{content: 'Apple', color: 'red'}`
+Expected format: comma delimited `string`, eg `'one, two, three'` or array of objects with required content key and optional color, type, size keys, e.g. `{content: 'Apple', color: 'red'}`. Acceptable values for color, type, size are same as for Tag component.
 
 <Canvas withSource="close">
   <Story name="Tags Cell">
