@@ -147,6 +147,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: doc
         run: |
+          sudo apt-get install docker-compose-plugin
           docker-compose -v 
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
