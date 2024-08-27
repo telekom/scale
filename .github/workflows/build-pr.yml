@@ -187,7 +187,7 @@ jobs:
           CI: true
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
         run: |
-          sudo ln -s /usr/bin/docker /usr/local/bin/docker-compose
+          sudo ln -s /usr/bin/docker /usr/bin/docker-compose
           yarn workspace @telekom/scale-visual-tests test:ci -u
 
       - name: Check for any snapshots changes
