@@ -176,7 +176,7 @@ jobs:
           
       - name: Ensure docker-compose exists and has correct permissions
         run: |
-          touch /usr/bin/docker-compose
+          sudo touch /usr/bin/docker-compose
           docker -v
          
       - name: Run visual tests
