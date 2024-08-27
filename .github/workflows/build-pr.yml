@@ -137,12 +137,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-      - name: Ensure docker-compose exists and has correct permissions
-        run: |
-          sudo touch /usr/bin/docker-compose
-          sudo chmod 755 /usr/bin/docker-compose
-          docker-compose -v         
-
       - name: Restore Lerna
         id: yarn-cache
         uses: actions/cache@v2
@@ -188,6 +182,7 @@ jobs:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
         run: |
           sudo ln -s /usr/bin/docker /usr/bin/docker-compose
+          # sudo chmod 755 /usr/bin/docker-compose
           yarn workspace @telekom/scale-visual-tests test:ci -u
 
       - name: Check for any snapshots changes
