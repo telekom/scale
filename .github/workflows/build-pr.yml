@@ -141,7 +141,9 @@ jobs:
         run: |
           DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
           mkdir -p $DOCKER_CONFIG/cli-plugins
-          curl -SL https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose          
+          curl -SL https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose      
+          docker-compose -v 
+
       - name: Restore Lerna
         id: yarn-cache
         uses: actions/cache@v2
@@ -150,10 +152,6 @@ jobs:
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      - name: doc
-        run: |
-          sudo apt-get install docker-compose-plugin
-          docker-compose -v 
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
