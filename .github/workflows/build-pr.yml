@@ -134,12 +134,15 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-
+      - name: Set up Docker Compose alias 
+        run: |
+          sudo touch /usr/bin/docker-compose
+          echo 'docker compose --compatibility "$@"' | sudo tee /usr/bin/docker-compose
+          sudo chmod +x /usr/bin/docker-compose
+          
       - name: Restore Lerna
         id: yarn-cache
         uses: actions/cache@v2
