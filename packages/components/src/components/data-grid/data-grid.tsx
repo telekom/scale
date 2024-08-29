@@ -112,7 +112,7 @@ export class DataGrid {
   /** (optional) Title for sortable columns */
   @Prop() sortableColumnTitle?: string = 'Activate to sort column';
   /**
-   * (optional) set localization for sort, toggle, select/deselect, table options, expand / collapse (html cell)
+   * (optional) set localization for sort, toggle, select/deselect, table options, expand/collapse (html cell)
    * Default is English.
    */
   @Prop() localization?: {
