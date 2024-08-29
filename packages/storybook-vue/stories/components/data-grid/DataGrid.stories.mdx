@@ -42,7 +42,7 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       },
       description: `(optional) Title for sortable columns`,
       control: { type: null },
-    },    
+    },
     height: {
       table: {
         type: { summary: 'string' },
@@ -309,6 +309,8 @@ const rows = [ [1, 'John', '12:30'], [2, 'Mary', '2:12'], [3, 'Patek', '16:01'],
 - `resizable?: boolean = true`
 - `sortable?: boolean = false`
 - `sortBy?: 'number' | 'text' = 'text'`
+- `presort?: boolean = false`
+- `presortDirection?: 'ascending' | 'descending' = 'ascending'`
 - `textAlign?: 'left' | 'center' | 'right' = 'left'`
 - `stretchWeight?: 'number'`
 - `visible?: boolean = true`
