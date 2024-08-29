@@ -20,16 +20,24 @@ export const HTMLCell: Cell = {
     // Skip check as content width is always the same
     return rows[0][columnIndex];
   },
-  render: ({ content, component }) => {
+  render: ({ content, component, localization }) => {
+    const getAriaLabel = () => {
+      if (localization?.expand && localization?.collapse) {
+        return content.isExpanded
+          ? localization?.collapse
+          : localization?.expand;
+      }
+      return `Activate to ${
+        content.isExpanded ? 'collapse' : 'expand'
+      } content`;
+    };
     return (
       content && (
         <scale-button
           variant="secondary"
           size="small"
           icon-only
-          inner-aria-label={`Activate to ${
-            content.isExpanded ? 'collapse' : 'expand'
-          } content`}
+          inner-aria-label={getAriaLabel()}
           onClick={() => {
             content.isExpanded = !content.isExpanded;
             component.forceRender++;

@@ -30,5 +30,6 @@ export interface Cell {
     rowIndex,
     columnIndex,
     isAutoWidthCheck,
+    localization,
   }): HTMLElement;
 }

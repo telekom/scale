@@ -112,7 +112,7 @@ export class DataGrid {
   /** (optional) Title for sortable columns */
   @Prop() sortableColumnTitle?: string = 'Activate to sort column';
   /**
-   * (optional) set localization for sort, toggle, select/deselect, table options
+   * (optional) set localization for sort, toggle, select/deselect, table options, expand / collapse (html cell)
    * Default is English.
    */
   @Prop() localization?: {
@@ -120,6 +120,8 @@ export class DataGrid {
     toggle: string;
     select: string;
     tableOptions: string;
+    expand?: string;
+    collapse?: string;
   };
   /* 4. Events (alphabetical) */
   /** Event triggered every time the editable cells are changed, updating the original rows data */
@@ -1316,6 +1318,7 @@ export class DataGrid {
           component: this,
           rowIndex,
           columnIndex,
+          localization: this.localization,
         })}
       </td>
     );
