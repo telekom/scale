@@ -62,6 +62,8 @@
 - [scale-dropdown-select-item](../dropdown-select-item)
 - [scale-tag](../tag)
 - [scale-text-field](../text-field)
+- [scale-icon-action-edit](../icons/action-edit)
+- [scale-icon-action-remove](../icons/action-remove)
 
 ### Graph
 ```mermaid
@@ -87,6 +89,8 @@ graph TD;
   scale-data-grid --> scale-dropdown-select-item
   scale-data-grid --> scale-tag
   scale-data-grid --> scale-text-field
+  scale-data-grid --> scale-icon-action-edit
+  scale-data-grid --> scale-icon-action-remove
   scale-menu-flyout-item --> scale-icon-action-checkmark
   scale-menu-flyout-item --> scale-icon-navigation-right
   scale-checkbox --> scale-icon-action-minus
