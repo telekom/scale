@@ -62,7 +62,7 @@ React passes all data to custom elements not as props but as HTML attributes whi
 
 ### Custom Events
 
-React has its own [synthetic event system](https://reactjs.org/docs/handling-events.html), which makes it impossible to declaratively bind to custom events. That means `<scale-button onScaleChange={handleChange}>` won't work.
+React has its own [synthetic event system](https://reactjs.org/docs/handling-events.html), which makes it impossible to declaratively bind to custom events. That means `<scale-button on-scale-change={handleChange}>` won't work.
 
 Working around these limitations without help is possible but can be cumbersome and requires some imperative code. So we recommend using a wrapper or interop layer to make things easier.
 
