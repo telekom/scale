@@ -240,5 +240,5 @@ jobs:
 
       - name: Check for uncommitted changes
         run: |
-          sh scripts/porcelain.sh
           cat packages/components/custom-elements.json
+          sh scripts/porcelain.sh
