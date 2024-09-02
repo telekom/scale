@@ -1,5 +1,6 @@
 name: build-pr
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
@@ -137,12 +138,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Set up Docker Compose alias 
+      - name: Set up Docker Compose alias
         run: |
           sudo touch /usr/bin/docker-compose
           echo 'docker compose --compatibility "$@"' | sudo tee /usr/bin/docker-compose
           sudo chmod +x /usr/bin/docker-compose
-          
+
       - name: Restore Lerna
         id: yarn-cache
         uses: actions/cache@v2
@@ -240,3 +241,4 @@ jobs:
       - name: Check for uncommitted changes
         run: |
           sh scripts/porcelain.sh
+          cat packages/components/custom-elements.json
