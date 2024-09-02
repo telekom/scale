@@ -31,4 +31,5 @@ hydrate/
 build/
 __diff_output__/
 src/components/icons/
+custom-elements.json
 components.d.ts
