@@ -608,7 +608,7 @@
           "description": "Chart Data",
           "values": [
             {
-              "name": "type"
+              "name": "value"
             }
           ]
         },
