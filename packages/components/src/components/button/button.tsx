@@ -102,6 +102,12 @@ export class Button {
         if (this.type) {
           fakeButton.type = this.type;
         }
+        if (this.value) {
+          fakeButton.value = this.value;
+        }
+        if (this.name) {
+          fakeButton.name = this.name;
+        }
         fakeButton.style.display = 'none';
         parentForm.appendChild(fakeButton);
         fakeButton.click();
