@@ -89,7 +89,7 @@ export const Template = (args, { argTypes }) => ({
       :required="required"
       :counter="counter"
       :value="value"
-      :aria-detailed-id="ariaDetailedId"
+      :aria-details-id="ariaDetailsId"
       :input-id="inputId"
       :input-autofocus="inputAutofocus"
       :input-autocomplete="inputAutocomplete"
@@ -184,24 +184,30 @@ export const StorySectionsTemplate = (args, { argTypes }) => ({
 
 ```css
 scale-text-field {
-  --transition: all var(--telekom-motion-duration-transition)
-    var(--telekom-motion-easing-standard);
+  --transition: all var(--telekom-motion-duration-transition) var(
+      --telekom-motion-easing-standard
+    );
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-spacing-composition-space-01) solid
-    var(--telekom-color-ui-border-standard);
-  --border-error: var(--telekom-spacing-composition-space-02) solid
-    var(--telekom-color-functional-danger-standard);
-  --border-success: var(--telekom-spacing-composition-space-02) solid
-    var(--telekom-color-functional-success-standard);
-  --border-warning: var(--telekom-spacing-composition-space-02) solid
-    var(--telekom-color-functional-warning-standard);
+  --border: var(--telekom-spacing-composition-space-01) solid var(
+      --telekom-color-ui-border-standard
+    );
+  --border-error: var(--telekom-spacing-composition-space-02) solid var(
+      --telekom-color-functional-danger-standard
+    );
+  --border-success: var(--telekom-spacing-composition-space-02) solid var(
+      --telekom-color-functional-success-standard
+    );
+  --border-warning: var(--telekom-spacing-composition-space-02) solid var(
+      --telekom-color-functional-warning-standard
+    );
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-color-disabled: none;
-  --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus-standard);
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(
+      --telekom-color-functional-focus-standard
+    );
   --height: 44px;
   --spacing-x: var(--telekom-spacing-composition-space-05);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
@@ -218,9 +224,9 @@ scale-text-field {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /* control */
-  --spacing-control: 1.125rem
-    calc(2rem - var(--telekom-spacing-composition-space-01)) 0.25rem
-    calc(0.75rem - var(--telekom-spacing-composition-space-01));
+  --spacing-control: 1.125rem calc(
+      2rem - var(--telekom-spacing-composition-space-01)
+    ) 0.25rem calc(0.75rem - var(--telekom-spacing-composition-space-01));
   --transition-control: var(--transition);
   --background-control: var(--telekom-color-ui-state-fill-standard);
   --margin-bottom-control: var(--telekom-spacing-composition-space-03);

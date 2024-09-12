@@ -106,7 +106,7 @@ export class TextField {
   /** (optional) custom value for autocomplete HTML attribute */
   @Prop() inputAutocomplete?: string;
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
-  @Prop() ariaDetailedId?: string;
+  @Prop() ariaDetailsId?: string;
   /** (optional) to avoid displaying the label */
   @Prop() hideLabelVisually?: boolean = false;
   /** (optional) Injected CSS styles */
@@ -231,8 +231,11 @@ export class TextField {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': 'true' } : {};
     const helperTextId = `helper-message-${this.internalId}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
-    const ariaDetailedById = { 'aria-details': this.ariaDetailedId };
+    const ariaDescribedByAttr = {
+      'aria-describedBy':
+        (this.helperText && helperTextId) || this.ariaDetailsId,
+    };
+    const ariaDetailsAttr = { 'aria-details': this.ariaDetailsId };
     const numericTypes = [
       'number',
       'date',
@@ -275,9 +278,11 @@ export class TextField {
             disabled={this.disabled}
             readonly={this.readonly}
             autocomplete={this.inputAutocomplete}
-            {...ariaDetailedById}
             {...ariaInvalidAttr}
-            {...(this.helperText ? ariaDescribedByAttr : {})}
+            {...(this.helperText || this.ariaDetailsId
+              ? ariaDescribedByAttr
+              : {})}
+            {...(this.helperText && this.ariaDetailsId ? ariaDetailsAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
           />
           {(!!this.helperText || !!this.counter) && (
