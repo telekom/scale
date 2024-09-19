@@ -8,10 +8,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* dropdown scroll fixed ([#2333](https://github.com/amir-ba/scale/issues/2333)) ([592c69d](https://github.com/amir-ba/scale/commit/592c69d00e4a50f7113973bc583dff19f1cc8979))
-
-
-
+* dropdown scroll fixed ([#2327](https://github.com/scale/issues/2327)) ([6f326eb](https://github.com/telekom/scale/commit/6f326eb138eff93080d39b1c74d48d9393fd1684))
+* chip accessibility fix ([#2328](https://github.com/telekom/scale/issues/2328)) ([0b21978](https://github.com/telekom/scale/commit/0b21978bad9516d9958aa61e733a3f8348d11799))
+* checkbox and switch css fixes for high contrast mode ([#2300](https://github.com/scale/issues/2300)) ([318df56](https://github.com/telekom/scale/commit/318df5658a21b7eea44abe37eba1fc6bedfc243c))
+* ghost btn in storybook ([#2312](https://github.com/scale/issues/2312)) ([168f710](https://github.com/telekom/scale/commit/168f710fedae9df7f08decb79066b14bd7f73d1e))
+* update of event descriptions in storybook ([#2315](https://github.com/scale/issues/2315)) ([8681ed8](https://github.com/telekom/scale/commit/8681ed8d4f1cd08a756cf7e952e520df840c40b4))
+* aria describedby added extended for other use cases in text field ([#2349](https://github.com/scale/issues/2349)) ([2706542](https://github.com/telekom/scale/commit/270654297695571068c894aee30178729f361833))
 
 
 
