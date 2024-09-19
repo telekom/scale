@@ -62,7 +62,7 @@ export default {
     inputAutofocus: { type: Boolean },
     inputAutocomplete: { type: String },
     experimentalControlled: { type: Boolean },
-    hideLabelVisually: {type: Boolean, default: false},
+    hideLabelVisually: { type: Boolean, default: false },
     styles: { type: String },
   },
   methods: {

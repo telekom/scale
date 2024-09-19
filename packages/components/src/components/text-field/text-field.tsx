@@ -231,8 +231,11 @@ export class TextField {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': 'true' } : {};
     const helperTextId = `helper-message-${this.internalId}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
-    const ariaDetailedById = { 'aria-details': this.ariaDetailedId };
+    const ariaDescribedByAttr = {
+      'aria-describedBy':
+        (this.helperText && helperTextId) || this.ariaDetailedId,
+    };
+    const ariaDetailsAttr = { 'aria-details': this.ariaDetailedId };
     const numericTypes = [
       'number',
       'date',
@@ -275,9 +278,11 @@ export class TextField {
             disabled={this.disabled}
             readonly={this.readonly}
             autocomplete={this.inputAutocomplete}
-            {...ariaDetailedById}
             {...ariaInvalidAttr}
-            {...(this.helperText ? ariaDescribedByAttr : {})}
+            {...(this.helperText || this.ariaDetailedId
+              ? ariaDescribedByAttr
+              : {})}
+            {...(this.helperText && this.ariaDetailedId ? ariaDetailsAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
           />
           {(!!this.helperText || !!this.counter) && (

@@ -62,7 +62,7 @@ React übermittelt Daten zu Custom Elements nicht als Properties, sondern als HT
 
 ### Custom Events
 
-React hat sein eigenes [Synthetic Event System](https://reactjs.org/docs/handling-events.html), weshalb Custom Events nicht deklarativ angebunden werden können. `<scale-button onScaleChange={handleChange}>` wird nicht funktionieren.
+React hat sein eigenes [Synthetic Event System](https://reactjs.org/docs/handling-events.html), weshalb Custom Events nicht deklarativ angebunden werden können. `<scale-button on-scale-change={handleChange}>` wird nicht funktionieren.
 
 Diese Einschränkung ohne Hilfe zu umgehen, kann aufwändig sein und erfordert imperativen Code. Wir empfehlen die Verwendung eines Wrappers oder Interop Layers.
 
@@ -82,17 +82,19 @@ const App = () => {
   const handleInput = (event) => {
     // it works!
   };
-  return <ScaleSlider label="Example" onScaleInput={handleInput}></ScaleSlider>;
+  return (
+    <ScaleSlider label="Example" on-scale-input={handleInput}></ScaleSlider>
+  );
 };
 
 export default App;
 ```
 
-Bitte beachten Sie, dass es wichtig ist, das Wort "on" vor dem Ereignisnamen zu verwenden, wenn Sie benutzerdefinierte Ereignisse von einer Skala in einem Wrapper verwenden. "scaleChange" sollte zum Beispiel als "onScaleChange" geschrieben werden.
+Bitte beachten Sie, dass es wichtig ist, das Wort "on" vor dem Ereignisnamen zu verwenden, wenn Sie benutzerdefinierte Ereignisse von einer Skala in einem Wrapper verwenden. "scale-change" sollte zum Beispiel als "on-scale-change" geschrieben werden.
 
 ## Events in React
 
-Um Konflikte mit Standard-Events zu vermeiden und für bessere Kompatibilität mit anderen Libraries und Frameworks, sind Custom Events mit dem Prefix `scale` gekennzeichnet. Event-Namen werden in camelCase-Syntax geschrieben (z.B. `scaleChange`) Die Dokumentation zu Custom Events findest du auf den entsprechenden Komponentenseiten im Abschnitt "Docs".
+Um Konflikte mit Standard-Events zu vermeiden und für bessere Kompatibilität mit anderen Libraries und Frameworks, sind Custom Events mit dem Prefix `scale` gekennzeichnet. Event-Namen werden in kebab-case-Syntax geschrieben (z.B. `scale-change`). Beachte, dass die Events vor v3 im сamelCase geschrieben wurden (z.B. `scaleChange`). Diese sind jetzt veraltet, aber noch verfügbar, um die Abwärtskompatibilität zu gewährleisten. Für die neuesten Komponenten gelten nur noch Events im kebab-case. Die Dokumentation zu Custom Events findest du auf den entsprechenden Komponentenseiten im Abschnitt "Docs".
 
 Aufgrund von Reacts [Synthetic Events](https://reactjs.org/docs/handling-events.html), bedarf das Binding von Custom Events etwas Mehraufwand. Nutze wie oben beschrieben einen Interop Layer oder alternativ [`ref`](https://reactjs.org/docs/refs-and-the-dom.html), um `addEventListener` imperativ anzuwenden.
 

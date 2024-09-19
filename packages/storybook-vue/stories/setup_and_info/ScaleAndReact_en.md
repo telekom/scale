@@ -62,7 +62,7 @@ React passes all data to custom elements not as props but as HTML attributes whi
 
 ### Custom Events
 
-React has its own [synthetic event system](https://reactjs.org/docs/handling-events.html), which makes it impossible to declaratively bind to custom events. That means `<scale-button onScaleChange={handleChange}>` won't work.
+React has its own [synthetic event system](https://reactjs.org/docs/handling-events.html), which makes it impossible to declaratively bind to custom events. That means `<scale-button on-scale-change={handleChange}>` won't work.
 
 Working around these limitations without help is possible but can be cumbersome and requires some imperative code. So we recommend using a wrapper or interop layer to make things easier.
 
@@ -82,17 +82,19 @@ const App = () => {
   const handleInput = (event) => {
     // it works!
   };
-  return <ScaleSlider label="Example" onScaleInput={handleInput}></ScaleSlider>;
+  return (
+    <ScaleSlider label="Example" on-scale-input={handleInput}></ScaleSlider>
+  );
 };
 
 export default App;
 ```
 
-Please note that when using any custom events from scale in a wrapper, it is important to include "on" before the event name. For example, "scaleChange" should be written as "onScaleChange.
+Please note that when using any custom events from scale in a wrapper, it is important to include "on" before the event name. For example, "scale-change" should be written as "on-scale-change".
 
 ## Events in React
 
-In order to prevent collisions with standard events and for better compatibility with other libraries and frameworks, the custom events emitted by some Scale components are prefixed with `scale`. Event names are camelCased (e.g. `scaleChange`). You can find the documentation for these custom events on the respective component pages in the "docs" section.
+In order to prevent collisions with standard events and for better compatibility with other libraries and frameworks, the custom events emitted by some Scale components are prefixed with `scale`. Event names are kebab-cased (e.g. scale-change). Note, that before v3 events were camelCased (e.g. `scaleChange`), these are now deprecated, but still available for maintaining backward compatibility. For newest components only kebab-case events apply. You can find the documentation to custom events on the respective component pages in the "docs" section.
 
 Due to React's [synthetic events](https://reactjs.org/docs/handling-events.html), binding to custom events requires some extra work. You can use an interop layer like the ones listed above, or alternatively use [`ref`](https://reactjs.org/docs/refs-and-the-dom.html) to bind imperatively with `addEventListener`.
 

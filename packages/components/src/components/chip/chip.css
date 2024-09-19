@@ -85,8 +85,7 @@
   color: var(--telekom-color-text-and-icon-inverted-standard);
 }
 
-.chip:not(.chip--disabled):not(.chip--type-dynamic):focus,
-.chip.chip--type-dynamic:not(.chip--selected):focus {
+.chip:not(.chip--disabled):focus {
   outline: var(--telekom-spacing-composition-space-02) solid var(--color-focus);
   outline-offset: var(--telekom-spacing-composition-space-01);
 }
