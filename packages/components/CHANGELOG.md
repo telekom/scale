@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.153](https://github.com/telekom/scale/compare/v3.0.0-beta.152...v3.0.0-beta.153) (2024-09-19)
+
+
+### Bug Fixes
+
+* dropdown scroll fixed ([#2333](https://github.com/telekom/scale/issues/2333)) ([592c69d](https://github.com/telekom/scale/commit/592c69d00e4a50f7113973bc583dff19f1cc8979))
+
+
+
+
+
+
 # [3.0.0-beta.152](https://github.com/telekom/scale/compare/v3.0.0-beta.151...v3.0.0-beta.152) (2024-07-10)
 
 
