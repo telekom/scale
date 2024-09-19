@@ -100,12 +100,12 @@ Nun solltest du in der Lage sein, Scale-Komponenten in deinen Templates zu verwe
 
 ## Events in Vue
 
-Um Konflikte mit Standard-Events zu vermeiden und für beste Kompatibilität mit anderen Libraries und Frameworks, sind die Custom Events, die von einigen Scale-Komponenten ausgegeben werden, mit dem Prefix `scale` gekennzeichnet. Event-Namen werden in camelCase-Syntax geschrieben (z. B. scaleChange). Die Dokumentation zu Custom Events findest du auf den jeweiligen Komponentenseiten im Abschnitt "Docs".
+Um Konflikte mit Standard-Events zu vermeiden und für bessere Kompatibilität mit anderen Libraries und Frameworks, sind Custom Events mit dem Prefix `scale` gekennzeichnet. Event-Namen werden in kebab-case-Syntax geschrieben (z.B. `scale-change`). Beachte, dass die Events vor v3 im сamelCase geschrieben wurden (z. B. `scaleChange`). Diese sind jetzt veraltet, aber noch verfügbar, um die Abwärtskompatibilität zu gewährleisten. Für die neuesten Komponenten gelten nur noch Events im kebab-case. Die Dokumentation zu Custom Events findest du auf den entsprechenden Komponentenseiten im Abschnitt "Docs".
 
 An Events mit dem Prefix `scale` kannst du reguläre Vue-Syntax anbinden:
 
 ```html
-<scale-slider @scaleInput="handleInput"></scale-slider>
+<scale-slider @scale-input="handleInput"></scale-slider>
 ```
 
 ## Form Input Bindings
@@ -117,7 +117,7 @@ Du kannst ganz einfach die gleichen Ergebnisse erzielen:
 ```html
 <scale-text-field
   :value="example"
-  @scaleChange="example = $event.target.value"
+  @scale-change="example = $event.target.value"
 ></scale-text-field>
 ```
 
