@@ -1,7 +1,5 @@
 # scale-text-field
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -9,7 +7,7 @@
 
 | Property                 | Attribute                 | Description                                                                                                      | Type                                                                                                                                     | Default           |
 | ------------------------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| `ariaDetailsId`          | `aria-details-id`         | (optional) id or space separated list of ids of elements that provide or link to additional related information. | `string`                                                                                                                                 | `undefined`       |
+| `ariaDetailedId`         | `aria-detailed-id`        | (optional) id or space separated list of ids of elements that provide or link to additional related information. | `string`                                                                                                                                 | `undefined`       |
 | `counter`                | `counter`                 | (optional) Input counter                                                                                         | `boolean`                                                                                                                                | `undefined`       |
 | `disabled`               | `disabled`                | (optional) Input disabled                                                                                        | `boolean`                                                                                                                                | `undefined`       |
 | `experimentalControlled` | `experimental-controlled` | (optional)) Makes type `input` behave as a controlled component in React                                         | `boolean`                                                                                                                                | `false`           |

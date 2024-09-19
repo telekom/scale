@@ -60,6 +60,13 @@ export const ICON =
       description: `(optional) DEPRECATED - css overwrite should replace size`,
       control: { type: null },
     },
+    ariaDetailedId: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) Id of the element with additional information, will be used as aria-details. In case helperText is not provided, will be used as aria-describedBy`,
+      control: { type: null },
+    },
   }}
 />
 
@@ -89,7 +96,7 @@ export const Template = (args, { argTypes }) => ({
       :required="required"
       :counter="counter"
       :value="value"
-      :aria-details-id="ariaDetailsId"
+      :aria-detailed-id="ariaDetailedId"
       :input-id="inputId"
       :input-autofocus="inputAutofocus"
       :input-autocomplete="inputAutocomplete"
