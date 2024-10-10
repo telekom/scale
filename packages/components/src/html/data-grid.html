@@ -805,11 +805,21 @@
         ],
       ];
 
+      const localization = {
+        sortBy: 'SortLoc',
+        toggle: 'ToggleLoc',
+        select: 'SelectLoc',
+        tableOptions: 'OptionsLoc',
+        expand: 'Klicken Sie zu expanden',
+        collapse: 'Klicken Sie zu collapsen',
+      };
+
       // Pass in data
       const table = document.querySelector('#table1');
 
       table.fields = fields;
       table.rows = rows;
+      table.localization = localization;
 
       // table.addEventListener('scaleEdit', ({ detail }) => {
       //   const { rows, rowIndex, columnIndex, value } = detail;

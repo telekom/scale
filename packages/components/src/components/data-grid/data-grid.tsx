@@ -112,13 +112,16 @@ export class DataGrid {
   /** (optional) Title for sortable columns */
   @Prop() sortableColumnTitle?: string = 'Activate to sort column';
   /**
-   * (optional) set localization for sort, toggle and select/deselect table
+   * (optional) set localization for sort, toggle, select/deselect, table options, expand/collapse (html cell)
    * Default is English.
    */
   @Prop() localization?: {
     sortBy: string;
     toggle: string;
     select: string;
+    tableOptions: string;
+    expand?: string;
+    collapse?: string;
   };
   /* 4. Events (alphabetical) */
   /** Event triggered every time the editable cells are changed, updating the original rows data */
@@ -797,7 +800,11 @@ export class DataGrid {
           icon-only
           data-sortable={this.isSortable}
         >
-          <scale-icon-service-settings accessibilityTitle="Table options"></scale-icon-service-settings>
+          <scale-icon-service-settings
+            accessibilityTitle={
+              this.localization?.tableOptions || 'Table options'
+            }
+          ></scale-icon-service-settings>
         </scale-button>
         <scale-menu-flyout-list>
           {this.isSortable && (
@@ -1311,6 +1318,7 @@ export class DataGrid {
           component: this,
           rowIndex,
           columnIndex,
+          localization: this.localization,
         })}
       </td>
     );

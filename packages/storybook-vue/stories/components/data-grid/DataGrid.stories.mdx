@@ -42,7 +42,7 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       },
       description: `(optional) Title for sortable columns`,
       control: { type: null },
-    },    
+    },
     height: {
       table: {
         type: { summary: 'string' },
@@ -111,7 +111,7 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       table: {
         type: { summary: 'object' },
       },
-      description: `(optional) localization object for sort by, toogle visibility and select/deselect all. The default value is English`,
+      description: `(optional) localization object for sort by, toogle visibility, select/deselect all, table settings, expand/collapse buttons. The default value is English. To provide localization, use object with next keys: 'sortBy', 'toggle', 'select', 'tableOptions', 'expand', 'collapse'`,
       control: { type: null },
     },
     shadeAlternate: {
