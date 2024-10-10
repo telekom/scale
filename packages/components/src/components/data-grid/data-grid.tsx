@@ -182,11 +182,12 @@ export class DataGrid {
     this.applyResponsiveClasses = this.applyResponsiveClasses.bind(this);
     this.updateColumnStretching = this.updateColumnStretching.bind(this);
   }
+
   componentWillLoad() {
     this.fieldsHandler();
     this.rowsHandler();
   }
-  componentWillUpdate() {}
+
   componentDidRender() {
     if (this.needsAutoWidthParse) {
       this.calculateAutoWidths();
@@ -198,10 +199,11 @@ export class DataGrid {
       }
     });
   }
+
   componentDidLoad() {
     this.addResizeObserver();
   }
-  componentDidUpdate() {}
+
   disconnectedCallback() {
     this.removeResizeObserver();
   }
@@ -216,6 +218,7 @@ export class DataGrid {
     this.resetSortingToggle();
     this.dataNeedsCheck = true;
   }
+
   @Watch('rows')
   rowsHandler() {
     // Reset pagination to the last page of the new records if new records are less than previous.
@@ -225,6 +228,7 @@ export class DataGrid {
     }
     this.parseRows();
     this.setInitialRowProps();
+    this.presortTable();
     this.dataNeedsCheck = true;
     // Set flag to dirty to redo column width with new data
     this.needsAutoWidthParse = true;
@@ -407,7 +411,7 @@ export class DataGrid {
   }
 
   // Sorting handlers
-  toggleTableSorting(sortDirection, columnIndex, type) {
+  toggleTableSorting(currentSortDirection, columnIndex, type) {
     // Remove sorting from previous column index
     if (
       this.activeSortingIndex > -1 &&
@@ -419,9 +423,9 @@ export class DataGrid {
     this.activeSortingIndex = columnIndex;
 
     const newSortDirection =
-      sortDirection === 'none'
+      currentSortDirection === 'none'
         ? 'ascending'
-        : sortDirection === 'ascending'
+        : currentSortDirection === 'ascending'
         ? 'descending'
         : 'none';
     this.fields[columnIndex].sortDirection = newSortDirection;
@@ -494,6 +498,23 @@ export class DataGrid {
       this.fields[this.activeSortingIndex].sortDirection = 'none';
     }
     this.activeSortingIndex = -1;
+  }
+
+  presortTable(): void {
+    const columnToPresort = this.fields.find(
+      (col) => col.sortable && col.presort
+    );
+    if (!columnToPresort) {
+      return;
+    }
+    const columnIndex = this.fields.indexOf(columnToPresort);
+    const direction =
+      columnToPresort.presortDirection === 'descending'
+        ? 'descending'
+        : 'ascending';
+    this.activeSortingIndex = columnIndex;
+    this.fields[columnIndex].sortDirection = direction;
+    this.sortTable(direction, columnToPresort.type, columnIndex);
   }
 
   // Column resize handlers
