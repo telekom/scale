@@ -1385,7 +1385,7 @@ Expected format: unformatted `string`, eg `'this is a string'`
 
 ## Presort
 
-To make grid presorted by certain field on init, add next props to this field: `presort: true`, `presortDirection: 'ascending' | 'descending'`.
+To make grid presorted by certain field on init, add next props to this field: `sortable: true`, `presort: true`, `presortDirection: 'ascending' | 'descending'`.
 
 <Canvas withSource="close">
   <Story name="Presort">
@@ -1398,8 +1398,9 @@ To make grid presorted by certain field on init, add next props to this field: `
             {
               type: 'text',
               label: 'Name',
+              sortable: true,
               presort: true,
-              presortDirection: 'descending'
+              presortDirection: 'descending',
             },
             {
               type: 'checkbox',
