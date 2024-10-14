@@ -1383,6 +1383,42 @@ Expected format: unformatted `string`, eg `'this is a string'`
   </Story>
 </Canvas>
 
+## Presort
+
+To make grid presorted by certain field on init, add next props to this field: `presort: true`, `presortDirection: 'ascending' | 'descending'`.
+
+<Canvas withSource="close">
+  <Story name="Presort">
+    {`<content>
+      <scale-data-grid heading="Presort" id="presort-example"></scale-data-grid>
+      <script type="application/javascript">
+        {
+          const dataGrid = document.querySelector('#presort-example');
+          dataGrid.fields = [
+            {
+              type: 'text',
+              label: 'Name',
+              presort: true,
+              presortDirection: 'descending'
+            },
+            {
+              type: 'checkbox',
+              label: 'Toggle',
+              style: 'switch',
+            },
+          ];
+          dataGrid.rows = [
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+          ];
+        }
+      </script>
+    </content>`}
+  </Story>
+</Canvas>
+
 <!-- TODO -->
 <!-- manual pagination example -->
 <!-- search filtering example -->
