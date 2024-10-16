@@ -146,4 +146,3 @@ describe('pagination', () => {
     expect(buttonPrev.hasAttribute('disabled')).toBe(true);
   });
 });
-
