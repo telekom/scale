@@ -53,6 +53,8 @@ export class RadioButton {
   @Prop() inputId?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
+  @Prop() ariaDetailsId?: string;
 
   @Event({ eventName: 'scale-change' })
   scaleChange!: EventEmitter<InputChangeEventDetail>;
@@ -124,7 +126,8 @@ export class RadioButton {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': 'true' } : {};
     const helperTextId = `helper-message-${this.internalId}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const describedBy = this.helperText ? helperTextId : this.ariaDetailsId;
+    const ariaDescribedByAttr = { 'aria-describedBy': describedBy };
 
     return (
       <Host>
@@ -138,7 +141,10 @@ export class RadioButton {
             checked={this.checked}
             disabled={this.disabled}
             {...ariaInvalidAttr}
-            {...(this.helperText ? ariaDescribedByAttr : {})}
+            {...(this.helperText || this.ariaDetailsId
+              ? ariaDescribedByAttr
+              : {})}
+            aria-details={this.ariaDetailsId}
           />
           <label htmlFor={this.inputId}>{this.label}</label>
           {!!this.helperText && (
