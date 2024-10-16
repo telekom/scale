@@ -52,7 +52,7 @@ export class SegmentedButton {
   /** (optional) Allow more than one button to be selected */
   @Prop() multiSelect: boolean = false;
   /** (optional) the index of the selected segment */
-  @Prop() selectedIndex?: number;
+  @Prop({ mutable: true }) selectedIndex?: number;
   /** (optional) If `true`, the button is disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) If `true`, expand to container width */
@@ -119,36 +119,36 @@ export class SegmentedButton {
     });
   }
 
-  componentDidLoad() {
+  componentWillLoad() {
     const tempState: SegmentStatus[] = [];
     const segments = this.getAllSegments();
     this.slottedSegments = segments.length;
-    const longestButtonWidth = this.getLongestButtonWidth();
-    segments.forEach((segment) => {
-      this.position++;
+    segments.forEach((segment, i) => {
       tempState.push({
         id: segment.getAttribute('segment-id') || segment.segmentId,
         selected: segment.hasAttribute('selected') || segment.selected,
       });
-      segment.setAttribute('position', this.position.toString());
+      segment.setAttribute('position', `${i + 1}`);
       segment.setAttribute(
         'aria-description-translation',
         '$position $selected'
       );
     });
+    this.setState(tempState);
+    this.selectedIndex = this.getSelectedIndex();
+  }
+  componentDidLoad() {
+    const longestButtonWidth = this.getLongestButtonWidth();
     if (!this.fullWidth) {
-      this.container.style.gridTemplateColumns = `repeat(${
-        this.hostElement.children.length
-      }, ${Math.ceil(longestButtonWidth)}px)`;
+      this.container.style.gridTemplateColumns = longestButtonWidth
+        ? `repeat(${this.hostElement.children.length}, ${Math.ceil(
+            longestButtonWidth
+          )}px)`
+        : `repeat(${this.hostElement.children.length}, auto)`;
     } else {
       this.container.style.display = 'flex';
     }
-
-    this.selectedIndex = this.getSelectedIndex();
     this.propagatePropsToChildren();
-    this.position = 0;
-    this.status = tempState;
-    this.setState(tempState);
   }
 
   componentWillUpdate() {
@@ -195,27 +195,29 @@ export class SegmentedButton {
   // all segmented buttons should have the same width, based on the largest one
   getLongestButtonWidth() {
     let tempWidth = 0;
-    Array.from(this.hostElement.children).forEach((child) => {
-      const selected = child.hasAttribute('selected');
-      const iconOnly = child.hasAttribute('icon-only');
-      const checkmark =
-        this.size === 'small'
-          ? CHECKMARK_WIDTH_SMALL
-          : this.size === 'medium'
-          ? CHECKMARK_WIDTH_MEDIUM
-          : CHECKMARK_WIDTH_LARGE;
-      if (selected || iconOnly) {
-        tempWidth =
-          child.getBoundingClientRect().width > tempWidth
-            ? child.getBoundingClientRect().width
-            : tempWidth;
-      } else {
-        tempWidth =
-          child.getBoundingClientRect().width + checkmark > tempWidth
-            ? child.getBoundingClientRect().width + checkmark
-            : tempWidth;
-      }
-    });
+    Array.from(this.hostElement.children)
+      .filter((child) => child.getBoundingClientRect().width)
+      .forEach((child) => {
+        const selected = child.hasAttribute('selected');
+        const iconOnly = child.hasAttribute('icon-only');
+        const checkmark =
+          this.size === 'small'
+            ? CHECKMARK_WIDTH_SMALL
+            : this.size === 'medium'
+            ? CHECKMARK_WIDTH_MEDIUM
+            : CHECKMARK_WIDTH_LARGE;
+        if (selected || iconOnly) {
+          tempWidth =
+            child.getBoundingClientRect().width > tempWidth
+              ? child.getBoundingClientRect().width
+              : tempWidth;
+        } else {
+          tempWidth =
+            child.getBoundingClientRect().width + checkmark > tempWidth
+              ? child.getBoundingClientRect().width + checkmark
+              : tempWidth;
+        }
+      });
     return tempWidth;
   }
 
