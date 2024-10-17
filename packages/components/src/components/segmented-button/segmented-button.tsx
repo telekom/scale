@@ -136,6 +136,7 @@ export class SegmentedButton {
     });
     this.setState(tempState);
     this.selectedIndex = this.getSelectedIndex();
+    this.showHelperText = this.shouldShowHelperText();
   }
   componentDidLoad() {
     const longestButtonWidth = this.getLongestButtonWidth();
@@ -153,13 +154,17 @@ export class SegmentedButton {
 
   componentWillUpdate() {
     this.selectedIndex = this.getSelectedIndex();
-    this.showHelperText = false;
+    this.showHelperText = this.shouldShowHelperText();
+  }
+  shouldShowHelperText() {
+    let showHelperText = false;
     if (
       this.invalid &&
       this.status.filter((e) => e.selected === true).length <= 0
     ) {
-      this.showHelperText = true;
+      showHelperText = true;
     }
+    return showHelperText;
   }
 
   getSelectedIndex() {

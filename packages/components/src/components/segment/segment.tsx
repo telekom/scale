@@ -84,7 +84,9 @@ export class Segment {
   async setFocus() {
     this.focusableElement.focus();
   }
-
+  componentWillLoad() {
+    this.handleIcon();
+  }
   componentWillUpdate() {
     this.handleIcon();
   }

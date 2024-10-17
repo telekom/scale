@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
-    <title>Loading spinners</title>
+    <title>Segment Buttons</title>
 
     <script type="module" src="build/scale-components.esm.js"></script>
     <script nomodule src="build/scale-components.js"></script>
@@ -15,6 +15,7 @@
       section {
         padding: 1rem;
       }
+
       .bg-black {
         background: black;
         color: white;
@@ -32,17 +33,48 @@
         <scale-segment>Huawei</scale-segment>
       </scale-segmented-button>
     </scale-collapsible>
-
+    <div style="height: 20px"></div>
     <scale-segmented-button>
       <scale-segment>Apple</scale-segment>
       <scale-segment>One+</scale-segment>
       <scale-segment>Samsung</scale-segment>
       <scale-segment>Huawei</scale-segment>
     </scale-segmented-button>
-
+    <div style="height: 20px"></div>
     <scale-segmented-button>
       <scale-segment selected>Label</scale-segment>
       <scale-segment selected>Label</scale-segment>
+    </scale-segmented-button>
+    <div style="height: 20px"></div>
+    <scale-segmented-button invalid>
+      <scale-segment>
+        <scale-icon-device-device-phone slot="segment-icon">
+        </scale-icon-device-device-phone>
+        Apple
+      </scale-segment>
+      <scale-segment>
+        <scale-icon-device-device-phone slot="segment-icon">
+        </scale-icon-device-device-phone>
+        One+
+      </scale-segment>
+      <scale-segment>
+        <scale-icon-device-device-phone slot="segment-icon">
+        </scale-icon-device-device-phone>
+        Samsung
+      </scale-segment>
+      <scale-segment>
+        <scale-icon-device-device-phone slot="segment-icon">
+        </scale-icon-device-device-phone>
+        Huawei
+      </scale-segment>
+    </scale-segmented-button>
+    <div style="height: 20px"></div>
+
+    <scale-segmented-button multi-select>
+      <scale-segment selected>Apple</scale-segment>
+      <scale-segment selected>One+</scale-segment>
+      <scale-segment>Samsung</scale-segment>
+      <scale-segment>Huawei</scale-segment>
     </scale-segmented-button>
   </body>
 </html>
