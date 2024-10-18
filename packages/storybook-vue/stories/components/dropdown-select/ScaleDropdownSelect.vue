@@ -10,6 +10,7 @@
     :combobox-id="comboboxId"
     :hide-label-visually="hideLabelVisually"
     :floating-strategy="floatingStrategy"
+    :aria-details-id="ariaDetailsId"
     @scaleChange="['scale-change']"
     @scaleFocus="['scale-focus']"
     @scaleBlur="['scale-blur']"

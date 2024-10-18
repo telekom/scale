@@ -19,6 +19,7 @@
     :popup-title="popupTitle"
     :placeholder="placeholder"
     :styles="styles"
+    :aria-details-id="ariaDetailsId"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"

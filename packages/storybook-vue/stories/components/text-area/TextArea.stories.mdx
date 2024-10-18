@@ -38,6 +38,7 @@ export const Template = (args, { argTypes }) => ({
       :input-id="inputId"
       :transparent="transparent"
       :input-autofocus="inputAutofocus"
+      :aria-details-id="ariaDetailsId"
       @scaleChange="scaleChange"
       @scaleFocus="scaleFocus"
       @scaleBlur="scaleBlur"
@@ -89,20 +90,24 @@ export const Template = (args, { argTypes }) => ({
 
 ```css
 scale-textarea {
-  --transition: all var(--telekom-motion-duration-transition)
-    var(--telekom-motion-easing-standard);
+  --transition: all var(--telekom-motion-duration-transition) var(
+      --telekom-motion-easing-standard
+    );
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-border-standard);
-  --border-error: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-danger-standard);
+  --border: var(--telekom-line-weight-standard) solid var(
+      --telekom-color-ui-border-standard
+    );
+  --border-error: var(--telekom-line-weight-highlight) solid var(
+      --telekom-color-functional-danger-standard
+    );
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-color-disabled: none;
-  --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus-standard);
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(
+      --telekom-color-functional-focus-standard
+    );
   --spacing-x-control: var(--telekom-spacing-composition-space-05);
   --spacing-bottom-control: var(--telekom-spacing-composition-space-05);
   --spacing-top-control: calc(
@@ -126,8 +131,8 @@ scale-textarea {
     18px 32px 4px 12px
     (subtracting 1px from border)
   */
-  --spacing-control: 0 calc(2rem - var(--telekom-spacing-composition-space-01))
-    0.25rem calc(0.75rem - var(--telekom-spacing-composition-space-01));
+  --spacing-control: 0 calc(2rem - var(--telekom-spacing-composition-space-01)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-composition-space-01));
   --transition-control: var(--transition);
   --background-control: var(--telekom-color-ui-state-fill-standard);
 
@@ -236,9 +241,9 @@ scale-textarea {
   <Story
     name="Read Only"
     args={{
-      label: "Read only",
+      label: 'Read only',
       readonly: true,
-      value: "This cannot be changed"
+      value: 'This cannot be changed',
     }}
   >
     {Template.bind({})}
@@ -246,7 +251,11 @@ scale-textarea {
 </Canvas>
 
 ```html
-<scale-textarea label="Read only" value="This cannot be changed" readonly></scale-textarea>
+<scale-textarea
+  label="Read only"
+  value="This cannot be changed"
+  readonly
+></scale-textarea>
 ```
 
 ## Max Length With Counter

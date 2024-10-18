@@ -12,6 +12,7 @@
     :input-id="inputId"
     :visible-size="visibleSize"
     :controlled="controlled"
+    :aria-details-id="ariaDetailsId"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"

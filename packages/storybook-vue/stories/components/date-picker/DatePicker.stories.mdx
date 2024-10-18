@@ -45,6 +45,7 @@ export const Template = (args, { argTypes }) => ({
             :helper-text="helperText"
             :invalid="invalid"
             :placeholder="placeholder"
+            :aria-details-id="ariaDetailsId"
             @scaleChange="scaleChange"
             @scale-change="scale-change"
             @scaleFocus="scaleFocus"
@@ -204,7 +205,7 @@ export const RangeTemplate = (args, { argTypes }) => ({
     args={{
       value: '2020-12-31',
       label: 'Standard',
-      placeholder: 'Select date'
+      placeholder: 'Select date',
     }}
   >
     {Template.bind({})}
@@ -251,8 +252,9 @@ duet-date-picker {
   --font-size-day: var(--telekom-typography-font-size-body);
   --font-size-table-header: var(--telekom-typography-font-size-caption);
   --font-weight-table-header: var(--telekom-typography-font-weight-extra-bold);
-  --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus-standard);
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(
+      --telekom-color-functional-focus-standard
+    );
 
   --z-index-label: 10;
 }
@@ -290,7 +292,7 @@ duet-date-picker {
       label: 'With Error',
       invalid: true,
       helperText: 'something is wrong',
-      placeholder: 'select date'
+      placeholder: 'select date',
     }}
   >
     {Template.bind({})}

@@ -18,6 +18,7 @@
     :input-id="inputId"
     :transparent="transparent"
     :input-autofocus="inputAutofocus"
+    :aria-details-id="ariaDetailsId"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
