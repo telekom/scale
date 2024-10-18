@@ -54,8 +54,8 @@ export const Template = (args, context) => ({
         :disabled="itemProps[index]?.disabled"
       ></scale-radio-button>
     </scale-radio-button-group>
-  `
-})
+  `,
+});
 
 <div
   style={{
@@ -75,13 +75,13 @@ export const Template = (args, context) => ({
   <Story
     name="Standard"
     parameters={{
-      controls: { 
-        exclude: ['groupName'] 
-      }
+      controls: {
+        exclude: ['groupName'],
+      },
     }}
     args={{
       label: 'Group Label',
-      groupName: 'standard'
+      groupName: 'standard',
     }}
   >
     {Template.bind({})}
@@ -137,8 +137,9 @@ scale-radio-button {
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: var(--telekom-color-ui-disabled);
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
-  --transition: all var(--telekom-motion-duration-transition)
-    var(--telekom-motion-easing-standard);
+  --transition: all var(--telekom-motion-duration-transition) var(
+      --telekom-motion-easing-standard
+    );
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --color-primary-hover: var(--telekom-color-text-and-icon-standard);
   --color-primary-active: var(--telekom-color-text-and-icon-standard);
@@ -171,26 +172,29 @@ scale-radio-button {
   --height-control: var(--telekom-spacing-composition-space-07);
   --transition-control: var(--transition);
   --background-color-control: var(--telekom-color-ui-base);
-  --border-control: var(--telekom-spacing-composition-space-01) solid
-    var(--telekom-color-ui-border-standard);
+  --border-control: var(--telekom-spacing-composition-space-01) solid var(
+      --telekom-color-ui-border-standard
+    );
   --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
   --border-control-checked: calc(
       0.25 * var(--telekom-spacing-composition-space-05)
-    )
-    solid var(--telekom-color-background-canvas);
+    ) solid var(--telekom-color-background-canvas);
   --border-control-checked-disabled: calc(
       0.5 * var(--telekom-spacing-composition-space-05)
-    )
-    solid var(--telekom-color-ui-border-disabled);
+    ) solid var(--telekom-color-ui-border-disabled);
   --background-control-checked-disabled: none;
-  --border-control-active: var(--telekom-spacing-composition-space-04) solid
-    var(--telekom-color-primary-pressed);
-  --border-control-disabled: 0 0 0 var(--telekom-spacing-composition-space-01)
-    var(--telekom-color-ui-border-disabled);
-  --border-control-error: var(--telekom-spacing-composition-space-02) solid
-    var(--telekom-color-functional-danger-standard);
-  --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-composition-space-03)
-    var(--color-focus);
+  --border-control-active: var(--telekom-spacing-composition-space-04) solid var(
+      --telekom-color-primary-pressed
+    );
+  --border-control-disabled: 0 0 0 var(--telekom-spacing-composition-space-01) var(
+      --telekom-color-ui-border-disabled
+    );
+  --border-control-error: var(--telekom-spacing-composition-space-02) solid var(
+      --telekom-color-functional-danger-standard
+    );
+  --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-composition-space-03) var(
+      --color-focus
+    );
 }
 ```
 
@@ -233,7 +237,10 @@ scale-radio-button {
 </Canvas>
 
 ```html
-<scale-radio-button-group label="Group Label" helper-text="Make sure to fill this">
+<scale-radio-button-group
+  label="Group Label"
+  helper-text="Make sure to fill this"
+>
   <scale-radio-button
     label="Radio Label"
     name="helper-text"
@@ -271,7 +278,7 @@ scale-radio-button {
           checked: true,
           helperText: 'Error message',
         },
-      }
+      },
     }}
   >
     {Template.bind({})}
@@ -279,7 +286,11 @@ scale-radio-button {
 </Canvas>
 
 ```html
-<scale-radio-button-group label="Group Label" invalid helper-text="Something is wrong">
+<scale-radio-button-group
+  label="Group Label"
+  invalid
+  helper-text="Something is wrong"
+>
   <scale-radio-button
     label="Radio Label"
     name="error"
@@ -316,7 +327,7 @@ scale-radio-button {
         0: {
           disabled: true,
         },
-      }
+      },
     }}
   >
     {Template.bind({})}

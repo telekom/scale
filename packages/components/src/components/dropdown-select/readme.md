@@ -7,22 +7,23 @@
 
 ## Properties
 
-| Property            | Attribute             | Description                                                                     | Type                                                    | Default                    |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------- |
-| `ariaLabelSelected` | `aria-label-selected` | (optional) Screen reader text appended to the selected element                  | `string`                                                | `'selected'`               |
-| `comboboxId`        | `combobox-id`         |                                                                                 | `string`                                                | `'combobox'`               |
-| `disabled`          | `disabled`            |                                                                                 | `boolean`                                               | `undefined`                |
-| `floatingStrategy`  | `floating-strategy`   |                                                                                 | `"absolute" \| "fixed"`                                 | `'absolute'`               |
-| `hcmLabelDisabled`  | `hcm-label-disabled`  | (optional) Text displayed in high contrast mode only to indicate disabled state | `string`                                                | `'this field is disabled'` |
-| `helperText`        | `helper-text`         |                                                                                 | `string`                                                | `''`                       |
-| `hideLabelVisually` | `hide-label-visually` | (optional) to hide the label                                                    | `boolean`                                               | `false`                    |
-| `invalid`           | `invalid`             |                                                                                 | `boolean`                                               | `false`                    |
-| `label`             | `label`               |                                                                                 | `string`                                                | `undefined`                |
-| `name`              | `name`                |                                                                                 | `string`                                                | `undefined`                |
-| `readonly`          | `readonly`            |                                                                                 | `boolean`                                               | `undefined`                |
-| `transparent`       | `transparent`         |                                                                                 | `boolean`                                               | `undefined`                |
-| `value`             | `value`               |                                                                                 | `any`                                                   | `undefined`                |
-| `variant`           | `variant`             |                                                                                 | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'`          |
+| Property            | Attribute             | Description                                                                                                      | Type                                                    | Default                    |
+| ------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------- |
+| `ariaDetailsId`     | `aria-details-id`     | (optional) id or space separated list of ids of elements that provide or link to additional related information. | `string`                                                | `undefined`                |
+| `ariaLabelSelected` | `aria-label-selected` | (optional) Screen reader text appended to the selected element                                                   | `string`                                                | `'selected'`               |
+| `comboboxId`        | `combobox-id`         |                                                                                                                  | `string`                                                | `'combobox'`               |
+| `disabled`          | `disabled`            |                                                                                                                  | `boolean`                                               | `undefined`                |
+| `floatingStrategy`  | `floating-strategy`   |                                                                                                                  | `"absolute" \| "fixed"`                                 | `'absolute'`               |
+| `hcmLabelDisabled`  | `hcm-label-disabled`  | (optional) Text displayed in high contrast mode only to indicate disabled state                                  | `string`                                                | `'this field is disabled'` |
+| `helperText`        | `helper-text`         |                                                                                                                  | `string`                                                | `''`                       |
+| `hideLabelVisually` | `hide-label-visually` | (optional) to hide the label                                                                                     | `boolean`                                               | `false`                    |
+| `invalid`           | `invalid`             |                                                                                                                  | `boolean`                                               | `false`                    |
+| `label`             | `label`               |                                                                                                                  | `string`                                                | `undefined`                |
+| `name`              | `name`                |                                                                                                                  | `string`                                                | `undefined`                |
+| `readonly`          | `readonly`            |                                                                                                                  | `boolean`                                               | `undefined`                |
+| `transparent`       | `transparent`         |                                                                                                                  | `boolean`                                               | `undefined`                |
+| `value`             | `value`               |                                                                                                                  | `any`                                                   | `undefined`                |
+| `variant`           | `variant`             |                                                                                                                  | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'`          |
 
 
 ## Events

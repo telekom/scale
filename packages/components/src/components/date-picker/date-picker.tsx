@@ -151,6 +151,10 @@ export class DatePicker {
 
   @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
     'informational';
+
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
+  @Prop() ariaDetailsId?: string;
+
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
 
@@ -308,11 +312,15 @@ export class DatePicker {
       input.addEventListener('keyup', this.handleKeyPress);
     }
 
-    if (input && this.helperText) {
-      input.setAttribute(
-        'aria-describedby',
-        `helper-message-${this.internalId}`
-      );
+    if (input && (this.helperText || this.ariaDetailsId)) {
+      const describedBy = this.helperText
+        ? `helper-message-${this.internalId}`
+        : this.ariaDetailsId;
+      input.setAttribute('aria-describedby', describedBy);
+    }
+
+    if (input && this.ariaDetailsId) {
+      input.setAttribute('aria-details', this.ariaDetailsId);
     }
 
     if (input && this.placeholder) {
@@ -483,7 +491,7 @@ export class DatePicker {
             dateAdapter={this.dateAdapter}
             disabled={this.disabled}
             value={this.value}
-            ref={(element: HTMLElement & DuetDatePicker) =>
+            ref={(element: HTMLDuetDatePickerElement & DuetDatePicker) =>
               (this.duetInput = element)
             }
           ></duet-date-picker>

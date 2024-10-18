@@ -50,6 +50,7 @@ export default {
     styles: { type: String },
     placeholder: { type: String },
     size: { type: String },
+    ariaDetailsId: { type: String },
   },
   methods: {
     scaleChange($event) {
