@@ -11,7 +11,6 @@
     :input-id="inputId"
     :required="required"
     :aria-label-checkbox="ariaLabelCheckbox"
-    :aria-details-id="ariaDetailsId"
     @scaleChange="scaleChange"
   >
   </scale-checkbox>
@@ -33,6 +32,7 @@ export default {
     inputId: { type: String },
     required: { type: Boolean },
     ariaLabelCheckbox: { type: String },
+    ariaDetailsId: { type: String },
   },
   methods: {
     scaleChange($event) {

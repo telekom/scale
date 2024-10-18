@@ -12,7 +12,6 @@
     :input-id="inputId"
     :visible-size="visibleSize"
     :controlled="controlled"
-    :aria-details-id="ariaDetailsId"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
@@ -41,6 +40,7 @@ export default {
     controlled: { type: Boolean },
     styles: { type: String },
     size: { type: String },
+    ariaDetailsId: { type: String },
   },
   methods: {
     scaleInput($event) {

@@ -18,7 +18,6 @@
     :input-id="inputId"
     :transparent="transparent"
     :input-autofocus="inputAutofocus"
-    :aria-details-id="ariaDetailsId"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
@@ -53,6 +52,7 @@ export default {
     transparent: { type: Boolean },
     inputAutofocus: { type: Boolean },
     styles: { type: String },
+    ariaDetailsId: { type: String },
   },
   methods: {
     scaleInput($event) {
