@@ -65,6 +65,7 @@ export class TabHeader {
       return;
     }
     this.selected = true;
+    this.scaleSelect.emit();
   }
 
   @Watch('selected')

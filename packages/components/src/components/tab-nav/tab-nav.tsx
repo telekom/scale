@@ -95,9 +95,8 @@ export class TabNav {
       customElements.whenDefined('scale-tab-header'),
       customElements.whenDefined('scale-tab-panel'),
     ]).then(() => {
-      this.linkPanels();
+      this.linkPanelsAndSelectTab();
       this.propagateSizeToTabs();
-      this.selectNextTab();
     });
 
     if (this.small !== false) {
@@ -148,13 +147,14 @@ export class TabNav {
     return tabs[tabs.length - 1];
   }
 
-  linkPanels() {
+  linkPanelsAndSelectTab() {
     const tabs = this.getAllTabs();
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
       tab.setAttribute('aria-controls', panel.id);
       panel.setAttribute('aria-labelledby', tab.id);
     });
+    this.selectNextTab();
   }
 
   selectNextTab(nextTab?: HTMLScaleTabHeaderElement): void {
