@@ -483,7 +483,7 @@ export class DatePicker {
             dateAdapter={this.dateAdapter}
             disabled={this.disabled}
             value={this.value}
-            ref={(element: HTMLElement & DuetDatePicker) =>
+            ref={(element: HTMLDuetDatePickerElement & DuetDatePicker) =>
               (this.duetInput = element)
             }
           ></duet-date-picker>
