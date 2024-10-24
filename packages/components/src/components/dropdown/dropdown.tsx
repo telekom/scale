@@ -70,6 +70,8 @@ export class Dropdown {
   @Prop() controlled?: boolean = false;
   /** (optional) to avoid displaying the label */
   @Prop() hideLabelVisually?: boolean = false;
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
+  @Prop() ariaDetailsId?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -242,7 +244,8 @@ export class Dropdown {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': 'true' } : {};
     const helperTextId = `helper-message-${this.internalId}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const describedBy = this.helperText ? helperTextId : this.ariaDetailsId;
+    const ariaDescribedByAttr = { 'aria-describedBy': describedBy };
 
     return (
       <Host>
@@ -268,7 +271,10 @@ export class Dropdown {
               name={this.name}
               size={this.visibleSize}
               {...ariaInvalidAttr}
-              {...(this.helperText ? ariaDescribedByAttr : {})}
+              {...(this.helperText || this.ariaDetailsId
+                ? ariaDescribedByAttr
+                : {})}
+              aria-details={this.ariaDetailsId}
             >
               <slot />
             </select>
