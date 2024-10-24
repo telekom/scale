@@ -47,13 +47,16 @@ export class TabHeader {
   /** (optional) size  */
   @Prop() size?: 'small' | 'large' = 'small';
   /** (optional) Whether the tab is selected */
-  @Prop() selected?: boolean;
+  @Prop({ mutable: true }) selected?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
   @State() hasFocus: boolean = false;
 
+  /** Emitted on header select */
   @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter;
+  /** Emitted when currently selected tab got disabled */
+  @Event({ eventName: 'scale-disabled' }) scaleDisabled: EventEmitter;
 
   @Listen('click')
   handleClick(event: MouseEvent) {
@@ -61,28 +64,30 @@ export class TabHeader {
     if (this.disabled) {
       return;
     }
+    this.selected = true;
     this.scaleSelect.emit();
   }
 
   @Watch('selected')
   selectedChanged(newValue: boolean) {
-    if (!this.hostElement.isConnected) {
+    if (!this.hostElement.isConnected || this.disabled) {
       return;
     }
-    if (!this.disabled) {
-      if (newValue === true && this.tabsHaveFocus()) {
-        // Having focus on the host element, and not on inner elements,
-        // is required because screen readers.
-        this.hostElement.focus();
-      }
-      this.updateSlottedIcon();
+    if (newValue) {
+      this.scaleSelect.emit();
     }
+    if (newValue && this.tabsHaveFocus()) {
+      // Having focus on the host element and not on inner elements is required because of screen readers
+      this.hostElement.focus();
+    }
+    this.updateSlottedIcon();
   }
 
   @Watch('disabled')
   disabledChanged() {
     if (this.disabled) {
       this.selected = false;
+      this.scaleDisabled.emit();
     }
   }
 
