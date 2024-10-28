@@ -508,6 +508,7 @@ export class DropdownSelect {
               aria-expanded={this.open ? 'true' : 'false'}
               aria-haspopup="listbox"
               aria-labelledby={`${this.comboboxId}-label`}
+              aria-details={this.ariaDetailsId}
               id={this.comboboxId}
               part="combobox"
               role="combobox"
@@ -524,7 +525,7 @@ export class DropdownSelect {
                     ).value,
                   }
                 : {})}
-              {...(this.helperText ? ariaDescribedByAttr : {})}
+              {...ariaDescribedByAttr}
               {...(this.invalid ? { 'aria-invalid': 'true' } : {})}
             >
               <span part="combobox-value">
