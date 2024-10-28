@@ -327,6 +327,9 @@ export class DropdownSelect {
   }
 
   updateInputHidden(value: string = this.value): void {
+    if (!this.hiddenInput) {
+      return;
+    }
     this.hiddenInput.value = value;
   }
 
