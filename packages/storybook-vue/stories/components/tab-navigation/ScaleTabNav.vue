@@ -58,6 +58,7 @@ export default {
     preselected: { type: Boolean, default: false },
     withIcon: { type: Boolean, default: true },
     size: { type: String, default: 'small' },
+    small: { type: Boolean, default: false },
   },
 };
 </script>

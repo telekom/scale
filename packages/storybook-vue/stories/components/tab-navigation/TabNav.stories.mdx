@@ -35,6 +35,13 @@ import TabPanel from './TabPanel.vue';
       description: `(optional) DEPRECATED - size should replace small`,
       control: { type: null },
     },
+    preselected: {
+      table: {
+        disable: true,
+      },
+      description: '',
+      control: { type: null },
+    },
   }}
 />
 
@@ -124,8 +131,9 @@ export const Template = (args, { argTypes }) => ({
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
-  --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus-standard);
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(
+      --telekom-color-functional-focus-standard
+    );
   --spacing-right-slotted: var(--telekom-spacing-composition-space-04);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);
