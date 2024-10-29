@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      <scale-tab-nav>
+        <scale-tab-header slot="tab">General</scale-tab-header>
+        <scale-tab-panel slot="panel">
+          1 Freegan kinfolk farm-to-table humblebrag cred…
+        </scale-tab-panel>
+        <scale-tab-header slot="tab">Usage</scale-tab-header>
+        <scale-tab-panel slot="panel">
+          2 Bespoke austin pork belly yuccie pop-up. Before they sold out…
+        </scale-tab-panel>
+        <scale-tab-header slot="tab">Style</scale-tab-header>
+        <scale-tab-panel slot="panel">
+          3 Biodiesel chia af hoodie tumeric bespoke letterpress…
+        </scale-tab-panel>
+        <scale-tab-header slot="tab">Code</scale-tab-header>
+        <scale-tab-panel slot="panel">
+          4 Asymmetrical tattooed chia, banh mi blog microdosing…
+        </scale-tab-panel>
+      </scale-tab-nav>
+    </p>
+  </body>
+  <script>
+    setTimeout(() => {
+      let tabs = document.querySelectorAll('scale-tab-header');
+      tabs[0].disabled = true;
+    }, 2000);
+    setTimeout(() => {
+      let tabs = document.querySelectorAll('scale-tab-header');
+      tabs[3].selected = true;
+    }, 4000);
+  </script>
+</html>
