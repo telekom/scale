@@ -257,6 +257,8 @@ export class DropdownSelect {
   @Prop() ariaLabelSelected?: string = 'selected';
   /** (optional) Text displayed in high contrast mode only to indicate disabled state */
   @Prop() hcmLabelDisabled?: string = 'this field is disabled';
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
+  @Prop() ariaDetailsId?: string;
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
@@ -490,7 +492,8 @@ export class DropdownSelect {
     const ValueElement = element.ItemElement;
     const hasEmptyValueElement = element.value === '';
     const helperTextId = `helper-message-${generateUniqueId()}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const describedBy = this.helperText ? helperTextId : this.ariaDetailsId;
+    const ariaDescribedByAttr = { 'aria-describedBy': describedBy };
 
     return (
       <Host>
@@ -505,6 +508,7 @@ export class DropdownSelect {
               aria-expanded={this.open ? 'true' : 'false'}
               aria-haspopup="listbox"
               aria-labelledby={`${this.comboboxId}-label`}
+              aria-details={this.ariaDetailsId}
               id={this.comboboxId}
               part="combobox"
               role="combobox"
@@ -521,7 +525,7 @@ export class DropdownSelect {
                     ).value,
                   }
                 : {})}
-              {...(this.helperText ? ariaDescribedByAttr : {})}
+              {...ariaDescribedByAttr}
               {...(this.invalid ? { 'aria-invalid': 'true' } : {})}
             >
               <span part="combobox-value">

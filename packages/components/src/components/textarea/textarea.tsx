@@ -77,6 +77,8 @@ export class Textarea {
   @Prop() inputAutofocus?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
+  @Prop() ariaDetailsId?: string;
 
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
@@ -173,7 +175,8 @@ export class Textarea {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': 'true' } : {};
     const helperTextId = `helper-message-${this.internalId}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const describedBy = this.helperText ? helperTextId : this.ariaDetailsId;
+    const ariaDescribedByAttr = { 'aria-describedBy': describedBy };
     const readonlyAttr = this.readonly ? { readonly: 'readonly' } : {};
 
     return (
@@ -212,7 +215,10 @@ export class Textarea {
               {...(!!this.rows ? { rows: this.rows } : {})}
               {...(!!this.cols ? { cols: this.cols } : {})}
               {...ariaInvalidAttr}
-              {...(this.helperText ? ariaDescribedByAttr : {})}
+              {...(this.helperText || this.ariaDetailsId
+                ? ariaDescribedByAttr
+                : {})}
+              aria-details={this.ariaDetailsId}
               ref={(el) => (this.focusableElement = el)}
             />
           </div>

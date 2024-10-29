@@ -65,6 +65,8 @@ export class Checkbox {
   @Prop() styles?: string;
   /** (optional) Input required */
   @Prop() required?: boolean;
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
+  @Prop() ariaDetailsId?: string;
 
   /** Emitted when the value has changed. */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
@@ -189,7 +191,8 @@ export class Checkbox {
           aria-label={this.ariaLabelCheckbox}
           aria-checked={this.indeterminate ? 'mixed' : false}
           aria-invalid={this.status === 'error' || this.invalid ? 'true' : null}
-          aria-describedBy={helperText.id}
+          aria-describedBy={helperText ? helperText.id : this.ariaDetailsId}
+          aria-details={this.ariaDetailsId}
           disabled={this.disabled}
           required={this.required}
           onChange={this.handleChange}

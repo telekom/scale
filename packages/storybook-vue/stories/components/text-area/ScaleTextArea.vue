@@ -52,6 +52,7 @@ export default {
     transparent: { type: Boolean },
     inputAutofocus: { type: Boolean },
     styles: { type: String },
+    ariaDetailsId: { type: String },
   },
   methods: {
     scaleInput($event) {

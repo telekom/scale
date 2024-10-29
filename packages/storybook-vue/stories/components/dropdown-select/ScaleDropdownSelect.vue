@@ -35,6 +35,7 @@ export default {
     comboboxId: { type: String },
     hideLabelVisually: { type: Boolean, default: false },
     floatingStrategy: { type: String },
+    ariaDetailsId: { type: String },
   },
   methods: {
     'scale-change'($event) {

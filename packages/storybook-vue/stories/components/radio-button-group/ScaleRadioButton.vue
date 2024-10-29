@@ -10,15 +10,16 @@ export default {
     checked: { type: Boolean },
     value: { type: String },
     inputId: { type: String },
-    styles: { type: String }
+    styles: { type: String },
+    ariaDetailsId: { type: String },
   },
   methods: {
     fireEvents() {
       this.$emit('scale-change');
-    }
+    },
   },
   render() {
     return this.$slots.default;
-  }
+  },
 };
 </script>
