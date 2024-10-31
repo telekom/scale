@@ -136,7 +136,7 @@ export class DataGrid {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleSort' })
   scaleSortLegacy: EventEmitter<DataGridSortedEventDetail>;
-  /**Event triggered every time the selection list updates  */
+  /** Event triggered every time the selection list updates  */
   @Event({ eventName: 'scale-selection' })
   scaleSelection: EventEmitter<any[]>;
   /* 5. Private Properties (alphabetical) */
@@ -343,7 +343,7 @@ export class DataGrid {
     if (!this.fields) {
       return;
     }
-    this.fields?.forEach(({ sortable }) => {
+    this.fields.forEach(({ sortable }) => {
       if (sortable) {
         this.isSortable = true;
       }
@@ -684,7 +684,7 @@ export class DataGrid {
         }
       }
       // Add each visible column's target width
-      this.fields?.forEach(({ visible = true, width }) => {
+      this.fields.forEach(({ visible = true, width }) => {
         if (visible) {
           // 32 for padding+margin
           total += width + 32;
@@ -706,7 +706,7 @@ export class DataGrid {
       // If stretchWeight unset, share remainder of 1 (if any) between all unset cols
       let totalSetWeight = 0;
       let unsetColsCount = 0;
-      this.fields?.forEach(({ visible = true, stretchWeight }) => {
+      this.fields.forEach(({ visible = true, stretchWeight }) => {
         // Disregard invisible columns
         if (!visible) {
           return;
@@ -720,7 +720,7 @@ export class DataGrid {
       const remainderWeight = Math.max(0, 1 - totalSetWeight);
       // Set total to be divided against to be above 1 to keep total set/unset weights equal to 1
       totalSetWeight = Math.max(1, totalSetWeight);
-      this.fields?.forEach((field) => {
+      this.fields.forEach((field) => {
         const { visible = true, stretchWeight } = field;
         if (!visible) {
           return;
