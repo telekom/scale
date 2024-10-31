@@ -102,7 +102,7 @@ export class DataGrid {
   /** (optional) Set to true to add selection column */
   @Prop() selectable?: boolean = false;
   /** Read-only selection array - populated with raw data from selected rows */
-  @Prop() selection: string[] = [];
+  @State() selection: any[] = [];
   /** (optional) Shade every second row darker */
   @Prop() shadeAlternate?: boolean = true;
   /** (optional) Injected css styles */
@@ -136,6 +136,9 @@ export class DataGrid {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleSort' })
   scaleSortLegacy: EventEmitter<DataGridSortedEventDetail>;
+  /**Event triggered every time the selection list updates  */
+  @Event({ eventName: 'scale-selection' })
+  scaleSelection: EventEmitter<any[]>;
   /* 5. Private Properties (alphabetical) */
   /** Used to update column divider during interaction */
   private activeDivider: any;
@@ -221,6 +224,9 @@ export class DataGrid {
 
   @Watch('rows')
   rowsHandler() {
+    if (!this.rows) {
+      return;
+    }
     // Reset pagination to the last page of the new records if new records are less than previous.
     if (this.paginationStart > this.rows.length) {
       this.paginationStart =
@@ -249,7 +255,7 @@ export class DataGrid {
       this.sortTable(
         this.fields[this.activeSortingIndex].sortDirection,
         this.fields[this.activeSortingIndex].type,
-        this.activeSortingIndex
+        this.activeSortingIndex, true
       );
     }
   }
@@ -336,7 +342,7 @@ export class DataGrid {
     if (!this.fields) {
       return;
     }
-    this.fields.forEach(({ sortable }) => {
+    this.fields?.forEach(({ sortable }) => {
       if (sortable) {
         this.isSortable = true;
       }
@@ -399,14 +405,14 @@ export class DataGrid {
   }
 
   updateReadableSelection() {
-    this.selection.length = 0;
+    this.selection = [];
     this.rows.forEach((row) => row.selected && this.selection.push(row));
-
     // Check header checkbox if any or none are selected
     const selectAll = this.hostElement.shadowRoot.querySelector(
       '.thead__cell--selection scale-checkbox'
     ) as HTMLInputElement;
     selectAll.checked = !!this.selection.length;
+    emitEvent(this, 'scaleSelection', this.selection);
     // selectAll.indeterminate = !!this.selection.length;
   }
 
@@ -432,7 +438,7 @@ export class DataGrid {
     this.sortTable(newSortDirection, type, columnIndex);
   }
 
-  sortTable(sortDirection, type, columnIndex) {
+  sortTable(sortDirection, type, columnIndex, shouldTriggerEvent = true) {
     const format = this.fields[columnIndex].format;
     if (sortDirection === 'none') {
       this.rows.sort((a, b) => {
@@ -489,8 +495,10 @@ export class DataGrid {
       }
     }
     this.forceRender++;
-    // Trigger event
-    this.triggerSortEvent(sortDirection, type, columnIndex);
+    if (shouldTriggerEvent) {
+      // Trigger event
+      this.triggerSortEvent(sortDirection, type, columnIndex);
+    }
   }
 
   resetSortingToggle() {
@@ -514,7 +522,7 @@ export class DataGrid {
         : 'ascending';
     this.activeSortingIndex = columnIndex;
     this.fields[columnIndex].sortDirection = direction;
-    this.sortTable(direction, columnToPresort.type, columnIndex);
+    this.sortTable(direction, columnToPresort.type, columnIndex, false);
   }
 
   // Column resize handlers
@@ -675,7 +683,7 @@ export class DataGrid {
         }
       }
       // Add each visible column's target width
-      this.fields.forEach(({ visible = true, width }) => {
+      this.fields?.forEach(({ visible = true, width }) => {
         if (visible) {
           // 32 for padding+margin
           total += width + 32;
@@ -697,7 +705,7 @@ export class DataGrid {
       // If stretchWeight unset, share remainder of 1 (if any) between all unset cols
       let totalSetWeight = 0;
       let unsetColsCount = 0;
-      this.fields.forEach(({ visible = true, stretchWeight }) => {
+      this.fields?.forEach(({ visible = true, stretchWeight }) => {
         // Disregard invisible columns
         if (!visible) {
           return;
@@ -711,7 +719,7 @@ export class DataGrid {
       const remainderWeight = Math.max(0, 1 - totalSetWeight);
       // Set total to be divided against to be above 1 to keep total set/unset weights equal to 1
       totalSetWeight = Math.max(1, totalSetWeight);
-      this.fields.forEach((field) => {
+      this.fields?.forEach((field) => {
         const { visible = true, stretchWeight } = field;
         if (!visible) {
           return;
@@ -1024,7 +1032,7 @@ export class DataGrid {
         <tr class={`thead__row`}>
           {this.numbered && this.renderTableHeadNumberedCell()}
           {this.selectable && this.renderTableHeadSelectableCell()}
-          {this.fields.map(
+          {this.fields?.map(
             (
               {
                 type,
@@ -1165,7 +1173,7 @@ export class DataGrid {
           ref={(el) => (this.elToggleSelectAll = el)}
           onScaleChange={() => this.toggleSelectAll()}
           hideLabel={true}
-          aria-label="Select"
+          ariaLabelCheckbox="Select"
         ></scale-checkbox>
       </th>
     );
