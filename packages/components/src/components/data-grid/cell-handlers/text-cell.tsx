@@ -38,7 +38,7 @@ export const TextCell: Cell = {
       iconPrefix,
       iconSuffix,
       label,
-      textFieldProps = {}
+      textFieldProps = {},
     } = field;
 
     // Input component doesn't expand with content, so need to return a fake element that simulates width

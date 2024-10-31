@@ -102,7 +102,7 @@ export class DataGrid {
   /** (optional) Set to true to add selection column */
   @Prop() selectable?: boolean = false;
   /** Read-only selection array - populated with raw data from selected rows */
-  @State() selection: any[] = [];
+  @Prop({mutable: true}) selection: any[] = [];
   /** (optional) Shade every second row darker */
   @Prop() shadeAlternate?: boolean = true;
   /** (optional) Injected css styles */
@@ -255,7 +255,8 @@ export class DataGrid {
       this.sortTable(
         this.fields[this.activeSortingIndex].sortDirection,
         this.fields[this.activeSortingIndex].type,
-        this.activeSortingIndex, true
+        this.activeSortingIndex,
+        true
       );
     }
   }

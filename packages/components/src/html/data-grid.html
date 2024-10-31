@@ -189,15 +189,15 @@
           style: 'switch',
           editable: true,
         },
-        {  
+        {
           type: 'text',
           label: 'Nr-edit',
           editable: true,
           width: 60,
           textFieldProps: {
             type: 'number',
-            'max':2
-          }
+            max: 2,
+          },
         },
         {
           type: 'graph',
@@ -849,12 +849,16 @@
 
       // Pass in data
       const table = document.querySelector('#table1');
-      document.querySelector('scale-data-grid').addEventListener('scale-sort', ({ detail }) => {
-        console.log('sort', detail);
-      });
-      document.querySelector('scale-data-grid').addEventListener('scale-selection', ({ detail }) => {
-        console.log('select', detail);
-      });
+      document
+        .querySelector('scale-data-grid')
+        .addEventListener('scale-sort', ({ detail }) => {
+          console.log('sort', detail);
+        });
+      document
+        .querySelector('scale-data-grid')
+        .addEventListener('scale-selection', ({ detail }) => {
+          console.log('select', detail);
+        });
       table.fields = fields;
       table.rows = rows;
       table.localization = localization;
