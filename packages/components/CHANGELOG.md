@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.154](https://github.com/telekom/scale/compare/v3.0.0-beta.152...v3.0.0-beta.154) (2024-11-06)
+
+
+### Bug Fixes
+
+* **button:** Include name and value properties on temporary submit button ([#2351](https://github.com/telekom/scale/issues/2351)) ([e0ff157](https://github.com/telekom/scale/commit/e0ff15764128fecc0a643d14e1ee01f64ab67d0f))
+* **data-grid:** imporves pagination with 0 elements ([#2316](https://github.com/telekom/scale/issues/2316)) ([42a3b36](https://github.com/telekom/scale/commit/42a3b3699df5b361b63fc9c466461e2af61d67ed))
+* **nav-item:** hover underline on function slots ([#2260](https://github.com/telekom/scale/issues/2260)) ([6e8c380](https://github.com/telekom/scale/commit/6e8c38027a861babd28e8925dcc5db1c87a4b05d))
+* **segment:** improves loading of the component and solves nested elemnts sizing issue ([#2358](https://github.com/telekom/scale/issues/2358)) ([299be7d](https://github.com/telekom/scale/commit/299be7d00122ed34fcde07cff9e288e291e33318))
+* **tab-nav:** fixes preselect logic in tabs with disabled attribute ([#2320](https://github.com/telekom/scale/issues/2320)) ([bd30a6f](https://github.com/telekom/scale/commit/bd30a6f2a187976ae85234b5f526537f68b3ea80))
+* dropdown scroll fixed ([#2333](https://github.com/telekom/scale/issues/2333)) ([592c69d](https://github.com/telekom/scale/commit/592c69d00e4a50f7113973bc583dff19f1cc8979))
+
+
+### Features
+
+* **accordion:** allow collapsible to be individually expanded ([#2263](https://github.com/telekom/scale/issues/2263)) ([9b02151](https://github.com/telekom/scale/commit/9b021511c94e29e9644680afcb15236b96ab35b5))
+* **data-grid:** add scale-selection event and enhance editable text field ([#2362](https://github.com/telekom/scale/issues/2362)) ([eeaecaf](https://github.com/telekom/scale/commit/eeaecaf461f014fb57c4ad14e3f279640b777c5f))
+* aria-details added to all input types ([#2359](https://github.com/telekom/scale/issues/2359)) ([4c45650](https://github.com/telekom/scale/commit/4c45650e14eff01ef42525f08ba27c1c7b0f2109))
+* **data-grid:** added tooltip and scale-icon in data-grid action cell  ([#2308](https://github.com/telekom/scale/issues/2308)) ([30a0ce5](https://github.com/telekom/scale/commit/30a0ce5bdb8ca13d0c6a067894a0ee4aef6dd98b))
+* **data-grid:** adds presort to grid ([#2335](https://github.com/telekom/scale/issues/2335)) ([f657202](https://github.com/telekom/scale/commit/f6572021489ae07914dbbb6d31cb0aa2d20ea74c))
+
+
+
+
+
+
 # [3.0.0-beta.153](https://github.com/telekom/scale/compare/v3.0.0-beta.152...v3.0.0-beta.153) (2024-09-19)
 
 
