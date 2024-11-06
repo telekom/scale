@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.154](https://github.com/amir-ba/scale/compare/v3.0.0-beta.152...v3.0.0-beta.154) (2024-11-06)
+
+
+### Bug Fixes
+
+* **tab-nav:** fixes preselect logic in tabs with disabled attribute ([#2320](https://github.com/amir-ba/scale/issues/2320)) ([bd30a6f](https://github.com/amir-ba/scale/commit/bd30a6f2a187976ae85234b5f526537f68b3ea80))
+
+
+### Features
+
+* **data-grid:** add scale-selection event and enhance editable text field ([#2362](https://github.com/amir-ba/scale/issues/2362)) ([eeaecaf](https://github.com/amir-ba/scale/commit/eeaecaf461f014fb57c4ad14e3f279640b777c5f))
+* aria-details added to all input types ([#2359](https://github.com/amir-ba/scale/issues/2359)) ([4c45650](https://github.com/amir-ba/scale/commit/4c45650e14eff01ef42525f08ba27c1c7b0f2109))
+* **data-grid:** adds presort to grid ([#2335](https://github.com/amir-ba/scale/issues/2335)) ([f657202](https://github.com/amir-ba/scale/commit/f6572021489ae07914dbbb6d31cb0aa2d20ea74c))
+
+
+
+
+
+
 # [3.0.0-beta.153](https://github.com/amir-ba/scale/compare/v3.0.0-beta.152...v3.0.0-beta.153) (2024-09-19)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue
