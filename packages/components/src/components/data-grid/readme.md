@@ -38,6 +38,14 @@
 | `scaleSort`       | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<DataGridSortedEventDetail>` |
 
 
+## Shadow Parts
+
+| Part           | Description |
+| -------------- | ----------- |
+| `"scrollable"` |             |
+| `"title"`      |             |
+
+
 ## Dependencies
 
 ### Depends on
