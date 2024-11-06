@@ -38,6 +38,7 @@ export const TextCell: Cell = {
       iconPrefix,
       iconSuffix,
       label,
+      textFieldProps = {},
     } = field;
 
     // Input component doesn't expand with content, so need to return a fake element that simulates width
@@ -52,6 +53,7 @@ export const TextCell: Cell = {
     if (editable) {
       const props = {
         type: 'text',
+        ...textFieldProps,
         value: content,
         label,
       } as any;

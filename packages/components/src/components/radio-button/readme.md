@@ -7,18 +7,19 @@
 
 ## Properties
 
-| Property     | Attribute     | Description                                                                               | Type               | Default     |
-| ------------ | ------------- | ----------------------------------------------------------------------------------------- | ------------------ | ----------- |
-| `checked`    | `checked`     | (optional) Input checked                                                                  | `boolean`          | `false`     |
-| `disabled`   | `disabled`    | (optional) Input disabled                                                                 | `boolean`          | `undefined` |
-| `helperText` | `helper-text` | (optional) Input helper text                                                              | `string`           | `''`        |
-| `inputId`    | `input-id`    | (optional) Input checkbox id                                                              | `string`           | `undefined` |
-| `invalid`    | `invalid`     | (optional) Input status                                                                   | `boolean`          | `false`     |
-| `label`      | `label`       | (optional) Input label                                                                    | `string`           | `''`        |
-| `name`       | `name`        | (optional) Input name                                                                     | `string`           | `''`        |
-| `status`     | `status`      | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/> | `string`           | `''`        |
-| `styles`     | `styles`      | (optional) Injected CSS styles                                                            | `string`           | `undefined` |
-| `value`      | `value`       | (optional) Input value                                                                    | `number \| string` | `''`        |
+| Property        | Attribute         | Description                                                                                                      | Type               | Default     |
+| --------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------ | ----------- |
+| `ariaDetailsId` | `aria-details-id` | (optional) id or space separated list of ids of elements that provide or link to additional related information. | `string`           | `undefined` |
+| `checked`       | `checked`         | (optional) Input checked                                                                                         | `boolean`          | `false`     |
+| `disabled`      | `disabled`        | (optional) Input disabled                                                                                        | `boolean`          | `undefined` |
+| `helperText`    | `helper-text`     | (optional) Input helper text                                                                                     | `string`           | `''`        |
+| `inputId`       | `input-id`        | (optional) Input checkbox id                                                                                     | `string`           | `undefined` |
+| `invalid`       | `invalid`         | (optional) Input status                                                                                          | `boolean`          | `false`     |
+| `label`         | `label`           | (optional) Input label                                                                                           | `string`           | `''`        |
+| `name`          | `name`            | (optional) Input name                                                                                            | `string`           | `''`        |
+| `status`        | `status`          | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/>                        | `string`           | `''`        |
+| `styles`        | `styles`          | (optional) Injected CSS styles                                                                                   | `string`           | `undefined` |
+| `value`         | `value`           | (optional) Input value                                                                                           | `number \| string` | `''`        |
 
 
 ## Events

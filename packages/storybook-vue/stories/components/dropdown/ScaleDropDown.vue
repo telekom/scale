@@ -40,6 +40,7 @@ export default {
     controlled: { type: Boolean },
     styles: { type: String },
     size: { type: String },
+    ariaDetailsId: { type: String },
   },
   methods: {
     scaleInput($event) {

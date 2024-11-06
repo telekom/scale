@@ -31,7 +31,8 @@ export default {
     value: { type: String },
     inputId: { type: String },
     required: { type: Boolean },
-    ariaLabelCheckbox: { type: String}
+    ariaLabelCheckbox: { type: String },
+    ariaDetailsId: { type: String },
   },
   methods: {
     scaleChange($event) {

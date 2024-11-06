@@ -68,7 +68,7 @@ scale-telekom-profile-menu scale-menu-flyout {
   height: 12px;
 }
 
-.scale-telekom-nav-item > button {
+scale-telekom-profile-menu .scale-telekom-nav-item > button {
   padding-bottom: var(--_spacing-bottom-slotted-bottom);
 }
 

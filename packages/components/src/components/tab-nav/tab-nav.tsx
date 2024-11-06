@@ -42,9 +42,12 @@ export class TabNav {
   handleSelect(event) {
     const nextTab = event.target as HTMLScaleTabHeaderElement;
     // Act only if it's a direct child
-    if (this.getAllEnabledTabs().includes(nextTab) && !nextTab.disabled) {
-      this.selectTab(nextTab);
-    }
+    this.selectNextTab(nextTab);
+  }
+
+  @Listen('scale-disabled')
+  handleDisabledTabHeader() {
+    this.selectNextTab();
   }
 
   @Listen('keydown')
@@ -92,7 +95,7 @@ export class TabNav {
       customElements.whenDefined('scale-tab-header'),
       customElements.whenDefined('scale-tab-panel'),
     ]).then(() => {
-      this.linkPanels();
+      this.linkPanelsAndSelectTab();
       this.propagateSizeToTabs();
     });
 
@@ -144,24 +147,33 @@ export class TabNav {
     return tabs[tabs.length - 1];
   }
 
-  linkPanels() {
+  linkPanelsAndSelectTab() {
     const tabs = this.getAllTabs();
-    const selectedTab =
-      tabs.find((x) => x.selected) || tabs.filter((x) => !x.disabled)[0];
-
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
       tab.setAttribute('aria-controls', panel.id);
       panel.setAttribute('aria-labelledby', tab.id);
     });
-    this.selectTab(selectedTab);
+    this.selectNextTab();
   }
 
-  reset() {
-    const tabs = this.getAllEnabledTabs();
-    const panels = this.getAllPanels();
+  selectNextTab(nextTab?: HTMLScaleTabHeaderElement): void {
+    const tabs = this.getAllTabs();
+    const tabToSelect =
+      (!nextTab?.disabled && nextTab) ||
+      tabs.find((tab) => tab.selected) ||
+      tabs.filter((tab) => !tab.disabled)[0];
+    this.selectTab(tabToSelect);
+  }
 
-    tabs.forEach((tab) => (tab.selected = false));
+  reset(nextTab?: HTMLScaleTabHeaderElement) {
+    const tabs = this.getAllEnabledTabs();
+    tabs.forEach((tab) => {
+      if (tab !== nextTab) {
+        tab.selected = false;
+      }
+    });
+    const panels = this.getAllPanels();
     panels.forEach((panel) => (panel.hidden = true));
   }
 
@@ -171,10 +183,12 @@ export class TabNav {
   }
 
   selectTab(nextTab: HTMLScaleTabHeaderElement) {
+    this.reset(nextTab);
+    if (!nextTab.selected) {
+      nextTab.selected = true;
+    }
     const nextPanel = this.findPanelForTab(nextTab);
-    this.reset();
     nextPanel.hidden = false;
-    nextTab.selected = true;
   }
 
   /**

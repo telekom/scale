@@ -165,7 +165,7 @@ export class TelekomProfileMenu {
   buildLogoutButton() {
     return {
       type: 'button',
-      name: this.logoutLabel,
+      name: this.logoutLabel || 'Logout',
       href: this.logoutUrl || LOGOUT_DEFAULT,
       variant: 'secondary',
       onClick: this.logoutHandler,
@@ -176,17 +176,11 @@ export class TelekomProfileMenu {
     const divider = [{ type: 'divider' }];
 
     const userInfo = readData(this.userInfo);
-    if (!userInfo) {
-      // console.error("userInfo missing");
-    }
-    userInfo.type = 'userInfo';
-
-    let serviceLinks = readData(this.serviceLinks);
-    if (!serviceLinks) {
-      // console.error("serviceLinks missing");
-      serviceLinks = [];
+    if (userInfo) {
+      userInfo.type = 'userInfo';
     }
 
+    const serviceLinks = readData(this.serviceLinks) || [];
     for (const el of serviceLinks) {
       el.type = 'item';
     }
@@ -200,9 +194,11 @@ export class TelekomProfileMenu {
 
     let menu = [];
 
-    menu = menu.concat(userInfo);
+    if (userInfo) {
+      menu = menu.concat(userInfo);
+    }
 
-    if (!this.serviceLinksEmpty()) {
+    if (userInfo && !this.serviceLinksEmpty()) {
       menu = menu.concat(divider);
     }
 
@@ -221,7 +217,10 @@ export class TelekomProfileMenu {
   }
 
   serviceLinksEmpty() {
-    return (this.hideLoginSettings && this.serviceLinks.length < 1) === true;
+    return (
+      this.hideLoginSettings &&
+      (!this.serviceLinks || this.serviceLinks.length < 1)
+    );
   }
 
   buildDesktopMenuStyles() {

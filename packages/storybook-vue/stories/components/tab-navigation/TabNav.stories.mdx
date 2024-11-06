@@ -6,12 +6,13 @@ import {
   Description,
 } from '@storybook/addon-docs';
 import ScaleTabNav from './ScaleTabNav.vue';
+import TabHeader from './TabHeader.vue';
 import TabPanel from './TabPanel.vue';
 
 <Meta
   title="Components/Tab Navigation"
   component={ScaleTabNav}
-  subcomponents={{ 'Scale Tab Panel': TabPanel }}
+  subcomponents={{ 'Scale Tab Header': TabHeader, 'Scale Tab Panel': TabPanel }}
   argTypes={{
     styles: {
       table: {
@@ -34,6 +35,13 @@ import TabPanel from './TabPanel.vue';
       description: `(optional) DEPRECATED - size should replace small`,
       control: { type: null },
     },
+    preselected: {
+      table: {
+        disable: true,
+      },
+      description: '',
+      control: { type: null },
+    },
   }}
 />
 
@@ -41,7 +49,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleTabNav },
   props: ScaleTabNav.props,
   template: `
-    <scale-tab-nav :disabled="disabled ? true : false" :size="size" :with-icon="withIcon"></scale-tab-nav>
+    <scale-tab-nav :disabled="disabled ? true : false" :preselected="preselected ? true : false" :size="size" :with-icon="withIcon"></scale-tab-nav>
   `,
 });
 
@@ -123,8 +131,9 @@ export const Template = (args, { argTypes }) => ({
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
-  --focus-outline: var(--telekom-line-weight-highlight) solid
-    var(--telekom-color-functional-focus-standard);
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(
+      --telekom-color-functional-focus-standard
+    );
   --spacing-right-slotted: var(--telekom-spacing-composition-space-04);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);
@@ -190,6 +199,38 @@ For Shadow Parts, please inspect the element's #shadow.
     Bespoke austin pork belly yuccie pop-up. Before they sold out…
   </scale-tab-panel>
   <scale-tab-header slot="tab">Style</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Biodiesel chia af hoodie tumeric bespoke letterpress…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Code</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Asymmetrical tattooed chia, banh mi blog microdosing…
+  </scale-tab-panel>
+</scale-tab-nav>
+```
+
+## Preselected Tab
+
+<Canvas withSource="none">
+  <Story
+    name="Preselected Tab"
+    args={{ preselected: true, withIcon: false, size: 'small' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tab-nav>
+  <scale-tab-header slot="tab">General</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Freegan kinfolk farm-to-table humblebrag cred…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Usage</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Bespoke austin pork belly yuccie pop-up. Before they sold out…
+  </scale-tab-panel>
+  <scale-tab-header selected slot="tab">Style</scale-tab-header>
   <scale-tab-panel slot="panel">
     Biodiesel chia af hoodie tumeric bespoke letterpress…
   </scale-tab-panel>
