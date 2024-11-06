@@ -169,6 +169,14 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       description: `Event triggered every time the data is sorted, changing original rows data`,
       control: { type: null },
     },
+    eventScaleSelection: {
+      name: '[event] scale-selection',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Event triggered every time the selection list updates`,
+      control: { type: null },
+    },
     slotMenu: {
       name: '[slot] menu',
       table: {
@@ -740,8 +748,12 @@ Expected format: unformatted `string`, eg `'this is a string'`
 - `iconPrefix?: scale-icon-string (eg 'action-download')`
 - `iconSuffix?: scale-icon-string (eg 'action-download')`
 - `editable?: boolean = false`
+- `textFieldProps?: Object (eg { type: 'number', helperText: 'Enter a number' })`
 
-<Canvas withSource="close">
+
+ If `editable` is set to `true`, a `scale-text-field` is used for the element. The properties of the `scale-text-field` can be passed directly to the editable component using the `textFieldProps` attribute.
+ and if the `editable` is set to `false`, the `textFieldProps` has no effect, as the cell will be read-only.
+ <Canvas withSource="close">
   <Story name="Text Cell">
     {`<content>
     <scale-data-grid id="text-example" hide-menu></scale-data-grid>

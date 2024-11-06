@@ -102,7 +102,7 @@ export class DataGrid {
   /** (optional) Set to true to add selection column */
   @Prop() selectable?: boolean = false;
   /** Read-only selection array - populated with raw data from selected rows */
-  @Prop() selection: string[] = [];
+  @Prop({ mutable: true }) selection: any[] = [];
   /** (optional) Shade every second row darker */
   @Prop() shadeAlternate?: boolean = true;
   /** (optional) Injected css styles */
@@ -136,6 +136,9 @@ export class DataGrid {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleSort' })
   scaleSortLegacy: EventEmitter<DataGridSortedEventDetail>;
+  /** Event triggered every time the selection list updates  */
+  @Event({ eventName: 'scale-selection' })
+  scaleSelection: EventEmitter<any[]>;
   /* 5. Private Properties (alphabetical) */
   /** Used to update column divider during interaction */
   private activeDivider: any;
@@ -221,6 +224,9 @@ export class DataGrid {
 
   @Watch('rows')
   rowsHandler() {
+    if (!this.rows) {
+      return;
+    }
     // Reset pagination to the last page of the new records if new records are less than previous.
     if (this.paginationStart > this.rows.length) {
       this.paginationStart =
@@ -249,7 +255,8 @@ export class DataGrid {
       this.sortTable(
         this.fields[this.activeSortingIndex].sortDirection,
         this.fields[this.activeSortingIndex].type,
-        this.activeSortingIndex
+        this.activeSortingIndex,
+        true
       );
     }
   }
@@ -399,14 +406,14 @@ export class DataGrid {
   }
 
   updateReadableSelection() {
-    this.selection.length = 0;
+    this.selection = [];
     this.rows.forEach((row) => row.selected && this.selection.push(row));
-
     // Check header checkbox if any or none are selected
     const selectAll = this.hostElement.shadowRoot.querySelector(
       '.thead__cell--selection scale-checkbox'
     ) as HTMLInputElement;
     selectAll.checked = !!this.selection.length;
+    emitEvent(this, 'scaleSelection', this.selection);
     // selectAll.indeterminate = !!this.selection.length;
   }
 
@@ -432,7 +439,7 @@ export class DataGrid {
     this.sortTable(newSortDirection, type, columnIndex);
   }
 
-  sortTable(sortDirection, type, columnIndex) {
+  sortTable(sortDirection, type, columnIndex, shouldTriggerEvent = true) {
     const format = this.fields[columnIndex].format;
     if (sortDirection === 'none') {
       this.rows.sort((a, b) => {
@@ -489,8 +496,10 @@ export class DataGrid {
       }
     }
     this.forceRender++;
-    // Trigger event
-    this.triggerSortEvent(sortDirection, type, columnIndex);
+    if (shouldTriggerEvent) {
+      // Trigger event
+      this.triggerSortEvent(sortDirection, type, columnIndex);
+    }
   }
 
   resetSortingToggle() {
@@ -514,7 +523,7 @@ export class DataGrid {
         : 'ascending';
     this.activeSortingIndex = columnIndex;
     this.fields[columnIndex].sortDirection = direction;
-    this.sortTable(direction, columnToPresort.type, columnIndex);
+    this.sortTable(direction, columnToPresort.type, columnIndex, false);
   }
 
   // Column resize handlers
@@ -947,6 +956,7 @@ export class DataGrid {
       <div
         ref={(el) => (this.elScrollContainer = el)}
         class={`${name}__scroll-container`}
+        part="scrollable"
         style={{ height: this.height || 'auto' }}
         onScroll={() => this.onTableScroll()}
       >
@@ -1024,7 +1034,7 @@ export class DataGrid {
         <tr class={`thead__row`}>
           {this.numbered && this.renderTableHeadNumberedCell()}
           {this.selectable && this.renderTableHeadSelectableCell()}
-          {this.fields.map(
+          {this.fields?.map(
             (
               {
                 type,
@@ -1165,7 +1175,7 @@ export class DataGrid {
           ref={(el) => (this.elToggleSelectAll = el)}
           onScaleChange={() => this.toggleSelectAll()}
           hideLabel={true}
-          aria-label="Select"
+          ariaLabelCheckbox="Select"
         ></scale-checkbox>
       </th>
     );
@@ -1384,7 +1394,7 @@ export class DataGrid {
       >
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
-          <div class={`${name}__title-block`}>
+          <div class={`${name}__title-block`} part="title">
             {/* h4 tag + h5 styles feels weird, ideally one should be able to set the tag with an attribute */}
             {this.heading && (
               <h4 class={`${name}__heading scl-h5`}>{this.heading}</h4>

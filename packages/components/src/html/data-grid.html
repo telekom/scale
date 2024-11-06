@@ -190,6 +190,16 @@
           editable: true,
         },
         {
+          type: 'text',
+          label: 'Nr-edit',
+          editable: true,
+          width: 60,
+          textFieldProps: {
+            type: 'number',
+            max: 2,
+          },
+        },
+        {
           type: 'graph',
           label: 'Progress',
           sortable: true,
@@ -222,6 +232,7 @@
           '00:00:20',
           101045.0,
           false,
+          1,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -255,6 +266,7 @@
           '00:01:15',
           43.2,
           true,
+          2,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -288,6 +300,7 @@
           '00:00:20',
           102045.0,
           false,
+          3,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -326,6 +339,7 @@
           '00:01:15',
           45.2,
           true,
+          4,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -359,6 +373,7 @@
           '00:00:20',
           103045.0,
           false,
+          5,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -392,6 +407,7 @@
           '00:01:15',
           47.2,
           true,
+          6,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -425,6 +441,7 @@
           '00:00:20',
           105045.0,
           false,
+          7,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -458,6 +475,7 @@
           '00:01:15',
           48.2,
           true,
+          8,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -491,6 +509,7 @@
           '00:00:20',
           109045.0,
           false,
+          9,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -524,6 +543,7 @@
           '00:01:15',
           40.2,
           true,
+          10,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -557,6 +577,7 @@
           '00:00:20',
           108045.0,
           false,
+          11,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -590,6 +611,7 @@
           '00:01:15',
           43.2,
           true,
+          12,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -622,6 +644,7 @@
           '00:00:20',
           102045.0,
           false,
+          13,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -655,6 +678,7 @@
           '00:01:15',
           43.2,
           true,
+          14,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -689,6 +713,7 @@
           102045.0,
           false,
           15,
+          15,
           (() => {
             const demoNestedContent = document.createElement('div');
             demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
@@ -721,6 +746,7 @@
           '00:01:15',
           43.2,
           true,
+          16,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -754,6 +780,7 @@
           '00:00:20',
           102045.0,
           false,
+          17,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -787,6 +814,7 @@
           '00:01:15',
           43.2,
           true,
+          18,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -817,12 +845,20 @@
         select: 'SelectLoc',
         tableOptions: 'OptionsLoc',
         expand: 'Klicken Sie zu expanden',
-        collapse: 'Klicken Sie zu collapsen',
       };
 
       // Pass in data
       const table = document.querySelector('#table1');
-
+      document
+        .querySelector('scale-data-grid')
+        .addEventListener('scale-sort', ({ detail }) => {
+          console.log('sort', detail);
+        });
+      document
+        .querySelector('scale-data-grid')
+        .addEventListener('scale-selection', ({ detail }) => {
+          console.log('select', detail);
+        });
       table.fields = fields;
       table.rows = rows;
       table.localization = localization;
