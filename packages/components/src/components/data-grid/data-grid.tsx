@@ -956,6 +956,7 @@ export class DataGrid {
       <div
         ref={(el) => (this.elScrollContainer = el)}
         class={`${name}__scroll-container`}
+        part="scrollable"
         style={{ height: this.height || 'auto' }}
         onScroll={() => this.onTableScroll()}
       >
@@ -1393,7 +1394,7 @@ export class DataGrid {
       >
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
-          <div class={`${name}__title-block`}>
+          <div class={`${name}__title-block`} part="title">
             {/* h4 tag + h5 styles feels weird, ideally one should be able to set the tag with an attribute */}
             {this.heading && (
               <h4 class={`${name}__heading scl-h5`}>{this.heading}</h4>
