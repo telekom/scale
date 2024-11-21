@@ -71,7 +71,7 @@ export class TelekomNavItem {
       el.matches('a, button')
     );
     const parentRole = this.hostElement.parentElement?.getAttribute('role');
-    if (parentRole === 'menu') {
+    if (child && parentRole === 'menu') {
       child.setAttribute('role', 'menuitem');
     }
   }
