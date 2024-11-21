@@ -32,11 +32,12 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div :style="wrapperStyles">
       <scale-sidebar-nav
-        :arial-label="ariaLabel"
+        :arial-label-sidebar-nav="ariaLabelSiderbarNav"
         :collapsible="collapsible"
         :collapsible-label="collapsibleLabel"
         :collapsible-media-query="collapsibleMediaQuery"
         :styles="styles"
+        :collapsed="collapsed"
       >
         <scale-sidebar-nav-item>
           <a href="#">Overview</a>

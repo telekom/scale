@@ -8,7 +8,15 @@ import {
 import ScaleCheckbox from './ScaleCheckbox.vue';
 import { action } from '@storybook/addon-actions';
 
-<Meta title="Components/Checkbox" component={ScaleCheckbox} argTypes={{}} />
+<Meta 
+  title="Components/Checkbox" 
+  component={ScaleCheckbox} 
+  argTypes={{
+    status: {
+      description: 'DEPRECATED - invalid should replace status'
+    }
+  }} 
+/>
 
 export const Template = (args, { argTypes }) => ({
   props: {
@@ -27,6 +35,9 @@ export const Template = (args, { argTypes }) => ({
       :value="value"
       :input-id="inputId"
       :required="required"
+      :hide-label="hideLabel"
+      :status="status"
+      :styles="styles"
       @scaleChange="action('scaleChange')($event)"
       @scale-change="action('scale-change')($event)"
     ></scale-checkbox>
@@ -68,9 +79,8 @@ export const Template = (args, { argTypes }) => ({
 ```css
 scale-checkbox {
   --spacing-x: var(--telekom-spacing-composition-space-04);
-  --transition: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
-    );
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
   --color-text: var(--telekom-color-text-and-icon-standard);
   --color-error: var(--telekom-color-functional-danger-standard);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);

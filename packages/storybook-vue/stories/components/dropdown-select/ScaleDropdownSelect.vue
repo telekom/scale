@@ -10,6 +10,10 @@
     :combobox-id="comboboxId"
     :hide-label-visually="hideLabelVisually"
     :floating-strategy="floatingStrategy"
+    :read-only="readOnly"
+    :transparent="transparent"
+    :aria-label-selected="ariaLabelSelected"
+    :hcm-label-disabled="hcmLabelDisabled"
     @scaleChange="['scale-change']"
     @scaleFocus="['scale-focus']"
     @scaleBlur="['scale-blur']"
@@ -36,6 +40,10 @@ export default {
     hideLabelVisually: { type: Boolean, default: false },
     floatingStrategy: { type: String },
     ariaDetailsId: { type: String },
+    readOnly: { type: Boolean }, 
+    transparent: { type: Boolean }, 
+    ariaLabelSelected: { type: String },
+    hcmLabelDisabled: { type: String },
   },
   methods: {
     'scale-change'($event) {

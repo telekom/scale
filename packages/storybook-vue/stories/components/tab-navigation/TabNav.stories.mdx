@@ -12,7 +12,7 @@ import TabPanel from './TabPanel.vue';
 <Meta
   title="Components/Tab Navigation"
   component={ScaleTabNav}
-  subcomponents={{ 'Scale Tab Header': TabHeader, 'Scale Tab Panel': TabPanel }}
+  subcomponents={{ 'Scale Tab Panel': TabPanel }}
   argTypes={{
     styles: {
       table: {
@@ -22,10 +22,6 @@ import TabPanel from './TabPanel.vue';
       control: { type: null },
     },
     size: {
-      table: {
-        type: { summary: 'string' },
-      },
-      description: `(optional) size`,
       control: { type: 'select', options: ['large', 'small'] },
     },
     small: {
@@ -33,13 +29,6 @@ import TabPanel from './TabPanel.vue';
         type: { summary: 'Boolean' },
       },
       description: `(optional) DEPRECATED - size should replace small`,
-      control: { type: null },
-    },
-    preselected: {
-      table: {
-        disable: true,
-      },
-      description: '',
       control: { type: null },
     },
   }}

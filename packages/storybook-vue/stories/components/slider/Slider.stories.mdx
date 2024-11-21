@@ -18,6 +18,15 @@ import { action } from '@storybook/addon-actions';
     styles: {
       control: { disable: true },
     },
+    customColor :{
+      description: ' DEPRECATED - (optional) slider custom color',
+    },
+    trackSmall :{
+      description: ' DEPRECATED - (optional) smaller track',
+    },
+    thumbLarge :{
+      description: ' DEPRECATED - (optional) larger thumb ',
+    }
   }}
 />
 
@@ -45,6 +54,10 @@ export const Template = (args, { argTypes }) => ({
       :slider-id="sliderId"
       :helper-text="helperText"
       :platform="platform"
+      :custom-color="customColor"
+      :track-small="trackSmall"
+      :thumb-large="thumbLarge"
+      :inner-aria-value-text="innerAriaValueText"
       @scale-change="handleScaleChange"
       @scale-input="handleScaleInput"
       >
