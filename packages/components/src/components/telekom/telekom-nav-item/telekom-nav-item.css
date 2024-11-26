@@ -168,14 +168,14 @@
 }
 
 .scale-telekom-nav-list[variant='main-nav']
-  > .scale-telekom-nav-item[active]
+  > .scale-telekom-nav-item[active]:not([active='false'])
   > :where(a, button),
 .scale-telekom-nav-list[variant='main-nav']
   > scale-menu-flyout
-  > .scale-telekom-nav-item[active]
+  > .scale-telekom-nav-item[active]:not([active='false'])
   > :where(a, button),
 .scale-telekom-nav-list[variant='main-nav']
-  > .scale-telekom-nav-item[active]
+  > .scale-telekom-nav-item[active]:not([active='false'])
   > :where(a, button) {
   color: var(--telekom-color-text-and-icon-primary-standard);
 }
@@ -255,14 +255,14 @@
 }
 
 .scale-telekom-nav-list[variant='main-nav']
-  > .scale-telekom-nav-item[active]
+  > .scale-telekom-nav-item[active]:not([active='false'])
   > :where(a, button):after,
 .scale-telekom-nav-list[variant='functions']
-  > .scale-telekom-nav-item[active]
+  > .scale-telekom-nav-item[active]:not([active='false'])
   > :where(a, button):after,
 .scale-telekom-nav-list[variant='main-nav']
   > scale-menu-flyout
-  > .scale-telekom-nav-item[active]
+  > .scale-telekom-nav-item[active]:not([active='false'])
   > :where(a, button):after {
   content: '';
   height: var(--telekom-spacing-composition-space-03);
@@ -277,14 +277,14 @@
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .scale-telekom-nav-list[variant='main-nav']
-    > .scale-telekom-nav-item[active]
+    > .scale-telekom-nav-item[active]:not([active='false'])
     > :where(a, button),
   .scale-telekom-nav-list[variant='functions']
-    > .scale-telekom-nav-item[active]
+    > .scale-telekom-nav-item[active]:not([active='false'])
     > :where(a, button),
   .scale-telekom-nav-list[variant='main-nav']
     > scale-menu-flyout
-    > .scale-telekom-nav-item[active]
+    > .scale-telekom-nav-item[active]:not([active='false'])
     > :where(a, button) {
     border-bottom: 2px solid hsl(0, 0%, 100%);
   }
