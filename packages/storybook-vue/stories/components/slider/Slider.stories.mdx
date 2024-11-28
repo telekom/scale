@@ -14,19 +14,75 @@ import { action } from '@storybook/addon-actions';
   argTypes={{
     platform: {
       control: { type: 'text' },
+      description: '(optional) adapt styles for a specific platform. Ideally done via a global `data-platform` attribute (e.g. data-platform="ios" on `body`) but browser support is not yet sufficient.',
     },
     styles: {
       control: { disable: true },
+      description: '(optional) Injected CSS styles ',
     },
     customColor :{
-      description: ' DEPRECATED - (optional) slider custom color',
+      description: ' <span style="color:red">**[DEPRECATED]**</span> (optional) slider custom color<br/><br/>',
     },
     trackSmall :{
-      description: ' DEPRECATED - (optional) smaller track',
+      description: ' <span style="color:red">**[DEPRECATED]**</span> (optional) smaller track<br/><br/>',
     },
     thumbLarge :{
-      description: ' DEPRECATED - (optional) larger thumb ',
-    }
+      description: ' <span style="color:red">**[DEPRECATED]**</span> (optional) larger thumb<br/><br/> ',
+    },
+    decimals :{
+      description: ' (optional) number of decimal places  ',
+    },
+    innerAriaValueText :{
+      description: ' (optional) Aria label for range slider',
+    },
+    label :{
+      description: ' (optional) slider label',
+    },
+    max :{
+      description: ' (optional) the maximal value of the slider',
+    },
+    min :{
+      description: ' (optional) he minimal value of the slider',
+    },
+    name :{
+      description: ' (optional) the name of the slider',
+    },
+    range :{
+      description: ' (optional) multi-thumb',
+    },
+    showStepMarks :{
+      description: ' (optional) show a mark for each step',
+    },
+    showValue :{
+      description: ' (optional) slider display value',
+    },
+    sliderId :{
+      description: ' (optional) Slider id',
+    },
+    step :{
+      description: ' (optional) the step size to increase or decrease when dragging slider',
+    },
+    unit :{
+      description: ' (optional) slider value unit',
+    },
+    unitPosition :{
+      description: ' (optional) unit position',
+    },
+    helperText :{
+      description: ' (optional) helper text',
+    },
+    disabled :{
+      description: ' (optional) disabled',
+    },
+    value :{
+      description: ' (optional) the value of the slider',
+    },
+    valueTo :{
+      description: ' (optional) when `range` is true, the "from" value',
+    },
+    valueFrom :{
+      description: ' (optional) when `range` is true, the "to" value',
+    },
   }}
 />
 

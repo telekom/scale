@@ -39,6 +39,7 @@
       :focusable="focusable"
       :decorative="decorative"
       :accessibility-title="accessibilityTitle"
+      :styles="styles"
     />
   </div>
 </template>
@@ -54,6 +55,7 @@ export default {
     focusable: { type: Boolean, default: false },
     decorative: { type: Boolean, default: false },
     accessibilityTitle: { type: String },
+    styles: { type: String }
   }
 }
 </script>

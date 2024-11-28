@@ -34,7 +34,7 @@ export default {
     invalid: { type: Boolean },
     disabled: { type: Boolean },
     size: { type: String },
-    value: { type: String },
+    value: { type: 'absolute' | 'fixed' , default: 'absolute' },
     variant: { type: String },
     comboboxId: { type: String },
     hideLabelVisually: { type: Boolean, default: false },

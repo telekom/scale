@@ -11,9 +11,9 @@ import ScaleSidebarNavItem from './SidebarNavItem.vue';
     'scale-sidebar-nav-item': ScaleSidebarNavItem,
   }}
   argTypes={{
-    styles: {
-      control: { disable: true },
-    },
+    collapsible: { description: "Set to `true` to make the sidebar toggleable (useful for small screens)"},
+    collapsibleMediaQuery: { description: "Automatically set `collapsible` based on this media query"},
+    collapsibleLabel: { description: "Label for toggle button"},
   }}
 />
 
