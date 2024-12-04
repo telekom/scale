@@ -230,9 +230,12 @@ export class DatePicker {
    */
   @Watch('value')
   onValueChange() {
-    this.hasValue = this.value != null && this.value !== '';
-    // @ts-ignore
-    this.duetInput.querySelector('.duet-date__input').value = this.value;
+    this.hasValue = this.value !== null && this.value !== '';
+    const input = this.duetInput.querySelector('.duet-date__input');
+    if (input) {
+      // @ts-ignore
+      input.value = this.value;
+    }
   }
 
   /**
