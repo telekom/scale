@@ -20,6 +20,10 @@ export default {
     helperText: String,
     platform: { type: 'ios' | 'android' },
     styles: { type: String },
+    customColor: { type: String },
+    trackSmall: { type: Boolean },
+    thumbLarge: { type: Boolean },
+    innerAriaValueText: { type: '$from to $to'}
   },
   render() {
     return this.$slots.default;

@@ -12,6 +12,7 @@ export default {
     inputId: { type: String },
     styles: { type: String },
     ariaDetailsId: { type: String },
+    status: { type: String , default: 'COMMENT: DEPRECATED - invalid should replace status'}
   },
   methods: {
     fireEvents() {

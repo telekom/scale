@@ -13,7 +13,11 @@ import { action } from '@storybook/addon-actions';
   title="Components/Radio Button Group"
   component={ScaleRadioButtonGroup}
   subcomponents={{ 'Radio Button': ScaleRadioButton }}
-  argTypes={{}}
+  argTypes={{
+    status: {
+      description: 'DEPRECATED - invalid should replace status'
+    }
+  }}
 />
 
 export const Template = (args, context) => ({
@@ -39,6 +43,7 @@ export const Template = (args, context) => ({
       :label="label"
       :invalid="invalid"
       :helper-text="helperText"
+      :status="status"
       @scale-change="emitChange"
     >
       <scale-radio-button
@@ -52,6 +57,7 @@ export const Template = (args, context) => ({
         :invalid="itemProps[index]?.invalid"
         :helper-text="itemProps[index]?.helperText"
         :disabled="itemProps[index]?.disabled"
+        :status="status"
       ></scale-radio-button>
     </scale-radio-button-group>
   `,
@@ -327,7 +333,7 @@ scale-radio-button {
         0: {
           disabled: true,
         },
-      },
+      }
     }}
   >
     {Template.bind({})}

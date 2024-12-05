@@ -27,6 +27,14 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       description: `(optional) Freeze header row from scrolling`,
       control: { type: null },
     },
+    visible: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: true },
+      },
+      description: `(optional) Set to false to hide table, used for nested tables to re-render upon toggle`,
+      control: { type: null },
+    },
     heading: {
       table: {
         type: { summary: 'string' },

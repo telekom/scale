@@ -8,6 +8,9 @@
     :helper-text="helperText"
     :full-width="fullWidth"
     :styles="styles"
+    :selected-index="selectedIndex"
+    :aria-label-translation="ariaLabelTranslation"
+    :longest-button-width="longestButtonWidth"
     @scaleChange="scaleChange"
   >
     <slot></slot>
@@ -26,6 +29,9 @@ export default {
     helperText: { type: String },
     fullWidth: { type: Boolean, default: false },
     styles: { type: String },
+    selectedIndex: { type: Number },
+    ariaLabelTranslation: { type: `segment button with $slottedSegments` },
+    longestButtonWidth: { type: String },
   },
   methods: {
     scaleChange($event) {

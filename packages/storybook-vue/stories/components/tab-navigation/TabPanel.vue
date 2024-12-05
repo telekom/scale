@@ -3,15 +3,9 @@
     name: 'Tab Panel',
     props: {
         styles: { type: String },
-        tabbable: { type: Boolean, default: 'true',
-          argTypes:{
-            table: {
-              type: { summary: 'string' },
-            },
-            description: `(optional) Injected styles`,
-            control: { type: null },
-          },
-        },
-      }
+        tabbablePanel: { type: Boolean, default: 'true'},
+        size: { type: 'small' | 'large' , default: 'COMMENT: DEPRECATED - no more size difference ' },
+        small: { type: Boolean , default: 'COMMENT: DEPRECATED - no more size difference ' },
+    }
   };
 </script>

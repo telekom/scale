@@ -5,6 +5,7 @@ export default {
     helperText: { type: String },
     label: { type: String },
     invalid: { type: Boolean },
+    status: { type: String }, 
   },
   render() {
     return this.$slots.default;

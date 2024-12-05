@@ -13,6 +13,26 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
   argTypes={{}}
 />
 
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleCheckboxGroup },
+  props: ScaleCheckboxGroup.props,
+  template: `
+    <scale-checkbox-group
+      :name="name"
+      :label="label"
+      :helper-text="helperText"
+      :aria-label-checkbox-group="ariaLabelCheckboxGroup"
+      :invalid="invalid"
+      :select-text="selectText"
+      :unselect-text="unselectText"
+      :value="value"
+      :input-id="inputId"
+      :styles="styles"
+      :status="status"
+    ></scale-checkbox-group>
+  `,
+});
+
 <div
   style={{
     display: 'inline-flex',
@@ -28,7 +48,9 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
 ## Standard
 
 <Canvas withSource="none">
-  <Story name="Standard" args={{}}>
+  <Story 
+    name="Standard" 
+    args={{}}>
     {() => ({
       template: `
         <scale-checkbox-group label="Group Label" name="group" value="">

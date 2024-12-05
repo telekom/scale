@@ -54,11 +54,8 @@
 export default {
   props: {
     styles: { type: String },
-    disabled: { type: Boolean, default: false },
-    preselected: { type: Boolean, default: false },
-    withIcon: { type: Boolean, default: true },
-    size: { type: String, default: 'small' },
-    small: { type: Boolean, default: false },
+    small: { type: Boolean, default: false},
+    size: { type: 'small' | 'large' , default: 'small' },
   },
 };
 </script>

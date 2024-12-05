@@ -6,6 +6,7 @@
     :input-id="inputId"
     :checked="checked"
     :size="size"
+    :styles="styles"
     @scaleChange="scaleChange"
     style="--color-on: blue"
   >
@@ -23,6 +24,7 @@ export default {
     label: String,
     size: String,
     name: String,
+    styles: String,
   },
   methods: {
     scaleChange($event) {

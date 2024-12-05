@@ -41,7 +41,7 @@
   <script>
   export default {
     props: {
-        type: { type: String, default: 'standard'}
+        type: { type: 'standard' | 'minimal' , default: 'standard'}
     }
   };
   </script>

@@ -9,6 +9,10 @@
     :percentage="percentage"
     :percentageStart="percentageStart"
     :styles="styles"
+    :busy="busy"
+    :icon="icon"
+    :progress-bar-id="progressBarId"
+    :mute="mute"
   >
   </scale-progress-bar>
 </template>
@@ -24,7 +28,11 @@ export default {
     styles: String,
     showStatus: Boolean,
     percentage: Number,
-    percentageStart: {type: Number, default: 0} 
+    percentageStart: {type: Number, default: 0},
+    busy: Boolean,
+    icon: String,
+    progressBarId: String,
+    mute: Boolean,
   },
 };
 </script>

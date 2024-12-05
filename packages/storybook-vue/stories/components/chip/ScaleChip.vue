@@ -7,6 +7,8 @@
     :aria-role-title="ariaRoleTitle"
     :disabled="disabled"
     :styles="styles"
+    :label="label"
+    :dismiss-text="dismissText"
     @scaleChange="scaleChange"
     @scaleClose="scaleClose"
   >
@@ -26,6 +28,8 @@ export default {
     styles: { type: 'switch' | 'radio' | 'option' | 'menuitemreadio' | 'menuitemcheckbox' | 'checkbox', default: 'switch'},
     ariaRoleTitle: { type: String },
     ariaCheckedState: { type: Boolean },
+    label: { type: String }, 
+    dismissText: { type: String },
   },
   methods: {
     scaleChange($event) {

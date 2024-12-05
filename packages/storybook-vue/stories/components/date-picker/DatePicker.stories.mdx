@@ -19,6 +19,12 @@ import { action } from '@storybook/addon-actions';
       description: `(optional) DEPRECATED - css overwrite should replace size`,
       control: { type: null },
     },
+    popupTitle: {
+      description: 'DEPRECATED - in v3 in favor of localization.calendarHeading'
+    },
+    status: {
+      description: 'DEPRECATED - invalid should replace status'
+    },
   }}
 />
 
@@ -45,6 +51,9 @@ export const Template = (args, { argTypes }) => ({
             :helper-text="helperText"
             :invalid="invalid"
             :placeholder="placeholder"
+            :inner-role="innerRole"
+            :status="status"
+            :variant="variant"
             @scaleChange="scaleChange"
             @scale-change="scale-change"
             @scaleFocus="scaleFocus"

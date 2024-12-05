@@ -15,7 +15,11 @@ import ScaleProgressBar from './ScaleProgressBar.vue';
       sort: 'alpha'
     }
   }}
-  argTypes={{}}
+  argTypes={{
+    customColor :{
+      description: ' DEPRECATED - (optional) Progress bar customColor'
+    }
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
@@ -34,6 +38,10 @@ export const Template = (args, { argTypes }) => ({
         :percentageStart="percentageStart"
         :percentage="percentage"
         :styles="styles"
+        :busy="busy"
+        :icon="icon"
+        :progress-bar-id="progressBarId"
+        :mute="mute"
       >
       </scale-progress-bar>
   `,

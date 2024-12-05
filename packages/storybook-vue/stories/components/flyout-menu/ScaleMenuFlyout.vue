@@ -11,6 +11,7 @@
       closeOnSelect: { type: Boolean, default: true },
       direction: { type: String, default: 'bottom-right' },
       styles: { type: String },
+      triggerHasPopup: { type: Boolean, default: true}
     },
     methods: {
       emit() {

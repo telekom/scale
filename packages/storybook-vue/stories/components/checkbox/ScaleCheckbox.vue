@@ -11,6 +11,9 @@
     :input-id="inputId"
     :required="required"
     :aria-label-checkbox="ariaLabelCheckbox"
+    :hide-label="hideLabel"
+    :status="status"
+    :styles="styles"
     @scaleChange="scaleChange"
   >
   </scale-checkbox>
@@ -33,6 +36,9 @@ export default {
     required: { type: Boolean },
     ariaLabelCheckbox: { type: String },
     ariaDetailsId: { type: String },
+    hideLabel: { type: Boolean},
+    status: { type: String },
+    styles: { type: String },
   },
   methods: {
     scaleChange($event) {

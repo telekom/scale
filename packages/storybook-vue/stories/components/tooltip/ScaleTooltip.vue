@@ -8,6 +8,8 @@
       :opened="opened"
       :trigger="trigger"
       :flip="flip"
+      :arrow-offset="arrowOffset"
+      :arrow-padding="arrowPadding"
     >
       <slot name="content"></slot>
       <scale-button :disabled="disabled">Hover me</scale-button>
@@ -25,6 +27,8 @@ export default {
     opened: { type: Boolean },
     trigger: { type: String },
     flip: { type: Boolean },
+    arrowOffset: { type: Number },
+    arrowPadding: { type: Number },
     styles: String,
   },
   methods: {
