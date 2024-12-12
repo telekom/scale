@@ -201,6 +201,12 @@ export class Button {
       this.disabled && 'disabled'
     );
 
+    if (!this.disabled) {
+      this.hostElement.removeAttribute('disabled');
+    } else {
+      this.hostElement.setAttribute('disabled', 'true');
+    }
+
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
