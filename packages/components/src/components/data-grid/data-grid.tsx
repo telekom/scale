@@ -380,7 +380,7 @@ export class DataGrid {
     let maxLength = 0;
     let longestContent;
     rows.forEach((row) => {
-      const length = row[columnIndex].toString().length;
+      const length = row[columnIndex]?.toString()?.length || 0;
       if (length > maxLength) {
         longestContent = row[columnIndex];
         maxLength = length;
