@@ -40,7 +40,7 @@ export class Button {
   /** (optional) Button variant */
   @Prop() variant?: string = 'primary';
   /** (optional) If `true`, the button is disabled */
-  @Prop() disabled?: boolean = false;
+  @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) Button type */
   @Prop() type?: 'reset' | 'submit' | 'button';
   /** (optional) The name of the button, submitted as a pair with the button's `value` as part of the form data */
@@ -200,12 +200,6 @@ export class Button {
       !this.iconOnly && this.iconPosition,
       this.disabled && 'disabled'
     );
-
-    if (!this.disabled) {
-      this.hostElement.removeAttribute('disabled');
-    } else {
-      this.hostElement.setAttribute('disabled', 'true');
-    }
 
     return (
       <Host>
