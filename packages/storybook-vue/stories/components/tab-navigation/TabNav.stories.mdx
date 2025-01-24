@@ -22,6 +22,10 @@ import TabPanel from './TabPanel.vue';
       control: { type: null },
     },
     size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) size`,
       control: { type: 'select', options: ['large', 'small'] },
     },
     small: {
@@ -36,13 +40,6 @@ import TabPanel from './TabPanel.vue';
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleTabNav },
-    preselected: {
-      table: {
-        disable: true,
-      },
-      description: '',
-      control: { type: null },
-    },
   props: ScaleTabNav.props,
   template: `
     <scale-tab-nav :disabled="disabled ? true : false" :preselected="preselected ? true : false" :size="size" :with-icon="withIcon"></scale-tab-nav>

@@ -117,7 +117,7 @@ Du kannst ganz einfach die gleichen Ergebnisse erzielen:
 ```html
 <scale-text-field
   :value="example"
-  @scaleChange="example = $event.target.value"
+  @scale-change="example = $event.target.value"
 ></scale-text-field>
 ```
 

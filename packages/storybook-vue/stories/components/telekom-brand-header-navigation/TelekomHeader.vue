@@ -10,7 +10,6 @@
     :meta-nav-external-aria-label="metaNavExternalAriaLabel"
     :lang-switcher-aria-label="langSwitcherAriaLabel"
     :main-nav-aria-label="mainNavAriaLabel"      
-    :type="type"
   >
     <slot name="logo"></slot>
     <slot name="meta-nav-external"></slot>
@@ -34,7 +33,6 @@ export default {
     metaNavExternalAriaLabel: String,
     langSwitcherAriaLabel: String,
     mainNavAriaLabel: String,   
-    type: String, 
   },
 };
 </script>
