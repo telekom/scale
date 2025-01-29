@@ -44,6 +44,7 @@ export default {
     transparent: { type: Boolean }, 
     ariaLabelSelected: { type: String },
     hcmLabelDisabled: { type: String },
+    value: { type: String},
   },
   methods: {
     'scale-change'($event) {
