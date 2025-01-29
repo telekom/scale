@@ -2,7 +2,6 @@
   <scale-modal
     :heading="heading"
     :size="size"
-    :variant="size"
     :opened="opened"
     :duration="duration"
     :close-button-label="closeButtonLabel"
@@ -30,7 +29,6 @@ export default {
   props: {
     heading: { type: String, default: 'Today is your lucky day' },
     size: String,
-    variant: String,
     opened: Boolean,
     duration: { type: Number, default: 200 },
     closeButtonLabel: String,

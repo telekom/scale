@@ -7,7 +7,23 @@ import { action } from '@storybook/addon-actions';
   title="Components/Dropdown Select"
   component={ScaleDropdownSelect}
   subcomponents={{ 'Dropdown Select Item': ScaleDropdownSelectItem }}
-  argTypes={{}}
+  argTypes={{
+    hideLabelVisually: {
+      description: "(optional) to hide the label."
+    },
+    ariaLabelSelected: {
+      description: "(optional) Screen reader text appended to the selected element."
+    },
+    hcmLabelDisabled: {
+      description: "(optional) Text displayed in high contrast mode only to indicate disabled state."
+    },
+    ariaDetailsId: {
+      description: "(optional) id or space separated list of ids of elements that provide or link to additional related information."
+    },
+    floatingStrategy: {
+      description: "see https://floating-ui.com/docs/computePosition#strategy "
+    },
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
@@ -38,6 +54,10 @@ export const Template = (args, { argTypes }) => ({
         :combobox-id="comboboxId"
         :hide-label-visually="hideLabelVisually"
         :floating-strategy="floatingStrategy"
+        :read-only="readOnly"
+        :transparent="transparent"
+        :aria-label-selected="ariaLabelSelected"
+        :hcm-label-disabled="hcmLabelDisabled"
         @scaleChange="['scale-change']"
         @scaleFocus="['scale-focus']"
         @scaleBlur="['scale-blur']"

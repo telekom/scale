@@ -9,6 +9,7 @@
     :logo-title="logoTitle"
     :logo-hide-title="logoHideTitle"
     :logo-aria-described-by="logoAriaDescribedBy"
+    :logo-aria-hidden="logoAriaHidden"
     :accessibility-title="accessibilityTitle"
     :focusable="focusable"
     :scroll-into-view-on-focus="scrollIntoViewOnFocus"
@@ -42,8 +43,10 @@ export default {
     href: { type: String },
     styles: { type: String },
     logoAriaDescribedBy: { type: String },
+    logoAriaHidden: { type: Boolean },
     logoTitle: { type: String },
     logoHideTitle: { type: Boolean },
+    accessibilityTitle: { type: String },
   },
 };
 </script>
