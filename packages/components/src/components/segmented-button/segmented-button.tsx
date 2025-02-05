@@ -99,6 +99,15 @@ export class SegmentedButton {
     this.setState(tempState);
   }
 
+  @Listen('scaleSelectionChanged')
+  selectionChangedHandler() {
+    this.selectedIndex = this.getSelectedIndex();
+    if (typeof(this.selectedIndex) !== 'number') { return }
+    this.getAllSegments().forEach((segment) => {
+      segment.setAttribute('selected-index', this.selectedIndex.toString());
+    })
+  }
+
   @Watch('disabled')
   @Watch('size')
   @Watch('selectedIndex')

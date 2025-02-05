@@ -18,6 +18,7 @@ import {
   Event,
   EventEmitter,
   Method,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -72,6 +73,8 @@ export class Segment {
     id: string;
     selected: boolean;
   }>;
+  /** Emitted when selection has been changed. */
+  @Event({ eventName: 'scaleSelectionChanged' }) scaleSelectionChanged!: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
     id: string;
@@ -79,6 +82,11 @@ export class Segment {
   }>;
 
   private focusableElement: HTMLElement;
+
+  @Watch('selected')
+  selectionChanged() {
+    emitEvent(this, 'scaleSelectionChanged');
+  }
 
   @Method()
   async setFocus() {
