@@ -66,15 +66,13 @@ export class Segment {
   /** (optional) position within group */
   @Prop({ mutable: true }) iconOnly?: boolean;
   /** (optional) the index of the currently selected segment in the segmented-button */
-  @Prop({ mutable: true }) selectedIndex?: string;
+  @Prop({ mutable: true }) selectedIndex?: number;
 
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
     selected: boolean;
   }>;
-  /** Emitted when selection has been changed. */
-  @Event({ eventName: 'scaleSelectionChanged' }) scaleSelectionChanged!: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
     id: string;
@@ -85,7 +83,13 @@ export class Segment {
 
   @Watch('selected')
   selectionChanged() {
-    emitEvent(this, 'scaleSelectionChanged');
+    if (this.selectedIndex !== -1 && !this.selected) {
+      return;
+    }
+    emitEvent(this, 'scaleClick', {
+      id: this.segmentId,
+      selected: this.selected,
+    });
   }
 
   @Method()
@@ -158,15 +162,11 @@ export class Segment {
   }
 
   handleClick = (event: MouseEvent) => {
-    if (parseInt(this.selectedIndex, 10) + 1 === this.position) {
+    if (this.selectedIndex === this.position) {
       return;
     }
     event.preventDefault();
     this.selected = !this.selected;
-    emitEvent(this, 'scaleClick', {
-      id: this.segmentId,
-      selected: this.selected,
-    });
   };
 
   render() {
