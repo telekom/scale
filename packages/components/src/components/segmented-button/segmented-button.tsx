@@ -15,7 +15,6 @@ import {
   h,
   Host,
   Element,
-  State,
   Listen,
   Event,
   EventEmitter,
@@ -45,8 +44,6 @@ export class SegmentedButton {
   slottedSegments = 0;
 
   @Element() hostElement: HTMLElement;
-  /** state */
-  @State() status: SegmentStatus[] = [];
   /** (optional) The size of the button */
   @Prop() size?: 'small' | 'medium' | 'large' = 'small';
   /** (optional) Allow more than one button to be selected */
@@ -79,9 +76,6 @@ export class SegmentedButton {
   showHelperText = false;
   @Listen('scaleClick')
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
-    if (this.status.length === 0) {
-      return;
-    }
     let tempState = this.getAllSegments().map((segment) => {
       return {
         id: segment.getAttribute('segment-id') || segment.segmentId,
@@ -158,15 +152,11 @@ export class SegmentedButton {
   }
 
   componentWillUpdate() {
-    this.selectedIndex = this.getSelectedIndex();
     this.showHelperText = this.shouldShowHelperText();
   }
   shouldShowHelperText() {
     let showHelperText = false;
-    if (
-      this.invalid &&
-      this.status.filter((e) => e.selected === true).length <= 0
-    ) {
+    if (this.invalid && this.selectedIndex < 0) {
       showHelperText = true;
     }
     return showHelperText;
@@ -246,9 +236,9 @@ export class SegmentedButton {
         tempState[i].selected ? 'true' : 'false'
       );
     });
-    this.status = tempState;
+    this.selectedIndex = this.getSelectedIndex();
     if (!isInitial) {
-      emitEvent(this, 'scaleChange', { status: this.status, segments });
+      emitEvent(this, 'scaleChange', { segments });
     }
   }
 
