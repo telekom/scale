@@ -134,7 +134,6 @@ export class SegmentedButton {
       );
     });
     this.setState(tempState, true);
-    this.selectedIndex = this.getSelectedIndex();
     this.showHelperText = this.shouldShowHelperText();
   }
   componentDidLoad() {
