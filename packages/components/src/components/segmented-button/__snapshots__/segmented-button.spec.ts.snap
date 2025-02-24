@@ -7,10 +7,10 @@ exports[`SegmentedButton should match selected button snapshot 1`] = `
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-segment adjacent-siblings="right" aria-description-translation="$position $selected" position="0" selected="true" selected-index="-2" size="small">
+  <scale-segment adjacent-siblings="right" aria-description-translation="$position $selected" position="0" selected="true" selected-index="0" size="small">
     Label
   </scale-segment>
-  <scale-segment adjacent-siblings="left" aria-description-translation="$position $selected" position="1" selected="true" selected-index="-2" size="small">
+  <scale-segment adjacent-siblings="left" aria-description-translation="$position $selected" position="1" selected="true" selected-index="0" size="small">
     Label
   </scale-segment>
 </scale-segmented-button>
