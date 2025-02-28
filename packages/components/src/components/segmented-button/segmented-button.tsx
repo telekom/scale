@@ -78,9 +78,8 @@ export class SegmentedButton {
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
     let tempState = this.getAllSegments().map((segment) => {
       return {
-        id: segment.getAttribute('segment-id') || segment.segmentId,
-        selected:
-          segment.hasAttribute('selected') && segment.selected ? true : false,
+        id: segment.segmentId,
+        selected: segment.selected,
       };
     });
     if (!this.multiSelect) {
@@ -93,8 +92,10 @@ export class SegmentedButton {
           ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
         );
       }
+      this.setState(tempState, ev.detail.selected);
+    } else {
+      this.setState(tempState);
     }
-    this.setState(tempState);
   }
 
   @Watch('disabled')
@@ -109,10 +110,10 @@ export class SegmentedButton {
    */
   propagatePropsToChildren() {
     this.getAllSegments().forEach((segment) => {
-      segment.setAttribute('size', this.size);
-      segment.setAttribute('selected-index', this.selectedIndex.toString());
+      segment.size = this.size;
+      segment.selectedIndex = this.selectedIndex;
       if (this.disabled) {
-        segment.setAttribute('disabled', true && 'disabled');
+        segment.disabled = true;
       }
     });
   }
@@ -123,17 +124,13 @@ export class SegmentedButton {
     this.slottedSegments = segments.length;
     segments.forEach((segment, i) => {
       tempState.push({
-        id: segment.getAttribute('segment-id') || segment.segmentId,
-        selected:
-          segment.hasAttribute('selected') && segment.selected ? true : false,
+        id: segment.segmentId,
+        selected: segment.selected,
       });
-      segment.setAttribute('position', `${i}`);
-      segment.setAttribute(
-        'aria-description-translation',
-        '$position $selected'
-      );
+      segment.position = i;
+      segment.ariaDescriptionTranslation = '$position $selected';
     });
-    this.setState(tempState, true);
+    this.setState(tempState, false);
     this.showHelperText = this.shouldShowHelperText();
   }
   componentDidLoad() {
@@ -176,7 +173,7 @@ export class SegmentedButton {
   }
 
   getAdjacentSiblings = (tempState, i) => {
-    let adjacentSiblings = '';
+    let adjacentSiblings = null;
     if (i !== 0 && tempState[i].selected && tempState[i - 1].selected) {
       adjacentSiblings = 'left';
     }
@@ -221,22 +218,16 @@ export class SegmentedButton {
     return tempWidth;
   }
 
-  setState(tempState: SegmentStatus[], isInitial: boolean = false) {
+  setState(tempState: SegmentStatus[], handleEvent: boolean = true) {
     const segments = Array.from(
       this.hostElement.querySelectorAll('scale-segment')
     );
     segments.forEach((segment, i) => {
-      segment.setAttribute(
-        'adjacent-siblings',
-        this.getAdjacentSiblings(tempState, i)
-      );
-      segment.setAttribute(
-        'selected',
-        tempState[i].selected ? 'true' : 'false'
-      );
+      segment.adjacentSiblings = this.getAdjacentSiblings(tempState, i);
+      segment.selected = tempState[i].selected;
     });
     this.selectedIndex = this.getSelectedIndex();
-    if (!isInitial) {
+    if (handleEvent) {
       emitEvent(this, 'scaleChange', { segments });
     }
   }

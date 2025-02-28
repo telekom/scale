@@ -83,9 +83,6 @@ export class Segment {
 
   @Watch('selected')
   selectionChanged() {
-    if (this.selectedIndex !== -1 && !this.selected) {
-      return;
-    }
     emitEvent(this, 'scaleClick', {
       id: this.segmentId,
       selected: this.selected,
