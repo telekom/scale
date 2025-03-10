@@ -11,17 +11,18 @@
 
 :host {
   /* not selected */
-  --background-color-selected: var(--telekom-color-ui-base);
+  --background-color-selected: var(--telekom-color-primary-standard);
   --button-radius: 6px;
   --padding-top-bottom: var(--telekom-spacing-composition-space-03);
   --height: 28px;
   --font: var(--telekom-text-style-caption-bold);
+  --background-disabled: var(--telekom-color-ui-disabled);
   --label-disabled: var(--telekom-color-text-and-icon-disabled);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --color: var(--telekom-color-text-and-icon-standard);
 
-  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+  --color-selected: var(--telekom-color-text-and-icon-white-standard);
 
   /* medium styles */
   --font-medium: var(--telekom-text-style-ui-bold);
@@ -126,6 +127,10 @@ button.segment--large .segment--mask {
 .segment--selected {
   background-color: var(--background-color-selected);
   box-shadow: var(--telekom-shadow-raised-standard);
+}
+
+.segment--selected.segment--disabled {
+  background-color: var(--background-disabled);
 }
 
 .segment--selected .segment--mask {
