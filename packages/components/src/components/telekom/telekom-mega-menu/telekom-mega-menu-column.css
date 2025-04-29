@@ -23,7 +23,7 @@
 
 [part~='base'] {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 [part~='icon'] {
