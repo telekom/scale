@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print"></style>
+  </head>
+
+  <body>
+    <scale-telekom-header>
+      <scale-telekom-nav-list
+        variant="functions"
+        slot="functions"
+        alignment="right"
+      >
+        <scale-telekom-nav-item class="burger-item">
+          <button>
+            <scale-badge>
+              <scale-icon-action-menu></scale-icon-action-menu>
+            </scale-badge>
+          </button>
+          <scale-telekom-nav-flyout class="mobile-nav-flyout">
+            <!-- the mobile navigation structure goes here -->
+            <scale-telekom-mobile-flyout-canvas
+              app-name="Standard Version"
+              app-name-link="/foo"
+            >
+              <scale-telekom-mobile-menu
+                slot="mobile-main-nav"
+                app-name-link="/bar"
+              >
+                <scale-telekom-mobile-menu-item active>
+                  <a href="#">Topic One</a>
+                  <scale-telekom-mobile-menu-item active slot="children">
+                    <a href="#">Second Level</a>
+                    <scale-telekom-mobile-menu-item slot="children">
+                      <a href="#">Third Level</a>
+                      <scale-telekom-mobile-menu-item slot="children">
+                        <a href="#">Fourth Level</a>
+                      </scale-telekom-mobile-menu-item>
+                    </scale-telekom-mobile-menu-item>
+                  </scale-telekom-mobile-menu-item>
+                </scale-telekom-mobile-menu-item>
+              </scale-telekom-mobile-menu>
+            </scale-telekom-mobile-flyout-canvas>
+          </scale-telekom-nav-flyout>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
+      <!-- main navigation (desktop) -->
+      <scale-telekom-nav-list variant="main-nav" slot="main-nav">
+        <scale-telekom-nav-item active>
+          <a href="#">Topic One</a>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
+    </scale-telekom-header>
+  </body>
+</html>
