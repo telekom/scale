@@ -6,7 +6,7 @@ on:
 
 jobs:
   prettier:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
@@ -39,7 +39,7 @@ jobs:
         run: |
           sh scripts/porcelain.sh
   tslint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
@@ -68,7 +68,7 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components lint
   unit-tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
@@ -97,7 +97,7 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components test --spec --max-workers=8
   e2e-tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
@@ -131,7 +131,7 @@ jobs:
           yarn workspace @telekom/scale-components test --e2e --max-workers=8 --debug
 
   visual-tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -204,7 +204,7 @@ jobs:
           branch: ${{ steps.vars.outputs.branch-name }}
 
   uncommitted-changes:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
