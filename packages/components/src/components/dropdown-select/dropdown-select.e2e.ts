@@ -1,10 +1,8 @@
 import { E2EElement, E2EPage, newE2EPage } from '@stencil/core/testing';
-import { DropdownSelect } from './dropdown-select';
 
 describe('DropdownSelect', function () {
   it('should be able to change it`s value via keyboard nav', async () => {
     const page = await newE2EPage({
-      components: [DropdownSelect],
       html: `
       <scale-dropdown-select>
         <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
@@ -31,7 +29,6 @@ describe('DropdownSelect', function () {
   });
   it('should be able to change it`s value via typing', async () => {
     const page = await newE2EPage({
-      components: [DropdownSelect],
       html: `
       <scale-dropdown-select>
         <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
@@ -67,7 +64,6 @@ describe('DropdownSelect', function () {
 
     beforeEach(async () => {
       page = await newE2EPage({
-        components: [DropdownSelect],
         html: `
         <scale-dropdown-select>
           <scale-dropdown-select-item value="adam">Adam</scale-dropdown-select-item>
@@ -119,7 +115,6 @@ describe('DropdownSelect', function () {
 
     beforeEach(async () => {
       page = await newE2EPage({
-        components: [DropdownSelect],
         html: `
         <scale-dropdown-select value="default">
           <scale-dropdown-select-item disabled value="adam">Adam</scale-dropdown-select-item>

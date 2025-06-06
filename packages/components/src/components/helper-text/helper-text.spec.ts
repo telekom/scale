@@ -13,11 +13,6 @@ import { newSpecPage } from '@stencil/core/testing';
 import { HelperText } from './helper-text';
 
 describe('Helper Text', () => {
-  let element;
-  beforeEach(async () => {
-    element = new HelperText();
-  });
-
   it('should render informational helper text with info icon if no variant is specified', async () => {
     const page = await newSpecPage({
       components: [HelperText],
