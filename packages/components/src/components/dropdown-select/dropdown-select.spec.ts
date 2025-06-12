@@ -64,10 +64,14 @@ describe('DropdownSelect', function () {
 
     const selectEl = page.doc.querySelector('scale-dropdown-select');
     selectEl.addEventListener('scale-change', changeSpy);
-    const comboboxEl = selectEl.shadowRoot.querySelector('[part="combobox"]') as HTMLElement;
+    const comboboxEl = selectEl.shadowRoot.querySelector(
+      '[part="combobox"]'
+    ) as HTMLElement;
     comboboxEl.scrollIntoView = function () {};
     comboboxEl.focus = function () {};
-    const optionsEls = selectEl.shadowRoot.querySelectorAll('[role="option"]') as NodeListOf<HTMLElement>;
+    const optionsEls = selectEl.shadowRoot.querySelectorAll(
+      '[role="option"]'
+    ) as NodeListOf<HTMLElement>;
 
     comboboxEl.click();
     optionsEls[2].click();
