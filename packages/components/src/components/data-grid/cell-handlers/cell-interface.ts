@@ -17,6 +17,8 @@ export interface Cell {
     resizable?: boolean;
     sortable?: boolean;
     sortBy?: 'number' | 'text' | 'date';
+    presort?: boolean;
+    presortDirection?: 'ascending' | 'descending';
     stretchWeight?: number;
     textAlign?: 'left' | 'center' | 'right';
     visible?: boolean;
@@ -30,5 +32,6 @@ export interface Cell {
     rowIndex,
     columnIndex,
     isAutoWidthCheck,
+    localization,
   }): HTMLElement;
 }

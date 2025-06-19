@@ -19,6 +19,9 @@
     :popup-title="popupTitle"
     :placeholder="placeholder"
     :styles="styles"
+    :inner-role="innerRole"
+    :status="status"
+    :variant="variant"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"
@@ -50,6 +53,10 @@ export default {
     styles: { type: String },
     placeholder: { type: String },
     size: { type: String },
+    ariaDetailsId: { type: String },
+    innerRole: { type: String },
+    status: { type: String },
+    variant: { type: 'informational' | 'warning' | 'danger' | 'success' | 'informational'},
   },
   methods: {
     scaleChange($event) {

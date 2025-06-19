@@ -178,6 +178,16 @@
   transition: var(--transition-icon);
 }
 
+[part='clear'] {
+  top: 50%;
+  right: var(--spacing-x);
+  position: absolute;
+  transform: translateY(-50%);
+  height: var(--height-icon);
+  color: var(--color-icon);
+  transition: var(--transition-icon);
+}
+
 [part~='disabled'] [part='icon'] {
   color: var(--color-disabled);
 }

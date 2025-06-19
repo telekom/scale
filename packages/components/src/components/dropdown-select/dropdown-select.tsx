@@ -7,8 +7,8 @@ import {
   State,
   Watch,
   Event,
-  type EventEmitter,
-  type VNode,
+  EventEmitter,
+  VNode,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -257,6 +257,10 @@ export class DropdownSelect {
   @Prop() ariaLabelSelected?: string = 'selected';
   /** (optional) Text displayed in high contrast mode only to indicate disabled state */
   @Prop() hcmLabelDisabled?: string = 'this field is disabled';
+  /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
+  @Prop() ariaDetailsId?: string;
+  @Prop() allowClear?: boolean = false;
+  /** (optional) clear button inside the dropdown, that clears all iputs and resets the dropdown */
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
@@ -270,7 +274,7 @@ export class DropdownSelect {
   @State() hasFocus: boolean = false;
 
   private comboEl: HTMLElement;
-  private listboxEl: HTMLElement;
+  private scrollContainer: HTMLElement;
   private listboxPadEl: HTMLElement;
   private hiddenInput: HTMLInputElement;
 
@@ -327,6 +331,9 @@ export class DropdownSelect {
   }
 
   updateInputHidden(value: string = this.value): void {
+    if (!this.hiddenInput) {
+      return;
+    }
     this.hiddenInput.value = value;
   }
 
@@ -346,10 +353,10 @@ export class DropdownSelect {
 
   bringIntoView(index) {
     const options: NodeListOf<HTMLElement> =
-      this.listboxEl.querySelectorAll('[role=option]');
+      this.scrollContainer.querySelectorAll('[role=option]');
 
-    if (hasOverflow(this.listboxEl)) {
-      keepInView(options[index], this.listboxEl);
+    if (hasOverflow(this.scrollContainer)) {
+      keepInView(options[index], this.scrollContainer);
     }
 
     if (!isInView(options[index])) {
@@ -490,7 +497,8 @@ export class DropdownSelect {
     const ValueElement = element.ItemElement;
     const hasEmptyValueElement = element.value === '';
     const helperTextId = `helper-message-${generateUniqueId()}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const describedBy = this.helperText ? helperTextId : this.ariaDetailsId;
+    const ariaDescribedByAttr = { 'aria-describedBy': describedBy };
 
     return (
       <Host>
@@ -505,6 +513,7 @@ export class DropdownSelect {
               aria-expanded={this.open ? 'true' : 'false'}
               aria-haspopup="listbox"
               aria-labelledby={`${this.comboboxId}-label`}
+              aria-details={this.ariaDetailsId}
               id={this.comboboxId}
               part="combobox"
               role="combobox"
@@ -521,7 +530,7 @@ export class DropdownSelect {
                     ).value,
                   }
                 : {})}
-              {...(this.helperText ? ariaDescribedByAttr : {})}
+              {...ariaDescribedByAttr}
               {...(this.invalid ? { 'aria-invalid': 'true' } : {})}
             >
               <span part="combobox-value">
@@ -530,13 +539,13 @@ export class DropdownSelect {
             </div>
             <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
               <div
+                ref={(el) => (this.scrollContainer = el)}
                 part="listbox-scroll-container"
                 onMouseDown={(e) => {
                   e.preventDefault();
                 }}
               >
                 <div
-                  ref={(el) => (this.listboxEl = el)}
                   part="listbox"
                   role="listbox"
                   id={`${this.comboboxId}-listbox`}
@@ -574,22 +583,28 @@ export class DropdownSelect {
                 </div>
               </div>
             </div>
-
-            <div part="icon">
-              {this.open ? (
-                <scale-icon-navigation-collapse-up
-                  decorative
-                  size={DEFAULT_ICON_SIZE}
-                />
-              ) : (
-                <scale-icon-navigation-collapse-down
-                  decorative
-                  size={DEFAULT_ICON_SIZE}
-                />
-              )}
-            </div>
+            {this.allowClear && this.value ? (
+              <scale-icon-action-close
+                accessibility-title="close"
+                part="clear"
+                onClick={this.handleClearClick}
+              ></scale-icon-action-close>
+            ) : (
+              <div part="icon">
+                {this.open ? (
+                  <scale-icon-navigation-collapse-up
+                    decorative
+                    size={DEFAULT_ICON_SIZE}
+                  />
+                ) : (
+                  <scale-icon-navigation-collapse-down
+                    decorative
+                    size={DEFAULT_ICON_SIZE}
+                  />
+                )}
+              </div>
+            )}
           </div>
-
           {this.helperText && (
             <scale-helper-text
               helperText={this.helperText}
@@ -631,4 +646,15 @@ export class DropdownSelect {
       disabled && `disabled`
     );
   }
+
+  private handleClearClick = (event: MouseEvent) => {
+    event.stopPropagation();
+    if (this.disabled || this.readonly) {
+      return;
+    }
+
+    this.value = '';
+    this.currentIndex = -1;
+    emitEvent(this, 'scaleChange', { value: this.value });
+  };
 }

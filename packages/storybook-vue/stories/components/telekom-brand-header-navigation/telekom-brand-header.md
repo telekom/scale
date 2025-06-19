@@ -126,4 +126,4 @@ This component is still in the beta phase. When testing it, keep in mind that it
 - [Sidebar Navigation](?path=/usage/components-sidebar-navigation--standard)
 - [Tab Navigation](?path=/usage/components-tab-navigation--text-icon)
 - [Accordion](?path=/usage/components-accordion--standard)
-- [Profile Menu](?path=/docs/components-telekom-profile-menu--logged-out)
+- [Profile Menu](?path=/docs/components-telekom-brand-header-navigation--profile-menu-logged-out)

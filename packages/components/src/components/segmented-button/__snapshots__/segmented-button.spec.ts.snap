@@ -3,14 +3,14 @@
 exports[`SegmentedButton should match selected button snapshot 1`] = `
 <scale-segmented-button>
   <mock:shadow-root>
-    <div aria-label="segment button with 2" class="segmented-button segmented-button--small" part="segmented-button small" role="group" style="grid-template-columns: repeat(2, 0px);">
+    <div aria-label="segment button with 2" class="segmented-button segmented-button--small" part="segmented-button small" role="group" style="grid-template-columns: repeat(2, auto);">
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-segment adjacent-siblings="right" aria-description-translation="$position $selected" position="1" selected="true" selected-index="-1" size="small">
+  <scale-segment selected="">
     Label
   </scale-segment>
-  <scale-segment adjacent-siblings="left" aria-description-translation="$position $selected" position="2" selected="true" selected-index="-1" size="small">
+  <scale-segment>
     Label
   </scale-segment>
 </scale-segmented-button>
@@ -19,20 +19,20 @@ exports[`SegmentedButton should match selected button snapshot 1`] = `
 exports[`SegmentedButton should match standard snapshot 1`] = `
 <scale-segmented-button>
   <mock:shadow-root>
-    <div aria-label="segment button with 4" class="segmented-button segmented-button--small" part="segmented-button small" role="group" style="grid-template-columns: repeat(4, 14px);">
+    <div aria-label="segment button with 4" class="segmented-button segmented-button--small" part="segmented-button small" role="group" style="grid-template-columns: repeat(4, auto);">
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-segment adjacent-siblings="" aria-description-translation="$position $selected" position="1" selected="false" selected-index="-1" size="small">
+  <scale-segment>
     Label
   </scale-segment>
-  <scale-segment adjacent-siblings="" aria-description-translation="$position $selected" position="2" selected="false" selected-index="-1" size="small">
+  <scale-segment>
     Label
   </scale-segment>
-  <scale-segment adjacent-siblings="" aria-description-translation="$position $selected" position="3" selected="false" selected-index="-1" size="small">
+  <scale-segment>
     Label
   </scale-segment>
-  <scale-segment adjacent-siblings="" aria-description-translation="$position $selected" position="4" selected="false" selected-index="-1" size="small">
+  <scale-segment>
     Label
   </scale-segment>
 </scale-segmented-button>

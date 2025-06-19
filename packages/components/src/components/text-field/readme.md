@@ -1,7 +1,5 @@
 # scale-text-field
 
-
-
 <!-- Auto Generated Below -->
 
 

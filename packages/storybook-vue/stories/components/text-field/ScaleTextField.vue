@@ -24,6 +24,10 @@
     :input-autocomplete="inputAutocomplete"
     :experimental-controlled="experimentalControlled"
     :hide-label-visually="hideLabelVisually"
+    :status="status"
+    :transparent="transparent"
+    :step="step"
+    :list="list"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
@@ -62,8 +66,12 @@ export default {
     inputAutofocus: { type: Boolean },
     inputAutocomplete: { type: String },
     experimentalControlled: { type: Boolean },
-    hideLabelVisually: {type: Boolean, default: false},
+    hideLabelVisually: { type: Boolean, default: false },
     styles: { type: String },
+    status: { type: String },
+    transparent: { type: Boolean },
+    step: { type: String, default: '1' },
+    list: { type: String },
   },
   methods: {
     scaleInput($event) {

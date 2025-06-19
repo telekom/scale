@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.155](https://github.com/amir-ba/scale/compare/v3.0.0-beta.154...v3.0.0-beta.155) (2024-11-26)
+
+
+### Bug Fixes
+
+* **drop-down:** fixes hidden input in dropdown-select with null check ([#2361](https://github.com/amir-ba/scale/issues/2361)) ([8a04a5e](https://github.com/amir-ba/scale/commit/8a04a5e8c0bb3b72a2fbb90822600f6b8feefc06))
+* **nav-item:** add null check for child element before setting role to menuitem ([#2369](https://github.com/amir-ba/scale/issues/2369)) ([5fd16f1](https://github.com/amir-ba/scale/commit/5fd16f1d9f3f5259c004ae6f155117150ee8a0a3))
+* **nav-item:** makes nav-itemcomponent respect the active=false  ([#2364](https://github.com/amir-ba/scale/issues/2364)) ([9a999fb](https://github.com/amir-ba/scale/commit/9a999fb298f481d7d94dd430434678021acb007c))
+
+
+
+
+
+
+# [3.0.0-beta.154](https://github.com/amir-ba/scale/compare/v3.0.0-beta.152...v3.0.0-beta.154) (2024-11-06)
+
+
+### Bug Fixes
+
+* **button:** Include name and value properties on temporary submit button ([#2351](https://github.com/amir-ba/scale/issues/2351)) ([e0ff157](https://github.com/amir-ba/scale/commit/e0ff15764128fecc0a643d14e1ee01f64ab67d0f))
+* **data-grid:** imporves pagination with 0 elements ([#2316](https://github.com/amir-ba/scale/issues/2316)) ([42a3b36](https://github.com/amir-ba/scale/commit/42a3b3699df5b361b63fc9c466461e2af61d67ed))
+* **nav-item:** hover underline on function slots ([#2260](https://github.com/amir-ba/scale/issues/2260)) ([6e8c380](https://github.com/amir-ba/scale/commit/6e8c38027a861babd28e8925dcc5db1c87a4b05d))
+* **segment:** improves loading of the component and solves nested elemnts sizing issue ([#2358](https://github.com/amir-ba/scale/issues/2358)) ([299be7d](https://github.com/amir-ba/scale/commit/299be7d00122ed34fcde07cff9e288e291e33318))
+* **tab-nav:** fixes preselect logic in tabs with disabled attribute ([#2320](https://github.com/amir-ba/scale/issues/2320)) ([bd30a6f](https://github.com/amir-ba/scale/commit/bd30a6f2a187976ae85234b5f526537f68b3ea80))
+* dropdown scroll fixed ([#2333](https://github.com/amir-ba/scale/issues/2333)) ([592c69d](https://github.com/amir-ba/scale/commit/592c69d00e4a50f7113973bc583dff19f1cc8979))
+
+
+### Features
+
+* **accordion:** allow collapsible to be individually expanded ([#2263](https://github.com/amir-ba/scale/issues/2263)) ([9b02151](https://github.com/amir-ba/scale/commit/9b021511c94e29e9644680afcb15236b96ab35b5))
+* **data-grid:** add scale-selection event and enhance editable text field ([#2362](https://github.com/amir-ba/scale/issues/2362)) ([eeaecaf](https://github.com/amir-ba/scale/commit/eeaecaf461f014fb57c4ad14e3f279640b777c5f))
+* aria-details added to all input types ([#2359](https://github.com/amir-ba/scale/issues/2359)) ([4c45650](https://github.com/amir-ba/scale/commit/4c45650e14eff01ef42525f08ba27c1c7b0f2109))
+* **data-grid:** added tooltip and scale-icon in data-grid action cell  ([#2308](https://github.com/amir-ba/scale/issues/2308)) ([30a0ce5](https://github.com/amir-ba/scale/commit/30a0ce5bdb8ca13d0c6a067894a0ee4aef6dd98b))
+* **data-grid:** adds presort to grid ([#2335](https://github.com/amir-ba/scale/issues/2335)) ([f657202](https://github.com/amir-ba/scale/commit/f6572021489ae07914dbbb6d31cb0aa2d20ea74c))
+
+
+
+
+
+
+# [3.0.0-beta.153](https://github.com/amir-ba/scale/compare/v3.0.0-beta.152...v3.0.0-beta.153) (2024-09-19)
+
+
+### Bug Fixes
+
+* dropdown scroll fixed ([#2327](https://github.com/scale/issues/2327)) ([6f326eb](https://github.com/telekom/scale/commit/6f326eb138eff93080d39b1c74d48d9393fd1684))
+* chip accessibility fix ([#2328](https://github.com/telekom/scale/issues/2328)) ([0b21978](https://github.com/telekom/scale/commit/0b21978bad9516d9958aa61e733a3f8348d11799))
+* checkbox and switch css fixes for high contrast mode ([#2300](https://github.com/scale/issues/2300)) ([318df56](https://github.com/telekom/scale/commit/318df5658a21b7eea44abe37eba1fc6bedfc243c))
+* ghost btn in storybook ([#2312](https://github.com/scale/issues/2312)) ([168f710](https://github.com/telekom/scale/commit/168f710fedae9df7f08decb79066b14bd7f73d1e))
+* update of event descriptions in storybook ([#2315](https://github.com/scale/issues/2315)) ([8681ed8](https://github.com/telekom/scale/commit/8681ed8d4f1cd08a756cf7e952e520df840c40b4))
+* aria describedby added extended for other use cases in text field ([#2349](https://github.com/scale/issues/2349)) ([2706542](https://github.com/telekom/scale/commit/270654297695571068c894aee30178729f361833))
+
+
+
+# [3.0.0-beta.152](https://github.com/telekom/scale/compare/v3.0.0-beta.151...v3.0.0-beta.152) (2024-07-10)
+
+
+### Bug Fixes
+
+* **data-grid:** allow empty date ([#2322](https://github.com/telekom/scale/issues/2322)) ([116b50e](https://github.com/telekom/scale/commit/116b50e7a8712722f76edb9727ae0d9996aa516f))
+* **data-grid:** re-apply sort on data change ([#2324](https://github.com/telekom/scale/issues/2324)) ([3558e4b](https://github.com/telekom/scale/commit/3558e4b3ffd0b39fa34e7674c94482b8f82707f9))
+* **dropdown-select:** remove type keyword in import ([#2310](https://github.com/telekom/scale/issues/2310)) ([7304444](https://github.com/telekom/scale/commit/7304444f9dfee131496db39b28d99d46538946bb))
+
+
+
+
+
+# [3.0.0-beta.151](https://github.com/telekom/scale/compare/v3.0.0-beta.150...v3.0.0-beta.151) (2024-04-12)
+
+
+### Bug Fixes
+
+* **telekom-profile-menu:** keyboard accessibility & optional logout handler ([#2306](https://github.com/telekom/scale/issues/2306)) ([bb7aabd](https://github.com/telekom/scale/commit/bb7aabdb0a56ccdce245947bd35e69861bf3bc17))
+
+
+### Features
+
+* **dropdown-select:** ensure single dropdown open at a time ([#2307](https://github.com/telekom/scale/issues/2307)) ([2ad95bd](https://github.com/telekom/scale/commit/2ad95bdae1f8fb8e2ae785ba3cea4e52de075f57))
+
+
+
+
+
 # [3.0.0-beta.150](https://github.com/telekom/scale/compare/v3.0.0-beta.149...v3.0.0-beta.150) (2024-02-26)
 
 **Note:** Version bump only for package telekom

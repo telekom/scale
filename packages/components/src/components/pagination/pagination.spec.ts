@@ -125,4 +125,24 @@ describe('pagination', () => {
       })
     );
   });
+  it('should show no start element when total elements is zero', async () => {
+    const specPage = await newSpecPage({
+      components: [Pagination],
+      html: `<scale-pagination
+                hide-borders="true"
+                hide-border="true"
+                page-size="11"
+                start-element="0"
+                total-elements="0"
+                styles="style">
+              </scale-pagination>`,
+    });
+    const paginationInfoElement =
+      specPage.root.shadowRoot.querySelector('.pagination__info');
+    const buttonPrev = specPage.root.shadowRoot.querySelector(
+      '.pagination__prev-prompt'
+    );
+    expect(paginationInfoElement.textContent).toEqual('0-0 / 0');
+    expect(buttonPrev.hasAttribute('disabled')).toBe(true);
+  });
 });

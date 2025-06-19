@@ -15,6 +15,8 @@ exports[`Segment should match standard snapshot 1`] = `
       </div>
     </button>
   </mock:shadow-root>
-  Label
+  <span>
+    Label
+  </span>
 </scale-segment>
 `;

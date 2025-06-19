@@ -18,6 +18,7 @@ import {
   Event,
   EventEmitter,
   Method,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -38,7 +39,7 @@ export class Segment {
   /** (optional) If `true`, the segment is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) segment's id */
-  @Prop({ reflect: true, mutable: true }) segmentId?: string;
+  @Prop({ reflect: true }) segmentId?: string = 'segment-' + i++;
   /** (optional) aria-label attribute needed for icon-only segments */
   @Prop() ariaLabelSegment: string;
   /** (optional) Segment width set to ensure that all segments have the same width */
@@ -65,7 +66,7 @@ export class Segment {
   /** (optional) position within group */
   @Prop({ mutable: true }) iconOnly?: boolean;
   /** (optional) the index of the currently selected segment in the segmented-button */
-  @Prop({ mutable: true }) selectedIndex?: string;
+  @Prop({ mutable: true }) selectedIndex?: number;
 
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
@@ -80,17 +81,22 @@ export class Segment {
 
   private focusableElement: HTMLElement;
 
+  @Watch('selected')
+  selectionChanged() {
+    emitEvent(this, 'scaleClick', {
+      id: this.segmentId,
+      selected: this.selected,
+    });
+  }
+
   @Method()
   async setFocus() {
     this.focusableElement.focus();
   }
-
   componentWillLoad() {
-    if (this.segmentId == null) {
-      this.segmentId = 'segment-' + i++;
-    }
+    this.handleIcon();
   }
-  componentDidUpdate() {
+  componentWillUpdate() {
     this.handleIcon();
   }
 
@@ -153,15 +159,11 @@ export class Segment {
   }
 
   handleClick = (event: MouseEvent) => {
-    if (parseInt(this.selectedIndex, 10) + 1 === this.position) {
+    if (this.selectedIndex === this.position) {
       return;
     }
     event.preventDefault();
     this.selected = !this.selected;
-    emitEvent(this, 'scaleClick', {
-      id: this.segmentId,
-      selected: this.selected,
-    });
   };
 
   render() {

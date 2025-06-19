@@ -102,7 +102,7 @@ export class DataGrid {
   /** (optional) Set to true to add selection column */
   @Prop() selectable?: boolean = false;
   /** Read-only selection array - populated with raw data from selected rows */
-  @Prop() selection: string[] = [];
+  @Prop({ mutable: true }) selection: any[] = [];
   /** (optional) Shade every second row darker */
   @Prop() shadeAlternate?: boolean = true;
   /** (optional) Injected css styles */
@@ -112,13 +112,16 @@ export class DataGrid {
   /** (optional) Title for sortable columns */
   @Prop() sortableColumnTitle?: string = 'Activate to sort column';
   /**
-   * (optional) set localization for sort, toggle and select/deselect table
+   * (optional) set localization for sort, toggle, select/deselect, table options, expand/collapse (html cell)
    * Default is English.
    */
   @Prop() localization?: {
     sortBy: string;
     toggle: string;
     select: string;
+    tableOptions: string;
+    expand?: string;
+    collapse?: string;
   };
   /* 4. Events (alphabetical) */
   /** Event triggered every time the editable cells are changed, updating the original rows data */
@@ -133,6 +136,9 @@ export class DataGrid {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleSort' })
   scaleSortLegacy: EventEmitter<DataGridSortedEventDetail>;
+  /** Event triggered every time the selection list updates  */
+  @Event({ eventName: 'scale-selection' })
+  scaleSelection: EventEmitter<any[]>;
   /* 5. Private Properties (alphabetical) */
   /** Used to update column divider during interaction */
   private activeDivider: any;
@@ -179,11 +185,12 @@ export class DataGrid {
     this.applyResponsiveClasses = this.applyResponsiveClasses.bind(this);
     this.updateColumnStretching = this.updateColumnStretching.bind(this);
   }
+
   componentWillLoad() {
     this.fieldsHandler();
     this.rowsHandler();
   }
-  componentWillUpdate() {}
+
   componentDidRender() {
     if (this.needsAutoWidthParse) {
       this.calculateAutoWidths();
@@ -195,10 +202,11 @@ export class DataGrid {
       }
     });
   }
+
   componentDidLoad() {
     this.addResizeObserver();
   }
-  componentDidUpdate() {}
+
   disconnectedCallback() {
     this.removeResizeObserver();
   }
@@ -209,10 +217,16 @@ export class DataGrid {
     this.parseFields();
     this.checkForMobileTitle();
     this.checkForSortableFields();
+    // if the fields have changed then reset the sorting as the field may no longer be sortable
+    this.resetSortingToggle();
     this.dataNeedsCheck = true;
   }
+
   @Watch('rows')
   rowsHandler() {
+    if (!this.rows) {
+      return;
+    }
     // Reset pagination to the last page of the new records if new records are less than previous.
     if (this.paginationStart > this.rows.length) {
       this.paginationStart =
@@ -220,7 +234,7 @@ export class DataGrid {
     }
     this.parseRows();
     this.setInitialRowProps();
-    this.resetSortingToggle();
+    this.presortTable();
     this.dataNeedsCheck = true;
     // Set flag to dirty to redo column width with new data
     this.needsAutoWidthParse = true;
@@ -234,6 +248,16 @@ export class DataGrid {
     ) {
       // step back one page
       this.paginationStart = this.paginationStart - this.pageSize;
+    }
+
+    // If the table was sorted and the data has changed then apply the existing sorting again
+    if (this.activeSortingIndex !== -1) {
+      this.sortTable(
+        this.fields[this.activeSortingIndex].sortDirection,
+        this.fields[this.activeSortingIndex].type,
+        this.activeSortingIndex,
+        true
+      );
     }
   }
 
@@ -356,7 +380,7 @@ export class DataGrid {
     let maxLength = 0;
     let longestContent;
     rows.forEach((row) => {
-      const length = row[columnIndex].toString().length;
+      const length = row[columnIndex]?.toString()?.length || 0;
       if (length > maxLength) {
         longestContent = row[columnIndex];
         maxLength = length;
@@ -382,19 +406,19 @@ export class DataGrid {
   }
 
   updateReadableSelection() {
-    this.selection.length = 0;
+    this.selection = [];
     this.rows.forEach((row) => row.selected && this.selection.push(row));
-
     // Check header checkbox if any or none are selected
     const selectAll = this.hostElement.shadowRoot.querySelector(
       '.thead__cell--selection scale-checkbox'
     ) as HTMLInputElement;
     selectAll.checked = !!this.selection.length;
+    emitEvent(this, 'scaleSelection', this.selection);
     // selectAll.indeterminate = !!this.selection.length;
   }
 
   // Sorting handlers
-  toggleTableSorting(sortDirection, columnIndex, type) {
+  toggleTableSorting(currentSortDirection, columnIndex, type) {
     // Remove sorting from previous column index
     if (
       this.activeSortingIndex > -1 &&
@@ -406,16 +430,16 @@ export class DataGrid {
     this.activeSortingIndex = columnIndex;
 
     const newSortDirection =
-      sortDirection === 'none'
+      currentSortDirection === 'none'
         ? 'ascending'
-        : sortDirection === 'ascending'
+        : currentSortDirection === 'ascending'
         ? 'descending'
         : 'none';
     this.fields[columnIndex].sortDirection = newSortDirection;
     this.sortTable(newSortDirection, type, columnIndex);
   }
 
-  sortTable(sortDirection, type, columnIndex) {
+  sortTable(sortDirection, type, columnIndex, shouldTriggerEvent = true) {
     const format = this.fields[columnIndex].format;
     if (sortDirection === 'none') {
       this.rows.sort((a, b) => {
@@ -446,14 +470,14 @@ export class DataGrid {
         case 'date':
           if (sortDirection === 'ascending') {
             this.rows.sort((a, b) => {
-              const textA = a[columnIndex].toLowerCase();
-              const textB = b[columnIndex].toLowerCase();
+              const textA = a[columnIndex]?.toLowerCase();
+              const textB = b[columnIndex]?.toLowerCase();
               return textA < textB ? -1 : textA > textB ? 1 : 0;
             });
           } else {
             this.rows.sort((a, b) => {
-              const textA = a[columnIndex].toLowerCase();
-              const textB = b[columnIndex].toLowerCase();
+              const textA = a[columnIndex]?.toLowerCase();
+              const textB = b[columnIndex]?.toLowerCase();
               return textA > textB ? -1 : textA < textB ? 1 : 0;
             });
           }
@@ -472,8 +496,10 @@ export class DataGrid {
       }
     }
     this.forceRender++;
-    // Trigger event
-    this.triggerSortEvent(sortDirection, type, columnIndex);
+    if (shouldTriggerEvent) {
+      // Trigger event
+      this.triggerSortEvent(sortDirection, type, columnIndex);
+    }
   }
 
   resetSortingToggle() {
@@ -481,6 +507,23 @@ export class DataGrid {
       this.fields[this.activeSortingIndex].sortDirection = 'none';
     }
     this.activeSortingIndex = -1;
+  }
+
+  presortTable(): void {
+    const columnToPresort = this.fields.find(
+      (col) => col.sortable && col.presort
+    );
+    if (!columnToPresort) {
+      return;
+    }
+    const columnIndex = this.fields.indexOf(columnToPresort);
+    const direction =
+      columnToPresort.presortDirection === 'descending'
+        ? 'descending'
+        : 'ascending';
+    this.activeSortingIndex = columnIndex;
+    this.fields[columnIndex].sortDirection = direction;
+    this.sortTable(direction, columnToPresort.type, columnIndex, false);
   }
 
   // Column resize handlers
@@ -787,7 +830,11 @@ export class DataGrid {
           icon-only
           data-sortable={this.isSortable}
         >
-          <scale-icon-service-settings accessibilityTitle="Table options"></scale-icon-service-settings>
+          <scale-icon-service-settings
+            accessibilityTitle={
+              this.localization?.tableOptions || 'Table options'
+            }
+          ></scale-icon-service-settings>
         </scale-button>
         <scale-menu-flyout-list>
           {this.isSortable && (
@@ -909,6 +956,7 @@ export class DataGrid {
       <div
         ref={(el) => (this.elScrollContainer = el)}
         class={`${name}__scroll-container`}
+        part="scrollable"
         style={{ height: this.height || 'auto' }}
         onScroll={() => this.onTableScroll()}
       >
@@ -986,7 +1034,7 @@ export class DataGrid {
         <tr class={`thead__row`}>
           {this.numbered && this.renderTableHeadNumberedCell()}
           {this.selectable && this.renderTableHeadSelectableCell()}
-          {this.fields.map(
+          {this.fields?.map(
             (
               {
                 type,
@@ -1127,7 +1175,7 @@ export class DataGrid {
           ref={(el) => (this.elToggleSelectAll = el)}
           onScaleChange={() => this.toggleSelectAll()}
           hideLabel={true}
-          aria-label="Select"
+          ariaLabelCheckbox="Select"
         ></scale-checkbox>
       </th>
     );
@@ -1301,6 +1349,7 @@ export class DataGrid {
           component: this,
           rowIndex,
           columnIndex,
+          localization: this.localization,
         })}
       </td>
     );
@@ -1345,7 +1394,7 @@ export class DataGrid {
       >
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
-          <div class={`${name}__title-block`}>
+          <div class={`${name}__title-block`} part="title">
             {/* h4 tag + h5 styles feels weird, ideally one should be able to set the tag with an attribute */}
             {this.heading && (
               <h4 class={`${name}__heading scl-h5`}>{this.heading}</h4>

@@ -24,7 +24,7 @@ export const DateCell: Cell = {
     sortBy: 'date',
   },
   render: ({ content, isAutoWidthCheck }) => {
-    let value = content;
+    let value = content ?? '';
 
     // Render all digits with 8s as they're the widest
     if (isAutoWidthCheck) {

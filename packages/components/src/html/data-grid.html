@@ -172,6 +172,8 @@
           type: 'number',
           label: 'Numbers',
           sortable: true,
+          presort: true,
+          presortDirection: 'descending',
           precision: 2,
           decimalSymbol: '.',
           groupSymbol: ',',
@@ -186,6 +188,16 @@
           sortable: true,
           style: 'switch',
           editable: true,
+        },
+        {
+          type: 'text',
+          label: 'Nr-edit',
+          editable: true,
+          width: 60,
+          textFieldProps: {
+            type: 'number',
+            max: 2,
+          },
         },
         {
           type: 'graph',
@@ -212,10 +224,15 @@
           'One',
           'Lorem ipsum dolor sit amet sime',
           'http://example.com',
-          'Simple, Short',
+          [
+            { content: 'Apple', color: 'red', size: 'standard' },
+            { content: 'Pear', color: 'green', type: 'strong' },
+            { content: 'Bug' },
+          ],
           '00:00:20',
-          102045.0,
+          101045.0,
           false,
+          1,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -249,6 +266,7 @@
           '00:01:15',
           43.2,
           true,
+          2,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -282,6 +300,7 @@
           '00:00:20',
           102045.0,
           false,
+          3,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -318,8 +337,9 @@
           'http://example.com',
           'Simple, Short',
           '00:01:15',
-          43.2,
+          45.2,
           true,
+          4,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -351,8 +371,9 @@
           'http://example.com',
           'Simple, Short',
           '00:00:20',
-          102045.0,
+          103045.0,
           false,
+          5,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -384,8 +405,9 @@
           'http://example.com',
           'Simple, Short',
           '00:01:15',
-          43.2,
+          47.2,
           true,
+          6,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -417,8 +439,9 @@
           'http://example.com',
           'Simple, Short',
           '00:00:20',
-          102045.0,
+          105045.0,
           false,
+          7,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -450,8 +473,9 @@
           'http://example.com',
           'Simple, Short',
           '00:01:15',
-          43.2,
+          48.2,
           true,
+          8,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -483,8 +507,9 @@
           'http://example.com',
           'Simple, Short',
           '00:00:20',
-          102045.0,
+          109045.0,
           false,
+          9,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -516,8 +541,9 @@
           'http://example.com',
           'Simple, Short',
           '00:01:15',
-          43.2,
+          40.2,
           true,
+          10,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -549,8 +575,9 @@
           'http://example.com',
           'Simple, Short',
           '00:00:20',
-          102045.0,
+          108045.0,
           false,
+          11,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -584,6 +611,7 @@
           '00:01:15',
           43.2,
           true,
+          12,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -616,6 +644,7 @@
           '00:00:20',
           102045.0,
           false,
+          13,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -649,6 +678,7 @@
           '00:01:15',
           43.2,
           true,
+          14,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -683,6 +713,7 @@
           102045.0,
           false,
           15,
+          15,
           (() => {
             const demoNestedContent = document.createElement('div');
             demoNestedContent.innerHTML = `<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
@@ -715,6 +746,7 @@
           '00:01:15',
           43.2,
           true,
+          16,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -748,6 +780,7 @@
           '00:00:20',
           102045.0,
           false,
+          17,
           15,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -781,6 +814,7 @@
           '00:01:15',
           43.2,
           true,
+          18,
           73.2,
           (() => {
             const demoNestedContent = document.createElement('div');
@@ -805,11 +839,29 @@
         ],
       ];
 
+      const localization = {
+        sortBy: 'SortLoc',
+        toggle: 'ToggleLoc',
+        select: 'SelectLoc',
+        tableOptions: 'OptionsLoc',
+        expand: 'Klicken Sie zu expanden',
+      };
+
       // Pass in data
       const table = document.querySelector('#table1');
-
+      document
+        .querySelector('scale-data-grid')
+        .addEventListener('scale-sort', ({ detail }) => {
+          console.log('sort', detail);
+        });
+      document
+        .querySelector('scale-data-grid')
+        .addEventListener('scale-selection', ({ detail }) => {
+          console.log('select', detail);
+        });
       table.fields = fields;
       table.rows = rows;
+      table.localization = localization;
 
       // table.addEventListener('scaleEdit', ({ detail }) => {
       //   const { rows, rowIndex, columnIndex, value } = detail;

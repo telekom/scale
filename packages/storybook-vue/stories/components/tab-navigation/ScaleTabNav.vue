@@ -24,7 +24,7 @@
         bitters.
       </p>
     </scale-tab-panel>
-    <scale-tab-header slot="tab">
+    <scale-tab-header :selected="preselected ? true : false" slot="tab">
       <scale-icon-content-heart v-if="withIcon" /> Style
     </scale-tab-header>
     <scale-tab-panel slot="panel">
@@ -53,10 +53,11 @@
 <script>
 export default {
   props: {
-    styles: { type: String },
     disabled: { type: Boolean, default: false },
+    preselected: { type: Boolean, default: false },
     withIcon: { type: Boolean, default: true },
-    size: { type: String, default: 'small' },
+    size: { type: 'small' | 'large' , default: 'small' }, 
+    small: { type: Boolean, default: false },
   },
 };
 </script>

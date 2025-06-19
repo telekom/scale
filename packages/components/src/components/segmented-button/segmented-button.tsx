@@ -15,7 +15,6 @@ import {
   h,
   Host,
   Element,
-  State,
   Listen,
   Event,
   EventEmitter,
@@ -45,14 +44,12 @@ export class SegmentedButton {
   slottedSegments = 0;
 
   @Element() hostElement: HTMLElement;
-  /** state */
-  @State() status: SegmentStatus[] = [];
   /** (optional) The size of the button */
   @Prop() size?: 'small' | 'medium' | 'large' = 'small';
   /** (optional) Allow more than one button to be selected */
   @Prop() multiSelect: boolean = false;
   /** (optional) the index of the selected segment */
-  @Prop() selectedIndex?: number;
+  @Prop({ mutable: true }) selectedIndex?: number;
   /** (optional) If `true`, the button is disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) If `true`, expand to container width */
@@ -79,24 +76,26 @@ export class SegmentedButton {
   showHelperText = false;
   @Listen('scaleClick')
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
-    let tempState: SegmentStatus[];
+    let tempState = this.getAllSegments().map((segment) => {
+      return {
+        id: segment.segmentId,
+        selected: segment.selected,
+      };
+    });
     if (!this.multiSelect) {
       if (!ev.detail.selected) {
-        tempState = this.status.map((obj) =>
+        tempState = tempState.map((obj) =>
           ev.detail.id === obj.id ? ev.detail : { ...obj }
         );
-        /* clicked button has now selected state */
       } else {
-        tempState = this.status.map((obj) =>
+        tempState = tempState.map((obj) =>
           ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
         );
       }
+      this.setState(tempState, ev.detail.selected);
     } else {
-      tempState = this.status.map((obj) =>
-        ev.detail.id === obj.id ? ev.detail : { ...obj }
-      );
+      this.setState(tempState);
     }
-    this.setState(tempState);
   }
 
   @Watch('disabled')
@@ -111,55 +110,52 @@ export class SegmentedButton {
    */
   propagatePropsToChildren() {
     this.getAllSegments().forEach((segment) => {
-      segment.setAttribute('size', this.size);
-      segment.setAttribute('selected-index', this.selectedIndex.toString());
+      segment.size = this.size;
+      segment.selectedIndex = this.selectedIndex;
       if (this.disabled) {
-        segment.setAttribute('disabled', true && 'disabled');
+        segment.disabled = true;
       }
     });
   }
 
-  componentDidLoad() {
+  componentWillLoad() {
     const tempState: SegmentStatus[] = [];
     const segments = this.getAllSegments();
     this.slottedSegments = segments.length;
-    const longestButtonWidth = this.getLongestButtonWidth();
-    segments.forEach((segment) => {
-      this.position++;
+    segments.forEach((segment, i) => {
       tempState.push({
-        id: segment.getAttribute('segment-id') || segment.segmentId,
-        selected: segment.hasAttribute('selected') || segment.selected,
+        id: segment.segmentId,
+        selected: segment.selected,
       });
-      segment.setAttribute('position', this.position.toString());
-      segment.setAttribute(
-        'aria-description-translation',
-        '$position $selected'
-      );
+      segment.position = i;
+      segment.ariaDescriptionTranslation = '$position $selected';
     });
+    this.setState(tempState, false);
+    this.showHelperText = this.shouldShowHelperText();
+  }
+  componentDidLoad() {
+    const longestButtonWidth = this.getLongestButtonWidth();
     if (!this.fullWidth) {
-      this.container.style.gridTemplateColumns = `repeat(${
-        this.hostElement.children.length
-      }, ${Math.ceil(longestButtonWidth)}px)`;
+      this.container.style.gridTemplateColumns = longestButtonWidth
+        ? `repeat(${this.hostElement.children.length}, ${Math.ceil(
+            longestButtonWidth
+          )}px)`
+        : `repeat(${this.hostElement.children.length}, auto)`;
     } else {
       this.container.style.display = 'flex';
     }
-
-    this.selectedIndex = this.getSelectedIndex();
     this.propagatePropsToChildren();
-    this.position = 0;
-    this.status = tempState;
-    this.setState(tempState);
   }
 
   componentWillUpdate() {
-    this.selectedIndex = this.getSelectedIndex();
-    this.showHelperText = false;
-    if (
-      this.invalid &&
-      this.status.filter((e) => e.selected === true).length <= 0
-    ) {
-      this.showHelperText = true;
+    this.showHelperText = this.shouldShowHelperText();
+  }
+  shouldShowHelperText() {
+    let showHelperText = false;
+    if (this.invalid && this.selectedIndex < 0) {
+      showHelperText = true;
     }
+    return showHelperText;
   }
 
   getSelectedIndex() {
@@ -171,12 +167,13 @@ export class SegmentedButton {
       const selectedIndex = allSegments.findIndex(
         (el: HTMLScaleSegmentElement) => el.selected === true
       );
-      return selectedIndex;
+      // we need to return -2 if no segment is selected
+      return selectedIndex >= 0 ? selectedIndex : -2;
     }
   }
 
   getAdjacentSiblings = (tempState, i) => {
-    let adjacentSiblings = '';
+    let adjacentSiblings = null;
     if (i !== 0 && tempState[i].selected && tempState[i - 1].selected) {
       adjacentSiblings = 'left';
     }
@@ -195,46 +192,44 @@ export class SegmentedButton {
   // all segmented buttons should have the same width, based on the largest one
   getLongestButtonWidth() {
     let tempWidth = 0;
-    Array.from(this.hostElement.children).forEach((child) => {
-      const selected = child.hasAttribute('selected');
-      const iconOnly = child.hasAttribute('icon-only');
-      const checkmark =
-        this.size === 'small'
-          ? CHECKMARK_WIDTH_SMALL
-          : this.size === 'medium'
-          ? CHECKMARK_WIDTH_MEDIUM
-          : CHECKMARK_WIDTH_LARGE;
-      if (selected || iconOnly) {
-        tempWidth =
-          child.getBoundingClientRect().width > tempWidth
-            ? child.getBoundingClientRect().width
-            : tempWidth;
-      } else {
-        tempWidth =
-          child.getBoundingClientRect().width + checkmark > tempWidth
-            ? child.getBoundingClientRect().width + checkmark
-            : tempWidth;
-      }
-    });
+    Array.from(this.hostElement.children)
+      .filter((child) => child.getBoundingClientRect().width)
+      .forEach((child) => {
+        const selected = child.hasAttribute('selected');
+        const iconOnly = child.hasAttribute('icon-only');
+        const checkmark =
+          this.size === 'small'
+            ? CHECKMARK_WIDTH_SMALL
+            : this.size === 'medium'
+            ? CHECKMARK_WIDTH_MEDIUM
+            : CHECKMARK_WIDTH_LARGE;
+        if (selected || iconOnly) {
+          tempWidth =
+            child.getBoundingClientRect().width > tempWidth
+              ? child.getBoundingClientRect().width
+              : tempWidth;
+        } else {
+          tempWidth =
+            child.getBoundingClientRect().width + checkmark > tempWidth
+              ? child.getBoundingClientRect().width + checkmark
+              : tempWidth;
+        }
+      });
     return tempWidth;
   }
 
-  setState(tempState: SegmentStatus[]) {
+  setState(tempState: SegmentStatus[], handleEvent: boolean = true) {
     const segments = Array.from(
       this.hostElement.querySelectorAll('scale-segment')
     );
     segments.forEach((segment, i) => {
-      segment.setAttribute(
-        'adjacent-siblings',
-        this.getAdjacentSiblings(tempState, i)
-      );
-      segment.setAttribute(
-        'selected',
-        tempState[i].selected ? 'true' : 'false'
-      );
+      segment.adjacentSiblings = this.getAdjacentSiblings(tempState, i);
+      segment.selected = tempState[i].selected;
     });
-    this.status = tempState;
-    emitEvent(this, 'scaleChange', this.status);
+    this.selectedIndex = this.getSelectedIndex();
+    if (handleEvent) {
+      emitEvent(this, 'scaleChange', { segments });
+    }
   }
 
   getAllSegments() {

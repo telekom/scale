@@ -43,7 +43,7 @@ describe('SegmentedButton', () => {
       html: `
         <scale-segmented-button>
             <scale-segment selected>Label</scale-segment>
-            <scale-segment selected>Label</scale-segment>
+            <scale-segment>Label</scale-segment>
         </scale-segmented-button>`,
     });
     expect(page.root).toMatchSnapshot();

@@ -78,7 +78,7 @@ export const config: Config = {
     },
     {
       type: 'docs-vscode',
-      file: 'custom-elements.json',
+      file: './dist/vscode-data.json',
     },
     {
       type: 'docs-json',

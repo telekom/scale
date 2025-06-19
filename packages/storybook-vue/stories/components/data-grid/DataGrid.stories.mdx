@@ -27,6 +27,14 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       description: `(optional) Freeze header row from scrolling`,
       control: { type: null },
     },
+    visible: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: true },
+      },
+      description: `(optional) Set to false to hide table, used for nested tables to re-render upon toggle`,
+      control: { type: null },
+    },
     heading: {
       table: {
         type: { summary: 'string' },
@@ -42,7 +50,7 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       },
       description: `(optional) Title for sortable columns`,
       control: { type: null },
-    },    
+    },
     height: {
       table: {
         type: { summary: 'string' },
@@ -111,7 +119,7 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       table: {
         type: { summary: 'object' },
       },
-      description: `(optional) localization object for sort by, toogle visibility and select/deselect all. The default value is English`,
+      description: `(optional) localization object for sort by, toogle visibility, select/deselect all, table settings, expand/collapse buttons. The default value is English. To provide localization, use object with next keys: 'sortBy', 'toggle', 'select', 'tableOptions', 'expand', 'collapse'`,
       control: { type: null },
     },
     shadeAlternate: {
@@ -167,6 +175,14 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
         type: { summary: 'event' },
       },
       description: `Event triggered every time the data is sorted, changing original rows data`,
+      control: { type: null },
+    },
+    eventScaleSelection: {
+      name: '[event] scale-selection',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Event triggered every time the selection list updates`,
       control: { type: null },
     },
     slotMenu: {
@@ -309,6 +325,8 @@ const rows = [ [1, 'John', '12:30'], [2, 'Mary', '2:12'], [3, 'Patek', '16:01'],
 - `resizable?: boolean = true`
 - `sortable?: boolean = false`
 - `sortBy?: 'number' | 'text' = 'text'`
+- `presort?: boolean = false`
+- `presortDirection?: 'ascending' | 'descending' = 'ascending'`
 - `textAlign?: 'left' | 'center' | 'right' = 'left'`
 - `stretchWeight?: 'number'`
 - `visible?: boolean = true`
@@ -669,7 +687,7 @@ Expected format: string
 
 ## Tags Cell
 
-Expected format: comma delimited `string`, eg `'one, two, three'` or array of objects with content and color keys, e.g. `{content: 'Apple', color: 'red'}`
+Expected format: comma delimited `string`, eg `'one, two, three'` or array of objects with required content key and optional color, type, size keys, e.g. `{content: 'Apple', color: 'red'}`. Acceptable values for color, type, size are same as for [Tag component](?path=/docs/components-tag--standard).
 
 <Canvas withSource="close">
   <Story name="Tags Cell">
@@ -738,8 +756,12 @@ Expected format: unformatted `string`, eg `'this is a string'`
 - `iconPrefix?: scale-icon-string (eg 'action-download')`
 - `iconSuffix?: scale-icon-string (eg 'action-download')`
 - `editable?: boolean = false`
+- `textFieldProps?: Object (eg { type: 'number', helperText: 'Enter a number' })`
 
-<Canvas withSource="close">
+
+ If `editable` is set to `true`, a `scale-text-field` is used for the element. The properties of the `scale-text-field` can be passed directly to the editable component using the `textFieldProps` attribute.
+ and if the `editable` is set to `false`, the `textFieldProps` has no effect, as the cell will be read-only.
+ <Canvas withSource="close">
   <Story name="Text Cell">
     {`<content>
     <scale-data-grid id="text-example" hide-menu></scale-data-grid>
@@ -1378,6 +1400,43 @@ Expected format: unformatted `string`, eg `'this is a string'`
     }
     </script>
 </content>`}
+  </Story>
+</Canvas>
+
+## Presort
+
+To make grid presorted by certain field on init, add next props to this field: `sortable: true`, `presort: true`, `presortDirection: 'ascending' | 'descending'`.
+
+<Canvas withSource="close">
+  <Story name="Presort">
+    {`<content>
+      <scale-data-grid heading="Presort" id="presort-example"></scale-data-grid>
+      <script type="application/javascript">
+        {
+          const dataGrid = document.querySelector('#presort-example');
+          dataGrid.fields = [
+            {
+              type: 'text',
+              label: 'Name',
+              sortable: true,
+              presort: true,
+              presortDirection: 'descending',
+            },
+            {
+              type: 'checkbox',
+              label: 'Toggle',
+              style: 'switch',
+            },
+          ];
+          dataGrid.rows = [
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+          ];
+        }
+      </script>
+    </content>`}
   </Story>
 </Canvas>
 
