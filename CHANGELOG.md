@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.156](https://github.com/amir-ba/scale/compare/v3.0.0-beta.154...v3.0.0-beta.156) (2025-06-19)
+
+
+### Bug Fixes
+
+* **data-grid:** prevents null or undefined break max content length calculation ([#2395](https://github.com/amir-ba/scale/issues/2395)) ([32afca9](https://github.com/amir-ba/scale/commit/32afca9044067a53c71a4d28d82086319b2d5b5b))
+* **date-picker:** check for querySelector value added ([#2374](https://github.com/amir-ba/scale/issues/2374)) ([dac9e93](https://github.com/amir-ba/scale/commit/dac9e93f2f30ef18d84d586a74b200476646148a))
+* **drop-down:** fixes hidden input in dropdown-select with null check ([#2361](https://github.com/amir-ba/scale/issues/2361)) ([8a04a5e](https://github.com/amir-ba/scale/commit/8a04a5e8c0bb3b72a2fbb90822600f6b8feefc06))
+* **mega-menu-column:** fixed its positioning when screen is small ([#2388](https://github.com/amir-ba/scale/issues/2388)) ([cb4f115](https://github.com/amir-ba/scale/commit/cb4f115b63f49a4986cace687f81043f4bfd22d8))
+* **nav-item:** add null check for child element before setting role to menuitem ([#2369](https://github.com/amir-ba/scale/issues/2369)) ([5fd16f1](https://github.com/amir-ba/scale/commit/5fd16f1d9f3f5259c004ae6f155117150ee8a0a3))
+* **nav-item:** makes nav-itemcomponent respect the active=false  ([#2364](https://github.com/amir-ba/scale/issues/2364)) ([9a999fb](https://github.com/amir-ba/scale/commit/9a999fb298f481d7d94dd430434678021acb007c))
+* **segmented button:** Scale Segmented Button doesn't respect controlled selected state ([#2166](https://github.com/amir-ba/scale/issues/2166)) ([#2384](https://github.com/amir-ba/scale/issues/2384)) ([39ad8ab](https://github.com/amir-ba/scale/commit/39ad8ab04f457ebe84b122ca3bd17802e9a4cacf))
+* **segmented-button:** fixed ratio contrast to fulfill AA requirement ([#2385](https://github.com/amir-ba/scale/issues/2385)) ([de88dfc](https://github.com/amir-ba/scale/commit/de88dfcf7a91349e3d8acfb8d4aa2fbd92cd62e5))
+* **switch:** add text color for switch toggle ([#2396](https://github.com/amir-ba/scale/issues/2396)) ([39accf4](https://github.com/amir-ba/scale/commit/39accf4ef6004b6624ade3477d6cc0f00d5d13e1))
+* **telekom-mobile-menu-item:** fixed icon placing ([#2387](https://github.com/amir-ba/scale/issues/2387)) ([0307f25](https://github.com/amir-ba/scale/commit/0307f25d8f7bffe68adcd859fa3e9aab46a4615e))
+
+
+### Features
+
+* **dropdown-select:** add clear button to improve user experience ([#2391](https://github.com/amir-ba/scale/issues/2391)) ([9fbe1c6](https://github.com/amir-ba/scale/commit/9fbe1c64ca0ae7360645d7f9263897fcae206c97))
+
+
+
+
+
+
 # [3.0.0-beta.155](https://github.com/amir-ba/scale/compare/v3.0.0-beta.154...v3.0.0-beta.155) (2024-11-26)
 
 
