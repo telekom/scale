@@ -380,7 +380,7 @@ export class DataGrid {
     let maxLength = 0;
     let longestContent;
     rows.forEach((row) => {
-      const length = row[columnIndex].toString().length;
+      const length = row[columnIndex]?.toString()?.length || 0;
       if (length > maxLength) {
         longestContent = row[columnIndex];
         maxLength = length;
@@ -470,14 +470,14 @@ export class DataGrid {
         case 'date':
           if (sortDirection === 'ascending') {
             this.rows.sort((a, b) => {
-              const textA = a[columnIndex].toLowerCase();
-              const textB = b[columnIndex].toLowerCase();
+              const textA = a[columnIndex]?.toLowerCase();
+              const textB = b[columnIndex]?.toLowerCase();
               return textA < textB ? -1 : textA > textB ? 1 : 0;
             });
           } else {
             this.rows.sort((a, b) => {
-              const textA = a[columnIndex].toLowerCase();
-              const textB = b[columnIndex].toLowerCase();
+              const textA = a[columnIndex]?.toLowerCase();
+              const textB = b[columnIndex]?.toLowerCase();
               return textA > textB ? -1 : textA < textB ? 1 : 0;
             });
           }

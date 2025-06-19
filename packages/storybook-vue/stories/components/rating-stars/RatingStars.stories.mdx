@@ -10,7 +10,7 @@ import ScaleRatingStars from './ScaleRatingStars.vue';
         type: { summary: 'string' },
         defaultValue: { summary: 'large' },
       },
-      description: `(optional) Deprecated; size should be used instead of starSize`,
+      description: `(optional) DEPRECATED; size should be used instead of starSize`,
       control: { type: 'select', options: ['large', 'small'] },
     },
     size: {
@@ -20,7 +20,7 @@ import ScaleRatingStars from './ScaleRatingStars.vue';
           summary: 'large',
         },
       },
-      description: `(optional) size of the stars. Overwritten by deprecated starSize`,
+      description: `(optional) size of the stars. Overwritten by DEPRECATED starSize`,
       control: { type: 'select', options: ['large', 'small'] },
     },
     minRating: {
@@ -30,7 +30,7 @@ import ScaleRatingStars from './ScaleRatingStars.vue';
           summary: 0,
         },
       },
-      description: `(optional) Deprecated; minimum rating value. Will be dropped on next release`,
+      description: `(optional) DEPRECATED; minimum rating value. Will be dropped on next release`,
       control: { type: 'number' },
     },
     maxRating: {
@@ -40,7 +40,7 @@ import ScaleRatingStars from './ScaleRatingStars.vue';
           summary: 5,
         },
       },
-      description: `(optional) Deprecated; max should be used instead of maxRating`,
+      description: `(optional) DEPRECATED; max should be used instead of maxRating`,
       control: { type: 'number' },
     },
     max: {
@@ -50,7 +50,7 @@ import ScaleRatingStars from './ScaleRatingStars.vue';
           summary: 5,
         },
       },
-      description: `(optional) The upper limit of the rating. Overwritten by deprecated maxRating`,
+      description: `(optional) The upper limit of the rating. Overwritten by DEPRECATED maxRating`,
       control: { type: 'number' },
     },
     rating: {

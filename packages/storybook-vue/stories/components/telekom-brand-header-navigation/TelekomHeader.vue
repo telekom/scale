@@ -32,7 +32,7 @@ export default {
     metaNavAriaLabel: String,
     metaNavExternalAriaLabel: String,
     langSwitcherAriaLabel: String,
-    mainNavAriaLabel: String,    
+    mainNavAriaLabel: String,   
   },
 };
 </script>

@@ -52,6 +52,8 @@ export const TextTemplate = (args, { argTypes }) => ({
     <scale-notification-badge
       :type="type"
       :label="label"
+      :max-characters="maxCharacters"
+      :click-handler="clickHandler"
     ><b>Service</b></scale-notification-badge>
   `,
   methods: {

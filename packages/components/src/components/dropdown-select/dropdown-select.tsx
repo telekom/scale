@@ -259,6 +259,8 @@ export class DropdownSelect {
   @Prop() hcmLabelDisabled?: string = 'this field is disabled';
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
+  @Prop() allowClear?: boolean = false;
+  /** (optional) clear button inside the dropdown, that clears all iputs and resets the dropdown */
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
@@ -329,6 +331,9 @@ export class DropdownSelect {
   }
 
   updateInputHidden(value: string = this.value): void {
+    if (!this.hiddenInput) {
+      return;
+    }
     this.hiddenInput.value = value;
   }
 
@@ -578,22 +583,28 @@ export class DropdownSelect {
                 </div>
               </div>
             </div>
-
-            <div part="icon">
-              {this.open ? (
-                <scale-icon-navigation-collapse-up
-                  decorative
-                  size={DEFAULT_ICON_SIZE}
-                />
-              ) : (
-                <scale-icon-navigation-collapse-down
-                  decorative
-                  size={DEFAULT_ICON_SIZE}
-                />
-              )}
-            </div>
+            {this.allowClear && this.value ? (
+              <scale-icon-action-close
+                accessibility-title="close"
+                part="clear"
+                onClick={this.handleClearClick}
+              ></scale-icon-action-close>
+            ) : (
+              <div part="icon">
+                {this.open ? (
+                  <scale-icon-navigation-collapse-up
+                    decorative
+                    size={DEFAULT_ICON_SIZE}
+                  />
+                ) : (
+                  <scale-icon-navigation-collapse-down
+                    decorative
+                    size={DEFAULT_ICON_SIZE}
+                  />
+                )}
+              </div>
+            )}
           </div>
-
           {this.helperText && (
             <scale-helper-text
               helperText={this.helperText}
@@ -635,4 +646,15 @@ export class DropdownSelect {
       disabled && `disabled`
     );
   }
+
+  private handleClearClick = (event: MouseEvent) => {
+    event.stopPropagation();
+    if (this.disabled || this.readonly) {
+      return;
+    }
+
+    this.value = '';
+    this.currentIndex = -1;
+    emitEvent(this, 'scaleChange', { value: this.value });
+  };
 }
