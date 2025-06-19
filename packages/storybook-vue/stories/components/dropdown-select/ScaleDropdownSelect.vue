@@ -14,6 +14,7 @@
     :transparent="transparent"
     :aria-label-selected="ariaLabelSelected"
     :hcm-label-disabled="hcmLabelDisabled"
+    :allow-clear="allowClear"
     @scaleChange="['scale-change']"
     @scaleFocus="['scale-focus']"
     @scaleBlur="['scale-blur']"
@@ -45,6 +46,7 @@ export default {
     ariaLabelSelected: { type: String },
     hcmLabelDisabled: { type: String },
     value: { type: String},
+    allowClear: {type: Boolean}
   },
   methods: {
     'scale-change'($event) {
