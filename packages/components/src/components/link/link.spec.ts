@@ -13,11 +13,6 @@ import { newSpecPage } from '@stencil/core/testing';
 import { Link } from './link';
 
 describe('Link', () => {
-  let element;
-  beforeEach(async () => {
-    element = new Link();
-  });
-
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Link],
