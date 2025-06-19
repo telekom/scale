@@ -470,14 +470,14 @@ export class DataGrid {
         case 'date':
           if (sortDirection === 'ascending') {
             this.rows.sort((a, b) => {
-              const textA = a[columnIndex].toLowerCase();
-              const textB = b[columnIndex].toLowerCase();
+              const textA = a[columnIndex]?.toLowerCase();
+              const textB = b[columnIndex]?.toLowerCase();
               return textA < textB ? -1 : textA > textB ? 1 : 0;
             });
           } else {
             this.rows.sort((a, b) => {
-              const textA = a[columnIndex].toLowerCase();
-              const textB = b[columnIndex].toLowerCase();
+              const textA = a[columnIndex]?.toLowerCase();
+              const textB = b[columnIndex]?.toLowerCase();
               return textA > textB ? -1 : textA < textB ? 1 : 0;
             });
           }
