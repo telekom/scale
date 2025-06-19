@@ -259,8 +259,7 @@ export class DropdownSelect {
   @Prop() hcmLabelDisabled?: string = 'this field is disabled';
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
-
-  @Prop() allowClear?: boolean = true;
+  @Prop() allowClear?: boolean = false;
   /** (optional) clear button inside the dropdown, that clears all iputs and resets the dropdown */
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
@@ -650,18 +649,12 @@ export class DropdownSelect {
 
   private handleClearClick = (event: MouseEvent) => {
     event.stopPropagation();
-    // Verhindert, dass das Dropdown durch den Klick geöffnet/geschlossen wird
-
     if (this.disabled || this.readonly) {
       return;
     }
 
     this.value = '';
-    // Setzt den Wert zurück. Überlegen Sie, ob null passender wäre.
-
-    this.currentIndex = -1; // Setzt den Index des ausgewählten Elements zurück
-
+    this.currentIndex = -1;
     emitEvent(this, 'scaleChange', { value: this.value });
-    // Informiert über die Wertänderung
   };
 }
