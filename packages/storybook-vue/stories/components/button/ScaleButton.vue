@@ -10,6 +10,7 @@
     :value="value"
     :variant="variant"
     :icon-only="iconOnly"
+    :icon-position="iconPosition"
     :inner-tabindex="innerTabindex"
     :inner-aria-label="innerAriaLabel"
     :styles="styles"
@@ -36,6 +37,7 @@ export default {
     variant: String,
     size: String,
     iconOnly: Boolean,
+    iconPosition: String,
     innerTabindex: Number,
     innerAriaLabel: String,
     styles: String,

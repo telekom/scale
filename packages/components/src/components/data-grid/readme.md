@@ -114,6 +114,7 @@ graph TD;
   scale-progress-bar --> scale-icon-alert-error
   scale-progress-bar --> scale-icon-action-success
   scale-dropdown-select --> scale-icon-action-checkmark
+  scale-dropdown-select --> scale-icon-action-close
   scale-dropdown-select --> scale-icon-navigation-collapse-up
   scale-dropdown-select --> scale-icon-navigation-collapse-down
   scale-dropdown-select --> scale-helper-text

@@ -13,12 +13,6 @@ import { newSpecPage } from '@stencil/core/testing';
 import { Notification } from './notification';
 
 describe('Notification ', () => {
-  let element;
-
-  beforeEach(async () => {
-    element = new Notification();
-  });
-
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Notification],
