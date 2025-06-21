@@ -1,7 +1,10 @@
 describe.skip('SegmentedButton', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.runColorSetup('components-segmented-button--standard', mode);
+      await global.runColorSetup(
+        'beta-components-segmented-button--standard',
+        mode
+      );
     });
     test.each([
       ['standard'],
