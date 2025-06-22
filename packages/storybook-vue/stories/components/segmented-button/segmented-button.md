@@ -130,5 +130,5 @@ This component is still in the beta phase. When testing it, keep in mind that it
 [Button](?path=/usage/components-button--standard),
 [Radio Button Group](?path=/usage/components-radio-button-group--standard),
 [Checkbox Group](?path=/usage/components-checkbox-group--standard),
-[Chip](?path=/usage/beta-components-chip--standard),
+[Chip](?path=/usage/components-chip--standard),
 [Icon Button](?path=/usage/components-button--icon-only)

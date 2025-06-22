@@ -7,10 +7,10 @@ import {
 } from '@storybook/addon-docs';
 import ScaleCallout from './ScaleCallout.vue';
 
-export const CANVAS_HEIGHT = 204
+export const CANVAS_HEIGHT = 204;
 
 <Meta
-  title="Beta Components/Callout"
+  title="Components/Callout"
   component={ScaleCallout}
   argTypes={{
     variant: {
@@ -58,16 +58,12 @@ export const CANVAS_HEIGHT = 204
   }}
 >
   <h1>Callout</h1>
-  <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
-  <Story
-    name="Standard"
-    args={{ variant: 'primary' }}
-  >
+  <Story name="Standard" args={{ variant: 'primary' }}>
     {{
       props: {
         ...ScaleCallout.props,
@@ -87,7 +83,7 @@ export const CANVAS_HEIGHT = 204
             <span class="scl-callout-text-small">for 4 weeks</span>
           </scale-callout>
         </div>
-      `
+      `,
     }}
   </Story>
 </Canvas>
@@ -105,7 +101,7 @@ export const CANVAS_HEIGHT = 204
 ### Scoped CSS variables
 
 ```css
- :host {
+:host {
   --position: absolute;
   --background: var(--telekom-color-ui-extra-strong);
   --color: var(--telekom-color-text-and-icon-inverted-standard);
@@ -132,7 +128,7 @@ export const CANVAS_HEIGHT = 204
             <span class="scl-callout-text-large">9.95 &#8364;</span>
           </scale-callout>
         </div>
-      `
+      `,
     }}
   </Story>
 </Canvas>
@@ -154,7 +150,7 @@ export const CANVAS_HEIGHT = 204
             <span class="scl-callout-text-large">9.95 &#8364;</span>
           </scale-callout>
         </div>
-      `
+      `,
     }}
   </Story>
 </Canvas>
@@ -176,7 +172,7 @@ export const CANVAS_HEIGHT = 204
             <span class="scl-callout-text-large">9.95 &#8364;</span>
           </scale-callout>
         </div>
-      `
+      `,
     }}
   </Story>
 </Canvas>
@@ -198,7 +194,7 @@ export const CANVAS_HEIGHT = 204
             <span class="scl-callout-text-large">9.95 &#8364;</span>
           </scale-callout>
         </div>
-      `
+      `,
     }}
   </Story>
 </Canvas>
@@ -225,7 +221,7 @@ export const CANVAS_HEIGHT = 204
             <span>value *</span>
           </scale-callout>
         </div>
-      `
+      `,
     }}
   </Story>
 </Canvas>
@@ -253,7 +249,7 @@ For convenience, two scoped CSS classes are provided for large and small text: `
             <span class="scl-callout-text-small">for 4 weeks</span>
           </scale-callout>
         </div>
-      `
+      `,
     }}
   </Story>
 </Canvas>

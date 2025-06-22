@@ -3,4 +3,4 @@
     <img src="assets/deprecated.png" alt="Deprecated Component" />
 </div>
 
-Wir unterstützen die Notification Banner nicht mehr. Bitte verwende stattdessen den [Notification](?path=/docs/beta-components-notification--standard).
+Wir unterstützen die Notification Banner nicht mehr. Bitte verwende stattdessen den [Notification](?path=/docs/components-notification--standard).
