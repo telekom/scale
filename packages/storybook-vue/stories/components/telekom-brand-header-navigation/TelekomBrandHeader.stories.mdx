@@ -1,7 +1,7 @@
 import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
 import TelekomHeader from './TelekomHeader.vue';
 import TelekomHeaderDataBackCompat from './TelekomHeaderDataBackCompat.vue';
-import TelekomProfileMenu from './TelekomProfileMenu.vue';
+import TelekomProfileMenu from "./TelekomProfileMenu.vue";
 import TelekomHeaderTemplate from './TelekomHeaderTemplate.vue';
 import {
   mainNavigation,
@@ -165,9 +165,9 @@ scale-telekom-header {
   --shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
   --background: var(--telekom-color-background-surface);
   --background-logo: var(--telekom-color-primary-standard);
-  --transition-common-scrolled: height var(--telekom-motion-duration-immediate) var(
-        --telekom-motion-easing-standard
-      ), width var(--telekom-motion-duration-immediate),
+  --transition-common-scrolled: height var(--telekom-motion-duration-immediate)
+      var(--telekom-motion-easing-standard),
+    width var(--telekom-motion-duration-immediate),
     margin var(--telekom-motion-duration-immediate);
   --font-size-app-name: var(--telekom-typography-font-size-body);
   --line-height-app-name: var(--telekom-typography-line-spacing-tight);
@@ -182,9 +182,8 @@ scale-telekom-nav-list {
 }
 
 scale-telekom-nav-item {
-  --focus-outline: var(--telekom-line-weight-highlight) solid var(
-      --telekom-color-functional-focus-standard
-    );
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
   --color: var(--telekom-color-text-and-icon-standard);
 }
 ```
@@ -326,22 +325,20 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
   <Story
     name="Profile Menu / Logged out"
     args={{
-      loginUrl: 'https://www.telekom.de/todo/login',
-      loginHelpUrl: 'https://www.telekom.de/hilfe/telekom-login',
-      registerUrl:
-        'https://meinkonto.telekom-dienste.de/telekom/account/registration/assistant/userstatus.xhtml',
+      loginUrl: "https://www.telekom.de/todo/login",
+      loginHelpUrl: "https://www.telekom.de/hilfe/telekom-login",
+      registerUrl: "https://meinkonto.telekom-dienste.de/telekom/account/registration/assistant/userstatus.xhtml",
       loggedIn: false,
-      appName: 'Application',
-      label: 'Login',
-      accessibilityLabel: 'Login',
-      closeMenuAccessibilityLabel: 'Close menu',
-      serviceName: 'Customer Center',
-      serviceDescription:
-        'Manage your contracts, bills, usage overviews, settings, and more.',
-      loginLabel: 'Log in',
-      loginHelpLabel: 'Help logging in',
-      registerHeadline: 'Need an account?',
-      registerLabel: 'Register now',
+      appName: "Application",
+      label: "Login",
+      accessibilityLabel: "Login",
+      closeMenuAccessibilityLabel: "Close menu",
+      serviceName: "Customer Center",
+      serviceDescription: "Manage your contracts, bills, usage overviews, settings, and more.",
+      loginLabel: "Log in",
+      loginHelpLabel: "Help logging in",
+      registerHeadline: "Need an account?",
+      registerLabel: "Register now",
       userInfo: JSON.stringify({
         name: 'Firstname Lastname',
         email: 'example@example.com',
@@ -356,8 +353,8 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
           name: 'Service 2',
           href: 'https://www.telekom.de/service-2',
           icon: 'communication-mail-opened',
-        },
-      ]),
+        }
+      ])
     }}
     inline={false}
     height={500}
@@ -371,13 +368,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
 ```html
 <scale-telekom-header>
   <!-- ... -->
-  <scale-telekom-nav-list
-    variant="functions"
-    slot="functions"
-    alignment="right"
-    aria-label="Functions Menu"
-    role="none"
-  >
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <!-- login-url: dynamic link - OpenID connect discovery -->
     <scale-telekom-profile-menu
       login-url="https://www.telekom.de/todo/login"
@@ -404,13 +395,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
 ```html
 <scale-telekom-header>
   <!-- ... -->
-  <scale-telekom-nav-list
-    variant="functions"
-    slot="functions"
-    alignment="right"
-    aria-label="Functions Menu"
-    role="none"
-  >
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <!-- login-url: dynamic link - OpenID connect discovery -->
     <scale-telekom-profile-menu
       login-url="https://www.telekom.de/todo/login"
@@ -438,16 +423,16 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
   <Story
     name="Profile Menu / Logged in"
     args={{
-      loginSettingsUrl: 'https://www.telekom.de/todo/loginSettings',
+      loginSettingsUrl: "https://www.telekom.de/todo/loginSettings",
       hideLoginSettings: false,
-      logoutUrl: 'https://www.telekom.de/todo/logout',
+      logoutUrl: "https://www.telekom.de/todo/logout",
       loggedIn: true,
-      appName: 'Application',
-      label: 'Alexander',
-      accessibilityLabel: 'open user menu: Alexander',
-      closeMenuAccessibilityLabel: 'close menu',
-      loginSettingsLabel: 'Login Settings',
-      logoutLabel: 'Log out',
+      appName: "Application",
+      label: "Alexander",
+      accessibilityLabel: "open user menu: Alexander",
+      closeMenuAccessibilityLabel: "close menu",
+      loginSettingsLabel: "Login Settings",
+      logoutLabel: "Log out",   
       userInfo: JSON.stringify({
         name: 'Alexander Dreyer',
         email: 'alexander.dreyer@t-online.de',
@@ -482,8 +467,8 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
           name: 'MagentaHome Web',
           href: 'https://cockpit.telekom.net',
           icon: 'home-smarthome',
-        },
-      ]),
+        }
+      ])
     }}
     inline={false}
     height={650}
@@ -497,13 +482,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
 ```html
 <scale-telekom-header>
   <!-- ... -->
-  <scale-telekom-nav-list
-    variant="functions"
-    slot="functions"
-    alignment="right"
-    aria-label="Functions Menu"
-    role="none"
-  >
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <scale-telekom-profile-menu
       login-settings-url="https://idm.account.telekom.com/account-manager"
       hide-login-settings="false"
@@ -515,68 +494,57 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
       close-menu-accessibility-label="Menü schließen"
       login-settings-label="Login-Einstellungen"
       logout-label="Logout"
-      <!--
-      set
-      user-info
-      &
-      service-links
-      via
-      script,
-      see
-      below
-      --
-    >
-      ></scale-telekom-profile-menu
-    >
+      <!-- set user-info & service-links via script, see below -->
+    ></scale-telekom-profile-menu>
   </scale-telekom-nav-list>
 </scale-telekom-header>
 
 <script>
-  let serviceLinks = [
-    {
-      name: 'Kundencenter',
-      href: 'https://www.telekom.de/mein-kundencenter',
-      icon: 't-product-measure-internet-speed',
-    },
-    {
-      name: 'E-Mail Center',
-      href: 'https://www.telekom.de/e-mail/e-mail-center',
-      icon: 'communication-mail-opened',
-    },
-    {
-      name: 'MagentaTV',
-      href: 'https://web.magentatv.de/EPG/',
-      icon: 't-product-magenta-tv',
-    },
-    {
-      name: 'MagentaSport',
-      href: 'https://www.magentasport.de',
-      icon: 't-product-telekom-1t1',
-    },
-    {
-      name: 'MagentaCLOUD',
-      href: 'https://magentacloud.de',
-      icon: 'action-upload-to-cloud',
-    },
-    {
-      name: 'MagentaZuhause Web',
-      href: 'https://cockpit.telekom.net',
-      icon: 'home-smarthome',
-    },
-  ];
-  window.onload = () => {
-    let profileMenu = document.querySelector('scale-telekom-profile-menu');
-    profileMenu.userInfo = JSON.stringify({
-      name: 'Alexander Dreyer',
-      email: 'alexander.dreyer@t-online.de',
-    });
-    profileMenu.serviceLinks = JSON.stringify(serviceLinks);
+let serviceLinks = [
+  {
+    name: 'Kundencenter',
+    href: 'https://www.telekom.de/mein-kundencenter',
+    icon: 't-product-measure-internet-speed',
+  },
+  {
+    name: 'E-Mail Center',
+    href: 'https://www.telekom.de/e-mail/e-mail-center',
+    icon: 'communication-mail-opened',
+  },
+  {
+    name: 'MagentaTV',
+    href: 'https://web.magentatv.de/EPG/',
+    icon: 't-product-magenta-tv',
+  },
+  {
+    name: 'MagentaSport',
+    href: 'https://www.magentasport.de',
+    icon: 't-product-telekom-1t1',
+  },
+  {
+    name: 'MagentaCLOUD',
+    href: 'https://magentacloud.de',
+    icon: 'action-upload-to-cloud',
+  },
+  {
+    name: 'MagentaZuhause Web',
+    href: 'https://cockpit.telekom.net',
+    icon: 'home-smarthome',
+  }
+];
+window.onload = () => {
+  let profileMenu = document.querySelector('scale-telekom-profile-menu');
+  profileMenu.userInfo = JSON.stringify({
+    name: 'Alexander Dreyer',
+    email: 'alexander.dreyer@t-online.de',
+  });
+  profileMenu.serviceLinks = JSON.stringify(serviceLinks);
 
-    // optional: set a custom handler for clicks on logout button
-    profileMenu.logoutHandler = () => {
-      // ...
-    };
-  };
+  // optional: set a custom handler for clicks on logout button
+  profileMenu.logoutHandler = () => {
+    // ...
+  }
+};
 </script>
 ```
 
@@ -585,13 +553,7 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
 ```html
 <scale-telekom-header>
   <!-- ... -->
-  <scale-telekom-nav-list
-    variant="functions"
-    slot="functions"
-    alignment="right"
-    aria-label="Functions Menu"
-    role="none"
-  >
+  <scale-telekom-nav-list variant="functions" slot="functions" alignment="right" aria-label="Functions Menu" role="none">
     <scale-telekom-profile-menu
       login-settings-url="https://idm.account.telekom.com/account-manager"
       hide-login-settings="false"
@@ -603,74 +565,63 @@ Set the profile menu's `logged-in` property to `true` or `false` to switch betwe
       close-menu-accessibility-label="close menu"
       login-settings-label="Login Settings"
       logout-label="Log out"
-      <!--
-      set
-      user-info
-      &
-      service-links
-      via
-      script,
-      see
-      below
-      --
-    >
-      ></scale-telekom-profile-menu
-    >
+      <!-- set user-info & service-links via script, see below -->
+    ></scale-telekom-profile-menu>
   </scale-telekom-nav-list>
 </scale-telekom-header>
 
 <script>
-  let serviceLinks = [
-    {
-      name: 'My Account',
-      href: 'https://www.telekom.de/mein-kundencenter',
-      icon: 't-product-measure-internet-speed',
-    },
-    {
-      name: 'E-Mail Center',
-      href: 'https://www.telekom.de/e-mail/e-mail-center',
-      icon: 'communication-mail-opened',
-    },
-    {
-      name: 'MagentaTV',
-      href: 'https://web.magentatv.de/EPG/',
-      icon: 't-product-magenta-tv',
-    },
-    {
-      name: 'MagentaSport',
-      href: 'https://www.magentasport.de',
-      icon: 't-product-telekom-1t1',
-    },
-    {
-      name: 'MagentaCLOUD',
-      href: 'https://magentacloud.de',
-      icon: 'action-upload-to-cloud',
-    },
-    {
-      name: 'MagentaHome Web',
-      href: 'https://cockpit.telekom.net',
-      icon: 'home-smarthome',
-    },
-  ];
-  window.onload = () => {
-    let profileMenu = document.querySelector('scale-telekom-profile-menu');
-    profileMenu.userInfo = JSON.stringify({
-      name: 'Alexander Dreyer',
-      email: 'alexander.dreyer@t-online.de',
-    });
-    profileMenu.serviceLinks = JSON.stringify(serviceLinks);
+let serviceLinks = [
+  {
+    name: 'My Account',
+    href: 'https://www.telekom.de/mein-kundencenter',
+    icon: 't-product-measure-internet-speed',
+  },
+  {
+    name: 'E-Mail Center',
+    href: 'https://www.telekom.de/e-mail/e-mail-center',
+    icon: 'communication-mail-opened',
+  },
+  {
+    name: 'MagentaTV',
+    href: 'https://web.magentatv.de/EPG/',
+    icon: 't-product-magenta-tv',
+  },
+  {
+    name: 'MagentaSport',
+    href: 'https://www.magentasport.de',
+    icon: 't-product-telekom-1t1',
+  },
+  {
+    name: 'MagentaCLOUD',
+    href: 'https://magentacloud.de',
+    icon: 'action-upload-to-cloud',
+  },
+  {
+    name: 'MagentaHome Web',
+    href: 'https://cockpit.telekom.net',
+    icon: 'home-smarthome',
+  }
+];
+window.onload = () => {
+  let profileMenu = document.querySelector('scale-telekom-profile-menu');
+  profileMenu.userInfo = JSON.stringify({
+    name: 'Alexander Dreyer',
+    email: 'alexander.dreyer@t-online.de',
+  });
+  profileMenu.serviceLinks = JSON.stringify(serviceLinks);
 
-    // optional: set a custom handler for clicks on logout button
-    profileMenu.logoutHandler = () => {
-      // ...
-    };
-  };
+  // optional: set a custom handler for clicks on logout button
+  profileMenu.logoutHandler = () => {
+    // ...
+  }
+};
 </script>
 ```
 
 ## Data API (Backward compatibility)
 
-> This scale-telekom-header-data-back-compat component is only meant to make it easier to migrate from a [previous version of the Brand Header](?path=/usage/deprecated-components-brand-header-navigation--standard). If you do not need to migrate, please avoid it. Learn more about the [expected data shape](https://github.com/telekom/scale/blob/main/packages/storybook-vue/stories/deprecated/telekom-header-navigation/fixtures.js).
+> This scale-telekom-header-data-back-compat component is only meant to make it easier to migrate from a [previous version of the Brand Header](?path=/usage/components-brand-header-navigation--standard). If you do not need to migrate, please avoid it. Learn more about the [expected data shape](https://github.com/telekom/scale/blob/main/packages/storybook-vue/stories/components/telekom-header-navigation/fixtures.js).
 
 <Canvas withSource="none">
   <Story
