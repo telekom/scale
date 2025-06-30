@@ -40,13 +40,13 @@ export class HelperText {
   renderHelperIcon() {
     const variant = this.variant;
     if (variant === 'informational' || variant === 'warning') {
-      return <scale-icon-alert-information></scale-icon-alert-information>;
+      return <scale-icon-alert-information aria-hidden="true" />;
     }
     if (variant === 'danger') {
-      return <scale-icon-alert-error></scale-icon-alert-error>;
+      return <scale-icon-alert-error aria-hidden="true" />;
     }
     if (variant === 'success') {
-      return <scale-icon-action-success></scale-icon-action-success>;
+      return <scale-icon-action-success aria-hidden="true" />;
     }
   }
 
