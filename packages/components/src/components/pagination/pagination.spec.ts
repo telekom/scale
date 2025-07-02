@@ -43,9 +43,7 @@ describe('pagination', () => {
   });
   it('should emit when clicked goFirstPage()', async () => {
     const clickSpy = jest.fn();
-    const clickSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-pagination', clickSpy);
-    page.doc.addEventListener('scalePagination', clickSpyLegacy);
     const buttonElement = page.root.shadowRoot.querySelector(
       '.pagination__first-prompt'
     ) as HTMLElement;
@@ -56,17 +54,10 @@ describe('pagination', () => {
         detail: expect.objectContaining({ direction: 'FIRST' }),
       })
     );
-    expect(clickSpyLegacy).toHaveBeenCalledWith(
-      expect.objectContaining({
-        detail: expect.objectContaining({ direction: 'FIRST' }),
-      })
-    );
   });
   it('should emit when clicked goPreviousPage()', async () => {
     const clickSpy = jest.fn();
-    const clickSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-pagination', clickSpy);
-    page.doc.addEventListener('scalePagination', clickSpyLegacy);
     const buttonElement = page.root.shadowRoot.querySelector(
       '.pagination__prev-prompt'
     ) as HTMLElement;
@@ -77,17 +68,10 @@ describe('pagination', () => {
         detail: expect.objectContaining({ direction: 'PREVIOUS' }),
       })
     );
-    expect(clickSpyLegacy).toHaveBeenCalledWith(
-      expect.objectContaining({
-        detail: expect.objectContaining({ direction: 'PREVIOUS' }),
-      })
-    );
   });
   it('should emit when clicked goNextPage()', async () => {
     const clickSpy = jest.fn();
-    const clickSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-pagination', clickSpy);
-    page.doc.addEventListener('scalePagination', clickSpyLegacy);
     const buttonElement = page.root.shadowRoot.querySelector(
       '.pagination__next-prompt'
     ) as HTMLElement;
@@ -98,28 +82,16 @@ describe('pagination', () => {
         detail: expect.objectContaining({ direction: 'NEXT' }),
       })
     );
-    expect(clickSpyLegacy).toHaveBeenCalledWith(
-      expect.objectContaining({
-        detail: expect.objectContaining({ direction: 'NEXT' }),
-      })
-    );
   });
   it('should emit when clicked goLastPage()', async () => {
     const clickSpy = jest.fn();
-    const clickSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-pagination', clickSpy);
-    page.doc.addEventListener('scalePagination', clickSpyLegacy);
     const buttonElement = page.root.shadowRoot.querySelector(
       '.pagination__last-prompt'
     ) as HTMLElement;
     buttonElement.click();
     await page.waitForChanges();
     expect(clickSpy).toHaveBeenCalledWith(
-      expect.objectContaining({
-        detail: expect.objectContaining({ direction: 'LAST' }),
-      })
-    );
-    expect(clickSpyLegacy).toHaveBeenCalledWith(
       expect.objectContaining({
         detail: expect.objectContaining({ direction: 'LAST' }),
       })

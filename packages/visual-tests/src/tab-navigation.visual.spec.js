@@ -13,7 +13,7 @@ describe('TabNavigation', () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
       );
-      await page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
 
       const previewHtml = await page.$('body');
       await page.evaluate(() => {

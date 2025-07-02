@@ -2,6 +2,6 @@
 
 exports[`Breadcrumb should match snapshot 1`] = `
 <scale-breadcrumb>
-  <mock:shadow-root></mock:shadow-root>
+  <template shadowrootmode="open"></template>
 </scale-breadcrumb>
 `;

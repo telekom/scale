@@ -16,17 +16,15 @@
 | `opened`              | `opened`                |                                                                                       | `boolean`                                                                           | `false`          |
 | `preventFlipVertical` | `prevent-flip-vertical` | (optional) set to true to prevent flipping orientation when off the screen vertically | `boolean`                                                                           | `false`          |
 | `styles`              | `styles`                | (optional) Injected styles                                                            | `string`                                                                            | `undefined`      |
-| `trigger`             | --                      |                                                                                       | `() => HTMLElement`                                                                 | `undefined`      |
+| `trigger`             | `trigger`               |                                                                                       | `() => HTMLElement`                                                                 | `undefined`      |
 
 
 ## Events
 
-| Event         | Description                                                                                        | Type                                  |
-| ------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| `scale-close` | Event triggered when menu list closed                                                              | `CustomEvent<{ list: HTMLElement; }>` |
-| `scale-open`  | Event triggered when menu list opened                                                              | `CustomEvent<{ list: HTMLElement; }>` |
-| `scaleClose`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ list: HTMLElement; }>` |
-| `scaleOpen`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ list: HTMLElement; }>` |
+| Event         | Description                           | Type                                  |
+| ------------- | ------------------------------------- | ------------------------------------- |
+| `scale-close` | Event triggered when menu list closed | `CustomEvent<{ list: HTMLElement; }>` |
+| `scale-open`  | Event triggered when menu list opened | `CustomEvent<{ list: HTMLElement; }>` |
 
 
 ## Methods
@@ -34,6 +32,12 @@
 ### `close(silent?: boolean) => Promise<void>`
 
 
+
+#### Parameters
+
+| Name     | Type      | Description |
+| -------- | --------- | ----------- |
+| `silent` | `boolean` |             |
 
 #### Returns
 

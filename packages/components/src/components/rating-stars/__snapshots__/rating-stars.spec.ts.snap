@@ -2,7 +2,7 @@
 
 exports[`RatingStars snapshots deprecated overwrite actual props 1`] = `
 <scale-rating-stars label="Rating" max="12" max-rating="12" rating="0" size="small" star-size="small">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div part="container">
       <label htmlfor="scale-rating-star-5" id="scale-rating-star-5-label" part="label">
         Rating
@@ -85,13 +85,13 @@ exports[`RatingStars snapshots deprecated overwrite actual props 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-rating-stars>
 `;
 
 exports[`RatingStars snapshots rating 2 1`] = `
 <scale-rating-stars label="Rating" max="5" rating="2" size="large">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div part="container">
       <label htmlfor="scale-rating-star-1" id="scale-rating-star-1-label" part="label">
         Rating
@@ -132,13 +132,13 @@ exports[`RatingStars snapshots rating 2 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-rating-stars>
 `;
 
 exports[`RatingStars snapshots rating 2, maxRating 7 1`] = `
 <scale-rating-stars label="Rating" max="7" max-rating="7" rating="2" size="large">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div part="container">
       <label htmlfor="scale-rating-star-3" id="scale-rating-star-3-label" part="label">
         Rating
@@ -191,13 +191,13 @@ exports[`RatingStars snapshots rating 2, maxRating 7 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-rating-stars>
 `;
 
 exports[`RatingStars snapshots rating 3, disabled 1`] = `
 <scale-rating-stars class="disabled" disabled="" label="Rating" max="5" rating="0" size="large">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div part="container">
       <label htmlfor="scale-rating-star-4" id="scale-rating-star-4-label" part="label">
         Rating
@@ -238,13 +238,13 @@ exports[`RatingStars snapshots rating 3, disabled 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-rating-stars>
 `;
 
 exports[`RatingStars snapshots rating 3, minRating 1 1`] = `
 <scale-rating-stars label="Rating" max="5" min-rating="1" rating="3" size="large">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div part="container">
       <label htmlfor="scale-rating-star-2" id="scale-rating-star-2-label" part="label">
         Rating
@@ -285,6 +285,6 @@ exports[`RatingStars snapshots rating 3, minRating 1 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-rating-stars>
 `;

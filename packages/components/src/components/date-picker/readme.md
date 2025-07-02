@@ -19,7 +19,7 @@
 | `innerRole`      | `inner-role`        | Defines a specific role attribute for the date picker input.                                                                                                                                                                                          | `string`                                                | `undefined`       |
 | `invalid`        | `invalid`           | (optional) invalid status                                                                                                                                                                                                                             | `boolean`                                               | `undefined`       |
 | `label`          | `label`             | (optional) Label                                                                                                                                                                                                                                      | `string`                                                | `''`              |
-| `localization`   | --                  | Button labels, day names, month names, etc, used for localization. Default is English.                                                                                                                                                                | `DuetLocalizedText & { today: string; }`                | `undefined`       |
+| `localization`   | `localization`      | Button labels, day names, month names, etc, used for localization. Default is English.                                                                                                                                                                | `DuetLocalizedText & { today: string; }`                | `undefined`       |
 | `max`            | `max`               | Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the min property.                                                                                                          | `string`                                                | `''`              |
 | `min`            | `min`               | Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the max property.                                                                                                          | `string`                                                | `''`              |
 | `name`           | `name`              | Name of the date picker input.                                                                                                                                                                                                                        | `string`                                                | `'date'`          |
@@ -35,14 +35,11 @@
 
 ## Events
 
-| Event          | Description                                                                                        | Type                                                                                |
-| -------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `scale-blur`   | Event emitted the date picker input is blurred.                                                    | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
-| `scale-change` | Event emitted when a date is selected.                                                             | `CustomEvent<{ component: "duet-date-picker"; valueAsDate: Date; value: string; }>` |
-| `scale-focus`  | Event emitted the date picker input is focused.                                                    | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
-| `scaleBlur`    | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
-| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ component: "duet-date-picker"; valueAsDate: Date; value: string; }>` |
-| `scaleFocus`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
+| Event          | Description                                     | Type                                                                                |
+| -------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `scale-blur`   | Event emitted the date picker input is blurred. | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
+| `scale-change` | Event emitted when a date is selected.          | `CustomEvent<{ component: "duet-date-picker"; valueAsDate: Date; value: string; }>` |
+| `scale-focus`  | Event emitted the date picker input is focused. | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
 
 
 ## Methods
@@ -51,6 +48,12 @@
 
 Hide the calendar modal. Set `moveFocusToButton` to false to prevent focus
 returning to the date picker's button. Default is true.
+
+#### Parameters
+
+| Name                | Type      | Description |
+| ------------------- | --------- | ----------- |
+| `moveFocusToButton` | `boolean` |             |
 
 #### Returns
 

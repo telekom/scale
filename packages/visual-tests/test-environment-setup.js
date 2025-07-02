@@ -25,7 +25,7 @@ const toMatchImageSnapshot = configureToMatchImageSnapshot({
 expect.extend({ toMatchImageSnapshot });
 
 global.visualCheck = async (options) => {
-  await global.page.waitForSelector('html.hydrated');
+  await global.page.waitForSelector('#root');
   const previewHtml = await global.page.$('body');
   expect(await previewHtml.screenshot()).toMatchImageSnapshot(options);
 };

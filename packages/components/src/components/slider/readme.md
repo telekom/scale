@@ -36,12 +36,10 @@
 
 ## Events
 
-| Event          | Description                                                                                        | Type                  |
-| -------------- | -------------------------------------------------------------------------------------------------- | --------------------- |
-| `scale-change` |                                                                                                    | `CustomEvent<number>` |
-| `scale-input`  |                                                                                                    | `CustomEvent<number>` |
-| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<number>` |
-| `scaleInput`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<number>` |
+| Event          | Description | Type                  |
+| -------------- | ----------- | --------------------- |
+| `scale-change` |             | `CustomEvent<number>` |
+| `scale-input`  |             | `CustomEvent<number>` |
 
 
 ## Shadow Parts

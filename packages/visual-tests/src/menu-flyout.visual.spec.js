@@ -13,20 +13,20 @@ describe.skip('Menu', () => {
     // open menu on click
     test.each([['standard'], ['cascading-menu']])('%p', async (variant) => {
       await global.runSetup(`components-flyout-menu--${variant}`);
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       await global.page.$('body');
       const button = await global.page.evaluateHandle(
         `document.querySelector("#root scale-menu-flyout > scale-button").shadowRoot.querySelector("button")`
       );
       await button.click();
-      await global.page.waitFor(500);
+      await global.page.waitForTimeout(500);
       await global.visualCheck();
     });
     // open 2nd and 3rd level of cascading menu on click
     // hover, active, focus
     test.each([['cascading-menu']])('%p', async (variant) => {
       await global.runSetup(`components-flyout-menu--${variant}`);
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       await global.page.$('body');
       const button = await global.page.evaluateHandle(
         `document.querySelector("#root scale-menu-flyout > scale-button").shadowRoot.querySelector("button")`
@@ -41,26 +41,26 @@ describe.skip('Menu', () => {
         `document.querySelector("#root")`
       );
       await button.click();
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await flyoutItemOne.hover();
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await global.visualCheck();
       await base.click();
       await button.click();
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await global.page.keyboard.press('ArrowDown');
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await global.page.keyboard.press('ArrowDown');
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await global.page.keyboard.press('ArrowDown');
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await global.page.keyboard.press('ArrowDown');
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await global.page.keyboard.press('ArrowDown');
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await global.visualCheck();
       await flyoutItemOne.click();
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await global.visualCheck();
       await flyoutItemTwo.focus();
       await global.visualCheck();

@@ -9,8 +9,8 @@ describe('Table', () => {
         await page.goto(
           `http://host.docker.internal:3123/iframe.html?id=components-table--${variant}&viewMode=story`
         );
-        await page.waitForSelector('html.hydrated');
-        await page.waitFor(5000);
+        await global.page.waitForSelector('#root');
+        await global.page.waitForTimeout(5000);
         const previewHtml = await page.$('body');
         await page.evaluate(() => {
           [
@@ -27,7 +27,7 @@ describe('Table', () => {
     );
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-table--${variant}`);
-      await global.page.waitFor(5000);
+      await global.page.waitForTimeout(5000);
       const row = await global.page.evaluateHandle(
         'document.querySelector("#sortable-table > tbody > tr:nth-child(3)")'
       );

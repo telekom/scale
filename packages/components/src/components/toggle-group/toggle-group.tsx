@@ -67,8 +67,6 @@ export class ToggleGroup {
   @Prop() styles?: string;
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   @Listen('scaleClick')
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {

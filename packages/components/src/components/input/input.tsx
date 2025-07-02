@@ -11,14 +11,14 @@
 
 import {
   Component,
-  Prop,
+  Element,
   Event,
-  h,
   EventEmitter,
+  h,
   Host,
+  Prop,
   State,
   Watch,
-  Element,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -108,29 +108,18 @@ export class Input {
 
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleInput' })
-  scaleInputLegacy: EventEmitter<KeyboardEvent>;
+
   /** Emitted when the value has changed. */
   @Event({ eventName: 'scale-change' })
   scaleChange: EventEmitter<InputChangeEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' })
-  scaleChangeLegacy: EventEmitter<InputChangeEventDetail>;
+
   /** Emitted when the input has focus. */
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleFocus' }) scaleFocusLegacy!: EventEmitter<void>;
   /** Emitted when the input loses focus. */
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
   scaleKeyDown!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleKeyDown' })
-  scaleKeyDownLegacy!: EventEmitter<KeyboardEvent>;
   /** (optional) Input checkbox checked */
   @State() customResize?: any;
   /** Whether the input element has focus */

@@ -2,7 +2,7 @@
 
 exports[`NotificationMessage handle variant prop 1`] = `
 <scale-notification-message opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="notification-message notification-message--variant-error" part="notification-message variant-error" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
         <scale-icon-alert-error aria-hidden="true" class="notification-message__icon-error"></scale-icon-alert-error>
@@ -11,14 +11,14 @@ exports[`NotificationMessage handle variant prop 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-notification-message>
 `;
 
 exports[`NotificationMessage handle variant prop 2`] = `
 <scale-notification-message opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="notification-message notification-message--variant-warning" part="notification-message variant-warning" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
         <scale-icon-alert-warning aria-hidden="true" class="notification-message__icon-information" color="#AE461C"></scale-icon-alert-warning>
@@ -27,14 +27,14 @@ exports[`NotificationMessage handle variant prop 2`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-notification-message>
 `;
 
 exports[`NotificationMessage handle variant prop 3`] = `
 <scale-notification-message opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="notification-message notification-message--variant-informational" part="notification-message variant-informational" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
         <scale-icon-alert-information aria-hidden="true" class="notification-message__icon-information"></scale-icon-alert-information>
@@ -43,14 +43,14 @@ exports[`NotificationMessage handle variant prop 3`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-notification-message>
 `;
 
 exports[`NotificationMessage handle variant prop 4`] = `
 <scale-notification-message opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="notification-message notification-message--variant-success" part="notification-message variant-success" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
         <scale-icon-action-success aria-hidden="true" class="notification-message__icon-success" color="#187431"></scale-icon-action-success>
@@ -59,14 +59,14 @@ exports[`NotificationMessage handle variant prop 4`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-notification-message>
 `;
 
 exports[`NotificationMessage should match snapshot 1`] = `
 <scale-notification-message opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="notification-message notification-message--variant-informational" part="notification-message variant-informational" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
         <scale-icon-alert-information aria-hidden="true" class="notification-message__icon-information"></scale-icon-alert-information>
@@ -75,6 +75,6 @@ exports[`NotificationMessage should match snapshot 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-notification-message>
 `;
