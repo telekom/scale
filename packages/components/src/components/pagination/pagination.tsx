@@ -38,11 +38,10 @@ import { emitEvent } from '../../utils/utils';
 export type PaginationEventDirection = 'FIRST' | 'PREVIOUS' | 'NEXT' | 'LAST';
 
 export interface PaginationEventDetail {
-    startElement?: number;
-    currentPage?: number;
-    direction: PaginationEventDirection;
-  }
-
+  startElement?: number;
+  currentPage?: number;
+  direction: PaginationEventDirection;
+}
 
 const DEFAULT_ICON_SIZE = 20;
 
@@ -87,7 +86,8 @@ export class Pagination {
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
-  @Event({ eventName: 'scale-pagination' }) scalePagination: EventEmitter<PaginationEventDetail>;
+  @Event({ eventName: 'scale-pagination' })
+  scalePagination: EventEmitter<PaginationEventDetail>;
   /* 5. Private Properties (alphabetical) */
   /** Calculated width of largest text so buttons don't move while changing pages */
   maxWidth: number = 100;
