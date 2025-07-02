@@ -7,7 +7,7 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'scale-slider',
   host: {
-    '(scaleChange)': 'handleChangeEvent($event.target.value)'
+    '(scaleChange)': 'handleChangeEvent($event.target?.["value"])'
   },
   providers: [
     {
@@ -15,13 +15,14 @@ import { ValueAccessor } from './value-accessor';
       useExisting: NumericValueAccessor,
       multi: true
     }
-  ]
+  ],
+standalone: false
 })
 export class NumericValueAccessor extends ValueAccessor {
   constructor(el: ElementRef) {
     super(el);
   }
-  registerOnChange(fn: (_: number | null) => void) {
+  override registerOnChange(fn: (_: number | null) => void) {
     super.registerOnChange(value => {
       fn(value === '' ? null : parseFloat(value));
     });

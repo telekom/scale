@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Event, EventEmitter } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 @Component({
@@ -51,9 +51,6 @@ export class Tag {
 
   /** (optional) Close icon click event */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<MouseEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClose' })
-  scaleCloseLegacy: EventEmitter<MouseEvent>;
 
   componentWillUpdate() {}
   disconnectedCallback() {}

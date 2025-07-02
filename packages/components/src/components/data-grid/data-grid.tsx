@@ -11,22 +11,22 @@
 
 import {
   Component,
-  Prop,
-  h,
   Element,
-  Host,
-  Watch,
-  State,
   Event,
   EventEmitter,
+  Host,
+  Prop,
+  State,
+  Watch,
+  h,
 } from '@stencil/core';
-import {
-  CELL_TYPES,
-  DEFAULT_CELL_TYPE,
-  CELL_DEFAULTS,
-} from './data-grid-cells';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import {
+  CELL_DEFAULTS,
+  CELL_TYPES,
+  DEFAULT_CELL_TYPE,
+} from './data-grid-cells';
 
 import { parse } from 'date-fns';
 
@@ -127,15 +127,11 @@ export class DataGrid {
   /** Event triggered every time the editable cells are changed, updating the original rows data */
   @Event({ eventName: 'scale-edit' })
   scaleEdit: EventEmitter<DataGridEditEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleEdit' })
-  scaleEditLegacy: EventEmitter<DataGridEditEventDetail>;
+
   /** Event triggered every time the data is sorted, changing original rows data */
   @Event({ eventName: 'scale-sort' })
   scaleSort: EventEmitter<DataGridSortedEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleSort' })
-  scaleSortLegacy: EventEmitter<DataGridSortedEventDetail>;
+
   /** Event triggered every time the selection list updates  */
   @Event({ eventName: 'scale-selection' })
   scaleSelection: EventEmitter<any[]>;
@@ -1153,7 +1149,7 @@ export class DataGrid {
       >
         <scale-checkbox
           ref={(el) => (this.elToggleSelectAll = el)}
-          onScaleChange={() => this.toggleSelectAll()}
+          onScale-change={() => this.toggleSelectAll()}
           hideLabel={true}
           ariaLabelCheckbox="Select"
         ></scale-checkbox>
@@ -1298,7 +1294,7 @@ export class DataGrid {
       >
         <scale-checkbox
           checked={this.rows[rowIndex].selected}
-          onScaleChange={(e) => this.toggleRowSelect(e, rowIndex)}
+          onScale-change={(e) => this.toggleRowSelect(e, rowIndex)}
           hideLabel={true}
         ></scale-checkbox>
       </td>
@@ -1352,7 +1348,7 @@ export class DataGrid {
             startElement={this.paginationStart}
             totalElements={this.rows.length}
             pageSize={this.pageSize}
-            onScalePagination={({ detail }) =>
+            onScale-pagination={({ detail }) =>
               (this.paginationStart = detail.startElement)
             }
           ></scale-pagination>

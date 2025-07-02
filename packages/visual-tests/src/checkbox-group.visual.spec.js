@@ -10,13 +10,17 @@ describe('CheckboxGroup', () => {
       ['helper-text'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-checkbox-group--${variant}`);
-      await global.page.waitFor(500);
+      await global.page.waitForTimeout(500);
       await global.visualCheck();
     });
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-checkbox-group--${variant}`);
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       await global.page.$('body');
+
+      await global.page.waitForSelector(
+        '#root > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]'
+      );
       const firstCheckbox = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]")`
       );

@@ -7,7 +7,7 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'scale-input',
   host: {
-    '(scaleChange)': 'handleChangeEvent($event.target.value)'
+    '(scaleChange)': 'handleChangeEvent($event.target?.["value"])'
   },
   providers: [
     {
@@ -15,7 +15,8 @@ import { ValueAccessor } from './value-accessor';
       useExisting: TextValueAccessor,
       multi: true
     }
-  ]
+  ],
+standalone: false
 })
 export class TextValueAccessor extends ValueAccessor {
   constructor(el: ElementRef) {

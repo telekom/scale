@@ -2,14 +2,14 @@
 
 exports[`Alert should match snapshot 1`] = `
 <scale-alert>
-  <mock:shadow-root></mock:shadow-root>
+  <template shadowrootmode="open"></template>
   Notifications
 </scale-alert>
 `;
 
 exports[`Alert should match snapshot when opened 1`] = `
 <scale-alert opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="alert">
       <div class="alert__body">
         <div class="alert__icon"></div>
@@ -22,14 +22,14 @@ exports[`Alert should match snapshot when opened 1`] = `
         x
       </a>
     </div>
-  </mock:shadow-root>
+  </template>
   Notifications
 </scale-alert>
 `;
 
 exports[`Alert should match snapshot with hasSlotClose 1`] = `
 <scale-alert opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="alert">
       <div class="alert__body">
         <div class="alert__icon"></div>
@@ -44,7 +44,7 @@ exports[`Alert should match snapshot with hasSlotClose 1`] = `
         </div>
       </a>
     </div>
-  </mock:shadow-root>
+  </template>
   Notifications
   <div slot="close">
     Close

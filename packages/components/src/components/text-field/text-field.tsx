@@ -11,19 +11,19 @@
 
 import {
   Component,
-  Prop,
   Element,
   Event,
-  h,
   EventEmitter,
+  h,
   Host,
+  Prop,
   State,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
-interface InputChangeEventDetail {
+export interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
@@ -115,29 +115,16 @@ export class TextField {
   @Prop() experimentalControlled?: boolean = false;
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleInput' })
-  scaleInputLegacy!: EventEmitter<KeyboardEvent>;
   /** Emitted when the value has changed. */
   @Event({ eventName: 'scale-change' })
   scaleChange!: EventEmitter<InputChangeEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' })
-  scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
   /** Emitted when the input has focus. */
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleFocus' }) scaleFocusLegacy!: EventEmitter<void>;
   /** Emitted when the input loses focus. */
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
   scaleKeyDown!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleKeydown' })
-  scaleKeyDownLegacy!: EventEmitter<KeyboardEvent>;
 
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;

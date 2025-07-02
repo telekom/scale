@@ -9,30 +9,30 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
 import {
   Component,
-  h,
-  Prop,
-  Method,
   Element,
   Event,
   EventEmitter,
+  h,
+  Host,
+  Method,
+  Prop,
   State,
   Watch,
-  Host,
 } from '@stencil/core';
-import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
 import statusNote from '../../utils/status-note';
 
+import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
 import {
+  DuetDatePicker,
   DuetDatePickerChangeEvent,
   DuetDatePickerDirection,
   DuetDatePickerFocusEvent,
-  DuetDatePicker,
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
 import classNames from 'classnames';
-import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
-import { emitEvent, generateUniqueId } from '../../utils/utils';
+import { emitEvent, generateUniqueId, type ScaleIcon } from '../../utils/utils';
 
 if (
   typeof window !== 'undefined' &&
@@ -171,29 +171,17 @@ export class DatePicker {
   @Event({ eventName: 'scale-change' })
   scaleChange: EventEmitter<DuetDatePickerChangeEvent>;
 
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' })
-  scaleChangeLegacy: EventEmitter<DuetDatePickerChangeEvent>;
-
   /**
    * Event emitted the date picker input is blurred.
    */
   @Event({ eventName: 'scale-blur' })
   scaleBlur: EventEmitter<DuetDatePickerFocusEvent>;
 
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBlur' })
-  scaleBlurLegacy: EventEmitter<DuetDatePickerFocusEvent>;
-
   /**
    * Event emitted the date picker input is focused.
    */
   @Event({ eventName: 'scale-focus' })
   scaleFocus: EventEmitter<DuetDatePickerFocusEvent>;
-
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleFocus' })
-  scaleFocusLegacy: EventEmitter<DuetDatePickerFocusEvent>;
 
   private readonly internalId = generateUniqueId();
 
@@ -283,7 +271,9 @@ export class DatePicker {
     );
 
     if (calendarIcon) {
-      const icon = document.createElement('scale-icon-content-calendar');
+      const icon = document.createElement(
+        'scale-icon-content-calendar'
+      ) as ScaleIcon;
       icon.size = DEFAULT_ICON_SIZE;
       calendarIcon.replaceWith(icon);
     }
@@ -293,7 +283,7 @@ export class DatePicker {
     if (navLeftIcon) {
       const scaleNavLeftIcon = document.createElement(
         'scale-icon-navigation-left'
-      );
+      ) as ScaleIcon;
       scaleNavLeftIcon.size = 16;
       navLeftIcon.replaceWith(scaleNavLeftIcon);
     }
@@ -303,7 +293,7 @@ export class DatePicker {
     if (navRightIcon) {
       const scaleNavRightIcon = document.createElement(
         'scale-icon-navigation-right'
-      );
+      ) as ScaleIcon;
       scaleNavRightIcon.size = 16;
       navRightIcon.replaceWith(scaleNavRightIcon);
     }

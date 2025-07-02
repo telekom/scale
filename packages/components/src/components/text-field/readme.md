@@ -40,18 +40,13 @@
 
 ## Events
 
-| Event           | Description                                                                                        | Type                                  |
-| --------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| `scale-blur`    | Emitted when the input loses focus.                                                                | `CustomEvent<void>`                   |
-| `scale-change`  | Emitted when the value has changed.                                                                | `CustomEvent<InputChangeEventDetail>` |
-| `scale-focus`   | Emitted when the input has focus.                                                                  | `CustomEvent<void>`                   |
-| `scale-input`   | Emitted when a keyboard input occurred.                                                            | `CustomEvent<KeyboardEvent>`          |
-| `scale-keydown` | Emitted on keydown.                                                                                | `CustomEvent<KeyboardEvent>`          |
-| `scaleBlur`     | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<void>`                   |
-| `scaleChange`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<InputChangeEventDetail>` |
-| `scaleFocus`    | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<void>`                   |
-| `scaleInput`    | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<KeyboardEvent>`          |
-| `scaleKeydown`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<KeyboardEvent>`          |
+| Event           | Description                             | Type                                  |
+| --------------- | --------------------------------------- | ------------------------------------- |
+| `scale-blur`    | Emitted when the input loses focus.     | `CustomEvent<void>`                   |
+| `scale-change`  | Emitted when the value has changed.     | `CustomEvent<InputChangeEventDetail>` |
+| `scale-focus`   | Emitted when the input has focus.       | `CustomEvent<void>`                   |
+| `scale-input`   | Emitted when a keyboard input occurred. | `CustomEvent<KeyboardEvent>`          |
+| `scale-keydown` | Emitted on keydown.                     | `CustomEvent<KeyboardEvent>`          |
 
 
 ## Dependencies

@@ -2,7 +2,7 @@
 
 exports[`pagination should match snapshot 1`] = `
 <scale-pagination>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="pagination" part="pagination">
       <div class="pagination__info-responsive" part="info-responsive">
         <span>
@@ -31,6 +31,6 @@ exports[`pagination should match snapshot 1`] = `
         </button>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-pagination>
 `;

@@ -74,12 +74,6 @@ export class Segment {
     selected: boolean;
     userInteraction?: boolean;
   }>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
-    id: string;
-    selected: boolean;
-    userInteraction?: boolean;
-  }>;
 
   private focusableElement: HTMLElement;
   private userInteraction = false; // 'false' indicates that this event is triggered by internal state change

@@ -2,21 +2,21 @@
 
 exports[`Accordion should match snapshot 1`] = `
 <scale-accordion>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="accordion" part="base">
       <slot></slot>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-accordion>
 `;
 
 exports[`Handle dependent prop match snapshot 1`] = `
 <scale-accordion dependent="" headline="multi">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="accordion" part="base">
       <slot></slot>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-collapsible is-expanded="">
     <scale-text slot="headline" variant="collapsible">
       Accordion with multi
@@ -34,11 +34,11 @@ exports[`Handle dependent prop match snapshot 1`] = `
 
 exports[`Handle expanded prop match snapshot 1`] = `
 <scale-accordion expanded="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="accordion" part="base">
       <slot></slot>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-collapsible>
     <h3>
       Leo integer malesuada nunc vel risus

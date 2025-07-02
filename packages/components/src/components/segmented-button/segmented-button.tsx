@@ -69,8 +69,6 @@ export class SegmentedButton {
   longestButtonWidth: string;
   /** Emitted when button is clicked. Not emitted in case of programmatic state changes (e.g. the `selected` state is set by the skript). */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   container: HTMLElement;
   showHelperText = false;

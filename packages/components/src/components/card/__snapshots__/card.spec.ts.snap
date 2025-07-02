@@ -2,7 +2,7 @@
 
 exports[`Card should handle label prop 1`] = `
 <scale-card label="card label">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="card-border" part="border">
       <div aria-label="card label" class="card" part="base" role="group" target="_self">
         <div class="card__body" part="body">
@@ -10,14 +10,14 @@ exports[`Card should handle label prop 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-card>
 `;
 
 exports[`Card should handle rel prop 1`] = `
 <scale-card rel="card rel">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="card-border" part="border">
       <div class="card" part="base" rel="card rel" role="group" target="_self">
         <div class="card__body" part="body">
@@ -25,14 +25,14 @@ exports[`Card should handle rel prop 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-card>
 `;
 
 exports[`Card should handle styles prop 1`] = `
 <scale-card styles="color=red">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       color=red
     </style>
@@ -43,14 +43,14 @@ exports[`Card should handle styles prop 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-card>
 `;
 
 exports[`Card should handle target prop 1`] = `
 <scale-card target="card target">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="card-border" part="border">
       <div class="card" part="base" role="group" target="card target">
         <div class="card__body" part="body">
@@ -58,14 +58,14 @@ exports[`Card should handle target prop 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-card>
 `;
 
 exports[`Card should handle to prop 1`] = `
 <scale-card to="adresse">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="card-border" part="border">
       <a class="card card--interactive" href="adresse" part="base interactive" target="_self">
         <div class="card__body" part="body">
@@ -73,14 +73,14 @@ exports[`Card should handle to prop 1`] = `
         </div>
       </a>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-card>
 `;
 
 exports[`Card should match snapshot 1`] = `
 <scale-card>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="card-border" part="border">
       <div class="card" part="base" role="group" target="_self">
         <div class="card__body" part="body">
@@ -88,7 +88,7 @@ exports[`Card should match snapshot 1`] = `
         </div>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-card>
 `;

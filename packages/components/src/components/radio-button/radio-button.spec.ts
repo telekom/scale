@@ -36,14 +36,11 @@ describe('RadioButton', () => {
       html: `<scale-radio-button></scale-radio-button>`,
     });
     const changeSpy = jest.fn();
-    const changeSpyLegacy = jest.fn();
     page.rootInstance.checked = true;
     page.doc.addEventListener('scale-change', changeSpy);
-    page.doc.addEventListener('scaleChange', changeSpyLegacy);
     const element = page.root.querySelector('input');
     element.dispatchEvent(new Event('change'));
     await page.waitForChanges();
     expect(changeSpy).toHaveBeenCalled();
-    expect(changeSpyLegacy).toHaveBeenCalled();
   });
 });

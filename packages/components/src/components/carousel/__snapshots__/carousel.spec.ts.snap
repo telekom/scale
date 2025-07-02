@@ -2,7 +2,7 @@
 
 exports[`Carousel should match snapshot 1`] = `
 <scale-carousel>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="carousel">
       <div class="carousel__container">
         <div class="carousel__arrow carousel__arrow--left">
@@ -14,7 +14,7 @@ exports[`Carousel should match snapshot 1`] = `
       </div>
       <ul class="carousel__indicators"></ul>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-carousel>
 `;
