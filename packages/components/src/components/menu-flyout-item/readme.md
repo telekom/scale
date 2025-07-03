@@ -35,7 +35,7 @@
 
 | Name            | Type                          | Description |
 | --------------- | ----------------------------- | ----------- |
-| `event`         | `KeyboardEvent \| MouseEvent` |             |
+| `event`         | `MouseEvent \| KeyboardEvent` |             |
 | `closeOnSelect` | `boolean`                     |             |
 
 #### Returns

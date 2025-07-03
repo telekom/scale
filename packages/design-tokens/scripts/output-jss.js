@@ -17,7 +17,6 @@ import { processValue } from './output-css.js';
 const prettierOptions = {
   singleQuote: true,
   trailingComma: 'es5',
-  parser: 'babel',
 };
 const fontKeyPropMap = {
   family: 'fontFamily',
