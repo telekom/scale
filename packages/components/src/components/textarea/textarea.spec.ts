@@ -145,68 +145,53 @@ describe('Textarea', () => {
 
     it('onKeyDown', async () => {
       const mock = jest.fn();
-      const mockLegacy = jest.fn();
-      page.root.addEventListener('scaleKeyDown', mockLegacy);
       page.root.addEventListener('scale-keydown', mock);
       const target = page.root.querySelector('.textarea__control');
       await page.waitForChanges();
       await target.dispatchEvent(new KeyboardEvent('keydown'));
       await page.waitForChanges();
       expect(mock).toHaveBeenCalled();
-      expect(mockLegacy).toHaveBeenCalled();
     });
 
     it('onBlur', async () => {
       const mock = jest.fn();
-      const mockLegacy = jest.fn();
       page.root.addEventListener('scale-blur', mock);
-      page.root.addEventListener('scaleBlur', mockLegacy);
       const target = page.root.querySelector('.textarea__control');
       await page.waitForChanges();
       target.dispatchEvent(new Event('blur'));
       await page.waitForChanges();
       expect(mock).toHaveBeenCalled();
-      expect(mockLegacy).toHaveBeenCalled();
     });
 
     it('onFocus', async () => {
       const mock = jest.fn();
-      const mockLegacy = jest.fn();
       page.root.addEventListener('scale-focus', mock);
-      page.root.addEventListener('scaleFocus', mockLegacy);
       const target = page.root.querySelector('.textarea__control');
       await page.waitForChanges();
       target.dispatchEvent(new Event('focus'));
       await page.waitForChanges();
       expect(mock).toHaveBeenCalled();
-      expect(mockLegacy).toHaveBeenCalled();
     });
 
     it('onInput', async () => {
       const mock = jest.fn();
-      const mockLegacy = jest.fn();
       page.root.addEventListener('scale-input', mock);
-      page.root.addEventListener('scaleInput', mockLegacy);
       const target = page.root.querySelector('.textarea__control');
       await page.waitForChanges();
       target.dispatchEvent(new Event('input'));
       await page.waitForChanges();
       expect(mock).toHaveBeenCalled();
-      expect(mockLegacy).toHaveBeenCalled();
     });
 
     it('onChange', async () => {
       const mock = jest.fn();
-      const mockLegacy = jest.fn();
       page.root.emitChange = jest.fn();
-      page.root.addEventListener('scale-change', mockLegacy);
-      page.root.addEventListener('scaleChange', mock);
+      page.root.addEventListener('scale-change', mock);
       const target = page.root.querySelector('.textarea__control');
       await page.waitForChanges();
       target.dispatchEvent(new Event('change'));
       await page.waitForChanges();
       expect(mock).toHaveBeenCalled();
-      expect(mockLegacy).toHaveBeenCalled();
       expect(page.root.emitChange).not.toHaveBeenCalled();
     });
   });
@@ -220,7 +205,7 @@ describe('Textarea', () => {
     });
     it('...', async () => {
       const mock = jest.fn();
-      page.root.addEventListener('scaleChange', mock);
+      page.root.addEventListener('scale-change', mock);
       page.root.value = null;
       await page.waitForChanges();
       page.rootInstance.emitChange();

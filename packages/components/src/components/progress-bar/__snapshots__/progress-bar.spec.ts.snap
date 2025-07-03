@@ -2,7 +2,7 @@
 
 exports[`ProgressBar check props 1`] = `
 <scale-progress-bar label="testLabel" percentage="18" percentage-start="5" show-status="" status-description="statusDescription" status-inside="" stroke-width="24" styles="color:blue;" text-inside="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       color:blue;
     </style>
@@ -38,14 +38,14 @@ exports[`ProgressBar check props 1`] = `
     <span aria-live="polite" class="progress-bar__aria-live">
       20%
     </span>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-progress-bar>
 `;
 
 exports[`ProgressBar should match snapshot 1`] = `
 <scale-progress-bar>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       @keyframes showProgress {
       from {
@@ -69,7 +69,7 @@ exports[`ProgressBar should match snapshot 1`] = `
       </div>
     </div>
     <span aria-live="polite" class="progress-bar__aria-live"></span>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-progress-bar>
 `;

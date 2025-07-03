@@ -2,21 +2,21 @@
 
 exports[`SidebarNavItem should match snapshot 1`] = `
 <scale-sidebar-nav-item>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <li class="sidebar-nav-item" part="sidebar-nav-item" role="listitem">
       <slot></slot>
     </li>
-  </mock:shadow-root>
+  </template>
 </scale-sidebar-nav-item>
 `;
 
 exports[`SidebarNavItem should match snapshot 2`] = `
 <scale-sidebar-nav-item>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <li class="sidebar-nav-item" part="sidebar-nav-item" role="listitem">
       <slot></slot>
     </li>
-  </mock:shadow-root>
+  </template>
   <a href="#">
     Some foo
   </a>
@@ -25,11 +25,11 @@ exports[`SidebarNavItem should match snapshot 2`] = `
 
 exports[`SidebarNavItem should match snapshot after using createScreenReaderOnlySpan() 1`] = `
 <scale-sidebar-nav-item active="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <li class="sidebar-nav-item sidebar-nav-item--active" part="sidebar-nav-item active" role="listitem">
       <slot></slot>
     </li>
-  </mock:shadow-root>
+  </template>
   <a aria-current="page" href="#">
     Some foo
     <span style="position: absolute; left: -10000px; overflow: hidden;">
@@ -41,11 +41,11 @@ exports[`SidebarNavItem should match snapshot after using createScreenReaderOnly
 
 exports[`SidebarNavItem should match snapshot after using createScreenReaderOnlySpan() 2`] = `
 <scale-sidebar-nav-item active="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <li class="sidebar-nav-item sidebar-nav-item--active" part="sidebar-nav-item active" role="listitem">
       <slot></slot>
     </li>
-  </mock:shadow-root>
+  </template>
   <a aria-current="page" href="#">
     Some foo
     <span style="position: absolute; left: -10000px; overflow: hidden;">
@@ -57,11 +57,11 @@ exports[`SidebarNavItem should match snapshot after using createScreenReaderOnly
 
 exports[`SidebarNavItem should match snapshot after using currentChanged() 1`] = `
 <scale-sidebar-nav-item active="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <li class="sidebar-nav-item sidebar-nav-item--active" part="sidebar-nav-item active" role="listitem">
       <slot></slot>
     </li>
-  </mock:shadow-root>
+  </template>
   <a aria-current="page" href="#">
     Some foo
     <span style="position: absolute; left: -10000px; overflow: hidden;">
@@ -73,11 +73,11 @@ exports[`SidebarNavItem should match snapshot after using currentChanged() 1`] =
 
 exports[`SidebarNavItem should match snapshot after using currentChanged() 2`] = `
 <scale-sidebar-nav-item>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <li class="sidebar-nav-item" part="sidebar-nav-item" role="listitem">
       <slot></slot>
     </li>
-  </mock:shadow-root>
+  </template>
   <a href="#">
     Some foo
   </a>

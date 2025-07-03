@@ -2,7 +2,7 @@
 
 exports[`NotificationToast  handle variant prop 1`] = `
 <scale-notification-toast opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       @keyframes fadeIn {
         from {
@@ -55,14 +55,14 @@ exports[`NotificationToast  handle variant prop 1`] = `
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-notification-toast>
 `;
 
 exports[`NotificationToast  handle variant prop 2`] = `
 <scale-notification-toast opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       @keyframes fadeIn {
         from {
@@ -115,14 +115,14 @@ exports[`NotificationToast  handle variant prop 2`] = `
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-notification-toast>
 `;
 
 exports[`NotificationToast  handle variant prop 3`] = `
 <scale-notification-toast opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       @keyframes fadeIn {
         from {
@@ -175,14 +175,14 @@ exports[`NotificationToast  handle variant prop 3`] = `
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-notification-toast>
 `;
 
 exports[`NotificationToast  handle variant prop 4`] = `
 <scale-notification-toast opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       @keyframes fadeIn {
         from {
@@ -235,14 +235,14 @@ exports[`NotificationToast  handle variant prop 4`] = `
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-notification-toast>
 `;
 
 exports[`NotificationToast  should match snapshot 1`] = `
 <scale-notification-toast opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       @keyframes fadeIn {
         from {
@@ -295,6 +295,6 @@ exports[`NotificationToast  should match snapshot 1`] = `
         <scale-icon-action-circle-close></scale-icon-action-circle-close>
       </button>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-notification-toast>
 `;
