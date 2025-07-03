@@ -11,18 +11,18 @@
 
 import {
   Component,
-  Prop,
-  State,
-  h,
   Element,
-  Host,
-  Watch,
   Event,
   EventEmitter,
+  h,
+  Host,
+  Prop,
+  State,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
 import { animateTo, KEYFRAMES } from '../../utils/animate';
+import { isFocusable, isHidden, queryShadowRoot } from '../../utils/focus-trap';
 import { emitEvent } from '../../utils/utils';
 
 const supportsResizeObserver = 'ResizeObserver' in window;
@@ -81,18 +81,13 @@ export class Modal {
 
   /** Fires when the modal has been opened */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<void>;
+
   /** Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing */
   @Event({ eventName: 'scale-before-close' })
   scaleBeforeClose: EventEmitter<BeforeCloseEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBeforeClose' })
-  scaleBeforeCloseLegacy: EventEmitter<BeforeCloseEventDetail>;
+
   /** Fires when the modal has been closed */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<void>;
 
   private closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   private modalContainer: HTMLElement;

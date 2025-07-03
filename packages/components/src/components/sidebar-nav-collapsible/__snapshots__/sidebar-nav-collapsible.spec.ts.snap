@@ -2,7 +2,7 @@
 
 exports[`SidebarNavCollapsible emitter exit handleKeydown if event metaKey 1`] = `
 <scale-sidebar-nav-collapsible>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <li class="sidebar-nav-collapsible" part="sidebar-nav-collapsible" role="listitem">
       <div class="sidebar-nav-collapsible__wrapper" part="wrapper">
         <a aria-expanded="false" class="sidebar-nav-collapsible__button" href="#" part="button" role="button">
@@ -13,13 +13,13 @@ exports[`SidebarNavCollapsible emitter exit handleKeydown if event metaKey 1`] =
         <slot></slot>
       </ul>
     </li>
-  </mock:shadow-root>
+  </template>
 </scale-sidebar-nav-collapsible>
 `;
 
 exports[`SidebarNavCollapsible snapshots smoke test 1`] = `
 <scale-sidebar-nav-collapsible>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <li class="sidebar-nav-collapsible" part="sidebar-nav-collapsible" role="listitem">
       <div class="sidebar-nav-collapsible__wrapper" part="wrapper">
         <a aria-expanded="false" class="sidebar-nav-collapsible__button" href="#" part="button" role="button">
@@ -30,6 +30,6 @@ exports[`SidebarNavCollapsible snapshots smoke test 1`] = `
         <slot></slot>
       </ul>
     </li>
-  </mock:shadow-root>
+  </template>
 </scale-sidebar-nav-collapsible>
 `;

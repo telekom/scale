@@ -2,11 +2,11 @@
 
 exports[`SegmentedButton should match selected button snapshot 1`] = `
 <scale-segmented-button>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div aria-label="segment button with 2" class="segmented-button segmented-button--small" part="segmented-button small" role="group" style="grid-template-columns: repeat(2, auto);">
       <slot></slot>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-segment selected="">
     Label
   </scale-segment>
@@ -18,11 +18,11 @@ exports[`SegmentedButton should match selected button snapshot 1`] = `
 
 exports[`SegmentedButton should match standard snapshot 1`] = `
 <scale-segmented-button>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div aria-label="segment button with 4" class="segmented-button segmented-button--small" part="segmented-button small" role="group" style="grid-template-columns: repeat(4, auto);">
       <slot></slot>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-segment>
     Label
   </scale-segment>

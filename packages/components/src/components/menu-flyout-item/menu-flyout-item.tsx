@@ -49,10 +49,6 @@ export class MenuFlyoutItem {
   @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter<{
     item: HTMLElement;
   }>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleSelect' }) scaleSelectLegacy: EventEmitter<{
-    item: HTMLElement;
-  }>;
 
   private hasSlotSublist: boolean = false;
 

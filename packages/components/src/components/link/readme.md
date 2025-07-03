@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+This is a superset of the default anchor `<a>` element.
+
 ## Usage
 
 ### Link

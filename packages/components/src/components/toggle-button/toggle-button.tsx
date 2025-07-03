@@ -11,17 +11,17 @@
 
 import {
   Component,
-  Prop,
-  h,
-  Host,
   Element,
   Event,
   EventEmitter,
+  h,
+  Host,
   Method,
+  Prop,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 enum iconSizes {
   xs = '12',
@@ -76,11 +76,6 @@ export class ToggleButton {
   @Prop() ariaDescriptionTranslation = '$selected';
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
-    id: string;
-    selected: boolean;
-  }>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
     id: string;
     selected: boolean;
   }>;

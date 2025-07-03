@@ -20,10 +20,9 @@
 
 ## Events
 
-| Event          | Description                                                                                        | Type                                  |
-| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| `scale-select` | Event triggered when menu item selected                                                            | `CustomEvent<{ item: HTMLElement; }>` |
-| `scaleSelect`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ item: HTMLElement; }>` |
+| Event          | Description                             | Type                                  |
+| -------------- | --------------------------------------- | ------------------------------------- |
+| `scale-select` | Event triggered when menu item selected | `CustomEvent<{ item: HTMLElement; }>` |
 
 
 ## Methods
@@ -31,6 +30,13 @@
 ### `triggerEvent(event: KeyboardEvent | MouseEvent, closeOnSelect?: boolean) => Promise<void>`
 
 
+
+#### Parameters
+
+| Name            | Type                          | Description |
+| --------------- | ----------------------------- | ----------- |
+| `event`         | `MouseEvent \| KeyboardEvent` |             |
+| `closeOnSelect` | `boolean`                     |             |
 
 #### Returns
 

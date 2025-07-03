@@ -1,12 +1,12 @@
-import { reactOutputTarget } from '@stencil/react-output-target';
 import {
-  vueOutputTarget,
   ComponentModelConfig,
+  vueOutputTarget,
 } from '@nowseemee/vue-output-target';
 import {
   angularOutputTarget,
   ValueAccessorConfig,
 } from '@stencil/angular-output-target';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 const vueComponentModels: ComponentModelConfig[] = [
   {
@@ -80,9 +80,11 @@ const excludeComponents = [
 
 export const frameworkTargets = [
   reactOutputTarget({
-    componentCorePackage: '@telekom/scale-components',
-    proxiesFile: '../components-react/src/components.ts',
+    // componentCorePackage: '@telekom/scale-components',
+    stencilPackageName: '@telekom/scale-components',
+    // proxiesFile: '../components-react/src/components.ts',
     excludeComponents,
+    outDir: '../components-react/src',
   }),
   vueOutputTarget({
     componentCorePackage: '@telekom/scale-components',
@@ -93,10 +95,8 @@ export const frameworkTargets = [
   angularOutputTarget({
     componentCorePackage: '@telekom/scale-components',
     directivesProxyFile: '../components-angular/src/directives/proxies.ts',
-    directivesArrayFile:
-      '../components-angular/src/directives/proxies-list.tsx',
-    directivesUtilsFile:
-      '../components-angular/src/directives/proxies-utils.ts',
+    directivesArrayFile: '../components-angular/src/directives/proxies-list.ts',
+    outputType: 'component',
     valueAccessorConfigs: angularValueAccessorBindings,
     excludeComponents,
   }),

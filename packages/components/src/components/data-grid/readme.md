@@ -15,12 +15,12 @@
 | `hideHeader`          | `hide-header`           | (optional) Set to true to hide header row                                                                                     | `boolean`                                                                                                       | `false`                     |
 | `hideInfo`            | `hide-info`             | (optional) Set to true to remove info footer block including pagination and selection status                                  | `boolean`                                                                                                       | `false`                     |
 | `hideMenu`            | `hide-menu`             | (optional) Set to true to hide settings menu                                                                                  | `boolean`                                                                                                       | `false`                     |
-| `localization`        | --                      | (optional) set localization for sort, toggle, select/deselect, table options, expand/collapse (html cell) Default is English. | `{ sortBy: string; toggle: string; select: string; tableOptions: string; expand?: string; collapse?: string; }` | `undefined`                 |
+| `localization`        | `localization`          | (optional) set localization for sort, toggle, select/deselect, table options, expand/collapse (html cell) Default is English. | `{ sortBy: string; toggle: string; select: string; tableOptions: string; expand?: string; collapse?: string; }` | `undefined`                 |
 | `numbered`            | `numbered`              | (optional) Set to true to add numbers column                                                                                  | `boolean`                                                                                                       | `false`                     |
 | `pageSize`            | `page-size`             | (optional) Set number of rows to display per pagination page                                                                  | `number`                                                                                                        | `Infinity`                  |
 | `rows`                | `rows`                  | Input data array                                                                                                              | `any`                                                                                                           | `undefined`                 |
 | `selectable`          | `selectable`            | (optional) Set to true to add selection column                                                                                | `boolean`                                                                                                       | `false`                     |
-| `selection`           | --                      | Read-only selection array - populated with raw data from selected rows                                                        | `any[]`                                                                                                         | `[]`                        |
+| `selection`           | `selection`             | Read-only selection array - populated with raw data from selected rows                                                        | `any[]`                                                                                                         | `[]`                        |
 | `shadeAlternate`      | `shade-alternate`       | (optional) Shade every second row darker                                                                                      | `boolean`                                                                                                       | `true`                      |
 | `sortableColumnTitle` | `sortable-column-title` | (optional) Title for sortable columns                                                                                         | `string`                                                                                                        | `'Activate to sort column'` |
 | `styles`              | `styles`                | (optional) Injected css styles                                                                                                | `any`                                                                                                           | `undefined`                 |
@@ -29,13 +29,11 @@
 
 ## Events
 
-| Event             | Description                                                                                        | Type                                     |
-| ----------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `scale-edit`      | Event triggered every time the editable cells are changed, updating the original rows data         | `CustomEvent<DataGridEditEventDetail>`   |
-| `scale-selection` | Event triggered every time the selection list updates                                              | `CustomEvent<any[]>`                     |
-| `scale-sort`      | Event triggered every time the data is sorted, changing original rows data                         | `CustomEvent<DataGridSortedEventDetail>` |
-| `scaleEdit`       | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<DataGridEditEventDetail>`   |
-| `scaleSort`       | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<DataGridSortedEventDetail>` |
+| Event             | Description                                                                                | Type                                     |
+| ----------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------- |
+| `scale-edit`      | Event triggered every time the editable cells are changed, updating the original rows data | `CustomEvent<DataGridEditEventDetail>`   |
+| `scale-selection` | Event triggered every time the selection list updates                                      | `CustomEvent<any[]>`                     |
+| `scale-sort`      | Event triggered every time the data is sorted, changing original rows data                 | `CustomEvent<DataGridSortedEventDetail>` |
 
 
 ## Shadow Parts
