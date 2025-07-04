@@ -61,5 +61,5 @@ Das Label des Switch sollte kurz und verständlich sein. Für einige Fälle eign
 ## Verwandte Komponenten
 
 [Checkbox, ](?path=/usage/components-checkbox--standard)
-[Dropdown, ](?path=/usage/components-dropdown--standard)
+[Dropdown Select, ](?path=/usage/components-dropdown-select--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)

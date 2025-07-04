@@ -1,5 +1,4 @@
 import { Component, h, Host, Prop, Element, Watch } from '@stencil/core';
-import statusNote from '../../utils/status-note';
 
 /**
  * Adds the `px` suffix to a string number
@@ -33,7 +32,6 @@ export class Callout {
   @Prop() styles?: string;
 
   connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
     this.syncPropsToCSS();
   }
 

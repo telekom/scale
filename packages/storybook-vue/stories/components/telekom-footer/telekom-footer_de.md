@@ -17,23 +17,23 @@ Entscheide dich je nach Umfang und Ausrichtung deines Produkts für eine Variant
 
 Das Seitenende wird in dieser Variante durch die dunkle Hintergrundfarbe deutlich markiert. Der Standard-Footer enthält Logo und Claim. Bei Seiten mit geringer Komplexität oder wenig Relevanz für Suchmaschinen-Optimierung kannst du diese Variante des Footers einsetzen.
 
-![Image Name](assets/3_components/beta-footer/Footer-standard.png)
+![Image Name](assets/3_components/telekom-footer/Footer-standard.png)
 
 ### Minimal
 
 Der Minimal-Footer ist in seiner Darstellung sehr reduziert. Er eignet sich ebenso wie die Standard-Variante für Seiten mit geringer Komplexität oder wenig Relevanz für Suchmaschinen-Optimierung.
 
-![Image Name](assets/3_components/beta-footer/Footer-minimal.png)
+![Image Name](assets/3_components/telekom-footer/Footer-minimal.png)
 
 ### Erweitert
 
 Der erweiterte Footer eignet sich für Portale mit umfangreichem Angebot, da sich neben den rechtsverbindlichen Links auch ein Einstieg in das gesamte Angebot des jeweiligen Portals abbilden lässt.
 
-![Image Name](assets/3_components/beta-footer/footer-erweitert.png)
+![Image Name](assets/3_components/telekom-footer/footer-erweitert.png)
 
 ## Elemente
 
-![Image Name](assets/3_components/beta-footer/footer-elemente.png)
+![Image Name](assets/3_components/telekom-footer/footer-elemente.png)
 
 #### Sitemap (1) (optional)
 
@@ -47,8 +47,4 @@ Der erweiterte Footer eignet sich für Portale mit umfangreichem Angebot, da sic
 
 Kleine Geräte stellen die Seitennavigation als Accordion dar. Alle anderen Elemente sind ebenfalls vertikal angeordnet.
 
-![Image Name](assets/3_components/beta-footer/Footer-navigation-mobile-de.png)
-
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
+![Image Name](assets/3_components/telekom-footer/Footer-navigation-mobile-de.png)
