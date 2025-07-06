@@ -20,16 +20,16 @@ const vueComponentModels: ComponentModelConfig[] = [
     event: 'scaleChange',
     targetAttr: 'value',
   },
-  // These do not work with the way the plugin "utils"'s wires events,
-  // and probably Vue doing something different for native input[type=checkbox|radio]
-  // {
-  //   elements: [
-  //     'scale-checkbox',
-  //     'scale-radio-button'
-  //   ],
-  //   event: 'scaleChange',
-  //   targetAttr: 'value',
-  // },
+  {
+    elements: ['scale-checkbox'],
+    event: 'scaleChange',
+    targetAttr: 'checked',
+  },
+  {
+    elements: ['scale-radio-button'],
+    event: 'scaleChange',
+    targetAttr: 'checked',
+  },
   {
     elements: ['scale-slider'],
     event: 'scaleInput',
