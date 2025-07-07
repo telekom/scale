@@ -195,7 +195,7 @@ jobs:
 
       - name: Create pull request with new snapshots
         if: failure()
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: 'test(visual): update snapshots'
           title: 'update visual snapshots: ${{ github.event.pull_request.title }}'
