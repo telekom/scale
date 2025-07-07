@@ -208,7 +208,7 @@
     json5 "^2.2.3"
     semver "^6.3.1"
 
-"@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.10.4", "@babel/core@^7.7.5":
+"@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.7.5":
   version "7.11.4"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.11.4.tgz"
   integrity sha512-5deljj5HlqRXN+5oJTY7Zs37iH3z3b++KjiKtIsJy1NrjOOVSEaJHEetLBhyu0aQOSNNZ/0IuEAan9GzRuDXHg==
@@ -250,6 +250,27 @@
     json5 "^2.1.2"
     semver "^6.3.0"
     source-map "^0.5.0"
+
+"@babel/core@^7.28.0":
+  version "7.28.0"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.28.0.tgz#55dad808d5bf3445a108eefc88ea3fdf034749a4"
+  integrity sha512-UlLAnTPrFdNGoFtbSXwcGFQBtQZJCNjaN6hQNP3UPvuNXT1i82N26KL3dZeIpNalWywr9IuQuncaAfUaS1g6sQ==
+  dependencies:
+    "@ampproject/remapping" "^2.2.0"
+    "@babel/code-frame" "^7.27.1"
+    "@babel/generator" "^7.28.0"
+    "@babel/helper-compilation-targets" "^7.27.2"
+    "@babel/helper-module-transforms" "^7.27.3"
+    "@babel/helpers" "^7.27.6"
+    "@babel/parser" "^7.28.0"
+    "@babel/template" "^7.27.2"
+    "@babel/traverse" "^7.28.0"
+    "@babel/types" "^7.28.0"
+    convert-source-map "^2.0.0"
+    debug "^4.1.0"
+    gensync "^1.0.0-beta.2"
+    json5 "^2.2.3"
+    semver "^6.3.1"
 
 "@babel/core@^7.9.0":
   version "7.18.13"
@@ -3189,7 +3210,7 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
-"@babel/traverse@^7.27.1", "@babel/traverse@^7.27.3", "@babel/traverse@^7.27.7":
+"@babel/traverse@^7.27.1", "@babel/traverse@^7.27.3", "@babel/traverse@^7.27.7", "@babel/traverse@^7.28.0":
   version "7.28.0"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.28.0.tgz#518aa113359b062042379e333db18380b537e34b"
   integrity sha512-mGe7UK5wWyh0bKRfupsUchrQGqvDbZDbKJw+kcRGSmdHVYrv+ltd0pnpDTVpiTqnaBru9iEvA8pz8W46v0Amwg==
@@ -7307,6 +7328,13 @@ babel-jest@^26.6.3:
     graceful-fs "^4.2.4"
     slash "^3.0.0"
 
+babel-loader@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-10.0.0.tgz#b9743714c0e1e084b3e4adef3cd5faee33089977"
+  integrity sha512-z8jt+EdS61AMw22nSfoNJAZ0vrtmhPRVi6ghL3rCeRZI8cdNYFiV5xeV3HbE7rlZZNmGH8BVccwWt8/ED0QOHA==
+  dependencies:
+    find-up "^5.0.0"
+
 babel-loader@^8.0.0:
   version "8.2.5"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.5.tgz#d45f585e654d5a5d90f5350a779d7647c5ed512e"
@@ -7315,17 +7343,6 @@ babel-loader@^8.0.0:
     find-cache-dir "^3.3.1"
     loader-utils "^2.0.0"
     make-dir "^3.1.0"
-    schema-utils "^2.6.5"
-
-babel-loader@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.1.0.tgz"
-  integrity sha512-7q7nC1tYOrqvUrN3LQK4GwSk/TQorZSOlO9C+RZDZpODgyN4ZlCqE5q9cDsyWOliN+aU9B4JX01xK9eJXowJLw==
-  dependencies:
-    find-cache-dir "^2.1.0"
-    loader-utils "^1.4.0"
-    mkdirp "^0.5.3"
-    pify "^4.0.1"
     schema-utils "^2.6.5"
 
 babel-plugin-apply-mdx-type-prop@1.6.22:
@@ -9149,6 +9166,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cross-env@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+  dependencies:
+    cross-spawn "^7.0.1"
+
 cross-spawn@^6.0.0:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz"
@@ -9164,6 +9188,15 @@ cross-spawn@^7.0.0:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz"
   integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
+  dependencies:
+    path-key "^3.1.0"
+    shebang-command "^2.0.0"
+    which "^2.0.1"
+
+cross-spawn@^7.0.1:
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.6.tgz#8a58fe78f00dcd70c370451759dfbfaf03e8ee9f"
+  integrity sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==
   dependencies:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
@@ -14075,7 +14108,7 @@ loader-utils@2.0.0, loader-utils@^2.0.0:
     emojis-list "^3.0.0"
     json5 "^2.1.2"
 
-loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4.0:
+loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.4.0.tgz"
   integrity sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==
