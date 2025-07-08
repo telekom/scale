@@ -39,8 +39,8 @@
   "scripts": {
     "prestart": "rm -rf node_modules/.cache/ && yes | cp -a ../components/dist/scale-components/fonts/* public/fonts/ && yes | cp -a ../components/dist/scale-components/scale-components.css public/",
     "prebuild": "rm -rf node_modules/.cache/ && yes | cp -a ../components/dist/scale-components/fonts/* public/fonts/ && yes | cp -a ../components/dist/scale-components/scale-components.css public/",
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider && start-storybook -s ./public -p 6006",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook -s ./public",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -s ./public -p 6006",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook -s ./public",
     "preserve": "yarn build",
     "serve": "http-server storybook-static",
     "format": "prettier --write \"package.json\" \"stories/**/*.md\"",
