@@ -17,7 +17,7 @@
     "@storybook/core-events": "^6.4.22",
     "@storybook/theming": "^6.4.22",
     "@storybook/vue": "^6.4.22",
-    "babel-loader": "^10.0.0",
+    "babel-loader": "~8.2.3 ",
     "babel-preset-vue": "^2.0.2",
     "copy-webpack-plugin": "^6.0.3",
     "cross-env": "^7.0.3",
