@@ -15,23 +15,16 @@ const path = require('path');
 const fg = require('fast-glob');
 const fs = require('fs-extra');
 const SVGO = require('svgo');
-const {
-  // kebabCase,
-  camelCase,
-  startCase,
-  upperFirst,
-  groupBy,
-  map,
-  find,
-  // flatMap,
-} = require('lodash');
 const Handlebars = require('handlebars'); // using Handlebars for consistency with components-sketch
 
 const { parse } = require('svg-parser');
-// const toHTML = require('hast-util-to-html');
 
 const svgo = new SVGO({
-  plugins: [{ removeViewBox: false }, { removeXMLNS: true }, {cleanupIDs: false}],
+  plugins: [
+    { removeViewBox: false },
+    { removeXMLNS: true },
+    { cleanupIDs: false },
+  ],
 });
 
 const INPUT_GLOB = process.env.WHITELABEL
@@ -39,20 +32,31 @@ const INPUT_GLOB = process.env.WHITELABEL
   : './src/telekom/icons/**/*.svg';
 const OUTPUT_PATH = './src/components/icons';
 const ICON_TEMPLATE_PATH = './scripts/icon-component.hbs';
-// const SET_TEMPLATE_PATH = './scripts/set.hbs';
 const EXT = '.svg';
 
 main();
 
+/**
+ * Main function to generate icon components.
+ * @returns {Promise<void>}
+ */
 async function main() {
   const { toHtml } = await import('hast-util-to-html');
 
-  /* Get SVG data from source files */
-
+  /** Get SVG data from source files @type {string[]} */
   const entries = await fg(INPUT_GLOB);
 
-  /* Read file, optimized svg, extract "state" (default or selected) */
+  /**
+   * @typedef {object} SVGFile
+   * @property {string} data
+   * @property {string} filepath
+   * @property {string} key
+   * @property {string} category
+   * @property {string} name
+   * @property {string} state
+   */
 
+  /** @type {SVGFile[]} */
   const files = await Promise.all(
     entries.map(async (filepath) => {
       const file = await fs.readFile(filepath, { encoding: 'utf-8' });
@@ -78,22 +82,104 @@ async function main() {
     })
   );
 
-  /* Replace low dashes with normal dashes */
+  /**
+   * Replaces underscores with hyphens in a string.
+   * @param {string} str
+   * @returns {string}
+   */
   function nolo(str) {
     return str.replace(/_/g, '-');
   }
 
-  /* Parse, define names and markup */
+  /**
+   * Converts a string to camelCase.
+   * @param {string} str
+   * @returns {string}
+   */
+  function camelCase(str) {
+    return str.replace(/-(\w)/g, (_, c) => c.toUpperCase());
+  }
 
+  /**
+   * Converts the first character of a string to uppercase.
+   * @param {string} str
+   * @returns {string}
+   */
+  function upperFirst(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  /**
+   * Groups an array of objects by a common property.
+   * @template T
+   * @param {T[]} array
+   * @param {keyof T} key
+   * @returns {Record<string, T[]>}
+   */
+  function groupBy(array, key) {
+    return array.reduce((acc, obj) => {
+      const value = obj[key];
+      if (!acc[value]) {
+        acc[value] = [];
+      }
+      acc[value].push(obj);
+      return acc;
+    }, {});
+  }
+
+  /**
+   * Transforms an object's values using a mapping function.
+   * @template T, U
+   * @param {Record<string, T>} obj
+   * @param {(value: T, key: string) => U} mapper
+   * @returns {U[]}
+   */
+  function map(obj, mapper) {
+    return Object.keys(obj).map((key) => mapper(obj[key], key));
+  }
+
+  /**
+   * Finds an element in an array based on a predicate.
+   * @template T
+   * @param {T[]} array
+   * @param {Partial<T>} predicate
+   * @returns {T | undefined}
+   */
+  function find(array, predicate) {
+    const keys = Object.keys(predicate);
+    return array.find((item) =>
+      keys.every((key) => item[key] === predicate[key])
+    );
+  }
+
+  /**
+   * Converts a string to start case.
+   * @param {string} str
+   * @returns {string}
+   */
+  function startCase(str) {
+    return str.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase());
+  }
+
+  /** @type {Record<string, SVGFile[]>} */
   const groupedByState = groupBy(files, 'key');
 
+  /**
+   * @typedef {object} IconComponent
+   * @property {string} key
+   * @property {string} tagName
+   * @property {string} className
+   * @property {{ default: string; selected: string }} markup
+   * @property {string} viewBox
+   */
+
+  /** @type {IconComponent[]} */
   const components = map(groupedByState, (item, key) => {
     const defaultItem = find(item, { state: 'default' });
     let selectedItem = find(item, { state: 'selected' });
     const tagName = 'scale-icon-' + key;
     const className = upperFirst(camelCase(key));
 
-    // Fallback to default when no `selected` is found
     if (selectedItem == null) {
       selectedItem = defaultItem;
       console.log(`Warning: icon with name '${key}' has no selected state`);
@@ -111,16 +197,26 @@ async function main() {
     };
   });
 
+  /**
+   * Converts HTML attributes to JSX attributes.
+   * @param {string} html
+   * @returns {string}
+   */
   function JSXify(html) {
-    if (html.indexOf('xlink:href')) {
-      return html.replace(/xlink:href/g, 'xlinkHref');
-    }
-    return html;
+    return html.replace(/xlink:href/g, 'xlinkHref');
   }
 
-  /* Generate an "index" JSON file */
+  /**
+   * Generate an "index" JSON file
+   * @typedef {object} CategoryIndex
+   * @property {string} label
+   * @property {string} category
+   * @property {string[]} items
+   */
 
+  /** @type {Record<string, SVGFile[]>} */
   const groupedByCategory = groupBy(files, 'category');
+  /** @type {CategoryIndex[]} */
   const indexByCategory = [];
 
   Object.keys(groupedByCategory)
@@ -165,13 +261,28 @@ async function main() {
   }); */
 
   // HAST https://github.com/syntax-tree/hast
+  /**
+   * Extracts the viewBox attribute from an SVG tree.
+   * @param {import('svg-parser').Node} tree
+   * @returns {string}
+   */
   function getViewBox(tree) {
     return tree.children[0].properties.viewBox || '0 0 24 24';
   }
+
+  /**
+   * Adapts the SVG tree by removing `fill` attributes.
+   * @param {import('svg-parser').Node} tree
+   * @returns {import('svg-parser').Node}
+   */
   function adaptTree(tree) {
     // skip <svg> root
     const { children } = tree.children[0];
-    // remove `fill` attributes
+    /**
+     * Removes `fill` attribute from a node if it's a path and not 'none'.
+     * @param {import('svg-parser').Node} node
+     * @returns {import('svg-parser').Node}
+     */
     const removeFillAttr = (node) => {
       if (
         node.tagName === 'path' &&

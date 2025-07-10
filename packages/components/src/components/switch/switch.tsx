@@ -42,8 +42,6 @@ export class Switch {
 
   /** Emitted when the switch was clicked */
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy!: EventEmitter;
 
   componentWillLoad() {
     if (this.inputId == null) {

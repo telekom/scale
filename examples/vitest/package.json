@@ -15,6 +15,6 @@
     "jsdom": "latest",
     "vite": "latest",
     "vitest": "latest",
-    "typescript": "^5.0.3"
+    "typescript": "^5.8.3"
   }
 }

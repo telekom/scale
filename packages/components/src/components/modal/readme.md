@@ -26,9 +26,6 @@
 | `scale-before-close` | Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing | `CustomEvent<BeforeCloseEventDetail>` |
 | `scale-close`        | Fires when the modal has been closed                                                               | `CustomEvent<void>`                   |
 | `scale-open`         | Fires when the modal has been opened                                                               | `CustomEvent<void>`                   |
-| `scaleBeforeClose`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<BeforeCloseEventDetail>` |
-| `scaleClose`         | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<void>`                   |
-| `scaleOpen`          | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<void>`                   |
 
 
 ## Shadow Parts

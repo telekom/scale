@@ -73,11 +73,6 @@ export class Segment {
     id: string;
     selected: boolean;
   }>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
-    id: string;
-    selected: boolean;
-  }>;
 
   private focusableElement: HTMLElement;
 

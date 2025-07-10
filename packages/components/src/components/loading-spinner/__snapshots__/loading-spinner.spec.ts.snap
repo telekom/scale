@@ -2,7 +2,7 @@
 
 exports[`LoadingSpinner should match snapshot 1`] = `
 <scale-loading-spinner>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="spinner spinner--alignment-horizontal spinner--size-small spinner--variant-primary" part="spinner alignment-horizontal variant-primary size-small">
       <div class="spinner__container" part="container">
         <svg aria-hidden="true" class="spinner__circle" viewBox="0 0 50 50">
@@ -17,6 +17,6 @@ exports[`LoadingSpinner should match snapshot 1`] = `
       </div>
       <div></div>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-loading-spinner>
 `;

@@ -1,10 +1,13 @@
+import { postcss } from '@stencil-community/postcss';
 import { Config } from '@stencil/core';
-import { postcss } from '@stencil/postcss';
 import postcssCustomMedia from 'postcss-custom-media';
-import { frameworkTargets } from './framework-targets';
 import { inlineSvg } from 'stencil-inline-svg';
+import { frameworkTargets } from './framework-targets';
 
 export const config: Config = {
+  sourceMap: false,
+  transformAliasedImportPaths: false,
+
   devServer: {
     startupTimeout: 120000,
   },
@@ -12,7 +15,7 @@ export const config: Config = {
     ? 'tsconfig.whitelabel.json'
     : 'tsconfig.json',
   testing: {
-    testRegex: '/src/.*\\.(spec|e2e)\\.(ts|tsx)$',
+    testRegex: ['/src/.*\\.(spec|e2e)\\.(ts|tsx)$'],
     collectCoverageFrom: [
       '**/src/**/*.{ts,tsx}',
       '!**/node_modules/**',
@@ -35,6 +38,7 @@ export const config: Config = {
     ...frameworkTargets,
     {
       type: 'dist',
+
       esmLoaderPath: '../loader',
       copy: [
         // do not include fonts files for whitelabel build
@@ -56,6 +60,7 @@ export const config: Config = {
     {
       type: 'dist-custom-elements',
       generateTypeDeclarations: true,
+      externalRuntime: false,
     },
     {
       type: 'www',

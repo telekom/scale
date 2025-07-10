@@ -70,8 +70,6 @@ export class RatingStars {
 
   /** Emitted when the rating has changed */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   componentWillRender() {
     // make sure the deprecated props overwrite the actual ones if used

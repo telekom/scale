@@ -8,7 +8,7 @@ describe('DatePicker', () => {
       await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-date-picker--${variant}&viewMode=story`
       );
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       const previewHtml = await global.page.$('body');
       await global.page.evaluate(() => {
         [
@@ -38,7 +38,7 @@ describe('DatePicker', () => {
       await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-date-picker--${variant}&viewMode=story`
       );
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       const previewHtml = await global.page.$('body');
 
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
@@ -49,7 +49,7 @@ describe('DatePicker', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-date-picker--${variant}&viewMode=story`
       );
 
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       const previewHtml = await global.page.$('body');
       await global.page.evaluate(() => {
         [

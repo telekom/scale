@@ -2,11 +2,11 @@
 
 exports[`Toggle Group snapshots default props 1`] = `
 <scale-toggle-group>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
       <slot></slot>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="1" radius="left" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
@@ -21,11 +21,11 @@ exports[`Toggle Group snapshots default props 1`] = `
 
 exports[`Toggle Group snapshots disabled 1`] = `
 <scale-toggle-group aria-label="Aria Label" disabled="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--disabled toggle-group--inline" part="toggle-group inline disabled" role="group">
       <slot></slot>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="disabled" hide-border="false" position="1" radius="left" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
@@ -40,11 +40,11 @@ exports[`Toggle Group snapshots disabled 1`] = `
 
 exports[`Toggle Group snapshots size small, multi false 1`] = `
 <scale-toggle-group single-select="true" size="small">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
       <slot></slot>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="1" radius="left" size="small" variant="color">
     Click Me!
   </scale-toggle-button>
@@ -59,14 +59,14 @@ exports[`Toggle Group snapshots size small, multi false 1`] = `
 
 exports[`Toggle Group snapshots styles 1`] = `
 <scale-toggle-group styles="color:red">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       color:red
     </style>
     <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
       <slot></slot>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="1" radius="left" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>

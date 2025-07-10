@@ -1,5 +1,5 @@
 import { Config } from '@stencil/core';
-import { postcss } from '@stencil/postcss';
+import { postcss } from '@stencil-community/postcss';
 import postcssCustomMedia from 'postcss-custom-media';
 import { inlineSvg } from 'stencil-inline-svg';
 

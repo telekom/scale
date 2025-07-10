@@ -13,7 +13,7 @@ describe.skip('Menu', () => {
     // open menu on click
     test.each([['standard'], ['cascading-menu']])('%p', async (variant) => {
       await global.runSetup(`components-flyout-menu--${variant}`);
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       await global.page.$('body');
       const button = await global.page.evaluateHandle(
         `document.querySelector("#root scale-menu-flyout > scale-button").shadowRoot.querySelector("button")`
@@ -26,7 +26,7 @@ describe.skip('Menu', () => {
     // hover, active, focus
     test.each([['cascading-menu']])('%p', async (variant) => {
       await global.runSetup(`components-flyout-menu--${variant}`);
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       await global.page.$('body');
       const button = await global.page.evaluateHandle(
         `document.querySelector("#root scale-menu-flyout > scale-button").shadowRoot.querySelector("button")`
