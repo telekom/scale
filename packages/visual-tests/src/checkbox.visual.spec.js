@@ -27,7 +27,7 @@ describe('Checkbox', () => {
       ['custom-label', 'focus'],
     ])('%p', async (variant, state) => {
       await global.runSetup(`components-checkbox--${variant}`);
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       await global.page.$('body');
       const checkbox = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox > label")`
