@@ -1,17 +1,12 @@
 import Vue from 'vue';
 
-import {
-  defineCustomElements,
-  applyPolyfills,
-} from '@telekom/scale-components/loader';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
 Vue.config.productionTip = false;
 Vue.config.ignoredElements = [/scale-\w*/];
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+defineCustomElements(window);
 
 export const parameters = {
   a11y: {

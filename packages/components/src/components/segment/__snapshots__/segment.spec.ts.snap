@@ -2,7 +2,7 @@
 
 exports[`Segment should match standard snapshot 1`] = `
 <scale-segment segment-id="segment-0">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <button aria-description="deselected" class="segment segment--small" id="segment-0" part="segment small" type="button">
       <div class="segment--mask">
         <div class="success-icon-container">
@@ -14,7 +14,7 @@ exports[`Segment should match standard snapshot 1`] = `
         <slot></slot>
       </div>
     </button>
-  </mock:shadow-root>
+  </template>
   <span>
     Label
   </span>

@@ -2,7 +2,7 @@
 
 exports[`RadioButtonGroup should match error snapshot 1`] = `
 <scale-radio-button-group helper-text="Error message" invalid="true" label="Radio Button Label">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <fieldset class="radio-button-group" part="base">
       <legend class="radio-button-group__title">
         <label aria-label="Radio Button Label" class="radio-button-group__title-label">
@@ -19,7 +19,7 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
         <slot></slot>
       </div>
     </fieldset>
-  </mock:shadow-root>
+  </template>
   <div slot="radio-button-list">
     <scale-radio-button input-id="choiceOne" invalid="true" label="Radio Button" name="radioError" transparent="true" value="1"></scale-radio-button>
     <div style="margin-top: 0.5rem;"></div>
@@ -32,7 +32,7 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
 
 exports[`RadioButtonGroup should match selected snapshot 1`] = `
 <scale-radio-button-group label="Radio Button Label">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <fieldset class="radio-button-group" part="base">
       <legend class="radio-button-group__title">
         <label aria-label="Radio Button Label" class="radio-button-group__title-label">
@@ -43,7 +43,7 @@ exports[`RadioButtonGroup should match selected snapshot 1`] = `
         <slot></slot>
       </div>
     </fieldset>
-  </mock:shadow-root>
+  </template>
   <div slot="radio-button-list">
     <scale-radio-button checked="" input-id="choiceOne" label="Radio Button" name="radioSelectedOne" transparent="true" value="1"></scale-radio-button>
     <div style="margin-top: 0.5rem;"></div>
@@ -56,7 +56,7 @@ exports[`RadioButtonGroup should match selected snapshot 1`] = `
 
 exports[`RadioButtonGroup should match standard snapshot 1`] = `
 <scale-radio-button-group label="Radio Button Label">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <fieldset class="radio-button-group" part="base">
       <legend class="radio-button-group__title">
         <label aria-label="Radio Button Label" class="radio-button-group__title-label">
@@ -67,7 +67,7 @@ exports[`RadioButtonGroup should match standard snapshot 1`] = `
         <slot></slot>
       </div>
     </fieldset>
-  </mock:shadow-root>
+  </template>
   <div slot="radio-button-list">
     <scale-radio-button input-id="choiceOne" label="Radio Button" name="radioSelect" transparent="true" value="1"></scale-radio-button>
     <div style="margin-top: 0.5rem;"></div>

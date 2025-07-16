@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "fs-extra": "^9.1.0",
+    "lodash": "^4.17.21",
     "postcss": "^8.2.5"
   },
   "license": "MPL-2.0",

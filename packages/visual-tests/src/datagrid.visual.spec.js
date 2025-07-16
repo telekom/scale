@@ -19,7 +19,7 @@ describe('DataGrid', () => {
       ['selection-export'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-data-grid--${variant}`);
-
+      await global.page.waitForTimeout(3000);
       await global.visualCheck({ failureThreshold: 1000 });
     });
   });

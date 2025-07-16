@@ -1,125 +1,22 @@
-import { NgModule } from '@angular/core';
-import { defineCustomElements } from '@telekom/scale-components/loader';
-
-import { BooleanValueAccessor } from './directives/boolean-value-accessor';
-import { NumericValueAccessor } from './directives/number-value-accessor';
-import { RadioValueAccessor } from './directives/radio-value-accessor';
-import { SelectValueAccessor } from './directives/select-value-accessor';
 import {
-  AppLogo,
-  AppMegaMenu,
-  AppNavigationMainMobile,
-  AppNavigationSectorMobile,
-  ScaleAccordion,
-  ScaleAlert,
-  ScaleAppHeader,
-  ScaleAppShell,
-  ScaleCallout,
-  ScaleBreadcrumb,
-  ScaleButton,
-  ScaleCard,
-  ScaleCarousel,
-  ScaleChartStackCard,
-  ScaleCheckbox,
-  ScaleCollapsible,
-  ScaleDataGrid,
-  ScaleDatePicker,
-  ScaleDivider,
-  ScaleIcon,
-  ScaleInput,
-  ScaleLink,
-  ScaleList,
-  ScaleListItem,
-  ScaleLoadingSpinner,
-  ScaleMenuFlyout,
-  ScaleMenuFlyoutDivider,
-  ScaleMenuFlyoutItem,
-  ScaleMenuFlyoutList,
-  ScaleModal,
-  ScalePagination,
-  ScaleProgressBar,
-  ScaleRadioButton,
-  ScaleRatingStars,
-  ScaleSidebarNav,
-  ScaleSidebarNavCollapsible,
-  ScaleSidebarNavItem,
-  ScaleSlider,
-  ScaleSsrSlotFix,
-  ScaleSwitch,
-  ScaleTabHeader,
-  ScaleTabNav,
-  ScaleTabPanel,
-  ScaleTable,
-  ScaleTag,
-  ScaleTextField,
-  ScaleToast
-} from './directives/proxies';
-import { TextValueAccessor } from './directives/text-value-accessor';
-
-defineCustomElements(window);
-
-const DECLARATIONS = [
-  // proxies
-  AppLogo,
-  AppMegaMenu,
-  AppNavigationMainMobile,
-  AppNavigationSectorMobile,
-  ScaleAccordion,
-  ScaleAlert,
-  ScaleAppHeader,
-  ScaleAppShell,
-  ScaleCallout,
-  ScaleBreadcrumb,
-  ScaleButton,
-  ScaleCard,
-  ScaleCarousel,
-  ScaleChartStackCard,
-  ScaleCheckbox,
-  ScaleCollapsible,
-  ScaleDataGrid,
-  ScaleDatePicker,
-  ScaleDivider,
-  ScaleIcon,
-  ScaleInput,
-  ScaleLink,
-  ScaleList,
-  ScaleListItem,
-  ScaleLoadingSpinner,
-  ScaleMenuFlyout,
-  ScaleMenuFlyoutDivider,
-  ScaleMenuFlyoutItem,
-  ScaleMenuFlyoutList,
-  ScaleModal,
-  ScalePagination,
-  ScaleProgressBar,
-  ScaleRadioButton,
-  ScaleRatingStars,
-  ScaleSidebarNav,
-  ScaleSidebarNavCollapsible,
-  ScaleSidebarNavItem,
-  ScaleSlider,
-  ScaleSsrSlotFix,
-  ScaleSwitch,
-  ScaleTabHeader,
-  ScaleTabNav,
-  ScaleTabPanel,
-  ScaleTable,
-  ScaleTag,
-  ScaleTextField,
-  ScaleToast,
-
-  // Value Accessors
-  BooleanValueAccessor,
-  NumericValueAccessor,
-  RadioValueAccessor,
-  SelectValueAccessor,
-  TextValueAccessor,
-];
+  APP_INITIALIZER,
+  CUSTOM_ELEMENTS_SCHEMA,
+  NgModule,
+} from '@angular/core';
+import { defineCustomElements } from '@telekom/scale-components/loader';
+import { DIRECTIVES } from './directives/proxies-list';
 
 @NgModule({
-  declarations: DECLARATIONS,
-  exports: DECLARATIONS,
-  imports: [],
-  providers: [],
+  declarations: [...DIRECTIVES],
+  exports: [...DIRECTIVES],
+  providers: [
+    {
+      //! TODO it is depcrecated
+      provide: APP_INITIALIZER,
+      useFactory: () => defineCustomElements,
+      multi: true,
+    },
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ComponentLibraryModule {}

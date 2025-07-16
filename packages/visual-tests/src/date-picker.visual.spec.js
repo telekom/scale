@@ -8,7 +8,7 @@ describe('DatePicker', () => {
       await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-date-picker--${variant}&viewMode=story`
       );
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       const previewHtml = await global.page.$('body');
       await global.page.evaluate(() => {
         [
@@ -24,7 +24,7 @@ describe('DatePicker', () => {
         `document.querySelector("#root > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > button")`
       );
       await openButton.click();
-      await global.page.waitFor(3000);
+      await global.page.waitForTimeout(3000);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     // screenshots of stories
@@ -38,7 +38,7 @@ describe('DatePicker', () => {
       await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-date-picker--${variant}&viewMode=story`
       );
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       const previewHtml = await global.page.$('body');
 
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
@@ -49,7 +49,7 @@ describe('DatePicker', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-date-picker--${variant}&viewMode=story`
       );
 
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
       const previewHtml = await global.page.$('body');
       await global.page.evaluate(() => {
         [

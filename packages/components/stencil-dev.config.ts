@@ -1,9 +1,11 @@
 import { Config } from '@stencil/core';
-import { postcss } from '@stencil/postcss';
+import { postcss } from '@stencil-community/postcss';
 import postcssCustomMedia from 'postcss-custom-media';
 
 export const config: Config = {
   namespace: 'scale-components',
+  sourceMap: false,
+  transformAliasedImportPaths: false,
   globalStyle: process.env.WHITELABEL
     ? 'src/global/whitelabel.css'
     : 'src/global/scale.css',

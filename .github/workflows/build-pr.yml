@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22
 
       - name: Restore Lerna
         id: yarn-cache
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22
 
       - name: Restore Lerna
         id: yarn-cache
@@ -73,7 +73,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22
 
       - name: Restore Lerna
         id: yarn-cache
@@ -102,7 +102,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22
 
       - name: Restore Lerna
         id: yarn-cache
@@ -136,13 +136,13 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-      - name: Set up Docker Compose alias 
+          node-version: 22
+      - name: Set up Docker Compose alias
         run: |
           sudo touch /usr/bin/docker-compose
           echo 'docker compose --compatibility "$@"' | sudo tee /usr/bin/docker-compose
           sudo chmod +x /usr/bin/docker-compose
-          
+
       - name: Restore Lerna
         id: yarn-cache
         uses: actions/cache@v3
@@ -195,7 +195,7 @@ jobs:
 
       - name: Create pull request with new snapshots
         if: failure()
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: 'test(visual): update snapshots'
           title: 'update visual snapshots: ${{ github.event.pull_request.title }}'
@@ -209,7 +209,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22
 
       - name: Restore Lerna
         id: yarn-cache

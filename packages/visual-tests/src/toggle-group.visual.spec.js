@@ -19,7 +19,7 @@ describe.skip('Deprecated ToggleGroup', () => {
       ['icon-only'],
     ])('%p', async (variant) => {
       await global.runSetup(`deprecated-toggle-group--${variant}`);
-      await global.page.waitFor(500);
+      await global.page.waitForTimeout(500);
       await global.visualCheck();
     });
     // hover, active, focus
