@@ -3,4 +3,4 @@
     <img src="assets/deprecated.png" alt="Deprecated" />
 </div>
 
-We no longer support the Toggle Group. Please use the [Segmented Button](?path=/usage/beta-components-segmented-button--standard) instead.
+We no longer support the Toggle Group. Please use the [Segmented Button](?path=/usage/components-segmented-button--standard) instead.

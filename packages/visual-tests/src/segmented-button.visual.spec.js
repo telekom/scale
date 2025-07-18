@@ -1,10 +1,7 @@
 describe.skip('SegmentedButton', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.runColorSetup(
-        'beta-components-segmented-button--standard',
-        mode
-      );
+      await global.runColorSetup('components-segmented-button--standard', mode);
     });
     test.each([
       ['standard'],
@@ -15,7 +12,7 @@ describe.skip('SegmentedButton', () => {
       ['icon-and-text'],
       ['invalid'],
     ])('%p', async (variant) => {
-      await global.runSetup(`beta-components-segmented-button--${variant}`);
+      await global.runSetup(`components-segmented-button--${variant}`);
       await global.visualCheck();
     });
   });

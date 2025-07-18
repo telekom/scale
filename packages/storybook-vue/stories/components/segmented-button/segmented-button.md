@@ -1,6 +1,5 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Segmented Button</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 Segmented buttons make it easier for users to filter content, select options, or change views.
@@ -119,10 +118,6 @@ The label describes individual choices and should be short and precise.
 ![Image Name](assets/3_components/segmented-button/SegmentedButton-SortBy-Price.png)
 
 ![Image Name](assets/3_components/segmented-button/Map.png)
-
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
 
 ## Related components
 
