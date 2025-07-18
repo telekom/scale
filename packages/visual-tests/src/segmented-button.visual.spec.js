@@ -12,7 +12,7 @@ describe.skip('SegmentedButton', () => {
       ['icon-and-text'],
       ['invalid'],
     ])('%p', async (variant) => {
-      await global.runSetup(`beta-components-segmented-button--${variant}`);
+      await global.runSetup(`components-segmented-button--${variant}`);
       await global.visualCheck();
     });
   });

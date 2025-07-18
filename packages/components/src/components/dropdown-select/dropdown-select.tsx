@@ -11,7 +11,6 @@ import {
   VNode,
 } from '@stencil/core';
 import classNames from 'classnames';
-import statusNote from '../../utils/status-note';
 import { computePosition } from '@floating-ui/dom';
 import { emitEvent, generateUniqueId } from '../../utils/utils';
 
@@ -287,7 +286,6 @@ export class DropdownSelect {
   }
 
   connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
     this.currentIndex =
       readOptions(this.hostElement).findIndex(
         ({ value }) => value === this.value

@@ -50,7 +50,7 @@ Die Logovarianten mit Claim wurden aus Scale entfernt, da sie nicht für digital
 
 20.03.2023
 
-Die im Januar veröffentlichte Beta-Komponente “Telekom Brand Header & Navigation” wird um zwei neue Basistypen ergänzt – “Slim Header” und “Subtle Header”. Mehr Informationen findest du im Usage Text des [neuen Brand Headers](./?path=/docs/beta-components-telekom-brand-header-navigation--standard).
+Die im Januar veröffentlichte Beta-Komponente “Telekom Brand Header & Navigation” wird um zwei neue Basistypen ergänzt – “Slim Header” und “Subtle Header”. Mehr Informationen findest du im Usage Text des [neuen Brand Headers](./?path=/docs/components-telekom-brand-header-navigation--standard).
 
 ## Neuer Brand Footer
 
@@ -167,9 +167,9 @@ Die neuen UI-Farben „White“ und „Black“ sind für Anwendungsfälle geeig
 
 02.08.2022
 
-Das Dropdown-Menü ist nun ein integrierter Bestandteil der Komponente und wird nicht mehr wie in der [bestehenden Version](./?path=/docs/components-dropdown--standard) vom Browser generiert. Dadurch ist die Komponente weniger fehleranfällig. Insbesondere Fehler, die beim Switch zwischen Light- und Dark Mode entstehen konnten, werden nun vermieden.
+Das Dropdown-Menü ist nun ein integrierter Bestandteil der Komponente und wird nicht mehr wie in der [bestehenden Version](./?path=/docs/deprecated-components-dropdown--standard) vom Browser generiert. Dadurch ist die Komponente weniger fehleranfällig. Insbesondere Fehler, die beim Switch zwischen Light- und Dark Mode entstehen konnten, werden nun vermieden.
 
-Wir planen, die bestehende [Dropdown-Komponente](./?path=/docs/components-dropdown--standard) zugunsten der neu veröffentlichten Beta-Version von [Dropdown Select](./?path=/docs/beta-components-dropdown-select--standard) zu verwerfen, sobald die neue Komponente die Beta-Phase verlassen hat.
+Wir planen, die bestehende [Dropdown-Komponente](./?path=/docs/deprecated-components-dropdown--standard) zugunsten der neu veröffentlichten Beta-Version von [Dropdown Select](./?path=/docs/components-dropdown-select--standard) zu verwerfen, sobald die neue Komponente die Beta-Phase verlassen hat.
 
 ## Dark mode (`v3.0.0-beta.100`)
 

@@ -18,23 +18,23 @@ Der Brand Header ist die zentrale Komponente für den Einstieg in die Markenwelt
 Der Brand Header Standard enthält alle verfügbaren Elemente und Telekom Links.
 Im gescrollten Zustand sind die Meta-Navigation und das Sprachwechsel-Element ausgeblendet.
 
-![Image Name](assets/3_components/beta-brand-header/1_DE_brandheader_brandbar_standard.png)
+![Image Name](assets/3_components/telekom-brand-header/1_DE_brandheader_brandbar_standard.png)
 
 ### Brand Header Slim
 
 Der Brand Header Slim enthält weder Meta-Navigation noch Sprachwechsel. Beim Scrollen reduziert sich lediglich die Höhe der Komponente.
 
-![Image Name](assets/3_components/beta-brand-header/2_DE_brandheader_brandbar_slim.png)
+![Image Name](assets/3_components/telekom-brand-header/2_DE_brandheader_brandbar_slim.png)
 
 ### Brand Header Subtle
 
 Der Brand Header Subtle hat keine Hauptnavigation oder Funktionen und ist am oberen Bildschirmrand fixiert. Er hebt sich nicht durch einen Schatten vom Inhalt der Seite ab oder verändert sich beim Scrollen.
 
-![Image Name](assets/3_components/beta-brand-header/3_brandheader_brandbar_subtle.png)
+![Image Name](assets/3_components/telekom-brand-header/3_brandheader_brandbar_subtle.png)
 
 ## Elemente
 
-![Image Name](assets/3_components/brand-header/4_brandheader_brandbar_elements.jpg)
+![Image Name](assets/3_components/telekom-brand-header/4_brandheader_brandbar_elements.jpg)
 
 #### Brand Area mit Logo (1) (verpflichtend)
 
@@ -78,7 +78,7 @@ Für die verschiedenen Breakpoints sind unterschiedliche Größen definiert.
 
 Das Mega-Menü nutzt du am besten für eine flache Informationsarchitektur. Es bietet eine gute Übersicht innerhalb einer Kategorie. Die Ebenentiefe ist allerdings auf drei Ebenen begrenzt.
 
-![Image Name](assets/3_components/beta-brand-header/5_brandheader_nav4_megamenu.png)
+![Image Name](assets/3_components/telekom-brand-header/5_brandheader_nav4_megamenu.png)
 
 ### Dropdown-Navigation
 
@@ -91,7 +91,7 @@ Das Mega-Menü nutzt du am besten für eine flache Informationsarchitektur. Es b
     </div>
 </div>
 
-![Image Name](assets/3_components/beta-brand-header/brandheader_dropdown_menu.png)
+![Image Name](assets/3_components/telekom-brand-header/brandheader_dropdown_menu.png)
 
 Die Dropdown-Navigation eignet sich für Webseiten mit umfangreicher Seitenarchitektur. Sie kann mehrere Hierarchieebenen innerhalb des Navigationsbaums darstellen. Generell gilt: je weniger Ebenen, desto besser.
 
@@ -99,7 +99,7 @@ Die Dropdown-Navigation eignet sich für Webseiten mit umfangreicher Seitenarchi
 
 Auf kleinen Viewports gibt es nur eine Art der Navigation.
 
-![Image Name](assets/3_components/beta-brand-header/6_brandheader_nav_mobile.png)
+![Image Name](assets/3_components/telekom-brand-header/6_brandheader_nav_mobile.png)
 
 ### Nutzerprofilmenü
 
@@ -109,17 +109,13 @@ Mithilfe des Profilmenüs können sich Nutzer\*innen an- und abmelden. Wenn dein
 
 Ein kurzer Beschreibungstext erläutert, welche Funktionen nach dem Login zur Verfügung stehen werden. Neben dem Button, der zur Login-Maske führt, gibt es ergänzende Links zu einer Hilfeseite und zum Registrierungsprozess.
 
-![](assets/3_components/brand-header/BrandHeader-LoggedOut.png)
+![](assets/3_components/telekom-brand-header/BrandHeader-LoggedOut.png)
 
 #### Angemeldeter Zustand
 
 Das Icon bekommt einen grünen Badge und der Vorname der angemeldeten Person ist zu lesen. Neben der Option, sich abzumelden, können optional verschiedene Dienste der Telekom angezeigt werden.
 
-![](assets/3_components/brand-header/BrandHeader-LoggedIn.png)
-
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
+![](assets/3_components/telekom-brand-header/BrandHeader-LoggedIn.png)
 
 ## Verwandte Komponenten
 

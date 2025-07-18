@@ -11,7 +11,6 @@
 
 import { Component, Element, h, Host, Prop } from '@stencil/core';
 import cx from 'classnames';
-import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-badge',
@@ -30,9 +29,6 @@ export class Badge {
     // @ts-ignore
     notation: 'compact',
   });
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-  }
 
   getAriaLabel() {
     const filledText = this.ariaLabelTranslation

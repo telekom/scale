@@ -71,6 +71,6 @@ Verwende ein Sternchen (\*) hinter dem Text, wenn eine Checkbox ausgewählt werd
 ## Verwandte Komponenten
 
 [Checkbox Group, ](?path=/usage/components-checkbox-group--standard)
-[Dropdown, ](?path=/usage/components-dropdown--standard)
+[Dropdown Select, ](?path=/usage/components-dropdown-select--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)

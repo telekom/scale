@@ -1,16 +1,13 @@
 describe.skip('DropdownSelect', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.runColorSetup(
-        'beta-components-dropdown-select--standard',
-        mode
-      );
+      await global.runColorSetup('components-dropdown-select--standard', mode);
     });
     // screenshots of stories
     test.each([['standard'], ['disabled'], ['error']])(
       '%p',
       async (variant) => {
-        await global.runSetup(`beta-components-dropdown-select--${variant}`);
+        await global.runSetup(`components-dropdown-select--${variant}`);
 
         const select = await global.page.evaluateHandle(
           `document.querySelector("#root > div > scale-dropdown-select").shadowRoot.querySelector("#combobox")`
@@ -22,7 +19,7 @@ describe.skip('DropdownSelect', () => {
     );
     // hover, active, focus
     test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`beta-components-dropdown-select--${variant}`);
+      await global.runSetup(`components-dropdown-select--${variant}`);
 
       const select = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-dropdown-select").shadowRoot.querySelector("#combobox")`
