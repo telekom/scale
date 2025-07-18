@@ -7,7 +7,7 @@ exports[`Helper Text should render danger text with danger icon if dange variant
       <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-error></scale-icon-alert-error>
+      <scale-icon-alert-error decorative=""></scale-icon-alert-error>
     </div>
   </mock:shadow-root>
   danger
@@ -21,7 +21,7 @@ exports[`Helper Text should render informational helper text with info icon if i
       <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-information></scale-icon-alert-information>
+      <scale-icon-alert-information decorative=""></scale-icon-alert-information>
     </div>
   </mock:shadow-root>
   informational
@@ -35,7 +35,7 @@ exports[`Helper Text should render informational helper text with info icon if n
       <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-information></scale-icon-alert-information>
+      <scale-icon-alert-information decorative=""></scale-icon-alert-information>
     </div>
   </mock:shadow-root>
   informational
@@ -62,7 +62,7 @@ exports[`Helper Text should render success text with success icon if success var
       <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-action-success></scale-icon-action-success>
+      <scale-icon-action-success decorative=""></scale-icon-action-success>
     </div>
   </mock:shadow-root>
   success
@@ -76,7 +76,7 @@ exports[`Helper Text should render warning text with warning icon if warning var
       <span part="text">
         <slot></slot>
       </span>
-      <scale-icon-alert-information></scale-icon-alert-information>
+      <scale-icon-alert-information decorative=""></scale-icon-alert-information>
     </div>
   </mock:shadow-root>
   warning
