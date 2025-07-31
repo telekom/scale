@@ -1,6 +1,5 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Segmented Button</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 Segmented Buttons erleichtern Nutzer\*innen das Filtern von Inhalten, die Auswahl von Optionen oder dem Wechsel von Ansichten.
@@ -117,15 +116,11 @@ Das Label beschreibt einzelne Auswahlmöglichkeiten und sollte kurz und präzise
 
 ![Image Name](assets/3_components/segmented-button/SegmentedButton-Tip-DE.png)
 
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
-
 ## Verwandte Komponenten
 
 [Tab Navigation](?path=/usage/components-tab-navigation--text-icon),
 [Button](?path=/usage/components-button--standard),
 [Radio Button Group](?path=/usage/components-radio-button-group--standard),
 [Checkbox Group](?path=/usage/components-checkbox-group--standard),
-[Chip](?path=/usage/beta-components-chip--standard),
+[Chip](?path=/usage/components-chip--standard),
 [Icon Button](?path=/usage/components-button--icon-only)

@@ -13,7 +13,7 @@ describe('NotificationBadge', () => {
       ['icon'],
       ['standard'],
     ])('%p', async (variant) => {
-      await global.runSetup(`beta-components-notification-badge--${variant}`);
+      await global.runSetup(`components-notification-badge--${variant}`);
       await global.visualCheck();
     });
   });

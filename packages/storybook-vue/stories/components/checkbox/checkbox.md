@@ -70,6 +70,6 @@ When checking a box is required, use an asterisk (\*) in the text label.
 ## Related components
 
 [Checkbox Group, ](?path=/usage/components-checkbox-group--standard)
-[Dropdown, ](?path=/usage/components-dropdown--standard)
+[Dropdown Select, ](?path=/usage/components-dropdown-select--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)

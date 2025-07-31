@@ -17,23 +17,23 @@ The brand header is the core component for carrying our customers into the world
 
 The standard brand header contains all available elements and Telekom links. Scrolling hides the meta navigation and language selector.
 
-![Image Name](assets/3_components/beta-brand-header/1_EN_brandheader_brandbar_standard.png)
+![Image Name](assets/3_components/telekom-brand-header/1_EN_brandheader_brandbar_standard.png)
 
 ### Slim
 
 The slim brand header contains neither the meta navigation nor the language selector. Scrolling only reduces the height of the component.
 
-![Image Name](assets/3_components/beta-brand-header/2_EN_brandheader_brandbar_slim.png)
+![Image Name](assets/3_components/telekom-brand-header/2_EN_brandheader_brandbar_slim.png)
 
 ### Subtle
 
 The subtle brand header has no main navigation or features and is pinned to the top of the screen. It doesn’t use a shadow to stand out from the page content or change when scrolling.
 
-![Image Name](assets/3_components/beta-brand-header/3_brandheader_brandbar_subtle.png)
+![Image Name](assets/3_components/telekom-brand-header/3_brandheader_brandbar_subtle.png)
 
 ## Elements
 
-![Image Name](assets/3_components/brand-header/4_brandheader_brandbar_elements.jpg)
+![Image Name](assets/3_components/telekom-brand-header/4_brandheader_brandbar_elements.jpg)
 
 #### Brand area with logo (1) (required)
 
@@ -77,7 +77,7 @@ Different sizes are defined for the various break points.
 
 The mega menu is suitable for a flat information architecture. It offers a good overview within a category, but the depth is limited to three levels.
 
-![Image Name](assets/3_components/beta-brand-header/5_brandheader_nav4_megamenu.png)
+![Image Name](assets/3_components/telekom-brand-header/5_brandheader_nav4_megamenu.png)
 
 ### Dropdown navigation
 
@@ -90,7 +90,7 @@ The mega menu is suitable for a flat information architecture. It offers a good 
     </div>
 </div>
 
-![Image Name](assets/3_components/beta-brand-header/brandheader_dropdown_menu.png)
+![Image Name](assets/3_components/telekom-brand-header/brandheader_dropdown_menu.png)
 
 The dropdown navigation can accommodate several levels of navigation and different depths within a navigation tree. As a general rule, the less levels the better.
 
@@ -98,7 +98,7 @@ The dropdown navigation can accommodate several levels of navigation and differe
 
 Small viewports only have one type of navigation.
 
-![Image Name](assets/3_components/beta-brand-header/6_brandheader_nav_mobile.png)
+![Image Name](assets/3_components/telekom-brand-header/6_brandheader_nav_mobile.png)
 
 ### Profile Menu
 
@@ -108,17 +108,13 @@ The profile menu allows users to log in and out. It should be integrated into al
 
 In the logged-out state, a brief description explains what functions are available after logging in. In addition to the button that leads to the login mask, there are additional links to a help page and the registration process.
 
-![](assets/3_components/brand-header/BrandHeader-LoggedOut.png)
+![](assets/3_components/telekom-brand-header/BrandHeader-LoggedOut.png)
 
 #### Logged in
 
 In the logged-in state, the icon gets a green badge and the first name of the logged-in person can be read. In addition to the option to log out, various Telekom services can optionally be displayed.
 
-![](assets/3_components/brand-header/BrandHeader-LoggedIn.png)
-
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
+![](assets/3_components/telekom-brand-header/BrandHeader-LoggedIn.png)
 
 ## Related components
 

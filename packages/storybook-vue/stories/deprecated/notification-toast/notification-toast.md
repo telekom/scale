@@ -3,4 +3,4 @@
     <img src="assets/deprecated.png" alt="Deprecated Component" />
 </div>
 
-We no longer support the Notification Toast. Please use the [Notification](?path=/docs/beta-components-notification--standard) instead.
+We no longer support the Notification Toast. Please use the [Notification](?path=/docs/components-notification--standard) instead.

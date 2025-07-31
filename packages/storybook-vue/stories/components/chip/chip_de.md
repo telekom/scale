@@ -93,5 +93,5 @@ Füge ein Icon hinzu, wenn Nutzer\*innen die Funktion des Chips dadurch leichter
 
 [Tag](?path=/usage/components-tag--standard),
 [Button](?path=/usage/components-button--standard),
-[Segmented Button](?path=/usage/beta-components-segmented-button--standard),
+[Segmented Button](?path=/usage/components-segmented-button--standard),
 [Checkbox Group](?path=/usage/components-checkbox-group--standard)
