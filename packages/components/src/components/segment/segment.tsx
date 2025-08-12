@@ -168,7 +168,7 @@ export class Segment {
     emitEvent(this, 'scaleClick', {
       id: this.segmentId,
       selected: this.selected,
-      userInteraction
+      userInteraction,
     });
   }
 

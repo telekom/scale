@@ -74,8 +74,14 @@ export class SegmentedButton {
 
   container: HTMLElement;
   showHelperText = false;
-@Listen('scaleClick')
-scaleClickHandler(ev: CustomEvent<{ id: string; selected: boolean; userInteraction?: boolean }>) {
+  @Listen('scaleClick')
+  scaleClickHandler(
+    ev: CustomEvent<{
+      id: string;
+      selected: boolean;
+      userInteraction?: boolean;
+    }>
+  ) {
     const { userInteraction = true } = ev.detail; // set default to true, which leads to emit the scaleChange-event finally
     let tempState = this.getAllSegments().map((segment) => {
       return {
