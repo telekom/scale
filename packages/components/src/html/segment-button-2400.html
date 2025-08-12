@@ -1,0 +1,189 @@
+<!-- <!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Segment Buttons</title>
+
+    <script type="module" src="build/scale-components.esm.js"></script>
+    <script nomodule src="build/scale-components.js"></script>
+    <link rel="stylesheet" href="build/scale-components.css" />
+    <style>
+      section {
+        padding: 1rem;
+      }
+
+      .bg-black {
+        background: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="height: 40px"></div>
+
+    <section>
+      <scale-button id="toggle-button">Click here to select</scale-button>
+      <div style="height: 10px"></div>
+      <scale-segmented-button id="segmented-button">
+        <scale-segment id="segment-alpha">Option A</scale-segment>
+        <scale-segment id="segment-beta" selected>Option B</scale-segment>
+      </scale-segmented-button>
+      <h4>state</h4>
+      <pre id="state-display">b</pre>
+    </section>
+
+    <script>
+      let selectedOption = 'b';
+      const toggleButton = document.getElementById('toggle-button');
+      const segmentedButton = document.getElementById('segmented-button');
+      const segmentAlpha = document.getElementById('segment-alpha');
+      const segmentBeta = document.getElementById('segment-beta');
+      const stateDisplay = document.getElementById('state-display');
+
+      function updateState() {
+        segmentAlpha.selected = selectedOption === 'a';
+        segmentBeta.selected = selectedOption === 'b';
+      }
+
+      function onClick() {
+        console.log('onClick');
+        selectedOption = selectedOption === 'a' ? 'b' : 'a';
+        updateState();
+        stateDisplay.textContent = selectedOption;
+        console.log('toggleButtonclicked');
+      }
+
+      function onChange(event) {
+        console.log('onChange');
+        selectedOption = selectedOption === 'a' ? 'b' : 'a';
+        updateState();
+        stateDisplay.textContent = selectedOption;
+        console.log('segment changed');
+      }
+
+      toggleButton.addEventListener('click', onClick);
+      segmentedButton.addEventListener('scale-change', onChange);
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Grade Selector</title>
+
+    <script type="module" src="build/scale-components.esm.js"></script>
+    <script nomodule src="build/scale-components.js"></script>
+    <link rel="stylesheet" href="build/scale-components.css" />
+    <style>
+      section {
+        padding: 1rem;
+      }
+      
+      .App {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="height: 40px"></div>
+
+    <section>
+      <div class="App">
+        <h1>Hello CodeSandbox</h1>
+        <h2>Start editing to see some magic happen!</h2>
+        
+        <scale-segmented-button 
+          id="grade-selector"
+          label="Grades"
+          helper-text="Test"
+          invalid="false"
+          full-width="true"
+          multi-select="false"
+        >
+          <scale-segment id="grade-1" selected>No. 1</scale-segment>
+          <scale-segment id="grade-2">No. 2</scale-segment>
+          <scale-segment id="grade-3">No. 3</scale-segment>
+          <scale-segment id="grade-4">No. 4</scale-segment>
+          <scale-segment id="grade-5">No. 5</scale-segment>
+        </scale-segmented-button>
+        
+        <h4>Selected Grade</h4>
+        <pre id="selected-grade-display">1</pre>
+      </div>
+    </section>
+
+    <script>
+      // Grade data structure
+      const grades = [
+        { id: 1, text: "No. 1" },
+        { id: 2, text: "No. 2" },
+        { id: 3, text: "No. 3" },
+        { id: 4, text: "No. 4" },
+        { id: 5, text: "No. 5" }
+      ];
+
+      let selectedGrade = 1;
+
+      // Get DOM elements
+      const gradeSelector = document.getElementById('grade-selector');
+      const selectedGradeDisplay = document.getElementById('selected-grade-display');
+      const gradeSegments = {
+        1: document.getElementById('grade-1'),
+        2: document.getElementById('grade-2'),
+        3: document.getElementById('grade-3'),
+        4: document.getElementById('grade-4'),
+        5: document.getElementById('grade-5')
+      };
+
+      // Update the selected state of all segments
+      function updateGradeSelection() {
+        Object.keys(gradeSegments).forEach(gradeId => {
+          gradeSegments[gradeId].selected = selectedGrade == gradeId;
+        });
+        selectedGradeDisplay.textContent = selectedGrade;
+      }
+
+      // Handle grade selection change
+      function handleGradeChange(event) {
+        console.log('Grade changed');
+        
+        // Find which segment was clicked
+        const clickedSegment = event.target;
+        let newGradeId = null;
+        
+        Object.keys(gradeSegments).forEach(gradeId => {
+          if (gradeSegments[gradeId] === clickedSegment) {
+            newGradeId = parseInt(gradeId);
+          }
+        });
+
+        if (newGradeId && newGradeId !== selectedGrade) {
+          selectedGrade = newGradeId;
+          updateGradeSelection();
+          console.log('clicked - Selected grade:', selectedGrade);
+        }
+      }
+
+      // Add event listeners to individual segments
+      Object.values(gradeSegments).forEach(segment => {
+        segment.addEventListener('scale-click', handleGradeChange);
+      });
+
+      // Initialize the display
+      updateGradeSelection();
+    </script>
+  </body>
+</html>

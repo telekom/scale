@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Segment Buttons</title>
+
+    <script type="module" src="build/scale-components.esm.js"></script>
+    <script nomodule src="build/scale-components.js"></script>
+    <link rel="stylesheet" href="build/scale-components.css" />
+    <style>
+      section {
+        padding: 1rem;
+      }
+
+      .bg-black {
+        background: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="height: 40px"></div>
+
+    <section>
+      <scale-button id="toggle-button">Click here to select</scale-button>
+      <div style="height: 10px"></div>
+      <scale-segmented-button id="segmented-button">
+        <scale-segment id="segment-alpha">Option A</scale-segment>
+        <scale-segment id="segment-beta" selected>Option B</scale-segment>
+      </scale-segmented-button>
+      <h4>state</h4>
+      <pre id="state-display">b</pre>
+    </section>
+
+    <script>
+      let selectedOption = 'b';
+      const toggleButton = document.getElementById('toggle-button');
+      const segmentedButton = document.getElementById('segmented-button');
+      const segmentAlpha = document.getElementById('segment-alpha');
+      const segmentBeta = document.getElementById('segment-beta');
+      const stateDisplay = document.getElementById('state-display');
+
+      function updateState() {
+        segmentAlpha.selected = selectedOption === 'a';
+        segmentBeta.selected = selectedOption === 'b';
+        console.log('segments changed');
+      }
+
+      function onClick() {
+        console.log('Skript: toggleButton clicked');
+        selectedOption = selectedOption === 'a' ? 'b' : 'a';
+        updateState();
+        stateDisplay.textContent = selectedOption;
+      }
+
+      function onChange(event) {
+        console.log('Skript: Change Event listened');
+        selectedOption = selectedOption === 'a' ? 'b' : 'a';
+        updateState();
+        stateDisplay.textContent = selectedOption;
+      }
+
+      toggleButton.addEventListener('click', onClick);
+      segmentedButton.addEventListener('scale-change', onChange);
+    </script>
+  </body>
+</html>

@@ -83,10 +83,7 @@ export class Segment {
 
   @Watch('selected')
   selectionChanged() {
-    emitEvent(this, 'scaleClick', {
-      id: this.segmentId,
-      selected: this.selected,
-    });
+    this.emitScaleClickEvent(false); // 'false' indicates that this event is triggered by internal state change
   }
 
   @Method()
@@ -164,7 +161,16 @@ export class Segment {
     }
     event.preventDefault();
     this.selected = !this.selected;
+    this.emitScaleClickEvent(true);
   };
+
+  private emitScaleClickEvent(userInteraction: boolean) {
+    emitEvent(this, 'scaleClick', {
+      id: this.segmentId,
+      selected: this.selected,
+      userInteraction
+    });
+  }
 
   render() {
     return (
