@@ -164,14 +164,6 @@ export class Segment {
     this.emitScaleClickEvent(true);
   };
 
-  private emitScaleClickEvent(userInteraction: boolean) {
-    emitEvent(this, 'scaleClick', {
-      id: this.segmentId,
-      selected: this.selected,
-      userInteraction,
-    });
-  }
-
   render() {
     return (
       <Host>
@@ -237,5 +229,13 @@ export class Segment {
       this.hasIcon && `${prefix}has-icon`,
       this.iconOnly && `${prefix}icon-only`
     );
+  }
+
+  private emitScaleClickEvent(userInteraction: boolean) {
+    emitEvent(this, 'scaleClick', {
+      id: this.segmentId,
+      selected: this.selected,
+      userInteraction,
+    });
   }
 }
