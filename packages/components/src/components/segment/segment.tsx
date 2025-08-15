@@ -81,10 +81,10 @@ export class Segment {
 
   private focusableElement: HTMLElement;
 
-  @Watch('selected')
-  selectionChanged() {
-    this.emitScaleClickEvent(false); // 'false' indicates that this event is triggered by internal state change
-  }
+  // @Watch('selected')
+  // selectionChanged() {
+  //   this.emitScaleClickEvent(false); // 'false' indicates that this event is triggered by internal state change
+  // }
 
   @Method()
   async setFocus() {
@@ -160,8 +160,10 @@ export class Segment {
       return;
     }
     event.preventDefault();
-    this.selected = !this.selected;
-    this.emitScaleClickEvent(true);
+    emitEvent(this, 'scaleClick', {
+      id: this.segmentId,
+      selected: this.selected,
+    });
   };
 
   render() {
@@ -237,5 +239,6 @@ export class Segment {
       selected: this.selected,
       userInteraction,
     });
+    console.log('Event emitted: Segment clicked:', this.segmentId, 'Selected:', this.selected, 'User Interaction:', userInteraction);
   }
 }

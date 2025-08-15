@@ -31,42 +31,41 @@
       <div style="height: 10px"></div>
       <scale-segmented-button id="segmented-button">
         <scale-segment id="segment-alpha">Option A</scale-segment>
-        <scale-segment id="segment-beta" selected>Option B</scale-segment>
+        <scale-segment id="segment-beta">Option B</scale-segment>
       </scale-segmented-button>
       <h4>state</h4>
       <pre id="state-display">b</pre>
     </section>
 
     <script>
-      let selectedOption = 'b';
-      const toggleButton = document.getElementById('toggle-button');
-      const segmentedButton = document.getElementById('segmented-button');
-      const segmentAlpha = document.getElementById('segment-alpha');
-      const segmentBeta = document.getElementById('segment-beta');
-      const stateDisplay = document.getElementById('state-display');
+let selectedIndex = 1; // 0 = Option A, 1 = Option B
+const toggleButton = document.getElementById('toggle-button');
+const segmentedButton = document.getElementById('segmented-button');
+const stateDisplay = document.getElementById('state-display');
 
-      function updateState() {
-        segmentAlpha.selected = selectedOption === 'a';
-        segmentBeta.selected = selectedOption === 'b';
-        console.log('segments changed');
-      }
+function updateState() {
+  segmentedButton.selectedIndex = selectedIndex;
+  stateDisplay.textContent = selectedIndex === 0 ? 'a' : 'b';
+}
 
-      function onClick() {
-        console.log('Skript: toggleButton clicked');
-        selectedOption = selectedOption === 'a' ? 'b' : 'a';
-        updateState();
-        stateDisplay.textContent = selectedOption;
-      }
+function onClick() {
+  selectedIndex = selectedIndex === 0 ? 1 : 0;
+  updateState();
+}
 
-      function onChange(event) {
-        console.log('Skript: Change Event listened');
-        selectedOption = selectedOption === 'a' ? 'b' : 'a';
-        updateState();
-        stateDisplay.textContent = selectedOption;
-      }
+function onChange(event) {
+  // Lies den neuen Index aus dem Event aus, falls vorhanden
+  if (event.detail && typeof event.detail.selectedIndex === 'number') {
+    selectedIndex = event.detail.selectedIndex;
+    updateState();
+  }
+}
 
-      toggleButton.addEventListener('click', onClick);
-      segmentedButton.addEventListener('scale-change', onChange);
+toggleButton.addEventListener('click', onClick);
+segmentedButton.addEventListener('scale-change', onChange);
+
+// Initialisieren
+updateState();
     </script>
   </body>
 </html>

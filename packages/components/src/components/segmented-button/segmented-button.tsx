@@ -48,8 +48,10 @@ export class SegmentedButton {
   @Prop() size?: 'small' | 'medium' | 'large' = 'small';
   /** (optional) Allow more than one button to be selected */
   @Prop() multiSelect: boolean = false;
-  /** (optional) the index of the selected segment */
-  @Prop({ mutable: true }) selectedIndex?: number;
+  /** (controlled) Array of selected segment IDs (for multiSelect) */
+  @Prop() selectedIds?: string[];
+  /** (controlled) Index of the selected segment (for single select) */
+  @Prop() selectedIndex?: number;
   /** (optional) If `true`, the button is disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) If `true`, expand to container width */
@@ -75,34 +77,32 @@ export class SegmentedButton {
   container: HTMLElement;
   showHelperText = false;
   @Listen('scaleClick')
-  scaleClickHandler(
-    ev: CustomEvent<{
-      id: string;
-      selected: boolean;
-      userInteraction?: boolean;
-    }>
-  ) {
-    const { userInteraction = true } = ev.detail; // set default to true, which leads to emit the scaleChange-event finally
-    let tempState = this.getAllSegments().map((segment) => {
-      return {
-        id: segment.segmentId,
-        selected: segment.selected,
-      };
-    });
-    if (!this.multiSelect) {
-      if (!ev.detail.selected) {
-        tempState = tempState.map((obj) =>
-          ev.detail.id === obj.id ? ev.detail : { ...obj }
-        );
+  handleSegmentClick(ev: CustomEvent<{ id: string; selected: boolean; userInteraction?: boolean }>) {
+    // Nur auf echte User-Interaktion reagieren
+    const { id } = ev.detail;
+    if (this.multiSelect) {
+      // Multi-Select: Toggle ID in selectedIds
+      const ids = Array.isArray(this.selectedIds) ? [...this.selectedIds] : [];
+      const idx = ids.indexOf(id);
+      if (idx > -1) {
+        ids.splice(idx, 1);
       } else {
-        tempState = tempState.map((obj) =>
-          ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
-        );
+        ids.push(id);
       }
-      this.setState(tempState, userInteraction && ev.detail.selected);
+      this.scaleChange.emit({ selectedIds: ids });
     } else {
-      this.setState(tempState, userInteraction);
+      // Single-Select: Nur ein Index aktiv
+      const segments = this.getAllSegments();
+      const newIndex = segments.findIndex(seg => seg.segmentId === id);
+      this.scaleChange.emit({ selectedIds: [id], selectedIndex: newIndex });
     }
+  }
+
+  @Watch('selectedIds')
+  @Watch('selectedIndex')
+  @Watch('multiSelect')
+  syncSegmentsWithProps() {
+    this.updateSegmentsFromProps();
   }
 
   @Watch('disabled')
@@ -111,6 +111,7 @@ export class SegmentedButton {
   handlePropsChange() {
     this.propagatePropsToChildren();
   }
+
 
   /**
    * Keep props, needed in children buttons, in sync
@@ -125,6 +126,23 @@ export class SegmentedButton {
     });
   }
 
+    updateSegmentsFromProps() {
+    const segments = this.getAllSegments();
+    segments.forEach((segment, i) => {
+      if (this.multiSelect && Array.isArray(this.selectedIds)) {
+        segment.selected = this.selectedIds.includes(segment.segmentId);
+      } else if (!this.multiSelect && typeof this.selectedIndex === 'number') {
+        segment.selected = i === this.selectedIndex;
+      } else {
+        segment.selected = false;
+      }
+      segment.size = this.size;
+      segment.disabled = this.disabled;
+    });
+  }
+
+  
+
   componentWillLoad() {
     const tempState: SegmentStatus[] = [];
     const segments = this.getAllSegments();
@@ -137,7 +155,6 @@ export class SegmentedButton {
       segment.position = i;
       segment.ariaDescriptionTranslation = '$position $selected';
     });
-    this.setState(tempState, false);
     this.showHelperText = this.shouldShowHelperText();
   }
   componentDidLoad() {
@@ -151,7 +168,7 @@ export class SegmentedButton {
     } else {
       this.container.style.display = 'flex';
     }
-    this.propagatePropsToChildren();
+    this.updateSegmentsFromProps();
   }
 
   componentWillUpdate() {
@@ -225,19 +242,6 @@ export class SegmentedButton {
     return tempWidth;
   }
 
-  setState(tempState: SegmentStatus[], handleEvent: boolean = true) {
-    const segments = Array.from(
-      this.hostElement.querySelectorAll('scale-segment')
-    );
-    segments.forEach((segment, i) => {
-      segment.adjacentSiblings = this.getAdjacentSiblings(tempState, i);
-      segment.selected = tempState[i].selected;
-    });
-    this.selectedIndex = this.getSelectedIndex();
-    if (handleEvent) {
-      emitEvent(this, 'scaleChange', { segments });
-    }
-  }
 
   getAllSegments() {
     return Array.from(this.hostElement.querySelectorAll('scale-segment'));
