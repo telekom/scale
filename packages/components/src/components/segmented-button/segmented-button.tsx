@@ -21,7 +21,6 @@ import {
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
 
 interface SegmentStatus {
   id: string;
@@ -77,7 +76,13 @@ export class SegmentedButton {
   container: HTMLElement;
   showHelperText = false;
   @Listen('scaleClick')
-  handleSegmentClick(ev: CustomEvent<{ id: string; selected: boolean; userInteraction?: boolean }>) {
+  handleSegmentClick(
+    ev: CustomEvent<{
+      id: string;
+      selected: boolean;
+      userInteraction?: boolean;
+    }>
+  ) {
     // Nur auf echte User-Interaktion reagieren
     const { id } = ev.detail;
     if (this.multiSelect) {
@@ -93,7 +98,7 @@ export class SegmentedButton {
     } else {
       // Single-Select: Nur ein Index aktiv
       const segments = this.getAllSegments();
-      const newIndex = segments.findIndex(seg => seg.segmentId === id);
+      const newIndex = segments.findIndex((seg) => seg.segmentId === id);
       this.scaleChange.emit({ selectedIds: [id], selectedIndex: newIndex });
     }
   }
@@ -112,7 +117,6 @@ export class SegmentedButton {
     this.propagatePropsToChildren();
   }
 
-
   /**
    * Keep props, needed in children buttons, in sync
    */
@@ -126,7 +130,7 @@ export class SegmentedButton {
     });
   }
 
-    updateSegmentsFromProps() {
+  updateSegmentsFromProps() {
     const segments = this.getAllSegments();
     segments.forEach((segment, i) => {
       if (this.multiSelect && Array.isArray(this.selectedIds)) {
@@ -140,8 +144,6 @@ export class SegmentedButton {
       segment.disabled = this.disabled;
     });
   }
-
-  
 
   componentWillLoad() {
     const tempState: SegmentStatus[] = [];
@@ -241,7 +243,6 @@ export class SegmentedButton {
       });
     return tempWidth;
   }
-
 
   getAllSegments() {
     return Array.from(this.hostElement.querySelectorAll('scale-segment'));

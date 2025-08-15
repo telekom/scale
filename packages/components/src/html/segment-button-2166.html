@@ -38,34 +38,34 @@
     </section>
 
     <script>
-let selectedIndex = 1; // 0 = Option A, 1 = Option B
-const toggleButton = document.getElementById('toggle-button');
-const segmentedButton = document.getElementById('segmented-button');
-const stateDisplay = document.getElementById('state-display');
+      let selectedIndex = 1; // 0 = Option A, 1 = Option B
+      const toggleButton = document.getElementById('toggle-button');
+      const segmentedButton = document.getElementById('segmented-button');
+      const stateDisplay = document.getElementById('state-display');
 
-function updateState() {
-  segmentedButton.selectedIndex = selectedIndex;
-  stateDisplay.textContent = selectedIndex === 0 ? 'a' : 'b';
-}
+      function updateState() {
+        segmentedButton.selectedIndex = selectedIndex;
+        stateDisplay.textContent = selectedIndex === 0 ? 'a' : 'b';
+      }
 
-function onClick() {
-  selectedIndex = selectedIndex === 0 ? 1 : 0;
-  updateState();
-}
+      function onClick() {
+        selectedIndex = selectedIndex === 0 ? 1 : 0;
+        updateState();
+      }
 
-function onChange(event) {
-  // Lies den neuen Index aus dem Event aus, falls vorhanden
-  if (event.detail && typeof event.detail.selectedIndex === 'number') {
-    selectedIndex = event.detail.selectedIndex;
-    updateState();
-  }
-}
+      function onChange(event) {
+        // Lies den neuen Index aus dem Event aus, falls vorhanden
+        if (event.detail && typeof event.detail.selectedIndex === 'number') {
+          selectedIndex = event.detail.selectedIndex;
+          updateState();
+        }
+      }
 
-toggleButton.addEventListener('click', onClick);
-segmentedButton.addEventListener('scale-change', onChange);
+      toggleButton.addEventListener('click', onClick);
+      segmentedButton.addEventListener('scale-change', onChange);
 
-// Initialisieren
-updateState();
+      // Initialisieren
+      updateState();
     </script>
   </body>
 </html>

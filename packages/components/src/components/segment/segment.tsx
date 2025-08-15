@@ -18,7 +18,6 @@ import {
   Event,
   EventEmitter,
   Method,
-  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -231,14 +230,5 @@ export class Segment {
       this.hasIcon && `${prefix}has-icon`,
       this.iconOnly && `${prefix}icon-only`
     );
-  }
-
-  private emitScaleClickEvent(userInteraction: boolean) {
-    emitEvent(this, 'scaleClick', {
-      id: this.segmentId,
-      selected: this.selected,
-      userInteraction,
-    });
-    console.log('Event emitted: Segment clicked:', this.segmentId, 'Selected:', this.selected, 'User Interaction:', userInteraction);
   }
 }
