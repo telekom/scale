@@ -76,21 +76,27 @@
       <scale-segment>Huawei</scale-segment>
     </scale-segmented-button>
     <div style="height: 20px"></div>
-    <hr>
+    <hr />
     <section>
-      <scale-button id="toggle-button">Change selected state of the segments</scale-button>
+      <scale-button id="toggle-button"
+        >Change selected state of the segments</scale-button
+      >
       <div style="height: 10px"></div>
       <scale-segmented-button id="segmented-button-toggle">
         <scale-segment id="segment-alpha">Option A</scale-segment>
         <scale-segment id="segment-beta" selected>Option B</scale-segment>
       </scale-segmented-button>
-      <p><b>state: <span id="state-display">b</span></b></p>
+      <p>
+        <b>state: <span id="state-display">b</span></b>
+      </p>
     </section>
     <!-- functionality for changing the selected-state of the segments -->
     <script>
       let selectedOption = 'b';
       const toggleButton = document.getElementById('toggle-button');
-      const segmentedButtonToggle = document.getElementById('segmented-button-toggle');
+      const segmentedButtonToggle = document.getElementById(
+        'segmented-button-toggle'
+      );
       const segmentAlpha = document.getElementById('segment-alpha');
       const segmentBeta = document.getElementById('segment-beta');
       const stateDisplay = document.getElementById('state-display');
