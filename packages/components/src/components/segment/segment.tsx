@@ -80,10 +80,16 @@ export class Segment {
   }>;
 
   private focusableElement: HTMLElement;
+  private userInteraction = false; // 'false' indicates that this event is triggered by internal state change
 
   @Watch('selected')
   selectionChanged() {
-    this.emitScaleClickEvent(false); // 'false' indicates that this event is triggered by internal state change
+    emitEvent(this, 'scaleClick', {
+      id: this.segmentId,
+      selected: this.selected,
+      userInteraction: this.userInteraction,
+    });
+    this.userInteraction = false;
   }
 
   @Method()
@@ -160,8 +166,8 @@ export class Segment {
       return;
     }
     event.preventDefault();
+    this.userInteraction = true;
     this.selected = !this.selected;
-    this.emitScaleClickEvent(true);
   };
 
   render() {
@@ -229,13 +235,5 @@ export class Segment {
       this.hasIcon && `${prefix}has-icon`,
       this.iconOnly && `${prefix}icon-only`
     );
-  }
-
-  private emitScaleClickEvent(userInteraction: boolean) {
-    emitEvent(this, 'scaleClick', {
-      id: this.segmentId,
-      selected: this.selected,
-      userInteraction,
-    });
   }
 }
