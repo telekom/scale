@@ -72,11 +72,13 @@ export class Segment {
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
     selected: boolean;
+    userInteraction?: boolean;
   }>;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
     id: string;
     selected: boolean;
+    userInteraction?: boolean;
   }>;
 
   private focusableElement: HTMLElement;

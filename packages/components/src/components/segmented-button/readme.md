@@ -26,7 +26,7 @@
 
 | Event          | Description                                                                                        | Type               |
 | -------------- | -------------------------------------------------------------------------------------------------- | ------------------ |
-| `scale-change` | Emitted when button is clicked                                                                     | `CustomEvent<any>` |
+| `scale-change` | Emitted when button is clicked. Not emitted in case of programmatic state changes.                 | `CustomEvent<any>` |
 | `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<any>` |
 
 
