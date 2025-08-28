@@ -10,7 +10,14 @@ import ScaleSegmentedButton from './ScaleSegmentedButton.vue';
     },
     ariaLabelTranslation: {
       description: "(optional) aria-label attribute needed for icon-only buttons"
-    }
+    },
+    scaleChange: {
+      description: '@deprecated in v3 in favor of kebab-case event names.',
+    },
+    'scale-change': {
+      description:
+        'Emitted when button is clicked. Not emitted in case of programmatic state changes (e.g. the `selected` state is set by the skript).',
+    },
   }}
 />
 

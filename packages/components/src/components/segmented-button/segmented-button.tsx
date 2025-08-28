@@ -67,7 +67,7 @@ export class SegmentedButton {
   ariaLabelTranslation = `segment button with $slottedSegments`;
   @Prop({ mutable: true })
   longestButtonWidth: string;
-  /** Emitted when button is clicked */
+  /** Emitted when button is clicked. Not emitted in case of programmatic state changes (e.g. the `selected` state is set by the skript). */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
@@ -75,7 +75,14 @@ export class SegmentedButton {
   container: HTMLElement;
   showHelperText = false;
   @Listen('scaleClick')
-  scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
+  scaleClickHandler(
+    ev: CustomEvent<{
+      id: string;
+      selected: boolean;
+      userInteraction?: boolean;
+    }>
+  ) {
+    const { userInteraction = true } = ev.detail; // set default to true, which leads to emit the scaleChange-event finally
     let tempState = this.getAllSegments().map((segment) => {
       return {
         id: segment.segmentId,
@@ -92,9 +99,9 @@ export class SegmentedButton {
           ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
         );
       }
-      this.setState(tempState, ev.detail.selected);
+      this.setState(tempState, userInteraction && ev.detail.selected);
     } else {
-      this.setState(tempState);
+      this.setState(tempState, userInteraction);
     }
   }
 
