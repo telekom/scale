@@ -1106,21 +1106,19 @@ export class DataGrid {
                     : {})}
                 >
                   <div class={`thead__title`}>
-                    <span class={`thead__text`}>
-                      {sortable && (
-                        <scale-icon-content-sort-indicator-up
-                          size={16}
-                          class={`thead__arrow-top`}
-                        ></scale-icon-content-sort-indicator-up>
-                      )}
-                      {sortable && (
-                        <scale-icon-content-sort-indicator-down
-                          size={16}
-                          class={`thead__arrow-bottom`}
-                        ></scale-icon-content-sort-indicator-down>
-                      )}
-                      {label}
-                    </span>
+                    <span class={`thead__text`}>{label}</span>
+                    {sortable && (
+                      <scale-icon-content-sort-indicator-up
+                        size={16}
+                        class={`thead__arrow-top`}
+                      ></scale-icon-content-sort-indicator-up>
+                    )}
+                    {sortable && (
+                      <scale-icon-content-sort-indicator-down
+                        size={16}
+                        class={`thead__arrow-bottom`}
+                      ></scale-icon-content-sort-indicator-down>
+                    )}
                   </div>
 
                   {resizable && (
