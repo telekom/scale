@@ -1012,9 +1012,7 @@ export class DataGrid {
 
   renderTableHead() {
     return (
-      <thead
-        class={`thead ${this.hideHeader ? 'sr-only' : ''}`}
-      >
+      <thead class={`thead ${this.hideHeader ? 'sr-only' : ''}`}>
         <tr class={`thead__row`}>
           {this.numbered && this.renderTableHeadNumberedCell()}
           {this.selectable && this.renderTableHeadSelectableCell()}
