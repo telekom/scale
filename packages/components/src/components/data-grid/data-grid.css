@@ -120,7 +120,7 @@
 .data-grid__table {
   border-spacing: 0;
   border-collapse: collapse;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .data-grid--hide-menu .data-grid__settings-menu {
@@ -146,6 +146,8 @@
 }
 
 .data-grid--freeze-header .thead {
+  position: sticky;
+  top: 0;
   z-index: 30;
   background-color: var(--telekom-color-background-canvas);
 }
