@@ -120,7 +120,6 @@
 .data-grid__table {
   border-spacing: 0;
   border-collapse: collapse;
-  /* overflow: hidden; */
 }
 
 .data-grid--hide-menu .data-grid__settings-menu {
