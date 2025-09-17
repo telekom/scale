@@ -120,7 +120,6 @@
 .data-grid__table {
   border-spacing: 0;
   border-collapse: collapse;
-  overflow: hidden;
 }
 
 .data-grid--hide-menu .data-grid__settings-menu {
@@ -146,6 +145,8 @@
 }
 
 .data-grid--freeze-header .thead {
+  position: sticky;
+  top: 0;
   z-index: 30;
   background-color: var(--telekom-color-background-canvas);
 }
@@ -169,6 +170,12 @@
   color: var(--telekom-color-text-and-icon-additional);
 }
 
+.thead__text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .thead__cell--numbered {
   text-align: right;
   justify-content: flex-end;
@@ -184,6 +191,8 @@
 }
 .thead__title {
   color: var(--telekom-color-text-and-icon-standard);
+  width: 100%;
+  display: flex;
 }
 
 .thead__text {
@@ -194,10 +203,7 @@
 
 .thead__arrow-top,
 .thead__arrow-bottom {
-  position: absolute;
   display: none !important;
-  top: -2px;
-  left: -16px;
 }
 
 .thead__sort-prompt {

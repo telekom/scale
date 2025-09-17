@@ -75,10 +75,6 @@ Auf mobilen Bildschrimen bricht die Datenzeile um und wird als separates Item an
 
 ![Image Name](assets/3_components/data-grid/Mobile-de.png)
 
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
-
 ## Verwandte Komponenten
 
 <a href="?path=/usage/components-table--standard">Tabelle</a>

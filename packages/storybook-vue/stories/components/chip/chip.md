@@ -97,5 +97,5 @@ Add an icon if it makes it easier for users to understand the function of the ch
 
 [Tag](?path=/usage/components-tag--standard),
 [Button](?path=/usage/components-button--standard),
-[Segmented Button](?path=/usage/beta-components-segmented-button--standard),
+[Segmented Button](?path=/usage/components-segmented-button--standard),
 [Checkbox Group](?path=/usage/components-checkbox-group--standard)

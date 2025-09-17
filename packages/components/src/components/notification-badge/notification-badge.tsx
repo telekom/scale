@@ -11,7 +11,6 @@
 
 import { Component, Element, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
-import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-notification-badge',
@@ -28,10 +27,6 @@ export class NotificationBadge {
   @Prop() type: 'icon' | 'text' | 'nav-icon' = 'icon';
   /** (optional) Handle click on the badge and surroundet slot elements */
   @Prop() clickHandler: any;
-
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-  }
 
   getBadgeLabel() {
     if (this.label) {

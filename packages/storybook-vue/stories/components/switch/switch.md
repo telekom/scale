@@ -63,5 +63,5 @@ Clearly label the switch and keep it short. For some use cases, a single noun pr
 ## Related components
 
 [Checkbox, ](?path=/usage/components-checkbox--standard)
-[Dropdown, ](?path=/usage/components-dropdown--standard)
+[Dropdown Select, ](?path=/usage/components-dropdown-select--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)

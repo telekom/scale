@@ -43,6 +43,6 @@ The monthly calendar displays the days of the month which are available for sele
 ## Related components
 
 [Input, ](?path=/usage/components-text-field--standard)
-[Dropdown, ](?path=/usage/components-dropdown--standard)
+[Dropdown Select, ](?path=/usage/components-dropdown-select--standard)
 [Slider, ](?path=/usage/components-slider--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)

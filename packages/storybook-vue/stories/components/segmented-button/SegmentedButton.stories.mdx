@@ -2,7 +2,7 @@ import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
 import ScaleSegmentedButton from './ScaleSegmentedButton.vue';
 
 <Meta
-  title="Beta Components/Segmented Button"
+  title="Components/Segmented Button"
   component={ScaleSegmentedButton}
   argTypes={{
     size: {
@@ -10,7 +10,14 @@ import ScaleSegmentedButton from './ScaleSegmentedButton.vue';
     },
     ariaLabelTranslation: {
       description: "(optional) aria-label attribute needed for icon-only buttons"
-    }
+    },
+    scaleChange: {
+      description: '@deprecated in v3 in favor of kebab-case event names.',
+    },
+    'scale-change': {
+      description:
+        'Emitted when button is clicked. Not emitted in case of programmatic state changes (e.g. the `selected` state is set by the skript).',
+    },
   }}
 />
 
@@ -190,7 +197,6 @@ export const InvalidTemplate = (args, { argTypes }) => ({
   }}
 >
   <h1>Segmented Button</h1>
-  <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 ## Standard

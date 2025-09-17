@@ -150,10 +150,6 @@ export class DataGrid {
   private dataNeedsCheck: boolean = true;
   /** Track main container for element resize */
   private elMmainContainer?: any;
-  /** Track table container for scroll */
-  private elScrollContainer?: HTMLElement;
-  /** Table head for frozen header */
-  private elTableHead?: HTMLElement;
   /** Checkbox for getting toggle-all state */
   private elToggleSelectAll?: HTMLScaleCheckboxElement;
   /** Flag to know if rendering can commence */
@@ -798,15 +794,6 @@ export class DataGrid {
     this.forceRender++;
   }
 
-  onTableScroll() {
-    if (!this.freezeHeader || this.hideHeader) {
-      return;
-    }
-    // Freeze header
-    const scrollY = this.elScrollContainer.scrollTop;
-    this.elTableHead.style.transform = `translateY(${scrollY}px)`;
-  }
-
   handleMenuListClick = (event) => {
     const menuItems = ['sortBy', 'toggleVisibility'];
     const currentMenuItemsIndex = menuItems.indexOf(event.target.id);
@@ -954,11 +941,9 @@ export class DataGrid {
     }
     return (
       <div
-        ref={(el) => (this.elScrollContainer = el)}
         class={`${name}__scroll-container`}
         part="scrollable"
         style={{ height: this.height || 'auto' }}
-        onScroll={() => this.onTableScroll()}
       >
         <table class={`${name}__table`}>
           {this.renderTableHead()}
@@ -1027,10 +1012,7 @@ export class DataGrid {
 
   renderTableHead() {
     return (
-      <thead
-        ref={(el) => (this.elTableHead = el)}
-        class={`thead ${this.hideHeader ? 'sr-only' : ''}`}
-      >
+      <thead class={`thead ${this.hideHeader ? 'sr-only' : ''}`}>
         <tr class={`thead__row`}>
           {this.numbered && this.renderTableHeadNumberedCell()}
           {this.selectable && this.renderTableHeadSelectableCell()}
@@ -1106,21 +1088,19 @@ export class DataGrid {
                     : {})}
                 >
                   <div class={`thead__title`}>
-                    <span class={`thead__text`}>
-                      {sortable && (
-                        <scale-icon-content-sort-indicator-up
-                          size={16}
-                          class={`thead__arrow-top`}
-                        ></scale-icon-content-sort-indicator-up>
-                      )}
-                      {sortable && (
-                        <scale-icon-content-sort-indicator-down
-                          size={16}
-                          class={`thead__arrow-bottom`}
-                        ></scale-icon-content-sort-indicator-down>
-                      )}
-                      {label}
-                    </span>
+                    <span class={`thead__text`}>{label}</span>
+                    {sortable && (
+                      <scale-icon-content-sort-indicator-up
+                        size={16}
+                        class={`thead__arrow-top`}
+                      ></scale-icon-content-sort-indicator-up>
+                    )}
+                    {sortable && (
+                      <scale-icon-content-sort-indicator-down
+                        size={16}
+                        class={`thead__arrow-bottom`}
+                      ></scale-icon-content-sort-indicator-down>
+                    )}
                   </div>
 
                   {resizable && (

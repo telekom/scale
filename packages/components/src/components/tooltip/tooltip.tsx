@@ -96,8 +96,6 @@ export class Tooltip {
   }
 
   connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-
     if (this.hostElement.hasAttribute('open')) {
       statusNote({
         tag: 'deprecated',
