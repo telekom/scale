@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.157](https://github.com/amir-ba/scale/compare/v3.0.0-beta.156...v3.0.0-beta.157) (2025-09-17)
+
+
+### Bug Fixes
+
+* **data-grid:** fix issue with table header overlapping the table body ([#2426](https://github.com/amir-ba/scale/issues/2426)) ([81dc80c](https://github.com/amir-ba/scale/commit/81dc80c965cf10ac1674f3eb5d59168bcfbfdb4e))
+* **data-grid:** fix overflowing table header text when title space reduced ([#2425](https://github.com/amir-ba/scale/issues/2425)) ([3279e36](https://github.com/amir-ba/scale/commit/3279e36144a79e7453684b8880575fc1b364153a))
+* **helper-text:** add aria-hidden to helper icons ([#2402](https://github.com/amir-ba/scale/issues/2402)) ([f71532d](https://github.com/amir-ba/scale/commit/f71532dc127bac802aed8e06b7e4420e41a79a82))
+
+
+
+
+
+
 # [3.0.0-beta.156](https://github.com/amir-ba/scale/compare/v3.0.0-beta.154...v3.0.0-beta.156) (2025-06-19)
 
 
