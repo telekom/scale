@@ -404,10 +404,7 @@ scale-telekom-mobile-flyout-canvas
   min-block-size: 24px;
 }
 
-.scale-telekom-nav-list[variant='lang-switcher'].scale-telekom-nav-list > .scale-telekom-nav-item {
+.scale-telekom-nav-list[variant='lang-switcher'].scale-telekom-nav-list
+  > .scale-telekom-nav-item {
   margin: 0;
 }
-
-
-
-
