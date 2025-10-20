@@ -47,7 +47,7 @@ duet-date-picker .duet-date__input {
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-border-standard);
   background-color: var(--telekom-color-ui-state-fill-standard);
-  padding: 1.125rem calc(2rem - var(--telekom-spacing-composition-space-01))
+  padding: 1.125rem 3.5rem
     0.25rem calc(var(--spacing-x) - var(--telekom-spacing-composition-space-01));
   height: var(--telekom-spacing-composition-space-13);
   font: var(--telekom-text-style-body);
@@ -142,7 +142,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   font: var(--telekom-text-style-ui);
   transform: translate(var(--telekom-spacing-composition-space-05), 0.875rem);
 
-  width: calc( 100% - var(--telekom-spacing-composition-space-17)  ); 
+  width: calc(100% - var(--telekom-spacing-composition-space-17));
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
