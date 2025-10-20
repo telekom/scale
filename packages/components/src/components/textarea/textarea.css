@@ -146,7 +146,7 @@ scale-textarea {
   font: var(--telekom-text-style-ui);
   transform: translate(var(--spacing-x-control), 0.875rem);
 
-  width: calc( 100% - var(--spacing-x-control) * 2); 
+  width: calc(100% - var(--spacing-x-control) * 2);
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

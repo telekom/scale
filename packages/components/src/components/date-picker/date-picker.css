@@ -47,8 +47,8 @@ duet-date-picker .duet-date__input {
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-border-standard);
   background-color: var(--telekom-color-ui-state-fill-standard);
-  padding: 1.125rem 3.5rem
-    0.25rem calc(var(--spacing-x) - var(--telekom-spacing-composition-space-01));
+  padding: 1.125rem 3.5rem 0.25rem
+    calc(var(--spacing-x) - var(--telekom-spacing-composition-space-01));
   height: var(--telekom-spacing-composition-space-13);
   font: var(--telekom-text-style-body);
 }
