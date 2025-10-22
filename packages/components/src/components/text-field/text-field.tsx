@@ -250,13 +250,14 @@ export class TextField {
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
           {/* Accessibility: label should be always *before* the actual input */}
-          <label class="text-field__label" htmlFor={this.inputId}>
+          <label id={`${this.inputId}-label`} class="text-field__label" htmlFor={this.inputId}>
             {this.label}
           </label>
           <input
             type={this.type}
             inputMode={this.inputModeType}
             class="text-field__control"
+            aria-labelledby={`${this.inputId}-label`}
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
             {...(!!this.inputAutofocus ? { autofocus: 'true' } : {})}
