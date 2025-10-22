@@ -250,7 +250,11 @@ export class TextField {
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
           {/* Accessibility: label should be always *before* the actual input */}
-          <label id={`${this.inputId}-label`} class="text-field__label" htmlFor={this.inputId}>
+          <label
+            id={`${this.inputId}-label`}
+            class="text-field__label"
+            htmlFor={this.inputId}
+          >
             {this.label}
           </label>
           <input
