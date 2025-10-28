@@ -176,13 +176,17 @@ scale-text-field {
   top: 0;
   left: 0;
   color: var(--color-label);
-  display: flex;
   z-index: var(--z-index-label);
   position: absolute;
   transition: var(--transition-label);
   pointer-events: none;
   font: var(--telekom-text-style-ui);
   transform: translate(var(--spacing-x), 0.875rem);
+
+  width: calc(100% - var(--spacing-x) * 2);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
