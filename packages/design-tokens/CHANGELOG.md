@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.158](https://github.com/telekom/scale/compare/v3.0.0-beta.157...v3.0.0-beta.158) (2025-10-29)
+
+**Note:** Version bump only for package @telekom/scale-design-tokens
+
+
+
+
+
+
 # [3.0.0-beta.157](https://github.com/telekom/scale/compare/v3.0.0-beta.156...v3.0.0-beta.157) (2025-09-17)
 
 **Note:** Version bump only for package @telekom/scale-design-tokens

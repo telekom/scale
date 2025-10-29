@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.158](https://github.com/telekom/scale/compare/v3.0.0-beta.157...v3.0.0-beta.158) (2025-10-29)
+
+
+### Bug Fixes
+
+* **telekom-header:** fixes minimum size for the language switcher for i18n compatibility  ([c8cda97](https://github.com/telekom/scale/commit/c8cda97f2f86e5cf488bd425c39e0bd6897f1da1))
+* **text-field:** the label accessibility is fixed to work when the hide-label-visually is set  ([f4ba48d](https://github.com/telekom/scale/commit/f4ba48dea477cae1eef547bcfe77fbb02034ad05))
+* **text-field:** update styles of input components to prevent overflow ([#2433](https://github.com/telekom/scale/issues/2433)) ([0ab297c](https://github.com/telekom/scale/commit/0ab297c532a2209b338a573d724c7c78e6e64e9e))
+
+
+
+
+
+
 # [3.0.0-beta.157](https://github.com/telekom/scale/compare/v3.0.0-beta.156...v3.0.0-beta.157) (2025-09-17)
 
 
