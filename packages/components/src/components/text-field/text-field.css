@@ -28,7 +28,8 @@ scale-text-field {
   --background-color-disabled: none;
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus-standard);
-  --height: 44px;
+  --height: auto;
+  --min-height: 44px; /* for backward compatibility */
   --spacing-x: var(--telekom-spacing-composition-space-05);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
@@ -94,6 +95,7 @@ scale-text-field {
 .text-field .text-field__control {
   width: 100%;
   height: var(--height);
+  min-height: var(--min-height);
   margin: 0;
   display: flex;
   outline: none;
