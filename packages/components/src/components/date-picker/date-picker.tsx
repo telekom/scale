@@ -249,6 +249,18 @@ export class DatePicker {
     }
   }
 
+  /**
+   * Watch `localization` for changes and refresh all DOM bits we set manually
+   * (buttonLabel/title, custom heading, weekday abbreviations, "today" suffix, etc.).
+   */
+  @Watch('localization')
+  onLocalizationChange() {
+    if (this.duetInput && this.localization) {
+      (this.duetInput as any).localization = { ...this.localization }; // neue Ref
+    }
+    this.updateLocalizedDomBits(); // new methode
+  }
+
   componentWillLoad() {
     if (this.popupTitle !== 'Pick a date') {
       statusNote({
@@ -334,53 +346,10 @@ export class DatePicker {
       input.setAttribute('aria-invalid', 'true');
     }
 
-    // Remove existing <h2> with `{Month} {Year}` text
-    const dialog = this.hostElement.querySelector('.duet-date__dialog');
-    let duetHeadingId: string = '';
-    if (dialog) {
-      duetHeadingId = dialog.getAttribute('aria-labelledby');
-      if (duetHeadingId) {
-        const duetHeading = this.hostElement.querySelector(`#${duetHeadingId}`);
-        if (duetHeading) {
-          duetHeading.parentElement.removeChild(duetHeading);
-        }
-      }
-    }
-
-    // Add custom <h2> heading
-    const dialogContent = this.hostElement.querySelector(
-      '.duet-date__dialog-content'
-    );
-    if (dialogContent) {
-      const calendarHeading =
-        this.localization?.calendarHeading || this.popupTitle || 'Pick a date';
-      const heading = document.createElement('h2');
-      heading.id = duetHeadingId; // link to .duet-date__dialog[aria-labelledby]
-      heading.className = 'scale-date-picker__popup-heading';
-      heading.innerHTML = calendarHeading;
-      dialogContent.insertBefore(heading, dialogContent.firstChild);
-    }
-
-    // truncate table headings to a single character
-    const tableHeadings = this.hostElement.querySelectorAll(
-      '.duet-date__table-header span[aria-hidden="true"]'
-    );
-    if (tableHeadings) {
-      Array.from(tableHeadings).forEach(
-        (item) => (item.innerHTML = item.innerHTML[0])
-      );
-    }
-
-    const today = this.hostElement.querySelector(
-      '.duet-date__day.is-today span.duet-date__vhidden'
-    );
-    if (today) {
-      today.innerHTML = `${today.innerHTML}, ${
-        this.localization?.today || 'today'
-      }`;
-    }
-
     this.adjustButtonsLabelsForA11y();
+
+    // Initialize all localized bits
+    this.updateLocalizedDomBits();
   }
 
   componentDidRender() {
@@ -508,4 +477,89 @@ export class DatePicker {
       </Host>
     );
   }
+  /**
+   * (Re)applies our manual DOM changes that depend on localization.
+   */
+  private updateLocalizedDomBits = () => {
+    // Remove Duet’s default <h2> and ensure our custom heading exists/updates
+    const dialog = this.hostElement.querySelector('.duet-date__dialog');
+    const dialogContent = this.hostElement.querySelector(
+      '.duet-date__dialog-content'
+    );
+    if (dialog && dialogContent) {
+      const duetHeadingId = dialog.getAttribute('aria-labelledby') || '';
+      if (duetHeadingId) {
+        const duetHeading = this.hostElement.querySelector<HTMLElement>(
+          '#' + duetHeadingId
+        );
+        if (duetHeading && duetHeading.parentElement) {
+          duetHeading.parentElement.removeChild(duetHeading);
+        }
+      }
+      const calendarHeading =
+        this.localization?.calendarHeading || this.popupTitle || 'Pick a date';
+      let heading = this.hostElement.querySelector<HTMLElement>(
+        '.scale-date-picker__popup-heading'
+      );
+      if (!heading) {
+        heading = document.createElement('h2');
+        if (duetHeadingId) {
+          heading.id = duetHeadingId;
+          heading.className = 'scale-date-picker__popup-heading';
+          dialogContent.insertBefore(heading, dialogContent.firstChild);
+        }
+      }
+      heading.textContent = calendarHeading;
+    }
+
+    // Toggle button (buttonLabel / title / aria-label)
+    const toggleBtn =
+      this.hostElement.querySelector<HTMLButtonElement>('.duet-date__toggle');
+    const btnLabel = (this.localization as any)?.buttonLabel;
+    if (toggleBtn && btnLabel) {
+      toggleBtn.setAttribute('title', btnLabel);
+      toggleBtn.setAttribute('aria-label', btnLabel);
+    }
+
+    // Truncate weekday headings to one character
+    // Update weekday headings based on current localization
+    const short =
+      (this.localization as any)?.weekdays?.shorthand || // Duet format
+      (this.localization as any)?.dayNamesShort || // alternative
+      (this.localization as any)?.dayNames?.map((d: string) => d.slice(0, 1)) ||
+      [];
+
+    // Adjust for firstDayOfWeek (Duet default = Monday = 1)
+    const start = Number.isInteger(this.firstDayOfWeek)
+      ? Number(this.firstDayOfWeek)
+      : 1;
+
+    const ordered =
+      short.length === 7
+        ? [...short.slice(start), ...short.slice(0, start)]
+        : short;
+
+    // Apply the correct short labels to the DOM
+    const tableHeadings = Array.from(
+      this.hostElement.querySelectorAll<HTMLElement>(
+        '.duet-date__table-header span[aria-hidden="true"]'
+      )
+    );
+
+    tableHeadings.forEach((el, i) => {
+      const label = ordered[i];
+      // Use the first character if full names are provided
+      el.textContent = label ? label[0] : (el.textContent || '').slice(0, 1);
+    });
+
+    // "today" visually hidden text
+    const today = this.hostElement.querySelector(
+      '.duet-date__day.is-today span.duet-date__vhidden'
+    );
+    if (today) {
+      today.innerHTML = `${today.innerHTML}, ${
+        this.localization?.today || 'today'
+      }`;
+    }
+  };
 }
