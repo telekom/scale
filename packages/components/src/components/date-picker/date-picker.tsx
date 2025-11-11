@@ -256,9 +256,9 @@ export class DatePicker {
   @Watch('localization')
   onLocalizationChange() {
     if (this.duetInput && this.localization) {
-      (this.duetInput as any).localization = { ...this.localization }; // neue Ref
+      (this.duetInput as any).localization = { ...this.localization };
     }
-    this.updateLocalizedDomBits(); // new methode
+    this.updateLocalizedDomBits();
   }
 
   componentWillLoad() {
@@ -477,9 +477,6 @@ export class DatePicker {
       </Host>
     );
   }
-  /**
-   * (Re)applies our manual DOM changes that depend on localization.
-   */
   private updateLocalizedDomBits = () => {
     // Remove Duet’s default <h2> and ensure our custom heading exists/updates
     const dialog = this.hostElement.querySelector('.duet-date__dialog');
