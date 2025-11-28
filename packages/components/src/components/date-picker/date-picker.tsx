@@ -248,7 +248,6 @@ export class DatePicker {
       input.setAttribute('placeholder', newValue);
     }
   }
-
   /**
    * Watch `localization` for changes and refresh all DOM bits we set manually
    * (buttonLabel/title, custom heading, weekday abbreviations, "today" suffix, etc.).
@@ -256,9 +255,9 @@ export class DatePicker {
   @Watch('localization')
   onLocalizationChange() {
     if (this.duetInput && this.localization) {
-      (this.duetInput as any).localization = { ...this.localization };
+      (this.duetInput as any).localization = this.localization ;
     }
-    this.updateLocalizedDomBits();
+    this.updateDomOnLocalizationChange();
   }
 
   componentWillLoad() {
@@ -349,7 +348,7 @@ export class DatePicker {
     this.adjustButtonsLabelsForA11y();
 
     // Initialize all localized bits
-    this.updateLocalizedDomBits();
+    this.updateDomOnLocalizationChange();
   }
 
   componentDidRender() {
@@ -477,7 +476,7 @@ export class DatePicker {
       </Host>
     );
   }
-  private updateLocalizedDomBits = () => {
+  private updateDomOnLocalizationChange = () => {
     // Remove Duet’s default <h2> and ensure our custom heading exists/updates
     const dialog = this.hostElement.querySelector('.duet-date__dialog');
     const dialogContent = this.hostElement.querySelector(
