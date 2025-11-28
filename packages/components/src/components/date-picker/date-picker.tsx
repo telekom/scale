@@ -255,7 +255,7 @@ export class DatePicker {
   @Watch('localization')
   onLocalizationChange() {
     if (this.duetInput && this.localization) {
-      (this.duetInput as any).localization = this.localization ;
+      (this.duetInput as any).localization = this.localization;
     }
     this.updateDomOnLocalizationChange();
   }
