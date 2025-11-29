@@ -17,6 +17,7 @@ import {
   Listen,
   Element,
   Method,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { hasShadowDom, ScaleIcon, isScaleIcon } from '../../utils/utils';
@@ -40,7 +41,7 @@ export class Button {
   /** (optional) Button variant */
   @Prop() variant?: string = 'primary';
   /** (optional) If `true`, the button is disabled */
-  @Prop({ reflect: true }) disabled?: boolean = false;
+  @Prop() disabled?: boolean = false;
   /** (optional) Button type */
   @Prop() type?: 'reset' | 'submit' | 'button';
   /** (optional) The name of the button, submitted as a pair with the button's `value` as part of the form data */
@@ -66,6 +67,19 @@ export class Button {
 
   private focusableElement: HTMLElement;
   private fallbackSubmitInputElement: HTMLInputElement;
+
+  private syncDisabledAttr() {
+    if (this.disabled) {
+      this.hostElement.setAttribute('disabled', '');
+    } else {
+      this.hostElement.removeAttribute('disabled');
+    }
+  }
+
+  @Watch('disabled')
+  onDisabledChange() {
+    this.syncDisabledAttr();
+  }
 
   /**
    * Prevent clicks from being emitted from the host
@@ -119,6 +133,7 @@ export class Button {
   connectedCallback() {
     this.setIconPositionProp();
     this.appendEnterKeySubmitFallback();
+    this.syncDisabledAttr();
   }
 
   disconnectedCallback() {
@@ -226,7 +241,9 @@ export class Button {
             ref={(el) => (this.focusableElement = el)}
             class={this.getCssClassMap()}
             onClick={this.handleClick}
-            disabled={this.disabled}
+            disabled={
+              this.disabled ? true : undefined
+            } /* Use undefined to properly remove the disabled attribute when false*/
             type={this.type}
             part={basePart}
             tabIndex={this.innerTabindex}
