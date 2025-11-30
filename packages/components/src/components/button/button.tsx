@@ -68,14 +68,6 @@ export class Button {
   private focusableElement: HTMLElement;
   private fallbackSubmitInputElement: HTMLInputElement;
 
-  private syncDisabledAttr() {
-    if (this.disabled) {
-      this.hostElement.setAttribute('disabled', '');
-    } else {
-      this.hostElement.removeAttribute('disabled');
-    }
-  }
-
   @Watch('disabled')
   onDisabledChange() {
     this.syncDisabledAttr();
@@ -269,5 +261,12 @@ export class Button {
         `button--icon-${this.iconPosition}`,
       this.disabled && `button--disabled`
     );
+  }
+  private syncDisabledAttr() {
+    if (this.disabled) {
+      this.hostElement.setAttribute('disabled', '');
+    } else {
+      this.hostElement.removeAttribute('disabled');
+    }
   }
 }
