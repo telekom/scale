@@ -29,9 +29,9 @@
 
 ## Events
 
-| Event         | Description                    | Type                                              |
-| ------------- | ------------------------------ | ------------------------------------------------- |
-| `scale-click` | Emitted when button is clicked | `CustomEvent<{ id: string; selected: boolean; }>` |
+| Event         | Description                    | Type                                                                         |
+| ------------- | ------------------------------ | ---------------------------------------------------------------------------- |
+| `scale-click` | Emitted when button is clicked | `CustomEvent<{ id: string; selected: boolean; userInteraction?: boolean; }>` |
 
 
 ## Methods

@@ -24,9 +24,9 @@
 
 ## Events
 
-| Event          | Description                    | Type               |
-| -------------- | ------------------------------ | ------------------ |
-| `scale-change` | Emitted when button is clicked | `CustomEvent<any>` |
+| Event          | Description                                                                                                                         | Type               |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `scale-change` | Emitted when button is clicked. Not emitted in case of programmatic state changes (e.g. the `selected` state is set by the skript). | `CustomEvent<any>` |
 
 
 ## Dependencies
