@@ -41,6 +41,7 @@ describe('DatePicker', () => {
       await global.page.waitForSelector('#root');
       const previewHtml = await global.page.$('body');
 
+      await global.page.waitForTimeout(1000);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     // hover, active, focus
@@ -65,8 +66,10 @@ describe('DatePicker', () => {
         `document.querySelector("#root > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > .duet-date__input")`
       );
       datePicker.hover();
+      await global.page.waitForTimeout(1000);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       datePicker.focus();
+      await global.page.waitForTimeout(1000);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
