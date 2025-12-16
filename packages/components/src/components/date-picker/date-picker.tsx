@@ -429,15 +429,15 @@ export class DatePicker {
           </label>
           <duet-date-picker
             onDuetChange={(e) => {
-              emitEvent(this, 'scaleChange', e.detail);
+              emitEvent(this, 'scale-change', e.detail);
               this.handleKeyPress(e);
             }}
             onDuetFocus={(e) => {
-              emitEvent(this, 'scaleFocus', e.detail);
+              emitEvent(this, 'scale-focus', e.detail);
               this.hasFocus = true;
             }}
             onDuetBlur={(e) => {
-              emitEvent(this, 'scaleBlur', e.detail);
+              emitEvent(this, 'scale-blur', e.detail);
               this.hasFocus = false;
             }}
             name={this.name}

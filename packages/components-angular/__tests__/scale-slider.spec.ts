@@ -1,9 +1,9 @@
 import { async, ComponentFixture } from '@angular/core/testing';
 
-import { ConfigureFn, configureTests } from '../src/config.testing';
-import { DebugElement, Component } from '@angular/core';
-import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Component, DebugElement } from '@angular/core';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { ConfigureFn, configureTests } from '../src/config.testing';
 import { ComponentLibraryModule } from '../src/index';
 
 @Component({
@@ -41,16 +41,18 @@ describe('ScaleSlider - Number Value', () => {
     const { componentInstance: myAngularComponent } = fixture;
     myInputEl.nativeElement.value = 50;
     myInputEl.nativeElement.dispatchEvent(
-      new CustomEvent('scaleChange', { detail: { value: 50 } }),
+      new CustomEvent('scale-change', { detail: { value: 50 } })
     );
     expect(myAngularComponent.testNumber).toEqual(50);
   });
 
-  it('scaleChange event should call local method', () => {
+  it('scale-change event should call local method', () => {
     const { componentInstance: myAngularComponent } = fixture;
     const fakeOnInput = jest.fn();
     myAngularComponent.onInput = fakeOnInput;
-    myInputEl.triggerEventHandler('scaleChange', { target: { value: 'fired' } });
+    myInputEl.triggerEventHandler('scale-change', {
+      target: { value: 'fired' },
+    });
 
     expect(fakeOnInput).toHaveBeenCalledTimes(1);
     expect(fakeOnInput).toHaveBeenCalledWith('fired');

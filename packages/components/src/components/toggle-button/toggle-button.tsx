@@ -140,7 +140,7 @@ export class ToggleButton {
     this.selected = !this.selected;
     this.handleIconShape();
     this.scaleClick.emit({ id: this.toggleButtonId, selected: this.selected });
-    emitEvent(this, 'scaleClick', {
+    emitEvent(this, 'scale-click', {
       id: this.toggleButtonId,
       selected: this.selected,
     });

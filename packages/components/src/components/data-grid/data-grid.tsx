@@ -405,7 +405,7 @@ export class DataGrid {
       '.thead__cell--selection scale-checkbox'
     ) as HTMLInputElement;
     selectAll.checked = !!this.selection.length;
-    emitEvent(this, 'scaleSelection', this.selection);
+    emitEvent(this, 'scale-selection', this.selection);
     // selectAll.indeterminate = !!this.selection.length;
   }
 
@@ -774,7 +774,7 @@ export class DataGrid {
       sortDirection,
       columnIndex,
     } as DataGridSortedEventDetail;
-    emitEvent(this, 'scaleSort', data);
+    emitEvent(this, 'scale-sort', data);
   }
 
   triggerEditEvent(value, rowIndex, columnIndex) {
@@ -784,7 +784,7 @@ export class DataGrid {
       columnIndex,
       value,
     } as DataGridEditEventDetail;
-    emitEvent(this, 'scaleEdit', data);
+    emitEvent(this, 'scale-edit', data);
 
     // Force render for checkboxes
     this.forceRender++;

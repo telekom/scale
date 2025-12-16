@@ -174,7 +174,7 @@ export class TextField {
   // `this.value = selectedValue`
 
   emitChange() {
-    emitEvent(this, 'scaleChange', {
+    emitEvent(this, 'scale-change', {
       value: this.value == null ? this.value : this.value.toString(),
     });
   }
@@ -189,7 +189,7 @@ export class TextField {
       this.value = target.value || '';
       this.emitChange();
     }
-    emitEvent(this, 'scaleInput', event as KeyboardEvent);
+    emitEvent(this, 'scale-input', event as KeyboardEvent);
   };
 
   handleChange = (event: Event) => {
@@ -201,17 +201,17 @@ export class TextField {
   };
 
   handleFocus = () => {
-    emitEvent(this, 'scaleFocus');
+    emitEvent(this, 'scale-focus');
     this.hasFocus = true;
   };
 
   handleBlur = () => {
-    emitEvent(this, 'scaleBlur');
+    emitEvent(this, 'scale-blur');
     this.hasFocus = false;
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
-    emitEvent(this, 'scaleKeyDown', event);
+    emitEvent(this, 'scale-keydown', event);
   };
 
   render() {

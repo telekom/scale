@@ -11,19 +11,19 @@
 
 import {
   Component,
-  Prop,
-  h,
-  Host,
   Element,
-  State,
-  Listen,
   Event,
   EventEmitter,
+  h,
+  Host,
+  Listen,
+  Prop,
+  State,
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 interface ButtonStatus {
   id: string;
@@ -68,7 +68,7 @@ export class ToggleGroup {
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
 
-  @Listen('scaleClick')
+  @Listen('scale-click')
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
     let tempState: ButtonStatus[];
     if (this.singleSelect) {
@@ -180,7 +180,7 @@ export class ToggleGroup {
       button.setAttribute('selected', tempState[i].selected ? 'true' : 'false');
     });
     this.status = tempState;
-    emitEvent(this, 'scaleChange', this.status);
+    emitEvent(this, 'scale-change', this.status);
   }
 
   setButtonWidth() {

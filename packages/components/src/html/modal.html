@@ -38,11 +38,11 @@
         modal.setAttribute('opened', 'true');
       });
 
-      modal.addEventListener('scaleClose', () => {
+      modal.addEventListener('scale-close', () => {
         modal.removeAttribute('opened');
       });
 
-      modal.addEventListener('scaleBeforeClose', (event) => {
+      modal.addEventListener('scale-before-close', (event) => {
         // event.preventDefault()
       });
     </script>

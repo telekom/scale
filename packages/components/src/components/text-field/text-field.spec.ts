@@ -111,7 +111,7 @@ describe('TextField', () => {
   });
   it('should react on change event', async () => {
     // const changeSpy = jest.fn();
-    // page.doc.addEventListener('scaleChange', changeSpy);
+    // page.doc.addEventListener('scale-change', changeSpy);
     const inputField = page.doc.querySelector('input');
     inputField.value = TEST_VALUE;
     await inputField.dispatchEvent(new Event('change'));

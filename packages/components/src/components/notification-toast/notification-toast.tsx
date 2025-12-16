@@ -11,14 +11,14 @@
 
 import {
   Component,
-  Prop,
-  Method,
-  h,
-  State,
   Element,
-  Host,
   Event,
   EventEmitter,
+  h,
+  Host,
+  Method,
+  Prop,
+  State,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -93,11 +93,11 @@ export class NotificationToast {
   }
 
   close = () => {
-    emitEvent(this, 'scaleClosing');
+    emitEvent(this, 'scale-closing');
     this.hideToast = true;
     setTimeout(() => {
       this.opened = false;
-      emitEvent(this, 'scaleClose');
+      emitEvent(this, 'scale-close');
     }, this.fadeDuration);
   };
 

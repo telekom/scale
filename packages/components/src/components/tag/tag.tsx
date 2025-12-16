@@ -61,7 +61,7 @@ export class Tag {
     if (this.disabled) {
       return;
     }
-    emitEvent(this, 'scaleClose', event);
+    emitEvent(this, 'scale-close', event);
   };
 
   render() {

@@ -9,10 +9,9 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
-import { isPseudoClassSupported } from '../../utils/utils';
+import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, isPseudoClassSupported } from '../../utils/utils';
 
 let i = 0;
 
@@ -65,7 +64,7 @@ export class Switch {
               id={this.inputId}
               onChange={(event: any) => {
                 this.checked = event.target.checked;
-                emitEvent(this, 'scaleChange', { value: this.checked });
+                emitEvent(this, 'scale-change', { value: this.checked });
               }}
             />
             <span class="switch__toggle" aria-hidden="true">

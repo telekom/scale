@@ -72,7 +72,7 @@ export class SegmentedButton {
 
   container: HTMLElement;
   showHelperText = false;
-  @Listen('scaleClick')
+  @Listen('scale-click')
   scaleClickHandler(
     ev: CustomEvent<{
       id: string;
@@ -233,7 +233,7 @@ export class SegmentedButton {
     });
     this.selectedIndex = this.getSelectedIndex();
     if (handleEvent) {
-      emitEvent(this, 'scaleChange', { segments });
+      emitEvent(this, 'scale-change', { segments });
     }
   }
 

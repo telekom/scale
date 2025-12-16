@@ -11,13 +11,13 @@
 
 import {
   Component,
-  Prop,
-  h,
-  Host,
   Element,
   Event,
   EventEmitter,
+  h,
+  Host,
   Method,
+  Prop,
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
@@ -80,7 +80,7 @@ export class Segment {
 
   @Watch('selected')
   selectionChanged() {
-    emitEvent(this, 'scaleClick', {
+    emitEvent(this, 'scale-click', {
       id: this.segmentId,
       selected: this.selected,
       userInteraction: this.userInteraction,

@@ -188,7 +188,7 @@ export class Slider {
     this.setValue(this[valueKey] + steps, valueKey);
     emitEvent(
       this,
-      'scaleChange',
+      'scale-change',
       this.range ? [this.valueFrom, this.valueTo] : this.value
     );
   };
@@ -220,7 +220,7 @@ export class Slider {
     this.dragging = false;
     emitEvent(
       this,
-      'scaleChange',
+      'scale-change',
       this.range ? [this.valueFrom, this.valueTo] : this.value
     );
     this.removeGlobalListeners();
@@ -237,7 +237,7 @@ export class Slider {
     this[valueKey] = this.clamp(nextValue);
     emitEvent(
       this,
-      'scaleInput',
+      'scale-input',
       this.range ? [this.valueFrom, this.valueTo] : this.value
     );
   };

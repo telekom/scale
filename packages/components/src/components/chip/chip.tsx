@@ -82,7 +82,7 @@ export class Chip {
   handleClose = (event: MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    emitEvent(this, 'scaleClose', event);
+    emitEvent(this, 'scale-close', event);
   };
 
   handleClick = (event: MouseEvent) => {
@@ -102,7 +102,7 @@ export class Chip {
       return;
     }
     this.selected = !this.selected;
-    emitEvent(this, 'scaleChange', event);
+    emitEvent(this, 'scale-change', event);
   };
 
   getIcon() {

@@ -128,7 +128,7 @@ export class Modal {
   }
 
   emitBeforeClose(trigger: CloseEventTrigger) {
-    const emittedEvents = emitEvent(this, 'scaleBeforeClose', { trigger });
+    const emittedEvents = emitEvent(this, 'scale-before-close', { trigger });
     const prevented = emittedEvents.some((event) => event.defaultPrevented);
     if (!prevented) {
       this.opened = false;
@@ -213,11 +213,11 @@ export class Modal {
       });
       anim.addEventListener('finish', () => {
         this.attemptFocus(this.getFirstFocusableElement());
-        emitEvent(this, 'scaleOpen');
+        emitEvent(this, 'scale-open');
       });
       this.hostElement.addEventListener('keydown', this.handleKeypress);
     } catch (err) {
-      emitEvent(this, 'scaleOpen');
+      emitEvent(this, 'scale-open');
     }
   }
 
@@ -228,12 +228,12 @@ export class Modal {
       });
       anim.addEventListener('finish', () => {
         this.isOpen = false;
-        emitEvent(this, 'scaleClose');
+        emitEvent(this, 'scale-close');
       });
       this.hostElement.removeEventListener('keydown', this.handleKeypress);
     } catch (err) {
       this.isOpen = false;
-      emitEvent(this, 'scaleClose');
+      emitEvent(this, 'scale-close');
     }
   }
 

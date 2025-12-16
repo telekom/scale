@@ -11,12 +11,12 @@
 
 import {
   Component,
-  Prop,
-  h,
-  Host,
   Element,
   Event,
   EventEmitter,
+  h,
+  Host,
+  Prop,
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
@@ -168,7 +168,7 @@ export class Pagination {
       startElement: this.startElement,
       direction,
     };
-    emitEvent(this, 'scalePagination', data);
+    emitEvent(this, 'scale-pagination', data);
   }
 
   /* 10. Render */

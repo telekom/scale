@@ -17,7 +17,7 @@ const vueComponentModels: ComponentModelConfig[] = [
       'scale-dropdown',
       'scale-switch',
     ],
-    event: 'scaleChange',
+    event: 'scale-change',
     targetAttr: 'value',
   },
   // These do not work with the way the plugin "utils"'s wires events,
@@ -27,12 +27,12 @@ const vueComponentModels: ComponentModelConfig[] = [
   //     'scale-checkbox',
   //     'scale-radio-button'
   //   ],
-  //   event: 'scaleChange',
+  //   event: 'scale-change',
   //   targetAttr: 'value',
   // },
   {
     elements: ['scale-slider'],
-    event: 'scaleInput',
+    event: 'scale-input',
     targetAttr: 'value',
   },
 ];
@@ -40,7 +40,7 @@ const vueComponentModels: ComponentModelConfig[] = [
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
     elementSelectors: ['scale-input'],
-    event: 'scaleChange',
+    event: 'scale-change',
     targetAttr: 'value',
     type: 'text',
   },
@@ -48,25 +48,25 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
   // https://github.com/ionic-team/stencil-ds-output-targets/blob/master/packages/example-project/component-library-angular/__tests__/my-checkbox.spec.ts
   /* {
       elementSelectors: ['scale-input[type=checkbox]'],
-      event: 'scaleChange',
+      event: 'scale-change',
       targetAttr: 'checked',
       type: 'boolean'
     },
     {
       elementSelectors: ['scale-input[type=radio]'],
-      event: 'scaleChange',
+      event: 'scale-change',
       targetAttr: 'checked',
       type: 'radio'
     },
     {
       elementSelectors: ['scale-input[type=select]'],
-      event: 'scaleChange',
+      event: 'scale-change',
       targetAttr: 'value',
       type: 'select'
     }, */
   {
     elementSelectors: ['scale-slider'],
-    event: 'scaleChange',
+    event: 'scale-change',
     targetAttr: 'value',
     type: 'number',
   },
