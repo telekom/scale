@@ -7,7 +7,7 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'scale-input',
   host: {
-    '(scaleChange)': 'handleChangeEvent($event.target?.["value"])'
+    '(scale-change)': 'handleChangeEvent($event.target?.["value"])'
   },
   providers: [
     {
