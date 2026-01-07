@@ -40,6 +40,7 @@ This is a superset of the default anchor `<a>` element.
 
 ### Used by
 
+ - [scale-combobox](../combobox)
  - [scale-date-picker](../date-picker)
  - [scale-dropdown](../dropdown)
  - [scale-dropdown-select](../dropdown-select)
@@ -59,6 +60,7 @@ graph TD;
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
   scale-helper-text --> scale-icon-action-success
+  scale-combobox --> scale-helper-text
   scale-date-picker --> scale-helper-text
   scale-dropdown --> scale-helper-text
   scale-dropdown-select --> scale-helper-text

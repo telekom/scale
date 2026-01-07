@@ -1,0 +1,253 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleCombobox from './ScaleCombobox.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta
+  title="Components/Combobox"
+  component={ScaleCombobox}
+  argTypes={{
+    disabled: {
+      control: { type: 'boolean' },
+    },
+    invalid: {
+      control: { type: 'boolean' },
+    },
+    allowCustom: {
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+export const Template = (args) => {
+  return {
+    components: { ScaleCombobox },
+    data() {
+      return {
+        label: args.label,
+        placeholder: args.placeholder,
+        helperText: args.helperText,
+        value: args.value,
+        disabled: args.disabled,
+        invalid: args.invalid,
+        allowCustom: args.allowCustom,
+        options: Array.isArray(args.options) ? args.options : [],
+      };
+    },
+    template: `
+      <div style="padding: 20px 0;">
+        <scale-combobox
+          :label="label"
+          :placeholder="placeholder"
+          :helper-text="helperText"
+          :value="value"
+          :disabled="disabled"
+          :invalid="invalid"
+          :allow-custom="allowCustom"
+          :options.prop="options"
+          @scaleChange="handleChange"
+        ></scale-combobox>
+      </div>
+    `,
+    methods: {
+      handleChange: action('scaleChange'),
+    },
+  };
+};
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Combobox</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+The Combobox component allows users to select from a list of predefined options or type a custom value. It combines the functionality of a text input with a dropdown list, providing a flexible way to handle both selections and free-form text entry.
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'Select a framework',
+      placeholder: 'Type or select...',
+      options: ['React', 'Vue', 'Angular', 'Svelte', 'Ember'],
+      value: '',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-combobox
+  label="Select a framework"
+  placeholder="Type or select..."
+></scale-combobox>
+```
+
+## With Helper Text
+
+<Canvas withSource="none">
+  <Story
+    name="With Helper Text"
+    args={{
+      label: 'Choose a color',
+      placeholder: 'Select a color...',
+      helperText: 'Choose from available colors or enter a custom color code',
+      options: ['Red', 'Blue', 'Green', 'Yellow', 'Purple', 'Orange'],
+      value: '',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-combobox
+  label="Choose a color"
+  placeholder="Select a color..."
+  helper-text="Choose from available colors or enter a custom color code"
+></scale-combobox>
+```
+
+## Invalid State
+
+<Canvas withSource="none">
+  <Story
+    name="Invalid"
+    args={{
+      label: 'Email provider',
+      placeholder: 'Select or enter...',
+      invalid: true,
+      helperText: 'Please select a valid option',
+      options: ['gmail.com', 'outlook.com', 'yahoo.com', 'icloud.com'],
+      value: '',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-combobox
+  label="Email provider"
+  placeholder="Select or enter..."
+  invalid
+  helper-text="Please select a valid option"
+></scale-combobox>
+```
+
+## Disabled State
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: 'Disabled field',
+      placeholder: 'This is disabled',
+      disabled: true,
+      options: ['Option 1', 'Option 2', 'Option 3'],
+      value: 'Option 1',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-combobox
+  label="Disabled field"
+  placeholder="This is disabled"
+  disabled
+></scale-combobox>
+```
+
+## Without Custom Values
+
+<Canvas withSource="none">
+  <Story
+    name="No Custom Values"
+    args={{
+      label: 'Select a country',
+      placeholder: 'Choose a country...',
+      allowCustom: false,
+      options: ['United States', 'United Kingdom', 'Germany', 'France', 'Spain'],
+      value: '',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-combobox
+  label="Select a country"
+  placeholder="Choose a country..."
+  :allow-custom="false"
+></scale-combobox>
+```
+
+## Features
+
+- **Selection from predefined options**: Users can click or keyboard navigate through available options
+- **Custom value support**: By default, users can type custom values not in the predefined list (configurable)
+- **Keyboard navigation**: Full keyboard support with arrow keys, Enter, Escape
+- **Floating dropdown**: The options dropdown automatically positions itself to stay within the viewport
+- **Helper text**: Optional text to guide users
+- **Validation states**: Support for invalid/error states with visual feedback
+- **Disabled state**: Full support for disabled inputs
+- **Accessible**: ARIA attributes and semantic HTML for screen reader support
+
+## Keyboard Interactions
+
+- **Arrow Up/Down**: Navigate through options when dropdown is open, or open dropdown when closed
+- **Enter**: Select highlighted option
+- **Escape**: Close dropdown
+- **Tab**: Close dropdown and move focus
+
+## Scoped CSS Variables
+
+```css
+:host {
+  --height: var(--telekom-spacing-composition-space-13);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-disabled: none;
+  --background-hover: var(--telekom-color-ui-state-fill-hovered);
+  --border: var(--telekom-spacing-composition-space-01) solid
+    var(--telekom-color-ui-border-standard);
+  --border-color-hover: var(--telekom-color-ui-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-border-hovered);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --border-invalid: var(--telekom-spacing-composition-space-02) solid
+    var(--telekom-color-functional-danger-hovered);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
+  --spacing-x: var(--telekom-spacing-composition-space-05);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --radius: var(--telekom-radius-standard);
+  --color-label: var(--telekom-color-text-and-icon-additional);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+  --background-listbox: var(--telekom-color-background-surface);
+  --box-shadow-listbox: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  --max-height-listbox: 300px;
+  --z-index-listbox: 99;
+}
+```
