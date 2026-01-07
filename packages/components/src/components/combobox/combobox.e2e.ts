@@ -197,15 +197,15 @@ describe('scale-combobox', () => {
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
     await page.waitForTimeout(150);
-    
+
     // Type a custom value that's not in the options
     await input.type('Custom Value');
     await page.waitForTimeout(100);
-    
+
     // Press Enter - should NOT emit scaleChange for custom values
     await input.press('Enter');
     await page.waitForTimeout(100);
-    
+
     // Verify no scaleChange event was emitted
     expect(scaleChangeEvent).not.toHaveReceivedEvent();
   });
