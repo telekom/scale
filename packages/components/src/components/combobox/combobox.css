@@ -37,9 +37,7 @@
   --z-index-listbox: 99;
 
   /*option*/
-  --background-option-highlighted: var(
-    --telekom-color-ui-state-fill-hovered
-  );
+  --background-option-highlighted: var(--telekom-color-ui-state-fill-hovered);
   --color-option-highlighted: var(--telekom-color-text-and-icon-standard);
 }
 
@@ -184,7 +182,9 @@
 }
 
 .combobox-meta scale-helper-text {
-  --color-informational: var(--telekom-color-text-and-icon-functional-informational);
+  --color-informational: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
   --color-warning: var(--telekom-color-text-and-icon-functional-warning);
   --color-danger: var(--telekom-color-text-and-icon-functional-danger);
   --color-success: var(--telekom-color-text-and-icon-functional-success);
