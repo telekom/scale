@@ -113,6 +113,10 @@ export class TextField {
   @Prop() styles?: string;
   /** (optional)) Makes type `input` behave as a controlled component in React */
   @Prop() experimentalControlled?: boolean = false;
+
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -180,12 +184,10 @@ export class TextField {
       });
     }
   }
-
   // We're not watching `value` like we used to
   // because we get unwanted `scaleChange` events
   // because how we keep this.value up-to-date for type="select"
   // `this.value = selectedValue`
-
   emitChange() {
     emitEvent(this, 'scaleChange', {
       value: this.value == null ? this.value : this.value.toString(),
@@ -289,6 +291,7 @@ export class TextField {
               : {})}
             {...(this.helperText && this.ariaDetailedId ? ariaDetailsAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
+            {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
           />
           {(!!this.helperText || !!this.counter) && (
             <div

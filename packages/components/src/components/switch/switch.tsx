@@ -40,6 +40,9 @@ export class Switch {
 
   @Prop() size?: 'small' | 'large' = 'large';
 
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   /** Emitted when the switch was clicked */
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -65,6 +68,7 @@ export class Switch {
               disabled={this.disabled}
               aria-labelledby={`${this.inputId}-label`}
               id={this.inputId}
+              {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
               onChange={(event: any) => {
                 this.checked = event.target.checked;
                 emitEvent(this, 'scaleChange', { value: this.checked });

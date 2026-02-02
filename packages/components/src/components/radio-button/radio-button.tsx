@@ -56,6 +56,9 @@ export class RadioButton {
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
 
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   @Event({ eventName: 'scale-change' })
   scaleChange!: EventEmitter<InputChangeEventDetail>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -94,7 +97,6 @@ export class RadioButton {
       });
     }
   };
-
   // We manually set `checked` to false on sibling <scale-radio-button> elements,
   // otherwise they stayed `checked` after being clicked once, forever.
   uncheckSiblings() {
@@ -145,6 +147,7 @@ export class RadioButton {
               ? ariaDescribedByAttr
               : {})}
             aria-details={this.ariaDetailsId}
+            {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
           />
           <label htmlFor={this.inputId}>{this.label}</label>
           {!!this.helperText && (

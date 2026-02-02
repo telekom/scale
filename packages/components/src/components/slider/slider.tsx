@@ -89,6 +89,9 @@ export class Slider {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   // The actual position in % of the slider thumb
   @State() position: number = 0;
   @State() positionFrom: number = 25;
@@ -264,7 +267,6 @@ export class Slider {
     this[positionKey] =
       ((clampedValue - this.min) * 100) / (this.max - this.min);
   };
-
   /**
    * Utility function
    * e.g. 'value' -> 'valueFrom' if `activeRangeThumb='From'`
@@ -405,6 +407,9 @@ export class Slider {
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
                         {...(this.helperText ? ariaDescribedByAttr : {})}
+                        {...(this.dataQa
+                          ? { 'data-qa': `${this.dataQa}-from` }
+                          : {})}
                         onKeyDown={this.onKeyDown}
                       />
                     </div>
@@ -427,6 +432,9 @@ export class Slider {
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
                         {...(this.helperText ? ariaDescribedByAttr : {})}
+                        {...(this.dataQa
+                          ? { 'data-qa': `${this.dataQa}-to` }
+                          : {})}
                         onKeyDown={this.onKeyDown}
                       />
                     </div>
@@ -451,6 +459,7 @@ export class Slider {
                       aria-orientation="horizontal"
                       aria-disabled={this.disabled}
                       {...(this.helperText ? ariaDescribedByAttr : {})}
+                      {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
                       onKeyDown={this.onKeyDown}
                     />
                   </div>

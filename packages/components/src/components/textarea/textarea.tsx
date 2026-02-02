@@ -34,6 +34,7 @@ interface InputChangeEventDetail {
 })
 export class Textarea {
   @Element() hostElement: HTMLElement;
+
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label */
@@ -80,6 +81,9 @@ export class Textarea {
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
 
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -94,11 +98,13 @@ export class Textarea {
   /** Emitted when the input has focus. */
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleFocus' }) scaleFocusLegacy!: EventEmitter<void>;
+  @Event({ eventName: 'scaleFocus' })
+  scaleFocusLegacy!: EventEmitter<void>;
   /** Emitted when the input loses focus. */
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
+  @Event({ eventName: 'scaleBlur' })
+  scaleBlurLegacy!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
   scaleKeyDown!: EventEmitter<KeyboardEvent>;
@@ -129,7 +135,6 @@ export class Textarea {
       });
     }
   }
-
   // We're not watching `value` like we used to
   // because we get unwanted `scaleChange` events
   // because how we keep this.value up-to-date for type="select"
@@ -219,6 +224,7 @@ export class Textarea {
                 ? ariaDescribedByAttr
                 : {})}
               aria-details={this.ariaDetailsId}
+              {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
               ref={(el) => (this.focusableElement = el)}
             />
           </div>
