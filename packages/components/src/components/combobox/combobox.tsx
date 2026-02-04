@@ -89,7 +89,7 @@ export class Combobox {
       // Use setTimeout to ensure DOM is fully rendered before calculating position
       setTimeout(() => {
         this.updateListboxPosition();
-      }, 0);
+      }, 10);
     }
   }
 
@@ -175,7 +175,7 @@ export class Combobox {
                       })}
                       role="option"
                       aria-selected={index === this.highlightedIndex}
-                      onClick={(e) => this.handleOptionClick(option, e)}
+                      onMouseDown={(e) => this.handleOptionClick(option, e)}
                       onMouseEnter={() => {
                         this.highlightedIndex = index;
                       }}
@@ -224,6 +224,13 @@ export class Combobox {
     );
     this.filteredOptions = filtered;
     this.highlightedIndex = -1;
+    
+    // Update listbox position when filtered options change (dropdown size changes)
+    if (this.isOpen) {
+      setTimeout(() => {
+        this.updateListboxPosition();
+      }, 0);
+    }
   }
 
   private handleInputChange = (event: Event) => {
@@ -362,6 +369,11 @@ export class Combobox {
 
     // Then update position in next frame
     requestAnimationFrame(() => {
+      // Check elements still exist and are connected to DOM
+      if (!this.comboEl || !this.listboxPadEl || !this.isOpen) {
+        return;
+      }
+
       // Use floating-ui to compute the best position, accounting for scroll
       // The flip middleware will automatically switch to 'top' placement if there's not enough space below
       computePosition(this.comboEl, this.listboxPadEl, {
@@ -373,6 +385,11 @@ export class Combobox {
           }),
         ],
       }).then(({ x, y }) => {
+        // Final check before applying styles
+        if (!this.listboxPadEl || !this.comboEl || !this.isOpen) {
+          return;
+        }
+
         // Get fresh input rect for final positioning
         const freshInputRect = this.comboEl.getBoundingClientRect();
         const freshInputWidth = freshInputRect.width;
