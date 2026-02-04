@@ -209,4 +209,26 @@ describe('scale-combobox', () => {
     // Verify no scaleChange event was emitted
     expect(scaleChangeEvent).not.toHaveReceivedEvent();
   });
+
+  it('respects custom filter function', async () => {
+    const page = await newE2EPage();
+    const html = `
+      <scale-combobox></scale-combobox>
+      <script>
+        const combobox = document.querySelector('scale-combobox');
+        combobox.options = ['test', 'estt', 'stte'];
+        combobox.filterFunction = (option, query) =>
+          option.toLowerCase().startsWith(query.toLowerCase());
+      </script>
+    `;
+    await page.setContent(html);
+    const input = await page.find('scale-combobox >>> .combobox-input');
+    await input.focus();
+    await input.type('st');
+    await page.waitForTimeout(100);
+    const options = await page.findAll('scale-combobox >>> .combobox-option');
+    // Should only show React due to custom filter function
+    expect(options.length).toBeLessThanOrEqual(1);
+    expect(options[0]).toEqualText('stte');
+  });
 });

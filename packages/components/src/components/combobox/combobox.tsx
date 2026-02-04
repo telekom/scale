@@ -38,7 +38,7 @@ export class Combobox {
   @Prop() options: string[] = [];
 
   /** Current selected value */
-  @Prop({mutable: true}) value?: string = '';
+  @Prop({ mutable: true }) value?: string = '';
 
   /** Whether the combobox is disabled */
   @Prop() disabled?: boolean = false;
@@ -51,6 +51,28 @@ export class Combobox {
 
   /** Invalid state */
   @Prop() invalid?: boolean = false;
+
+  /** Custom filtering function */
+  @Prop() filterFunction?: (option: string, query: string) => boolean;
+
+  @Watch('filterFunction')
+  validateFilterFunction(customFilterFn: any) {
+    if (!customFilterFn) return false;
+
+    if (typeof customFilterFn !== 'function') {
+      throw new Error(
+        'scale-combobox: The provided filterFunction prop is not a valid function. Falling back to default filtering behavior.'
+      );
+    }
+
+    // Check the return type by executing the funciton with simple paylaod
+    const testResult = customFilterFn('test option', 'test query');
+    if (typeof testResult !== 'boolean') {
+      throw new Error(
+        'scale-combobox: The provided filterFunction prop does not return a boolean value. Falling back to default filtering behavior.'
+      );
+    }
+  }
 
   @State() isOpen = false;
   @State() filteredOptions: string[] = [];
@@ -220,11 +242,13 @@ export class Combobox {
 
   private filterOptions(query: string) {
     const filtered = this.options.filter((option) =>
-      option.toLowerCase().includes(query.toLowerCase())
+      this.filterFunction
+        ? this.filterFunction(option, query)
+        : option.toLowerCase().includes(query.toLowerCase())
     );
     this.filteredOptions = filtered;
     this.highlightedIndex = -1;
-    
+
     // Update listbox position when filtered options change (dropdown size changes)
     if (this.isOpen) {
       setTimeout(() => {

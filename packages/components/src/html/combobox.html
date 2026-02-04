@@ -111,6 +111,19 @@
       </div>
     </div>
 
+    <!-- Custom Filtering Example -->
+    <div class="example">
+      <h2>Combobox with Custom Filtering</h2>
+      <p class="description">
+        Implement custom filtering logic to control which options are displayed.
+      </p>
+      <scale-combobox
+        id="custom-filter-combobox"
+        label="Select a framework"
+        placeholder="Type or select..."
+      ></scale-combobox>
+    </div>
+
     <script>
       // Framework options
       const frameworks = [
@@ -160,6 +173,18 @@
       // Disabled combobox setup
       const disabledCombobox = document.getElementById('disabled-combobox');
       disabledCombobox.options = ['Option 1', 'Option 2', 'Option 3'];
+
+      // Custom filter combobox setup
+      const customFilterCombobox = document.getElementById(
+        'custom-filter-combobox'
+      );
+      customFilterCombobox.options = frameworks;
+      customFilterCombobox.filterFunction = (option, query) =>
+        option.toLowerCase().startsWith(query.toLowerCase());
+
+      customFilterCombobox.addEventListener('scaleChange', (e) => {
+        console.log('Custom filter combobox changed:', e.detail.value);
+      });
     </script>
   </body>
 </html>
