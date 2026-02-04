@@ -55,25 +55,6 @@ export class Combobox {
   /** Custom filtering function */
   @Prop() filterFunction?: (option: string, query: string) => boolean;
 
-  @Watch('filterFunction')
-  validateFilterFunction(customFilterFn: any) {
-    if (!customFilterFn) return false;
-
-    if (typeof customFilterFn !== 'function') {
-      throw new Error(
-        'scale-combobox: The provided filterFunction prop is not a valid function. Falling back to default filtering behavior.'
-      );
-    }
-
-    // Check the return type by executing the funciton with simple paylaod
-    const testResult = customFilterFn('test option', 'test query');
-    if (typeof testResult !== 'boolean') {
-      throw new Error(
-        'scale-combobox: The provided filterFunction prop does not return a boolean value. Falling back to default filtering behavior.'
-      );
-    }
-  }
-
   @State() isOpen = false;
   @State() filteredOptions: string[] = [];
   @State() highlightedIndex = -1;
@@ -112,6 +93,27 @@ export class Combobox {
       setTimeout(() => {
         this.updateListboxPosition();
       }, 10);
+    }
+  }
+
+  @Watch('filterFunction')
+  validateFilterFunction(customFilterFn: any) {
+    if (!customFilterFn) {
+      return;
+    }
+
+    if (typeof customFilterFn !== 'function') {
+      throw new Error(
+        'scale-combobox: The provided filterFunction prop is not a valid function. Falling back to default filtering behavior.'
+      );
+    }
+
+    // Check the return type by executing the funciton with simple paylaod
+    const testResult = customFilterFn('test option', 'test query');
+    if (typeof testResult !== 'boolean') {
+      throw new Error(
+        'scale-combobox: The provided filterFunction prop does not return a boolean value. Falling back to default filtering behavior.'
+      );
     }
   }
 
