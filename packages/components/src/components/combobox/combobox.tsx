@@ -38,7 +38,7 @@ export class Combobox {
   @Prop() options: string[] = [];
 
   /** Current selected value */
-  @Prop() value?: string = '';
+  @Prop({mutable: true}) value?: string = '';
 
   /** Whether the combobox is disabled */
   @Prop() disabled?: boolean = false;
@@ -93,7 +93,7 @@ export class Combobox {
     }
   }
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.inputValue = this.value || '';
     this.filterOptions(this.inputValue);
 
