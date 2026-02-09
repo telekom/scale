@@ -155,6 +155,9 @@ export class DatePicker {
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
 
+  /** (optional) Visually hide the label (remains accessible to screen readers) */
+  @Prop() hideLabelVisually?: boolean = false;
+
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
 
@@ -434,9 +437,16 @@ export class DatePicker {
             this.helperText && 'has-helper-text'
           )}
         >
-          <label class="date-picker__label" htmlFor={this.identifier}>
+          <label
+            class={classNames(
+              'date-picker__label',
+              this.hideLabelVisually && 'date-picker__label--visually-hidden'
+            )}
+            htmlFor={this.identifier}
+          >
             {this.label}
           </label>
+
           <duet-date-picker
             onDuetChange={(e) => {
               emitEvent(this, 'scaleChange', e.detail);

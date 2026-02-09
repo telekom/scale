@@ -34,6 +34,7 @@ interface InputChangeEventDetail {
 })
 export class Textarea {
   @Element() hostElement: HTMLElement;
+
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label */
@@ -79,7 +80,8 @@ export class Textarea {
   @Prop() styles?: string;
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
-
+  /** (optional) Visually hide the label (remains accessible to screen readers) */
+  @Prop() hideLabelVisually?: boolean = false;
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -94,11 +96,13 @@ export class Textarea {
   /** Emitted when the input has focus. */
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleFocus' }) scaleFocusLegacy!: EventEmitter<void>;
+  @Event({ eventName: 'scaleFocus' })
+  scaleFocusLegacy!: EventEmitter<void>;
   /** Emitted when the input loses focus. */
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
+  @Event({ eventName: 'scaleBlur' })
+  scaleBlurLegacy!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
   scaleKeyDown!: EventEmitter<KeyboardEvent>;
@@ -129,7 +133,6 @@ export class Textarea {
       });
     }
   }
-
   // We're not watching `value` like we used to
   // because we get unwanted `scaleChange` events
   // because how we keep this.value up-to-date for type="select"
@@ -191,9 +194,16 @@ export class Textarea {
             }
           >
             {/* Accessibility: label should be always *before* the actual input */}
-            <label class="textarea__label" htmlFor={this.inputId}>
+            <label
+              class={classNames(
+                'textarea__label',
+                this.hideLabelVisually && 'textarea__label--visually-hidden'
+              )}
+              htmlFor={this.inputId}
+            >
               {this.label}
             </label>
+
             <textarea
               class="textarea__control"
               style={!!this.resize && { resize: this.resize }}
