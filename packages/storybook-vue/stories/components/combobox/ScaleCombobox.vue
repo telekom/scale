@@ -7,7 +7,8 @@
     :allow-custom="allowCustom"
     :helper-text="helperText"
     :value="value"
-    :options="options"
+    :options.prop="options"
+    :filter-function.prop="filterFunction"
     @scaleChange="handleChange"
   >
   </scale-combobox>
@@ -47,6 +48,10 @@ export default {
     options: {
       type: Array,
       default: () => [],
+    },
+    filterFunction: {
+      type: Function,
+      default: null,
     },
   },
   methods: {

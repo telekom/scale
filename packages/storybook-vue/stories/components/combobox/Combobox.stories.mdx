@@ -21,6 +21,10 @@ import { action } from '@storybook/addon-actions';
     allowCustom: {
       control: { type: 'boolean' },
     },
+    filterFunction: {
+      control: { type: null },
+      description: 'Custom filtering function with signature (option: string, query: string) => boolean',
+    },
   }}
 />
 
@@ -37,6 +41,7 @@ export const Template = (args) => {
         invalid: args.invalid,
         allowCustom: args.allowCustom,
         options: Array.isArray(args.options) ? args.options : [],
+        filterFunction: args.filterFunction || null,
       };
     },
     template: `
@@ -50,6 +55,7 @@ export const Template = (args) => {
           :invalid="invalid"
           :allow-custom="allowCustom"
           :options.prop="options"
+          :filter-function.prop="filterFunction"
           @scaleChange="handleChange"
         ></scale-combobox>
       </div>
@@ -199,6 +205,38 @@ The Combobox component allows users to select from a list of predefined options 
   placeholder="Choose a country..."
   :allow-custom="false"
 ></scale-combobox>
+```
+
+## Custom Filter Function
+
+The `filterFunction` prop allows you to implement custom filtering logic. It receives the option and the current query text, and must return a boolean indicating whether the option matches. This example filters by prefix match instead of the default substring match.
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Filter"
+    args={{
+      label: 'Select a programming language',
+      placeholder: 'Type to filter by prefix...',
+      options: ['JavaScript', 'Java', 'Python', 'PHP', 'TypeScript', 'Rust', 'Go'],
+      value: '',
+      filterFunction: (option, query) => {
+        // Match only if the option starts with the query (case-insensitive)
+        return option.toLowerCase().startsWith(query.toLowerCase());
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<!-- Example: Filter options by prefix match -->
+<script>
+  const combobox = document.querySelector('scale-combobox');
+  combobox.filterFunction = (option, query) => {
+    return option.toLowerCase().startsWith(query.toLowerCase());
+  };
+</script>
 ```
 
 ## Features
