@@ -72,7 +72,7 @@ You should now be able to use Scale components in your templates:
 
 ## Events in Angular
 
-In order to prevent collisions with standard events and for better compatibility with other libraries and frameworks, the custom events emitted by some Scale components are prefixed with `scale`. Event names are kebab-cased (e.g. scale-change). Note, that before v3 events were camelCased (e.g. `scaleChange`), these are now deprecated, but still available for maintaining backward compatibility. For newest components only kebab-case events apply. You can find the documentation to custom events on the respective component pages in the "docs" section.
+In order to prevent collisions with standard events and for better compatibility with other libraries and frameworks, the custom events emitted by some Scale components are prefixed with `scale`. Event names are kebab-cased (e.g. scale-change). Note, that before v3 events were camelCased (e.g. `scaleChange`), these are now deprecated, and are not available in latest version of Scale also for newest components only kebab-case events apply. You can find the documentation to custom events on the respective component pages in the "docs" section.
 
 You can bind to `scale`-prefixed events with the regular Angular syntax:
 

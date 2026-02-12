@@ -91,7 +91,7 @@ export class Dropdown {
 
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
-  scaleKeyDown!: EventEmitter<KeyboardEvent>;
+  scaleKeydown!: EventEmitter<KeyboardEvent>;
 
   /** "forceUpdate" hack, set it to trigger and re-render */
   @State() forceUpdate: string;

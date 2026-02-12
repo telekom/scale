@@ -6,7 +6,6 @@ import {
   Description,
 } from '@storybook/addon-docs';
 import ScaleDatePicker from './ScaleDatePicker.vue';
-import { action } from '@storybook/addon-actions';
 
 <Meta
   title="Components/Date Picker"
@@ -33,8 +32,7 @@ export const Template = (args, { argTypes }) => ({
   props: ScaleDatePicker.props,
   template: `
     <div style="height: 500px;">
-        <scale-date-picker
-            ref="picker"
+        <ScaleDatePicker
             :name="name"
             :identifier="identifier"
             :role="role"
@@ -54,119 +52,35 @@ export const Template = (args, { argTypes }) => ({
             :inner-role="innerRole"
             :status="status"
             :variant="variant"
-            @scaleChange="scaleChange"
-            @scale-change="scale-change"
-            @scaleFocus="scaleFocus"
-            @scale-focus="scale-focus"
-            @scaleBlur="scaleBlur"
-            @scale-blur="scale-blur"
-            ></scale-date-picker>
+            :size="size"
+            :popup-title="popupTitle"
+            :styles="styles"
+            ></ScaleDatePicker>
     </div>
   `,
-  mounted() {
-    const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
-    if (args.localization === 'de') {
-      this.$refs.picker.$el.dateAdapter = {
-        parse(value = '', createDate) {
-          const matches = value.match(DATE_FORMAT);
-          if (matches) {
-            return createDate(matches[3], matches[2], matches[1]);
-          }
-        },
-        format(date) {
-          return `${date.getDate()}.${
-            date.getMonth() + 1
-          }.${date.getFullYear()}`;
-        },
-      };
-      this.$refs.picker.$el.localization = {
-        buttonLabel: 'Datum wählen',
-        placeholder: 'TT.MM.JJJJ',
-        selectedDateMessage: 'Gewähltes Datum',
-        prevMonthLabel: 'Vorheriger Monat',
-        nextMonthLabel: 'Nächster Monat',
-        monthSelectLabel: 'Monat',
-        yearSelectLabel: 'Jahr',
-        closeLabel: 'Fenster schließen',
-        keyboardInstruction:
-          'Sie können mit den Pfeiltasten vor und zurück navigieren',
-        calendarHeading: 'Datum wählen',
-        dayNames: [
-          'Sonntag',
-          'Montag',
-          'Dienstag',
-          'Mittwoch',
-          'Donnerstag',
-          'Freitag',
-          'Samstag',
-        ],
-        monthNames: [
-          'Januar',
-          'Februar',
-          'März',
-          'April',
-          'Mai',
-          'Juni',
-          'Juli',
-          'August',
-          'September',
-          'Oktober',
-          'November',
-          'Dezember',
-        ],
-        monthNamesShort: [
-          'Jan',
-          'Feb',
-          'Mär',
-          'Apr',
-          'Mai',
-          'Jun',
-          'Jul',
-          'Aug',
-          'Sep',
-          'Okt',
-          'Nov',
-          'Dez',
-        ],
-        today: 'heute',
-        locale: 'de-DE',
-      };
-    }
-  },
-  methods: {
-    scaleChange: function () {
-      action('scaleChange')();
-    },
-    scaleFocus: function () {
-      action('scaleFocus')();
-    },
-    scaleBlur: function () {
-      action('scaleBlur')();
-    },
-  },
 });
 
 export const RangeTemplate = (args, { argTypes }) => ({
   components: { ScaleDatePicker },
   template: `
     <div style="height: 500px;">
-        <scale-date-picker
+        <ScaleDatePicker
             ref="start"
             identifier="start"
             label="Start"
             style="margin-right: 8px;"
             :value="$data.start"
             :max="$data.end"
-            @scaleChange="scaleChangeStart"
-        ></scale-date-picker>
-        <scale-date-picker
+            @scale-change="scaleChangeStart"
+        ></ScaleDatePicker>
+        <ScaleDatePicker
             ref="end"
             identifier="end"
             label="End"
             :value="$data.end"
             :min="$data.start"
-            @scaleChange="scaleChangeEnd"
-        ></scale-date-picker>
+            @scale-change="scaleChangeEnd"
+        ></ScaleDatePicker>
     </div>
   `,
   methods: {
@@ -227,9 +141,9 @@ export const RangeTemplate = (args, { argTypes }) => ({
   label="Standard"
   value="2020-12-31"
   placeholder="Select date"
-  @scaleChange="handleChange"
-  @scaleFocus="handleFocus"
-  @scaleBlur="handleBlur"
+  @scale-change="handleChange"
+  @scale-focus="handleFocus"
+  @scale-blur="handleBlur"
 ></scale-date-picker>
 ```
 
@@ -440,7 +354,7 @@ const RangeTemplate = (args, { argTypes }) => ({
             style="margin-right: 8px;"
             :value="$data.start"
             :max="$data.end"
-            @scaleChange="scaleChangeStart"
+            @scale-change="scaleChangeStart"
         ></scale-date-picker>
         <scale-date-picker
             ref="end"
@@ -448,7 +362,7 @@ const RangeTemplate = (args, { argTypes }) => ({
             label="End"
             :value="$data.end"
             :min="$data.start"
-            @scaleChange="scaleChangeEnd"
+            @scale-change="scaleChangeEnd"
         ></scale-date-picker>
     </div>
   `,

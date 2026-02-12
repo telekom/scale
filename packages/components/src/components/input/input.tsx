@@ -119,7 +119,7 @@ export class Input {
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
-  scaleKeyDown!: EventEmitter<KeyboardEvent>;
+  scaleKeydown!: EventEmitter<KeyboardEvent>;
   /** (optional) Input checkbox checked */
   @State() customResize?: any;
   /** Whether the input element has focus */

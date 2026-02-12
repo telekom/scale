@@ -28,11 +28,11 @@
     :transparent="transparent"
     :step="step"
     :list="list"
-    @scaleInput="scaleInput"
-    @scaleChange="scaleChange"
-    @scaleFocus="scaleFocus"
-    @scaleBlur="scaleBlur"
-    @scaleKeyDown="scaleKeyDown"
+    @scale-input="scaleInput"
+    @scale-change="scaleChange"
+    @scale-focus="scaleFocus"
+    @scale-blur="scaleBlur"
+    @scale-keydown="scaleKeydown"
   >
     <slot></slot>
   </scale-text-field>
@@ -75,43 +75,23 @@ export default {
   },
   methods: {
     scaleInput($event) {
-      action('scaleInput');
-      this.$emit('scaleInput', $event);
-    },
-    'scale-input'($event) {
-      action('scale-input');
+      action('scale-input')($event.detail);
       this.$emit('scale-input', $event);
     },
     scaleChange($event) {
-      action('scaleChange');
-      this.$emit('scaleChange', $event);
-    },
-    'scale-change'($event) {
-      action('scale-change');
+      action('scale-change')($event.detail);
       this.$emit('scale-change', $event);
     },
     scaleFocus($event) {
-      action('scaleFocus');
-      this.$emit('scaleFocus', $event);
-    },
-    'scale-focus'($event) {
-      action('scale-focus');
+      action('scale-focus')($event.detail);
       this.$emit('scale-focus', $event);
     },
     scaleBlur($event) {
-      action('scaleBlur');
-      this.$emit('scaleBlur', $event);
-    },
-    'scale-blur'($event) {
-      action('scale-blur');
+      action('scale-blur')($event.detail);
       this.$emit('scale-blur', $event);
     },
-    scaleKeyDown($event) {
-      action('scaleKeyDown');
-      this.$emit('scaleKeyDown', $event);
-    },
-    'scale-keydown'($event) {
-      action('scale-keydown');
+    scaleKeydown($event) {
+      action('scale-keydown')($event.detail);
       this.$emit('scale-keydown', $event);
     },
   },

@@ -48,5 +48,52 @@
       hide-label-visually="true"
     ></scale-text-field>
     <div id="extra">some extra desc</div>
+
+    <scale-textarea
+      label="Label"
+      placeholder="this is the placeholder"
+      helper-text="some helper text"
+    ></scale-textarea>
   </body>
+  <script>
+    const textFields = document.querySelectorAll('scale-text-field');
+    textFields.forEach((textField) => {
+      textField.addEventListener('scale-change', (event) => {
+        console.log('scale-change', event);
+      });
+      textField.addEventListener('scale-focus', (event) => {
+        console.log('scale-focus', event);
+      });
+      textField.addEventListener('scale-blur', (event) => {
+        console.log('scale-blur', event);
+      });
+      textField.addEventListener('scale-input', (event) => {
+        console.log('scale-input', event);
+      });
+
+      textField.addEventListener('scale-keydown', (event) => {
+        console.log('scale-keydown', event);
+      });
+    });
+
+    const textAreas = document.querySelectorAll('scale-textarea');
+    textAreas.forEach((textArea) => {
+      textArea.addEventListener('scale-change', (event) => {
+        console.log('scale-change', event);
+      });
+      textArea.addEventListener('scale-focus', (event) => {
+        console.log('scale-focus', event);
+      });
+      textArea.addEventListener('scale-blur', (event) => {
+        console.log('scale-blur', event);
+      });
+      textArea.addEventListener('scale-input', (event) => {
+        console.log('scale-input', event);
+      });
+
+      textArea.addEventListener('scale-keydown', (event) => {
+        console.log('scale-keydown', event);
+      });
+    });
+  </script>
 </html>

@@ -128,8 +128,8 @@ export class Modal {
   }
 
   emitBeforeClose(trigger: CloseEventTrigger) {
-    const emittedEvents = emitEvent(this, 'scale-before-close', { trigger });
-    const prevented = emittedEvents.some((event) => event.defaultPrevented);
+    const emittedEvent = emitEvent(this, 'scale-before-close', { trigger });
+    const prevented = emittedEvent?.defaultPrevented;
     if (!prevented) {
       this.opened = false;
     }

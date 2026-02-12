@@ -91,7 +91,7 @@ export class Textarea {
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
-  scaleKeyDown!: EventEmitter<KeyboardEvent>;
+  scaleKeydown!: EventEmitter<KeyboardEvent>;
 
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
