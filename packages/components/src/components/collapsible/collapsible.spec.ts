@@ -25,13 +25,10 @@ describe('TextField', () => {
   });
   it('should emit on click', async () => {
     const clickSpy = jest.fn();
-    const clickSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-expand', clickSpy);
-    page.doc.addEventListener('scaleExpand', clickSpyLegacy);
     const buttonElement = page.root.shadowRoot.querySelector('button');
     buttonElement.click();
     await page.waitForChanges();
     expect(clickSpy).toHaveBeenCalled();
-    expect(clickSpyLegacy).toHaveBeenCalled();
   });
 });

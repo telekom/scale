@@ -47,31 +47,35 @@ export const isPseudoClassSupported = (pseudoClass) => {
 };
 
 /**
- * Call `emit` on component events twice.
- * One for the legacy camel-cased event, one for the new kebab-cased.
- * e.g. for the event `scaleChange` it will do `instance.scaleChange.emit()` and `instance.scaleChangeLegacy.emit()`.
- * It expects both `scaleChange` and `scaleChangeLegacy` event-decorated properties to exist on the component.
+ * Call `emit` on component events once the function was needed
+ * when we stil had the legacy events alongside the new onesand it was calling 2 events but it now just fires the kebab case event
+ * we should remove this completly in the long run and just call the events directly on the component instance but for now this is a helper to call the correct event
  *
  * @param instance {ComponentInterface} - The component instance, aka `this`
  * @param eventKey {string} - The event property, e.g. `scaleChange`
  * @param detail {any} - The custom event `detail`
- * @returns {CustomEvent[]} - The events emitted
+ * @returns {CustomEvent} - The event emitted
  */
 export function emitEvent(
   instance: ComponentInterface,
   eventKey: string,
   detail?: any
-): CustomEvent[] {
-  const legacyKey = eventKey + 'Legacy';
-  const emitted = [];
-  if (typeof instance[legacyKey] !== 'undefined') {
-    // Emit legacy camel case event, e.g. `scaleClose`
-    emitted.push(instance[legacyKey].emit(detail));
-  }
+): CustomEvent {
   // Emit now-standard kebab-case event, e.g. `scale-close`
-  emitted.push(instance[eventKey].emit(detail));
-  // Return both
-  return emitted;
+  const isCamelCased = /[A-Z]/.test(eventKey);
+  if (typeof instance[eventKey] !== 'undefined') {
+    return instance[eventKey].emit(detail);
+  }
+  if (!isCamelCased) {
+    // Fallback: try camelCase if kebab-cased eventKey not found since mostly thats how the event objects are named
+    const camelCasedKey = eventKey.replace(/-([a-z])/g, (g) =>
+      g[1].toUpperCase()
+    );
+    if (typeof instance[camelCasedKey] !== 'undefined') {
+      return instance[camelCasedKey].emit(detail);
+    }
+  }
+  return null;
 }
 
 export function isClickOutside(event: MouseEvent, host: HTMLElement) {

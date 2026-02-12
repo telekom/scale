@@ -1,5 +1,5 @@
 <template>
-  <scale-checkbox-group>
+  <scale-checkbox-group
     :name="name"
     :label="label"
     :helper-text="helperText"
@@ -11,11 +11,15 @@
     :input-id="inputId"
     :styles="styles"
     :status="status"
+    @scale-change="handler">
     <slot></slot>
   </scale-checkbox-group>
 </template>
 
 <script>
+import { action } from '@storybook/addon-actions';
+
+const handler = action('scale-change');
 export default {
   props: {
     name: { type: String },
@@ -28,7 +32,10 @@ export default {
     value: { type: String, default: '' },
     inputId: { type: String },
     styles: { type: String },
-    status: { type: String, default: 'COMMENT: DEPRECATED - invalid should replace status'}
+    status: { type: String, default: 'COMMENT: DEPRECATED - \'invalid\' should replace status'}
   },
+  methods: {
+    handler
+  }
 };
 </script>

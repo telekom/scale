@@ -31,11 +31,11 @@ import { action } from '@storybook/addon-actions';
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleDropdownSelect },
-  props: {
-    itemProps: { default: {} },
+props: {
+    itemProps: { default: () => ({}) },
     ...ScaleDropdownSelect.props,
   },
-  data() {
+    data() {
     return {
       items: [
         { value: 'caspar', label: 'Caspar' },
@@ -46,7 +46,7 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <div style="min-height: 350px;">
-    <scale-dropdown-select
+    <ScaleDropdownSelect
         :label="label"
         :helper-text="helperText"
         :invalid="invalid"
@@ -59,12 +59,9 @@ export const Template = (args, { argTypes }) => ({
         :floating-strategy="floatingStrategy"
         :read-only="readOnly"
         :transparent="transparent"
+        :allowClear="allowClear"
         :aria-label-selected="ariaLabelSelected"
         :hcm-label-disabled="hcmLabelDisabled"
-        @scaleChange="['scale-change']"
-        @scaleFocus="['scale-focus']"
-        @scaleBlur="['scale-blur']"
-        @scaleKeyDown="['scale-keydown']"
     >
       <scale-dropdown-select-item
         v-for="(item, index) in items"
@@ -72,15 +69,9 @@ export const Template = (args, { argTypes }) => ({
         :value="item.value"
         :disabled="itemProps[index]?.disabled"
       >{{ item.label }}</scale-dropdown-select-item>
-</scale-dropdown-select>
+</ScaleDropdownSelect>
 </div>
-  `,
-  methods: {
-    'scale-change': action('scale-change'),
-    'scale-focus': action('scale-focus'),
-    'scale-blur': action('scale-blur'),
-    'scale-keydown': action('scale-keydown'),
-  },
+  `
 });
 
 <div
@@ -263,6 +254,31 @@ export const Template = (args, { argTypes }) => ({
   helper-text="Something went wrong..."
 >
   <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+  <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+  <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+</scale-dropdown-select>
+```
+## With clear button
+
+<Canvas withSource="none">
+  <Story
+    name="allowClear"
+    args={{
+      label: 'dropdown with clear button',
+      allowClear: true,
+      value: 'caspar'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-dropdown-select
+  label="enable clear"
+  allow-clear
+>
+  <scale-dropdown-select-item value="caspar" selected>Caspar</scale-dropdown-select-item>
   <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
   <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
 </scale-dropdown-select>

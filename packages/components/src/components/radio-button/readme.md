@@ -24,10 +24,9 @@
 
 ## Events
 
-| Event          | Description                                                                                        | Type                                  |
-| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| `scale-change` |                                                                                                    | `CustomEvent<InputChangeEventDetail>` |
-| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<InputChangeEventDetail>` |
+| Event          | Description | Type                                  |
+| -------------- | ----------- | ------------------------------------- |
+| `scale-change` |             | `CustomEvent<InputChangeEventDetail>` |
 
 
 ## Dependencies

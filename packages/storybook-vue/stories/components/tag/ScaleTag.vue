@@ -30,12 +30,8 @@ export default {
   },
   methods: {
     scaleClose($event) {
-      action('scaleChange');
-      this.$emit('scaleChange', $event);
-    },
-    'scale-close'($event) {
-      action('scale-change');
-      this.$emit('scale-change', $event);
+      action('scale-close')($event.detail);
+      this.$emit('scale-close', $event);
     },
   },
 };

@@ -7,10 +7,9 @@
     :aria-role-title="ariaRoleTitle"
     :disabled="disabled"
     :styles="styles"
-    :label="label"
     :dismiss-text="dismissText"
-    @scaleChange="scaleChange"
-    @scaleClose="scaleClose"
+    @scale-change="scaleChange"
+    @scale-close="scaleClose"
   >
     <slot name="chip-icon"></slot>
     <slot />
@@ -28,24 +27,15 @@ export default {
     styles: { type: 'switch' | 'radio' | 'option' | 'menuitemreadio' | 'menuitemcheckbox' | 'checkbox', default: 'switch'},
     ariaRoleTitle: { type: String },
     ariaCheckedState: { type: Boolean },
-    label: { type: String }, 
     dismissText: { type: String },
   },
   methods: {
     scaleChange($event) {
-      action('scaleChange');
-      this.$emit('scaleChange', $event);
-    },
-    'scale-change'($event) {
-      action('scale-change');
+      action('scale-change')($event.detail);
       this.$emit('scale-change', $event);
     },
     scaleClose($event) {
-      action('scaleClose');
-      this.$emit('scaleClose', $event);
-    },
-    'scale-close'($event) {
-      action('scale-close');
+      action('scale-close')($event.detail);
       this.$emit('scale-close', $event);
     },
   },

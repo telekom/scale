@@ -11,13 +11,13 @@
 
 import {
   Component,
-  h,
-  Host,
-  Prop,
   Element,
-  Method,
   Event,
   EventEmitter,
+  h,
+  Host,
+  Method,
+  Prop,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -113,7 +113,7 @@ export class NotificationBanner {
 
   close = () => {
     this.opened = false;
-    emitEvent(this, 'scaleClose');
+    emitEvent(this, 'scale-close');
   };
 
   render() {

@@ -2,7 +2,7 @@
 
 exports[`SidebarNav should handle click 1`] = `
 <scale-sidebar-nav collapsible="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
@@ -14,14 +14,14 @@ exports[`SidebarNav should handle click 1`] = `
         </ul>
       </nav>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-sidebar-nav-item nesting-level="1"></scale-sidebar-nav-item>
 </scale-sidebar-nav>
 `;
 
 exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child 1`] = `
 <scale-sidebar-nav collapsible="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
@@ -33,14 +33,14 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child 1`] = `
         </ul>
       </nav>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-sidebar-nav-collapsible nesting-level="1"></scale-sidebar-nav-collapsible>
 </scale-sidebar-nav>
 `;
 
 exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 1 1`] = `
 <scale-sidebar-nav collapsible="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
@@ -52,7 +52,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 1 1
         </ul>
       </nav>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-sidebar-nav-collapsible nesting-level="1">
     <scale-sidebar-nav-item nesting-level="2"></scale-sidebar-nav-item>
   </scale-sidebar-nav-collapsible>
@@ -61,7 +61,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 1 1
 
 exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 2 1`] = `
 <scale-sidebar-nav collapsible="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
@@ -73,7 +73,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 2 1
         </ul>
       </nav>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-sidebar-nav-collapsible nesting-level="1">
     <scale-sidebar-nav-collapsible condensed="true" nesting-level="2">
       <scale-sidebar-nav-item condensed="true" nesting-level="3"></scale-sidebar-nav-item>
@@ -84,7 +84,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 2 1
 
 exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 2 2`] = `
 <scale-sidebar-nav collapsible="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
@@ -96,7 +96,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 2 2
         </ul>
       </nav>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-sidebar-nav-collapsible nesting-level="1">
     <scale-sidebar-nav-collapsible condensed="true" nesting-level="2">
       <scale-sidebar-nav-item condensed="true" nesting-level="3"></scale-sidebar-nav-item>
@@ -108,7 +108,7 @@ exports[`SidebarNav should handle scale-sidebar-nav-collapsuible child level 2 2
 
 exports[`SidebarNav should handle scale-sidebar-nav-item child 1`] = `
 <scale-sidebar-nav collapsible="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
@@ -120,14 +120,14 @@ exports[`SidebarNav should handle scale-sidebar-nav-item child 1`] = `
         </ul>
       </nav>
     </div>
-  </mock:shadow-root>
+  </template>
   <scale-sidebar-nav-item nesting-level="1"></scale-sidebar-nav-item>
 </scale-sidebar-nav>
 `;
 
 exports[`SidebarNav should match snapshot 1`] = `
 <scale-sidebar-nav collapsible="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="sidebar-nav sidebar-nav--collapsible" part="sidebar-nav collapsible">
       <button aria-expanded="false" class="sidebar-nav__toggle-button" part="toggle-button">
         Menu
@@ -139,6 +139,6 @@ exports[`SidebarNav should match snapshot 1`] = `
         </ul>
       </nav>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-sidebar-nav>
 `;

@@ -22,12 +22,10 @@
 
 ## Events
 
-| Event          | Description                                                                                        | Type                      |
-| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------- |
-| `scale-change` | (optional) Change event                                                                            | `CustomEvent<MouseEvent>` |
-| `scale-close`  | (optional) Close icon click event                                                                  | `CustomEvent<MouseEvent>` |
-| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<MouseEvent>` |
-| `scaleClose`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<MouseEvent>` |
+| Event          | Description                       | Type                      |
+| -------------- | --------------------------------- | ------------------------- |
+| `scale-change` | (optional) Change event           | `CustomEvent<MouseEvent>` |
+| `scale-close`  | (optional) Close icon click event | `CustomEvent<MouseEvent>` |
 
 
 ## Shadow Parts

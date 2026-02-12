@@ -21,12 +21,12 @@ describe('ScaleInput', () => {
   it('should work with v-model', async () => {
     const Component = {
       data() {
-        return { text: '' }
+        return { text: '' };
       },
       template: `<ScaleInput v-model="text"></ScaleInput>`,
     };
     const wrapper = mount(Component, {
-      components: { ScaleInput }
+      components: { ScaleInput },
     });
 
     const inputEl = wrapper.find('scale-input');
@@ -34,7 +34,7 @@ describe('ScaleInput', () => {
 
     // one way - input to data
     wc.value = 'value';
-    inputEl.trigger('scaleChange', { detail: { value: 'value' } });
+    inputEl.trigger('scale-change', { detail: { value: 'value' } });
     expect(wrapper.vm.$data.text).toEqual('value');
 
     // the other way - data to input

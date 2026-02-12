@@ -94,7 +94,7 @@ Bitte beachten Sie, dass es wichtig ist, das Wort "on" vor dem Ereignisnamen zu 
 
 ## Events in React
 
-Um Konflikte mit Standard-Events zu vermeiden und für bessere Kompatibilität mit anderen Libraries und Frameworks, sind Custom Events mit dem Prefix `scale` gekennzeichnet. Event-Namen werden in kebab-case-Syntax geschrieben (z.B. `scale-change`). Beachte, dass die Events vor v3 im сamelCase geschrieben wurden (z.B. `scaleChange`). Diese sind jetzt veraltet, aber noch verfügbar, um die Abwärtskompatibilität zu gewährleisten. Für die neuesten Komponenten gelten nur noch Events im kebab-case. Die Dokumentation zu Custom Events findest du auf den entsprechenden Komponentenseiten im Abschnitt "Docs".
+Um Konflikte mit Standard-Events zu vermeiden und für bessere Kompatibilität mit anderen Libraries und Frameworks, sind Custom Events mit dem Prefix `scale` gekennzeichnet. Event-Namen werden in kebab-case-Syntax geschrieben (z.B. `scale-change`). Beachte, dass die Events vor v3 im сamelCase geschrieben wurden (z.B. `scaleChange`). Diese sind mittlerweile veraltet und auch in der neuesten Version von Scale nicht mehr verfügbar. Für die neuesten Komponenten gelten nur noch Events im kebab-case. Die Dokumentation zu Custom Events findest du auf den entsprechenden Komponentenseiten im Abschnitt "Docs".
 
 Aufgrund von Reacts [Synthetic Events](https://reactjs.org/docs/handling-events.html), bedarf das Binding von Custom Events etwas Mehraufwand. Nutze wie oben beschrieben einen Interop Layer oder alternativ [`ref`](https://reactjs.org/docs/refs-and-the-dom.html), um `addEventListener` imperativ anzuwenden.
 

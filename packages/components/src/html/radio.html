@@ -40,8 +40,8 @@
     <script>
       const radios = [...document.querySelectorAll('scale-radio-button')];
       radios.forEach((radio) => {
-        radio.addEventListener('scaleChange', () => {
-          console.log('scaleChange', radio);
+        radio.addEventListener('scale-change', () => {
+          console.log('scale-change', radio);
           radios.forEach((x) => console.log(x.checked));
         });
         radio.addEventListener('click', (event) => {

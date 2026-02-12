@@ -12,7 +12,7 @@ describe('ProgressBar', () => {
     ])('%p', async (variant) => {
       await global.runSetup(`components-progress-bar--${variant}`);
 
-      await global.page.waitFor(3000);
+      await global.page.waitForTimeout(3000);
 
       await global.visualCheck();
     });

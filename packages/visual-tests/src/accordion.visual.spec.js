@@ -14,9 +14,12 @@ describe('Accordion', () => {
     test.each([['standard'], ['dependent']])('%p', async (variant) => {
       await global.runSetup(`components-accordion--${variant}`);
 
+      await global.page.waitForTimeout(3000);
+
       const firstButton = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-accordion > scale-collapsible:nth-child(1)").shadowRoot.querySelector("div > h2 > button")`
       );
+
       await firstButton.hover();
       await global.visualCheck();
       // open first collapsible

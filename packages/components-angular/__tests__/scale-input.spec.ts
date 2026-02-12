@@ -1,9 +1,9 @@
 import { async, ComponentFixture } from '@angular/core/testing';
 
-import { ConfigureFn, configureTests } from '../src/config.testing';
-import { DebugElement, Component } from '@angular/core';
-import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Component, DebugElement } from '@angular/core';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { ConfigureFn, configureTests } from '../src/config.testing';
 import { ComponentLibraryModule } from '../src/index';
 
 @Component({
@@ -42,16 +42,18 @@ describe('ScaleInput - Text Value', () => {
     const { componentInstance: myAngularComponent } = fixture;
     myInputEl.nativeElement.value = 'text';
     myInputEl.nativeElement.dispatchEvent(
-      new CustomEvent('scaleChange', { detail: { value: 'text' } }),
+      new CustomEvent('scale-change', { detail: { value: 'text' } })
     );
     expect(myAngularComponent.testText).toEqual('text');
   });
 
-  it('scaleChange event should call local method', () => {
+  it('scale-change event should call local method', () => {
     const { componentInstance: myAngularComponent } = fixture;
     const fakeOnInput = jest.fn();
     myAngularComponent.onInput = fakeOnInput;
-    myInputEl.triggerEventHandler('scaleChange', { target: { value: 'fired' } });
+    myInputEl.triggerEventHandler('scale-change', {
+      target: { value: 'fired' },
+    });
 
     expect(fakeOnInput).toHaveBeenCalledTimes(1);
     expect(fakeOnInput).toHaveBeenCalledWith('fired');
@@ -59,7 +61,10 @@ describe('ScaleInput - Text Value', () => {
 });
 
 @Component({
-  template: `<scale-input type="number" [(ngModel)]="testNumber"></scale-input>`,
+  template: `<scale-input
+    type="number"
+    [(ngModel)]="testNumber"
+  ></scale-input>`,
 })
 class TestNumberValueAccessorComponent {
   testNumber: number = 0;
@@ -87,7 +92,9 @@ describe('ScaleInput - Number Value', () => {
   it('should update value to number on myInputEvent', () => {
     const { componentInstance: myAngularComponent } = fixture;
     myInputEl.nativeElement.value = 50;
-    myInputEl.nativeElement.dispatchEvent(new CustomEvent('scaleChange', { detail: { value: 50 } }));
+    myInputEl.nativeElement.dispatchEvent(
+      new CustomEvent('scale-change', { detail: { value: 50 } })
+    );
     expect(myAngularComponent.testNumber).toEqual(50);
   });
 });

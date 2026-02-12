@@ -8,7 +8,7 @@ describe('List', () => {
       async (variant) => {
         await global.runSetup(`components-list--${variant}`);
 
-        await global.page.waitFor(1000);
+        await global.page.waitForTimeout(1000);
 
         await global.visualCheck();
       }

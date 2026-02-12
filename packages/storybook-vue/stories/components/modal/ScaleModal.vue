@@ -10,9 +10,9 @@
     :align-actions="alignActions"
     :styles="styles"
     :allow-injecting-style-to-body="allowInjectingStyleToBody"
-    @scaleClose="scaleClose"
-    @scaleOpen="scaleOpen"
-    @scaleBeforeClose="scaleBeforeClose"
+    @scale-close="scaleClose"
+    @scale-open="scaleOpen"
+    @scale-before-close="scaleBeforeClose"
   >
     <slot name="close"></slot>
     <slot></slot>
@@ -22,8 +22,6 @@
 
 <script>
 import { action } from '@storybook/addon-actions';
-
-const scaleCloseAction = action('scaleClose');
 
 export default {
   props: {
@@ -40,27 +38,15 @@ export default {
   },
   methods: {
     scaleOpen($event) {
-      action('scaleOpen');
-      this.$emit('scaleOpen', $event);
-    },
-    'scale-open'($event) {
-      action('scale-open');
+      action('scale-open')($event.detail);
       this.$emit('scale-open', $event);
     },
     scaleBeforeClose($event) {
-      action('scaleBeforeClose');
-      this.$emit('scaleBeforeClose', $event);
-    },
-    'scale-before-close'($event) {
-      action('scale-before-close');
+      action('scale-before-close')($event.detail);
       this.$emit('scale-before-close', $event);
     },
     scaleClose($event) {
-      action('scaleClose');
-      this.$emit('scaleClose', $event);
-    },
-    'scale-close'($event) {
-      action('scale-close');
+      action('scale-close')($event.detail);
       this.$emit('scale-close', $event);
     },
   },
