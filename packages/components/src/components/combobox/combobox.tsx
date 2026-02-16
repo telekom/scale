@@ -31,6 +31,18 @@ export class Combobox {
   /** Combobox label */
   @Prop() label?: string = '';
 
+  /** Accessible name when no visible label is provided */
+  @Prop() inputAriaLabel?: string;
+
+  /** ID reference(s) for an external label element */
+  @Prop() inputAriaLabelledBy?: string;
+
+  /** (optional) Input element id */
+  @Prop() inputId?: string = `combobox-input-${generateUniqueId()}`;
+
+  /** (optional) data-qa attribute for automated testing */
+  @Prop() dataQa?: string;
+
   /** Combobox placeholder */
   @Prop() placeholder?: string = '';
 
@@ -43,8 +55,8 @@ export class Combobox {
   /** Whether the combobox is disabled */
   @Prop() disabled?: boolean = false;
 
-  /** Whether to allow custom values not in the options list */
-  @Prop() allowCustom?: boolean = true;
+  /** Whether to allow custom values not in the options list (default: false) */
+  @Prop() allowCustom?: boolean = false;
 
   /** Helper text shown below the combobox */
   @Prop() helperText?: string = '';
@@ -62,14 +74,15 @@ export class Combobox {
   @State() hasFocus = false;
 
   /** Emitted when the value changes */
-  @Event() scaleChange: EventEmitter<ComboboxChangeEventDetail>;
+  @Event({ eventName: 'scale-change' })
+  scaleChange: EventEmitter<ComboboxChangeEventDetail>;
 
-  private inputId = `combobox-input-${generateUniqueId()}`;
   private listboxId = `combobox-listbox-${generateUniqueId()}`;
   private helperTextId = `combobox-helper-text-${generateUniqueId()}`;
+  private optionIdPrefix = `combobox-option-${generateUniqueId()}`;
   private comboEl: HTMLInputElement;
   private listboxPadEl: HTMLElement;
-  private scrollTimeout: NodeJS.Timeout | null = null;
+  private scrollTimeout: ReturnType<typeof setTimeout> | null = null;
 
   @Watch('value')
   valueChanged(newValue: string) {
@@ -97,7 +110,9 @@ export class Combobox {
   }
 
   @Watch('filterFunction')
-  validateFilterFunction(customFilterFn: any) {
+  validateFilterFunction(
+    customFilterFn: ((option: string, query: string) => boolean) | undefined
+  ) {
     if (!customFilterFn) {
       return;
     }
@@ -108,11 +123,11 @@ export class Combobox {
       );
     }
 
-    // Check the return type by executing the funciton with simple paylaod
+    // Check the return type by executing the funciton with simple payload
     const testResult = customFilterFn('test option', 'test query');
     if (typeof testResult !== 'boolean') {
       throw new Error(
-        'scale-combobox: The provided filterFunction prop does not return a boolean value. Falling back to default filtering behavior.'
+        'scale-combobox: The provided filterFunction prop does not return a boolean value.'
       );
     }
   }
@@ -168,11 +183,20 @@ export class Combobox {
               onInput={this.handleInputChange}
               onFocus={this.handleInputFocus}
               onBlur={this.handleInputBlur}
+              data-qa={this.dataQa}
               onKeyDown={this.handleKeyDown}
               role="combobox"
               aria-autocomplete="list"
               aria-controls={this.listboxId}
               aria-expanded={this.isOpen}
+              aria-invalid={this.invalid ? 'true' : undefined}
+              aria-activedescendant={
+                this.highlightedIndex >= 0
+                  ? `${this.optionIdPrefix}-${this.highlightedIndex}`
+                  : undefined
+              }
+              aria-label={this.inputAriaLabel}
+              aria-labelledby={this.inputAriaLabelledBy}
               aria-describedby={this.helperText ? this.helperTextId : undefined}
               autocomplete="off"
               ref={(el) => (this.comboEl = el as HTMLInputElement)}
@@ -189,24 +213,29 @@ export class Combobox {
                   class="combobox-listbox"
                   role="listbox"
                 >
-                  {this.filteredOptions.map((option, index) => (
-                    <div
-                      part="option"
-                      class={classNames({
-                        'combobox-option': true,
-                        'combobox-option-highlighted':
-                          index === this.highlightedIndex,
-                      })}
-                      role="option"
-                      aria-selected={index === this.highlightedIndex}
-                      onMouseDown={(e) => this.handleOptionClick(option, e)}
-                      onMouseEnter={() => {
-                        this.highlightedIndex = index;
-                      }}
-                    >
-                      {option}
-                    </div>
-                  ))}
+                  {this.filteredOptions.map((option, index) => {
+                    const optionId = `${this.optionIdPrefix}-${index}`;
+
+                    return (
+                      <div
+                        part="option"
+                        id={optionId}
+                        class={classNames({
+                          'combobox-option': true,
+                          'combobox-option-highlighted':
+                            index === this.highlightedIndex,
+                        })}
+                        role="option"
+                        aria-selected={index === this.highlightedIndex}
+                        onMouseDown={(e) => this.handleOptionClick(option, e)}
+                        onMouseEnter={() => {
+                          this.highlightedIndex = index;
+                        }}
+                      >
+                        {option}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -277,10 +306,24 @@ export class Combobox {
     // Delay to allow click on option to register
     // Only close if still open (in case option click already closed it)
     setTimeout(() => {
+      this.commitCustomValue();
       if (this.isOpen) {
         this.isOpen = false;
       }
     }, 100);
+  };
+
+  private commitCustomValue = () => {
+    if (!this.allowCustom) {
+      return;
+    }
+
+    if (this.value === this.inputValue) {
+      return;
+    }
+
+    this.value = this.inputValue;
+    emitEvent(this, 'scale-change', { value: this.inputValue });
   };
 
   private handleOptionClick = (option: string, event: MouseEvent) => {
@@ -289,7 +332,7 @@ export class Combobox {
     this.inputValue = option;
     this.value = option;
     this.isOpen = false;
-    emitEvent(this, 'scaleChange', { value: option });
+    emitEvent(this, 'scale-change', { value: option });
   };
 
   private handleKeyDown = (event: KeyboardEvent) => {
@@ -327,10 +370,14 @@ export class Combobox {
             this.filteredOptions[this.highlightedIndex],
             event as any
           );
-        } else if (this.allowCustom && this.inputValue) {
+        } else if (
+          this.allowCustom &&
+          this.inputValue &&
+          this.inputValue !== this.value
+        ) {
           this.value = this.inputValue;
           this.isOpen = false;
-          emitEvent(this, 'scaleChange', { value: this.inputValue });
+          emitEvent(this, 'scale-change', { value: this.inputValue });
         }
         break;
 

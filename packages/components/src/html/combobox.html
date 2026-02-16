@@ -111,6 +111,18 @@
       </div>
     </div>
 
+    <!-- Custom entry Example -->
+    <div class="example">
+      <h2>Combobox with Custom allowed</h2>
+
+      <scale-combobox
+        id="custom-allowed-combobox"
+        label="Select a framework"
+        placeholder="Type or select..."
+        allow-custom
+      ></scale-combobox>
+    </div>
+
     <!-- Custom Filtering Example -->
     <div class="example">
       <h2>Combobox with Custom Filtering</h2>
@@ -174,6 +186,14 @@
       const disabledCombobox = document.getElementById('disabled-combobox');
       disabledCombobox.options = ['Option 1', 'Option 2', 'Option 3'];
 
+      // Custom allowed combobox setup
+      const customAllowedCombobox = document.getElementById(
+        'custom-allowed-combobox'
+      );
+      customAllowedCombobox.options = frameworks;
+      customAllowedCombobox.addEventListener('scaleChange', (e) => {
+        console.log('Custom allowed combobox changed:', e.detail.value);
+      });
       // Custom filter combobox setup
       const customFilterCombobox = document.getElementById(
         'custom-filter-combobox'
