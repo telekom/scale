@@ -2,7 +2,7 @@
  * @license
  * Scale https://github.com/telekom/scale
  *
- * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ * Copyright (c) 2026 contributors, Deutsche Telekom AG
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -51,7 +51,6 @@ describe('scale-combobox', () => {
     await page.setContent(html);
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
-    await page.waitForTimeout(150);
     const listbox = await page.find('scale-combobox >>> .combobox-listbox');
     expect(listbox).toBeTruthy();
   });
@@ -69,7 +68,6 @@ describe('scale-combobox', () => {
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
     await input.type('Re');
-    await page.waitForTimeout(100);
     const options = await page.findAll('scale-combobox >>> .combobox-option');
     // Should only show React
     expect(options.length).toBeLessThanOrEqual(1);
@@ -88,10 +86,8 @@ describe('scale-combobox', () => {
     await page.setContent(html);
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
-    await page.waitForTimeout(150);
     const option = await page.find('scale-combobox >>> .combobox-option');
     await option.click();
-    await page.waitForTimeout(100);
     const inputValue = await input.getProperty('value');
     expect(inputValue).toBeTruthy();
   });
@@ -136,13 +132,11 @@ describe('scale-combobox', () => {
       </script>
     `;
     await page.setContent(html);
-    const scaleChangeEvent = await page.spyOnEvent('scaleChange');
+    const scaleChangeEvent = await page.spyOnEvent('scale-change');
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
-    await page.waitForTimeout(150);
     const option = await page.find('scale-combobox >>> .combobox-option');
     await option.click();
-    await page.waitForTimeout(100);
     expect(scaleChangeEvent).toHaveReceivedEvent();
   });
 
@@ -158,9 +152,7 @@ describe('scale-combobox', () => {
     await page.setContent(html);
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
-    await page.waitForTimeout(150);
     await input.press('Escape');
-    await page.waitForTimeout(100);
     const listbox = await page.find('scale-combobox >>> .combobox-listbox');
     expect(listbox).toBeFalsy();
   });
@@ -178,7 +170,6 @@ describe('scale-combobox', () => {
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
     await input.type('Custom Value');
-    await page.waitForTimeout(100);
     const inputValue = await input.getProperty('value');
     expect(inputValue).toContain('Custom Value');
   });
@@ -196,15 +187,12 @@ describe('scale-combobox', () => {
     const scaleChangeEvent = await page.spyOnEvent('scaleChange');
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
-    await page.waitForTimeout(150);
 
     // Type a custom value that's not in the options
     await input.type('Custom Value');
-    await page.waitForTimeout(100);
 
     // Press Enter - should NOT emit scaleChange for custom values
     await input.press('Enter');
-    await page.waitForTimeout(100);
 
     // Verify no scaleChange event was emitted
     expect(scaleChangeEvent).not.toHaveReceivedEvent();
@@ -225,7 +213,6 @@ describe('scale-combobox', () => {
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
     await input.type('st');
-    await page.waitForTimeout(100);
     const options = await page.findAll('scale-combobox >>> .combobox-option');
     // Should only show React due to custom filter function
     expect(options.length).toBeLessThanOrEqual(1);
