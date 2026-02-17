@@ -9,7 +9,7 @@
 
 | Property  | Attribute | Description | Type                                                            | Default     |
 | --------- | --------- | ----------- | --------------------------------------------------------------- | ----------- |
-| `data`    | `data`    | Chart Data  | `Record<"type" \| "value" \| "percentage", string>[] \| string` | `undefined` |
+| `data`    | `data`    | Chart Data  | `Record<"value" \| "type" \| "percentage", string>[] \| string` | `undefined` |
 | `heading` | `heading` | Chart Title | `string`                                                        | `undefined` |
 
 
