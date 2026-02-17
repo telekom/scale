@@ -5993,15 +5993,10 @@
     vue-docgen-loader "^1.5.0"
     webpack "4"
 
-"@telekom/design-tokens@1.0.0-beta.10":
-  version "1.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.10.tgz#381956d229bd1c4d096c96e51de371323a60de10"
-  integrity sha512-57BFgDxDkvOOrQf7wmS1u5jQmPRdhh6Y/qOHwTvYlS5GwGlkr3EeGeuwePL5pJ7z0jTnxEIVhmwbZnIx9AIX8w==
-
-"@telekom/design-tokens@^1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.2.tgz#b3e9eeef05417883315e509fb9a3686a89fa91b0"
-  integrity sha512-FZ8XfT5drDPjpzYhHfJ7JIYumHeNN/C92aJIRILmD4052wNgUU7ormdD2rvTCprvvDFFQXwCDhrl+9kNEgtNLg==
+"@telekom/design-tokens@1.0.0-beta.12", "@telekom/design-tokens@^1.0.0-beta.12":
+  version "1.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.12.tgz#c389af0159d2a38a7c563079014f3093bb893cb7"
+  integrity sha512-bsR4fnhsOpwVPrgPI4mj/0ZSPO8db9r4F2AC3kdUCtXbBTMbJxSW5rM42Gs4zjkfFI+VehSVOBIquqjfn/FhBw==
 
 "@testing-library/jest-dom@^5.8.0":
   version "5.11.4"
