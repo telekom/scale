@@ -12,12 +12,7 @@
 import { Component, Element, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
-
-type ChartStackCardDataItem = {
-  type: string;
-  value: string;
-  percentage: string;
-};
+import type { ChartStackCardDataItem } from './chart-stack-card.interfaces';
 
 @Component({
   tag: 'scale-chart-stack-card',
