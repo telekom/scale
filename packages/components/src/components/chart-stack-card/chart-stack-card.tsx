@@ -21,7 +21,7 @@ import type { ChartStackCardDataItem } from './chart-stack-card.interfaces';
 export class ChartStackCard {
   @Element() hostElement: HTMLElement;
   /** Chart Data (`[{ type: string, value: string, percentage: string }]`) */
-  @Prop() data: string | Array<ChartStackCardDataItem>;
+  @Prop() data: string | ChartStackCardDataItem[];
   /** Chart Title */
   @Prop() heading: string;
 
