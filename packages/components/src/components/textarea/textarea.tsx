@@ -82,6 +82,10 @@ export class Textarea {
   @Prop() ariaDetailsId?: string;
   /** (optional) Visually hide the label (remains accessible to screen readers) */
   @Prop() hideLabelVisually?: boolean = false;
+
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
   /** Emitted when the value has changed. */
@@ -214,6 +218,7 @@ export class Textarea {
                 ? ariaDescribedByAttr
                 : {})}
               aria-details={this.ariaDetailsId}
+              {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
               ref={(el) => (this.focusableElement = el)}
             />
           </div>

@@ -106,6 +106,9 @@ export class Input {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
 
@@ -314,6 +317,7 @@ export class Input {
               disabled={this.disabled}
               {...ariaInvalidAttr}
               {...ariaDescribedByAttr}
+              {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
             />
             <div
               class={classNames('input__checkbox-container')}
@@ -355,6 +359,7 @@ export class Input {
               disabled={this.disabled}
               {...ariaInvalidAttr}
               {...ariaDescribedByAttr}
+              {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
             />
             <label htmlFor={this.inputId}>{this.label}</label>
             {!!this.helperText && (
@@ -398,6 +403,7 @@ export class Input {
                 size={this.visibleSize}
                 {...ariaInvalidAttr}
                 {...ariaDescribedByAttr}
+                {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
               >
                 <slot />
               </select>
@@ -428,6 +434,7 @@ export class Input {
               {...(!!this.cols ? { cols: this.cols } : {})}
               {...ariaInvalidAttr}
               {...ariaDescribedByAttr}
+              {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
             />
           )}
 
