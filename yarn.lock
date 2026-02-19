@@ -42,9 +42,9 @@
     rxjs "7.8.2"
 
 "@angular/common@^20.0.6":
-  version "20.0.6"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-20.0.6.tgz#b123bf7ad10932c0dd265df7f090fbdf0a8cef62"
-  integrity sha512-NRsq2gI4CH8nEy8yEZFySEmZ4U+1Y1yGzdIFubrKmtE2NXxR4KFGvQCkBLCLh6hNQXQx+Soe126bqByA6oIaFw==
+  version "20.3.14"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-20.3.14.tgz#62d7e693ae70d3ac41aa424c602c490c0e8d46c5"
+  integrity sha512-OOUvjTtnpktJLsNupA+GFT2q5zNocPdpOENA8aSrXvAheNybLjgi+otO3U3sQsvB1VwaoEZ9GT5O3lZlstnA/A==
   dependencies:
     tslib "^2.3.0"
 
