@@ -102,19 +102,16 @@ describe('TextField', () => {
 
   it('should emit on input', async () => {
     const inputSpy = jest.fn();
-    const inputSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-input', inputSpy);
-    page.doc.addEventListener('scaleInput', inputSpyLegacy);
     const inputField = page.doc.querySelector('input');
     inputField.value = TEST_VALUE;
     await inputField.dispatchEvent(new Event('input'));
     await page.waitForChanges();
     expect(inputSpy).toHaveBeenCalled();
-    expect(inputSpyLegacy).toHaveBeenCalled();
   });
   it('should react on change event', async () => {
     // const changeSpy = jest.fn();
-    // page.doc.addEventListener('scaleChange', changeSpy);
+    // page.doc.addEventListener('scale-change', changeSpy);
     const inputField = page.doc.querySelector('input');
     inputField.value = TEST_VALUE;
     await inputField.dispatchEvent(new Event('change'));
@@ -128,49 +125,37 @@ describe('TextField', () => {
   });
   it('should emit on change', async () => {
     const emitSpy = jest.fn();
-    const emitSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-change', emitSpy);
-    page.doc.addEventListener('scaleChange', emitSpyLegacy);
     page.rootInstance.emitChange();
     await page.waitForChanges();
     expect(emitSpy).toHaveBeenCalled();
-    expect(emitSpyLegacy).toHaveBeenCalledTimes(1);
   });
   it('should emit on focus', async () => {
     const focusSpy = jest.fn();
-    const focusSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-focus', focusSpy);
-    page.doc.addEventListener('scaleFocus', focusSpyLegacy);
     const inputField = page.doc.querySelector('input');
     inputField.value = TEST_VALUE;
     await inputField.dispatchEvent(new Event('focus'));
     await page.waitForChanges();
     expect(focusSpy).toHaveBeenCalled();
-    expect(focusSpyLegacy).toHaveBeenCalled();
   });
   it('should emit on blur', async () => {
     const blurSpy = jest.fn();
-    const blurSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-blur', blurSpy);
-    page.doc.addEventListener('scaleBlur', blurSpyLegacy);
     const inputField = page.doc.querySelector('input');
     inputField.value = TEST_VALUE;
     await inputField.dispatchEvent(new Event('blur'));
     await page.waitForChanges();
     expect(blurSpy).toHaveBeenCalled();
-    expect(blurSpyLegacy).toHaveBeenCalled();
   });
   it('should emit on keydown', async () => {
     const keyDownSpy = jest.fn();
-    const keyDownSpyLegacy = jest.fn();
-    page.doc.addEventListener('scaleKeydown', keyDownSpyLegacy);
     page.doc.addEventListener('scale-keydown', keyDownSpy);
     const inputField = page.doc.querySelector('input');
     inputField.value = TEST_VALUE;
     await inputField.dispatchEvent(new Event('keydown'));
     await page.waitForChanges();
     expect(keyDownSpy).toHaveBeenCalled();
-    expect(keyDownSpyLegacy).toHaveBeenCalled();
   });
 
   it('should handle css classes', () => {
@@ -212,9 +197,7 @@ describe('TextField', () => {
       html: `<scale-text-field controlled></scale-text-field>`,
     });
     const inputSpy = jest.fn();
-    const inputSpyLegacy = jest.fn();
     controlledInputPage.doc.addEventListener('scale-change', inputSpy);
-    controlledInputPage.doc.addEventListener('scaleChange', inputSpyLegacy);
 
     const inputField = controlledInputPage.doc.querySelector('input');
 
@@ -222,6 +205,5 @@ describe('TextField', () => {
     await inputField.dispatchEvent(new Event('input'));
     await controlledInputPage.waitForChanges();
     expect(inputSpy).toHaveBeenCalledTimes(1);
-    expect(inputSpyLegacy).toHaveBeenCalledTimes(1);
   });
 });

@@ -1,4 +1,4 @@
 dist/
 build/
 src/directives/proxies.ts
-src/directives/proxies-list.tsx
+src/directives/proxies-list.ts

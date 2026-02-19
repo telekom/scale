@@ -344,7 +344,7 @@
     <script>
       {
         const el = document.querySelector('#select-example-menu');
-        el.addEventListener('scaleSelect', (e) =>
+        el.addEventListener('scale-select', (e) =>
           alert(e.detail.item.innerText)
         );
       }
@@ -365,8 +365,8 @@
     <script>
       {
         const el = document.querySelector('#open-close-example-menu');
-        el.addEventListener('scaleOpen', () => alert('open'));
-        el.addEventListener('scaleClose', () => alert('close'));
+        el.addEventListener('scale-open', () => alert('open'));
+        el.addEventListener('scale-close', () => alert('close'));
       }
     </script>
 
@@ -386,7 +386,7 @@
       {
         const el = document.querySelector('#checked-toggle-example-menu');
         el.addEventListener(
-          'scaleSelect',
+          'scale-select',
           ({ detail }) => (detail.item.checked = !detail.item.checked)
         );
       }

@@ -58,14 +58,11 @@ describe('Checkbox', () => {
 
   it('should emit on change', async () => {
     const changeSpy = jest.fn();
-    const changeSpyLegacy = jest.fn();
     const element = page.root.querySelector('input');
     page.doc.addEventListener('scale-change', changeSpy);
-    page.doc.addEventListener('scaleChange', changeSpyLegacy);
     element.dispatchEvent(new Event('change'));
     await page.waitForChanges();
     expect(changeSpy).toHaveBeenCalled();
-    expect(changeSpyLegacy).toHaveBeenCalled();
   });
 
   it('should handle inputId with undefined value', async () => {

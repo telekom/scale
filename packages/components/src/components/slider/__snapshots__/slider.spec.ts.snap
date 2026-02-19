@@ -2,7 +2,7 @@
 
 exports[`Slider should match snapshot 1`] = `
 <scale-slider value="0" value-from="0" value-to="0">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div part="base">
       <div part="label-wrapper">
         <div part="value-text">
@@ -21,14 +21,14 @@ exports[`Slider should match snapshot 1`] = `
       </div>
       <input type="hidden" value="0">
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-slider>
 `;
 
 exports[`Slider should match snapshot 2`] = `
 <scale-slider value="10" value-from="0" value-to="0">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div part="base">
       <div part="label-wrapper">
         <div part="value-text">
@@ -47,7 +47,7 @@ exports[`Slider should match snapshot 2`] = `
       </div>
       <input type="hidden" value="10">
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-slider>
 `;

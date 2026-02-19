@@ -11,14 +11,14 @@
 
 import {
   Component,
-  Prop,
+  Element,
   Event,
-  h,
   EventEmitter,
+  h,
   Host,
+  Prop,
   State,
   Watch,
-  Element,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -108,29 +108,18 @@ export class Input {
 
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleInput' })
-  scaleInputLegacy: EventEmitter<KeyboardEvent>;
+
   /** Emitted when the value has changed. */
   @Event({ eventName: 'scale-change' })
   scaleChange: EventEmitter<InputChangeEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' })
-  scaleChangeLegacy: EventEmitter<InputChangeEventDetail>;
+
   /** Emitted when the input has focus. */
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleFocus' }) scaleFocusLegacy!: EventEmitter<void>;
   /** Emitted when the input loses focus. */
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
-  scaleKeyDown!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleKeyDown' })
-  scaleKeyDownLegacy!: EventEmitter<KeyboardEvent>;
+  scaleKeydown!: EventEmitter<KeyboardEvent>;
   /** (optional) Input checkbox checked */
   @State() customResize?: any;
   /** Whether the input element has focus */
@@ -233,14 +222,14 @@ export class Input {
   // because how we keep this.value up-to-date for type="select"
   // `this.value = selectedValue`
   emitChange() {
-    emitEvent(this, 'scaleChange', {
+    emitEvent(this, 'scale-change', {
       value: this.value == null ? this.value : this.value.toString(),
     });
   }
 
   @Watch('checked')
   checkedChanged() {
-    emitEvent(this, 'scaleChange', { value: this.checked });
+    emitEvent(this, 'scale-change', { value: this.checked });
   }
 
   // Handle checkbox/radio change (click on label)
@@ -263,7 +252,7 @@ export class Input {
     const target = event.target as HTMLInputElement | null;
 
     if (this.controlled) {
-      emitEvent(this, 'scaleChange', { value: target.value });
+      emitEvent(this, 'scale-change', { value: target.value });
       this.selectElement.value = String(this.value);
       this.forceUpdate = String(Date.now());
     } else {
@@ -278,7 +267,7 @@ export class Input {
       this.value = target.value || '';
       this.emitChange();
     }
-    emitEvent(this, 'scaleInput', event as KeyboardEvent);
+    emitEvent(this, 'scale-input', event as KeyboardEvent);
   };
 
   handleChange = (event: Event) => {
@@ -290,17 +279,17 @@ export class Input {
   };
 
   handleFocus = () => {
-    emitEvent(this, 'scaleFocus');
+    emitEvent(this, 'scale-focus');
     this.hasFocus = true;
   };
 
   handleBlur = () => {
-    emitEvent(this, 'scaleBlur');
+    emitEvent(this, 'scale-blur');
     this.hasFocus = false;
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
-    emitEvent(this, 'scaleKeyDown', event);
+    emitEvent(this, 'scale-keydown', event);
   };
 
   render() {

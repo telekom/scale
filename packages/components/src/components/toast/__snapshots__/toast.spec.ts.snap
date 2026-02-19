@@ -2,7 +2,7 @@
 
 exports[`Toast should match snapshot 1`] = `
 <scale-toast>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       @keyframes fadeIn {
       from {
@@ -54,14 +54,14 @@ exports[`Toast should match snapshot 1`] = `
         <slot></slot>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Toast message
 </scale-toast>
 `;
 
 exports[`Toast should match snapshot when opened 1`] = `
 <scale-toast opened="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       @keyframes fadeIn {
       from {
@@ -113,7 +113,7 @@ exports[`Toast should match snapshot when opened 1`] = `
         <slot></slot>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-toast>
 `;

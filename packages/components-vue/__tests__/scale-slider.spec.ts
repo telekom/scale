@@ -5,12 +5,12 @@ describe('ScaleSlider', () => {
   it('should work with v-model', async () => {
     const Component = {
       data() {
-        return { numberValue: 0 }
+        return { numberValue: 0 };
       },
       template: `<ScaleSlider v-model="numberValue"></ScaleSlider>`,
     };
     const wrapper = mount(Component, {
-      components: { ScaleSlider }
+      components: { ScaleSlider },
     });
 
     const sliderEl = wrapper.find('scale-slider');
@@ -18,7 +18,7 @@ describe('ScaleSlider', () => {
 
     // one way - input to data
     wc.value = 50;
-    sliderEl.trigger('scaleChange', { detail: { value: 50 } });
+    sliderEl.trigger('scale-change', { detail: { value: 50 } });
     expect(wrapper.vm.$data.numberValue).toEqual(50);
 
     // the other way - data to input

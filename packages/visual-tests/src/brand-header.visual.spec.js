@@ -10,7 +10,7 @@ describe.skip('Deprecated Brand Header', () => {
       await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--standard&viewMode=story`
       );
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
 
       const previewHtml = await global.page.$('body');
       await global.page.evaluate(() => {
@@ -38,7 +38,7 @@ describe.skip('Deprecated Brand Header', () => {
       await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--custom-main-navigation&viewMode=story`
       );
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
 
       const previewHtml = await global.page.$('body');
       await global.page.evaluate(() => {
@@ -71,7 +71,7 @@ describe.skip('Deprecated Brand Header', () => {
       await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--${variant}&viewMode=story`
       );
-      await global.page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
 
       const previewHtml = await global.page.$('body');
       await global.page.evaluate(() => {

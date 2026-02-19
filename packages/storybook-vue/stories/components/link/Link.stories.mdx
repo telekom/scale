@@ -48,10 +48,9 @@ import ScaleLink from './ScaleLink.vue';
   }}
 />
 
-export const Template = (args, { argTypes }) => ({
+export const Template = (args) => ({
   props: {
     label: String,
-    withIcon: { type: Boolean, default: false },
     ...ScaleLink.props,
   },
   template: `
@@ -68,6 +67,7 @@ export const Template = (args, { argTypes }) => ({
       :target="target"
       :type="type"
       :inner-tabindex="innerTabindex"
+      :withIcon="withIcon"
     >
       {{ label }}
       <scale-icon-navigation-external-link

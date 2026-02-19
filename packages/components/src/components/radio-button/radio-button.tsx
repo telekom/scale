@@ -19,10 +19,10 @@ import {
   Prop,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
-interface InputChangeEventDetail {
+export interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
@@ -58,9 +58,6 @@ export class RadioButton {
 
   @Event({ eventName: 'scale-change' })
   scaleChange!: EventEmitter<InputChangeEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' })
-  scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
 
   private readonly internalId = generateUniqueId();
 
@@ -89,7 +86,7 @@ export class RadioButton {
       if (this.checked) {
         this.uncheckSiblings();
       }
-      emitEvent(this, 'scaleChange', {
+      emitEvent(this, 'scale-change', {
         value: this.value == null ? this.value : this.value.toString(),
       });
     }

@@ -12,7 +12,7 @@
     :readonly="readonly"
     :info-text="infoText"
     :hide-label="hideLabel"
-    @scaleChange="scaleChange"
+    @scale-change="scaleChange"
   >
   </scale-rating-stars>
 </template>
@@ -36,11 +36,7 @@ export default {
   },
   methods: {
     scaleChange($event) {
-      action("scaleChange");
-      this.$emit("scaleChange", $event);
-    },
-    'scale-change'($event) {
-      action("scale-change");
+      action("scale-change")($event.detail);
       this.$emit("scale-change", $event);
     },
   }

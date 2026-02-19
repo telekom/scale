@@ -2,7 +2,7 @@
 
 exports[`AppFooter should match snapshot 1`] = `
 <scale-app-footer>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="footer--variant-standard footer-container">
       <div class="footer-mask"></div>
       <footer class="footer">
@@ -19,6 +19,6 @@ exports[`AppFooter should match snapshot 1`] = `
         </div>
       </footer>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-app-footer>
 `;

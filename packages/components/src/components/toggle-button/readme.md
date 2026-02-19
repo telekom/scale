@@ -30,10 +30,9 @@
 
 ## Events
 
-| Event         | Description                                                                                        | Type                                              |
-| ------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| `scale-click` | Emitted when button is clicked                                                                     | `CustomEvent<{ id: string; selected: boolean; }>` |
-| `scaleClick`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ id: string; selected: boolean; }>` |
+| Event         | Description                    | Type                                              |
+| ------------- | ------------------------------ | ------------------------------------------------- |
+| `scale-click` | Emitted when button is clicked | `CustomEvent<{ id: string; selected: boolean; }>` |
 
 
 ## Methods

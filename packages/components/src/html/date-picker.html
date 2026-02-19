@@ -125,15 +125,15 @@
       });
 
       // Listen for when date is selected
-      picker.addEventListener('scaleChange', function (e) {
-        console.log('scaleChange selected date', e.detail.valueAsDate);
+      picker.addEventListener('scale-change', function (e) {
+        console.log('scale-change selected date', e.detail.valueAsDate);
       });
-      picker.addEventListener('scaleFocus', function (e) {
-        console.log('scaleFocus', e);
+      picker.addEventListener('scale-focus', function (e) {
+        console.log('scale-focus', e);
       });
 
-      picker.addEventListener('scaleBlur', function (e) {
-        console.log('scaleBlur', e);
+      picker.addEventListener('scale-blur', function (e) {
+        console.log('scale-blur', e);
       });
     </script>
   </body>

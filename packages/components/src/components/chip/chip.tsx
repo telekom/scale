@@ -11,12 +11,12 @@
 
 import {
   Component,
-  Prop,
-  h,
-  Host,
+  Element,
   Event,
   EventEmitter,
-  Element,
+  h,
+  Host,
+  Prop,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -54,14 +54,9 @@ export class Chip {
 
   /** (optional) Change event */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<MouseEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' })
-  scaleChangeLegacy: EventEmitter<MouseEvent>;
+
   /** (optional) Close icon click event */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<MouseEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClose' })
-  scaleCloseLegacy: EventEmitter<MouseEvent>;
 
   componentDidRender() {
     // handle no setted icon size attribute
@@ -87,7 +82,7 @@ export class Chip {
   handleClose = (event: MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    emitEvent(this, 'scaleClose', event);
+    emitEvent(this, 'scale-close', event);
   };
 
   handleClick = (event: MouseEvent) => {
@@ -107,7 +102,7 @@ export class Chip {
       return;
     }
     this.selected = !this.selected;
-    emitEvent(this, 'scaleChange', event);
+    emitEvent(this, 'scale-change', event);
   };
 
   getIcon() {

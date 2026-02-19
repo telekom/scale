@@ -110,16 +110,16 @@
       const a = document.getElementById('a');
       const display = document.querySelector('demo-color-display');
 
-      h.addEventListener('scaleInput', () => {
+      h.addEventListener('scale-input', () => {
         display.style.setProperty('--h', h.valueTo + 'deg');
       });
-      s.addEventListener('scaleInput', () => {
+      s.addEventListener('scale-input', () => {
         display.style.setProperty('--s', s.value + '%');
       });
-      l.addEventListener('scaleInput', () => {
+      l.addEventListener('scale-input', () => {
         display.style.setProperty('--l', l.value + '%');
       });
-      a.addEventListener('scaleInput', () => {
+      a.addEventListener('scale-input', () => {
         display.style.setProperty('--a', a.value);
       });
     </script>

@@ -17,7 +17,7 @@ describe('Chip', () => {
       ['dynamic-selection-outline'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-chip--${variant}`);
-      await global.page.waitFor(3000);
+      await global.page.waitForTimeout(3000);
       await global.visualCheck();
     });
   });

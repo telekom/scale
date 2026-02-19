@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Prop, Event, Element } from '@stencil/core';
+import { Component, Element, Event, h, Host, Prop } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import { emitEvent } from '../../../utils/utils';
 
@@ -44,7 +44,7 @@ export class TelekomMobileFlyoutCanvas {
               href="javascript:void(0)"
               onClick={(event) => {
                 event.preventDefault();
-                emitEvent(this, 'scaleCloseNavFlyout', {
+                emitEvent(this, 'scale-close-nav-flyout', {
                   originalEvent: event,
                 });
               }}

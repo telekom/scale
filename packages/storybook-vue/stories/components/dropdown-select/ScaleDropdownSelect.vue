@@ -15,10 +15,10 @@
     :aria-label-selected="ariaLabelSelected"
     :hcm-label-disabled="hcmLabelDisabled"
     :allow-clear="allowClear"
-    @scaleChange="['scale-change']"
-    @scaleFocus="['scale-focus']"
-    @scaleBlur="['scale-blur']"
-    @scaleKeyDown="['scale-keydown']"
+    @scale-change="scaleChange"
+    @scale-focus="scaleFocus"
+    @scale-blur="scaleBlur"
+    @scale-keydown="scaleKeydown"
   >
     <slot></slot>
   </scale-dropdown-select>
@@ -49,20 +49,20 @@ export default {
     allowClear: {type: Boolean}
   },
   methods: {
-    'scale-change'($event) {
-      action('scale-change');
+    scaleChange($event) {
+      action('scale-change')($event.detail);
       this.$emit('scale-change', $event);
     },
-    'scale-focus'($event) {
-      action('scale-focus');
+    scaleFocus($event) {
+      action('scale-focus')($event.detail);
       this.$emit('scale-focus', $event);
     },
-    'scale-blur'($event) {
-      action('scale-blur');
+    scaleBlur($event) {
+      action('scale-blur')($event.detail);
       this.$emit('scale-blur', $event);
     },
-    'scale-keydown'($event) {
-      action('scale-keydown');
+    scaleKeydown($event) {
+      action('scale-keydown')($event.detail);
       this.$emit('scale-keydown', $event);
     },
   },
