@@ -34,6 +34,7 @@ export interface InputChangeEventDetail {
 })
 export class Textarea {
   @Element() hostElement: HTMLElement;
+
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label */
@@ -80,6 +81,9 @@ export class Textarea {
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
 
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
   /** Emitted when the value has changed. */
@@ -116,7 +120,6 @@ export class Textarea {
       });
     }
   }
-
   // We're not watching `value` like we used to
   // because we get unwanted `scaleChange` events
   // because how we keep this.value up-to-date for type="select"
@@ -206,6 +209,7 @@ export class Textarea {
                 ? ariaDescribedByAttr
                 : {})}
               aria-details={this.ariaDetailsId}
+              {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
               ref={(el) => (this.focusableElement = el)}
             />
           </div>
