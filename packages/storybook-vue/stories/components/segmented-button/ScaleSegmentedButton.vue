@@ -11,7 +11,7 @@
     :selected-index="selectedIndex"
     :aria-label-translation="ariaLabelTranslation"
     :longest-button-width="longestButtonWidth"
-    @scaleChange="scaleChange"
+    @scale-change="scaleChange"
   >
     <slot></slot>
   </scale-segmented-button>
@@ -35,11 +35,7 @@ export default {
   },
   methods: {
     scaleChange($event) {
-      action('scaleChange');
-      this.$emit('scaleChange', $event);
-    },
-    'scale-change'($event) {
-      action('scale-change');
+      action('scale-change')($event.detail);
       this.$emit('scale-change', $event);
     },
   },

@@ -9,7 +9,7 @@
 
 | Property     | Attribute    | Description | Type         | Default     |
 | ------------ | ------------ | ----------- | ------------ | ----------- |
-| `hide`       | --           |             | `() => void` | `undefined` |
+| `hide`       | `hide`       |             | `() => void` | `undefined` |
 | `navigation` | `navigation` |             | `any`        | `undefined` |
 | `styles`     | `styles`     |             | `string`     | `undefined` |
 

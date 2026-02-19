@@ -43,9 +43,6 @@ import ScaleModal from './ScaleModal.vue';
         disable: true,
       },
     },
-    scaleBeforeClose: {
-      description: '@deprecated in v3 in favor of kebab-case event names.',
-    },
     'scale-before-close': {
       description:
         'It fires on every close attempt. Those events can be one of the event.detail.trigger, such as CLOSE_BUTTON, ESCAPE_KEY or BACKDROP, depending on the action that triggered the event. Calling `event.preventDefault()` will prevent the modal from closing.',
@@ -84,7 +81,7 @@ export const Template = (args, context) => ({
         :align-actions="alignActions"
         :styles="styles"
         :allow-injecting-style-to-body="allowInjectingStyleToBody"
-        @scaleClose="scaleClose()"
+        @scale-close="scaleClose()"
       >
         <template v-if="shortBody">
           <p>Hello. Welcome. What a pleasure it is to have you.</p>

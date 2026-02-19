@@ -2,35 +2,35 @@
 
 exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 <scale-link href="http://example.com" open-new-tab="true">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <a aria-disabled="false" href="http://example.com" part="anchor">
       <div part="content">
         <slot></slot>
       </div>
       <slot name="icon"></slot>
     </a>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-link>
 `;
 
 exports[`Link should handle disabled link 1`] = `
 <scale-link class="disabled" disabled="true" href="http://example.com">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <a aria-disabled="true" href="http://example.com" part="anchor" tabindex="-1">
       <div part="content">
         <slot></slot>
       </div>
       <slot name="icon"></slot>
     </a>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-link>
 `;
 
 exports[`Link should handle setted styles 1`] = `
 <scale-link href="http://example.com" styles="color:red">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       color:red
     </style>
@@ -40,35 +40,35 @@ exports[`Link should handle setted styles 1`] = `
       </div>
       <slot name="icon"></slot>
     </a>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-link>
 `;
 
 exports[`Link should have link href value when href value is set 1`] = `
 <scale-link href="http://example.com">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <a aria-disabled="false" href="http://example.com" part="anchor">
       <div part="content">
         <slot></slot>
       </div>
       <slot name="icon"></slot>
     </a>
-  </mock:shadow-root>
+  </template>
   Label
 </scale-link>
 `;
 
 exports[`Link should match snapshot 1`] = `
 <scale-link>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <a aria-disabled="false" part="anchor">
       <div part="content">
         <slot></slot>
       </div>
       <slot name="icon"></slot>
     </a>
-  </mock:shadow-root>
+  </template>
   default
 </scale-link>
 `;

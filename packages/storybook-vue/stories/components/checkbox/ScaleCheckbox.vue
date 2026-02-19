@@ -14,7 +14,7 @@
     :hide-label="hideLabel"
     :status="status"
     :styles="styles"
-    @scaleChange="scaleChange"
+    @scale-change="scaleChange"
   >
   </scale-checkbox>
 </template>
@@ -42,11 +42,7 @@ export default {
   },
   methods: {
     scaleChange($event) {
-      action('scaleChange');
-      this.$emit('scaleChange', $event);
-    },
-    'scale-change'($event) {
-      action('scale-change');
+      action('scale-change')($event.detail);
       this.$emit('scale-change', $event);
     },
   },

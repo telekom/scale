@@ -61,7 +61,7 @@ export const Template = (args, { argTypes }) => ({
       :target="target"
       :color="color"
       :type="type"
-      @scaleClose="action('scaleClose')($event)"
+      @scale-close="action('scale-close')($event)"
     >
     {{ label }}
     </scale-tag>
@@ -80,7 +80,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
                 type="strong"
                 v-bind:color=color
                 v-bind:dismiss-text="'Remove ' + color + ' from the list'"
-                @scaleClose="removeColor(color)"
+                @scale-close="removeColor(color)"
             >
                 {{color}}
             </scale-tag>
@@ -90,7 +90,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
                 type="standard"
                 v-bind:color=color
                 v-bind:dismiss-text="'Remove ' + color + ' from the list'"
-                @scaleClose="removeColor(color)"
+                @scale-close="removeColor(color)"
             >
                 {{color}}
             </scale-tag>
@@ -98,7 +98,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
       </ul>
   `,
   methods: {
-    action: action('scaleClose'),
+    action: action('scale-close'),
     removeColor(color) {
       this.action();
       this.colors = this.colors.filter((x) => x !== color);

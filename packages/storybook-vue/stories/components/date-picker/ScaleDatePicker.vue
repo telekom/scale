@@ -22,9 +22,9 @@
     :inner-role="innerRole"
     :status="status"
     :variant="variant"
-    @scaleChange="scaleChange"
-    @scaleFocus="scaleFocus"
-    @scaleBlur="scaleBlur"
+    @scale-change="scaleChange"
+    @scale-focus="scaleFocus"
+    @scale-blur="scaleBlur"
   >
   </scale-date-picker>
 </template>
@@ -42,7 +42,7 @@ export default {
     min: { type: String },
     max: { type: String },
     firstDayOfWeek: { type: String },
-    localization: { type: Object },
+    localization: { type: [Object, String] },
     dateAdapter: { type: Object },
     value: { type: String },
     label: { type: String },
@@ -58,29 +58,93 @@ export default {
     status: { type: String },
     variant: { type: 'informational' | 'warning' | 'danger' | 'success' | 'informational'},
   },
-  methods: {
-    scaleChange($event) {
-      action('scaleChange');
-      this.$emit('scaleChange', $event);
+  mounted() {
+    this.setupLocalization();
+  },
+  watch: {
+    localization() {
+      this.setupLocalization();
     },
-    'scale-change'($event) {
-      action('scale-change');
+  },
+  methods: {
+    setupLocalization() {
+      const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
+      
+      if (this.localization === 'de') {
+        this.$el.dateAdapter = {
+          parse(value = '', createDate) {
+            const matches = value.match(DATE_FORMAT);
+            if (matches) {
+              return createDate(matches[3], matches[2], matches[1]);
+            }
+          },
+          format(date) {
+            return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+          },
+        };
+        this.$el.localization = {
+          buttonLabel: 'Datum wählen',
+          placeholder: 'TT.MM.JJJJ',
+          selectedDateMessage: 'Gewähltes Datum',
+          prevMonthLabel: 'Vorheriger Monat',
+          nextMonthLabel: 'Nächster Monat',
+          monthSelectLabel: 'Monat',
+          yearSelectLabel: 'Jahr',
+          closeLabel: 'Fenster schließen',
+          keyboardInstruction: 'Sie können mit den Pfeiltasten vor und zurück navigieren',
+          calendarHeading: 'Datum wählen',
+          dayNames: [
+            'Sonntag',
+            'Montag',
+            'Dienstag',
+            'Mittwoch',
+            'Donnerstag',
+            'Freitag',
+            'Samstag',
+          ],
+          monthNames: [
+            'Januar',
+            'Februar',
+            'März',
+            'April',
+            'Mai',
+            'Juni',
+            'Juli',
+            'August',
+            'September',
+            'Oktober',
+            'November',
+            'Dezember',
+          ],
+          monthNamesShort: [
+            'Jan',
+            'Feb',
+            'Mär',
+            'Apr',
+            'Mai',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Okt',
+            'Nov',
+            'Dez',
+          ],
+          today: 'heute',
+          locale: 'de-DE',
+        };
+      }
+    },
+    scaleChange($event) {
+      action('scale-change')($event.detail);
       this.$emit('scale-change', $event);
     },
     scaleFocus($event) {
-      action('scaleFocus');
-      this.$emit('scaleFocus', $event);
-    },
-    'scale-focus'($event) {
-      action('scale-focus');
+      action('scale-focus')($event.detail);
       this.$emit('scale-focus', $event);
     },
     scaleBlur($event) {
-      action('scaleBlur');
-      this.$emit('scaleBlur', $event);
-    },
-    'scale-blur'($event) {
-      action('scale-blur');
+      action('scale-blur')($event.detail);
       this.$emit('scale-blur', $event);
     },
   },

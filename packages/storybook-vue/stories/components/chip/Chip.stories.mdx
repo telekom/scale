@@ -19,10 +19,12 @@ import { action } from '@storybook/addon-actions';
       },
     },
     type: {
+      description: `"persistent" (default) — Chip is toggleable: clicking or pressing Space toggles selected and emits the change event (scale-change).
+                    "dynamic" — Chip is dismissable: clicking the chip does not toggle selection (selection must be managed externally). When selected, a close/dismiss button is shown; clicking that button emits the close event (scale-close).`,
       control: {
         type: 'select',
         options: ['dynamic', 'persistent'],
-      },
+        },
     },
     disabled: {
       description: `only valid for persistent type`,
@@ -34,24 +36,24 @@ import { action } from '@storybook/addon-actions';
 />
 
 export const Template = (args, { argTypes }) => ({
+  components: { ScaleChip },
   props: {
     label: String,
     ...ScaleChip.props,
   },
   template: `
-        <scale-chip
+        <ScaleChip
             :variant="variant"
             :type="type"
             :selected="selected"
             :disabled="disabled"
             :styles="styles"
-        >
-        {{label}}
-        </scale-chip>
+            :label="label"
+            :dismiss-text="dismissText"
+            :aria-role-title="ariaRoleTitle"
+            :aria-checked-state="ariaCheckedState"
+        >{{label}}</ScaleChip>
   `,
-  methods: {
-    action,
-  },
 });
 
 export const TemplateIcon = (args, { argTypes }) => ({
@@ -60,7 +62,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
     ...ScaleChip.props,
   },
   template: `
-    <scale-chip
+ <scale-chip
       :selected="selected"
       :type="type"
       :label="label"
@@ -73,46 +75,46 @@ export const TemplateIcon = (args, { argTypes }) => ({
       </div>
     </scale-chip>
   `,
-  methods: {
-    action,
-  },
 });
 
 export const TemplateInteractive = (args, { argTypes }) => ({
+  components: { ScaleChip },
   template: `
   <div>
-    <div style="height: 20px;">Please select one option:</div>
+    <div style="height: 20px;">Dismisable options:</div>
       <ul aria-label="selection" style="display: flex; list-style: none; padding: 0;">
-        <li v-for="label in labels" :key="label" style="margin-right: 4px;">
-          <scale-chip
+        <li v-for="chipLabel in labels" :key="chipLabel" style="margin-right: 4px;">
+          <ScaleChip
             type="dynamic"
-            v-bind:label=label
-            @scaleChange="removeChip(label)"
+            :label="chipLabel"
+            :selected="selectedChip === chipLabel"
+            @scale-close="removeChip(chipLabel)"
           >
-            {{label}}
-          </scale-chip>
+            {{chipLabel}}
+          </ScaleChip>
         </li>
        
       </ul>   
     </div>
   `,
   methods: {
-    action: action('scaleChange'),
     removeChip(label) {
-      this.action();
-      this.labels = null;
-      this.text = this.label;
-      setTimeout(() => {
-        this.$el.querySelector('#root > ul > li > scale-chip') &&
-          this.$el
-            .querySelector('#root > ul > li > scale-chip')
-            .shadowRoot.querySelector('span > button')
-            .focus();
+      
+      action('scale-close')(label);
+      this.labels = this.labels.filter(l => l !== label);
+      this.selectedChip = this.labels[0];
+      this.$nextTick(() => {
+        const firstChip = this.$el.querySelector('ul > li > scale-chip');
+        if (firstChip && firstChip.shadowRoot) {
+          const button = firstChip.shadowRoot.querySelector('span > button');
+          if (button) button.focus();
+        }
       });
     },
   },
   data: () => ({
     labels: ['option 1', 'option 2', 'option 3', 'option 4'],
+    selectedChip: 'option 1'
   }),
 });
 
@@ -396,10 +398,35 @@ export const TemplateInteractive = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip
+<scale-chip 
   >Label
   <div slot="chip-icon">
     <scale-icon-action-favorite accessibility-title="favorite" />
   </div>
 </scale-chip>
+```
+
+## Interactive Example
+
+<Canvas withSource="none">
+  <Story name="Interactive">
+    {TemplateInteractive.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<div>
+  <div style="height: 20px;">Please select one option:</div>
+  <ul aria-label="selection" style="display: flex; list-style: none; padding: 0;">
+    <li v-for="label in labels" :key="label" style="margin-right: 4px;">
+      <scale-chip
+        type="dynamic"
+        v-bind:label=label
+        @scale-change="removeChip(label)"
+      >
+        {{label}}
+      </scale-chip>
+    </li>
+  </ul>   
+</div>
 ```

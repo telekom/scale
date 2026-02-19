@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combobox snapshots should match default snapshot 1`] = `
+<scale-combobox>
+  <template shadowrootmode="open">
+    <div class="combobox-container" part="combobox-container">
+      <div class="combobox-wrapper">
+        <input aria-autocomplete="list" aria-controls="combobox-listbox-1" autocomplete="off" class="combobox-input" id="combobox-input-0" part="combobox" placeholder="" role="combobox" type="text" value="">
+      </div>
+    </div>
+  </template>
+</scale-combobox>
+`;
+
+exports[`Combobox snapshots should match snapshot with label, helper text and invalid state 1`] = `
+<scale-combobox helper-text="Please choose" invalid="true" label="Framework">
+  <template shadowrootmode="open">
+    <div class="combobox-container combobox-invalid" part="combobox-container">
+      <div class="combobox-wrapper">
+        <label class="combobox-label" htmlfor="combobox-input-4" part="label">
+          Framework
+        </label>
+        <input aria-autocomplete="list" aria-controls="combobox-listbox-5" aria-describedby="combobox-helper-text-6" aria-invalid="true" autocomplete="off" class="combobox-input" id="combobox-input-4" part="combobox" placeholder="" role="combobox" type="text" value="">
+      </div>
+      <div aria-live="polite" aria-relevant="additions removals" class="combobox-meta">
+        <scale-helper-text helpertext="Please choose" id="combobox-helper-text-6" variant="danger"></scale-helper-text>
+      </div>
+    </div>
+  </template>
+</scale-combobox>
+`;

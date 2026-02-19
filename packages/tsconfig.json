@@ -3,9 +3,6 @@
   "include": [],
   "references": [
     {
-      "path": "./config"
-    },
-    {
       "path": "./components"
     },
     {
@@ -13,6 +10,9 @@
     },
     {
       "path": "./components-vue"
+    },
+    {
+      "path": "./components-angular"
     }
   ]
 }

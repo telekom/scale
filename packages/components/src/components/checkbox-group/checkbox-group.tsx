@@ -60,7 +60,7 @@ export class CheckboxGroup {
   private groupNode;
   private actionText: string;
 
-  @Listen('scaleChange')
+  @Listen('scale-change')
   handleCheckboxChange(ev) {
     const el = ev.composedPath()[0];
     const { tagName, checked } = el;

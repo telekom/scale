@@ -1,17 +1,17 @@
+import { computePosition } from '@floating-ui/dom';
 import {
   Component,
+  Element,
+  Event,
+  EventEmitter,
   h,
   Host,
   Prop,
-  Element,
   State,
-  Watch,
-  Event,
-  EventEmitter,
   VNode,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { computePosition } from '@floating-ui/dom';
 import { emitEvent, generateUniqueId } from '../../utils/utils';
 
 enum Actions {
@@ -338,7 +338,7 @@ export class DropdownSelect {
   selectOption = (index) => {
     this.currentIndex = index;
     this.value = readOptions(this.hostElement)[index].value;
-    emitEvent(this, 'scaleChange', { value: this.value });
+    emitEvent(this, 'scale-change', { value: this.value });
   };
 
   handleOptionChange(index) {
@@ -425,7 +425,7 @@ export class DropdownSelect {
     const { key } = event;
     const options = readOptions(this.hostElement);
     const action = getActionFromKey(event, this.open);
-    emitEvent(this, 'scaleKeydown', event);
+    emitEvent(this, 'scale-keydown', event);
 
     switch (action) {
       case Actions['Last']:
@@ -460,11 +460,11 @@ export class DropdownSelect {
 
   handleBlur = () => {
     this.setOpen(false);
-    emitEvent(this, 'scaleBlur');
+    emitEvent(this, 'scale-blur');
   };
 
   handleFocus = () => {
-    emitEvent(this, 'scaleFocus');
+    emitEvent(this, 'scale-focus');
   };
 
   handleClick = () => {
@@ -653,6 +653,6 @@ export class DropdownSelect {
 
     this.value = '';
     this.currentIndex = -1;
-    emitEvent(this, 'scaleChange', { value: this.value });
+    emitEvent(this, 'scale-change', { value: this.value });
   };
 }

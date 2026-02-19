@@ -2,47 +2,47 @@
 
 exports[`Toggle Button snapshots black color scheme 1`] = `
 <scale-toggle-button color-scheme="black" icon-position="before" toggle-button-id="toggle-button-2">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <button aria-description="deselected" class="toggle-button toggle-button--black toggle-button--border toggle-button--color toggle-button--icon-before toggle-button--regular toggle-button--secondary" id="toggle-button-2" part="toggle-button regular secondary toggle-button--icon-before black color border" type="button">
       <slot></slot>
     </button>
-  </mock:shadow-root>
+  </template>
   Test
 </scale-toggle-button>
 `;
 
 exports[`Toggle Button snapshots default props 1`] = `
 <scale-toggle-button icon-position="before" toggle-button-id="toggle-button-0">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <button aria-description="deselected" class="toggle-button toggle-button--border toggle-button--color toggle-button--icon-before toggle-button--regular toggle-button--secondary" id="toggle-button-0" part="toggle-button regular secondary toggle-button--icon-before color color border" type="button">
       <slot></slot>
     </button>
-  </mock:shadow-root>
+  </template>
   Test
 </scale-toggle-button>
 `;
 
 exports[`Toggle Button snapshots disabled 1`] = `
 <scale-toggle-button disabled="" icon-position="before" size="large" toggle-button-id="toggle-button-3">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <button aria-description="deselected" class="toggle-button toggle-button--border toggle-button--color toggle-button--icon-before toggle-button--large toggle-button--secondary" disabled="" id="toggle-button-3" part="toggle-button large secondary toggle-button--icon-before color color border" type="button">
       <slot></slot>
     </button>
-  </mock:shadow-root>
+  </template>
   Test
 </scale-toggle-button>
 `;
 
 exports[`Toggle Button snapshots iconAfter 1`] = `
 <scale-toggle-button icon-position="after" radius="left" styles="color:red" toggle-button-id="toggle-button-7">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       color:red
     </style>
     <button aria-description="deselected" class="toggle-button toggle-button--border toggle-button--color toggle-button--icon-after toggle-button--left toggle-button--regular toggle-button--secondary" id="toggle-button-7" part="toggle-button regular secondary toggle-button--icon-after left color color border" type="button">
       <slot></slot>
     </button>
-  </mock:shadow-root>
+  </template>
   Test
   <scale-icon-action-search size="22"></scale-icon-action-search>
 </scale-toggle-button>
@@ -50,11 +50,11 @@ exports[`Toggle Button snapshots iconAfter 1`] = `
 
 exports[`Toggle Button snapshots iconBefore 1`] = `
 <scale-toggle-button icon-position="before" radius="right" toggle-button-id="toggle-button-6">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <button aria-description="deselected" class="toggle-button toggle-button--border toggle-button--color toggle-button--icon-before toggle-button--regular toggle-button--right toggle-button--secondary" id="toggle-button-6" part="toggle-button regular secondary toggle-button--icon-before right color color border" type="button">
       <slot></slot>
     </button>
-  </mock:shadow-root>
+  </template>
   <scale-icon-action-search size="22"></scale-icon-action-search>
   Test
 </scale-toggle-button>
@@ -62,33 +62,33 @@ exports[`Toggle Button snapshots iconBefore 1`] = `
 
 exports[`Toggle Button snapshots iconOnly 1`] = `
 <scale-toggle-button icon-position="after" radius="both" selected="" toggle-button-id="toggle-button-5">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <button aria-description="selected" aria-pressed="" class="toggle-button toggle-button--border toggle-button--both toggle-button--color toggle-button--icon-after toggle-button--regular toggle-button--secondary toggle-button--selected" id="toggle-button-5" part="toggle-button regular secondary toggle-button--icon-after selected both color color border" type="button">
       <slot></slot>
     </button>
-  </mock:shadow-root>
+  </template>
   <scale-icon-action-search selected="true" size="22"></scale-icon-action-search>
 </scale-toggle-button>
 `;
 
 exports[`Toggle Button snapshots regular size secondary 1`] = `
 <scale-toggle-button icon-position="before" size="regular" toggle-button-id="toggle-button-1" variant="secondary">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <button aria-description="deselected" class="toggle-button toggle-button--border toggle-button--color toggle-button--icon-before toggle-button--regular toggle-button--secondary" id="toggle-button-1" part="toggle-button regular secondary toggle-button--icon-before color secondary border" type="button">
       <slot></slot>
     </button>
-  </mock:shadow-root>
+  </template>
   Test
 </scale-toggle-button>
 `;
 
 exports[`Toggle Button snapshots selected 1`] = `
 <scale-toggle-button icon-position="before" selected="" size="xs" toggle-button-id="toggle-button-4">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <button aria-description="selected" aria-pressed="" class="toggle-button toggle-button--border toggle-button--color toggle-button--icon-before toggle-button--secondary toggle-button--selected toggle-button--xs" id="toggle-button-4" part="toggle-button xs secondary toggle-button--icon-before selected color color border" type="button">
       <slot></slot>
     </button>
-  </mock:shadow-root>
+  </template>
   Test
 </scale-toggle-button>
 `;

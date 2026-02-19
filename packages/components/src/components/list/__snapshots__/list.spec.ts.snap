@@ -2,22 +2,22 @@
 
 exports[`List should handle listItem 1`] = `
 <scale-list ordered="">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <ol class="list list--type-ordered" part="base ordered">
       <slot></slot>
     </ol>
-  </mock:shadow-root>
+  </template>
   <scale-list-item></scale-list-item>
 </scale-list>
 `;
 
 exports[`List should match snapshot 1`] = `
 <scale-list>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <ul class="list" part="base">
       <slot></slot>
     </ul>
-  </mock:shadow-root>
+  </template>
   default
 </scale-list>
 `;

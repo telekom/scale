@@ -1,5 +1,6 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
 import ScaleDataGrid from './ScaleDataGrid.vue';
+import { action } from '@storybook/addon-actions';
 
 <Meta
   title="Components/Data Grid"
@@ -144,73 +145,35 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
       },
       description: `Read-only selection array - populated with raw data from selected rows. Note needs selectable set to true`,
       control: { type: null },
-    },
-    eventScaleEditLegacy: {
-      name: '[event] scaleEdit',
-      table: {
-        type: { summary: 'event' },
-      },
-      description: `Event triggered every time the editable cells are changed, updating the original rows data`,
-      control: { type: null },
-    },
-    eventScaleEdit: {
-      name: '[event] scale-edit',
-      table: {
-        type: { summary: 'event' },
-      },
-      description: `Deprecated!: Event triggered every time the editable cells are changed, updating the original rows data`,
-      control: { type: null },
-    },
-    eventScaleSortLegacy: {
-      name: '[event] scaleSort',
-      table: {
-        type: { summary: 'event' },
-      },
-      description: `Deprecated!: Event triggered every time the data is sorted, changing original rows data`,
-      control: { type: null },
-    },
-    eventScaleSort: {
-      name: '[event] scale-sort',
-      table: {
-        type: { summary: 'event' },
-      },
-      description: `Event triggered every time the data is sorted, changing original rows data`,
-      control: { type: null },
-    },
-    eventScaleSelection: {
-      name: '[event] scale-selection',
-      table: {
-        type: { summary: 'event' },
-      },
-      description: `Event triggered every time the selection list updates`,
-      control: { type: null },
-    },
-    slotMenu: {
-      name: '[slot] menu',
-      table: {
-        type: { summary: 'scale-menu-flyout-item' },
-      },
-      description: `Used for adding extra menu items within the settings menu. Note hideMenu must be false`,
-      control: { type: null },
-    },
-    slotDefault: {
-      name: '[slot] default',
-      table: {
-        type: { summary: 'scale-button' },
-      },
-      description: `Used for adding elements into the top section between the heading and the settings menu`,
-      control: { type: null },
-    },
+    }
   }}
 />
 
-export const Template = (args, {}) => ({
+export const Template = (args, { argTypes }) => ({
   components: { ScaleDataGrid },
-  props: {
-    // Ignored, but can't be empty ¯\_(ツ)_/¯
-    unused: {},
-  },
-  template: '',
+  props: ScaleDataGrid.props,
+  template: `
+    <ScaleDataGrid
+      :fields="fields"
+      :rows="rows"
+      :freeze-header="freezeHeader"
+      :visible="visible"
+      :heading="heading"
+      :sortable-column-title="sortableColumnTitle"
+      :height="height"
+      :hide-border="hideBorder"
+      :hide-header="hideHeader"
+      :hide-info="hideInfo"
+      :hide-menu="hideMenu"
+      :numbered="numbered"
+      :page-size="pageSize"
+      :selectable="selectable"
+      :localization="localization"
+      :shade-alternate="shadeAlternate"
+      :styles="styles"
+    >
+    </ScaleDataGrid>
+  `
 });
 
 <div
@@ -229,46 +192,90 @@ export const Template = (args, {}) => ({
 
 <ArgsTable story="Standard" />
 
-<Canvas withSource="close">
-  <Story name="Standard">
-    {`<content>
-    <scale-data-grid heading="Default" id="default-example"></scale-data-grid>
-    <script type="application/javascript">
-    {
-        const dataGrid = document.querySelector('#default-example');
-        dataGrid.fields = [
-            {
-                type: 'number',
-                label: 'ID',
-            },
-            {
-                type: 'text',
-                label: 'Name',
-                sortable: true,
-            },
-            {
-                type: 'date',
-                label: 'Time',
-                stretchWeight: 1,
-            },
-        ];
-        dataGrid.rows = [
-            [1, 'John', '12:30'],
-            [2, 'Mary', '2:12'],
-            [3, 'Patek', '16:01'],
-            [4, 'Heidi', '3:15'],
-            [5, 'Muhammad', '21:45'],
-        ];
-        dataGrid.localization = {
-          sortBy: 'Sort By',
-          toggle: 'Toogle Visibility',
-          select: 'Select / Deselect All'
-        }
-    }
-    </script>
-</content>`}
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      heading: 'Default',
+      fields: [
+        {
+          type: 'number',
+          label: 'ID',
+        },
+        {
+          type: 'text',
+          label: 'Name',
+          sortable: true,
+        },
+        {
+          type: 'date',
+          label: 'Time',
+          stretchWeight: 1,
+        },
+      ],
+      rows: [
+        [1, 'John', '12:30'],
+        [2, 'Mary', '2:12'],
+        [3, 'Patek', '16:01'],
+        [4, 'Heidi', '3:15'],
+        [5, 'Muhammad', '21:45'],
+      ],
+      localization: {
+        sortBy: 'Sort By',
+        toggle: 'Toogle Visibility',
+        select: 'Select / Deselect All'
+      }
+    }}
+  >
+    {Template.bind({})}
   </Story>
 </Canvas>
+
+```html
+<scale-data-grid
+  heading="Default"
+  :fields="fields"
+  :rows="rows"
+  :localization="localization"
+  @scale-edit="handleEdit"
+  @scale-sort="handleSort"
+  @scale-selection="handleSelection"
+></scale-data-grid>
+
+<script>
+        dataGrid.fields = [
+  {
+    type: 'number',
+    label: 'ID',
+  },
+  {
+    type: 'text',
+    label: 'Name',
+    sortable: true,
+  },
+  {
+    type: 'date',
+    label: 'Time',
+    stretchWeight: 1,
+  },
+];
+        dataGrid.rows = [
+  [1, 'John', '12:30'],
+  [2, 'Mary', '2:12'],
+  [3, 'Patek', '16:01'],
+  [4, 'Heidi', '3:15'],
+  [5, 'Muhammad', '21:45'],
+];
+        dataGrid.localization = {
+  sortBy: 'Sort By',
+  toggle: 'Toogle Visibility',
+  select: 'Select / Deselect All'
+      }
+    }
+</script>
+```
 
 ## Fields Structure
 

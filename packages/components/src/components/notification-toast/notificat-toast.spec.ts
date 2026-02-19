@@ -10,7 +10,6 @@
  */
 
 import { newSpecPage } from '@stencil/core/testing';
-// import { remove } from 'lodash';
 import { NotificationToast } from './notification-toast';
 
 describe('NotificationToast ', () => {

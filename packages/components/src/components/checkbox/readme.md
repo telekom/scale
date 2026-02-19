@@ -29,10 +29,9 @@
 
 ## Events
 
-| Event          | Description                                                                                        | Type               |
-| -------------- | -------------------------------------------------------------------------------------------------- | ------------------ |
-| `scale-change` | Emitted when the value has changed.                                                                | `CustomEvent<any>` |
-| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<any>` |
+| Event          | Description                         | Type               |
+| -------------- | ----------------------------------- | ------------------ |
+| `scale-change` | Emitted when the value has changed. | `CustomEvent<any>` |
 
 
 ## Shadow Parts

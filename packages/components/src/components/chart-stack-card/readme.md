@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type                                                            | Default     |
-| --------- | --------- | ----------- | --------------------------------------------------------------- | ----------- |
-| `data`    | `data`    | Chart Data  | `Record<"type" \| "value" \| "percentage", string>[] \| string` | `undefined` |
-| `heading` | `heading` | Chart Title | `string`                                                        | `undefined` |
+| Property  | Attribute | Description                                                          | Type                                 | Default     |
+| --------- | --------- | -------------------------------------------------------------------- | ------------------------------------ | ----------- |
+| `data`    | `data`    | Chart Data (`[{ type: string, value: string, percentage: string }]`) | `ChartStackCardDataItem[] \| string` | `undefined` |
+| `heading` | `heading` | Chart Title                                                          | `string`                             | `undefined` |
 
 
 ## Dependencies

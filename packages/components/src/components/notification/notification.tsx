@@ -25,7 +25,7 @@ import { animationsFinished } from '../../utils/utils';
 
 const ICON_SIZE = 20;
 
-type CloseEventTrigger = 'CLOSE_BUTTON' | 'ATTRIBUTE' | 'TIMEOUT';
+export type CloseEventTrigger = 'CLOSE_BUTTON' | 'ATTRIBUTE' | 'TIMEOUT';
 
 export interface BeforeCloseEventDetail {
   trigger: CloseEventTrigger;

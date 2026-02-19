@@ -72,7 +72,7 @@ Nun solltest du in der Lage sein, Scale-Komponenten in deinen Templates zu verwe
 
 ## Events in Angular
 
-Um Konflikte mit Standard-Events zu vermeiden und für bessere Kompatibilität mit anderen Libraries und Frameworks, sind Custom Events mit dem Prefix `scale` gekennzeichnet. Event-Namen werden in kebab-case-Syntax geschrieben (z.B. `scale-change`). Beachte, dass die Events vor v3 im сamelCase geschrieben wurden (z.B. `scaleChange`). Diese sind jetzt veraltet, aber noch verfügbar, um die Abwärtskompatibilität zu gewährleisten. Für die neuesten Komponenten gelten nur noch Events im kebab-case. Die Dokumentation zu Custom Events findest du auf den entsprechenden Komponentenseiten im Abschnitt "Docs".
+Um Konflikte mit Standard-Events zu vermeiden und für bessere Kompatibilität mit anderen Libraries und Frameworks, sind Custom Events mit dem Prefix `scale` gekennzeichnet. Event-Namen werden in kebab-case-Syntax geschrieben (z.B. `scale-change`). Beachte, dass die Events vor v3 im сamelCase geschrieben wurden (z.B. `scaleChange`). Diese sind mittlerweile veraltet und auch in der neuesten Version von Scale nicht mehr verfügbar. Für die neuesten Komponenten gelten nur noch Events im kebab-case. Die Dokumentation zu Custom Events findest du auf den entsprechenden Komponentenseiten im Abschnitt "Docs".
 
 An Events mit dem Prefix `scale` kannst du reguläre Angular-Syntax anbinden:
 

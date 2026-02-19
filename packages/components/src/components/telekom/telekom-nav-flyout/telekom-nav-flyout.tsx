@@ -11,10 +11,10 @@
 
 import {
   Component,
-  h,
-  Host,
   Element,
   Event,
+  h,
+  Host,
   Listen,
   Method,
   Prop,
@@ -23,7 +23,7 @@ import {
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import cx from 'classnames';
-import { emitEvent, animationsFinished } from '../../../utils/utils';
+import { animationsFinished, emitEvent } from '../../../utils/utils';
 
 /*
 TODO add something like this with a better-named prop defaulting to false
@@ -176,7 +176,7 @@ export class TelekomNavItem {
       await animationsFinished(this.hostElement.shadowRoot);
       this.animationState = undefined;
       this.triggerElement.setAttribute('aria-expanded', 'true');
-      emitEvent(this, 'scaleExpanded', { expanded: true });
+      emitEvent(this, 'scale-expanded', { expanded: true });
     });
   }
 
@@ -188,7 +188,7 @@ export class TelekomNavItem {
       this.animationState = undefined;
       this.isExpanded = false;
       this.triggerElement.setAttribute('aria-expanded', 'false');
-      emitEvent(this, 'scaleExpanded', { expanded: false });
+      emitEvent(this, 'scale-expanded', { expanded: false });
     });
   }
 

@@ -1,0 +1,198 @@
+:host {
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --height: var(--telekom-spacing-composition-space-13);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-disabled: none;
+  --background-hover: var(--telekom-color-ui-state-fill-hovered);
+  --border: var(--telekom-spacing-composition-space-01) solid
+    var(--telekom-color-ui-border-standard);
+  --border-color-hover: var(--telekom-color-ui-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-border-hovered);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --border-invalid: var(--telekom-spacing-composition-space-02) solid
+    var(--telekom-color-functional-danger-hovered);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
+  --spacing-x: var(--telekom-spacing-composition-space-05);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --radius: var(--telekom-radius-standard);
+
+  /* control padding: 18px 32px 4px 12px (subtracting 1px from border) */
+  --spacing-control: 1.125rem
+    calc(2rem - var(--telekom-spacing-composition-space-01)) 0.25rem
+    calc(0.75rem - var(--telekom-spacing-composition-space-01));
+
+  /*label*/
+  --color-label: var(--telekom-color-text-and-icon-additional);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+
+  /*listbox*/
+  --background-listbox: var(--telekom-color-background-surface);
+  --box-shadow-listbox: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  --max-height-listbox: 300px;
+  --z-index-listbox: 99;
+
+  /*option*/
+  --background-option-highlighted: var(--telekom-color-ui-state-fill-hovered);
+  --color-option-highlighted: var(--telekom-color-text-and-icon-standard);
+}
+
+.combobox-container {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.combobox-wrapper {
+  position: relative;
+}
+
+.combobox-label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-label);
+  z-index: var(--z-index-label);
+  pointer-events: none;
+  font: var(--telekom-text-style-ui);
+  transition: var(--transition-label);
+  transform: translate(var(--spacing-x), 0.875rem);
+  width: calc(100% - var(--spacing-x) * 2);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.animated .combobox-label {
+  font: var(--telekom-text-style-small-bold);
+  transform: translate(
+    var(--spacing-x),
+    calc(0.25rem + var(--telekom-spacing-composition-space-01))
+  );
+}
+
+.combobox-input {
+  width: 100%;
+  height: var(--height);
+  margin: 0;
+  padding: var(--spacing-control);
+  box-sizing: border-box;
+  font: var(--telekom-text-style-body);
+  border-radius: var(--radius);
+  border: var(--border);
+  background-color: var(--telekom-color-ui-state-fill-standard);
+  color: var(--color);
+  outline: none;
+  transition: var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.combobox-input::placeholder {
+  color: transparent;
+  transition: var(--transition);
+}
+
+.combobox-input:hover:not(:disabled) {
+  border-color: var(--border-color-hover);
+  background-color: var(--background-hover);
+}
+
+.combobox-input:focus:not(:disabled) {
+  border-color: var(--border-color-focus);
+  outline: var(--focus-outline);
+  outline-offset: 1px;
+}
+
+.combobox-input:focus::placeholder {
+  color: var(--telekom-color-text-and-icon-additional);
+}
+
+.combobox-input:disabled {
+  cursor: not-allowed;
+  border-color: var(--border-color-disabled);
+  color: var(--color-disabled);
+  background-color: var(--background-disabled);
+}
+
+.combobox-container.combobox-invalid .combobox-input {
+  border: var(--border-invalid);
+}
+
+.combobox-container.combobox-disabled .combobox-input {
+  opacity: 0.6;
+}
+
+[part='listbox-pad'] {
+  position: fixed;
+  z-index: var(--z-index-listbox);
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+[part='listbox'] {
+  position: relative;
+  width: 100%;
+  background-color: var(--background-listbox);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow-listbox);
+  max-height: var(--max-height-listbox);
+  overflow-y: auto;
+  overflow-x: hidden;
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+[part='option'] {
+  padding: var(--spacing-x);
+  cursor: pointer;
+  color: var(--color);
+  font: var(--telekom-text-style-body);
+  transition: var(--transition);
+}
+
+[part='option']:hover {
+  background-color: var(--background-option-highlighted);
+  color: var(--color-option-highlighted);
+}
+
+.combobox-option-highlighted {
+  background-color: var(--background-option-highlighted);
+  color: var(--color-option-highlighted);
+}
+
+.combobox-helper-text {
+  margin-top: var(--telekom-spacing-composition-space-02);
+  color: var(--telekom-color-text-and-icon-additional);
+  font-size: var(--telekom-text-style-small);
+  display: block;
+}
+
+.combobox-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--telekom-spacing-composition-space-03);
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+.combobox-meta scale-helper-text {
+  --color-informational: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+  --color-warning: var(--telekom-color-text-and-icon-functional-warning);
+  --color-danger: var(--telekom-color-text-and-icon-functional-danger);
+  --color-success: var(--telekom-color-text-and-icon-functional-success);
+  --color-neutral: var(--telekom-color-text-and-icon-additional);
+  --font-size: var(--telekom-typography-font-size-small);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --line-height: 1.35;
+  --icon-size-helper-text: 11px;
+  font-weight: var(--telekom-typography-font-weight-bold);
+  display: flex;
+}

@@ -81,7 +81,7 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
   <div style="padding: 20px 0 20px 0;">
-    <scale-text-field
+    <ScaleTextField
       :name="name"
       :type="type"
       :input-mode-type="inputModeType"
@@ -105,20 +105,9 @@ export const Template = (args, { argTypes }) => ({
       :input-autocomplete="inputAutocomplete"
       :experimental-controlled="experimentalControlled"
       :hide-label-visually="hideLabelVisually"
-      @scaleChange="scaleChange"
-      @scaleFocus="scaleFocus"
-      @scaleBlur="scaleBlur"
-      @scaleKeyDown="scaleKeyDown"
-    ></scale-text-field>
+    ></ScaleTextField>
     </div>
-  `,
-  methods: {
-    scaleChange: action('scaleChange'),
-    scaleFocus: action('scaleFocus'),
-    scaleBlur: action('scaleBlur'),
-    scaleKeyDown: action('scaleKeyDown'),
-  },
-});
+  `});
 
 export const StorySectionsTemplate = (args, { argTypes }) => ({
   components: { ScaleTextField },
@@ -127,7 +116,7 @@ export const StorySectionsTemplate = (args, { argTypes }) => ({
     ...ScaleTextField.props,
   },
   template: `
-    <scale-text-field
+    <ScaleTextField
       :name="name"
       :type="type"
       :input-mode-type="inputModeType"
@@ -149,18 +138,8 @@ export const StorySectionsTemplate = (args, { argTypes }) => ({
       :input-autofocus="inputAutofocus"
       :input-autocomplete="inputAutocomplete"
       :experimental-controlled="experimentalControlled"
-      @scaleChange="scaleChange"
-      @scaleFocus="scaleFocus"
-      @scaleBlur="scaleBlur"
-      @scaleKeyDown="scaleKeyDown"
-    ></scale-text-field>
-  `,
-  methods: {
-    scaleChange: action('scaleChange'),
-    scaleFocus: action('scaleFocus'),
-    scaleBlur: action('scaleBlur'),
-    scaleKeyDown: action('scaleKeyDown'),
-  },
+    ></ScaleTextField>
+  `
 });
 
 <div

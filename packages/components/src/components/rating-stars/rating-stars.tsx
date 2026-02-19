@@ -11,15 +11,15 @@
 
 import {
   Component,
-  h,
-  Prop,
-  Host,
   Element,
   Event,
   EventEmitter,
+  h,
+  Host,
+  Prop,
 } from '@stencil/core';
-import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 export interface StarInterface extends HTMLDivElement {
   dataset: {
@@ -70,8 +70,6 @@ export class RatingStars {
 
   /** Emitted when the rating has changed */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   componentWillRender() {
     // make sure the deprecated props overwrite the actual ones if used
@@ -135,7 +133,7 @@ export class RatingStars {
 
     this.rating = Number(input.value);
 
-    emitEvent(this, 'scaleChange', { value: this.rating });
+    emitEvent(this, 'scale-change', { value: this.rating });
   };
 
   handleStarClick = (ev: MouseEvent) => {
@@ -151,7 +149,7 @@ export class RatingStars {
     } else {
       this.rating = starValue;
     }
-    emitEvent(this, 'scaleChange', { value: this.rating });
+    emitEvent(this, 'scale-change', { value: this.rating });
   };
 
   renderStar(index: number, selected = false, rating: number) {

@@ -13,6 +13,7 @@ export default {
     rel: { type: String, default: null },
     target: { type: String, default: null },
     type: { type: String, default: null },
+    withIcon: { type: Boolean, default: false },
     innerTabindex: Number,
   },
   render() {

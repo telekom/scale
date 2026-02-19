@@ -2,33 +2,33 @@
 
 exports[`Divider should handle style 1`] = `
 <scale-divider styles="color:blue;">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <style>
       color:blue;
     </style>
     <div aria-hidden="true" class="divider" part="base">
       <hr class="divider__horizontal" part="rule-horizontal">
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-divider>
 `;
 
 exports[`Divider should match snapshot 1`] = `
 <scale-divider>
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div aria-hidden="true" class="divider" part="base">
       <hr class="divider__horizontal" part="rule-horizontal">
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-divider>
 `;
 
 exports[`Divider should match snapshot when horizontal false 1`] = `
 <scale-divider vertical="true">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div aria-hidden="true" class="divider divider--vertical" part="base vertical">
       <span class="divider__vertical" part="rule-vertical"></span>
     </div>
-  </mock:shadow-root>
+  </template>
 </scale-divider>
 `;

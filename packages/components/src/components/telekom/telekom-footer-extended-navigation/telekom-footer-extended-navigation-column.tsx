@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Element } from '@stencil/core';
+import { Component, Element, h, Host } from '@stencil/core';
 import { HTMLStencilElement, Prop } from '@stencil/core/internal';
 import cx from 'classnames';
 // import { emitEvent } from '../../../utils/utils';
@@ -29,7 +29,7 @@ export class TelekomFooterExtendedNavigationColumn {
 
   handleClick = () => {
     this.expanded = !this.expanded;
-    // emitEvent(this, 'scaleExpand', { expanded: this.expanded });
+    // emitEvent(this, 'scale-expand', { expanded: this.expanded });
   };
 
   render() {

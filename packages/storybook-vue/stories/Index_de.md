@@ -5,6 +5,11 @@
 <br/>
 <br/>
 
+### Update Februar 2026
+
+Mit dem neuen Release modernisieren wir die zugrunde liegenden Scale-Frameworks (StencilJS), unsere Node-Umgebung und weitere Abhängigkeiten. Damit kommen lang erwartete Deprecations, besonders bei Event-Namen. Das bedeutet auch, dass Nutzer neuerer React-Versionen Scale wieder ohne Peer-Dependency-Probleme einsetzen können.
+Mehr Details findet ihr in den Release-Change-Logs.
+
 ### Wir, das Team, das das Scale Design System entwickelt hat, möchten einige spannende Neuigkeiten mit Euch teilen.
 
 Nach vielen Jahren, in denen Scale von einem sehr kleinen Team aufgebaut wurde, **haben wir nun die Möglichkeit, einen großen Schritt vorwärts zu machen.**

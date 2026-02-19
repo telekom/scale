@@ -14,7 +14,7 @@ describe.skip('Callout', () => {
       ['large-and-small'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-callout--${variant}`);
-      await global.page.waitFor(500);
+      await global.page.waitForTimeout(500);
       await global.visualCheck();
     });
   });
