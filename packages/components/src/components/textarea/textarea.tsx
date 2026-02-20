@@ -80,6 +80,8 @@ export class Textarea {
   @Prop() styles?: string;
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
+  /** (optional) Visually hide the label (remains accessible to screen readers) */
+  @Prop() hideLabelVisually?: boolean = false;
 
   /** (optional) data-qa attribute for e2e testing */
   @Prop() dataQa?: string;
@@ -181,9 +183,16 @@ export class Textarea {
             }
           >
             {/* Accessibility: label should be always *before* the actual input */}
-            <label class="textarea__label" htmlFor={this.inputId}>
+            <label
+              class={classNames(
+                'textarea__label',
+                this.hideLabelVisually && 'textarea__label--visually-hidden'
+              )}
+              htmlFor={this.inputId}
+            >
               {this.label}
             </label>
+
             <textarea
               class="textarea__control"
               style={!!this.resize && { resize: this.resize }}
