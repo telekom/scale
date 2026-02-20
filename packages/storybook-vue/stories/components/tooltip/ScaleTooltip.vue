@@ -10,6 +10,10 @@
       :flip="flip"
       :arrow-offset="arrowOffset"
       :arrow-padding="arrowPadding"
+      @scale-show="scaleShow"
+      @scale-before-show="scaleBeforeShow"
+      @scale-before-hide="scaleBeforeHide"
+      @scale-hide="scaleHide"
     >
       <slot name="content"></slot>
       <scale-button :disabled="disabled">Hover me</scale-button>
@@ -18,6 +22,7 @@
 </template>
 
 <script>
+import { action } from "@storybook/addon-actions";
 export default {
   props: {
     content: { type: String },
@@ -32,20 +37,20 @@ export default {
     styles: String,
   },
   methods: {
-    'scale-show'($event) {
-      action('scale-show');
+    scaleShow($event) {
+      action('scale-show')($event);
       this.$emit('scale-show', $event);
     },
-    'scale-before-show'($event) {
-      action('scale-before-show');
+    scaleBeforeShow($event) {
+      action('scale-before-show')($event);
       this.$emit('scale-before-show', $event);
     },
-    'scale-before-hide'($event) {
-      action('scale-before-hide');
+    scaleBeforeHide($event) {
+      action('scale-before-hide')($event);
       this.$emit('scale-before-hide', $event);
     },
-    'scale-hide'($event) {
-      action('scale-hide');
+    scaleHide($event) {
+      action('scale-hide')($event);
       this.$emit('scale-hide', $event);
     },
   },

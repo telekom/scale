@@ -7,7 +7,7 @@
     :checked="checked"
     :size="size"
     :styles="styles"
-    @scaleChange="scaleChange"
+    @scale-change="scaleChange"
     style="--color-on: blue"
   >
   </scale-switch>
@@ -28,11 +28,7 @@ export default {
   },
   methods: {
     scaleChange($event) {
-      action('scaleChange');
-      this.$emit('scaleChange', $event);
-    },
-    'scale-change'($event) {
-      action('scale-change');
+      action('scale-change')($event.detail);
       this.$emit('scale-change', $event);
     },
   },

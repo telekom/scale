@@ -11,6 +11,7 @@
 | --------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------ | ----------- |
 | `ariaDetailsId` | `aria-details-id` | (optional) id or space separated list of ids of elements that provide or link to additional related information. | `string`           | `undefined` |
 | `checked`       | `checked`         | (optional) Input checked                                                                                         | `boolean`          | `false`     |
+| `dataQa`        | `data-qa`         | (optional) data-qa attribute for e2e testing                                                                     | `string`           | `undefined` |
 | `disabled`      | `disabled`        | (optional) Input disabled                                                                                        | `boolean`          | `undefined` |
 | `helperText`    | `helper-text`     | (optional) Input helper text                                                                                     | `string`           | `''`        |
 | `inputId`       | `input-id`        | (optional) Input checkbox id                                                                                     | `string`           | `undefined` |
@@ -24,10 +25,9 @@
 
 ## Events
 
-| Event          | Description                                                                                        | Type                                  |
-| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| `scale-change` |                                                                                                    | `CustomEvent<InputChangeEventDetail>` |
-| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<InputChangeEventDetail>` |
+| Event          | Description | Type                                  |
+| -------------- | ----------- | ------------------------------------- |
+| `scale-change` |             | `CustomEvent<InputChangeEventDetail>` |
 
 
 ## Dependencies

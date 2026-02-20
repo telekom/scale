@@ -11,13 +11,13 @@
 
 import {
   Component,
-  Prop,
+  Element,
+  Event,
+  EventEmitter,
   h,
   Host,
   Method,
-  Event,
-  EventEmitter,
-  Element,
+  Prop,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -47,10 +47,6 @@ export class MenuFlyoutItem {
 
   /** Event triggered when menu item selected */
   @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter<{
-    item: HTMLElement;
-  }>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleSelect' }) scaleSelectLegacy: EventEmitter<{
     item: HTMLElement;
   }>;
 
@@ -88,7 +84,7 @@ export class MenuFlyoutItem {
       originalEvent: event,
     };
 
-    emitEvent(this, 'scaleSelect', detail);
+    emitEvent(this, 'scale-select', detail);
   }
 
   connectedCallback() {

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Combobox Component Examples</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+
+    <style>
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 40px;
+      }
+
+      .example {
+        margin-bottom: 4rem;
+        padding: 2rem;
+        background: #222;
+        border-radius: 0.5rem;
+        max-width: 30rem;
+        /* To check if dropdown of the combobox works correctly */
+        overflow: hidden;
+      }
+
+      scale-combobox {
+        display: block;
+        margin-bottom: 1.5rem;
+      }
+
+      .description {
+        color: #ddd;
+      }
+
+      @media (prefers-color-scheme: light) {
+        .example {
+          background: #eee;
+        }
+
+        .description {
+          color: #555;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Scale Combobox Component</h1>
+
+    <!-- Basic Example -->
+    <div class="example">
+      <h2>Basic Combobox</h2>
+      <p class="description">
+        Select from predefined options or type a custom value.
+      </p>
+      <scale-combobox
+        id="basic-combobox"
+        label="Select a framework"
+        placeholder="Type or select..."
+      ></scale-combobox>
+    </div>
+
+    <!-- Example with Helper Text -->
+    <div class="example">
+      <h2>Combobox with Helper Text</h2>
+      <p class="description">Use helper text to provide additional guidance.</p>
+      <scale-combobox
+        id="helper-combobox"
+        label="Choose a color"
+        placeholder="Select a color..."
+        helper-text="Choose from available colors or enter a custom color code"
+      ></scale-combobox>
+    </div>
+
+    <!-- Disabled Example -->
+    <div class="example">
+      <h2>Disabled Combobox</h2>
+      <p class="description">A disabled combobox cannot be interacted with.</p>
+      <scale-combobox
+        id="disabled-combobox"
+        label="Disabled field"
+        placeholder="This is disabled"
+        disabled
+      ></scale-combobox>
+    </div>
+
+    <!-- Invalid Example -->
+    <div class="example">
+      <h2>Invalid Combobox</h2>
+      <p class="description">Show invalid state for validation errors.</p>
+      <scale-combobox
+        id="invalid-combobox"
+        label="Email provider"
+        placeholder="Select or enter..."
+        invalid
+        helperText="Please select a valid option"
+      ></scale-combobox>
+      <div>
+        <input type="checkbox" id="toggle-invalid" checked="true" />
+        <label for="toggle-invalid"> Toggle Invalid State </label>
+      </div>
+    </div>
+
+    <!-- Custom entry Example -->
+    <div class="example">
+      <h2>Combobox with Custom allowed</h2>
+
+      <scale-combobox
+        id="custom-allowed-combobox"
+        label="Select a framework"
+        placeholder="Type or select..."
+        allow-custom
+      ></scale-combobox>
+    </div>
+
+    <!-- Custom Filtering Example -->
+    <div class="example">
+      <h2>Combobox with Custom Filtering</h2>
+      <p class="description">
+        Implement custom filtering logic to control which options are displayed.
+      </p>
+      <scale-combobox
+        id="custom-filter-combobox"
+        label="Select a framework"
+        placeholder="Type or select..."
+      ></scale-combobox>
+    </div>
+
+    <script>
+      // Framework options
+      const frameworks = [
+        'React',
+        'Vue',
+        'Angular',
+        'Svelte',
+        'Ember',
+        'Next.js',
+        'Nuxt',
+        'Gatsby',
+      ];
+
+      const basicCombobox = document.getElementById('basic-combobox');
+      basicCombobox.options = frameworks;
+      basicCombobox.addEventListener('scaleChange', (e) => {
+        console.log('Basic combobox changed:', e.detail.value);
+      });
+
+      // Color options
+      const colors = ['Red', 'Blue', 'Green', 'Yellow', 'Purple', 'Orange'];
+      const helperCombobox = document.getElementById('helper-combobox');
+      helperCombobox.options = colors;
+      helperCombobox.addEventListener('scaleChange', (e) => {
+        console.log('Color combobox changed:', e.detail.value);
+      });
+
+      // Email providers
+      const providers = [
+        'gmail.com',
+        'outlook.com',
+        'yahoo.com',
+        'icloud.com',
+        'proton.me',
+      ];
+      const invalidCombobox = document.getElementById('invalid-combobox');
+      invalidCombobox.options = providers;
+      invalidCombobox.addEventListener('scaleChange', (e) => {
+        console.log('Email combobox changed:', e.detail.value);
+      });
+      // Toggle invalid state
+      const toggleInvalid = document.getElementById('toggle-invalid');
+      toggleInvalid.addEventListener('change', (e) => {
+        invalidCombobox.invalid = e.target.checked;
+      });
+
+      // Disabled combobox setup
+      const disabledCombobox = document.getElementById('disabled-combobox');
+      disabledCombobox.options = ['Option 1', 'Option 2', 'Option 3'];
+
+      // Custom allowed combobox setup
+      const customAllowedCombobox = document.getElementById(
+        'custom-allowed-combobox'
+      );
+      customAllowedCombobox.options = frameworks;
+      customAllowedCombobox.addEventListener('scaleChange', (e) => {
+        console.log('Custom allowed combobox changed:', e.detail.value);
+      });
+      // Custom filter combobox setup
+      const customFilterCombobox = document.getElementById(
+        'custom-filter-combobox'
+      );
+      customFilterCombobox.options = frameworks;
+      customFilterCombobox.filterFunction = (option, query) =>
+        option.toLowerCase().startsWith(query.toLowerCase());
+
+      customFilterCombobox.addEventListener('scaleChange', (e) => {
+        console.log('Custom filter combobox changed:', e.detail.value);
+      });
+    </script>
+  </body>
+</html>

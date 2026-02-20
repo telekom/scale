@@ -123,14 +123,11 @@ describe('Slider', () => {
       html: `<scale-slider></scale-slider>`,
     });
     const inputSpy = jest.fn();
-    const inputSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-input', inputSpy);
-    page.doc.addEventListener('scaleInput', inputSpyLegacy);
     const element = page.root.shadowRoot.querySelector('[part="thumb"]');
     element.dispatchEvent(new Event('keydown'));
     await page.waitForChanges();
     expect(inputSpy).toHaveBeenCalled();
-    expect(inputSpyLegacy).toHaveBeenCalled();
   });
 
   it('keydown [part="thumb"] with ArrowUp', async () => {

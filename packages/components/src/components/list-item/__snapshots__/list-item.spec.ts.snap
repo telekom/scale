@@ -2,14 +2,14 @@
 
 exports[`ListItem should match snapshot 1`] = `
 <scale-list-item role="listitem">
-  <mock:shadow-root>
+  <template shadowrootmode="open">
     <div class="list-item list-item--unordered" part="base unordered">
       <slot></slot>
       <div class="list-item__nested-list" hidden="" part="nested-list">
         <slot name="nested"></slot>
       </div>
     </div>
-  </mock:shadow-root>
+  </template>
   default
 </scale-list-item>
 `;

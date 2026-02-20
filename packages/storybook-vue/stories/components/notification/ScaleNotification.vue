@@ -18,7 +18,8 @@ export default {
     closeButtonLabel: { type: String },
     closeButtonTitle: { type: String },
     styles: { type: String },
-    ariaHeading: { type: String }  
+    ariaHeading: { type: String },  
+    headingLevel: { type: Number, default: 2 },
   },
   render() {
     return this.$slots.default

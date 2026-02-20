@@ -51,22 +51,22 @@ export class TelekomMobileMenuItem {
     const hasLinkNoChildren = hasLink && !this.children.length;
 
     if (hasLinkNoChildren) {
-      emitEvent(this, 'scaleCloseNavFlyout', e);
-      return emitEvent(this, 'scaleSetMenuItemActive', e.detail);
+      emitEvent(this, 'scale-close-nav-flyout', e);
+      return emitEvent(this, 'scale-set-menu-item-active', e.detail);
     }
 
     const hasLinkAndChildrenAndOpen =
       hasLink && this.children.length && this.open;
     if (hasLinkAndChildrenAndOpen) {
-      emitEvent(this, 'scaleCloseNavFlyout', e);
-      return emitEvent(this, 'scaleSetMenuItemActive', e.detail);
+      emitEvent(this, 'scale-close-nav-flyout', e);
+      return emitEvent(this, 'scale-set-menu-item-active', e.detail);
     }
 
     // EITHER hos link and children - ready to expand children without firing the link click
     // OR no link but has children
     e.preventDefault();
     this.toggleChildrenVisibility(true);
-    return emitEvent(this, 'scaleSetMenuItemOpen', e.detail);
+    return emitEvent(this, 'scale-set-menu-item-open', e.detail);
   };
 
   get children(): NodeListOf<HTMLElement> | null {

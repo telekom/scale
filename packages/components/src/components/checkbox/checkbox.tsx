@@ -18,8 +18,8 @@ import {
   Host,
   Prop,
 } from '@stencil/core';
-import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
 export interface CheckboxInterface extends HTMLElement {
   checked: boolean;
@@ -68,10 +68,11 @@ export class Checkbox {
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
 
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   /** Emitted when the value has changed. */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   private readonly internalId = generateUniqueId();
 
@@ -107,7 +108,12 @@ export class Checkbox {
 
     const { checked, indeterminate, value, disabled } = this;
 
-    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled });
+    emitEvent(this, 'scale-change', {
+      checked,
+      indeterminate,
+      value,
+      disabled,
+    });
   };
 
   connectedCallback() {
@@ -196,6 +202,7 @@ export class Checkbox {
           disabled={this.disabled}
           required={this.required}
           onChange={this.handleChange}
+          {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
         />
         <label part="container" htmlFor={this.inputId}>
           <span part="checkbox">{this.renderIcon()}</span>

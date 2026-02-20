@@ -12,7 +12,7 @@
     :aria-label-previous-page="ariaLabelPreviousPage"
     :aria-label-next-page="ariaLabelNextPage"
     :styles="styles"
-    @scalePagination="scalePagination"
+    @scale-pagination="scalePagination"
   >
   </scale-pagination>
 </template>
@@ -36,11 +36,7 @@ export default {
   },
   methods: {
     scalePagination($event) {
-      action('scalePagination');
-      this.$emit('scalePagination', $event);
-    },
-    'scale-pagination'($event) {
-      action('scale-pagination');
+      action('scale-pagination')($event.detail);
       this.$emit('scale-pagination', $event);
     },
   },

@@ -11,20 +11,20 @@
 
 import {
   Component,
-  Prop,
-  Event,
-  h,
-  EventEmitter,
-  Host,
-  State,
   Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Prop,
+  State,
 } from '@stencil/core';
-import classNames from 'classnames';
 import { HTMLStencilElement } from '@stencil/core/internal';
-import { emitEvent, generateUniqueId } from '../../utils/utils';
+import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
-interface InputChangeEventDetail {
+export interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
@@ -78,29 +78,20 @@ export class Dropdown {
 
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleInput' })
-  scaleInputLegacy!: EventEmitter<KeyboardEvent>;
+
   /** Emitted when the value has changed. */
   @Event({ eventName: 'scale-change' })
   scaleChange!: EventEmitter<InputChangeEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' })
-  scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
+
   /** Emitted when the input has focus. */
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleFocus' }) scaleFocusLegacy!: EventEmitter<void>;
+
   /** Emitted when the input loses focus. */
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
+
   /** Emitted on keydown. */
   @Event({ eventName: 'scale-keydown' })
-  scaleKeyDown!: EventEmitter<KeyboardEvent>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleKeydown' })
-  scaleKeyDownLegacy!: EventEmitter<KeyboardEvent>;
+  scaleKeydown!: EventEmitter<KeyboardEvent>;
 
   /** "forceUpdate" hack, set it to trigger and re-render */
   @State() forceUpdate: string;
@@ -189,7 +180,7 @@ export class Dropdown {
   // because how we keep this.value up-to-date for type="select"
   // `this.value = selectedValue`
   emitChange() {
-    emitEvent(this, 'scaleChange', {
+    emitEvent(this, 'scale-change', {
       value: this.value == null ? this.value : this.value.toString(),
     });
   }
@@ -202,7 +193,7 @@ export class Dropdown {
     const target = event.target as HTMLInputElement | null;
 
     if (this.controlled) {
-      emitEvent(this, 'scaleChange', { value: target.value });
+      emitEvent(this, 'scale-change', { value: target.value });
       this.selectElement.value = String(this.value);
       this.forceUpdate = String(Date.now());
     } else {
@@ -217,7 +208,7 @@ export class Dropdown {
       this.value = target.value || '';
       this.emitChange();
     }
-    emitEvent(this, 'scaleInput', event as KeyboardEvent);
+    emitEvent(this, 'scale-input', event as KeyboardEvent);
   };
 
   handleChange = (event: Event) => {
@@ -229,15 +220,15 @@ export class Dropdown {
   };
 
   handleFocus = () => {
-    emitEvent(this, 'scaleFocus');
+    emitEvent(this, 'scale-focus');
   };
 
   handleBlur = () => {
-    emitEvent(this, 'scaleBlur');
+    emitEvent(this, 'scale-blur');
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
-    emitEvent(this, 'scaleKeyDown', event);
+    emitEvent(this, 'scale-keydown', event);
   };
 
   render() {

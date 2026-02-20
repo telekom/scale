@@ -12,14 +12,16 @@
 import { Component, Element, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import type { ChartStackCardDataItem } from './chart-stack-card.interfaces';
+
 @Component({
   tag: 'scale-chart-stack-card',
   styleUrl: 'chart-stack-card.css',
 })
 export class ChartStackCard {
   @Element() hostElement: HTMLElement;
-  /** Chart Data */
-  @Prop() data: string | Array<Record<'type' | 'value' | 'percentage', string>>;
+  /** Chart Data (`[{ type: string, value: string, percentage: string }]`) */
+  @Prop() data: string | ChartStackCardDataItem[];
   /** Chart Title */
   @Prop() heading: string;
 

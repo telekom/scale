@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.159](https://github.com/telekom/scale/compare/v3.0.0-beta.158...v3.0.0-beta.159) (2026-02-20)
+
+
+### Bug Fixes
+
+* a11y contrast issues in dark mode ([#2458](https://github.com/telekom/scale/issues/2458)) ([e40d54d](https://github.com/telekom/scale/commit/e40d54dfd46b0580f1067e3d31547b79a3bed313))
+* readme build leads to undeterministic results ([#2460](https://github.com/telekom/scale/issues/2460)) ([7fb79f1](https://github.com/telekom/scale/commit/7fb79f1b21c65579e01c1160f10e2923eaf7b1f5))
+* remove disabled attribute when false ([#2390](https://github.com/telekom/scale/issues/2390)) ([#2447](https://github.com/telekom/scale/issues/2447)) ([6d4d9e9](https://github.com/telekom/scale/commit/6d4d9e918956941bb6f3c8094635874d4ceea36b))
+* **date-picker:** Fix date-picker button label localization([#2417](https://github.com/telekom/scale/issues/2417)) ([#2438](https://github.com/telekom/scale/issues/2438)) ([4608fb9](https://github.com/telekom/scale/commit/4608fb9a57e9693cea44fd7d6fe97ce17f765a1e))
+* **text-field:** auto-size textfield height accesability ([#2439](https://github.com/telekom/scale/issues/2439)) ([d6b4d67](https://github.com/telekom/scale/commit/d6b4d676a62c1153418eaef9cbe5c1066330e25c))
+
+
+### Features
+
+* add combobox component ([#2445](https://github.com/telekom/scale/issues/2445)) ([4d64560](https://github.com/telekom/scale/commit/4d64560a65395ce60ac96010528230af5408617e))
+* add data-qa for input fields ([#2451](https://github.com/telekom/scale/issues/2451)) ([361def0](https://github.com/telekom/scale/commit/361def0dabeb5f260b2929a946644bf9c18eac70))
+
+
+
+
+
+
 # [3.0.0-beta.158](https://github.com/telekom/scale/compare/v3.0.0-beta.157...v3.0.0-beta.158) (2025-10-29)
 
 

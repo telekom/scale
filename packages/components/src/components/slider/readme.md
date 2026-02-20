@@ -10,6 +10,7 @@
 | Property             | Attribute               | Description                                                                                                                                                                          | Type                  | Default          |
 | -------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------- | ---------------- |
 | `customColor`        | `custom-color`          | <span style="color:red">**[DEPRECATED]**</span> (optional) slider custom color<br/><br/>                                                                                             | `string`              | `undefined`      |
+| `dataQa`             | `data-qa`               | (optional) data-qa attribute for e2e testing                                                                                                                                         | `string`              | `undefined`      |
 | `decimals`           | `decimals`              | (optional) number of decimal places                                                                                                                                                  | `0 \| 1 \| 2`         | `0`              |
 | `disabled`           | `disabled`              | (optional) disabled                                                                                                                                                                  | `boolean`             | `false`          |
 | `helperText`         | `helper-text`           | (optional) helper text                                                                                                                                                               | `string`              | `undefined`      |
@@ -36,12 +37,10 @@
 
 ## Events
 
-| Event          | Description                                                                                        | Type                  |
-| -------------- | -------------------------------------------------------------------------------------------------- | --------------------- |
-| `scale-change` |                                                                                                    | `CustomEvent<number>` |
-| `scale-input`  |                                                                                                    | `CustomEvent<number>` |
-| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<number>` |
-| `scaleInput`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<number>` |
+| Event          | Description | Type                  |
+| -------------- | ----------- | --------------------- |
+| `scale-change` |             | `CustomEvent<number>` |
+| `scale-input`  |             | `CustomEvent<number>` |
 
 
 ## Shadow Parts

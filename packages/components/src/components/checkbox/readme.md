@@ -12,6 +12,7 @@
 | `ariaDetailsId`     | `aria-details-id`     | (optional) id or space separated list of ids of elements that provide or link to additional related information. | `string`  | `undefined` |
 | `ariaLabelCheckbox` | `aria-label-checkbox` | (optional) Input label output                                                                                    | `string`  | `undefined` |
 | `checked`           | `checked`             | (optional) Active switch                                                                                         | `boolean` | `false`     |
+| `dataQa`            | `data-qa`             | (optional) data-qa attribute for e2e testing                                                                     | `string`  | `undefined` |
 | `disabled`          | `disabled`            | (optional) Input disabled                                                                                        | `boolean` | `false`     |
 | `helperText`        | `helper-text`         | (optional) Input helper text                                                                                     | `string`  | `undefined` |
 | `hideLabel`         | `hide-label`          | (optional) Hides the specified label visually                                                                    | `boolean` | `false`     |
@@ -28,10 +29,9 @@
 
 ## Events
 
-| Event          | Description                                                                                        | Type               |
-| -------------- | -------------------------------------------------------------------------------------------------- | ------------------ |
-| `scale-change` | Emitted when the value has changed.                                                                | `CustomEvent<any>` |
-| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<any>` |
+| Event          | Description                         | Type               |
+| -------------- | ----------------------------------- | ------------------ |
+| `scale-change` | Emitted when the value has changed. | `CustomEvent<any>` |
 
 
 ## Shadow Parts
@@ -42,7 +42,6 @@
 | `"container"`   |             |
 | `"helper-text"` |             |
 | `"icon"`        |             |
-| `"input"`       |             |
 | `"label"`       |             |
 
 

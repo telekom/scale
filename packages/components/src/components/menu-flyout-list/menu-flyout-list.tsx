@@ -11,14 +11,14 @@
 
 import {
   Component,
-  Prop,
-  h,
-  Host,
-  Method,
   Element,
   Event,
   EventEmitter,
+  h,
+  Host,
   Listen,
+  Method,
+  Prop,
   State,
   Watch,
 } from '@stencil/core';
@@ -66,16 +66,8 @@ export class MenuFlyoutList {
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
     list: HTMLElement;
   }>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<{
-    list: HTMLElement;
-  }>;
   /** Event triggered when menu list closed */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<{
-    list: HTMLElement;
-  }>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<{
     list: HTMLElement;
   }>;
 
@@ -120,13 +112,13 @@ export class MenuFlyoutList {
   @Method()
   async open() {
     this.opened = true;
-    emitEvent(this, 'scaleOpen', { list: this.hostElement });
+    emitEvent(this, 'scale-open', { list: this.hostElement });
   }
 
   @Method()
   async close(silent: boolean = false) {
     if (this.active && silent !== true) {
-      emitEvent(this, 'scaleClose', { list: this.hostElement });
+      emitEvent(this, 'scale-close', { list: this.hostElement });
     }
     this.opened = false;
   }

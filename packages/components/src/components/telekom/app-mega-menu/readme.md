@@ -11,9 +11,9 @@
 | --------------- | ----------------- | ----------- | ------------ | ----------- |
 | `active`        | `active`          |             | `boolean`    | `undefined` |
 | `activeRouteId` | `active-route-id` |             | `string`     | `undefined` |
-| `hide`          | --                |             | `() => void` | `undefined` |
+| `hide`          | `hide`            |             | `() => void` | `undefined` |
 | `isActive`      | `is-active`       |             | `boolean`    | `undefined` |
-| `navigation`    | --                |             | `MenuItem[]` | `[]`        |
+| `navigation`    | `navigation`      |             | `MenuItem[]` | `[]`        |
 
 
 ## Dependencies

@@ -10,14 +10,31 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
 <Meta
   title="Components/Checkbox Group"
   component={ScaleCheckboxGroup}
-  argTypes={{}}
+  argTypes={{
+    ariaLabelCheckboxGroup: {
+      control: { type: 'text' },
+    },
+    selectText: {
+      control: { type: 'text' },
+    },
+    unselectText: {
+      control: { type: 'text' },
+    },
+    styles: {
+      control: { type: null },
+    },
+    status: {
+      description: 'DEPRECATED - invalid should replace status',
+      control: { type: null },
+    },
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleCheckboxGroup },
   props: ScaleCheckboxGroup.props,
   template: `
-    <scale-checkbox-group
+    <ScaleCheckboxGroup
       :name="name"
       :label="label"
       :helper-text="helperText"
@@ -29,7 +46,11 @@ export const Template = (args, { argTypes }) => ({
       :input-id="inputId"
       :styles="styles"
       :status="status"
-    ></scale-checkbox-group>
+    >
+      <scale-checkbox label="Checkbox Item 1" name="example" value="1"></scale-checkbox>
+      <scale-checkbox label="Checkbox Item 2" name="example" value="2" checked></scale-checkbox>
+      <scale-checkbox label="Checkbox Item 3" name="example" value="3"></scale-checkbox>
+    </ScaleCheckboxGroup>
   `,
 });
 
@@ -49,17 +70,13 @@ export const Template = (args, { argTypes }) => ({
 
 <Canvas withSource="none">
   <Story 
-    name="Standard" 
-    args={{}}>
-    {() => ({
-      template: `
-        <scale-checkbox-group label="Group Label" name="group" value="">
-          <scale-checkbox  label="Checkbox Item 1" name="example" value="1"></scale-checkbox>
-          <scale-checkbox  label="Checkbox Item 2" name="example" value="2" checked></scale-checkbox>
-          <scale-checkbox  label="Checkbox Item 3" name="example" value="3"></scale-checkbox>
-        </scale-checkbox-group>
-      `,
-    })}
+    name="Standard"
+    args={{
+      label: 'Group Label',
+      name: 'group',
+      value: '',
+    }}>
+    {Template.bind({})}
   </Story>
 </Canvas>
 

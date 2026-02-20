@@ -24,7 +24,7 @@ describe.skip('DropdownSelect', () => {
       const select = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-dropdown-select").shadowRoot.querySelector("#combobox")`
       );
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await select.hover();
       await global.visualCheck();
       await select.focus();

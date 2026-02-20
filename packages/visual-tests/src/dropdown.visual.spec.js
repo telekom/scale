@@ -18,7 +18,8 @@ describe('Dropdown', () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=deprecated-components-dropdown--${variant}&viewMode=story`
       );
-      await page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('#root');
+
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [
@@ -30,7 +31,7 @@ describe('Dropdown', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-      await page.waitFor(1000);
+      await global.page.waitForTimeout(1000);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     // hover, active, focus
@@ -40,7 +41,7 @@ describe('Dropdown', () => {
       const dropdown = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-dropdown .input__dropdown")`
       );
-      await global.page.waitFor(300);
+      await global.page.waitForTimeout(300);
       await dropdown.hover();
       await global.visualCheck();
       await dropdown.focus();

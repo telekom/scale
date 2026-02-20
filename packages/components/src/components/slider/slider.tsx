@@ -11,19 +11,19 @@
 
 import {
   Component,
-  h,
-  State,
-  Prop,
-  Host,
-  Event,
-  Watch,
-  EventEmitter,
   Element,
+  Event,
+  EventEmitter,
   Fragment,
+  h,
+  Host,
+  Prop,
+  State,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent, generateUniqueId } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+import { emitEvent, generateUniqueId } from '../../utils/utils';
 
 @Component({
   tag: 'scale-slider',
@@ -89,18 +89,17 @@ export class Slider {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  /** (optional) data-qa attribute for e2e testing */
+  @Prop() dataQa?: string;
+
   // The actual position in % of the slider thumb
   @State() position: number = 0;
   @State() positionFrom: number = 25;
   @State() positionTo: number = 75;
 
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<number>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter<number>;
 
   @Event({ eventName: 'scale-input' }) scaleInput: EventEmitter<number>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
   private dragging: boolean;
   // Don't know how to make TypeScript handle `this[offsetKey]`
@@ -192,7 +191,7 @@ export class Slider {
     this.setValue(this[valueKey] + steps, valueKey);
     emitEvent(
       this,
-      'scaleChange',
+      'scale-change',
       this.range ? [this.valueFrom, this.valueTo] : this.value
     );
   };
@@ -224,7 +223,7 @@ export class Slider {
     this.dragging = false;
     emitEvent(
       this,
-      'scaleChange',
+      'scale-change',
       this.range ? [this.valueFrom, this.valueTo] : this.value
     );
     this.removeGlobalListeners();
@@ -241,7 +240,7 @@ export class Slider {
     this[valueKey] = this.clamp(nextValue);
     emitEvent(
       this,
-      'scaleInput',
+      'scale-input',
       this.range ? [this.valueFrom, this.valueTo] : this.value
     );
   };
@@ -264,7 +263,6 @@ export class Slider {
     this[positionKey] =
       ((clampedValue - this.min) * 100) / (this.max - this.min);
   };
-
   /**
    * Utility function
    * e.g. 'value' -> 'valueFrom' if `activeRangeThumb='From'`
@@ -405,6 +403,9 @@ export class Slider {
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
                         {...(this.helperText ? ariaDescribedByAttr : {})}
+                        {...(this.dataQa
+                          ? { 'data-qa': `${this.dataQa}-from` }
+                          : {})}
                         onKeyDown={this.onKeyDown}
                       />
                     </div>
@@ -427,6 +428,9 @@ export class Slider {
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
                         {...(this.helperText ? ariaDescribedByAttr : {})}
+                        {...(this.dataQa
+                          ? { 'data-qa': `${this.dataQa}-to` }
+                          : {})}
                         onKeyDown={this.onKeyDown}
                       />
                     </div>
@@ -451,6 +455,7 @@ export class Slider {
                       aria-orientation="horizontal"
                       aria-disabled={this.disabled}
                       {...(this.helperText ? ariaDescribedByAttr : {})}
+                      {...(this.dataQa ? { 'data-qa': this.dataQa } : {})}
                       onKeyDown={this.onKeyDown}
                     />
                   </div>

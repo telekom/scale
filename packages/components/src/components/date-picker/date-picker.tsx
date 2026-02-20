@@ -9,30 +9,30 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
 import {
   Component,
-  h,
-  Prop,
-  Method,
   Element,
   Event,
   EventEmitter,
+  h,
+  Host,
+  Method,
+  Prop,
   State,
   Watch,
-  Host,
 } from '@stencil/core';
-import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
 import statusNote from '../../utils/status-note';
 
+import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
 import {
+  DuetDatePicker,
   DuetDatePickerChangeEvent,
   DuetDatePickerDirection,
   DuetDatePickerFocusEvent,
-  DuetDatePicker,
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
 import classNames from 'classnames';
-import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
-import { emitEvent, generateUniqueId } from '../../utils/utils';
+import { emitEvent, generateUniqueId, type ScaleIcon } from '../../utils/utils';
 
 if (
   typeof window !== 'undefined' &&
@@ -171,29 +171,17 @@ export class DatePicker {
   @Event({ eventName: 'scale-change' })
   scaleChange: EventEmitter<DuetDatePickerChangeEvent>;
 
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' })
-  scaleChangeLegacy: EventEmitter<DuetDatePickerChangeEvent>;
-
   /**
    * Event emitted the date picker input is blurred.
    */
   @Event({ eventName: 'scale-blur' })
   scaleBlur: EventEmitter<DuetDatePickerFocusEvent>;
 
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleBlur' })
-  scaleBlurLegacy: EventEmitter<DuetDatePickerFocusEvent>;
-
   /**
    * Event emitted the date picker input is focused.
    */
   @Event({ eventName: 'scale-focus' })
   scaleFocus: EventEmitter<DuetDatePickerFocusEvent>;
-
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleFocus' })
-  scaleFocusLegacy: EventEmitter<DuetDatePickerFocusEvent>;
 
   private readonly internalId = generateUniqueId();
 
@@ -248,6 +236,17 @@ export class DatePicker {
       input.setAttribute('placeholder', newValue);
     }
   }
+  /**
+   * Watch `localization` for changes and refresh all DOM bits we set manually
+   * (buttonLabel/title, custom heading, weekday abbreviations, "today" suffix, etc.).
+   */
+  @Watch('localization')
+  onLocalizationChange() {
+    if (this.duetInput && this.localization) {
+      (this.duetInput as any).localization = this.localization;
+    }
+    this.updateDomOnLocalizationChange();
+  }
 
   componentWillLoad() {
     if (this.popupTitle !== 'Pick a date') {
@@ -272,7 +271,9 @@ export class DatePicker {
     );
 
     if (calendarIcon) {
-      const icon = document.createElement('scale-icon-content-calendar');
+      const icon = document.createElement(
+        'scale-icon-content-calendar'
+      ) as ScaleIcon;
       icon.size = DEFAULT_ICON_SIZE;
       calendarIcon.replaceWith(icon);
     }
@@ -282,7 +283,7 @@ export class DatePicker {
     if (navLeftIcon) {
       const scaleNavLeftIcon = document.createElement(
         'scale-icon-navigation-left'
-      );
+      ) as ScaleIcon;
       scaleNavLeftIcon.size = 16;
       navLeftIcon.replaceWith(scaleNavLeftIcon);
     }
@@ -292,7 +293,7 @@ export class DatePicker {
     if (navRightIcon) {
       const scaleNavRightIcon = document.createElement(
         'scale-icon-navigation-right'
-      );
+      ) as ScaleIcon;
       scaleNavRightIcon.size = 16;
       navRightIcon.replaceWith(scaleNavRightIcon);
     }
@@ -334,53 +335,10 @@ export class DatePicker {
       input.setAttribute('aria-invalid', 'true');
     }
 
-    // Remove existing <h2> with `{Month} {Year}` text
-    const dialog = this.hostElement.querySelector('.duet-date__dialog');
-    let duetHeadingId: string = '';
-    if (dialog) {
-      duetHeadingId = dialog.getAttribute('aria-labelledby');
-      if (duetHeadingId) {
-        const duetHeading = this.hostElement.querySelector(`#${duetHeadingId}`);
-        if (duetHeading) {
-          duetHeading.parentElement.removeChild(duetHeading);
-        }
-      }
-    }
-
-    // Add custom <h2> heading
-    const dialogContent = this.hostElement.querySelector(
-      '.duet-date__dialog-content'
-    );
-    if (dialogContent) {
-      const calendarHeading =
-        this.localization?.calendarHeading || this.popupTitle || 'Pick a date';
-      const heading = document.createElement('h2');
-      heading.id = duetHeadingId; // link to .duet-date__dialog[aria-labelledby]
-      heading.className = 'scale-date-picker__popup-heading';
-      heading.innerHTML = calendarHeading;
-      dialogContent.insertBefore(heading, dialogContent.firstChild);
-    }
-
-    // truncate table headings to a single character
-    const tableHeadings = this.hostElement.querySelectorAll(
-      '.duet-date__table-header span[aria-hidden="true"]'
-    );
-    if (tableHeadings) {
-      Array.from(tableHeadings).forEach(
-        (item) => (item.innerHTML = item.innerHTML[0])
-      );
-    }
-
-    const today = this.hostElement.querySelector(
-      '.duet-date__day.is-today span.duet-date__vhidden'
-    );
-    if (today) {
-      today.innerHTML = `${today.innerHTML}, ${
-        this.localization?.today || 'today'
-      }`;
-    }
-
     this.adjustButtonsLabelsForA11y();
+
+    // Initialize all localized bits
+    this.updateDomOnLocalizationChange();
   }
 
   componentDidRender() {
@@ -471,15 +429,15 @@ export class DatePicker {
           </label>
           <duet-date-picker
             onDuetChange={(e) => {
-              emitEvent(this, 'scaleChange', e.detail);
+              emitEvent(this, 'scale-change', e.detail);
               this.handleKeyPress(e);
             }}
             onDuetFocus={(e) => {
-              emitEvent(this, 'scaleFocus', e.detail);
+              emitEvent(this, 'scale-focus', e.detail);
               this.hasFocus = true;
             }}
             onDuetBlur={(e) => {
-              emitEvent(this, 'scaleBlur', e.detail);
+              emitEvent(this, 'scale-blur', e.detail);
               this.hasFocus = false;
             }}
             name={this.name}
@@ -508,4 +466,86 @@ export class DatePicker {
       </Host>
     );
   }
+  private updateDomOnLocalizationChange = () => {
+    // Remove Duet’s default <h2> and ensure our custom heading exists/updates
+    const dialog = this.hostElement.querySelector('.duet-date__dialog');
+    const dialogContent = this.hostElement.querySelector(
+      '.duet-date__dialog-content'
+    );
+    if (dialog && dialogContent) {
+      const duetHeadingId = dialog.getAttribute('aria-labelledby') || '';
+      if (duetHeadingId) {
+        const duetHeading = this.hostElement.querySelector<HTMLElement>(
+          '#' + duetHeadingId
+        );
+        if (duetHeading && duetHeading.parentElement) {
+          duetHeading.parentElement.removeChild(duetHeading);
+        }
+      }
+      const calendarHeading =
+        this.localization?.calendarHeading || this.popupTitle || 'Pick a date';
+      let heading = this.hostElement.querySelector<HTMLElement>(
+        '.scale-date-picker__popup-heading'
+      );
+      if (!heading) {
+        heading = document.createElement('h2');
+        if (duetHeadingId) {
+          heading.id = duetHeadingId;
+          heading.className = 'scale-date-picker__popup-heading';
+          dialogContent.insertBefore(heading, dialogContent.firstChild);
+        }
+      }
+      heading.textContent = calendarHeading;
+    }
+
+    // Toggle button (buttonLabel / title / aria-label)
+    const toggleBtn =
+      this.hostElement.querySelector<HTMLButtonElement>('.duet-date__toggle');
+    const btnLabel = (this.localization as any)?.buttonLabel;
+    if (toggleBtn && btnLabel) {
+      toggleBtn.setAttribute('title', btnLabel);
+      toggleBtn.setAttribute('aria-label', btnLabel);
+    }
+
+    // Truncate weekday headings to one character
+    // Update weekday headings based on current localization
+    const short =
+      (this.localization as any)?.weekdays?.shorthand || // Duet format
+      (this.localization as any)?.dayNamesShort || // alternative
+      (this.localization as any)?.dayNames?.map((d: string) => d.slice(0, 1)) ||
+      [];
+
+    // Adjust for firstDayOfWeek (Duet default = Monday = 1)
+    const start = Number.isInteger(this.firstDayOfWeek)
+      ? Number(this.firstDayOfWeek)
+      : 1;
+
+    const ordered =
+      short.length === 7
+        ? [...short.slice(start), ...short.slice(0, start)]
+        : short;
+
+    // Apply the correct short labels to the DOM
+    const tableHeadings = Array.from(
+      this.hostElement.querySelectorAll<HTMLElement>(
+        '.duet-date__table-header span[aria-hidden="true"]'
+      )
+    );
+
+    tableHeadings.forEach((el, i) => {
+      const label = ordered[i];
+      // Use the first character if full names are provided
+      el.textContent = label ? label[0] : (el.textContent || '').slice(0, 1);
+    });
+
+    // "today" visually hidden text
+    const today = this.hostElement.querySelector(
+      '.duet-date__day.is-today span.duet-date__vhidden'
+    );
+    if (today) {
+      today.innerHTML = `${today.innerHTML}, ${
+        this.localization?.today || 'today'
+      }`;
+    }
+  };
 }

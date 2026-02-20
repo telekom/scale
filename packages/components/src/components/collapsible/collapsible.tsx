@@ -11,12 +11,12 @@
 
 import {
   Component,
-  h,
-  Prop,
-  Host,
   Element,
   Event,
   EventEmitter,
+  h,
+  Host,
+  Prop,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -52,9 +52,6 @@ export class Collapsible {
   /** Emitted so parent <scale-accordion> knows about it */
   @Event({ eventName: 'scale-expand' })
   scaleExpand: EventEmitter<CollapsibleEventDetail>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleExpand' })
-  scaleExpandLegacy: EventEmitter<CollapsibleEventDetail>;
 
   componentWillLoad() {
     const j = i++;
@@ -68,7 +65,7 @@ export class Collapsible {
 
   handleClick = () => {
     this.expanded = !this.expanded;
-    emitEvent(this, 'scaleExpand', { expanded: this.expanded });
+    emitEvent(this, 'scale-expand', { expanded: this.expanded });
   };
 
   /**

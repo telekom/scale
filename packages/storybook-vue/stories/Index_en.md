@@ -3,6 +3,11 @@
 <h1 class="magenta"> Important Information for all Users of Scale! </h1>
 <br/>
 
+### Update February 2026
+
+With the new release we are modernizing the underlying Scale frameworks (StencilJS), our Node environment, and other dependencies. This comes with long-awaited deprecations, especially around event names. It also means users of more recent React versions can use Scale again without peer dependency issues.
+For more details, please check the release change logs.
+
 ---
 
 ### UPDATE July 2024

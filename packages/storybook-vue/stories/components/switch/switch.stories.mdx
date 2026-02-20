@@ -5,7 +5,6 @@ import {
   Canvas,
   Description,
 } from '@storybook/addon-docs';
-import { action } from '@storybook/addon-actions';
 import ScaleSwitch from './ScaleSwitch.vue';
 
 <Meta title="Components/Switch" component={ScaleSwitch} />
@@ -14,7 +13,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleSwitch },
   props: ScaleSwitch.props,
   template: `
-    <scale-switch
+    <ScaleSwitch
       :disabled="disabled"
       :input-id="inputId"
       :checked="checked"
@@ -22,13 +21,9 @@ export const Template = (args, { argTypes }) => ({
       :size="size"
       :name="name"
       :styles="styles"
-      @scaleChange="scaleChange"
     >
-    </scale-switch>
-  `,
-  methods: {
-    scaleChange: action('scaleChange'),
-  },
+    </ScaleSwitch>
+  `
 });
 
 <div
@@ -154,22 +149,31 @@ export const Template = (args, { argTypes }) => ({
 ## Android
 
 <Canvas withSource="none">
-  <Story name="Android">
-    {{
+  <Story
+    name="Android"
+    args={{
+      label: 'Platform Android',
+      name: 'android',
+    }}
+  >
+    {(args, { argTypes }) => ({
+      components: { ScaleSwitch },
+      props: ScaleSwitch.props,
       template: `
         <div data-platform="android">
-          <scale-switch
-            label="Platform Android"
-            name="android"
-            @scale-change="emitChange"
+          <ScaleSwitch
+            :label="label"
+            :name="name"
+            :disabled="disabled"
+            :input-id="inputId"
+            :checked="checked"
+            :size="size"
+            :styles="styles"
           >
-          </scale-switch>
+          </ScaleSwitch>
         </div>
       `,
-      methods: {
-        emitChange: action('scale-change'),
-      },
-    }}
+    })}
   </Story>
 </Canvas>
 
@@ -182,23 +186,32 @@ export const Template = (args, { argTypes }) => ({
 ## Android Disabled
 
 <Canvas withSource="none">
-  <Story name="Android Disabled">
-    {{
+  <Story
+    name="Android Disabled"
+    args={{
+      disabled: true,
+      label: 'Platform Android',
+      name: 'android',
+    }}
+  >
+    {(args, { argTypes }) => ({
+      components: { ScaleSwitch },
+      props: ScaleSwitch.props,
       template: `
         <div data-platform="android">
-          <scale-switch
-            label="Platform Android"
-            name="android"
-            disabled
-            @scale-change="emitChange"
+          <ScaleSwitch
+            :label="label"
+            :name="name"
+            :disabled="disabled"
+            :input-id="inputId"
+            :checked="checked"
+            :size="size"
+            :styles="styles"
           >
-          </scale-switch>
+          </ScaleSwitch>
         </div>
       `,
-      methods: {
-        emitChange: action('scale-change'),
-      },
-    }}
+    })}
   </Story>
 </Canvas>
 
@@ -211,23 +224,32 @@ export const Template = (args, { argTypes }) => ({
 ## Android Selected
 
 <Canvas withSource="none">
-  <Story name="Android Selected">
-    {{
+  <Story
+    name="Android Selected"
+    args={{
+      checked: true,
+      label: 'Platform Android',
+      name: 'android',
+    }}
+  >
+    {(args, { argTypes }) => ({
+      components: { ScaleSwitch },
+      props: ScaleSwitch.props,
       template: `
         <div data-platform="android">
-          <scale-switch
-            label="Platform Android"
-            name="android"
-            checked
-            @scale-change="emitChange"
+          <ScaleSwitch
+            :label="label"
+            :name="name"
+            :disabled="disabled"
+            :input-id="inputId"
+            :checked="checked"
+            :size="size"
+            :styles="styles"
           >
-          </scale-switch>
+          </ScaleSwitch>
         </div>
       `,
-      methods: {
-        emitChange: action('scale-change'),
-      },
-    }}
+    })}
   </Story>
 </Canvas>
 
@@ -240,24 +262,33 @@ export const Template = (args, { argTypes }) => ({
 ## Android Selected Disabled
 
 <Canvas withSource="none">
-  <Story name="Android Selected Disabled">
-    {{
+  <Story
+    name="Android Selected Disabled"
+    args={{
+      disabled: true,
+      checked: true,
+      label: 'Platform Android',
+      name: 'android',
+    }}
+  >
+    {(args, { argTypes }) => ({
+      components: { ScaleSwitch },
+      props: ScaleSwitch.props,
       template: `
         <div data-platform="android">
-          <scale-switch
-            label="Platform Android"
-            name="android"
-            disabled
-            checked
-            @scale-change="emitChange"
+          <ScaleSwitch
+            :label="label"
+            :name="name"
+            :disabled="disabled"
+            :input-id="inputId"
+            :checked="checked"
+            :size="size"
+            :styles="styles"
           >
-          </scale-switch>
+          </ScaleSwitch>
         </div>
       `,
-      methods: {
-        emitChange: action('scale-change'),
-      },
-    }}
+    })}
   </Story>
 </Canvas>
 
