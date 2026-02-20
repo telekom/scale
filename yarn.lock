@@ -42,9 +42,9 @@
     rxjs "7.8.2"
 
 "@angular/common@^20.0.6":
-  version "20.3.14"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-20.3.14.tgz#62d7e693ae70d3ac41aa424c602c490c0e8d46c5"
-  integrity sha512-OOUvjTtnpktJLsNupA+GFT2q5zNocPdpOENA8aSrXvAheNybLjgi+otO3U3sQsvB1VwaoEZ9GT5O3lZlstnA/A==
+  version "20.0.6"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-20.0.6.tgz#b123bf7ad10932c0dd265df7f090fbdf0a8cef62"
+  integrity sha512-NRsq2gI4CH8nEy8yEZFySEmZ4U+1Y1yGzdIFubrKmtE2NXxR4KFGvQCkBLCLh6hNQXQx+Soe126bqByA6oIaFw==
   dependencies:
     tslib "^2.3.0"
 
@@ -63,9 +63,9 @@
     yargs "^18.0.0"
 
 "@angular/compiler@^20.0.6":
-  version "20.3.16"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-20.3.16.tgz#9970a72d4c7dac5b5bf1b2e9292e55eb22046623"
-  integrity sha512-Pt9Ms9GwTThgzdxWBwMfN8cH1JEtQ2DK5dc2yxYtPSaD+WKmG9AVL1PrzIYQEbaKcWk2jxASUHpEWSlNiwo8uw==
+  version "20.0.6"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-20.0.6.tgz#33e4fdb0225f3dcefba4f404b6b8501e26ea67e9"
+  integrity sha512-pgkOUnufEtzuEnjrL4BqFJCCayp1Si8cT5ZBq8CsYoQUETiYFMT2kf1OEV09vPNH4owxuzE42Wa4fEyWMRWdbA==
   dependencies:
     tslib "^2.3.0"
 
