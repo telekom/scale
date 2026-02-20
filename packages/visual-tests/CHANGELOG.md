@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.159](https://github.com/telekom/scale/compare/v3.0.0-beta.158...v3.0.0-beta.159) (2026-02-20)
+
+
+### Bug Fixes
+
+* a11y contrast issues in dark mode ([#2458](https://github.com/telekom/scale/issues/2458)) ([e40d54d](https://github.com/telekom/scale/commit/e40d54dfd46b0580f1067e3d31547b79a3bed313))
+
+
+
+
+
+
 # [3.0.0-beta.158](https://github.com/telekom/scale/compare/v3.0.0-beta.157...v3.0.0-beta.158) (2025-10-29)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests

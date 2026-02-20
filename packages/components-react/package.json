@@ -1,7 +1,7 @@
 {
   "name": "@telekom/scale-components-react",
   "sideEffects": false,
-  "version": "3.0.0-beta.158",
+  "version": "3.0.0-beta.159",
   "description": "React proxy for @telekom/scale-components",
   "license": "MPL-2.0",
   "homepage": "https://github.com/telekom/scale",
@@ -26,9 +26,9 @@
     "dist/"
   ],
   "devDependencies": {
-    "@types/react-dom": "^18.3.1",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-typescript": "^11.1.1",
+    "@types/react-dom": "^18.3.1",
     "rimraf": "^3.0.2",
     "rollup": "2.79.1",
     "rollup-plugin-commonjs": "^10.1.0",
