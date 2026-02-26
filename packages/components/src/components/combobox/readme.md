@@ -18,10 +18,10 @@
 | `inputAriaLabelledBy` | `input-aria-labelled-by` | ID reference(s) for an external label element                           | `string`                                     | `undefined`                                  |
 | `inputId`             | `input-id`               | (optional) Input element id                                             | `string`                                     | `` `combobox-input-${generateUniqueId()}` `` |
 | `invalid`             | `invalid`                | Invalid state                                                           | `boolean`                                    | `false`                                      |
-| `required`            | `required`               | Whether the combobox is required                                        | `boolean`                                    | `false`                                      |
 | `label`               | `label`                  | Combobox label                                                          | `string`                                     | `''`                                         |
 | `options`             | `options`                | Available options for the combobox                                      | `string[]`                                   | `[]`                                         |
 | `placeholder`         | `placeholder`            | Combobox placeholder                                                    | `string`                                     | `''`                                         |
+| `required`            | `required`               | Required state                                                          | `boolean`                                    | `false`                                      |
 | `styles`              | `styles`                 | (optional) Injected CSS styles                                          | `string`                                     | `undefined`                                  |
 | `value`               | `value`                  | Current selected value                                                  | `string`                                     | `''`                                         |
 
