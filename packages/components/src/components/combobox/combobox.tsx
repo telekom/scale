@@ -64,6 +64,9 @@ export class Combobox {
   /** Invalid state */
   @Prop() invalid?: boolean = false;
 
+  /** Required state */
+  @Prop() required?: boolean = false;
+
   /** Custom filtering function */
   @Prop() filterFunction?: (option: string, query: string) => boolean;
 
@@ -180,6 +183,7 @@ export class Combobox {
               value={this.inputValue}
               placeholder={this.placeholder}
               disabled={this.disabled}
+              required={this.required}
               onInput={this.handleInputChange}
               onFocus={this.handleInputFocus}
               onBlur={this.handleInputBlur}

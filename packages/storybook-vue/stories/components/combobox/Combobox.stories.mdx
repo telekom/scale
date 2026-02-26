@@ -39,6 +39,7 @@ export const Template = (args) => {
         value: args.value,
         disabled: args.disabled,
         invalid: args.invalid,
+        required: args.required,
         allowCustom: args.allowCustom,
         options: Array.isArray(args.options) ? args.options : [],
         filterFunction: args.filterFunction || null,
@@ -53,6 +54,7 @@ export const Template = (args) => {
           :value="value"
           :disabled="disabled"
           :invalid="invalid"
+          :required="required"
           :allow-custom="allowCustom"
           :options.prop="options"
           :filter-function.prop="filterFunction"

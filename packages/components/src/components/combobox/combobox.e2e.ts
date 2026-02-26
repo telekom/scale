@@ -218,4 +218,13 @@ describe('scale-combobox', () => {
     expect(options.length).toBeLessThanOrEqual(1);
     expect(options[0]).toEqualText('stte');
   });
+
+  it('adds required attribute to input when required prop is set', async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      '<scale-combobox required label="Required field"></scale-combobox>'
+    );
+    const input = await page.find('scale-combobox >>> .combobox-input');
+    expect(input).toHaveAttribute('required');
+  });
 });
