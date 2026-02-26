@@ -40,6 +40,10 @@ Add helper text below the input to provide additional guidance or context about 
 
 Display an error state when validation fails, with appropriate styling and helper text to guide the user.
 
+### Required State
+
+Add a required attribute to the input to indicate that the field must be filled out before form submission.
+
 ### Disabled Option
 
 A disabled combobox is non-interactive. Use this when an option is not available due to permissions or dependencies.

@@ -4,6 +4,7 @@
     :placeholder="placeholder"
     :disabled="disabled"
     :invalid="invalid"
+    :required="required"
     :allow-custom="allowCustom"
     :helper-text="helperText"
     :value="value"
@@ -30,6 +31,10 @@ export default {
       default: false,
     },
     invalid: {
+      type: Boolean,
+      default: false,
+    },
+    required: {
       type: Boolean,
       default: false,
     },

@@ -21,6 +21,7 @@
 | `label`               | `label`                  | Combobox label                                                          | `string`                                     | `''`                                         |
 | `options`             | `options`                | Available options for the combobox                                      | `string[]`                                   | `[]`                                         |
 | `placeholder`         | `placeholder`            | Combobox placeholder                                                    | `string`                                     | `''`                                         |
+| `required`            | `required`               | Required state                                                          | `boolean`                                    | `false`                                      |
 | `styles`              | `styles`                 | (optional) Injected CSS styles                                          | `string`                                     | `undefined`                                  |
 | `value`               | `value`                  | Current selected value                                                  | `string`                                     | `''`                                         |
 

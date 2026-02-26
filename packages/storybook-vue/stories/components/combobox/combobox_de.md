@@ -40,6 +40,10 @@ Fügen Sie Hilfetext unterhalb der Eingabe hinzu, um zusätzliche Anleitungen od
 
 Zeigen Sie einen Fehlerstatus an, wenn die Validierung fehlschlägt, mit angemessenem Styling und Hilfetext, um den Benutzer zu leiten.
 
+### Erforderlicher Status
+
+Fügen Sie ein erforderliches Attribut zum Eingabefeld hinzu, um anzugeben, dass das Feld vor der Formularübermittlung ausgefüllt werden muss.
+
 ### Deaktivierte Option
 
 Eine deaktivierte Combobox ist nicht interaktiv. Verwenden Sie dies, wenn eine Option aufgrund von Berechtigungen oder Abhängigkeiten nicht verfügbar ist.
