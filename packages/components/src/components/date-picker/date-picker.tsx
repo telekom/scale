@@ -155,6 +155,9 @@ export class DatePicker {
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
 
+  /** (optional) to avoid displaying the label */
+  @Prop() hideLabelVisually?: boolean = false;
+
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
 
@@ -421,7 +424,8 @@ export class DatePicker {
             this.hasFocus && 'scale-date-picker--focus',
             this.disabled && 'scale-date-picker--disabled',
             this.hasValue && 'animated',
-            this.helperText && 'has-helper-text'
+            this.helperText && 'has-helper-text',
+            this.hideLabelVisually && 'scale-date-picker--hide-label'
           )}
         >
           <label class="date-picker__label" htmlFor={this.identifier}>

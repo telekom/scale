@@ -151,6 +151,11 @@ scale-textarea {
   white-space: nowrap;
   overflow: hidden;
 }
+
+.textarea--hide-label .textarea__label {
+  visibility: hidden;
+}
+
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
   font: var(--telekom-text-style-small-bold);
