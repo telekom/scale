@@ -361,8 +361,8 @@ duet-date-picker .duet-date__day.is-today {
   box-shadow: none;
 }
 duet-date-picker .duet-date__day.is-disabled {
-  opacity: 1;
-  color: var(--telekom-color-text-and-icon-disabled);
+  opacity: 0.4;
+  color: var(--telekom-color-text-and-icon-standard);
   pointer-events: none;
 }
 
