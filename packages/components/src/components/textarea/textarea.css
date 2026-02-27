@@ -156,6 +156,10 @@ scale-textarea {
   visibility: hidden;
 }
 
+.textarea--hide-label .textarea__wrapper .textarea__control {
+  padding-top: var(--telekom-spacing-composition-space-02);
+}
+
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
   font: var(--telekom-text-style-small-bold);
