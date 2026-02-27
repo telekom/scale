@@ -80,6 +80,8 @@ export class Textarea {
   @Prop() styles?: string;
   /** (optional) id or space separated list of ids of elements that provide or link to additional related information. */
   @Prop() ariaDetailsId?: string;
+  /** (optional) to avoid displaying the label */
+  @Prop() hideLabelVisually?: boolean = false;
 
   /** (optional) data-qa attribute for e2e testing */
   @Prop() dataQa?: string;
@@ -250,6 +252,7 @@ export class Textarea {
       this.invalid && `textarea--status-error`,
       this.variant && `textarea--variant-${this.variant}`,
       this.readonly && `textarea--readonly`,
+      this.hideLabelVisually && `textarea--hide-label`,
       this.value != null && this.value !== '' && 'animated'
     );
   }

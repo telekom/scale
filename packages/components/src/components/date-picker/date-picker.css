@@ -148,6 +148,14 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   overflow: hidden;
 }
 
+.scale-date-picker--hide-label .date-picker__label {
+  visibility: hidden;
+}
+
+.scale-date-picker--hide-label duet-date-picker .duet-date__input {
+  padding-top: var(--telekom-spacing-composition-space-05);
+}
+
 duet-date-picker .duet-date__input::placeholder {
   visibility: hidden;
   color: transparent;
