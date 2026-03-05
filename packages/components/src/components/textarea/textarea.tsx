@@ -39,6 +39,8 @@ export class Textarea {
   @Prop() name?: string = '';
   /** (optional) Input label */
   @Prop() label: string = '';
+  /** (optional) Visually hide the label */
+  @Prop() hideLabel?: boolean;
   /** (optional) textarea row */
   @Prop() rows?: number;
   /** (optional) textarea column */
@@ -242,6 +244,7 @@ export class Textarea {
   getCssClassMap() {
     return classNames(
       'textarea',
+      this.hideLabel && 'textarea--hide-label',
       this.hasFocus && 'textarea--has-focus',
       this.resize && `textarea--resize-${this.resize}`,
       this.disabled && `textarea--disabled`,

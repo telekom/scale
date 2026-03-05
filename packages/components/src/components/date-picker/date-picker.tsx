@@ -140,6 +140,9 @@ export class DatePicker {
   /** (optional) Label */
   @Prop() label: string = '';
 
+  /** (optional) Visually hide the label */
+  @Prop() hideLabel?: boolean;
+
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -416,6 +419,7 @@ export class DatePicker {
         <div
           class={classNames(
             'scale-date-picker',
+            this.hideLabel && 'scale-date-picker--hide-label',
             this.status && `scale-date-picker--status-${this.status}`,
             this.invalid && `scale-date-picker--status-error`,
             this.hasFocus && 'scale-date-picker--focus',

@@ -148,6 +148,19 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   overflow: hidden;
 }
 
+/* visually hidden label via descendant selector (getCssClassMap) */
+.scale-date-picker--hide-label .date-picker__label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
 duet-date-picker .duet-date__input::placeholder {
   visibility: hidden;
   color: transparent;

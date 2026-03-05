@@ -44,6 +44,19 @@ describe('Textarea', () => {
     expect(page.root).toMatchSnapshot();
   });
 
+  it('should match snapshot -> hide-label', async () => {
+    const page = await newSpecPage({
+      components: [Textarea],
+      html: `
+        <scale-textarea
+          label="My Label"
+          hide-label="true"
+          >
+        </scale-textarea>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+
   describe('classes', () => {
     it('should handle getCssClassMap()', () => {
       const element = new Textarea();
@@ -66,6 +79,9 @@ describe('Textarea', () => {
 
       element.value = 'value';
       expect(element.getCssClassMap()).toContain('animated');
+
+      element.hideLabel = true;
+      expect(element.getCssClassMap()).toContain('textarea--hide-label');
     });
   });
   describe('props', () => {
@@ -80,6 +96,8 @@ describe('Textarea', () => {
       expect(page.rootInstance.invalid).toBe(false);
       expect(page.rootInstance.placeholder).toBe('');
       expect(page.rootInstance.value).toBe('');
+
+      expect(page.rootInstance.hideLabel).toBeUndefined();
     });
 
     it('check props being set', async () => {
@@ -102,6 +120,7 @@ describe('Textarea', () => {
       page.root.value = 'value';
       page.root.inputId = 'inputId';
       page.root.styles = 'background : red';
+      page.root.hideLabel = true;
       await page.waitForChanges();
       expect(page.rootInstance.name).toBe('name');
       expect(page.rootInstance.label).toBe('label');
@@ -118,6 +137,7 @@ describe('Textarea', () => {
       expect(page.rootInstance.transparent).toBe(true);
       expect(page.rootInstance.inputId).toBe('inputId');
       expect(page.rootInstance.styles).toBe('background : red');
+      expect(page.rootInstance.hideLabel).toBe(true);
     });
   });
   describe('functions', () => {

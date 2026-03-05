@@ -18,4 +18,21 @@ describe('scale-textarea', () => {
     const element = await page.find('scale-textarea');
     expect(element).toHaveClass('hydrated');
   });
+
+  it('should have textarea--hide-label class when hide-label is set', async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      '<scale-textarea label="My Label" hide-label></scale-textarea>'
+    );
+    const wrapper = await page.find('scale-textarea .textarea');
+    expect(wrapper).toHaveClass('textarea--hide-label');
+  });
+
+  // optional
+  it('should NOT have textarea--hide-label class when hide-label is not set', async () => {
+    const page = await newE2EPage();
+    await page.setContent('<scale-textarea label="My Label"></scale-textarea>');
+    const wrapper = await page.find('scale-textarea .textarea');
+    expect(wrapper).not.toHaveClass('textarea--hide-label');
+  });
 });
