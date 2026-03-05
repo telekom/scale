@@ -49,6 +49,10 @@ export class Chip {
   @Prop() disabled?: boolean = false;
   /** (optional) Dismiss label */
   @Prop() dismissText?: string = 'dismiss';
+  /** (optional) Checkmark icon accessibility title */
+  @Prop() checkmarkAccessibilityTitle?: string = 'success';
+  /** (optional) If `true` the checkmark icon is hidden from screen readers */
+  @Prop() checkmarkDecorative?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -124,14 +128,19 @@ export class Chip {
     } else if (this.type === 'persistent' && this.selected) {
       return (
         <scale-icon-action-checkmark
-          accessibility-title="success"
+          accessibility-title={this.checkmarkAccessibilityTitle}
+          decorative={this.checkmarkDecorative}
           size={16}
           selected
         />
       );
     } else if (this.type === 'persistent') {
       return (
-        <scale-icon-action-checkmark accessibility-title="success" size={16} />
+        <scale-icon-action-checkmark
+          accessibility-title={this.checkmarkAccessibilityTitle}
+          decorative={this.checkmarkDecorative}
+          size={16}
+        />
       );
     }
   }
