@@ -141,7 +141,7 @@ export class DatePicker {
   @Prop() label: string = '';
 
   /** (optional) Visually hide the label */
-  @Prop() hideLabel?: boolean;
+  @Prop() hideLabelVisually?: boolean;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
