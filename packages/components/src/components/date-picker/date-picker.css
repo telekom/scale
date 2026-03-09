@@ -161,6 +161,10 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   white-space: nowrap;
 }
 
+/* when the label is visually hidden, reduce top padding on the input to remove extra space for the floating label */
+.scale-date-picker--hide-label duet-date-picker .duet-date__input {
+  padding-top: 0.5rem;
+}
 duet-date-picker .duet-date__input::placeholder {
   visibility: hidden;
   color: transparent;
