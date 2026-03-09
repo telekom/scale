@@ -173,6 +173,9 @@ scale-textarea {
   white-space: nowrap;
 }
 
+.textarea--hide-label .textarea__wrapper .textarea__control {
+  margin-top: 0;
+}
 .textarea--status-error .textarea__wrapper {
   border: var(--border-error);
 }
