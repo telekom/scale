@@ -12,14 +12,12 @@ Once you have installed both packages and defined the custom elements, `Scale` c
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { applyPolyfills, defineCustomElements } from '@telekom/scale-components/loader';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 import App from './App';
 import '@telekom/scale-components/dist/scale-components/scale-components.css';
 import './index.css';
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+defineCustomElements(window);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ```

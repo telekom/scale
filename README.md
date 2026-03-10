@@ -51,14 +51,9 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 
 ```javascript
 import '@telekom/scale-components-neutral/dist/scale-components/scale-components.css';
-import {
-  applyPolyfills,
-  defineCustomElements,
-} from '@telekom/scale-components-neutral/loader';
+import { defineCustomElements } from '@telekom/scale-components-neutral/loader';
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+defineCustomElements(window);
 ```
 
 ### NPM packages
@@ -120,11 +115,9 @@ npm install @telekom/scale-components@next
 
 ```javascript
 import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@telekom/scale-components/loader";
+import { defineCustomElements } from "@telekom/scale-components/loader";
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+defineCustomElements(window);
 ```
 
 ### NPM packages
