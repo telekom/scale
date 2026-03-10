@@ -22,4 +22,16 @@ describe('Chip', () => {
     element.disabled = true;
     expect(element.getCssClassMap()).toContain('chip--disabled');
   });
+
+  it('should allow customizing checkmark accessibility', async () => {
+    const page = await newSpecPage({
+      components: [Chip],
+      html: `<scale-chip selected checkmark-accessibility-title="translated" checkmark-decorative="true">Label</scale-chip>`,
+    });
+    const icon = page.root.shadowRoot.querySelector(
+      'scale-icon-action-checkmark'
+    ) as HTMLElement;
+    expect(icon.getAttribute('accessibility-title')).toBe('translated');
+    expect(icon.hasAttribute('decorative')).toBe(true);
+  });
 });
