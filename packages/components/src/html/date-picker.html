@@ -62,7 +62,7 @@
         name="date-hidden-label"
         value="2021-03-24"
         placeholder="DD-MM-YYYY"
-        hide-label
+        hide-label-visually
       ></scale-date-picker>
     </div>
 
@@ -151,7 +151,6 @@
         picker.setFocus();
       });
 
-      // Listen for when date is selected
       picker.addEventListener('scale-change', function (e) {
         console.log('scale-change selected date', e.detail.valueAsDate);
       });
@@ -163,7 +162,6 @@
         console.log('scale-blur', e);
       });
 
-      // optional: apply same adapter/localization to hidden-label example
       const hiddenPicker = document.getElementById('picker-hidden-label');
       hiddenPicker.dateAdapter = picker.dateAdapter;
       hiddenPicker.localization = picker.localization;
