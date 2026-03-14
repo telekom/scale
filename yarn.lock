@@ -63,9 +63,9 @@
     yargs "^18.0.0"
 
 "@angular/compiler@^20.0.6":
-  version "20.0.6"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-20.0.6.tgz#33e4fdb0225f3dcefba4f404b6b8501e26ea67e9"
-  integrity sha512-pgkOUnufEtzuEnjrL4BqFJCCayp1Si8cT5ZBq8CsYoQUETiYFMT2kf1OEV09vPNH4owxuzE42Wa4fEyWMRWdbA==
+  version "20.3.18"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-20.3.18.tgz#5370dc1a24d55623828a2b0875c776c8da13fdc6"
+  integrity sha512-AaP/LCiDNcYmF135EEozjyR04NRBT38ZfBHQwjhgwiBBTejmvcpHwJaHSkraLpZqZzE4BQqqmgiQ1EJqxEwLVA==
   dependencies:
     tslib "^2.3.0"
 
