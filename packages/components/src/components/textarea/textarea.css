@@ -160,8 +160,12 @@ scale-textarea {
   );
 }
 
+.textarea--hide-label .textarea__label {
+  visibility: hidden;
+}
+
 .textarea--hide-label .textarea__wrapper .textarea__control {
-  margin-top: 0;
+  padding-top: var(--telekom-spacing-composition-space-02);
 }
 .textarea--status-error .textarea__wrapper {
   border: var(--border-error);
