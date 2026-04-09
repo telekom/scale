@@ -28,6 +28,18 @@ exports[`Textarea should match snapshot -> helpertext 1`] = `
 </scale-textarea>
 `;
 
+exports[`Textarea should match snapshot -> hide-label-visually 1`] = `
+<scale-textarea hide-label-visually="true" label="My Label">
+  <div class="textarea textarea--hide-label textarea--variant-informational">
+    <div class="textarea__wrapper">
+      <label class="textarea__label" htmlfor="input-textarea-3">
+        My Label
+      </label><textarea class="textarea__control" id="input-textarea-3" value=""></textarea>
+    </div>
+  </div>
+</scale-textarea>
+`;
+
 exports[`Textarea should match snapshot 1`] = `
 <scale-textarea>
   <div class="textarea textarea--variant-informational">
