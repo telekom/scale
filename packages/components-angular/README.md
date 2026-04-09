@@ -17,7 +17,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { applyPolyfills, defineCustomElements } from '@telekom/scale-components/loader';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
 if (environment.production) {
   enableProdMode();
@@ -26,9 +26,7 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+defineCustomElements(window);
 ```
 
 ## src/app.module.ts

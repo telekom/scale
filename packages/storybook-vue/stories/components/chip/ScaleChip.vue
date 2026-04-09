@@ -8,6 +8,8 @@
     :disabled="disabled"
     :styles="styles"
     :dismiss-text="dismissText"
+    :checkmark-accessibility-title="checkmarkAccessibilityTitle"
+    :checkmark-decorative="checkmarkDecorative"
     @scale-change="scaleChange"
     @scale-close="scaleClose"
   >
@@ -28,6 +30,8 @@ export default {
     ariaRoleTitle: { type: String },
     ariaCheckedState: { type: Boolean },
     dismissText: { type: String },
+    checkmarkAccessibilityTitle: { type: String, default: 'success' },
+    checkmarkDecorative: { type: Boolean, default: false },
   },
   methods: {
     scaleChange($event) {
