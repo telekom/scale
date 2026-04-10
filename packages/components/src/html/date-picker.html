@@ -26,6 +26,16 @@
       hr {
         margin: 3rem 0;
       }
+
+      .example {
+        margin-top: 2rem;
+        max-width: 30rem;
+      }
+
+      .description {
+        margin-top: 0.5rem;
+        margin-bottom: 1.25rem;
+      }
     </style>
   </head>
 
@@ -39,6 +49,23 @@
     <scale-button id="show">show</scale-button>
     <scale-button id="hide">hide</scale-button>
     <scale-button id="focus">focus</scale-button>
+
+    <div class="example">
+      <h2>Hidden Label</h2>
+      <p class="description">
+        The label is visually hidden but still available to screen readers.
+      </p>
+
+      <scale-date-picker
+        id="picker-hidden-label"
+        label="date"
+        name="date-hidden-label"
+        value="2021-03-24"
+        placeholder="DD-MM-YYYY"
+        hide-label-visually
+      ></scale-date-picker>
+    </div>
+
     <script>
       const picker = document.querySelector('scale-date-picker');
       const show = document.getElementById('show');
@@ -124,7 +151,6 @@
         picker.setFocus();
       });
 
-      // Listen for when date is selected
       picker.addEventListener('scale-change', function (e) {
         console.log('scale-change selected date', e.detail.valueAsDate);
       });
@@ -135,6 +161,10 @@
       picker.addEventListener('scale-blur', function (e) {
         console.log('scale-blur', e);
       });
+
+      const hiddenPicker = document.getElementById('picker-hidden-label');
+      hiddenPicker.dateAdapter = picker.dateAdapter;
+      hiddenPicker.localization = picker.localization;
     </script>
   </body>
 </html>

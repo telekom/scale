@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Textarea Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+
+      /* subtle example wrapper (only for this html test page) */
+      .example {
+        margin-top: 2rem;
+        max-width: 30rem;
+      }
+
+      .description {
+        margin-top: 0.5rem;
+        margin-bottom: 1.25rem;
+      }
+
+      scale-textarea {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="example">
+      <h2>Textarea – Hidden Label</h2>
+      <p class="description">
+        The label is visually hidden but still available to screen readers.
+      </p>
+
+      <scale-textarea
+        id="textarea-hidden-label"
+        label="Message"
+        name="message"
+        placeholder="Type here..."
+        helper-text="Label is visually hidden but available for screen readers"
+        aria-details-id="ta-extra"
+        hide-label-visually
+        rows="4"
+      ></scale-textarea>
+
+      <div id="ta-extra">some extra desc</div>
+    </div>
+
+    <script>
+      const textarea = document.getElementById('textarea-hidden-label');
+
+      textarea.addEventListener('scale-input', (e) => {
+        console.log('scale-input', e);
+      });
+
+      textarea.addEventListener('scale-change', (e) => {
+        console.log('scale-change', e.detail.value);
+      });
+
+      textarea.addEventListener('scale-focus', () => {
+        console.log('scale-focus');
+      });
+
+      textarea.addEventListener('scale-blur', () => {
+        console.log('scale-blur');
+      });
+
+      textarea.addEventListener('scale-keydown', (e) => {
+        console.log('scale-keydown', e);
+      });
+    </script>
+  </body>
+</html>
