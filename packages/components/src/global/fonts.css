@@ -41,7 +41,8 @@
   font-weight: 800;
   font-style: italic;
   src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.eot');
-  src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff2') format('woff2'),
+  src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff2')
+      format('woff2'),
     url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff') format('woff');
   font-display: swap;
 }
