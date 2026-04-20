@@ -85,6 +85,7 @@ export const frameworkTargets = [
     // proxiesFile: '../components-react/src/components.ts',
     excludeComponents,
     outDir: '../components-react/src',
+    hydrateModule: '@telekom/scale-components/hydrate',
   }),
   vueOutputTarget({
     componentCorePackage: '@telekom/scale-components',
