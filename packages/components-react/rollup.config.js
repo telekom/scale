@@ -16,28 +16,49 @@ const plugins = [
     typescript() // Transpiles our TypeScript code into JavaScript.
 ];
 
-export default {
-    input: `./src/index.ts`,
-    output: [
-        {
-            name: 'index',
-            file: `dist/index.js`,
-            format: 'cjs',
-            sourcemap: true,
-        },
-        {
-            name: 'index',
-            file: `dist/index.es.js`,
-            format: 'esm',
-            sourcemap: true,
-        },
-        {
-            name: 'index',
-            file: `dist/index.umd.js`,
-            format: 'umd',
-            sourcemap: true,
-            globals,
-        },
-    ],
-    plugins
-};
+export default [
+    {
+        input: `./src/index.ts`,
+        output: [
+            {
+                name: 'index',
+                file: `dist/index.js`,
+                format: 'cjs',
+                sourcemap: true,
+            },
+            {
+                name: 'index',
+                file: `dist/index.es.js`,
+                format: 'esm',
+                sourcemap: true,
+            },
+            {
+                name: 'index',
+                file: `dist/index.umd.js`,
+                format: 'umd',
+                sourcemap: true,
+                globals,
+            },
+        ],
+        plugins
+    },
+    {
+        input: `./src/components.server.ts`,
+        output: [
+            {
+                file: `dist/components.server.js`,
+                format: 'esm',
+                sourcemap: true,
+            },
+        ],
+        external: [
+            'react',
+            'react-dom',
+            '@stencil/react-output-target/runtime',
+            '@stencil/react-output-target/ssr',
+            '@telekom/scale-components',
+            /^@telekom\/scale-components\//,
+        ],
+        plugins
+    }
+];

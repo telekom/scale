@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "lib": ["dom", "es2015"],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
