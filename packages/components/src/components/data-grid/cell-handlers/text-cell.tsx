@@ -19,6 +19,8 @@ import { Cell } from './cell-interface';
 // editable?: boolean = false
 // iconPrefix?: string eg 'action-download'
 // iconSuffix?: string eg 'action-download'
+// iconPrefixAccessibilityTitle?: string eg 'Download'
+// iconSuffixAccessibilityTitle?: string eg 'Download'
 
 export const TextCell: Cell = {
   defaults: {
@@ -37,6 +39,8 @@ export const TextCell: Cell = {
       editable = false,
       iconPrefix,
       iconSuffix,
+      iconPrefixAccessibilityTitle,
+      iconSuffixAccessibilityTitle,
       label,
       textFieldProps = {},
     } = field;
@@ -80,13 +84,17 @@ export const TextCell: Cell = {
         <div class={`tbody__text-cell`}>
           {iconPrefix && (
             <span class={`tbody__text-cell-prefix`}>
-              {h(`scale-icon-${iconPrefix}`)}
+              {h(`scale-icon-${iconPrefix}`, {
+                'accessibility-title': iconPrefixAccessibilityTitle ?? label,
+              })}
             </span>
           )}
           <p class={`scl-${variant}`}>{value}</p>
           {iconSuffix && (
             <span class={`tbody__text-cell-suffix`}>
-              {h(`scale-icon-${iconSuffix}`)}
+              {h(`scale-icon-${iconSuffix}`, {
+                'accessibility-title': iconSuffixAccessibilityTitle ?? label,
+              })}
             </span>
           )}
         </div>
