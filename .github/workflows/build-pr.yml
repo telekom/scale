@@ -237,6 +237,19 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components build
 
+      - name: Build React Wrapper
+        run: |
+          yarn workspace @telekom/scale-components-react build
+
+      - name: Build Vue Wrapper
+        run: |
+          yarn workspace @telekom/scale-components-vue build
+
+      - name: Build Angular Wrapper
+        run: |
+          yarn workspace @telekom/scale-components process-angular-proxies
+          yarn workspace @telekom/scale-components-angular build
+
       - name: Check for uncommitted changes
         run: |
           sh scripts/porcelain.sh
