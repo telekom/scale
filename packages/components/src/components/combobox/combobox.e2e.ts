@@ -68,9 +68,10 @@ describe('scale-combobox', () => {
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
     await input.type('Re');
+    await page.waitForChanges();
     const options = await page.findAll('scale-combobox >>> .combobox-option');
     // Should only show React
-    expect(options.length).toBeLessThanOrEqual(1);
+    expect(options.length).toBe(1);
     expect(options[0]).toEqualText('React');
   });
 
@@ -213,9 +214,10 @@ describe('scale-combobox', () => {
     const input = await page.find('scale-combobox >>> .combobox-input');
     await input.focus();
     await input.type('st');
+    await page.waitForChanges();
     const options = await page.findAll('scale-combobox >>> .combobox-option');
-    // Should only show React due to custom filter function
-    expect(options.length).toBeLessThanOrEqual(1);
+    // Should only show stte due to custom filter function
+    expect(options.length).toBe(1);
     expect(options[0]).toEqualText('stte');
   });
 
