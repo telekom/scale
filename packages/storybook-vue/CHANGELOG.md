@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.160](https://github.com/telekom/scale/compare/v3.0.0-beta.159...v3.0.0-beta.160) (2026-04-24)
+
+
+### Features
+
+* **chip:** Add checkmark accessibility properties and update documentation ([#2472](https://github.com/telekom/scale/issues/2472)) ([a5ee592](https://github.com/telekom/scale/commit/a5ee592250744f34f2b4d61af8fce3de74dcc8ed))
+* **combobox:** add required prop and update documentation ([#2466](https://github.com/telekom/scale/issues/2466)) ([2e7f881](https://github.com/telekom/scale/commit/2e7f88179695369e326e1394fc60f6df49aac67a))
+
+
+
+
+
+
 # [3.0.0-beta.159](https://github.com/telekom/scale/compare/v3.0.0-beta.158...v3.0.0-beta.159) (2026-02-20)
 
 

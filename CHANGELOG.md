@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.160](https://github.com/telekom/scale/compare/v3.0.0-beta.159...v3.0.0-beta.160) (2026-04-24)
+
+
+### Bug Fixes
+
+* **date-picker:** change date picker contrast in dark mode ([#2467](https://github.com/telekom/scale/issues/2467)) ([8eed7ac](https://github.com/telekom/scale/commit/8eed7accd17518128b97d28dad02b1ca24b843b7))
+* **style:** correct font format fallback ([#2481](https://github.com/telekom/scale/issues/2481)) ([eb3d974](https://github.com/telekom/scale/commit/eb3d974c9dc9b4f1ea89eeb356e513248617ce6d))
+
+
+### Features
+
+* **chip:** Add checkmark accessibility properties and update documentation ([#2472](https://github.com/telekom/scale/issues/2472)) ([a5ee592](https://github.com/telekom/scale/commit/a5ee592250744f34f2b4d61af8fce3de74dcc8ed))
+* **combobox:** add required prop and update documentation ([#2466](https://github.com/telekom/scale/issues/2466)) ([2e7f881](https://github.com/telekom/scale/commit/2e7f88179695369e326e1394fc60f6df49aac67a))
+* **text-area:** adds hide label visibility with screenreader support for datepicker and textarea ([#2480](https://github.com/telekom/scale/issues/2480)) ([76262a5](https://github.com/telekom/scale/commit/76262a5ff7434929fd5461b51a5c3f42b60da120))
+
+
+
+
+
+
 # [3.0.0-beta.159](https://github.com/telekom/scale/compare/v3.0.0-beta.158...v3.0.0-beta.159) (2026-02-20)
 
 
