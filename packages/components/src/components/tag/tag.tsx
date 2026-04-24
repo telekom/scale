@@ -9,15 +9,18 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+
 @Component({
   tag: 'scale-tag',
   styleUrl: './tag.css',
   shadow: true,
 })
 export class Tag {
+  @Element() hostElement!: HTMLElement;
+
   /** (optional) Tag size */
   @Prop() size?: 'small';
   /** (optional) Tag type */
@@ -52,8 +55,84 @@ export class Tag {
   /** (optional) Close icon click event */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<MouseEvent>;
 
+  componentDidLoad() {
+    this.initializeRovingTabindex();
+  }
+
   componentWillUpdate() {}
   disconnectedCallback() {}
+
+  private initializeRovingTabindex() {
+    // Find all sibling scale-tag elements
+    const siblings = this.getSiblingTags();
+    if (siblings.length === 0) return;
+
+    // Set first tag as focusable, others as not focusable
+    siblings.forEach((tag, index) => {
+      if (index === 0) {
+        tag.setAttribute('tabindex', '0');
+      } else {
+        tag.setAttribute('tabindex', '-1');
+      }
+      // Set ARIA attributes for accessibility
+      tag.setAttribute('role', 'option');
+      tag.setAttribute('aria-selected', 'false');
+    });
+  }
+
+  private getSiblingTags(): HTMLElement[] {
+    if (!this.hostElement.parentElement) return [];
+
+    const allTags = Array.from(
+      this.hostElement.parentElement.querySelectorAll('scale-tag')
+    ) as HTMLElement[];
+    return allTags;
+  }
+
+  private updateRoving(newFocusedTag: HTMLElement) {
+    const siblings = this.getSiblingTags();
+    siblings.forEach((tag) => {
+      if (tag === newFocusedTag) {
+        tag.setAttribute('tabindex', '0');
+      } else {
+        tag.setAttribute('tabindex', '-1');
+      }
+    });
+    // Focus the new tag
+    newFocusedTag.focus();
+  }
+
+  private handleKeyDown = (event: KeyboardEvent) => {
+    const keyCode = event.key;
+    if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(keyCode)) {
+      return;
+    }
+
+    event.preventDefault();
+    const siblings = this.getSiblingTags();
+    const currentIndex = siblings.indexOf(this.hostElement);
+
+    let nextIndex = currentIndex;
+
+    if (keyCode === 'ArrowRight' || keyCode === 'ArrowDown') {
+      nextIndex = (currentIndex + 1) % siblings.length;
+    } else if (keyCode === 'ArrowLeft' || keyCode === 'ArrowUp') {
+      nextIndex = (currentIndex - 1 + siblings.length) % siblings.length;
+    }
+
+    this.updateRoving(siblings[nextIndex]);
+  };
+
+  private handleFocus = (event: FocusEvent) => {
+    const siblings = this.getSiblingTags();
+    siblings.forEach((tag) => {
+      if (tag === this.hostElement) {
+        tag.setAttribute('tabindex', '0');
+      } else {
+        tag.setAttribute('tabindex', '-1');
+      }
+    });
+  };
 
   handleClose = (event: MouseEvent) => {
     event.preventDefault();
@@ -74,7 +153,13 @@ export class Tag {
       : {};
 
     return (
-      <Host>
+      <Host
+        role="option"
+        aria-selected="false"
+        tabindex={0}
+        onKeyDown={this.handleKeyDown}
+        onFocus={this.handleFocus}
+      >
         {this.styles && <style>{this.styles}</style>}
 
         <Element

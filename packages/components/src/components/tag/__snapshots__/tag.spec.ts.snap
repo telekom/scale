@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tag should have a link 1`] = `
-<scale-tag href="#">
+<scale-tag aria-selected="false" href="#" role="option" tabindex="0">
   <template shadowrootmode="open">
     <a class="tag tag--color-standard tag--link tag--type-standard" href="#" part="base type-standard color-standard link" target="_self">
       <slot></slot>
@@ -12,7 +12,7 @@ exports[`Tag should have a link 1`] = `
 `;
 
 exports[`Tag should match snapshot 1`] = `
-<scale-tag>
+<scale-tag aria-selected="false" role="option" tabindex="0">
   <template shadowrootmode="open">
     <span class="tag tag--color-standard tag--type-standard" part="base type-standard color-standard">
       <slot></slot>
