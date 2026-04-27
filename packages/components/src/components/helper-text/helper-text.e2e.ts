@@ -18,4 +18,21 @@ describe('scale-helper-text', () => {
     const element = await page.find('scale-helper-text');
     expect(element).toHaveClass('hydrated');
   });
+
+  it('uses the dark-mode danger token', async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      '<div data-mode="dark"><scale-helper-text variant="danger">default</scale-helper-text></div>'
+    );
+
+    const color = await page.$eval(
+      'scale-helper-text',
+      (element: HTMLElement) =>
+        getComputedStyle(
+          element.shadowRoot.querySelector('.helper-text') as HTMLElement
+        ).color
+    );
+
+    expect(color).toBe('rgb(251, 106, 85)');
+  });
 });

@@ -18,4 +18,18 @@ describe('scale-checkbox', () => {
     const element = await page.find('scale-checkbox');
     expect(element).toHaveClass('hydrated');
   });
+
+  it('uses the dark-mode danger helper text color', async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      '<div data-mode="dark"><scale-checkbox label="Label" helper-text="This is the error message" invalid></scale-checkbox></div>'
+    );
+
+    const color = await page.$eval(
+      'scale-checkbox [part="helper-text"]',
+      (element: HTMLElement) => getComputedStyle(element).color
+    );
+
+    expect(color).toBe('rgb(251, 106, 85)');
+  });
 });

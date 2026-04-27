@@ -42,7 +42,10 @@ scale-text-field {
   --line-height-meta: var(--telekom-typography-line-spacing-standard);
   --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
-  --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
+  --color-meta-error: var(
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
+  );
 
   /* control */
   /*
@@ -67,7 +70,10 @@ scale-text-field {
   --color-helper-text: var(
     --telekom-color-text-and-icon-functional-informational
   );
-  --color-helper-text-error: var(--color-meta-error);
+  --color-helper-text-error: var(
+    --scl-color-form-error-message,
+    var(--color-meta-error)
+  );
   --color-helper-text-success: var(
     --telekom-color-text-and-icon-functional-success
   );
@@ -208,23 +214,35 @@ scale-text-field {
   border: var(--border-warning);
 }
 
-.text-field--variant-danger:not(.text-field--disabled):not(.text-field--readonly)
+.text-field--variant-danger:not(.text-field--disabled):not(
+    .text-field--readonly
+  )
   .text-field__control:hover,
-.text-field--variant-danger:not(.text-field--disabled):not(.text-field--readonly)
+.text-field--variant-danger:not(.text-field--disabled):not(
+    .text-field--readonly
+  )
   .text-field__control:focus {
   border-color: var(--telekom-color-functional-danger-hovered);
 }
 
-.text-field--variant-success:not(.text-field--disabled):not(.text-field--readonly)
+.text-field--variant-success:not(.text-field--disabled):not(
+    .text-field--readonly
+  )
   .text-field__control:hover,
-.text-field--variant-success:not(.text-field--disabled):not(.text-field--readonly)
+.text-field--variant-success:not(.text-field--disabled):not(
+    .text-field--readonly
+  )
   .text-field__control:focus {
   border-color: var(--telekom-color-functional-success-hovered);
 }
 
-.text-field--variant-warning:not(.text-field--disabled):not(.text-field--readonly)
+.text-field--variant-warning:not(.text-field--disabled):not(
+    .text-field--readonly
+  )
   .text-field__control:hover,
-.text-field--variant-warning:not(.text-field--disabled):not(.text-field--readonly)
+.text-field--variant-warning:not(.text-field--disabled):not(
+    .text-field--readonly
+  )
   .text-field__control:focus {
   border-color: var(--telekom-color-functional-warning-hovered);
 }
