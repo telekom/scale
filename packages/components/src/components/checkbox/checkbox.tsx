@@ -58,7 +58,7 @@ export class Checkbox {
   /** (optional) indeterminate */
   @Prop({ mutable: true, reflect: true }) indeterminate?: boolean = false;
   /** (optional) Input value */
-  @Prop() value?: string = '';
+  @Prop() value?: string = 'on';
   /** (optional) Input checkbox id */
   @Prop({ mutable: true }) inputId?: string;
   /** (optional) Injected CSS styles */

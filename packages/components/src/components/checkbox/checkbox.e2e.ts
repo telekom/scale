@@ -46,4 +46,47 @@ describe('scale-checkbox', () => {
 
     expect(color).toBe(expectedColor);
   });
+
+  it('should submit the native default checkbox value after user interaction', async () => {
+    const page = await newE2EPage();
+    await page.setContent(`
+      <form>
+        <scale-checkbox
+          name="scale-checkbox"
+          label="Scale checkbox"
+        ></scale-checkbox>
+      </form>
+    `);
+
+    const checkbox = await page.find('scale-checkbox >>> input');
+    await checkbox.click();
+    await page.waitForChanges();
+
+    const formEntries = await page.evaluate(() =>
+      Array.from(new FormData(document.querySelector('form')).entries())
+    );
+
+    expect(formEntries).toEqual([['scale-checkbox', 'on']]);
+  });
+
+  it('should preserve an explicitly provided checkbox value in forms', async () => {
+    const page = await newE2EPage();
+    await page.setContent(`
+      <form>
+        <scale-checkbox
+          checked
+          name="scale-checkbox"
+          value="newsletter"
+          label="Scale checkbox"
+        ></scale-checkbox>
+      </form>
+    `);
+    await page.waitForChanges();
+
+    const formEntries = await page.evaluate(() =>
+      Array.from(new FormData(document.querySelector('form')).entries())
+    );
+
+    expect(formEntries).toEqual([['scale-checkbox', 'newsletter']]);
+  });
 });
