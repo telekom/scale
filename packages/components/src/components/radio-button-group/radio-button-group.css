@@ -16,7 +16,8 @@
   /*helper-text--status-error*/
   --font-size-error-helper-text: var(--telekom-typography-font-size-small);
   --color-error-helper-text: var(
-    --telekom-color-text-and-icon-functional-danger
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
   );
   --padding-bottom-error-helper-text: var(
     --telekom-spacing-composition-space-04
