@@ -24,10 +24,92 @@
   </head>
 
   <body>
-    <h3>Modal with header</h3>
+    <h3>Modal with dropdown select</h3>
     <scale-button id="show-modal"> show modal </scale-button>
-    <scale-modal id="modal-default" opened="true">
-      <p>Hello. Welcome. What a pleasure it is to have you.</p>
+    <scale-modal
+      id="modal-default"
+      opened="true"
+      heading="Select a favorite person"
+    >
+      <p>
+        Scroll inside the modal and open the dropdown near the bottom. The
+        listbox should overlay above the modal content without breaking
+        scrolling.
+      </p>
+      <div style="display: grid; gap: 1rem">
+        <p>Filler content 1</p>
+        <p>Filler content 2</p>
+        <p>Filler content 3</p>
+        <p>Filler content 4</p>
+        <p>Filler content 5</p>
+        <p>Filler content 6</p>
+        <p>Filler content 7</p>
+        <p>Filler content 8</p>
+        <p>Filler content 9</p>
+        <p>Filler content 10</p>
+        <p>Filler content 11</p>
+        <p>Filler content 12</p>
+      </div>
+      <scale-dropdown-select
+        label="Favorite person"
+        id="person-select"
+        helper-text="Pick one from the list."
+        value="caspar"
+        name="favorite-person"
+      >
+        <scale-dropdown-select-item value="caspar"
+          >Caspar</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+        <scale-dropdown-select-item value="charlie"
+          >Charlie</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="chris"
+          >Chris</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="christian"
+          >Christian</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="christiano"
+          >Christiano</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="christoph"
+          >Christoph</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="christopher"
+          >Christopher</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="claas"
+          >Claas</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="clemens"
+          >Clemens</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="colin"
+          >Colin</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="collin"
+          >Collin</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="conner"
+          >Conner</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="connor"
+          >Connor</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="constantin"
+          >Constantin</scale-dropdown-select-item
+        >
+        <scale-dropdown-select-item value="corvin"
+          >Corvin</scale-dropdown-select-item
+        >
+      </scale-dropdown-select>
+      <div style="display: grid; gap: 1rem">
+        <p>Filler content 13</p>
+        <p>Filler content 14</p>
+        <p>Filler content 15</p>
+        <p>Filler content 16</p>
+      </div>
       <scale-button slot="action"> Primary Action </scale-button>
     </scale-modal>
 

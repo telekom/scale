@@ -1,4 +1,4 @@
-import { computePosition } from '@floating-ui/dom';
+import { autoUpdate, computePosition } from '@floating-ui/dom';
 import {
   Component,
   Element,
@@ -276,6 +276,7 @@ export class DropdownSelect {
   private scrollContainer: HTMLElement;
   private listboxPadEl: HTMLElement;
   private hiddenInput: HTMLInputElement;
+  private cleanupAutoUpdate?: () => void;
 
   @Watch('value')
   valueChange(newValue) {
@@ -296,26 +297,18 @@ export class DropdownSelect {
     if (!this.open) {
       return;
     }
-    if (this.floatingStrategy === 'fixed') {
-      this.listboxPadEl.style.width = `${
-        this.comboEl.getBoundingClientRect().width
-      }px`;
-    }
-    computePosition(this.comboEl, this.listboxPadEl, {
-      placement: 'bottom',
-      strategy: this.floatingStrategy,
-    }).then(({ x, y }) => {
-      Object.assign(this.listboxPadEl.style, {
-        left: `${x}px`,
-        top: `${y}px`,
-      });
-    });
+    this.updateListboxPosition();
+    this.startAutoUpdate();
   }
 
   // this workaround is needed to make the component work with form
   // https://github.com/ionic-team/stencil/issues/2284
   componentDidLoad() {
     this.appendInputHidden();
+  }
+
+  disconnectedCallback() {
+    this.stopAutoUpdate();
   }
 
   appendInputHidden(): void {
@@ -373,6 +366,7 @@ export class DropdownSelect {
     this.open = open;
 
     if (!this.open) {
+      this.stopAutoUpdate();
       this.comboEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       this.comboEl.focus();
       this.currentIndex = -1;
@@ -621,6 +615,7 @@ export class DropdownSelect {
 
   getBasePartMap() {
     const animated = this.value != null && this.value !== '';
+    const floatingStrategy = this.getFloatingStrategy();
 
     return classNames(
       'select',
@@ -632,7 +627,7 @@ export class DropdownSelect {
       this.currentIndex > -1 && `steal-focus`,
       animated && 'animated',
       this.helperText && 'has-helper-text',
-      this.floatingStrategy && `strategy-${this.floatingStrategy}`,
+      floatingStrategy && `strategy-${floatingStrategy}`,
       this.hideLabelVisually && 'hide-label'
     );
   }
@@ -655,4 +650,53 @@ export class DropdownSelect {
     this.currentIndex = -1;
     emitEvent(this, 'scale-change', { value: this.value });
   };
+
+  private getFloatingStrategy() {
+    return this.hostElement.closest('scale-modal')
+      ? 'fixed'
+      : this.floatingStrategy;
+  }
+
+  private stopAutoUpdate() {
+    this.cleanupAutoUpdate?.();
+    this.cleanupAutoUpdate = undefined;
+  }
+
+  private startAutoUpdate() {
+    if (this.cleanupAutoUpdate || !this.comboEl || !this.listboxPadEl) {
+      return;
+    }
+
+    this.cleanupAutoUpdate = autoUpdate(this.comboEl, this.listboxPadEl, () => {
+      this.updateListboxPosition();
+    });
+  }
+
+  private updateListboxPosition() {
+    if (!this.comboEl || !this.listboxPadEl) {
+      return;
+    }
+
+    const floatingStrategy = this.getFloatingStrategy();
+
+    if (floatingStrategy === 'fixed') {
+      this.listboxPadEl.style.width = `${
+        this.comboEl.getBoundingClientRect().width
+      }px`;
+    }
+
+    computePosition(this.comboEl, this.listboxPadEl, {
+      placement: 'bottom',
+      strategy: floatingStrategy,
+    }).then(({ x, y }) => {
+      if (!this.comboEl || !this.listboxPadEl || !this.open) {
+        return;
+      }
+
+      Object.assign(this.listboxPadEl.style, {
+        left: `${x}px`,
+        top: `${y}px`,
+      });
+    });
+  }
 }
