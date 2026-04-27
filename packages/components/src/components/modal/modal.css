@@ -23,6 +23,8 @@
   --radius-window: var(--telekom-radius-large);
   --box-shadow-window: var(--telekom-shadow-top);
   --background-window: var(--telekom-color-background-surface);
+  --border-window: var(--telekom-line-weight-standard) solid
+    var(--telekom-color-ui-border-standard);
   --color-window: var(--telekom-color-text-and-icon-standard);
 
   /*
@@ -116,6 +118,7 @@
   overflow-y: auto;
   flex-direction: column;
   background-color: var(--background-window);
+  border: var(--border-window);
   color: var(--color-window);
   max-height: var(--max-height-window);
   min-height: var(--min-height-window);
