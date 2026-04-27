@@ -46,5 +46,44 @@
         label="My styles were affecting checkbox styles"
       ></scale-switch>
     </p>
+    <form id="checkbox-form" style="max-width: 40rem; padding-top: 2rem">
+      <h2>Form submission</h2>
+      <p>
+        <input
+          checked
+          name="native-checkbox"
+          type="checkbox"
+          value="on"
+        />
+        Native checkbox
+      </p>
+      <p>
+        <scale-checkbox
+          checked
+          label="Scale checkbox"
+          name="scale-checkbox"
+        ></scale-checkbox>
+      </p>
+      <p>
+        <button type="submit">Serialize form</button>
+      </p>
+      <pre id="checkbox-form-result" style="background: #f3f3f3; padding: 1rem"></pre>
+    </form>
+    <script>
+      const form = document.getElementById('checkbox-form');
+      const output = document.getElementById('checkbox-form-result');
+
+      const renderFormData = () => {
+        const params = new URLSearchParams(new FormData(form));
+        output.textContent = params.toString();
+      };
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        renderFormData();
+      });
+
+      renderFormData();
+    </script>
   </body>
 </html>

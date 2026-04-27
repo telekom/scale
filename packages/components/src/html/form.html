@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/build/scale-components.css" />
   </head>
   <body>
-    <form style="max-width: 40ch; padding: 2rem">
+    <form id="demo-form" style="max-width: 40ch; padding: 2rem">
       <h1>Say hello</h1>
       <p>
         <scale-input label="Name" name="name" variant="animated"></scale-input>
@@ -24,6 +24,17 @@
         ></scale-input>
       </p>
       <p>
+        <input checked name="native-checkbox" type="checkbox" />
+        Native checkbox
+      </p>
+      <p>
+        <scale-checkbox
+          checked
+          label="Scale checkbox"
+          name="scale-checkbox"
+        ></scale-checkbox>
+      </p>
+      <p>
         <scale-button>Submit</scale-button>
       </p>
       <p>
@@ -34,12 +45,28 @@
       <p>
         <button>Submit for real</button>
       </p>
+      <pre id="form-output" style="background: #f3f3f3; padding: 1rem"></pre>
     </form>
     <script>
+      const form = document.getElementById('demo-form');
+      const output = document.getElementById('form-output');
+
+      function renderFormData() {
+        const params = new URLSearchParams(new FormData(form));
+        output.textContent = params.toString();
+      }
+
       function handleClick(event) {
         const form = event.target.closest('form');
-        if (form) form.submit();
+        if (form) form.requestSubmit();
       }
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        renderFormData();
+      });
+
+      renderFormData();
     </script>
   </body>
 </html>

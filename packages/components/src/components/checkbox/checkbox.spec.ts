@@ -56,6 +56,21 @@ describe('Checkbox', () => {
     expect(page.rootInstance.value).toBe('testvalue');
   });
 
+  it('should use the native checkbox default value', async () => {
+    page = await newSpecPage({
+      components: [Checkbox],
+      html: `
+        <form>
+          <scale-checkbox checked name="scale-checkbox"></scale-checkbox>
+        </form>`,
+    });
+    await page.waitForChanges();
+
+    const input = page.doc.querySelector('input');
+
+    expect(input.value).toBe('on');
+  });
+
   it('should emit on change', async () => {
     const changeSpy = jest.fn();
     const element = page.root.querySelector('input');
