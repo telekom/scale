@@ -5249,10 +5249,10 @@
     "@rollup/rollup-win32-arm64-msvc" "4.34.9"
     "@rollup/rollup-win32-x64-msvc" "4.34.9"
 
-"@stencil/react-output-target@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@stencil/react-output-target/-/react-output-target-1.1.1.tgz#e3097bd17e3734be665a5d3fccfe2ee561ee9a9d"
-  integrity sha512-769RC9X7NvDSOBGWFCL9MS6pyZ4NXOuzgU8CKfU40Bn//be9pOKuI37dQNi1fOWnrlyIe+/HAZr64MeVYKwDMg==
+"@stencil/react-output-target@~1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@stencil/react-output-target/-/react-output-target-1.5.1.tgz#df3e3695baea80f1c8bdda1f9950f6cd720dc23a"
+  integrity sha512-nUMoMKXn9hDrL3MmREXoxhaNO9Mm7YTpNYge/8UkHVdMRAMVWqAtX6MNRziJ7oXZyhTaQcHvF9pUEgrg1aLVPQ==
   dependencies:
     "@lit/react" "^1.0.7"
     html-react-parser "^5.2.2"

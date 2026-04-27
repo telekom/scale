@@ -23,8 +23,8 @@ import {
   ScaleRatingStars,
   ScaleTelekomHeader,
   ScaleTelekomNavItem,
-} from "../dist/index";
-import React from "react";
+} from '../dist/index';
+import React from 'react';
 
 // Helper: assert that a JSX expression is valid (compile-time only)
 function expectValidJSX(_jsx: React.ReactElement): void {}
@@ -38,12 +38,18 @@ expectValidJSX(<ScaleButton variant="secondary" size="small" disabled />);
 expectValidJSX(<ScaleButton type="submit">Submit</ScaleButton>);
 
 // --- ScaleTag ---
-expectValidJSX(<ScaleTag size="small" color="green">Active</ScaleTag>);
+expectValidJSX(
+  <ScaleTag size="small" color="green">
+    Active
+  </ScaleTag>
+);
 expectValidJSX(<ScaleTag dismissable type="strong" />);
 
 // --- ScaleTextField ---
 expectValidJSX(<ScaleTextField label="Name" value="John" required />);
-expectValidJSX(<ScaleTextField label="Email" type="email" helperText="Enter email" />);
+expectValidJSX(
+  <ScaleTextField label="Email" type="email" helperText="Enter email" />
+);
 
 // --- ScaleSwitch ---
 expectValidJSX(<ScaleSwitch label="Dark Mode" checked />);
@@ -53,18 +59,35 @@ expectValidJSX(<ScaleCheckbox label="Accept terms" checked />);
 expectValidJSX(<ScaleCheckbox indeterminate disabled />);
 
 // --- ScaleSlider ---
-expectValidJSX(<ScaleSlider label="Volume" min={0} max={100} value={50} showValue innerAriaValueText="50%" />);
+expectValidJSX(
+  <ScaleSlider
+    label="Volume"
+    min={0}
+    max={100}
+    value={50}
+    showValue
+    innerAriaValueText="50%"
+  />
+);
 
 // --- ScaleProgressBar ---
-expectValidJSX(<ScaleProgressBar percentage={75} percentageStart={0} showStatus />);
+expectValidJSX(
+  <ScaleProgressBar percentage={75} percentageStart={0} showStatus />
+);
 
 // --- ScaleCollapsible ---
-expectValidJSX(<ScaleCollapsible expanded><div>Content</div></ScaleCollapsible>);
+expectValidJSX(
+  <ScaleCollapsible expanded>
+    <div>Content</div>
+  </ScaleCollapsible>
+);
 
 // --- ScaleDropdownSelect + Item ---
 expectValidJSX(
   <ScaleDropdownSelect label="Choose" value="a">
-    <ScaleDropdownSelectItem value="a" selected>Option A</ScaleDropdownSelectItem>
+    <ScaleDropdownSelectItem value="a" selected>
+      Option A
+    </ScaleDropdownSelectItem>
     <ScaleDropdownSelectItem value="b">Option B</ScaleDropdownSelectItem>
   </ScaleDropdownSelect>
 );
@@ -105,7 +128,11 @@ expectValidJSX(
 );
 
 // --- ScaleTelekomNavItem ---
-expectValidJSX(<ScaleTelekomNavItem active><a href="/">Home</a></ScaleTelekomNavItem>);
+expectValidJSX(
+  <ScaleTelekomNavItem active>
+    <a href="/">Home</a>
+  </ScaleTelekomNavItem>
+);
 
 // --- Negative tests: unknown props should NOT compile ---
 // @ts-expect-error — nonExistentProp is not a valid prop
