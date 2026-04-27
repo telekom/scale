@@ -58,6 +58,7 @@ export class TelekomNavItem {
   @Event({ eventName: 'scale-expanded', bubbles: true }) scaleExpanded;
 
   private parentElement: HTMLElement;
+  private suppressKeyboardTriggerClick = false;
 
   @Listen('keydown', { target: 'window' })
   handleWindowKeydown(event) {
@@ -106,8 +107,12 @@ export class TelekomNavItem {
     if (this.hover) {
       this.triggerElement.addEventListener('mouseenter', this.handlePointerIn);
       this.triggerElement.addEventListener(
-        'keypress',
+        'keydown',
         this.handleSpaceOrEnterForHover
+      );
+      this.triggerElement.addEventListener(
+        'click',
+        this.handleHoverTriggerClick
       );
     } else {
       this.triggerElement.addEventListener('click', this.handleTriggerClick);
@@ -116,9 +121,13 @@ export class TelekomNavItem {
 
   disconnectedCallback() {
     this.triggerElement.removeEventListener('click', this.handleTriggerClick);
+    this.triggerElement.removeEventListener(
+      'click',
+      this.handleHoverTriggerClick
+    );
     this.triggerElement.removeEventListener('mouseenter', this.handlePointerIn);
     this.triggerElement.removeEventListener(
-      'keypress',
+      'keydown',
       this.handleSpaceOrEnterForHover
     );
   }
@@ -128,8 +137,22 @@ export class TelekomNavItem {
       return;
     }
     if (event.key === 'Enter' || event.key === ' ') {
+      this.suppressKeyboardTriggerClick = true;
+      event.preventDefault();
       this.expanded = true;
       this.show();
+    }
+  };
+  handleHoverTriggerClick = (event: MouseEvent) => {
+    if (!this.suppressKeyboardTriggerClick) {
+      return;
+    }
+
+    this.suppressKeyboardTriggerClick = false;
+
+    if (event.detail === 0) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
     }
   };
   handleTriggerClick = (event: MouseEvent) => {

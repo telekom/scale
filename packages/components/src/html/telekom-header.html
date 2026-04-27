@@ -65,7 +65,7 @@
       <!-- MAIN NAV -->
       <scale-telekom-nav-list variant="main-nav" slot="main-nav">
         <scale-telekom-nav-item active>
-          <button><span>Topic One</span></button>
+          <a href="#topic-one-target"><span>Topic One</span></a>
           <scale-telekom-nav-flyout hover>
             <scale-telekom-mega-menu>
               <scale-telekom-mega-menu-column>
@@ -580,6 +580,9 @@
         --size-md: 1;
       }
     </style>
+    <div id="topic-one-target" style="margin-top: 120vh; padding: 1rem">
+      Topic One target
+    </div>
     <scale-grid>
       <scale-grid-item foo>1</scale-grid-item>
       <scale-grid-item foo>2</scale-grid-item>
