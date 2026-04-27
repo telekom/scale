@@ -32,13 +32,33 @@ export class TelekomMobileFlyoutCanvas {
 
   @Event({ eventName: 'scale-close-nav-flyout' }) scaleCloseNavFlyout;
 
+  get appNameHref(): string | undefined {
+    if (this.appNameLink) {
+      return this.appNameLink;
+    }
+
+    if (typeof this.appNameClick === 'function') {
+      return 'javascript:void(0);';
+    }
+
+    return undefined;
+  }
+
   render() {
     return (
       <Host>
         <div part="base">
           <div part="header">
             <slot name="heading">
-              <h2 part="heading">{this.appName}</h2>
+              <h2 part="heading">
+                {this.appNameHref ? (
+                  <a href={this.appNameHref} onClick={this.appNameClick}>
+                    {this.appName}
+                  </a>
+                ) : (
+                  this.appName
+                )}
+              </h2>
             </slot>
             <a
               href="javascript:void(0)"
