@@ -17,7 +17,8 @@
     "zip": "zip -vr telekom-scale-components-react-$npm_package_version.zip dist/ -x '*.DS_Store'",
     "clean": "rimraf dist",
     "format": "prettier --write \"package.json\"",
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "test:types": "tsc --noEmit --project tsconfig.test.json"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
@@ -47,7 +48,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@stencil/react-output-target": "^1.1.1",
+    "@stencil/react-output-target": "~1.5.1",
     "@types/vfile-message": "^2.0.0"
   },
   "peerDependencies": {

@@ -67,6 +67,43 @@ jobs:
       - name: Run TSLint
         run: |
           yarn workspace @telekom/scale-components lint
+  type-check-react:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
+
+      - name: Build Stencil components
+        run: |
+          yarn workspace @telekom/scale-components build
+
+      - name: Build React wrappers
+        run: |
+          yarn workspace @telekom/scale-components-react build
+
+      - name: Type-check React wrapper props
+        run: |
+          yarn workspace @telekom/scale-components-react test:types
   unit-tests:
     runs-on: ubuntu-22.04
     steps:
