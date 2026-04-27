@@ -91,11 +91,24 @@ export class Notification {
 
   private lastCloseEventTrigger: CloseEventTrigger | null = null;
 
+  get resolvedInnerRole() {
+    if (this.innerRole === 'status' || this.innerAriaLive === 'polite') {
+      return 'status';
+    }
+
+    return 'alert';
+  }
+
+  get resolvedInnerAriaLive() {
+    if (this.resolvedInnerRole === 'status') {
+      return 'polite';
+    }
+
+    return this.innerAriaLive;
+  }
+
   connectedCallback() {
     if (this.hostElement.hasAttribute('opened')) {
-      if (this.innerAriaLive === 'polite' || this.innerRole === 'status') {
-        this.innerRole = 'status';
-      }
       this.isOpen = true;
     }
     if (this.delay !== undefined) {
@@ -166,7 +179,8 @@ export class Notification {
             `variant-${this.variant}`,
             this.isOpen && 'open'
           )}
-          role={this.innerRole}
+          role={this.resolvedInnerRole}
+          aria-live={this.resolvedInnerAriaLive}
         >
           <div part="icon" aria-hidden="true">
             <slot name="icon">

@@ -34,4 +34,31 @@ describe('Notification ', () => {
     });
     expect(page.root).toMatchSnapshot();
   });
+
+  it('wires innerAriaLive to the inner live region when opened later', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification heading="Live region" inner-aria-live="polite"></scale-notification>`,
+    });
+
+    page.root.opened = true;
+    await page.waitForChanges();
+
+    const liveRegion = page.root.shadowRoot.querySelector('[part~="base"]');
+
+    expect(liveRegion.getAttribute('role')).toBe('status');
+    expect(liveRegion.getAttribute('aria-live')).toBe('polite');
+  });
+
+  it('keeps innerRole=status aligned with a polite live region', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification heading="Live region" inner-role="status" opened></scale-notification>`,
+    });
+
+    const liveRegion = page.root.shadowRoot.querySelector('[part~="base"]');
+
+    expect(liveRegion.getAttribute('role')).toBe('status');
+    expect(liveRegion.getAttribute('aria-live')).toBe('polite');
+  });
 });
