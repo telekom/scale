@@ -12,7 +12,7 @@ exports[`Tag should have a link 1`] = `
 `;
 
 exports[`Tag should match snapshot 1`] = `
-<scale-tag>
+<scale-tag aria-label="Label" role="text">
   <template shadowrootmode="open">
     <span class="tag tag--color-standard tag--type-standard" part="base type-standard color-standard">
       <slot></slot>

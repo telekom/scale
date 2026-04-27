@@ -9,7 +9,16 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import {
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Prop,
+  State,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 @Component({
@@ -18,6 +27,7 @@ import { emitEvent } from '../../utils/utils';
   shadow: true,
 })
 export class Tag {
+  @Element() hostElement: HTMLElement;
   /** (optional) Tag size */
   @Prop() size?: 'small';
   /** (optional) Tag type */
@@ -48,12 +58,36 @@ export class Tag {
   @Prop() dismissText?: string = 'dismiss';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  @State() accessibleText: string = '';
 
   /** (optional) Close icon click event */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<MouseEvent>;
 
+  componentWillLoad() {
+    this.syncAccessibleText();
+  }
+
   componentWillUpdate() {}
   disconnectedCallback() {}
+
+  syncAccessibleText(slot?: HTMLSlotElement) {
+    const nodes = slot?.assignedNodes({ flatten: true }) || [
+      ...this.hostElement.childNodes,
+    ];
+    const accessibleText = nodes
+      .map((node) => node.textContent || '')
+      .join(' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (accessibleText !== this.accessibleText) {
+      this.accessibleText = accessibleText;
+    }
+  }
+
+  handleSlotChange = (event: Event) => {
+    this.syncAccessibleText(event.target as HTMLSlotElement);
+  };
 
   handleClose = (event: MouseEvent) => {
     event.preventDefault();
@@ -65,6 +99,7 @@ export class Tag {
   };
 
   render() {
+    const isReadOnly = !this.href && !this.dismissable;
     const Element = !!this.href && !this.disabled ? 'a' : 'span';
     const linkProps = !!this.href
       ? {
@@ -74,7 +109,12 @@ export class Tag {
       : {};
 
     return (
-      <Host>
+      <Host
+        role={isReadOnly ? 'text' : null}
+        aria-label={
+          isReadOnly && this.accessibleText ? this.accessibleText : null
+        }
+      >
         {this.styles && <style>{this.styles}</style>}
 
         <Element
@@ -82,7 +122,7 @@ export class Tag {
           class={this.getCssClassMap()}
           {...linkProps}
         >
-          <slot />
+          <slot onSlotchange={this.handleSlotChange} />
 
           {this.dismissable && (
             <button
