@@ -49,6 +49,25 @@ describe('DropdownSelect', function () {
     expect(comboboxEl.textContent).toBe('Cedric');
   });
 
+  it('should not suppress the focus outline before the listbox is opened', async () => {
+    const page = await newSpecPage({
+      components: [DropdownSelect],
+      html: `
+        <scale-dropdown-select value="cedric">
+            <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+        </scale-dropdown-select>`,
+    });
+
+    const selectEl = page.doc.querySelector('scale-dropdown-select');
+    const selectWrapper = selectEl.shadowRoot.querySelector(
+      'div[part~="select"]'
+    );
+
+    expect(selectWrapper.getAttribute('part')).not.toContain('steal-focus');
+  });
+
   it('should be able to change it`s value via click and emit an event', async () => {
     const page = await newSpecPage({
       components: [DropdownSelect],

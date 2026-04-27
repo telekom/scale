@@ -629,7 +629,7 @@ export class DropdownSelect {
       this.readonly && `readonly`,
       this.transparent && 'transparent',
       this.invalid && `invalid`,
-      this.currentIndex > -1 && `steal-focus`,
+      this.open && this.currentIndex > -1 && `steal-focus`,
       animated && 'animated',
       this.helperText && 'has-helper-text',
       this.floatingStrategy && `strategy-${this.floatingStrategy}`,
