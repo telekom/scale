@@ -495,8 +495,13 @@ export class DropdownSelect {
     const ValueElement = element.ItemElement;
     const hasEmptyValueElement = element.value === '';
     const helperTextId = `helper-message-${generateUniqueId()}`;
-    const describedBy = this.helperText ? helperTextId : this.ariaDetailsId;
-    const ariaDescribedByAttr = { 'aria-describedBy': describedBy };
+    const describedBy = [
+      this.helperText ? helperTextId : null,
+      this.ariaDetailsId,
+    ]
+      .filter(Boolean)
+      .join(' ');
+    const ariaDescribedByAttr = { 'aria-describedby': describedBy };
 
     return (
       <Host>
@@ -528,7 +533,7 @@ export class DropdownSelect {
                     ).value,
                   }
                 : {})}
-              {...ariaDescribedByAttr}
+              {...(describedBy ? ariaDescribedByAttr : {})}
               {...(this.invalid ? { 'aria-invalid': 'true' } : {})}
             >
               <span part="combobox-value">
