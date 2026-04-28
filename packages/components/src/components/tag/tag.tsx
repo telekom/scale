@@ -80,7 +80,7 @@ export class Tag {
   };
 
   render() {
-    const element = !!this.href && !this.disabled ? 'a' : 'span';
+    const TagElement = !!this.href && !this.disabled ? 'a' : 'span';
     const linkProps = !!this.href
       ? {
           href: this.href,
@@ -98,7 +98,7 @@ export class Tag {
       >
         {this.styles && <style>{this.styles}</style>}
 
-        <element
+        <TagElement
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           {...linkProps}
@@ -115,7 +115,7 @@ export class Tag {
               <scale-icon-action-close part="icon-dismissable" size={16} />
             </button>
           )}
-        </element>
+        </TagElement>
       </Host>
     );
   }
