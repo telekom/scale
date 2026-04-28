@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Element, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import {
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Prop,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 
@@ -104,7 +112,9 @@ export class Tag {
 
   private handleKeyDown = (event: KeyboardEvent) => {
     const keyCode = event.key;
-    if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(keyCode)) {
+    if (
+      !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(keyCode)
+    ) {
       return;
     }
 
