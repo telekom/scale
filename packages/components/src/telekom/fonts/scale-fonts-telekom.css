@@ -13,7 +13,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 900;
   font-style: normal;
-  src: url('./TeleNeoWeb/TeleNeoWeb-Ultra.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-Ultra.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-Ultra.woff') format('woff');
   font-display: swap;
@@ -22,7 +21,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 900;
   font-style: italic;
-  src: url('./TeleNeoWeb/TeleNeoWeb-UltraItalic.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-UltraItalic.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-UltraItalic.woff') format('woff');
   font-display: swap;
@@ -31,7 +29,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 800;
   font-style: normal;
-  src: url('./TeleNeoWeb/TeleNeoWeb-ExtraBold.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-ExtraBold.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-ExtraBold.woff') format('woff');
   font-display: swap;
@@ -40,7 +37,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 800;
   font-style: italic;
-  src: url('./TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff') format('woff');
   font-display: swap;
@@ -49,7 +45,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 700;
   font-style: normal;
-  src: url('./TeleNeoWeb/TeleNeoWeb-Bold.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-Bold.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-Bold.woff') format('woff');
   font-display: swap;
@@ -58,7 +53,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 700;
   font-style: italic;
-  src: url('./TeleNeoWeb/TeleNeoWeb-BoldItalic.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-BoldItalic.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-BoldItalic.woff') format('woff');
   font-display: swap;
@@ -67,7 +61,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 500;
   font-style: normal;
-  src: url('./TeleNeoWeb/TeleNeoWeb-Medium.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-Medium.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-Medium.woff') format('woff');
   font-display: swap;
@@ -76,7 +69,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 500;
   font-style: italic;
-  src: url('./TeleNeoWeb/TeleNeoWeb-MediumItalic.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-MediumItalic.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-MediumItalic.woff') format('woff');
   font-display: swap;
@@ -85,7 +77,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 400;
   font-style: normal;
-  src: url('./TeleNeoWeb/TeleNeoWeb-Regular.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-Regular.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-Regular.woff') format('woff');
   font-display: swap;
@@ -94,7 +85,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 400;
   font-style: italic;
-  src: url('./TeleNeoWeb/TeleNeoWeb-RegularItalic.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-RegularItalic.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-RegularItalic.woff') format('woff');
   font-display: swap;
@@ -103,7 +93,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 200;
   font-style: normal;
-  src: url('./TeleNeoWeb/TeleNeoWeb-Thin.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-Thin.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-Thin.woff') format('woff');
   font-display: swap;
@@ -112,7 +101,6 @@
   font-family: 'TeleNeoWeb';
   font-weight: 200;
   font-style: italic;
-  src: url('./TeleNeoWeb/TeleNeoWeb-ThinItalic.eot');
   src: url('./TeleNeoWeb/TeleNeoWeb-ThinItalic.woff2') format('woff2'),
     url('./TeleNeoWeb/TeleNeoWeb-ThinItalic.woff') format('woff');
   font-display: swap;
