@@ -146,7 +146,9 @@ export class Tag {
   private initializeRovingTabindex() {
     // Find all sibling scale-tag elements
     const siblings = this.getSiblingTags();
-    if (siblings.length === 0) { return; }
+    if (siblings.length === 0) {
+      return;
+    }
 
     // Set first tag as focusable, others as not focusable
     siblings.forEach((tag, index) => {
@@ -162,7 +164,9 @@ export class Tag {
   }
 
   private getSiblingTags(): HTMLElement[] {
-    if (!this.hostElement.parentElement) { return []; }
+    if (!this.hostElement.parentElement) {
+      return [];
+    }
 
     const allTags = Array.from(
       this.hostElement.parentElement.querySelectorAll('scale-tag')
