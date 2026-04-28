@@ -70,10 +70,83 @@ export class Tag {
   componentWillUpdate() {}
   disconnectedCallback() {}
 
+  handleClose = (event: MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.disabled) {
+      return;
+    }
+    emitEvent(this, 'scale-close', event);
+  };
+
+  render() {
+    const element = !!this.href && !this.disabled ? 'a' : 'span';
+    const linkProps = !!this.href
+      ? {
+          href: this.href,
+          target: this.target,
+        }
+      : {};
+
+    return (
+      <Host
+        role="option"
+        aria-selected="false"
+        tabindex={0}
+        onKeyDown={this.handleKeyDown}
+        onFocus={this.handleFocus}
+      >
+        {this.styles && <style>{this.styles}</style>}
+
+        <element
+          part={this.getBasePartMap()}
+          class={this.getCssClassMap()}
+          {...linkProps}
+        >
+          <slot />
+
+          {this.dismissable && (
+            <button
+              part="button-dismissable"
+              disabled={this.disabled}
+              aria-label={this.dismissText}
+              onClick={this.handleClose}
+            >
+              <scale-icon-action-close part="icon-dismissable" size={16} />
+            </button>
+          )}
+        </element>
+      </Host>
+    );
+  }
+
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
+  getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'tag';
+    const prefix = mode === 'basePart' ? '' : `${component}--`;
+
+    return classNames(
+      mode === 'basePart' ? 'base' : component,
+      this.size && `${prefix}size-${this.size}`,
+      this.type && `${prefix}type-${this.type}`,
+      this.color && `${prefix}color-${this.color}`,
+      !!this.href && `${prefix}link`,
+      !!this.dismissable && `${prefix}dismissable`,
+      !!this.disabled && `${prefix}disabled`
+    );
+  }
+
   private initializeRovingTabindex() {
     // Find all sibling scale-tag elements
     const siblings = this.getSiblingTags();
-    if (siblings.length === 0) return;
+    if (siblings.length === 0) { return; }
 
     // Set first tag as focusable, others as not focusable
     siblings.forEach((tag, index) => {
@@ -89,7 +162,7 @@ export class Tag {
   }
 
   private getSiblingTags(): HTMLElement[] {
-    if (!this.hostElement.parentElement) return [];
+    if (!this.hostElement.parentElement) { return []; }
 
     const allTags = Array.from(
       this.hostElement.parentElement.querySelectorAll('scale-tag')
@@ -143,77 +216,4 @@ export class Tag {
       }
     });
   };
-
-  handleClose = (event: MouseEvent) => {
-    event.preventDefault();
-    event.stopPropagation();
-    if (this.disabled) {
-      return;
-    }
-    emitEvent(this, 'scale-close', event);
-  };
-
-  render() {
-    const Element = !!this.href && !this.disabled ? 'a' : 'span';
-    const linkProps = !!this.href
-      ? {
-          href: this.href,
-          target: this.target,
-        }
-      : {};
-
-    return (
-      <Host
-        role="option"
-        aria-selected="false"
-        tabindex={0}
-        onKeyDown={this.handleKeyDown}
-        onFocus={this.handleFocus}
-      >
-        {this.styles && <style>{this.styles}</style>}
-
-        <Element
-          part={this.getBasePartMap()}
-          class={this.getCssClassMap()}
-          {...linkProps}
-        >
-          <slot />
-
-          {this.dismissable && (
-            <button
-              part="button-dismissable"
-              disabled={this.disabled}
-              aria-label={this.dismissText}
-              onClick={this.handleClose}
-            >
-              <scale-icon-action-close part="icon-dismissable" size={16} />
-            </button>
-          )}
-        </Element>
-      </Host>
-    );
-  }
-
-  getBasePartMap() {
-    return this.getCssOrBasePartMap('basePart');
-  }
-
-  getCssClassMap() {
-    return this.getCssOrBasePartMap('css');
-  }
-
-  getCssOrBasePartMap(mode: 'basePart' | 'css') {
-    const component = 'tag';
-    const prefix = mode === 'basePart' ? '' : `${component}--`;
-
-    return classNames(
-      mode === 'basePart' ? 'base' : component,
-      this.size && `${prefix}size-${this.size}`,
-      this.type && `${prefix}type-${this.type}`,
-      this.color && `${prefix}color-${this.color}`,
-      !!this.href && `${prefix}link`,
-      !!this.dismissable && `${prefix}dismissable`,
-      !!this.disabled && `${prefix}disabled`
-    );
-  }
 }
