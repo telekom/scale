@@ -1,22 +1,6 @@
-import { Component, h, Prop } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { DataGrid } from './data-grid';
-
-@Component({
-  tag: 'scale-icon-action-download',
-  shadow: false,
-})
-class ActionDownloadStub {
-  @Prop({ attribute: 'accessibility-title' }) accessibilityTitle: string;
-
-  render() {
-    return (
-      <svg>
-        <title>{this.accessibilityTitle}</title>
-      </svg>
-    );
-  }
-}
+import { ActionDownload } from '../icons/action-download/action-download';
 
 describe('DataGrid', () => {
   beforeEach(() => {
@@ -29,7 +13,7 @@ describe('DataGrid', () => {
 
   it('should forward accessibility titles to prefix and suffix text cell icons', async () => {
     const page = await newSpecPage({
-      components: [DataGrid, ActionDownloadStub],
+      components: [DataGrid, ActionDownload],
       html: `<scale-data-grid hide-menu hide-info fields='[{"type":"text","label":"Attachment","iconPrefix":"action-download","iconPrefixAccessibilityTitle":"Download attachment","iconSuffix":"action-download","iconSuffixAccessibilityTitle":"Attachment ready"}]' rows='[["Invoice.pdf"]]'></scale-data-grid>`,
     });
 
@@ -54,7 +38,7 @@ describe('DataGrid', () => {
 
   it('should preserve label fallback when text cell icon accessibility titles are not provided', async () => {
     const page = await newSpecPage({
-      components: [DataGrid, ActionDownloadStub],
+      components: [DataGrid, ActionDownload],
       html: `<scale-data-grid hide-menu hide-info fields='[{"type":"text","label":"Status","iconPrefix":"action-download","iconSuffix":"action-download"}]' rows='[["Complete"]]'></scale-data-grid>`,
     });
 
