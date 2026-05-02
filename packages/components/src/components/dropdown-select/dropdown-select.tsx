@@ -279,9 +279,17 @@ export class DropdownSelect {
 
   @Watch('value')
   valueChange(newValue) {
-    // NOTE: Do NOT set currentIndex here. Setting it while the dropdown is closed
-    // would add the `steal-focus` CSS part and suppress the focus outline.
-    // currentIndex is managed by setOpen() and keyboard/mouse handlers.
+    // Do not set currentIndex while the dropdown is closed. Doing so would add
+    // the `steal-focus` CSS part and suppress the focus outline.
+    // However, when the dropdown is already open, controlled/programmatic value
+    // updates must keep currentIndex in sync so the highlighted option and
+    // aria-activedescendant stay aligned with the selected value.
+    if (this.open && Array.isArray(this.options)) {
+      this.currentIndex = this.options.findIndex(
+        (option) => option.value === newValue
+      );
+    }
+
     this.updateInputHidden(newValue);
   }
 
