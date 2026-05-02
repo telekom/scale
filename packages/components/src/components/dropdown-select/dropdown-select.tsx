@@ -279,17 +279,16 @@ export class DropdownSelect {
 
   @Watch('value')
   valueChange(newValue) {
-    this.currentIndex = readOptions(this.hostElement).findIndex(
-      ({ value }) => value === newValue
-    );
+    // NOTE: Do NOT set currentIndex here. Setting it while the dropdown is closed
+    // would add the `steal-focus` CSS part and suppress the focus outline.
+    // currentIndex is managed by setOpen() and keyboard/mouse handlers.
     this.updateInputHidden(newValue);
   }
 
   connectedCallback() {
-    this.currentIndex =
-      readOptions(this.hostElement).findIndex(
-        ({ value }) => value === this.value
-      ) || -1;
+    // currentIndex intentionally starts at -1 (the @State() default).
+    // The dropdown is closed on init, so steal-focus must not be applied.
+    // currentIndex is set to the selected item's index when the dropdown opens.
   }
 
   componentDidRender() {
@@ -376,6 +375,12 @@ export class DropdownSelect {
       this.comboEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       this.comboEl.focus();
       this.currentIndex = -1;
+    } else {
+      // Initialize currentIndex to the currently selected item so that keyboard
+      // navigation starts from the right position and the item is highlighted.
+      this.currentIndex = readOptions(this.hostElement).findIndex(
+        ({ value }) => value === this.value
+      );
     }
   }
 
