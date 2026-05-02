@@ -123,4 +123,65 @@ describe('DropdownSelect', function () {
       expect(changeSpy).not.toBeCalled();
     });
   });
+
+  describe('focus outline (issue #2428)', () => {
+    it('should NOT have steal-focus part when a non-first item is initially selected and dropdown is closed', async () => {
+      const page = await newSpecPage({
+        components: [DropdownSelect],
+        html: `
+          <scale-dropdown-select value="cedric">
+            <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+          </scale-dropdown-select>`,
+      });
+
+      const selectEl = page.doc.querySelector('scale-dropdown-select');
+      const baseEl = selectEl.shadowRoot.querySelector(
+        '[part~="select"]'
+      ) as HTMLElement;
+
+      // The part attribute must NOT contain "steal-focus" while dropdown is closed,
+      // regardless of which item is initially selected.
+      expect(baseEl.getAttribute('part')).not.toContain('steal-focus');
+    });
+
+    it('should NOT have steal-focus part when the last item is initially selected and dropdown is closed', async () => {
+      const page = await newSpecPage({
+        components: [DropdownSelect],
+        html: `
+          <scale-dropdown-select value="cem">
+            <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+          </scale-dropdown-select>`,
+      });
+
+      const selectEl = page.doc.querySelector('scale-dropdown-select');
+      const baseEl = selectEl.shadowRoot.querySelector(
+        '[part~="select"]'
+      ) as HTMLElement;
+
+      expect(baseEl.getAttribute('part')).not.toContain('steal-focus');
+    });
+
+    it('should NOT have steal-focus part when first item is initially selected and dropdown is closed', async () => {
+      const page = await newSpecPage({
+        components: [DropdownSelect],
+        html: `
+          <scale-dropdown-select value="caspar">
+            <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+          </scale-dropdown-select>`,
+      });
+
+      const selectEl = page.doc.querySelector('scale-dropdown-select');
+      const baseEl = selectEl.shadowRoot.querySelector(
+        '[part~="select"]'
+      ) as HTMLElement;
+
+      expect(baseEl.getAttribute('part')).not.toContain('steal-focus');
+    });
+  });
 });
