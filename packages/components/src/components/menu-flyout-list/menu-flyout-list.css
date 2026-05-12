@@ -56,7 +56,7 @@
 }
 
 .menu-flyout-list__list {
-  padding: 20px 0;
+  padding: var(--telekom-spacing-composition-space-08) var(--telekom-spacing-composition-space-00, 0);
   overflow-y: auto;
   overflow-y: overlay;
   overscroll-behavior: contain;
