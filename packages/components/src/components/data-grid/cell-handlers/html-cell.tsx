@@ -18,12 +18,12 @@ export const HTMLCell: Cell = {
   defaults: {},
   getLongestContent({ rows, columnIndex, field }) {
     if (field.display === 'inline') {
-      let maxLength = 0;
+      let maxLength = -1;
       let longestContent;
       rows.forEach((row) => {
         const content = row[columnIndex];
         const length = content?.textContent?.length || 0;
-        if (length > maxLength) {
+        if (content && length > maxLength) {
           longestContent = content;
           maxLength = length;
         }

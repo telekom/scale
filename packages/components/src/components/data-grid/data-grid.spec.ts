@@ -92,4 +92,17 @@ describe('DataGrid', () => {
 
     expect(longestContent).toBe(longButton);
   });
+
+  it('uses inline html content with empty text for auto width checks', () => {
+    const iconOnlyButton = document.createElement('button');
+    iconOnlyButton.setAttribute('aria-label', 'Open details');
+
+    const longestContent = HTMLCell.getLongestContent({
+      rows: [[iconOnlyButton]],
+      columnIndex: 0,
+      field: { display: 'inline' },
+    });
+
+    expect(longestContent).toBe(iconOnlyButton);
+  });
 });
