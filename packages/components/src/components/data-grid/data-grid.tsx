@@ -1187,8 +1187,8 @@ export class DataGrid {
                   if (!visible) {
                     return;
                   }
-                  // Add rows nested tables to array
-                  if (field.type === 'html') {
+                  // Add non-inline HTML cells to the nested content row.
+                  if (field.type === 'html' && field.display !== 'inline') {
                     if (!cellContent) {
                       return this.renderTableCell(
                         field,
