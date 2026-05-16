@@ -308,6 +308,12 @@
   width: auto;
 }
 
+.tbody__html-cell--inline {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+}
+
 .tbody__nested {
   white-space: nowrap;
   padding: 0px;
