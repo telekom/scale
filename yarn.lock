@@ -70,9 +70,9 @@
     tslib "^2.3.0"
 
 "@angular/core@^20.0.6":
-  version "20.0.6"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-20.0.6.tgz#c4ef738760e84d992f40b9e1bf65e1d16bf2bea9"
-  integrity sha512-PLSRl8vM8I+HOlAJFiTcRMNbRj2Clb7lpQqUfkeBSk8bBWOy9fLlscoY3JOk0tXoUTnW6lbRB1LmAFuYAQZzAA==
+  version "20.3.25"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-20.3.25.tgz#4418a9625a8a152029b49158dbda01f1c83d19c0"
+  integrity sha512-B4XnnR5jzikZDvZ4PjwjAWZMT14dxrKrmJdwa/n0yp7rMPkIJTKF6ZJMg4d1pLWLLSsc2oWHioN3UrWlGqIKnA==
   dependencies:
     tslib "^2.3.0"
 
