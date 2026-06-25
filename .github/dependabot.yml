@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # This repository uses Yarn v1 workspaces. Dependabot uses the "npm"
+  # ecosystem value for npm, pnpm, and Yarn, and updates package manifests
+  # together with the root yarn.lock when dependency updates are opened.
+  - package-ecosystem: "npm"
+    directories:
+      - "/"
+      - "/packages/*"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 15
+    versioning-strategy: "auto"
+    allow:
+      - dependency-type: "development"
