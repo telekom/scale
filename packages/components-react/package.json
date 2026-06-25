@@ -48,7 +48,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@stencil/react-output-target": "~1.5.1",
+    "@stencil/react-output-target": "~1.5.3",
     "@types/vfile-message": "^2.0.0"
   },
   "peerDependencies": {

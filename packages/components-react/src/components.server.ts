@@ -13,7 +13,7 @@ import { createComponent, type HydrateModule, type SerializeShadowRootOptions } 
 // @ts-ignore - ignore potential type issues as the project is importing itself
 import * as clientComponents from "@telekom/scale-components";
 import { type AppNavigationMainMobileCustomEvent, type AppNavigationUserMenuCustomEvent, type BeforeCloseEventDetail, type CollapsibleEventDetail, type ComboboxChangeEventDetail, type DataGridEditEventDetail, type DataGridSortedEventDetail, type DuetDatePickerChangeEvent, type DuetDatePickerFocusEvent, type InputChangeEventDetail, type PaginationEventDetail, type ScaleCheckboxCustomEvent, type ScaleChipCustomEvent, type ScaleCollapsibleCustomEvent, type ScaleComboboxCustomEvent, type ScaleDataGridCustomEvent, type ScaleDatePickerCustomEvent, type ScaleDropdownCustomEvent, type ScaleDropdownSelectCustomEvent, type ScaleInputCustomEvent, type ScaleMenuFlyoutItemCustomEvent, type ScaleMenuFlyoutListCustomEvent, type ScaleModalCustomEvent, type ScaleNotificationBannerCustomEvent, type ScaleNotificationCustomEvent, type ScaleNotificationMessageCustomEvent, type ScaleNotificationToastCustomEvent, type ScalePaginationCustomEvent, type ScaleRadioButtonCustomEvent, type ScaleRatingStarsCustomEvent, type ScaleSegmentCustomEvent, type ScaleSegmentedButtonCustomEvent, type ScaleSliderCustomEvent, type ScaleSwitchCustomEvent, type ScaleTabHeaderCustomEvent, type ScaleTagCustomEvent, type ScaleTelekomMobileFlyoutCanvasCustomEvent, type ScaleTelekomMobileMenuCustomEvent, type ScaleTelekomMobileMenuItemCustomEvent, type ScaleTelekomNavFlyoutCustomEvent, type ScaleTextFieldCustomEvent, type ScaleTextareaCustomEvent, type ScaleToggleButtonCustomEvent, type ScaleToggleGroupCustomEvent, type ScaleTooltipCustomEvent } from "@telekom/scale-components";
-import type { JSX } from "@telekom/scale-components/dist/components";
+import type { Components } from "@telekom/scale-components/dist/components";
 import { AppLogo as AppLogoElement } from "@telekom/scale-components/dist/components/app-logo.js";
 import { AppMegaMenu as AppMegaMenuElement } from "@telekom/scale-components/dist/components/app-mega-menu.js";
 import { AppNavigationMainMobile as AppNavigationMainMobileElement } from "@telekom/scale-components/dist/components/app-navigation-main-mobile.js";
@@ -461,7 +461,7 @@ export const serializeShadowRoot: SerializeShadowRootOptions = { default: "decla
 
 export type AppLogoEvents = NonNullable<unknown>;
 
-export const AppLogo: StencilReactComponent<AppLogoElement, AppLogoEvents, JSX.AppLogo> = /*@__PURE__*/ createComponent<AppLogoElement, AppLogoEvents, JSX.AppLogo>({
+export const AppLogo: StencilReactComponent<AppLogoElement, AppLogoEvents, Components.AppLogo> = /*@__PURE__*/ createComponent<AppLogoElement, AppLogoEvents, Components.AppLogo>({
     tagName: 'app-logo',
     properties: {
         href: 'href',
@@ -471,14 +471,14 @@ export const AppLogo: StencilReactComponent<AppLogoElement, AppLogoEvents, JSX.A
         claimLang: 'claim-lang',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.AppLogo as StencilReactComponent<AppLogoElement, AppLogoEvents, JSX.AppLogo>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.AppLogo as StencilReactComponent<AppLogoElement, AppLogoEvents, Components.AppLogo>,
     serializeShadowRoot
 });
 
 export type AppMegaMenuEvents = NonNullable<unknown>;
 
-export const AppMegaMenu: StencilReactComponent<AppMegaMenuElement, AppMegaMenuEvents, JSX.AppMegaMenu> = /*@__PURE__*/ createComponent<AppMegaMenuElement, AppMegaMenuEvents, JSX.AppMegaMenu>({
+export const AppMegaMenu: StencilReactComponent<AppMegaMenuElement, AppMegaMenuEvents, Components.AppMegaMenu> = /*@__PURE__*/ createComponent<AppMegaMenuElement, AppMegaMenuEvents, Components.AppMegaMenu>({
     tagName: 'app-mega-menu',
     properties: {
         navigation: 'navigation',
@@ -487,56 +487,56 @@ export const AppMegaMenu: StencilReactComponent<AppMegaMenuElement, AppMegaMenuE
         isActive: 'is-active',
         active: 'active'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.AppMegaMenu as StencilReactComponent<AppMegaMenuElement, AppMegaMenuEvents, JSX.AppMegaMenu>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.AppMegaMenu as StencilReactComponent<AppMegaMenuElement, AppMegaMenuEvents, Components.AppMegaMenu>,
     serializeShadowRoot
 });
 
 export type AppNavigationMainMobileEvents = { onCloseMenu: EventName<AppNavigationMainMobileCustomEvent<any>> };
 
-export const AppNavigationMainMobile: StencilReactComponent<AppNavigationMainMobileElement, AppNavigationMainMobileEvents, JSX.AppNavigationMainMobile> = /*@__PURE__*/ createComponent<AppNavigationMainMobileElement, AppNavigationMainMobileEvents, JSX.AppNavigationMainMobile>({
+export const AppNavigationMainMobile: StencilReactComponent<AppNavigationMainMobileElement, AppNavigationMainMobileEvents, Components.AppNavigationMainMobile> = /*@__PURE__*/ createComponent<AppNavigationMainMobileElement, AppNavigationMainMobileEvents, Components.AppNavigationMainMobile>({
     tagName: 'app-navigation-main-mobile',
     properties: {
         hide: 'hide',
         navigation: 'navigation',
         activeRouteId: 'active-route-id'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.AppNavigationMainMobile as StencilReactComponent<AppNavigationMainMobileElement, AppNavigationMainMobileEvents, JSX.AppNavigationMainMobile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.AppNavigationMainMobile as StencilReactComponent<AppNavigationMainMobileElement, AppNavigationMainMobileEvents, Components.AppNavigationMainMobile>,
     serializeShadowRoot
 });
 
 export type AppNavigationSectorMobileEvents = NonNullable<unknown>;
 
-export const AppNavigationSectorMobile: StencilReactComponent<AppNavigationSectorMobileElement, AppNavigationSectorMobileEvents, JSX.AppNavigationSectorMobile> = /*@__PURE__*/ createComponent<AppNavigationSectorMobileElement, AppNavigationSectorMobileEvents, JSX.AppNavigationSectorMobile>({
+export const AppNavigationSectorMobile: StencilReactComponent<AppNavigationSectorMobileElement, AppNavigationSectorMobileEvents, Components.AppNavigationSectorMobile> = /*@__PURE__*/ createComponent<AppNavigationSectorMobileElement, AppNavigationSectorMobileEvents, Components.AppNavigationSectorMobile>({
     tagName: 'app-navigation-sector-mobile',
     properties: {
         hide: 'hide',
         navigation: 'navigation',
         activeSectorId: 'active-sector-id'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.AppNavigationSectorMobile as StencilReactComponent<AppNavigationSectorMobileElement, AppNavigationSectorMobileEvents, JSX.AppNavigationSectorMobile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.AppNavigationSectorMobile as StencilReactComponent<AppNavigationSectorMobileElement, AppNavigationSectorMobileEvents, Components.AppNavigationSectorMobile>,
     serializeShadowRoot
 });
 
 export type AppNavigationUserMenuEvents = { onCloseMenu: EventName<AppNavigationUserMenuCustomEvent<any>> };
 
-export const AppNavigationUserMenu: StencilReactComponent<AppNavigationUserMenuElement, AppNavigationUserMenuEvents, JSX.AppNavigationUserMenu> = /*@__PURE__*/ createComponent<AppNavigationUserMenuElement, AppNavigationUserMenuEvents, JSX.AppNavigationUserMenu>({
+export const AppNavigationUserMenu: StencilReactComponent<AppNavigationUserMenuElement, AppNavigationUserMenuEvents, Components.AppNavigationUserMenu> = /*@__PURE__*/ createComponent<AppNavigationUserMenuElement, AppNavigationUserMenuEvents, Components.AppNavigationUserMenu>({
     tagName: 'app-navigation-user-menu',
     properties: {
         hide: 'hide',
         navigation: 'navigation',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.AppNavigationUserMenu as StencilReactComponent<AppNavigationUserMenuElement, AppNavigationUserMenuEvents, JSX.AppNavigationUserMenu>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.AppNavigationUserMenu as StencilReactComponent<AppNavigationUserMenuElement, AppNavigationUserMenuEvents, Components.AppNavigationUserMenu>,
     serializeShadowRoot
 });
 
 export type ScaleAccordionEvents = NonNullable<unknown>;
 
-export const ScaleAccordion: StencilReactComponent<ScaleAccordionElement, ScaleAccordionEvents, JSX.ScaleAccordion> = /*@__PURE__*/ createComponent<ScaleAccordionElement, ScaleAccordionEvents, JSX.ScaleAccordion>({
+export const ScaleAccordion: StencilReactComponent<ScaleAccordionElement, ScaleAccordionEvents, Components.ScaleAccordion> = /*@__PURE__*/ createComponent<ScaleAccordionElement, ScaleAccordionEvents, Components.ScaleAccordion>({
     tagName: 'scale-accordion',
     properties: {
         styles: 'styles',
@@ -545,14 +545,14 @@ export const ScaleAccordion: StencilReactComponent<ScaleAccordionElement, ScaleA
         headingLevel: 'heading-level',
         iconLocation: 'icon-location'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleAccordion as StencilReactComponent<ScaleAccordionElement, ScaleAccordionEvents, JSX.ScaleAccordion>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleAccordion as StencilReactComponent<ScaleAccordionElement, ScaleAccordionEvents, Components.ScaleAccordion>,
     serializeShadowRoot
 });
 
 export type ScaleAlertEvents = NonNullable<unknown>;
 
-export const ScaleAlert: StencilReactComponent<ScaleAlertElement, ScaleAlertEvents, JSX.ScaleAlert> = /*@__PURE__*/ createComponent<ScaleAlertElement, ScaleAlertEvents, JSX.ScaleAlert>({
+export const ScaleAlert: StencilReactComponent<ScaleAlertElement, ScaleAlertEvents, Components.ScaleAlert> = /*@__PURE__*/ createComponent<ScaleAlertElement, ScaleAlertEvents, Components.ScaleAlert>({
     tagName: 'scale-alert',
     properties: {
         size: 'size',
@@ -563,14 +563,14 @@ export const ScaleAlert: StencilReactComponent<ScaleAlertElement, ScaleAlertEven
         icon: 'icon',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleAlert as StencilReactComponent<ScaleAlertElement, ScaleAlertEvents, JSX.ScaleAlert>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleAlert as StencilReactComponent<ScaleAlertElement, ScaleAlertEvents, Components.ScaleAlert>,
     serializeShadowRoot
 });
 
 export type ScaleAppFooterEvents = NonNullable<unknown>;
 
-export const ScaleAppFooter: StencilReactComponent<ScaleAppFooterElement, ScaleAppFooterEvents, JSX.ScaleAppFooter> = /*@__PURE__*/ createComponent<ScaleAppFooterElement, ScaleAppFooterEvents, JSX.ScaleAppFooter>({
+export const ScaleAppFooter: StencilReactComponent<ScaleAppFooterElement, ScaleAppFooterEvents, Components.ScaleAppFooter> = /*@__PURE__*/ createComponent<ScaleAppFooterElement, ScaleAppFooterEvents, Components.ScaleAppFooter>({
     tagName: 'scale-app-footer',
     properties: {
         footerNavigation: 'footer-navigation',
@@ -582,14 +582,14 @@ export const ScaleAppFooter: StencilReactComponent<ScaleAppFooterElement, ScaleA
         logoAriaDescribedBy: 'logo-aria-described-by',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleAppFooter as StencilReactComponent<ScaleAppFooterElement, ScaleAppFooterEvents, JSX.ScaleAppFooter>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleAppFooter as StencilReactComponent<ScaleAppFooterElement, ScaleAppFooterEvents, Components.ScaleAppFooter>,
     serializeShadowRoot
 });
 
 export type ScaleAppHeaderEvents = NonNullable<unknown>;
 
-export const ScaleAppHeader: StencilReactComponent<ScaleAppHeaderElement, ScaleAppHeaderEvents, JSX.ScaleAppHeader> = /*@__PURE__*/ createComponent<ScaleAppHeaderElement, ScaleAppHeaderEvents, JSX.ScaleAppHeader>({
+export const ScaleAppHeader: StencilReactComponent<ScaleAppHeaderElement, ScaleAppHeaderEvents, Components.ScaleAppHeader> = /*@__PURE__*/ createComponent<ScaleAppHeaderElement, ScaleAppHeaderEvents, Components.ScaleAppHeader>({
     tagName: 'scale-app-header',
     properties: {
         logoHref: 'logo-href',
@@ -613,14 +613,14 @@ export const ScaleAppHeader: StencilReactComponent<ScaleAppHeaderElement, ScaleA
         isMobileMenuVisible: 'is-mobile-menu-visible',
         mobileMenuVisible: 'mobile-menu-visible'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleAppHeader as StencilReactComponent<ScaleAppHeaderElement, ScaleAppHeaderEvents, JSX.ScaleAppHeader>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleAppHeader as StencilReactComponent<ScaleAppHeaderElement, ScaleAppHeaderEvents, Components.ScaleAppHeader>,
     serializeShadowRoot
 });
 
 export type ScaleAppShellEvents = NonNullable<unknown>;
 
-export const ScaleAppShell: StencilReactComponent<ScaleAppShellElement, ScaleAppShellEvents, JSX.ScaleAppShell> = /*@__PURE__*/ createComponent<ScaleAppShellElement, ScaleAppShellEvents, JSX.ScaleAppShell>({
+export const ScaleAppShell: StencilReactComponent<ScaleAppShellElement, ScaleAppShellEvents, Components.ScaleAppShell> = /*@__PURE__*/ createComponent<ScaleAppShellElement, ScaleAppShellEvents, Components.ScaleAppShell>({
     tagName: 'scale-app-shell',
     properties: {
         portalName: 'portal-name',
@@ -641,14 +641,14 @@ export const ScaleAppShell: StencilReactComponent<ScaleAppShellElement, ScaleApp
         sticky: 'sticky',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleAppShell as StencilReactComponent<ScaleAppShellElement, ScaleAppShellEvents, JSX.ScaleAppShell>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleAppShell as StencilReactComponent<ScaleAppShellElement, ScaleAppShellEvents, Components.ScaleAppShell>,
     serializeShadowRoot
 });
 
 export type ScaleBadgeEvents = NonNullable<unknown>;
 
-export const ScaleBadge: StencilReactComponent<ScaleBadgeElement, ScaleBadgeEvents, JSX.ScaleBadge> = /*@__PURE__*/ createComponent<ScaleBadgeElement, ScaleBadgeEvents, JSX.ScaleBadge>({
+export const ScaleBadge: StencilReactComponent<ScaleBadgeElement, ScaleBadgeEvents, Components.ScaleBadge> = /*@__PURE__*/ createComponent<ScaleBadgeElement, ScaleBadgeEvents, Components.ScaleBadge>({
     tagName: 'scale-badge',
     properties: {
         count: 'count',
@@ -656,27 +656,27 @@ export const ScaleBadge: StencilReactComponent<ScaleBadgeElement, ScaleBadgeEven
         labelVisuallyHidden: 'label-visually-hidden',
         ariaLabelTranslation: 'aria-label-translation'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleBadge as StencilReactComponent<ScaleBadgeElement, ScaleBadgeEvents, JSX.ScaleBadge>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleBadge as StencilReactComponent<ScaleBadgeElement, ScaleBadgeEvents, Components.ScaleBadge>,
     serializeShadowRoot
 });
 
 export type ScaleBreadcrumbEvents = NonNullable<unknown>;
 
-export const ScaleBreadcrumb: StencilReactComponent<ScaleBreadcrumbElement, ScaleBreadcrumbEvents, JSX.ScaleBreadcrumb> = /*@__PURE__*/ createComponent<ScaleBreadcrumbElement, ScaleBreadcrumbEvents, JSX.ScaleBreadcrumb>({
+export const ScaleBreadcrumb: StencilReactComponent<ScaleBreadcrumbElement, ScaleBreadcrumbEvents, Components.ScaleBreadcrumb> = /*@__PURE__*/ createComponent<ScaleBreadcrumbElement, ScaleBreadcrumbEvents, Components.ScaleBreadcrumb>({
     tagName: 'scale-breadcrumb',
     properties: {
         separator: 'separator',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleBreadcrumb as StencilReactComponent<ScaleBreadcrumbElement, ScaleBreadcrumbEvents, JSX.ScaleBreadcrumb>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleBreadcrumb as StencilReactComponent<ScaleBreadcrumbElement, ScaleBreadcrumbEvents, Components.ScaleBreadcrumb>,
     serializeShadowRoot
 });
 
 export type ScaleButtonEvents = NonNullable<unknown>;
 
-export const ScaleButton: StencilReactComponent<ScaleButtonElement, ScaleButtonEvents, JSX.ScaleButton> = /*@__PURE__*/ createComponent<ScaleButtonElement, ScaleButtonEvents, JSX.ScaleButton>({
+export const ScaleButton: StencilReactComponent<ScaleButtonElement, ScaleButtonEvents, Components.ScaleButton> = /*@__PURE__*/ createComponent<ScaleButtonElement, ScaleButtonEvents, Components.ScaleButton>({
     tagName: 'scale-button',
     properties: {
         size: 'size',
@@ -694,14 +694,14 @@ export const ScaleButton: StencilReactComponent<ScaleButtonElement, ScaleButtonE
         innerTabindex: 'inner-tabindex',
         innerAriaLabel: 'inner-aria-label'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleButton as StencilReactComponent<ScaleButtonElement, ScaleButtonEvents, JSX.ScaleButton>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleButton as StencilReactComponent<ScaleButtonElement, ScaleButtonEvents, Components.ScaleButton>,
     serializeShadowRoot
 });
 
 export type ScaleCalloutEvents = NonNullable<unknown>;
 
-export const ScaleCallout: StencilReactComponent<ScaleCalloutElement, ScaleCalloutEvents, JSX.ScaleCallout> = /*@__PURE__*/ createComponent<ScaleCalloutElement, ScaleCalloutEvents, JSX.ScaleCallout>({
+export const ScaleCallout: StencilReactComponent<ScaleCalloutElement, ScaleCalloutEvents, Components.ScaleCallout> = /*@__PURE__*/ createComponent<ScaleCalloutElement, ScaleCalloutEvents, Components.ScaleCallout>({
     tagName: 'scale-callout',
     properties: {
         variant: 'variant',
@@ -712,14 +712,14 @@ export const ScaleCallout: StencilReactComponent<ScaleCalloutElement, ScaleCallo
         left: 'left',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleCallout as StencilReactComponent<ScaleCalloutElement, ScaleCalloutEvents, JSX.ScaleCallout>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleCallout as StencilReactComponent<ScaleCalloutElement, ScaleCalloutEvents, Components.ScaleCallout>,
     serializeShadowRoot
 });
 
 export type ScaleCardEvents = NonNullable<unknown>;
 
-export const ScaleCard: StencilReactComponent<ScaleCardElement, ScaleCardEvents, JSX.ScaleCard> = /*@__PURE__*/ createComponent<ScaleCardElement, ScaleCardEvents, JSX.ScaleCard>({
+export const ScaleCard: StencilReactComponent<ScaleCardElement, ScaleCardEvents, Components.ScaleCard> = /*@__PURE__*/ createComponent<ScaleCardElement, ScaleCardEvents, Components.ScaleCard>({
     tagName: 'scale-card',
     properties: {
         to: 'to',
@@ -728,40 +728,40 @@ export const ScaleCard: StencilReactComponent<ScaleCardElement, ScaleCardEvents,
         rel: 'rel',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleCard as StencilReactComponent<ScaleCardElement, ScaleCardEvents, JSX.ScaleCard>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleCard as StencilReactComponent<ScaleCardElement, ScaleCardEvents, Components.ScaleCard>,
     serializeShadowRoot
 });
 
 export type ScaleCarouselEvents = NonNullable<unknown>;
 
-export const ScaleCarousel: StencilReactComponent<ScaleCarouselElement, ScaleCarouselEvents, JSX.ScaleCarousel> = /*@__PURE__*/ createComponent<ScaleCarouselElement, ScaleCarouselEvents, JSX.ScaleCarousel>({
+export const ScaleCarousel: StencilReactComponent<ScaleCarouselElement, ScaleCarouselEvents, Components.ScaleCarousel> = /*@__PURE__*/ createComponent<ScaleCarouselElement, ScaleCarouselEvents, Components.ScaleCarousel>({
     tagName: 'scale-carousel',
     properties: {
         vertical: 'vertical',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleCarousel as StencilReactComponent<ScaleCarouselElement, ScaleCarouselEvents, JSX.ScaleCarousel>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleCarousel as StencilReactComponent<ScaleCarouselElement, ScaleCarouselEvents, Components.ScaleCarousel>,
     serializeShadowRoot
 });
 
 export type ScaleChartStackCardEvents = NonNullable<unknown>;
 
-export const ScaleChartStackCard: StencilReactComponent<ScaleChartStackCardElement, ScaleChartStackCardEvents, JSX.ScaleChartStackCard> = /*@__PURE__*/ createComponent<ScaleChartStackCardElement, ScaleChartStackCardEvents, JSX.ScaleChartStackCard>({
+export const ScaleChartStackCard: StencilReactComponent<ScaleChartStackCardElement, ScaleChartStackCardEvents, Components.ScaleChartStackCard> = /*@__PURE__*/ createComponent<ScaleChartStackCardElement, ScaleChartStackCardEvents, Components.ScaleChartStackCard>({
     tagName: 'scale-chart-stack-card',
     properties: {
         data: 'data',
         heading: 'heading'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleChartStackCard as StencilReactComponent<ScaleChartStackCardElement, ScaleChartStackCardEvents, JSX.ScaleChartStackCard>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleChartStackCard as StencilReactComponent<ScaleChartStackCardElement, ScaleChartStackCardEvents, Components.ScaleChartStackCard>,
     serializeShadowRoot
 });
 
 export type ScaleCheckboxEvents = { onScaleChange: EventName<ScaleCheckboxCustomEvent<any>> };
 
-export const ScaleCheckbox: StencilReactComponent<ScaleCheckboxElement, ScaleCheckboxEvents, JSX.ScaleCheckbox> = /*@__PURE__*/ createComponent<ScaleCheckboxElement, ScaleCheckboxEvents, JSX.ScaleCheckbox>({
+export const ScaleCheckbox: StencilReactComponent<ScaleCheckboxElement, ScaleCheckboxEvents, Components.ScaleCheckbox> = /*@__PURE__*/ createComponent<ScaleCheckboxElement, ScaleCheckboxEvents, Components.ScaleCheckbox>({
     tagName: 'scale-checkbox',
     properties: {
         name: 'name',
@@ -781,14 +781,14 @@ export const ScaleCheckbox: StencilReactComponent<ScaleCheckboxElement, ScaleChe
         ariaDetailsId: 'aria-details-id',
         dataQa: 'data-qa'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleCheckbox as StencilReactComponent<ScaleCheckboxElement, ScaleCheckboxEvents, JSX.ScaleCheckbox>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleCheckbox as StencilReactComponent<ScaleCheckboxElement, ScaleCheckboxEvents, Components.ScaleCheckbox>,
     serializeShadowRoot
 });
 
 export type ScaleCheckboxGroupEvents = NonNullable<unknown>;
 
-export const ScaleCheckboxGroup: StencilReactComponent<ScaleCheckboxGroupElement, ScaleCheckboxGroupEvents, JSX.ScaleCheckboxGroup> = /*@__PURE__*/ createComponent<ScaleCheckboxGroupElement, ScaleCheckboxGroupEvents, JSX.ScaleCheckboxGroup>({
+export const ScaleCheckboxGroup: StencilReactComponent<ScaleCheckboxGroupElement, ScaleCheckboxGroupEvents, Components.ScaleCheckboxGroup> = /*@__PURE__*/ createComponent<ScaleCheckboxGroupElement, ScaleCheckboxGroupEvents, Components.ScaleCheckboxGroup>({
     tagName: 'scale-checkbox-group',
     properties: {
         name: 'name',
@@ -803,8 +803,8 @@ export const ScaleCheckboxGroup: StencilReactComponent<ScaleCheckboxGroupElement
         selectText: 'select-text',
         unselectText: 'unselect-text'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleCheckboxGroup as StencilReactComponent<ScaleCheckboxGroupElement, ScaleCheckboxGroupEvents, JSX.ScaleCheckboxGroup>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleCheckboxGroup as StencilReactComponent<ScaleCheckboxGroupElement, ScaleCheckboxGroupEvents, Components.ScaleCheckboxGroup>,
     serializeShadowRoot
 });
 
@@ -813,7 +813,7 @@ export type ScaleChipEvents = {
     onScaleClose: EventName<ScaleChipCustomEvent<MouseEvent>>
 };
 
-export const ScaleChip: StencilReactComponent<ScaleChipElement, ScaleChipEvents, JSX.ScaleChip> = /*@__PURE__*/ createComponent<ScaleChipElement, ScaleChipEvents, JSX.ScaleChip>({
+export const ScaleChip: StencilReactComponent<ScaleChipElement, ScaleChipEvents, Components.ScaleChip> = /*@__PURE__*/ createComponent<ScaleChipElement, ScaleChipEvents, Components.ScaleChip>({
     tagName: 'scale-chip',
     properties: {
         variant: 'variant',
@@ -828,14 +828,14 @@ export const ScaleChip: StencilReactComponent<ScaleChipElement, ScaleChipEvents,
         checkmarkDecorative: 'checkmark-decorative',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleChip as StencilReactComponent<ScaleChipElement, ScaleChipEvents, JSX.ScaleChip>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleChip as StencilReactComponent<ScaleChipElement, ScaleChipEvents, Components.ScaleChip>,
     serializeShadowRoot
 });
 
 export type ScaleCollapsibleEvents = { onScaleExpand: EventName<ScaleCollapsibleCustomEvent<CollapsibleEventDetail>> };
 
-export const ScaleCollapsible: StencilReactComponent<ScaleCollapsibleElement, ScaleCollapsibleEvents, JSX.ScaleCollapsible> = /*@__PURE__*/ createComponent<ScaleCollapsibleElement, ScaleCollapsibleEvents, JSX.ScaleCollapsible>({
+export const ScaleCollapsible: StencilReactComponent<ScaleCollapsibleElement, ScaleCollapsibleEvents, Components.ScaleCollapsible> = /*@__PURE__*/ createComponent<ScaleCollapsibleElement, ScaleCollapsibleEvents, Components.ScaleCollapsible>({
     tagName: 'scale-collapsible',
     properties: {
         expanded: 'expanded',
@@ -843,14 +843,14 @@ export const ScaleCollapsible: StencilReactComponent<ScaleCollapsibleElement, Sc
         styles: 'styles',
         iconLocation: 'icon-location'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleCollapsible as StencilReactComponent<ScaleCollapsibleElement, ScaleCollapsibleEvents, JSX.ScaleCollapsible>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleCollapsible as StencilReactComponent<ScaleCollapsibleElement, ScaleCollapsibleEvents, Components.ScaleCollapsible>,
     serializeShadowRoot
 });
 
 export type ScaleComboboxEvents = { onScaleChange: EventName<ScaleComboboxCustomEvent<ComboboxChangeEventDetail>> };
 
-export const ScaleCombobox: StencilReactComponent<ScaleComboboxElement, ScaleComboboxEvents, JSX.ScaleCombobox> = /*@__PURE__*/ createComponent<ScaleComboboxElement, ScaleComboboxEvents, JSX.ScaleCombobox>({
+export const ScaleCombobox: StencilReactComponent<ScaleComboboxElement, ScaleComboboxEvents, Components.ScaleCombobox> = /*@__PURE__*/ createComponent<ScaleComboboxElement, ScaleComboboxEvents, Components.ScaleCombobox>({
     tagName: 'scale-combobox',
     properties: {
         styles: 'styles',
@@ -869,8 +869,8 @@ export const ScaleCombobox: StencilReactComponent<ScaleComboboxElement, ScaleCom
         required: 'required',
         filterFunction: 'filter-function'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleCombobox as StencilReactComponent<ScaleComboboxElement, ScaleComboboxEvents, JSX.ScaleCombobox>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleCombobox as StencilReactComponent<ScaleComboboxElement, ScaleComboboxEvents, Components.ScaleCombobox>,
     serializeShadowRoot
 });
 
@@ -880,7 +880,7 @@ export type ScaleDataGridEvents = {
     onScaleSelection: EventName<ScaleDataGridCustomEvent<any[]>>
 };
 
-export const ScaleDataGrid: StencilReactComponent<ScaleDataGridElement, ScaleDataGridEvents, JSX.ScaleDataGrid> = /*@__PURE__*/ createComponent<ScaleDataGridElement, ScaleDataGridEvents, JSX.ScaleDataGrid>({
+export const ScaleDataGrid: StencilReactComponent<ScaleDataGridElement, ScaleDataGridEvents, Components.ScaleDataGrid> = /*@__PURE__*/ createComponent<ScaleDataGridElement, ScaleDataGridEvents, Components.ScaleDataGrid>({
     tagName: 'scale-data-grid',
     properties: {
         fields: 'fields',
@@ -902,8 +902,8 @@ export const ScaleDataGrid: StencilReactComponent<ScaleDataGridElement, ScaleDat
         sortableColumnTitle: 'sortable-column-title',
         localization: 'localization'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleDataGrid as StencilReactComponent<ScaleDataGridElement, ScaleDataGridEvents, JSX.ScaleDataGrid>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleDataGrid as StencilReactComponent<ScaleDataGridElement, ScaleDataGridEvents, Components.ScaleDataGrid>,
     serializeShadowRoot
 });
 
@@ -913,7 +913,7 @@ export type ScaleDatePickerEvents = {
     onScaleFocus: EventName<ScaleDatePickerCustomEvent<DuetDatePickerFocusEvent>>
 };
 
-export const ScaleDatePicker: StencilReactComponent<ScaleDatePickerElement, ScaleDatePickerEvents, JSX.ScaleDatePicker> = /*@__PURE__*/ createComponent<ScaleDatePickerElement, ScaleDatePickerEvents, JSX.ScaleDatePicker>({
+export const ScaleDatePicker: StencilReactComponent<ScaleDatePickerElement, ScaleDatePickerEvents, Components.ScaleDatePicker> = /*@__PURE__*/ createComponent<ScaleDatePickerElement, ScaleDatePickerEvents, Components.ScaleDatePicker>({
     tagName: 'scale-date-picker',
     properties: {
         name: 'name',
@@ -940,21 +940,21 @@ export const ScaleDatePicker: StencilReactComponent<ScaleDatePickerElement, Scal
         variant: 'variant',
         ariaDetailsId: 'aria-details-id'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleDatePicker as StencilReactComponent<ScaleDatePickerElement, ScaleDatePickerEvents, JSX.ScaleDatePicker>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleDatePicker as StencilReactComponent<ScaleDatePickerElement, ScaleDatePickerEvents, Components.ScaleDatePicker>,
     serializeShadowRoot
 });
 
 export type ScaleDividerEvents = NonNullable<unknown>;
 
-export const ScaleDivider: StencilReactComponent<ScaleDividerElement, ScaleDividerEvents, JSX.ScaleDivider> = /*@__PURE__*/ createComponent<ScaleDividerElement, ScaleDividerEvents, JSX.ScaleDivider>({
+export const ScaleDivider: StencilReactComponent<ScaleDividerElement, ScaleDividerEvents, Components.ScaleDivider> = /*@__PURE__*/ createComponent<ScaleDividerElement, ScaleDividerEvents, Components.ScaleDivider>({
     tagName: 'scale-divider',
     properties: {
         vertical: 'vertical',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleDivider as StencilReactComponent<ScaleDividerElement, ScaleDividerEvents, JSX.ScaleDivider>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleDivider as StencilReactComponent<ScaleDividerElement, ScaleDividerEvents, Components.ScaleDivider>,
     serializeShadowRoot
 });
 
@@ -966,7 +966,7 @@ export type ScaleDropdownEvents = {
     onScaleKeydown: EventName<ScaleDropdownCustomEvent<KeyboardEvent>>
 };
 
-export const ScaleDropdown: StencilReactComponent<ScaleDropdownElement, ScaleDropdownEvents, JSX.ScaleDropdown> = /*@__PURE__*/ createComponent<ScaleDropdownElement, ScaleDropdownEvents, JSX.ScaleDropdown>({
+export const ScaleDropdown: StencilReactComponent<ScaleDropdownElement, ScaleDropdownEvents, Components.ScaleDropdown> = /*@__PURE__*/ createComponent<ScaleDropdownElement, ScaleDropdownEvents, Components.ScaleDropdown>({
     tagName: 'scale-dropdown',
     properties: {
         name: 'name',
@@ -988,8 +988,8 @@ export const ScaleDropdown: StencilReactComponent<ScaleDropdownElement, ScaleDro
         ariaDetailsId: 'aria-details-id',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleDropdown as StencilReactComponent<ScaleDropdownElement, ScaleDropdownEvents, JSX.ScaleDropdown>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleDropdown as StencilReactComponent<ScaleDropdownElement, ScaleDropdownEvents, Components.ScaleDropdown>,
     serializeShadowRoot
 });
 
@@ -1000,7 +1000,7 @@ export type ScaleDropdownSelectEvents = {
     onScaleKeydown: EventName<ScaleDropdownSelectCustomEvent<void>>
 };
 
-export const ScaleDropdownSelect: StencilReactComponent<ScaleDropdownSelectElement, ScaleDropdownSelectEvents, JSX.ScaleDropdownSelect> = /*@__PURE__*/ createComponent<ScaleDropdownSelectElement, ScaleDropdownSelectEvents, JSX.ScaleDropdownSelect>({
+export const ScaleDropdownSelect: StencilReactComponent<ScaleDropdownSelectElement, ScaleDropdownSelectEvents, Components.ScaleDropdownSelect> = /*@__PURE__*/ createComponent<ScaleDropdownSelectElement, ScaleDropdownSelectEvents, Components.ScaleDropdownSelect>({
     tagName: 'scale-dropdown-select',
     properties: {
         comboboxId: 'combobox-id',
@@ -1020,14 +1020,14 @@ export const ScaleDropdownSelect: StencilReactComponent<ScaleDropdownSelectEleme
         ariaDetailsId: 'aria-details-id',
         allowClear: 'allow-clear'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleDropdownSelect as StencilReactComponent<ScaleDropdownSelectElement, ScaleDropdownSelectEvents, JSX.ScaleDropdownSelect>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleDropdownSelect as StencilReactComponent<ScaleDropdownSelectElement, ScaleDropdownSelectEvents, Components.ScaleDropdownSelect>,
     serializeShadowRoot
 });
 
 export type ScaleDropdownSelectItemEvents = NonNullable<unknown>;
 
-export const ScaleDropdownSelectItem: StencilReactComponent<ScaleDropdownSelectItemElement, ScaleDropdownSelectItemEvents, JSX.ScaleDropdownSelectItem> = /*@__PURE__*/ createComponent<ScaleDropdownSelectItemElement, ScaleDropdownSelectItemEvents, JSX.ScaleDropdownSelectItem>({
+export const ScaleDropdownSelectItem: StencilReactComponent<ScaleDropdownSelectItemElement, ScaleDropdownSelectItemEvents, Components.ScaleDropdownSelectItem> = /*@__PURE__*/ createComponent<ScaleDropdownSelectItemElement, ScaleDropdownSelectItemEvents, Components.ScaleDropdownSelectItem>({
     tagName: 'scale-dropdown-select-item',
     properties: {
         selected: 'selected',
@@ -1035,14 +1035,14 @@ export const ScaleDropdownSelectItem: StencilReactComponent<ScaleDropdownSelectI
         value: 'value',
         disabled: 'disabled'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleDropdownSelectItem as StencilReactComponent<ScaleDropdownSelectItemElement, ScaleDropdownSelectItemEvents, JSX.ScaleDropdownSelectItem>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleDropdownSelectItem as StencilReactComponent<ScaleDropdownSelectItemElement, ScaleDropdownSelectItemEvents, Components.ScaleDropdownSelectItem>,
     serializeShadowRoot
 });
 
 export type ScaleGridEvents = NonNullable<unknown>;
 
-export const ScaleGrid: StencilReactComponent<ScaleGridElement, ScaleGridEvents, JSX.ScaleGrid> = /*@__PURE__*/ createComponent<ScaleGridElement, ScaleGridEvents, JSX.ScaleGrid>({
+export const ScaleGrid: StencilReactComponent<ScaleGridElement, ScaleGridEvents, Components.ScaleGrid> = /*@__PURE__*/ createComponent<ScaleGridElement, ScaleGridEvents, Components.ScaleGrid>({
     tagName: 'scale-grid',
     properties: {
         columns: 'columns',
@@ -1051,41 +1051,41 @@ export const ScaleGrid: StencilReactComponent<ScaleGridElement, ScaleGridEvents,
         spacing: 'spacing',
         maxWidth: 'max-width'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleGrid as StencilReactComponent<ScaleGridElement, ScaleGridEvents, JSX.ScaleGrid>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleGrid as StencilReactComponent<ScaleGridElement, ScaleGridEvents, Components.ScaleGrid>,
     serializeShadowRoot
 });
 
 export type ScaleGridItemEvents = NonNullable<unknown>;
 
-export const ScaleGridItem: StencilReactComponent<ScaleGridItemElement, ScaleGridItemEvents, JSX.ScaleGridItem> = /*@__PURE__*/ createComponent<ScaleGridItemElement, ScaleGridItemEvents, JSX.ScaleGridItem>({
+export const ScaleGridItem: StencilReactComponent<ScaleGridItemElement, ScaleGridItemEvents, Components.ScaleGridItem> = /*@__PURE__*/ createComponent<ScaleGridItemElement, ScaleGridItemEvents, Components.ScaleGridItem>({
     tagName: 'scale-grid-item',
     properties: {
         size: 'size',
         offset: 'offset'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleGridItem as StencilReactComponent<ScaleGridItemElement, ScaleGridItemEvents, JSX.ScaleGridItem>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleGridItem as StencilReactComponent<ScaleGridItemElement, ScaleGridItemEvents, Components.ScaleGridItem>,
     serializeShadowRoot
 });
 
 export type ScaleHelperTextEvents = NonNullable<unknown>;
 
-export const ScaleHelperText: StencilReactComponent<ScaleHelperTextElement, ScaleHelperTextEvents, JSX.ScaleHelperText> = /*@__PURE__*/ createComponent<ScaleHelperTextElement, ScaleHelperTextEvents, JSX.ScaleHelperText>({
+export const ScaleHelperText: StencilReactComponent<ScaleHelperTextElement, ScaleHelperTextEvents, Components.ScaleHelperText> = /*@__PURE__*/ createComponent<ScaleHelperTextElement, ScaleHelperTextEvents, Components.ScaleHelperText>({
     tagName: 'scale-helper-text',
     properties: {
         helperText: 'helper-text',
         styles: 'styles',
         variant: 'variant'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleHelperText as StencilReactComponent<ScaleHelperTextElement, ScaleHelperTextEvents, JSX.ScaleHelperText>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleHelperText as StencilReactComponent<ScaleHelperTextElement, ScaleHelperTextEvents, Components.ScaleHelperText>,
     serializeShadowRoot
 });
 
 export type ScaleIconEvents = NonNullable<unknown>;
 
-export const ScaleIcon: StencilReactComponent<ScaleIconElement, ScaleIconEvents, JSX.ScaleIcon> = /*@__PURE__*/ createComponent<ScaleIconElement, ScaleIconEvents, JSX.ScaleIcon>({
+export const ScaleIcon: StencilReactComponent<ScaleIconElement, ScaleIconEvents, Components.ScaleIcon> = /*@__PURE__*/ createComponent<ScaleIconElement, ScaleIconEvents, Components.ScaleIcon>({
     tagName: 'scale-icon',
     properties: {
         name: 'name',
@@ -1097,14 +1097,14 @@ export const ScaleIcon: StencilReactComponent<ScaleIconElement, ScaleIconEvents,
         decorative: 'decorative',
         accessibilityTitle: 'accessibility-title'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIcon as StencilReactComponent<ScaleIconElement, ScaleIconEvents, JSX.ScaleIcon>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIcon as StencilReactComponent<ScaleIconElement, ScaleIconEvents, Components.ScaleIcon>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionAddEvents = NonNullable<unknown>;
 
-export const ScaleIconActionAdd: StencilReactComponent<ScaleIconActionAddElement, ScaleIconActionAddEvents, JSX.ScaleIconActionAdd> = /*@__PURE__*/ createComponent<ScaleIconActionAddElement, ScaleIconActionAddEvents, JSX.ScaleIconActionAdd>({
+export const ScaleIconActionAdd: StencilReactComponent<ScaleIconActionAddElement, ScaleIconActionAddEvents, Components.ScaleIconActionAdd> = /*@__PURE__*/ createComponent<ScaleIconActionAddElement, ScaleIconActionAddEvents, Components.ScaleIconActionAdd>({
     tagName: 'scale-icon-action-add',
     properties: {
         size: 'size',
@@ -1115,14 +1115,14 @@ export const ScaleIconActionAdd: StencilReactComponent<ScaleIconActionAddElement
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionAdd as StencilReactComponent<ScaleIconActionAddElement, ScaleIconActionAddEvents, JSX.ScaleIconActionAdd>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionAdd as StencilReactComponent<ScaleIconActionAddElement, ScaleIconActionAddEvents, Components.ScaleIconActionAdd>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionAddCardEvents = NonNullable<unknown>;
 
-export const ScaleIconActionAddCard: StencilReactComponent<ScaleIconActionAddCardElement, ScaleIconActionAddCardEvents, JSX.ScaleIconActionAddCard> = /*@__PURE__*/ createComponent<ScaleIconActionAddCardElement, ScaleIconActionAddCardEvents, JSX.ScaleIconActionAddCard>({
+export const ScaleIconActionAddCard: StencilReactComponent<ScaleIconActionAddCardElement, ScaleIconActionAddCardEvents, Components.ScaleIconActionAddCard> = /*@__PURE__*/ createComponent<ScaleIconActionAddCardElement, ScaleIconActionAddCardEvents, Components.ScaleIconActionAddCard>({
     tagName: 'scale-icon-action-add-card',
     properties: {
         size: 'size',
@@ -1133,14 +1133,14 @@ export const ScaleIconActionAddCard: StencilReactComponent<ScaleIconActionAddCar
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionAddCard as StencilReactComponent<ScaleIconActionAddCardElement, ScaleIconActionAddCardEvents, JSX.ScaleIconActionAddCard>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionAddCard as StencilReactComponent<ScaleIconActionAddCardElement, ScaleIconActionAddCardEvents, Components.ScaleIconActionAddCard>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionArrangeEvents = NonNullable<unknown>;
 
-export const ScaleIconActionArrange: StencilReactComponent<ScaleIconActionArrangeElement, ScaleIconActionArrangeEvents, JSX.ScaleIconActionArrange> = /*@__PURE__*/ createComponent<ScaleIconActionArrangeElement, ScaleIconActionArrangeEvents, JSX.ScaleIconActionArrange>({
+export const ScaleIconActionArrange: StencilReactComponent<ScaleIconActionArrangeElement, ScaleIconActionArrangeEvents, Components.ScaleIconActionArrange> = /*@__PURE__*/ createComponent<ScaleIconActionArrangeElement, ScaleIconActionArrangeEvents, Components.ScaleIconActionArrange>({
     tagName: 'scale-icon-action-arrange',
     properties: {
         size: 'size',
@@ -1151,14 +1151,14 @@ export const ScaleIconActionArrange: StencilReactComponent<ScaleIconActionArrang
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionArrange as StencilReactComponent<ScaleIconActionArrangeElement, ScaleIconActionArrangeEvents, JSX.ScaleIconActionArrange>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionArrange as StencilReactComponent<ScaleIconActionArrangeElement, ScaleIconActionArrangeEvents, Components.ScaleIconActionArrange>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionArrowDownEvents = NonNullable<unknown>;
 
-export const ScaleIconActionArrowDown: StencilReactComponent<ScaleIconActionArrowDownElement, ScaleIconActionArrowDownEvents, JSX.ScaleIconActionArrowDown> = /*@__PURE__*/ createComponent<ScaleIconActionArrowDownElement, ScaleIconActionArrowDownEvents, JSX.ScaleIconActionArrowDown>({
+export const ScaleIconActionArrowDown: StencilReactComponent<ScaleIconActionArrowDownElement, ScaleIconActionArrowDownEvents, Components.ScaleIconActionArrowDown> = /*@__PURE__*/ createComponent<ScaleIconActionArrowDownElement, ScaleIconActionArrowDownEvents, Components.ScaleIconActionArrowDown>({
     tagName: 'scale-icon-action-arrow-down',
     properties: {
         size: 'size',
@@ -1169,14 +1169,14 @@ export const ScaleIconActionArrowDown: StencilReactComponent<ScaleIconActionArro
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionArrowDown as StencilReactComponent<ScaleIconActionArrowDownElement, ScaleIconActionArrowDownEvents, JSX.ScaleIconActionArrowDown>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionArrowDown as StencilReactComponent<ScaleIconActionArrowDownElement, ScaleIconActionArrowDownEvents, Components.ScaleIconActionArrowDown>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionArrowLeftEvents = NonNullable<unknown>;
 
-export const ScaleIconActionArrowLeft: StencilReactComponent<ScaleIconActionArrowLeftElement, ScaleIconActionArrowLeftEvents, JSX.ScaleIconActionArrowLeft> = /*@__PURE__*/ createComponent<ScaleIconActionArrowLeftElement, ScaleIconActionArrowLeftEvents, JSX.ScaleIconActionArrowLeft>({
+export const ScaleIconActionArrowLeft: StencilReactComponent<ScaleIconActionArrowLeftElement, ScaleIconActionArrowLeftEvents, Components.ScaleIconActionArrowLeft> = /*@__PURE__*/ createComponent<ScaleIconActionArrowLeftElement, ScaleIconActionArrowLeftEvents, Components.ScaleIconActionArrowLeft>({
     tagName: 'scale-icon-action-arrow-left',
     properties: {
         size: 'size',
@@ -1187,14 +1187,14 @@ export const ScaleIconActionArrowLeft: StencilReactComponent<ScaleIconActionArro
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionArrowLeft as StencilReactComponent<ScaleIconActionArrowLeftElement, ScaleIconActionArrowLeftEvents, JSX.ScaleIconActionArrowLeft>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionArrowLeft as StencilReactComponent<ScaleIconActionArrowLeftElement, ScaleIconActionArrowLeftEvents, Components.ScaleIconActionArrowLeft>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionArrowRightEvents = NonNullable<unknown>;
 
-export const ScaleIconActionArrowRight: StencilReactComponent<ScaleIconActionArrowRightElement, ScaleIconActionArrowRightEvents, JSX.ScaleIconActionArrowRight> = /*@__PURE__*/ createComponent<ScaleIconActionArrowRightElement, ScaleIconActionArrowRightEvents, JSX.ScaleIconActionArrowRight>({
+export const ScaleIconActionArrowRight: StencilReactComponent<ScaleIconActionArrowRightElement, ScaleIconActionArrowRightEvents, Components.ScaleIconActionArrowRight> = /*@__PURE__*/ createComponent<ScaleIconActionArrowRightElement, ScaleIconActionArrowRightEvents, Components.ScaleIconActionArrowRight>({
     tagName: 'scale-icon-action-arrow-right',
     properties: {
         size: 'size',
@@ -1205,14 +1205,14 @@ export const ScaleIconActionArrowRight: StencilReactComponent<ScaleIconActionArr
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionArrowRight as StencilReactComponent<ScaleIconActionArrowRightElement, ScaleIconActionArrowRightEvents, JSX.ScaleIconActionArrowRight>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionArrowRight as StencilReactComponent<ScaleIconActionArrowRightElement, ScaleIconActionArrowRightEvents, Components.ScaleIconActionArrowRight>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionArrowUpEvents = NonNullable<unknown>;
 
-export const ScaleIconActionArrowUp: StencilReactComponent<ScaleIconActionArrowUpElement, ScaleIconActionArrowUpEvents, JSX.ScaleIconActionArrowUp> = /*@__PURE__*/ createComponent<ScaleIconActionArrowUpElement, ScaleIconActionArrowUpEvents, JSX.ScaleIconActionArrowUp>({
+export const ScaleIconActionArrowUp: StencilReactComponent<ScaleIconActionArrowUpElement, ScaleIconActionArrowUpEvents, Components.ScaleIconActionArrowUp> = /*@__PURE__*/ createComponent<ScaleIconActionArrowUpElement, ScaleIconActionArrowUpEvents, Components.ScaleIconActionArrowUp>({
     tagName: 'scale-icon-action-arrow-up',
     properties: {
         size: 'size',
@@ -1223,14 +1223,14 @@ export const ScaleIconActionArrowUp: StencilReactComponent<ScaleIconActionArrowU
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionArrowUp as StencilReactComponent<ScaleIconActionArrowUpElement, ScaleIconActionArrowUpEvents, JSX.ScaleIconActionArrowUp>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionArrowUp as StencilReactComponent<ScaleIconActionArrowUpElement, ScaleIconActionArrowUpEvents, Components.ScaleIconActionArrowUp>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionAutoLoginEvents = NonNullable<unknown>;
 
-export const ScaleIconActionAutoLogin: StencilReactComponent<ScaleIconActionAutoLoginElement, ScaleIconActionAutoLoginEvents, JSX.ScaleIconActionAutoLogin> = /*@__PURE__*/ createComponent<ScaleIconActionAutoLoginElement, ScaleIconActionAutoLoginEvents, JSX.ScaleIconActionAutoLogin>({
+export const ScaleIconActionAutoLogin: StencilReactComponent<ScaleIconActionAutoLoginElement, ScaleIconActionAutoLoginEvents, Components.ScaleIconActionAutoLogin> = /*@__PURE__*/ createComponent<ScaleIconActionAutoLoginElement, ScaleIconActionAutoLoginEvents, Components.ScaleIconActionAutoLogin>({
     tagName: 'scale-icon-action-auto-login',
     properties: {
         size: 'size',
@@ -1241,14 +1241,14 @@ export const ScaleIconActionAutoLogin: StencilReactComponent<ScaleIconActionAuto
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionAutoLogin as StencilReactComponent<ScaleIconActionAutoLoginElement, ScaleIconActionAutoLoginEvents, JSX.ScaleIconActionAutoLogin>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionAutoLogin as StencilReactComponent<ScaleIconActionAutoLoginElement, ScaleIconActionAutoLoginEvents, Components.ScaleIconActionAutoLogin>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionBackspaceEvents = NonNullable<unknown>;
 
-export const ScaleIconActionBackspace: StencilReactComponent<ScaleIconActionBackspaceElement, ScaleIconActionBackspaceEvents, JSX.ScaleIconActionBackspace> = /*@__PURE__*/ createComponent<ScaleIconActionBackspaceElement, ScaleIconActionBackspaceEvents, JSX.ScaleIconActionBackspace>({
+export const ScaleIconActionBackspace: StencilReactComponent<ScaleIconActionBackspaceElement, ScaleIconActionBackspaceEvents, Components.ScaleIconActionBackspace> = /*@__PURE__*/ createComponent<ScaleIconActionBackspaceElement, ScaleIconActionBackspaceEvents, Components.ScaleIconActionBackspace>({
     tagName: 'scale-icon-action-backspace',
     properties: {
         size: 'size',
@@ -1259,14 +1259,14 @@ export const ScaleIconActionBackspace: StencilReactComponent<ScaleIconActionBack
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionBackspace as StencilReactComponent<ScaleIconActionBackspaceElement, ScaleIconActionBackspaceEvents, JSX.ScaleIconActionBackspace>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionBackspace as StencilReactComponent<ScaleIconActionBackspaceElement, ScaleIconActionBackspaceEvents, Components.ScaleIconActionBackspace>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionBackwardEvents = NonNullable<unknown>;
 
-export const ScaleIconActionBackward: StencilReactComponent<ScaleIconActionBackwardElement, ScaleIconActionBackwardEvents, JSX.ScaleIconActionBackward> = /*@__PURE__*/ createComponent<ScaleIconActionBackwardElement, ScaleIconActionBackwardEvents, JSX.ScaleIconActionBackward>({
+export const ScaleIconActionBackward: StencilReactComponent<ScaleIconActionBackwardElement, ScaleIconActionBackwardEvents, Components.ScaleIconActionBackward> = /*@__PURE__*/ createComponent<ScaleIconActionBackwardElement, ScaleIconActionBackwardEvents, Components.ScaleIconActionBackward>({
     tagName: 'scale-icon-action-backward',
     properties: {
         size: 'size',
@@ -1277,14 +1277,14 @@ export const ScaleIconActionBackward: StencilReactComponent<ScaleIconActionBackw
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionBackward as StencilReactComponent<ScaleIconActionBackwardElement, ScaleIconActionBackwardEvents, JSX.ScaleIconActionBackward>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionBackward as StencilReactComponent<ScaleIconActionBackwardElement, ScaleIconActionBackwardEvents, Components.ScaleIconActionBackward>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionChangelogEvents = NonNullable<unknown>;
 
-export const ScaleIconActionChangelog: StencilReactComponent<ScaleIconActionChangelogElement, ScaleIconActionChangelogEvents, JSX.ScaleIconActionChangelog> = /*@__PURE__*/ createComponent<ScaleIconActionChangelogElement, ScaleIconActionChangelogEvents, JSX.ScaleIconActionChangelog>({
+export const ScaleIconActionChangelog: StencilReactComponent<ScaleIconActionChangelogElement, ScaleIconActionChangelogEvents, Components.ScaleIconActionChangelog> = /*@__PURE__*/ createComponent<ScaleIconActionChangelogElement, ScaleIconActionChangelogEvents, Components.ScaleIconActionChangelog>({
     tagName: 'scale-icon-action-changelog',
     properties: {
         size: 'size',
@@ -1295,14 +1295,14 @@ export const ScaleIconActionChangelog: StencilReactComponent<ScaleIconActionChan
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionChangelog as StencilReactComponent<ScaleIconActionChangelogElement, ScaleIconActionChangelogEvents, JSX.ScaleIconActionChangelog>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionChangelog as StencilReactComponent<ScaleIconActionChangelogElement, ScaleIconActionChangelogEvents, Components.ScaleIconActionChangelog>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionCheckmarkEvents = NonNullable<unknown>;
 
-export const ScaleIconActionCheckmark: StencilReactComponent<ScaleIconActionCheckmarkElement, ScaleIconActionCheckmarkEvents, JSX.ScaleIconActionCheckmark> = /*@__PURE__*/ createComponent<ScaleIconActionCheckmarkElement, ScaleIconActionCheckmarkEvents, JSX.ScaleIconActionCheckmark>({
+export const ScaleIconActionCheckmark: StencilReactComponent<ScaleIconActionCheckmarkElement, ScaleIconActionCheckmarkEvents, Components.ScaleIconActionCheckmark> = /*@__PURE__*/ createComponent<ScaleIconActionCheckmarkElement, ScaleIconActionCheckmarkEvents, Components.ScaleIconActionCheckmark>({
     tagName: 'scale-icon-action-checkmark',
     properties: {
         size: 'size',
@@ -1313,14 +1313,14 @@ export const ScaleIconActionCheckmark: StencilReactComponent<ScaleIconActionChec
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionCheckmark as StencilReactComponent<ScaleIconActionCheckmarkElement, ScaleIconActionCheckmarkEvents, JSX.ScaleIconActionCheckmark>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionCheckmark as StencilReactComponent<ScaleIconActionCheckmarkElement, ScaleIconActionCheckmarkEvents, Components.ScaleIconActionCheckmark>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionCircleAddEvents = NonNullable<unknown>;
 
-export const ScaleIconActionCircleAdd: StencilReactComponent<ScaleIconActionCircleAddElement, ScaleIconActionCircleAddEvents, JSX.ScaleIconActionCircleAdd> = /*@__PURE__*/ createComponent<ScaleIconActionCircleAddElement, ScaleIconActionCircleAddEvents, JSX.ScaleIconActionCircleAdd>({
+export const ScaleIconActionCircleAdd: StencilReactComponent<ScaleIconActionCircleAddElement, ScaleIconActionCircleAddEvents, Components.ScaleIconActionCircleAdd> = /*@__PURE__*/ createComponent<ScaleIconActionCircleAddElement, ScaleIconActionCircleAddEvents, Components.ScaleIconActionCircleAdd>({
     tagName: 'scale-icon-action-circle-add',
     properties: {
         size: 'size',
@@ -1331,14 +1331,14 @@ export const ScaleIconActionCircleAdd: StencilReactComponent<ScaleIconActionCirc
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionCircleAdd as StencilReactComponent<ScaleIconActionCircleAddElement, ScaleIconActionCircleAddEvents, JSX.ScaleIconActionCircleAdd>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionCircleAdd as StencilReactComponent<ScaleIconActionCircleAddElement, ScaleIconActionCircleAddEvents, Components.ScaleIconActionCircleAdd>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionCircleCloseEvents = NonNullable<unknown>;
 
-export const ScaleIconActionCircleClose: StencilReactComponent<ScaleIconActionCircleCloseElement, ScaleIconActionCircleCloseEvents, JSX.ScaleIconActionCircleClose> = /*@__PURE__*/ createComponent<ScaleIconActionCircleCloseElement, ScaleIconActionCircleCloseEvents, JSX.ScaleIconActionCircleClose>({
+export const ScaleIconActionCircleClose: StencilReactComponent<ScaleIconActionCircleCloseElement, ScaleIconActionCircleCloseEvents, Components.ScaleIconActionCircleClose> = /*@__PURE__*/ createComponent<ScaleIconActionCircleCloseElement, ScaleIconActionCircleCloseEvents, Components.ScaleIconActionCircleClose>({
     tagName: 'scale-icon-action-circle-close',
     properties: {
         size: 'size',
@@ -1349,14 +1349,14 @@ export const ScaleIconActionCircleClose: StencilReactComponent<ScaleIconActionCi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionCircleClose as StencilReactComponent<ScaleIconActionCircleCloseElement, ScaleIconActionCircleCloseEvents, JSX.ScaleIconActionCircleClose>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionCircleClose as StencilReactComponent<ScaleIconActionCircleCloseElement, ScaleIconActionCircleCloseEvents, Components.ScaleIconActionCircleClose>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionCloseEvents = NonNullable<unknown>;
 
-export const ScaleIconActionClose: StencilReactComponent<ScaleIconActionCloseElement, ScaleIconActionCloseEvents, JSX.ScaleIconActionClose> = /*@__PURE__*/ createComponent<ScaleIconActionCloseElement, ScaleIconActionCloseEvents, JSX.ScaleIconActionClose>({
+export const ScaleIconActionClose: StencilReactComponent<ScaleIconActionCloseElement, ScaleIconActionCloseEvents, Components.ScaleIconActionClose> = /*@__PURE__*/ createComponent<ScaleIconActionCloseElement, ScaleIconActionCloseEvents, Components.ScaleIconActionClose>({
     tagName: 'scale-icon-action-close',
     properties: {
         size: 'size',
@@ -1367,14 +1367,14 @@ export const ScaleIconActionClose: StencilReactComponent<ScaleIconActionCloseEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionClose as StencilReactComponent<ScaleIconActionCloseElement, ScaleIconActionCloseEvents, JSX.ScaleIconActionClose>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionClose as StencilReactComponent<ScaleIconActionCloseElement, ScaleIconActionCloseEvents, Components.ScaleIconActionClose>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionCompareEvents = NonNullable<unknown>;
 
-export const ScaleIconActionCompare: StencilReactComponent<ScaleIconActionCompareElement, ScaleIconActionCompareEvents, JSX.ScaleIconActionCompare> = /*@__PURE__*/ createComponent<ScaleIconActionCompareElement, ScaleIconActionCompareEvents, JSX.ScaleIconActionCompare>({
+export const ScaleIconActionCompare: StencilReactComponent<ScaleIconActionCompareElement, ScaleIconActionCompareEvents, Components.ScaleIconActionCompare> = /*@__PURE__*/ createComponent<ScaleIconActionCompareElement, ScaleIconActionCompareEvents, Components.ScaleIconActionCompare>({
     tagName: 'scale-icon-action-compare',
     properties: {
         size: 'size',
@@ -1385,14 +1385,14 @@ export const ScaleIconActionCompare: StencilReactComponent<ScaleIconActionCompar
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionCompare as StencilReactComponent<ScaleIconActionCompareElement, ScaleIconActionCompareEvents, JSX.ScaleIconActionCompare>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionCompare as StencilReactComponent<ScaleIconActionCompareElement, ScaleIconActionCompareEvents, Components.ScaleIconActionCompare>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionCopyPasteEvents = NonNullable<unknown>;
 
-export const ScaleIconActionCopyPaste: StencilReactComponent<ScaleIconActionCopyPasteElement, ScaleIconActionCopyPasteEvents, JSX.ScaleIconActionCopyPaste> = /*@__PURE__*/ createComponent<ScaleIconActionCopyPasteElement, ScaleIconActionCopyPasteEvents, JSX.ScaleIconActionCopyPaste>({
+export const ScaleIconActionCopyPaste: StencilReactComponent<ScaleIconActionCopyPasteElement, ScaleIconActionCopyPasteEvents, Components.ScaleIconActionCopyPaste> = /*@__PURE__*/ createComponent<ScaleIconActionCopyPasteElement, ScaleIconActionCopyPasteEvents, Components.ScaleIconActionCopyPaste>({
     tagName: 'scale-icon-action-copy-paste',
     properties: {
         size: 'size',
@@ -1403,14 +1403,14 @@ export const ScaleIconActionCopyPaste: StencilReactComponent<ScaleIconActionCopy
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionCopyPaste as StencilReactComponent<ScaleIconActionCopyPasteElement, ScaleIconActionCopyPasteEvents, JSX.ScaleIconActionCopyPaste>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionCopyPaste as StencilReactComponent<ScaleIconActionCopyPasteElement, ScaleIconActionCopyPasteEvents, Components.ScaleIconActionCopyPaste>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionCutPasteEvents = NonNullable<unknown>;
 
-export const ScaleIconActionCutPaste: StencilReactComponent<ScaleIconActionCutPasteElement, ScaleIconActionCutPasteEvents, JSX.ScaleIconActionCutPaste> = /*@__PURE__*/ createComponent<ScaleIconActionCutPasteElement, ScaleIconActionCutPasteEvents, JSX.ScaleIconActionCutPaste>({
+export const ScaleIconActionCutPaste: StencilReactComponent<ScaleIconActionCutPasteElement, ScaleIconActionCutPasteEvents, Components.ScaleIconActionCutPaste> = /*@__PURE__*/ createComponent<ScaleIconActionCutPasteElement, ScaleIconActionCutPasteEvents, Components.ScaleIconActionCutPaste>({
     tagName: 'scale-icon-action-cut-paste',
     properties: {
         size: 'size',
@@ -1421,14 +1421,14 @@ export const ScaleIconActionCutPaste: StencilReactComponent<ScaleIconActionCutPa
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionCutPaste as StencilReactComponent<ScaleIconActionCutPasteElement, ScaleIconActionCutPasteEvents, JSX.ScaleIconActionCutPaste>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionCutPaste as StencilReactComponent<ScaleIconActionCutPasteElement, ScaleIconActionCutPasteEvents, Components.ScaleIconActionCutPaste>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionDisabledMicrophoneEvents = NonNullable<unknown>;
 
-export const ScaleIconActionDisabledMicrophone: StencilReactComponent<ScaleIconActionDisabledMicrophoneElement, ScaleIconActionDisabledMicrophoneEvents, JSX.ScaleIconActionDisabledMicrophone> = /*@__PURE__*/ createComponent<ScaleIconActionDisabledMicrophoneElement, ScaleIconActionDisabledMicrophoneEvents, JSX.ScaleIconActionDisabledMicrophone>({
+export const ScaleIconActionDisabledMicrophone: StencilReactComponent<ScaleIconActionDisabledMicrophoneElement, ScaleIconActionDisabledMicrophoneEvents, Components.ScaleIconActionDisabledMicrophone> = /*@__PURE__*/ createComponent<ScaleIconActionDisabledMicrophoneElement, ScaleIconActionDisabledMicrophoneEvents, Components.ScaleIconActionDisabledMicrophone>({
     tagName: 'scale-icon-action-disabled-microphone',
     properties: {
         size: 'size',
@@ -1439,14 +1439,14 @@ export const ScaleIconActionDisabledMicrophone: StencilReactComponent<ScaleIconA
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionDisabledMicrophone as StencilReactComponent<ScaleIconActionDisabledMicrophoneElement, ScaleIconActionDisabledMicrophoneEvents, JSX.ScaleIconActionDisabledMicrophone>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionDisabledMicrophone as StencilReactComponent<ScaleIconActionDisabledMicrophoneElement, ScaleIconActionDisabledMicrophoneEvents, Components.ScaleIconActionDisabledMicrophone>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionDownloadEvents = NonNullable<unknown>;
 
-export const ScaleIconActionDownload: StencilReactComponent<ScaleIconActionDownloadElement, ScaleIconActionDownloadEvents, JSX.ScaleIconActionDownload> = /*@__PURE__*/ createComponent<ScaleIconActionDownloadElement, ScaleIconActionDownloadEvents, JSX.ScaleIconActionDownload>({
+export const ScaleIconActionDownload: StencilReactComponent<ScaleIconActionDownloadElement, ScaleIconActionDownloadEvents, Components.ScaleIconActionDownload> = /*@__PURE__*/ createComponent<ScaleIconActionDownloadElement, ScaleIconActionDownloadEvents, Components.ScaleIconActionDownload>({
     tagName: 'scale-icon-action-download',
     properties: {
         size: 'size',
@@ -1457,14 +1457,14 @@ export const ScaleIconActionDownload: StencilReactComponent<ScaleIconActionDownl
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionDownload as StencilReactComponent<ScaleIconActionDownloadElement, ScaleIconActionDownloadEvents, JSX.ScaleIconActionDownload>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionDownload as StencilReactComponent<ScaleIconActionDownloadElement, ScaleIconActionDownloadEvents, Components.ScaleIconActionDownload>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionDownloadFromCloudEvents = NonNullable<unknown>;
 
-export const ScaleIconActionDownloadFromCloud: StencilReactComponent<ScaleIconActionDownloadFromCloudElement, ScaleIconActionDownloadFromCloudEvents, JSX.ScaleIconActionDownloadFromCloud> = /*@__PURE__*/ createComponent<ScaleIconActionDownloadFromCloudElement, ScaleIconActionDownloadFromCloudEvents, JSX.ScaleIconActionDownloadFromCloud>({
+export const ScaleIconActionDownloadFromCloud: StencilReactComponent<ScaleIconActionDownloadFromCloudElement, ScaleIconActionDownloadFromCloudEvents, Components.ScaleIconActionDownloadFromCloud> = /*@__PURE__*/ createComponent<ScaleIconActionDownloadFromCloudElement, ScaleIconActionDownloadFromCloudEvents, Components.ScaleIconActionDownloadFromCloud>({
     tagName: 'scale-icon-action-download-from-cloud',
     properties: {
         size: 'size',
@@ -1475,14 +1475,14 @@ export const ScaleIconActionDownloadFromCloud: StencilReactComponent<ScaleIconAc
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionDownloadFromCloud as StencilReactComponent<ScaleIconActionDownloadFromCloudElement, ScaleIconActionDownloadFromCloudEvents, JSX.ScaleIconActionDownloadFromCloud>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionDownloadFromCloud as StencilReactComponent<ScaleIconActionDownloadFromCloudElement, ScaleIconActionDownloadFromCloudEvents, Components.ScaleIconActionDownloadFromCloud>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionDragAndDropEvents = NonNullable<unknown>;
 
-export const ScaleIconActionDragAndDrop: StencilReactComponent<ScaleIconActionDragAndDropElement, ScaleIconActionDragAndDropEvents, JSX.ScaleIconActionDragAndDrop> = /*@__PURE__*/ createComponent<ScaleIconActionDragAndDropElement, ScaleIconActionDragAndDropEvents, JSX.ScaleIconActionDragAndDrop>({
+export const ScaleIconActionDragAndDrop: StencilReactComponent<ScaleIconActionDragAndDropElement, ScaleIconActionDragAndDropEvents, Components.ScaleIconActionDragAndDrop> = /*@__PURE__*/ createComponent<ScaleIconActionDragAndDropElement, ScaleIconActionDragAndDropEvents, Components.ScaleIconActionDragAndDrop>({
     tagName: 'scale-icon-action-drag-and-drop',
     properties: {
         size: 'size',
@@ -1493,14 +1493,14 @@ export const ScaleIconActionDragAndDrop: StencilReactComponent<ScaleIconActionDr
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionDragAndDrop as StencilReactComponent<ScaleIconActionDragAndDropElement, ScaleIconActionDragAndDropEvents, JSX.ScaleIconActionDragAndDrop>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionDragAndDrop as StencilReactComponent<ScaleIconActionDragAndDropElement, ScaleIconActionDragAndDropEvents, Components.ScaleIconActionDragAndDrop>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionEditEvents = NonNullable<unknown>;
 
-export const ScaleIconActionEdit: StencilReactComponent<ScaleIconActionEditElement, ScaleIconActionEditEvents, JSX.ScaleIconActionEdit> = /*@__PURE__*/ createComponent<ScaleIconActionEditElement, ScaleIconActionEditEvents, JSX.ScaleIconActionEdit>({
+export const ScaleIconActionEdit: StencilReactComponent<ScaleIconActionEditElement, ScaleIconActionEditEvents, Components.ScaleIconActionEdit> = /*@__PURE__*/ createComponent<ScaleIconActionEditElement, ScaleIconActionEditEvents, Components.ScaleIconActionEdit>({
     tagName: 'scale-icon-action-edit',
     properties: {
         size: 'size',
@@ -1511,14 +1511,14 @@ export const ScaleIconActionEdit: StencilReactComponent<ScaleIconActionEditEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionEdit as StencilReactComponent<ScaleIconActionEditElement, ScaleIconActionEditEvents, JSX.ScaleIconActionEdit>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionEdit as StencilReactComponent<ScaleIconActionEditElement, ScaleIconActionEditEvents, Components.ScaleIconActionEdit>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionExportEvents = NonNullable<unknown>;
 
-export const ScaleIconActionExport: StencilReactComponent<ScaleIconActionExportElement, ScaleIconActionExportEvents, JSX.ScaleIconActionExport> = /*@__PURE__*/ createComponent<ScaleIconActionExportElement, ScaleIconActionExportEvents, JSX.ScaleIconActionExport>({
+export const ScaleIconActionExport: StencilReactComponent<ScaleIconActionExportElement, ScaleIconActionExportEvents, Components.ScaleIconActionExport> = /*@__PURE__*/ createComponent<ScaleIconActionExportElement, ScaleIconActionExportEvents, Components.ScaleIconActionExport>({
     tagName: 'scale-icon-action-export',
     properties: {
         size: 'size',
@@ -1529,14 +1529,14 @@ export const ScaleIconActionExport: StencilReactComponent<ScaleIconActionExportE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionExport as StencilReactComponent<ScaleIconActionExportElement, ScaleIconActionExportEvents, JSX.ScaleIconActionExport>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionExport as StencilReactComponent<ScaleIconActionExportElement, ScaleIconActionExportEvents, Components.ScaleIconActionExport>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionFastForwardEvents = NonNullable<unknown>;
 
-export const ScaleIconActionFastForward: StencilReactComponent<ScaleIconActionFastForwardElement, ScaleIconActionFastForwardEvents, JSX.ScaleIconActionFastForward> = /*@__PURE__*/ createComponent<ScaleIconActionFastForwardElement, ScaleIconActionFastForwardEvents, JSX.ScaleIconActionFastForward>({
+export const ScaleIconActionFastForward: StencilReactComponent<ScaleIconActionFastForwardElement, ScaleIconActionFastForwardEvents, Components.ScaleIconActionFastForward> = /*@__PURE__*/ createComponent<ScaleIconActionFastForwardElement, ScaleIconActionFastForwardEvents, Components.ScaleIconActionFastForward>({
     tagName: 'scale-icon-action-fast-forward',
     properties: {
         size: 'size',
@@ -1547,14 +1547,14 @@ export const ScaleIconActionFastForward: StencilReactComponent<ScaleIconActionFa
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionFastForward as StencilReactComponent<ScaleIconActionFastForwardElement, ScaleIconActionFastForwardEvents, JSX.ScaleIconActionFastForward>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionFastForward as StencilReactComponent<ScaleIconActionFastForwardElement, ScaleIconActionFastForwardEvents, Components.ScaleIconActionFastForward>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionFastForwardNbEvents = NonNullable<unknown>;
 
-export const ScaleIconActionFastForwardNb: StencilReactComponent<ScaleIconActionFastForwardNbElement, ScaleIconActionFastForwardNbEvents, JSX.ScaleIconActionFastForwardNb> = /*@__PURE__*/ createComponent<ScaleIconActionFastForwardNbElement, ScaleIconActionFastForwardNbEvents, JSX.ScaleIconActionFastForwardNb>({
+export const ScaleIconActionFastForwardNb: StencilReactComponent<ScaleIconActionFastForwardNbElement, ScaleIconActionFastForwardNbEvents, Components.ScaleIconActionFastForwardNb> = /*@__PURE__*/ createComponent<ScaleIconActionFastForwardNbElement, ScaleIconActionFastForwardNbEvents, Components.ScaleIconActionFastForwardNb>({
     tagName: 'scale-icon-action-fast-forward-nb',
     properties: {
         size: 'size',
@@ -1565,14 +1565,14 @@ export const ScaleIconActionFastForwardNb: StencilReactComponent<ScaleIconAction
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionFastForwardNb as StencilReactComponent<ScaleIconActionFastForwardNbElement, ScaleIconActionFastForwardNbEvents, JSX.ScaleIconActionFastForwardNb>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionFastForwardNb as StencilReactComponent<ScaleIconActionFastForwardNbElement, ScaleIconActionFastForwardNbEvents, Components.ScaleIconActionFastForwardNb>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionFavoriteEvents = NonNullable<unknown>;
 
-export const ScaleIconActionFavorite: StencilReactComponent<ScaleIconActionFavoriteElement, ScaleIconActionFavoriteEvents, JSX.ScaleIconActionFavorite> = /*@__PURE__*/ createComponent<ScaleIconActionFavoriteElement, ScaleIconActionFavoriteEvents, JSX.ScaleIconActionFavorite>({
+export const ScaleIconActionFavorite: StencilReactComponent<ScaleIconActionFavoriteElement, ScaleIconActionFavoriteEvents, Components.ScaleIconActionFavorite> = /*@__PURE__*/ createComponent<ScaleIconActionFavoriteElement, ScaleIconActionFavoriteEvents, Components.ScaleIconActionFavorite>({
     tagName: 'scale-icon-action-favorite',
     properties: {
         size: 'size',
@@ -1583,14 +1583,14 @@ export const ScaleIconActionFavorite: StencilReactComponent<ScaleIconActionFavor
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionFavorite as StencilReactComponent<ScaleIconActionFavoriteElement, ScaleIconActionFavoriteEvents, JSX.ScaleIconActionFavorite>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionFavorite as StencilReactComponent<ScaleIconActionFavoriteElement, ScaleIconActionFavoriteEvents, Components.ScaleIconActionFavorite>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionFilterEvents = NonNullable<unknown>;
 
-export const ScaleIconActionFilter: StencilReactComponent<ScaleIconActionFilterElement, ScaleIconActionFilterEvents, JSX.ScaleIconActionFilter> = /*@__PURE__*/ createComponent<ScaleIconActionFilterElement, ScaleIconActionFilterEvents, JSX.ScaleIconActionFilter>({
+export const ScaleIconActionFilter: StencilReactComponent<ScaleIconActionFilterElement, ScaleIconActionFilterEvents, Components.ScaleIconActionFilter> = /*@__PURE__*/ createComponent<ScaleIconActionFilterElement, ScaleIconActionFilterEvents, Components.ScaleIconActionFilter>({
     tagName: 'scale-icon-action-filter',
     properties: {
         size: 'size',
@@ -1601,14 +1601,14 @@ export const ScaleIconActionFilter: StencilReactComponent<ScaleIconActionFilterE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionFilter as StencilReactComponent<ScaleIconActionFilterElement, ScaleIconActionFilterEvents, JSX.ScaleIconActionFilter>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionFilter as StencilReactComponent<ScaleIconActionFilterElement, ScaleIconActionFilterEvents, Components.ScaleIconActionFilter>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionFilter2Events = NonNullable<unknown>;
 
-export const ScaleIconActionFilter2: StencilReactComponent<ScaleIconActionFilter2Element, ScaleIconActionFilter2Events, JSX.ScaleIconActionFilter2> = /*@__PURE__*/ createComponent<ScaleIconActionFilter2Element, ScaleIconActionFilter2Events, JSX.ScaleIconActionFilter2>({
+export const ScaleIconActionFilter2: StencilReactComponent<ScaleIconActionFilter2Element, ScaleIconActionFilter2Events, Components.ScaleIconActionFilter2> = /*@__PURE__*/ createComponent<ScaleIconActionFilter2Element, ScaleIconActionFilter2Events, Components.ScaleIconActionFilter2>({
     tagName: 'scale-icon-action-filter-2',
     properties: {
         size: 'size',
@@ -1619,14 +1619,14 @@ export const ScaleIconActionFilter2: StencilReactComponent<ScaleIconActionFilter
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionFilter2 as StencilReactComponent<ScaleIconActionFilter2Element, ScaleIconActionFilter2Events, JSX.ScaleIconActionFilter2>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionFilter2 as StencilReactComponent<ScaleIconActionFilter2Element, ScaleIconActionFilter2Events, Components.ScaleIconActionFilter2>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionForwardEvents = NonNullable<unknown>;
 
-export const ScaleIconActionForward: StencilReactComponent<ScaleIconActionForwardElement, ScaleIconActionForwardEvents, JSX.ScaleIconActionForward> = /*@__PURE__*/ createComponent<ScaleIconActionForwardElement, ScaleIconActionForwardEvents, JSX.ScaleIconActionForward>({
+export const ScaleIconActionForward: StencilReactComponent<ScaleIconActionForwardElement, ScaleIconActionForwardEvents, Components.ScaleIconActionForward> = /*@__PURE__*/ createComponent<ScaleIconActionForwardElement, ScaleIconActionForwardEvents, Components.ScaleIconActionForward>({
     tagName: 'scale-icon-action-forward',
     properties: {
         size: 'size',
@@ -1637,14 +1637,14 @@ export const ScaleIconActionForward: StencilReactComponent<ScaleIconActionForwar
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionForward as StencilReactComponent<ScaleIconActionForwardElement, ScaleIconActionForwardEvents, JSX.ScaleIconActionForward>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionForward as StencilReactComponent<ScaleIconActionForwardElement, ScaleIconActionForwardEvents, Components.ScaleIconActionForward>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionFullScreenEvents = NonNullable<unknown>;
 
-export const ScaleIconActionFullScreen: StencilReactComponent<ScaleIconActionFullScreenElement, ScaleIconActionFullScreenEvents, JSX.ScaleIconActionFullScreen> = /*@__PURE__*/ createComponent<ScaleIconActionFullScreenElement, ScaleIconActionFullScreenEvents, JSX.ScaleIconActionFullScreen>({
+export const ScaleIconActionFullScreen: StencilReactComponent<ScaleIconActionFullScreenElement, ScaleIconActionFullScreenEvents, Components.ScaleIconActionFullScreen> = /*@__PURE__*/ createComponent<ScaleIconActionFullScreenElement, ScaleIconActionFullScreenEvents, Components.ScaleIconActionFullScreen>({
     tagName: 'scale-icon-action-full-screen',
     properties: {
         size: 'size',
@@ -1655,14 +1655,14 @@ export const ScaleIconActionFullScreen: StencilReactComponent<ScaleIconActionFul
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionFullScreen as StencilReactComponent<ScaleIconActionFullScreenElement, ScaleIconActionFullScreenEvents, JSX.ScaleIconActionFullScreen>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionFullScreen as StencilReactComponent<ScaleIconActionFullScreenElement, ScaleIconActionFullScreenEvents, Components.ScaleIconActionFullScreen>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionHidePasswordEvents = NonNullable<unknown>;
 
-export const ScaleIconActionHidePassword: StencilReactComponent<ScaleIconActionHidePasswordElement, ScaleIconActionHidePasswordEvents, JSX.ScaleIconActionHidePassword> = /*@__PURE__*/ createComponent<ScaleIconActionHidePasswordElement, ScaleIconActionHidePasswordEvents, JSX.ScaleIconActionHidePassword>({
+export const ScaleIconActionHidePassword: StencilReactComponent<ScaleIconActionHidePasswordElement, ScaleIconActionHidePasswordEvents, Components.ScaleIconActionHidePassword> = /*@__PURE__*/ createComponent<ScaleIconActionHidePasswordElement, ScaleIconActionHidePasswordEvents, Components.ScaleIconActionHidePassword>({
     tagName: 'scale-icon-action-hide-password',
     properties: {
         size: 'size',
@@ -1673,14 +1673,14 @@ export const ScaleIconActionHidePassword: StencilReactComponent<ScaleIconActionH
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionHidePassword as StencilReactComponent<ScaleIconActionHidePasswordElement, ScaleIconActionHidePasswordEvents, JSX.ScaleIconActionHidePassword>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionHidePassword as StencilReactComponent<ScaleIconActionHidePasswordElement, ScaleIconActionHidePasswordEvents, Components.ScaleIconActionHidePassword>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionImportEvents = NonNullable<unknown>;
 
-export const ScaleIconActionImport: StencilReactComponent<ScaleIconActionImportElement, ScaleIconActionImportEvents, JSX.ScaleIconActionImport> = /*@__PURE__*/ createComponent<ScaleIconActionImportElement, ScaleIconActionImportEvents, JSX.ScaleIconActionImport>({
+export const ScaleIconActionImport: StencilReactComponent<ScaleIconActionImportElement, ScaleIconActionImportEvents, Components.ScaleIconActionImport> = /*@__PURE__*/ createComponent<ScaleIconActionImportElement, ScaleIconActionImportEvents, Components.ScaleIconActionImport>({
     tagName: 'scale-icon-action-import',
     properties: {
         size: 'size',
@@ -1691,14 +1691,14 @@ export const ScaleIconActionImport: StencilReactComponent<ScaleIconActionImportE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionImport as StencilReactComponent<ScaleIconActionImportElement, ScaleIconActionImportEvents, JSX.ScaleIconActionImport>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionImport as StencilReactComponent<ScaleIconActionImportElement, ScaleIconActionImportEvents, Components.ScaleIconActionImport>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionInstallEvents = NonNullable<unknown>;
 
-export const ScaleIconActionInstall: StencilReactComponent<ScaleIconActionInstallElement, ScaleIconActionInstallEvents, JSX.ScaleIconActionInstall> = /*@__PURE__*/ createComponent<ScaleIconActionInstallElement, ScaleIconActionInstallEvents, JSX.ScaleIconActionInstall>({
+export const ScaleIconActionInstall: StencilReactComponent<ScaleIconActionInstallElement, ScaleIconActionInstallEvents, Components.ScaleIconActionInstall> = /*@__PURE__*/ createComponent<ScaleIconActionInstallElement, ScaleIconActionInstallEvents, Components.ScaleIconActionInstall>({
     tagName: 'scale-icon-action-install',
     properties: {
         size: 'size',
@@ -1709,14 +1709,14 @@ export const ScaleIconActionInstall: StencilReactComponent<ScaleIconActionInstal
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionInstall as StencilReactComponent<ScaleIconActionInstallElement, ScaleIconActionInstallEvents, JSX.ScaleIconActionInstall>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionInstall as StencilReactComponent<ScaleIconActionInstallElement, ScaleIconActionInstallEvents, Components.ScaleIconActionInstall>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionLaunchEvents = NonNullable<unknown>;
 
-export const ScaleIconActionLaunch: StencilReactComponent<ScaleIconActionLaunchElement, ScaleIconActionLaunchEvents, JSX.ScaleIconActionLaunch> = /*@__PURE__*/ createComponent<ScaleIconActionLaunchElement, ScaleIconActionLaunchEvents, JSX.ScaleIconActionLaunch>({
+export const ScaleIconActionLaunch: StencilReactComponent<ScaleIconActionLaunchElement, ScaleIconActionLaunchEvents, Components.ScaleIconActionLaunch> = /*@__PURE__*/ createComponent<ScaleIconActionLaunchElement, ScaleIconActionLaunchEvents, Components.ScaleIconActionLaunch>({
     tagName: 'scale-icon-action-launch',
     properties: {
         size: 'size',
@@ -1727,14 +1727,14 @@ export const ScaleIconActionLaunch: StencilReactComponent<ScaleIconActionLaunchE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionLaunch as StencilReactComponent<ScaleIconActionLaunchElement, ScaleIconActionLaunchEvents, JSX.ScaleIconActionLaunch>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionLaunch as StencilReactComponent<ScaleIconActionLaunchElement, ScaleIconActionLaunchEvents, Components.ScaleIconActionLaunch>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionLightDarkModeEvents = NonNullable<unknown>;
 
-export const ScaleIconActionLightDarkMode: StencilReactComponent<ScaleIconActionLightDarkModeElement, ScaleIconActionLightDarkModeEvents, JSX.ScaleIconActionLightDarkMode> = /*@__PURE__*/ createComponent<ScaleIconActionLightDarkModeElement, ScaleIconActionLightDarkModeEvents, JSX.ScaleIconActionLightDarkMode>({
+export const ScaleIconActionLightDarkMode: StencilReactComponent<ScaleIconActionLightDarkModeElement, ScaleIconActionLightDarkModeEvents, Components.ScaleIconActionLightDarkMode> = /*@__PURE__*/ createComponent<ScaleIconActionLightDarkModeElement, ScaleIconActionLightDarkModeEvents, Components.ScaleIconActionLightDarkMode>({
     tagName: 'scale-icon-action-light-dark-mode',
     properties: {
         size: 'size',
@@ -1745,14 +1745,14 @@ export const ScaleIconActionLightDarkMode: StencilReactComponent<ScaleIconAction
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionLightDarkMode as StencilReactComponent<ScaleIconActionLightDarkModeElement, ScaleIconActionLightDarkModeEvents, JSX.ScaleIconActionLightDarkMode>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionLightDarkMode as StencilReactComponent<ScaleIconActionLightDarkModeElement, ScaleIconActionLightDarkModeEvents, Components.ScaleIconActionLightDarkMode>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionLinkEvents = NonNullable<unknown>;
 
-export const ScaleIconActionLink: StencilReactComponent<ScaleIconActionLinkElement, ScaleIconActionLinkEvents, JSX.ScaleIconActionLink> = /*@__PURE__*/ createComponent<ScaleIconActionLinkElement, ScaleIconActionLinkEvents, JSX.ScaleIconActionLink>({
+export const ScaleIconActionLink: StencilReactComponent<ScaleIconActionLinkElement, ScaleIconActionLinkEvents, Components.ScaleIconActionLink> = /*@__PURE__*/ createComponent<ScaleIconActionLinkElement, ScaleIconActionLinkEvents, Components.ScaleIconActionLink>({
     tagName: 'scale-icon-action-link',
     properties: {
         size: 'size',
@@ -1763,14 +1763,14 @@ export const ScaleIconActionLink: StencilReactComponent<ScaleIconActionLinkEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionLink as StencilReactComponent<ScaleIconActionLinkElement, ScaleIconActionLinkEvents, JSX.ScaleIconActionLink>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionLink as StencilReactComponent<ScaleIconActionLinkElement, ScaleIconActionLinkEvents, Components.ScaleIconActionLink>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionLogoutEvents = NonNullable<unknown>;
 
-export const ScaleIconActionLogout: StencilReactComponent<ScaleIconActionLogoutElement, ScaleIconActionLogoutEvents, JSX.ScaleIconActionLogout> = /*@__PURE__*/ createComponent<ScaleIconActionLogoutElement, ScaleIconActionLogoutEvents, JSX.ScaleIconActionLogout>({
+export const ScaleIconActionLogout: StencilReactComponent<ScaleIconActionLogoutElement, ScaleIconActionLogoutEvents, Components.ScaleIconActionLogout> = /*@__PURE__*/ createComponent<ScaleIconActionLogoutElement, ScaleIconActionLogoutEvents, Components.ScaleIconActionLogout>({
     tagName: 'scale-icon-action-logout',
     properties: {
         size: 'size',
@@ -1781,14 +1781,14 @@ export const ScaleIconActionLogout: StencilReactComponent<ScaleIconActionLogoutE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionLogout as StencilReactComponent<ScaleIconActionLogoutElement, ScaleIconActionLogoutEvents, JSX.ScaleIconActionLogout>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionLogout as StencilReactComponent<ScaleIconActionLogoutElement, ScaleIconActionLogoutEvents, Components.ScaleIconActionLogout>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionLoopEvents = NonNullable<unknown>;
 
-export const ScaleIconActionLoop: StencilReactComponent<ScaleIconActionLoopElement, ScaleIconActionLoopEvents, JSX.ScaleIconActionLoop> = /*@__PURE__*/ createComponent<ScaleIconActionLoopElement, ScaleIconActionLoopEvents, JSX.ScaleIconActionLoop>({
+export const ScaleIconActionLoop: StencilReactComponent<ScaleIconActionLoopElement, ScaleIconActionLoopEvents, Components.ScaleIconActionLoop> = /*@__PURE__*/ createComponent<ScaleIconActionLoopElement, ScaleIconActionLoopEvents, Components.ScaleIconActionLoop>({
     tagName: 'scale-icon-action-loop',
     properties: {
         size: 'size',
@@ -1799,14 +1799,14 @@ export const ScaleIconActionLoop: StencilReactComponent<ScaleIconActionLoopEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionLoop as StencilReactComponent<ScaleIconActionLoopElement, ScaleIconActionLoopEvents, JSX.ScaleIconActionLoop>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionLoop as StencilReactComponent<ScaleIconActionLoopElement, ScaleIconActionLoopEvents, Components.ScaleIconActionLoop>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionMenuEvents = NonNullable<unknown>;
 
-export const ScaleIconActionMenu: StencilReactComponent<ScaleIconActionMenuElement, ScaleIconActionMenuEvents, JSX.ScaleIconActionMenu> = /*@__PURE__*/ createComponent<ScaleIconActionMenuElement, ScaleIconActionMenuEvents, JSX.ScaleIconActionMenu>({
+export const ScaleIconActionMenu: StencilReactComponent<ScaleIconActionMenuElement, ScaleIconActionMenuEvents, Components.ScaleIconActionMenu> = /*@__PURE__*/ createComponent<ScaleIconActionMenuElement, ScaleIconActionMenuEvents, Components.ScaleIconActionMenu>({
     tagName: 'scale-icon-action-menu',
     properties: {
         size: 'size',
@@ -1817,14 +1817,14 @@ export const ScaleIconActionMenu: StencilReactComponent<ScaleIconActionMenuEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionMenu as StencilReactComponent<ScaleIconActionMenuElement, ScaleIconActionMenuEvents, JSX.ScaleIconActionMenu>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionMenu as StencilReactComponent<ScaleIconActionMenuElement, ScaleIconActionMenuEvents, Components.ScaleIconActionMenu>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionMicrophoneEvents = NonNullable<unknown>;
 
-export const ScaleIconActionMicrophone: StencilReactComponent<ScaleIconActionMicrophoneElement, ScaleIconActionMicrophoneEvents, JSX.ScaleIconActionMicrophone> = /*@__PURE__*/ createComponent<ScaleIconActionMicrophoneElement, ScaleIconActionMicrophoneEvents, JSX.ScaleIconActionMicrophone>({
+export const ScaleIconActionMicrophone: StencilReactComponent<ScaleIconActionMicrophoneElement, ScaleIconActionMicrophoneEvents, Components.ScaleIconActionMicrophone> = /*@__PURE__*/ createComponent<ScaleIconActionMicrophoneElement, ScaleIconActionMicrophoneEvents, Components.ScaleIconActionMicrophone>({
     tagName: 'scale-icon-action-microphone',
     properties: {
         size: 'size',
@@ -1835,14 +1835,14 @@ export const ScaleIconActionMicrophone: StencilReactComponent<ScaleIconActionMic
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionMicrophone as StencilReactComponent<ScaleIconActionMicrophoneElement, ScaleIconActionMicrophoneEvents, JSX.ScaleIconActionMicrophone>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionMicrophone as StencilReactComponent<ScaleIconActionMicrophoneElement, ScaleIconActionMicrophoneEvents, Components.ScaleIconActionMicrophone>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionMinimizeScreenEvents = NonNullable<unknown>;
 
-export const ScaleIconActionMinimizeScreen: StencilReactComponent<ScaleIconActionMinimizeScreenElement, ScaleIconActionMinimizeScreenEvents, JSX.ScaleIconActionMinimizeScreen> = /*@__PURE__*/ createComponent<ScaleIconActionMinimizeScreenElement, ScaleIconActionMinimizeScreenEvents, JSX.ScaleIconActionMinimizeScreen>({
+export const ScaleIconActionMinimizeScreen: StencilReactComponent<ScaleIconActionMinimizeScreenElement, ScaleIconActionMinimizeScreenEvents, Components.ScaleIconActionMinimizeScreen> = /*@__PURE__*/ createComponent<ScaleIconActionMinimizeScreenElement, ScaleIconActionMinimizeScreenEvents, Components.ScaleIconActionMinimizeScreen>({
     tagName: 'scale-icon-action-minimize-screen',
     properties: {
         size: 'size',
@@ -1853,14 +1853,14 @@ export const ScaleIconActionMinimizeScreen: StencilReactComponent<ScaleIconActio
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionMinimizeScreen as StencilReactComponent<ScaleIconActionMinimizeScreenElement, ScaleIconActionMinimizeScreenEvents, JSX.ScaleIconActionMinimizeScreen>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionMinimizeScreen as StencilReactComponent<ScaleIconActionMinimizeScreenElement, ScaleIconActionMinimizeScreenEvents, Components.ScaleIconActionMinimizeScreen>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionMinusEvents = NonNullable<unknown>;
 
-export const ScaleIconActionMinus: StencilReactComponent<ScaleIconActionMinusElement, ScaleIconActionMinusEvents, JSX.ScaleIconActionMinus> = /*@__PURE__*/ createComponent<ScaleIconActionMinusElement, ScaleIconActionMinusEvents, JSX.ScaleIconActionMinus>({
+export const ScaleIconActionMinus: StencilReactComponent<ScaleIconActionMinusElement, ScaleIconActionMinusEvents, Components.ScaleIconActionMinus> = /*@__PURE__*/ createComponent<ScaleIconActionMinusElement, ScaleIconActionMinusEvents, Components.ScaleIconActionMinus>({
     tagName: 'scale-icon-action-minus',
     properties: {
         size: 'size',
@@ -1871,14 +1871,14 @@ export const ScaleIconActionMinus: StencilReactComponent<ScaleIconActionMinusEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionMinus as StencilReactComponent<ScaleIconActionMinusElement, ScaleIconActionMinusEvents, JSX.ScaleIconActionMinus>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionMinus as StencilReactComponent<ScaleIconActionMinusElement, ScaleIconActionMinusEvents, Components.ScaleIconActionMinus>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionMinusCircleEvents = NonNullable<unknown>;
 
-export const ScaleIconActionMinusCircle: StencilReactComponent<ScaleIconActionMinusCircleElement, ScaleIconActionMinusCircleEvents, JSX.ScaleIconActionMinusCircle> = /*@__PURE__*/ createComponent<ScaleIconActionMinusCircleElement, ScaleIconActionMinusCircleEvents, JSX.ScaleIconActionMinusCircle>({
+export const ScaleIconActionMinusCircle: StencilReactComponent<ScaleIconActionMinusCircleElement, ScaleIconActionMinusCircleEvents, Components.ScaleIconActionMinusCircle> = /*@__PURE__*/ createComponent<ScaleIconActionMinusCircleElement, ScaleIconActionMinusCircleEvents, Components.ScaleIconActionMinusCircle>({
     tagName: 'scale-icon-action-minus-circle',
     properties: {
         size: 'size',
@@ -1889,14 +1889,14 @@ export const ScaleIconActionMinusCircle: StencilReactComponent<ScaleIconActionMi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionMinusCircle as StencilReactComponent<ScaleIconActionMinusCircleElement, ScaleIconActionMinusCircleEvents, JSX.ScaleIconActionMinusCircle>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionMinusCircle as StencilReactComponent<ScaleIconActionMinusCircleElement, ScaleIconActionMinusCircleEvents, Components.ScaleIconActionMinusCircle>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionMoreEvents = NonNullable<unknown>;
 
-export const ScaleIconActionMore: StencilReactComponent<ScaleIconActionMoreElement, ScaleIconActionMoreEvents, JSX.ScaleIconActionMore> = /*@__PURE__*/ createComponent<ScaleIconActionMoreElement, ScaleIconActionMoreEvents, JSX.ScaleIconActionMore>({
+export const ScaleIconActionMore: StencilReactComponent<ScaleIconActionMoreElement, ScaleIconActionMoreEvents, Components.ScaleIconActionMore> = /*@__PURE__*/ createComponent<ScaleIconActionMoreElement, ScaleIconActionMoreEvents, Components.ScaleIconActionMore>({
     tagName: 'scale-icon-action-more',
     properties: {
         size: 'size',
@@ -1907,14 +1907,14 @@ export const ScaleIconActionMore: StencilReactComponent<ScaleIconActionMoreEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionMore as StencilReactComponent<ScaleIconActionMoreElement, ScaleIconActionMoreEvents, JSX.ScaleIconActionMore>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionMore as StencilReactComponent<ScaleIconActionMoreElement, ScaleIconActionMoreEvents, Components.ScaleIconActionMore>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionMoveEvents = NonNullable<unknown>;
 
-export const ScaleIconActionMove: StencilReactComponent<ScaleIconActionMoveElement, ScaleIconActionMoveEvents, JSX.ScaleIconActionMove> = /*@__PURE__*/ createComponent<ScaleIconActionMoveElement, ScaleIconActionMoveEvents, JSX.ScaleIconActionMove>({
+export const ScaleIconActionMove: StencilReactComponent<ScaleIconActionMoveElement, ScaleIconActionMoveEvents, Components.ScaleIconActionMove> = /*@__PURE__*/ createComponent<ScaleIconActionMoveElement, ScaleIconActionMoveEvents, Components.ScaleIconActionMove>({
     tagName: 'scale-icon-action-move',
     properties: {
         size: 'size',
@@ -1925,14 +1925,14 @@ export const ScaleIconActionMove: StencilReactComponent<ScaleIconActionMoveEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionMove as StencilReactComponent<ScaleIconActionMoveElement, ScaleIconActionMoveEvents, JSX.ScaleIconActionMove>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionMove as StencilReactComponent<ScaleIconActionMoveElement, ScaleIconActionMoveEvents, Components.ScaleIconActionMove>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionMuteEvents = NonNullable<unknown>;
 
-export const ScaleIconActionMute: StencilReactComponent<ScaleIconActionMuteElement, ScaleIconActionMuteEvents, JSX.ScaleIconActionMute> = /*@__PURE__*/ createComponent<ScaleIconActionMuteElement, ScaleIconActionMuteEvents, JSX.ScaleIconActionMute>({
+export const ScaleIconActionMute: StencilReactComponent<ScaleIconActionMuteElement, ScaleIconActionMuteEvents, Components.ScaleIconActionMute> = /*@__PURE__*/ createComponent<ScaleIconActionMuteElement, ScaleIconActionMuteEvents, Components.ScaleIconActionMute>({
     tagName: 'scale-icon-action-mute',
     properties: {
         size: 'size',
@@ -1943,14 +1943,14 @@ export const ScaleIconActionMute: StencilReactComponent<ScaleIconActionMuteEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionMute as StencilReactComponent<ScaleIconActionMuteElement, ScaleIconActionMuteEvents, JSX.ScaleIconActionMute>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionMute as StencilReactComponent<ScaleIconActionMuteElement, ScaleIconActionMuteEvents, Components.ScaleIconActionMute>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionNotificationEvents = NonNullable<unknown>;
 
-export const ScaleIconActionNotification: StencilReactComponent<ScaleIconActionNotificationElement, ScaleIconActionNotificationEvents, JSX.ScaleIconActionNotification> = /*@__PURE__*/ createComponent<ScaleIconActionNotificationElement, ScaleIconActionNotificationEvents, JSX.ScaleIconActionNotification>({
+export const ScaleIconActionNotification: StencilReactComponent<ScaleIconActionNotificationElement, ScaleIconActionNotificationEvents, Components.ScaleIconActionNotification> = /*@__PURE__*/ createComponent<ScaleIconActionNotificationElement, ScaleIconActionNotificationEvents, Components.ScaleIconActionNotification>({
     tagName: 'scale-icon-action-notification',
     properties: {
         size: 'size',
@@ -1961,14 +1961,14 @@ export const ScaleIconActionNotification: StencilReactComponent<ScaleIconActionN
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionNotification as StencilReactComponent<ScaleIconActionNotificationElement, ScaleIconActionNotificationEvents, JSX.ScaleIconActionNotification>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionNotification as StencilReactComponent<ScaleIconActionNotificationElement, ScaleIconActionNotificationEvents, Components.ScaleIconActionNotification>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPauseEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPause: StencilReactComponent<ScaleIconActionPauseElement, ScaleIconActionPauseEvents, JSX.ScaleIconActionPause> = /*@__PURE__*/ createComponent<ScaleIconActionPauseElement, ScaleIconActionPauseEvents, JSX.ScaleIconActionPause>({
+export const ScaleIconActionPause: StencilReactComponent<ScaleIconActionPauseElement, ScaleIconActionPauseEvents, Components.ScaleIconActionPause> = /*@__PURE__*/ createComponent<ScaleIconActionPauseElement, ScaleIconActionPauseEvents, Components.ScaleIconActionPause>({
     tagName: 'scale-icon-action-pause',
     properties: {
         size: 'size',
@@ -1979,14 +1979,14 @@ export const ScaleIconActionPause: StencilReactComponent<ScaleIconActionPauseEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPause as StencilReactComponent<ScaleIconActionPauseElement, ScaleIconActionPauseEvents, JSX.ScaleIconActionPause>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPause as StencilReactComponent<ScaleIconActionPauseElement, ScaleIconActionPauseEvents, Components.ScaleIconActionPause>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPauseNbEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPauseNb: StencilReactComponent<ScaleIconActionPauseNbElement, ScaleIconActionPauseNbEvents, JSX.ScaleIconActionPauseNb> = /*@__PURE__*/ createComponent<ScaleIconActionPauseNbElement, ScaleIconActionPauseNbEvents, JSX.ScaleIconActionPauseNb>({
+export const ScaleIconActionPauseNb: StencilReactComponent<ScaleIconActionPauseNbElement, ScaleIconActionPauseNbEvents, Components.ScaleIconActionPauseNb> = /*@__PURE__*/ createComponent<ScaleIconActionPauseNbElement, ScaleIconActionPauseNbEvents, Components.ScaleIconActionPauseNb>({
     tagName: 'scale-icon-action-pause-nb',
     properties: {
         size: 'size',
@@ -1997,14 +1997,14 @@ export const ScaleIconActionPauseNb: StencilReactComponent<ScaleIconActionPauseN
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPauseNb as StencilReactComponent<ScaleIconActionPauseNbElement, ScaleIconActionPauseNbEvents, JSX.ScaleIconActionPauseNb>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPauseNb as StencilReactComponent<ScaleIconActionPauseNbElement, ScaleIconActionPauseNbEvents, Components.ScaleIconActionPauseNb>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPinEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPin: StencilReactComponent<ScaleIconActionPinElement, ScaleIconActionPinEvents, JSX.ScaleIconActionPin> = /*@__PURE__*/ createComponent<ScaleIconActionPinElement, ScaleIconActionPinEvents, JSX.ScaleIconActionPin>({
+export const ScaleIconActionPin: StencilReactComponent<ScaleIconActionPinElement, ScaleIconActionPinEvents, Components.ScaleIconActionPin> = /*@__PURE__*/ createComponent<ScaleIconActionPinElement, ScaleIconActionPinEvents, Components.ScaleIconActionPin>({
     tagName: 'scale-icon-action-pin',
     properties: {
         size: 'size',
@@ -2015,14 +2015,14 @@ export const ScaleIconActionPin: StencilReactComponent<ScaleIconActionPinElement
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPin as StencilReactComponent<ScaleIconActionPinElement, ScaleIconActionPinEvents, JSX.ScaleIconActionPin>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPin as StencilReactComponent<ScaleIconActionPinElement, ScaleIconActionPinEvents, Components.ScaleIconActionPin>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPlayEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPlay: StencilReactComponent<ScaleIconActionPlayElement, ScaleIconActionPlayEvents, JSX.ScaleIconActionPlay> = /*@__PURE__*/ createComponent<ScaleIconActionPlayElement, ScaleIconActionPlayEvents, JSX.ScaleIconActionPlay>({
+export const ScaleIconActionPlay: StencilReactComponent<ScaleIconActionPlayElement, ScaleIconActionPlayEvents, Components.ScaleIconActionPlay> = /*@__PURE__*/ createComponent<ScaleIconActionPlayElement, ScaleIconActionPlayEvents, Components.ScaleIconActionPlay>({
     tagName: 'scale-icon-action-play',
     properties: {
         size: 'size',
@@ -2033,14 +2033,14 @@ export const ScaleIconActionPlay: StencilReactComponent<ScaleIconActionPlayEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPlay as StencilReactComponent<ScaleIconActionPlayElement, ScaleIconActionPlayEvents, JSX.ScaleIconActionPlay>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPlay as StencilReactComponent<ScaleIconActionPlayElement, ScaleIconActionPlayEvents, Components.ScaleIconActionPlay>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPlayNbEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPlayNb: StencilReactComponent<ScaleIconActionPlayNbElement, ScaleIconActionPlayNbEvents, JSX.ScaleIconActionPlayNb> = /*@__PURE__*/ createComponent<ScaleIconActionPlayNbElement, ScaleIconActionPlayNbEvents, JSX.ScaleIconActionPlayNb>({
+export const ScaleIconActionPlayNb: StencilReactComponent<ScaleIconActionPlayNbElement, ScaleIconActionPlayNbEvents, Components.ScaleIconActionPlayNb> = /*@__PURE__*/ createComponent<ScaleIconActionPlayNbElement, ScaleIconActionPlayNbEvents, Components.ScaleIconActionPlayNb>({
     tagName: 'scale-icon-action-play-nb',
     properties: {
         size: 'size',
@@ -2051,14 +2051,14 @@ export const ScaleIconActionPlayNb: StencilReactComponent<ScaleIconActionPlayNbE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPlayNb as StencilReactComponent<ScaleIconActionPlayNbElement, ScaleIconActionPlayNbEvents, JSX.ScaleIconActionPlayNb>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPlayNb as StencilReactComponent<ScaleIconActionPlayNbElement, ScaleIconActionPlayNbEvents, Components.ScaleIconActionPlayNb>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPopUpWindowEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPopUpWindow: StencilReactComponent<ScaleIconActionPopUpWindowElement, ScaleIconActionPopUpWindowEvents, JSX.ScaleIconActionPopUpWindow> = /*@__PURE__*/ createComponent<ScaleIconActionPopUpWindowElement, ScaleIconActionPopUpWindowEvents, JSX.ScaleIconActionPopUpWindow>({
+export const ScaleIconActionPopUpWindow: StencilReactComponent<ScaleIconActionPopUpWindowElement, ScaleIconActionPopUpWindowEvents, Components.ScaleIconActionPopUpWindow> = /*@__PURE__*/ createComponent<ScaleIconActionPopUpWindowElement, ScaleIconActionPopUpWindowEvents, Components.ScaleIconActionPopUpWindow>({
     tagName: 'scale-icon-action-pop-up-window',
     properties: {
         size: 'size',
@@ -2069,14 +2069,14 @@ export const ScaleIconActionPopUpWindow: StencilReactComponent<ScaleIconActionPo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPopUpWindow as StencilReactComponent<ScaleIconActionPopUpWindowElement, ScaleIconActionPopUpWindowEvents, JSX.ScaleIconActionPopUpWindow>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPopUpWindow as StencilReactComponent<ScaleIconActionPopUpWindowElement, ScaleIconActionPopUpWindowEvents, Components.ScaleIconActionPopUpWindow>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPowerEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPower: StencilReactComponent<ScaleIconActionPowerElement, ScaleIconActionPowerEvents, JSX.ScaleIconActionPower> = /*@__PURE__*/ createComponent<ScaleIconActionPowerElement, ScaleIconActionPowerEvents, JSX.ScaleIconActionPower>({
+export const ScaleIconActionPower: StencilReactComponent<ScaleIconActionPowerElement, ScaleIconActionPowerEvents, Components.ScaleIconActionPower> = /*@__PURE__*/ createComponent<ScaleIconActionPowerElement, ScaleIconActionPowerEvents, Components.ScaleIconActionPower>({
     tagName: 'scale-icon-action-power',
     properties: {
         size: 'size',
@@ -2087,14 +2087,14 @@ export const ScaleIconActionPower: StencilReactComponent<ScaleIconActionPowerEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPower as StencilReactComponent<ScaleIconActionPowerElement, ScaleIconActionPowerEvents, JSX.ScaleIconActionPower>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPower as StencilReactComponent<ScaleIconActionPowerElement, ScaleIconActionPowerEvents, Components.ScaleIconActionPower>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPreviousNbEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPreviousNb: StencilReactComponent<ScaleIconActionPreviousNbElement, ScaleIconActionPreviousNbEvents, JSX.ScaleIconActionPreviousNb> = /*@__PURE__*/ createComponent<ScaleIconActionPreviousNbElement, ScaleIconActionPreviousNbEvents, JSX.ScaleIconActionPreviousNb>({
+export const ScaleIconActionPreviousNb: StencilReactComponent<ScaleIconActionPreviousNbElement, ScaleIconActionPreviousNbEvents, Components.ScaleIconActionPreviousNb> = /*@__PURE__*/ createComponent<ScaleIconActionPreviousNbElement, ScaleIconActionPreviousNbEvents, Components.ScaleIconActionPreviousNb>({
     tagName: 'scale-icon-action-previous-nb',
     properties: {
         size: 'size',
@@ -2105,14 +2105,14 @@ export const ScaleIconActionPreviousNb: StencilReactComponent<ScaleIconActionPre
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPreviousNb as StencilReactComponent<ScaleIconActionPreviousNbElement, ScaleIconActionPreviousNbEvents, JSX.ScaleIconActionPreviousNb>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPreviousNb as StencilReactComponent<ScaleIconActionPreviousNbElement, ScaleIconActionPreviousNbEvents, Components.ScaleIconActionPreviousNb>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPrintEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPrint: StencilReactComponent<ScaleIconActionPrintElement, ScaleIconActionPrintEvents, JSX.ScaleIconActionPrint> = /*@__PURE__*/ createComponent<ScaleIconActionPrintElement, ScaleIconActionPrintEvents, JSX.ScaleIconActionPrint>({
+export const ScaleIconActionPrint: StencilReactComponent<ScaleIconActionPrintElement, ScaleIconActionPrintEvents, Components.ScaleIconActionPrint> = /*@__PURE__*/ createComponent<ScaleIconActionPrintElement, ScaleIconActionPrintEvents, Components.ScaleIconActionPrint>({
     tagName: 'scale-icon-action-print',
     properties: {
         size: 'size',
@@ -2123,14 +2123,14 @@ export const ScaleIconActionPrint: StencilReactComponent<ScaleIconActionPrintEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPrint as StencilReactComponent<ScaleIconActionPrintElement, ScaleIconActionPrintEvents, JSX.ScaleIconActionPrint>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPrint as StencilReactComponent<ScaleIconActionPrintElement, ScaleIconActionPrintEvents, Components.ScaleIconActionPrint>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionPublishEvents = NonNullable<unknown>;
 
-export const ScaleIconActionPublish: StencilReactComponent<ScaleIconActionPublishElement, ScaleIconActionPublishEvents, JSX.ScaleIconActionPublish> = /*@__PURE__*/ createComponent<ScaleIconActionPublishElement, ScaleIconActionPublishEvents, JSX.ScaleIconActionPublish>({
+export const ScaleIconActionPublish: StencilReactComponent<ScaleIconActionPublishElement, ScaleIconActionPublishEvents, Components.ScaleIconActionPublish> = /*@__PURE__*/ createComponent<ScaleIconActionPublishElement, ScaleIconActionPublishEvents, Components.ScaleIconActionPublish>({
     tagName: 'scale-icon-action-publish',
     properties: {
         size: 'size',
@@ -2141,14 +2141,14 @@ export const ScaleIconActionPublish: StencilReactComponent<ScaleIconActionPublis
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionPublish as StencilReactComponent<ScaleIconActionPublishElement, ScaleIconActionPublishEvents, JSX.ScaleIconActionPublish>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionPublish as StencilReactComponent<ScaleIconActionPublishElement, ScaleIconActionPublishEvents, Components.ScaleIconActionPublish>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionRandomEvents = NonNullable<unknown>;
 
-export const ScaleIconActionRandom: StencilReactComponent<ScaleIconActionRandomElement, ScaleIconActionRandomEvents, JSX.ScaleIconActionRandom> = /*@__PURE__*/ createComponent<ScaleIconActionRandomElement, ScaleIconActionRandomEvents, JSX.ScaleIconActionRandom>({
+export const ScaleIconActionRandom: StencilReactComponent<ScaleIconActionRandomElement, ScaleIconActionRandomEvents, Components.ScaleIconActionRandom> = /*@__PURE__*/ createComponent<ScaleIconActionRandomElement, ScaleIconActionRandomEvents, Components.ScaleIconActionRandom>({
     tagName: 'scale-icon-action-random',
     properties: {
         size: 'size',
@@ -2159,14 +2159,14 @@ export const ScaleIconActionRandom: StencilReactComponent<ScaleIconActionRandomE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionRandom as StencilReactComponent<ScaleIconActionRandomElement, ScaleIconActionRandomEvents, JSX.ScaleIconActionRandom>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionRandom as StencilReactComponent<ScaleIconActionRandomElement, ScaleIconActionRandomEvents, Components.ScaleIconActionRandom>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionRecordNbEvents = NonNullable<unknown>;
 
-export const ScaleIconActionRecordNb: StencilReactComponent<ScaleIconActionRecordNbElement, ScaleIconActionRecordNbEvents, JSX.ScaleIconActionRecordNb> = /*@__PURE__*/ createComponent<ScaleIconActionRecordNbElement, ScaleIconActionRecordNbEvents, JSX.ScaleIconActionRecordNb>({
+export const ScaleIconActionRecordNb: StencilReactComponent<ScaleIconActionRecordNbElement, ScaleIconActionRecordNbEvents, Components.ScaleIconActionRecordNb> = /*@__PURE__*/ createComponent<ScaleIconActionRecordNbElement, ScaleIconActionRecordNbEvents, Components.ScaleIconActionRecordNb>({
     tagName: 'scale-icon-action-record-nb',
     properties: {
         size: 'size',
@@ -2177,14 +2177,14 @@ export const ScaleIconActionRecordNb: StencilReactComponent<ScaleIconActionRecor
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionRecordNb as StencilReactComponent<ScaleIconActionRecordNbElement, ScaleIconActionRecordNbEvents, JSX.ScaleIconActionRecordNb>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionRecordNb as StencilReactComponent<ScaleIconActionRecordNbElement, ScaleIconActionRecordNbEvents, Components.ScaleIconActionRecordNb>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionRefreshEvents = NonNullable<unknown>;
 
-export const ScaleIconActionRefresh: StencilReactComponent<ScaleIconActionRefreshElement, ScaleIconActionRefreshEvents, JSX.ScaleIconActionRefresh> = /*@__PURE__*/ createComponent<ScaleIconActionRefreshElement, ScaleIconActionRefreshEvents, JSX.ScaleIconActionRefresh>({
+export const ScaleIconActionRefresh: StencilReactComponent<ScaleIconActionRefreshElement, ScaleIconActionRefreshEvents, Components.ScaleIconActionRefresh> = /*@__PURE__*/ createComponent<ScaleIconActionRefreshElement, ScaleIconActionRefreshEvents, Components.ScaleIconActionRefresh>({
     tagName: 'scale-icon-action-refresh',
     properties: {
         size: 'size',
@@ -2195,14 +2195,14 @@ export const ScaleIconActionRefresh: StencilReactComponent<ScaleIconActionRefres
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionRefresh as StencilReactComponent<ScaleIconActionRefreshElement, ScaleIconActionRefreshEvents, JSX.ScaleIconActionRefresh>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionRefresh as StencilReactComponent<ScaleIconActionRefreshElement, ScaleIconActionRefreshEvents, Components.ScaleIconActionRefresh>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionRemoveEvents = NonNullable<unknown>;
 
-export const ScaleIconActionRemove: StencilReactComponent<ScaleIconActionRemoveElement, ScaleIconActionRemoveEvents, JSX.ScaleIconActionRemove> = /*@__PURE__*/ createComponent<ScaleIconActionRemoveElement, ScaleIconActionRemoveEvents, JSX.ScaleIconActionRemove>({
+export const ScaleIconActionRemove: StencilReactComponent<ScaleIconActionRemoveElement, ScaleIconActionRemoveEvents, Components.ScaleIconActionRemove> = /*@__PURE__*/ createComponent<ScaleIconActionRemoveElement, ScaleIconActionRemoveEvents, Components.ScaleIconActionRemove>({
     tagName: 'scale-icon-action-remove',
     properties: {
         size: 'size',
@@ -2213,14 +2213,14 @@ export const ScaleIconActionRemove: StencilReactComponent<ScaleIconActionRemoveE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionRemove as StencilReactComponent<ScaleIconActionRemoveElement, ScaleIconActionRemoveEvents, JSX.ScaleIconActionRemove>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionRemove as StencilReactComponent<ScaleIconActionRemoveElement, ScaleIconActionRemoveEvents, Components.ScaleIconActionRemove>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionReplyEvents = NonNullable<unknown>;
 
-export const ScaleIconActionReply: StencilReactComponent<ScaleIconActionReplyElement, ScaleIconActionReplyEvents, JSX.ScaleIconActionReply> = /*@__PURE__*/ createComponent<ScaleIconActionReplyElement, ScaleIconActionReplyEvents, JSX.ScaleIconActionReply>({
+export const ScaleIconActionReply: StencilReactComponent<ScaleIconActionReplyElement, ScaleIconActionReplyEvents, Components.ScaleIconActionReply> = /*@__PURE__*/ createComponent<ScaleIconActionReplyElement, ScaleIconActionReplyEvents, Components.ScaleIconActionReply>({
     tagName: 'scale-icon-action-reply',
     properties: {
         size: 'size',
@@ -2231,14 +2231,14 @@ export const ScaleIconActionReply: StencilReactComponent<ScaleIconActionReplyEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionReply as StencilReactComponent<ScaleIconActionReplyElement, ScaleIconActionReplyEvents, JSX.ScaleIconActionReply>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionReply as StencilReactComponent<ScaleIconActionReplyElement, ScaleIconActionReplyEvents, Components.ScaleIconActionReply>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionReplyAllEvents = NonNullable<unknown>;
 
-export const ScaleIconActionReplyAll: StencilReactComponent<ScaleIconActionReplyAllElement, ScaleIconActionReplyAllEvents, JSX.ScaleIconActionReplyAll> = /*@__PURE__*/ createComponent<ScaleIconActionReplyAllElement, ScaleIconActionReplyAllEvents, JSX.ScaleIconActionReplyAll>({
+export const ScaleIconActionReplyAll: StencilReactComponent<ScaleIconActionReplyAllElement, ScaleIconActionReplyAllEvents, Components.ScaleIconActionReplyAll> = /*@__PURE__*/ createComponent<ScaleIconActionReplyAllElement, ScaleIconActionReplyAllEvents, Components.ScaleIconActionReplyAll>({
     tagName: 'scale-icon-action-reply-all',
     properties: {
         size: 'size',
@@ -2249,14 +2249,14 @@ export const ScaleIconActionReplyAll: StencilReactComponent<ScaleIconActionReply
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionReplyAll as StencilReactComponent<ScaleIconActionReplyAllElement, ScaleIconActionReplyAllEvents, JSX.ScaleIconActionReplyAll>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionReplyAll as StencilReactComponent<ScaleIconActionReplyAllElement, ScaleIconActionReplyAllEvents, Components.ScaleIconActionReplyAll>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionReplyForwardEvents = NonNullable<unknown>;
 
-export const ScaleIconActionReplyForward: StencilReactComponent<ScaleIconActionReplyForwardElement, ScaleIconActionReplyForwardEvents, JSX.ScaleIconActionReplyForward> = /*@__PURE__*/ createComponent<ScaleIconActionReplyForwardElement, ScaleIconActionReplyForwardEvents, JSX.ScaleIconActionReplyForward>({
+export const ScaleIconActionReplyForward: StencilReactComponent<ScaleIconActionReplyForwardElement, ScaleIconActionReplyForwardEvents, Components.ScaleIconActionReplyForward> = /*@__PURE__*/ createComponent<ScaleIconActionReplyForwardElement, ScaleIconActionReplyForwardEvents, Components.ScaleIconActionReplyForward>({
     tagName: 'scale-icon-action-reply-forward',
     properties: {
         size: 'size',
@@ -2267,14 +2267,14 @@ export const ScaleIconActionReplyForward: StencilReactComponent<ScaleIconActionR
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionReplyForward as StencilReactComponent<ScaleIconActionReplyForwardElement, ScaleIconActionReplyForwardEvents, JSX.ScaleIconActionReplyForward>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionReplyForward as StencilReactComponent<ScaleIconActionReplyForwardElement, ScaleIconActionReplyForwardEvents, Components.ScaleIconActionReplyForward>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionRestartEvents = NonNullable<unknown>;
 
-export const ScaleIconActionRestart: StencilReactComponent<ScaleIconActionRestartElement, ScaleIconActionRestartEvents, JSX.ScaleIconActionRestart> = /*@__PURE__*/ createComponent<ScaleIconActionRestartElement, ScaleIconActionRestartEvents, JSX.ScaleIconActionRestart>({
+export const ScaleIconActionRestart: StencilReactComponent<ScaleIconActionRestartElement, ScaleIconActionRestartEvents, Components.ScaleIconActionRestart> = /*@__PURE__*/ createComponent<ScaleIconActionRestartElement, ScaleIconActionRestartEvents, Components.ScaleIconActionRestart>({
     tagName: 'scale-icon-action-restart',
     properties: {
         size: 'size',
@@ -2285,14 +2285,14 @@ export const ScaleIconActionRestart: StencilReactComponent<ScaleIconActionRestar
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionRestart as StencilReactComponent<ScaleIconActionRestartElement, ScaleIconActionRestartEvents, JSX.ScaleIconActionRestart>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionRestart as StencilReactComponent<ScaleIconActionRestartElement, ScaleIconActionRestartEvents, Components.ScaleIconActionRestart>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionSearchEvents = NonNullable<unknown>;
 
-export const ScaleIconActionSearch: StencilReactComponent<ScaleIconActionSearchElement, ScaleIconActionSearchEvents, JSX.ScaleIconActionSearch> = /*@__PURE__*/ createComponent<ScaleIconActionSearchElement, ScaleIconActionSearchEvents, JSX.ScaleIconActionSearch>({
+export const ScaleIconActionSearch: StencilReactComponent<ScaleIconActionSearchElement, ScaleIconActionSearchEvents, Components.ScaleIconActionSearch> = /*@__PURE__*/ createComponent<ScaleIconActionSearchElement, ScaleIconActionSearchEvents, Components.ScaleIconActionSearch>({
     tagName: 'scale-icon-action-search',
     properties: {
         size: 'size',
@@ -2303,14 +2303,14 @@ export const ScaleIconActionSearch: StencilReactComponent<ScaleIconActionSearchE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionSearch as StencilReactComponent<ScaleIconActionSearchElement, ScaleIconActionSearchEvents, JSX.ScaleIconActionSearch>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionSearch as StencilReactComponent<ScaleIconActionSearchElement, ScaleIconActionSearchEvents, Components.ScaleIconActionSearch>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionSendEvents = NonNullable<unknown>;
 
-export const ScaleIconActionSend: StencilReactComponent<ScaleIconActionSendElement, ScaleIconActionSendEvents, JSX.ScaleIconActionSend> = /*@__PURE__*/ createComponent<ScaleIconActionSendElement, ScaleIconActionSendEvents, JSX.ScaleIconActionSend>({
+export const ScaleIconActionSend: StencilReactComponent<ScaleIconActionSendElement, ScaleIconActionSendEvents, Components.ScaleIconActionSend> = /*@__PURE__*/ createComponent<ScaleIconActionSendElement, ScaleIconActionSendEvents, Components.ScaleIconActionSend>({
     tagName: 'scale-icon-action-send',
     properties: {
         size: 'size',
@@ -2321,14 +2321,14 @@ export const ScaleIconActionSend: StencilReactComponent<ScaleIconActionSendEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionSend as StencilReactComponent<ScaleIconActionSendElement, ScaleIconActionSendEvents, JSX.ScaleIconActionSend>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionSend as StencilReactComponent<ScaleIconActionSendElement, ScaleIconActionSendEvents, Components.ScaleIconActionSend>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionShareEvents = NonNullable<unknown>;
 
-export const ScaleIconActionShare: StencilReactComponent<ScaleIconActionShareElement, ScaleIconActionShareEvents, JSX.ScaleIconActionShare> = /*@__PURE__*/ createComponent<ScaleIconActionShareElement, ScaleIconActionShareEvents, JSX.ScaleIconActionShare>({
+export const ScaleIconActionShare: StencilReactComponent<ScaleIconActionShareElement, ScaleIconActionShareEvents, Components.ScaleIconActionShare> = /*@__PURE__*/ createComponent<ScaleIconActionShareElement, ScaleIconActionShareEvents, Components.ScaleIconActionShare>({
     tagName: 'scale-icon-action-share',
     properties: {
         size: 'size',
@@ -2339,14 +2339,14 @@ export const ScaleIconActionShare: StencilReactComponent<ScaleIconActionShareEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionShare as StencilReactComponent<ScaleIconActionShareElement, ScaleIconActionShareEvents, JSX.ScaleIconActionShare>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionShare as StencilReactComponent<ScaleIconActionShareElement, ScaleIconActionShareEvents, Components.ScaleIconActionShare>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionShoppingCartEvents = NonNullable<unknown>;
 
-export const ScaleIconActionShoppingCart: StencilReactComponent<ScaleIconActionShoppingCartElement, ScaleIconActionShoppingCartEvents, JSX.ScaleIconActionShoppingCart> = /*@__PURE__*/ createComponent<ScaleIconActionShoppingCartElement, ScaleIconActionShoppingCartEvents, JSX.ScaleIconActionShoppingCart>({
+export const ScaleIconActionShoppingCart: StencilReactComponent<ScaleIconActionShoppingCartElement, ScaleIconActionShoppingCartEvents, Components.ScaleIconActionShoppingCart> = /*@__PURE__*/ createComponent<ScaleIconActionShoppingCartElement, ScaleIconActionShoppingCartEvents, Components.ScaleIconActionShoppingCart>({
     tagName: 'scale-icon-action-shopping-cart',
     properties: {
         size: 'size',
@@ -2357,14 +2357,14 @@ export const ScaleIconActionShoppingCart: StencilReactComponent<ScaleIconActionS
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionShoppingCart as StencilReactComponent<ScaleIconActionShoppingCartElement, ScaleIconActionShoppingCartEvents, JSX.ScaleIconActionShoppingCart>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionShoppingCart as StencilReactComponent<ScaleIconActionShoppingCartElement, ScaleIconActionShoppingCartEvents, Components.ScaleIconActionShoppingCart>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionShowPasswordEvents = NonNullable<unknown>;
 
-export const ScaleIconActionShowPassword: StencilReactComponent<ScaleIconActionShowPasswordElement, ScaleIconActionShowPasswordEvents, JSX.ScaleIconActionShowPassword> = /*@__PURE__*/ createComponent<ScaleIconActionShowPasswordElement, ScaleIconActionShowPasswordEvents, JSX.ScaleIconActionShowPassword>({
+export const ScaleIconActionShowPassword: StencilReactComponent<ScaleIconActionShowPasswordElement, ScaleIconActionShowPasswordEvents, Components.ScaleIconActionShowPassword> = /*@__PURE__*/ createComponent<ScaleIconActionShowPasswordElement, ScaleIconActionShowPasswordEvents, Components.ScaleIconActionShowPassword>({
     tagName: 'scale-icon-action-show-password',
     properties: {
         size: 'size',
@@ -2375,14 +2375,14 @@ export const ScaleIconActionShowPassword: StencilReactComponent<ScaleIconActionS
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionShowPassword as StencilReactComponent<ScaleIconActionShowPasswordElement, ScaleIconActionShowPasswordEvents, JSX.ScaleIconActionShowPassword>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionShowPassword as StencilReactComponent<ScaleIconActionShowPasswordElement, ScaleIconActionShowPasswordEvents, Components.ScaleIconActionShowPassword>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionSortEvents = NonNullable<unknown>;
 
-export const ScaleIconActionSort: StencilReactComponent<ScaleIconActionSortElement, ScaleIconActionSortEvents, JSX.ScaleIconActionSort> = /*@__PURE__*/ createComponent<ScaleIconActionSortElement, ScaleIconActionSortEvents, JSX.ScaleIconActionSort>({
+export const ScaleIconActionSort: StencilReactComponent<ScaleIconActionSortElement, ScaleIconActionSortEvents, Components.ScaleIconActionSort> = /*@__PURE__*/ createComponent<ScaleIconActionSortElement, ScaleIconActionSortEvents, Components.ScaleIconActionSort>({
     tagName: 'scale-icon-action-sort',
     properties: {
         size: 'size',
@@ -2393,14 +2393,14 @@ export const ScaleIconActionSort: StencilReactComponent<ScaleIconActionSortEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionSort as StencilReactComponent<ScaleIconActionSortElement, ScaleIconActionSortEvents, JSX.ScaleIconActionSort>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionSort as StencilReactComponent<ScaleIconActionSortElement, ScaleIconActionSortEvents, Components.ScaleIconActionSort>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionSoundOnEvents = NonNullable<unknown>;
 
-export const ScaleIconActionSoundOn: StencilReactComponent<ScaleIconActionSoundOnElement, ScaleIconActionSoundOnEvents, JSX.ScaleIconActionSoundOn> = /*@__PURE__*/ createComponent<ScaleIconActionSoundOnElement, ScaleIconActionSoundOnEvents, JSX.ScaleIconActionSoundOn>({
+export const ScaleIconActionSoundOn: StencilReactComponent<ScaleIconActionSoundOnElement, ScaleIconActionSoundOnEvents, Components.ScaleIconActionSoundOn> = /*@__PURE__*/ createComponent<ScaleIconActionSoundOnElement, ScaleIconActionSoundOnEvents, Components.ScaleIconActionSoundOn>({
     tagName: 'scale-icon-action-sound-on',
     properties: {
         size: 'size',
@@ -2411,14 +2411,14 @@ export const ScaleIconActionSoundOn: StencilReactComponent<ScaleIconActionSoundO
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionSoundOn as StencilReactComponent<ScaleIconActionSoundOnElement, ScaleIconActionSoundOnEvents, JSX.ScaleIconActionSoundOn>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionSoundOn as StencilReactComponent<ScaleIconActionSoundOnElement, ScaleIconActionSoundOnEvents, Components.ScaleIconActionSoundOn>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionStarEvents = NonNullable<unknown>;
 
-export const ScaleIconActionStar: StencilReactComponent<ScaleIconActionStarElement, ScaleIconActionStarEvents, JSX.ScaleIconActionStar> = /*@__PURE__*/ createComponent<ScaleIconActionStarElement, ScaleIconActionStarEvents, JSX.ScaleIconActionStar>({
+export const ScaleIconActionStar: StencilReactComponent<ScaleIconActionStarElement, ScaleIconActionStarEvents, Components.ScaleIconActionStar> = /*@__PURE__*/ createComponent<ScaleIconActionStarElement, ScaleIconActionStarEvents, Components.ScaleIconActionStar>({
     tagName: 'scale-icon-action-star',
     properties: {
         size: 'size',
@@ -2429,14 +2429,14 @@ export const ScaleIconActionStar: StencilReactComponent<ScaleIconActionStarEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionStar as StencilReactComponent<ScaleIconActionStarElement, ScaleIconActionStarEvents, JSX.ScaleIconActionStar>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionStar as StencilReactComponent<ScaleIconActionStarElement, ScaleIconActionStarEvents, Components.ScaleIconActionStar>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionStreamOnEvents = NonNullable<unknown>;
 
-export const ScaleIconActionStreamOn: StencilReactComponent<ScaleIconActionStreamOnElement, ScaleIconActionStreamOnEvents, JSX.ScaleIconActionStreamOn> = /*@__PURE__*/ createComponent<ScaleIconActionStreamOnElement, ScaleIconActionStreamOnEvents, JSX.ScaleIconActionStreamOn>({
+export const ScaleIconActionStreamOn: StencilReactComponent<ScaleIconActionStreamOnElement, ScaleIconActionStreamOnEvents, Components.ScaleIconActionStreamOn> = /*@__PURE__*/ createComponent<ScaleIconActionStreamOnElement, ScaleIconActionStreamOnEvents, Components.ScaleIconActionStreamOn>({
     tagName: 'scale-icon-action-stream-on',
     properties: {
         size: 'size',
@@ -2447,14 +2447,14 @@ export const ScaleIconActionStreamOn: StencilReactComponent<ScaleIconActionStrea
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionStreamOn as StencilReactComponent<ScaleIconActionStreamOnElement, ScaleIconActionStreamOnEvents, JSX.ScaleIconActionStreamOn>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionStreamOn as StencilReactComponent<ScaleIconActionStreamOnElement, ScaleIconActionStreamOnEvents, Components.ScaleIconActionStreamOn>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionSuccessEvents = NonNullable<unknown>;
 
-export const ScaleIconActionSuccess: StencilReactComponent<ScaleIconActionSuccessElement, ScaleIconActionSuccessEvents, JSX.ScaleIconActionSuccess> = /*@__PURE__*/ createComponent<ScaleIconActionSuccessElement, ScaleIconActionSuccessEvents, JSX.ScaleIconActionSuccess>({
+export const ScaleIconActionSuccess: StencilReactComponent<ScaleIconActionSuccessElement, ScaleIconActionSuccessEvents, Components.ScaleIconActionSuccess> = /*@__PURE__*/ createComponent<ScaleIconActionSuccessElement, ScaleIconActionSuccessEvents, Components.ScaleIconActionSuccess>({
     tagName: 'scale-icon-action-success',
     properties: {
         size: 'size',
@@ -2465,14 +2465,14 @@ export const ScaleIconActionSuccess: StencilReactComponent<ScaleIconActionSucces
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionSuccess as StencilReactComponent<ScaleIconActionSuccessElement, ScaleIconActionSuccessEvents, JSX.ScaleIconActionSuccess>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionSuccess as StencilReactComponent<ScaleIconActionSuccessElement, ScaleIconActionSuccessEvents, Components.ScaleIconActionSuccess>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionThumbsDownEvents = NonNullable<unknown>;
 
-export const ScaleIconActionThumbsDown: StencilReactComponent<ScaleIconActionThumbsDownElement, ScaleIconActionThumbsDownEvents, JSX.ScaleIconActionThumbsDown> = /*@__PURE__*/ createComponent<ScaleIconActionThumbsDownElement, ScaleIconActionThumbsDownEvents, JSX.ScaleIconActionThumbsDown>({
+export const ScaleIconActionThumbsDown: StencilReactComponent<ScaleIconActionThumbsDownElement, ScaleIconActionThumbsDownEvents, Components.ScaleIconActionThumbsDown> = /*@__PURE__*/ createComponent<ScaleIconActionThumbsDownElement, ScaleIconActionThumbsDownEvents, Components.ScaleIconActionThumbsDown>({
     tagName: 'scale-icon-action-thumbs-down',
     properties: {
         size: 'size',
@@ -2483,14 +2483,14 @@ export const ScaleIconActionThumbsDown: StencilReactComponent<ScaleIconActionThu
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionThumbsDown as StencilReactComponent<ScaleIconActionThumbsDownElement, ScaleIconActionThumbsDownEvents, JSX.ScaleIconActionThumbsDown>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionThumbsDown as StencilReactComponent<ScaleIconActionThumbsDownElement, ScaleIconActionThumbsDownEvents, Components.ScaleIconActionThumbsDown>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionThumbsUpEvents = NonNullable<unknown>;
 
-export const ScaleIconActionThumbsUp: StencilReactComponent<ScaleIconActionThumbsUpElement, ScaleIconActionThumbsUpEvents, JSX.ScaleIconActionThumbsUp> = /*@__PURE__*/ createComponent<ScaleIconActionThumbsUpElement, ScaleIconActionThumbsUpEvents, JSX.ScaleIconActionThumbsUp>({
+export const ScaleIconActionThumbsUp: StencilReactComponent<ScaleIconActionThumbsUpElement, ScaleIconActionThumbsUpEvents, Components.ScaleIconActionThumbsUp> = /*@__PURE__*/ createComponent<ScaleIconActionThumbsUpElement, ScaleIconActionThumbsUpEvents, Components.ScaleIconActionThumbsUp>({
     tagName: 'scale-icon-action-thumbs-up',
     properties: {
         size: 'size',
@@ -2501,14 +2501,14 @@ export const ScaleIconActionThumbsUp: StencilReactComponent<ScaleIconActionThumb
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionThumbsUp as StencilReactComponent<ScaleIconActionThumbsUpElement, ScaleIconActionThumbsUpEvents, JSX.ScaleIconActionThumbsUp>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionThumbsUp as StencilReactComponent<ScaleIconActionThumbsUpElement, ScaleIconActionThumbsUpEvents, Components.ScaleIconActionThumbsUp>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionTilesAddEvents = NonNullable<unknown>;
 
-export const ScaleIconActionTilesAdd: StencilReactComponent<ScaleIconActionTilesAddElement, ScaleIconActionTilesAddEvents, JSX.ScaleIconActionTilesAdd> = /*@__PURE__*/ createComponent<ScaleIconActionTilesAddElement, ScaleIconActionTilesAddEvents, JSX.ScaleIconActionTilesAdd>({
+export const ScaleIconActionTilesAdd: StencilReactComponent<ScaleIconActionTilesAddElement, ScaleIconActionTilesAddEvents, Components.ScaleIconActionTilesAdd> = /*@__PURE__*/ createComponent<ScaleIconActionTilesAddElement, ScaleIconActionTilesAddEvents, Components.ScaleIconActionTilesAdd>({
     tagName: 'scale-icon-action-tiles-add',
     properties: {
         size: 'size',
@@ -2519,14 +2519,14 @@ export const ScaleIconActionTilesAdd: StencilReactComponent<ScaleIconActionTiles
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionTilesAdd as StencilReactComponent<ScaleIconActionTilesAddElement, ScaleIconActionTilesAddEvents, JSX.ScaleIconActionTilesAdd>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionTilesAdd as StencilReactComponent<ScaleIconActionTilesAddElement, ScaleIconActionTilesAddEvents, Components.ScaleIconActionTilesAdd>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionUploadEvents = NonNullable<unknown>;
 
-export const ScaleIconActionUpload: StencilReactComponent<ScaleIconActionUploadElement, ScaleIconActionUploadEvents, JSX.ScaleIconActionUpload> = /*@__PURE__*/ createComponent<ScaleIconActionUploadElement, ScaleIconActionUploadEvents, JSX.ScaleIconActionUpload>({
+export const ScaleIconActionUpload: StencilReactComponent<ScaleIconActionUploadElement, ScaleIconActionUploadEvents, Components.ScaleIconActionUpload> = /*@__PURE__*/ createComponent<ScaleIconActionUploadElement, ScaleIconActionUploadEvents, Components.ScaleIconActionUpload>({
     tagName: 'scale-icon-action-upload',
     properties: {
         size: 'size',
@@ -2537,14 +2537,14 @@ export const ScaleIconActionUpload: StencilReactComponent<ScaleIconActionUploadE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionUpload as StencilReactComponent<ScaleIconActionUploadElement, ScaleIconActionUploadEvents, JSX.ScaleIconActionUpload>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionUpload as StencilReactComponent<ScaleIconActionUploadElement, ScaleIconActionUploadEvents, Components.ScaleIconActionUpload>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionUploadToCloudEvents = NonNullable<unknown>;
 
-export const ScaleIconActionUploadToCloud: StencilReactComponent<ScaleIconActionUploadToCloudElement, ScaleIconActionUploadToCloudEvents, JSX.ScaleIconActionUploadToCloud> = /*@__PURE__*/ createComponent<ScaleIconActionUploadToCloudElement, ScaleIconActionUploadToCloudEvents, JSX.ScaleIconActionUploadToCloud>({
+export const ScaleIconActionUploadToCloud: StencilReactComponent<ScaleIconActionUploadToCloudElement, ScaleIconActionUploadToCloudEvents, Components.ScaleIconActionUploadToCloud> = /*@__PURE__*/ createComponent<ScaleIconActionUploadToCloudElement, ScaleIconActionUploadToCloudEvents, Components.ScaleIconActionUploadToCloud>({
     tagName: 'scale-icon-action-upload-to-cloud',
     properties: {
         size: 'size',
@@ -2555,14 +2555,14 @@ export const ScaleIconActionUploadToCloud: StencilReactComponent<ScaleIconAction
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionUploadToCloud as StencilReactComponent<ScaleIconActionUploadToCloudElement, ScaleIconActionUploadToCloudEvents, JSX.ScaleIconActionUploadToCloud>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionUploadToCloud as StencilReactComponent<ScaleIconActionUploadToCloudElement, ScaleIconActionUploadToCloudEvents, Components.ScaleIconActionUploadToCloud>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionVolumeDownEvents = NonNullable<unknown>;
 
-export const ScaleIconActionVolumeDown: StencilReactComponent<ScaleIconActionVolumeDownElement, ScaleIconActionVolumeDownEvents, JSX.ScaleIconActionVolumeDown> = /*@__PURE__*/ createComponent<ScaleIconActionVolumeDownElement, ScaleIconActionVolumeDownEvents, JSX.ScaleIconActionVolumeDown>({
+export const ScaleIconActionVolumeDown: StencilReactComponent<ScaleIconActionVolumeDownElement, ScaleIconActionVolumeDownEvents, Components.ScaleIconActionVolumeDown> = /*@__PURE__*/ createComponent<ScaleIconActionVolumeDownElement, ScaleIconActionVolumeDownEvents, Components.ScaleIconActionVolumeDown>({
     tagName: 'scale-icon-action-volume-down',
     properties: {
         size: 'size',
@@ -2573,14 +2573,14 @@ export const ScaleIconActionVolumeDown: StencilReactComponent<ScaleIconActionVol
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionVolumeDown as StencilReactComponent<ScaleIconActionVolumeDownElement, ScaleIconActionVolumeDownEvents, JSX.ScaleIconActionVolumeDown>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionVolumeDown as StencilReactComponent<ScaleIconActionVolumeDownElement, ScaleIconActionVolumeDownEvents, Components.ScaleIconActionVolumeDown>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionVolumeUpEvents = NonNullable<unknown>;
 
-export const ScaleIconActionVolumeUp: StencilReactComponent<ScaleIconActionVolumeUpElement, ScaleIconActionVolumeUpEvents, JSX.ScaleIconActionVolumeUp> = /*@__PURE__*/ createComponent<ScaleIconActionVolumeUpElement, ScaleIconActionVolumeUpEvents, JSX.ScaleIconActionVolumeUp>({
+export const ScaleIconActionVolumeUp: StencilReactComponent<ScaleIconActionVolumeUpElement, ScaleIconActionVolumeUpEvents, Components.ScaleIconActionVolumeUp> = /*@__PURE__*/ createComponent<ScaleIconActionVolumeUpElement, ScaleIconActionVolumeUpEvents, Components.ScaleIconActionVolumeUp>({
     tagName: 'scale-icon-action-volume-up',
     properties: {
         size: 'size',
@@ -2591,14 +2591,14 @@ export const ScaleIconActionVolumeUp: StencilReactComponent<ScaleIconActionVolum
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionVolumeUp as StencilReactComponent<ScaleIconActionVolumeUpElement, ScaleIconActionVolumeUpEvents, JSX.ScaleIconActionVolumeUp>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionVolumeUp as StencilReactComponent<ScaleIconActionVolumeUpElement, ScaleIconActionVolumeUpEvents, Components.ScaleIconActionVolumeUp>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionZoomInEvents = NonNullable<unknown>;
 
-export const ScaleIconActionZoomIn: StencilReactComponent<ScaleIconActionZoomInElement, ScaleIconActionZoomInEvents, JSX.ScaleIconActionZoomIn> = /*@__PURE__*/ createComponent<ScaleIconActionZoomInElement, ScaleIconActionZoomInEvents, JSX.ScaleIconActionZoomIn>({
+export const ScaleIconActionZoomIn: StencilReactComponent<ScaleIconActionZoomInElement, ScaleIconActionZoomInEvents, Components.ScaleIconActionZoomIn> = /*@__PURE__*/ createComponent<ScaleIconActionZoomInElement, ScaleIconActionZoomInEvents, Components.ScaleIconActionZoomIn>({
     tagName: 'scale-icon-action-zoom-in',
     properties: {
         size: 'size',
@@ -2609,14 +2609,14 @@ export const ScaleIconActionZoomIn: StencilReactComponent<ScaleIconActionZoomInE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionZoomIn as StencilReactComponent<ScaleIconActionZoomInElement, ScaleIconActionZoomInEvents, JSX.ScaleIconActionZoomIn>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionZoomIn as StencilReactComponent<ScaleIconActionZoomInElement, ScaleIconActionZoomInEvents, Components.ScaleIconActionZoomIn>,
     serializeShadowRoot
 });
 
 export type ScaleIconActionZoomOutEvents = NonNullable<unknown>;
 
-export const ScaleIconActionZoomOut: StencilReactComponent<ScaleIconActionZoomOutElement, ScaleIconActionZoomOutEvents, JSX.ScaleIconActionZoomOut> = /*@__PURE__*/ createComponent<ScaleIconActionZoomOutElement, ScaleIconActionZoomOutEvents, JSX.ScaleIconActionZoomOut>({
+export const ScaleIconActionZoomOut: StencilReactComponent<ScaleIconActionZoomOutElement, ScaleIconActionZoomOutEvents, Components.ScaleIconActionZoomOut> = /*@__PURE__*/ createComponent<ScaleIconActionZoomOutElement, ScaleIconActionZoomOutEvents, Components.ScaleIconActionZoomOut>({
     tagName: 'scale-icon-action-zoom-out',
     properties: {
         size: 'size',
@@ -2627,14 +2627,14 @@ export const ScaleIconActionZoomOut: StencilReactComponent<ScaleIconActionZoomOu
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconActionZoomOut as StencilReactComponent<ScaleIconActionZoomOutElement, ScaleIconActionZoomOutEvents, JSX.ScaleIconActionZoomOut>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconActionZoomOut as StencilReactComponent<ScaleIconActionZoomOutElement, ScaleIconActionZoomOutEvents, Components.ScaleIconActionZoomOut>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertAntivirusProtectionEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertAntivirusProtection: StencilReactComponent<ScaleIconAlertAntivirusProtectionElement, ScaleIconAlertAntivirusProtectionEvents, JSX.ScaleIconAlertAntivirusProtection> = /*@__PURE__*/ createComponent<ScaleIconAlertAntivirusProtectionElement, ScaleIconAlertAntivirusProtectionEvents, JSX.ScaleIconAlertAntivirusProtection>({
+export const ScaleIconAlertAntivirusProtection: StencilReactComponent<ScaleIconAlertAntivirusProtectionElement, ScaleIconAlertAntivirusProtectionEvents, Components.ScaleIconAlertAntivirusProtection> = /*@__PURE__*/ createComponent<ScaleIconAlertAntivirusProtectionElement, ScaleIconAlertAntivirusProtectionEvents, Components.ScaleIconAlertAntivirusProtection>({
     tagName: 'scale-icon-alert-antivirus-protection',
     properties: {
         size: 'size',
@@ -2645,14 +2645,14 @@ export const ScaleIconAlertAntivirusProtection: StencilReactComponent<ScaleIconA
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertAntivirusProtection as StencilReactComponent<ScaleIconAlertAntivirusProtectionElement, ScaleIconAlertAntivirusProtectionEvents, JSX.ScaleIconAlertAntivirusProtection>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertAntivirusProtection as StencilReactComponent<ScaleIconAlertAntivirusProtectionElement, ScaleIconAlertAntivirusProtectionEvents, Components.ScaleIconAlertAntivirusProtection>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertComplianceEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertCompliance: StencilReactComponent<ScaleIconAlertComplianceElement, ScaleIconAlertComplianceEvents, JSX.ScaleIconAlertCompliance> = /*@__PURE__*/ createComponent<ScaleIconAlertComplianceElement, ScaleIconAlertComplianceEvents, JSX.ScaleIconAlertCompliance>({
+export const ScaleIconAlertCompliance: StencilReactComponent<ScaleIconAlertComplianceElement, ScaleIconAlertComplianceEvents, Components.ScaleIconAlertCompliance> = /*@__PURE__*/ createComponent<ScaleIconAlertComplianceElement, ScaleIconAlertComplianceEvents, Components.ScaleIconAlertCompliance>({
     tagName: 'scale-icon-alert-compliance',
     properties: {
         size: 'size',
@@ -2663,14 +2663,14 @@ export const ScaleIconAlertCompliance: StencilReactComponent<ScaleIconAlertCompl
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertCompliance as StencilReactComponent<ScaleIconAlertComplianceElement, ScaleIconAlertComplianceEvents, JSX.ScaleIconAlertCompliance>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertCompliance as StencilReactComponent<ScaleIconAlertComplianceElement, ScaleIconAlertComplianceEvents, Components.ScaleIconAlertCompliance>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertCyberSecurityEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertCyberSecurity: StencilReactComponent<ScaleIconAlertCyberSecurityElement, ScaleIconAlertCyberSecurityEvents, JSX.ScaleIconAlertCyberSecurity> = /*@__PURE__*/ createComponent<ScaleIconAlertCyberSecurityElement, ScaleIconAlertCyberSecurityEvents, JSX.ScaleIconAlertCyberSecurity>({
+export const ScaleIconAlertCyberSecurity: StencilReactComponent<ScaleIconAlertCyberSecurityElement, ScaleIconAlertCyberSecurityEvents, Components.ScaleIconAlertCyberSecurity> = /*@__PURE__*/ createComponent<ScaleIconAlertCyberSecurityElement, ScaleIconAlertCyberSecurityEvents, Components.ScaleIconAlertCyberSecurity>({
     tagName: 'scale-icon-alert-cyber-security',
     properties: {
         size: 'size',
@@ -2681,14 +2681,14 @@ export const ScaleIconAlertCyberSecurity: StencilReactComponent<ScaleIconAlertCy
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertCyberSecurity as StencilReactComponent<ScaleIconAlertCyberSecurityElement, ScaleIconAlertCyberSecurityEvents, JSX.ScaleIconAlertCyberSecurity>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertCyberSecurity as StencilReactComponent<ScaleIconAlertCyberSecurityElement, ScaleIconAlertCyberSecurityEvents, Components.ScaleIconAlertCyberSecurity>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertErrorEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertError: StencilReactComponent<ScaleIconAlertErrorElement, ScaleIconAlertErrorEvents, JSX.ScaleIconAlertError> = /*@__PURE__*/ createComponent<ScaleIconAlertErrorElement, ScaleIconAlertErrorEvents, JSX.ScaleIconAlertError>({
+export const ScaleIconAlertError: StencilReactComponent<ScaleIconAlertErrorElement, ScaleIconAlertErrorEvents, Components.ScaleIconAlertError> = /*@__PURE__*/ createComponent<ScaleIconAlertErrorElement, ScaleIconAlertErrorEvents, Components.ScaleIconAlertError>({
     tagName: 'scale-icon-alert-error',
     properties: {
         size: 'size',
@@ -2699,14 +2699,14 @@ export const ScaleIconAlertError: StencilReactComponent<ScaleIconAlertErrorEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertError as StencilReactComponent<ScaleIconAlertErrorElement, ScaleIconAlertErrorEvents, JSX.ScaleIconAlertError>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertError as StencilReactComponent<ScaleIconAlertErrorElement, ScaleIconAlertErrorEvents, Components.ScaleIconAlertError>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertHelpEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertHelp: StencilReactComponent<ScaleIconAlertHelpElement, ScaleIconAlertHelpEvents, JSX.ScaleIconAlertHelp> = /*@__PURE__*/ createComponent<ScaleIconAlertHelpElement, ScaleIconAlertHelpEvents, JSX.ScaleIconAlertHelp>({
+export const ScaleIconAlertHelp: StencilReactComponent<ScaleIconAlertHelpElement, ScaleIconAlertHelpEvents, Components.ScaleIconAlertHelp> = /*@__PURE__*/ createComponent<ScaleIconAlertHelpElement, ScaleIconAlertHelpEvents, Components.ScaleIconAlertHelp>({
     tagName: 'scale-icon-alert-help',
     properties: {
         size: 'size',
@@ -2717,14 +2717,14 @@ export const ScaleIconAlertHelp: StencilReactComponent<ScaleIconAlertHelpElement
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertHelp as StencilReactComponent<ScaleIconAlertHelpElement, ScaleIconAlertHelpEvents, JSX.ScaleIconAlertHelp>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertHelp as StencilReactComponent<ScaleIconAlertHelpElement, ScaleIconAlertHelpEvents, Components.ScaleIconAlertHelp>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertHighPriorityEmailEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertHighPriorityEmail: StencilReactComponent<ScaleIconAlertHighPriorityEmailElement, ScaleIconAlertHighPriorityEmailEvents, JSX.ScaleIconAlertHighPriorityEmail> = /*@__PURE__*/ createComponent<ScaleIconAlertHighPriorityEmailElement, ScaleIconAlertHighPriorityEmailEvents, JSX.ScaleIconAlertHighPriorityEmail>({
+export const ScaleIconAlertHighPriorityEmail: StencilReactComponent<ScaleIconAlertHighPriorityEmailElement, ScaleIconAlertHighPriorityEmailEvents, Components.ScaleIconAlertHighPriorityEmail> = /*@__PURE__*/ createComponent<ScaleIconAlertHighPriorityEmailElement, ScaleIconAlertHighPriorityEmailEvents, Components.ScaleIconAlertHighPriorityEmail>({
     tagName: 'scale-icon-alert-high-priority-email',
     properties: {
         size: 'size',
@@ -2735,14 +2735,14 @@ export const ScaleIconAlertHighPriorityEmail: StencilReactComponent<ScaleIconAle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertHighPriorityEmail as StencilReactComponent<ScaleIconAlertHighPriorityEmailElement, ScaleIconAlertHighPriorityEmailEvents, JSX.ScaleIconAlertHighPriorityEmail>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertHighPriorityEmail as StencilReactComponent<ScaleIconAlertHighPriorityEmailElement, ScaleIconAlertHighPriorityEmailEvents, Components.ScaleIconAlertHighPriorityEmail>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertImprintDataprivacyEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertImprintDataprivacy: StencilReactComponent<ScaleIconAlertImprintDataprivacyElement, ScaleIconAlertImprintDataprivacyEvents, JSX.ScaleIconAlertImprintDataprivacy> = /*@__PURE__*/ createComponent<ScaleIconAlertImprintDataprivacyElement, ScaleIconAlertImprintDataprivacyEvents, JSX.ScaleIconAlertImprintDataprivacy>({
+export const ScaleIconAlertImprintDataprivacy: StencilReactComponent<ScaleIconAlertImprintDataprivacyElement, ScaleIconAlertImprintDataprivacyEvents, Components.ScaleIconAlertImprintDataprivacy> = /*@__PURE__*/ createComponent<ScaleIconAlertImprintDataprivacyElement, ScaleIconAlertImprintDataprivacyEvents, Components.ScaleIconAlertImprintDataprivacy>({
     tagName: 'scale-icon-alert-imprint-dataprivacy',
     properties: {
         size: 'size',
@@ -2753,14 +2753,14 @@ export const ScaleIconAlertImprintDataprivacy: StencilReactComponent<ScaleIconAl
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertImprintDataprivacy as StencilReactComponent<ScaleIconAlertImprintDataprivacyElement, ScaleIconAlertImprintDataprivacyEvents, JSX.ScaleIconAlertImprintDataprivacy>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertImprintDataprivacy as StencilReactComponent<ScaleIconAlertImprintDataprivacyElement, ScaleIconAlertImprintDataprivacyEvents, Components.ScaleIconAlertImprintDataprivacy>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertInformationEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertInformation: StencilReactComponent<ScaleIconAlertInformationElement, ScaleIconAlertInformationEvents, JSX.ScaleIconAlertInformation> = /*@__PURE__*/ createComponent<ScaleIconAlertInformationElement, ScaleIconAlertInformationEvents, JSX.ScaleIconAlertInformation>({
+export const ScaleIconAlertInformation: StencilReactComponent<ScaleIconAlertInformationElement, ScaleIconAlertInformationEvents, Components.ScaleIconAlertInformation> = /*@__PURE__*/ createComponent<ScaleIconAlertInformationElement, ScaleIconAlertInformationEvents, Components.ScaleIconAlertInformation>({
     tagName: 'scale-icon-alert-information',
     properties: {
         size: 'size',
@@ -2771,14 +2771,14 @@ export const ScaleIconAlertInformation: StencilReactComponent<ScaleIconAlertInfo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertInformation as StencilReactComponent<ScaleIconAlertInformationElement, ScaleIconAlertInformationEvents, JSX.ScaleIconAlertInformation>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertInformation as StencilReactComponent<ScaleIconAlertInformationElement, ScaleIconAlertInformationEvents, Components.ScaleIconAlertInformation>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertLegalEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertLegal: StencilReactComponent<ScaleIconAlertLegalElement, ScaleIconAlertLegalEvents, JSX.ScaleIconAlertLegal> = /*@__PURE__*/ createComponent<ScaleIconAlertLegalElement, ScaleIconAlertLegalEvents, JSX.ScaleIconAlertLegal>({
+export const ScaleIconAlertLegal: StencilReactComponent<ScaleIconAlertLegalElement, ScaleIconAlertLegalEvents, Components.ScaleIconAlertLegal> = /*@__PURE__*/ createComponent<ScaleIconAlertLegalElement, ScaleIconAlertLegalEvents, Components.ScaleIconAlertLegal>({
     tagName: 'scale-icon-alert-legal',
     properties: {
         size: 'size',
@@ -2789,14 +2789,14 @@ export const ScaleIconAlertLegal: StencilReactComponent<ScaleIconAlertLegalEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertLegal as StencilReactComponent<ScaleIconAlertLegalElement, ScaleIconAlertLegalEvents, JSX.ScaleIconAlertLegal>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertLegal as StencilReactComponent<ScaleIconAlertLegalElement, ScaleIconAlertLegalEvents, Components.ScaleIconAlertLegal>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertNetworkDisruptedEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertNetworkDisrupted: StencilReactComponent<ScaleIconAlertNetworkDisruptedElement, ScaleIconAlertNetworkDisruptedEvents, JSX.ScaleIconAlertNetworkDisrupted> = /*@__PURE__*/ createComponent<ScaleIconAlertNetworkDisruptedElement, ScaleIconAlertNetworkDisruptedEvents, JSX.ScaleIconAlertNetworkDisrupted>({
+export const ScaleIconAlertNetworkDisrupted: StencilReactComponent<ScaleIconAlertNetworkDisruptedElement, ScaleIconAlertNetworkDisruptedEvents, Components.ScaleIconAlertNetworkDisrupted> = /*@__PURE__*/ createComponent<ScaleIconAlertNetworkDisruptedElement, ScaleIconAlertNetworkDisruptedEvents, Components.ScaleIconAlertNetworkDisrupted>({
     tagName: 'scale-icon-alert-network-disrupted',
     properties: {
         size: 'size',
@@ -2807,14 +2807,14 @@ export const ScaleIconAlertNetworkDisrupted: StencilReactComponent<ScaleIconAler
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertNetworkDisrupted as StencilReactComponent<ScaleIconAlertNetworkDisruptedElement, ScaleIconAlertNetworkDisruptedEvents, JSX.ScaleIconAlertNetworkDisrupted>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertNetworkDisrupted as StencilReactComponent<ScaleIconAlertNetworkDisruptedElement, ScaleIconAlertNetworkDisruptedEvents, Components.ScaleIconAlertNetworkDisrupted>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertPasswordBreakingEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertPasswordBreaking: StencilReactComponent<ScaleIconAlertPasswordBreakingElement, ScaleIconAlertPasswordBreakingEvents, JSX.ScaleIconAlertPasswordBreaking> = /*@__PURE__*/ createComponent<ScaleIconAlertPasswordBreakingElement, ScaleIconAlertPasswordBreakingEvents, JSX.ScaleIconAlertPasswordBreaking>({
+export const ScaleIconAlertPasswordBreaking: StencilReactComponent<ScaleIconAlertPasswordBreakingElement, ScaleIconAlertPasswordBreakingEvents, Components.ScaleIconAlertPasswordBreaking> = /*@__PURE__*/ createComponent<ScaleIconAlertPasswordBreakingElement, ScaleIconAlertPasswordBreakingEvents, Components.ScaleIconAlertPasswordBreaking>({
     tagName: 'scale-icon-alert-password-breaking',
     properties: {
         size: 'size',
@@ -2825,14 +2825,14 @@ export const ScaleIconAlertPasswordBreaking: StencilReactComponent<ScaleIconAler
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertPasswordBreaking as StencilReactComponent<ScaleIconAlertPasswordBreakingElement, ScaleIconAlertPasswordBreakingEvents, JSX.ScaleIconAlertPasswordBreaking>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertPasswordBreaking as StencilReactComponent<ScaleIconAlertPasswordBreakingElement, ScaleIconAlertPasswordBreakingEvents, Components.ScaleIconAlertPasswordBreaking>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertSecurityEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertSecurity: StencilReactComponent<ScaleIconAlertSecurityElement, ScaleIconAlertSecurityEvents, JSX.ScaleIconAlertSecurity> = /*@__PURE__*/ createComponent<ScaleIconAlertSecurityElement, ScaleIconAlertSecurityEvents, JSX.ScaleIconAlertSecurity>({
+export const ScaleIconAlertSecurity: StencilReactComponent<ScaleIconAlertSecurityElement, ScaleIconAlertSecurityEvents, Components.ScaleIconAlertSecurity> = /*@__PURE__*/ createComponent<ScaleIconAlertSecurityElement, ScaleIconAlertSecurityEvents, Components.ScaleIconAlertSecurity>({
     tagName: 'scale-icon-alert-security',
     properties: {
         size: 'size',
@@ -2843,14 +2843,14 @@ export const ScaleIconAlertSecurity: StencilReactComponent<ScaleIconAlertSecurit
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertSecurity as StencilReactComponent<ScaleIconAlertSecurityElement, ScaleIconAlertSecurityEvents, JSX.ScaleIconAlertSecurity>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertSecurity as StencilReactComponent<ScaleIconAlertSecurityElement, ScaleIconAlertSecurityEvents, Components.ScaleIconAlertSecurity>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertTrafficDisruptionEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertTrafficDisruption: StencilReactComponent<ScaleIconAlertTrafficDisruptionElement, ScaleIconAlertTrafficDisruptionEvents, JSX.ScaleIconAlertTrafficDisruption> = /*@__PURE__*/ createComponent<ScaleIconAlertTrafficDisruptionElement, ScaleIconAlertTrafficDisruptionEvents, JSX.ScaleIconAlertTrafficDisruption>({
+export const ScaleIconAlertTrafficDisruption: StencilReactComponent<ScaleIconAlertTrafficDisruptionElement, ScaleIconAlertTrafficDisruptionEvents, Components.ScaleIconAlertTrafficDisruption> = /*@__PURE__*/ createComponent<ScaleIconAlertTrafficDisruptionElement, ScaleIconAlertTrafficDisruptionEvents, Components.ScaleIconAlertTrafficDisruption>({
     tagName: 'scale-icon-alert-traffic-disruption',
     properties: {
         size: 'size',
@@ -2861,14 +2861,14 @@ export const ScaleIconAlertTrafficDisruption: StencilReactComponent<ScaleIconAle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertTrafficDisruption as StencilReactComponent<ScaleIconAlertTrafficDisruptionElement, ScaleIconAlertTrafficDisruptionEvents, JSX.ScaleIconAlertTrafficDisruption>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertTrafficDisruption as StencilReactComponent<ScaleIconAlertTrafficDisruptionElement, ScaleIconAlertTrafficDisruptionEvents, Components.ScaleIconAlertTrafficDisruption>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertUnknownEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertUnknown: StencilReactComponent<ScaleIconAlertUnknownElement, ScaleIconAlertUnknownEvents, JSX.ScaleIconAlertUnknown> = /*@__PURE__*/ createComponent<ScaleIconAlertUnknownElement, ScaleIconAlertUnknownEvents, JSX.ScaleIconAlertUnknown>({
+export const ScaleIconAlertUnknown: StencilReactComponent<ScaleIconAlertUnknownElement, ScaleIconAlertUnknownEvents, Components.ScaleIconAlertUnknown> = /*@__PURE__*/ createComponent<ScaleIconAlertUnknownElement, ScaleIconAlertUnknownEvents, Components.ScaleIconAlertUnknown>({
     tagName: 'scale-icon-alert-unknown',
     properties: {
         size: 'size',
@@ -2879,14 +2879,14 @@ export const ScaleIconAlertUnknown: StencilReactComponent<ScaleIconAlertUnknownE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertUnknown as StencilReactComponent<ScaleIconAlertUnknownElement, ScaleIconAlertUnknownEvents, JSX.ScaleIconAlertUnknown>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertUnknown as StencilReactComponent<ScaleIconAlertUnknownElement, ScaleIconAlertUnknownEvents, Components.ScaleIconAlertUnknown>,
     serializeShadowRoot
 });
 
 export type ScaleIconAlertWarningEvents = NonNullable<unknown>;
 
-export const ScaleIconAlertWarning: StencilReactComponent<ScaleIconAlertWarningElement, ScaleIconAlertWarningEvents, JSX.ScaleIconAlertWarning> = /*@__PURE__*/ createComponent<ScaleIconAlertWarningElement, ScaleIconAlertWarningEvents, JSX.ScaleIconAlertWarning>({
+export const ScaleIconAlertWarning: StencilReactComponent<ScaleIconAlertWarningElement, ScaleIconAlertWarningEvents, Components.ScaleIconAlertWarning> = /*@__PURE__*/ createComponent<ScaleIconAlertWarningElement, ScaleIconAlertWarningEvents, Components.ScaleIconAlertWarning>({
     tagName: 'scale-icon-alert-warning',
     properties: {
         size: 'size',
@@ -2897,14 +2897,14 @@ export const ScaleIconAlertWarning: StencilReactComponent<ScaleIconAlertWarningE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconAlertWarning as StencilReactComponent<ScaleIconAlertWarningElement, ScaleIconAlertWarningEvents, JSX.ScaleIconAlertWarning>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconAlertWarning as StencilReactComponent<ScaleIconAlertWarningElement, ScaleIconAlertWarningEvents, Components.ScaleIconAlertWarning>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationAvailableEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationAvailable: StencilReactComponent<ScaleIconCommunicationAvailableElement, ScaleIconCommunicationAvailableEvents, JSX.ScaleIconCommunicationAvailable> = /*@__PURE__*/ createComponent<ScaleIconCommunicationAvailableElement, ScaleIconCommunicationAvailableEvents, JSX.ScaleIconCommunicationAvailable>({
+export const ScaleIconCommunicationAvailable: StencilReactComponent<ScaleIconCommunicationAvailableElement, ScaleIconCommunicationAvailableEvents, Components.ScaleIconCommunicationAvailable> = /*@__PURE__*/ createComponent<ScaleIconCommunicationAvailableElement, ScaleIconCommunicationAvailableEvents, Components.ScaleIconCommunicationAvailable>({
     tagName: 'scale-icon-communication-available',
     properties: {
         size: 'size',
@@ -2915,14 +2915,14 @@ export const ScaleIconCommunicationAvailable: StencilReactComponent<ScaleIconCom
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationAvailable as StencilReactComponent<ScaleIconCommunicationAvailableElement, ScaleIconCommunicationAvailableEvents, JSX.ScaleIconCommunicationAvailable>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationAvailable as StencilReactComponent<ScaleIconCommunicationAvailableElement, ScaleIconCommunicationAvailableEvents, Components.ScaleIconCommunicationAvailable>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationBlogEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationBlog: StencilReactComponent<ScaleIconCommunicationBlogElement, ScaleIconCommunicationBlogEvents, JSX.ScaleIconCommunicationBlog> = /*@__PURE__*/ createComponent<ScaleIconCommunicationBlogElement, ScaleIconCommunicationBlogEvents, JSX.ScaleIconCommunicationBlog>({
+export const ScaleIconCommunicationBlog: StencilReactComponent<ScaleIconCommunicationBlogElement, ScaleIconCommunicationBlogEvents, Components.ScaleIconCommunicationBlog> = /*@__PURE__*/ createComponent<ScaleIconCommunicationBlogElement, ScaleIconCommunicationBlogEvents, Components.ScaleIconCommunicationBlog>({
     tagName: 'scale-icon-communication-blog',
     properties: {
         size: 'size',
@@ -2933,14 +2933,14 @@ export const ScaleIconCommunicationBlog: StencilReactComponent<ScaleIconCommunic
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationBlog as StencilReactComponent<ScaleIconCommunicationBlogElement, ScaleIconCommunicationBlogEvents, JSX.ScaleIconCommunicationBlog>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationBlog as StencilReactComponent<ScaleIconCommunicationBlogElement, ScaleIconCommunicationBlogEvents, Components.ScaleIconCommunicationBlog>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationCallIncomingEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationCallIncoming: StencilReactComponent<ScaleIconCommunicationCallIncomingElement, ScaleIconCommunicationCallIncomingEvents, JSX.ScaleIconCommunicationCallIncoming> = /*@__PURE__*/ createComponent<ScaleIconCommunicationCallIncomingElement, ScaleIconCommunicationCallIncomingEvents, JSX.ScaleIconCommunicationCallIncoming>({
+export const ScaleIconCommunicationCallIncoming: StencilReactComponent<ScaleIconCommunicationCallIncomingElement, ScaleIconCommunicationCallIncomingEvents, Components.ScaleIconCommunicationCallIncoming> = /*@__PURE__*/ createComponent<ScaleIconCommunicationCallIncomingElement, ScaleIconCommunicationCallIncomingEvents, Components.ScaleIconCommunicationCallIncoming>({
     tagName: 'scale-icon-communication-call-incoming',
     properties: {
         size: 'size',
@@ -2951,14 +2951,14 @@ export const ScaleIconCommunicationCallIncoming: StencilReactComponent<ScaleIcon
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationCallIncoming as StencilReactComponent<ScaleIconCommunicationCallIncomingElement, ScaleIconCommunicationCallIncomingEvents, JSX.ScaleIconCommunicationCallIncoming>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationCallIncoming as StencilReactComponent<ScaleIconCommunicationCallIncomingElement, ScaleIconCommunicationCallIncomingEvents, Components.ScaleIconCommunicationCallIncoming>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationCallOutgoingEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationCallOutgoing: StencilReactComponent<ScaleIconCommunicationCallOutgoingElement, ScaleIconCommunicationCallOutgoingEvents, JSX.ScaleIconCommunicationCallOutgoing> = /*@__PURE__*/ createComponent<ScaleIconCommunicationCallOutgoingElement, ScaleIconCommunicationCallOutgoingEvents, JSX.ScaleIconCommunicationCallOutgoing>({
+export const ScaleIconCommunicationCallOutgoing: StencilReactComponent<ScaleIconCommunicationCallOutgoingElement, ScaleIconCommunicationCallOutgoingEvents, Components.ScaleIconCommunicationCallOutgoing> = /*@__PURE__*/ createComponent<ScaleIconCommunicationCallOutgoingElement, ScaleIconCommunicationCallOutgoingEvents, Components.ScaleIconCommunicationCallOutgoing>({
     tagName: 'scale-icon-communication-call-outgoing',
     properties: {
         size: 'size',
@@ -2969,14 +2969,14 @@ export const ScaleIconCommunicationCallOutgoing: StencilReactComponent<ScaleIcon
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationCallOutgoing as StencilReactComponent<ScaleIconCommunicationCallOutgoingElement, ScaleIconCommunicationCallOutgoingEvents, JSX.ScaleIconCommunicationCallOutgoing>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationCallOutgoing as StencilReactComponent<ScaleIconCommunicationCallOutgoingElement, ScaleIconCommunicationCallOutgoingEvents, Components.ScaleIconCommunicationCallOutgoing>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationChatEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationChat: StencilReactComponent<ScaleIconCommunicationChatElement, ScaleIconCommunicationChatEvents, JSX.ScaleIconCommunicationChat> = /*@__PURE__*/ createComponent<ScaleIconCommunicationChatElement, ScaleIconCommunicationChatEvents, JSX.ScaleIconCommunicationChat>({
+export const ScaleIconCommunicationChat: StencilReactComponent<ScaleIconCommunicationChatElement, ScaleIconCommunicationChatEvents, Components.ScaleIconCommunicationChat> = /*@__PURE__*/ createComponent<ScaleIconCommunicationChatElement, ScaleIconCommunicationChatEvents, Components.ScaleIconCommunicationChat>({
     tagName: 'scale-icon-communication-chat',
     properties: {
         size: 'size',
@@ -2987,14 +2987,14 @@ export const ScaleIconCommunicationChat: StencilReactComponent<ScaleIconCommunic
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationChat as StencilReactComponent<ScaleIconCommunicationChatElement, ScaleIconCommunicationChatEvents, JSX.ScaleIconCommunicationChat>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationChat as StencilReactComponent<ScaleIconCommunicationChatElement, ScaleIconCommunicationChatEvents, Components.ScaleIconCommunicationChat>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationChatBadgeEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationChatBadge: StencilReactComponent<ScaleIconCommunicationChatBadgeElement, ScaleIconCommunicationChatBadgeEvents, JSX.ScaleIconCommunicationChatBadge> = /*@__PURE__*/ createComponent<ScaleIconCommunicationChatBadgeElement, ScaleIconCommunicationChatBadgeEvents, JSX.ScaleIconCommunicationChatBadge>({
+export const ScaleIconCommunicationChatBadge: StencilReactComponent<ScaleIconCommunicationChatBadgeElement, ScaleIconCommunicationChatBadgeEvents, Components.ScaleIconCommunicationChatBadge> = /*@__PURE__*/ createComponent<ScaleIconCommunicationChatBadgeElement, ScaleIconCommunicationChatBadgeEvents, Components.ScaleIconCommunicationChatBadge>({
     tagName: 'scale-icon-communication-chat-badge',
     properties: {
         size: 'size',
@@ -3005,14 +3005,14 @@ export const ScaleIconCommunicationChatBadge: StencilReactComponent<ScaleIconCom
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationChatBadge as StencilReactComponent<ScaleIconCommunicationChatBadgeElement, ScaleIconCommunicationChatBadgeEvents, JSX.ScaleIconCommunicationChatBadge>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationChatBadge as StencilReactComponent<ScaleIconCommunicationChatBadgeElement, ScaleIconCommunicationChatBadgeEvents, Components.ScaleIconCommunicationChatBadge>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationEmailEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationEmail: StencilReactComponent<ScaleIconCommunicationEmailElement, ScaleIconCommunicationEmailEvents, JSX.ScaleIconCommunicationEmail> = /*@__PURE__*/ createComponent<ScaleIconCommunicationEmailElement, ScaleIconCommunicationEmailEvents, JSX.ScaleIconCommunicationEmail>({
+export const ScaleIconCommunicationEmail: StencilReactComponent<ScaleIconCommunicationEmailElement, ScaleIconCommunicationEmailEvents, Components.ScaleIconCommunicationEmail> = /*@__PURE__*/ createComponent<ScaleIconCommunicationEmailElement, ScaleIconCommunicationEmailEvents, Components.ScaleIconCommunicationEmail>({
     tagName: 'scale-icon-communication-email',
     properties: {
         size: 'size',
@@ -3023,14 +3023,14 @@ export const ScaleIconCommunicationEmail: StencilReactComponent<ScaleIconCommuni
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationEmail as StencilReactComponent<ScaleIconCommunicationEmailElement, ScaleIconCommunicationEmailEvents, JSX.ScaleIconCommunicationEmail>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationEmail as StencilReactComponent<ScaleIconCommunicationEmailElement, ScaleIconCommunicationEmailEvents, Components.ScaleIconCommunicationEmail>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationEndCallEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationEndCall: StencilReactComponent<ScaleIconCommunicationEndCallElement, ScaleIconCommunicationEndCallEvents, JSX.ScaleIconCommunicationEndCall> = /*@__PURE__*/ createComponent<ScaleIconCommunicationEndCallElement, ScaleIconCommunicationEndCallEvents, JSX.ScaleIconCommunicationEndCall>({
+export const ScaleIconCommunicationEndCall: StencilReactComponent<ScaleIconCommunicationEndCallElement, ScaleIconCommunicationEndCallEvents, Components.ScaleIconCommunicationEndCall> = /*@__PURE__*/ createComponent<ScaleIconCommunicationEndCallElement, ScaleIconCommunicationEndCallEvents, Components.ScaleIconCommunicationEndCall>({
     tagName: 'scale-icon-communication-end-call',
     properties: {
         size: 'size',
@@ -3041,14 +3041,14 @@ export const ScaleIconCommunicationEndCall: StencilReactComponent<ScaleIconCommu
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationEndCall as StencilReactComponent<ScaleIconCommunicationEndCallElement, ScaleIconCommunicationEndCallEvents, JSX.ScaleIconCommunicationEndCall>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationEndCall as StencilReactComponent<ScaleIconCommunicationEndCallElement, ScaleIconCommunicationEndCallEvents, Components.ScaleIconCommunicationEndCall>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationFeedbackEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationFeedback: StencilReactComponent<ScaleIconCommunicationFeedbackElement, ScaleIconCommunicationFeedbackEvents, JSX.ScaleIconCommunicationFeedback> = /*@__PURE__*/ createComponent<ScaleIconCommunicationFeedbackElement, ScaleIconCommunicationFeedbackEvents, JSX.ScaleIconCommunicationFeedback>({
+export const ScaleIconCommunicationFeedback: StencilReactComponent<ScaleIconCommunicationFeedbackElement, ScaleIconCommunicationFeedbackEvents, Components.ScaleIconCommunicationFeedback> = /*@__PURE__*/ createComponent<ScaleIconCommunicationFeedbackElement, ScaleIconCommunicationFeedbackEvents, Components.ScaleIconCommunicationFeedback>({
     tagName: 'scale-icon-communication-feedback',
     properties: {
         size: 'size',
@@ -3059,14 +3059,14 @@ export const ScaleIconCommunicationFeedback: StencilReactComponent<ScaleIconComm
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationFeedback as StencilReactComponent<ScaleIconCommunicationFeedbackElement, ScaleIconCommunicationFeedbackEvents, JSX.ScaleIconCommunicationFeedback>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationFeedback as StencilReactComponent<ScaleIconCommunicationFeedbackElement, ScaleIconCommunicationFeedbackEvents, Components.ScaleIconCommunicationFeedback>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationFlightModeEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationFlightMode: StencilReactComponent<ScaleIconCommunicationFlightModeElement, ScaleIconCommunicationFlightModeEvents, JSX.ScaleIconCommunicationFlightMode> = /*@__PURE__*/ createComponent<ScaleIconCommunicationFlightModeElement, ScaleIconCommunicationFlightModeEvents, JSX.ScaleIconCommunicationFlightMode>({
+export const ScaleIconCommunicationFlightMode: StencilReactComponent<ScaleIconCommunicationFlightModeElement, ScaleIconCommunicationFlightModeEvents, Components.ScaleIconCommunicationFlightMode> = /*@__PURE__*/ createComponent<ScaleIconCommunicationFlightModeElement, ScaleIconCommunicationFlightModeEvents, Components.ScaleIconCommunicationFlightMode>({
     tagName: 'scale-icon-communication-flight-mode',
     properties: {
         size: 'size',
@@ -3077,14 +3077,14 @@ export const ScaleIconCommunicationFlightMode: StencilReactComponent<ScaleIconCo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationFlightMode as StencilReactComponent<ScaleIconCommunicationFlightModeElement, ScaleIconCommunicationFlightModeEvents, JSX.ScaleIconCommunicationFlightMode>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationFlightMode as StencilReactComponent<ScaleIconCommunicationFlightModeElement, ScaleIconCommunicationFlightModeEvents, Components.ScaleIconCommunicationFlightMode>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationHappyPersonEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationHappyPerson: StencilReactComponent<ScaleIconCommunicationHappyPersonElement, ScaleIconCommunicationHappyPersonEvents, JSX.ScaleIconCommunicationHappyPerson> = /*@__PURE__*/ createComponent<ScaleIconCommunicationHappyPersonElement, ScaleIconCommunicationHappyPersonEvents, JSX.ScaleIconCommunicationHappyPerson>({
+export const ScaleIconCommunicationHappyPerson: StencilReactComponent<ScaleIconCommunicationHappyPersonElement, ScaleIconCommunicationHappyPersonEvents, Components.ScaleIconCommunicationHappyPerson> = /*@__PURE__*/ createComponent<ScaleIconCommunicationHappyPersonElement, ScaleIconCommunicationHappyPersonEvents, Components.ScaleIconCommunicationHappyPerson>({
     tagName: 'scale-icon-communication-happy-person',
     properties: {
         size: 'size',
@@ -3095,14 +3095,14 @@ export const ScaleIconCommunicationHappyPerson: StencilReactComponent<ScaleIconC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationHappyPerson as StencilReactComponent<ScaleIconCommunicationHappyPersonElement, ScaleIconCommunicationHappyPersonEvents, JSX.ScaleIconCommunicationHappyPerson>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationHappyPerson as StencilReactComponent<ScaleIconCommunicationHappyPersonElement, ScaleIconCommunicationHappyPersonEvents, Components.ScaleIconCommunicationHappyPerson>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationInboxEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationInbox: StencilReactComponent<ScaleIconCommunicationInboxElement, ScaleIconCommunicationInboxEvents, JSX.ScaleIconCommunicationInbox> = /*@__PURE__*/ createComponent<ScaleIconCommunicationInboxElement, ScaleIconCommunicationInboxEvents, JSX.ScaleIconCommunicationInbox>({
+export const ScaleIconCommunicationInbox: StencilReactComponent<ScaleIconCommunicationInboxElement, ScaleIconCommunicationInboxEvents, Components.ScaleIconCommunicationInbox> = /*@__PURE__*/ createComponent<ScaleIconCommunicationInboxElement, ScaleIconCommunicationInboxEvents, Components.ScaleIconCommunicationInbox>({
     tagName: 'scale-icon-communication-inbox',
     properties: {
         size: 'size',
@@ -3113,14 +3113,14 @@ export const ScaleIconCommunicationInbox: StencilReactComponent<ScaleIconCommuni
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationInbox as StencilReactComponent<ScaleIconCommunicationInboxElement, ScaleIconCommunicationInboxEvents, JSX.ScaleIconCommunicationInbox>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationInbox as StencilReactComponent<ScaleIconCommunicationInboxElement, ScaleIconCommunicationInboxEvents, Components.ScaleIconCommunicationInbox>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationLandingMobileContactClientEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationLandingMobileContactClient: StencilReactComponent<ScaleIconCommunicationLandingMobileContactClientElement, ScaleIconCommunicationLandingMobileContactClientEvents, JSX.ScaleIconCommunicationLandingMobileContactClient> = /*@__PURE__*/ createComponent<ScaleIconCommunicationLandingMobileContactClientElement, ScaleIconCommunicationLandingMobileContactClientEvents, JSX.ScaleIconCommunicationLandingMobileContactClient>({
+export const ScaleIconCommunicationLandingMobileContactClient: StencilReactComponent<ScaleIconCommunicationLandingMobileContactClientElement, ScaleIconCommunicationLandingMobileContactClientEvents, Components.ScaleIconCommunicationLandingMobileContactClient> = /*@__PURE__*/ createComponent<ScaleIconCommunicationLandingMobileContactClientElement, ScaleIconCommunicationLandingMobileContactClientEvents, Components.ScaleIconCommunicationLandingMobileContactClient>({
     tagName: 'scale-icon-communication-landing-mobile-contact-client',
     properties: {
         size: 'size',
@@ -3131,14 +3131,14 @@ export const ScaleIconCommunicationLandingMobileContactClient: StencilReactCompo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationLandingMobileContactClient as StencilReactComponent<ScaleIconCommunicationLandingMobileContactClientElement, ScaleIconCommunicationLandingMobileContactClientEvents, JSX.ScaleIconCommunicationLandingMobileContactClient>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationLandingMobileContactClient as StencilReactComponent<ScaleIconCommunicationLandingMobileContactClientElement, ScaleIconCommunicationLandingMobileContactClientEvents, Components.ScaleIconCommunicationLandingMobileContactClient>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationLoyaltyEarnedEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationLoyaltyEarned: StencilReactComponent<ScaleIconCommunicationLoyaltyEarnedElement, ScaleIconCommunicationLoyaltyEarnedEvents, JSX.ScaleIconCommunicationLoyaltyEarned> = /*@__PURE__*/ createComponent<ScaleIconCommunicationLoyaltyEarnedElement, ScaleIconCommunicationLoyaltyEarnedEvents, JSX.ScaleIconCommunicationLoyaltyEarned>({
+export const ScaleIconCommunicationLoyaltyEarned: StencilReactComponent<ScaleIconCommunicationLoyaltyEarnedElement, ScaleIconCommunicationLoyaltyEarnedEvents, Components.ScaleIconCommunicationLoyaltyEarned> = /*@__PURE__*/ createComponent<ScaleIconCommunicationLoyaltyEarnedElement, ScaleIconCommunicationLoyaltyEarnedEvents, Components.ScaleIconCommunicationLoyaltyEarned>({
     tagName: 'scale-icon-communication-loyalty-earned',
     properties: {
         size: 'size',
@@ -3149,14 +3149,14 @@ export const ScaleIconCommunicationLoyaltyEarned: StencilReactComponent<ScaleIco
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationLoyaltyEarned as StencilReactComponent<ScaleIconCommunicationLoyaltyEarnedElement, ScaleIconCommunicationLoyaltyEarnedEvents, JSX.ScaleIconCommunicationLoyaltyEarned>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationLoyaltyEarned as StencilReactComponent<ScaleIconCommunicationLoyaltyEarnedElement, ScaleIconCommunicationLoyaltyEarnedEvents, Components.ScaleIconCommunicationLoyaltyEarned>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationLoyaltyLostEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationLoyaltyLost: StencilReactComponent<ScaleIconCommunicationLoyaltyLostElement, ScaleIconCommunicationLoyaltyLostEvents, JSX.ScaleIconCommunicationLoyaltyLost> = /*@__PURE__*/ createComponent<ScaleIconCommunicationLoyaltyLostElement, ScaleIconCommunicationLoyaltyLostEvents, JSX.ScaleIconCommunicationLoyaltyLost>({
+export const ScaleIconCommunicationLoyaltyLost: StencilReactComponent<ScaleIconCommunicationLoyaltyLostElement, ScaleIconCommunicationLoyaltyLostEvents, Components.ScaleIconCommunicationLoyaltyLost> = /*@__PURE__*/ createComponent<ScaleIconCommunicationLoyaltyLostElement, ScaleIconCommunicationLoyaltyLostEvents, Components.ScaleIconCommunicationLoyaltyLost>({
     tagName: 'scale-icon-communication-loyalty-lost',
     properties: {
         size: 'size',
@@ -3167,14 +3167,14 @@ export const ScaleIconCommunicationLoyaltyLost: StencilReactComponent<ScaleIconC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationLoyaltyLost as StencilReactComponent<ScaleIconCommunicationLoyaltyLostElement, ScaleIconCommunicationLoyaltyLostEvents, JSX.ScaleIconCommunicationLoyaltyLost>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationLoyaltyLost as StencilReactComponent<ScaleIconCommunicationLoyaltyLostElement, ScaleIconCommunicationLoyaltyLostEvents, Components.ScaleIconCommunicationLoyaltyLost>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationMailOpenedEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationMailOpened: StencilReactComponent<ScaleIconCommunicationMailOpenedElement, ScaleIconCommunicationMailOpenedEvents, JSX.ScaleIconCommunicationMailOpened> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMailOpenedElement, ScaleIconCommunicationMailOpenedEvents, JSX.ScaleIconCommunicationMailOpened>({
+export const ScaleIconCommunicationMailOpened: StencilReactComponent<ScaleIconCommunicationMailOpenedElement, ScaleIconCommunicationMailOpenedEvents, Components.ScaleIconCommunicationMailOpened> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMailOpenedElement, ScaleIconCommunicationMailOpenedEvents, Components.ScaleIconCommunicationMailOpened>({
     tagName: 'scale-icon-communication-mail-opened',
     properties: {
         size: 'size',
@@ -3185,14 +3185,14 @@ export const ScaleIconCommunicationMailOpened: StencilReactComponent<ScaleIconCo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationMailOpened as StencilReactComponent<ScaleIconCommunicationMailOpenedElement, ScaleIconCommunicationMailOpenedEvents, JSX.ScaleIconCommunicationMailOpened>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationMailOpened as StencilReactComponent<ScaleIconCommunicationMailOpenedElement, ScaleIconCommunicationMailOpenedEvents, Components.ScaleIconCommunicationMailOpened>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationMessageEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationMessage: StencilReactComponent<ScaleIconCommunicationMessageElement, ScaleIconCommunicationMessageEvents, JSX.ScaleIconCommunicationMessage> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMessageElement, ScaleIconCommunicationMessageEvents, JSX.ScaleIconCommunicationMessage>({
+export const ScaleIconCommunicationMessage: StencilReactComponent<ScaleIconCommunicationMessageElement, ScaleIconCommunicationMessageEvents, Components.ScaleIconCommunicationMessage> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMessageElement, ScaleIconCommunicationMessageEvents, Components.ScaleIconCommunicationMessage>({
     tagName: 'scale-icon-communication-message',
     properties: {
         size: 'size',
@@ -3203,14 +3203,14 @@ export const ScaleIconCommunicationMessage: StencilReactComponent<ScaleIconCommu
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationMessage as StencilReactComponent<ScaleIconCommunicationMessageElement, ScaleIconCommunicationMessageEvents, JSX.ScaleIconCommunicationMessage>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationMessage as StencilReactComponent<ScaleIconCommunicationMessageElement, ScaleIconCommunicationMessageEvents, Components.ScaleIconCommunicationMessage>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationMessageIncomingEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationMessageIncoming: StencilReactComponent<ScaleIconCommunicationMessageIncomingElement, ScaleIconCommunicationMessageIncomingEvents, JSX.ScaleIconCommunicationMessageIncoming> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMessageIncomingElement, ScaleIconCommunicationMessageIncomingEvents, JSX.ScaleIconCommunicationMessageIncoming>({
+export const ScaleIconCommunicationMessageIncoming: StencilReactComponent<ScaleIconCommunicationMessageIncomingElement, ScaleIconCommunicationMessageIncomingEvents, Components.ScaleIconCommunicationMessageIncoming> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMessageIncomingElement, ScaleIconCommunicationMessageIncomingEvents, Components.ScaleIconCommunicationMessageIncoming>({
     tagName: 'scale-icon-communication-message-incoming',
     properties: {
         size: 'size',
@@ -3221,14 +3221,14 @@ export const ScaleIconCommunicationMessageIncoming: StencilReactComponent<ScaleI
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationMessageIncoming as StencilReactComponent<ScaleIconCommunicationMessageIncomingElement, ScaleIconCommunicationMessageIncomingEvents, JSX.ScaleIconCommunicationMessageIncoming>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationMessageIncoming as StencilReactComponent<ScaleIconCommunicationMessageIncomingElement, ScaleIconCommunicationMessageIncomingEvents, Components.ScaleIconCommunicationMessageIncoming>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationMessageOutgoingEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationMessageOutgoing: StencilReactComponent<ScaleIconCommunicationMessageOutgoingElement, ScaleIconCommunicationMessageOutgoingEvents, JSX.ScaleIconCommunicationMessageOutgoing> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMessageOutgoingElement, ScaleIconCommunicationMessageOutgoingEvents, JSX.ScaleIconCommunicationMessageOutgoing>({
+export const ScaleIconCommunicationMessageOutgoing: StencilReactComponent<ScaleIconCommunicationMessageOutgoingElement, ScaleIconCommunicationMessageOutgoingEvents, Components.ScaleIconCommunicationMessageOutgoing> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMessageOutgoingElement, ScaleIconCommunicationMessageOutgoingEvents, Components.ScaleIconCommunicationMessageOutgoing>({
     tagName: 'scale-icon-communication-message-outgoing',
     properties: {
         size: 'size',
@@ -3239,14 +3239,14 @@ export const ScaleIconCommunicationMessageOutgoing: StencilReactComponent<ScaleI
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationMessageOutgoing as StencilReactComponent<ScaleIconCommunicationMessageOutgoingElement, ScaleIconCommunicationMessageOutgoingEvents, JSX.ScaleIconCommunicationMessageOutgoing>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationMessageOutgoing as StencilReactComponent<ScaleIconCommunicationMessageOutgoingElement, ScaleIconCommunicationMessageOutgoingEvents, Components.ScaleIconCommunicationMessageOutgoing>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationMmsIncomingEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationMmsIncoming: StencilReactComponent<ScaleIconCommunicationMmsIncomingElement, ScaleIconCommunicationMmsIncomingEvents, JSX.ScaleIconCommunicationMmsIncoming> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMmsIncomingElement, ScaleIconCommunicationMmsIncomingEvents, JSX.ScaleIconCommunicationMmsIncoming>({
+export const ScaleIconCommunicationMmsIncoming: StencilReactComponent<ScaleIconCommunicationMmsIncomingElement, ScaleIconCommunicationMmsIncomingEvents, Components.ScaleIconCommunicationMmsIncoming> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMmsIncomingElement, ScaleIconCommunicationMmsIncomingEvents, Components.ScaleIconCommunicationMmsIncoming>({
     tagName: 'scale-icon-communication-mms-incoming',
     properties: {
         size: 'size',
@@ -3257,14 +3257,14 @@ export const ScaleIconCommunicationMmsIncoming: StencilReactComponent<ScaleIconC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationMmsIncoming as StencilReactComponent<ScaleIconCommunicationMmsIncomingElement, ScaleIconCommunicationMmsIncomingEvents, JSX.ScaleIconCommunicationMmsIncoming>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationMmsIncoming as StencilReactComponent<ScaleIconCommunicationMmsIncomingElement, ScaleIconCommunicationMmsIncomingEvents, Components.ScaleIconCommunicationMmsIncoming>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationMmsOutgoingEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationMmsOutgoing: StencilReactComponent<ScaleIconCommunicationMmsOutgoingElement, ScaleIconCommunicationMmsOutgoingEvents, JSX.ScaleIconCommunicationMmsOutgoing> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMmsOutgoingElement, ScaleIconCommunicationMmsOutgoingEvents, JSX.ScaleIconCommunicationMmsOutgoing>({
+export const ScaleIconCommunicationMmsOutgoing: StencilReactComponent<ScaleIconCommunicationMmsOutgoingElement, ScaleIconCommunicationMmsOutgoingEvents, Components.ScaleIconCommunicationMmsOutgoing> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMmsOutgoingElement, ScaleIconCommunicationMmsOutgoingEvents, Components.ScaleIconCommunicationMmsOutgoing>({
     tagName: 'scale-icon-communication-mms-outgoing',
     properties: {
         size: 'size',
@@ -3275,14 +3275,14 @@ export const ScaleIconCommunicationMmsOutgoing: StencilReactComponent<ScaleIconC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationMmsOutgoing as StencilReactComponent<ScaleIconCommunicationMmsOutgoingElement, ScaleIconCommunicationMmsOutgoingEvents, JSX.ScaleIconCommunicationMmsOutgoing>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationMmsOutgoing as StencilReactComponent<ScaleIconCommunicationMmsOutgoingElement, ScaleIconCommunicationMmsOutgoingEvents, Components.ScaleIconCommunicationMmsOutgoing>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationMobilePhoneNumberEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationMobilePhoneNumber: StencilReactComponent<ScaleIconCommunicationMobilePhoneNumberElement, ScaleIconCommunicationMobilePhoneNumberEvents, JSX.ScaleIconCommunicationMobilePhoneNumber> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMobilePhoneNumberElement, ScaleIconCommunicationMobilePhoneNumberEvents, JSX.ScaleIconCommunicationMobilePhoneNumber>({
+export const ScaleIconCommunicationMobilePhoneNumber: StencilReactComponent<ScaleIconCommunicationMobilePhoneNumberElement, ScaleIconCommunicationMobilePhoneNumberEvents, Components.ScaleIconCommunicationMobilePhoneNumber> = /*@__PURE__*/ createComponent<ScaleIconCommunicationMobilePhoneNumberElement, ScaleIconCommunicationMobilePhoneNumberEvents, Components.ScaleIconCommunicationMobilePhoneNumber>({
     tagName: 'scale-icon-communication-mobile-phone-number',
     properties: {
         size: 'size',
@@ -3293,14 +3293,14 @@ export const ScaleIconCommunicationMobilePhoneNumber: StencilReactComponent<Scal
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationMobilePhoneNumber as StencilReactComponent<ScaleIconCommunicationMobilePhoneNumberElement, ScaleIconCommunicationMobilePhoneNumberEvents, JSX.ScaleIconCommunicationMobilePhoneNumber>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationMobilePhoneNumber as StencilReactComponent<ScaleIconCommunicationMobilePhoneNumberElement, ScaleIconCommunicationMobilePhoneNumberEvents, Components.ScaleIconCommunicationMobilePhoneNumber>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationNetworkSignalEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationNetworkSignal: StencilReactComponent<ScaleIconCommunicationNetworkSignalElement, ScaleIconCommunicationNetworkSignalEvents, JSX.ScaleIconCommunicationNetworkSignal> = /*@__PURE__*/ createComponent<ScaleIconCommunicationNetworkSignalElement, ScaleIconCommunicationNetworkSignalEvents, JSX.ScaleIconCommunicationNetworkSignal>({
+export const ScaleIconCommunicationNetworkSignal: StencilReactComponent<ScaleIconCommunicationNetworkSignalElement, ScaleIconCommunicationNetworkSignalEvents, Components.ScaleIconCommunicationNetworkSignal> = /*@__PURE__*/ createComponent<ScaleIconCommunicationNetworkSignalElement, ScaleIconCommunicationNetworkSignalEvents, Components.ScaleIconCommunicationNetworkSignal>({
     tagName: 'scale-icon-communication-network-signal',
     properties: {
         size: 'size',
@@ -3311,14 +3311,14 @@ export const ScaleIconCommunicationNetworkSignal: StencilReactComponent<ScaleIco
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationNetworkSignal as StencilReactComponent<ScaleIconCommunicationNetworkSignalElement, ScaleIconCommunicationNetworkSignalEvents, JSX.ScaleIconCommunicationNetworkSignal>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationNetworkSignal as StencilReactComponent<ScaleIconCommunicationNetworkSignalElement, ScaleIconCommunicationNetworkSignalEvents, Components.ScaleIconCommunicationNetworkSignal>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationNewEmailEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationNewEmail: StencilReactComponent<ScaleIconCommunicationNewEmailElement, ScaleIconCommunicationNewEmailEvents, JSX.ScaleIconCommunicationNewEmail> = /*@__PURE__*/ createComponent<ScaleIconCommunicationNewEmailElement, ScaleIconCommunicationNewEmailEvents, JSX.ScaleIconCommunicationNewEmail>({
+export const ScaleIconCommunicationNewEmail: StencilReactComponent<ScaleIconCommunicationNewEmailElement, ScaleIconCommunicationNewEmailEvents, Components.ScaleIconCommunicationNewEmail> = /*@__PURE__*/ createComponent<ScaleIconCommunicationNewEmailElement, ScaleIconCommunicationNewEmailEvents, Components.ScaleIconCommunicationNewEmail>({
     tagName: 'scale-icon-communication-new-email',
     properties: {
         size: 'size',
@@ -3329,14 +3329,14 @@ export const ScaleIconCommunicationNewEmail: StencilReactComponent<ScaleIconComm
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationNewEmail as StencilReactComponent<ScaleIconCommunicationNewEmailElement, ScaleIconCommunicationNewEmailEvents, JSX.ScaleIconCommunicationNewEmail>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationNewEmail as StencilReactComponent<ScaleIconCommunicationNewEmailElement, ScaleIconCommunicationNewEmailEvents, Components.ScaleIconCommunicationNewEmail>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationOutboxEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationOutbox: StencilReactComponent<ScaleIconCommunicationOutboxElement, ScaleIconCommunicationOutboxEvents, JSX.ScaleIconCommunicationOutbox> = /*@__PURE__*/ createComponent<ScaleIconCommunicationOutboxElement, ScaleIconCommunicationOutboxEvents, JSX.ScaleIconCommunicationOutbox>({
+export const ScaleIconCommunicationOutbox: StencilReactComponent<ScaleIconCommunicationOutboxElement, ScaleIconCommunicationOutboxEvents, Components.ScaleIconCommunicationOutbox> = /*@__PURE__*/ createComponent<ScaleIconCommunicationOutboxElement, ScaleIconCommunicationOutboxEvents, Components.ScaleIconCommunicationOutbox>({
     tagName: 'scale-icon-communication-outbox',
     properties: {
         size: 'size',
@@ -3347,14 +3347,14 @@ export const ScaleIconCommunicationOutbox: StencilReactComponent<ScaleIconCommun
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationOutbox as StencilReactComponent<ScaleIconCommunicationOutboxElement, ScaleIconCommunicationOutboxEvents, JSX.ScaleIconCommunicationOutbox>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationOutbox as StencilReactComponent<ScaleIconCommunicationOutboxElement, ScaleIconCommunicationOutboxEvents, Components.ScaleIconCommunicationOutbox>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationPhoneNumberEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationPhoneNumber: StencilReactComponent<ScaleIconCommunicationPhoneNumberElement, ScaleIconCommunicationPhoneNumberEvents, JSX.ScaleIconCommunicationPhoneNumber> = /*@__PURE__*/ createComponent<ScaleIconCommunicationPhoneNumberElement, ScaleIconCommunicationPhoneNumberEvents, JSX.ScaleIconCommunicationPhoneNumber>({
+export const ScaleIconCommunicationPhoneNumber: StencilReactComponent<ScaleIconCommunicationPhoneNumberElement, ScaleIconCommunicationPhoneNumberEvents, Components.ScaleIconCommunicationPhoneNumber> = /*@__PURE__*/ createComponent<ScaleIconCommunicationPhoneNumberElement, ScaleIconCommunicationPhoneNumberEvents, Components.ScaleIconCommunicationPhoneNumber>({
     tagName: 'scale-icon-communication-phone-number',
     properties: {
         size: 'size',
@@ -3365,14 +3365,14 @@ export const ScaleIconCommunicationPhoneNumber: StencilReactComponent<ScaleIconC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationPhoneNumber as StencilReactComponent<ScaleIconCommunicationPhoneNumberElement, ScaleIconCommunicationPhoneNumberEvents, JSX.ScaleIconCommunicationPhoneNumber>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationPhoneNumber as StencilReactComponent<ScaleIconCommunicationPhoneNumberElement, ScaleIconCommunicationPhoneNumberEvents, Components.ScaleIconCommunicationPhoneNumber>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationRecipientEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationRecipient: StencilReactComponent<ScaleIconCommunicationRecipientElement, ScaleIconCommunicationRecipientEvents, JSX.ScaleIconCommunicationRecipient> = /*@__PURE__*/ createComponent<ScaleIconCommunicationRecipientElement, ScaleIconCommunicationRecipientEvents, JSX.ScaleIconCommunicationRecipient>({
+export const ScaleIconCommunicationRecipient: StencilReactComponent<ScaleIconCommunicationRecipientElement, ScaleIconCommunicationRecipientEvents, Components.ScaleIconCommunicationRecipient> = /*@__PURE__*/ createComponent<ScaleIconCommunicationRecipientElement, ScaleIconCommunicationRecipientEvents, Components.ScaleIconCommunicationRecipient>({
     tagName: 'scale-icon-communication-recipient',
     properties: {
         size: 'size',
@@ -3383,14 +3383,14 @@ export const ScaleIconCommunicationRecipient: StencilReactComponent<ScaleIconCom
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationRecipient as StencilReactComponent<ScaleIconCommunicationRecipientElement, ScaleIconCommunicationRecipientEvents, JSX.ScaleIconCommunicationRecipient>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationRecipient as StencilReactComponent<ScaleIconCommunicationRecipientElement, ScaleIconCommunicationRecipientEvents, Components.ScaleIconCommunicationRecipient>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationSaveEmailsToDraftsEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationSaveEmailsToDrafts: StencilReactComponent<ScaleIconCommunicationSaveEmailsToDraftsElement, ScaleIconCommunicationSaveEmailsToDraftsEvents, JSX.ScaleIconCommunicationSaveEmailsToDrafts> = /*@__PURE__*/ createComponent<ScaleIconCommunicationSaveEmailsToDraftsElement, ScaleIconCommunicationSaveEmailsToDraftsEvents, JSX.ScaleIconCommunicationSaveEmailsToDrafts>({
+export const ScaleIconCommunicationSaveEmailsToDrafts: StencilReactComponent<ScaleIconCommunicationSaveEmailsToDraftsElement, ScaleIconCommunicationSaveEmailsToDraftsEvents, Components.ScaleIconCommunicationSaveEmailsToDrafts> = /*@__PURE__*/ createComponent<ScaleIconCommunicationSaveEmailsToDraftsElement, ScaleIconCommunicationSaveEmailsToDraftsEvents, Components.ScaleIconCommunicationSaveEmailsToDrafts>({
     tagName: 'scale-icon-communication-save-emails-to-drafts',
     properties: {
         size: 'size',
@@ -3401,14 +3401,14 @@ export const ScaleIconCommunicationSaveEmailsToDrafts: StencilReactComponent<Sca
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationSaveEmailsToDrafts as StencilReactComponent<ScaleIconCommunicationSaveEmailsToDraftsElement, ScaleIconCommunicationSaveEmailsToDraftsEvents, JSX.ScaleIconCommunicationSaveEmailsToDrafts>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationSaveEmailsToDrafts as StencilReactComponent<ScaleIconCommunicationSaveEmailsToDraftsElement, ScaleIconCommunicationSaveEmailsToDraftsEvents, Components.ScaleIconCommunicationSaveEmailsToDrafts>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationSmsEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationSms: StencilReactComponent<ScaleIconCommunicationSmsElement, ScaleIconCommunicationSmsEvents, JSX.ScaleIconCommunicationSms> = /*@__PURE__*/ createComponent<ScaleIconCommunicationSmsElement, ScaleIconCommunicationSmsEvents, JSX.ScaleIconCommunicationSms>({
+export const ScaleIconCommunicationSms: StencilReactComponent<ScaleIconCommunicationSmsElement, ScaleIconCommunicationSmsEvents, Components.ScaleIconCommunicationSms> = /*@__PURE__*/ createComponent<ScaleIconCommunicationSmsElement, ScaleIconCommunicationSmsEvents, Components.ScaleIconCommunicationSms>({
     tagName: 'scale-icon-communication-sms',
     properties: {
         size: 'size',
@@ -3419,14 +3419,14 @@ export const ScaleIconCommunicationSms: StencilReactComponent<ScaleIconCommunica
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationSms as StencilReactComponent<ScaleIconCommunicationSmsElement, ScaleIconCommunicationSmsEvents, JSX.ScaleIconCommunicationSms>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationSms as StencilReactComponent<ScaleIconCommunicationSmsElement, ScaleIconCommunicationSmsEvents, Components.ScaleIconCommunicationSms>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationSpamEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationSpam: StencilReactComponent<ScaleIconCommunicationSpamElement, ScaleIconCommunicationSpamEvents, JSX.ScaleIconCommunicationSpam> = /*@__PURE__*/ createComponent<ScaleIconCommunicationSpamElement, ScaleIconCommunicationSpamEvents, JSX.ScaleIconCommunicationSpam>({
+export const ScaleIconCommunicationSpam: StencilReactComponent<ScaleIconCommunicationSpamElement, ScaleIconCommunicationSpamEvents, Components.ScaleIconCommunicationSpam> = /*@__PURE__*/ createComponent<ScaleIconCommunicationSpamElement, ScaleIconCommunicationSpamEvents, Components.ScaleIconCommunicationSpam>({
     tagName: 'scale-icon-communication-spam',
     properties: {
         size: 'size',
@@ -3437,14 +3437,14 @@ export const ScaleIconCommunicationSpam: StencilReactComponent<ScaleIconCommunic
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationSpam as StencilReactComponent<ScaleIconCommunicationSpamElement, ScaleIconCommunicationSpamEvents, JSX.ScaleIconCommunicationSpam>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationSpam as StencilReactComponent<ScaleIconCommunicationSpamElement, ScaleIconCommunicationSpamEvents, Components.ScaleIconCommunicationSpam>,
     serializeShadowRoot
 });
 
 export type ScaleIconCommunicationVoiceMessageEvents = NonNullable<unknown>;
 
-export const ScaleIconCommunicationVoiceMessage: StencilReactComponent<ScaleIconCommunicationVoiceMessageElement, ScaleIconCommunicationVoiceMessageEvents, JSX.ScaleIconCommunicationVoiceMessage> = /*@__PURE__*/ createComponent<ScaleIconCommunicationVoiceMessageElement, ScaleIconCommunicationVoiceMessageEvents, JSX.ScaleIconCommunicationVoiceMessage>({
+export const ScaleIconCommunicationVoiceMessage: StencilReactComponent<ScaleIconCommunicationVoiceMessageElement, ScaleIconCommunicationVoiceMessageEvents, Components.ScaleIconCommunicationVoiceMessage> = /*@__PURE__*/ createComponent<ScaleIconCommunicationVoiceMessageElement, ScaleIconCommunicationVoiceMessageEvents, Components.ScaleIconCommunicationVoiceMessage>({
     tagName: 'scale-icon-communication-voice-message',
     properties: {
         size: 'size',
@@ -3455,14 +3455,14 @@ export const ScaleIconCommunicationVoiceMessage: StencilReactComponent<ScaleIcon
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconCommunicationVoiceMessage as StencilReactComponent<ScaleIconCommunicationVoiceMessageElement, ScaleIconCommunicationVoiceMessageEvents, JSX.ScaleIconCommunicationVoiceMessage>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconCommunicationVoiceMessage as StencilReactComponent<ScaleIconCommunicationVoiceMessageElement, ScaleIconCommunicationVoiceMessageEvents, Components.ScaleIconCommunicationVoiceMessage>,
     serializeShadowRoot
 });
 
 export type ScaleIconContent2faGoogleAuthEvents = NonNullable<unknown>;
 
-export const ScaleIconContent2faGoogleAuth: StencilReactComponent<ScaleIconContent2faGoogleAuthElement, ScaleIconContent2faGoogleAuthEvents, JSX.ScaleIconContent2faGoogleAuth> = /*@__PURE__*/ createComponent<ScaleIconContent2faGoogleAuthElement, ScaleIconContent2faGoogleAuthEvents, JSX.ScaleIconContent2faGoogleAuth>({
+export const ScaleIconContent2faGoogleAuth: StencilReactComponent<ScaleIconContent2faGoogleAuthElement, ScaleIconContent2faGoogleAuthEvents, Components.ScaleIconContent2faGoogleAuth> = /*@__PURE__*/ createComponent<ScaleIconContent2faGoogleAuthElement, ScaleIconContent2faGoogleAuthEvents, Components.ScaleIconContent2faGoogleAuth>({
     tagName: 'scale-icon-content-2fa-google-auth',
     properties: {
         size: 'size',
@@ -3473,14 +3473,14 @@ export const ScaleIconContent2faGoogleAuth: StencilReactComponent<ScaleIconConte
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContent2faGoogleAuth as StencilReactComponent<ScaleIconContent2faGoogleAuthElement, ScaleIconContent2faGoogleAuthEvents, JSX.ScaleIconContent2faGoogleAuth>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContent2faGoogleAuth as StencilReactComponent<ScaleIconContent2faGoogleAuthElement, ScaleIconContent2faGoogleAuthEvents, Components.ScaleIconContent2faGoogleAuth>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentAchievementEvents = NonNullable<unknown>;
 
-export const ScaleIconContentAchievement: StencilReactComponent<ScaleIconContentAchievementElement, ScaleIconContentAchievementEvents, JSX.ScaleIconContentAchievement> = /*@__PURE__*/ createComponent<ScaleIconContentAchievementElement, ScaleIconContentAchievementEvents, JSX.ScaleIconContentAchievement>({
+export const ScaleIconContentAchievement: StencilReactComponent<ScaleIconContentAchievementElement, ScaleIconContentAchievementEvents, Components.ScaleIconContentAchievement> = /*@__PURE__*/ createComponent<ScaleIconContentAchievementElement, ScaleIconContentAchievementEvents, Components.ScaleIconContentAchievement>({
     tagName: 'scale-icon-content-achievement',
     properties: {
         size: 'size',
@@ -3491,14 +3491,14 @@ export const ScaleIconContentAchievement: StencilReactComponent<ScaleIconContent
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentAchievement as StencilReactComponent<ScaleIconContentAchievementElement, ScaleIconContentAchievementEvents, JSX.ScaleIconContentAchievement>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentAchievement as StencilReactComponent<ScaleIconContentAchievementElement, ScaleIconContentAchievementEvents, Components.ScaleIconContentAchievement>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentAndroidEvents = NonNullable<unknown>;
 
-export const ScaleIconContentAndroid: StencilReactComponent<ScaleIconContentAndroidElement, ScaleIconContentAndroidEvents, JSX.ScaleIconContentAndroid> = /*@__PURE__*/ createComponent<ScaleIconContentAndroidElement, ScaleIconContentAndroidEvents, JSX.ScaleIconContentAndroid>({
+export const ScaleIconContentAndroid: StencilReactComponent<ScaleIconContentAndroidElement, ScaleIconContentAndroidEvents, Components.ScaleIconContentAndroid> = /*@__PURE__*/ createComponent<ScaleIconContentAndroidElement, ScaleIconContentAndroidEvents, Components.ScaleIconContentAndroid>({
     tagName: 'scale-icon-content-android',
     properties: {
         size: 'size',
@@ -3509,14 +3509,14 @@ export const ScaleIconContentAndroid: StencilReactComponent<ScaleIconContentAndr
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentAndroid as StencilReactComponent<ScaleIconContentAndroidElement, ScaleIconContentAndroidEvents, JSX.ScaleIconContentAndroid>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentAndroid as StencilReactComponent<ScaleIconContentAndroidElement, ScaleIconContentAndroidEvents, Components.ScaleIconContentAndroid>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentAppleEvents = NonNullable<unknown>;
 
-export const ScaleIconContentApple: StencilReactComponent<ScaleIconContentAppleElement, ScaleIconContentAppleEvents, JSX.ScaleIconContentApple> = /*@__PURE__*/ createComponent<ScaleIconContentAppleElement, ScaleIconContentAppleEvents, JSX.ScaleIconContentApple>({
+export const ScaleIconContentApple: StencilReactComponent<ScaleIconContentAppleElement, ScaleIconContentAppleEvents, Components.ScaleIconContentApple> = /*@__PURE__*/ createComponent<ScaleIconContentAppleElement, ScaleIconContentAppleEvents, Components.ScaleIconContentApple>({
     tagName: 'scale-icon-content-apple',
     properties: {
         size: 'size',
@@ -3527,14 +3527,14 @@ export const ScaleIconContentApple: StencilReactComponent<ScaleIconContentAppleE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentApple as StencilReactComponent<ScaleIconContentAppleElement, ScaleIconContentAppleEvents, JSX.ScaleIconContentApple>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentApple as StencilReactComponent<ScaleIconContentAppleElement, ScaleIconContentAppleEvents, Components.ScaleIconContentApple>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentApplicationsEvents = NonNullable<unknown>;
 
-export const ScaleIconContentApplications: StencilReactComponent<ScaleIconContentApplicationsElement, ScaleIconContentApplicationsEvents, JSX.ScaleIconContentApplications> = /*@__PURE__*/ createComponent<ScaleIconContentApplicationsElement, ScaleIconContentApplicationsEvents, JSX.ScaleIconContentApplications>({
+export const ScaleIconContentApplications: StencilReactComponent<ScaleIconContentApplicationsElement, ScaleIconContentApplicationsEvents, Components.ScaleIconContentApplications> = /*@__PURE__*/ createComponent<ScaleIconContentApplicationsElement, ScaleIconContentApplicationsEvents, Components.ScaleIconContentApplications>({
     tagName: 'scale-icon-content-applications',
     properties: {
         size: 'size',
@@ -3545,14 +3545,14 @@ export const ScaleIconContentApplications: StencilReactComponent<ScaleIconConten
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentApplications as StencilReactComponent<ScaleIconContentApplicationsElement, ScaleIconContentApplicationsEvents, JSX.ScaleIconContentApplications>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentApplications as StencilReactComponent<ScaleIconContentApplicationsElement, ScaleIconContentApplicationsEvents, Components.ScaleIconContentApplications>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentAvailableKeychainEvents = NonNullable<unknown>;
 
-export const ScaleIconContentAvailableKeychain: StencilReactComponent<ScaleIconContentAvailableKeychainElement, ScaleIconContentAvailableKeychainEvents, JSX.ScaleIconContentAvailableKeychain> = /*@__PURE__*/ createComponent<ScaleIconContentAvailableKeychainElement, ScaleIconContentAvailableKeychainEvents, JSX.ScaleIconContentAvailableKeychain>({
+export const ScaleIconContentAvailableKeychain: StencilReactComponent<ScaleIconContentAvailableKeychainElement, ScaleIconContentAvailableKeychainEvents, Components.ScaleIconContentAvailableKeychain> = /*@__PURE__*/ createComponent<ScaleIconContentAvailableKeychainElement, ScaleIconContentAvailableKeychainEvents, Components.ScaleIconContentAvailableKeychain>({
     tagName: 'scale-icon-content-available-keychain',
     properties: {
         size: 'size',
@@ -3563,14 +3563,14 @@ export const ScaleIconContentAvailableKeychain: StencilReactComponent<ScaleIconC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentAvailableKeychain as StencilReactComponent<ScaleIconContentAvailableKeychainElement, ScaleIconContentAvailableKeychainEvents, JSX.ScaleIconContentAvailableKeychain>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentAvailableKeychain as StencilReactComponent<ScaleIconContentAvailableKeychainElement, ScaleIconContentAvailableKeychainEvents, Components.ScaleIconContentAvailableKeychain>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentBankEvents = NonNullable<unknown>;
 
-export const ScaleIconContentBank: StencilReactComponent<ScaleIconContentBankElement, ScaleIconContentBankEvents, JSX.ScaleIconContentBank> = /*@__PURE__*/ createComponent<ScaleIconContentBankElement, ScaleIconContentBankEvents, JSX.ScaleIconContentBank>({
+export const ScaleIconContentBank: StencilReactComponent<ScaleIconContentBankElement, ScaleIconContentBankEvents, Components.ScaleIconContentBank> = /*@__PURE__*/ createComponent<ScaleIconContentBankElement, ScaleIconContentBankEvents, Components.ScaleIconContentBank>({
     tagName: 'scale-icon-content-bank',
     properties: {
         size: 'size',
@@ -3581,14 +3581,14 @@ export const ScaleIconContentBank: StencilReactComponent<ScaleIconContentBankEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentBank as StencilReactComponent<ScaleIconContentBankElement, ScaleIconContentBankEvents, JSX.ScaleIconContentBank>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentBank as StencilReactComponent<ScaleIconContentBankElement, ScaleIconContentBankEvents, Components.ScaleIconContentBank>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentBiometricEvents = NonNullable<unknown>;
 
-export const ScaleIconContentBiometric: StencilReactComponent<ScaleIconContentBiometricElement, ScaleIconContentBiometricEvents, JSX.ScaleIconContentBiometric> = /*@__PURE__*/ createComponent<ScaleIconContentBiometricElement, ScaleIconContentBiometricEvents, JSX.ScaleIconContentBiometric>({
+export const ScaleIconContentBiometric: StencilReactComponent<ScaleIconContentBiometricElement, ScaleIconContentBiometricEvents, Components.ScaleIconContentBiometric> = /*@__PURE__*/ createComponent<ScaleIconContentBiometricElement, ScaleIconContentBiometricEvents, Components.ScaleIconContentBiometric>({
     tagName: 'scale-icon-content-biometric',
     properties: {
         size: 'size',
@@ -3599,14 +3599,14 @@ export const ScaleIconContentBiometric: StencilReactComponent<ScaleIconContentBi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentBiometric as StencilReactComponent<ScaleIconContentBiometricElement, ScaleIconContentBiometricEvents, JSX.ScaleIconContentBiometric>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentBiometric as StencilReactComponent<ScaleIconContentBiometricElement, ScaleIconContentBiometricEvents, Components.ScaleIconContentBiometric>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentBirthdayEvents = NonNullable<unknown>;
 
-export const ScaleIconContentBirthday: StencilReactComponent<ScaleIconContentBirthdayElement, ScaleIconContentBirthdayEvents, JSX.ScaleIconContentBirthday> = /*@__PURE__*/ createComponent<ScaleIconContentBirthdayElement, ScaleIconContentBirthdayEvents, JSX.ScaleIconContentBirthday>({
+export const ScaleIconContentBirthday: StencilReactComponent<ScaleIconContentBirthdayElement, ScaleIconContentBirthdayEvents, Components.ScaleIconContentBirthday> = /*@__PURE__*/ createComponent<ScaleIconContentBirthdayElement, ScaleIconContentBirthdayEvents, Components.ScaleIconContentBirthday>({
     tagName: 'scale-icon-content-birthday',
     properties: {
         size: 'size',
@@ -3617,14 +3617,14 @@ export const ScaleIconContentBirthday: StencilReactComponent<ScaleIconContentBir
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentBirthday as StencilReactComponent<ScaleIconContentBirthdayElement, ScaleIconContentBirthdayEvents, JSX.ScaleIconContentBirthday>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentBirthday as StencilReactComponent<ScaleIconContentBirthdayElement, ScaleIconContentBirthdayEvents, Components.ScaleIconContentBirthday>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentBookmarkEvents = NonNullable<unknown>;
 
-export const ScaleIconContentBookmark: StencilReactComponent<ScaleIconContentBookmarkElement, ScaleIconContentBookmarkEvents, JSX.ScaleIconContentBookmark> = /*@__PURE__*/ createComponent<ScaleIconContentBookmarkElement, ScaleIconContentBookmarkEvents, JSX.ScaleIconContentBookmark>({
+export const ScaleIconContentBookmark: StencilReactComponent<ScaleIconContentBookmarkElement, ScaleIconContentBookmarkEvents, Components.ScaleIconContentBookmark> = /*@__PURE__*/ createComponent<ScaleIconContentBookmarkElement, ScaleIconContentBookmarkEvents, Components.ScaleIconContentBookmark>({
     tagName: 'scale-icon-content-bookmark',
     properties: {
         size: 'size',
@@ -3635,14 +3635,14 @@ export const ScaleIconContentBookmark: StencilReactComponent<ScaleIconContentBoo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentBookmark as StencilReactComponent<ScaleIconContentBookmarkElement, ScaleIconContentBookmarkEvents, JSX.ScaleIconContentBookmark>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentBookmark as StencilReactComponent<ScaleIconContentBookmarkElement, ScaleIconContentBookmarkEvents, Components.ScaleIconContentBookmark>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentCalendarEvents = NonNullable<unknown>;
 
-export const ScaleIconContentCalendar: StencilReactComponent<ScaleIconContentCalendarElement, ScaleIconContentCalendarEvents, JSX.ScaleIconContentCalendar> = /*@__PURE__*/ createComponent<ScaleIconContentCalendarElement, ScaleIconContentCalendarEvents, JSX.ScaleIconContentCalendar>({
+export const ScaleIconContentCalendar: StencilReactComponent<ScaleIconContentCalendarElement, ScaleIconContentCalendarEvents, Components.ScaleIconContentCalendar> = /*@__PURE__*/ createComponent<ScaleIconContentCalendarElement, ScaleIconContentCalendarEvents, Components.ScaleIconContentCalendar>({
     tagName: 'scale-icon-content-calendar',
     properties: {
         size: 'size',
@@ -3653,14 +3653,14 @@ export const ScaleIconContentCalendar: StencilReactComponent<ScaleIconContentCal
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentCalendar as StencilReactComponent<ScaleIconContentCalendarElement, ScaleIconContentCalendarEvents, JSX.ScaleIconContentCalendar>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentCalendar as StencilReactComponent<ScaleIconContentCalendarElement, ScaleIconContentCalendarEvents, Components.ScaleIconContentCalendar>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentClipboardEvents = NonNullable<unknown>;
 
-export const ScaleIconContentClipboard: StencilReactComponent<ScaleIconContentClipboardElement, ScaleIconContentClipboardEvents, JSX.ScaleIconContentClipboard> = /*@__PURE__*/ createComponent<ScaleIconContentClipboardElement, ScaleIconContentClipboardEvents, JSX.ScaleIconContentClipboard>({
+export const ScaleIconContentClipboard: StencilReactComponent<ScaleIconContentClipboardElement, ScaleIconContentClipboardEvents, Components.ScaleIconContentClipboard> = /*@__PURE__*/ createComponent<ScaleIconContentClipboardElement, ScaleIconContentClipboardEvents, Components.ScaleIconContentClipboard>({
     tagName: 'scale-icon-content-clipboard',
     properties: {
         size: 'size',
@@ -3671,14 +3671,14 @@ export const ScaleIconContentClipboard: StencilReactComponent<ScaleIconContentCl
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentClipboard as StencilReactComponent<ScaleIconContentClipboardElement, ScaleIconContentClipboardEvents, JSX.ScaleIconContentClipboard>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentClipboard as StencilReactComponent<ScaleIconContentClipboardElement, ScaleIconContentClipboardEvents, Components.ScaleIconContentClipboard>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentClockEvents = NonNullable<unknown>;
 
-export const ScaleIconContentClock: StencilReactComponent<ScaleIconContentClockElement, ScaleIconContentClockEvents, JSX.ScaleIconContentClock> = /*@__PURE__*/ createComponent<ScaleIconContentClockElement, ScaleIconContentClockEvents, JSX.ScaleIconContentClock>({
+export const ScaleIconContentClock: StencilReactComponent<ScaleIconContentClockElement, ScaleIconContentClockEvents, Components.ScaleIconContentClock> = /*@__PURE__*/ createComponent<ScaleIconContentClockElement, ScaleIconContentClockEvents, Components.ScaleIconContentClock>({
     tagName: 'scale-icon-content-clock',
     properties: {
         size: 'size',
@@ -3689,14 +3689,14 @@ export const ScaleIconContentClock: StencilReactComponent<ScaleIconContentClockE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentClock as StencilReactComponent<ScaleIconContentClockElement, ScaleIconContentClockEvents, JSX.ScaleIconContentClock>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentClock as StencilReactComponent<ScaleIconContentClockElement, ScaleIconContentClockEvents, Components.ScaleIconContentClock>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentCloudSecurityEvents = NonNullable<unknown>;
 
-export const ScaleIconContentCloudSecurity: StencilReactComponent<ScaleIconContentCloudSecurityElement, ScaleIconContentCloudSecurityEvents, JSX.ScaleIconContentCloudSecurity> = /*@__PURE__*/ createComponent<ScaleIconContentCloudSecurityElement, ScaleIconContentCloudSecurityEvents, JSX.ScaleIconContentCloudSecurity>({
+export const ScaleIconContentCloudSecurity: StencilReactComponent<ScaleIconContentCloudSecurityElement, ScaleIconContentCloudSecurityEvents, Components.ScaleIconContentCloudSecurity> = /*@__PURE__*/ createComponent<ScaleIconContentCloudSecurityElement, ScaleIconContentCloudSecurityEvents, Components.ScaleIconContentCloudSecurity>({
     tagName: 'scale-icon-content-cloud-security',
     properties: {
         size: 'size',
@@ -3707,14 +3707,14 @@ export const ScaleIconContentCloudSecurity: StencilReactComponent<ScaleIconConte
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentCloudSecurity as StencilReactComponent<ScaleIconContentCloudSecurityElement, ScaleIconContentCloudSecurityEvents, JSX.ScaleIconContentCloudSecurity>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentCloudSecurity as StencilReactComponent<ScaleIconContentCloudSecurityElement, ScaleIconContentCloudSecurityEvents, Components.ScaleIconContentCloudSecurity>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentCodeScannerEvents = NonNullable<unknown>;
 
-export const ScaleIconContentCodeScanner: StencilReactComponent<ScaleIconContentCodeScannerElement, ScaleIconContentCodeScannerEvents, JSX.ScaleIconContentCodeScanner> = /*@__PURE__*/ createComponent<ScaleIconContentCodeScannerElement, ScaleIconContentCodeScannerEvents, JSX.ScaleIconContentCodeScanner>({
+export const ScaleIconContentCodeScanner: StencilReactComponent<ScaleIconContentCodeScannerElement, ScaleIconContentCodeScannerEvents, Components.ScaleIconContentCodeScanner> = /*@__PURE__*/ createComponent<ScaleIconContentCodeScannerElement, ScaleIconContentCodeScannerEvents, Components.ScaleIconContentCodeScanner>({
     tagName: 'scale-icon-content-code-scanner',
     properties: {
         size: 'size',
@@ -3725,14 +3725,14 @@ export const ScaleIconContentCodeScanner: StencilReactComponent<ScaleIconContent
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentCodeScanner as StencilReactComponent<ScaleIconContentCodeScannerElement, ScaleIconContentCodeScannerEvents, JSX.ScaleIconContentCodeScanner>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentCodeScanner as StencilReactComponent<ScaleIconContentCodeScannerElement, ScaleIconContentCodeScannerEvents, Components.ScaleIconContentCodeScanner>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentColorSelectionEvents = NonNullable<unknown>;
 
-export const ScaleIconContentColorSelection: StencilReactComponent<ScaleIconContentColorSelectionElement, ScaleIconContentColorSelectionEvents, JSX.ScaleIconContentColorSelection> = /*@__PURE__*/ createComponent<ScaleIconContentColorSelectionElement, ScaleIconContentColorSelectionEvents, JSX.ScaleIconContentColorSelection>({
+export const ScaleIconContentColorSelection: StencilReactComponent<ScaleIconContentColorSelectionElement, ScaleIconContentColorSelectionEvents, Components.ScaleIconContentColorSelection> = /*@__PURE__*/ createComponent<ScaleIconContentColorSelectionElement, ScaleIconContentColorSelectionEvents, Components.ScaleIconContentColorSelection>({
     tagName: 'scale-icon-content-color-selection',
     properties: {
         size: 'size',
@@ -3743,14 +3743,14 @@ export const ScaleIconContentColorSelection: StencilReactComponent<ScaleIconCont
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentColorSelection as StencilReactComponent<ScaleIconContentColorSelectionElement, ScaleIconContentColorSelectionEvents, JSX.ScaleIconContentColorSelection>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentColorSelection as StencilReactComponent<ScaleIconContentColorSelectionElement, ScaleIconContentColorSelectionEvents, Components.ScaleIconContentColorSelection>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentCountryEvents = NonNullable<unknown>;
 
-export const ScaleIconContentCountry: StencilReactComponent<ScaleIconContentCountryElement, ScaleIconContentCountryEvents, JSX.ScaleIconContentCountry> = /*@__PURE__*/ createComponent<ScaleIconContentCountryElement, ScaleIconContentCountryEvents, JSX.ScaleIconContentCountry>({
+export const ScaleIconContentCountry: StencilReactComponent<ScaleIconContentCountryElement, ScaleIconContentCountryEvents, Components.ScaleIconContentCountry> = /*@__PURE__*/ createComponent<ScaleIconContentCountryElement, ScaleIconContentCountryEvents, Components.ScaleIconContentCountry>({
     tagName: 'scale-icon-content-country',
     properties: {
         size: 'size',
@@ -3761,14 +3761,14 @@ export const ScaleIconContentCountry: StencilReactComponent<ScaleIconContentCoun
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentCountry as StencilReactComponent<ScaleIconContentCountryElement, ScaleIconContentCountryEvents, JSX.ScaleIconContentCountry>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentCountry as StencilReactComponent<ScaleIconContentCountryElement, ScaleIconContentCountryEvents, Components.ScaleIconContentCountry>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentCreditCardEvents = NonNullable<unknown>;
 
-export const ScaleIconContentCreditCard: StencilReactComponent<ScaleIconContentCreditCardElement, ScaleIconContentCreditCardEvents, JSX.ScaleIconContentCreditCard> = /*@__PURE__*/ createComponent<ScaleIconContentCreditCardElement, ScaleIconContentCreditCardEvents, JSX.ScaleIconContentCreditCard>({
+export const ScaleIconContentCreditCard: StencilReactComponent<ScaleIconContentCreditCardElement, ScaleIconContentCreditCardEvents, Components.ScaleIconContentCreditCard> = /*@__PURE__*/ createComponent<ScaleIconContentCreditCardElement, ScaleIconContentCreditCardEvents, Components.ScaleIconContentCreditCard>({
     tagName: 'scale-icon-content-credit-card',
     properties: {
         size: 'size',
@@ -3779,14 +3779,14 @@ export const ScaleIconContentCreditCard: StencilReactComponent<ScaleIconContentC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentCreditCard as StencilReactComponent<ScaleIconContentCreditCardElement, ScaleIconContentCreditCardEvents, JSX.ScaleIconContentCreditCard>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentCreditCard as StencilReactComponent<ScaleIconContentCreditCardElement, ScaleIconContentCreditCardEvents, Components.ScaleIconContentCreditCard>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentDataVisualisationEvents = NonNullable<unknown>;
 
-export const ScaleIconContentDataVisualisation: StencilReactComponent<ScaleIconContentDataVisualisationElement, ScaleIconContentDataVisualisationEvents, JSX.ScaleIconContentDataVisualisation> = /*@__PURE__*/ createComponent<ScaleIconContentDataVisualisationElement, ScaleIconContentDataVisualisationEvents, JSX.ScaleIconContentDataVisualisation>({
+export const ScaleIconContentDataVisualisation: StencilReactComponent<ScaleIconContentDataVisualisationElement, ScaleIconContentDataVisualisationEvents, Components.ScaleIconContentDataVisualisation> = /*@__PURE__*/ createComponent<ScaleIconContentDataVisualisationElement, ScaleIconContentDataVisualisationEvents, Components.ScaleIconContentDataVisualisation>({
     tagName: 'scale-icon-content-data-visualisation',
     properties: {
         size: 'size',
@@ -3797,14 +3797,14 @@ export const ScaleIconContentDataVisualisation: StencilReactComponent<ScaleIconC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentDataVisualisation as StencilReactComponent<ScaleIconContentDataVisualisationElement, ScaleIconContentDataVisualisationEvents, JSX.ScaleIconContentDataVisualisation>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentDataVisualisation as StencilReactComponent<ScaleIconContentDataVisualisationElement, ScaleIconContentDataVisualisationEvents, Components.ScaleIconContentDataVisualisation>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentDeliveryEvents = NonNullable<unknown>;
 
-export const ScaleIconContentDelivery: StencilReactComponent<ScaleIconContentDeliveryElement, ScaleIconContentDeliveryEvents, JSX.ScaleIconContentDelivery> = /*@__PURE__*/ createComponent<ScaleIconContentDeliveryElement, ScaleIconContentDeliveryEvents, JSX.ScaleIconContentDelivery>({
+export const ScaleIconContentDelivery: StencilReactComponent<ScaleIconContentDeliveryElement, ScaleIconContentDeliveryEvents, Components.ScaleIconContentDelivery> = /*@__PURE__*/ createComponent<ScaleIconContentDeliveryElement, ScaleIconContentDeliveryEvents, Components.ScaleIconContentDelivery>({
     tagName: 'scale-icon-content-delivery',
     properties: {
         size: 'size',
@@ -3815,14 +3815,14 @@ export const ScaleIconContentDelivery: StencilReactComponent<ScaleIconContentDel
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentDelivery as StencilReactComponent<ScaleIconContentDeliveryElement, ScaleIconContentDeliveryEvents, JSX.ScaleIconContentDelivery>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentDelivery as StencilReactComponent<ScaleIconContentDeliveryElement, ScaleIconContentDeliveryEvents, Components.ScaleIconContentDelivery>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentDigitalBankingEvents = NonNullable<unknown>;
 
-export const ScaleIconContentDigitalBanking: StencilReactComponent<ScaleIconContentDigitalBankingElement, ScaleIconContentDigitalBankingEvents, JSX.ScaleIconContentDigitalBanking> = /*@__PURE__*/ createComponent<ScaleIconContentDigitalBankingElement, ScaleIconContentDigitalBankingEvents, JSX.ScaleIconContentDigitalBanking>({
+export const ScaleIconContentDigitalBanking: StencilReactComponent<ScaleIconContentDigitalBankingElement, ScaleIconContentDigitalBankingEvents, Components.ScaleIconContentDigitalBanking> = /*@__PURE__*/ createComponent<ScaleIconContentDigitalBankingElement, ScaleIconContentDigitalBankingEvents, Components.ScaleIconContentDigitalBanking>({
     tagName: 'scale-icon-content-digital-banking',
     properties: {
         size: 'size',
@@ -3833,14 +3833,14 @@ export const ScaleIconContentDigitalBanking: StencilReactComponent<ScaleIconCont
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentDigitalBanking as StencilReactComponent<ScaleIconContentDigitalBankingElement, ScaleIconContentDigitalBankingEvents, JSX.ScaleIconContentDigitalBanking>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentDigitalBanking as StencilReactComponent<ScaleIconContentDigitalBankingElement, ScaleIconContentDigitalBankingEvents, Components.ScaleIconContentDigitalBanking>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentDigitalMediaEvents = NonNullable<unknown>;
 
-export const ScaleIconContentDigitalMedia: StencilReactComponent<ScaleIconContentDigitalMediaElement, ScaleIconContentDigitalMediaEvents, JSX.ScaleIconContentDigitalMedia> = /*@__PURE__*/ createComponent<ScaleIconContentDigitalMediaElement, ScaleIconContentDigitalMediaEvents, JSX.ScaleIconContentDigitalMedia>({
+export const ScaleIconContentDigitalMedia: StencilReactComponent<ScaleIconContentDigitalMediaElement, ScaleIconContentDigitalMediaEvents, Components.ScaleIconContentDigitalMedia> = /*@__PURE__*/ createComponent<ScaleIconContentDigitalMediaElement, ScaleIconContentDigitalMediaEvents, Components.ScaleIconContentDigitalMedia>({
     tagName: 'scale-icon-content-digital-media',
     properties: {
         size: 'size',
@@ -3851,14 +3851,14 @@ export const ScaleIconContentDigitalMedia: StencilReactComponent<ScaleIconConten
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentDigitalMedia as StencilReactComponent<ScaleIconContentDigitalMediaElement, ScaleIconContentDigitalMediaEvents, JSX.ScaleIconContentDigitalMedia>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentDigitalMedia as StencilReactComponent<ScaleIconContentDigitalMediaElement, ScaleIconContentDigitalMediaEvents, Components.ScaleIconContentDigitalMedia>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentDiscountEvents = NonNullable<unknown>;
 
-export const ScaleIconContentDiscount: StencilReactComponent<ScaleIconContentDiscountElement, ScaleIconContentDiscountEvents, JSX.ScaleIconContentDiscount> = /*@__PURE__*/ createComponent<ScaleIconContentDiscountElement, ScaleIconContentDiscountEvents, JSX.ScaleIconContentDiscount>({
+export const ScaleIconContentDiscount: StencilReactComponent<ScaleIconContentDiscountElement, ScaleIconContentDiscountEvents, Components.ScaleIconContentDiscount> = /*@__PURE__*/ createComponent<ScaleIconContentDiscountElement, ScaleIconContentDiscountEvents, Components.ScaleIconContentDiscount>({
     tagName: 'scale-icon-content-discount',
     properties: {
         size: 'size',
@@ -3869,14 +3869,14 @@ export const ScaleIconContentDiscount: StencilReactComponent<ScaleIconContentDis
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentDiscount as StencilReactComponent<ScaleIconContentDiscountElement, ScaleIconContentDiscountEvents, JSX.ScaleIconContentDiscount>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentDiscount as StencilReactComponent<ScaleIconContentDiscountElement, ScaleIconContentDiscountEvents, Components.ScaleIconContentDiscount>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentESimEvents = NonNullable<unknown>;
 
-export const ScaleIconContentESim: StencilReactComponent<ScaleIconContentESimElement, ScaleIconContentESimEvents, JSX.ScaleIconContentESim> = /*@__PURE__*/ createComponent<ScaleIconContentESimElement, ScaleIconContentESimEvents, JSX.ScaleIconContentESim>({
+export const ScaleIconContentESim: StencilReactComponent<ScaleIconContentESimElement, ScaleIconContentESimEvents, Components.ScaleIconContentESim> = /*@__PURE__*/ createComponent<ScaleIconContentESimElement, ScaleIconContentESimEvents, Components.ScaleIconContentESim>({
     tagName: 'scale-icon-content-e-sim',
     properties: {
         size: 'size',
@@ -3887,14 +3887,14 @@ export const ScaleIconContentESim: StencilReactComponent<ScaleIconContentESimEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentESim as StencilReactComponent<ScaleIconContentESimElement, ScaleIconContentESimEvents, JSX.ScaleIconContentESim>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentESim as StencilReactComponent<ScaleIconContentESimElement, ScaleIconContentESimEvents, Components.ScaleIconContentESim>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentEuEvents = NonNullable<unknown>;
 
-export const ScaleIconContentEu: StencilReactComponent<ScaleIconContentEuElement, ScaleIconContentEuEvents, JSX.ScaleIconContentEu> = /*@__PURE__*/ createComponent<ScaleIconContentEuElement, ScaleIconContentEuEvents, JSX.ScaleIconContentEu>({
+export const ScaleIconContentEu: StencilReactComponent<ScaleIconContentEuElement, ScaleIconContentEuEvents, Components.ScaleIconContentEu> = /*@__PURE__*/ createComponent<ScaleIconContentEuElement, ScaleIconContentEuEvents, Components.ScaleIconContentEu>({
     tagName: 'scale-icon-content-eu',
     properties: {
         size: 'size',
@@ -3905,14 +3905,14 @@ export const ScaleIconContentEu: StencilReactComponent<ScaleIconContentEuElement
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentEu as StencilReactComponent<ScaleIconContentEuElement, ScaleIconContentEuEvents, JSX.ScaleIconContentEu>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentEu as StencilReactComponent<ScaleIconContentEuElement, ScaleIconContentEuEvents, Components.ScaleIconContentEu>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentFaceMaskEvents = NonNullable<unknown>;
 
-export const ScaleIconContentFaceMask: StencilReactComponent<ScaleIconContentFaceMaskElement, ScaleIconContentFaceMaskEvents, JSX.ScaleIconContentFaceMask> = /*@__PURE__*/ createComponent<ScaleIconContentFaceMaskElement, ScaleIconContentFaceMaskEvents, JSX.ScaleIconContentFaceMask>({
+export const ScaleIconContentFaceMask: StencilReactComponent<ScaleIconContentFaceMaskElement, ScaleIconContentFaceMaskEvents, Components.ScaleIconContentFaceMask> = /*@__PURE__*/ createComponent<ScaleIconContentFaceMaskElement, ScaleIconContentFaceMaskEvents, Components.ScaleIconContentFaceMask>({
     tagName: 'scale-icon-content-face-mask',
     properties: {
         size: 'size',
@@ -3923,14 +3923,14 @@ export const ScaleIconContentFaceMask: StencilReactComponent<ScaleIconContentFac
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentFaceMask as StencilReactComponent<ScaleIconContentFaceMaskElement, ScaleIconContentFaceMaskEvents, JSX.ScaleIconContentFaceMask>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentFaceMask as StencilReactComponent<ScaleIconContentFaceMaskElement, ScaleIconContentFaceMaskEvents, Components.ScaleIconContentFaceMask>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentFeaturesEvents = NonNullable<unknown>;
 
-export const ScaleIconContentFeatures: StencilReactComponent<ScaleIconContentFeaturesElement, ScaleIconContentFeaturesEvents, JSX.ScaleIconContentFeatures> = /*@__PURE__*/ createComponent<ScaleIconContentFeaturesElement, ScaleIconContentFeaturesEvents, JSX.ScaleIconContentFeatures>({
+export const ScaleIconContentFeatures: StencilReactComponent<ScaleIconContentFeaturesElement, ScaleIconContentFeaturesEvents, Components.ScaleIconContentFeatures> = /*@__PURE__*/ createComponent<ScaleIconContentFeaturesElement, ScaleIconContentFeaturesEvents, Components.ScaleIconContentFeatures>({
     tagName: 'scale-icon-content-features',
     properties: {
         size: 'size',
@@ -3941,14 +3941,14 @@ export const ScaleIconContentFeatures: StencilReactComponent<ScaleIconContentFea
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentFeatures as StencilReactComponent<ScaleIconContentFeaturesElement, ScaleIconContentFeaturesEvents, JSX.ScaleIconContentFeatures>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentFeatures as StencilReactComponent<ScaleIconContentFeaturesElement, ScaleIconContentFeaturesEvents, Components.ScaleIconContentFeatures>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentFlexibleTariffsEvents = NonNullable<unknown>;
 
-export const ScaleIconContentFlexibleTariffs: StencilReactComponent<ScaleIconContentFlexibleTariffsElement, ScaleIconContentFlexibleTariffsEvents, JSX.ScaleIconContentFlexibleTariffs> = /*@__PURE__*/ createComponent<ScaleIconContentFlexibleTariffsElement, ScaleIconContentFlexibleTariffsEvents, JSX.ScaleIconContentFlexibleTariffs>({
+export const ScaleIconContentFlexibleTariffs: StencilReactComponent<ScaleIconContentFlexibleTariffsElement, ScaleIconContentFlexibleTariffsEvents, Components.ScaleIconContentFlexibleTariffs> = /*@__PURE__*/ createComponent<ScaleIconContentFlexibleTariffsElement, ScaleIconContentFlexibleTariffsEvents, Components.ScaleIconContentFlexibleTariffs>({
     tagName: 'scale-icon-content-flexible-tariffs',
     properties: {
         size: 'size',
@@ -3959,14 +3959,14 @@ export const ScaleIconContentFlexibleTariffs: StencilReactComponent<ScaleIconCon
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentFlexibleTariffs as StencilReactComponent<ScaleIconContentFlexibleTariffsElement, ScaleIconContentFlexibleTariffsEvents, JSX.ScaleIconContentFlexibleTariffs>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentFlexibleTariffs as StencilReactComponent<ScaleIconContentFlexibleTariffsElement, ScaleIconContentFlexibleTariffsEvents, Components.ScaleIconContentFlexibleTariffs>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentFolderEvents = NonNullable<unknown>;
 
-export const ScaleIconContentFolder: StencilReactComponent<ScaleIconContentFolderElement, ScaleIconContentFolderEvents, JSX.ScaleIconContentFolder> = /*@__PURE__*/ createComponent<ScaleIconContentFolderElement, ScaleIconContentFolderEvents, JSX.ScaleIconContentFolder>({
+export const ScaleIconContentFolder: StencilReactComponent<ScaleIconContentFolderElement, ScaleIconContentFolderEvents, Components.ScaleIconContentFolder> = /*@__PURE__*/ createComponent<ScaleIconContentFolderElement, ScaleIconContentFolderEvents, Components.ScaleIconContentFolder>({
     tagName: 'scale-icon-content-folder',
     properties: {
         size: 'size',
@@ -3977,14 +3977,14 @@ export const ScaleIconContentFolder: StencilReactComponent<ScaleIconContentFolde
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentFolder as StencilReactComponent<ScaleIconContentFolderElement, ScaleIconContentFolderEvents, JSX.ScaleIconContentFolder>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentFolder as StencilReactComponent<ScaleIconContentFolderElement, ScaleIconContentFolderEvents, Components.ScaleIconContentFolder>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentFoodEvents = NonNullable<unknown>;
 
-export const ScaleIconContentFood: StencilReactComponent<ScaleIconContentFoodElement, ScaleIconContentFoodEvents, JSX.ScaleIconContentFood> = /*@__PURE__*/ createComponent<ScaleIconContentFoodElement, ScaleIconContentFoodEvents, JSX.ScaleIconContentFood>({
+export const ScaleIconContentFood: StencilReactComponent<ScaleIconContentFoodElement, ScaleIconContentFoodEvents, Components.ScaleIconContentFood> = /*@__PURE__*/ createComponent<ScaleIconContentFoodElement, ScaleIconContentFoodEvents, Components.ScaleIconContentFood>({
     tagName: 'scale-icon-content-food',
     properties: {
         size: 'size',
@@ -3995,14 +3995,14 @@ export const ScaleIconContentFood: StencilReactComponent<ScaleIconContentFoodEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentFood as StencilReactComponent<ScaleIconContentFoodElement, ScaleIconContentFoodEvents, JSX.ScaleIconContentFood>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentFood as StencilReactComponent<ScaleIconContentFoodElement, ScaleIconContentFoodEvents, Components.ScaleIconContentFood>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentGenderDiverseEvents = NonNullable<unknown>;
 
-export const ScaleIconContentGenderDiverse: StencilReactComponent<ScaleIconContentGenderDiverseElement, ScaleIconContentGenderDiverseEvents, JSX.ScaleIconContentGenderDiverse> = /*@__PURE__*/ createComponent<ScaleIconContentGenderDiverseElement, ScaleIconContentGenderDiverseEvents, JSX.ScaleIconContentGenderDiverse>({
+export const ScaleIconContentGenderDiverse: StencilReactComponent<ScaleIconContentGenderDiverseElement, ScaleIconContentGenderDiverseEvents, Components.ScaleIconContentGenderDiverse> = /*@__PURE__*/ createComponent<ScaleIconContentGenderDiverseElement, ScaleIconContentGenderDiverseEvents, Components.ScaleIconContentGenderDiverse>({
     tagName: 'scale-icon-content-gender-diverse',
     properties: {
         size: 'size',
@@ -4013,14 +4013,14 @@ export const ScaleIconContentGenderDiverse: StencilReactComponent<ScaleIconConte
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentGenderDiverse as StencilReactComponent<ScaleIconContentGenderDiverseElement, ScaleIconContentGenderDiverseEvents, JSX.ScaleIconContentGenderDiverse>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentGenderDiverse as StencilReactComponent<ScaleIconContentGenderDiverseElement, ScaleIconContentGenderDiverseEvents, Components.ScaleIconContentGenderDiverse>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentGenderFemaleEvents = NonNullable<unknown>;
 
-export const ScaleIconContentGenderFemale: StencilReactComponent<ScaleIconContentGenderFemaleElement, ScaleIconContentGenderFemaleEvents, JSX.ScaleIconContentGenderFemale> = /*@__PURE__*/ createComponent<ScaleIconContentGenderFemaleElement, ScaleIconContentGenderFemaleEvents, JSX.ScaleIconContentGenderFemale>({
+export const ScaleIconContentGenderFemale: StencilReactComponent<ScaleIconContentGenderFemaleElement, ScaleIconContentGenderFemaleEvents, Components.ScaleIconContentGenderFemale> = /*@__PURE__*/ createComponent<ScaleIconContentGenderFemaleElement, ScaleIconContentGenderFemaleEvents, Components.ScaleIconContentGenderFemale>({
     tagName: 'scale-icon-content-gender-female',
     properties: {
         size: 'size',
@@ -4031,14 +4031,14 @@ export const ScaleIconContentGenderFemale: StencilReactComponent<ScaleIconConten
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentGenderFemale as StencilReactComponent<ScaleIconContentGenderFemaleElement, ScaleIconContentGenderFemaleEvents, JSX.ScaleIconContentGenderFemale>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentGenderFemale as StencilReactComponent<ScaleIconContentGenderFemaleElement, ScaleIconContentGenderFemaleEvents, Components.ScaleIconContentGenderFemale>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentGenderMaleEvents = NonNullable<unknown>;
 
-export const ScaleIconContentGenderMale: StencilReactComponent<ScaleIconContentGenderMaleElement, ScaleIconContentGenderMaleEvents, JSX.ScaleIconContentGenderMale> = /*@__PURE__*/ createComponent<ScaleIconContentGenderMaleElement, ScaleIconContentGenderMaleEvents, JSX.ScaleIconContentGenderMale>({
+export const ScaleIconContentGenderMale: StencilReactComponent<ScaleIconContentGenderMaleElement, ScaleIconContentGenderMaleEvents, Components.ScaleIconContentGenderMale> = /*@__PURE__*/ createComponent<ScaleIconContentGenderMaleElement, ScaleIconContentGenderMaleEvents, Components.ScaleIconContentGenderMale>({
     tagName: 'scale-icon-content-gender-male',
     properties: {
         size: 'size',
@@ -4049,14 +4049,14 @@ export const ScaleIconContentGenderMale: StencilReactComponent<ScaleIconContentG
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentGenderMale as StencilReactComponent<ScaleIconContentGenderMaleElement, ScaleIconContentGenderMaleEvents, JSX.ScaleIconContentGenderMale>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentGenderMale as StencilReactComponent<ScaleIconContentGenderMaleElement, ScaleIconContentGenderMaleEvents, Components.ScaleIconContentGenderMale>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentHalfRatingEvents = NonNullable<unknown>;
 
-export const ScaleIconContentHalfRating: StencilReactComponent<ScaleIconContentHalfRatingElement, ScaleIconContentHalfRatingEvents, JSX.ScaleIconContentHalfRating> = /*@__PURE__*/ createComponent<ScaleIconContentHalfRatingElement, ScaleIconContentHalfRatingEvents, JSX.ScaleIconContentHalfRating>({
+export const ScaleIconContentHalfRating: StencilReactComponent<ScaleIconContentHalfRatingElement, ScaleIconContentHalfRatingEvents, Components.ScaleIconContentHalfRating> = /*@__PURE__*/ createComponent<ScaleIconContentHalfRatingElement, ScaleIconContentHalfRatingEvents, Components.ScaleIconContentHalfRating>({
     tagName: 'scale-icon-content-half-rating',
     properties: {
         size: 'size',
@@ -4067,14 +4067,14 @@ export const ScaleIconContentHalfRating: StencilReactComponent<ScaleIconContentH
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentHalfRating as StencilReactComponent<ScaleIconContentHalfRatingElement, ScaleIconContentHalfRatingEvents, JSX.ScaleIconContentHalfRating>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentHalfRating as StencilReactComponent<ScaleIconContentHalfRatingElement, ScaleIconContentHalfRatingEvents, Components.ScaleIconContentHalfRating>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentHeartEvents = NonNullable<unknown>;
 
-export const ScaleIconContentHeart: StencilReactComponent<ScaleIconContentHeartElement, ScaleIconContentHeartEvents, JSX.ScaleIconContentHeart> = /*@__PURE__*/ createComponent<ScaleIconContentHeartElement, ScaleIconContentHeartEvents, JSX.ScaleIconContentHeart>({
+export const ScaleIconContentHeart: StencilReactComponent<ScaleIconContentHeartElement, ScaleIconContentHeartEvents, Components.ScaleIconContentHeart> = /*@__PURE__*/ createComponent<ScaleIconContentHeartElement, ScaleIconContentHeartEvents, Components.ScaleIconContentHeart>({
     tagName: 'scale-icon-content-heart',
     properties: {
         size: 'size',
@@ -4085,14 +4085,14 @@ export const ScaleIconContentHeart: StencilReactComponent<ScaleIconContentHeartE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentHeart as StencilReactComponent<ScaleIconContentHeartElement, ScaleIconContentHeartEvents, JSX.ScaleIconContentHeart>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentHeart as StencilReactComponent<ScaleIconContentHeartElement, ScaleIconContentHeartEvents, Components.ScaleIconContentHeart>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentHeightEvents = NonNullable<unknown>;
 
-export const ScaleIconContentHeight: StencilReactComponent<ScaleIconContentHeightElement, ScaleIconContentHeightEvents, JSX.ScaleIconContentHeight> = /*@__PURE__*/ createComponent<ScaleIconContentHeightElement, ScaleIconContentHeightEvents, JSX.ScaleIconContentHeight>({
+export const ScaleIconContentHeight: StencilReactComponent<ScaleIconContentHeightElement, ScaleIconContentHeightEvents, Components.ScaleIconContentHeight> = /*@__PURE__*/ createComponent<ScaleIconContentHeightElement, ScaleIconContentHeightEvents, Components.ScaleIconContentHeight>({
     tagName: 'scale-icon-content-height',
     properties: {
         size: 'size',
@@ -4103,14 +4103,14 @@ export const ScaleIconContentHeight: StencilReactComponent<ScaleIconContentHeigh
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentHeight as StencilReactComponent<ScaleIconContentHeightElement, ScaleIconContentHeightEvents, JSX.ScaleIconContentHeight>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentHeight as StencilReactComponent<ScaleIconContentHeightElement, ScaleIconContentHeightEvents, Components.ScaleIconContentHeight>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentHistoryEvents = NonNullable<unknown>;
 
-export const ScaleIconContentHistory: StencilReactComponent<ScaleIconContentHistoryElement, ScaleIconContentHistoryEvents, JSX.ScaleIconContentHistory> = /*@__PURE__*/ createComponent<ScaleIconContentHistoryElement, ScaleIconContentHistoryEvents, JSX.ScaleIconContentHistory>({
+export const ScaleIconContentHistory: StencilReactComponent<ScaleIconContentHistoryElement, ScaleIconContentHistoryEvents, Components.ScaleIconContentHistory> = /*@__PURE__*/ createComponent<ScaleIconContentHistoryElement, ScaleIconContentHistoryEvents, Components.ScaleIconContentHistory>({
     tagName: 'scale-icon-content-history',
     properties: {
         size: 'size',
@@ -4121,14 +4121,14 @@ export const ScaleIconContentHistory: StencilReactComponent<ScaleIconContentHist
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentHistory as StencilReactComponent<ScaleIconContentHistoryElement, ScaleIconContentHistoryEvents, JSX.ScaleIconContentHistory>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentHistory as StencilReactComponent<ScaleIconContentHistoryElement, ScaleIconContentHistoryEvents, Components.ScaleIconContentHistory>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentHourGlassEvents = NonNullable<unknown>;
 
-export const ScaleIconContentHourGlass: StencilReactComponent<ScaleIconContentHourGlassElement, ScaleIconContentHourGlassEvents, JSX.ScaleIconContentHourGlass> = /*@__PURE__*/ createComponent<ScaleIconContentHourGlassElement, ScaleIconContentHourGlassEvents, JSX.ScaleIconContentHourGlass>({
+export const ScaleIconContentHourGlass: StencilReactComponent<ScaleIconContentHourGlassElement, ScaleIconContentHourGlassEvents, Components.ScaleIconContentHourGlass> = /*@__PURE__*/ createComponent<ScaleIconContentHourGlassElement, ScaleIconContentHourGlassEvents, Components.ScaleIconContentHourGlass>({
     tagName: 'scale-icon-content-hour-glass',
     properties: {
         size: 'size',
@@ -4139,14 +4139,14 @@ export const ScaleIconContentHourGlass: StencilReactComponent<ScaleIconContentHo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentHourGlass as StencilReactComponent<ScaleIconContentHourGlassElement, ScaleIconContentHourGlassEvents, JSX.ScaleIconContentHourGlass>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentHourGlass as StencilReactComponent<ScaleIconContentHourGlassElement, ScaleIconContentHourGlassEvents, Components.ScaleIconContentHourGlass>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentIbanEvents = NonNullable<unknown>;
 
-export const ScaleIconContentIban: StencilReactComponent<ScaleIconContentIbanElement, ScaleIconContentIbanEvents, JSX.ScaleIconContentIban> = /*@__PURE__*/ createComponent<ScaleIconContentIbanElement, ScaleIconContentIbanEvents, JSX.ScaleIconContentIban>({
+export const ScaleIconContentIban: StencilReactComponent<ScaleIconContentIbanElement, ScaleIconContentIbanEvents, Components.ScaleIconContentIban> = /*@__PURE__*/ createComponent<ScaleIconContentIbanElement, ScaleIconContentIbanEvents, Components.ScaleIconContentIban>({
     tagName: 'scale-icon-content-iban',
     properties: {
         size: 'size',
@@ -4157,14 +4157,14 @@ export const ScaleIconContentIban: StencilReactComponent<ScaleIconContentIbanEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentIban as StencilReactComponent<ScaleIconContentIbanElement, ScaleIconContentIbanEvents, JSX.ScaleIconContentIban>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentIban as StencilReactComponent<ScaleIconContentIbanElement, ScaleIconContentIbanEvents, Components.ScaleIconContentIban>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentIdEvents = NonNullable<unknown>;
 
-export const ScaleIconContentId: StencilReactComponent<ScaleIconContentIdElement, ScaleIconContentIdEvents, JSX.ScaleIconContentId> = /*@__PURE__*/ createComponent<ScaleIconContentIdElement, ScaleIconContentIdEvents, JSX.ScaleIconContentId>({
+export const ScaleIconContentId: StencilReactComponent<ScaleIconContentIdElement, ScaleIconContentIdEvents, Components.ScaleIconContentId> = /*@__PURE__*/ createComponent<ScaleIconContentIdElement, ScaleIconContentIdEvents, Components.ScaleIconContentId>({
     tagName: 'scale-icon-content-id',
     properties: {
         size: 'size',
@@ -4175,14 +4175,14 @@ export const ScaleIconContentId: StencilReactComponent<ScaleIconContentIdElement
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentId as StencilReactComponent<ScaleIconContentIdElement, ScaleIconContentIdEvents, JSX.ScaleIconContentId>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentId as StencilReactComponent<ScaleIconContentIdElement, ScaleIconContentIdEvents, Components.ScaleIconContentId>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentInStockEvents = NonNullable<unknown>;
 
-export const ScaleIconContentInStock: StencilReactComponent<ScaleIconContentInStockElement, ScaleIconContentInStockEvents, JSX.ScaleIconContentInStock> = /*@__PURE__*/ createComponent<ScaleIconContentInStockElement, ScaleIconContentInStockEvents, JSX.ScaleIconContentInStock>({
+export const ScaleIconContentInStock: StencilReactComponent<ScaleIconContentInStockElement, ScaleIconContentInStockEvents, Components.ScaleIconContentInStock> = /*@__PURE__*/ createComponent<ScaleIconContentInStockElement, ScaleIconContentInStockEvents, Components.ScaleIconContentInStock>({
     tagName: 'scale-icon-content-in-stock',
     properties: {
         size: 'size',
@@ -4193,14 +4193,14 @@ export const ScaleIconContentInStock: StencilReactComponent<ScaleIconContentInSt
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentInStock as StencilReactComponent<ScaleIconContentInStockElement, ScaleIconContentInStockEvents, JSX.ScaleIconContentInStock>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentInStock as StencilReactComponent<ScaleIconContentInStockElement, ScaleIconContentInStockEvents, Components.ScaleIconContentInStock>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentInternationalEvents = NonNullable<unknown>;
 
-export const ScaleIconContentInternational: StencilReactComponent<ScaleIconContentInternationalElement, ScaleIconContentInternationalEvents, JSX.ScaleIconContentInternational> = /*@__PURE__*/ createComponent<ScaleIconContentInternationalElement, ScaleIconContentInternationalEvents, JSX.ScaleIconContentInternational>({
+export const ScaleIconContentInternational: StencilReactComponent<ScaleIconContentInternationalElement, ScaleIconContentInternationalEvents, Components.ScaleIconContentInternational> = /*@__PURE__*/ createComponent<ScaleIconContentInternationalElement, ScaleIconContentInternationalEvents, Components.ScaleIconContentInternational>({
     tagName: 'scale-icon-content-international',
     properties: {
         size: 'size',
@@ -4211,14 +4211,14 @@ export const ScaleIconContentInternational: StencilReactComponent<ScaleIconConte
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentInternational as StencilReactComponent<ScaleIconContentInternationalElement, ScaleIconContentInternationalEvents, JSX.ScaleIconContentInternational>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentInternational as StencilReactComponent<ScaleIconContentInternationalElement, ScaleIconContentInternationalEvents, Components.ScaleIconContentInternational>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentInternationalSmsEvents = NonNullable<unknown>;
 
-export const ScaleIconContentInternationalSms: StencilReactComponent<ScaleIconContentInternationalSmsElement, ScaleIconContentInternationalSmsEvents, JSX.ScaleIconContentInternationalSms> = /*@__PURE__*/ createComponent<ScaleIconContentInternationalSmsElement, ScaleIconContentInternationalSmsEvents, JSX.ScaleIconContentInternationalSms>({
+export const ScaleIconContentInternationalSms: StencilReactComponent<ScaleIconContentInternationalSmsElement, ScaleIconContentInternationalSmsEvents, Components.ScaleIconContentInternationalSms> = /*@__PURE__*/ createComponent<ScaleIconContentInternationalSmsElement, ScaleIconContentInternationalSmsEvents, Components.ScaleIconContentInternationalSms>({
     tagName: 'scale-icon-content-international-sms',
     properties: {
         size: 'size',
@@ -4229,14 +4229,14 @@ export const ScaleIconContentInternationalSms: StencilReactComponent<ScaleIconCo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentInternationalSms as StencilReactComponent<ScaleIconContentInternationalSmsElement, ScaleIconContentInternationalSmsEvents, JSX.ScaleIconContentInternationalSms>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentInternationalSms as StencilReactComponent<ScaleIconContentInternationalSmsElement, ScaleIconContentInternationalSmsEvents, Components.ScaleIconContentInternationalSms>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentInterviewEvents = NonNullable<unknown>;
 
-export const ScaleIconContentInterview: StencilReactComponent<ScaleIconContentInterviewElement, ScaleIconContentInterviewEvents, JSX.ScaleIconContentInterview> = /*@__PURE__*/ createComponent<ScaleIconContentInterviewElement, ScaleIconContentInterviewEvents, JSX.ScaleIconContentInterview>({
+export const ScaleIconContentInterview: StencilReactComponent<ScaleIconContentInterviewElement, ScaleIconContentInterviewEvents, Components.ScaleIconContentInterview> = /*@__PURE__*/ createComponent<ScaleIconContentInterviewElement, ScaleIconContentInterviewEvents, Components.ScaleIconContentInterview>({
     tagName: 'scale-icon-content-interview',
     properties: {
         size: 'size',
@@ -4247,14 +4247,14 @@ export const ScaleIconContentInterview: StencilReactComponent<ScaleIconContentIn
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentInterview as StencilReactComponent<ScaleIconContentInterviewElement, ScaleIconContentInterviewEvents, JSX.ScaleIconContentInterview>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentInterview as StencilReactComponent<ScaleIconContentInterviewElement, ScaleIconContentInterviewEvents, Components.ScaleIconContentInterview>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentKeyEvents = NonNullable<unknown>;
 
-export const ScaleIconContentKey: StencilReactComponent<ScaleIconContentKeyElement, ScaleIconContentKeyEvents, JSX.ScaleIconContentKey> = /*@__PURE__*/ createComponent<ScaleIconContentKeyElement, ScaleIconContentKeyEvents, JSX.ScaleIconContentKey>({
+export const ScaleIconContentKey: StencilReactComponent<ScaleIconContentKeyElement, ScaleIconContentKeyEvents, Components.ScaleIconContentKey> = /*@__PURE__*/ createComponent<ScaleIconContentKeyElement, ScaleIconContentKeyEvents, Components.ScaleIconContentKey>({
     tagName: 'scale-icon-content-key',
     properties: {
         size: 'size',
@@ -4265,14 +4265,14 @@ export const ScaleIconContentKey: StencilReactComponent<ScaleIconContentKeyEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentKey as StencilReactComponent<ScaleIconContentKeyElement, ScaleIconContentKeyEvents, JSX.ScaleIconContentKey>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentKey as StencilReactComponent<ScaleIconContentKeyElement, ScaleIconContentKeyEvents, Components.ScaleIconContentKey>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentLanguageEvents = NonNullable<unknown>;
 
-export const ScaleIconContentLanguage: StencilReactComponent<ScaleIconContentLanguageElement, ScaleIconContentLanguageEvents, JSX.ScaleIconContentLanguage> = /*@__PURE__*/ createComponent<ScaleIconContentLanguageElement, ScaleIconContentLanguageEvents, JSX.ScaleIconContentLanguage>({
+export const ScaleIconContentLanguage: StencilReactComponent<ScaleIconContentLanguageElement, ScaleIconContentLanguageEvents, Components.ScaleIconContentLanguage> = /*@__PURE__*/ createComponent<ScaleIconContentLanguageElement, ScaleIconContentLanguageEvents, Components.ScaleIconContentLanguage>({
     tagName: 'scale-icon-content-language',
     properties: {
         size: 'size',
@@ -4283,14 +4283,14 @@ export const ScaleIconContentLanguage: StencilReactComponent<ScaleIconContentLan
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentLanguage as StencilReactComponent<ScaleIconContentLanguageElement, ScaleIconContentLanguageEvents, JSX.ScaleIconContentLanguage>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentLanguage as StencilReactComponent<ScaleIconContentLanguageElement, ScaleIconContentLanguageEvents, Components.ScaleIconContentLanguage>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentLockEvents = NonNullable<unknown>;
 
-export const ScaleIconContentLock: StencilReactComponent<ScaleIconContentLockElement, ScaleIconContentLockEvents, JSX.ScaleIconContentLock> = /*@__PURE__*/ createComponent<ScaleIconContentLockElement, ScaleIconContentLockEvents, JSX.ScaleIconContentLock>({
+export const ScaleIconContentLock: StencilReactComponent<ScaleIconContentLockElement, ScaleIconContentLockEvents, Components.ScaleIconContentLock> = /*@__PURE__*/ createComponent<ScaleIconContentLockElement, ScaleIconContentLockEvents, Components.ScaleIconContentLock>({
     tagName: 'scale-icon-content-lock',
     properties: {
         size: 'size',
@@ -4301,14 +4301,14 @@ export const ScaleIconContentLock: StencilReactComponent<ScaleIconContentLockEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentLock as StencilReactComponent<ScaleIconContentLockElement, ScaleIconContentLockEvents, JSX.ScaleIconContentLock>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentLock as StencilReactComponent<ScaleIconContentLockElement, ScaleIconContentLockEvents, Components.ScaleIconContentLock>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentLoyaltyEvents = NonNullable<unknown>;
 
-export const ScaleIconContentLoyalty: StencilReactComponent<ScaleIconContentLoyaltyElement, ScaleIconContentLoyaltyEvents, JSX.ScaleIconContentLoyalty> = /*@__PURE__*/ createComponent<ScaleIconContentLoyaltyElement, ScaleIconContentLoyaltyEvents, JSX.ScaleIconContentLoyalty>({
+export const ScaleIconContentLoyalty: StencilReactComponent<ScaleIconContentLoyaltyElement, ScaleIconContentLoyaltyEvents, Components.ScaleIconContentLoyalty> = /*@__PURE__*/ createComponent<ScaleIconContentLoyaltyElement, ScaleIconContentLoyaltyEvents, Components.ScaleIconContentLoyalty>({
     tagName: 'scale-icon-content-loyalty',
     properties: {
         size: 'size',
@@ -4319,14 +4319,14 @@ export const ScaleIconContentLoyalty: StencilReactComponent<ScaleIconContentLoya
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentLoyalty as StencilReactComponent<ScaleIconContentLoyaltyElement, ScaleIconContentLoyaltyEvents, JSX.ScaleIconContentLoyalty>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentLoyalty as StencilReactComponent<ScaleIconContentLoyaltyElement, ScaleIconContentLoyaltyEvents, Components.ScaleIconContentLoyalty>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentMediaFolderEvents = NonNullable<unknown>;
 
-export const ScaleIconContentMediaFolder: StencilReactComponent<ScaleIconContentMediaFolderElement, ScaleIconContentMediaFolderEvents, JSX.ScaleIconContentMediaFolder> = /*@__PURE__*/ createComponent<ScaleIconContentMediaFolderElement, ScaleIconContentMediaFolderEvents, JSX.ScaleIconContentMediaFolder>({
+export const ScaleIconContentMediaFolder: StencilReactComponent<ScaleIconContentMediaFolderElement, ScaleIconContentMediaFolderEvents, Components.ScaleIconContentMediaFolder> = /*@__PURE__*/ createComponent<ScaleIconContentMediaFolderElement, ScaleIconContentMediaFolderEvents, Components.ScaleIconContentMediaFolder>({
     tagName: 'scale-icon-content-media-folder',
     properties: {
         size: 'size',
@@ -4337,14 +4337,14 @@ export const ScaleIconContentMediaFolder: StencilReactComponent<ScaleIconContent
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentMediaFolder as StencilReactComponent<ScaleIconContentMediaFolderElement, ScaleIconContentMediaFolderEvents, JSX.ScaleIconContentMediaFolder>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentMediaFolder as StencilReactComponent<ScaleIconContentMediaFolderElement, ScaleIconContentMediaFolderEvents, Components.ScaleIconContentMediaFolder>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentMoneyAtEvents = NonNullable<unknown>;
 
-export const ScaleIconContentMoneyAt: StencilReactComponent<ScaleIconContentMoneyAtElement, ScaleIconContentMoneyAtEvents, JSX.ScaleIconContentMoneyAt> = /*@__PURE__*/ createComponent<ScaleIconContentMoneyAtElement, ScaleIconContentMoneyAtEvents, JSX.ScaleIconContentMoneyAt>({
+export const ScaleIconContentMoneyAt: StencilReactComponent<ScaleIconContentMoneyAtElement, ScaleIconContentMoneyAtEvents, Components.ScaleIconContentMoneyAt> = /*@__PURE__*/ createComponent<ScaleIconContentMoneyAtElement, ScaleIconContentMoneyAtEvents, Components.ScaleIconContentMoneyAt>({
     tagName: 'scale-icon-content-money-at',
     properties: {
         size: 'size',
@@ -4355,14 +4355,14 @@ export const ScaleIconContentMoneyAt: StencilReactComponent<ScaleIconContentMone
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentMoneyAt as StencilReactComponent<ScaleIconContentMoneyAtElement, ScaleIconContentMoneyAtEvents, JSX.ScaleIconContentMoneyAt>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentMoneyAt as StencilReactComponent<ScaleIconContentMoneyAtElement, ScaleIconContentMoneyAtEvents, Components.ScaleIconContentMoneyAt>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentMusicEvents = NonNullable<unknown>;
 
-export const ScaleIconContentMusic: StencilReactComponent<ScaleIconContentMusicElement, ScaleIconContentMusicEvents, JSX.ScaleIconContentMusic> = /*@__PURE__*/ createComponent<ScaleIconContentMusicElement, ScaleIconContentMusicEvents, JSX.ScaleIconContentMusic>({
+export const ScaleIconContentMusic: StencilReactComponent<ScaleIconContentMusicElement, ScaleIconContentMusicEvents, Components.ScaleIconContentMusic> = /*@__PURE__*/ createComponent<ScaleIconContentMusicElement, ScaleIconContentMusicEvents, Components.ScaleIconContentMusic>({
     tagName: 'scale-icon-content-music',
     properties: {
         size: 'size',
@@ -4373,14 +4373,14 @@ export const ScaleIconContentMusic: StencilReactComponent<ScaleIconContentMusicE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentMusic as StencilReactComponent<ScaleIconContentMusicElement, ScaleIconContentMusicEvents, JSX.ScaleIconContentMusic>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentMusic as StencilReactComponent<ScaleIconContentMusicElement, ScaleIconContentMusicEvents, Components.ScaleIconContentMusic>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentNewsEvents = NonNullable<unknown>;
 
-export const ScaleIconContentNews: StencilReactComponent<ScaleIconContentNewsElement, ScaleIconContentNewsEvents, JSX.ScaleIconContentNews> = /*@__PURE__*/ createComponent<ScaleIconContentNewsElement, ScaleIconContentNewsEvents, JSX.ScaleIconContentNews>({
+export const ScaleIconContentNews: StencilReactComponent<ScaleIconContentNewsElement, ScaleIconContentNewsEvents, Components.ScaleIconContentNews> = /*@__PURE__*/ createComponent<ScaleIconContentNewsElement, ScaleIconContentNewsEvents, Components.ScaleIconContentNews>({
     tagName: 'scale-icon-content-news',
     properties: {
         size: 'size',
@@ -4391,14 +4391,14 @@ export const ScaleIconContentNews: StencilReactComponent<ScaleIconContentNewsEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentNews as StencilReactComponent<ScaleIconContentNewsElement, ScaleIconContentNewsEvents, JSX.ScaleIconContentNews>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentNews as StencilReactComponent<ScaleIconContentNewsElement, ScaleIconContentNewsEvents, Components.ScaleIconContentNews>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentOutOfStockEvents = NonNullable<unknown>;
 
-export const ScaleIconContentOutOfStock: StencilReactComponent<ScaleIconContentOutOfStockElement, ScaleIconContentOutOfStockEvents, JSX.ScaleIconContentOutOfStock> = /*@__PURE__*/ createComponent<ScaleIconContentOutOfStockElement, ScaleIconContentOutOfStockEvents, JSX.ScaleIconContentOutOfStock>({
+export const ScaleIconContentOutOfStock: StencilReactComponent<ScaleIconContentOutOfStockElement, ScaleIconContentOutOfStockEvents, Components.ScaleIconContentOutOfStock> = /*@__PURE__*/ createComponent<ScaleIconContentOutOfStockElement, ScaleIconContentOutOfStockEvents, Components.ScaleIconContentOutOfStock>({
     tagName: 'scale-icon-content-out-of-stock',
     properties: {
         size: 'size',
@@ -4409,14 +4409,14 @@ export const ScaleIconContentOutOfStock: StencilReactComponent<ScaleIconContentO
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentOutOfStock as StencilReactComponent<ScaleIconContentOutOfStockElement, ScaleIconContentOutOfStockEvents, JSX.ScaleIconContentOutOfStock>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentOutOfStock as StencilReactComponent<ScaleIconContentOutOfStockElement, ScaleIconContentOutOfStockEvents, Components.ScaleIconContentOutOfStock>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentPersonWalkingEvents = NonNullable<unknown>;
 
-export const ScaleIconContentPersonWalking: StencilReactComponent<ScaleIconContentPersonWalkingElement, ScaleIconContentPersonWalkingEvents, JSX.ScaleIconContentPersonWalking> = /*@__PURE__*/ createComponent<ScaleIconContentPersonWalkingElement, ScaleIconContentPersonWalkingEvents, JSX.ScaleIconContentPersonWalking>({
+export const ScaleIconContentPersonWalking: StencilReactComponent<ScaleIconContentPersonWalkingElement, ScaleIconContentPersonWalkingEvents, Components.ScaleIconContentPersonWalking> = /*@__PURE__*/ createComponent<ScaleIconContentPersonWalkingElement, ScaleIconContentPersonWalkingEvents, Components.ScaleIconContentPersonWalking>({
     tagName: 'scale-icon-content-person-walking',
     properties: {
         size: 'size',
@@ -4427,14 +4427,14 @@ export const ScaleIconContentPersonWalking: StencilReactComponent<ScaleIconConte
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentPersonWalking as StencilReactComponent<ScaleIconContentPersonWalkingElement, ScaleIconContentPersonWalkingEvents, JSX.ScaleIconContentPersonWalking>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentPersonWalking as StencilReactComponent<ScaleIconContentPersonWalkingElement, ScaleIconContentPersonWalkingEvents, Components.ScaleIconContentPersonWalking>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentPrepaidActivateEvents = NonNullable<unknown>;
 
-export const ScaleIconContentPrepaidActivate: StencilReactComponent<ScaleIconContentPrepaidActivateElement, ScaleIconContentPrepaidActivateEvents, JSX.ScaleIconContentPrepaidActivate> = /*@__PURE__*/ createComponent<ScaleIconContentPrepaidActivateElement, ScaleIconContentPrepaidActivateEvents, JSX.ScaleIconContentPrepaidActivate>({
+export const ScaleIconContentPrepaidActivate: StencilReactComponent<ScaleIconContentPrepaidActivateElement, ScaleIconContentPrepaidActivateEvents, Components.ScaleIconContentPrepaidActivate> = /*@__PURE__*/ createComponent<ScaleIconContentPrepaidActivateElement, ScaleIconContentPrepaidActivateEvents, Components.ScaleIconContentPrepaidActivate>({
     tagName: 'scale-icon-content-prepaid-activate',
     properties: {
         size: 'size',
@@ -4445,14 +4445,14 @@ export const ScaleIconContentPrepaidActivate: StencilReactComponent<ScaleIconCon
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentPrepaidActivate as StencilReactComponent<ScaleIconContentPrepaidActivateElement, ScaleIconContentPrepaidActivateEvents, JSX.ScaleIconContentPrepaidActivate>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentPrepaidActivate as StencilReactComponent<ScaleIconContentPrepaidActivateElement, ScaleIconContentPrepaidActivateEvents, Components.ScaleIconContentPrepaidActivate>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentPriceTagEvents = NonNullable<unknown>;
 
-export const ScaleIconContentPriceTag: StencilReactComponent<ScaleIconContentPriceTagElement, ScaleIconContentPriceTagEvents, JSX.ScaleIconContentPriceTag> = /*@__PURE__*/ createComponent<ScaleIconContentPriceTagElement, ScaleIconContentPriceTagEvents, JSX.ScaleIconContentPriceTag>({
+export const ScaleIconContentPriceTag: StencilReactComponent<ScaleIconContentPriceTagElement, ScaleIconContentPriceTagEvents, Components.ScaleIconContentPriceTag> = /*@__PURE__*/ createComponent<ScaleIconContentPriceTagElement, ScaleIconContentPriceTagEvents, Components.ScaleIconContentPriceTag>({
     tagName: 'scale-icon-content-price-tag',
     properties: {
         size: 'size',
@@ -4463,14 +4463,14 @@ export const ScaleIconContentPriceTag: StencilReactComponent<ScaleIconContentPri
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentPriceTag as StencilReactComponent<ScaleIconContentPriceTagElement, ScaleIconContentPriceTagEvents, JSX.ScaleIconContentPriceTag>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentPriceTag as StencilReactComponent<ScaleIconContentPriceTagElement, ScaleIconContentPriceTagEvents, Components.ScaleIconContentPriceTag>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentRatingsEvents = NonNullable<unknown>;
 
-export const ScaleIconContentRatings: StencilReactComponent<ScaleIconContentRatingsElement, ScaleIconContentRatingsEvents, JSX.ScaleIconContentRatings> = /*@__PURE__*/ createComponent<ScaleIconContentRatingsElement, ScaleIconContentRatingsEvents, JSX.ScaleIconContentRatings>({
+export const ScaleIconContentRatings: StencilReactComponent<ScaleIconContentRatingsElement, ScaleIconContentRatingsEvents, Components.ScaleIconContentRatings> = /*@__PURE__*/ createComponent<ScaleIconContentRatingsElement, ScaleIconContentRatingsEvents, Components.ScaleIconContentRatings>({
     tagName: 'scale-icon-content-ratings',
     properties: {
         size: 'size',
@@ -4481,14 +4481,14 @@ export const ScaleIconContentRatings: StencilReactComponent<ScaleIconContentRati
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentRatings as StencilReactComponent<ScaleIconContentRatingsElement, ScaleIconContentRatingsEvents, JSX.ScaleIconContentRatings>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentRatings as StencilReactComponent<ScaleIconContentRatingsElement, ScaleIconContentRatingsEvents, Components.ScaleIconContentRatings>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentRouteEvents = NonNullable<unknown>;
 
-export const ScaleIconContentRoute: StencilReactComponent<ScaleIconContentRouteElement, ScaleIconContentRouteEvents, JSX.ScaleIconContentRoute> = /*@__PURE__*/ createComponent<ScaleIconContentRouteElement, ScaleIconContentRouteEvents, JSX.ScaleIconContentRoute>({
+export const ScaleIconContentRoute: StencilReactComponent<ScaleIconContentRouteElement, ScaleIconContentRouteEvents, Components.ScaleIconContentRoute> = /*@__PURE__*/ createComponent<ScaleIconContentRouteElement, ScaleIconContentRouteEvents, Components.ScaleIconContentRoute>({
     tagName: 'scale-icon-content-route',
     properties: {
         size: 'size',
@@ -4499,14 +4499,14 @@ export const ScaleIconContentRoute: StencilReactComponent<ScaleIconContentRouteE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentRoute as StencilReactComponent<ScaleIconContentRouteElement, ScaleIconContentRouteEvents, JSX.ScaleIconContentRoute>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentRoute as StencilReactComponent<ScaleIconContentRouteElement, ScaleIconContentRouteEvents, Components.ScaleIconContentRoute>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentRssEvents = NonNullable<unknown>;
 
-export const ScaleIconContentRss: StencilReactComponent<ScaleIconContentRssElement, ScaleIconContentRssEvents, JSX.ScaleIconContentRss> = /*@__PURE__*/ createComponent<ScaleIconContentRssElement, ScaleIconContentRssEvents, JSX.ScaleIconContentRss>({
+export const ScaleIconContentRss: StencilReactComponent<ScaleIconContentRssElement, ScaleIconContentRssEvents, Components.ScaleIconContentRss> = /*@__PURE__*/ createComponent<ScaleIconContentRssElement, ScaleIconContentRssEvents, Components.ScaleIconContentRss>({
     tagName: 'scale-icon-content-rss',
     properties: {
         size: 'size',
@@ -4517,14 +4517,14 @@ export const ScaleIconContentRss: StencilReactComponent<ScaleIconContentRssEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentRss as StencilReactComponent<ScaleIconContentRssElement, ScaleIconContentRssEvents, JSX.ScaleIconContentRss>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentRss as StencilReactComponent<ScaleIconContentRssElement, ScaleIconContentRssEvents, Components.ScaleIconContentRss>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentShopEvents = NonNullable<unknown>;
 
-export const ScaleIconContentShop: StencilReactComponent<ScaleIconContentShopElement, ScaleIconContentShopEvents, JSX.ScaleIconContentShop> = /*@__PURE__*/ createComponent<ScaleIconContentShopElement, ScaleIconContentShopEvents, JSX.ScaleIconContentShop>({
+export const ScaleIconContentShop: StencilReactComponent<ScaleIconContentShopElement, ScaleIconContentShopEvents, Components.ScaleIconContentShop> = /*@__PURE__*/ createComponent<ScaleIconContentShopElement, ScaleIconContentShopEvents, Components.ScaleIconContentShop>({
     tagName: 'scale-icon-content-shop',
     properties: {
         size: 'size',
@@ -4535,14 +4535,14 @@ export const ScaleIconContentShop: StencilReactComponent<ScaleIconContentShopEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentShop as StencilReactComponent<ScaleIconContentShopElement, ScaleIconContentShopEvents, JSX.ScaleIconContentShop>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentShop as StencilReactComponent<ScaleIconContentShopElement, ScaleIconContentShopEvents, Components.ScaleIconContentShop>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentSignalEvents = NonNullable<unknown>;
 
-export const ScaleIconContentSignal: StencilReactComponent<ScaleIconContentSignalElement, ScaleIconContentSignalEvents, JSX.ScaleIconContentSignal> = /*@__PURE__*/ createComponent<ScaleIconContentSignalElement, ScaleIconContentSignalEvents, JSX.ScaleIconContentSignal>({
+export const ScaleIconContentSignal: StencilReactComponent<ScaleIconContentSignalElement, ScaleIconContentSignalEvents, Components.ScaleIconContentSignal> = /*@__PURE__*/ createComponent<ScaleIconContentSignalElement, ScaleIconContentSignalEvents, Components.ScaleIconContentSignal>({
     tagName: 'scale-icon-content-signal',
     properties: {
         size: 'size',
@@ -4553,14 +4553,14 @@ export const ScaleIconContentSignal: StencilReactComponent<ScaleIconContentSigna
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentSignal as StencilReactComponent<ScaleIconContentSignalElement, ScaleIconContentSignalEvents, JSX.ScaleIconContentSignal>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentSignal as StencilReactComponent<ScaleIconContentSignalElement, ScaleIconContentSignalEvents, Components.ScaleIconContentSignal>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentSimCardEvents = NonNullable<unknown>;
 
-export const ScaleIconContentSimCard: StencilReactComponent<ScaleIconContentSimCardElement, ScaleIconContentSimCardEvents, JSX.ScaleIconContentSimCard> = /*@__PURE__*/ createComponent<ScaleIconContentSimCardElement, ScaleIconContentSimCardEvents, JSX.ScaleIconContentSimCard>({
+export const ScaleIconContentSimCard: StencilReactComponent<ScaleIconContentSimCardElement, ScaleIconContentSimCardEvents, Components.ScaleIconContentSimCard> = /*@__PURE__*/ createComponent<ScaleIconContentSimCardElement, ScaleIconContentSimCardEvents, Components.ScaleIconContentSimCard>({
     tagName: 'scale-icon-content-sim-card',
     properties: {
         size: 'size',
@@ -4571,14 +4571,14 @@ export const ScaleIconContentSimCard: StencilReactComponent<ScaleIconContentSimC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentSimCard as StencilReactComponent<ScaleIconContentSimCardElement, ScaleIconContentSimCardEvents, JSX.ScaleIconContentSimCard>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentSimCard as StencilReactComponent<ScaleIconContentSimCardElement, ScaleIconContentSimCardEvents, Components.ScaleIconContentSimCard>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentSmileEvents = NonNullable<unknown>;
 
-export const ScaleIconContentSmile: StencilReactComponent<ScaleIconContentSmileElement, ScaleIconContentSmileEvents, JSX.ScaleIconContentSmile> = /*@__PURE__*/ createComponent<ScaleIconContentSmileElement, ScaleIconContentSmileEvents, JSX.ScaleIconContentSmile>({
+export const ScaleIconContentSmile: StencilReactComponent<ScaleIconContentSmileElement, ScaleIconContentSmileEvents, Components.ScaleIconContentSmile> = /*@__PURE__*/ createComponent<ScaleIconContentSmileElement, ScaleIconContentSmileEvents, Components.ScaleIconContentSmile>({
     tagName: 'scale-icon-content-smile',
     properties: {
         size: 'size',
@@ -4589,14 +4589,14 @@ export const ScaleIconContentSmile: StencilReactComponent<ScaleIconContentSmileE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentSmile as StencilReactComponent<ScaleIconContentSmileElement, ScaleIconContentSmileEvents, JSX.ScaleIconContentSmile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentSmile as StencilReactComponent<ScaleIconContentSmileElement, ScaleIconContentSmileEvents, Components.ScaleIconContentSmile>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentSortIndicatorDownEvents = NonNullable<unknown>;
 
-export const ScaleIconContentSortIndicatorDown: StencilReactComponent<ScaleIconContentSortIndicatorDownElement, ScaleIconContentSortIndicatorDownEvents, JSX.ScaleIconContentSortIndicatorDown> = /*@__PURE__*/ createComponent<ScaleIconContentSortIndicatorDownElement, ScaleIconContentSortIndicatorDownEvents, JSX.ScaleIconContentSortIndicatorDown>({
+export const ScaleIconContentSortIndicatorDown: StencilReactComponent<ScaleIconContentSortIndicatorDownElement, ScaleIconContentSortIndicatorDownEvents, Components.ScaleIconContentSortIndicatorDown> = /*@__PURE__*/ createComponent<ScaleIconContentSortIndicatorDownElement, ScaleIconContentSortIndicatorDownEvents, Components.ScaleIconContentSortIndicatorDown>({
     tagName: 'scale-icon-content-sort-indicator-down',
     properties: {
         size: 'size',
@@ -4607,14 +4607,14 @@ export const ScaleIconContentSortIndicatorDown: StencilReactComponent<ScaleIconC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentSortIndicatorDown as StencilReactComponent<ScaleIconContentSortIndicatorDownElement, ScaleIconContentSortIndicatorDownEvents, JSX.ScaleIconContentSortIndicatorDown>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentSortIndicatorDown as StencilReactComponent<ScaleIconContentSortIndicatorDownElement, ScaleIconContentSortIndicatorDownEvents, Components.ScaleIconContentSortIndicatorDown>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentSortIndicatorMiniDownEvents = NonNullable<unknown>;
 
-export const ScaleIconContentSortIndicatorMiniDown: StencilReactComponent<ScaleIconContentSortIndicatorMiniDownElement, ScaleIconContentSortIndicatorMiniDownEvents, JSX.ScaleIconContentSortIndicatorMiniDown> = /*@__PURE__*/ createComponent<ScaleIconContentSortIndicatorMiniDownElement, ScaleIconContentSortIndicatorMiniDownEvents, JSX.ScaleIconContentSortIndicatorMiniDown>({
+export const ScaleIconContentSortIndicatorMiniDown: StencilReactComponent<ScaleIconContentSortIndicatorMiniDownElement, ScaleIconContentSortIndicatorMiniDownEvents, Components.ScaleIconContentSortIndicatorMiniDown> = /*@__PURE__*/ createComponent<ScaleIconContentSortIndicatorMiniDownElement, ScaleIconContentSortIndicatorMiniDownEvents, Components.ScaleIconContentSortIndicatorMiniDown>({
     tagName: 'scale-icon-content-sort-indicator-mini-down',
     properties: {
         size: 'size',
@@ -4625,14 +4625,14 @@ export const ScaleIconContentSortIndicatorMiniDown: StencilReactComponent<ScaleI
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentSortIndicatorMiniDown as StencilReactComponent<ScaleIconContentSortIndicatorMiniDownElement, ScaleIconContentSortIndicatorMiniDownEvents, JSX.ScaleIconContentSortIndicatorMiniDown>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentSortIndicatorMiniDown as StencilReactComponent<ScaleIconContentSortIndicatorMiniDownElement, ScaleIconContentSortIndicatorMiniDownEvents, Components.ScaleIconContentSortIndicatorMiniDown>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentSortIndicatorUpEvents = NonNullable<unknown>;
 
-export const ScaleIconContentSortIndicatorUp: StencilReactComponent<ScaleIconContentSortIndicatorUpElement, ScaleIconContentSortIndicatorUpEvents, JSX.ScaleIconContentSortIndicatorUp> = /*@__PURE__*/ createComponent<ScaleIconContentSortIndicatorUpElement, ScaleIconContentSortIndicatorUpEvents, JSX.ScaleIconContentSortIndicatorUp>({
+export const ScaleIconContentSortIndicatorUp: StencilReactComponent<ScaleIconContentSortIndicatorUpElement, ScaleIconContentSortIndicatorUpEvents, Components.ScaleIconContentSortIndicatorUp> = /*@__PURE__*/ createComponent<ScaleIconContentSortIndicatorUpElement, ScaleIconContentSortIndicatorUpEvents, Components.ScaleIconContentSortIndicatorUp>({
     tagName: 'scale-icon-content-sort-indicator-up',
     properties: {
         size: 'size',
@@ -4643,14 +4643,14 @@ export const ScaleIconContentSortIndicatorUp: StencilReactComponent<ScaleIconCon
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentSortIndicatorUp as StencilReactComponent<ScaleIconContentSortIndicatorUpElement, ScaleIconContentSortIndicatorUpEvents, JSX.ScaleIconContentSortIndicatorUp>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentSortIndicatorUp as StencilReactComponent<ScaleIconContentSortIndicatorUpElement, ScaleIconContentSortIndicatorUpEvents, Components.ScaleIconContentSortIndicatorUp>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentSortIndicatorUpMiniEvents = NonNullable<unknown>;
 
-export const ScaleIconContentSortIndicatorUpMini: StencilReactComponent<ScaleIconContentSortIndicatorUpMiniElement, ScaleIconContentSortIndicatorUpMiniEvents, JSX.ScaleIconContentSortIndicatorUpMini> = /*@__PURE__*/ createComponent<ScaleIconContentSortIndicatorUpMiniElement, ScaleIconContentSortIndicatorUpMiniEvents, JSX.ScaleIconContentSortIndicatorUpMini>({
+export const ScaleIconContentSortIndicatorUpMini: StencilReactComponent<ScaleIconContentSortIndicatorUpMiniElement, ScaleIconContentSortIndicatorUpMiniEvents, Components.ScaleIconContentSortIndicatorUpMini> = /*@__PURE__*/ createComponent<ScaleIconContentSortIndicatorUpMiniElement, ScaleIconContentSortIndicatorUpMiniEvents, Components.ScaleIconContentSortIndicatorUpMini>({
     tagName: 'scale-icon-content-sort-indicator-up-mini',
     properties: {
         size: 'size',
@@ -4661,14 +4661,14 @@ export const ScaleIconContentSortIndicatorUpMini: StencilReactComponent<ScaleIco
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentSortIndicatorUpMini as StencilReactComponent<ScaleIconContentSortIndicatorUpMiniElement, ScaleIconContentSortIndicatorUpMiniEvents, JSX.ScaleIconContentSortIndicatorUpMini>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentSortIndicatorUpMini as StencilReactComponent<ScaleIconContentSortIndicatorUpMiniElement, ScaleIconContentSortIndicatorUpMiniEvents, Components.ScaleIconContentSortIndicatorUpMini>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentStatusInactiveEvents = NonNullable<unknown>;
 
-export const ScaleIconContentStatusInactive: StencilReactComponent<ScaleIconContentStatusInactiveElement, ScaleIconContentStatusInactiveEvents, JSX.ScaleIconContentStatusInactive> = /*@__PURE__*/ createComponent<ScaleIconContentStatusInactiveElement, ScaleIconContentStatusInactiveEvents, JSX.ScaleIconContentStatusInactive>({
+export const ScaleIconContentStatusInactive: StencilReactComponent<ScaleIconContentStatusInactiveElement, ScaleIconContentStatusInactiveEvents, Components.ScaleIconContentStatusInactive> = /*@__PURE__*/ createComponent<ScaleIconContentStatusInactiveElement, ScaleIconContentStatusInactiveEvents, Components.ScaleIconContentStatusInactive>({
     tagName: 'scale-icon-content-status-inactive',
     properties: {
         size: 'size',
@@ -4679,14 +4679,14 @@ export const ScaleIconContentStatusInactive: StencilReactComponent<ScaleIconCont
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentStatusInactive as StencilReactComponent<ScaleIconContentStatusInactiveElement, ScaleIconContentStatusInactiveEvents, JSX.ScaleIconContentStatusInactive>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentStatusInactive as StencilReactComponent<ScaleIconContentStatusInactiveElement, ScaleIconContentStatusInactiveEvents, Components.ScaleIconContentStatusInactive>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentStatusRecurringEvents = NonNullable<unknown>;
 
-export const ScaleIconContentStatusRecurring: StencilReactComponent<ScaleIconContentStatusRecurringElement, ScaleIconContentStatusRecurringEvents, JSX.ScaleIconContentStatusRecurring> = /*@__PURE__*/ createComponent<ScaleIconContentStatusRecurringElement, ScaleIconContentStatusRecurringEvents, JSX.ScaleIconContentStatusRecurring>({
+export const ScaleIconContentStatusRecurring: StencilReactComponent<ScaleIconContentStatusRecurringElement, ScaleIconContentStatusRecurringEvents, Components.ScaleIconContentStatusRecurring> = /*@__PURE__*/ createComponent<ScaleIconContentStatusRecurringElement, ScaleIconContentStatusRecurringEvents, Components.ScaleIconContentStatusRecurring>({
     tagName: 'scale-icon-content-status-recurring',
     properties: {
         size: 'size',
@@ -4697,14 +4697,14 @@ export const ScaleIconContentStatusRecurring: StencilReactComponent<ScaleIconCon
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentStatusRecurring as StencilReactComponent<ScaleIconContentStatusRecurringElement, ScaleIconContentStatusRecurringEvents, JSX.ScaleIconContentStatusRecurring>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentStatusRecurring as StencilReactComponent<ScaleIconContentStatusRecurringElement, ScaleIconContentStatusRecurringEvents, Components.ScaleIconContentStatusRecurring>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentStopwatchEvents = NonNullable<unknown>;
 
-export const ScaleIconContentStopwatch: StencilReactComponent<ScaleIconContentStopwatchElement, ScaleIconContentStopwatchEvents, JSX.ScaleIconContentStopwatch> = /*@__PURE__*/ createComponent<ScaleIconContentStopwatchElement, ScaleIconContentStopwatchEvents, JSX.ScaleIconContentStopwatch>({
+export const ScaleIconContentStopwatch: StencilReactComponent<ScaleIconContentStopwatchElement, ScaleIconContentStopwatchEvents, Components.ScaleIconContentStopwatch> = /*@__PURE__*/ createComponent<ScaleIconContentStopwatchElement, ScaleIconContentStopwatchEvents, Components.ScaleIconContentStopwatch>({
     tagName: 'scale-icon-content-stopwatch',
     properties: {
         size: 'size',
@@ -4715,14 +4715,14 @@ export const ScaleIconContentStopwatch: StencilReactComponent<ScaleIconContentSt
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentStopwatch as StencilReactComponent<ScaleIconContentStopwatchElement, ScaleIconContentStopwatchEvents, JSX.ScaleIconContentStopwatch>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentStopwatch as StencilReactComponent<ScaleIconContentStopwatchElement, ScaleIconContentStopwatchEvents, Components.ScaleIconContentStopwatch>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentSupportChatEvents = NonNullable<unknown>;
 
-export const ScaleIconContentSupportChat: StencilReactComponent<ScaleIconContentSupportChatElement, ScaleIconContentSupportChatEvents, JSX.ScaleIconContentSupportChat> = /*@__PURE__*/ createComponent<ScaleIconContentSupportChatElement, ScaleIconContentSupportChatEvents, JSX.ScaleIconContentSupportChat>({
+export const ScaleIconContentSupportChat: StencilReactComponent<ScaleIconContentSupportChatElement, ScaleIconContentSupportChatEvents, Components.ScaleIconContentSupportChat> = /*@__PURE__*/ createComponent<ScaleIconContentSupportChatElement, ScaleIconContentSupportChatEvents, Components.ScaleIconContentSupportChat>({
     tagName: 'scale-icon-content-support-chat',
     properties: {
         size: 'size',
@@ -4733,14 +4733,14 @@ export const ScaleIconContentSupportChat: StencilReactComponent<ScaleIconContent
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentSupportChat as StencilReactComponent<ScaleIconContentSupportChatElement, ScaleIconContentSupportChatEvents, JSX.ScaleIconContentSupportChat>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentSupportChat as StencilReactComponent<ScaleIconContentSupportChatElement, ScaleIconContentSupportChatEvents, Components.ScaleIconContentSupportChat>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentSustainableEvents = NonNullable<unknown>;
 
-export const ScaleIconContentSustainable: StencilReactComponent<ScaleIconContentSustainableElement, ScaleIconContentSustainableEvents, JSX.ScaleIconContentSustainable> = /*@__PURE__*/ createComponent<ScaleIconContentSustainableElement, ScaleIconContentSustainableEvents, JSX.ScaleIconContentSustainable>({
+export const ScaleIconContentSustainable: StencilReactComponent<ScaleIconContentSustainableElement, ScaleIconContentSustainableEvents, Components.ScaleIconContentSustainable> = /*@__PURE__*/ createComponent<ScaleIconContentSustainableElement, ScaleIconContentSustainableEvents, Components.ScaleIconContentSustainable>({
     tagName: 'scale-icon-content-sustainable',
     properties: {
         size: 'size',
@@ -4751,14 +4751,14 @@ export const ScaleIconContentSustainable: StencilReactComponent<ScaleIconContent
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentSustainable as StencilReactComponent<ScaleIconContentSustainableElement, ScaleIconContentSustainableEvents, JSX.ScaleIconContentSustainable>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentSustainable as StencilReactComponent<ScaleIconContentSustainableElement, ScaleIconContentSustainableEvents, Components.ScaleIconContentSustainable>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentTariffsEvents = NonNullable<unknown>;
 
-export const ScaleIconContentTariffs: StencilReactComponent<ScaleIconContentTariffsElement, ScaleIconContentTariffsEvents, JSX.ScaleIconContentTariffs> = /*@__PURE__*/ createComponent<ScaleIconContentTariffsElement, ScaleIconContentTariffsEvents, JSX.ScaleIconContentTariffs>({
+export const ScaleIconContentTariffs: StencilReactComponent<ScaleIconContentTariffsElement, ScaleIconContentTariffsEvents, Components.ScaleIconContentTariffs> = /*@__PURE__*/ createComponent<ScaleIconContentTariffsElement, ScaleIconContentTariffsEvents, Components.ScaleIconContentTariffs>({
     tagName: 'scale-icon-content-tariffs',
     properties: {
         size: 'size',
@@ -4769,14 +4769,14 @@ export const ScaleIconContentTariffs: StencilReactComponent<ScaleIconContentTari
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentTariffs as StencilReactComponent<ScaleIconContentTariffsElement, ScaleIconContentTariffsEvents, JSX.ScaleIconContentTariffs>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentTariffs as StencilReactComponent<ScaleIconContentTariffsElement, ScaleIconContentTariffsEvents, Components.ScaleIconContentTariffs>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentThreatsEvents = NonNullable<unknown>;
 
-export const ScaleIconContentThreats: StencilReactComponent<ScaleIconContentThreatsElement, ScaleIconContentThreatsEvents, JSX.ScaleIconContentThreats> = /*@__PURE__*/ createComponent<ScaleIconContentThreatsElement, ScaleIconContentThreatsEvents, JSX.ScaleIconContentThreats>({
+export const ScaleIconContentThreats: StencilReactComponent<ScaleIconContentThreatsElement, ScaleIconContentThreatsEvents, Components.ScaleIconContentThreats> = /*@__PURE__*/ createComponent<ScaleIconContentThreatsElement, ScaleIconContentThreatsEvents, Components.ScaleIconContentThreats>({
     tagName: 'scale-icon-content-threats',
     properties: {
         size: 'size',
@@ -4787,14 +4787,14 @@ export const ScaleIconContentThreats: StencilReactComponent<ScaleIconContentThre
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentThreats as StencilReactComponent<ScaleIconContentThreatsElement, ScaleIconContentThreatsEvents, JSX.ScaleIconContentThreats>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentThreats as StencilReactComponent<ScaleIconContentThreatsElement, ScaleIconContentThreatsEvents, Components.ScaleIconContentThreats>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentTodoListEvents = NonNullable<unknown>;
 
-export const ScaleIconContentTodoList: StencilReactComponent<ScaleIconContentTodoListElement, ScaleIconContentTodoListEvents, JSX.ScaleIconContentTodoList> = /*@__PURE__*/ createComponent<ScaleIconContentTodoListElement, ScaleIconContentTodoListEvents, JSX.ScaleIconContentTodoList>({
+export const ScaleIconContentTodoList: StencilReactComponent<ScaleIconContentTodoListElement, ScaleIconContentTodoListEvents, Components.ScaleIconContentTodoList> = /*@__PURE__*/ createComponent<ScaleIconContentTodoListElement, ScaleIconContentTodoListEvents, Components.ScaleIconContentTodoList>({
     tagName: 'scale-icon-content-todo-list',
     properties: {
         size: 'size',
@@ -4805,14 +4805,14 @@ export const ScaleIconContentTodoList: StencilReactComponent<ScaleIconContentTod
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentTodoList as StencilReactComponent<ScaleIconContentTodoListElement, ScaleIconContentTodoListEvents, JSX.ScaleIconContentTodoList>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentTodoList as StencilReactComponent<ScaleIconContentTodoListElement, ScaleIconContentTodoListEvents, Components.ScaleIconContentTodoList>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentTransportEvents = NonNullable<unknown>;
 
-export const ScaleIconContentTransport: StencilReactComponent<ScaleIconContentTransportElement, ScaleIconContentTransportEvents, JSX.ScaleIconContentTransport> = /*@__PURE__*/ createComponent<ScaleIconContentTransportElement, ScaleIconContentTransportEvents, JSX.ScaleIconContentTransport>({
+export const ScaleIconContentTransport: StencilReactComponent<ScaleIconContentTransportElement, ScaleIconContentTransportEvents, Components.ScaleIconContentTransport> = /*@__PURE__*/ createComponent<ScaleIconContentTransportElement, ScaleIconContentTransportEvents, Components.ScaleIconContentTransport>({
     tagName: 'scale-icon-content-transport',
     properties: {
         size: 'size',
@@ -4823,14 +4823,14 @@ export const ScaleIconContentTransport: StencilReactComponent<ScaleIconContentTr
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentTransport as StencilReactComponent<ScaleIconContentTransportElement, ScaleIconContentTransportEvents, JSX.ScaleIconContentTransport>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentTransport as StencilReactComponent<ScaleIconContentTransportElement, ScaleIconContentTransportEvents, Components.ScaleIconContentTransport>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentUnlockEvents = NonNullable<unknown>;
 
-export const ScaleIconContentUnlock: StencilReactComponent<ScaleIconContentUnlockElement, ScaleIconContentUnlockEvents, JSX.ScaleIconContentUnlock> = /*@__PURE__*/ createComponent<ScaleIconContentUnlockElement, ScaleIconContentUnlockEvents, JSX.ScaleIconContentUnlock>({
+export const ScaleIconContentUnlock: StencilReactComponent<ScaleIconContentUnlockElement, ScaleIconContentUnlockEvents, Components.ScaleIconContentUnlock> = /*@__PURE__*/ createComponent<ScaleIconContentUnlockElement, ScaleIconContentUnlockEvents, Components.ScaleIconContentUnlock>({
     tagName: 'scale-icon-content-unlock',
     properties: {
         size: 'size',
@@ -4841,14 +4841,14 @@ export const ScaleIconContentUnlock: StencilReactComponent<ScaleIconContentUnloc
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentUnlock as StencilReactComponent<ScaleIconContentUnlockElement, ScaleIconContentUnlockEvents, JSX.ScaleIconContentUnlock>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentUnlock as StencilReactComponent<ScaleIconContentUnlockElement, ScaleIconContentUnlockEvents, Components.ScaleIconContentUnlock>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentVoucherEvents = NonNullable<unknown>;
 
-export const ScaleIconContentVoucher: StencilReactComponent<ScaleIconContentVoucherElement, ScaleIconContentVoucherEvents, JSX.ScaleIconContentVoucher> = /*@__PURE__*/ createComponent<ScaleIconContentVoucherElement, ScaleIconContentVoucherEvents, JSX.ScaleIconContentVoucher>({
+export const ScaleIconContentVoucher: StencilReactComponent<ScaleIconContentVoucherElement, ScaleIconContentVoucherEvents, Components.ScaleIconContentVoucher> = /*@__PURE__*/ createComponent<ScaleIconContentVoucherElement, ScaleIconContentVoucherEvents, Components.ScaleIconContentVoucher>({
     tagName: 'scale-icon-content-voucher',
     properties: {
         size: 'size',
@@ -4859,14 +4859,14 @@ export const ScaleIconContentVoucher: StencilReactComponent<ScaleIconContentVouc
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentVoucher as StencilReactComponent<ScaleIconContentVoucherElement, ScaleIconContentVoucherEvents, JSX.ScaleIconContentVoucher>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentVoucher as StencilReactComponent<ScaleIconContentVoucherElement, ScaleIconContentVoucherEvents, Components.ScaleIconContentVoucher>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentWaitingEvents = NonNullable<unknown>;
 
-export const ScaleIconContentWaiting: StencilReactComponent<ScaleIconContentWaitingElement, ScaleIconContentWaitingEvents, JSX.ScaleIconContentWaiting> = /*@__PURE__*/ createComponent<ScaleIconContentWaitingElement, ScaleIconContentWaitingEvents, JSX.ScaleIconContentWaiting>({
+export const ScaleIconContentWaiting: StencilReactComponent<ScaleIconContentWaitingElement, ScaleIconContentWaitingEvents, Components.ScaleIconContentWaiting> = /*@__PURE__*/ createComponent<ScaleIconContentWaitingElement, ScaleIconContentWaitingEvents, Components.ScaleIconContentWaiting>({
     tagName: 'scale-icon-content-waiting',
     properties: {
         size: 'size',
@@ -4877,14 +4877,14 @@ export const ScaleIconContentWaiting: StencilReactComponent<ScaleIconContentWait
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentWaiting as StencilReactComponent<ScaleIconContentWaitingElement, ScaleIconContentWaitingEvents, JSX.ScaleIconContentWaiting>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentWaiting as StencilReactComponent<ScaleIconContentWaitingElement, ScaleIconContentWaitingEvents, Components.ScaleIconContentWaiting>,
     serializeShadowRoot
 });
 
 export type ScaleIconContentWalletEvents = NonNullable<unknown>;
 
-export const ScaleIconContentWallet: StencilReactComponent<ScaleIconContentWalletElement, ScaleIconContentWalletEvents, JSX.ScaleIconContentWallet> = /*@__PURE__*/ createComponent<ScaleIconContentWalletElement, ScaleIconContentWalletEvents, JSX.ScaleIconContentWallet>({
+export const ScaleIconContentWallet: StencilReactComponent<ScaleIconContentWalletElement, ScaleIconContentWalletEvents, Components.ScaleIconContentWallet> = /*@__PURE__*/ createComponent<ScaleIconContentWalletElement, ScaleIconContentWalletEvents, Components.ScaleIconContentWallet>({
     tagName: 'scale-icon-content-wallet',
     properties: {
         size: 'size',
@@ -4895,14 +4895,14 @@ export const ScaleIconContentWallet: StencilReactComponent<ScaleIconContentWalle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconContentWallet as StencilReactComponent<ScaleIconContentWalletElement, ScaleIconContentWalletEvents, JSX.ScaleIconContentWallet>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconContentWallet as StencilReactComponent<ScaleIconContentWalletElement, ScaleIconContentWalletEvents, Components.ScaleIconContentWallet>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceAddDeviceEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceAddDevice: StencilReactComponent<ScaleIconDeviceAddDeviceElement, ScaleIconDeviceAddDeviceEvents, JSX.ScaleIconDeviceAddDevice> = /*@__PURE__*/ createComponent<ScaleIconDeviceAddDeviceElement, ScaleIconDeviceAddDeviceEvents, JSX.ScaleIconDeviceAddDevice>({
+export const ScaleIconDeviceAddDevice: StencilReactComponent<ScaleIconDeviceAddDeviceElement, ScaleIconDeviceAddDeviceEvents, Components.ScaleIconDeviceAddDevice> = /*@__PURE__*/ createComponent<ScaleIconDeviceAddDeviceElement, ScaleIconDeviceAddDeviceEvents, Components.ScaleIconDeviceAddDevice>({
     tagName: 'scale-icon-device-add-device',
     properties: {
         size: 'size',
@@ -4913,14 +4913,14 @@ export const ScaleIconDeviceAddDevice: StencilReactComponent<ScaleIconDeviceAddD
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceAddDevice as StencilReactComponent<ScaleIconDeviceAddDeviceElement, ScaleIconDeviceAddDeviceEvents, JSX.ScaleIconDeviceAddDevice>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceAddDevice as StencilReactComponent<ScaleIconDeviceAddDeviceElement, ScaleIconDeviceAddDeviceEvents, Components.ScaleIconDeviceAddDevice>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceCameraEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceCamera: StencilReactComponent<ScaleIconDeviceCameraElement, ScaleIconDeviceCameraEvents, JSX.ScaleIconDeviceCamera> = /*@__PURE__*/ createComponent<ScaleIconDeviceCameraElement, ScaleIconDeviceCameraEvents, JSX.ScaleIconDeviceCamera>({
+export const ScaleIconDeviceCamera: StencilReactComponent<ScaleIconDeviceCameraElement, ScaleIconDeviceCameraEvents, Components.ScaleIconDeviceCamera> = /*@__PURE__*/ createComponent<ScaleIconDeviceCameraElement, ScaleIconDeviceCameraEvents, Components.ScaleIconDeviceCamera>({
     tagName: 'scale-icon-device-camera',
     properties: {
         size: 'size',
@@ -4931,14 +4931,14 @@ export const ScaleIconDeviceCamera: StencilReactComponent<ScaleIconDeviceCameraE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceCamera as StencilReactComponent<ScaleIconDeviceCameraElement, ScaleIconDeviceCameraEvents, JSX.ScaleIconDeviceCamera>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceCamera as StencilReactComponent<ScaleIconDeviceCameraElement, ScaleIconDeviceCameraEvents, Components.ScaleIconDeviceCamera>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceChangeCameraEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceChangeCamera: StencilReactComponent<ScaleIconDeviceChangeCameraElement, ScaleIconDeviceChangeCameraEvents, JSX.ScaleIconDeviceChangeCamera> = /*@__PURE__*/ createComponent<ScaleIconDeviceChangeCameraElement, ScaleIconDeviceChangeCameraEvents, JSX.ScaleIconDeviceChangeCamera>({
+export const ScaleIconDeviceChangeCamera: StencilReactComponent<ScaleIconDeviceChangeCameraElement, ScaleIconDeviceChangeCameraEvents, Components.ScaleIconDeviceChangeCamera> = /*@__PURE__*/ createComponent<ScaleIconDeviceChangeCameraElement, ScaleIconDeviceChangeCameraEvents, Components.ScaleIconDeviceChangeCamera>({
     tagName: 'scale-icon-device-change-camera',
     properties: {
         size: 'size',
@@ -4949,14 +4949,14 @@ export const ScaleIconDeviceChangeCamera: StencilReactComponent<ScaleIconDeviceC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceChangeCamera as StencilReactComponent<ScaleIconDeviceChangeCameraElement, ScaleIconDeviceChangeCameraEvents, JSX.ScaleIconDeviceChangeCamera>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceChangeCamera as StencilReactComponent<ScaleIconDeviceChangeCameraElement, ScaleIconDeviceChangeCameraEvents, Components.ScaleIconDeviceChangeCamera>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceComputerEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceComputer: StencilReactComponent<ScaleIconDeviceComputerElement, ScaleIconDeviceComputerEvents, JSX.ScaleIconDeviceComputer> = /*@__PURE__*/ createComponent<ScaleIconDeviceComputerElement, ScaleIconDeviceComputerEvents, JSX.ScaleIconDeviceComputer>({
+export const ScaleIconDeviceComputer: StencilReactComponent<ScaleIconDeviceComputerElement, ScaleIconDeviceComputerEvents, Components.ScaleIconDeviceComputer> = /*@__PURE__*/ createComponent<ScaleIconDeviceComputerElement, ScaleIconDeviceComputerEvents, Components.ScaleIconDeviceComputer>({
     tagName: 'scale-icon-device-computer',
     properties: {
         size: 'size',
@@ -4967,14 +4967,14 @@ export const ScaleIconDeviceComputer: StencilReactComponent<ScaleIconDeviceCompu
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceComputer as StencilReactComponent<ScaleIconDeviceComputerElement, ScaleIconDeviceComputerEvents, JSX.ScaleIconDeviceComputer>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceComputer as StencilReactComponent<ScaleIconDeviceComputerElement, ScaleIconDeviceComputerEvents, Components.ScaleIconDeviceComputer>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceDeviceControllerEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceDeviceController: StencilReactComponent<ScaleIconDeviceDeviceControllerElement, ScaleIconDeviceDeviceControllerEvents, JSX.ScaleIconDeviceDeviceController> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceControllerElement, ScaleIconDeviceDeviceControllerEvents, JSX.ScaleIconDeviceDeviceController>({
+export const ScaleIconDeviceDeviceController: StencilReactComponent<ScaleIconDeviceDeviceControllerElement, ScaleIconDeviceDeviceControllerEvents, Components.ScaleIconDeviceDeviceController> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceControllerElement, ScaleIconDeviceDeviceControllerEvents, Components.ScaleIconDeviceDeviceController>({
     tagName: 'scale-icon-device-device-controller',
     properties: {
         size: 'size',
@@ -4985,14 +4985,14 @@ export const ScaleIconDeviceDeviceController: StencilReactComponent<ScaleIconDev
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceDeviceController as StencilReactComponent<ScaleIconDeviceDeviceControllerElement, ScaleIconDeviceDeviceControllerEvents, JSX.ScaleIconDeviceDeviceController>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceDeviceController as StencilReactComponent<ScaleIconDeviceDeviceControllerElement, ScaleIconDeviceDeviceControllerEvents, Components.ScaleIconDeviceDeviceController>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceDeviceEthernetEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceDeviceEthernet: StencilReactComponent<ScaleIconDeviceDeviceEthernetElement, ScaleIconDeviceDeviceEthernetEvents, JSX.ScaleIconDeviceDeviceEthernet> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceEthernetElement, ScaleIconDeviceDeviceEthernetEvents, JSX.ScaleIconDeviceDeviceEthernet>({
+export const ScaleIconDeviceDeviceEthernet: StencilReactComponent<ScaleIconDeviceDeviceEthernetElement, ScaleIconDeviceDeviceEthernetEvents, Components.ScaleIconDeviceDeviceEthernet> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceEthernetElement, ScaleIconDeviceDeviceEthernetEvents, Components.ScaleIconDeviceDeviceEthernet>({
     tagName: 'scale-icon-device-device-ethernet',
     properties: {
         size: 'size',
@@ -5003,14 +5003,14 @@ export const ScaleIconDeviceDeviceEthernet: StencilReactComponent<ScaleIconDevic
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceDeviceEthernet as StencilReactComponent<ScaleIconDeviceDeviceEthernetElement, ScaleIconDeviceDeviceEthernetEvents, JSX.ScaleIconDeviceDeviceEthernet>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceDeviceEthernet as StencilReactComponent<ScaleIconDeviceDeviceEthernetElement, ScaleIconDeviceDeviceEthernetEvents, Components.ScaleIconDeviceDeviceEthernet>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceDeviceMeshEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceDeviceMesh: StencilReactComponent<ScaleIconDeviceDeviceMeshElement, ScaleIconDeviceDeviceMeshEvents, JSX.ScaleIconDeviceDeviceMesh> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceMeshElement, ScaleIconDeviceDeviceMeshEvents, JSX.ScaleIconDeviceDeviceMesh>({
+export const ScaleIconDeviceDeviceMesh: StencilReactComponent<ScaleIconDeviceDeviceMeshElement, ScaleIconDeviceDeviceMeshEvents, Components.ScaleIconDeviceDeviceMesh> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceMeshElement, ScaleIconDeviceDeviceMeshEvents, Components.ScaleIconDeviceDeviceMesh>({
     tagName: 'scale-icon-device-device-mesh',
     properties: {
         size: 'size',
@@ -5021,14 +5021,14 @@ export const ScaleIconDeviceDeviceMesh: StencilReactComponent<ScaleIconDeviceDev
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceDeviceMesh as StencilReactComponent<ScaleIconDeviceDeviceMeshElement, ScaleIconDeviceDeviceMeshEvents, JSX.ScaleIconDeviceDeviceMesh>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceDeviceMesh as StencilReactComponent<ScaleIconDeviceDeviceMeshElement, ScaleIconDeviceDeviceMeshEvents, Components.ScaleIconDeviceDeviceMesh>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceDevicePhoneEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceDevicePhone: StencilReactComponent<ScaleIconDeviceDevicePhoneElement, ScaleIconDeviceDevicePhoneEvents, JSX.ScaleIconDeviceDevicePhone> = /*@__PURE__*/ createComponent<ScaleIconDeviceDevicePhoneElement, ScaleIconDeviceDevicePhoneEvents, JSX.ScaleIconDeviceDevicePhone>({
+export const ScaleIconDeviceDevicePhone: StencilReactComponent<ScaleIconDeviceDevicePhoneElement, ScaleIconDeviceDevicePhoneEvents, Components.ScaleIconDeviceDevicePhone> = /*@__PURE__*/ createComponent<ScaleIconDeviceDevicePhoneElement, ScaleIconDeviceDevicePhoneEvents, Components.ScaleIconDeviceDevicePhone>({
     tagName: 'scale-icon-device-device-phone',
     properties: {
         size: 'size',
@@ -5039,14 +5039,14 @@ export const ScaleIconDeviceDevicePhone: StencilReactComponent<ScaleIconDeviceDe
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceDevicePhone as StencilReactComponent<ScaleIconDeviceDevicePhoneElement, ScaleIconDeviceDevicePhoneEvents, JSX.ScaleIconDeviceDevicePhone>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceDevicePhone as StencilReactComponent<ScaleIconDeviceDevicePhoneElement, ScaleIconDeviceDevicePhoneEvents, Components.ScaleIconDeviceDevicePhone>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceDeviceRouterEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceDeviceRouter: StencilReactComponent<ScaleIconDeviceDeviceRouterElement, ScaleIconDeviceDeviceRouterEvents, JSX.ScaleIconDeviceDeviceRouter> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceRouterElement, ScaleIconDeviceDeviceRouterEvents, JSX.ScaleIconDeviceDeviceRouter>({
+export const ScaleIconDeviceDeviceRouter: StencilReactComponent<ScaleIconDeviceDeviceRouterElement, ScaleIconDeviceDeviceRouterEvents, Components.ScaleIconDeviceDeviceRouter> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceRouterElement, ScaleIconDeviceDeviceRouterEvents, Components.ScaleIconDeviceDeviceRouter>({
     tagName: 'scale-icon-device-device-router',
     properties: {
         size: 'size',
@@ -5057,14 +5057,14 @@ export const ScaleIconDeviceDeviceRouter: StencilReactComponent<ScaleIconDeviceD
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceDeviceRouter as StencilReactComponent<ScaleIconDeviceDeviceRouterElement, ScaleIconDeviceDeviceRouterEvents, JSX.ScaleIconDeviceDeviceRouter>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceDeviceRouter as StencilReactComponent<ScaleIconDeviceDeviceRouterElement, ScaleIconDeviceDeviceRouterEvents, Components.ScaleIconDeviceDeviceRouter>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceDeviceTvEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceDeviceTv: StencilReactComponent<ScaleIconDeviceDeviceTvElement, ScaleIconDeviceDeviceTvEvents, JSX.ScaleIconDeviceDeviceTv> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceTvElement, ScaleIconDeviceDeviceTvEvents, JSX.ScaleIconDeviceDeviceTv>({
+export const ScaleIconDeviceDeviceTv: StencilReactComponent<ScaleIconDeviceDeviceTvElement, ScaleIconDeviceDeviceTvEvents, Components.ScaleIconDeviceDeviceTv> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceTvElement, ScaleIconDeviceDeviceTvEvents, Components.ScaleIconDeviceDeviceTv>({
     tagName: 'scale-icon-device-device-tv',
     properties: {
         size: 'size',
@@ -5075,14 +5075,14 @@ export const ScaleIconDeviceDeviceTv: StencilReactComponent<ScaleIconDeviceDevic
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceDeviceTv as StencilReactComponent<ScaleIconDeviceDeviceTvElement, ScaleIconDeviceDeviceTvEvents, JSX.ScaleIconDeviceDeviceTv>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceDeviceTv as StencilReactComponent<ScaleIconDeviceDeviceTvElement, ScaleIconDeviceDeviceTvEvents, Components.ScaleIconDeviceDeviceTv>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceDeviceWatchEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceDeviceWatch: StencilReactComponent<ScaleIconDeviceDeviceWatchElement, ScaleIconDeviceDeviceWatchEvents, JSX.ScaleIconDeviceDeviceWatch> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceWatchElement, ScaleIconDeviceDeviceWatchEvents, JSX.ScaleIconDeviceDeviceWatch>({
+export const ScaleIconDeviceDeviceWatch: StencilReactComponent<ScaleIconDeviceDeviceWatchElement, ScaleIconDeviceDeviceWatchEvents, Components.ScaleIconDeviceDeviceWatch> = /*@__PURE__*/ createComponent<ScaleIconDeviceDeviceWatchElement, ScaleIconDeviceDeviceWatchEvents, Components.ScaleIconDeviceDeviceWatch>({
     tagName: 'scale-icon-device-device-watch',
     properties: {
         size: 'size',
@@ -5093,14 +5093,14 @@ export const ScaleIconDeviceDeviceWatch: StencilReactComponent<ScaleIconDeviceDe
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceDeviceWatch as StencilReactComponent<ScaleIconDeviceDeviceWatchElement, ScaleIconDeviceDeviceWatchEvents, JSX.ScaleIconDeviceDeviceWatch>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceDeviceWatch as StencilReactComponent<ScaleIconDeviceDeviceWatchElement, ScaleIconDeviceDeviceWatchEvents, Components.ScaleIconDeviceDeviceWatch>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceDongleEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceDongle: StencilReactComponent<ScaleIconDeviceDongleElement, ScaleIconDeviceDongleEvents, JSX.ScaleIconDeviceDongle> = /*@__PURE__*/ createComponent<ScaleIconDeviceDongleElement, ScaleIconDeviceDongleEvents, JSX.ScaleIconDeviceDongle>({
+export const ScaleIconDeviceDongle: StencilReactComponent<ScaleIconDeviceDongleElement, ScaleIconDeviceDongleEvents, Components.ScaleIconDeviceDongle> = /*@__PURE__*/ createComponent<ScaleIconDeviceDongleElement, ScaleIconDeviceDongleEvents, Components.ScaleIconDeviceDongle>({
     tagName: 'scale-icon-device-dongle',
     properties: {
         size: 'size',
@@ -5111,14 +5111,14 @@ export const ScaleIconDeviceDongle: StencilReactComponent<ScaleIconDeviceDongleE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceDongle as StencilReactComponent<ScaleIconDeviceDongleElement, ScaleIconDeviceDongleEvents, JSX.ScaleIconDeviceDongle>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceDongle as StencilReactComponent<ScaleIconDeviceDongleElement, ScaleIconDeviceDongleEvents, Components.ScaleIconDeviceDongle>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceFaxEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceFax: StencilReactComponent<ScaleIconDeviceFaxElement, ScaleIconDeviceFaxEvents, JSX.ScaleIconDeviceFax> = /*@__PURE__*/ createComponent<ScaleIconDeviceFaxElement, ScaleIconDeviceFaxEvents, JSX.ScaleIconDeviceFax>({
+export const ScaleIconDeviceFax: StencilReactComponent<ScaleIconDeviceFaxElement, ScaleIconDeviceFaxEvents, Components.ScaleIconDeviceFax> = /*@__PURE__*/ createComponent<ScaleIconDeviceFaxElement, ScaleIconDeviceFaxEvents, Components.ScaleIconDeviceFax>({
     tagName: 'scale-icon-device-fax',
     properties: {
         size: 'size',
@@ -5129,14 +5129,14 @@ export const ScaleIconDeviceFax: StencilReactComponent<ScaleIconDeviceFaxElement
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceFax as StencilReactComponent<ScaleIconDeviceFaxElement, ScaleIconDeviceFaxEvents, JSX.ScaleIconDeviceFax>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceFax as StencilReactComponent<ScaleIconDeviceFaxElement, ScaleIconDeviceFaxEvents, Components.ScaleIconDeviceFax>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceFixedLineServicesEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceFixedLineServices: StencilReactComponent<ScaleIconDeviceFixedLineServicesElement, ScaleIconDeviceFixedLineServicesEvents, JSX.ScaleIconDeviceFixedLineServices> = /*@__PURE__*/ createComponent<ScaleIconDeviceFixedLineServicesElement, ScaleIconDeviceFixedLineServicesEvents, JSX.ScaleIconDeviceFixedLineServices>({
+export const ScaleIconDeviceFixedLineServices: StencilReactComponent<ScaleIconDeviceFixedLineServicesElement, ScaleIconDeviceFixedLineServicesEvents, Components.ScaleIconDeviceFixedLineServices> = /*@__PURE__*/ createComponent<ScaleIconDeviceFixedLineServicesElement, ScaleIconDeviceFixedLineServicesEvents, Components.ScaleIconDeviceFixedLineServices>({
     tagName: 'scale-icon-device-fixed-line-services',
     properties: {
         size: 'size',
@@ -5147,14 +5147,14 @@ export const ScaleIconDeviceFixedLineServices: StencilReactComponent<ScaleIconDe
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceFixedLineServices as StencilReactComponent<ScaleIconDeviceFixedLineServicesElement, ScaleIconDeviceFixedLineServicesEvents, JSX.ScaleIconDeviceFixedLineServices>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceFixedLineServices as StencilReactComponent<ScaleIconDeviceFixedLineServicesElement, ScaleIconDeviceFixedLineServicesEvents, Components.ScaleIconDeviceFixedLineServices>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceGameControllerEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceGameController: StencilReactComponent<ScaleIconDeviceGameControllerElement, ScaleIconDeviceGameControllerEvents, JSX.ScaleIconDeviceGameController> = /*@__PURE__*/ createComponent<ScaleIconDeviceGameControllerElement, ScaleIconDeviceGameControllerEvents, JSX.ScaleIconDeviceGameController>({
+export const ScaleIconDeviceGameController: StencilReactComponent<ScaleIconDeviceGameControllerElement, ScaleIconDeviceGameControllerEvents, Components.ScaleIconDeviceGameController> = /*@__PURE__*/ createComponent<ScaleIconDeviceGameControllerElement, ScaleIconDeviceGameControllerEvents, Components.ScaleIconDeviceGameController>({
     tagName: 'scale-icon-device-game-controller',
     properties: {
         size: 'size',
@@ -5165,14 +5165,14 @@ export const ScaleIconDeviceGameController: StencilReactComponent<ScaleIconDevic
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceGameController as StencilReactComponent<ScaleIconDeviceGameControllerElement, ScaleIconDeviceGameControllerEvents, JSX.ScaleIconDeviceGameController>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceGameController as StencilReactComponent<ScaleIconDeviceGameControllerElement, ScaleIconDeviceGameControllerEvents, Components.ScaleIconDeviceGameController>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceMediaReceiverEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceMediaReceiver: StencilReactComponent<ScaleIconDeviceMediaReceiverElement, ScaleIconDeviceMediaReceiverEvents, JSX.ScaleIconDeviceMediaReceiver> = /*@__PURE__*/ createComponent<ScaleIconDeviceMediaReceiverElement, ScaleIconDeviceMediaReceiverEvents, JSX.ScaleIconDeviceMediaReceiver>({
+export const ScaleIconDeviceMediaReceiver: StencilReactComponent<ScaleIconDeviceMediaReceiverElement, ScaleIconDeviceMediaReceiverEvents, Components.ScaleIconDeviceMediaReceiver> = /*@__PURE__*/ createComponent<ScaleIconDeviceMediaReceiverElement, ScaleIconDeviceMediaReceiverEvents, Components.ScaleIconDeviceMediaReceiver>({
     tagName: 'scale-icon-device-media-receiver',
     properties: {
         size: 'size',
@@ -5183,14 +5183,14 @@ export const ScaleIconDeviceMediaReceiver: StencilReactComponent<ScaleIconDevice
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceMediaReceiver as StencilReactComponent<ScaleIconDeviceMediaReceiverElement, ScaleIconDeviceMediaReceiverEvents, JSX.ScaleIconDeviceMediaReceiver>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceMediaReceiver as StencilReactComponent<ScaleIconDeviceMediaReceiverElement, ScaleIconDeviceMediaReceiverEvents, Components.ScaleIconDeviceMediaReceiver>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceMobileDataEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceMobileData: StencilReactComponent<ScaleIconDeviceMobileDataElement, ScaleIconDeviceMobileDataEvents, JSX.ScaleIconDeviceMobileData> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobileDataElement, ScaleIconDeviceMobileDataEvents, JSX.ScaleIconDeviceMobileData>({
+export const ScaleIconDeviceMobileData: StencilReactComponent<ScaleIconDeviceMobileDataElement, ScaleIconDeviceMobileDataEvents, Components.ScaleIconDeviceMobileData> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobileDataElement, ScaleIconDeviceMobileDataEvents, Components.ScaleIconDeviceMobileData>({
     tagName: 'scale-icon-device-mobile-data',
     properties: {
         size: 'size',
@@ -5201,14 +5201,14 @@ export const ScaleIconDeviceMobileData: StencilReactComponent<ScaleIconDeviceMob
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceMobileData as StencilReactComponent<ScaleIconDeviceMobileDataElement, ScaleIconDeviceMobileDataEvents, JSX.ScaleIconDeviceMobileData>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceMobileData as StencilReactComponent<ScaleIconDeviceMobileDataElement, ScaleIconDeviceMobileDataEvents, Components.ScaleIconDeviceMobileData>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceMobileDevicesCombinationEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceMobileDevicesCombination: StencilReactComponent<ScaleIconDeviceMobileDevicesCombinationElement, ScaleIconDeviceMobileDevicesCombinationEvents, JSX.ScaleIconDeviceMobileDevicesCombination> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobileDevicesCombinationElement, ScaleIconDeviceMobileDevicesCombinationEvents, JSX.ScaleIconDeviceMobileDevicesCombination>({
+export const ScaleIconDeviceMobileDevicesCombination: StencilReactComponent<ScaleIconDeviceMobileDevicesCombinationElement, ScaleIconDeviceMobileDevicesCombinationEvents, Components.ScaleIconDeviceMobileDevicesCombination> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobileDevicesCombinationElement, ScaleIconDeviceMobileDevicesCombinationEvents, Components.ScaleIconDeviceMobileDevicesCombination>({
     tagName: 'scale-icon-device-mobile-devices-combination',
     properties: {
         size: 'size',
@@ -5219,14 +5219,14 @@ export const ScaleIconDeviceMobileDevicesCombination: StencilReactComponent<Scal
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceMobileDevicesCombination as StencilReactComponent<ScaleIconDeviceMobileDevicesCombinationElement, ScaleIconDeviceMobileDevicesCombinationEvents, JSX.ScaleIconDeviceMobileDevicesCombination>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceMobileDevicesCombination as StencilReactComponent<ScaleIconDeviceMobileDevicesCombinationElement, ScaleIconDeviceMobileDevicesCombinationEvents, Components.ScaleIconDeviceMobileDevicesCombination>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceMobileEquipmentEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceMobileEquipment: StencilReactComponent<ScaleIconDeviceMobileEquipmentElement, ScaleIconDeviceMobileEquipmentEvents, JSX.ScaleIconDeviceMobileEquipment> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobileEquipmentElement, ScaleIconDeviceMobileEquipmentEvents, JSX.ScaleIconDeviceMobileEquipment>({
+export const ScaleIconDeviceMobileEquipment: StencilReactComponent<ScaleIconDeviceMobileEquipmentElement, ScaleIconDeviceMobileEquipmentEvents, Components.ScaleIconDeviceMobileEquipment> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobileEquipmentElement, ScaleIconDeviceMobileEquipmentEvents, Components.ScaleIconDeviceMobileEquipment>({
     tagName: 'scale-icon-device-mobile-equipment',
     properties: {
         size: 'size',
@@ -5237,14 +5237,14 @@ export const ScaleIconDeviceMobileEquipment: StencilReactComponent<ScaleIconDevi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceMobileEquipment as StencilReactComponent<ScaleIconDeviceMobileEquipmentElement, ScaleIconDeviceMobileEquipmentEvents, JSX.ScaleIconDeviceMobileEquipment>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceMobileEquipment as StencilReactComponent<ScaleIconDeviceMobileEquipmentElement, ScaleIconDeviceMobileEquipmentEvents, Components.ScaleIconDeviceMobileEquipment>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceMobilePhoneInsuranceEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceMobilePhoneInsurance: StencilReactComponent<ScaleIconDeviceMobilePhoneInsuranceElement, ScaleIconDeviceMobilePhoneInsuranceEvents, JSX.ScaleIconDeviceMobilePhoneInsurance> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobilePhoneInsuranceElement, ScaleIconDeviceMobilePhoneInsuranceEvents, JSX.ScaleIconDeviceMobilePhoneInsurance>({
+export const ScaleIconDeviceMobilePhoneInsurance: StencilReactComponent<ScaleIconDeviceMobilePhoneInsuranceElement, ScaleIconDeviceMobilePhoneInsuranceEvents, Components.ScaleIconDeviceMobilePhoneInsurance> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobilePhoneInsuranceElement, ScaleIconDeviceMobilePhoneInsuranceEvents, Components.ScaleIconDeviceMobilePhoneInsurance>({
     tagName: 'scale-icon-device-mobile-phone-insurance',
     properties: {
         size: 'size',
@@ -5255,14 +5255,14 @@ export const ScaleIconDeviceMobilePhoneInsurance: StencilReactComponent<ScaleIco
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceMobilePhoneInsurance as StencilReactComponent<ScaleIconDeviceMobilePhoneInsuranceElement, ScaleIconDeviceMobilePhoneInsuranceEvents, JSX.ScaleIconDeviceMobilePhoneInsurance>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceMobilePhoneInsurance as StencilReactComponent<ScaleIconDeviceMobilePhoneInsuranceElement, ScaleIconDeviceMobilePhoneInsuranceEvents, Components.ScaleIconDeviceMobilePhoneInsurance>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceMobileServicesEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceMobileServices: StencilReactComponent<ScaleIconDeviceMobileServicesElement, ScaleIconDeviceMobileServicesEvents, JSX.ScaleIconDeviceMobileServices> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobileServicesElement, ScaleIconDeviceMobileServicesEvents, JSX.ScaleIconDeviceMobileServices>({
+export const ScaleIconDeviceMobileServices: StencilReactComponent<ScaleIconDeviceMobileServicesElement, ScaleIconDeviceMobileServicesEvents, Components.ScaleIconDeviceMobileServices> = /*@__PURE__*/ createComponent<ScaleIconDeviceMobileServicesElement, ScaleIconDeviceMobileServicesEvents, Components.ScaleIconDeviceMobileServices>({
     tagName: 'scale-icon-device-mobile-services',
     properties: {
         size: 'size',
@@ -5273,14 +5273,14 @@ export const ScaleIconDeviceMobileServices: StencilReactComponent<ScaleIconDevic
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceMobileServices as StencilReactComponent<ScaleIconDeviceMobileServicesElement, ScaleIconDeviceMobileServicesEvents, JSX.ScaleIconDeviceMobileServices>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceMobileServices as StencilReactComponent<ScaleIconDeviceMobileServicesElement, ScaleIconDeviceMobileServicesEvents, Components.ScaleIconDeviceMobileServices>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceNoCameraEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceNoCamera: StencilReactComponent<ScaleIconDeviceNoCameraElement, ScaleIconDeviceNoCameraEvents, JSX.ScaleIconDeviceNoCamera> = /*@__PURE__*/ createComponent<ScaleIconDeviceNoCameraElement, ScaleIconDeviceNoCameraEvents, JSX.ScaleIconDeviceNoCamera>({
+export const ScaleIconDeviceNoCamera: StencilReactComponent<ScaleIconDeviceNoCameraElement, ScaleIconDeviceNoCameraEvents, Components.ScaleIconDeviceNoCamera> = /*@__PURE__*/ createComponent<ScaleIconDeviceNoCameraElement, ScaleIconDeviceNoCameraEvents, Components.ScaleIconDeviceNoCamera>({
     tagName: 'scale-icon-device-no-camera',
     properties: {
         size: 'size',
@@ -5291,14 +5291,14 @@ export const ScaleIconDeviceNoCamera: StencilReactComponent<ScaleIconDeviceNoCam
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceNoCamera as StencilReactComponent<ScaleIconDeviceNoCameraElement, ScaleIconDeviceNoCameraEvents, JSX.ScaleIconDeviceNoCamera>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceNoCamera as StencilReactComponent<ScaleIconDeviceNoCameraElement, ScaleIconDeviceNoCameraEvents, Components.ScaleIconDeviceNoCamera>,
     serializeShadowRoot
 });
 
 export type ScaleIconDevicePhoneWithMobilePlanEvents = NonNullable<unknown>;
 
-export const ScaleIconDevicePhoneWithMobilePlan: StencilReactComponent<ScaleIconDevicePhoneWithMobilePlanElement, ScaleIconDevicePhoneWithMobilePlanEvents, JSX.ScaleIconDevicePhoneWithMobilePlan> = /*@__PURE__*/ createComponent<ScaleIconDevicePhoneWithMobilePlanElement, ScaleIconDevicePhoneWithMobilePlanEvents, JSX.ScaleIconDevicePhoneWithMobilePlan>({
+export const ScaleIconDevicePhoneWithMobilePlan: StencilReactComponent<ScaleIconDevicePhoneWithMobilePlanElement, ScaleIconDevicePhoneWithMobilePlanEvents, Components.ScaleIconDevicePhoneWithMobilePlan> = /*@__PURE__*/ createComponent<ScaleIconDevicePhoneWithMobilePlanElement, ScaleIconDevicePhoneWithMobilePlanEvents, Components.ScaleIconDevicePhoneWithMobilePlan>({
     tagName: 'scale-icon-device-phone-with-mobile-plan',
     properties: {
         size: 'size',
@@ -5309,14 +5309,14 @@ export const ScaleIconDevicePhoneWithMobilePlan: StencilReactComponent<ScaleIcon
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDevicePhoneWithMobilePlan as StencilReactComponent<ScaleIconDevicePhoneWithMobilePlanElement, ScaleIconDevicePhoneWithMobilePlanEvents, JSX.ScaleIconDevicePhoneWithMobilePlan>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDevicePhoneWithMobilePlan as StencilReactComponent<ScaleIconDevicePhoneWithMobilePlanElement, ScaleIconDevicePhoneWithMobilePlanEvents, Components.ScaleIconDevicePhoneWithMobilePlan>,
     serializeShadowRoot
 });
 
 export type ScaleIconDevicePhoneWithoutMobilePlanEvents = NonNullable<unknown>;
 
-export const ScaleIconDevicePhoneWithoutMobilePlan: StencilReactComponent<ScaleIconDevicePhoneWithoutMobilePlanElement, ScaleIconDevicePhoneWithoutMobilePlanEvents, JSX.ScaleIconDevicePhoneWithoutMobilePlan> = /*@__PURE__*/ createComponent<ScaleIconDevicePhoneWithoutMobilePlanElement, ScaleIconDevicePhoneWithoutMobilePlanEvents, JSX.ScaleIconDevicePhoneWithoutMobilePlan>({
+export const ScaleIconDevicePhoneWithoutMobilePlan: StencilReactComponent<ScaleIconDevicePhoneWithoutMobilePlanElement, ScaleIconDevicePhoneWithoutMobilePlanEvents, Components.ScaleIconDevicePhoneWithoutMobilePlan> = /*@__PURE__*/ createComponent<ScaleIconDevicePhoneWithoutMobilePlanElement, ScaleIconDevicePhoneWithoutMobilePlanEvents, Components.ScaleIconDevicePhoneWithoutMobilePlan>({
     tagName: 'scale-icon-device-phone-without-mobile-plan',
     properties: {
         size: 'size',
@@ -5327,14 +5327,14 @@ export const ScaleIconDevicePhoneWithoutMobilePlan: StencilReactComponent<ScaleI
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDevicePhoneWithoutMobilePlan as StencilReactComponent<ScaleIconDevicePhoneWithoutMobilePlanElement, ScaleIconDevicePhoneWithoutMobilePlanEvents, JSX.ScaleIconDevicePhoneWithoutMobilePlan>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDevicePhoneWithoutMobilePlan as StencilReactComponent<ScaleIconDevicePhoneWithoutMobilePlanElement, ScaleIconDevicePhoneWithoutMobilePlanEvents, Components.ScaleIconDevicePhoneWithoutMobilePlan>,
     serializeShadowRoot
 });
 
 export type ScaleIconDevicePhotoCameraEvents = NonNullable<unknown>;
 
-export const ScaleIconDevicePhotoCamera: StencilReactComponent<ScaleIconDevicePhotoCameraElement, ScaleIconDevicePhotoCameraEvents, JSX.ScaleIconDevicePhotoCamera> = /*@__PURE__*/ createComponent<ScaleIconDevicePhotoCameraElement, ScaleIconDevicePhotoCameraEvents, JSX.ScaleIconDevicePhotoCamera>({
+export const ScaleIconDevicePhotoCamera: StencilReactComponent<ScaleIconDevicePhotoCameraElement, ScaleIconDevicePhotoCameraEvents, Components.ScaleIconDevicePhotoCamera> = /*@__PURE__*/ createComponent<ScaleIconDevicePhotoCameraElement, ScaleIconDevicePhotoCameraEvents, Components.ScaleIconDevicePhotoCamera>({
     tagName: 'scale-icon-device-photo-camera',
     properties: {
         size: 'size',
@@ -5345,14 +5345,14 @@ export const ScaleIconDevicePhotoCamera: StencilReactComponent<ScaleIconDevicePh
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDevicePhotoCamera as StencilReactComponent<ScaleIconDevicePhotoCameraElement, ScaleIconDevicePhotoCameraEvents, JSX.ScaleIconDevicePhotoCamera>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDevicePhotoCamera as StencilReactComponent<ScaleIconDevicePhotoCameraElement, ScaleIconDevicePhotoCameraEvents, Components.ScaleIconDevicePhotoCamera>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceRemoteControllerEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceRemoteController: StencilReactComponent<ScaleIconDeviceRemoteControllerElement, ScaleIconDeviceRemoteControllerEvents, JSX.ScaleIconDeviceRemoteController> = /*@__PURE__*/ createComponent<ScaleIconDeviceRemoteControllerElement, ScaleIconDeviceRemoteControllerEvents, JSX.ScaleIconDeviceRemoteController>({
+export const ScaleIconDeviceRemoteController: StencilReactComponent<ScaleIconDeviceRemoteControllerElement, ScaleIconDeviceRemoteControllerEvents, Components.ScaleIconDeviceRemoteController> = /*@__PURE__*/ createComponent<ScaleIconDeviceRemoteControllerElement, ScaleIconDeviceRemoteControllerEvents, Components.ScaleIconDeviceRemoteController>({
     tagName: 'scale-icon-device-remote-controller',
     properties: {
         size: 'size',
@@ -5363,14 +5363,14 @@ export const ScaleIconDeviceRemoteController: StencilReactComponent<ScaleIconDev
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceRemoteController as StencilReactComponent<ScaleIconDeviceRemoteControllerElement, ScaleIconDeviceRemoteControllerEvents, JSX.ScaleIconDeviceRemoteController>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceRemoteController as StencilReactComponent<ScaleIconDeviceRemoteControllerElement, ScaleIconDeviceRemoteControllerEvents, Components.ScaleIconDeviceRemoteController>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceReplacementMobilephoneEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceReplacementMobilephone: StencilReactComponent<ScaleIconDeviceReplacementMobilephoneElement, ScaleIconDeviceReplacementMobilephoneEvents, JSX.ScaleIconDeviceReplacementMobilephone> = /*@__PURE__*/ createComponent<ScaleIconDeviceReplacementMobilephoneElement, ScaleIconDeviceReplacementMobilephoneEvents, JSX.ScaleIconDeviceReplacementMobilephone>({
+export const ScaleIconDeviceReplacementMobilephone: StencilReactComponent<ScaleIconDeviceReplacementMobilephoneElement, ScaleIconDeviceReplacementMobilephoneEvents, Components.ScaleIconDeviceReplacementMobilephone> = /*@__PURE__*/ createComponent<ScaleIconDeviceReplacementMobilephoneElement, ScaleIconDeviceReplacementMobilephoneEvents, Components.ScaleIconDeviceReplacementMobilephone>({
     tagName: 'scale-icon-device-replacement-mobilephone',
     properties: {
         size: 'size',
@@ -5381,14 +5381,14 @@ export const ScaleIconDeviceReplacementMobilephone: StencilReactComponent<ScaleI
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceReplacementMobilephone as StencilReactComponent<ScaleIconDeviceReplacementMobilephoneElement, ScaleIconDeviceReplacementMobilephoneEvents, JSX.ScaleIconDeviceReplacementMobilephone>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceReplacementMobilephone as StencilReactComponent<ScaleIconDeviceReplacementMobilephoneElement, ScaleIconDeviceReplacementMobilephoneEvents, Components.ScaleIconDeviceReplacementMobilephone>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceScreenRotateEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceScreenRotate: StencilReactComponent<ScaleIconDeviceScreenRotateElement, ScaleIconDeviceScreenRotateEvents, JSX.ScaleIconDeviceScreenRotate> = /*@__PURE__*/ createComponent<ScaleIconDeviceScreenRotateElement, ScaleIconDeviceScreenRotateEvents, JSX.ScaleIconDeviceScreenRotate>({
+export const ScaleIconDeviceScreenRotate: StencilReactComponent<ScaleIconDeviceScreenRotateElement, ScaleIconDeviceScreenRotateEvents, Components.ScaleIconDeviceScreenRotate> = /*@__PURE__*/ createComponent<ScaleIconDeviceScreenRotateElement, ScaleIconDeviceScreenRotateEvents, Components.ScaleIconDeviceScreenRotate>({
     tagName: 'scale-icon-device-screen-rotate',
     properties: {
         size: 'size',
@@ -5399,14 +5399,14 @@ export const ScaleIconDeviceScreenRotate: StencilReactComponent<ScaleIconDeviceS
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceScreenRotate as StencilReactComponent<ScaleIconDeviceScreenRotateElement, ScaleIconDeviceScreenRotateEvents, JSX.ScaleIconDeviceScreenRotate>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceScreenRotate as StencilReactComponent<ScaleIconDeviceScreenRotateElement, ScaleIconDeviceScreenRotateEvents, Components.ScaleIconDeviceScreenRotate>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceServerEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceServer: StencilReactComponent<ScaleIconDeviceServerElement, ScaleIconDeviceServerEvents, JSX.ScaleIconDeviceServer> = /*@__PURE__*/ createComponent<ScaleIconDeviceServerElement, ScaleIconDeviceServerEvents, JSX.ScaleIconDeviceServer>({
+export const ScaleIconDeviceServer: StencilReactComponent<ScaleIconDeviceServerElement, ScaleIconDeviceServerEvents, Components.ScaleIconDeviceServer> = /*@__PURE__*/ createComponent<ScaleIconDeviceServerElement, ScaleIconDeviceServerEvents, Components.ScaleIconDeviceServer>({
     tagName: 'scale-icon-device-server',
     properties: {
         size: 'size',
@@ -5417,14 +5417,14 @@ export const ScaleIconDeviceServer: StencilReactComponent<ScaleIconDeviceServerE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceServer as StencilReactComponent<ScaleIconDeviceServerElement, ScaleIconDeviceServerEvents, JSX.ScaleIconDeviceServer>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceServer as StencilReactComponent<ScaleIconDeviceServerElement, ScaleIconDeviceServerEvents, Components.ScaleIconDeviceServer>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceSmartSpeakerEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceSmartSpeaker: StencilReactComponent<ScaleIconDeviceSmartSpeakerElement, ScaleIconDeviceSmartSpeakerEvents, JSX.ScaleIconDeviceSmartSpeaker> = /*@__PURE__*/ createComponent<ScaleIconDeviceSmartSpeakerElement, ScaleIconDeviceSmartSpeakerEvents, JSX.ScaleIconDeviceSmartSpeaker>({
+export const ScaleIconDeviceSmartSpeaker: StencilReactComponent<ScaleIconDeviceSmartSpeakerElement, ScaleIconDeviceSmartSpeakerEvents, Components.ScaleIconDeviceSmartSpeaker> = /*@__PURE__*/ createComponent<ScaleIconDeviceSmartSpeakerElement, ScaleIconDeviceSmartSpeakerEvents, Components.ScaleIconDeviceSmartSpeaker>({
     tagName: 'scale-icon-device-smart-speaker',
     properties: {
         size: 'size',
@@ -5435,14 +5435,14 @@ export const ScaleIconDeviceSmartSpeaker: StencilReactComponent<ScaleIconDeviceS
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceSmartSpeaker as StencilReactComponent<ScaleIconDeviceSmartSpeakerElement, ScaleIconDeviceSmartSpeakerEvents, JSX.ScaleIconDeviceSmartSpeaker>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceSmartSpeaker as StencilReactComponent<ScaleIconDeviceSmartSpeakerElement, ScaleIconDeviceSmartSpeakerEvents, Components.ScaleIconDeviceSmartSpeaker>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceTabletEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceTablet: StencilReactComponent<ScaleIconDeviceTabletElement, ScaleIconDeviceTabletEvents, JSX.ScaleIconDeviceTablet> = /*@__PURE__*/ createComponent<ScaleIconDeviceTabletElement, ScaleIconDeviceTabletEvents, JSX.ScaleIconDeviceTablet>({
+export const ScaleIconDeviceTablet: StencilReactComponent<ScaleIconDeviceTabletElement, ScaleIconDeviceTabletEvents, Components.ScaleIconDeviceTablet> = /*@__PURE__*/ createComponent<ScaleIconDeviceTabletElement, ScaleIconDeviceTabletEvents, Components.ScaleIconDeviceTablet>({
     tagName: 'scale-icon-device-tablet',
     properties: {
         size: 'size',
@@ -5453,14 +5453,14 @@ export const ScaleIconDeviceTablet: StencilReactComponent<ScaleIconDeviceTabletE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceTablet as StencilReactComponent<ScaleIconDeviceTabletElement, ScaleIconDeviceTabletEvents, JSX.ScaleIconDeviceTablet>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceTablet as StencilReactComponent<ScaleIconDeviceTabletElement, ScaleIconDeviceTabletEvents, Components.ScaleIconDeviceTablet>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceTvAndMobileEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceTvAndMobile: StencilReactComponent<ScaleIconDeviceTvAndMobileElement, ScaleIconDeviceTvAndMobileEvents, JSX.ScaleIconDeviceTvAndMobile> = /*@__PURE__*/ createComponent<ScaleIconDeviceTvAndMobileElement, ScaleIconDeviceTvAndMobileEvents, JSX.ScaleIconDeviceTvAndMobile>({
+export const ScaleIconDeviceTvAndMobile: StencilReactComponent<ScaleIconDeviceTvAndMobileElement, ScaleIconDeviceTvAndMobileEvents, Components.ScaleIconDeviceTvAndMobile> = /*@__PURE__*/ createComponent<ScaleIconDeviceTvAndMobileElement, ScaleIconDeviceTvAndMobileEvents, Components.ScaleIconDeviceTvAndMobile>({
     tagName: 'scale-icon-device-tv-and-mobile',
     properties: {
         size: 'size',
@@ -5471,14 +5471,14 @@ export const ScaleIconDeviceTvAndMobile: StencilReactComponent<ScaleIconDeviceTv
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceTvAndMobile as StencilReactComponent<ScaleIconDeviceTvAndMobileElement, ScaleIconDeviceTvAndMobileEvents, JSX.ScaleIconDeviceTvAndMobile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceTvAndMobile as StencilReactComponent<ScaleIconDeviceTvAndMobileElement, ScaleIconDeviceTvAndMobileEvents, Components.ScaleIconDeviceTvAndMobile>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceTwitchingClosedStateEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceTwitchingClosedState: StencilReactComponent<ScaleIconDeviceTwitchingClosedStateElement, ScaleIconDeviceTwitchingClosedStateEvents, JSX.ScaleIconDeviceTwitchingClosedState> = /*@__PURE__*/ createComponent<ScaleIconDeviceTwitchingClosedStateElement, ScaleIconDeviceTwitchingClosedStateEvents, JSX.ScaleIconDeviceTwitchingClosedState>({
+export const ScaleIconDeviceTwitchingClosedState: StencilReactComponent<ScaleIconDeviceTwitchingClosedStateElement, ScaleIconDeviceTwitchingClosedStateEvents, Components.ScaleIconDeviceTwitchingClosedState> = /*@__PURE__*/ createComponent<ScaleIconDeviceTwitchingClosedStateElement, ScaleIconDeviceTwitchingClosedStateEvents, Components.ScaleIconDeviceTwitchingClosedState>({
     tagName: 'scale-icon-device-twitching-closed-state',
     properties: {
         size: 'size',
@@ -5489,14 +5489,14 @@ export const ScaleIconDeviceTwitchingClosedState: StencilReactComponent<ScaleIco
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceTwitchingClosedState as StencilReactComponent<ScaleIconDeviceTwitchingClosedStateElement, ScaleIconDeviceTwitchingClosedStateEvents, JSX.ScaleIconDeviceTwitchingClosedState>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceTwitchingClosedState as StencilReactComponent<ScaleIconDeviceTwitchingClosedStateElement, ScaleIconDeviceTwitchingClosedStateEvents, Components.ScaleIconDeviceTwitchingClosedState>,
     serializeShadowRoot
 });
 
 export type ScaleIconDeviceTwitchingOpenStateEvents = NonNullable<unknown>;
 
-export const ScaleIconDeviceTwitchingOpenState: StencilReactComponent<ScaleIconDeviceTwitchingOpenStateElement, ScaleIconDeviceTwitchingOpenStateEvents, JSX.ScaleIconDeviceTwitchingOpenState> = /*@__PURE__*/ createComponent<ScaleIconDeviceTwitchingOpenStateElement, ScaleIconDeviceTwitchingOpenStateEvents, JSX.ScaleIconDeviceTwitchingOpenState>({
+export const ScaleIconDeviceTwitchingOpenState: StencilReactComponent<ScaleIconDeviceTwitchingOpenStateElement, ScaleIconDeviceTwitchingOpenStateEvents, Components.ScaleIconDeviceTwitchingOpenState> = /*@__PURE__*/ createComponent<ScaleIconDeviceTwitchingOpenStateElement, ScaleIconDeviceTwitchingOpenStateEvents, Components.ScaleIconDeviceTwitchingOpenState>({
     tagName: 'scale-icon-device-twitching-open-state',
     properties: {
         size: 'size',
@@ -5507,14 +5507,14 @@ export const ScaleIconDeviceTwitchingOpenState: StencilReactComponent<ScaleIconD
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconDeviceTwitchingOpenState as StencilReactComponent<ScaleIconDeviceTwitchingOpenStateElement, ScaleIconDeviceTwitchingOpenStateEvents, JSX.ScaleIconDeviceTwitchingOpenState>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconDeviceTwitchingOpenState as StencilReactComponent<ScaleIconDeviceTwitchingOpenStateElement, ScaleIconDeviceTwitchingOpenStateEvents, Components.ScaleIconDeviceTwitchingOpenState>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeHomeEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeHome: StencilReactComponent<ScaleIconHomeHomeElement, ScaleIconHomeHomeEvents, JSX.ScaleIconHomeHome> = /*@__PURE__*/ createComponent<ScaleIconHomeHomeElement, ScaleIconHomeHomeEvents, JSX.ScaleIconHomeHome>({
+export const ScaleIconHomeHome: StencilReactComponent<ScaleIconHomeHomeElement, ScaleIconHomeHomeEvents, Components.ScaleIconHomeHome> = /*@__PURE__*/ createComponent<ScaleIconHomeHomeElement, ScaleIconHomeHomeEvents, Components.ScaleIconHomeHome>({
     tagName: 'scale-icon-home-home',
     properties: {
         size: 'size',
@@ -5525,14 +5525,14 @@ export const ScaleIconHomeHome: StencilReactComponent<ScaleIconHomeHomeElement, 
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeHome as StencilReactComponent<ScaleIconHomeHomeElement, ScaleIconHomeHomeEvents, JSX.ScaleIconHomeHome>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeHome as StencilReactComponent<ScaleIconHomeHomeElement, ScaleIconHomeHomeEvents, Components.ScaleIconHomeHome>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeInternetAtHomeEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeInternetAtHome: StencilReactComponent<ScaleIconHomeInternetAtHomeElement, ScaleIconHomeInternetAtHomeEvents, JSX.ScaleIconHomeInternetAtHome> = /*@__PURE__*/ createComponent<ScaleIconHomeInternetAtHomeElement, ScaleIconHomeInternetAtHomeEvents, JSX.ScaleIconHomeInternetAtHome>({
+export const ScaleIconHomeInternetAtHome: StencilReactComponent<ScaleIconHomeInternetAtHomeElement, ScaleIconHomeInternetAtHomeEvents, Components.ScaleIconHomeInternetAtHome> = /*@__PURE__*/ createComponent<ScaleIconHomeInternetAtHomeElement, ScaleIconHomeInternetAtHomeEvents, Components.ScaleIconHomeInternetAtHome>({
     tagName: 'scale-icon-home-internet-at-home',
     properties: {
         size: 'size',
@@ -5543,14 +5543,14 @@ export const ScaleIconHomeInternetAtHome: StencilReactComponent<ScaleIconHomeInt
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeInternetAtHome as StencilReactComponent<ScaleIconHomeInternetAtHomeElement, ScaleIconHomeInternetAtHomeEvents, JSX.ScaleIconHomeInternetAtHome>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeInternetAtHome as StencilReactComponent<ScaleIconHomeInternetAtHomeElement, ScaleIconHomeInternetAtHomeEvents, Components.ScaleIconHomeInternetAtHome>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeIotEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeIot: StencilReactComponent<ScaleIconHomeIotElement, ScaleIconHomeIotEvents, JSX.ScaleIconHomeIot> = /*@__PURE__*/ createComponent<ScaleIconHomeIotElement, ScaleIconHomeIotEvents, JSX.ScaleIconHomeIot>({
+export const ScaleIconHomeIot: StencilReactComponent<ScaleIconHomeIotElement, ScaleIconHomeIotEvents, Components.ScaleIconHomeIot> = /*@__PURE__*/ createComponent<ScaleIconHomeIotElement, ScaleIconHomeIotEvents, Components.ScaleIconHomeIot>({
     tagName: 'scale-icon-home-iot',
     properties: {
         size: 'size',
@@ -5561,14 +5561,14 @@ export const ScaleIconHomeIot: StencilReactComponent<ScaleIconHomeIotElement, Sc
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeIot as StencilReactComponent<ScaleIconHomeIotElement, ScaleIconHomeIotEvents, JSX.ScaleIconHomeIot>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeIot as StencilReactComponent<ScaleIconHomeIotElement, ScaleIconHomeIotEvents, Components.ScaleIconHomeIot>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeLightBulbEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeLightBulb: StencilReactComponent<ScaleIconHomeLightBulbElement, ScaleIconHomeLightBulbEvents, JSX.ScaleIconHomeLightBulb> = /*@__PURE__*/ createComponent<ScaleIconHomeLightBulbElement, ScaleIconHomeLightBulbEvents, JSX.ScaleIconHomeLightBulb>({
+export const ScaleIconHomeLightBulb: StencilReactComponent<ScaleIconHomeLightBulbElement, ScaleIconHomeLightBulbEvents, Components.ScaleIconHomeLightBulb> = /*@__PURE__*/ createComponent<ScaleIconHomeLightBulbElement, ScaleIconHomeLightBulbEvents, Components.ScaleIconHomeLightBulb>({
     tagName: 'scale-icon-home-light-bulb',
     properties: {
         size: 'size',
@@ -5579,14 +5579,14 @@ export const ScaleIconHomeLightBulb: StencilReactComponent<ScaleIconHomeLightBul
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeLightBulb as StencilReactComponent<ScaleIconHomeLightBulbElement, ScaleIconHomeLightBulbEvents, JSX.ScaleIconHomeLightBulb>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeLightBulb as StencilReactComponent<ScaleIconHomeLightBulbElement, ScaleIconHomeLightBulbEvents, Components.ScaleIconHomeLightBulb>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeNetworkSecureEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeNetworkSecure: StencilReactComponent<ScaleIconHomeNetworkSecureElement, ScaleIconHomeNetworkSecureEvents, JSX.ScaleIconHomeNetworkSecure> = /*@__PURE__*/ createComponent<ScaleIconHomeNetworkSecureElement, ScaleIconHomeNetworkSecureEvents, JSX.ScaleIconHomeNetworkSecure>({
+export const ScaleIconHomeNetworkSecure: StencilReactComponent<ScaleIconHomeNetworkSecureElement, ScaleIconHomeNetworkSecureEvents, Components.ScaleIconHomeNetworkSecure> = /*@__PURE__*/ createComponent<ScaleIconHomeNetworkSecureElement, ScaleIconHomeNetworkSecureEvents, Components.ScaleIconHomeNetworkSecure>({
     tagName: 'scale-icon-home-network-secure',
     properties: {
         size: 'size',
@@ -5597,14 +5597,14 @@ export const ScaleIconHomeNetworkSecure: StencilReactComponent<ScaleIconHomeNetw
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeNetworkSecure as StencilReactComponent<ScaleIconHomeNetworkSecureElement, ScaleIconHomeNetworkSecureEvents, JSX.ScaleIconHomeNetworkSecure>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeNetworkSecure as StencilReactComponent<ScaleIconHomeNetworkSecureElement, ScaleIconHomeNetworkSecureEvents, Components.ScaleIconHomeNetworkSecure>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeNoWifiEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeNoWifi: StencilReactComponent<ScaleIconHomeNoWifiElement, ScaleIconHomeNoWifiEvents, JSX.ScaleIconHomeNoWifi> = /*@__PURE__*/ createComponent<ScaleIconHomeNoWifiElement, ScaleIconHomeNoWifiEvents, JSX.ScaleIconHomeNoWifi>({
+export const ScaleIconHomeNoWifi: StencilReactComponent<ScaleIconHomeNoWifiElement, ScaleIconHomeNoWifiEvents, Components.ScaleIconHomeNoWifi> = /*@__PURE__*/ createComponent<ScaleIconHomeNoWifiElement, ScaleIconHomeNoWifiEvents, Components.ScaleIconHomeNoWifi>({
     tagName: 'scale-icon-home-no-wifi',
     properties: {
         size: 'size',
@@ -5615,14 +5615,14 @@ export const ScaleIconHomeNoWifi: StencilReactComponent<ScaleIconHomeNoWifiEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeNoWifi as StencilReactComponent<ScaleIconHomeNoWifiElement, ScaleIconHomeNoWifiEvents, JSX.ScaleIconHomeNoWifi>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeNoWifi as StencilReactComponent<ScaleIconHomeNoWifiElement, ScaleIconHomeNoWifiEvents, Components.ScaleIconHomeNoWifi>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomePowerSocketEvents = NonNullable<unknown>;
 
-export const ScaleIconHomePowerSocket: StencilReactComponent<ScaleIconHomePowerSocketElement, ScaleIconHomePowerSocketEvents, JSX.ScaleIconHomePowerSocket> = /*@__PURE__*/ createComponent<ScaleIconHomePowerSocketElement, ScaleIconHomePowerSocketEvents, JSX.ScaleIconHomePowerSocket>({
+export const ScaleIconHomePowerSocket: StencilReactComponent<ScaleIconHomePowerSocketElement, ScaleIconHomePowerSocketEvents, Components.ScaleIconHomePowerSocket> = /*@__PURE__*/ createComponent<ScaleIconHomePowerSocketElement, ScaleIconHomePowerSocketEvents, Components.ScaleIconHomePowerSocket>({
     tagName: 'scale-icon-home-power-socket',
     properties: {
         size: 'size',
@@ -5633,14 +5633,14 @@ export const ScaleIconHomePowerSocket: StencilReactComponent<ScaleIconHomePowerS
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomePowerSocket as StencilReactComponent<ScaleIconHomePowerSocketElement, ScaleIconHomePowerSocketEvents, JSX.ScaleIconHomePowerSocket>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomePowerSocket as StencilReactComponent<ScaleIconHomePowerSocketElement, ScaleIconHomePowerSocketEvents, Components.ScaleIconHomePowerSocket>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomePreferredWifiEvents = NonNullable<unknown>;
 
-export const ScaleIconHomePreferredWifi: StencilReactComponent<ScaleIconHomePreferredWifiElement, ScaleIconHomePreferredWifiEvents, JSX.ScaleIconHomePreferredWifi> = /*@__PURE__*/ createComponent<ScaleIconHomePreferredWifiElement, ScaleIconHomePreferredWifiEvents, JSX.ScaleIconHomePreferredWifi>({
+export const ScaleIconHomePreferredWifi: StencilReactComponent<ScaleIconHomePreferredWifiElement, ScaleIconHomePreferredWifiEvents, Components.ScaleIconHomePreferredWifi> = /*@__PURE__*/ createComponent<ScaleIconHomePreferredWifiElement, ScaleIconHomePreferredWifiEvents, Components.ScaleIconHomePreferredWifi>({
     tagName: 'scale-icon-home-preferred-wifi',
     properties: {
         size: 'size',
@@ -5651,14 +5651,14 @@ export const ScaleIconHomePreferredWifi: StencilReactComponent<ScaleIconHomePref
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomePreferredWifi as StencilReactComponent<ScaleIconHomePreferredWifiElement, ScaleIconHomePreferredWifiEvents, JSX.ScaleIconHomePreferredWifi>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomePreferredWifi as StencilReactComponent<ScaleIconHomePreferredWifiElement, ScaleIconHomePreferredWifiEvents, Components.ScaleIconHomePreferredWifi>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeReducedWifiEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeReducedWifi: StencilReactComponent<ScaleIconHomeReducedWifiElement, ScaleIconHomeReducedWifiEvents, JSX.ScaleIconHomeReducedWifi> = /*@__PURE__*/ createComponent<ScaleIconHomeReducedWifiElement, ScaleIconHomeReducedWifiEvents, JSX.ScaleIconHomeReducedWifi>({
+export const ScaleIconHomeReducedWifi: StencilReactComponent<ScaleIconHomeReducedWifiElement, ScaleIconHomeReducedWifiEvents, Components.ScaleIconHomeReducedWifi> = /*@__PURE__*/ createComponent<ScaleIconHomeReducedWifiElement, ScaleIconHomeReducedWifiEvents, Components.ScaleIconHomeReducedWifi>({
     tagName: 'scale-icon-home-reduced-wifi',
     properties: {
         size: 'size',
@@ -5669,14 +5669,14 @@ export const ScaleIconHomeReducedWifi: StencilReactComponent<ScaleIconHomeReduce
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeReducedWifi as StencilReactComponent<ScaleIconHomeReducedWifiElement, ScaleIconHomeReducedWifiEvents, JSX.ScaleIconHomeReducedWifi>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeReducedWifi as StencilReactComponent<ScaleIconHomeReducedWifiElement, ScaleIconHomeReducedWifiEvents, Components.ScaleIconHomeReducedWifi>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeSlowWifiEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeSlowWifi: StencilReactComponent<ScaleIconHomeSlowWifiElement, ScaleIconHomeSlowWifiEvents, JSX.ScaleIconHomeSlowWifi> = /*@__PURE__*/ createComponent<ScaleIconHomeSlowWifiElement, ScaleIconHomeSlowWifiEvents, JSX.ScaleIconHomeSlowWifi>({
+export const ScaleIconHomeSlowWifi: StencilReactComponent<ScaleIconHomeSlowWifiElement, ScaleIconHomeSlowWifiEvents, Components.ScaleIconHomeSlowWifi> = /*@__PURE__*/ createComponent<ScaleIconHomeSlowWifiElement, ScaleIconHomeSlowWifiEvents, Components.ScaleIconHomeSlowWifi>({
     tagName: 'scale-icon-home-slow-wifi',
     properties: {
         size: 'size',
@@ -5687,14 +5687,14 @@ export const ScaleIconHomeSlowWifi: StencilReactComponent<ScaleIconHomeSlowWifiE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeSlowWifi as StencilReactComponent<ScaleIconHomeSlowWifiElement, ScaleIconHomeSlowWifiEvents, JSX.ScaleIconHomeSlowWifi>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeSlowWifi as StencilReactComponent<ScaleIconHomeSlowWifiElement, ScaleIconHomeSlowWifiEvents, Components.ScaleIconHomeSlowWifi>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeSmarthomeEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeSmarthome: StencilReactComponent<ScaleIconHomeSmarthomeElement, ScaleIconHomeSmarthomeEvents, JSX.ScaleIconHomeSmarthome> = /*@__PURE__*/ createComponent<ScaleIconHomeSmarthomeElement, ScaleIconHomeSmarthomeEvents, JSX.ScaleIconHomeSmarthome>({
+export const ScaleIconHomeSmarthome: StencilReactComponent<ScaleIconHomeSmarthomeElement, ScaleIconHomeSmarthomeEvents, Components.ScaleIconHomeSmarthome> = /*@__PURE__*/ createComponent<ScaleIconHomeSmarthomeElement, ScaleIconHomeSmarthomeEvents, Components.ScaleIconHomeSmarthome>({
     tagName: 'scale-icon-home-smarthome',
     properties: {
         size: 'size',
@@ -5705,14 +5705,14 @@ export const ScaleIconHomeSmarthome: StencilReactComponent<ScaleIconHomeSmarthom
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeSmarthome as StencilReactComponent<ScaleIconHomeSmarthomeElement, ScaleIconHomeSmarthomeEvents, JSX.ScaleIconHomeSmarthome>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeSmarthome as StencilReactComponent<ScaleIconHomeSmarthomeElement, ScaleIconHomeSmarthomeEvents, Components.ScaleIconHomeSmarthome>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeUnableToConnectToRouterEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeUnableToConnectToRouter: StencilReactComponent<ScaleIconHomeUnableToConnectToRouterElement, ScaleIconHomeUnableToConnectToRouterEvents, JSX.ScaleIconHomeUnableToConnectToRouter> = /*@__PURE__*/ createComponent<ScaleIconHomeUnableToConnectToRouterElement, ScaleIconHomeUnableToConnectToRouterEvents, JSX.ScaleIconHomeUnableToConnectToRouter>({
+export const ScaleIconHomeUnableToConnectToRouter: StencilReactComponent<ScaleIconHomeUnableToConnectToRouterElement, ScaleIconHomeUnableToConnectToRouterEvents, Components.ScaleIconHomeUnableToConnectToRouter> = /*@__PURE__*/ createComponent<ScaleIconHomeUnableToConnectToRouterElement, ScaleIconHomeUnableToConnectToRouterEvents, Components.ScaleIconHomeUnableToConnectToRouter>({
     tagName: 'scale-icon-home-unable-to-connect-to-router',
     properties: {
         size: 'size',
@@ -5723,14 +5723,14 @@ export const ScaleIconHomeUnableToConnectToRouter: StencilReactComponent<ScaleIc
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeUnableToConnectToRouter as StencilReactComponent<ScaleIconHomeUnableToConnectToRouterElement, ScaleIconHomeUnableToConnectToRouterEvents, JSX.ScaleIconHomeUnableToConnectToRouter>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeUnableToConnectToRouter as StencilReactComponent<ScaleIconHomeUnableToConnectToRouterElement, ScaleIconHomeUnableToConnectToRouterEvents, Components.ScaleIconHomeUnableToConnectToRouter>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeWifiEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeWifi: StencilReactComponent<ScaleIconHomeWifiElement, ScaleIconHomeWifiEvents, JSX.ScaleIconHomeWifi> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiElement, ScaleIconHomeWifiEvents, JSX.ScaleIconHomeWifi>({
+export const ScaleIconHomeWifi: StencilReactComponent<ScaleIconHomeWifiElement, ScaleIconHomeWifiEvents, Components.ScaleIconHomeWifi> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiElement, ScaleIconHomeWifiEvents, Components.ScaleIconHomeWifi>({
     tagName: 'scale-icon-home-wifi',
     properties: {
         size: 'size',
@@ -5741,14 +5741,14 @@ export const ScaleIconHomeWifi: StencilReactComponent<ScaleIconHomeWifiElement, 
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeWifi as StencilReactComponent<ScaleIconHomeWifiElement, ScaleIconHomeWifiEvents, JSX.ScaleIconHomeWifi>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeWifi as StencilReactComponent<ScaleIconHomeWifiElement, ScaleIconHomeWifiEvents, Components.ScaleIconHomeWifi>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeWifiConnectedEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeWifiConnected: StencilReactComponent<ScaleIconHomeWifiConnectedElement, ScaleIconHomeWifiConnectedEvents, JSX.ScaleIconHomeWifiConnected> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiConnectedElement, ScaleIconHomeWifiConnectedEvents, JSX.ScaleIconHomeWifiConnected>({
+export const ScaleIconHomeWifiConnected: StencilReactComponent<ScaleIconHomeWifiConnectedElement, ScaleIconHomeWifiConnectedEvents, Components.ScaleIconHomeWifiConnected> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiConnectedElement, ScaleIconHomeWifiConnectedEvents, Components.ScaleIconHomeWifiConnected>({
     tagName: 'scale-icon-home-wifi-connected',
     properties: {
         size: 'size',
@@ -5759,14 +5759,14 @@ export const ScaleIconHomeWifiConnected: StencilReactComponent<ScaleIconHomeWifi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeWifiConnected as StencilReactComponent<ScaleIconHomeWifiConnectedElement, ScaleIconHomeWifiConnectedEvents, JSX.ScaleIconHomeWifiConnected>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeWifiConnected as StencilReactComponent<ScaleIconHomeWifiConnectedElement, ScaleIconHomeWifiConnectedEvents, Components.ScaleIconHomeWifiConnected>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeWifiConnectionErrorEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeWifiConnectionError: StencilReactComponent<ScaleIconHomeWifiConnectionErrorElement, ScaleIconHomeWifiConnectionErrorEvents, JSX.ScaleIconHomeWifiConnectionError> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiConnectionErrorElement, ScaleIconHomeWifiConnectionErrorEvents, JSX.ScaleIconHomeWifiConnectionError>({
+export const ScaleIconHomeWifiConnectionError: StencilReactComponent<ScaleIconHomeWifiConnectionErrorElement, ScaleIconHomeWifiConnectionErrorEvents, Components.ScaleIconHomeWifiConnectionError> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiConnectionErrorElement, ScaleIconHomeWifiConnectionErrorEvents, Components.ScaleIconHomeWifiConnectionError>({
     tagName: 'scale-icon-home-wifi-connection-error',
     properties: {
         size: 'size',
@@ -5777,14 +5777,14 @@ export const ScaleIconHomeWifiConnectionError: StencilReactComponent<ScaleIconHo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeWifiConnectionError as StencilReactComponent<ScaleIconHomeWifiConnectionErrorElement, ScaleIconHomeWifiConnectionErrorEvents, JSX.ScaleIconHomeWifiConnectionError>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeWifiConnectionError as StencilReactComponent<ScaleIconHomeWifiConnectionErrorElement, ScaleIconHomeWifiConnectionErrorEvents, Components.ScaleIconHomeWifiConnectionError>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeWifiManualLoginEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeWifiManualLogin: StencilReactComponent<ScaleIconHomeWifiManualLoginElement, ScaleIconHomeWifiManualLoginEvents, JSX.ScaleIconHomeWifiManualLogin> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiManualLoginElement, ScaleIconHomeWifiManualLoginEvents, JSX.ScaleIconHomeWifiManualLogin>({
+export const ScaleIconHomeWifiManualLogin: StencilReactComponent<ScaleIconHomeWifiManualLoginElement, ScaleIconHomeWifiManualLoginEvents, Components.ScaleIconHomeWifiManualLogin> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiManualLoginElement, ScaleIconHomeWifiManualLoginEvents, Components.ScaleIconHomeWifiManualLogin>({
     tagName: 'scale-icon-home-wifi-manual-login',
     properties: {
         size: 'size',
@@ -5795,14 +5795,14 @@ export const ScaleIconHomeWifiManualLogin: StencilReactComponent<ScaleIconHomeWi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeWifiManualLogin as StencilReactComponent<ScaleIconHomeWifiManualLoginElement, ScaleIconHomeWifiManualLoginEvents, JSX.ScaleIconHomeWifiManualLogin>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeWifiManualLogin as StencilReactComponent<ScaleIconHomeWifiManualLoginElement, ScaleIconHomeWifiManualLoginEvents, Components.ScaleIconHomeWifiManualLogin>,
     serializeShadowRoot
 });
 
 export type ScaleIconHomeWifiNoWiredInternetEvents = NonNullable<unknown>;
 
-export const ScaleIconHomeWifiNoWiredInternet: StencilReactComponent<ScaleIconHomeWifiNoWiredInternetElement, ScaleIconHomeWifiNoWiredInternetEvents, JSX.ScaleIconHomeWifiNoWiredInternet> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiNoWiredInternetElement, ScaleIconHomeWifiNoWiredInternetEvents, JSX.ScaleIconHomeWifiNoWiredInternet>({
+export const ScaleIconHomeWifiNoWiredInternet: StencilReactComponent<ScaleIconHomeWifiNoWiredInternetElement, ScaleIconHomeWifiNoWiredInternetEvents, Components.ScaleIconHomeWifiNoWiredInternet> = /*@__PURE__*/ createComponent<ScaleIconHomeWifiNoWiredInternetElement, ScaleIconHomeWifiNoWiredInternetEvents, Components.ScaleIconHomeWifiNoWiredInternet>({
     tagName: 'scale-icon-home-wifi-no-wired-internet',
     properties: {
         size: 'size',
@@ -5813,14 +5813,14 @@ export const ScaleIconHomeWifiNoWiredInternet: StencilReactComponent<ScaleIconHo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconHomeWifiNoWiredInternet as StencilReactComponent<ScaleIconHomeWifiNoWiredInternetElement, ScaleIconHomeWifiNoWiredInternetEvents, JSX.ScaleIconHomeWifiNoWiredInternet>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconHomeWifiNoWiredInternet as StencilReactComponent<ScaleIconHomeWifiNoWiredInternetElement, ScaleIconHomeWifiNoWiredInternetEvents, Components.ScaleIconHomeWifiNoWiredInternet>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationCircleTopUpEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationCircleTopUp: StencilReactComponent<ScaleIconNavigationCircleTopUpElement, ScaleIconNavigationCircleTopUpEvents, JSX.ScaleIconNavigationCircleTopUp> = /*@__PURE__*/ createComponent<ScaleIconNavigationCircleTopUpElement, ScaleIconNavigationCircleTopUpEvents, JSX.ScaleIconNavigationCircleTopUp>({
+export const ScaleIconNavigationCircleTopUp: StencilReactComponent<ScaleIconNavigationCircleTopUpElement, ScaleIconNavigationCircleTopUpEvents, Components.ScaleIconNavigationCircleTopUp> = /*@__PURE__*/ createComponent<ScaleIconNavigationCircleTopUpElement, ScaleIconNavigationCircleTopUpEvents, Components.ScaleIconNavigationCircleTopUp>({
     tagName: 'scale-icon-navigation-circle-top-up',
     properties: {
         size: 'size',
@@ -5831,14 +5831,14 @@ export const ScaleIconNavigationCircleTopUp: StencilReactComponent<ScaleIconNavi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationCircleTopUp as StencilReactComponent<ScaleIconNavigationCircleTopUpElement, ScaleIconNavigationCircleTopUpEvents, JSX.ScaleIconNavigationCircleTopUp>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationCircleTopUp as StencilReactComponent<ScaleIconNavigationCircleTopUpElement, ScaleIconNavigationCircleTopUpEvents, Components.ScaleIconNavigationCircleTopUp>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationCollapseDownEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationCollapseDown: StencilReactComponent<ScaleIconNavigationCollapseDownElement, ScaleIconNavigationCollapseDownEvents, JSX.ScaleIconNavigationCollapseDown> = /*@__PURE__*/ createComponent<ScaleIconNavigationCollapseDownElement, ScaleIconNavigationCollapseDownEvents, JSX.ScaleIconNavigationCollapseDown>({
+export const ScaleIconNavigationCollapseDown: StencilReactComponent<ScaleIconNavigationCollapseDownElement, ScaleIconNavigationCollapseDownEvents, Components.ScaleIconNavigationCollapseDown> = /*@__PURE__*/ createComponent<ScaleIconNavigationCollapseDownElement, ScaleIconNavigationCollapseDownEvents, Components.ScaleIconNavigationCollapseDown>({
     tagName: 'scale-icon-navigation-collapse-down',
     properties: {
         size: 'size',
@@ -5849,14 +5849,14 @@ export const ScaleIconNavigationCollapseDown: StencilReactComponent<ScaleIconNav
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationCollapseDown as StencilReactComponent<ScaleIconNavigationCollapseDownElement, ScaleIconNavigationCollapseDownEvents, JSX.ScaleIconNavigationCollapseDown>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationCollapseDown as StencilReactComponent<ScaleIconNavigationCollapseDownElement, ScaleIconNavigationCollapseDownEvents, Components.ScaleIconNavigationCollapseDown>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationCollapseUpEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationCollapseUp: StencilReactComponent<ScaleIconNavigationCollapseUpElement, ScaleIconNavigationCollapseUpEvents, JSX.ScaleIconNavigationCollapseUp> = /*@__PURE__*/ createComponent<ScaleIconNavigationCollapseUpElement, ScaleIconNavigationCollapseUpEvents, JSX.ScaleIconNavigationCollapseUp>({
+export const ScaleIconNavigationCollapseUp: StencilReactComponent<ScaleIconNavigationCollapseUpElement, ScaleIconNavigationCollapseUpEvents, Components.ScaleIconNavigationCollapseUp> = /*@__PURE__*/ createComponent<ScaleIconNavigationCollapseUpElement, ScaleIconNavigationCollapseUpEvents, Components.ScaleIconNavigationCollapseUp>({
     tagName: 'scale-icon-navigation-collapse-up',
     properties: {
         size: 'size',
@@ -5867,14 +5867,14 @@ export const ScaleIconNavigationCollapseUp: StencilReactComponent<ScaleIconNavig
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationCollapseUp as StencilReactComponent<ScaleIconNavigationCollapseUpElement, ScaleIconNavigationCollapseUpEvents, JSX.ScaleIconNavigationCollapseUp>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationCollapseUp as StencilReactComponent<ScaleIconNavigationCollapseUpElement, ScaleIconNavigationCollapseUpEvents, Components.ScaleIconNavigationCollapseUp>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationDoubleLeftEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationDoubleLeft: StencilReactComponent<ScaleIconNavigationDoubleLeftElement, ScaleIconNavigationDoubleLeftEvents, JSX.ScaleIconNavigationDoubleLeft> = /*@__PURE__*/ createComponent<ScaleIconNavigationDoubleLeftElement, ScaleIconNavigationDoubleLeftEvents, JSX.ScaleIconNavigationDoubleLeft>({
+export const ScaleIconNavigationDoubleLeft: StencilReactComponent<ScaleIconNavigationDoubleLeftElement, ScaleIconNavigationDoubleLeftEvents, Components.ScaleIconNavigationDoubleLeft> = /*@__PURE__*/ createComponent<ScaleIconNavigationDoubleLeftElement, ScaleIconNavigationDoubleLeftEvents, Components.ScaleIconNavigationDoubleLeft>({
     tagName: 'scale-icon-navigation-double-left',
     properties: {
         size: 'size',
@@ -5885,14 +5885,14 @@ export const ScaleIconNavigationDoubleLeft: StencilReactComponent<ScaleIconNavig
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationDoubleLeft as StencilReactComponent<ScaleIconNavigationDoubleLeftElement, ScaleIconNavigationDoubleLeftEvents, JSX.ScaleIconNavigationDoubleLeft>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationDoubleLeft as StencilReactComponent<ScaleIconNavigationDoubleLeftElement, ScaleIconNavigationDoubleLeftEvents, Components.ScaleIconNavigationDoubleLeft>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationDoubleRightEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationDoubleRight: StencilReactComponent<ScaleIconNavigationDoubleRightElement, ScaleIconNavigationDoubleRightEvents, JSX.ScaleIconNavigationDoubleRight> = /*@__PURE__*/ createComponent<ScaleIconNavigationDoubleRightElement, ScaleIconNavigationDoubleRightEvents, JSX.ScaleIconNavigationDoubleRight>({
+export const ScaleIconNavigationDoubleRight: StencilReactComponent<ScaleIconNavigationDoubleRightElement, ScaleIconNavigationDoubleRightEvents, Components.ScaleIconNavigationDoubleRight> = /*@__PURE__*/ createComponent<ScaleIconNavigationDoubleRightElement, ScaleIconNavigationDoubleRightEvents, Components.ScaleIconNavigationDoubleRight>({
     tagName: 'scale-icon-navigation-double-right',
     properties: {
         size: 'size',
@@ -5903,14 +5903,14 @@ export const ScaleIconNavigationDoubleRight: StencilReactComponent<ScaleIconNavi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationDoubleRight as StencilReactComponent<ScaleIconNavigationDoubleRightElement, ScaleIconNavigationDoubleRightEvents, JSX.ScaleIconNavigationDoubleRight>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationDoubleRight as StencilReactComponent<ScaleIconNavigationDoubleRightElement, ScaleIconNavigationDoubleRightEvents, Components.ScaleIconNavigationDoubleRight>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationExternalLinkEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationExternalLink: StencilReactComponent<ScaleIconNavigationExternalLinkElement, ScaleIconNavigationExternalLinkEvents, JSX.ScaleIconNavigationExternalLink> = /*@__PURE__*/ createComponent<ScaleIconNavigationExternalLinkElement, ScaleIconNavigationExternalLinkEvents, JSX.ScaleIconNavigationExternalLink>({
+export const ScaleIconNavigationExternalLink: StencilReactComponent<ScaleIconNavigationExternalLinkElement, ScaleIconNavigationExternalLinkEvents, Components.ScaleIconNavigationExternalLink> = /*@__PURE__*/ createComponent<ScaleIconNavigationExternalLinkElement, ScaleIconNavigationExternalLinkEvents, Components.ScaleIconNavigationExternalLink>({
     tagName: 'scale-icon-navigation-external-link',
     properties: {
         size: 'size',
@@ -5921,14 +5921,14 @@ export const ScaleIconNavigationExternalLink: StencilReactComponent<ScaleIconNav
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationExternalLink as StencilReactComponent<ScaleIconNavigationExternalLinkElement, ScaleIconNavigationExternalLinkEvents, JSX.ScaleIconNavigationExternalLink>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationExternalLink as StencilReactComponent<ScaleIconNavigationExternalLinkElement, ScaleIconNavigationExternalLinkEvents, Components.ScaleIconNavigationExternalLink>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationInternalLinkEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationInternalLink: StencilReactComponent<ScaleIconNavigationInternalLinkElement, ScaleIconNavigationInternalLinkEvents, JSX.ScaleIconNavigationInternalLink> = /*@__PURE__*/ createComponent<ScaleIconNavigationInternalLinkElement, ScaleIconNavigationInternalLinkEvents, JSX.ScaleIconNavigationInternalLink>({
+export const ScaleIconNavigationInternalLink: StencilReactComponent<ScaleIconNavigationInternalLinkElement, ScaleIconNavigationInternalLinkEvents, Components.ScaleIconNavigationInternalLink> = /*@__PURE__*/ createComponent<ScaleIconNavigationInternalLinkElement, ScaleIconNavigationInternalLinkEvents, Components.ScaleIconNavigationInternalLink>({
     tagName: 'scale-icon-navigation-internal-link',
     properties: {
         size: 'size',
@@ -5939,14 +5939,14 @@ export const ScaleIconNavigationInternalLink: StencilReactComponent<ScaleIconNav
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationInternalLink as StencilReactComponent<ScaleIconNavigationInternalLinkElement, ScaleIconNavigationInternalLinkEvents, JSX.ScaleIconNavigationInternalLink>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationInternalLink as StencilReactComponent<ScaleIconNavigationInternalLinkElement, ScaleIconNavigationInternalLinkEvents, Components.ScaleIconNavigationInternalLink>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationLeftEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationLeft: StencilReactComponent<ScaleIconNavigationLeftElement, ScaleIconNavigationLeftEvents, JSX.ScaleIconNavigationLeft> = /*@__PURE__*/ createComponent<ScaleIconNavigationLeftElement, ScaleIconNavigationLeftEvents, JSX.ScaleIconNavigationLeft>({
+export const ScaleIconNavigationLeft: StencilReactComponent<ScaleIconNavigationLeftElement, ScaleIconNavigationLeftEvents, Components.ScaleIconNavigationLeft> = /*@__PURE__*/ createComponent<ScaleIconNavigationLeftElement, ScaleIconNavigationLeftEvents, Components.ScaleIconNavigationLeft>({
     tagName: 'scale-icon-navigation-left',
     properties: {
         size: 'size',
@@ -5957,14 +5957,14 @@ export const ScaleIconNavigationLeft: StencilReactComponent<ScaleIconNavigationL
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationLeft as StencilReactComponent<ScaleIconNavigationLeftElement, ScaleIconNavigationLeftEvents, JSX.ScaleIconNavigationLeft>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationLeft as StencilReactComponent<ScaleIconNavigationLeftElement, ScaleIconNavigationLeftEvents, Components.ScaleIconNavigationLeft>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationLeftCondensedEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationLeftCondensed: StencilReactComponent<ScaleIconNavigationLeftCondensedElement, ScaleIconNavigationLeftCondensedEvents, JSX.ScaleIconNavigationLeftCondensed> = /*@__PURE__*/ createComponent<ScaleIconNavigationLeftCondensedElement, ScaleIconNavigationLeftCondensedEvents, JSX.ScaleIconNavigationLeftCondensed>({
+export const ScaleIconNavigationLeftCondensed: StencilReactComponent<ScaleIconNavigationLeftCondensedElement, ScaleIconNavigationLeftCondensedEvents, Components.ScaleIconNavigationLeftCondensed> = /*@__PURE__*/ createComponent<ScaleIconNavigationLeftCondensedElement, ScaleIconNavigationLeftCondensedEvents, Components.ScaleIconNavigationLeftCondensed>({
     tagName: 'scale-icon-navigation-left-condensed',
     properties: {
         size: 'size',
@@ -5975,14 +5975,14 @@ export const ScaleIconNavigationLeftCondensed: StencilReactComponent<ScaleIconNa
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationLeftCondensed as StencilReactComponent<ScaleIconNavigationLeftCondensedElement, ScaleIconNavigationLeftCondensedEvents, JSX.ScaleIconNavigationLeftCondensed>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationLeftCondensed as StencilReactComponent<ScaleIconNavigationLeftCondensedElement, ScaleIconNavigationLeftCondensedEvents, Components.ScaleIconNavigationLeftCondensed>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationLocationEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationLocation: StencilReactComponent<ScaleIconNavigationLocationElement, ScaleIconNavigationLocationEvents, JSX.ScaleIconNavigationLocation> = /*@__PURE__*/ createComponent<ScaleIconNavigationLocationElement, ScaleIconNavigationLocationEvents, JSX.ScaleIconNavigationLocation>({
+export const ScaleIconNavigationLocation: StencilReactComponent<ScaleIconNavigationLocationElement, ScaleIconNavigationLocationEvents, Components.ScaleIconNavigationLocation> = /*@__PURE__*/ createComponent<ScaleIconNavigationLocationElement, ScaleIconNavigationLocationEvents, Components.ScaleIconNavigationLocation>({
     tagName: 'scale-icon-navigation-location',
     properties: {
         size: 'size',
@@ -5993,14 +5993,14 @@ export const ScaleIconNavigationLocation: StencilReactComponent<ScaleIconNavigat
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationLocation as StencilReactComponent<ScaleIconNavigationLocationElement, ScaleIconNavigationLocationEvents, JSX.ScaleIconNavigationLocation>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationLocation as StencilReactComponent<ScaleIconNavigationLocationElement, ScaleIconNavigationLocationEvents, Components.ScaleIconNavigationLocation>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationMapEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationMap: StencilReactComponent<ScaleIconNavigationMapElement, ScaleIconNavigationMapEvents, JSX.ScaleIconNavigationMap> = /*@__PURE__*/ createComponent<ScaleIconNavigationMapElement, ScaleIconNavigationMapEvents, JSX.ScaleIconNavigationMap>({
+export const ScaleIconNavigationMap: StencilReactComponent<ScaleIconNavigationMapElement, ScaleIconNavigationMapEvents, Components.ScaleIconNavigationMap> = /*@__PURE__*/ createComponent<ScaleIconNavigationMapElement, ScaleIconNavigationMapEvents, Components.ScaleIconNavigationMap>({
     tagName: 'scale-icon-navigation-map',
     properties: {
         size: 'size',
@@ -6011,14 +6011,14 @@ export const ScaleIconNavigationMap: StencilReactComponent<ScaleIconNavigationMa
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationMap as StencilReactComponent<ScaleIconNavigationMapElement, ScaleIconNavigationMapEvents, JSX.ScaleIconNavigationMap>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationMap as StencilReactComponent<ScaleIconNavigationMapElement, ScaleIconNavigationMapEvents, Components.ScaleIconNavigationMap>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationMyLocationEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationMyLocation: StencilReactComponent<ScaleIconNavigationMyLocationElement, ScaleIconNavigationMyLocationEvents, JSX.ScaleIconNavigationMyLocation> = /*@__PURE__*/ createComponent<ScaleIconNavigationMyLocationElement, ScaleIconNavigationMyLocationEvents, JSX.ScaleIconNavigationMyLocation>({
+export const ScaleIconNavigationMyLocation: StencilReactComponent<ScaleIconNavigationMyLocationElement, ScaleIconNavigationMyLocationEvents, Components.ScaleIconNavigationMyLocation> = /*@__PURE__*/ createComponent<ScaleIconNavigationMyLocationElement, ScaleIconNavigationMyLocationEvents, Components.ScaleIconNavigationMyLocation>({
     tagName: 'scale-icon-navigation-my-location',
     properties: {
         size: 'size',
@@ -6029,14 +6029,14 @@ export const ScaleIconNavigationMyLocation: StencilReactComponent<ScaleIconNavig
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationMyLocation as StencilReactComponent<ScaleIconNavigationMyLocationElement, ScaleIconNavigationMyLocationEvents, JSX.ScaleIconNavigationMyLocation>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationMyLocation as StencilReactComponent<ScaleIconNavigationMyLocationElement, ScaleIconNavigationMyLocationEvents, Components.ScaleIconNavigationMyLocation>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationRightEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationRight: StencilReactComponent<ScaleIconNavigationRightElement, ScaleIconNavigationRightEvents, JSX.ScaleIconNavigationRight> = /*@__PURE__*/ createComponent<ScaleIconNavigationRightElement, ScaleIconNavigationRightEvents, JSX.ScaleIconNavigationRight>({
+export const ScaleIconNavigationRight: StencilReactComponent<ScaleIconNavigationRightElement, ScaleIconNavigationRightEvents, Components.ScaleIconNavigationRight> = /*@__PURE__*/ createComponent<ScaleIconNavigationRightElement, ScaleIconNavigationRightEvents, Components.ScaleIconNavigationRight>({
     tagName: 'scale-icon-navigation-right',
     properties: {
         size: 'size',
@@ -6047,14 +6047,14 @@ export const ScaleIconNavigationRight: StencilReactComponent<ScaleIconNavigation
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationRight as StencilReactComponent<ScaleIconNavigationRightElement, ScaleIconNavigationRightEvents, JSX.ScaleIconNavigationRight>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationRight as StencilReactComponent<ScaleIconNavigationRightElement, ScaleIconNavigationRightEvents, Components.ScaleIconNavigationRight>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationRightCondensedEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationRightCondensed: StencilReactComponent<ScaleIconNavigationRightCondensedElement, ScaleIconNavigationRightCondensedEvents, JSX.ScaleIconNavigationRightCondensed> = /*@__PURE__*/ createComponent<ScaleIconNavigationRightCondensedElement, ScaleIconNavigationRightCondensedEvents, JSX.ScaleIconNavigationRightCondensed>({
+export const ScaleIconNavigationRightCondensed: StencilReactComponent<ScaleIconNavigationRightCondensedElement, ScaleIconNavigationRightCondensedEvents, Components.ScaleIconNavigationRightCondensed> = /*@__PURE__*/ createComponent<ScaleIconNavigationRightCondensedElement, ScaleIconNavigationRightCondensedEvents, Components.ScaleIconNavigationRightCondensed>({
     tagName: 'scale-icon-navigation-right-condensed',
     properties: {
         size: 'size',
@@ -6065,14 +6065,14 @@ export const ScaleIconNavigationRightCondensed: StencilReactComponent<ScaleIconN
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationRightCondensed as StencilReactComponent<ScaleIconNavigationRightCondensedElement, ScaleIconNavigationRightCondensedEvents, JSX.ScaleIconNavigationRightCondensed>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationRightCondensed as StencilReactComponent<ScaleIconNavigationRightCondensedElement, ScaleIconNavigationRightCondensedEvents, Components.ScaleIconNavigationRightCondensed>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationStartEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationStart: StencilReactComponent<ScaleIconNavigationStartElement, ScaleIconNavigationStartEvents, JSX.ScaleIconNavigationStart> = /*@__PURE__*/ createComponent<ScaleIconNavigationStartElement, ScaleIconNavigationStartEvents, JSX.ScaleIconNavigationStart>({
+export const ScaleIconNavigationStart: StencilReactComponent<ScaleIconNavigationStartElement, ScaleIconNavigationStartEvents, Components.ScaleIconNavigationStart> = /*@__PURE__*/ createComponent<ScaleIconNavigationStartElement, ScaleIconNavigationStartEvents, Components.ScaleIconNavigationStart>({
     tagName: 'scale-icon-navigation-start',
     properties: {
         size: 'size',
@@ -6083,14 +6083,14 @@ export const ScaleIconNavigationStart: StencilReactComponent<ScaleIconNavigation
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationStart as StencilReactComponent<ScaleIconNavigationStartElement, ScaleIconNavigationStartEvents, JSX.ScaleIconNavigationStart>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationStart as StencilReactComponent<ScaleIconNavigationStartElement, ScaleIconNavigationStartEvents, Components.ScaleIconNavigationStart>,
     serializeShadowRoot
 });
 
 export type ScaleIconNavigationTopUpEvents = NonNullable<unknown>;
 
-export const ScaleIconNavigationTopUp: StencilReactComponent<ScaleIconNavigationTopUpElement, ScaleIconNavigationTopUpEvents, JSX.ScaleIconNavigationTopUp> = /*@__PURE__*/ createComponent<ScaleIconNavigationTopUpElement, ScaleIconNavigationTopUpEvents, JSX.ScaleIconNavigationTopUp>({
+export const ScaleIconNavigationTopUp: StencilReactComponent<ScaleIconNavigationTopUpElement, ScaleIconNavigationTopUpEvents, Components.ScaleIconNavigationTopUp> = /*@__PURE__*/ createComponent<ScaleIconNavigationTopUpElement, ScaleIconNavigationTopUpEvents, Components.ScaleIconNavigationTopUp>({
     tagName: 'scale-icon-navigation-top-up',
     properties: {
         size: 'size',
@@ -6101,14 +6101,14 @@ export const ScaleIconNavigationTopUp: StencilReactComponent<ScaleIconNavigation
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconNavigationTopUp as StencilReactComponent<ScaleIconNavigationTopUpElement, ScaleIconNavigationTopUpEvents, JSX.ScaleIconNavigationTopUp>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconNavigationTopUp as StencilReactComponent<ScaleIconNavigationTopUpElement, ScaleIconNavigationTopUpEvents, Components.ScaleIconNavigationTopUp>,
     serializeShadowRoot
 });
 
 export type ScaleIconProcessOrderStatusEvents = NonNullable<unknown>;
 
-export const ScaleIconProcessOrderStatus: StencilReactComponent<ScaleIconProcessOrderStatusElement, ScaleIconProcessOrderStatusEvents, JSX.ScaleIconProcessOrderStatus> = /*@__PURE__*/ createComponent<ScaleIconProcessOrderStatusElement, ScaleIconProcessOrderStatusEvents, JSX.ScaleIconProcessOrderStatus>({
+export const ScaleIconProcessOrderStatus: StencilReactComponent<ScaleIconProcessOrderStatusElement, ScaleIconProcessOrderStatusEvents, Components.ScaleIconProcessOrderStatus> = /*@__PURE__*/ createComponent<ScaleIconProcessOrderStatusElement, ScaleIconProcessOrderStatusEvents, Components.ScaleIconProcessOrderStatus>({
     tagName: 'scale-icon-process-order-status',
     properties: {
         size: 'size',
@@ -6119,14 +6119,14 @@ export const ScaleIconProcessOrderStatus: StencilReactComponent<ScaleIconProcess
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconProcessOrderStatus as StencilReactComponent<ScaleIconProcessOrderStatusElement, ScaleIconProcessOrderStatusEvents, JSX.ScaleIconProcessOrderStatus>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconProcessOrderStatus as StencilReactComponent<ScaleIconProcessOrderStatusElement, ScaleIconProcessOrderStatusEvents, Components.ScaleIconProcessOrderStatus>,
     serializeShadowRoot
 });
 
 export type ScaleIconProcessProcessingEvents = NonNullable<unknown>;
 
-export const ScaleIconProcessProcessing: StencilReactComponent<ScaleIconProcessProcessingElement, ScaleIconProcessProcessingEvents, JSX.ScaleIconProcessProcessing> = /*@__PURE__*/ createComponent<ScaleIconProcessProcessingElement, ScaleIconProcessProcessingEvents, JSX.ScaleIconProcessProcessing>({
+export const ScaleIconProcessProcessing: StencilReactComponent<ScaleIconProcessProcessingElement, ScaleIconProcessProcessingEvents, Components.ScaleIconProcessProcessing> = /*@__PURE__*/ createComponent<ScaleIconProcessProcessingElement, ScaleIconProcessProcessingEvents, Components.ScaleIconProcessProcessing>({
     tagName: 'scale-icon-process-processing',
     properties: {
         size: 'size',
@@ -6137,14 +6137,14 @@ export const ScaleIconProcessProcessing: StencilReactComponent<ScaleIconProcessP
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconProcessProcessing as StencilReactComponent<ScaleIconProcessProcessingElement, ScaleIconProcessProcessingEvents, JSX.ScaleIconProcessProcessing>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconProcessProcessing as StencilReactComponent<ScaleIconProcessProcessingElement, ScaleIconProcessProcessingEvents, Components.ScaleIconProcessProcessing>,
     serializeShadowRoot
 });
 
 export type ScaleIconProcessSepaTransactionEvents = NonNullable<unknown>;
 
-export const ScaleIconProcessSepaTransaction: StencilReactComponent<ScaleIconProcessSepaTransactionElement, ScaleIconProcessSepaTransactionEvents, JSX.ScaleIconProcessSepaTransaction> = /*@__PURE__*/ createComponent<ScaleIconProcessSepaTransactionElement, ScaleIconProcessSepaTransactionEvents, JSX.ScaleIconProcessSepaTransaction>({
+export const ScaleIconProcessSepaTransaction: StencilReactComponent<ScaleIconProcessSepaTransactionElement, ScaleIconProcessSepaTransactionEvents, Components.ScaleIconProcessSepaTransaction> = /*@__PURE__*/ createComponent<ScaleIconProcessSepaTransactionElement, ScaleIconProcessSepaTransactionEvents, Components.ScaleIconProcessSepaTransaction>({
     tagName: 'scale-icon-process-sepa-transaction',
     properties: {
         size: 'size',
@@ -6155,14 +6155,14 @@ export const ScaleIconProcessSepaTransaction: StencilReactComponent<ScaleIconPro
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconProcessSepaTransaction as StencilReactComponent<ScaleIconProcessSepaTransactionElement, ScaleIconProcessSepaTransactionEvents, JSX.ScaleIconProcessSepaTransaction>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconProcessSepaTransaction as StencilReactComponent<ScaleIconProcessSepaTransactionElement, ScaleIconProcessSepaTransactionEvents, Components.ScaleIconProcessSepaTransaction>,
     serializeShadowRoot
 });
 
 export type ScaleIconServiceDevicesServiceEvents = NonNullable<unknown>;
 
-export const ScaleIconServiceDevicesService: StencilReactComponent<ScaleIconServiceDevicesServiceElement, ScaleIconServiceDevicesServiceEvents, JSX.ScaleIconServiceDevicesService> = /*@__PURE__*/ createComponent<ScaleIconServiceDevicesServiceElement, ScaleIconServiceDevicesServiceEvents, JSX.ScaleIconServiceDevicesService>({
+export const ScaleIconServiceDevicesService: StencilReactComponent<ScaleIconServiceDevicesServiceElement, ScaleIconServiceDevicesServiceEvents, Components.ScaleIconServiceDevicesService> = /*@__PURE__*/ createComponent<ScaleIconServiceDevicesServiceElement, ScaleIconServiceDevicesServiceEvents, Components.ScaleIconServiceDevicesService>({
     tagName: 'scale-icon-service-devices-service',
     properties: {
         size: 'size',
@@ -6173,14 +6173,14 @@ export const ScaleIconServiceDevicesService: StencilReactComponent<ScaleIconServ
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconServiceDevicesService as StencilReactComponent<ScaleIconServiceDevicesServiceElement, ScaleIconServiceDevicesServiceEvents, JSX.ScaleIconServiceDevicesService>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconServiceDevicesService as StencilReactComponent<ScaleIconServiceDevicesServiceElement, ScaleIconServiceDevicesServiceEvents, Components.ScaleIconServiceDevicesService>,
     serializeShadowRoot
 });
 
 export type ScaleIconServiceMaintananceEvents = NonNullable<unknown>;
 
-export const ScaleIconServiceMaintanance: StencilReactComponent<ScaleIconServiceMaintananceElement, ScaleIconServiceMaintananceEvents, JSX.ScaleIconServiceMaintanance> = /*@__PURE__*/ createComponent<ScaleIconServiceMaintananceElement, ScaleIconServiceMaintananceEvents, JSX.ScaleIconServiceMaintanance>({
+export const ScaleIconServiceMaintanance: StencilReactComponent<ScaleIconServiceMaintananceElement, ScaleIconServiceMaintananceEvents, Components.ScaleIconServiceMaintanance> = /*@__PURE__*/ createComponent<ScaleIconServiceMaintananceElement, ScaleIconServiceMaintananceEvents, Components.ScaleIconServiceMaintanance>({
     tagName: 'scale-icon-service-maintanance',
     properties: {
         size: 'size',
@@ -6191,14 +6191,14 @@ export const ScaleIconServiceMaintanance: StencilReactComponent<ScaleIconService
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconServiceMaintanance as StencilReactComponent<ScaleIconServiceMaintananceElement, ScaleIconServiceMaintananceEvents, JSX.ScaleIconServiceMaintanance>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconServiceMaintanance as StencilReactComponent<ScaleIconServiceMaintananceElement, ScaleIconServiceMaintananceEvents, Components.ScaleIconServiceMaintanance>,
     serializeShadowRoot
 });
 
 export type ScaleIconServiceManualEvents = NonNullable<unknown>;
 
-export const ScaleIconServiceManual: StencilReactComponent<ScaleIconServiceManualElement, ScaleIconServiceManualEvents, JSX.ScaleIconServiceManual> = /*@__PURE__*/ createComponent<ScaleIconServiceManualElement, ScaleIconServiceManualEvents, JSX.ScaleIconServiceManual>({
+export const ScaleIconServiceManual: StencilReactComponent<ScaleIconServiceManualElement, ScaleIconServiceManualEvents, Components.ScaleIconServiceManual> = /*@__PURE__*/ createComponent<ScaleIconServiceManualElement, ScaleIconServiceManualEvents, Components.ScaleIconServiceManual>({
     tagName: 'scale-icon-service-manual',
     properties: {
         size: 'size',
@@ -6209,14 +6209,14 @@ export const ScaleIconServiceManual: StencilReactComponent<ScaleIconServiceManua
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconServiceManual as StencilReactComponent<ScaleIconServiceManualElement, ScaleIconServiceManualEvents, JSX.ScaleIconServiceManual>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconServiceManual as StencilReactComponent<ScaleIconServiceManualElement, ScaleIconServiceManualEvents, Components.ScaleIconServiceManual>,
     serializeShadowRoot
 });
 
 export type ScaleIconServiceOneTimePasswordEvents = NonNullable<unknown>;
 
-export const ScaleIconServiceOneTimePassword: StencilReactComponent<ScaleIconServiceOneTimePasswordElement, ScaleIconServiceOneTimePasswordEvents, JSX.ScaleIconServiceOneTimePassword> = /*@__PURE__*/ createComponent<ScaleIconServiceOneTimePasswordElement, ScaleIconServiceOneTimePasswordEvents, JSX.ScaleIconServiceOneTimePassword>({
+export const ScaleIconServiceOneTimePassword: StencilReactComponent<ScaleIconServiceOneTimePasswordElement, ScaleIconServiceOneTimePasswordEvents, Components.ScaleIconServiceOneTimePassword> = /*@__PURE__*/ createComponent<ScaleIconServiceOneTimePasswordElement, ScaleIconServiceOneTimePasswordEvents, Components.ScaleIconServiceOneTimePassword>({
     tagName: 'scale-icon-service-one-time-password',
     properties: {
         size: 'size',
@@ -6227,14 +6227,14 @@ export const ScaleIconServiceOneTimePassword: StencilReactComponent<ScaleIconSer
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconServiceOneTimePassword as StencilReactComponent<ScaleIconServiceOneTimePasswordElement, ScaleIconServiceOneTimePasswordEvents, JSX.ScaleIconServiceOneTimePassword>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconServiceOneTimePassword as StencilReactComponent<ScaleIconServiceOneTimePasswordElement, ScaleIconServiceOneTimePasswordEvents, Components.ScaleIconServiceOneTimePassword>,
     serializeShadowRoot
 });
 
 export type ScaleIconServiceServicesEvents = NonNullable<unknown>;
 
-export const ScaleIconServiceServices: StencilReactComponent<ScaleIconServiceServicesElement, ScaleIconServiceServicesEvents, JSX.ScaleIconServiceServices> = /*@__PURE__*/ createComponent<ScaleIconServiceServicesElement, ScaleIconServiceServicesEvents, JSX.ScaleIconServiceServices>({
+export const ScaleIconServiceServices: StencilReactComponent<ScaleIconServiceServicesElement, ScaleIconServiceServicesEvents, Components.ScaleIconServiceServices> = /*@__PURE__*/ createComponent<ScaleIconServiceServicesElement, ScaleIconServiceServicesEvents, Components.ScaleIconServiceServices>({
     tagName: 'scale-icon-service-services',
     properties: {
         size: 'size',
@@ -6245,14 +6245,14 @@ export const ScaleIconServiceServices: StencilReactComponent<ScaleIconServiceSer
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconServiceServices as StencilReactComponent<ScaleIconServiceServicesElement, ScaleIconServiceServicesEvents, JSX.ScaleIconServiceServices>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconServiceServices as StencilReactComponent<ScaleIconServiceServicesElement, ScaleIconServiceServicesEvents, Components.ScaleIconServiceServices>,
     serializeShadowRoot
 });
 
 export type ScaleIconServiceSettingsEvents = NonNullable<unknown>;
 
-export const ScaleIconServiceSettings: StencilReactComponent<ScaleIconServiceSettingsElement, ScaleIconServiceSettingsEvents, JSX.ScaleIconServiceSettings> = /*@__PURE__*/ createComponent<ScaleIconServiceSettingsElement, ScaleIconServiceSettingsEvents, JSX.ScaleIconServiceSettings>({
+export const ScaleIconServiceSettings: StencilReactComponent<ScaleIconServiceSettingsElement, ScaleIconServiceSettingsEvents, Components.ScaleIconServiceSettings> = /*@__PURE__*/ createComponent<ScaleIconServiceSettingsElement, ScaleIconServiceSettingsEvents, Components.ScaleIconServiceSettings>({
     tagName: 'scale-icon-service-settings',
     properties: {
         size: 'size',
@@ -6263,14 +6263,14 @@ export const ScaleIconServiceSettings: StencilReactComponent<ScaleIconServiceSet
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconServiceSettings as StencilReactComponent<ScaleIconServiceSettingsElement, ScaleIconServiceSettingsEvents, JSX.ScaleIconServiceSettings>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconServiceSettings as StencilReactComponent<ScaleIconServiceSettingsElement, ScaleIconServiceSettingsEvents, Components.ScaleIconServiceSettings>,
     serializeShadowRoot
 });
 
 export type ScaleIconServiceSupportEvents = NonNullable<unknown>;
 
-export const ScaleIconServiceSupport: StencilReactComponent<ScaleIconServiceSupportElement, ScaleIconServiceSupportEvents, JSX.ScaleIconServiceSupport> = /*@__PURE__*/ createComponent<ScaleIconServiceSupportElement, ScaleIconServiceSupportEvents, JSX.ScaleIconServiceSupport>({
+export const ScaleIconServiceSupport: StencilReactComponent<ScaleIconServiceSupportElement, ScaleIconServiceSupportEvents, Components.ScaleIconServiceSupport> = /*@__PURE__*/ createComponent<ScaleIconServiceSupportElement, ScaleIconServiceSupportEvents, Components.ScaleIconServiceSupport>({
     tagName: 'scale-icon-service-support',
     properties: {
         size: 'size',
@@ -6281,14 +6281,14 @@ export const ScaleIconServiceSupport: StencilReactComponent<ScaleIconServiceSupp
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconServiceSupport as StencilReactComponent<ScaleIconServiceSupportElement, ScaleIconServiceSupportEvents, JSX.ScaleIconServiceSupport>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconServiceSupport as StencilReactComponent<ScaleIconServiceSupportElement, ScaleIconServiceSupportEvents, Components.ScaleIconServiceSupport>,
     serializeShadowRoot
 });
 
 export type ScaleIconServiceVpnEvents = NonNullable<unknown>;
 
-export const ScaleIconServiceVpn: StencilReactComponent<ScaleIconServiceVpnElement, ScaleIconServiceVpnEvents, JSX.ScaleIconServiceVpn> = /*@__PURE__*/ createComponent<ScaleIconServiceVpnElement, ScaleIconServiceVpnEvents, JSX.ScaleIconServiceVpn>({
+export const ScaleIconServiceVpn: StencilReactComponent<ScaleIconServiceVpnElement, ScaleIconServiceVpnEvents, Components.ScaleIconServiceVpn> = /*@__PURE__*/ createComponent<ScaleIconServiceVpnElement, ScaleIconServiceVpnEvents, Components.ScaleIconServiceVpn>({
     tagName: 'scale-icon-service-vpn',
     properties: {
         size: 'size',
@@ -6299,14 +6299,14 @@ export const ScaleIconServiceVpn: StencilReactComponent<ScaleIconServiceVpnEleme
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconServiceVpn as StencilReactComponent<ScaleIconServiceVpnElement, ScaleIconServiceVpnEvents, JSX.ScaleIconServiceVpn>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconServiceVpn as StencilReactComponent<ScaleIconServiceVpnElement, ScaleIconServiceVpnEvents, Components.ScaleIconServiceVpn>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProduct2faTelekomAppEvents = NonNullable<unknown>;
 
-export const ScaleIconTProduct2faTelekomApp: StencilReactComponent<ScaleIconTProduct2faTelekomAppElement, ScaleIconTProduct2faTelekomAppEvents, JSX.ScaleIconTProduct2faTelekomApp> = /*@__PURE__*/ createComponent<ScaleIconTProduct2faTelekomAppElement, ScaleIconTProduct2faTelekomAppEvents, JSX.ScaleIconTProduct2faTelekomApp>({
+export const ScaleIconTProduct2faTelekomApp: StencilReactComponent<ScaleIconTProduct2faTelekomAppElement, ScaleIconTProduct2faTelekomAppEvents, Components.ScaleIconTProduct2faTelekomApp> = /*@__PURE__*/ createComponent<ScaleIconTProduct2faTelekomAppElement, ScaleIconTProduct2faTelekomAppEvents, Components.ScaleIconTProduct2faTelekomApp>({
     tagName: 'scale-icon-t-product-2fa-telekom-app',
     properties: {
         size: 'size',
@@ -6317,14 +6317,14 @@ export const ScaleIconTProduct2faTelekomApp: StencilReactComponent<ScaleIconTPro
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProduct2faTelekomApp as StencilReactComponent<ScaleIconTProduct2faTelekomAppElement, ScaleIconTProduct2faTelekomAppEvents, JSX.ScaleIconTProduct2faTelekomApp>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProduct2faTelekomApp as StencilReactComponent<ScaleIconTProduct2faTelekomAppElement, ScaleIconTProduct2faTelekomAppEvents, Components.ScaleIconTProduct2faTelekomApp>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductMagentaCloudEvents = NonNullable<unknown>;
 
-export const ScaleIconTProductMagentaCloud: StencilReactComponent<ScaleIconTProductMagentaCloudElement, ScaleIconTProductMagentaCloudEvents, JSX.ScaleIconTProductMagentaCloud> = /*@__PURE__*/ createComponent<ScaleIconTProductMagentaCloudElement, ScaleIconTProductMagentaCloudEvents, JSX.ScaleIconTProductMagentaCloud>({
+export const ScaleIconTProductMagentaCloud: StencilReactComponent<ScaleIconTProductMagentaCloudElement, ScaleIconTProductMagentaCloudEvents, Components.ScaleIconTProductMagentaCloud> = /*@__PURE__*/ createComponent<ScaleIconTProductMagentaCloudElement, ScaleIconTProductMagentaCloudEvents, Components.ScaleIconTProductMagentaCloud>({
     tagName: 'scale-icon-t-product-magenta-cloud',
     properties: {
         size: 'size',
@@ -6335,14 +6335,14 @@ export const ScaleIconTProductMagentaCloud: StencilReactComponent<ScaleIconTProd
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductMagentaCloud as StencilReactComponent<ScaleIconTProductMagentaCloudElement, ScaleIconTProductMagentaCloudEvents, JSX.ScaleIconTProductMagentaCloud>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductMagentaCloud as StencilReactComponent<ScaleIconTProductMagentaCloudElement, ScaleIconTProductMagentaCloudEvents, Components.ScaleIconTProductMagentaCloud>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductMagentaTvEvents = NonNullable<unknown>;
 
-export const ScaleIconTProductMagentaTv: StencilReactComponent<ScaleIconTProductMagentaTvElement, ScaleIconTProductMagentaTvEvents, JSX.ScaleIconTProductMagentaTv> = /*@__PURE__*/ createComponent<ScaleIconTProductMagentaTvElement, ScaleIconTProductMagentaTvEvents, JSX.ScaleIconTProductMagentaTv>({
+export const ScaleIconTProductMagentaTv: StencilReactComponent<ScaleIconTProductMagentaTvElement, ScaleIconTProductMagentaTvEvents, Components.ScaleIconTProductMagentaTv> = /*@__PURE__*/ createComponent<ScaleIconTProductMagentaTvElement, ScaleIconTProductMagentaTvEvents, Components.ScaleIconTProductMagentaTv>({
     tagName: 'scale-icon-t-product-magenta-tv',
     properties: {
         size: 'size',
@@ -6353,14 +6353,14 @@ export const ScaleIconTProductMagentaTv: StencilReactComponent<ScaleIconTProduct
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductMagentaTv as StencilReactComponent<ScaleIconTProductMagentaTvElement, ScaleIconTProductMagentaTvEvents, JSX.ScaleIconTProductMagentaTv>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductMagentaTv as StencilReactComponent<ScaleIconTProductMagentaTvElement, ScaleIconTProductMagentaTvEvents, Components.ScaleIconTProductMagentaTv>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductMagentaoneEvents = NonNullable<unknown>;
 
-export const ScaleIconTProductMagentaone: StencilReactComponent<ScaleIconTProductMagentaoneElement, ScaleIconTProductMagentaoneEvents, JSX.ScaleIconTProductMagentaone> = /*@__PURE__*/ createComponent<ScaleIconTProductMagentaoneElement, ScaleIconTProductMagentaoneEvents, JSX.ScaleIconTProductMagentaone>({
+export const ScaleIconTProductMagentaone: StencilReactComponent<ScaleIconTProductMagentaoneElement, ScaleIconTProductMagentaoneEvents, Components.ScaleIconTProductMagentaone> = /*@__PURE__*/ createComponent<ScaleIconTProductMagentaoneElement, ScaleIconTProductMagentaoneEvents, Components.ScaleIconTProductMagentaone>({
     tagName: 'scale-icon-t-product-magentaone',
     properties: {
         size: 'size',
@@ -6371,14 +6371,14 @@ export const ScaleIconTProductMagentaone: StencilReactComponent<ScaleIconTProduc
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductMagentaone as StencilReactComponent<ScaleIconTProductMagentaoneElement, ScaleIconTProductMagentaoneEvents, JSX.ScaleIconTProductMagentaone>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductMagentaone as StencilReactComponent<ScaleIconTProductMagentaoneElement, ScaleIconTProductMagentaoneEvents, Components.ScaleIconTProductMagentaone>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductMeasureInternetSpeedEvents = NonNullable<unknown>;
 
-export const ScaleIconTProductMeasureInternetSpeed: StencilReactComponent<ScaleIconTProductMeasureInternetSpeedElement, ScaleIconTProductMeasureInternetSpeedEvents, JSX.ScaleIconTProductMeasureInternetSpeed> = /*@__PURE__*/ createComponent<ScaleIconTProductMeasureInternetSpeedElement, ScaleIconTProductMeasureInternetSpeedEvents, JSX.ScaleIconTProductMeasureInternetSpeed>({
+export const ScaleIconTProductMeasureInternetSpeed: StencilReactComponent<ScaleIconTProductMeasureInternetSpeedElement, ScaleIconTProductMeasureInternetSpeedEvents, Components.ScaleIconTProductMeasureInternetSpeed> = /*@__PURE__*/ createComponent<ScaleIconTProductMeasureInternetSpeedElement, ScaleIconTProductMeasureInternetSpeedEvents, Components.ScaleIconTProductMeasureInternetSpeed>({
     tagName: 'scale-icon-t-product-measure-internet-speed',
     properties: {
         size: 'size',
@@ -6389,14 +6389,14 @@ export const ScaleIconTProductMeasureInternetSpeed: StencilReactComponent<ScaleI
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductMeasureInternetSpeed as StencilReactComponent<ScaleIconTProductMeasureInternetSpeedElement, ScaleIconTProductMeasureInternetSpeedEvents, JSX.ScaleIconTProductMeasureInternetSpeed>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductMeasureInternetSpeed as StencilReactComponent<ScaleIconTProductMeasureInternetSpeedElement, ScaleIconTProductMeasureInternetSpeedEvents, Components.ScaleIconTProductMeasureInternetSpeed>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductSeamlessConnectivityEvents = NonNullable<unknown>;
 
-export const ScaleIconTProductSeamlessConnectivity: StencilReactComponent<ScaleIconTProductSeamlessConnectivityElement, ScaleIconTProductSeamlessConnectivityEvents, JSX.ScaleIconTProductSeamlessConnectivity> = /*@__PURE__*/ createComponent<ScaleIconTProductSeamlessConnectivityElement, ScaleIconTProductSeamlessConnectivityEvents, JSX.ScaleIconTProductSeamlessConnectivity>({
+export const ScaleIconTProductSeamlessConnectivity: StencilReactComponent<ScaleIconTProductSeamlessConnectivityElement, ScaleIconTProductSeamlessConnectivityEvents, Components.ScaleIconTProductSeamlessConnectivity> = /*@__PURE__*/ createComponent<ScaleIconTProductSeamlessConnectivityElement, ScaleIconTProductSeamlessConnectivityEvents, Components.ScaleIconTProductSeamlessConnectivity>({
     tagName: 'scale-icon-t-product-seamless-connectivity',
     properties: {
         size: 'size',
@@ -6407,14 +6407,14 @@ export const ScaleIconTProductSeamlessConnectivity: StencilReactComponent<ScaleI
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductSeamlessConnectivity as StencilReactComponent<ScaleIconTProductSeamlessConnectivityElement, ScaleIconTProductSeamlessConnectivityEvents, JSX.ScaleIconTProductSeamlessConnectivity>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductSeamlessConnectivity as StencilReactComponent<ScaleIconTProductSeamlessConnectivityElement, ScaleIconTProductSeamlessConnectivityEvents, Components.ScaleIconTProductSeamlessConnectivity>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductTelekom1t1Events = NonNullable<unknown>;
 
-export const ScaleIconTProductTelekom1t1: StencilReactComponent<ScaleIconTProductTelekom1t1Element, ScaleIconTProductTelekom1t1Events, JSX.ScaleIconTProductTelekom1t1> = /*@__PURE__*/ createComponent<ScaleIconTProductTelekom1t1Element, ScaleIconTProductTelekom1t1Events, JSX.ScaleIconTProductTelekom1t1>({
+export const ScaleIconTProductTelekom1t1: StencilReactComponent<ScaleIconTProductTelekom1t1Element, ScaleIconTProductTelekom1t1Events, Components.ScaleIconTProductTelekom1t1> = /*@__PURE__*/ createComponent<ScaleIconTProductTelekom1t1Element, ScaleIconTProductTelekom1t1Events, Components.ScaleIconTProductTelekom1t1>({
     tagName: 'scale-icon-t-product-telekom-1t1',
     properties: {
         size: 'size',
@@ -6425,14 +6425,14 @@ export const ScaleIconTProductTelekom1t1: StencilReactComponent<ScaleIconTProduc
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductTelekom1t1 as StencilReactComponent<ScaleIconTProductTelekom1t1Element, ScaleIconTProductTelekom1t1Events, JSX.ScaleIconTProductTelekom1t1>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductTelekom1t1 as StencilReactComponent<ScaleIconTProductTelekom1t1Element, ScaleIconTProductTelekom1t1Events, Components.ScaleIconTProductTelekom1t1>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductTelekomPlanEvents = NonNullable<unknown>;
 
-export const ScaleIconTProductTelekomPlan: StencilReactComponent<ScaleIconTProductTelekomPlanElement, ScaleIconTProductTelekomPlanEvents, JSX.ScaleIconTProductTelekomPlan> = /*@__PURE__*/ createComponent<ScaleIconTProductTelekomPlanElement, ScaleIconTProductTelekomPlanEvents, JSX.ScaleIconTProductTelekomPlan>({
+export const ScaleIconTProductTelekomPlan: StencilReactComponent<ScaleIconTProductTelekomPlanElement, ScaleIconTProductTelekomPlanEvents, Components.ScaleIconTProductTelekomPlan> = /*@__PURE__*/ createComponent<ScaleIconTProductTelekomPlanElement, ScaleIconTProductTelekomPlanEvents, Components.ScaleIconTProductTelekomPlan>({
     tagName: 'scale-icon-t-product-telekom-plan',
     properties: {
         size: 'size',
@@ -6443,14 +6443,14 @@ export const ScaleIconTProductTelekomPlan: StencilReactComponent<ScaleIconTProdu
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductTelekomPlan as StencilReactComponent<ScaleIconTProductTelekomPlanElement, ScaleIconTProductTelekomPlanEvents, JSX.ScaleIconTProductTelekomPlan>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductTelekomPlan as StencilReactComponent<ScaleIconTProductTelekomPlanElement, ScaleIconTProductTelekomPlanEvents, Components.ScaleIconTProductTelekomPlan>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductTelekomShopBEvents = NonNullable<unknown>;
 
-export const ScaleIconTProductTelekomShopB: StencilReactComponent<ScaleIconTProductTelekomShopBElement, ScaleIconTProductTelekomShopBEvents, JSX.ScaleIconTProductTelekomShopB> = /*@__PURE__*/ createComponent<ScaleIconTProductTelekomShopBElement, ScaleIconTProductTelekomShopBEvents, JSX.ScaleIconTProductTelekomShopB>({
+export const ScaleIconTProductTelekomShopB: StencilReactComponent<ScaleIconTProductTelekomShopBElement, ScaleIconTProductTelekomShopBEvents, Components.ScaleIconTProductTelekomShopB> = /*@__PURE__*/ createComponent<ScaleIconTProductTelekomShopBElement, ScaleIconTProductTelekomShopBEvents, Components.ScaleIconTProductTelekomShopB>({
     tagName: 'scale-icon-t-product-telekom-shop-b',
     properties: {
         size: 'size',
@@ -6461,14 +6461,14 @@ export const ScaleIconTProductTelekomShopB: StencilReactComponent<ScaleIconTProd
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductTelekomShopB as StencilReactComponent<ScaleIconTProductTelekomShopBElement, ScaleIconTProductTelekomShopBEvents, JSX.ScaleIconTProductTelekomShopB>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductTelekomShopB as StencilReactComponent<ScaleIconTProductTelekomShopBElement, ScaleIconTProductTelekomShopBEvents, Components.ScaleIconTProductTelekomShopB>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductUsageEvents = NonNullable<unknown>;
 
-export const ScaleIconTProductUsage: StencilReactComponent<ScaleIconTProductUsageElement, ScaleIconTProductUsageEvents, JSX.ScaleIconTProductUsage> = /*@__PURE__*/ createComponent<ScaleIconTProductUsageElement, ScaleIconTProductUsageEvents, JSX.ScaleIconTProductUsage>({
+export const ScaleIconTProductUsage: StencilReactComponent<ScaleIconTProductUsageElement, ScaleIconTProductUsageEvents, Components.ScaleIconTProductUsage> = /*@__PURE__*/ createComponent<ScaleIconTProductUsageElement, ScaleIconTProductUsageEvents, Components.ScaleIconTProductUsage>({
     tagName: 'scale-icon-t-product-usage',
     properties: {
         size: 'size',
@@ -6479,14 +6479,14 @@ export const ScaleIconTProductUsage: StencilReactComponent<ScaleIconTProductUsag
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductUsage as StencilReactComponent<ScaleIconTProductUsageElement, ScaleIconTProductUsageEvents, JSX.ScaleIconTProductUsage>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductUsage as StencilReactComponent<ScaleIconTProductUsageElement, ScaleIconTProductUsageEvents, Components.ScaleIconTProductUsage>,
     serializeShadowRoot
 });
 
 export type ScaleIconTProductVoiceEvents = NonNullable<unknown>;
 
-export const ScaleIconTProductVoice: StencilReactComponent<ScaleIconTProductVoiceElement, ScaleIconTProductVoiceEvents, JSX.ScaleIconTProductVoice> = /*@__PURE__*/ createComponent<ScaleIconTProductVoiceElement, ScaleIconTProductVoiceEvents, JSX.ScaleIconTProductVoice>({
+export const ScaleIconTProductVoice: StencilReactComponent<ScaleIconTProductVoiceElement, ScaleIconTProductVoiceEvents, Components.ScaleIconTProductVoice> = /*@__PURE__*/ createComponent<ScaleIconTProductVoiceElement, ScaleIconTProductVoiceEvents, Components.ScaleIconTProductVoice>({
     tagName: 'scale-icon-t-product-voice',
     properties: {
         size: 'size',
@@ -6497,14 +6497,14 @@ export const ScaleIconTProductVoice: StencilReactComponent<ScaleIconTProductVoic
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconTProductVoice as StencilReactComponent<ScaleIconTProductVoiceElement, ScaleIconTProductVoiceEvents, JSX.ScaleIconTProductVoice>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconTProductVoice as StencilReactComponent<ScaleIconTProductVoiceElement, ScaleIconTProductVoiceEvents, Components.ScaleIconTProductVoice>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileAdminEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileAdmin: StencilReactComponent<ScaleIconUserFileAdminElement, ScaleIconUserFileAdminEvents, JSX.ScaleIconUserFileAdmin> = /*@__PURE__*/ createComponent<ScaleIconUserFileAdminElement, ScaleIconUserFileAdminEvents, JSX.ScaleIconUserFileAdmin>({
+export const ScaleIconUserFileAdmin: StencilReactComponent<ScaleIconUserFileAdminElement, ScaleIconUserFileAdminEvents, Components.ScaleIconUserFileAdmin> = /*@__PURE__*/ createComponent<ScaleIconUserFileAdminElement, ScaleIconUserFileAdminEvents, Components.ScaleIconUserFileAdmin>({
     tagName: 'scale-icon-user-file-admin',
     properties: {
         size: 'size',
@@ -6515,14 +6515,14 @@ export const ScaleIconUserFileAdmin: StencilReactComponent<ScaleIconUserFileAdmi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileAdmin as StencilReactComponent<ScaleIconUserFileAdminElement, ScaleIconUserFileAdminEvents, JSX.ScaleIconUserFileAdmin>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileAdmin as StencilReactComponent<ScaleIconUserFileAdminElement, ScaleIconUserFileAdminEvents, Components.ScaleIconUserFileAdmin>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileAnalyticsEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileAnalytics: StencilReactComponent<ScaleIconUserFileAnalyticsElement, ScaleIconUserFileAnalyticsEvents, JSX.ScaleIconUserFileAnalytics> = /*@__PURE__*/ createComponent<ScaleIconUserFileAnalyticsElement, ScaleIconUserFileAnalyticsEvents, JSX.ScaleIconUserFileAnalytics>({
+export const ScaleIconUserFileAnalytics: StencilReactComponent<ScaleIconUserFileAnalyticsElement, ScaleIconUserFileAnalyticsEvents, Components.ScaleIconUserFileAnalytics> = /*@__PURE__*/ createComponent<ScaleIconUserFileAnalyticsElement, ScaleIconUserFileAnalyticsEvents, Components.ScaleIconUserFileAnalytics>({
     tagName: 'scale-icon-user-file-analytics',
     properties: {
         size: 'size',
@@ -6533,14 +6533,14 @@ export const ScaleIconUserFileAnalytics: StencilReactComponent<ScaleIconUserFile
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileAnalytics as StencilReactComponent<ScaleIconUserFileAnalyticsElement, ScaleIconUserFileAnalyticsEvents, JSX.ScaleIconUserFileAnalytics>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileAnalytics as StencilReactComponent<ScaleIconUserFileAnalyticsElement, ScaleIconUserFileAnalyticsEvents, Components.ScaleIconUserFileAnalytics>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileAttachmentEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileAttachment: StencilReactComponent<ScaleIconUserFileAttachmentElement, ScaleIconUserFileAttachmentEvents, JSX.ScaleIconUserFileAttachment> = /*@__PURE__*/ createComponent<ScaleIconUserFileAttachmentElement, ScaleIconUserFileAttachmentEvents, JSX.ScaleIconUserFileAttachment>({
+export const ScaleIconUserFileAttachment: StencilReactComponent<ScaleIconUserFileAttachmentElement, ScaleIconUserFileAttachmentEvents, Components.ScaleIconUserFileAttachment> = /*@__PURE__*/ createComponent<ScaleIconUserFileAttachmentElement, ScaleIconUserFileAttachmentEvents, Components.ScaleIconUserFileAttachment>({
     tagName: 'scale-icon-user-file-attachment',
     properties: {
         size: 'size',
@@ -6551,14 +6551,14 @@ export const ScaleIconUserFileAttachment: StencilReactComponent<ScaleIconUserFil
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileAttachment as StencilReactComponent<ScaleIconUserFileAttachmentElement, ScaleIconUserFileAttachmentEvents, JSX.ScaleIconUserFileAttachment>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileAttachment as StencilReactComponent<ScaleIconUserFileAttachmentElement, ScaleIconUserFileAttachmentEvents, Components.ScaleIconUserFileAttachment>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileAudioFileEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileAudioFile: StencilReactComponent<ScaleIconUserFileAudioFileElement, ScaleIconUserFileAudioFileEvents, JSX.ScaleIconUserFileAudioFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileAudioFileElement, ScaleIconUserFileAudioFileEvents, JSX.ScaleIconUserFileAudioFile>({
+export const ScaleIconUserFileAudioFile: StencilReactComponent<ScaleIconUserFileAudioFileElement, ScaleIconUserFileAudioFileEvents, Components.ScaleIconUserFileAudioFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileAudioFileElement, ScaleIconUserFileAudioFileEvents, Components.ScaleIconUserFileAudioFile>({
     tagName: 'scale-icon-user-file-audio-file',
     properties: {
         size: 'size',
@@ -6569,14 +6569,14 @@ export const ScaleIconUserFileAudioFile: StencilReactComponent<ScaleIconUserFile
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileAudioFile as StencilReactComponent<ScaleIconUserFileAudioFileElement, ScaleIconUserFileAudioFileEvents, JSX.ScaleIconUserFileAudioFile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileAudioFile as StencilReactComponent<ScaleIconUserFileAudioFileElement, ScaleIconUserFileAudioFileEvents, Components.ScaleIconUserFileAudioFile>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileBillingEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileBilling: StencilReactComponent<ScaleIconUserFileBillingElement, ScaleIconUserFileBillingEvents, JSX.ScaleIconUserFileBilling> = /*@__PURE__*/ createComponent<ScaleIconUserFileBillingElement, ScaleIconUserFileBillingEvents, JSX.ScaleIconUserFileBilling>({
+export const ScaleIconUserFileBilling: StencilReactComponent<ScaleIconUserFileBillingElement, ScaleIconUserFileBillingEvents, Components.ScaleIconUserFileBilling> = /*@__PURE__*/ createComponent<ScaleIconUserFileBillingElement, ScaleIconUserFileBillingEvents, Components.ScaleIconUserFileBilling>({
     tagName: 'scale-icon-user-file-billing',
     properties: {
         size: 'size',
@@ -6587,14 +6587,14 @@ export const ScaleIconUserFileBilling: StencilReactComponent<ScaleIconUserFileBi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileBilling as StencilReactComponent<ScaleIconUserFileBillingElement, ScaleIconUserFileBillingEvents, JSX.ScaleIconUserFileBilling>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileBilling as StencilReactComponent<ScaleIconUserFileBillingElement, ScaleIconUserFileBillingEvents, Components.ScaleIconUserFileBilling>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileBoyEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileBoy: StencilReactComponent<ScaleIconUserFileBoyElement, ScaleIconUserFileBoyEvents, JSX.ScaleIconUserFileBoy> = /*@__PURE__*/ createComponent<ScaleIconUserFileBoyElement, ScaleIconUserFileBoyEvents, JSX.ScaleIconUserFileBoy>({
+export const ScaleIconUserFileBoy: StencilReactComponent<ScaleIconUserFileBoyElement, ScaleIconUserFileBoyEvents, Components.ScaleIconUserFileBoy> = /*@__PURE__*/ createComponent<ScaleIconUserFileBoyElement, ScaleIconUserFileBoyEvents, Components.ScaleIconUserFileBoy>({
     tagName: 'scale-icon-user-file-boy',
     properties: {
         size: 'size',
@@ -6605,14 +6605,14 @@ export const ScaleIconUserFileBoy: StencilReactComponent<ScaleIconUserFileBoyEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileBoy as StencilReactComponent<ScaleIconUserFileBoyElement, ScaleIconUserFileBoyEvents, JSX.ScaleIconUserFileBoy>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileBoy as StencilReactComponent<ScaleIconUserFileBoyElement, ScaleIconUserFileBoyEvents, Components.ScaleIconUserFileBoy>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileBussinesUsersEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileBussinesUsers: StencilReactComponent<ScaleIconUserFileBussinesUsersElement, ScaleIconUserFileBussinesUsersEvents, JSX.ScaleIconUserFileBussinesUsers> = /*@__PURE__*/ createComponent<ScaleIconUserFileBussinesUsersElement, ScaleIconUserFileBussinesUsersEvents, JSX.ScaleIconUserFileBussinesUsers>({
+export const ScaleIconUserFileBussinesUsers: StencilReactComponent<ScaleIconUserFileBussinesUsersElement, ScaleIconUserFileBussinesUsersEvents, Components.ScaleIconUserFileBussinesUsers> = /*@__PURE__*/ createComponent<ScaleIconUserFileBussinesUsersElement, ScaleIconUserFileBussinesUsersEvents, Components.ScaleIconUserFileBussinesUsers>({
     tagName: 'scale-icon-user-file-bussines-users',
     properties: {
         size: 'size',
@@ -6623,14 +6623,14 @@ export const ScaleIconUserFileBussinesUsers: StencilReactComponent<ScaleIconUser
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileBussinesUsers as StencilReactComponent<ScaleIconUserFileBussinesUsersElement, ScaleIconUserFileBussinesUsersEvents, JSX.ScaleIconUserFileBussinesUsers>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileBussinesUsers as StencilReactComponent<ScaleIconUserFileBussinesUsersElement, ScaleIconUserFileBussinesUsersEvents, Components.ScaleIconUserFileBussinesUsers>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileCommunitiesEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileCommunities: StencilReactComponent<ScaleIconUserFileCommunitiesElement, ScaleIconUserFileCommunitiesEvents, JSX.ScaleIconUserFileCommunities> = /*@__PURE__*/ createComponent<ScaleIconUserFileCommunitiesElement, ScaleIconUserFileCommunitiesEvents, JSX.ScaleIconUserFileCommunities>({
+export const ScaleIconUserFileCommunities: StencilReactComponent<ScaleIconUserFileCommunitiesElement, ScaleIconUserFileCommunitiesEvents, Components.ScaleIconUserFileCommunities> = /*@__PURE__*/ createComponent<ScaleIconUserFileCommunitiesElement, ScaleIconUserFileCommunitiesEvents, Components.ScaleIconUserFileCommunities>({
     tagName: 'scale-icon-user-file-communities',
     properties: {
         size: 'size',
@@ -6641,14 +6641,14 @@ export const ScaleIconUserFileCommunities: StencilReactComponent<ScaleIconUserFi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileCommunities as StencilReactComponent<ScaleIconUserFileCommunitiesElement, ScaleIconUserFileCommunitiesEvents, JSX.ScaleIconUserFileCommunities>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileCommunities as StencilReactComponent<ScaleIconUserFileCommunitiesElement, ScaleIconUserFileCommunitiesEvents, Components.ScaleIconUserFileCommunities>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileContactsEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileContacts: StencilReactComponent<ScaleIconUserFileContactsElement, ScaleIconUserFileContactsEvents, JSX.ScaleIconUserFileContacts> = /*@__PURE__*/ createComponent<ScaleIconUserFileContactsElement, ScaleIconUserFileContactsEvents, JSX.ScaleIconUserFileContacts>({
+export const ScaleIconUserFileContacts: StencilReactComponent<ScaleIconUserFileContactsElement, ScaleIconUserFileContactsEvents, Components.ScaleIconUserFileContacts> = /*@__PURE__*/ createComponent<ScaleIconUserFileContactsElement, ScaleIconUserFileContactsEvents, Components.ScaleIconUserFileContacts>({
     tagName: 'scale-icon-user-file-contacts',
     properties: {
         size: 'size',
@@ -6659,14 +6659,14 @@ export const ScaleIconUserFileContacts: StencilReactComponent<ScaleIconUserFileC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileContacts as StencilReactComponent<ScaleIconUserFileContactsElement, ScaleIconUserFileContactsEvents, JSX.ScaleIconUserFileContacts>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileContacts as StencilReactComponent<ScaleIconUserFileContactsElement, ScaleIconUserFileContactsEvents, Components.ScaleIconUserFileContacts>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileContactsFromCloudEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileContactsFromCloud: StencilReactComponent<ScaleIconUserFileContactsFromCloudElement, ScaleIconUserFileContactsFromCloudEvents, JSX.ScaleIconUserFileContactsFromCloud> = /*@__PURE__*/ createComponent<ScaleIconUserFileContactsFromCloudElement, ScaleIconUserFileContactsFromCloudEvents, JSX.ScaleIconUserFileContactsFromCloud>({
+export const ScaleIconUserFileContactsFromCloud: StencilReactComponent<ScaleIconUserFileContactsFromCloudElement, ScaleIconUserFileContactsFromCloudEvents, Components.ScaleIconUserFileContactsFromCloud> = /*@__PURE__*/ createComponent<ScaleIconUserFileContactsFromCloudElement, ScaleIconUserFileContactsFromCloudEvents, Components.ScaleIconUserFileContactsFromCloud>({
     tagName: 'scale-icon-user-file-contacts-from-cloud',
     properties: {
         size: 'size',
@@ -6677,14 +6677,14 @@ export const ScaleIconUserFileContactsFromCloud: StencilReactComponent<ScaleIcon
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileContactsFromCloud as StencilReactComponent<ScaleIconUserFileContactsFromCloudElement, ScaleIconUserFileContactsFromCloudEvents, JSX.ScaleIconUserFileContactsFromCloud>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileContactsFromCloud as StencilReactComponent<ScaleIconUserFileContactsFromCloudElement, ScaleIconUserFileContactsFromCloudEvents, Components.ScaleIconUserFileContactsFromCloud>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileContractsEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileContracts: StencilReactComponent<ScaleIconUserFileContractsElement, ScaleIconUserFileContractsEvents, JSX.ScaleIconUserFileContracts> = /*@__PURE__*/ createComponent<ScaleIconUserFileContractsElement, ScaleIconUserFileContractsEvents, JSX.ScaleIconUserFileContracts>({
+export const ScaleIconUserFileContracts: StencilReactComponent<ScaleIconUserFileContractsElement, ScaleIconUserFileContractsEvents, Components.ScaleIconUserFileContracts> = /*@__PURE__*/ createComponent<ScaleIconUserFileContractsElement, ScaleIconUserFileContractsEvents, Components.ScaleIconUserFileContracts>({
     tagName: 'scale-icon-user-file-contracts',
     properties: {
         size: 'size',
@@ -6695,14 +6695,14 @@ export const ScaleIconUserFileContracts: StencilReactComponent<ScaleIconUserFile
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileContracts as StencilReactComponent<ScaleIconUserFileContractsElement, ScaleIconUserFileContractsEvents, JSX.ScaleIconUserFileContracts>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileContracts as StencilReactComponent<ScaleIconUserFileContractsElement, ScaleIconUserFileContractsEvents, Components.ScaleIconUserFileContracts>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileDraftFileEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileDraftFile: StencilReactComponent<ScaleIconUserFileDraftFileElement, ScaleIconUserFileDraftFileEvents, JSX.ScaleIconUserFileDraftFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileDraftFileElement, ScaleIconUserFileDraftFileEvents, JSX.ScaleIconUserFileDraftFile>({
+export const ScaleIconUserFileDraftFile: StencilReactComponent<ScaleIconUserFileDraftFileElement, ScaleIconUserFileDraftFileEvents, Components.ScaleIconUserFileDraftFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileDraftFileElement, ScaleIconUserFileDraftFileEvents, Components.ScaleIconUserFileDraftFile>({
     tagName: 'scale-icon-user-file-draft-file',
     properties: {
         size: 'size',
@@ -6713,14 +6713,14 @@ export const ScaleIconUserFileDraftFile: StencilReactComponent<ScaleIconUserFile
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileDraftFile as StencilReactComponent<ScaleIconUserFileDraftFileElement, ScaleIconUserFileDraftFileEvents, JSX.ScaleIconUserFileDraftFile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileDraftFile as StencilReactComponent<ScaleIconUserFileDraftFileElement, ScaleIconUserFileDraftFileEvents, Components.ScaleIconUserFileDraftFile>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileFamiliesEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileFamilies: StencilReactComponent<ScaleIconUserFileFamiliesElement, ScaleIconUserFileFamiliesEvents, JSX.ScaleIconUserFileFamilies> = /*@__PURE__*/ createComponent<ScaleIconUserFileFamiliesElement, ScaleIconUserFileFamiliesEvents, JSX.ScaleIconUserFileFamilies>({
+export const ScaleIconUserFileFamilies: StencilReactComponent<ScaleIconUserFileFamiliesElement, ScaleIconUserFileFamiliesEvents, Components.ScaleIconUserFileFamilies> = /*@__PURE__*/ createComponent<ScaleIconUserFileFamiliesElement, ScaleIconUserFileFamiliesEvents, Components.ScaleIconUserFileFamilies>({
     tagName: 'scale-icon-user-file-families',
     properties: {
         size: 'size',
@@ -6731,14 +6731,14 @@ export const ScaleIconUserFileFamilies: StencilReactComponent<ScaleIconUserFileF
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileFamilies as StencilReactComponent<ScaleIconUserFileFamiliesElement, ScaleIconUserFileFamiliesEvents, JSX.ScaleIconUserFileFamilies>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileFamilies as StencilReactComponent<ScaleIconUserFileFamiliesElement, ScaleIconUserFileFamiliesEvents, Components.ScaleIconUserFileFamilies>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileFamilyEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileFamily: StencilReactComponent<ScaleIconUserFileFamilyElement, ScaleIconUserFileFamilyEvents, JSX.ScaleIconUserFileFamily> = /*@__PURE__*/ createComponent<ScaleIconUserFileFamilyElement, ScaleIconUserFileFamilyEvents, JSX.ScaleIconUserFileFamily>({
+export const ScaleIconUserFileFamily: StencilReactComponent<ScaleIconUserFileFamilyElement, ScaleIconUserFileFamilyEvents, Components.ScaleIconUserFileFamily> = /*@__PURE__*/ createComponent<ScaleIconUserFileFamilyElement, ScaleIconUserFileFamilyEvents, Components.ScaleIconUserFileFamily>({
     tagName: 'scale-icon-user-file-family',
     properties: {
         size: 'size',
@@ -6749,14 +6749,14 @@ export const ScaleIconUserFileFamily: StencilReactComponent<ScaleIconUserFileFam
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileFamily as StencilReactComponent<ScaleIconUserFileFamilyElement, ScaleIconUserFileFamilyEvents, JSX.ScaleIconUserFileFamily>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileFamily as StencilReactComponent<ScaleIconUserFileFamilyElement, ScaleIconUserFileFamilyEvents, Components.ScaleIconUserFileFamily>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileFileEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileFile: StencilReactComponent<ScaleIconUserFileFileElement, ScaleIconUserFileFileEvents, JSX.ScaleIconUserFileFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileFileElement, ScaleIconUserFileFileEvents, JSX.ScaleIconUserFileFile>({
+export const ScaleIconUserFileFile: StencilReactComponent<ScaleIconUserFileFileElement, ScaleIconUserFileFileEvents, Components.ScaleIconUserFileFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileFileElement, ScaleIconUserFileFileEvents, Components.ScaleIconUserFileFile>({
     tagName: 'scale-icon-user-file-file',
     properties: {
         size: 'size',
@@ -6767,14 +6767,14 @@ export const ScaleIconUserFileFile: StencilReactComponent<ScaleIconUserFileFileE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileFile as StencilReactComponent<ScaleIconUserFileFileElement, ScaleIconUserFileFileEvents, JSX.ScaleIconUserFileFile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileFile as StencilReactComponent<ScaleIconUserFileFileElement, ScaleIconUserFileFileEvents, Components.ScaleIconUserFileFile>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileFileCollectionEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileFileCollection: StencilReactComponent<ScaleIconUserFileFileCollectionElement, ScaleIconUserFileFileCollectionEvents, JSX.ScaleIconUserFileFileCollection> = /*@__PURE__*/ createComponent<ScaleIconUserFileFileCollectionElement, ScaleIconUserFileFileCollectionEvents, JSX.ScaleIconUserFileFileCollection>({
+export const ScaleIconUserFileFileCollection: StencilReactComponent<ScaleIconUserFileFileCollectionElement, ScaleIconUserFileFileCollectionEvents, Components.ScaleIconUserFileFileCollection> = /*@__PURE__*/ createComponent<ScaleIconUserFileFileCollectionElement, ScaleIconUserFileFileCollectionEvents, Components.ScaleIconUserFileFileCollection>({
     tagName: 'scale-icon-user-file-file-collection',
     properties: {
         size: 'size',
@@ -6785,14 +6785,14 @@ export const ScaleIconUserFileFileCollection: StencilReactComponent<ScaleIconUse
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileFileCollection as StencilReactComponent<ScaleIconUserFileFileCollectionElement, ScaleIconUserFileFileCollectionEvents, JSX.ScaleIconUserFileFileCollection>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileFileCollection as StencilReactComponent<ScaleIconUserFileFileCollectionElement, ScaleIconUserFileFileCollectionEvents, Components.ScaleIconUserFileFileCollection>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileGirlEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileGirl: StencilReactComponent<ScaleIconUserFileGirlElement, ScaleIconUserFileGirlEvents, JSX.ScaleIconUserFileGirl> = /*@__PURE__*/ createComponent<ScaleIconUserFileGirlElement, ScaleIconUserFileGirlEvents, JSX.ScaleIconUserFileGirl>({
+export const ScaleIconUserFileGirl: StencilReactComponent<ScaleIconUserFileGirlElement, ScaleIconUserFileGirlEvents, Components.ScaleIconUserFileGirl> = /*@__PURE__*/ createComponent<ScaleIconUserFileGirlElement, ScaleIconUserFileGirlEvents, Components.ScaleIconUserFileGirl>({
     tagName: 'scale-icon-user-file-girl',
     properties: {
         size: 'size',
@@ -6803,14 +6803,14 @@ export const ScaleIconUserFileGirl: StencilReactComponent<ScaleIconUserFileGirlE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileGirl as StencilReactComponent<ScaleIconUserFileGirlElement, ScaleIconUserFileGirlEvents, JSX.ScaleIconUserFileGirl>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileGirl as StencilReactComponent<ScaleIconUserFileGirlElement, ScaleIconUserFileGirlEvents, Components.ScaleIconUserFileGirl>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileHandshakeEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileHandshake: StencilReactComponent<ScaleIconUserFileHandshakeElement, ScaleIconUserFileHandshakeEvents, JSX.ScaleIconUserFileHandshake> = /*@__PURE__*/ createComponent<ScaleIconUserFileHandshakeElement, ScaleIconUserFileHandshakeEvents, JSX.ScaleIconUserFileHandshake>({
+export const ScaleIconUserFileHandshake: StencilReactComponent<ScaleIconUserFileHandshakeElement, ScaleIconUserFileHandshakeEvents, Components.ScaleIconUserFileHandshake> = /*@__PURE__*/ createComponent<ScaleIconUserFileHandshakeElement, ScaleIconUserFileHandshakeEvents, Components.ScaleIconUserFileHandshake>({
     tagName: 'scale-icon-user-file-handshake',
     properties: {
         size: 'size',
@@ -6821,14 +6821,14 @@ export const ScaleIconUserFileHandshake: StencilReactComponent<ScaleIconUserFile
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileHandshake as StencilReactComponent<ScaleIconUserFileHandshakeElement, ScaleIconUserFileHandshakeEvents, JSX.ScaleIconUserFileHandshake>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileHandshake as StencilReactComponent<ScaleIconUserFileHandshakeElement, ScaleIconUserFileHandshakeEvents, Components.ScaleIconUserFileHandshake>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileHtmlFileEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileHtmlFile: StencilReactComponent<ScaleIconUserFileHtmlFileElement, ScaleIconUserFileHtmlFileEvents, JSX.ScaleIconUserFileHtmlFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileHtmlFileElement, ScaleIconUserFileHtmlFileEvents, JSX.ScaleIconUserFileHtmlFile>({
+export const ScaleIconUserFileHtmlFile: StencilReactComponent<ScaleIconUserFileHtmlFileElement, ScaleIconUserFileHtmlFileEvents, Components.ScaleIconUserFileHtmlFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileHtmlFileElement, ScaleIconUserFileHtmlFileEvents, Components.ScaleIconUserFileHtmlFile>({
     tagName: 'scale-icon-user-file-html-file',
     properties: {
         size: 'size',
@@ -6839,14 +6839,14 @@ export const ScaleIconUserFileHtmlFile: StencilReactComponent<ScaleIconUserFileH
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileHtmlFile as StencilReactComponent<ScaleIconUserFileHtmlFileElement, ScaleIconUserFileHtmlFileEvents, JSX.ScaleIconUserFileHtmlFile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileHtmlFile as StencilReactComponent<ScaleIconUserFileHtmlFileElement, ScaleIconUserFileHtmlFileEvents, Components.ScaleIconUserFileHtmlFile>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileIdCardEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileIdCard: StencilReactComponent<ScaleIconUserFileIdCardElement, ScaleIconUserFileIdCardEvents, JSX.ScaleIconUserFileIdCard> = /*@__PURE__*/ createComponent<ScaleIconUserFileIdCardElement, ScaleIconUserFileIdCardEvents, JSX.ScaleIconUserFileIdCard>({
+export const ScaleIconUserFileIdCard: StencilReactComponent<ScaleIconUserFileIdCardElement, ScaleIconUserFileIdCardEvents, Components.ScaleIconUserFileIdCard> = /*@__PURE__*/ createComponent<ScaleIconUserFileIdCardElement, ScaleIconUserFileIdCardEvents, Components.ScaleIconUserFileIdCard>({
     tagName: 'scale-icon-user-file-id-card',
     properties: {
         size: 'size',
@@ -6857,14 +6857,14 @@ export const ScaleIconUserFileIdCard: StencilReactComponent<ScaleIconUserFileIdC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileIdCard as StencilReactComponent<ScaleIconUserFileIdCardElement, ScaleIconUserFileIdCardEvents, JSX.ScaleIconUserFileIdCard>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileIdCard as StencilReactComponent<ScaleIconUserFileIdCardElement, ScaleIconUserFileIdCardEvents, Components.ScaleIconUserFileIdCard>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileImageFileEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileImageFile: StencilReactComponent<ScaleIconUserFileImageFileElement, ScaleIconUserFileImageFileEvents, JSX.ScaleIconUserFileImageFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileImageFileElement, ScaleIconUserFileImageFileEvents, JSX.ScaleIconUserFileImageFile>({
+export const ScaleIconUserFileImageFile: StencilReactComponent<ScaleIconUserFileImageFileElement, ScaleIconUserFileImageFileEvents, Components.ScaleIconUserFileImageFile> = /*@__PURE__*/ createComponent<ScaleIconUserFileImageFileElement, ScaleIconUserFileImageFileEvents, Components.ScaleIconUserFileImageFile>({
     tagName: 'scale-icon-user-file-image-file',
     properties: {
         size: 'size',
@@ -6875,14 +6875,14 @@ export const ScaleIconUserFileImageFile: StencilReactComponent<ScaleIconUserFile
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileImageFile as StencilReactComponent<ScaleIconUserFileImageFileElement, ScaleIconUserFileImageFileEvents, JSX.ScaleIconUserFileImageFile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileImageFile as StencilReactComponent<ScaleIconUserFileImageFileElement, ScaleIconUserFileImageFileEvents, Components.ScaleIconUserFileImageFile>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileLogoutEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileLogout: StencilReactComponent<ScaleIconUserFileLogoutElement, ScaleIconUserFileLogoutEvents, JSX.ScaleIconUserFileLogout> = /*@__PURE__*/ createComponent<ScaleIconUserFileLogoutElement, ScaleIconUserFileLogoutEvents, JSX.ScaleIconUserFileLogout>({
+export const ScaleIconUserFileLogout: StencilReactComponent<ScaleIconUserFileLogoutElement, ScaleIconUserFileLogoutEvents, Components.ScaleIconUserFileLogout> = /*@__PURE__*/ createComponent<ScaleIconUserFileLogoutElement, ScaleIconUserFileLogoutEvents, Components.ScaleIconUserFileLogout>({
     tagName: 'scale-icon-user-file-logout',
     properties: {
         size: 'size',
@@ -6893,14 +6893,14 @@ export const ScaleIconUserFileLogout: StencilReactComponent<ScaleIconUserFileLog
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileLogout as StencilReactComponent<ScaleIconUserFileLogoutElement, ScaleIconUserFileLogoutEvents, JSX.ScaleIconUserFileLogout>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileLogout as StencilReactComponent<ScaleIconUserFileLogoutElement, ScaleIconUserFileLogoutEvents, Components.ScaleIconUserFileLogout>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileManEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileMan: StencilReactComponent<ScaleIconUserFileManElement, ScaleIconUserFileManEvents, JSX.ScaleIconUserFileMan> = /*@__PURE__*/ createComponent<ScaleIconUserFileManElement, ScaleIconUserFileManEvents, JSX.ScaleIconUserFileMan>({
+export const ScaleIconUserFileMan: StencilReactComponent<ScaleIconUserFileManElement, ScaleIconUserFileManEvents, Components.ScaleIconUserFileMan> = /*@__PURE__*/ createComponent<ScaleIconUserFileManElement, ScaleIconUserFileManEvents, Components.ScaleIconUserFileMan>({
     tagName: 'scale-icon-user-file-man',
     properties: {
         size: 'size',
@@ -6911,14 +6911,14 @@ export const ScaleIconUserFileMan: StencilReactComponent<ScaleIconUserFileManEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileMan as StencilReactComponent<ScaleIconUserFileManElement, ScaleIconUserFileManEvents, JSX.ScaleIconUserFileMan>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileMan as StencilReactComponent<ScaleIconUserFileManElement, ScaleIconUserFileManEvents, Components.ScaleIconUserFileMan>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFilePdfFileEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFilePdfFile: StencilReactComponent<ScaleIconUserFilePdfFileElement, ScaleIconUserFilePdfFileEvents, JSX.ScaleIconUserFilePdfFile> = /*@__PURE__*/ createComponent<ScaleIconUserFilePdfFileElement, ScaleIconUserFilePdfFileEvents, JSX.ScaleIconUserFilePdfFile>({
+export const ScaleIconUserFilePdfFile: StencilReactComponent<ScaleIconUserFilePdfFileElement, ScaleIconUserFilePdfFileEvents, Components.ScaleIconUserFilePdfFile> = /*@__PURE__*/ createComponent<ScaleIconUserFilePdfFileElement, ScaleIconUserFilePdfFileEvents, Components.ScaleIconUserFilePdfFile>({
     tagName: 'scale-icon-user-file-pdf-file',
     properties: {
         size: 'size',
@@ -6929,14 +6929,14 @@ export const ScaleIconUserFilePdfFile: StencilReactComponent<ScaleIconUserFilePd
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFilePdfFile as StencilReactComponent<ScaleIconUserFilePdfFileElement, ScaleIconUserFilePdfFileEvents, JSX.ScaleIconUserFilePdfFile>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFilePdfFile as StencilReactComponent<ScaleIconUserFilePdfFileElement, ScaleIconUserFilePdfFileEvents, Components.ScaleIconUserFilePdfFile>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileSwitchUsersEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileSwitchUsers: StencilReactComponent<ScaleIconUserFileSwitchUsersElement, ScaleIconUserFileSwitchUsersEvents, JSX.ScaleIconUserFileSwitchUsers> = /*@__PURE__*/ createComponent<ScaleIconUserFileSwitchUsersElement, ScaleIconUserFileSwitchUsersEvents, JSX.ScaleIconUserFileSwitchUsers>({
+export const ScaleIconUserFileSwitchUsers: StencilReactComponent<ScaleIconUserFileSwitchUsersElement, ScaleIconUserFileSwitchUsersEvents, Components.ScaleIconUserFileSwitchUsers> = /*@__PURE__*/ createComponent<ScaleIconUserFileSwitchUsersElement, ScaleIconUserFileSwitchUsersEvents, Components.ScaleIconUserFileSwitchUsers>({
     tagName: 'scale-icon-user-file-switch-users',
     properties: {
         size: 'size',
@@ -6947,14 +6947,14 @@ export const ScaleIconUserFileSwitchUsers: StencilReactComponent<ScaleIconUserFi
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileSwitchUsers as StencilReactComponent<ScaleIconUserFileSwitchUsersElement, ScaleIconUserFileSwitchUsersEvents, JSX.ScaleIconUserFileSwitchUsers>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileSwitchUsers as StencilReactComponent<ScaleIconUserFileSwitchUsersElement, ScaleIconUserFileSwitchUsersEvents, Components.ScaleIconUserFileSwitchUsers>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileUserEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileUser: StencilReactComponent<ScaleIconUserFileUserElement, ScaleIconUserFileUserEvents, JSX.ScaleIconUserFileUser> = /*@__PURE__*/ createComponent<ScaleIconUserFileUserElement, ScaleIconUserFileUserEvents, JSX.ScaleIconUserFileUser>({
+export const ScaleIconUserFileUser: StencilReactComponent<ScaleIconUserFileUserElement, ScaleIconUserFileUserEvents, Components.ScaleIconUserFileUser> = /*@__PURE__*/ createComponent<ScaleIconUserFileUserElement, ScaleIconUserFileUserEvents, Components.ScaleIconUserFileUser>({
     tagName: 'scale-icon-user-file-user',
     properties: {
         size: 'size',
@@ -6965,14 +6965,14 @@ export const ScaleIconUserFileUser: StencilReactComponent<ScaleIconUserFileUserE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileUser as StencilReactComponent<ScaleIconUserFileUserElement, ScaleIconUserFileUserEvents, JSX.ScaleIconUserFileUser>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileUser as StencilReactComponent<ScaleIconUserFileUserElement, ScaleIconUserFileUserEvents, Components.ScaleIconUserFileUser>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileVideosEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileVideos: StencilReactComponent<ScaleIconUserFileVideosElement, ScaleIconUserFileVideosEvents, JSX.ScaleIconUserFileVideos> = /*@__PURE__*/ createComponent<ScaleIconUserFileVideosElement, ScaleIconUserFileVideosEvents, JSX.ScaleIconUserFileVideos>({
+export const ScaleIconUserFileVideos: StencilReactComponent<ScaleIconUserFileVideosElement, ScaleIconUserFileVideosEvents, Components.ScaleIconUserFileVideos> = /*@__PURE__*/ createComponent<ScaleIconUserFileVideosElement, ScaleIconUserFileVideosEvents, Components.ScaleIconUserFileVideos>({
     tagName: 'scale-icon-user-file-videos',
     properties: {
         size: 'size',
@@ -6983,14 +6983,14 @@ export const ScaleIconUserFileVideos: StencilReactComponent<ScaleIconUserFileVid
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileVideos as StencilReactComponent<ScaleIconUserFileVideosElement, ScaleIconUserFileVideosEvents, JSX.ScaleIconUserFileVideos>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileVideos as StencilReactComponent<ScaleIconUserFileVideosElement, ScaleIconUserFileVideosEvents, Components.ScaleIconUserFileVideos>,
     serializeShadowRoot
 });
 
 export type ScaleIconUserFileWomanEvents = NonNullable<unknown>;
 
-export const ScaleIconUserFileWoman: StencilReactComponent<ScaleIconUserFileWomanElement, ScaleIconUserFileWomanEvents, JSX.ScaleIconUserFileWoman> = /*@__PURE__*/ createComponent<ScaleIconUserFileWomanElement, ScaleIconUserFileWomanEvents, JSX.ScaleIconUserFileWoman>({
+export const ScaleIconUserFileWoman: StencilReactComponent<ScaleIconUserFileWomanElement, ScaleIconUserFileWomanEvents, Components.ScaleIconUserFileWoman> = /*@__PURE__*/ createComponent<ScaleIconUserFileWomanElement, ScaleIconUserFileWomanEvents, Components.ScaleIconUserFileWoman>({
     tagName: 'scale-icon-user-file-woman',
     properties: {
         size: 'size',
@@ -7001,14 +7001,14 @@ export const ScaleIconUserFileWoman: StencilReactComponent<ScaleIconUserFileWoma
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconUserFileWoman as StencilReactComponent<ScaleIconUserFileWomanElement, ScaleIconUserFileWomanEvents, JSX.ScaleIconUserFileWoman>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconUserFileWoman as StencilReactComponent<ScaleIconUserFileWomanElement, ScaleIconUserFileWomanEvents, Components.ScaleIconUserFileWoman>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherCloudyEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherCloudy: StencilReactComponent<ScaleIconWeatherCloudyElement, ScaleIconWeatherCloudyEvents, JSX.ScaleIconWeatherCloudy> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudyElement, ScaleIconWeatherCloudyEvents, JSX.ScaleIconWeatherCloudy>({
+export const ScaleIconWeatherCloudy: StencilReactComponent<ScaleIconWeatherCloudyElement, ScaleIconWeatherCloudyEvents, Components.ScaleIconWeatherCloudy> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudyElement, ScaleIconWeatherCloudyEvents, Components.ScaleIconWeatherCloudy>({
     tagName: 'scale-icon-weather-cloudy',
     properties: {
         size: 'size',
@@ -7019,14 +7019,14 @@ export const ScaleIconWeatherCloudy: StencilReactComponent<ScaleIconWeatherCloud
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherCloudy as StencilReactComponent<ScaleIconWeatherCloudyElement, ScaleIconWeatherCloudyEvents, JSX.ScaleIconWeatherCloudy>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherCloudy as StencilReactComponent<ScaleIconWeatherCloudyElement, ScaleIconWeatherCloudyEvents, Components.ScaleIconWeatherCloudy>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherCloudyRainEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherCloudyRain: StencilReactComponent<ScaleIconWeatherCloudyRainElement, ScaleIconWeatherCloudyRainEvents, JSX.ScaleIconWeatherCloudyRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudyRainElement, ScaleIconWeatherCloudyRainEvents, JSX.ScaleIconWeatherCloudyRain>({
+export const ScaleIconWeatherCloudyRain: StencilReactComponent<ScaleIconWeatherCloudyRainElement, ScaleIconWeatherCloudyRainEvents, Components.ScaleIconWeatherCloudyRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudyRainElement, ScaleIconWeatherCloudyRainEvents, Components.ScaleIconWeatherCloudyRain>({
     tagName: 'scale-icon-weather-cloudy-rain',
     properties: {
         size: 'size',
@@ -7037,14 +7037,14 @@ export const ScaleIconWeatherCloudyRain: StencilReactComponent<ScaleIconWeatherC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherCloudyRain as StencilReactComponent<ScaleIconWeatherCloudyRainElement, ScaleIconWeatherCloudyRainEvents, JSX.ScaleIconWeatherCloudyRain>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherCloudyRain as StencilReactComponent<ScaleIconWeatherCloudyRainElement, ScaleIconWeatherCloudyRainEvents, Components.ScaleIconWeatherCloudyRain>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherCloudySleetEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherCloudySleet: StencilReactComponent<ScaleIconWeatherCloudySleetElement, ScaleIconWeatherCloudySleetEvents, JSX.ScaleIconWeatherCloudySleet> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudySleetElement, ScaleIconWeatherCloudySleetEvents, JSX.ScaleIconWeatherCloudySleet>({
+export const ScaleIconWeatherCloudySleet: StencilReactComponent<ScaleIconWeatherCloudySleetElement, ScaleIconWeatherCloudySleetEvents, Components.ScaleIconWeatherCloudySleet> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudySleetElement, ScaleIconWeatherCloudySleetEvents, Components.ScaleIconWeatherCloudySleet>({
     tagName: 'scale-icon-weather-cloudy-sleet',
     properties: {
         size: 'size',
@@ -7055,14 +7055,14 @@ export const ScaleIconWeatherCloudySleet: StencilReactComponent<ScaleIconWeather
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherCloudySleet as StencilReactComponent<ScaleIconWeatherCloudySleetElement, ScaleIconWeatherCloudySleetEvents, JSX.ScaleIconWeatherCloudySleet>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherCloudySleet as StencilReactComponent<ScaleIconWeatherCloudySleetElement, ScaleIconWeatherCloudySleetEvents, Components.ScaleIconWeatherCloudySleet>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherCloudySnowEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherCloudySnow: StencilReactComponent<ScaleIconWeatherCloudySnowElement, ScaleIconWeatherCloudySnowEvents, JSX.ScaleIconWeatherCloudySnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudySnowElement, ScaleIconWeatherCloudySnowEvents, JSX.ScaleIconWeatherCloudySnow>({
+export const ScaleIconWeatherCloudySnow: StencilReactComponent<ScaleIconWeatherCloudySnowElement, ScaleIconWeatherCloudySnowEvents, Components.ScaleIconWeatherCloudySnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudySnowElement, ScaleIconWeatherCloudySnowEvents, Components.ScaleIconWeatherCloudySnow>({
     tagName: 'scale-icon-weather-cloudy-snow',
     properties: {
         size: 'size',
@@ -7073,14 +7073,14 @@ export const ScaleIconWeatherCloudySnow: StencilReactComponent<ScaleIconWeatherC
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherCloudySnow as StencilReactComponent<ScaleIconWeatherCloudySnowElement, ScaleIconWeatherCloudySnowEvents, JSX.ScaleIconWeatherCloudySnow>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherCloudySnow as StencilReactComponent<ScaleIconWeatherCloudySnowElement, ScaleIconWeatherCloudySnowEvents, Components.ScaleIconWeatherCloudySnow>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherCloudyThunderRainEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherCloudyThunderRain: StencilReactComponent<ScaleIconWeatherCloudyThunderRainElement, ScaleIconWeatherCloudyThunderRainEvents, JSX.ScaleIconWeatherCloudyThunderRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudyThunderRainElement, ScaleIconWeatherCloudyThunderRainEvents, JSX.ScaleIconWeatherCloudyThunderRain>({
+export const ScaleIconWeatherCloudyThunderRain: StencilReactComponent<ScaleIconWeatherCloudyThunderRainElement, ScaleIconWeatherCloudyThunderRainEvents, Components.ScaleIconWeatherCloudyThunderRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudyThunderRainElement, ScaleIconWeatherCloudyThunderRainEvents, Components.ScaleIconWeatherCloudyThunderRain>({
     tagName: 'scale-icon-weather-cloudy-thunder-rain',
     properties: {
         size: 'size',
@@ -7091,14 +7091,14 @@ export const ScaleIconWeatherCloudyThunderRain: StencilReactComponent<ScaleIconW
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherCloudyThunderRain as StencilReactComponent<ScaleIconWeatherCloudyThunderRainElement, ScaleIconWeatherCloudyThunderRainEvents, JSX.ScaleIconWeatherCloudyThunderRain>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherCloudyThunderRain as StencilReactComponent<ScaleIconWeatherCloudyThunderRainElement, ScaleIconWeatherCloudyThunderRainEvents, Components.ScaleIconWeatherCloudyThunderRain>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherCloudyThunderSnowEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherCloudyThunderSnow: StencilReactComponent<ScaleIconWeatherCloudyThunderSnowElement, ScaleIconWeatherCloudyThunderSnowEvents, JSX.ScaleIconWeatherCloudyThunderSnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudyThunderSnowElement, ScaleIconWeatherCloudyThunderSnowEvents, JSX.ScaleIconWeatherCloudyThunderSnow>({
+export const ScaleIconWeatherCloudyThunderSnow: StencilReactComponent<ScaleIconWeatherCloudyThunderSnowElement, ScaleIconWeatherCloudyThunderSnowEvents, Components.ScaleIconWeatherCloudyThunderSnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherCloudyThunderSnowElement, ScaleIconWeatherCloudyThunderSnowEvents, Components.ScaleIconWeatherCloudyThunderSnow>({
     tagName: 'scale-icon-weather-cloudy-thunder-snow',
     properties: {
         size: 'size',
@@ -7109,14 +7109,14 @@ export const ScaleIconWeatherCloudyThunderSnow: StencilReactComponent<ScaleIconW
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherCloudyThunderSnow as StencilReactComponent<ScaleIconWeatherCloudyThunderSnowElement, ScaleIconWeatherCloudyThunderSnowEvents, JSX.ScaleIconWeatherCloudyThunderSnow>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherCloudyThunderSnow as StencilReactComponent<ScaleIconWeatherCloudyThunderSnowElement, ScaleIconWeatherCloudyThunderSnowEvents, Components.ScaleIconWeatherCloudyThunderSnow>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherHeavySleetEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherHeavySleet: StencilReactComponent<ScaleIconWeatherHeavySleetElement, ScaleIconWeatherHeavySleetEvents, JSX.ScaleIconWeatherHeavySleet> = /*@__PURE__*/ createComponent<ScaleIconWeatherHeavySleetElement, ScaleIconWeatherHeavySleetEvents, JSX.ScaleIconWeatherHeavySleet>({
+export const ScaleIconWeatherHeavySleet: StencilReactComponent<ScaleIconWeatherHeavySleetElement, ScaleIconWeatherHeavySleetEvents, Components.ScaleIconWeatherHeavySleet> = /*@__PURE__*/ createComponent<ScaleIconWeatherHeavySleetElement, ScaleIconWeatherHeavySleetEvents, Components.ScaleIconWeatherHeavySleet>({
     tagName: 'scale-icon-weather-heavy-sleet',
     properties: {
         size: 'size',
@@ -7127,14 +7127,14 @@ export const ScaleIconWeatherHeavySleet: StencilReactComponent<ScaleIconWeatherH
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherHeavySleet as StencilReactComponent<ScaleIconWeatherHeavySleetElement, ScaleIconWeatherHeavySleetEvents, JSX.ScaleIconWeatherHeavySleet>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherHeavySleet as StencilReactComponent<ScaleIconWeatherHeavySleetElement, ScaleIconWeatherHeavySleetEvents, Components.ScaleIconWeatherHeavySleet>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherHeavySnowEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherHeavySnow: StencilReactComponent<ScaleIconWeatherHeavySnowElement, ScaleIconWeatherHeavySnowEvents, JSX.ScaleIconWeatherHeavySnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherHeavySnowElement, ScaleIconWeatherHeavySnowEvents, JSX.ScaleIconWeatherHeavySnow>({
+export const ScaleIconWeatherHeavySnow: StencilReactComponent<ScaleIconWeatherHeavySnowElement, ScaleIconWeatherHeavySnowEvents, Components.ScaleIconWeatherHeavySnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherHeavySnowElement, ScaleIconWeatherHeavySnowEvents, Components.ScaleIconWeatherHeavySnow>({
     tagName: 'scale-icon-weather-heavy-snow',
     properties: {
         size: 'size',
@@ -7145,14 +7145,14 @@ export const ScaleIconWeatherHeavySnow: StencilReactComponent<ScaleIconWeatherHe
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherHeavySnow as StencilReactComponent<ScaleIconWeatherHeavySnowElement, ScaleIconWeatherHeavySnowEvents, JSX.ScaleIconWeatherHeavySnow>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherHeavySnow as StencilReactComponent<ScaleIconWeatherHeavySnowElement, ScaleIconWeatherHeavySnowEvents, Components.ScaleIconWeatherHeavySnow>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherMoonClearEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherMoonClear: StencilReactComponent<ScaleIconWeatherMoonClearElement, ScaleIconWeatherMoonClearEvents, JSX.ScaleIconWeatherMoonClear> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonClearElement, ScaleIconWeatherMoonClearEvents, JSX.ScaleIconWeatherMoonClear>({
+export const ScaleIconWeatherMoonClear: StencilReactComponent<ScaleIconWeatherMoonClearElement, ScaleIconWeatherMoonClearEvents, Components.ScaleIconWeatherMoonClear> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonClearElement, ScaleIconWeatherMoonClearEvents, Components.ScaleIconWeatherMoonClear>({
     tagName: 'scale-icon-weather-moon-clear',
     properties: {
         size: 'size',
@@ -7163,14 +7163,14 @@ export const ScaleIconWeatherMoonClear: StencilReactComponent<ScaleIconWeatherMo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherMoonClear as StencilReactComponent<ScaleIconWeatherMoonClearElement, ScaleIconWeatherMoonClearEvents, JSX.ScaleIconWeatherMoonClear>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherMoonClear as StencilReactComponent<ScaleIconWeatherMoonClearElement, ScaleIconWeatherMoonClearEvents, Components.ScaleIconWeatherMoonClear>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherMoonCloudyAEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherMoonCloudyA: StencilReactComponent<ScaleIconWeatherMoonCloudyAElement, ScaleIconWeatherMoonCloudyAEvents, JSX.ScaleIconWeatherMoonCloudyA> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonCloudyAElement, ScaleIconWeatherMoonCloudyAEvents, JSX.ScaleIconWeatherMoonCloudyA>({
+export const ScaleIconWeatherMoonCloudyA: StencilReactComponent<ScaleIconWeatherMoonCloudyAElement, ScaleIconWeatherMoonCloudyAEvents, Components.ScaleIconWeatherMoonCloudyA> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonCloudyAElement, ScaleIconWeatherMoonCloudyAEvents, Components.ScaleIconWeatherMoonCloudyA>({
     tagName: 'scale-icon-weather-moon-cloudy-a',
     properties: {
         size: 'size',
@@ -7181,14 +7181,14 @@ export const ScaleIconWeatherMoonCloudyA: StencilReactComponent<ScaleIconWeather
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherMoonCloudyA as StencilReactComponent<ScaleIconWeatherMoonCloudyAElement, ScaleIconWeatherMoonCloudyAEvents, JSX.ScaleIconWeatherMoonCloudyA>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherMoonCloudyA as StencilReactComponent<ScaleIconWeatherMoonCloudyAElement, ScaleIconWeatherMoonCloudyAEvents, Components.ScaleIconWeatherMoonCloudyA>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherMoonCloudyBEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherMoonCloudyB: StencilReactComponent<ScaleIconWeatherMoonCloudyBElement, ScaleIconWeatherMoonCloudyBEvents, JSX.ScaleIconWeatherMoonCloudyB> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonCloudyBElement, ScaleIconWeatherMoonCloudyBEvents, JSX.ScaleIconWeatherMoonCloudyB>({
+export const ScaleIconWeatherMoonCloudyB: StencilReactComponent<ScaleIconWeatherMoonCloudyBElement, ScaleIconWeatherMoonCloudyBEvents, Components.ScaleIconWeatherMoonCloudyB> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonCloudyBElement, ScaleIconWeatherMoonCloudyBEvents, Components.ScaleIconWeatherMoonCloudyB>({
     tagName: 'scale-icon-weather-moon-cloudy-b',
     properties: {
         size: 'size',
@@ -7199,14 +7199,14 @@ export const ScaleIconWeatherMoonCloudyB: StencilReactComponent<ScaleIconWeather
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherMoonCloudyB as StencilReactComponent<ScaleIconWeatherMoonCloudyBElement, ScaleIconWeatherMoonCloudyBEvents, JSX.ScaleIconWeatherMoonCloudyB>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherMoonCloudyB as StencilReactComponent<ScaleIconWeatherMoonCloudyBElement, ScaleIconWeatherMoonCloudyBEvents, Components.ScaleIconWeatherMoonCloudyB>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherMoonRainEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherMoonRain: StencilReactComponent<ScaleIconWeatherMoonRainElement, ScaleIconWeatherMoonRainEvents, JSX.ScaleIconWeatherMoonRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonRainElement, ScaleIconWeatherMoonRainEvents, JSX.ScaleIconWeatherMoonRain>({
+export const ScaleIconWeatherMoonRain: StencilReactComponent<ScaleIconWeatherMoonRainElement, ScaleIconWeatherMoonRainEvents, Components.ScaleIconWeatherMoonRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonRainElement, ScaleIconWeatherMoonRainEvents, Components.ScaleIconWeatherMoonRain>({
     tagName: 'scale-icon-weather-moon-rain',
     properties: {
         size: 'size',
@@ -7217,14 +7217,14 @@ export const ScaleIconWeatherMoonRain: StencilReactComponent<ScaleIconWeatherMoo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherMoonRain as StencilReactComponent<ScaleIconWeatherMoonRainElement, ScaleIconWeatherMoonRainEvents, JSX.ScaleIconWeatherMoonRain>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherMoonRain as StencilReactComponent<ScaleIconWeatherMoonRainElement, ScaleIconWeatherMoonRainEvents, Components.ScaleIconWeatherMoonRain>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherMoonSleetEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherMoonSleet: StencilReactComponent<ScaleIconWeatherMoonSleetElement, ScaleIconWeatherMoonSleetEvents, JSX.ScaleIconWeatherMoonSleet> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonSleetElement, ScaleIconWeatherMoonSleetEvents, JSX.ScaleIconWeatherMoonSleet>({
+export const ScaleIconWeatherMoonSleet: StencilReactComponent<ScaleIconWeatherMoonSleetElement, ScaleIconWeatherMoonSleetEvents, Components.ScaleIconWeatherMoonSleet> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonSleetElement, ScaleIconWeatherMoonSleetEvents, Components.ScaleIconWeatherMoonSleet>({
     tagName: 'scale-icon-weather-moon-sleet',
     properties: {
         size: 'size',
@@ -7235,14 +7235,14 @@ export const ScaleIconWeatherMoonSleet: StencilReactComponent<ScaleIconWeatherMo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherMoonSleet as StencilReactComponent<ScaleIconWeatherMoonSleetElement, ScaleIconWeatherMoonSleetEvents, JSX.ScaleIconWeatherMoonSleet>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherMoonSleet as StencilReactComponent<ScaleIconWeatherMoonSleetElement, ScaleIconWeatherMoonSleetEvents, Components.ScaleIconWeatherMoonSleet>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherMoonSnowEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherMoonSnow: StencilReactComponent<ScaleIconWeatherMoonSnowElement, ScaleIconWeatherMoonSnowEvents, JSX.ScaleIconWeatherMoonSnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonSnowElement, ScaleIconWeatherMoonSnowEvents, JSX.ScaleIconWeatherMoonSnow>({
+export const ScaleIconWeatherMoonSnow: StencilReactComponent<ScaleIconWeatherMoonSnowElement, ScaleIconWeatherMoonSnowEvents, Components.ScaleIconWeatherMoonSnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonSnowElement, ScaleIconWeatherMoonSnowEvents, Components.ScaleIconWeatherMoonSnow>({
     tagName: 'scale-icon-weather-moon-snow',
     properties: {
         size: 'size',
@@ -7253,14 +7253,14 @@ export const ScaleIconWeatherMoonSnow: StencilReactComponent<ScaleIconWeatherMoo
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherMoonSnow as StencilReactComponent<ScaleIconWeatherMoonSnowElement, ScaleIconWeatherMoonSnowEvents, JSX.ScaleIconWeatherMoonSnow>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherMoonSnow as StencilReactComponent<ScaleIconWeatherMoonSnowElement, ScaleIconWeatherMoonSnowEvents, Components.ScaleIconWeatherMoonSnow>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherMoonThunderRainEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherMoonThunderRain: StencilReactComponent<ScaleIconWeatherMoonThunderRainElement, ScaleIconWeatherMoonThunderRainEvents, JSX.ScaleIconWeatherMoonThunderRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonThunderRainElement, ScaleIconWeatherMoonThunderRainEvents, JSX.ScaleIconWeatherMoonThunderRain>({
+export const ScaleIconWeatherMoonThunderRain: StencilReactComponent<ScaleIconWeatherMoonThunderRainElement, ScaleIconWeatherMoonThunderRainEvents, Components.ScaleIconWeatherMoonThunderRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonThunderRainElement, ScaleIconWeatherMoonThunderRainEvents, Components.ScaleIconWeatherMoonThunderRain>({
     tagName: 'scale-icon-weather-moon-thunder-rain',
     properties: {
         size: 'size',
@@ -7271,14 +7271,14 @@ export const ScaleIconWeatherMoonThunderRain: StencilReactComponent<ScaleIconWea
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherMoonThunderRain as StencilReactComponent<ScaleIconWeatherMoonThunderRainElement, ScaleIconWeatherMoonThunderRainEvents, JSX.ScaleIconWeatherMoonThunderRain>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherMoonThunderRain as StencilReactComponent<ScaleIconWeatherMoonThunderRainElement, ScaleIconWeatherMoonThunderRainEvents, Components.ScaleIconWeatherMoonThunderRain>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherMoonThunderSnowEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherMoonThunderSnow: StencilReactComponent<ScaleIconWeatherMoonThunderSnowElement, ScaleIconWeatherMoonThunderSnowEvents, JSX.ScaleIconWeatherMoonThunderSnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonThunderSnowElement, ScaleIconWeatherMoonThunderSnowEvents, JSX.ScaleIconWeatherMoonThunderSnow>({
+export const ScaleIconWeatherMoonThunderSnow: StencilReactComponent<ScaleIconWeatherMoonThunderSnowElement, ScaleIconWeatherMoonThunderSnowEvents, Components.ScaleIconWeatherMoonThunderSnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherMoonThunderSnowElement, ScaleIconWeatherMoonThunderSnowEvents, Components.ScaleIconWeatherMoonThunderSnow>({
     tagName: 'scale-icon-weather-moon-thunder-snow',
     properties: {
         size: 'size',
@@ -7289,14 +7289,14 @@ export const ScaleIconWeatherMoonThunderSnow: StencilReactComponent<ScaleIconWea
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherMoonThunderSnow as StencilReactComponent<ScaleIconWeatherMoonThunderSnowElement, ScaleIconWeatherMoonThunderSnowEvents, JSX.ScaleIconWeatherMoonThunderSnow>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherMoonThunderSnow as StencilReactComponent<ScaleIconWeatherMoonThunderSnowElement, ScaleIconWeatherMoonThunderSnowEvents, Components.ScaleIconWeatherMoonThunderSnow>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherOvercastEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherOvercast: StencilReactComponent<ScaleIconWeatherOvercastElement, ScaleIconWeatherOvercastEvents, JSX.ScaleIconWeatherOvercast> = /*@__PURE__*/ createComponent<ScaleIconWeatherOvercastElement, ScaleIconWeatherOvercastEvents, JSX.ScaleIconWeatherOvercast>({
+export const ScaleIconWeatherOvercast: StencilReactComponent<ScaleIconWeatherOvercastElement, ScaleIconWeatherOvercastEvents, Components.ScaleIconWeatherOvercast> = /*@__PURE__*/ createComponent<ScaleIconWeatherOvercastElement, ScaleIconWeatherOvercastEvents, Components.ScaleIconWeatherOvercast>({
     tagName: 'scale-icon-weather-overcast',
     properties: {
         size: 'size',
@@ -7307,14 +7307,14 @@ export const ScaleIconWeatherOvercast: StencilReactComponent<ScaleIconWeatherOve
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherOvercast as StencilReactComponent<ScaleIconWeatherOvercastElement, ScaleIconWeatherOvercastEvents, JSX.ScaleIconWeatherOvercast>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherOvercast as StencilReactComponent<ScaleIconWeatherOvercastElement, ScaleIconWeatherOvercastEvents, Components.ScaleIconWeatherOvercast>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherRainEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherRain: StencilReactComponent<ScaleIconWeatherRainElement, ScaleIconWeatherRainEvents, JSX.ScaleIconWeatherRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherRainElement, ScaleIconWeatherRainEvents, JSX.ScaleIconWeatherRain>({
+export const ScaleIconWeatherRain: StencilReactComponent<ScaleIconWeatherRainElement, ScaleIconWeatherRainEvents, Components.ScaleIconWeatherRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherRainElement, ScaleIconWeatherRainEvents, Components.ScaleIconWeatherRain>({
     tagName: 'scale-icon-weather-rain',
     properties: {
         size: 'size',
@@ -7325,14 +7325,14 @@ export const ScaleIconWeatherRain: StencilReactComponent<ScaleIconWeatherRainEle
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherRain as StencilReactComponent<ScaleIconWeatherRainElement, ScaleIconWeatherRainEvents, JSX.ScaleIconWeatherRain>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherRain as StencilReactComponent<ScaleIconWeatherRainElement, ScaleIconWeatherRainEvents, Components.ScaleIconWeatherRain>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherSunnyEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherSunny: StencilReactComponent<ScaleIconWeatherSunnyElement, ScaleIconWeatherSunnyEvents, JSX.ScaleIconWeatherSunny> = /*@__PURE__*/ createComponent<ScaleIconWeatherSunnyElement, ScaleIconWeatherSunnyEvents, JSX.ScaleIconWeatherSunny>({
+export const ScaleIconWeatherSunny: StencilReactComponent<ScaleIconWeatherSunnyElement, ScaleIconWeatherSunnyEvents, Components.ScaleIconWeatherSunny> = /*@__PURE__*/ createComponent<ScaleIconWeatherSunnyElement, ScaleIconWeatherSunnyEvents, Components.ScaleIconWeatherSunny>({
     tagName: 'scale-icon-weather-sunny',
     properties: {
         size: 'size',
@@ -7343,14 +7343,14 @@ export const ScaleIconWeatherSunny: StencilReactComponent<ScaleIconWeatherSunnyE
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherSunny as StencilReactComponent<ScaleIconWeatherSunnyElement, ScaleIconWeatherSunnyEvents, JSX.ScaleIconWeatherSunny>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherSunny as StencilReactComponent<ScaleIconWeatherSunnyElement, ScaleIconWeatherSunnyEvents, Components.ScaleIconWeatherSunny>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherThunderRainEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherThunderRain: StencilReactComponent<ScaleIconWeatherThunderRainElement, ScaleIconWeatherThunderRainEvents, JSX.ScaleIconWeatherThunderRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherThunderRainElement, ScaleIconWeatherThunderRainEvents, JSX.ScaleIconWeatherThunderRain>({
+export const ScaleIconWeatherThunderRain: StencilReactComponent<ScaleIconWeatherThunderRainElement, ScaleIconWeatherThunderRainEvents, Components.ScaleIconWeatherThunderRain> = /*@__PURE__*/ createComponent<ScaleIconWeatherThunderRainElement, ScaleIconWeatherThunderRainEvents, Components.ScaleIconWeatherThunderRain>({
     tagName: 'scale-icon-weather-thunder-rain',
     properties: {
         size: 'size',
@@ -7361,14 +7361,14 @@ export const ScaleIconWeatherThunderRain: StencilReactComponent<ScaleIconWeather
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherThunderRain as StencilReactComponent<ScaleIconWeatherThunderRainElement, ScaleIconWeatherThunderRainEvents, JSX.ScaleIconWeatherThunderRain>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherThunderRain as StencilReactComponent<ScaleIconWeatherThunderRainElement, ScaleIconWeatherThunderRainEvents, Components.ScaleIconWeatherThunderRain>,
     serializeShadowRoot
 });
 
 export type ScaleIconWeatherThunderSnowEvents = NonNullable<unknown>;
 
-export const ScaleIconWeatherThunderSnow: StencilReactComponent<ScaleIconWeatherThunderSnowElement, ScaleIconWeatherThunderSnowEvents, JSX.ScaleIconWeatherThunderSnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherThunderSnowElement, ScaleIconWeatherThunderSnowEvents, JSX.ScaleIconWeatherThunderSnow>({
+export const ScaleIconWeatherThunderSnow: StencilReactComponent<ScaleIconWeatherThunderSnowElement, ScaleIconWeatherThunderSnowEvents, Components.ScaleIconWeatherThunderSnow> = /*@__PURE__*/ createComponent<ScaleIconWeatherThunderSnowElement, ScaleIconWeatherThunderSnowEvents, Components.ScaleIconWeatherThunderSnow>({
     tagName: 'scale-icon-weather-thunder-snow',
     properties: {
         size: 'size',
@@ -7379,8 +7379,8 @@ export const ScaleIconWeatherThunderSnow: StencilReactComponent<ScaleIconWeather
         accessibilityTitle: 'accessibility-title',
         focusable: 'focusable'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleIconWeatherThunderSnow as StencilReactComponent<ScaleIconWeatherThunderSnowElement, ScaleIconWeatherThunderSnowEvents, JSX.ScaleIconWeatherThunderSnow>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleIconWeatherThunderSnow as StencilReactComponent<ScaleIconWeatherThunderSnowElement, ScaleIconWeatherThunderSnowEvents, Components.ScaleIconWeatherThunderSnow>,
     serializeShadowRoot
 });
 
@@ -7392,7 +7392,7 @@ export type ScaleInputEvents = {
     onScaleKeydown: EventName<ScaleInputCustomEvent<KeyboardEvent>>
 };
 
-export const ScaleInput: StencilReactComponent<ScaleInputElement, ScaleInputEvents, JSX.ScaleInput> = /*@__PURE__*/ createComponent<ScaleInputElement, ScaleInputEvents, JSX.ScaleInput>({
+export const ScaleInput: StencilReactComponent<ScaleInputElement, ScaleInputEvents, Components.ScaleInput> = /*@__PURE__*/ createComponent<ScaleInputElement, ScaleInputEvents, Components.ScaleInput>({
     tagName: 'scale-input',
     properties: {
         type: 'type',
@@ -7423,14 +7423,14 @@ export const ScaleInput: StencilReactComponent<ScaleInputElement, ScaleInputEven
         styles: 'styles',
         dataQa: 'data-qa'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleInput as StencilReactComponent<ScaleInputElement, ScaleInputEvents, JSX.ScaleInput>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleInput as StencilReactComponent<ScaleInputElement, ScaleInputEvents, Components.ScaleInput>,
     serializeShadowRoot
 });
 
 export type ScaleLinkEvents = NonNullable<unknown>;
 
-export const ScaleLink: StencilReactComponent<ScaleLinkElement, ScaleLinkEvents, JSX.ScaleLink> = /*@__PURE__*/ createComponent<ScaleLinkElement, ScaleLinkEvents, JSX.ScaleLink>({
+export const ScaleLink: StencilReactComponent<ScaleLinkElement, ScaleLinkEvents, Components.ScaleLink> = /*@__PURE__*/ createComponent<ScaleLinkElement, ScaleLinkEvents, Components.ScaleLink>({
     tagName: 'scale-link',
     properties: {
         disabled: 'disabled',
@@ -7447,27 +7447,27 @@ export const ScaleLink: StencilReactComponent<ScaleLinkElement, ScaleLinkEvents,
         innerTabindex: 'inner-tabindex',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleLink as StencilReactComponent<ScaleLinkElement, ScaleLinkEvents, JSX.ScaleLink>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleLink as StencilReactComponent<ScaleLinkElement, ScaleLinkEvents, Components.ScaleLink>,
     serializeShadowRoot
 });
 
 export type ScaleListEvents = NonNullable<unknown>;
 
-export const ScaleList: StencilReactComponent<ScaleListElement, ScaleListEvents, JSX.ScaleList> = /*@__PURE__*/ createComponent<ScaleListElement, ScaleListEvents, JSX.ScaleList>({
+export const ScaleList: StencilReactComponent<ScaleListElement, ScaleListEvents, Components.ScaleList> = /*@__PURE__*/ createComponent<ScaleListElement, ScaleListEvents, Components.ScaleList>({
     tagName: 'scale-list',
     properties: {
         ordered: 'ordered',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleList as StencilReactComponent<ScaleListElement, ScaleListEvents, JSX.ScaleList>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleList as StencilReactComponent<ScaleListElement, ScaleListEvents, Components.ScaleList>,
     serializeShadowRoot
 });
 
 export type ScaleListItemEvents = NonNullable<unknown>;
 
-export const ScaleListItem: StencilReactComponent<ScaleListItemElement, ScaleListItemEvents, JSX.ScaleListItem> = /*@__PURE__*/ createComponent<ScaleListItemElement, ScaleListItemEvents, JSX.ScaleListItem>({
+export const ScaleListItem: StencilReactComponent<ScaleListItemElement, ScaleListItemEvents, Components.ScaleListItem> = /*@__PURE__*/ createComponent<ScaleListItemElement, ScaleListItemEvents, Components.ScaleListItem>({
     tagName: 'scale-list-item',
     properties: {
         ordered: 'ordered',
@@ -7475,14 +7475,14 @@ export const ScaleListItem: StencilReactComponent<ScaleListItemElement, ScaleLis
         marker: 'marker',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleListItem as StencilReactComponent<ScaleListItemElement, ScaleListItemEvents, JSX.ScaleListItem>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleListItem as StencilReactComponent<ScaleListItemElement, ScaleListItemEvents, Components.ScaleListItem>,
     serializeShadowRoot
 });
 
 export type ScaleLoadingSpinnerEvents = NonNullable<unknown>;
 
-export const ScaleLoadingSpinner: StencilReactComponent<ScaleLoadingSpinnerElement, ScaleLoadingSpinnerEvents, JSX.ScaleLoadingSpinner> = /*@__PURE__*/ createComponent<ScaleLoadingSpinnerElement, ScaleLoadingSpinnerEvents, JSX.ScaleLoadingSpinner>({
+export const ScaleLoadingSpinner: StencilReactComponent<ScaleLoadingSpinnerElement, ScaleLoadingSpinnerEvents, Components.ScaleLoadingSpinner> = /*@__PURE__*/ createComponent<ScaleLoadingSpinnerElement, ScaleLoadingSpinnerEvents, Components.ScaleLoadingSpinner>({
     tagName: 'scale-loading-spinner',
     properties: {
         variant: 'variant',
@@ -7491,14 +7491,14 @@ export const ScaleLoadingSpinner: StencilReactComponent<ScaleLoadingSpinnerEleme
         accessibilityTitle: 'accessibility-title',
         size: 'size'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleLoadingSpinner as StencilReactComponent<ScaleLoadingSpinnerElement, ScaleLoadingSpinnerEvents, JSX.ScaleLoadingSpinner>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleLoadingSpinner as StencilReactComponent<ScaleLoadingSpinnerElement, ScaleLoadingSpinnerEvents, Components.ScaleLoadingSpinner>,
     serializeShadowRoot
 });
 
 export type ScaleLogoEvents = NonNullable<unknown>;
 
-export const ScaleLogo: StencilReactComponent<ScaleLogoElement, ScaleLogoEvents, JSX.ScaleLogo> = /*@__PURE__*/ createComponent<ScaleLogoElement, ScaleLogoEvents, JSX.ScaleLogo>({
+export const ScaleLogo: StencilReactComponent<ScaleLogoElement, ScaleLogoEvents, Components.ScaleLogo> = /*@__PURE__*/ createComponent<ScaleLogoElement, ScaleLogoEvents, Components.ScaleLogo>({
     tagName: 'scale-logo',
     properties: {
         variant: 'variant',
@@ -7515,14 +7515,14 @@ export const ScaleLogo: StencilReactComponent<ScaleLogoElement, ScaleLogoEvents,
         logoAriaDescribedBy: 'logo-aria-described-by',
         logoAriaHidden: 'logo-aria-hidden'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleLogo as StencilReactComponent<ScaleLogoElement, ScaleLogoEvents, JSX.ScaleLogo>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleLogo as StencilReactComponent<ScaleLogoElement, ScaleLogoEvents, Components.ScaleLogo>,
     serializeShadowRoot
 });
 
 export type ScaleLogoSvgEvents = NonNullable<unknown>;
 
-export const ScaleLogoSvg: StencilReactComponent<ScaleLogoSvgElement, ScaleLogoSvgEvents, JSX.ScaleLogoSvg> = /*@__PURE__*/ createComponent<ScaleLogoSvgElement, ScaleLogoSvgEvents, JSX.ScaleLogoSvg>({
+export const ScaleLogoSvg: StencilReactComponent<ScaleLogoSvgElement, ScaleLogoSvgEvents, Components.ScaleLogoSvg> = /*@__PURE__*/ createComponent<ScaleLogoSvgElement, ScaleLogoSvgEvents, Components.ScaleLogoSvg>({
     tagName: 'scale-logo-svg',
     properties: {
         color: 'color',
@@ -7532,14 +7532,14 @@ export const ScaleLogoSvg: StencilReactComponent<ScaleLogoSvgElement, ScaleLogoS
         logoTitle: 'logo-title',
         logoHideTitle: 'logo-hide-title'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleLogoSvg as StencilReactComponent<ScaleLogoSvgElement, ScaleLogoSvgEvents, JSX.ScaleLogoSvg>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleLogoSvg as StencilReactComponent<ScaleLogoSvgElement, ScaleLogoSvgEvents, Components.ScaleLogoSvg>,
     serializeShadowRoot
 });
 
 export type ScaleMenuFlyoutEvents = NonNullable<unknown>;
 
-export const ScaleMenuFlyout: StencilReactComponent<ScaleMenuFlyoutElement, ScaleMenuFlyoutEvents, JSX.ScaleMenuFlyout> = /*@__PURE__*/ createComponent<ScaleMenuFlyoutElement, ScaleMenuFlyoutEvents, JSX.ScaleMenuFlyout>({
+export const ScaleMenuFlyout: StencilReactComponent<ScaleMenuFlyoutElement, ScaleMenuFlyoutEvents, Components.ScaleMenuFlyout> = /*@__PURE__*/ createComponent<ScaleMenuFlyoutElement, ScaleMenuFlyoutEvents, Components.ScaleMenuFlyout>({
     tagName: 'scale-menu-flyout',
     properties: {
         closeOnSelect: 'close-on-select',
@@ -7547,24 +7547,24 @@ export const ScaleMenuFlyout: StencilReactComponent<ScaleMenuFlyoutElement, Scal
         direction: 'direction',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleMenuFlyout as StencilReactComponent<ScaleMenuFlyoutElement, ScaleMenuFlyoutEvents, JSX.ScaleMenuFlyout>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleMenuFlyout as StencilReactComponent<ScaleMenuFlyoutElement, ScaleMenuFlyoutEvents, Components.ScaleMenuFlyout>,
     serializeShadowRoot
 });
 
 export type ScaleMenuFlyoutDividerEvents = NonNullable<unknown>;
 
-export const ScaleMenuFlyoutDivider: StencilReactComponent<ScaleMenuFlyoutDividerElement, ScaleMenuFlyoutDividerEvents, JSX.ScaleMenuFlyoutDivider> = /*@__PURE__*/ createComponent<ScaleMenuFlyoutDividerElement, ScaleMenuFlyoutDividerEvents, JSX.ScaleMenuFlyoutDivider>({
+export const ScaleMenuFlyoutDivider: StencilReactComponent<ScaleMenuFlyoutDividerElement, ScaleMenuFlyoutDividerEvents, Components.ScaleMenuFlyoutDivider> = /*@__PURE__*/ createComponent<ScaleMenuFlyoutDividerElement, ScaleMenuFlyoutDividerEvents, Components.ScaleMenuFlyoutDivider>({
     tagName: 'scale-menu-flyout-divider',
     properties: { styles: 'styles' },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleMenuFlyoutDivider as StencilReactComponent<ScaleMenuFlyoutDividerElement, ScaleMenuFlyoutDividerEvents, JSX.ScaleMenuFlyoutDivider>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleMenuFlyoutDivider as StencilReactComponent<ScaleMenuFlyoutDividerElement, ScaleMenuFlyoutDividerEvents, Components.ScaleMenuFlyoutDivider>,
     serializeShadowRoot
 });
 
 export type ScaleMenuFlyoutItemEvents = { onScaleSelect: EventName<ScaleMenuFlyoutItemCustomEvent<{ item: HTMLElement; }>> };
 
-export const ScaleMenuFlyoutItem: StencilReactComponent<ScaleMenuFlyoutItemElement, ScaleMenuFlyoutItemEvents, JSX.ScaleMenuFlyoutItem> = /*@__PURE__*/ createComponent<ScaleMenuFlyoutItemElement, ScaleMenuFlyoutItemEvents, JSX.ScaleMenuFlyoutItem>({
+export const ScaleMenuFlyoutItem: StencilReactComponent<ScaleMenuFlyoutItemElement, ScaleMenuFlyoutItemEvents, Components.ScaleMenuFlyoutItem> = /*@__PURE__*/ createComponent<ScaleMenuFlyoutItemElement, ScaleMenuFlyoutItemEvents, Components.ScaleMenuFlyoutItem>({
     tagName: 'scale-menu-flyout-item',
     properties: {
         cascade: 'cascade',
@@ -7575,8 +7575,8 @@ export const ScaleMenuFlyoutItem: StencilReactComponent<ScaleMenuFlyoutItemEleme
         value: 'value',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleMenuFlyoutItem as StencilReactComponent<ScaleMenuFlyoutItemElement, ScaleMenuFlyoutItemEvents, JSX.ScaleMenuFlyoutItem>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleMenuFlyoutItem as StencilReactComponent<ScaleMenuFlyoutItemElement, ScaleMenuFlyoutItemEvents, Components.ScaleMenuFlyoutItem>,
     serializeShadowRoot
 });
 
@@ -7585,7 +7585,7 @@ export type ScaleMenuFlyoutListEvents = {
     onScaleClose: EventName<ScaleMenuFlyoutListCustomEvent<{ list: HTMLElement; }>>
 };
 
-export const ScaleMenuFlyoutList: StencilReactComponent<ScaleMenuFlyoutListElement, ScaleMenuFlyoutListEvents, JSX.ScaleMenuFlyoutList> = /*@__PURE__*/ createComponent<ScaleMenuFlyoutListElement, ScaleMenuFlyoutListEvents, JSX.ScaleMenuFlyoutList>({
+export const ScaleMenuFlyoutList: StencilReactComponent<ScaleMenuFlyoutListElement, ScaleMenuFlyoutListEvents, Components.ScaleMenuFlyoutList> = /*@__PURE__*/ createComponent<ScaleMenuFlyoutListElement, ScaleMenuFlyoutListEvents, Components.ScaleMenuFlyoutList>({
     tagName: 'scale-menu-flyout-list',
     properties: {
         opened: 'opened',
@@ -7597,8 +7597,8 @@ export const ScaleMenuFlyoutList: StencilReactComponent<ScaleMenuFlyoutListEleme
         styles: 'styles',
         preventFlipVertical: 'prevent-flip-vertical'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleMenuFlyoutList as StencilReactComponent<ScaleMenuFlyoutListElement, ScaleMenuFlyoutListEvents, JSX.ScaleMenuFlyoutList>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleMenuFlyoutList as StencilReactComponent<ScaleMenuFlyoutListElement, ScaleMenuFlyoutListEvents, Components.ScaleMenuFlyoutList>,
     serializeShadowRoot
 });
 
@@ -7608,7 +7608,7 @@ export type ScaleModalEvents = {
     onScaleClose: EventName<ScaleModalCustomEvent<void>>
 };
 
-export const ScaleModal: StencilReactComponent<ScaleModalElement, ScaleModalEvents, JSX.ScaleModal> = /*@__PURE__*/ createComponent<ScaleModalElement, ScaleModalEvents, JSX.ScaleModal>({
+export const ScaleModal: StencilReactComponent<ScaleModalElement, ScaleModalEvents, Components.ScaleModal> = /*@__PURE__*/ createComponent<ScaleModalElement, ScaleModalEvents, Components.ScaleModal>({
     tagName: 'scale-modal',
     properties: {
         heading: 'heading',
@@ -7622,14 +7622,14 @@ export const ScaleModal: StencilReactComponent<ScaleModalElement, ScaleModalEven
         styles: 'styles',
         allowInjectingStyleToBody: 'allow-injecting-style-to-body'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleModal as StencilReactComponent<ScaleModalElement, ScaleModalEvents, JSX.ScaleModal>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleModal as StencilReactComponent<ScaleModalElement, ScaleModalEvents, Components.ScaleModal>,
     serializeShadowRoot
 });
 
 export type ScaleNavIconEvents = NonNullable<unknown>;
 
-export const ScaleNavIcon: StencilReactComponent<ScaleNavIconElement, ScaleNavIconEvents, JSX.ScaleNavIcon> = /*@__PURE__*/ createComponent<ScaleNavIconElement, ScaleNavIconEvents, JSX.ScaleNavIcon>({
+export const ScaleNavIcon: StencilReactComponent<ScaleNavIconElement, ScaleNavIconEvents, Components.ScaleNavIcon> = /*@__PURE__*/ createComponent<ScaleNavIconElement, ScaleNavIconEvents, Components.ScaleNavIcon>({
     tagName: 'scale-nav-icon',
     properties: {
         isActive: 'is-active',
@@ -7645,14 +7645,14 @@ export const ScaleNavIcon: StencilReactComponent<ScaleNavIconElement, ScaleNavIc
         badge: 'badge',
         badgeLabel: 'badge-label'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleNavIcon as StencilReactComponent<ScaleNavIconElement, ScaleNavIconEvents, JSX.ScaleNavIcon>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleNavIcon as StencilReactComponent<ScaleNavIconElement, ScaleNavIconEvents, Components.ScaleNavIcon>,
     serializeShadowRoot
 });
 
 export type ScaleNavMainEvents = NonNullable<unknown>;
 
-export const ScaleNavMain: StencilReactComponent<ScaleNavMainElement, ScaleNavMainEvents, JSX.ScaleNavMain> = /*@__PURE__*/ createComponent<ScaleNavMainElement, ScaleNavMainEvents, JSX.ScaleNavMain>({
+export const ScaleNavMain: StencilReactComponent<ScaleNavMainElement, ScaleNavMainEvents, Components.ScaleNavMain> = /*@__PURE__*/ createComponent<ScaleNavMainElement, ScaleNavMainEvents, Components.ScaleNavMain>({
     tagName: 'scale-nav-main',
     properties: {
         isActive: 'is-active',
@@ -7666,22 +7666,22 @@ export const ScaleNavMain: StencilReactComponent<ScaleNavMainElement, ScaleNavMa
         innerId: 'inner-id',
         clickLink: 'click-link'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleNavMain as StencilReactComponent<ScaleNavMainElement, ScaleNavMainEvents, JSX.ScaleNavMain>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleNavMain as StencilReactComponent<ScaleNavMainElement, ScaleNavMainEvents, Components.ScaleNavMain>,
     serializeShadowRoot
 });
 
 export type ScaleNavSegmentEvents = NonNullable<unknown>;
 
-export const ScaleNavSegment: StencilReactComponent<ScaleNavSegmentElement, ScaleNavSegmentEvents, JSX.ScaleNavSegment> = /*@__PURE__*/ createComponent<ScaleNavSegmentElement, ScaleNavSegmentEvents, JSX.ScaleNavSegment>({
+export const ScaleNavSegment: StencilReactComponent<ScaleNavSegmentElement, ScaleNavSegmentEvents, Components.ScaleNavSegment> = /*@__PURE__*/ createComponent<ScaleNavSegmentElement, ScaleNavSegmentEvents, Components.ScaleNavSegment>({
     tagName: 'scale-nav-segment',
     properties: {
         isActive: 'is-active',
         active: 'active',
         href: 'href'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleNavSegment as StencilReactComponent<ScaleNavSegmentElement, ScaleNavSegmentEvents, JSX.ScaleNavSegment>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleNavSegment as StencilReactComponent<ScaleNavSegmentElement, ScaleNavSegmentEvents, Components.ScaleNavSegment>,
     serializeShadowRoot
 });
 
@@ -7691,7 +7691,7 @@ export type ScaleNotificationEvents = {
     onScaleClose: EventName<ScaleNotificationCustomEvent<void>>
 };
 
-export const ScaleNotification: StencilReactComponent<ScaleNotificationElement, ScaleNotificationEvents, JSX.ScaleNotification> = /*@__PURE__*/ createComponent<ScaleNotificationElement, ScaleNotificationEvents, JSX.ScaleNotification>({
+export const ScaleNotification: StencilReactComponent<ScaleNotificationElement, ScaleNotificationEvents, Components.ScaleNotification> = /*@__PURE__*/ createComponent<ScaleNotificationElement, ScaleNotificationEvents, Components.ScaleNotification>({
     tagName: 'scale-notification',
     properties: {
         heading: 'heading',
@@ -7708,14 +7708,14 @@ export const ScaleNotification: StencilReactComponent<ScaleNotificationElement, 
         ariaHeading: 'aria-heading',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleNotification as StencilReactComponent<ScaleNotificationElement, ScaleNotificationEvents, JSX.ScaleNotification>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleNotification as StencilReactComponent<ScaleNotificationElement, ScaleNotificationEvents, Components.ScaleNotification>,
     serializeShadowRoot
 });
 
 export type ScaleNotificationBadgeEvents = NonNullable<unknown>;
 
-export const ScaleNotificationBadge: StencilReactComponent<ScaleNotificationBadgeElement, ScaleNotificationBadgeEvents, JSX.ScaleNotificationBadge> = /*@__PURE__*/ createComponent<ScaleNotificationBadgeElement, ScaleNotificationBadgeEvents, JSX.ScaleNotificationBadge>({
+export const ScaleNotificationBadge: StencilReactComponent<ScaleNotificationBadgeElement, ScaleNotificationBadgeEvents, Components.ScaleNotificationBadge> = /*@__PURE__*/ createComponent<ScaleNotificationBadgeElement, ScaleNotificationBadgeEvents, Components.ScaleNotificationBadge>({
     tagName: 'scale-notification-badge',
     properties: {
         label: 'label',
@@ -7723,14 +7723,14 @@ export const ScaleNotificationBadge: StencilReactComponent<ScaleNotificationBadg
         type: 'type',
         clickHandler: 'click-handler'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleNotificationBadge as StencilReactComponent<ScaleNotificationBadgeElement, ScaleNotificationBadgeEvents, JSX.ScaleNotificationBadge>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleNotificationBadge as StencilReactComponent<ScaleNotificationBadgeElement, ScaleNotificationBadgeEvents, Components.ScaleNotificationBadge>,
     serializeShadowRoot
 });
 
 export type ScaleNotificationBannerEvents = { onScaleClose: EventName<ScaleNotificationBannerCustomEvent<void>> };
 
-export const ScaleNotificationBanner: StencilReactComponent<ScaleNotificationBannerElement, ScaleNotificationBannerEvents, JSX.ScaleNotificationBanner> = /*@__PURE__*/ createComponent<ScaleNotificationBannerElement, ScaleNotificationBannerEvents, JSX.ScaleNotificationBanner>({
+export const ScaleNotificationBanner: StencilReactComponent<ScaleNotificationBannerElement, ScaleNotificationBannerEvents, Components.ScaleNotificationBanner> = /*@__PURE__*/ createComponent<ScaleNotificationBannerElement, ScaleNotificationBannerEvents, Components.ScaleNotificationBanner>({
     tagName: 'scale-notification-banner',
     properties: {
         variant: 'variant',
@@ -7742,14 +7742,14 @@ export const ScaleNotificationBanner: StencilReactComponent<ScaleNotificationBan
         closeButtonLabel: 'close-button-label',
         closeButtonTitle: 'close-button-title'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleNotificationBanner as StencilReactComponent<ScaleNotificationBannerElement, ScaleNotificationBannerEvents, JSX.ScaleNotificationBanner>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleNotificationBanner as StencilReactComponent<ScaleNotificationBannerElement, ScaleNotificationBannerEvents, Components.ScaleNotificationBanner>,
     serializeShadowRoot
 });
 
 export type ScaleNotificationMessageEvents = { onScaleClose: EventName<ScaleNotificationMessageCustomEvent<void>> };
 
-export const ScaleNotificationMessage: StencilReactComponent<ScaleNotificationMessageElement, ScaleNotificationMessageEvents, JSX.ScaleNotificationMessage> = /*@__PURE__*/ createComponent<ScaleNotificationMessageElement, ScaleNotificationMessageEvents, JSX.ScaleNotificationMessage>({
+export const ScaleNotificationMessage: StencilReactComponent<ScaleNotificationMessageElement, ScaleNotificationMessageEvents, Components.ScaleNotificationMessage> = /*@__PURE__*/ createComponent<ScaleNotificationMessageElement, ScaleNotificationMessageEvents, Components.ScaleNotificationMessage>({
     tagName: 'scale-notification-message',
     properties: {
         variant: 'variant',
@@ -7760,8 +7760,8 @@ export const ScaleNotificationMessage: StencilReactComponent<ScaleNotificationMe
         closeButtonLabel: 'close-button-label',
         closeButtonTitle: 'close-button-title'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleNotificationMessage as StencilReactComponent<ScaleNotificationMessageElement, ScaleNotificationMessageEvents, JSX.ScaleNotificationMessage>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleNotificationMessage as StencilReactComponent<ScaleNotificationMessageElement, ScaleNotificationMessageEvents, Components.ScaleNotificationMessage>,
     serializeShadowRoot
 });
 
@@ -7770,7 +7770,7 @@ export type ScaleNotificationToastEvents = {
     onScaleClose: EventName<ScaleNotificationToastCustomEvent<void>>
 };
 
-export const ScaleNotificationToast: StencilReactComponent<ScaleNotificationToastElement, ScaleNotificationToastEvents, JSX.ScaleNotificationToast> = /*@__PURE__*/ createComponent<ScaleNotificationToastElement, ScaleNotificationToastEvents, JSX.ScaleNotificationToast>({
+export const ScaleNotificationToast: StencilReactComponent<ScaleNotificationToastElement, ScaleNotificationToastEvents, Components.ScaleNotificationToast> = /*@__PURE__*/ createComponent<ScaleNotificationToastElement, ScaleNotificationToastEvents, Components.ScaleNotificationToast>({
     tagName: 'scale-notification-toast',
     properties: {
         variant: 'variant',
@@ -7788,14 +7788,14 @@ export const ScaleNotificationToast: StencilReactComponent<ScaleNotificationToas
         story: 'story',
         href: 'href'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleNotificationToast as StencilReactComponent<ScaleNotificationToastElement, ScaleNotificationToastEvents, JSX.ScaleNotificationToast>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleNotificationToast as StencilReactComponent<ScaleNotificationToastElement, ScaleNotificationToastEvents, Components.ScaleNotificationToast>,
     serializeShadowRoot
 });
 
 export type ScalePaginationEvents = { onScalePagination: EventName<ScalePaginationCustomEvent<PaginationEventDetail>> };
 
-export const ScalePagination: StencilReactComponent<ScalePaginationElement, ScalePaginationEvents, JSX.ScalePagination> = /*@__PURE__*/ createComponent<ScalePaginationElement, ScalePaginationEvents, JSX.ScalePagination>({
+export const ScalePagination: StencilReactComponent<ScalePaginationElement, ScalePaginationEvents, Components.ScalePagination> = /*@__PURE__*/ createComponent<ScalePaginationElement, ScalePaginationEvents, Components.ScalePagination>({
     tagName: 'scale-pagination',
     properties: {
         hideBorders: 'hide-borders',
@@ -7811,14 +7811,14 @@ export const ScalePagination: StencilReactComponent<ScalePaginationElement, Scal
         ariaLabelPreviousPage: 'aria-label-previous-page',
         ariaLabelLastPage: 'aria-label-last-page'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScalePagination as StencilReactComponent<ScalePaginationElement, ScalePaginationEvents, JSX.ScalePagination>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScalePagination as StencilReactComponent<ScalePaginationElement, ScalePaginationEvents, Components.ScalePagination>,
     serializeShadowRoot
 });
 
 export type ScaleProgressBarEvents = NonNullable<unknown>;
 
-export const ScaleProgressBar: StencilReactComponent<ScaleProgressBarElement, ScaleProgressBarEvents, JSX.ScaleProgressBar> = /*@__PURE__*/ createComponent<ScaleProgressBarElement, ScaleProgressBarEvents, JSX.ScaleProgressBar>({
+export const ScaleProgressBar: StencilReactComponent<ScaleProgressBarElement, ScaleProgressBarEvents, Components.ScaleProgressBar> = /*@__PURE__*/ createComponent<ScaleProgressBarElement, ScaleProgressBarEvents, Components.ScaleProgressBar>({
     tagName: 'scale-progress-bar',
     properties: {
         busy: 'busy',
@@ -7835,14 +7835,14 @@ export const ScaleProgressBar: StencilReactComponent<ScaleProgressBarElement, Sc
         mute: 'mute',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleProgressBar as StencilReactComponent<ScaleProgressBarElement, ScaleProgressBarEvents, JSX.ScaleProgressBar>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleProgressBar as StencilReactComponent<ScaleProgressBarElement, ScaleProgressBarEvents, Components.ScaleProgressBar>,
     serializeShadowRoot
 });
 
 export type ScaleRadioButtonEvents = { onScaleChange: EventName<ScaleRadioButtonCustomEvent<InputChangeEventDetail>> };
 
-export const ScaleRadioButton: StencilReactComponent<ScaleRadioButtonElement, ScaleRadioButtonEvents, JSX.ScaleRadioButton> = /*@__PURE__*/ createComponent<ScaleRadioButtonElement, ScaleRadioButtonEvents, JSX.ScaleRadioButton>({
+export const ScaleRadioButton: StencilReactComponent<ScaleRadioButtonElement, ScaleRadioButtonEvents, Components.ScaleRadioButton> = /*@__PURE__*/ createComponent<ScaleRadioButtonElement, ScaleRadioButtonEvents, Components.ScaleRadioButton>({
     tagName: 'scale-radio-button',
     properties: {
         name: 'name',
@@ -7858,14 +7858,14 @@ export const ScaleRadioButton: StencilReactComponent<ScaleRadioButtonElement, Sc
         ariaDetailsId: 'aria-details-id',
         dataQa: 'data-qa'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleRadioButton as StencilReactComponent<ScaleRadioButtonElement, ScaleRadioButtonEvents, JSX.ScaleRadioButton>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleRadioButton as StencilReactComponent<ScaleRadioButtonElement, ScaleRadioButtonEvents, Components.ScaleRadioButton>,
     serializeShadowRoot
 });
 
 export type ScaleRadioButtonGroupEvents = NonNullable<unknown>;
 
-export const ScaleRadioButtonGroup: StencilReactComponent<ScaleRadioButtonGroupElement, ScaleRadioButtonGroupEvents, JSX.ScaleRadioButtonGroup> = /*@__PURE__*/ createComponent<ScaleRadioButtonGroupElement, ScaleRadioButtonGroupEvents, JSX.ScaleRadioButtonGroup>({
+export const ScaleRadioButtonGroup: StencilReactComponent<ScaleRadioButtonGroupElement, ScaleRadioButtonGroupEvents, Components.ScaleRadioButtonGroup> = /*@__PURE__*/ createComponent<ScaleRadioButtonGroupElement, ScaleRadioButtonGroupEvents, Components.ScaleRadioButtonGroup>({
     tagName: 'scale-radio-button-group',
     properties: {
         label: 'label',
@@ -7873,14 +7873,14 @@ export const ScaleRadioButtonGroup: StencilReactComponent<ScaleRadioButtonGroupE
         status: 'status',
         invalid: 'invalid'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleRadioButtonGroup as StencilReactComponent<ScaleRadioButtonGroupElement, ScaleRadioButtonGroupEvents, JSX.ScaleRadioButtonGroup>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleRadioButtonGroup as StencilReactComponent<ScaleRadioButtonGroupElement, ScaleRadioButtonGroupEvents, Components.ScaleRadioButtonGroup>,
     serializeShadowRoot
 });
 
 export type ScaleRatingStarsEvents = { onScaleChange: EventName<ScaleRatingStarsCustomEvent<any>> };
 
-export const ScaleRatingStars: StencilReactComponent<ScaleRatingStarsElement, ScaleRatingStarsEvents, JSX.ScaleRatingStars> = /*@__PURE__*/ createComponent<ScaleRatingStarsElement, ScaleRatingStarsEvents, JSX.ScaleRatingStars>({
+export const ScaleRatingStars: StencilReactComponent<ScaleRatingStarsElement, ScaleRatingStarsEvents, Components.ScaleRatingStars> = /*@__PURE__*/ createComponent<ScaleRatingStarsElement, ScaleRatingStarsEvents, Components.ScaleRatingStars>({
     tagName: 'scale-rating-stars',
     properties: {
         starSize: 'star-size',
@@ -7896,14 +7896,14 @@ export const ScaleRatingStars: StencilReactComponent<ScaleRatingStarsElement, Sc
         hideLabel: 'hide-label',
         infoText: 'info-text'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleRatingStars as StencilReactComponent<ScaleRatingStarsElement, ScaleRatingStarsEvents, JSX.ScaleRatingStars>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleRatingStars as StencilReactComponent<ScaleRatingStarsElement, ScaleRatingStarsEvents, Components.ScaleRatingStars>,
     serializeShadowRoot
 });
 
 export type ScaleSegmentEvents = { onScaleClick: EventName<ScaleSegmentCustomEvent<{ id: string; selected: boolean; userInteraction?: boolean; }>> };
 
-export const ScaleSegment: StencilReactComponent<ScaleSegmentElement, ScaleSegmentEvents, JSX.ScaleSegment> = /*@__PURE__*/ createComponent<ScaleSegmentElement, ScaleSegmentEvents, JSX.ScaleSegment>({
+export const ScaleSegment: StencilReactComponent<ScaleSegmentElement, ScaleSegmentEvents, Components.ScaleSegment> = /*@__PURE__*/ createComponent<ScaleSegmentElement, ScaleSegmentEvents, Components.ScaleSegment>({
     tagName: 'scale-segment',
     properties: {
         size: 'size',
@@ -7923,14 +7923,14 @@ export const ScaleSegment: StencilReactComponent<ScaleSegmentElement, ScaleSegme
         iconOnly: 'icon-only',
         selectedIndex: 'selected-index'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleSegment as StencilReactComponent<ScaleSegmentElement, ScaleSegmentEvents, JSX.ScaleSegment>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleSegment as StencilReactComponent<ScaleSegmentElement, ScaleSegmentEvents, Components.ScaleSegment>,
     serializeShadowRoot
 });
 
 export type ScaleSegmentedButtonEvents = { onScaleChange: EventName<ScaleSegmentedButtonCustomEvent<any>> };
 
-export const ScaleSegmentedButton: StencilReactComponent<ScaleSegmentedButtonElement, ScaleSegmentedButtonEvents, JSX.ScaleSegmentedButton> = /*@__PURE__*/ createComponent<ScaleSegmentedButtonElement, ScaleSegmentedButtonEvents, JSX.ScaleSegmentedButton>({
+export const ScaleSegmentedButton: StencilReactComponent<ScaleSegmentedButtonElement, ScaleSegmentedButtonEvents, Components.ScaleSegmentedButton> = /*@__PURE__*/ createComponent<ScaleSegmentedButtonElement, ScaleSegmentedButtonEvents, Components.ScaleSegmentedButton>({
     tagName: 'scale-segmented-button',
     properties: {
         size: 'size',
@@ -7945,14 +7945,14 @@ export const ScaleSegmentedButton: StencilReactComponent<ScaleSegmentedButtonEle
         ariaLabelTranslation: 'aria-label-translation',
         longestButtonWidth: 'longest-button-width'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleSegmentedButton as StencilReactComponent<ScaleSegmentedButtonElement, ScaleSegmentedButtonEvents, JSX.ScaleSegmentedButton>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleSegmentedButton as StencilReactComponent<ScaleSegmentedButtonElement, ScaleSegmentedButtonEvents, Components.ScaleSegmentedButton>,
     serializeShadowRoot
 });
 
 export type ScaleSidebarNavEvents = NonNullable<unknown>;
 
-export const ScaleSidebarNav: StencilReactComponent<ScaleSidebarNavElement, ScaleSidebarNavEvents, JSX.ScaleSidebarNav> = /*@__PURE__*/ createComponent<ScaleSidebarNavElement, ScaleSidebarNavEvents, JSX.ScaleSidebarNav>({
+export const ScaleSidebarNav: StencilReactComponent<ScaleSidebarNavElement, ScaleSidebarNavEvents, Components.ScaleSidebarNav> = /*@__PURE__*/ createComponent<ScaleSidebarNavElement, ScaleSidebarNavEvents, Components.ScaleSidebarNav>({
     tagName: 'scale-sidebar-nav',
     properties: {
         ariaLabelSidebarNav: 'aria-label-sidebar-nav',
@@ -7961,14 +7961,14 @@ export const ScaleSidebarNav: StencilReactComponent<ScaleSidebarNavElement, Scal
         collapsibleLabel: 'collapsible-label',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleSidebarNav as StencilReactComponent<ScaleSidebarNavElement, ScaleSidebarNavEvents, JSX.ScaleSidebarNav>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleSidebarNav as StencilReactComponent<ScaleSidebarNavElement, ScaleSidebarNavEvents, Components.ScaleSidebarNav>,
     serializeShadowRoot
 });
 
 export type ScaleSidebarNavCollapsibleEvents = NonNullable<unknown>;
 
-export const ScaleSidebarNavCollapsible: StencilReactComponent<ScaleSidebarNavCollapsibleElement, ScaleSidebarNavCollapsibleEvents, JSX.ScaleSidebarNavCollapsible> = /*@__PURE__*/ createComponent<ScaleSidebarNavCollapsibleElement, ScaleSidebarNavCollapsibleEvents, JSX.ScaleSidebarNavCollapsible>({
+export const ScaleSidebarNavCollapsible: StencilReactComponent<ScaleSidebarNavCollapsibleElement, ScaleSidebarNavCollapsibleEvents, Components.ScaleSidebarNavCollapsible> = /*@__PURE__*/ createComponent<ScaleSidebarNavCollapsibleElement, ScaleSidebarNavCollapsibleEvents, Components.ScaleSidebarNavCollapsible>({
     tagName: 'scale-sidebar-nav-collapsible',
     properties: {
         tag: 'tag',
@@ -7981,14 +7981,14 @@ export const ScaleSidebarNavCollapsible: StencilReactComponent<ScaleSidebarNavCo
         nestingLevel: 'nesting-level',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleSidebarNavCollapsible as StencilReactComponent<ScaleSidebarNavCollapsibleElement, ScaleSidebarNavCollapsibleEvents, JSX.ScaleSidebarNavCollapsible>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleSidebarNavCollapsible as StencilReactComponent<ScaleSidebarNavCollapsibleElement, ScaleSidebarNavCollapsibleEvents, Components.ScaleSidebarNavCollapsible>,
     serializeShadowRoot
 });
 
 export type ScaleSidebarNavItemEvents = NonNullable<unknown>;
 
-export const ScaleSidebarNavItem: StencilReactComponent<ScaleSidebarNavItemElement, ScaleSidebarNavItemEvents, JSX.ScaleSidebarNavItem> = /*@__PURE__*/ createComponent<ScaleSidebarNavItemElement, ScaleSidebarNavItemEvents, JSX.ScaleSidebarNavItem>({
+export const ScaleSidebarNavItem: StencilReactComponent<ScaleSidebarNavItemElement, ScaleSidebarNavItemEvents, Components.ScaleSidebarNavItem> = /*@__PURE__*/ createComponent<ScaleSidebarNavItemElement, ScaleSidebarNavItemEvents, Components.ScaleSidebarNavItem>({
     tagName: 'scale-sidebar-nav-item',
     properties: {
         condensed: 'condensed',
@@ -7998,8 +7998,8 @@ export const ScaleSidebarNavItem: StencilReactComponent<ScaleSidebarNavItemEleme
         nestingLevel: 'nesting-level',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleSidebarNavItem as StencilReactComponent<ScaleSidebarNavItemElement, ScaleSidebarNavItemEvents, JSX.ScaleSidebarNavItem>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleSidebarNavItem as StencilReactComponent<ScaleSidebarNavItemElement, ScaleSidebarNavItemEvents, Components.ScaleSidebarNavItem>,
     serializeShadowRoot
 });
 
@@ -8008,7 +8008,7 @@ export type ScaleSliderEvents = {
     onScaleInput: EventName<ScaleSliderCustomEvent<number>>
 };
 
-export const ScaleSlider: StencilReactComponent<ScaleSliderElement, ScaleSliderEvents, JSX.ScaleSlider> = /*@__PURE__*/ createComponent<ScaleSliderElement, ScaleSliderEvents, JSX.ScaleSlider>({
+export const ScaleSlider: StencilReactComponent<ScaleSliderElement, ScaleSliderEvents, Components.ScaleSlider> = /*@__PURE__*/ createComponent<ScaleSliderElement, ScaleSliderEvents, Components.ScaleSlider>({
     tagName: 'scale-slider',
     properties: {
         name: 'name',
@@ -8036,24 +8036,24 @@ export const ScaleSlider: StencilReactComponent<ScaleSliderElement, ScaleSliderE
         styles: 'styles',
         dataQa: 'data-qa'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleSlider as StencilReactComponent<ScaleSliderElement, ScaleSliderEvents, JSX.ScaleSlider>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleSlider as StencilReactComponent<ScaleSliderElement, ScaleSliderEvents, Components.ScaleSlider>,
     serializeShadowRoot
 });
 
 export type ScaleSsrSlotFixEvents = NonNullable<unknown>;
 
-export const ScaleSsrSlotFix: StencilReactComponent<ScaleSsrSlotFixElement, ScaleSsrSlotFixEvents, JSX.ScaleSsrSlotFix> = /*@__PURE__*/ createComponent<ScaleSsrSlotFixElement, ScaleSsrSlotFixEvents, JSX.ScaleSsrSlotFix>({
+export const ScaleSsrSlotFix: StencilReactComponent<ScaleSsrSlotFixElement, ScaleSsrSlotFixEvents, Components.ScaleSsrSlotFix> = /*@__PURE__*/ createComponent<ScaleSsrSlotFixElement, ScaleSsrSlotFixEvents, Components.ScaleSsrSlotFix>({
     tagName: 'scale-ssr-slot-fix',
     properties: {},
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleSsrSlotFix as StencilReactComponent<ScaleSsrSlotFixElement, ScaleSsrSlotFixEvents, JSX.ScaleSsrSlotFix>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleSsrSlotFix as StencilReactComponent<ScaleSsrSlotFixElement, ScaleSsrSlotFixEvents, Components.ScaleSsrSlotFix>,
     serializeShadowRoot
 });
 
 export type ScaleSwitchEvents = { onScaleChange: EventName<ScaleSwitchCustomEvent<any>> };
 
-export const ScaleSwitch: StencilReactComponent<ScaleSwitchElement, ScaleSwitchEvents, JSX.ScaleSwitch> = /*@__PURE__*/ createComponent<ScaleSwitchElement, ScaleSwitchEvents, JSX.ScaleSwitch>({
+export const ScaleSwitch: StencilReactComponent<ScaleSwitchElement, ScaleSwitchEvents, Components.ScaleSwitch> = /*@__PURE__*/ createComponent<ScaleSwitchElement, ScaleSwitchEvents, Components.ScaleSwitch>({
     tagName: 'scale-switch',
     properties: {
         checked: 'checked',
@@ -8065,8 +8065,8 @@ export const ScaleSwitch: StencilReactComponent<ScaleSwitchElement, ScaleSwitchE
         size: 'size',
         dataQa: 'data-qa'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleSwitch as StencilReactComponent<ScaleSwitchElement, ScaleSwitchEvents, JSX.ScaleSwitch>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleSwitch as StencilReactComponent<ScaleSwitchElement, ScaleSwitchEvents, Components.ScaleSwitch>,
     serializeShadowRoot
 });
 
@@ -8075,7 +8075,7 @@ export type ScaleTabHeaderEvents = {
     onScaleDisabled: EventName<ScaleTabHeaderCustomEvent<any>>
 };
 
-export const ScaleTabHeader: StencilReactComponent<ScaleTabHeaderElement, ScaleTabHeaderEvents, JSX.ScaleTabHeader> = /*@__PURE__*/ createComponent<ScaleTabHeaderElement, ScaleTabHeaderEvents, JSX.ScaleTabHeader>({
+export const ScaleTabHeader: StencilReactComponent<ScaleTabHeaderElement, ScaleTabHeaderEvents, Components.ScaleTabHeader> = /*@__PURE__*/ createComponent<ScaleTabHeaderElement, ScaleTabHeaderEvents, Components.ScaleTabHeader>({
     tagName: 'scale-tab-header',
     properties: {
         disabled: 'disabled',
@@ -8084,28 +8084,28 @@ export const ScaleTabHeader: StencilReactComponent<ScaleTabHeaderElement, ScaleT
         selected: 'selected',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTabHeader as StencilReactComponent<ScaleTabHeaderElement, ScaleTabHeaderEvents, JSX.ScaleTabHeader>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTabHeader as StencilReactComponent<ScaleTabHeaderElement, ScaleTabHeaderEvents, Components.ScaleTabHeader>,
     serializeShadowRoot
 });
 
 export type ScaleTabNavEvents = NonNullable<unknown>;
 
-export const ScaleTabNav: StencilReactComponent<ScaleTabNavElement, ScaleTabNavEvents, JSX.ScaleTabNav> = /*@__PURE__*/ createComponent<ScaleTabNavElement, ScaleTabNavEvents, JSX.ScaleTabNav>({
+export const ScaleTabNav: StencilReactComponent<ScaleTabNavElement, ScaleTabNavEvents, Components.ScaleTabNav> = /*@__PURE__*/ createComponent<ScaleTabNavElement, ScaleTabNavEvents, Components.ScaleTabNav>({
     tagName: 'scale-tab-nav',
     properties: {
         small: 'small',
         size: 'size',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTabNav as StencilReactComponent<ScaleTabNavElement, ScaleTabNavEvents, JSX.ScaleTabNav>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTabNav as StencilReactComponent<ScaleTabNavElement, ScaleTabNavEvents, Components.ScaleTabNav>,
     serializeShadowRoot
 });
 
 export type ScaleTabPanelEvents = NonNullable<unknown>;
 
-export const ScaleTabPanel: StencilReactComponent<ScaleTabPanelElement, ScaleTabPanelEvents, JSX.ScaleTabPanel> = /*@__PURE__*/ createComponent<ScaleTabPanelElement, ScaleTabPanelEvents, JSX.ScaleTabPanel>({
+export const ScaleTabPanel: StencilReactComponent<ScaleTabPanelElement, ScaleTabPanelEvents, Components.ScaleTabPanel> = /*@__PURE__*/ createComponent<ScaleTabPanelElement, ScaleTabPanelEvents, Components.ScaleTabPanel>({
     tagName: 'scale-tab-panel',
     properties: {
         small: 'small',
@@ -8113,14 +8113,14 @@ export const ScaleTabPanel: StencilReactComponent<ScaleTabPanelElement, ScaleTab
         tabbablePanel: 'tabbable-panel',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTabPanel as StencilReactComponent<ScaleTabPanelElement, ScaleTabPanelEvents, JSX.ScaleTabPanel>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTabPanel as StencilReactComponent<ScaleTabPanelElement, ScaleTabPanelEvents, Components.ScaleTabPanel>,
     serializeShadowRoot
 });
 
 export type ScaleTableEvents = NonNullable<unknown>;
 
-export const ScaleTable: StencilReactComponent<ScaleTableElement, ScaleTableEvents, JSX.ScaleTable> = /*@__PURE__*/ createComponent<ScaleTableElement, ScaleTableEvents, JSX.ScaleTable>({
+export const ScaleTable: StencilReactComponent<ScaleTableElement, ScaleTableEvents, Components.ScaleTable> = /*@__PURE__*/ createComponent<ScaleTableElement, ScaleTableEvents, Components.ScaleTable>({
     tagName: 'scale-table',
     properties: {
         showSort: 'show-sort',
@@ -8128,14 +8128,14 @@ export const ScaleTable: StencilReactComponent<ScaleTableElement, ScaleTableEven
         striped: 'striped',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTable as StencilReactComponent<ScaleTableElement, ScaleTableEvents, JSX.ScaleTable>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTable as StencilReactComponent<ScaleTableElement, ScaleTableEvents, Components.ScaleTable>,
     serializeShadowRoot
 });
 
 export type ScaleTagEvents = { onScaleClose: EventName<ScaleTagCustomEvent<MouseEvent>> };
 
-export const ScaleTag: StencilReactComponent<ScaleTagElement, ScaleTagEvents, JSX.ScaleTag> = /*@__PURE__*/ createComponent<ScaleTagElement, ScaleTagEvents, JSX.ScaleTag>({
+export const ScaleTag: StencilReactComponent<ScaleTagElement, ScaleTagEvents, Components.ScaleTag> = /*@__PURE__*/ createComponent<ScaleTagElement, ScaleTagEvents, Components.ScaleTag>({
     tagName: 'scale-tag',
     properties: {
         size: 'size',
@@ -8148,86 +8148,86 @@ export const ScaleTag: StencilReactComponent<ScaleTagElement, ScaleTagEvents, JS
         dismissText: 'dismiss-text',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTag as StencilReactComponent<ScaleTagElement, ScaleTagEvents, JSX.ScaleTag>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTag as StencilReactComponent<ScaleTagElement, ScaleTagEvents, Components.ScaleTag>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomAppShellEvents = NonNullable<unknown>;
 
-export const ScaleTelekomAppShell: StencilReactComponent<ScaleTelekomAppShellElement, ScaleTelekomAppShellEvents, JSX.ScaleTelekomAppShell> = /*@__PURE__*/ createComponent<ScaleTelekomAppShellElement, ScaleTelekomAppShellEvents, JSX.ScaleTelekomAppShell>({
+export const ScaleTelekomAppShell: StencilReactComponent<ScaleTelekomAppShellElement, ScaleTelekomAppShellEvents, Components.ScaleTelekomAppShell> = /*@__PURE__*/ createComponent<ScaleTelekomAppShellElement, ScaleTelekomAppShellEvents, Components.ScaleTelekomAppShell>({
     tagName: 'scale-telekom-app-shell',
     properties: { styles: 'styles' },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomAppShell as StencilReactComponent<ScaleTelekomAppShellElement, ScaleTelekomAppShellEvents, JSX.ScaleTelekomAppShell>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomAppShell as StencilReactComponent<ScaleTelekomAppShellElement, ScaleTelekomAppShellEvents, Components.ScaleTelekomAppShell>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomFooterEvents = NonNullable<unknown>;
 
-export const ScaleTelekomFooter: StencilReactComponent<ScaleTelekomFooterElement, ScaleTelekomFooterEvents, JSX.ScaleTelekomFooter> = /*@__PURE__*/ createComponent<ScaleTelekomFooterElement, ScaleTelekomFooterEvents, JSX.ScaleTelekomFooter>({
+export const ScaleTelekomFooter: StencilReactComponent<ScaleTelekomFooterElement, ScaleTelekomFooterEvents, Components.ScaleTelekomFooter> = /*@__PURE__*/ createComponent<ScaleTelekomFooterElement, ScaleTelekomFooterEvents, Components.ScaleTelekomFooter>({
     tagName: 'scale-telekom-footer',
     properties: { type: 'type' },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomFooter as StencilReactComponent<ScaleTelekomFooterElement, ScaleTelekomFooterEvents, JSX.ScaleTelekomFooter>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomFooter as StencilReactComponent<ScaleTelekomFooterElement, ScaleTelekomFooterEvents, Components.ScaleTelekomFooter>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomFooterContentEvents = NonNullable<unknown>;
 
-export const ScaleTelekomFooterContent: StencilReactComponent<ScaleTelekomFooterContentElement, ScaleTelekomFooterContentEvents, JSX.ScaleTelekomFooterContent> = /*@__PURE__*/ createComponent<ScaleTelekomFooterContentElement, ScaleTelekomFooterContentEvents, JSX.ScaleTelekomFooterContent>({
+export const ScaleTelekomFooterContent: StencilReactComponent<ScaleTelekomFooterContentElement, ScaleTelekomFooterContentEvents, Components.ScaleTelekomFooterContent> = /*@__PURE__*/ createComponent<ScaleTelekomFooterContentElement, ScaleTelekomFooterContentEvents, Components.ScaleTelekomFooterContent>({
     tagName: 'scale-telekom-footer-content',
     properties: {
         logoHref: 'logo-href',
         logoTitle: 'logo-title',
         logoHideTitle: 'logo-hide-title'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomFooterContent as StencilReactComponent<ScaleTelekomFooterContentElement, ScaleTelekomFooterContentEvents, JSX.ScaleTelekomFooterContent>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomFooterContent as StencilReactComponent<ScaleTelekomFooterContentElement, ScaleTelekomFooterContentEvents, Components.ScaleTelekomFooterContent>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomFooterDataBackCompatEvents = NonNullable<unknown>;
 
-export const ScaleTelekomFooterDataBackCompat: StencilReactComponent<ScaleTelekomFooterDataBackCompatElement, ScaleTelekomFooterDataBackCompatEvents, JSX.ScaleTelekomFooterDataBackCompat> = /*@__PURE__*/ createComponent<ScaleTelekomFooterDataBackCompatElement, ScaleTelekomFooterDataBackCompatEvents, JSX.ScaleTelekomFooterDataBackCompat>({
+export const ScaleTelekomFooterDataBackCompat: StencilReactComponent<ScaleTelekomFooterDataBackCompatElement, ScaleTelekomFooterDataBackCompatEvents, Components.ScaleTelekomFooterDataBackCompat> = /*@__PURE__*/ createComponent<ScaleTelekomFooterDataBackCompatElement, ScaleTelekomFooterDataBackCompatEvents, Components.ScaleTelekomFooterDataBackCompat>({
     tagName: 'scale-telekom-footer-data-back-compat',
     properties: {
         type: 'type',
         footerNavigation: 'footer-navigation',
         copyright: 'copyright'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomFooterDataBackCompat as StencilReactComponent<ScaleTelekomFooterDataBackCompatElement, ScaleTelekomFooterDataBackCompatEvents, JSX.ScaleTelekomFooterDataBackCompat>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomFooterDataBackCompat as StencilReactComponent<ScaleTelekomFooterDataBackCompatElement, ScaleTelekomFooterDataBackCompatEvents, Components.ScaleTelekomFooterDataBackCompat>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomFooterExtendedNavigationEvents = NonNullable<unknown>;
 
-export const ScaleTelekomFooterExtendedNavigation: StencilReactComponent<ScaleTelekomFooterExtendedNavigationElement, ScaleTelekomFooterExtendedNavigationEvents, JSX.ScaleTelekomFooterExtendedNavigation> = /*@__PURE__*/ createComponent<ScaleTelekomFooterExtendedNavigationElement, ScaleTelekomFooterExtendedNavigationEvents, JSX.ScaleTelekomFooterExtendedNavigation>({
+export const ScaleTelekomFooterExtendedNavigation: StencilReactComponent<ScaleTelekomFooterExtendedNavigationElement, ScaleTelekomFooterExtendedNavigationEvents, Components.ScaleTelekomFooterExtendedNavigation> = /*@__PURE__*/ createComponent<ScaleTelekomFooterExtendedNavigationElement, ScaleTelekomFooterExtendedNavigationEvents, Components.ScaleTelekomFooterExtendedNavigation>({
     tagName: 'scale-telekom-footer-extended-navigation',
     properties: {},
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomFooterExtendedNavigation as StencilReactComponent<ScaleTelekomFooterExtendedNavigationElement, ScaleTelekomFooterExtendedNavigationEvents, JSX.ScaleTelekomFooterExtendedNavigation>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomFooterExtendedNavigation as StencilReactComponent<ScaleTelekomFooterExtendedNavigationElement, ScaleTelekomFooterExtendedNavigationEvents, Components.ScaleTelekomFooterExtendedNavigation>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomFooterExtendedNavigationColumnEvents = NonNullable<unknown>;
 
-export const ScaleTelekomFooterExtendedNavigationColumn: StencilReactComponent<ScaleTelekomFooterExtendedNavigationColumnElement, ScaleTelekomFooterExtendedNavigationColumnEvents, JSX.ScaleTelekomFooterExtendedNavigationColumn> = /*@__PURE__*/ createComponent<ScaleTelekomFooterExtendedNavigationColumnElement, ScaleTelekomFooterExtendedNavigationColumnEvents, JSX.ScaleTelekomFooterExtendedNavigationColumn>({
+export const ScaleTelekomFooterExtendedNavigationColumn: StencilReactComponent<ScaleTelekomFooterExtendedNavigationColumnElement, ScaleTelekomFooterExtendedNavigationColumnEvents, Components.ScaleTelekomFooterExtendedNavigationColumn> = /*@__PURE__*/ createComponent<ScaleTelekomFooterExtendedNavigationColumnElement, ScaleTelekomFooterExtendedNavigationColumnEvents, Components.ScaleTelekomFooterExtendedNavigationColumn>({
     tagName: 'scale-telekom-footer-extended-navigation-column',
     properties: {
         heading: 'heading',
         expanded: 'expanded',
         headingLevel: 'heading-level'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomFooterExtendedNavigationColumn as StencilReactComponent<ScaleTelekomFooterExtendedNavigationColumnElement, ScaleTelekomFooterExtendedNavigationColumnEvents, JSX.ScaleTelekomFooterExtendedNavigationColumn>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomFooterExtendedNavigationColumn as StencilReactComponent<ScaleTelekomFooterExtendedNavigationColumnElement, ScaleTelekomFooterExtendedNavigationColumnEvents, Components.ScaleTelekomFooterExtendedNavigationColumn>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomHeaderEvents = NonNullable<unknown>;
 
-export const ScaleTelekomHeader: StencilReactComponent<ScaleTelekomHeaderElement, ScaleTelekomHeaderEvents, JSX.ScaleTelekomHeader> = /*@__PURE__*/ createComponent<ScaleTelekomHeaderElement, ScaleTelekomHeaderEvents, JSX.ScaleTelekomHeader>({
+export const ScaleTelekomHeader: StencilReactComponent<ScaleTelekomHeaderElement, ScaleTelekomHeaderEvents, Components.ScaleTelekomHeader> = /*@__PURE__*/ createComponent<ScaleTelekomHeaderElement, ScaleTelekomHeaderEvents, Components.ScaleTelekomHeader>({
     tagName: 'scale-telekom-header',
     properties: {
         appName: 'app-name',
@@ -8242,14 +8242,14 @@ export const ScaleTelekomHeader: StencilReactComponent<ScaleTelekomHeaderElement
         langSwitcherAriaLabel: 'lang-switcher-aria-label',
         mainNavAriaLabel: 'main-nav-aria-label'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomHeader as StencilReactComponent<ScaleTelekomHeaderElement, ScaleTelekomHeaderEvents, JSX.ScaleTelekomHeader>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomHeader as StencilReactComponent<ScaleTelekomHeaderElement, ScaleTelekomHeaderEvents, Components.ScaleTelekomHeader>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomHeaderDataBackCompatEvents = NonNullable<unknown>;
 
-export const ScaleTelekomHeaderDataBackCompat: StencilReactComponent<ScaleTelekomHeaderDataBackCompatElement, ScaleTelekomHeaderDataBackCompatEvents, JSX.ScaleTelekomHeaderDataBackCompat> = /*@__PURE__*/ createComponent<ScaleTelekomHeaderDataBackCompatElement, ScaleTelekomHeaderDataBackCompatEvents, JSX.ScaleTelekomHeaderDataBackCompat>({
+export const ScaleTelekomHeaderDataBackCompat: StencilReactComponent<ScaleTelekomHeaderDataBackCompatElement, ScaleTelekomHeaderDataBackCompatEvents, Components.ScaleTelekomHeaderDataBackCompat> = /*@__PURE__*/ createComponent<ScaleTelekomHeaderDataBackCompatElement, ScaleTelekomHeaderDataBackCompatEvents, Components.ScaleTelekomHeaderDataBackCompat>({
     tagName: 'scale-telekom-header-data-back-compat',
     properties: {
         appName: 'app-name',
@@ -8265,34 +8265,34 @@ export const ScaleTelekomHeaderDataBackCompat: StencilReactComponent<ScaleTeleko
         userNavigation: 'user-navigation',
         activeRouteId: 'active-route-id'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomHeaderDataBackCompat as StencilReactComponent<ScaleTelekomHeaderDataBackCompatElement, ScaleTelekomHeaderDataBackCompatEvents, JSX.ScaleTelekomHeaderDataBackCompat>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomHeaderDataBackCompat as StencilReactComponent<ScaleTelekomHeaderDataBackCompatElement, ScaleTelekomHeaderDataBackCompatEvents, Components.ScaleTelekomHeaderDataBackCompat>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomMegaMenuEvents = NonNullable<unknown>;
 
-export const ScaleTelekomMegaMenu: StencilReactComponent<ScaleTelekomMegaMenuElement, ScaleTelekomMegaMenuEvents, JSX.ScaleTelekomMegaMenu> = /*@__PURE__*/ createComponent<ScaleTelekomMegaMenuElement, ScaleTelekomMegaMenuEvents, JSX.ScaleTelekomMegaMenu>({
+export const ScaleTelekomMegaMenu: StencilReactComponent<ScaleTelekomMegaMenuElement, ScaleTelekomMegaMenuEvents, Components.ScaleTelekomMegaMenu> = /*@__PURE__*/ createComponent<ScaleTelekomMegaMenuElement, ScaleTelekomMegaMenuEvents, Components.ScaleTelekomMegaMenu>({
     tagName: 'scale-telekom-mega-menu',
     properties: {},
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomMegaMenu as StencilReactComponent<ScaleTelekomMegaMenuElement, ScaleTelekomMegaMenuEvents, JSX.ScaleTelekomMegaMenu>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomMegaMenu as StencilReactComponent<ScaleTelekomMegaMenuElement, ScaleTelekomMegaMenuEvents, Components.ScaleTelekomMegaMenu>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomMegaMenuColumnEvents = NonNullable<unknown>;
 
-export const ScaleTelekomMegaMenuColumn: StencilReactComponent<ScaleTelekomMegaMenuColumnElement, ScaleTelekomMegaMenuColumnEvents, JSX.ScaleTelekomMegaMenuColumn> = /*@__PURE__*/ createComponent<ScaleTelekomMegaMenuColumnElement, ScaleTelekomMegaMenuColumnEvents, JSX.ScaleTelekomMegaMenuColumn>({
+export const ScaleTelekomMegaMenuColumn: StencilReactComponent<ScaleTelekomMegaMenuColumnElement, ScaleTelekomMegaMenuColumnEvents, Components.ScaleTelekomMegaMenuColumn> = /*@__PURE__*/ createComponent<ScaleTelekomMegaMenuColumnElement, ScaleTelekomMegaMenuColumnEvents, Components.ScaleTelekomMegaMenuColumn>({
     tagName: 'scale-telekom-mega-menu-column',
     properties: { headingLevel: 'heading-level' },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomMegaMenuColumn as StencilReactComponent<ScaleTelekomMegaMenuColumnElement, ScaleTelekomMegaMenuColumnEvents, JSX.ScaleTelekomMegaMenuColumn>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomMegaMenuColumn as StencilReactComponent<ScaleTelekomMegaMenuColumnElement, ScaleTelekomMegaMenuColumnEvents, Components.ScaleTelekomMegaMenuColumn>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomMobileFlyoutCanvasEvents = { onScaleCloseNavFlyout: EventName<ScaleTelekomMobileFlyoutCanvasCustomEvent<any>> };
 
-export const ScaleTelekomMobileFlyoutCanvas: StencilReactComponent<ScaleTelekomMobileFlyoutCanvasElement, ScaleTelekomMobileFlyoutCanvasEvents, JSX.ScaleTelekomMobileFlyoutCanvas> = /*@__PURE__*/ createComponent<ScaleTelekomMobileFlyoutCanvasElement, ScaleTelekomMobileFlyoutCanvasEvents, JSX.ScaleTelekomMobileFlyoutCanvas>({
+export const ScaleTelekomMobileFlyoutCanvas: StencilReactComponent<ScaleTelekomMobileFlyoutCanvasElement, ScaleTelekomMobileFlyoutCanvasEvents, Components.ScaleTelekomMobileFlyoutCanvas> = /*@__PURE__*/ createComponent<ScaleTelekomMobileFlyoutCanvasElement, ScaleTelekomMobileFlyoutCanvasEvents, Components.ScaleTelekomMobileFlyoutCanvas>({
     tagName: 'scale-telekom-mobile-flyout-canvas',
     properties: {
         appName: 'app-name',
@@ -8301,14 +8301,14 @@ export const ScaleTelekomMobileFlyoutCanvas: StencilReactComponent<ScaleTelekomM
         closeButtonLabel: 'close-button-label',
         closeButtonTitle: 'close-button-title'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomMobileFlyoutCanvas as StencilReactComponent<ScaleTelekomMobileFlyoutCanvasElement, ScaleTelekomMobileFlyoutCanvasEvents, JSX.ScaleTelekomMobileFlyoutCanvas>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomMobileFlyoutCanvas as StencilReactComponent<ScaleTelekomMobileFlyoutCanvasElement, ScaleTelekomMobileFlyoutCanvasEvents, Components.ScaleTelekomMobileFlyoutCanvas>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomMobileMenuEvents = { onScaleCloseNavFlyout: EventName<ScaleTelekomMobileMenuCustomEvent<any>> };
 
-export const ScaleTelekomMobileMenu: StencilReactComponent<ScaleTelekomMobileMenuElement, ScaleTelekomMobileMenuEvents, JSX.ScaleTelekomMobileMenu> = /*@__PURE__*/ createComponent<ScaleTelekomMobileMenuElement, ScaleTelekomMobileMenuEvents, JSX.ScaleTelekomMobileMenu>({
+export const ScaleTelekomMobileMenu: StencilReactComponent<ScaleTelekomMobileMenuElement, ScaleTelekomMobileMenuEvents, Components.ScaleTelekomMobileMenu> = /*@__PURE__*/ createComponent<ScaleTelekomMobileMenuElement, ScaleTelekomMobileMenuEvents, Components.ScaleTelekomMobileMenu>({
     tagName: 'scale-telekom-mobile-menu',
     properties: {
         backButtonTitle: 'back-button-title',
@@ -8316,8 +8316,8 @@ export const ScaleTelekomMobileMenu: StencilReactComponent<ScaleTelekomMobileMen
         appNameLink: 'app-name-link',
         appNameClick: 'app-name-click'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomMobileMenu as StencilReactComponent<ScaleTelekomMobileMenuElement, ScaleTelekomMobileMenuEvents, JSX.ScaleTelekomMobileMenu>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomMobileMenu as StencilReactComponent<ScaleTelekomMobileMenuElement, ScaleTelekomMobileMenuEvents, Components.ScaleTelekomMobileMenu>,
     serializeShadowRoot
 });
 
@@ -8327,7 +8327,7 @@ export type ScaleTelekomMobileMenuItemEvents = {
     onScaleCloseNavFlyout: EventName<ScaleTelekomMobileMenuItemCustomEvent<any>>
 };
 
-export const ScaleTelekomMobileMenuItem: StencilReactComponent<ScaleTelekomMobileMenuItemElement, ScaleTelekomMobileMenuItemEvents, JSX.ScaleTelekomMobileMenuItem> = /*@__PURE__*/ createComponent<ScaleTelekomMobileMenuItemElement, ScaleTelekomMobileMenuItemEvents, JSX.ScaleTelekomMobileMenuItem>({
+export const ScaleTelekomMobileMenuItem: StencilReactComponent<ScaleTelekomMobileMenuItemElement, ScaleTelekomMobileMenuItemEvents, Components.ScaleTelekomMobileMenuItem> = /*@__PURE__*/ createComponent<ScaleTelekomMobileMenuItemElement, ScaleTelekomMobileMenuItemEvents, Components.ScaleTelekomMobileMenuItem>({
     tagName: 'scale-telekom-mobile-menu-item',
     properties: {
         open: 'open',
@@ -8335,14 +8335,14 @@ export const ScaleTelekomMobileMenuItem: StencilReactComponent<ScaleTelekomMobil
         level: 'level',
         currentLevel: 'current-level'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomMobileMenuItem as StencilReactComponent<ScaleTelekomMobileMenuItemElement, ScaleTelekomMobileMenuItemEvents, JSX.ScaleTelekomMobileMenuItem>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomMobileMenuItem as StencilReactComponent<ScaleTelekomMobileMenuItemElement, ScaleTelekomMobileMenuItemEvents, Components.ScaleTelekomMobileMenuItem>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomNavFlyoutEvents = { onScaleExpanded: EventName<ScaleTelekomNavFlyoutCustomEvent<any>> };
 
-export const ScaleTelekomNavFlyout: StencilReactComponent<ScaleTelekomNavFlyoutElement, ScaleTelekomNavFlyoutEvents, JSX.ScaleTelekomNavFlyout> = /*@__PURE__*/ createComponent<ScaleTelekomNavFlyoutElement, ScaleTelekomNavFlyoutEvents, JSX.ScaleTelekomNavFlyout>({
+export const ScaleTelekomNavFlyout: StencilReactComponent<ScaleTelekomNavFlyoutElement, ScaleTelekomNavFlyoutEvents, Components.ScaleTelekomNavFlyout> = /*@__PURE__*/ createComponent<ScaleTelekomNavFlyoutElement, ScaleTelekomNavFlyoutEvents, Components.ScaleTelekomNavFlyout>({
     tagName: 'scale-telekom-nav-flyout',
     properties: {
         expanded: 'expanded',
@@ -8350,14 +8350,14 @@ export const ScaleTelekomNavFlyout: StencilReactComponent<ScaleTelekomNavFlyoutE
         variant: 'variant',
         hover: 'hover'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomNavFlyout as StencilReactComponent<ScaleTelekomNavFlyoutElement, ScaleTelekomNavFlyoutEvents, JSX.ScaleTelekomNavFlyout>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomNavFlyout as StencilReactComponent<ScaleTelekomNavFlyoutElement, ScaleTelekomNavFlyoutEvents, Components.ScaleTelekomNavFlyout>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomNavItemEvents = NonNullable<unknown>;
 
-export const ScaleTelekomNavItem: StencilReactComponent<ScaleTelekomNavItemElement, ScaleTelekomNavItemEvents, JSX.ScaleTelekomNavItem> = /*@__PURE__*/ createComponent<ScaleTelekomNavItemElement, ScaleTelekomNavItemEvents, JSX.ScaleTelekomNavItem>({
+export const ScaleTelekomNavItem: StencilReactComponent<ScaleTelekomNavItemElement, ScaleTelekomNavItemEvents, Components.ScaleTelekomNavItem> = /*@__PURE__*/ createComponent<ScaleTelekomNavItemElement, ScaleTelekomNavItemEvents, Components.ScaleTelekomNavItem>({
     tagName: 'scale-telekom-nav-item',
     properties: {
         active: 'active',
@@ -8366,28 +8366,28 @@ export const ScaleTelekomNavItem: StencilReactComponent<ScaleTelekomNavItemEleme
         hideOnMobile: 'hide-on-mobile',
         hideOnDesktop: 'hide-on-desktop'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomNavItem as StencilReactComponent<ScaleTelekomNavItemElement, ScaleTelekomNavItemEvents, JSX.ScaleTelekomNavItem>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomNavItem as StencilReactComponent<ScaleTelekomNavItemElement, ScaleTelekomNavItemEvents, Components.ScaleTelekomNavItem>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomNavListEvents = NonNullable<unknown>;
 
-export const ScaleTelekomNavList: StencilReactComponent<ScaleTelekomNavListElement, ScaleTelekomNavListEvents, JSX.ScaleTelekomNavList> = /*@__PURE__*/ createComponent<ScaleTelekomNavListElement, ScaleTelekomNavListEvents, JSX.ScaleTelekomNavList>({
+export const ScaleTelekomNavList: StencilReactComponent<ScaleTelekomNavListElement, ScaleTelekomNavListEvents, Components.ScaleTelekomNavList> = /*@__PURE__*/ createComponent<ScaleTelekomNavListElement, ScaleTelekomNavListEvents, Components.ScaleTelekomNavList>({
     tagName: 'scale-telekom-nav-list',
     properties: {
         role: 'role',
         alignment: 'alignment',
         variant: 'variant'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomNavList as StencilReactComponent<ScaleTelekomNavListElement, ScaleTelekomNavListEvents, JSX.ScaleTelekomNavList>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomNavList as StencilReactComponent<ScaleTelekomNavListElement, ScaleTelekomNavListEvents, Components.ScaleTelekomNavList>,
     serializeShadowRoot
 });
 
 export type ScaleTelekomProfileMenuEvents = NonNullable<unknown>;
 
-export const ScaleTelekomProfileMenu: StencilReactComponent<ScaleTelekomProfileMenuElement, ScaleTelekomProfileMenuEvents, JSX.ScaleTelekomProfileMenu> = /*@__PURE__*/ createComponent<ScaleTelekomProfileMenuElement, ScaleTelekomProfileMenuEvents, JSX.ScaleTelekomProfileMenu>({
+export const ScaleTelekomProfileMenu: StencilReactComponent<ScaleTelekomProfileMenuElement, ScaleTelekomProfileMenuEvents, Components.ScaleTelekomProfileMenu> = /*@__PURE__*/ createComponent<ScaleTelekomProfileMenuElement, ScaleTelekomProfileMenuEvents, Components.ScaleTelekomProfileMenu>({
     tagName: 'scale-telekom-profile-menu',
     properties: {
         label: 'label',
@@ -8413,8 +8413,8 @@ export const ScaleTelekomProfileMenu: StencilReactComponent<ScaleTelekomProfileM
         logoutUrl: 'logout-url',
         logoutHandler: 'logout-handler'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTelekomProfileMenu as StencilReactComponent<ScaleTelekomProfileMenuElement, ScaleTelekomProfileMenuEvents, JSX.ScaleTelekomProfileMenu>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTelekomProfileMenu as StencilReactComponent<ScaleTelekomProfileMenuElement, ScaleTelekomProfileMenuEvents, Components.ScaleTelekomProfileMenu>,
     serializeShadowRoot
 });
 
@@ -8426,7 +8426,7 @@ export type ScaleTextFieldEvents = {
     onScaleKeydown: EventName<ScaleTextFieldCustomEvent<KeyboardEvent>>
 };
 
-export const ScaleTextField: StencilReactComponent<ScaleTextFieldElement, ScaleTextFieldEvents, JSX.ScaleTextField> = /*@__PURE__*/ createComponent<ScaleTextFieldElement, ScaleTextFieldEvents, JSX.ScaleTextField>({
+export const ScaleTextField: StencilReactComponent<ScaleTextFieldElement, ScaleTextFieldEvents, Components.ScaleTextField> = /*@__PURE__*/ createComponent<ScaleTextFieldElement, ScaleTextFieldEvents, Components.ScaleTextField>({
     tagName: 'scale-text-field',
     properties: {
         type: 'type',
@@ -8460,8 +8460,8 @@ export const ScaleTextField: StencilReactComponent<ScaleTextFieldElement, ScaleT
         experimentalControlled: 'experimental-controlled',
         dataQa: 'data-qa'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTextField as StencilReactComponent<ScaleTextFieldElement, ScaleTextFieldEvents, JSX.ScaleTextField>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTextField as StencilReactComponent<ScaleTextFieldElement, ScaleTextFieldEvents, Components.ScaleTextField>,
     serializeShadowRoot
 });
 
@@ -8473,7 +8473,7 @@ export type ScaleTextareaEvents = {
     onScaleKeydown: EventName<ScaleTextareaCustomEvent<KeyboardEvent>>
 };
 
-export const ScaleTextarea: StencilReactComponent<ScaleTextareaElement, ScaleTextareaEvents, JSX.ScaleTextarea> = /*@__PURE__*/ createComponent<ScaleTextareaElement, ScaleTextareaEvents, JSX.ScaleTextarea>({
+export const ScaleTextarea: StencilReactComponent<ScaleTextareaElement, ScaleTextareaEvents, Components.ScaleTextarea> = /*@__PURE__*/ createComponent<ScaleTextareaElement, ScaleTextareaEvents, Components.ScaleTextarea>({
     tagName: 'scale-textarea',
     properties: {
         name: 'name',
@@ -8501,14 +8501,14 @@ export const ScaleTextarea: StencilReactComponent<ScaleTextareaElement, ScaleTex
         ariaDetailsId: 'aria-details-id',
         dataQa: 'data-qa'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTextarea as StencilReactComponent<ScaleTextareaElement, ScaleTextareaEvents, JSX.ScaleTextarea>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTextarea as StencilReactComponent<ScaleTextareaElement, ScaleTextareaEvents, Components.ScaleTextarea>,
     serializeShadowRoot
 });
 
 export type ScaleToastEvents = NonNullable<unknown>;
 
-export const ScaleToast: StencilReactComponent<ScaleToastElement, ScaleToastEvents, JSX.ScaleToast> = /*@__PURE__*/ createComponent<ScaleToastElement, ScaleToastEvents, JSX.ScaleToast>({
+export const ScaleToast: StencilReactComponent<ScaleToastElement, ScaleToastEvents, Components.ScaleToast> = /*@__PURE__*/ createComponent<ScaleToastElement, ScaleToastEvents, Components.ScaleToast>({
     tagName: 'scale-toast',
     properties: {
         size: 'size',
@@ -8522,14 +8522,14 @@ export const ScaleToast: StencilReactComponent<ScaleToastElement, ScaleToastEven
         fadeDuration: 'fade-duration',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleToast as StencilReactComponent<ScaleToastElement, ScaleToastEvents, JSX.ScaleToast>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleToast as StencilReactComponent<ScaleToastElement, ScaleToastEvents, Components.ScaleToast>,
     serializeShadowRoot
 });
 
 export type ScaleToggleButtonEvents = { onScaleClick: EventName<ScaleToggleButtonCustomEvent<{ id: string; selected: boolean; }>> };
 
-export const ScaleToggleButton: StencilReactComponent<ScaleToggleButtonElement, ScaleToggleButtonEvents, JSX.ScaleToggleButton> = /*@__PURE__*/ createComponent<ScaleToggleButtonElement, ScaleToggleButtonEvents, JSX.ScaleToggleButton>({
+export const ScaleToggleButton: StencilReactComponent<ScaleToggleButtonElement, ScaleToggleButtonEvents, Components.ScaleToggleButton> = /*@__PURE__*/ createComponent<ScaleToggleButtonElement, ScaleToggleButtonEvents, Components.ScaleToggleButton>({
     tagName: 'scale-toggle-button',
     properties: {
         size: 'size',
@@ -8550,14 +8550,14 @@ export const ScaleToggleButton: StencilReactComponent<ScaleToggleButtonElement, 
         ariaLangDeselected: 'aria-lang-deselected',
         ariaDescriptionTranslation: 'aria-description-translation'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleToggleButton as StencilReactComponent<ScaleToggleButtonElement, ScaleToggleButtonEvents, JSX.ScaleToggleButton>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleToggleButton as StencilReactComponent<ScaleToggleButtonElement, ScaleToggleButtonEvents, Components.ScaleToggleButton>,
     serializeShadowRoot
 });
 
 export type ScaleToggleGroupEvents = { onScaleChange: EventName<ScaleToggleGroupCustomEvent<any>> };
 
-export const ScaleToggleGroup: StencilReactComponent<ScaleToggleGroupElement, ScaleToggleGroupEvents, JSX.ScaleToggleGroup> = /*@__PURE__*/ createComponent<ScaleToggleGroupElement, ScaleToggleGroupEvents, JSX.ScaleToggleGroup>({
+export const ScaleToggleGroup: StencilReactComponent<ScaleToggleGroupElement, ScaleToggleGroupEvents, Components.ScaleToggleGroup> = /*@__PURE__*/ createComponent<ScaleToggleGroupElement, ScaleToggleGroupEvents, Components.ScaleToggleGroup>({
     tagName: 'scale-toggle-group',
     properties: {
         size: 'size',
@@ -8571,8 +8571,8 @@ export const ScaleToggleGroup: StencilReactComponent<ScaleToggleGroupElement, Sc
         variant: 'variant',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleToggleGroup as StencilReactComponent<ScaleToggleGroupElement, ScaleToggleGroupEvents, JSX.ScaleToggleGroup>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleToggleGroup as StencilReactComponent<ScaleToggleGroupElement, ScaleToggleGroupEvents, Components.ScaleToggleGroup>,
     serializeShadowRoot
 });
 
@@ -8583,7 +8583,7 @@ export type ScaleTooltipEvents = {
     onScaleHide: EventName<ScaleTooltipCustomEvent<any>>
 };
 
-export const ScaleTooltip: StencilReactComponent<ScaleTooltipElement, ScaleTooltipEvents, JSX.ScaleTooltip> = /*@__PURE__*/ createComponent<ScaleTooltipElement, ScaleTooltipEvents, JSX.ScaleTooltip>({
+export const ScaleTooltip: StencilReactComponent<ScaleTooltipElement, ScaleTooltipEvents, Components.ScaleTooltip> = /*@__PURE__*/ createComponent<ScaleTooltipElement, ScaleTooltipEvents, Components.ScaleTooltip>({
     tagName: 'scale-tooltip',
     properties: {
         content: 'content',
@@ -8597,7 +8597,7 @@ export const ScaleTooltip: StencilReactComponent<ScaleTooltipElement, ScaleToolt
         flip: 'flip',
         styles: 'styles'
     },
-    hydrateModule: import('@telekom/scale-components/hydrate') as Promise<HydrateModule>,
-    clientModule: clientComponents.ScaleTooltip as StencilReactComponent<ScaleTooltipElement, ScaleTooltipEvents, JSX.ScaleTooltip>,
+    hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
+    clientModule: clientComponents.ScaleTooltip as StencilReactComponent<ScaleTooltipElement, ScaleTooltipEvents, Components.ScaleTooltip>,
     serializeShadowRoot
 });

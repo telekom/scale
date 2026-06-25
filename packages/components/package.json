@@ -42,7 +42,7 @@
     "@nowseemee/vue-output-target": "0.0.4",
     "@stencil-community/postcss": "^2.2.0",
     "@stencil/angular-output-target": "^1.1.0",
-    "@stencil/react-output-target": "~1.5.1",
+    "@stencil/react-output-target": "~1.5.3",
     "@types/classnames": "2.2.8",
     "@types/jest": "24.9.1",
     "@types/resize-observer-browser": "^0.1.11",
