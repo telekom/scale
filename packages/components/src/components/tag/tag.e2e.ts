@@ -19,202 +19,98 @@ describe('scale-tag', () => {
     expect(element).toHaveClass('hydrated');
   });
 
-  describe('Keyboard Navigation', () => {
-    it('should have role and aria attributes for accessibility', async () => {
+  describe('Accessibility', () => {
+    it('should keep read-only tags out of the tab order', async () => {
       const page = await newE2EPage();
       await page.setContent(`
         <div>
-          <scale-tag>Tag 1</scale-tag>
-          <scale-tag>Tag 2</scale-tag>
-          <scale-tag>Tag 3</scale-tag>
+          <button id="before">Before</button>
+          <scale-tag id="tag1">Tag 1</scale-tag>
+          <scale-tag id="tag2">Tag 2</scale-tag>
+          <button id="after">After</button>
         </div>
       `);
 
-      const firstTag = await page.find('scale-tag');
-      const role = await firstTag.getAttribute('role');
-      const ariaSelected = await firstTag.getAttribute('aria-selected');
+      await page.focus('#before');
+      await page.keyboard.press('Tab');
+      await page.waitForChanges();
 
-      expect(role).toBe('option');
-      expect(ariaSelected).toBe('false');
+      const activeElementId = await page.evaluate(
+        () => document.activeElement.id
+      );
+      expect(activeElementId).toBe('after');
     });
 
-    it('should have tabindex set for roving tabindex pattern', async () => {
+    it('should not emit option semantics without a listbox owner', async () => {
       const page = await newE2EPage();
       await page.setContent(`
         <div>
-          <scale-tag>Tag 1</scale-tag>
-          <scale-tag>Tag 2</scale-tag>
-          <scale-tag>Tag 3</scale-tag>
+          <scale-tag id="tag1">Tag 1</scale-tag>
+          <scale-tag id="tag2">Tag 2</scale-tag>
         </div>
+      `);
+
+      const firstTag = await page.find('#tag1');
+      const secondTag = await page.find('#tag2');
+
+      expect(await firstTag.getAttribute('role')).toBeNull();
+      expect(await firstTag.getAttribute('aria-selected')).toBeNull();
+      expect(await secondTag.getAttribute('role')).toBeNull();
+      expect(await secondTag.getAttribute('aria-selected')).toBeNull();
+    });
+
+    it('should expose wrapped read-only tags without making them tabbable', async () => {
+      const page = await newE2EPage();
+      await page.setContent(`
+        <ul>
+          <li><scale-tag id="tag1">Tag 1</scale-tag></li>
+          <li><scale-tag id="tag2" disabled>Tag 2</scale-tag></li>
+          <li><scale-tag id="tag3">Tag 3</scale-tag></li>
+        </ul>
       `);
 
       const tags = await page.findAll('scale-tag');
       expect(tags.length).toBe(3);
 
-      // First tag should be focusable
-      const firstTabindex = await tags[0].getAttribute('tabindex');
-      expect(firstTabindex).toBe('0');
-
-      // Other tags should not be focusable
-      const secondTabindex = await tags[1].getAttribute('tabindex');
-      const thirdTabindex = await tags[2].getAttribute('tabindex');
-      expect(secondTabindex).toBe('-1');
-      expect(thirdTabindex).toBe('-1');
+      expect(await tags[0].getAttribute('tabindex')).toBeNull();
+      expect(await tags[1].getAttribute('tabindex')).toBeNull();
+      expect(await tags[2].getAttribute('tabindex')).toBeNull();
+      expect(await tags[0].getAttribute('aria-label')).toBe('Tag 1');
+      expect(await tags[1].getAttribute('aria-disabled')).toBe('true');
+      expect(await tags[1].getAttribute('aria-label')).toBe('Tag 2');
+      expect(await tags[2].getAttribute('aria-label')).toBe('Tag 3');
     });
 
-    it('should navigate to next tag on ArrowRight key', async () => {
+    it('should keep href and dismissable tags interactive without host tab stops', async () => {
       const page = await newE2EPage();
       await page.setContent(`
         <div>
-          <scale-tag id="tag1">Tag 1</scale-tag>
-          <scale-tag id="tag2">Tag 2</scale-tag>
-          <scale-tag id="tag3">Tag 3</scale-tag>
+          <button id="before">Before</button>
+          <scale-tag id="link-tag" href="#target">Link tag</scale-tag>
+          <scale-tag id="dismissable-tag" dismissable dismiss-text="Remove tag">
+            Dismissable tag
+          </scale-tag>
+          <button id="after">After</button>
         </div>
       `);
 
-      const firstTag = await page.find('#tag1');
-      const secondTag = await page.find('#tag2');
+      const linkTag = await page.find('#link-tag');
+      const dismissableTag = await page.find('#dismissable-tag');
+      const link = await page.find('#link-tag >>> a');
+      const button = await page.find('#dismissable-tag >>> button');
 
-      // Focus on first tag and press ArrowRight
-      await firstTag.focus();
-      await page.keyboard.press('ArrowRight');
-      await page.waitForChanges();
+      expect(await linkTag.getAttribute('tabindex')).toBeNull();
+      expect(await dismissableTag.getAttribute('tabindex')).toBeNull();
+      expect(await link.getAttribute('href')).toBe('#target');
+      expect(await button.getAttribute('aria-label')).toBe('Remove tag');
 
-      // Check tabindex values after navigation
-      const firstTabindex = await firstTag.getAttribute('tabindex');
-      const secondTabindex = await secondTag.getAttribute('tabindex');
+      await page.focus('#before');
+      await page.keyboard.press('Tab');
+      const activeElementTagName = await page.evaluate(() =>
+        document.activeElement.shadowRoot.activeElement.tagName.toLowerCase()
+      );
 
-      expect(firstTabindex).toBe('-1');
-      expect(secondTabindex).toBe('0');
-    });
-
-    it('should navigate to previous tag on ArrowLeft key', async () => {
-      const page = await newE2EPage();
-      await page.setContent(`
-        <div>
-          <scale-tag id="tag1">Tag 1</scale-tag>
-          <scale-tag id="tag2">Tag 2</scale-tag>
-          <scale-tag id="tag3">Tag 3</scale-tag>
-        </div>
-      `);
-
-      const firstTag = await page.find('#tag1');
-      const secondTag = await page.find('#tag2');
-      const thirdTag = await page.find('#tag3');
-
-      // Focus on second tag and press ArrowLeft
-      await secondTag.focus();
-      await page.keyboard.press('ArrowLeft');
-      await page.waitForChanges();
-
-      // Check tabindex values - should go back to first tag
-      const firstTabindex = await firstTag.getAttribute('tabindex');
-      const secondTabindex = await secondTag.getAttribute('tabindex');
-
-      expect(firstTabindex).toBe('0');
-      expect(secondTabindex).toBe('-1');
-    });
-
-    it('should navigate to next tag on ArrowDown key', async () => {
-      const page = await newE2EPage();
-      await page.setContent(`
-        <div>
-          <scale-tag id="tag1">Tag 1</scale-tag>
-          <scale-tag id="tag2">Tag 2</scale-tag>
-        </div>
-      `);
-
-      const firstTag = await page.find('#tag1');
-      const secondTag = await page.find('#tag2');
-
-      // Focus on first tag and press ArrowDown
-      await firstTag.focus();
-      await page.keyboard.press('ArrowDown');
-      await page.waitForChanges();
-
-      // Check tabindex values
-      const firstTabindex = await firstTag.getAttribute('tabindex');
-      const secondTabindex = await secondTag.getAttribute('tabindex');
-
-      expect(firstTabindex).toBe('-1');
-      expect(secondTabindex).toBe('0');
-    });
-
-    it('should navigate to previous tag on ArrowUp key', async () => {
-      const page = await newE2EPage();
-      await page.setContent(`
-        <div>
-          <scale-tag id="tag1">Tag 1</scale-tag>
-          <scale-tag id="tag2">Tag 2</scale-tag>
-        </div>
-      `);
-
-      const firstTag = await page.find('#tag1');
-      const secondTag = await page.find('#tag2');
-
-      // Focus on second tag and press ArrowUp
-      await secondTag.focus();
-      await page.keyboard.press('ArrowUp');
-      await page.waitForChanges();
-
-      // Check tabindex values
-      const firstTabindex = await firstTag.getAttribute('tabindex');
-      const secondTabindex = await secondTag.getAttribute('tabindex');
-
-      expect(firstTabindex).toBe('0');
-      expect(secondTabindex).toBe('-1');
-    });
-
-    it('should wrap around from last to first tag on ArrowRight', async () => {
-      const page = await newE2EPage();
-      await page.setContent(`
-        <div>
-          <scale-tag id="tag1">Tag 1</scale-tag>
-          <scale-tag id="tag2">Tag 2</scale-tag>
-          <scale-tag id="tag3">Tag 3</scale-tag>
-        </div>
-      `);
-
-      const firstTag = await page.find('#tag1');
-      const thirdTag = await page.find('#tag3');
-
-      // Focus on last tag and press ArrowRight
-      await thirdTag.focus();
-      await page.keyboard.press('ArrowRight');
-      await page.waitForChanges();
-
-      // Check tabindex values - should wrap to first
-      const firstTabindex = await firstTag.getAttribute('tabindex');
-      const thirdTabindex = await thirdTag.getAttribute('tabindex');
-
-      expect(firstTabindex).toBe('0');
-      expect(thirdTabindex).toBe('-1');
-    });
-
-    it('should wrap around from first to last tag on ArrowLeft', async () => {
-      const page = await newE2EPage();
-      await page.setContent(`
-        <div>
-          <scale-tag id="tag1">Tag 1</scale-tag>
-          <scale-tag id="tag2">Tag 2</scale-tag>
-          <scale-tag id="tag3">Tag 3</scale-tag>
-        </div>
-      `);
-
-      const firstTag = await page.find('#tag1');
-      const thirdTag = await page.find('#tag3');
-
-      // Focus on first tag and press ArrowLeft
-      await firstTag.focus();
-      await page.keyboard.press('ArrowLeft');
-      await page.waitForChanges();
-
-      // Check tabindex values - should wrap to last
-      const firstTabindex = await firstTag.getAttribute('tabindex');
-      const thirdTabindex = await thirdTag.getAttribute('tabindex');
-
-      expect(firstTabindex).toBe('-1');
-      expect(thirdTabindex).toBe('0');
+      expect(activeElementTagName).toBe('a');
     });
   });
 });

@@ -45,141 +45,68 @@ describe('Tag', () => {
     expect(element.getCssClassMap()).toContain('tag--link');
   });
 
-  describe('Keyboard Navigation (Roving Tabindex)', () => {
-    it('should have role="option" and aria-selected attributes', async () => {
+  describe('Accessibility', () => {
+    it('should keep read-only tags out of tab order and invalid option context', async () => {
       const page = await newSpecPage({
         components: [Tag],
         html: `<scale-tag>Tag 1</scale-tag>`,
       });
       const tag = page.root;
-      expect(tag.getAttribute('role')).toBe('option');
-      expect(tag.getAttribute('aria-selected')).toBe('false');
+      expect(tag.hasAttribute('tabindex')).toBe(false);
+      expect(tag.hasAttribute('role')).toBe(false);
+      expect(tag.hasAttribute('aria-selected')).toBe(false);
+      expect(tag.getAttribute('aria-label')).toBe('Tag 1');
     });
 
-    it('should have tabindex initially set to 0', async () => {
+    it('should preserve explicit aria-label on read-only tags', async () => {
       const page = await newSpecPage({
         components: [Tag],
-        html: `<scale-tag>Tag 1</scale-tag>`,
+        html: `<scale-tag aria-label="Custom label">Tag 1</scale-tag>`,
       });
       const tag = page.root;
-      expect(tag.getAttribute('tabindex')).toBe('0');
+      expect(tag.getAttribute('aria-label')).toBe('Custom label');
     });
 
-    it('should handle ArrowRight keyboard event on a single tag', async () => {
+    it('should not put wrapped read-only tags into tab order', async () => {
       const page = await newSpecPage({
         components: [Tag],
-        html: `<scale-tag>Tag</scale-tag>`,
+        html: `
+          <ul>
+            <li><scale-tag>Tag 1</scale-tag></li>
+            <li><scale-tag disabled>Tag 2</scale-tag></li>
+            <li><scale-tag>Tag 3</scale-tag></li>
+          </ul>
+        `,
       });
 
-      const tag = page.root;
-      expect(tag).not.toBeNull();
-
-      // Simulate ArrowRight key press on tag
-      const event = new KeyboardEvent('keydown', {
-        key: 'ArrowRight',
-        bubbles: true,
+      const tags = page.body.querySelectorAll('scale-tag');
+      tags.forEach((tag) => {
+        expect(tag.hasAttribute('tabindex')).toBe(false);
+        expect(tag.hasAttribute('role')).toBe(false);
+        expect(tag.hasAttribute('aria-selected')).toBe(false);
       });
-      tag.dispatchEvent(event);
-      await page.waitForChanges();
-
-      // Verify that tag still has tabindex 0
-      expect(tag.getAttribute('tabindex')).toBe('0');
+      expect(tags[1].getAttribute('aria-disabled')).toBe('true');
     });
 
-    it('should handle ArrowLeft keyboard event on a single tag', async () => {
+    it('should keep href and dismissable behavior on the internal controls', async () => {
       const page = await newSpecPage({
         components: [Tag],
-        html: `<scale-tag>Tag</scale-tag>`,
+        html: `
+          <scale-tag href="https://example.com">Link tag</scale-tag>
+          <scale-tag dismissable dismiss-text="Remove tag">Dismissable tag</scale-tag>
+        `,
       });
 
-      const tag = page.root;
-      expect(tag).not.toBeNull();
+      const [linkTag, dismissableTag] = Array.from(
+        page.body.querySelectorAll('scale-tag')
+      );
+      const link = linkTag.shadowRoot.querySelector('a');
+      const button = dismissableTag.shadowRoot.querySelector('button');
 
-      // Simulate ArrowLeft key press
-      const event = new KeyboardEvent('keydown', {
-        key: 'ArrowLeft',
-        bubbles: true,
-      });
-      tag.dispatchEvent(event);
-      await page.waitForChanges();
-
-      expect(tag.getAttribute('tabindex')).toBe('0');
-    });
-
-    it('should handle ArrowDown keyboard event on a single tag', async () => {
-      const page = await newSpecPage({
-        components: [Tag],
-        html: `<scale-tag>Tag</scale-tag>`,
-      });
-
-      const tag = page.root;
-      expect(tag).not.toBeNull();
-
-      // Simulate ArrowDown key press
-      const event = new KeyboardEvent('keydown', {
-        key: 'ArrowDown',
-        bubbles: true,
-      });
-      tag.dispatchEvent(event);
-      await page.waitForChanges();
-
-      expect(tag.getAttribute('tabindex')).toBe('0');
-    });
-
-    it('should handle ArrowUp keyboard event on a single tag', async () => {
-      const page = await newSpecPage({
-        components: [Tag],
-        html: `<scale-tag>Tag</scale-tag>`,
-      });
-
-      const tag = page.root;
-      expect(tag).not.toBeNull();
-
-      // Simulate ArrowUp key press
-      const event = new KeyboardEvent('keydown', {
-        key: 'ArrowUp',
-        bubbles: true,
-      });
-      tag.dispatchEvent(event);
-      await page.waitForChanges();
-
-      expect(tag.getAttribute('tabindex')).toBe('0');
-    });
-
-    it('should handle focus event on a single tag', async () => {
-      const page = await newSpecPage({
-        components: [Tag],
-        html: `<scale-tag>Tag</scale-tag>`,
-      });
-
-      const tag = page.root;
-      expect(tag).not.toBeNull();
-
-      // Simulate focus event
-      const focusEvent = new FocusEvent('focus', { bubbles: true });
-      tag.dispatchEvent(focusEvent);
-      await page.waitForChanges();
-
-      expect(tag.getAttribute('tabindex')).toBe('0');
-    });
-
-    it('should not prevent default for non-arrow keys', async () => {
-      const page = await newSpecPage({
-        components: [Tag],
-        html: `<scale-tag>Tag</scale-tag>`,
-      });
-
-      const tag = page.root;
-      const event = new KeyboardEvent('keydown', {
-        key: 'Enter',
-        bubbles: true,
-      });
-      const preventDefaultSpy = jest.spyOn(event, 'preventDefault');
-
-      tag.dispatchEvent(event);
-      await page.waitForChanges();
-
-      expect(preventDefaultSpy).not.toHaveBeenCalled();
+      expect(link.getAttribute('href')).toBe('https://example.com');
+      expect(button.getAttribute('aria-label')).toBe('Remove tag');
+      expect(linkTag.hasAttribute('tabindex')).toBe(false);
+      expect(dismissableTag.hasAttribute('tabindex')).toBe(false);
     });
   });
 });

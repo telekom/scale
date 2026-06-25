@@ -63,8 +63,14 @@ export class Tag {
   /** (optional) Close icon click event */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<MouseEvent>;
 
+  private generatedAriaLabel?: string;
+
   componentDidLoad() {
-    this.initializeRovingTabindex();
+    this.syncReadonlyAccessibility();
+  }
+
+  componentDidUpdate() {
+    this.syncReadonlyAccessibility();
   }
 
   componentWillUpdate() {}
@@ -89,13 +95,7 @@ export class Tag {
       : {};
 
     return (
-      <Host
-        role="option"
-        aria-selected="false"
-        tabindex={0}
-        onKeyDown={this.handleKeyDown}
-        onFocus={this.handleFocus}
-      >
+      <Host aria-disabled={this.disabled ? 'true' : null}>
         {this.styles && <style>{this.styles}</style>}
 
         <TagElement
@@ -103,7 +103,7 @@ export class Tag {
           class={this.getCssClassMap()}
           {...linkProps}
         >
-          <slot />
+          <slot onSlotchange={this.syncReadonlyAccessibility} />
 
           {this.dismissable && (
             <button
@@ -143,81 +143,37 @@ export class Tag {
     );
   }
 
-  private initializeRovingTabindex() {
-    // Find all sibling scale-tag elements
-    const siblings = this.getSiblingTags();
-    if (siblings.length === 0) {
+  private syncReadonlyAccessibility = () => {
+    if (this.hasInteractiveControl()) {
+      if (
+        this.generatedAriaLabel != null &&
+        this.hostElement.getAttribute('aria-label') === this.generatedAriaLabel
+      ) {
+        this.hostElement.removeAttribute('aria-label');
+      }
+      this.generatedAriaLabel = undefined;
       return;
     }
 
-    // Set first tag as focusable, others as not focusable
-    siblings.forEach((tag, index) => {
-      if (index === 0) {
-        tag.setAttribute('tabindex', '0');
-      } else {
-        tag.setAttribute('tabindex', '-1');
-      }
-      // Set ARIA attributes for accessibility
-      tag.setAttribute('role', 'option');
-      tag.setAttribute('aria-selected', 'false');
-    });
-  }
-
-  private getSiblingTags(): HTMLElement[] {
-    if (!this.hostElement.parentElement) {
-      return [];
-    }
-
-    const allTags = Array.from(
-      this.hostElement.parentElement.querySelectorAll('scale-tag')
-    ) as HTMLElement[];
-    return allTags;
-  }
-
-  private updateRoving(newFocusedTag: HTMLElement) {
-    const siblings = this.getSiblingTags();
-    siblings.forEach((tag) => {
-      if (tag === newFocusedTag) {
-        tag.setAttribute('tabindex', '0');
-      } else {
-        tag.setAttribute('tabindex', '-1');
-      }
-    });
-    // Focus the new tag
-    newFocusedTag.focus();
-  }
-
-  private handleKeyDown = (event: KeyboardEvent) => {
-    const keyCode = event.key;
+    const currentAriaLabel = this.hostElement.getAttribute('aria-label');
     if (
-      !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(keyCode)
+      currentAriaLabel != null &&
+      currentAriaLabel !== this.generatedAriaLabel
     ) {
       return;
     }
 
-    event.preventDefault();
-    const siblings = this.getSiblingTags();
-    const currentIndex = siblings.indexOf(this.hostElement);
-
-    let nextIndex = currentIndex;
-
-    if (keyCode === 'ArrowRight' || keyCode === 'ArrowDown') {
-      nextIndex = (currentIndex + 1) % siblings.length;
-    } else if (keyCode === 'ArrowLeft' || keyCode === 'ArrowUp') {
-      nextIndex = (currentIndex - 1 + siblings.length) % siblings.length;
+    const text = this.hostElement.textContent?.trim().replace(/\s+/g, ' ');
+    if (text) {
+      this.hostElement.setAttribute('aria-label', text);
+      this.generatedAriaLabel = text;
+    } else {
+      this.hostElement.removeAttribute('aria-label');
+      this.generatedAriaLabel = undefined;
     }
-
-    this.updateRoving(siblings[nextIndex]);
   };
 
-  private handleFocus = (event: FocusEvent) => {
-    const siblings = this.getSiblingTags();
-    siblings.forEach((tag) => {
-      if (tag === this.hostElement) {
-        tag.setAttribute('tabindex', '0');
-      } else {
-        tag.setAttribute('tabindex', '-1');
-      }
-    });
-  };
+  private hasInteractiveControl() {
+    return (!!this.href || this.dismissable) && !this.disabled;
+  }
 }
