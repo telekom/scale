@@ -40,7 +40,10 @@ scale-textarea {
   --line-height-meta: var(--telekom-typography-line-spacing-standard);
   --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
-  --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
+  --color-meta-error: var(
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
+  );
 
   /*control*/
   /*
