@@ -176,9 +176,7 @@ scale-textarea {
 
 .textarea--status-error:not(.textarea--disabled):not(.textarea--readonly)
   .textarea__wrapper:hover,
-.textarea--status-error:not(.textarea--disabled):not(
-    .textarea--readonly
-  ).textarea--has-focus
+.textarea--status-error:not(.textarea--disabled):not(.textarea--readonly).textarea--has-focus
   .textarea__wrapper {
   border-color: var(--telekom-color-functional-danger-hovered);
 }

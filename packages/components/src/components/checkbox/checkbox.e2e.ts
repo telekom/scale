@@ -24,12 +24,26 @@ describe('scale-checkbox', () => {
     await page.setContent(
       '<div data-mode="dark"><scale-checkbox label="Label" helper-text="This is the error message" invalid></scale-checkbox></div>'
     );
+    const element = await page.find('scale-checkbox');
+    expect(element).toHaveClass('hydrated');
+
+    const expectedColor = await page.$eval(
+      '[data-mode="dark"]',
+      (modeElement: HTMLElement) => {
+        const probe = document.createElement('span');
+        probe.style.color = 'var(--scl-color-form-error-message)';
+        modeElement.appendChild(probe);
+        const computedColor = getComputedStyle(probe).color;
+        probe.remove();
+        return computedColor;
+      }
+    );
 
     const color = await page.$eval(
       'scale-checkbox [part="helper-text"]',
-      (element: HTMLElement) => getComputedStyle(element).color
+      (helperText: HTMLElement) => getComputedStyle(helperText).color
     );
 
-    expect(color).toBe('rgb(251, 106, 85)');
+    expect(color).toBe(expectedColor);
   });
 });

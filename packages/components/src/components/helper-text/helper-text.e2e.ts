@@ -24,15 +24,29 @@ describe('scale-helper-text', () => {
     await page.setContent(
       '<div data-mode="dark"><scale-helper-text variant="danger">default</scale-helper-text></div>'
     );
+    const element = await page.find('scale-helper-text');
+    expect(element).toHaveClass('hydrated');
+
+    const expectedColor = await page.$eval(
+      '[data-mode="dark"]',
+      (modeElement: HTMLElement) => {
+        const probe = document.createElement('span');
+        probe.style.color = 'var(--scl-color-form-error-message)';
+        modeElement.appendChild(probe);
+        const computedColor = getComputedStyle(probe).color;
+        probe.remove();
+        return computedColor;
+      }
+    );
 
     const color = await page.$eval(
       'scale-helper-text',
-      (element: HTMLElement) =>
+      (helperText: HTMLElement) =>
         getComputedStyle(
-          element.shadowRoot.querySelector('.helper-text') as HTMLElement
+          helperText.shadowRoot.querySelector('.helper-text') as HTMLElement
         ).color
     );
 
-    expect(color).toBe('rgb(251, 106, 85)');
+    expect(color).toBe(expectedColor);
   });
 });

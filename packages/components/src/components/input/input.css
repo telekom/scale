@@ -158,8 +158,7 @@
       (
           var(--telekom-spacing-composition-space-14) -
             var(--telekom-typography-font-size-body)
-        ) /
-        2
+        ) / 2
     )
   );
   font-weight: var(--telekom-typography-font-weight-medium);
@@ -221,8 +220,7 @@
       (
           var(--telekom-spacing-composition-space-12) -
             var(--telekom-typography-font-size-body)
-        ) /
-        2
+        ) / 2
     )
   );
   font-weight: var(--telekom-typography-font-weight-medium);
