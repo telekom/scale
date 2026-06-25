@@ -67,6 +67,7 @@ jobs:
       - name: Run TSLint
         run: |
           yarn workspace @telekom/scale-components lint
+
   unit-tests:
     runs-on: ubuntu-22.04
     steps:
@@ -203,7 +204,7 @@ jobs:
           labels: automated pr
           branch: ${{ steps.vars.outputs.branch-name }}
 
-  uncommitted-changes:
+  wrapper-build:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
@@ -241,6 +242,10 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components-react build
 
+      - name: Type-check React wrapper props
+        run: |
+          yarn workspace @telekom/scale-components-react test:types
+
       - name: Build Vue Wrapper
         run: |
           yarn workspace @telekom/scale-components-vue build
@@ -249,6 +254,40 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components process-angular-proxies
           yarn workspace @telekom/scale-components-angular build
+
+  uncommitted-changes:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
+
+      - name: Generate files
+        run: |
+          yarn lerna run generate
+
+      - name: Build Components
+        run: |
+          yarn workspace @telekom/scale-components build
 
       - name: Check for uncommitted changes
         run: |
