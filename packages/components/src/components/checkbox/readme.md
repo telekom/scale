@@ -24,7 +24,7 @@
 | `required`          | `required`            | (optional) Input required                                                                                        | `boolean` | `undefined` |
 | `status`            | `status`              | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/>                        | `string`  | `''`        |
 | `styles`            | `styles`              | (optional) Injected CSS styles                                                                                   | `string`  | `undefined` |
-| `value`             | `value`               | (optional) Input value                                                                                           | `string`  | `''`        |
+| `value`             | `value`               | (optional) Input value                                                                                           | `string`  | `'on'`      |
 
 
 ## Events
