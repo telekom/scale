@@ -52,7 +52,14 @@ export class TelekomMobileFlyoutCanvas {
             <slot name="heading">
               <h2 part="heading">
                 {this.appNameHref ? (
-                  <a href={this.appNameHref} onClick={this.appNameClick}>
+                  <a
+                    href={this.appNameHref}
+                    onClick={
+                      typeof this.appNameClick === 'function'
+                        ? this.appNameClick
+                        : undefined
+                    }
+                  >
                     {this.appName}
                   </a>
                 ) : (

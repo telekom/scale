@@ -70,4 +70,20 @@ describe('scale-telekom-mobile-flyout-canvas', () => {
 
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
+
+  it('renders the app name as plain text when appNameClick is a non-function string', async () => {
+    const page = await newSpecPage({
+      components: [TelekomMobileFlyoutCanvas],
+      html: `<scale-telekom-mobile-flyout-canvas app-name="Application Name"></scale-telekom-mobile-flyout-canvas>`,
+    });
+
+    page.root.appNameClick = 'doSomething()';
+    await page.waitForChanges();
+
+    const heading = page.root.shadowRoot.querySelector('[part="heading"]');
+    const link = heading.querySelector('a');
+
+    expect(link).toBeNull();
+    expect(heading.textContent).toBe('Application Name');
+  });
 });

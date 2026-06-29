@@ -60,6 +60,13 @@
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
+[part~='heading'] a:focus-visible {
+  outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus-standard);
+  outline-offset: 1px;
+  border-radius: var(--telekom-radius-small);
+}
+
 [part~='close-button'] {
   position: absolute;
   right: var(--telekom-spacing-composition-space-06);
