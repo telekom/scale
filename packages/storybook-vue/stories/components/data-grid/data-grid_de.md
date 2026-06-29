@@ -59,6 +59,8 @@ Der Inhalt einer Zeile bildet eine Dateneinheit und unterscheidet sich sowohl in
 
 Füllst du den HTML-Slot in einer Tabellenzeile aus, wird am Ende der Zeile ein Expand-Icon hinzugefügt. Klicken/tippen Nutzer\*innen auf das Expand-Icon, blendet sich der HTML-Inhalt dieses Slots ein.
 
+Wenn du ein `HTMLElement` stattdessen direkt in einer Data-Grid-Zelle darstellen möchtest, verwende den `html`-Zelltyp mit `display: "inline"` in der Feldkonfiguration. Das Standardverhalten bleibt aufklappbarer Nested Content.
+
 #### Pagination (8)
 
 Mit Hilfe der Pagination bewegen sich Nutzer\*innen gezielt durch den gesamten Datensatz.

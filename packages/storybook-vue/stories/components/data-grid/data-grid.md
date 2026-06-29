@@ -66,6 +66,8 @@ To aid readability, you can highlight the rows when hovering over them.
 
 If you fill in the HTML slot in a table row, it will add an expand icon at the end of the row. If users click on the expand icon, it will display the HTML content of this slot.
 
+If you want to render an `HTMLElement` directly inside a data grid cell instead, use the `html` cell type with `display: "inline"` in the field configuration. The default behavior stays expandable nested content.
+
 #### Pagination (8)
 
 With the help of pagination, users can move through the entire data set in a deliberate way.
