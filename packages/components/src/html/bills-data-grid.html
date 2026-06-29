@@ -380,6 +380,28 @@
           </p>
         </div>
 
+        <!-- ── RESPONSIVE: single line on desktop, wraps on mobile ─ -->
+        <div>
+          <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#d98a00;">
+            ⚠️ RESPONSIVE — single line on desktop, wraps on narrow screens
+          </p>
+          <div style="width:min(460px, 70vw);line-height:1.4;font-size:20px;border:1px dashed #d98a00;padding:4px;">
+            <scale-tooltip
+              content="Monatliche Rechnung — wraps on mobile"
+              placement="bottom"
+            >
+              <span data-testid="responsive-trigger" style="display:inline;">
+                Monatliche Rechnung bezahlt am 23.06.2023
+              </span>
+            </scale-tooltip>
+          </div>
+          <p style="margin:48px 0 0;font-size:12px;color:#666;">
+            One line on a wide screen (tooltip correct).<br />
+            Narrow the window so it wraps to two lines, then<br />
+            hover the <strong>first line</strong> — tooltip jumps below the last line (bug).
+          </p>
+        </div>
+
         <!-- ── CORRECT: single icon element ─────────────────── -->
         <div>
           <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#5ca832;">
@@ -422,6 +444,7 @@
         [
           { testid: 'multiline-trigger',   label: 'multiline text  ' },
           { testid: 'singleline-trigger',  label: 'single-line text' },
+          { testid: 'responsive-trigger',  label: 'responsive text ' },
           { testid: 'icon-trigger-repro',  label: 'icon element    ' },
         ].forEach(({ testid, label }) => {
           const trigger = document.querySelector(`[data-testid="${testid}"]`);
@@ -451,10 +474,10 @@
                 : `⚠️ unexpected: first=${gapFromFirst}px last=${gapFromLast}px`;
 
               const rows = document.querySelectorAll('#geometry-readout tr');
-              let row = Array.from(rows).find(r => r.dataset.testid === testid);
+              let row = Array.from(rows).find(r => r.dataset.rowFor === testid);
               if (!row) {
                 row = document.createElement('tr');
-                row.dataset.testid = testid;
+                row.dataset.rowFor = testid;
                 row.innerHTML = `<td style="padding:4px 12px 4px 0;font-weight:700"></td><td style="padding:4px 12px"></td><td style="padding:4px 12px"></td><td style="padding:4px 0"></td>`;
                 document.querySelector('#geometry-readout tbody').appendChild(row);
               }
