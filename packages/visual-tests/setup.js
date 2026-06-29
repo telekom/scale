@@ -22,7 +22,16 @@ module.exports = async (jestConfig) => {
     res.sendFile('index.html');
   });
 
-  global.__SERVER__ = app.listen(3123);
+  await new Promise((resolve, reject) => {
+    const server = app.listen(3123, '0.0.0.0', () => {
+      console.log(
+        '\nScale Visual Tests: Storybook server listening on 0.0.0.0:3123'
+      );
+      resolve();
+    });
+    server.on('error', reject);
+    global.__SERVER__ = server;
+  });
 
   await setupPuppeteer(jestConfig);
 };
