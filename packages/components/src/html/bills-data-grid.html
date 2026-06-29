@@ -1,0 +1,332 @@
+<!doctype html>
+<html dir="ltr" lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Bills data-grid – Tooltip placement reproduction (Issue #2289)</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+
+    <style>
+      /* ── Page reset ─────────────────────────────────────────────── */
+      body {
+        margin: 0;
+        background: #f5f5f5;
+        font-family: var(--telekom-typography-font-family-sans, 'TeleNeoWeb', sans-serif);
+        color: var(--telekom-color-text-and-icon-standard);
+      }
+
+      /* ── Card ───────────────────────────────────────────────────── */
+      .bill-card {
+        width: min(1280px, 100vw);
+        min-height: 768px;
+        padding: 48px 36px 45px;
+        box-sizing: border-box;
+        background: var(--telekom-color-background-surface, #fff);
+      }
+
+      /* ── Card header ─────────────────────────────────────────────── */
+      .bill-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+      }
+      .bill-header h1 {
+        margin: 0;
+        font-size: 36px;
+        line-height: 1;
+        font-weight: 800;
+      }
+      .bill-header scale-link {
+        --font-size: 22px;
+        --font-weight: 700;
+        --color: var(--telekom-color-primary-standard, #e20074);
+      }
+
+      /* ── Grid rows ──────────────────────────────────────────────── */
+      .grid-row {
+        display: grid;
+        grid-template-columns: 53% 32% 15%;
+        align-items: center;
+        min-height: 153px;
+        border-top: 1px solid var(--telekom-color-ui-faint, #d9d9d9);
+      }
+      .grid-row:first-of-type { border-top: 0; }
+
+      /* ── Account cell ─────────────────────────────────────────── */
+      .account-cell {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .account-cell .device-icon {
+        color: var(--telekom-color-text-and-icon-standard);
+      }
+      .account-title {
+        font-size: 22px;
+        line-height: 1.28;
+        font-weight: 800;
+      }
+      .account-number {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 6px;
+        font-size: 20px;
+        font-weight: 400;
+      }
+      .count-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 0 9px;
+        border-radius: 6px;
+        background: #65bdd6;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      /* ── Bill / status cell ──────────────────────────────────── */
+      .bill-cell {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      /* scale-icon colour via --status-color which inherits as currentColor */
+      .status-icon {
+        display: inline-flex;
+        color: var(--status-color);
+      }
+      .status-success  { --status-color: #5ca832; }
+      .status-payment  { --status-color: #4aa6c2; }
+      .status-warning  { --status-color: #c7352b; }
+      .status-info     { --status-color: #93bd41; }
+
+      .bill-title {
+        font-size: 22px;
+        font-weight: 800;
+      }
+      .bill-date {
+        margin-top: 4px;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      /* ── Amount cell ────────────────────────────────────────── */
+      .amount-cell {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      /* ── Bug callout ─────────────────────────────────────────── */
+      .bug-note {
+        margin-top: 32px;
+        padding: 16px;
+        background: #fff3cd;
+        border: 1px solid #f0c040;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 1.5;
+        max-width: 860px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="bill-card" aria-labelledby="bill-heading">
+      <!-- ── Header ──────────────────────────────────────────────── -->
+      <header class="bill-header">
+        <h1 id="bill-heading">bills (10)</h1>
+        <scale-link href="#" variant="strong">
+          Mehr
+          <scale-icon-navigation-right
+            slot="suffix"
+            size="20"
+            accessibility-title=""
+            decorative
+          ></scale-icon-navigation-right>
+        </scale-link>
+      </header>
+
+      <!-- ── Row 1 – paid (success, green) ────────────────────── -->
+      <div class="grid-row">
+        <div class="account-cell">
+          <span class="device-icon">
+            <scale-icon-communication-phone-number
+              size="54"
+              accessibility-title="Festnetz"
+            ></scale-icon-communication-phone-number>
+          </span>
+          <div>
+            <div class="account-title">Kundenkonto: 8365873246</div>
+            <div class="account-number">
+              0175 7775600
+              <span class="count-badge">+2</span>
+            </div>
+          </div>
+        </div>
+        <div class="bill-cell">
+          <span class="status-icon status-success">
+            <scale-icon-action-success
+              size="36"
+              accessibility-title="Bezahlt"
+            ></scale-icon-action-success>
+          </span>
+          <div>
+            <div class="bill-title">Monatliche Rechnung</div>
+            <div class="bill-date">23.06.2023</div>
+          </div>
+        </div>
+        <div class="amount-cell">56,99&nbsp;€</div>
+      </div>
+
+      <!-- ── Row 2 – direct debit (SEPA / euro-with-arrows) ───── -->
+      <!--
+        REPRODUCTION CASE: scale-tooltip wraps a single icon trigger.
+        Tooltip anchor uses the icon's bounding box (correct for single-element
+        triggers).  Compare with the multiline-text case in the tooltip-repro
+        example to see why the anchoring still works here.
+      -->
+      <div class="grid-row">
+        <div class="account-cell">
+          <span class="device-icon">
+            <scale-icon-device-device-phone
+              size="54"
+              accessibility-title="Mobiltelefon"
+            ></scale-icon-device-device-phone>
+          </span>
+          <div>
+            <div class="account-title">Kundenkonto: 8365873246</div>
+            <div class="account-number">
+              86523465
+              <span class="count-badge">+2</span>
+            </div>
+          </div>
+        </div>
+        <div class="bill-cell">
+          <!--
+            scale-tooltip trigger = single inline-flex <span> containing one icon.
+            placement="bottom" – tooltip should anchor to the bottom of the icon,
+            NOT shifted down.  Hover/focus the icon to verify placement.
+            The `opened` attribute pre-opens it for visual inspection.
+          -->
+          <scale-tooltip
+            content="Wir buchen 7.052,85&nbsp;EUR ab"
+            placement="bottom"
+            opened
+          >
+            <span
+              class="status-icon status-payment"
+              data-testid="sepa-icon-trigger"
+            >
+              <scale-icon-process-sepa-transaction
+                size="36"
+                accessibility-title="SEPA-Lastschrift ausstehend"
+              ></scale-icon-process-sepa-transaction>
+            </span>
+          </scale-tooltip>
+          <div>
+            <div class="bill-title">Monatliche Rechnung</div>
+            <div class="bill-date">23.06.2023</div>
+          </div>
+        </div>
+        <div class="amount-cell">56,99&nbsp;€</div>
+      </div>
+
+      <!-- ── Row 3 – warning (error triangle, red) ──────────── -->
+      <div class="grid-row">
+        <div class="account-cell">
+          <span class="device-icon">
+            <scale-icon-communication-phone-number
+              size="54"
+              accessibility-title="Festnetz"
+            ></scale-icon-communication-phone-number>
+          </span>
+          <div>
+            <div class="account-title">Kundenkonto: 8365873246</div>
+            <div class="account-number">
+              86523465
+              <span class="count-badge">+2</span>
+            </div>
+          </div>
+        </div>
+        <div class="bill-cell">
+          <span class="status-icon status-warning">
+            <scale-icon-alert-error
+              size="36"
+              accessibility-title="Warnung"
+            ></scale-icon-alert-error>
+          </span>
+          <div>
+            <div class="bill-title">Monatliche Rechnung</div>
+            <div class="bill-date">23.06.2023</div>
+          </div>
+        </div>
+        <div class="amount-cell">56,99&nbsp;€</div>
+      </div>
+
+      <!-- ── Row 4 – info (circle-i, lime-green) ──────────────── -->
+      <div class="grid-row">
+        <div class="account-cell">
+          <span class="device-icon">
+            <scale-icon-user-file-billing
+              size="54"
+              accessibility-title="Rechnung"
+            ></scale-icon-user-file-billing>
+          </span>
+          <div>
+            <div class="account-title">Kundenkonto: 8365873246</div>
+            <div class="account-number">
+              86523465
+              <span class="count-badge">+2</span>
+            </div>
+          </div>
+        </div>
+        <div class="bill-cell">
+          <span class="status-icon status-info">
+            <scale-icon-alert-information
+              size="36"
+              accessibility-title="Information"
+            ></scale-icon-alert-information>
+          </span>
+          <div>
+            <div class="bill-title">Monatliche Rechnung</div>
+            <div class="bill-date">23.06.2023</div>
+          </div>
+        </div>
+        <div class="amount-cell">56,99&nbsp;€</div>
+      </div>
+
+      <!-- ── Bug note ──────────────────────────────────────────── -->
+      <div class="bug-note" role="note">
+        <strong>Issue #2289 – tooltip placement:</strong>
+        The pre-opened tooltip on row 2 uses <code>placement="bottom"</code> with a
+        <strong>single-element</strong> icon trigger (<code>&lt;scale-icon-process-sepa-transaction&gt;</code>).<br />
+        For a single inline element the tooltip anchor is correct because
+        <code>getBoundingClientRect()</code> returns one box.<br />
+        The bug manifests when the trigger is a <strong>multiline inline text span</strong>:
+        the tooltip uses the full combined box instead of the line box under the cursor.
+        See <code>bills-data-grid-multiline-repro.html</code> (vanilla example) for the failing case.
+      </div>
+    </section>
+
+    <script>
+      // Optional: demonstrate tooltip repositioning on row 2 hover
+      // Uncomment to also log geometry for comparison
+      // document.querySelector('[data-testid="sepa-icon-trigger"]').addEventListener('mouseover', () => {
+      //   const host = document.querySelector('scale-tooltip');
+      //   const tooltip = host.shadowRoot.querySelector('[part="tooltip"]');
+      //   const trigger = document.querySelector('[data-testid="sepa-icon-trigger"]');
+      //   console.table({
+      //     triggerRect: trigger.getBoundingClientRect().toJSON(),
+      //     tooltipRect: tooltip.getBoundingClientRect().toJSON(),
+      //   });
+      // });
+    </script>
+  </body>
+</html>
