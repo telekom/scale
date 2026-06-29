@@ -24,7 +24,7 @@
     "@commitlint/config-conventional": "^12.1.1",
     "husky": "^9.1.7",
     "lerna": "3.22.1",
-    "prettier": "2.7.1",
+    "prettier": "3.8.4",
     "replace-in-file": "^6.2.0",
     "rimraf": "2.6.3"
   },
