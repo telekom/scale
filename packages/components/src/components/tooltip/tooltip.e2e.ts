@@ -38,7 +38,8 @@ describe('scale-tooltip', () => {
       return {
         gap: Math.round(tooltipRect.top - triggerRect.bottom),
         centerDelta: Math.round(
-          tooltipRect.left + tooltipRect.width / 2 -
+          tooltipRect.left +
+            tooltipRect.width / 2 -
             (triggerRect.left + triggerRect.width / 2)
         ),
       };
