@@ -85,7 +85,7 @@ export const TextCell: Cell = {
           {iconPrefix && (
             <span class={`tbody__text-cell-prefix`}>
               {h(`scale-icon-${iconPrefix}`, {
-                'accessibility-title': iconPrefixAccessibilityTitle ?? label,
+                'accessibility-title': iconPrefixAccessibilityTitle || label,
               })}
             </span>
           )}
@@ -93,7 +93,7 @@ export const TextCell: Cell = {
           {iconSuffix && (
             <span class={`tbody__text-cell-suffix`}>
               {h(`scale-icon-${iconSuffix}`, {
-                'accessibility-title': iconSuffixAccessibilityTitle ?? label,
+                'accessibility-title': iconSuffixAccessibilityTitle || label,
               })}
             </span>
           )}
