@@ -87,7 +87,7 @@ async function main() {
       });
     });
 
-    outputs.forEach(({ onComplete }) => onComplete());
+    await Promise.all(outputs.map(({ onComplete }) => onComplete()));
 
     // Write a file for each output
     await Promise.all(outputs.map(write));

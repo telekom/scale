@@ -256,37 +256,47 @@
   --scl-color-functional-green: hsl(136.3, 65.7%, 27.5%);
   --scl-color-functional-blue: hsl(227.39999999999998, 89%, 46.3%);
   /* SHADOW */
-  --scl-shadow-level-0: 0px 2px 8px 0px hsla(0, 0%, 0%, 0.1),
-    0px 1px 2px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-1: 0px 4px 16px 0px hsla(0, 0%, 0%, 0.1),
-    0px 2px 4px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-2: 0px 8px 32px 0px hsla(0, 0%, 0%, 0.1),
-    0px 4px 8px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-3: 0px 12px 48px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-0:
+    0px 2px 8px 0px hsla(0, 0%, 0%, 0.1), 0px 1px 2px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-1:
+    0px 4px 16px 0px hsla(0, 0%, 0%, 0.1), 0px 2px 4px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-2:
+    0px 8px 32px 0px hsla(0, 0%, 0%, 0.1), 0px 4px 8px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-3:
+    0px 12px 48px 0px hsla(0, 0%, 0%, 0.1),
     0px 6px 12px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-4: 0px 16px 64px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-4:
+    0px 16px 64px 0px hsla(0, 0%, 0%, 0.1),
     0px 8px 16px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-5: 0px 20px 80px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-5:
+    0px 20px 80px 0px hsla(0, 0%, 0%, 0.1),
     0px 10px 20px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-1-hover: 0px 6px 24px 0px hsla(0, 0%, 0%, 0.1),
-    0px 3px 6px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-1-active: 0px 2px 8px 0px hsla(0, 0%, 0%, 0.1),
-    0px 1px 2px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-2-hover: 0px 10px 40px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-1-hover:
+    0px 6px 24px 0px hsla(0, 0%, 0%, 0.1), 0px 3px 6px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-1-active:
+    0px 2px 8px 0px hsla(0, 0%, 0%, 0.1), 0px 1px 2px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-2-hover:
+    0px 10px 40px 0px hsla(0, 0%, 0%, 0.1),
     0px 5px 10px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-2-active: 0px 6px 24px 0px hsla(0, 0%, 0%, 0.1),
-    0px 3px 6px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-3-hover: 0px 14px 56px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-2-active:
+    0px 6px 24px 0px hsla(0, 0%, 0%, 0.1), 0px 3px 6px 0px hsla(0, 0%, 0%, 0.1);
+  --scl-shadow-level-3-hover:
+    0px 14px 56px 0px hsla(0, 0%, 0%, 0.1),
     0px 7px 14px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-3-active: 0px 10px 40px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-3-active:
+    0px 10px 40px 0px hsla(0, 0%, 0%, 0.1),
     0px 5px 10px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-4-hover: 0px 18px 72px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-4-hover:
+    0px 18px 72px 0px hsla(0, 0%, 0%, 0.1),
     0px 9px 18px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-4-active: 0px 14px 56px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-4-active:
+    0px 14px 56px 0px hsla(0, 0%, 0%, 0.1),
     0px 7px 14px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-5-hover: 0px 22px 88px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-5-hover:
+    0px 22px 88px 0px hsla(0, 0%, 0%, 0.1),
     0px 11px 22px 0px hsla(0, 0%, 0%, 0.1);
-  --scl-shadow-level-5-active: 0px 18px 72px 0px hsla(0, 0%, 0%, 0.1),
+  --scl-shadow-level-5-active:
+    0px 18px 72px 0px hsla(0, 0%, 0%, 0.1),
     0px 9px 18px 0px hsla(0, 0%, 0%, 0.1);
   /* RADIUS */
   --scl-radius-1: 1px;
