@@ -165,7 +165,7 @@ export class Tooltip {
           offset(this.distance),
           ...(this.flip ? [flip()] : []),
           arrow({ element: this.arrowEl, padding: this.arrowPadding }),
-          shift({ crossAxis: true }),
+          shift({ mainAxis: false }),
         ],
         platform: {
           ...platform,
