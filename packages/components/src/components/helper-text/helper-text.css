@@ -3,7 +3,10 @@
     --telekom-color-text-and-icon-functional-informational
   );
   --color-warning: var(--telekom-color-text-and-icon-functional-warning);
-  --color-danger: var(--telekom-color-text-and-icon-functional-danger);
+  --color-danger: var(
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
+  );
   --color-success: var(--telekom-color-text-and-icon-functional-success);
   --color-neutral: var(--telekom-color-text-and-icon-additional);
   --font-size: 0.75rem;

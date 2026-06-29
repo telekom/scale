@@ -31,8 +31,8 @@
 
   /*listbox*/
   --background-listbox: var(--telekom-color-background-surface);
-  --box-shadow-listbox: 0 2px 4px 0 rgba(0, 0, 0, 0.1),
-    0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  --box-shadow-listbox:
+    0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 16px 0 rgba(0, 0, 0, 0.1);
   --max-height-listbox: 300px;
   --z-index-listbox: 99;
 
@@ -186,7 +186,10 @@
     --telekom-color-text-and-icon-functional-informational
   );
   --color-warning: var(--telekom-color-text-and-icon-functional-warning);
-  --color-danger: var(--telekom-color-text-and-icon-functional-danger);
+  --color-danger: var(
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
+  );
   --color-success: var(--telekom-color-text-and-icon-functional-success);
   --color-neutral: var(--telekom-color-text-and-icon-additional);
   --font-size: var(--telekom-typography-font-size-small);

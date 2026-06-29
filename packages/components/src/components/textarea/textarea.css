@@ -40,7 +40,10 @@ scale-textarea {
   --line-height-meta: var(--telekom-typography-line-spacing-standard);
   --spacing-y-meta: var(--telekom-spacing-composition-space-03);
   --color-meta: var(--telekom-color-text-and-icon-standard);
-  --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
+  --color-meta-error: var(
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
+  );
 
   /*control*/
   /*
@@ -173,7 +176,9 @@ scale-textarea {
 
 .textarea--status-error:not(.textarea--disabled):not(.textarea--readonly)
   .textarea__wrapper:hover,
-.textarea--status-error:not(.textarea--disabled):not(.textarea--readonly).textarea--has-focus
+.textarea--status-error:not(.textarea--disabled):not(
+    .textarea--readonly
+  ).textarea--has-focus
   .textarea__wrapper {
   border-color: var(--telekom-color-functional-danger-hovered);
 }

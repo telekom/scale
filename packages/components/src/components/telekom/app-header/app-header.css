@@ -253,7 +253,8 @@ scale-app-header {
     display: flex;
     opacity: 1;
     position: relative;
-    transition: opacity var(--header-transition-speed) ease-in-out,
+    transition:
+      opacity var(--header-transition-speed) ease-in-out,
       top var(--header-transition-speed) ease-in-out;
     align-items: center;
   }
@@ -317,7 +318,8 @@ scale-app-header {
   }
   .header.header--sticky .header__brand-content {
     opacity: 0;
-    transition: opacity var(--header-transition-speed) ease-in-out,
+    transition:
+      opacity var(--header-transition-speed) ease-in-out,
       top var(--header-transition-speed) ease-in-out;
   }
   .header *[slot='menu-main'],

@@ -1,13 +1,8 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "npmClient": "yarn",
-  "npmClientArgs": [
-    "--pure-lockfile"
-  ],
-  "useWorkspaces": true,
-  "version": "3.0.0-beta.160",
+  "npmClientArgs": ["--pure-lockfile"],
+  "version": "3.0.0-beta.161",
   "command": {
     "version": {
       "allowBranch": "main"

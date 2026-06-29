@@ -17,7 +17,7 @@ describe('Segment', () => {
             <scale-segment>Label</scale-segment>`,
     });
     page.root.disabled = true;
-    (page.root.size = 'medium'), (page.root.selected = true);
+    ((page.root.size = 'medium'), (page.root.selected = true));
     page.root.hasIcon = true;
     page.root.ariaLangSelected = 'ariaLangSelected';
     page.root.ariaLangDeselected = 'ariaLangDeselected';

@@ -158,7 +158,8 @@
       (
           var(--telekom-spacing-composition-space-14) -
             var(--telekom-typography-font-size-body)
-        ) / 2
+        ) /
+        2
     )
   );
   font-weight: var(--telekom-typography-font-weight-medium);
@@ -182,10 +183,16 @@
     var(--telekom-color-functional-danger-standard);
 }
 .input--status-error .input__helper-text {
-  color: var(--telekom-color-text-and-icon-functional-danger);
+  color: var(
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
+  );
 }
 .input--status-error .input__counter {
-  color: var(--telekom-color-text-and-icon-functional-danger);
+  color: var(
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
+  );
 }
 .input--size-small .input__input {
   height: var(--telekom-spacing-composition-space-12);
@@ -214,7 +221,8 @@
       (
           var(--telekom-spacing-composition-space-12) -
             var(--telekom-typography-font-size-body)
-        ) / 2
+        ) /
+        2
     )
   );
   font-weight: var(--telekom-typography-font-weight-medium);

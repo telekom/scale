@@ -191,8 +191,8 @@ export class Segment {
                     this.size === 'small'
                       ? 14
                       : this.size === 'medium'
-                      ? 16
-                      : 20
+                        ? 16
+                        : 20
                   }
                   class="scale-icon-action-checkmark"
                   aria-hidden="true"
