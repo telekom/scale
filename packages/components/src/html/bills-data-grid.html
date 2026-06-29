@@ -306,27 +306,147 @@
       <div class="bug-note" role="note">
         <strong>Issue #2289 – tooltip placement:</strong>
         The pre-opened tooltip on row 2 uses <code>placement="bottom"</code> with a
-        <strong>single-element</strong> icon trigger (<code>&lt;scale-icon-process-sepa-transaction&gt;</code>).<br />
-        For a single inline element the tooltip anchor is correct because
-        <code>getBoundingClientRect()</code> returns one box.<br />
-        The bug manifests when the trigger is a <strong>multiline inline text span</strong>:
-        the tooltip uses the full combined box instead of the line box under the cursor.
-        See <code>bills-data-grid-multiline-repro.html</code> (vanilla example) for the failing case.
+        <strong>single-element</strong> icon trigger (<code>&lt;scale-icon-process-sepa-transaction&gt;</code>).
+        For a single inline element the tooltip anchor is correct (10 px gap = default <code>distance</code> prop).<br />
+        <strong>The bug is reproduced in the "Multiline trigger" section below:</strong>
+        the trigger is a <code>&lt;span&gt;</code> that wraps across two lines.
+        Hover over the <em>first line</em> — the tooltip stays anchored to the bottom of the
+        <em>last line</em> because <code>getBoundingClientRect()</code> returns the full combined bounding box.
       </div>
     </section>
 
+    <!-- ════════════════════════════════════════════════════════════
+         BUG REPRODUCTION — multiline inline text trigger
+         ════════════════════════════════════════════════════════════ -->
+    <section class="bill-card" style="margin-top:40px;" aria-label="Bug reproduction">
+      <div class="bill-header">
+        <h2 style="margin:0;font-size:28px;font-weight:800;">
+          ⚠️ Bug reproduction – multiline tooltip trigger
+        </h2>
+      </div>
+
+      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;">
+        The trigger below is a <code>&lt;span&gt;</code> containing enough text to wrap onto
+        <strong>two lines</strong> inside a constrained column (220 px wide).
+        The tooltip uses <code>placement="bottom"</code> and is pre-opened.<br />
+        <strong>Expected:</strong> tooltip anchors 10 px below whichever line you hover.<br />
+        <strong>Actual (bug):</strong> tooltip is always anchored to the bottom of the
+        <em>full combined bounding box</em> (below the last line) — hovering the first
+        line produces a ~65 px gap instead of 10 px.
+      </p>
+
+      <div style="display:flex;gap:60px;align-items:flex-start;flex-wrap:wrap;">
+
+        <!-- ── BUGGY: multiline inline text ─────────────────── -->
+        <div>
+          <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#c7352b;">
+            ❌ BUGGY — multiline &lt;span&gt; trigger
+          </p>
+          <div style="width:220px;line-height:1.4;font-size:20px;">
+            <scale-tooltip
+              content="Monatliche Rechnung — Tooltip placement bug #2289"
+              placement="bottom"
+              opened
+            >
+              <span data-testid="multiline-trigger" style="display:inline;">
+                Monatliche Rechnung Kundenkonto 8365873246 – Details anzeigen
+              </span>
+            </scale-tooltip>
+          </div>
+          <p style="margin:48px 0 0;font-size:12px;color:#666;">
+            Hover the <strong>first line</strong> of text above.<br />
+            The tooltip should be 10 px below that line,<br />
+            but instead it sits below the last line.
+          </p>
+        </div>
+
+        <!-- ── CORRECT: single-line text ────────────────────── -->
+        <div>
+          <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#5ca832;">
+            ✅ CORRECT — single-line trigger
+          </p>
+          <div style="font-size:20px;">
+            <scale-tooltip
+              content="Bezahlt — Tooltip korrekt positioniert"
+              placement="bottom"
+              opened
+            >
+              <span data-testid="singleline-trigger" style="display:inline;">
+                Bezahlt
+              </span>
+            </scale-tooltip>
+          </div>
+          <p style="margin:16px 0 0;font-size:12px;color:#666;">
+            Single-line: tooltip sits<br />
+            exactly 10 px below the text.
+          </p>
+        </div>
+
+        <!-- ── CORRECT: single icon element ─────────────────── -->
+        <div>
+          <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#5ca832;">
+            ✅ CORRECT — single icon trigger
+          </p>
+          <scale-tooltip
+            content="SEPA-Lastschrift — korrekt"
+            placement="bottom"
+            opened
+          >
+            <span
+              data-testid="icon-trigger-repro"
+              style="display:inline-flex;color:#4aa6c2;"
+            >
+              <scale-icon-process-sepa-transaction
+                size="36"
+                accessibility-title="SEPA-Lastschrift"
+              ></scale-icon-process-sepa-transaction>
+            </span>
+          </scale-tooltip>
+          <p style="margin:16px 0 0;font-size:12px;color:#666;">
+            Single block element: tooltip sits<br />
+            exactly 10 px below the icon.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Geometry readout injected by script below -->
+      <div id="geometry-readout" style="margin-top:40px;font-size:13px;font-family:monospace;white-space:pre;background:#f0f0f0;padding:16px;border-radius:6px;display:none;"></div>
+    </section>
+
     <script>
-      // Optional: demonstrate tooltip repositioning on row 2 hover
-      // Uncomment to also log geometry for comparison
-      // document.querySelector('[data-testid="sepa-icon-trigger"]').addEventListener('mouseover', () => {
-      //   const host = document.querySelector('scale-tooltip');
-      //   const tooltip = host.shadowRoot.querySelector('[part="tooltip"]');
-      //   const trigger = document.querySelector('[data-testid="sepa-icon-trigger"]');
-      //   console.table({
-      //     triggerRect: trigger.getBoundingClientRect().toJSON(),
-      //     tooltipRect: tooltip.getBoundingClientRect().toJSON(),
-      //   });
-      // });
+      // Log geometry comparison after web components hydrate
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const results = [];
+
+          [
+            { testid: 'multiline-trigger',   label: 'multiline text  ' },
+            { testid: 'singleline-trigger',  label: 'single-line text' },
+            { testid: 'icon-trigger-repro',  label: 'icon element    ' },
+          ].forEach(({ testid, label }) => {
+            const trigger = document.querySelector(`[data-testid="${testid}"]`);
+            const host    = trigger?.closest('scale-tooltip');
+            const tooltip = host?.shadowRoot?.querySelector('[part="tooltip"]');
+            if (!trigger || !tooltip) return;
+
+            const trig  = trigger.getBoundingClientRect();
+            const tip   = tooltip.getBoundingClientRect();
+            const gap   = Math.round(tip.top - trig.bottom);
+            const rects = trigger.getClientRects().length;
+
+            results.push(
+              `${label}  lineRects=${rects}  trigBottom=${Math.round(trig.bottom)}  tooltipTop=${Math.round(tip.top)}  gap=${gap}px  ${gap === 10 ? '✅ correct' : `❌ bug: gap too large by ${gap - 10}px`}`
+            );
+          });
+
+          const el = document.getElementById('geometry-readout');
+          if (results.length) {
+            el.textContent = results.join('\n');
+            el.style.display = 'block';
+          }
+        }, 800);
+      });
     </script>
   </body>
 </html>
