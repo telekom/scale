@@ -135,6 +135,44 @@
         line-height: 1.5;
         max-width: 860px;
       }
+
+      .tooltip-repro {
+        min-height: 0;
+        margin-top: 40px;
+      }
+
+      .tooltip-repro h2 {
+        margin: 0 0 20px;
+        font-size: 28px;
+        font-weight: 800;
+      }
+
+      .tooltip-icon-trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        color: #4aa6c2;
+      }
+
+      .geometry-readout {
+        display: none;
+        margin-top: 24px;
+        padding: 16px;
+        border-radius: 6px;
+        background: #f0f0f0;
+        font-family: monospace;
+        font-size: 13px;
+      }
+
+      .geometry-readout table {
+        border-collapse: collapse;
+      }
+
+      .geometry-readout td {
+        padding: 4px 12px 4px 0;
+      }
     </style>
   </head>
   <body>
@@ -306,111 +344,84 @@
       <div class="bug-note" role="note">
         <strong>Issue #2289 – tooltip placement:</strong>
         The pre-opened tooltip on row 2 uses <code>placement="bottom"</code> with a
-        <strong>single-element</strong> icon trigger (<code>&lt;scale-icon-process-sepa-transaction&gt;</code>).
-        When the trigger is near the left viewport edge, the tooltip is shifted horizontally
-        to stay in the viewport and no longer points at the icon.
+        <strong>single-element</strong> icon trigger (<code>&lt;scale-icon-process-sepa-transaction&gt;</code>).<br />
+        For a single inline element the tooltip anchor is correct because
+        <code>getBoundingClientRect()</code> returns one box.<br />
+        The bug manifests when the trigger is a <strong>multiline inline text span</strong>:
+        the tooltip uses the full combined box instead of the line box under the cursor.
+        See <code>bills-data-grid-multiline-repro.html</code> (vanilla example) for the failing case.
       </div>
     </section>
 
-    <!-- ════════════════════════════════════════════════════════════
-         BUG REPRODUCTION — single icon horizontal placement
-         ════════════════════════════════════════════════════════════ -->
-    <section class="bill-card" style="margin-top:40px;" aria-label="Bug reproduction">
-      <div class="bill-header">
-        <h2 style="margin:0;font-size:28px;font-weight:800;">
-          ⚠️ Bug reproduction – single icon tooltip placement
-        </h2>
-      </div>
+    <section class="bill-card tooltip-repro" aria-label="Bug reproduction">
+      <h2>Tooltip placement – single icon trigger</h2>
 
-      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;">
-        The trigger below is a single icon near the left edge of the viewport. The tooltip uses
-        <code>placement="bottom"</code> with a wider label.
-        <strong>Expected:</strong> the tooltip remains horizontally centered on the icon.<br />
-        <strong>Actual before the fix:</strong> <code>shift({ crossAxis: true })</code> clamps the tooltip to the viewport edge,
-        so it appears beside the icon instead of pointing at it.
+      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;max-width:860px;">
+        This example keeps the trigger as a single SEPA icon near the viewport edge.
+        Before the fix, <code>shift({ crossAxis: true })</code> moved the tooltip horizontally
+        so it appeared beside the icon instead of pointing at it.
       </p>
 
-      <div style="display:flex;gap:60px;align-items:flex-start;flex-wrap:wrap;">
-        <!-- ── BUGGY: single icon near viewport edge ────────── -->
-        <div>
-          <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#c7352b;">
-            ❌ BUGGY — single icon trigger near viewport edge
-          </p>
-          <scale-tooltip
-            content="SEPA-Lastschrift"
-            placement="bottom"
+      <scale-tooltip content="SEPA-Lastschrift" placement="bottom">
+        <span class="tooltip-icon-trigger" data-testid="icon-trigger-repro">
+          <svg
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+            role="img"
+            aria-label="SEPA-Lastschrift"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <span
-              data-testid="icon-trigger-repro"
-              style="display:inline-flex;width:36px;height:36px;color:#4aa6c2;"
-            >
-              <scale-icon-process-sepa-transaction
-                size="36"
-                accessibility-title="SEPA-Lastschrift"
-              ></scale-icon-process-sepa-transaction>
-            </span>
-          </scale-tooltip>
-          <p style="margin:16px 0 0;font-size:12px;color:#666;">
-            Hover the icon. Before the fix the tooltip is clamped to the viewport edge,<br />
-            so its center is shifted away from the icon center.
-          </p>
-        </div>
+            <circle cx="18" cy="18" r="15" stroke="currentColor" stroke-width="2" />
+            <path d="M21.5 10.5C20.6 10 19.5 9.75 18.3 9.75C14.9 9.75 12.5 12.25 12.5 18C12.5 23.75 14.9 26.25 18.3 26.25C19.5 26.25 20.6 26 21.5 25.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.5 15.25H19.5M10.5 20.75H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M24.5 13L28 9.5L31.5 13M28 9.5V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.5 23L8 26.5L4.5 23M8 26.5V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </scale-tooltip>
 
-      </div>
-
-      <!-- Geometry readout injected by script on hover -->
-      <div id="geometry-readout" style="margin-top:40px;font-size:13px;font-family:monospace;background:#f0f0f0;padding:16px;border-radius:6px;display:none;">
-        <strong style="display:block;margin-bottom:8px;">Live geometry (updates on each hover):</strong>
-        <table style="border-collapse:collapse;"><tbody></tbody></table>
+      <div id="geometry-readout" class="geometry-readout">
+        <strong style="display:block;margin-bottom:8px;">Live geometry (updates on hover):</strong>
+        <table>
+          <tbody></tbody>
+        </table>
       </div>
     </section>
 
     <script>
-      // Measure tooltip alignment on every mouseover and update the readout table live
       window.addEventListener('load', () => {
+        const trigger = document.querySelector('[data-testid="icon-trigger-repro"]');
         const readout = document.getElementById('geometry-readout');
+        if (!trigger || !readout) return;
 
-        [
-          { testid: 'icon-trigger-repro', label: 'icon element' },
-        ].forEach(({ testid, label }) => {
-          const trigger = document.querySelector(`[data-testid="${testid}"]`);
-          if (!trigger) return;
+        trigger.addEventListener('mouseover', () => {
+          setTimeout(() => {
+            const host = trigger.closest('scale-tooltip');
+            const tooltip = host?.shadowRoot?.querySelector('[part="tooltip"]');
+            if (!tooltip) return;
 
-          trigger.addEventListener('mouseover', () => {
-            // Defer one tick so scale-tooltip can call update() first
-            setTimeout(() => {
-              const host    = trigger.closest('scale-tooltip');
-              const tooltip = host?.shadowRoot?.querySelector('[part="tooltip"]');
-              if (!tooltip) return;
+            const trig = trigger.getBoundingClientRect();
+            const tip = tooltip.getBoundingClientRect();
+            const triggerCenter = Math.round(trig.left + trig.width / 2);
+            const tooltipCenter = Math.round(tip.left + tip.width / 2);
+            const centerDelta = tooltipCenter - triggerCenter;
+            const gap = Math.round(tip.top - trig.bottom);
+            const status = Math.abs(centerDelta) <= 1
+              ? 'centered on icon'
+              : `tooltip shifted ${centerDelta}px from icon center`;
 
-              const trig  = trigger.getBoundingClientRect();
-              const tip   = tooltip.getBoundingClientRect();
-              const triggerCenter = Math.round(trig.left + trig.width / 2);
-              const tooltipCenter = Math.round(tip.left + tip.width / 2);
-              const centerDelta = tooltipCenter - triggerCenter;
-              const gap = Math.round(tip.top - trig.bottom);
-
-              const status = Math.abs(centerDelta) <= 1
-                ? '✅ fixed: centered on icon'
-                : `❌ BUG: tooltip center shifted ${centerDelta}px from icon center`;
-
-              const rows = document.querySelectorAll('#geometry-readout tr');
-              let row = Array.from(rows).find(r => r.dataset.rowFor === testid);
-              if (!row) {
-                row = document.createElement('tr');
-                row.dataset.rowFor = testid;
-                row.innerHTML = `<td style="padding:4px 12px 4px 0;font-weight:700"></td><td style="padding:4px 12px"></td><td style="padding:4px 12px"></td><td style="padding:4px 0"></td>`;
-                document.querySelector('#geometry-readout tbody').appendChild(row);
-              }
-              const cells = row.querySelectorAll('td');
-              cells[0].textContent = label;
-              cells[1].textContent = `iconCenter=${triggerCenter}  tooltipCenter=${tooltipCenter}`;
-              cells[2].textContent = `centerDelta=${centerDelta}px  gap=${gap}px`;
-              cells[3].textContent = status;
-              cells[3].style.color = Math.abs(centerDelta) <= 1 ? '#5ca832' : '#c7352b';
-              readout.style.display = 'block';
-            }, 50);
-          });
+            readout.querySelector('tbody').innerHTML = `
+              <tr>
+                <td><strong>icon element</strong></td>
+                <td>iconCenter=${triggerCenter} tooltipCenter=${tooltipCenter}</td>
+                <td>centerDelta=${centerDelta}px gap=${gap}px</td>
+                <td>${status}</td>
+              </tr>
+            `;
+            readout.style.display = 'block';
+          }, 50);
         });
       });
     </script>
