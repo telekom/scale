@@ -29,7 +29,7 @@
     "@types/node": "^25.9.2",
     "@vue/test-utils": "^1.2.0",
     "jest": "^26.1.0",
-    "rimraf": "^2.6.3",
+    "rimraf": "^6.1.3",
     "ts-jest": "^26.2.0",
     "typescript": "^5.8.3"
   },

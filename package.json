@@ -10,7 +10,7 @@
     "build": "./scripts/build.sh",
     "build:storybook:staging": "./scripts/build-storybook.sh",
     "build:components": "yarn workspace @telekom/scale-components build",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "yarn install --check-files",
     "postbootstrap": "lerna run generate",
     "new-version": "lerna version --conventional-commits --no-push",
     "force-version": "lerna version --conventional-commits --force-publish",
@@ -23,10 +23,10 @@
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "husky": "^9.1.7",
-    "lerna": "3.22.1",
+    "lerna": "^9.0.7",
     "prettier": "3.8.4",
-    "replace-in-file": "^6.2.0",
-    "rimraf": "2.6.3"
+    "replace-in-file": "^8.4.0",
+    "rimraf": "^6.1.3"
   },
   "husky": {
     "hooks": {
@@ -34,7 +34,7 @@
     }
   },
   "engines": {
-    "node": "22.x",
+    "node": "24.x",
     "npm": "please-use-yarn",
     "yarn": "1.x"
   }

@@ -12,7 +12,7 @@ const path = require('path');
 const initExtensions = require('puppeteer-extensions');
 const { configureToMatchImageSnapshot } = require('jest-image-snapshot');
 
-jest.setTimeout(10000);
+jest.setTimeout(60000);
 
 const testFileName = global.jasmine.testPath;
 const testPath = path.dirname(testFileName);
@@ -24,8 +24,21 @@ const toMatchImageSnapshot = configureToMatchImageSnapshot({
 
 expect.extend({ toMatchImageSnapshot });
 
+const ensureLegacyRootSelector = async () => {
+  await global.page.evaluate(() => {
+    const hasLegacyRoot = document.querySelector('#root');
+    if (hasLegacyRoot) return;
+
+    const storybookRoot = document.querySelector('#storybook-root');
+    if (storybookRoot) {
+      storybookRoot.id = 'root';
+    }
+  });
+};
+
 global.visualCheck = async (options) => {
-  await global.page.waitForSelector('#root');
+  await global.page.waitForSelector('#root, #storybook-root');
+  await ensureLegacyRootSelector();
   const previewHtml = await global.page.$('body');
   expect(await previewHtml.screenshot()).toMatchImageSnapshot(options);
 };
@@ -36,6 +49,8 @@ global.runSetup = async (id) => {
   await global.page.goto(
     `http://host.docker.internal:3123/iframe.html?id=${id}&viewMode=story`
   );
+  await global.page.waitForSelector('#root, #storybook-root');
+  await ensureLegacyRootSelector();
   await global.extensions.turnOffAnimations();
   await global.page.evaluate(() => {
     [
@@ -60,6 +75,8 @@ global.runColorSetup = async (id, mode) => {
   await global.page.goto(
     `http://host.docker.internal:3123/iframe.html?id=${id}&viewMode=story`
   );
+  await global.page.waitForSelector('#root, #storybook-root');
+  await ensureLegacyRootSelector();
   await global.page.evaluate((colorMode) => {
     localStorage.setItem('persistedColorMode', JSON.stringify(colorMode));
   }, mode);

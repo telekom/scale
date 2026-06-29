@@ -22,7 +22,8 @@ module.exports = async (jestConfig) => {
     res.sendFile('index.html');
   });
 
-  global.__SERVER__ = app.listen(3123);
+  // Bind to all interfaces so the Docker Chromium container can reach Storybook via host.docker.internal.
+  global.__SERVER__ = app.listen(3123, '0.0.0.0');
 
   await setupPuppeteer(jestConfig);
 };
