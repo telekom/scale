@@ -192,6 +192,7 @@ export class TelekomNavItem {
 
   @Method()
   async show() {
+    this.suppressKeyboardTriggerClick = false;
     this.isExpanded = true;
     this.animationState = 'in';
     requestAnimationFrame(async () => {

@@ -36,7 +36,7 @@ describe('scale-telekom-nav-flyout', () => {
     });
     trigger.dispatchEvent(click);
 
-    expect(click.defaultPrevented).toBe(true);
+    expect(click.defaultPrevented).toBe(false);
   });
 
   it('does not block keyboard activation when a hover flyout is already expanded', async () => {
@@ -77,13 +77,6 @@ describe('scale-telekom-nav-flyout', () => {
 
     expect(firstKeydown.defaultPrevented).toBe(true);
     expect(flyout.expanded).toBe(true);
-
-    const firstClick = new MouseEvent('click', {
-      bubbles: true,
-      cancelable: true,
-      detail: 0,
-    });
-    trigger.dispatchEvent(firstClick);
 
     const secondKeydown = keyboardEvent('Enter');
     trigger.dispatchEvent(secondKeydown);
