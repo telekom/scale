@@ -140,7 +140,6 @@ export class TelekomNavItem {
       this.suppressKeyboardTriggerClick = true;
       event.preventDefault();
       this.expanded = true;
-      this.show();
     }
   };
   handleHoverTriggerClick = (event: MouseEvent) => {
