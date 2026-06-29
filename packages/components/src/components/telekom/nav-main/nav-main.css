@@ -47,7 +47,9 @@ scale-nav-main {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
-  transition: color, border 0.2s ease-in-out;
+  transition:
+    color,
+    border 0.2s ease-in-out;
   align-items: center;
   text-decoration: none;
 }

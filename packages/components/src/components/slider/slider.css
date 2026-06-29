@@ -22,7 +22,8 @@
   --size-thumb: 24px;
   --border-color-thumb: rgba(0, 0, 0, 0.05);
   --background-thumb: var(--telekom-color-ui-white);
-  --shadow-thumb: 0 0 2px 0 rgba(0, 0, 0, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.24),
+  --shadow-thumb:
+    0 0 2px 0 rgba(0, 0, 0, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.24),
     0 4px 12px 0 rgba(0, 0, 0, 0.26);
   --color-focus: var(--telekom-color-functional-focus-standard);
   --spacing-x-step-marks: 8px;

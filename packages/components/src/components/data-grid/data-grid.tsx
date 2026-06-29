@@ -425,8 +425,8 @@ export class DataGrid {
       currentSortDirection === 'none'
         ? 'ascending'
         : currentSortDirection === 'ascending'
-        ? 'descending'
-        : 'none';
+          ? 'descending'
+          : 'none';
     this.fields[columnIndex].sortDirection = newSortDirection;
     this.sortTable(newSortDirection, type, columnIndex);
   }
@@ -1182,8 +1182,8 @@ export class DataGrid {
                     field.visible !== undefined
                       ? field.visible
                       : CELL_TYPES[field.type].defaults.visible !== undefined
-                      ? CELL_TYPES[field.type].defaults.visible
-                      : CELL_DEFAULTS.visible;
+                        ? CELL_TYPES[field.type].defaults.visible
+                        : CELL_DEFAULTS.visible;
                   if (!visible) {
                     return;
                   }
