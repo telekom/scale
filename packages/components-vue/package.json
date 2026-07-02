@@ -27,7 +27,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.8.0",
     "@types/node": "^25.9.2",
-    "@vue/test-utils": "^1.2.0",
+    "@vue/test-utils": "^2.4.6",
     "jest": "^26.1.0",
     "rimraf": "^6.1.3",
     "ts-jest": "^26.2.0",
