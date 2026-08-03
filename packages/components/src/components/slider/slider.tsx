@@ -197,7 +197,7 @@ export class Slider {
   };
 
   onDragStart = () => {
-    const offsetKey = this.getKeyFor('offsetLeft');
+    const offsetKey = this.getKeyFor('trackOffsetLeft');
     this.dragging = true;
     this[offsetKey] = this.sliderTrack.getBoundingClientRect().left;
   };
@@ -207,7 +207,7 @@ export class Slider {
       return;
     }
     const valueKey = this.getKeyFor('value');
-    const offsetLeftKey = this.getKeyFor('offsetLeft');
+    const offsetLeftKey = this.getKeyFor('trackOffsetLeft');
     const offsetLeft = this[offsetLeftKey];
 
     const currentX = this.handleTouchEvent(event).clientX;
@@ -270,7 +270,7 @@ export class Slider {
    * @returns {string} The prop name with the range suffix if needed
    */
   getKeyFor = (
-    propName: 'value' | 'offsetLeft' | 'position',
+    propName: 'value' | 'trackOffsetLeft' | 'position',
     thumb?: string
   ) => {
     if (this.range) {
