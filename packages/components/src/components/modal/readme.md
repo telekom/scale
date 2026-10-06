@@ -28,6 +28,15 @@
 | `scale-open`         | Fires when the modal has been opened                                                               | `CustomEvent<void>`                   |
 
 
+## Slots
+
+| Slot           | Description      |
+| -------------- | ---------------- |
+|                | The default slot |
+| `"action"`     |                  |
+| `"close-icon"` |                  |
+
+
 ## Shadow Parts
 
 | Part             | Description |

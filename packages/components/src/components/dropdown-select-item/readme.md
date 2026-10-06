@@ -15,6 +15,15 @@
 | `value`    | `value`    |             | `any`     | `undefined` |
 
 
+## Slots
+
+| Slot       | Description      |
+| ---------- | ---------------- |
+|            | The default slot |
+| `"prefix"` |                  |
+| `"suffix"` |                  |
+
+
 ## Shadow Parts
 
 | Part       | Description |

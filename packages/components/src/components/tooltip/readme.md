@@ -54,6 +54,14 @@ Type: `Promise<void>`
 
 
 
+## Slots
+
+| Slot        | Description      |
+| ----------- | ---------------- |
+|             | The default slot |
+| `"content"` |                  |
+
+
 ## Shadow Parts
 
 | Part        | Description |

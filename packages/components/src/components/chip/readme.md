@@ -30,6 +30,14 @@
 | `scale-close`  | (optional) Close icon click event | `CustomEvent<MouseEvent>` |
 
 
+## Slots
+
+| Slot          | Description      |
+| ------------- | ---------------- |
+|               | The default slot |
+| `"chip-icon"` |                  |
+
+
 ## Shadow Parts
 
 | Part                   | Description |

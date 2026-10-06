@@ -15,6 +15,13 @@
 | `tabbablePanel` | `tabbable-panel` | (optional) adds tab-index="0" to the panel, set to false to exclude the tab-panel from the tab sequence, e.g. if the first element in the panel is a focusable button | `boolean`            | `true`      |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Shadow Parts
 
 | Part          | Description |

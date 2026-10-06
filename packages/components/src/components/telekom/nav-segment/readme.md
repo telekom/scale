@@ -14,6 +14,13 @@
 | `isActive` | `is-active` | (optional) if this item is active | `boolean` | `undefined`             |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Dependencies
 
 ### Used by

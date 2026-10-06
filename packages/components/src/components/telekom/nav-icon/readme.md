@@ -23,6 +23,13 @@
 | `refUserMenuToggle`       | `ref-user-menu-toggle`        |                                   | `any`     | `undefined`             |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Dependencies
 
 ### Used by

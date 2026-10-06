@@ -24,6 +24,14 @@
 | `scale-set-menu-item-open`   |             | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot         | Description      |
+| ------------ | ---------------- |
+|              | The default slot |
+| `"children"` |                  |
+
+
 ## Shadow Parts
 
 | Part                     | Description |

@@ -22,6 +22,14 @@
 | `scale-expand` | Emitted so parent <scale-accordion> knows about it | `CustomEvent<CollapsibleEventDetail>` |
 
 
+## Slots
+
+| Slot        | Description      |
+| ----------- | ---------------- |
+|             | The default slot |
+| `"heading"` |                  |
+
+
 ## Shadow Parts
 
 | Part            | Description |

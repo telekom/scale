@@ -4,7 +4,7 @@ exports[`Input props should reflect attributes 1`] = `
 <scale-input checked="">
   <!---->
   <div class="input input--checked input--resize-none input--size-small input--status-error input--type-select input--variant-animated">
-    <label class="input__label" htmlfor="input-13">
+    <label class="input__label" for="input-13">
       label
     </label>
     <div class="input__select-wrapper">
@@ -23,7 +23,7 @@ exports[`Input snapshots should match default snapshot (type="text") 1`] = `
 <scale-input>
   <!---->
   <div class="input input--type-text input--variant-static">
-    <label class="input__label" htmlfor="input-0"></label>
+    <label class="input__label" for="input-0"></label>
     <input aria-describedby="helper-message-0" class="input__input" id="input-0" type="text" value="">
   </div>
 </scale-input>
@@ -33,7 +33,7 @@ exports[`Input snapshots should match snapshot with slot 1`] = `
 <scale-input icon="icon">
   <!---->
   <div class="input input--type-select input--variant-static">
-    <label class="input__label" htmlfor="input-1"></label>
+    <label class="input__label" for="input-1"></label>
     <div class="input__select-wrapper">
       <select aria-describedby="helper-message-1" class="input__select" id="input-1" value="">
         <div>
@@ -54,7 +54,7 @@ exports[`Input snapshots should match snapshot with type="checkbox" 1`] = `
     <div class="input__checkbox-container">
       <span class="input__checkbox-placeholder"></span>
     </div>
-    <label htmlfor="input-2"></label>
+    <label for="input-2"></label>
   </div>
 </scale-input>
 `;
@@ -63,7 +63,7 @@ exports[`Input snapshots should match snapshot with type="email" 1`] = `
 <scale-input type="email">
   <!---->
   <div class="input input--type-email input--variant-static">
-    <label class="input__label" htmlfor="input-6"></label>
+    <label class="input__label" for="input-6"></label>
     <input aria-describedby="helper-message-6" class="input__input" id="input-6" type="email" value="">
   </div>
 </scale-input>
@@ -73,7 +73,7 @@ exports[`Input snapshots should match snapshot with type="hidden" 1`] = `
 <scale-input type="hidden">
   <!---->
   <div class="input input--type-hidden input--variant-static">
-    <label class="input__label" htmlfor="input-7"></label>
+    <label class="input__label" for="input-7"></label>
     <input aria-describedby="helper-message-7" class="input__input" id="input-7" type="hidden" value="">
   </div>
 </scale-input>
@@ -83,7 +83,7 @@ exports[`Input snapshots should match snapshot with type="input" 1`] = `
 <scale-input type="input">
   <!---->
   <div class="input input--type-input input--variant-static">
-    <label class="input__label" htmlfor="input-5"></label>
+    <label class="input__label" for="input-5"></label>
     <input aria-describedby="helper-message-5" class="input__input" id="input-5" type="input" value="">
   </div>
 </scale-input>
@@ -93,7 +93,7 @@ exports[`Input snapshots should match snapshot with type="number" 1`] = `
 <scale-input type="number">
   <!---->
   <div class="input input--type-number input--variant-static">
-    <label class="input__label" htmlfor="input-8"></label>
+    <label class="input__label" for="input-8"></label>
     <input aria-describedby="helper-message-8" class="input__input" id="input-8" type="number" value="">
   </div>
 </scale-input>
@@ -103,7 +103,7 @@ exports[`Input snapshots should match snapshot with type="password" 1`] = `
 <scale-input type="password">
   <!---->
   <div class="input input--type-password input--variant-static">
-    <label class="input__label" htmlfor="input-9"></label>
+    <label class="input__label" for="input-9"></label>
     <input aria-describedby="helper-message-9" class="input__input" id="input-9" type="password" value="">
   </div>
 </scale-input>
@@ -114,7 +114,7 @@ exports[`Input snapshots should match snapshot with type="radio" 1`] = `
   <!---->
   <div class="input input--type-radio input--variant-static">
     <input aria-describedby="helper-message-3" id="input-3" type="radio" value="">
-    <label htmlfor="input-3"></label>
+    <label for="input-3"></label>
   </div>
 </scale-input>
 `;
@@ -123,7 +123,7 @@ exports[`Input snapshots should match snapshot with type="tel" 1`] = `
 <scale-input type="tel">
   <!---->
   <div class="input input--type-tel input--variant-static">
-    <label class="input__label" htmlfor="input-10"></label>
+    <label class="input__label" for="input-10"></label>
     <input aria-describedby="helper-message-10" class="input__input" id="input-10" type="tel" value="">
   </div>
 </scale-input>
@@ -133,7 +133,7 @@ exports[`Input snapshots should match snapshot with type="textarea" 1`] = `
 <scale-input type="textarea">
   <!---->
   <div class="input input--type-textarea input--variant-static">
-    <label class="input__label" htmlfor="input-4"></label><textarea aria-describedby="helper-message-4" class="input__textarea" id="input-4" type="textarea" value=""></textarea>
+    <label class="input__label" for="input-4"></label><textarea aria-describedby="helper-message-4" class="input__textarea" id="input-4" type="textarea" value=""></textarea>
   </div>
 </scale-input>
 `;
@@ -142,7 +142,7 @@ exports[`Input snapshots should match snapshot with type="url" 1`] = `
 <scale-input type="url">
   <!---->
   <div class="input input--type-url input--variant-static">
-    <label class="input__label" htmlfor="input-11"></label>
+    <label class="input__label" for="input-11"></label>
     <input aria-describedby="helper-message-11" class="input__input" id="input-11" type="url" value="">
   </div>
 </scale-input>

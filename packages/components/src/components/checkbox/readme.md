@@ -34,6 +34,13 @@
 | `scale-change` | Emitted when the value has changed. | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Shadow Parts
 
 | Part            | Description |

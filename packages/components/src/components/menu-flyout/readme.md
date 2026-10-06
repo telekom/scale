@@ -15,6 +15,14 @@
 | `triggerHasPopup` | `trigger-has-popup` | (optional) Determines whether the flyout trigger should get the aria-haspopup attribute | `boolean`                                                                           | `true`           |
 
 
+## Slots
+
+| Slot        | Description      |
+| ----------- | ---------------- |
+|             | The default slot |
+| `"trigger"` |                  |
+
+
 ## Shadow Parts
 
 | Part        | Description |

@@ -4,7 +4,7 @@ exports[`Textarea should match snapshot -> counter 1`] = `
 <scale-textarea counter="true">
   <div class="textarea textarea--variant-informational">
     <div class="textarea__wrapper">
-      <label class="textarea__label" htmlfor="input-textarea-2"></label><textarea class="textarea__control" id="input-textarea-2" value=""></textarea>
+      <label class="textarea__label" for="input-textarea-2"></label><textarea class="textarea__control" id="input-textarea-2" value=""></textarea>
     </div>
     <div aria-live="polite" aria-relevant="additions removals" class="textarea__meta" id="helper-message-2">
       <div class="textarea__counter">
@@ -19,7 +19,7 @@ exports[`Textarea should match snapshot -> helpertext 1`] = `
 <scale-textarea helper-text="helpertext" invalid="true">
   <div class="textarea textarea--status-error textarea--variant-informational">
     <div class="textarea__wrapper">
-      <label class="textarea__label" htmlfor="input-textarea-1"></label><textarea aria-describedby="helper-message-1" aria-invalid="true" class="textarea__control" id="input-textarea-1" value=""></textarea>
+      <label class="textarea__label" for="input-textarea-1"></label><textarea aria-describedby="helper-message-1" aria-invalid="true" class="textarea__control" id="input-textarea-1" value=""></textarea>
     </div>
     <div aria-live="polite" aria-relevant="additions removals" class="textarea__meta" id="helper-message-1">
       <scale-helper-text helpertext="helpertext" variant="danger"></scale-helper-text>
@@ -32,7 +32,7 @@ exports[`Textarea should match snapshot -> hide-label-visually 1`] = `
 <scale-textarea hide-label-visually="true" label="My Label">
   <div class="textarea textarea--hide-label textarea--variant-informational">
     <div class="textarea__wrapper">
-      <label class="textarea__label" htmlfor="input-textarea-3">
+      <label class="textarea__label" for="input-textarea-3">
         My Label
       </label><textarea class="textarea__control" id="input-textarea-3" value=""></textarea>
     </div>
@@ -44,7 +44,7 @@ exports[`Textarea should match snapshot 1`] = `
 <scale-textarea>
   <div class="textarea textarea--variant-informational">
     <div class="textarea__wrapper">
-      <label class="textarea__label" htmlfor="input-textarea-0"></label><textarea class="textarea__control" id="input-textarea-0" value=""></textarea>
+      <label class="textarea__label" for="input-textarea-0"></label><textarea class="textarea__control" id="input-textarea-0" value=""></textarea>
     </div>
   </div>
 </scale-textarea>

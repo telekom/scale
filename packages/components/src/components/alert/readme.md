@@ -31,6 +31,14 @@ Type: `Promise<void>`
 
 
 
+## Slots
+
+| Slot      | Description      |
+| --------- | ---------------- |
+|           | The default slot |
+| `"close"` |                  |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

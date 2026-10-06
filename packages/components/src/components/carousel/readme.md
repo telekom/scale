@@ -13,6 +13,14 @@
 | `vertical` | `vertical` | (optional) carousel display direction | `boolean` | `false`     |
 
 
+## Slots
+
+| Slot            | Description |
+| --------------- | ----------- |
+| `"arrow-left"`  |             |
+| `"arrow-right"` |             |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

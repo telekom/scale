@@ -481,8 +481,6 @@ export type AppMegaMenuEvents = NonNullable<unknown>;
 export const AppMegaMenu: StencilReactComponent<AppMegaMenuElement, AppMegaMenuEvents, Components.AppMegaMenu> = /*@__PURE__*/ createComponent<AppMegaMenuElement, AppMegaMenuEvents, Components.AppMegaMenu>({
     tagName: 'app-mega-menu',
     properties: {
-        navigation: 'navigation',
-        hide: 'hide',
         activeRouteId: 'active-route-id',
         isActive: 'is-active',
         active: 'active'
@@ -496,11 +494,7 @@ export type AppNavigationMainMobileEvents = { onCloseMenu: EventName<AppNavigati
 
 export const AppNavigationMainMobile: StencilReactComponent<AppNavigationMainMobileElement, AppNavigationMainMobileEvents, Components.AppNavigationMainMobile> = /*@__PURE__*/ createComponent<AppNavigationMainMobileElement, AppNavigationMainMobileEvents, Components.AppNavigationMainMobile>({
     tagName: 'app-navigation-main-mobile',
-    properties: {
-        hide: 'hide',
-        navigation: 'navigation',
-        activeRouteId: 'active-route-id'
-    },
+    properties: { activeRouteId: 'active-route-id' },
     hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
     clientModule: clientComponents.AppNavigationMainMobile as StencilReactComponent<AppNavigationMainMobileElement, AppNavigationMainMobileEvents, Components.AppNavigationMainMobile>,
     serializeShadowRoot
@@ -510,11 +504,7 @@ export type AppNavigationSectorMobileEvents = NonNullable<unknown>;
 
 export const AppNavigationSectorMobile: StencilReactComponent<AppNavigationSectorMobileElement, AppNavigationSectorMobileEvents, Components.AppNavigationSectorMobile> = /*@__PURE__*/ createComponent<AppNavigationSectorMobileElement, AppNavigationSectorMobileEvents, Components.AppNavigationSectorMobile>({
     tagName: 'app-navigation-sector-mobile',
-    properties: {
-        hide: 'hide',
-        navigation: 'navigation',
-        activeSectorId: 'active-sector-id'
-    },
+    properties: { activeSectorId: 'active-sector-id' },
     hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
     clientModule: clientComponents.AppNavigationSectorMobile as StencilReactComponent<AppNavigationSectorMobileElement, AppNavigationSectorMobileEvents, Components.AppNavigationSectorMobile>,
     serializeShadowRoot
@@ -525,7 +515,6 @@ export type AppNavigationUserMenuEvents = { onCloseMenu: EventName<AppNavigation
 export const AppNavigationUserMenu: StencilReactComponent<AppNavigationUserMenuElement, AppNavigationUserMenuEvents, Components.AppNavigationUserMenu> = /*@__PURE__*/ createComponent<AppNavigationUserMenuElement, AppNavigationUserMenuEvents, Components.AppNavigationUserMenu>({
     tagName: 'app-navigation-user-menu',
     properties: {
-        hide: 'hide',
         navigation: 'navigation',
         styles: 'styles'
     },
@@ -860,14 +849,12 @@ export const ScaleCombobox: StencilReactComponent<ScaleComboboxElement, ScaleCom
         inputId: 'input-id',
         dataQa: 'data-qa',
         placeholder: 'placeholder',
-        options: 'options',
         value: 'value',
         disabled: 'disabled',
         allowCustom: 'allow-custom',
         helperText: 'helper-text',
         invalid: 'invalid',
-        required: 'required',
-        filterFunction: 'filter-function'
+        required: 'required'
     },
     hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
     clientModule: clientComponents.ScaleCombobox as StencilReactComponent<ScaleComboboxElement, ScaleComboboxEvents, Components.ScaleCombobox>,
@@ -895,12 +882,10 @@ export const ScaleDataGrid: StencilReactComponent<ScaleDataGridElement, ScaleDat
         pageSize: 'page-size',
         rows: 'rows',
         selectable: 'selectable',
-        selection: 'selection',
         shadeAlternate: 'shade-alternate',
         styles: 'styles',
         visible: 'visible',
-        sortableColumnTitle: 'sortable-column-title',
-        localization: 'localization'
+        sortableColumnTitle: 'sortable-column-title'
     },
     hydrateModule: typeof window === 'undefined' ? (import('@telekom/scale-components/hydrate') as Promise<HydrateModule>) : undefined,
     clientModule: clientComponents.ScaleDataGrid as StencilReactComponent<ScaleDataGridElement, ScaleDataGridEvents, Components.ScaleDataGrid>,
@@ -927,7 +912,6 @@ export const ScaleDatePicker: StencilReactComponent<ScaleDatePickerElement, Scal
         min: 'min',
         max: 'max',
         firstDayOfWeek: 'first-day-of-week',
-        localization: 'localization',
         dateAdapter: 'date-adapter',
         helperText: 'helper-text',
         status: 'status',
@@ -7589,7 +7573,6 @@ export const ScaleMenuFlyoutList: StencilReactComponent<ScaleMenuFlyoutListEleme
     tagName: 'scale-menu-flyout-list',
     properties: {
         opened: 'opened',
-        trigger: 'trigger',
         direction: 'direction',
         active: 'active',
         closeOnSelect: 'close-on-select',

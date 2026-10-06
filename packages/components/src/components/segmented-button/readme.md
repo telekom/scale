@@ -29,6 +29,13 @@
 | `scale-change` | Emitted when button is clicked. Not emitted in case of programmatic state changes (e.g. the `selected` state is set by the skript). | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Dependencies
 
 ### Depends on

@@ -14,6 +14,14 @@
 | `styles` | `styles`  | (optional) Injected CSS styles                                                        | `string`             | `undefined` |
 
 
+## Slots
+
+| Slot      | Description |
+| --------- | ----------- |
+| `"panel"` |             |
+| `"tab"`   |             |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

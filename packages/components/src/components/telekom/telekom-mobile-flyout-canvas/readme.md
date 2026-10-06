@@ -23,6 +23,22 @@
 | `scale-close-nav-flyout` |             | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot                         | Description |
+| ---------------------------- | ----------- |
+| `"close-icon"`               |             |
+| `"heading"`                  |             |
+| `"mobile-after-main-nav"`    |             |
+| `"mobile-before-main-nav"`   |             |
+| `"mobile-bottom"`            |             |
+| `"mobile-lang-switcher"`     |             |
+| `"mobile-main-nav"`          |             |
+| `"mobile-meta-nav"`          |             |
+| `"mobile-meta-nav-external"` |             |
+| `"row"`                      |             |
+
+
 ## Shadow Parts
 
 | Part             | Description |

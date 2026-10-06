@@ -10,8 +10,8 @@
 | Property        | Attribute         | Description | Type         | Default     |
 | --------------- | ----------------- | ----------- | ------------ | ----------- |
 | `activeRouteId` | `active-route-id` |             | `string`     | `undefined` |
-| `hide`          | `hide`            |             | `() => void` | `undefined` |
-| `navigation`    | `navigation`      |             | `MenuItem[]` | `undefined` |
+| `hide`          | --                |             | `() => void` | `undefined` |
+| `navigation`    | --                |             | `MenuItem[]` | `undefined` |
 
 
 ## Events

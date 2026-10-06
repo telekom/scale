@@ -23,6 +23,13 @@ We tried adding ::-moz-focus-inner for the button but JSS fails to parse that se
 | `tag`          | `tag`           | The parent wrapper                                                          | `string`  | `'li'`      |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Shadow Parts
 
 | Part        | Description |
