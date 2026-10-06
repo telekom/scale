@@ -25,8 +25,8 @@ A minimal reproduction case of the bug, you may fork one of the available sandbo
 [Scale and Plain HTML](https://codesandbox.io/s/scale-components-plain-html-template-qfi9mp)
 [Scale and React18](https://codesandbox.io/s/scale-components-react18-75ci1x)
 [Scale and React18 with Wrapper Package](https://codesandbox.io/s/scale-components-react18-with-wrapper-xqqkrv)
-[Scale and Angular13](https://codesandbox.io/s/scale-components-angular13-kxzv2k)
-[Scale and Vue3](https://codesandbox.io/s/scale-components-vue3-b14993)
+[Scale and Angular](https://github.com/telekom/scale/tree/main/examples/angular17-reactive-forms)
+[Scale and Vue 3](https://github.com/telekom/scale/tree/main/examples/vue3-vite-boilerplate)
 
 **Desktop (please complete the following information):**
  - OS: [e.g. iOS]
