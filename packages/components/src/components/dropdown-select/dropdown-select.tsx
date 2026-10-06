@@ -265,7 +265,7 @@ export class DropdownSelect {
   @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
   @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
   @Event({ eventName: 'scale-keydown' }) scaleKeydown!: EventEmitter<void>;
-  @State() options?: string | Array<{ label: string; value: any }> = '';
+  @State() options?: string | { label: string; value: any }[] = '';
   @State() open: boolean = false;
   @State() currentIndex: number = -1;
   @State() queryString: string = '';
