@@ -58,10 +58,10 @@ defineCustomElements();
 
 ### NPM packages
 
-| Package name                               | Description                   |
-| ------------------------------------------ | ----------------------------- |
-| @telekom/scale-components-neutral          | Stencil components            |
-| @telekom/scale-components-react-neutral    | Component proxies for React   |
+| Package name                            | Description                 |
+| --------------------------------------- | --------------------------- |
+| @telekom/scale-components-neutral       | Stencil components          |
+| @telekom/scale-components-react-neutral | Component proxies for React |
 
 > 2026-10-06: The long-deprecated Angular, Vue, and Scale design-token packages have been removed from this repository and its release pipeline. Angular and Vue support Web Components directly; use `@telekom/scale-components-neutral`. Design tokens are maintained independently in [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens). See the [removal announcement](https://github.com/telekom/scale/blob/main/docs/2026-10-06-deprecated-packages-removed.md) for migration details.
 
@@ -69,14 +69,14 @@ defineCustomElements();
 
 If you want to use the source code, remove the following folders. These folders contain all the protected brand and design assets of the Telekom and are not available under the MPL-2.0 License:
 
-| Folder                                     | Content                    |
-| ------------------------------------------ | -------------------------- |
-| assets                                     | Scale key visual           |
-| packages/components/src/components/telekom | Telekom components         |
-| packages/components/src/telekom            | Telekom fonts & icons      |
-| packages/components/src/html/telekom       | Telekom code examples      |
-| packages/visual-tests/                     | Visual tests               |
-| storybook-vue                              | Telekom branded storybook  |
+| Folder                                     | Content                   |
+| ------------------------------------------ | ------------------------- |
+| assets                                     | Scale key visual          |
+| packages/components/src/components/telekom | Telekom components        |
+| packages/components/src/telekom            | Telekom fonts & icons     |
+| packages/components/src/html/telekom       | Telekom code examples     |
+| packages/visual-tests/                     | Visual tests              |
+| storybook-vue                              | Telekom branded storybook |
 
 ## Telekom version
 
@@ -108,18 +108,18 @@ npm install @telekom/scale-components@next
 ### Setup with a bundler or ES modules
 
 ```javascript
-import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { defineCustomElements } from "@telekom/scale-components/loader";
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
 defineCustomElements();
 ```
 
 ### NPM packages
 
-| Package name                       | Description                   |
-| ---------------------------------- | ----------------------------- |
-| @telekom/scale-components          | Stencil components            |
-| @telekom/scale-components-react    | Component proxies for React   |
+| Package name                    | Description                 |
+| ------------------------------- | --------------------------- |
+| @telekom/scale-components       | Stencil components          |
+| @telekom/scale-components-react | Component proxies for React |
 
 > 2026-10-06: The long-deprecated Angular, Vue, and Scale design-token packages have been removed. Use `@telekom/scale-components` directly in Angular and Vue. Scale uses the independent [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens) package. See the [removal announcement](https://github.com/telekom/scale/blob/main/docs/2026-10-06-deprecated-packages-removed.md).
 
@@ -129,12 +129,12 @@ Simply clone/download this repository and use the source code as is.
 
 ## Monorepo packages overview
 
-| Package name       | Description                                                |
-| ------------------ | ---------------------------------------------------------- |
-| components         | Stencil components                                         |
-| components-react   | Component proxies for React (auto-generated)               |
-| storybook-vue      | Our Storybook                                              |
-| visual-tests       | Visual snapshot testing                                    |
+| Package name     | Description                                  |
+| ---------------- | -------------------------------------------- |
+| components       | Stencil components                           |
+| components-react | Component proxies for React (auto-generated) |
+| storybook-vue    | Our Storybook                                |
+| visual-tests     | Visual snapshot testing                      |
 
 # Contributing
 
@@ -159,7 +159,6 @@ Licensed under the **Mozilla Public License 2.0 (MPL-2.0)** (the "License"); you
 You may obtain a copy of the License by reviewing the file [LICENSE](./LICENSE) in the repository.
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the [LICENSE](./LICENSE) for the specific language governing permissions and limitations under the License.
-
 
 # Local development
 
