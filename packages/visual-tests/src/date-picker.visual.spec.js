@@ -20,8 +20,9 @@ describe('DatePicker', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-      const openButton = await global.page.evaluateHandle(
-        `document.querySelector("#root > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > button")`
+      const openButton = await global.page.waitForSelector(
+        '#root > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > button',
+        { visible: true }
       );
       await openButton.click();
       await global.page.waitForTimeout(3000);
@@ -62,8 +63,9 @@ describe('DatePicker', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-      const datePicker = await global.page.$(
-        '#root > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > .duet-date__input'
+      const datePicker = await global.page.waitForSelector(
+        '#root > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > .duet-date__input',
+        { visible: true }
       );
       await datePicker.hover();
       await global.page.waitForTimeout(1000);
