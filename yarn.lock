@@ -90,9 +90,9 @@
     tslib "^2.3.0"
 
 "@angular/router@^20.0.6":
-  version "20.3.25"
-  resolved "https://registry.yarnpkg.com/@angular/router/-/router-20.3.25.tgz#0b79c6c0a0f4212002713c03bbb2709dbd79c546"
-  integrity sha512-YIjLHWAufTaukNj15hEoys29e7XNhnCRsS1/95h/OqR69R3adbB8hV7ut7gO6XdXokriYqb4gtoUjoESxR+xFQ==
+  version "20.3.32"
+  resolved "https://registry.yarnpkg.com/@angular/router/-/router-20.3.32.tgz#e116ba164558d8cfa277139a3b5613a974066f07"
+  integrity sha512-enTR59hEh1GYTkOT6kLQD8SNP7xXa/UrdJRmkVoX9HjIVq8fEha9MOgIR8/MWKVX7Py9+IlnwtZSUt4Hx8vneQ==
   dependencies:
     tslib "^2.3.0"
 
