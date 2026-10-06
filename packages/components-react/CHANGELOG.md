@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.162](https://github.com/telekom/scale/compare/v3.0.0-beta.161...v3.0.0-beta.162) (2026-10-06)
+
+### Bug Fixes
+
+- slider crash in react build and add react 19 peer dep support ([#2525](https://github.com/telekom/scale/issues/2525)) ([faf9afd](https://github.com/telekom/scale/commit/faf9afd8ae890dbf73260f771d4f2ac178eca7b2))
+
 # [3.0.0-beta.161](https://github.com/telekom/scale/compare/v3.0.0-beta.160...v3.0.0-beta.161) (2026-06-29)
 
 ### Bug Fixes

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.162](https://github.com/telekom/scale/compare/v3.0.0-beta.161...v3.0.0-beta.162) (2026-10-06)
+
+### Bug Fixes
+
+- slider crash in react build and add react 19 peer dep support ([#2525](https://github.com/telekom/scale/issues/2525)) ([faf9afd](https://github.com/telekom/scale/commit/faf9afd8ae890dbf73260f771d4f2ac178eca7b2))
+- **tooltip:** prevent shift middleware from displacing tooltip along main axis ([#2520](https://github.com/telekom/scale/issues/2520)) ([20c0574](https://github.com/telekom/scale/commit/20c05741674a24cff9dd1f1f8d6b4155062debd2)), closes [#2289](https://github.com/telekom/scale/issues/2289)
+
+### Features
+
+- **data-grid:** support inline html cells ([0aac801](https://github.com/telekom/scale/commit/0aac8010019febf3466a43e492c115458ef32e89))
+
 # [3.0.0-beta.161](https://github.com/telekom/scale/compare/v3.0.0-beta.160...v3.0.0-beta.161) (2026-06-29)
 
 ### Bug Fixes
