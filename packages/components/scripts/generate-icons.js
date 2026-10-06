@@ -14,18 +14,25 @@
 const path = require('path');
 const fg = require('fast-glob');
 const fs = require('fs-extra');
-const SVGO = require('svgo');
+const { optimize } = require('svgo');
 const Handlebars = require('handlebars'); // using Handlebars for consistency with components-sketch
 
 const { parse } = require('svg-parser');
 
-const svgo = new SVGO({
+const svgoConfig = {
   plugins: [
-    { removeViewBox: false },
-    { removeXMLNS: true },
-    { cleanupIDs: false },
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          removeViewBox: false,
+          cleanupIDs: false,
+        },
+      },
+    },
+    'removeXMLNS',
   ],
-});
+};
 
 const INPUT_GLOB = process.env.WHITELABEL
   ? './src/icons/**/*.svg'
@@ -60,7 +67,7 @@ async function main() {
   const files = await Promise.all(
     entries.map(async (filepath) => {
       const file = await fs.readFile(filepath, { encoding: 'utf-8' });
-      const item = await svgo.optimize(file);
+      const item = optimize(file, { ...svgoConfig, path: filepath });
 
       const state = path.basename(filepath, EXT);
       const cleanPath = path
