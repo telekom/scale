@@ -7,7 +7,8 @@ import { BaseValueAccessorDirective } from './base-value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'scale-dropdown-select[formControlName],[sclSelectControl]',
   host: {
-    '(scale-change)': '_handleInput($event.target.value)'
+    '(scale-change)': '_handleInput($event.detail.value)',
+    '(scale-blur)': 'onTouched()'
   },
   providers: [
     {

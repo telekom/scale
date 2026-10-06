@@ -20,7 +20,7 @@
 @import url('./custom-media.css');
 
 /**
- * Include --scl tokens from legacy @telekom/scale-design-tokens package for backward-compat.
+ * Include legacy --scl tokens for backward compatibility.
  * @deprecated in v3
  */
 @import './legacy-scale-design-tokens.css';

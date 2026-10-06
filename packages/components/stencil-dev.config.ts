@@ -24,7 +24,6 @@ export const config: Config = {
           dest: 'build/fonts/TeleNeoWeb',
           warn: true,
         },
-        { src: '../../design-tokens/dist/*', dest: 'build/', warn: true },
         { src: './html/*', dest: './', warn: true },
         ...(!process.env.WHITELABEL
           ? [{ src: './html/telekom/*', dest: './', warn: true }]

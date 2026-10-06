@@ -2,7 +2,7 @@
 
 If you have been part of our closed beta phase, you have been running the first version of scale. The current version 2 offers numerous bugfixes, AA accessibility and full browser support. We upgraded to Stencil 2 and are using CSS instead of JSS now, amongst others.
 
-You need to load this CSS file at `@telekom/scale-design-tokens/dist/design-tokens-telekom.css` to get the tokens and fonts.
+This is an archived guide for Scale v2. For current versions, load the component CSS from `@telekom/scale-components/dist/scale-components/scale-components.css`; it includes fonts and tokens. See the [2026-10-06 removal announcement](../2026-10-06-deprecated-packages-removed.md) for the retired packages.
 
 In this document you'll find a list of all the breaking changes in v2 and how to upgrade from v1. If a component you're interested in is not listed, it has no breaking changes.
 

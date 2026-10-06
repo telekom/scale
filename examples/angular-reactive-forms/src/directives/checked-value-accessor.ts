@@ -16,7 +16,7 @@ import { BaseValueAccessorDirective } from './base-value-accessor';
 @Directive({
   selector: 'scale-checkbox[formControlName],scale-switch[formControlName],[sclCheckedControl]',
   host: {
-    '(scaleChange)': '_handleInput($event.target.checked)',
+    '(scale-change)': '_handleInput($event.detail.checked)',
     '(blur)': 'onTouched()'
   },
   providers: [

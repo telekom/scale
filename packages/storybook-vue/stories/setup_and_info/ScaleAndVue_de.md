@@ -121,11 +121,6 @@ Du kannst ganz einfach die gleichen Ergebnisse erzielen:
 ></scale-text-field>
 ```
 
-## Proxy Package
+## Native Web Components
 
-Die automatisch generierten Proxy Packages werden in v4 entfernt:
-
-- `@telekom/scale-components-vue`
-- `@telekom/scale-components-vue-neutral`
-
-Bitte nutze `@telekom/scale-components` direkt. Custom Elements werden bereits super unterstützt.
+2026-10-06: Die seit Langem veralteten Vue-Proxy-Pakete wurden aus diesem Repository und der Release-Pipeline entfernt. Nutze `@telekom/scale-components` direkt oder `@telekom/scale-components-neutral` für das neutrale Theme. Vue unterstützt Custom Elements nativ. Verwende für Formulare die oben beschriebenen Property- und Event-Bindings.

@@ -12,13 +12,9 @@
 export default async function() {
   if (process.client) {
     const {
-      defineCustomElements,
-      applyPolyfills
+      defineCustomElements
     } = require("@telekom/scale-components-neutral/loader");
 
-    // Bind the custom elements to the window object
-    applyPolyfills().then(() => {
-      defineCustomElements(window);
-    });
+    defineCustomElements(window);
   }
 }

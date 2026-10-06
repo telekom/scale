@@ -16,9 +16,9 @@ import { BaseValueAccessorDirective } from './base-value-accessor';
 @Directive({
   selector: 'scale-text-field:not([type="number"])[formControlName],scale-textarea[formControlName],scale-dropdown[formControlName],[sclTextControl]',
   host: {
-    '(scaleInput)': '_handleInput($event.target.value)',
-    '(scaleChange)': '_handleInput($event.target.value)',
-    '(blur)': 'onTouched()'
+    '(scale-input)': '_handleInput($event.detail.value)',
+    '(scale-change)': '_handleInput($event.detail.value)',
+    '(scale-blur)': 'onTouched()'
   },
   providers: [
     {

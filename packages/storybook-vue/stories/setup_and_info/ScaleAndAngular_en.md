@@ -111,11 +111,6 @@ import { NumberValueAccessorDirective } from 'src/directives/number-value-access
 export class AppModule {}
 ```
 
-## Proxy Package
+## Native Web Components
 
-The automatically generated proxy packages will be removed in v4:
-
-- `@telekom/scale-components-angular`
-- `@telekom/scale-components-angular-neutral`
-
-Please use `@telekom/scale-components` directly, support for custom elements is already great.
+2026-10-06: The long-deprecated Angular proxy packages have been removed from this repository and its release pipeline. Use `@telekom/scale-components` directly, or `@telekom/scale-components-neutral` for the neutral theme. Angular supports custom elements natively. Reactive forms still need the value accessors described above.

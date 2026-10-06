@@ -90,30 +90,13 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components build
 
-      - name: Build Angular Proxy
-        run: |
-          yarn workspace @telekom/scale-components process-angular-proxies
-          yarn workspace @telekom/scale-components-angular build
-
       - name: Build React Proxy
         run: |
           yarn workspace @telekom/scale-components-react build
 
-      - name: Build Vue Proxy
-        run: |
-          yarn workspace @telekom/scale-components-vue build
-
       - name: Publish to NPM
         run: |
           yarn publish-telekom
-
-      - name: Deprecate Angular Package
-        run: |
-          npm deprecate @telekom/scale-components-angular@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
-
-      - name: Deprecate Vue Package
-        run: |
-          npm deprecate @telekom/scale-components-vue@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
 
   publish-neutral:
     runs-on: ubuntu-22.04
@@ -164,27 +147,10 @@ jobs:
         run: |
           yarn prepare-neutral
 
-      - name: Build Angular Proxy
-        run: |
-          yarn workspace @telekom/scale-components-neutral process-angular-proxies
-          yarn workspace @telekom/scale-components-angular-neutral build
-
       - name: Build React Proxy
         run: |
           yarn workspace @telekom/scale-components-react-neutral build
 
-      - name: Build Vue Proxy
-        run: |
-          yarn workspace @telekom/scale-components-vue-neutral build
-
       - name: Publish to NPM
         run: |
           yarn publish-neutral
-
-      - name: Deprecate Angular Package
-        run: |
-          npm deprecate @telekom/scale-components-angular-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
-
-      - name: Deprecate Vue Package
-        run: |
-          npm deprecate @telekom/scale-components-vue-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."

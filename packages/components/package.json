@@ -35,13 +35,10 @@
     "lint:fix": "yarn lint:style --fix",
     "lint": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "generate": "node ./scripts/generate-icons.js",
-    "optimize-icons": "svgo -r -f src/telekom/icons",
-    "process-angular-proxies": "node ./scripts/process-angular-proxies.js"
+    "optimize-icons": "svgo -r -f src/telekom/icons"
   },
   "devDependencies": {
-    "@nowseemee/vue-output-target": "0.0.4",
     "@stencil-community/postcss": "^2.2.0",
-    "@stencil/angular-output-target": "^1.1.0",
     "@stencil/react-output-target": "~1.5.3",
     "@types/classnames": "2.2.8",
     "@types/jest": "24.9.1",

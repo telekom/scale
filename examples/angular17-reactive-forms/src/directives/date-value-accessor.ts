@@ -8,7 +8,8 @@ import { BaseValueAccessorDirective } from './base-value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'scale-date-picker[formControlName],[sclDateControl]',
   host: {
-    '(scale-change)': '_handleDatePickerSelect($event.target)',
+    '(scale-change)': '_handleInput($event.detail.value)',
+    '(scale-blur)': 'onTouched()',
   },
   providers: [
     {

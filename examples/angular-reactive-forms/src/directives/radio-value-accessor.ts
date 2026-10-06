@@ -16,7 +16,7 @@ import { BaseValueAccessorDirective } from './base-value-accessor';
 @Directive({
   selector: 'scale-radio-button[formControlName],[sclRadioControl]',
   host: {
-    '(scaleChange)': '_handleInput($event.target.value)',
+    '(scale-change)': '_handleInput($event.target.value)',
     '(blur)': 'onTouched()'
   },
   providers: [

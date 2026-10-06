@@ -17,8 +17,9 @@ import { BaseValueAccessorDirective } from './base-value-accessor';
   standalone: true,
   selector: 'scale-text-field[type="number"][formControlName],[sclNumberControl]',
   host: {
-    '(scaleInput)': '_handleInput($event.target.value)',
-    '(blur)': 'onTouched()'
+    '(scale-input)': '_handleInput($event.target.value)',
+    '(blur)': 'onTouched()',
+    '(scale-blur)': 'onTouched()'
   },
   providers: [
     {

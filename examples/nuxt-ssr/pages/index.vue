@@ -14,7 +14,8 @@
 
       <scale-text-field
         label="text field"
-        @scaleChange="handleChange"
+        :value="message"
+        @scale-change="handleChange"
         placeholder="add message"
       ></scale-text-field>
       <span>The message is:</span>
@@ -36,14 +37,13 @@ export default Vue.extend({
   }),
   methods: {
     handleChange: function(event: any) {
-      this.message = event.target.value
+      this.message = event.detail.value
     }
   }
 })
 </script>
 
 <style>
-@import "@telekom/scale-components-neutral/dist/scale-components/scale-components.css";
 .container {
   margin: 0 auto;
   min-height: 100vh;
