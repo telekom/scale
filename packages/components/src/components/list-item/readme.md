@@ -15,6 +15,14 @@
 | `styles`  | `styles`  | (optional) Injected CSS styles                                                         | `string`  | `undefined` |
 
 
+## Slots
+
+| Slot       | Description      |
+| ---------- | ---------------- |
+|            | The default slot |
+| `"nested"` |                  |
+
+
 ## Shadow Parts
 
 | Part            | Description |

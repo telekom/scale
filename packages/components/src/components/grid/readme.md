@@ -16,6 +16,13 @@
 | `spacing`  | `spacing`   | (optioanl) Set padding to container           | `string` | `undefined` |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

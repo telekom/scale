@@ -12,6 +12,15 @@
 | `styles` | `styles`  | (optional) Injected CSS styles | `string` | `undefined` |
 
 
+## Slots
+
+| Slot       | Description      |
+| ---------- | ---------------- |
+|            | The default slot |
+| `"footer"` |                  |
+| `"header"` |                  |
+
+
 ## Shadow Parts
 
 | Part        | Description |

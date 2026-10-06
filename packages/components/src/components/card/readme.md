@@ -36,6 +36,13 @@
 | `to`     | `to`      | (optional) Link card           | `string` | `''`        |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Shadow Parts
 
 | Part       | Description |

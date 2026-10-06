@@ -15,6 +15,14 @@
 | `type`          | `type`           | (optional) Setting/Slotcontent in which the badge is used         | `"icon" \| "nav-icon" \| "text"` | `'icon'`    |
 
 
+## Slots
+
+| Slot            | Description      |
+| --------------- | ---------------- |
+|                 | The default slot |
+| `"after-badge"` |                  |
+
+
 ## Dependencies
 
 ### Used by

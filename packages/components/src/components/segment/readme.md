@@ -47,6 +47,14 @@ Type: `Promise<void>`
 
 
 
+## Slots
+
+| Slot             | Description      |
+| ---------------- | ---------------- |
+|                  | The default slot |
+| `"segment-icon"` |                  |
+
+
 ## Dependencies
 
 ### Depends on

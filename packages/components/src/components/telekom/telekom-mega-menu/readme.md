@@ -29,6 +29,15 @@ Usage example:
 | `headingLevel` | `heading-level` |             | `number` | `2`     |
 
 
+## Slots
+
+| Slot        | Description      |
+| ----------- | ---------------- |
+|             | The default slot |
+| `"heading"` |                  |
+| `"icon"`    |                  |
+
+
 ## Shadow Parts
 
 | Part                 | Description |

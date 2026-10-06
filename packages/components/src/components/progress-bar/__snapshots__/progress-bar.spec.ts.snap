@@ -18,7 +18,7 @@ exports[`ProgressBar check props 1`] = `
     </style>
     <div class="progress-bar" part="progress-bar">
       <div class="progress-bar__top-container">
-        <label class="progress-bar__label" htmlfor="progress-bar-1" part="label">
+        <label class="progress-bar__label" for="progress-bar-1" part="label">
           testLabel
         </label>
         <div aria-hidden="true" class="progress-bar__status" part="status">

@@ -19,6 +19,14 @@
 | `variant`             | `variant`                |                                | `string` | `'standard'`              |
 
 
+## Slots
+
+| Slot           | Description |
+| -------------- | ----------- |
+| `"logo"`       |             |
+| `"navigation"` |             |
+
+
 ## Dependencies
 
 ### Depends on

@@ -16,6 +16,13 @@
 | `styles`                | `styles`                  | (optional) Extra styles                                                                                                                                                     | `string`  | `undefined`           |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Shadow Parts
 
 | Part              | Description |
