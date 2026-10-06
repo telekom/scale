@@ -19,7 +19,8 @@
   --height-regular: var(--telekom-spacing-composition-space-12);
   --height-large: var(--telekom-spacing-composition-space-14);
   --radius: var(--telekom-radius-small);
-  --transition: all var(--telekom-motion-duration-transition)
+  --transition:
+    all var(--telekom-motion-duration-transition)
       var(--telekom-motion-easing-standard),
     border-radius var(--telekom-motion-duration-instant);
   --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
@@ -186,12 +187,16 @@
   background: var(--background-selected-dark);
 }
 
-.toggle-button--selected:not(.button--disabled).toggle-button--monochrome:hover {
+.toggle-button--selected:not(
+    .button--disabled
+  ).toggle-button--monochrome:hover {
   color: var(--color-selected);
   background: var(--background-selected-hover-dark);
 }
 
-.toggle-button--selected:not(.button--disabled).toggle-button--monochrome:active {
+.toggle-button--selected:not(
+    .button--disabled
+  ).toggle-button--monochrome:active {
   color: var(--color-selected);
   background: var(--background-selected-active-dark);
 }

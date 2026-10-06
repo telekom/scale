@@ -16,6 +16,7 @@
     "outDir": "dist",
     "removeComments": false,
     "sourceMap": true,
+    "types": [],
     "jsx": "react",
     "target": "es2015"
   },

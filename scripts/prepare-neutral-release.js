@@ -1,15 +1,12 @@
-const replace = require('replace-in-file');
+const { replaceInFileSync } = require('replace-in-file');
 const fs = require('fs');
 
-fs.rename(
+fs.renameSync(
   'packages/components-angular/src/component-library-module-neutral.ts',
-  'packages/components-angular/src/component-library-module.ts',
-  function (err) {
-    if (err) console.log('ERROR: ' + err);
-  }
+  'packages/components-angular/src/component-library-module.ts'
 );
 
-replace.sync({
+replaceInFileSync({
   files: 'packages/**/README.md',
   ignore: ['packages/components/README.md', 'packages/design-tokens/README.md'],
   from: [
@@ -28,22 +25,22 @@ replace.sync({
   ],
 });
 
-replace.sync({
+replaceInFileSync({
   files: 'packages/components/package.json',
   from: /\"name\": \"@telekom\/scale\-components\"/g,
   to: `"name": "@telekom/scale-components-neutral"`,
 });
-replace.sync({
+replaceInFileSync({
   files: 'packages/components-react/package.json',
   from: /\"name\": \"@telekom\/scale\-components\-react\"/g,
   to: `"name": "@telekom/scale-components-react-neutral"`,
 });
-replace.sync({
+replaceInFileSync({
   files: 'packages/components-angular/package.json',
   from: /\"name\": \"@telekom\/scale\-components\-angular\"/g,
   to: `"name": "@telekom/scale-components-angular-neutral"`,
 });
-replace.sync({
+replaceInFileSync({
   files: 'packages/components-vue/package.json',
   from: /\"name\": \"@telekom\/scale\-components\-vue\"/g,
   to: `"name": "@telekom/scale-components-vue-neutral"`,

@@ -54,6 +54,9 @@
   --scl-z-index-50: 50;
   --scl-z-index-60: 60;
   --scl-z-index-70: 70;
+  --scl-color-form-error-message: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
   /* TODO: we can try to set this rule in design tokens :root */
   color-scheme: light dark;
 }
@@ -73,9 +76,29 @@
 }
 
 [data-mode='light'] {
+  --scl-color-form-error-message: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
   color-scheme: light;
 }
 
 [data-mode='dark'] {
+  --scl-color-form-error-message: var(
+    --telekom-color-text-and-icon-on-subtle-danger
+  );
   color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scl-color-form-error-message: var(
+      --telekom-color-text-and-icon-on-subtle-danger
+    );
+  }
+
+  [data-mode='light'] {
+    --scl-color-form-error-message: var(
+      --telekom-color-text-and-icon-functional-danger
+    );
+  }
 }

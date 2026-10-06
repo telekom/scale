@@ -34,7 +34,8 @@ scale-radio-button {
   );
   --spacing-top-helper-text: var(--telekom-spacing-composition-space-03);
   --color-helper-text-error: var(
-    --telekom-color-text-and-icon-functional-danger
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
   );
   /*label*/
   --transition-label: var(--transition);

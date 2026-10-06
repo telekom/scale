@@ -249,11 +249,17 @@ scale-icon-alert-error {
 
 /* :host(.error) [part='helper-text'], */
 scale-checkbox.error [part='helper-text'] {
-  color: var(--telekom-color-text-and-icon-functional-danger);
+  color: var(
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
+  );
 }
 
 scale-checkbox.error [part='helper-text'] scale-icon-alert-error {
-  color: var(--telekom-color-text-and-icon-functional-danger);
+  color: var(
+    --scl-color-form-error-message,
+    var(--telekom-color-text-and-icon-functional-danger)
+  );
 }
 
 /* :host(.error) [part='checkbox'], */

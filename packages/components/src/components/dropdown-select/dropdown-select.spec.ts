@@ -49,6 +49,55 @@ describe('DropdownSelect', function () {
     expect(comboboxEl.textContent).toBe('Cedric');
   });
 
+  it('should propagate aria details id to the combobox when no helper text is set', async () => {
+    const ariaDetailsId = 'dropdown-select-extra-details';
+    const page = await newSpecPage({
+      components: [DropdownSelect],
+      html: `
+        <scale-dropdown-select label="My Select" aria-details-id="${ariaDetailsId}">
+          <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+          <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+        </scale-dropdown-select>`,
+    });
+
+    const selectEl = page.doc.querySelector('scale-dropdown-select');
+    const comboboxEl = selectEl.shadowRoot.querySelector(
+      '[part="combobox"]'
+    ) as HTMLElement;
+
+    expect(comboboxEl.getAttribute('aria-describedby')).toBe(ariaDetailsId);
+    expect(comboboxEl.getAttribute('aria-details')).toBe(ariaDetailsId);
+  });
+
+  it('should keep helper text as aria-describedby and aria details on the combobox', async () => {
+    const ariaDetailsId = 'dropdown-select-extra-details';
+    const page = await newSpecPage({
+      components: [DropdownSelect],
+      html: `
+        <scale-dropdown-select
+          label="My Select"
+          helper-text="Some info"
+          aria-details-id="${ariaDetailsId}"
+        >
+          <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+          <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+        </scale-dropdown-select>`,
+    });
+
+    const selectEl = page.doc.querySelector('scale-dropdown-select');
+    const comboboxEl = selectEl.shadowRoot.querySelector(
+      '[part="combobox"]'
+    ) as HTMLElement;
+    const helperTextEl = selectEl.shadowRoot.querySelector(
+      'scale-helper-text'
+    ) as HTMLElement;
+
+    expect(comboboxEl.getAttribute('aria-describedby')).toBe(
+      `${helperTextEl.id} ${ariaDetailsId}`
+    );
+    expect(comboboxEl.getAttribute('aria-details')).toBe(ariaDetailsId);
+  });
+
   it('should be able to change it`s value via click and emit an event', async () => {
     const page = await newSpecPage({
       components: [DropdownSelect],

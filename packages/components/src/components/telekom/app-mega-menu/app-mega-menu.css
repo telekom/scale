@@ -70,7 +70,9 @@ app-mega-menu {
   color: var(--color-row-item);
   margin-bottom: var(--spacing-bottom-row-item);
   text-decoration: none;
-  transition: color, border 0.15s ease-in-out;
+  transition:
+    color,
+    border 0.15s ease-in-out;
   display: block;
   margin-bottom: 7px;
 }

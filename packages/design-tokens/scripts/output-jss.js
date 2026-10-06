@@ -15,6 +15,7 @@ import { COLOR, SHADOW, TYPE_VARIANT } from '../src/tokens.js';
 import { processValue } from './output-css.js';
 
 const prettierOptions = {
+  parser: 'babel',
   singleQuote: true,
   trailingComma: 'es5',
 };
@@ -68,14 +69,14 @@ export const outputJSS = {
     }
     section[camelCasedKey] = val;
   },
-  onComplete: () => {
+  onComplete: async () => {
     let output = '';
     for (const [name, props] of Object.entries(JSS)) {
       output = output.concat(
         `\n\nexport const ${name} = ${JSON.stringify(props)};`
       );
     }
-    outputJSS.content = prettier.format(output, prettierOptions);
+    outputJSS.content = await prettier.format(output, prettierOptions);
   },
   filename: `design-tokens${process.env.WHITELABEL ? '' : '-telekom'}`,
   ext: '.js',

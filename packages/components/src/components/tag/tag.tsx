@@ -9,15 +9,26 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import {
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Prop,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+
 @Component({
   tag: 'scale-tag',
   styleUrl: './tag.css',
   shadow: true,
 })
 export class Tag {
+  @Element() hostElement!: HTMLElement;
+
   /** (optional) Tag size */
   @Prop() size?: 'small';
   /** (optional) Tag type */
@@ -52,6 +63,16 @@ export class Tag {
   /** (optional) Close icon click event */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<MouseEvent>;
 
+  private generatedAriaLabel?: string;
+
+  componentDidLoad() {
+    this.syncReadonlyAccessibility();
+  }
+
+  componentDidUpdate() {
+    this.syncReadonlyAccessibility();
+  }
+
   componentWillUpdate() {}
   disconnectedCallback() {}
 
@@ -65,7 +86,7 @@ export class Tag {
   };
 
   render() {
-    const Element = !!this.href && !this.disabled ? 'a' : 'span';
+    const TagElement = !!this.href && !this.disabled ? 'a' : 'span';
     const linkProps = !!this.href
       ? {
           href: this.href,
@@ -74,15 +95,15 @@ export class Tag {
       : {};
 
     return (
-      <Host>
+      <Host aria-disabled={this.disabled ? 'true' : null}>
         {this.styles && <style>{this.styles}</style>}
 
-        <Element
+        <TagElement
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           {...linkProps}
         >
-          <slot />
+          <slot onSlotchange={this.syncReadonlyAccessibility} />
 
           {this.dismissable && (
             <button
@@ -94,7 +115,7 @@ export class Tag {
               <scale-icon-action-close part="icon-dismissable" size={16} />
             </button>
           )}
-        </Element>
+        </TagElement>
       </Host>
     );
   }
@@ -120,5 +141,39 @@ export class Tag {
       !!this.dismissable && `${prefix}dismissable`,
       !!this.disabled && `${prefix}disabled`
     );
+  }
+
+  private syncReadonlyAccessibility = () => {
+    if (this.hasInteractiveControl()) {
+      if (
+        this.generatedAriaLabel != null &&
+        this.hostElement.getAttribute('aria-label') === this.generatedAriaLabel
+      ) {
+        this.hostElement.removeAttribute('aria-label');
+      }
+      this.generatedAriaLabel = undefined;
+      return;
+    }
+
+    const currentAriaLabel = this.hostElement.getAttribute('aria-label');
+    if (
+      currentAriaLabel != null &&
+      currentAriaLabel !== this.generatedAriaLabel
+    ) {
+      return;
+    }
+
+    const text = this.hostElement.textContent?.trim().replace(/\s+/g, ' ');
+    if (text) {
+      this.hostElement.setAttribute('aria-label', text);
+      this.generatedAriaLabel = text;
+    } else {
+      this.hostElement.removeAttribute('aria-label');
+      this.generatedAriaLabel = undefined;
+    }
+  };
+
+  private hasInteractiveControl() {
+    return (!!this.href || this.dismissable) && !this.disabled;
   }
 }

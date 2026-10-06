@@ -17,7 +17,8 @@
   --shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
   --background: var(--telekom-color-background-surface);
   --background-logo: var(--telekom-color-primary-standard);
-  --transition-common-scrolled: height var(--telekom-motion-duration-immediate)
+  --transition-common-scrolled:
+    height var(--telekom-motion-duration-immediate)
       var(--telekom-motion-easing-standard),
     width var(--telekom-motion-duration-immediate),
     margin var(--telekom-motion-duration-immediate);
