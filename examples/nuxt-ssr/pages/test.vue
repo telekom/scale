@@ -11,7 +11,8 @@
         My legendary Nuxt.js project
       </h2>
       <scale-text-field
-        @scaleChange="handleChange"
+        :value="message"
+        @scale-change="handleChange"
         placeholder="add message"
         label="text field"
       ></scale-text-field>
@@ -35,7 +36,7 @@ export default Vue.extend({
   methods: {
     // @ts-ignore
     handleChange: function(event) {
-      this.message = event.target.value
+      this.message = event.detail.value
     }
   }
 })

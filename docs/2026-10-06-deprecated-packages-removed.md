@@ -23,7 +23,11 @@ defineCustomElements(window);
 
 Use Angular's `CUSTOM_ELEMENTS_SCHEMA` or Vue's custom-element configuration. For Vue 3, set `compilerOptions.isCustomElement` to recognize `scale-` tags. Register custom elements only on the client in server-rendered applications.
 
-This is not a drop-in replacement for wrapper-specific form bindings. Angular reactive forms still need application value accessors. Vue forms need explicit property and event bindings instead of wrapper `v-model` bindings. The [Angular guide](https://telekom.github.io/scale/?path=/docs/setup-info-scale-and-angular--page) and [Vue guide](https://telekom.github.io/scale/?path=/docs/setup-info-scale-and-vue--page) describe these steps. The repository examples use native custom elements.
+For ordinary component use, replace the wrapper dependency and imports with the core package, load its CSS, register the custom elements, and configure the framework as described above. The `scale-` elements and their properties and events remain available.
+
+Changing only the package name is not sufficient if your application uses a wrapper's form integration. Angular does not automatically connect a custom element to `formControlName`, `[formControl]`, or `ngModel`; retain or add a `ControlValueAccessor` for the controls you use. The Angular reactive-form examples already include these application directives. Vue's native custom elements do not use the removed wrapper's `v-model` integration; bind the component value and its `scale-change` or `scale-input` event explicitly instead.
+
+Applications that already use the core package and these native bindings need no wrapper migration. The [Angular guide](https://telekom.github.io/scale/?path=/docs/setup-info-scale-and-angular--page) and [Vue guide](https://telekom.github.io/scale/?path=/docs/setup-info-scale-and-vue--page) describe the integration steps.
 
 ## Design tokens
 

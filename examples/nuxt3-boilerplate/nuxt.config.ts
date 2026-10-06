@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   build: {
     transpile: ['@telekom/scale-components-neutral']
-  },  
+  },
   vue: {
     compilerOptions: {
       isCustomElement: tag =>  tag.startsWith('scale-')

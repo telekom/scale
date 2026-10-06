@@ -22,7 +22,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@telekom/scale-components-neutral/dist/scale-components/scale-components.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -35,6 +35,11 @@ export default {
    ** Nuxt.js modules
    */
   modules: ['~modules/ssr/module.js'],
+  vue: {
+    config: {
+      ignoredElements: [/^scale-/]
+    }
+  },
   /*
    ** scaled configuration
    */
