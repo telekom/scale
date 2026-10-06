@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@stencil-community/postcss": "^2.2.0",
-    "@stencil/react-output-target": "~1.5.3",
+    "@stencil/react-output-target": "^1.6.2",
     "@types/classnames": "2.2.8",
     "@types/jest": "24.9.1",
     "@types/resize-observer-browser": "^0.1.11",
@@ -63,7 +63,7 @@
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
     "@floating-ui/dom": "^1.2.8",
-    "@stencil/core": "^4.35.1",
+    "@stencil/core": "^4.45.2",
     "@telekom/design-tokens": "1.0.0-beta.12",
     "classnames": "^2.2.6",
     "composed-offset-position": "^0.0.4",
