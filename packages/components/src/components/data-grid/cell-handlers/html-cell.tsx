@@ -16,11 +16,45 @@ import { Cell } from './cell-interface';
 
 export const HTMLCell: Cell = {
   defaults: {},
-  getLongestContent({ rows, columnIndex }) {
-    // Skip check as content width is always the same
+  getLongestContent({ rows, columnIndex, field }) {
+    if (field.display === 'inline') {
+      let maxLength = -1;
+      let longestContent;
+      rows.forEach((row) => {
+        const content = row[columnIndex];
+        const length = content?.textContent?.length || 0;
+        if (content && length > maxLength) {
+          longestContent = content;
+          maxLength = length;
+        }
+      });
+      return longestContent;
+    }
+
+    // Skip check as nested HTML content width is always the same toggle button.
     return rows[0][columnIndex];
   },
-  render: ({ content, component, localization }) => {
+  render: ({ field, content, component, localization }) => {
+    if (field.display === 'inline') {
+      return (
+        content && (
+          <div
+            class={`tbody__html-cell tbody__html-cell--inline`}
+            ref={(el) => {
+              if (el) {
+                let child = el.lastElementChild;
+                while (child) {
+                  el.removeChild(child);
+                  child = el.lastElementChild;
+                }
+                el.appendChild(content);
+              }
+            }}
+          ></div>
+        )
+      );
+    }
+
     const getAriaLabel = () => {
       if (localization?.expand && localization?.collapse) {
         return content.isExpanded
