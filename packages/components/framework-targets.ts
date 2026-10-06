@@ -1,76 +1,4 @@
-import {
-  ComponentModelConfig,
-  vueOutputTarget,
-} from '@nowseemee/vue-output-target';
-import {
-  angularOutputTarget,
-  ValueAccessorConfig,
-} from '@stencil/angular-output-target';
 import { reactOutputTarget } from '@stencil/react-output-target';
-
-const vueComponentModels: ComponentModelConfig[] = [
-  {
-    elements: [
-      'scale-input',
-      'scale-text-field',
-      'scale-textarea',
-      'scale-dropdown',
-      'scale-switch',
-    ],
-    event: 'scale-change',
-    targetAttr: 'value',
-  },
-  // These do not work with the way the plugin "utils"'s wires events,
-  // and probably Vue doing something different for native input[type=checkbox|radio]
-  // {
-  //   elements: [
-  //     'scale-checkbox',
-  //     'scale-radio-button'
-  //   ],
-  //   event: 'scale-change',
-  //   targetAttr: 'value',
-  // },
-  {
-    elements: ['scale-slider'],
-    event: 'scale-input',
-    targetAttr: 'value',
-  },
-];
-
-const angularValueAccessorBindings: ValueAccessorConfig[] = [
-  {
-    elementSelectors: ['scale-input'],
-    event: 'scale-change',
-    targetAttr: 'value',
-    type: 'text',
-  },
-  // Tests won't pass for these
-  // https://github.com/ionic-team/stencil-ds-output-targets/blob/master/packages/example-project/component-library-angular/__tests__/my-checkbox.spec.ts
-  /* {
-      elementSelectors: ['scale-input[type=checkbox]'],
-      event: 'scale-change',
-      targetAttr: 'checked',
-      type: 'boolean'
-    },
-    {
-      elementSelectors: ['scale-input[type=radio]'],
-      event: 'scale-change',
-      targetAttr: 'checked',
-      type: 'radio'
-    },
-    {
-      elementSelectors: ['scale-input[type=select]'],
-      event: 'scale-change',
-      targetAttr: 'value',
-      type: 'select'
-    }, */
-  {
-    elementSelectors: ['scale-slider'],
-    event: 'scale-change',
-    targetAttr: 'value',
-    type: 'number',
-  },
-];
 
 const excludeComponents = [
   'animatable-component',
@@ -87,19 +15,5 @@ export const frameworkTargets = [
     outDir: '../components-react/src',
     hydrateModule: '@telekom/scale-components/hydrate',
     clientModule: '@telekom/scale-components',
-  }),
-  vueOutputTarget({
-    componentCorePackage: '@telekom/scale-components',
-    proxiesFile: '../components-vue/src/proxies.ts',
-    componentModels: vueComponentModels,
-    excludeComponents,
-  }),
-  angularOutputTarget({
-    componentCorePackage: '@telekom/scale-components',
-    directivesProxyFile: '../components-angular/src/directives/proxies.ts',
-    directivesArrayFile: '../components-angular/src/directives/proxies-list.ts',
-    outputType: 'component',
-    valueAccessorConfigs: angularValueAccessorBindings,
-    excludeComponents,
   }),
 ];

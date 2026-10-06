@@ -121,11 +121,6 @@ You can achieve the same results quite easily:
 ></scale-text-field>
 ```
 
-## Proxy Package
+## Native Web Components
 
-The automatically generated proxy packages will be removed in v4:
-
-- `@telekom/scale-components-vue`
-- `@telekom/scale-components-vue-neutral`
-
-Please use `@telekom/scale-components` directly, support for custom elements is already great.
+2026-10-06: The long-deprecated Vue proxy packages have been removed from this repository and its release pipeline. Use `@telekom/scale-components` directly, or `@telekom/scale-components-neutral` for the neutral theme. Vue supports custom elements natively. Use the property and event bindings described above for form inputs.

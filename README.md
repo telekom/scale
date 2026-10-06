@@ -62,13 +62,8 @@ defineCustomElements(window);
 | ------------------------------------------ | ----------------------------- |
 | @telekom/scale-components-neutral          | Stencil components            |
 | @telekom/scale-components-react-neutral    | Component proxies for React   |
-| @telekom/scale-components-vue-neutral*     | Component proxies for Vue     |
-| @telekom/scale-components-angular-neutral* | Component proxies for Angular |
-| @telekom/scale-design-tokens-neutral\**    | Design tokens                 |
 
-> *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components-neutral` directly, support for custom elements is already great.
-
-> \**deprecated since `v3.0.0-beta.100` in favor of [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens)
+> 2026-10-06: The long-deprecated Angular, Vue, and Scale design-token packages have been removed from this repository and its release pipeline. Angular and Vue support Web Components directly; use `@telekom/scale-components-neutral`. Design tokens are maintained independently in [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens). See the [removal announcement](https://github.com/telekom/scale/blob/main/docs/2026-10-06-deprecated-packages-removed.md) for migration details.
 
 ### Using the source code directly
 
@@ -80,7 +75,6 @@ If you want to use the source code, remove the following folders. These folders 
 | packages/components/src/components/telekom | Telekom components         |
 | packages/components/src/telekom            | Telekom fonts & icons      |
 | packages/components/src/html/telekom       | Telekom code examples      |
-| packages/design-tokens/src/telekom         | Telekom design tokens      |
 | packages/visual-tests/                     | Visual tests               |
 | storybook-vue                              | Telekom branded storybook  |
 
@@ -126,13 +120,8 @@ defineCustomElements(window);
 | ---------------------------------- | ----------------------------- |
 | @telekom/scale-components          | Stencil components            |
 | @telekom/scale-components-react    | Component proxies for React   |
-| @telekom/scale-components-vue*     | Component proxies for Vue     |
-| @telekom/scale-components-angular* | Component proxies for Angular |
-| @telekom/scale-design-tokens\**    | Telekom design tokens         |
 
-> *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components` directly, support for custom elements is already great. Check out the info relative to frameworks in [the documentation](https://telekom.github.io/scale/).
-
-> \**deprecated since `v3.0.0-beta.100` in favor of [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens)
+> 2026-10-06: The long-deprecated Angular, Vue, and Scale design-token packages have been removed. Use `@telekom/scale-components` directly in Angular and Vue. Scale uses the independent [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens) package. See the [removal announcement](https://github.com/telekom/scale/blob/main/docs/2026-10-06-deprecated-packages-removed.md).
 
 ### Using the source code directly
 
@@ -143,10 +132,7 @@ Simply clone/download this repository and use the source code as is.
 | Package name       | Description                                                |
 | ------------------ | ---------------------------------------------------------- |
 | components         | Stencil components                                         |
-| components-angular | Component proxies for Angular (auto-generated)             |
 | components-react   | Component proxies for React (auto-generated)               |
-| components-vue     | Component proxies for Vue (auto-generated)                 |
-| design-token       | Design tokens                                              |
 | storybook-vue      | Our Storybook                                              |
 | visual-tests       | Visual snapshot testing                                    |
 
