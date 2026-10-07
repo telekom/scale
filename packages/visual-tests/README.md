@@ -119,20 +119,33 @@ or rewriting canonical files.
 
 `visual-storybook` builds the candidate once. `visual-tests` downloads its
 SHA-named artifact into the same pinned image, verifies snapshot policy, and
-runs `test:ci` with updates disabled and one worker. Its `visual-results`
+runs `test:ci` with updates disabled and two workers. Its `visual-results`
 artifact contains HTML, JSON, JUnit, images, and failure traces. Ordinary CI
 does not write baselines or open snapshot-update PRs.
+Baseline generation through `test:update` uses the pinned Linux image and one
+worker, independently of comparison concurrency.
 
 ## Coverage
 
-All 38 legacy files are migrated: 396 active visual cases plus four new native
+All 38 legacy files are migrated: 478 active visual cases plus four native
 interaction cases across both themes. Button interaction states now run in both
 themes instead of inheriting the previous suite's theme.
 
-The 128 skipped cases in nine existing suites remain explicit exclusions:
-Brand Header, Callout, DropdownSelect, Menu, RadioButtonGroup, RadioButton,
-SegmentedButton, SidebarNavigation, and ToggleGroup. Brand Header and ToggleGroup
-are deprecated. These exclusions are retained coverage debt, not a speed gain.
+RadioButton, RadioButtonGroup, DropdownSelect, Menu, SegmentedButton, and
+SidebarNavigation contribute 82 active cases. Their assertions check rendered
+states and user-driven selection, keyboard, disabled, and navigation behavior.
+RadioButton uses a test-local production-element fixture because standalone
+stories are absent. SegmentedButton remounts after assets load; its initial-mount
+sizing behavior is not covered.
+
+SegmentedButton uses Chromium's `--disable-lcd-text` launch option to avoid
+subpixel glyph-edge variation after selection changes. Its baselines use the
+same launch option, pinned Linux x64 image, and one worker. Other suites retain
+their existing rendering mode; screenshot thresholds remain unchanged.
+
+The 54 skipped cases in three existing suites remain explicit exclusions:
+Brand Header, Callout, and ToggleGroup. Brand Header and ToggleGroup are
+deprecated. These exclusions are retained coverage debt, not a speed gain.
 
 New tests import `test` and `expect` from [the fixture](src/test-fixtures.js),
 open a story with `story.open(id)`, use locators through open shadow roots,
