@@ -1,54 +1,31 @@
-describe('Dropdown', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup(
-        'deprecated-components-dropdown--standard',
-        mode
-      );
+const { test } = require('./test-fixtures');
+test.describe('Dropdown', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['disabled'],
+    ['error'],
+    ['success'],
+    ['warning'],
+    ['with-custom-icon'],
+  ]) {
+    test(`${variant}`, async ({ page, story }) => {
+      await story.open(`deprecated-components-dropdown--${variant}`);
+      await story.screenshot('default.png');
     });
-    // screenshots of stories
-    test.each([
-      ['standard'],
-      ['disabled'],
-      ['error'],
-      ['success'],
-      ['warning'],
-      ['with-custom-icon'],
-    ])('%p', async (variant) => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-dropdown--${variant}&viewMode=story`
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`deprecated-components-dropdown--${variant}`);
+      const dropdown = page.locator(
+        ':is(#root, #storybook-root) > scale-dropdown .input__dropdown'
       );
-      await global.page.waitForSelector('#root');
-
-      const previewHtml = await page.$('body');
-      await page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-      await global.page.waitForTimeout(1000);
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    });
-    // hover, active, focus
-    test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`deprecated-components-dropdown--${variant}`);
-
-      const dropdown = await global.page.evaluateHandle(
-        `document.querySelector("#root > scale-dropdown .input__dropdown")`
-      );
-      await global.page.waitForTimeout(300);
       await dropdown.hover();
-      await global.visualCheck();
+      await story.screenshot('hover.png');
       await dropdown.focus();
-      await global.visualCheck();
-      await global.page.mouse.move(60, 60);
-      await global.page.mouse.down();
-      await global.visualCheck();
+      await story.screenshot('focus.png');
+      await page.mouse.move(60, 60);
+      await page.mouse.down();
+      await story.screenshot('active.png');
     });
-  });
+  }
 });

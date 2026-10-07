@@ -1,17 +1,13 @@
-describe('List', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-list--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('List', () => {
+  for (const [variant] of [
+    ['ordered'],
+    ['unordered'],
+    ['unordered-with-custom-icon'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-list--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([['ordered'], ['unordered'], ['unordered-with-custom-icon']])(
-      '%p',
-      async (variant) => {
-        await global.runSetup(`components-list--${variant}`);
-
-        await global.page.waitForTimeout(1000);
-
-        await global.visualCheck();
-      }
-    );
-  });
+  }
 });

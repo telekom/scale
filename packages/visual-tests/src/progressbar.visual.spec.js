@@ -1,20 +1,15 @@
-describe('ProgressBar', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-progress-bar--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('ProgressBar', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['description'],
+    ['completed'],
+    ['error'],
+    ['interactive'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-progress-bar--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['description'],
-      ['completed'],
-      ['error'],
-      ['interactive'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-progress-bar--${variant}`);
-
-      await global.page.waitForTimeout(3000);
-
-      await global.visualCheck();
-    });
-  });
+  }
 });

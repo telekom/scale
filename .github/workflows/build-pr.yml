@@ -127,82 +127,76 @@ jobs:
         run: |
           yarn lerna run generate
 
+      - name: Install core E2E browser
+        run: node node_modules/puppeteer/install.mjs
+
       - name: Run e2e tests
         run: |
           yarn workspace @telekom/scale-components test --e2e --max-workers=8 --debug
 
-  visual-tests:
+  visual-storybook:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Set up Docker Compose alias
-        run: |
-          sudo touch /usr/bin/docker-compose
-          echo 'docker compose --compatibility "$@"' | sudo tee /usr/bin/docker-compose
-          sudo chmod +x /usr/bin/docker-compose
-
-      - name: Restore Lerna
-        id: yarn-cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-
       - name: Install project dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
-
-      - name: Run Lerna bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: |
-          yarn bootstrap
-
-      - name: Generate files
-        run: |
-          yarn lerna run generate
-
-      - name: Build Components
-        if: steps.components-cache.outputs.cache-hit != 'true'
-        run: |
-          yarn workspace @telekom/scale-components build
-
-      - name: Build Storybook
-        if: steps.storybook-cache.outputs.cache-hit != 'true'
-        run: |
-          yarn workspace @telekom/scale-storybook-vue build --quiet
-
-      - name: Copy Storybook for visual tests
-        run: |
-          yarn workspace @telekom/scale-visual-tests copy
-
-      - name: Run visual tests
-        id: visual-tests
-        run: |
-          yarn workspace @telekom/scale-visual-tests test:ci -u
-
-      - name: Check for any snapshots changes
-        run: |
-          sh scripts/porcelain.sh
-
-      - name: Set patch branch name
-        if: failure()
-        id: vars
-        run: echo ::set-output name=branch-name::"visual-snapshots/${{ github.head_ref }}"
-
-      - name: Create pull request with new snapshots
-        if: failure()
-        uses: peter-evans/create-pull-request@v7
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
+        run: yarn install --frozen-lockfile --non-interactive
+      - name: Build candidate Storybook
+        run: yarn workspace @telekom/scale-visual-tests test:prepare
+      - name: Upload candidate Storybook
+        uses: actions/upload-artifact@v4
         with:
-          commit-message: 'test(visual): update snapshots'
-          title: 'update visual snapshots: ${{ github.event.pull_request.title }}'
-          body: This is an auto-generated PR with visual snapshot updates for \#${{ github.event.number }}.
-          labels: automated pr
-          branch: ${{ steps.vars.outputs.branch-name }}
+          name: visual-storybook-${{ github.sha }}
+          path: packages/visual-tests/storybook-static
+          retention-days: 1
+          if-no-files-found: error
+
+  visual-tests:
+    needs: visual-storybook
+    runs-on: ubuntu-22.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
+      options: --ipc=host
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install browser test dependencies
+        run: |
+          mkdir -p /tmp/scale-visual-dependencies
+          cp packages/visual-tests/package.json yarn.lock /tmp/scale-visual-dependencies/
+          cd /tmp/scale-visual-dependencies
+          yarn install --frozen-lockfile --ignore-scripts --non-interactive
+      - name: Download candidate Storybook
+        uses: actions/download-artifact@v4
+        with:
+          name: visual-storybook-${{ github.sha }}
+          path: packages/visual-tests/storybook-static
+      - name: Verify snapshot comparison policy
+        working-directory: packages/visual-tests
+        env:
+          NODE_PATH: /tmp/scale-visual-dependencies/node_modules
+        run: node scripts/check-snapshot-policy.js
+      - name: Run visual tests without updating baselines
+        working-directory: packages/visual-tests
+        env:
+          NODE_PATH: /tmp/scale-visual-dependencies/node_modules
+          PLAYWRIGHT_CLI: /tmp/scale-visual-dependencies/node_modules/@playwright/test/cli.js
+        run: yarn workspace @telekom/scale-visual-tests test:ci
+      - name: Check for snapshot changes
+        run: git -c safe.directory="$GITHUB_WORKSPACE" diff --exit-code -- packages/visual-tests/src/__image_snapshots__
+      - name: Upload browser test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-results-${{ github.sha }}
+          path: |
+            packages/visual-tests/report
+            packages/visual-tests/test-results
+          retention-days: 7
+          if-no-files-found: warn
 
   wrapper-build:
     runs-on: ubuntu-22.04

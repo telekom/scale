@@ -1,35 +1,32 @@
-describe('Textarea', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-text-area--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('Textarea', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['placeholder'],
+    ['helper-text'],
+    ['with-error'],
+    ['disabled'],
+    ['read-only'],
+    ['max-length-with-counter'],
+    ['more-rows'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-text-area--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['placeholder'],
-      ['helper-text'],
-      ['with-error'],
-      ['disabled'],
-      ['read-only'],
-      ['max-length-with-counter'],
-      ['more-rows'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-text-area--${variant}`);
-      await global.visualCheck();
-    });
-    // hover, focus, active
-    test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`components-text-area--${variant}`);
-      const textarea = await global.page.evaluateHandle(
-        'document.querySelector("#input-textarea-0")'
-      );
-      await global.page.mouse.move(60, 40);
-      await global.page.mouse.down();
-      await global.visualCheck();
-      await global.page.keyboard.press('Tab');
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-text-area--${variant}`);
+      const textarea = page.locator('#input-textarea-0');
+      await page.mouse.move(60, 40);
+      await page.mouse.down();
+      await story.screenshot('active.png');
+      await page.keyboard.press('Tab');
       await textarea.hover();
-      await global.visualCheck();
+      await story.screenshot('hover.png');
       await textarea.focus();
-      await global.visualCheck();
+      await story.screenshot('focus.png');
     });
-  });
+  }
 });

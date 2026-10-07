@@ -1,15 +1,15 @@
-describe('Tooltip', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-tooltip--standard', mode);
-    });
-    test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`components-tooltip--${variant}`);
-      const button = await global.page.evaluateHandle(
-        'document.querySelector("#root > div > scale-tooltip > scale-button")'
+const { test, expect } = require('./test-fixtures');
+test.describe('Tooltip', () => {
+  for (const [variant] of [['standard']]) {
+    test(`${variant} hover`, async ({ page, story }) => {
+      await story.open(`components-tooltip--${variant}`);
+      const button = page.locator(
+        ':is(#root, #storybook-root) > div > scale-tooltip > scale-button'
       );
       await button.hover();
-      await global.visualCheck();
+      await expect(page.locator('scale-tooltip')).toHaveAttribute('opened', '');
+      await expect(page.getByRole('tooltip')).toBeVisible();
+      await story.screenshot('hover.png');
     });
-  });
+  }
 });

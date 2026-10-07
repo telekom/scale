@@ -1,11 +1,9 @@
-describe('Divider', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-divider--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('Divider', () => {
+  for (const [variant] of [['standard'], ['vertical']]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-divider--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([['standard'], ['vertical']])('%p', async (variant) => {
-      await global.runSetup(`components-divider--${variant}`);
-      await global.visualCheck();
-    });
-  });
+  }
 });

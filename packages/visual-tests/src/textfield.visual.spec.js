@@ -1,37 +1,33 @@
-describe('Textfield', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-text-field--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('Textfield', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['placeholder'],
+    ['helper-text'],
+    ['with-error'],
+    ['with-success'],
+    ['with-warning'],
+    ['disabled'],
+    ['read-only'],
+    ['max-length-with-counter'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-text-field--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['placeholder'],
-      ['helper-text'],
-      ['with-error'],
-      ['with-success'],
-      ['with-warning'],
-      ['disabled'],
-      ['read-only'],
-      ['max-length-with-counter'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-text-field--${variant}`);
-      await global.visualCheck();
-    });
-    // hover, focus, active
-    test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`components-text-field--${variant}`);
-
-      const textfield = await global.page.evaluateHandle(
-        'document.querySelector("#input-text-field-0")'
-      );
-      await global.page.mouse.move(60, 40);
-      await global.page.mouse.down();
-      await global.visualCheck();
-      await global.page.keyboard.press('Tab');
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-text-field--${variant}`);
+      const textfield = page.locator('#input-text-field-0');
+      await page.mouse.move(60, 40);
+      await page.mouse.down();
+      await story.screenshot('active.png');
+      await page.keyboard.press('Tab');
       await textfield.hover();
-      await global.visualCheck();
+      await story.screenshot('hover.png');
       await textfield.focus();
-      await global.visualCheck();
+      await story.screenshot('focus.png');
     });
-  });
+  }
 });

@@ -1,90 +1,40 @@
-describe.skip('Deprecated Brand Header', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup(
-        'deprecated-components-brand-header-navigation--standard',
-        mode
+const { test } = require('./test-fixtures');
+test.describe.skip('Deprecated Brand Header', () => {
+  test('default mega menu states', async ({ page, story }) => {
+    await story.open(`deprecated-components-brand-header-navigation--standard`);
+    const firstLink = page
+      .locator(':is(#root, #storybook-root) > div > scale-app-shell')
+      .locator(
+        'scale-app-header nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a'
       );
-    });
-    it('default mega menu states', async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--standard&viewMode=story`
-      );
-      await global.page.waitForSelector('#root');
-
-      const previewHtml = await global.page.$('body');
-      await global.page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-      const firstLink = await global.page.evaluateHandle(
-        `document.querySelector("#root > div > scale-app-shell").shadowRoot.querySelector("scale-app-header nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a")`
-      );
-      // TODO we probably want to make sure `hover` is not affecting the `focus` snapshot?
-      // https://github.com/telekom/scale/pull/1565/files#diff-900e1daba44b830c5fb035a03c58deea10a791e34e9eadb54a5ba5db7f40e48d
-      await firstLink.hover();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-      await firstLink.focus();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    });
-
-    it('custom mega menu states', async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--custom-main-navigation&viewMode=story`
-      );
-      await global.page.waitForSelector('#root');
-
-      const previewHtml = await global.page.$('body');
-      await global.page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-      const firstLink = await global.page.evaluateHandle(
-        `document.querySelector("#nav-main-with-mega-menu > li > a")`
-      );
-      await firstLink.hover();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-      await firstLink.focus();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    });
-
-    test.each([
-      ['standard'],
-      ['custom-main-navigation'],
-      ['custom-icon-navigation'],
-      ['custom-sector-navigation'],
-      ['custom-addon-navigation'],
-      ['custom-logo'],
-    ])('%p', async (variant) => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=deprecated-components-brand-header-navigation--${variant}&viewMode=story`
-      );
-      await global.page.waitForSelector('#root');
-
-      const previewHtml = await global.page.$('body');
-      await global.page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    });
+    await firstLink.hover();
+    await story.screenshot('hover.png');
+    await firstLink.focus();
+    await story.screenshot('focus.png');
   });
+  test('custom mega menu states', async ({ page, story }) => {
+    await story.open(
+      `deprecated-components-brand-header-navigation--custom-main-navigation`
+    );
+    const firstLink = page.locator('#nav-main-with-mega-menu > li > a');
+    await firstLink.hover();
+    await story.screenshot('hover.png');
+    await firstLink.focus();
+    await story.screenshot('focus.png');
+  });
+  for (const [variant] of [
+    ['standard'],
+    ['custom-main-navigation'],
+    ['custom-icon-navigation'],
+    ['custom-sector-navigation'],
+    ['custom-addon-navigation'],
+    ['custom-logo'],
+  ]) {
+    test(`${variant}`, async ({ page, story }) => {
+      await story.open(
+        `deprecated-components-brand-header-navigation--${variant}`
+      );
+      await story.screenshot('default.png');
+    });
+  }
 });

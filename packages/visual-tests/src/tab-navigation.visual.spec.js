@@ -1,47 +1,30 @@
-describe('TabNavigation', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-tab-navigation--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('TabNavigation', () => {
+  for (const [variant] of [
+    ['text-icon'],
+    ['text-only'],
+    ['disabled-tabs'],
+    ['large-text-only'],
+    ['large-text-icon'],
+  ]) {
+    test(`${variant}`, async ({ page, story }) => {
+      await story.open(`components-tab-navigation--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['text-icon'],
-      ['text-only'],
-      ['disabled-tabs'],
-      ['large-text-only'],
-      ['large-text-icon'],
-    ])('%p', async (variant) => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
-      );
-      await global.page.waitForSelector('#root');
-
-      const previewHtml = await page.$('body');
-      await page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    });
-    // hover, focus, active
-    test.each([['text-icon'], ['text-only']])('%p', async (variant) => {
-      await global.runSetup(`components-tab-navigation--${variant}`);
-      const tabHeader = await global.page.evaluateHandle(
-        'document.querySelector("#scale-tab-header-1").shadowRoot.querySelector(".tab-header")'
-      );
+  }
+  for (const [variant] of [['text-icon'], ['text-only']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-tab-navigation--${variant}`);
+      const tabHeader = page
+        .locator('#scale-tab-header-1')
+        .locator('.tab-header');
       await tabHeader.hover();
-      await global.visualCheck();
+      await story.screenshot('hover.png');
       await tabHeader.click();
-      await global.visualCheck();
-      await global.page.mouse.move(20, 40);
-      await global.page.mouse.down();
-      await global.visualCheck();
+      await story.screenshot('selected.png');
+      await page.mouse.move(20, 40);
+      await page.mouse.down();
+      await story.screenshot('active.png');
     });
-  });
+  }
 });

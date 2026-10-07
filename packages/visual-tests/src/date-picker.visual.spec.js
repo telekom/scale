@@ -1,78 +1,38 @@
-describe('DatePicker', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-date-picker--standard', mode);
-    });
-    // open date-picker
-    test.each([['standard']])('%p', async (variant) => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-date-picker--${variant}&viewMode=story`
-      );
-      await global.page.waitForSelector('#root');
-      const previewHtml = await global.page.$('body');
-      await global.page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-      const openButton = await global.page.waitForSelector(
-        '#root > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > button',
-        { visible: true }
+const { test, expect } = require('./test-fixtures');
+test.describe('DatePicker', () => {
+  for (const [variant] of [['standard']]) {
+    test(`${variant} selected`, async ({ page, story }) => {
+      await story.open(`components-date-picker--${variant}`);
+      const openButton = page.locator(
+        ':is(#root, #storybook-root) > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > button'
       );
       await openButton.click();
-      await global.page.waitForTimeout(3000);
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await expect(page.locator('.duet-date__dialog')).toBeVisible();
+      await story.screenshot('selected.png');
     });
-    // screenshots of stories
-    test.each([
-      ['standard'],
-      ['helper-text'],
-      ['with-error'],
-      ['disabled'],
-      ['date-range-picker'],
-    ])('%p', async (variant) => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-date-picker--${variant}&viewMode=story`
-      );
-      await global.page.waitForSelector('#root');
-      const previewHtml = await global.page.$('body');
-
-      await global.page.waitForTimeout(1000);
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  }
+  for (const [variant] of [
+    ['standard'],
+    ['helper-text'],
+    ['with-error'],
+    ['disabled'],
+    ['date-range-picker'],
+  ]) {
+    test(`${variant}`, async ({ page, story }) => {
+      await story.open(`components-date-picker--${variant}`);
+      await story.screenshot('default.png');
     });
-    // hover, active, focus
-    test.each([['standard']])('%p', async (variant) => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-date-picker--${variant}&viewMode=story`
-      );
-
-      await global.page.waitForSelector('#root');
-      const previewHtml = await global.page.$('body');
-      await global.page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-      const datePicker = await global.page.waitForSelector(
-        '#root > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > .duet-date__input',
-        { visible: true }
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-date-picker--${variant}`);
+      const datePicker = page.locator(
+        ':is(#root, #storybook-root) > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > .duet-date__input'
       );
       await datePicker.hover();
-      await global.page.waitForTimeout(1000);
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await story.screenshot('hover.png');
       await datePicker.focus();
-      await global.page.waitForTimeout(1000);
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await story.screenshot('focus.png');
     });
-  });
+  }
 });

@@ -24,6 +24,47 @@ describe('DataGrid', () => {
     (globalThis as any).ResizeObserver = ResizeObserverMock;
   });
 
+  it('measures automatic HTML cell widths after nested components are ready', async () => {
+    let hydrated = false;
+    let finishHydration: () => void;
+    const ready = new Promise<void>((resolve) => {
+      finishHydration = () => {
+        hydrated = true;
+        resolve();
+      };
+    });
+    const content = document.createElement(
+      'scale-delayed-cell'
+    ) as HTMLElement & {
+      componentOnReady: () => Promise<void>;
+    };
+    content.textContent = 'Delayed content';
+    content.componentOnReady = () => ready;
+
+    const page = await newSpecPage({
+      components: [DataGrid],
+      html: '<scale-data-grid></scale-data-grid>',
+    });
+    page.root.fields = [{ type: 'html', display: 'inline', width: 'auto' }];
+    page.root.rows = [[content]];
+    await page.waitForChanges();
+
+    const measurement = page.root.shadowRoot.querySelector(
+      '.data-grid__auto-width-check td'
+    );
+    Object.defineProperties(measurement, {
+      offsetParent: { get: () => page.root },
+      clientWidth: { get: () => (hydrated ? 120 : 12) },
+    });
+    page.root.rows = [...page.root.rows];
+    await page.waitForChanges();
+    expect(page.root.fields[0].width).toBe('auto');
+
+    finishHydration();
+    await page.waitForChanges();
+    expect(page.root.fields[0].width).toBe(120);
+  });
+
   it('renders html cell content inline when display is inline', async () => {
     const inlineButton = document.createElement('button');
     inlineButton.textContent = 'Open details';

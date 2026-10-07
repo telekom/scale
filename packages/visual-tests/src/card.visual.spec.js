@@ -1,23 +1,15 @@
-describe('Card', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-card--standard', mode);
-    });
-    test.each([['standard'], ['with-link'], ['with-image']])(
-      '%p',
-      async (variant) => {
-        await global.runSetup(`components-card--${variant}`);
-
-        const anchor = await global.page.evaluateHandle(
-          `document.querySelector("body scale-card").shadowRoot.querySelector("div > a")`
-        );
-        await global.visualCheck();
-        // if no anchor is found an error object is returned
-        if (anchor._remoteObject.className) {
-          await anchor.hover();
-          await global.visualCheck();
-        }
+const { test, expect } = require('./test-fixtures');
+test.describe('Card', () => {
+  for (const [variant] of [['standard'], ['with-link'], ['with-image']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-card--${variant}`);
+      const anchor = page.locator('scale-card').getByRole('link');
+      await story.screenshot('default.png');
+      if (variant === 'with-link' || variant === 'with-image') {
+        await expect(anchor).toBeVisible();
+        await anchor.hover();
+        await story.screenshot('hover.png');
       }
-    );
-  });
+    });
+  }
 });
