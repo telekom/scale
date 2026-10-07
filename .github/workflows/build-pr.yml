@@ -127,6 +127,9 @@ jobs:
         run: |
           yarn lerna run generate
 
+      - name: Install core E2E browser
+        run: node node_modules/puppeteer/install.mjs
+
       - name: Run e2e tests
         run: |
           yarn workspace @telekom/scale-components test --e2e --max-workers=8 --debug
