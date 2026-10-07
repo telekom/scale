@@ -740,18 +740,18 @@ export class DataGrid {
     const columns = this.hostElement.shadowRoot.querySelectorAll(
       `.${name}__auto-width-check td`
     );
-    await Promise.all(
-      Array.from(
-        this.hostElement.shadowRoot.querySelectorAll(
-          `.${name}__auto-width-check td *`
-        ),
-        (
-          element: HTMLElement & {
-            componentOnReady?: () => Promise<HTMLElement>;
-          }
-        ) => element.componentOnReady?.()
-      )
-    );
+    const ready = async (element: Element) => {
+      const component = element as HTMLElement & {
+        componentOnReady?: () => Promise<HTMLElement>;
+      };
+      await component.componentOnReady?.();
+      await Promise.all(
+        [...element.children, ...(element.shadowRoot?.children || [])].map(
+          ready
+        )
+      );
+    };
+    await Promise.all(Array.from(columns, ready));
     await this.hostElement.ownerDocument.fonts?.ready;
     if (this.fields !== fields || this.rows !== rows) {
       return;

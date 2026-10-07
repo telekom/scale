@@ -24,46 +24,67 @@ describe('DataGrid', () => {
     (globalThis as any).ResizeObserver = ResizeObserverMock;
   });
 
-  it('measures automatic HTML cell widths after nested components are ready', async () => {
-    let hydrated = false;
-    let finishHydration: () => void;
-    const ready = new Promise<void>((resolve) => {
-      finishHydration = () => {
-        hydrated = true;
-        resolve();
+  it.each(['light DOM', 'nested shadow DOM'])(
+    'measures automatic HTML cell widths after components in %s are ready',
+    async (location) => {
+      let hydrated = false;
+      let finishHydration: () => void;
+      const ready = new Promise<void>((resolve) => {
+        finishHydration = () => {
+          hydrated = true;
+          resolve();
+        };
+      });
+      const content = document.createElement(
+        'scale-delayed-cell'
+      ) as HTMLElement & {
+        componentOnReady: () => Promise<void>;
       };
-    });
-    const content = document.createElement(
-      'scale-delayed-cell'
-    ) as HTMLElement & {
-      componentOnReady: () => Promise<void>;
-    };
-    content.textContent = 'Delayed content';
-    content.componentOnReady = () => ready;
+      content.textContent = 'Delayed content';
+      content.componentOnReady = () => ready;
 
-    const page = await newSpecPage({
-      components: [DataGrid],
-      html: '<scale-data-grid></scale-data-grid>',
-    });
-    page.root.fields = [{ type: 'html', display: 'inline', width: 'auto' }];
-    page.root.rows = [[content]];
-    await page.waitForChanges();
+      const wrapper = document.createElement(
+        'scale-cell-wrapper'
+      ) as HTMLElement & {
+        componentOnReady: () => Promise<HTMLElement>;
+      };
+      if (location === 'nested shadow DOM') {
+        wrapper.componentOnReady = async () => {
+          if (!wrapper.shadowRoot) {
+            const nested = document.createElement('scale-nested-cell');
+            nested.attachShadow({ mode: 'open' }).appendChild(content);
+            wrapper.attachShadow({ mode: 'open' }).appendChild(nested);
+          }
+          return wrapper;
+        };
+      } else {
+        wrapper.appendChild(content);
+      }
 
-    const measurement = page.root.shadowRoot.querySelector(
-      '.data-grid__auto-width-check td'
-    );
-    Object.defineProperties(measurement, {
-      offsetParent: { get: () => page.root },
-      clientWidth: { get: () => (hydrated ? 120 : 12) },
-    });
-    page.root.rows = [...page.root.rows];
-    await page.waitForChanges();
-    expect(page.root.fields[0].width).toBe('auto');
+      const page = await newSpecPage({
+        components: [DataGrid],
+        html: '<scale-data-grid></scale-data-grid>',
+      });
+      page.root.fields = [{ type: 'html', display: 'inline', width: 'auto' }];
+      page.root.rows = [[wrapper]];
+      await page.waitForChanges();
 
-    finishHydration();
-    await page.waitForChanges();
-    expect(page.root.fields[0].width).toBe(120);
-  });
+      const measurement = page.root.shadowRoot.querySelector(
+        '.data-grid__auto-width-check td'
+      );
+      Object.defineProperties(measurement, {
+        offsetParent: { get: () => page.root },
+        clientWidth: { get: () => (hydrated ? 120 : 12) },
+      });
+      page.root.rows = [...page.root.rows];
+      await page.waitForChanges();
+      expect(page.root.fields[0].width).toBe('auto');
+
+      finishHydration();
+      await page.waitForChanges();
+      expect(page.root.fields[0].width).toBe(120);
+    }
+  );
 
   it('renders html cell content inline when display is inline', async () => {
     const inlineButton = document.createElement('button');
