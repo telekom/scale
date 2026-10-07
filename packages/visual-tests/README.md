@@ -12,9 +12,20 @@ Use Node 24, Yarn 1, and Docker Desktop for canonical screenshots.
 From the repository root:
 
 ```sh
+# macOS, Linux, or Git Bash
+PUPPETEER_SKIP_DOWNLOAD=true yarn install --frozen-lockfile
+yarn workspace @telekom/scale-visual-tests test:prepare
+```
+
+In PowerShell, use:
+
+```powershell
+$env:PUPPETEER_SKIP_DOWNLOAD = 'true'
 yarn install --frozen-lockfile
 yarn workspace @telekom/scale-visual-tests test:prepare
 ```
+
+This skips downloading the separate Puppeteer browser used by core E2E tests.
 
 Preparation generates and builds components, builds Storybook from this source,
 and copies its output. It runs separately from tests so repeated comparisons do
@@ -24,9 +35,9 @@ not rebuild. Run it again after changing components, stories, tokens, or assets.
 ## Compare Screenshots
 
 ```sh
-yarn workspace @telekom/scale-visual-tests test
-yarn workspace @telekom/scale-visual-tests test '(^|/)button[.]visual[.]spec[.]js$'
-yarn workspace @telekom/scale-visual-tests test --repeat-each=2
+yarn workspace @telekom/scale-visual-tests test --workers=1
+yarn workspace @telekom/scale-visual-tests test --workers=1 '(^|/)button[.]visual[.]spec[.]js$'
+yarn workspace @telekom/scale-visual-tests test --workers=1 --repeat-each=2
 ```
 
 The local runner uses Linux x64 in
@@ -36,7 +47,22 @@ It installs only the visual workspace's dependencies with the frozen root lock.
 A dependency volume is keyed by manifest, lock, and image. Tests and Storybook
 are copied to the container filesystem to avoid bind-mount browser I/O.
 No port is published, and no Docker socket or nested browser container is used.
-`test:m1` remains an alias; all hosts use the same x64 renderer.
+All hosts use the same x64 renderer. `--workers=1` matches the CI worker count.
+
+The local prepare command builds Storybook on the host, while CI builds it on
+Ubuntu. In a fresh worktree, test the exact Storybook artifact used by a CI run
+by downloading it into the expected directory, then run the same Docker-backed
+compare:
+
+```sh
+gh run download RUN_ID --name visual-storybook-COMMIT_SHA --dir packages/visual-tests/storybook-static
+yarn workspace @telekom/scale-visual-tests test:policy
+yarn workspace @telekom/scale-visual-tests test --workers=1
+```
+
+Replace `RUN_ID` and `COMMIT_SHA` with the workflow run ID and its commit SHA.
+The CI-only `test:ci` script runs inside the pinned Actions container; the local
+`test` script starts that same image through Docker.
 
 Normal comparisons use `updateSnapshots: 'none'`. Missing images are errors,
 not new approvals. The matcher uses `threshold: 0.01` and `maxDiffPixels: 0`.
@@ -93,9 +119,9 @@ or rewriting canonical files.
 
 `visual-storybook` builds the candidate once. `visual-tests` downloads its
 SHA-named artifact into the same pinned image, verifies snapshot policy, and
-compares with updates disabled and one worker. Its `visual-results` artifact
-contains HTML, JSON, JUnit, images, and failure traces. Ordinary CI does not
-write baselines or open snapshot-update PRs.
+runs `test:ci` with updates disabled and one worker. Its `visual-results`
+artifact contains HTML, JSON, JUnit, images, and failure traces. Ordinary CI
+does not write baselines or open snapshot-update PRs.
 
 ## Coverage
 

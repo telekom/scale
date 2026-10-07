@@ -8,9 +8,8 @@
     "test:prepare": "node scripts/prepare.js",
     "copy": "node scripts/prepare.js --copy",
     "test": "node scripts/run-container.js",
-    "test:ci": "playwright test --update-snapshots=none",
+    "test:ci": "node \"$PLAYWRIGHT_CLI\" test --update-snapshots=none --workers=1",
     "test:update": "node scripts/run-container.js --update-snapshots=all",
-    "test:m1": "node scripts/run-container.js",
     "test:interaction": "playwright test --grep @interaction --update-snapshots=none",
     "test:policy": "node scripts/run-container.js --verify-policy",
     "format": "prettier --write \"package.json\" \"src/**/*.js\" \"scripts/*.js\" \"./*.js\""

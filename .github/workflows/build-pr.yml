@@ -183,7 +183,8 @@ jobs:
         working-directory: packages/visual-tests
         env:
           NODE_PATH: /tmp/scale-visual-dependencies/node_modules
-        run: node /tmp/scale-visual-dependencies/node_modules/@playwright/test/cli.js test --update-snapshots=none
+          PLAYWRIGHT_CLI: /tmp/scale-visual-dependencies/node_modules/@playwright/test/cli.js
+        run: yarn workspace @telekom/scale-visual-tests test:ci
       - name: Check for snapshot changes
         run: git -c safe.directory="$GITHUB_WORKSPACE" diff --exit-code -- packages/visual-tests/src/__image_snapshots__
       - name: Upload browser test evidence
