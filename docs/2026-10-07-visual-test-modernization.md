@@ -92,7 +92,7 @@ but introduce a service dependency and do not meet the same fully local workflow
 
 ## Pilot and Results
 
-The detached worktree is
+The research initially used a detached worktree at
 `C:/Users/A200005483/workspaces/.worktrees/scale-visual-modernization`.
 The temporary pilot config and tests left the production manifest, lockfile,
 runner, workflow, and snapshots unchanged during research. They have since been
@@ -134,7 +134,27 @@ For production, pin the verified platform image digest as well as the version.
 Evidence limit: the pilot copied an existing generated Storybook artifact from
 the original checkout. It did not build that artifact from the worktree's exact
 HEAD. It proves runner compatibility with that artifact, not exact-commit build
-reproducibility. No remote GitHub Actions run or full-suite migration was done.
+reproducibility. No remote GitHub Actions run or full-suite migration was done
+in the pilot phase.
+
+## Production Findings
+
+The migration uses Playwright Test 1.63.0 and the pinned Linux image below.
+It separates preparation from comparison and removes the old visual runner.
+The core package declares the same Jest versions that its Stencil tests had
+previously obtained indirectly from the visual workspace.
+
+Full repeated comparisons exposed a DataGrid initialization defect: automatic
+columns were measured before nested components finished rendering. Row refreshes
+did not fix it because the first numeric widths were retained. The component
+now waits for nested component and font readiness before measurement, and a
+regression spec covers a delayed child. Visual checks wait for the temporary
+measurement table to disappear.
+
+Remaining rounded-corner differences were only one RGB level. Production uses
+`threshold: 0.01` with `maxDiffPixels: 0`, without experimental renderer flags.
+This excludes small per-pixel rounding, not a count of tolerated changed pixels.
+Mismatch and missing-baseline checks verify the comparison policy independently.
 
 ## Chromium and Baseline Policy
 

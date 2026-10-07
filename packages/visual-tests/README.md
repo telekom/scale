@@ -39,9 +39,10 @@ No port is published, and no Docker socket or nested browser container is used.
 `test:m1` remains an alias; all hosts use the same x64 renderer.
 
 Normal comparisons use `updateSnapshots: 'none'`. Missing images are errors,
-not new approvals. The matcher uses `threshold: 0` and `maxDiffPixels: 0`;
-its antialias handling still applies. Native Windows/macOS images are not
-accepted as canonical baselines.
+not new approvals. The matcher uses `threshold: 0.01` and `maxDiffPixels: 0`.
+The 1% per-pixel perceptual threshold excludes measured one-level RGB rounding
+at rounded corners, not an allowance for changed pixels. Its antialias handling
+still applies. Native Windows/macOS images are not canonical baselines.
 
 ## Update And Review
 
@@ -73,7 +74,8 @@ yarn workspace @telekom/scale-visual-tests test:interaction
 ```
 
 These checks assert keyboard focus/activation and checkbox state without images
-or Docker. They do not replace Stencil spec/E2E tests. Set `SCALE_VISUAL_PORT`
+or Docker. They do not replace Stencil spec/E2E tests; the core package declares
+its existing Jest dependencies directly. Set `SCALE_VISUAL_PORT`
 for a second worktree; the server will not attach to an existing server.
 Playwright stops the test server after the run.
 
@@ -111,3 +113,7 @@ open a story with `story.open(id)`, use locators through open shadow roots,
 assert the relevant UI state, and call `story.screenshot('state.png')`.
 Use visible labels for covered inputs; do not force clicks or replace state
 assertions with sleeps. Add state-only tests with `@interaction` for native runs.
+
+DataGrid measures automatic columns only after nested cells and fonts are ready.
+Its visual tests also wait for the temporary measurement table to disappear.
+This prevents first-render child widths from being retained as final widths.

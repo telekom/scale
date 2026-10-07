@@ -1,4 +1,4 @@
-const { test } = require('./test-fixtures');
+const { test, expect } = require('./test-fixtures');
 test.describe('DataGrid', () => {
   for (const [variant] of [
     ['email-cell'],
@@ -17,9 +17,9 @@ test.describe('DataGrid', () => {
   ]) {
     test(`${variant}`, async ({ page, story }) => {
       await story.open(`components-data-grid--${variant}`);
-      await page.locator('scale-data-grid').evaluate((grid) => {
-        grid.rows = [...grid.rows];
-      });
+      await expect(
+        page.locator('scale-data-grid .data-grid__auto-width-check')
+      ).toHaveCount(0);
       await story.screenshot('default.png');
     });
   }

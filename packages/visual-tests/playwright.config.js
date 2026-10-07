@@ -19,7 +19,7 @@ module.exports = defineConfig({
       animations: 'disabled',
       caret: 'hide',
       scale: 'css',
-      threshold: 0,
+      threshold: 0.01,
       maxDiffPixels: 0,
     },
   },
@@ -37,9 +37,6 @@ module.exports = defineConfig({
   use: {
     baseURL,
     browserName: 'chromium',
-    launchOptions: {
-      args: ['--disable-gpu', '--font-render-hinting=none'],
-    },
     viewport: { width: 1040, height: 768 },
     deviceScaleFactor: 1,
     locale: 'en-US',

@@ -734,11 +734,29 @@ export class DataGrid {
   }
 
   // Auto column width handlers
-  calculateAutoWidths() {
-    let isVisible = false;
+  async calculateAutoWidths() {
+    const fields = this.fields;
+    const rows = this.rows;
     const columns = this.hostElement.shadowRoot.querySelectorAll(
       `.${name}__auto-width-check td`
     );
+    await Promise.all(
+      Array.from(
+        this.hostElement.shadowRoot.querySelectorAll(
+          `.${name}__auto-width-check td *`
+        ),
+        (
+          element: HTMLElement & {
+            componentOnReady?: () => Promise<HTMLElement>;
+          }
+        ) => element.componentOnReady?.()
+      )
+    );
+    await this.hostElement.ownerDocument.fonts?.ready;
+    if (this.fields !== fields || this.rows !== rows) {
+      return;
+    }
+    let isVisible = false;
     columns.forEach((cell: HTMLElement) => {
       // Make sure table is actually rendered (eg not display:none etc)
       if (!isVisible && cell.offsetParent !== null) {

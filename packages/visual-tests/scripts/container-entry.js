@@ -42,10 +42,14 @@ const result = spawnSync(
     env: { ...process.env, NODE_PATH: '/dependencies/node_modules' },
   }
 );
-for (const directory of ['report', 'test-results']) {
-  fs.rmSync(`/tests/${directory}`, { recursive: true, force: true });
-  if (fs.existsSync(`/work/${directory}`)) {
-    fs.cpSync(`/work/${directory}`, `/tests/${directory}`, { recursive: true });
+if (!policy) {
+  for (const directory of ['report', 'test-results']) {
+    fs.rmSync(`/tests/${directory}`, { recursive: true, force: true });
+    if (fs.existsSync(`/work/${directory}`)) {
+      fs.cpSync(`/work/${directory}`, `/tests/${directory}`, {
+        recursive: true,
+      });
+    }
   }
 }
 if (updating) {

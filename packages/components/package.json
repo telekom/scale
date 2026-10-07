@@ -50,6 +50,8 @@
     "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
     "hast-util-to-html": "^8.0.4",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
     "jsx-dom": "^6.4.17",
     "postcss-custom-media": "^12.0.1",
     "puppeteer": "^23.6.1",
