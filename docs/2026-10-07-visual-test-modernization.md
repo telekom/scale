@@ -53,7 +53,7 @@ Do not use system Chrome or an unpinned `latest` image for baseline generation.
   and themes. These are improvement targets, not a measured speedup.
 - [Storybook](../packages/storybook-vue/package.json) is Vue 2 / Storybook 6.4
   with Webpack. A modern Vitest Storybook addon is not a drop-in replacement.
-- [GitHub workflow](../.github/workflows/build-pr.yml) builds components and
+- [Legacy GitHub workflow](https://github.com/telekom/scale/blob/c4e721124f9c33febc75bfb9bde24193eda15a8b/.github/workflows/build-pr.yml) builds components and
   Storybook in the visual job, copies the output, then runs `test:ci -u`.
   Its `components-cache` and `storybook-cache` conditions reference missing
   step IDs. Other jobs also generate/build components.
@@ -155,6 +155,114 @@ Remaining rounded-corner differences were only one RGB level. Production uses
 `threshold: 0.01` with `maxDiffPixels: 0`, without experimental renderer flags.
 This excludes small per-pixel rounding, not a count of tolerated changed pixels.
 Mismatch and missing-baseline checks verify the comparison policy independently.
+
+### Production Verification
+
+The implementation at `c7678a32c4b49e333985e0de710ec6f6a50167ae` passed
+[all eight build-pr jobs](https://github.com/telekom/scale/actions/runs/37557538946)
+and [CodeQL](https://github.com/telekom/scale/actions/runs/37557538955).
+The downloaded visual JSON report confirms 400 passed, 128 skipped, zero
+unexpected results, and zero flaky results. Its test execution took 4.1 minutes;
+this excludes Storybook preparation and other pipeline jobs.
+
+Local exact-source preparation, frozen installation, generation, lint,
+formatting, React build/types, and clean generated-file checks passed.
+Core checks passed 359 tests across 62 spec suites, with 168 snapshots, and
+78 E2E tests across 35 suites. Native Windows interactions passed four tests.
+The public local Linux runner passed 400 cases in 2.1 minutes; a full repeated
+comparison passed 800 cases without flaky results. DataGrid repeat checks
+passed 104 cases. These are observed run times, not a benchmark against the
+legacy suite.
+
+All 474 canonical PNGs decode, have the expected 1040-pixel width, and contain
+visible pixel variation. Representative focus, active, calendar, tooltip, and
+grid captures were inspected in both themes. Negative policy checks reject a
+deliberate style mismatch and a missing baseline without changing canonical
+files. Policy checks preserve the previous HTML and JSON reports. Passing
+comparisons are not human design approval; the draft
+[migration PR #2552](https://github.com/telekom/scale/pull/2552) remains unmerged.
+The nine previously skipped suites remain explicit coverage debt.
+
+Real CI exposed two setup defects, both reproduced and fixed without changing
+image assertions. The snapshot guard trusts only `GITHUB_WORKSPACE` for its Git
+command; it still rejects changed or deleted PNGs. Core E2E explicitly installs
+its own pinned Puppeteer browser after dependency-cache restoration, because
+the `node_modules` cache does not contain the browser cache. A fresh empty
+browser cache and the unchanged 78 core E2E tests passed locally.
+
+## CLI Assessment After Green CI
+
+Research started only after [build-pr run 37557538946](https://github.com/telekom/scale/actions/runs/37557538946)
+and [CodeQL run 37557538955](https://github.com/telekom/scale/actions/runs/37557538955)
+completed with `success` at `c7678a32c4b49e333985e0de710ec6f6a50167ae`.
+Both conclusions and heads were checked with `gh` under account `amir-ba`, after
+`gh run watch --exit-status` with output sent to temporary logs.
+
+**Recommendation:** keep Playwright Test as the production gate. The standard
+`playwright test` CLI is already in use; this does not require another runner
+migration. Use the session CLI only as an optional local companion for page
+inspection, test authoring, and debugging. Do not replace the screenshot gate.
+
+The two names refer to different entry points. [npm metadata for Test 1.63.0](https://registry.npmjs.org/@playwright%2ftest/1.63.0)
+maps `playwright` to its test CLI and pins `playwright` to `1.63.0`.
+[Published session CLI metadata](https://registry.npmjs.org/@playwright%2fcli/0.1.22)
+identifies Microsoft's `microsoft/playwright-cli` repository and the
+`playwright-cli` binary. On 2026-10-07, npm `latest` was `0.1.22`, with exact
+`playwright` and `playwright-core` dependencies on `1.64.0-alpha-1790635538000`.
+It is not a version-matched substitute for the installed `1.63.0` package.
+
+| Need                      | Playwright Test CLI                                                      | Session CLI                                        | Assessment                                                             |
+| ------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------- | ---------------------------------------------------------------------- |
+| Native behavior checks    | `playwright test --grep @interaction`; existing assertions, no PNGs      | `open`, `goto`, `click`, `eval`, `run-code`        | Keep Test for repeatable checks; use session commands for exploration. |
+| Canonical visual checks   | `toHaveScreenshot()` compares PNG baselines and creates diff attachments | `screenshot` captures a file                       | A capture alone does not compare or approve a baseline.                |
+| Isolation and concurrency | Test/worker fixtures, projects, workers, retries, shards                 | Named sessions retain state between commands       | Sessions are not a drop-in replacement for suite execution.            |
+| Reports and CI failure    | HTML, JSON, JUnit, GitHub, blob reports; suite exit status               | Command output and command error exit status       | Keep the existing Actions gate and artifacts.                          |
+| Local debugging           | `--debug`, `--ui`, `show-trace`, `--debug=cli`                           | Attach to a paused test; inspect and generate code | Useful companion; rerun the unchanged test gate after a fix.           |
+
+Owning sources: [1.63.0 test commands](https://github.com/microsoft/playwright/blob/v1.63.0/packages/playwright/src/program.ts),
+[fixtures](https://github.com/microsoft/playwright/blob/v1.63.0/docs/src/test-fixtures-js.md),
+[projects](https://github.com/microsoft/playwright/blob/v1.63.0/docs/src/test-projects-js.md),
+[parallelism](https://github.com/microsoft/playwright/blob/v1.63.0/docs/src/test-parallel-js.md),
+[reporters](https://github.com/microsoft/playwright/blob/v1.63.0/docs/src/test-reporters-js.md),
+and the [published CLI README](https://github.com/microsoft/playwright-cli/blob/b85c7a736bb473bf55b584e54a09ffa698d6d871/README.md).
+
+The session CLI can perform checks: its [published dependency's run-code source](https://github.com/microsoft/playwright/blob/e8149b8257d32dcf8f72573ecc43e72439da7080/packages/playwright-core/src/tools/backend/runCode.ts)
+executes a function with `page` and propagates thrown errors. It does not inject
+Test's `expect` or test fixtures. Its [command dispatcher](https://github.com/microsoft/playwright/blob/e8149b8257d32dcf8f72573ecc43e72439da7080/packages/playwright-core/src/tools/cli-client/program.ts)
+sets exit code `1` for `isError`. This is not an inability to assert or fail CI.
+However, its [screenshot command](https://github.com/microsoft/playwright/blob/e8149b8257d32dcf8f72573ecc43e72439da7080/packages/playwright-core/src/tools/backend/screenshot.ts)
+captures an image; Test's [snapshot matcher](https://github.com/microsoft/playwright/blob/v1.63.0/packages/playwright/src/matchers/toMatchSnapshot.ts)
+owns baseline comparison, update policy, and diff attachments, and requires test
+context. Test's [runner exit logic](https://github.com/microsoft/playwright/blob/v1.63.0/packages/playwright/src/cli/testActions.ts)
+returns `0` for passed, `1` for other unsuccessful results, and `130` for interruption.
+A standalone session-command gate would need a separately verified suite,
+comparison, isolation, reporting, and cleanup contract. It is not approved here.
+
+`snapshot` produces YAML page structure with element references. An
+[ARIA snapshot assertion](https://playwright.dev/docs/aria-snapshots) compares
+accessible roles, names, states, and structure. It does not compare rendered
+pixels, fonts, colors, or rasterization. YAML and PNG baselines have different
+purposes; neither a YAML capture nor an ARIA match replaces the 474 PNG baselines.
+
+Keep native interaction checks separate from authoritative Linux x64 comparisons.
+Keep the pinned 1.63.0 image digest, container-local files, frozen visual-only
+dependencies, exact-candidate Storybook artifact, both themes, 1040 x 768/DPR 1,
+UTC/en-US, `threshold: 0.01`, `maxDiffPixels: 0`, and `--update-snapshots=none`.
+The [1.63.0 CI guide](https://github.com/microsoft/playwright/blob/v1.63.0/docs/src/ci.md)
+uses `playwright test` in GitHub Actions, including container jobs;
+[rendering guidance](https://playwright.dev/docs/test-snapshots) requires the same
+environment for reference and comparison images. Changing the command does not
+remove that constraint. No CLI performance benefit was measured.
+
+For local debugging, the [official test reference](https://github.com/microsoft/playwright-cli/blob/b85c7a736bb473bf55b584e54a09ffa698d6d871/skills/playwright-cli/references/playwright-tests.md)
+uses `playwright test --debug=cli`, then `playwright-cli attach <session>`.
+Version 1.63.0 also [includes the session CLI as `playwright cli`](https://github.com/microsoft/playwright/blob/v1.63.0/packages/playwright-core/src/cli/program.ts).
+Prefer that pinned entry point for a future local trial rather than installing
+the alpha-based `latest` package. The installed 1.63.0 package also passed a
+`playwright cli --help` check without opening a browser. Attachment
+compatibility, custom standalone comparison code, and
+end-to-end standalone gate behavior remain unverified. No packages were installed,
+no browsers were started, and no runner, workflow, or baseline was changed.
 
 ## Chromium and Baseline Policy
 
