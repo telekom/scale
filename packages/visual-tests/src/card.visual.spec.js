@@ -5,7 +5,7 @@ test.describe('Card', () => {
       await story.open(`components-card--${variant}`);
       const anchor = page.locator('scale-card').getByRole('link');
       await story.screenshot('default.png');
-      if (variant === 'with-link') {
+      if (variant === 'with-link' || variant === 'with-image') {
         await expect(anchor).toBeVisible();
         await anchor.hover();
         await story.screenshot('hover.png');
