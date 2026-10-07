@@ -49,6 +49,13 @@
 | `scale-keydown` | Emitted on keydown.                     | `CustomEvent<KeyboardEvent>`          |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Dependencies
 
 ### Depends on

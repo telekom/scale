@@ -24,6 +24,13 @@
 | `styles`            | `styles`             | (optional) Injected CSS styles                                                                  | `string`  | `undefined` |
 
 
+## Slots
+
+| Slot     | Description |
+| -------- | ----------- |
+| `"icon"` |             |
+
+
 ## Shadow Parts
 
 | Part                   | Description |

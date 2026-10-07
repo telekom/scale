@@ -17,7 +17,7 @@ exports[`Combobox snapshots should match snapshot with label, helper text and in
   <template shadowrootmode="open">
     <div class="combobox-container combobox-invalid" part="combobox-container">
       <div class="combobox-wrapper">
-        <label class="combobox-label" htmlfor="combobox-input-4" part="label">
+        <label class="combobox-label" for="combobox-input-4" part="label">
           Framework
         </label>
         <input aria-autocomplete="list" aria-controls="combobox-listbox-5" aria-describedby="combobox-helper-text-6" aria-invalid="true" autocomplete="off" class="combobox-input" id="combobox-input-4" part="combobox" placeholder="" role="combobox" type="text" value="">

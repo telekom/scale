@@ -28,6 +28,15 @@
 | `userNavigation`      | `user-navigation`        |                                | `any`     | `[]`        |
 
 
+## Slots
+
+| Slot       | Description      |
+| ---------- | ---------------- |
+|            | The default slot |
+| `"footer"` |                  |
+| `"header"` |                  |
+
+
 ## Shadow Parts
 
 | Part     | Description |

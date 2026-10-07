@@ -33,6 +33,16 @@
 | `scale-open`         | Fires after the notification has been opened                                                       | `CustomEvent<void>`                   |
 
 
+## Slots
+
+| Slot           | Description |
+| -------------- | ----------- |
+| `"close-icon"` |             |
+| `"heading"`    |             |
+| `"icon"`       |             |
+| `"text"`       |             |
+
+
 ## Shadow Parts
 
 | Part             | Description |

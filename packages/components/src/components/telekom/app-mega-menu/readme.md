@@ -11,9 +11,16 @@
 | --------------- | ----------------- | ----------- | ------------ | ----------- |
 | `active`        | `active`          |             | `boolean`    | `undefined` |
 | `activeRouteId` | `active-route-id` |             | `string`     | `undefined` |
-| `hide`          | `hide`            |             | `() => void` | `undefined` |
+| `hide`          | --                |             | `() => void` | `undefined` |
 | `isActive`      | `is-active`       |             | `boolean`    | `undefined` |
-| `navigation`    | `navigation`      |             | `MenuItem[]` | `[]`        |
+| `navigation`    | --                |             | `MenuItem[]` | `[]`        |
+
+
+## Slots
+
+| Slot            | Description |
+| --------------- | ----------- |
+| `"custom-body"` |             |
 
 
 ## Dependencies

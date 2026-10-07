@@ -15,6 +15,14 @@
 | `labelVisuallyHidden`  | `label-visually-hidden`  |                                         | `boolean` | `undefined`              |
 
 
+## Slots
+
+| Slot    | Description      |
+| ------- | ---------------- |
+|         | The default slot |
+| `"dot"` |                  |
+
+
 ## Shadow Parts
 
 | Part                | Description |

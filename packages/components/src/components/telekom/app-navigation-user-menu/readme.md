@@ -9,7 +9,7 @@
 
 | Property     | Attribute    | Description | Type         | Default     |
 | ------------ | ------------ | ----------- | ------------ | ----------- |
-| `hide`       | `hide`       |             | `() => void` | `undefined` |
+| `hide`       | --           |             | `() => void` | `undefined` |
 | `navigation` | `navigation` |             | `any`        | `undefined` |
 | `styles`     | `styles`     |             | `string`     | `undefined` |
 
@@ -21,6 +21,13 @@
 | `closeMenu` |             | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Shadow Parts
 
 | Part                | Description |
@@ -28,7 +35,7 @@
 | `"button"`          |             |
 | `"item"`            |             |
 | `"rule-horizontal"` |             |
-| `"userinfo"`        |             |
+| `"userInfo"`        |             |
 
 
 ## Dependencies

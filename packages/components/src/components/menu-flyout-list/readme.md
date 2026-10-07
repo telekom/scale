@@ -16,7 +16,7 @@
 | `opened`              | `opened`                |                                                                                       | `boolean`                                                                           | `false`          |
 | `preventFlipVertical` | `prevent-flip-vertical` | (optional) set to true to prevent flipping orientation when off the screen vertically | `boolean`                                                                           | `false`          |
 | `styles`              | `styles`                | (optional) Injected styles                                                            | `string`                                                                            | `undefined`      |
-| `trigger`             | `trigger`               |                                                                                       | `() => HTMLElement`                                                                 | `undefined`      |
+| `trigger`             | --                      |                                                                                       | `() => HTMLElement`                                                                 | `undefined`      |
 
 
 ## Events
@@ -64,6 +64,13 @@ Type: `Promise<void>`
 Type: `Promise<void>`
 
 
+
+
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
 
 
 ## Shadow Parts

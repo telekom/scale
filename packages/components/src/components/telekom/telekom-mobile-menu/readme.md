@@ -22,6 +22,13 @@
 | `scale-close-nav-flyout` |             | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Shadow Parts
 
 | Part            | Description |

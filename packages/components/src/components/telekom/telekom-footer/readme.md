@@ -14,6 +14,15 @@
 | `logoTitle`     | `logo-title`      | (optional) set logo specific title | `string`  | `'Telekom Logo'` |
 
 
+## Slots
+
+| Slot                    | Description |
+| ----------------------- | ----------- |
+| `"extended-navigation"` |             |
+| `"navigation"`          |             |
+| `"notice"`              |             |
+
+
 ## Shadow Parts
 
 | Part           | Description |

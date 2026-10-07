@@ -22,6 +22,7 @@ This is a superset of the default anchor `<a>` element.
 
 | Slot        | Description                                                          |
 | ----------- | -------------------------------------------------------------------- |
+|             | The default slot                                                     |
 | `"default"` | here goes the actual text of the                                     |
 | `"icon"`    | a slot that will not be underlined and which position can be changed |
 

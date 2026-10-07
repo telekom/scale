@@ -31,6 +31,19 @@
 | `userNavigation`      | `user-navigation`        |             | `any`     | `[]`        |
 
 
+## Slots
+
+| Slot             | Description |
+| ---------------- | ----------- |
+| `"logo"`         |             |
+| `"logo-inverse"` |             |
+| `"menu-addon"`   |             |
+| `"menu-icon"`    |             |
+| `"menu-main"`    |             |
+| `"menu-mobile"`  |             |
+| `"menu-sector"`  |             |
+
+
 ## Dependencies
 
 ### Used by

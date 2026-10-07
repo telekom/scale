@@ -14,6 +14,13 @@
 | `headingLevel` | `heading-level` |                         | `string`  | `'2'`       |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Shadow Parts
 
 | Part                    | Description |

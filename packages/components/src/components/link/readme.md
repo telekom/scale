@@ -93,6 +93,7 @@ Type: `Promise<void>`
 
 | Slot        | Description                                                          |
 | ----------- | -------------------------------------------------------------------- |
+|             | The default slot                                                     |
 | `"default"` | here goes the actual text of the                                     |
 | `"icon"`    | a slot that will not be underlined and which position can be changed |
 

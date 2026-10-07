@@ -34,6 +34,14 @@ Type: `Promise<void>`
 
 
 
+## Slots
+
+| Slot       | Description      |
+| ---------- | ---------------- |
+|            | The default slot |
+| `"header"` |                  |
+
+
 ## Shadow Parts
 
 | Part         | Description |

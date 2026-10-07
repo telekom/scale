@@ -21,6 +21,13 @@
 | `target`            | `target`               | (optional) target value                 | `string`  | `'_self'`               |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Dependencies
 
 ### Used by

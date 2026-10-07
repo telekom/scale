@@ -18,6 +18,13 @@
 | `variant`  | `variant`  | (optional) Color variant of the callout             | `string` | `undefined` |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Shadow Parts
 
 | Part     | Description |

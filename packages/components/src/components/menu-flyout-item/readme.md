@@ -45,6 +45,16 @@ Type: `Promise<void>`
 
 
 
+## Slots
+
+| Slot        | Description      |
+| ----------- | ---------------- |
+|             | The default slot |
+| `"prefix"`  |                  |
+| `"sublist"` |                  |
+| `"suffix"`  |                  |
+
+
 ## Shadow Parts
 
 | Part       | Description |

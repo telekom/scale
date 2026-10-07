@@ -22,6 +22,18 @@
 | `type`                     | `type`                         |             | `string`  | `''`                         |
 
 
+## Slots
+
+| Slot                  | Description |
+| --------------------- | ----------- |
+| `"functions"`         |             |
+| `"lang-switcher"`     |             |
+| `"logo"`              |             |
+| `"main-nav"`          |             |
+| `"meta-nav"`          |             |
+| `"meta-nav-external"` |             |
+
+
 ## Shadow Parts
 
 | Part                  | Description |
