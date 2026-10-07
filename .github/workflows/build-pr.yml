@@ -182,7 +182,7 @@ jobs:
           NODE_PATH: /tmp/scale-visual-dependencies/node_modules
         run: node /tmp/scale-visual-dependencies/node_modules/@playwright/test/cli.js test --update-snapshots=none
       - name: Check for snapshot changes
-        run: git diff --exit-code -- packages/visual-tests/src/__image_snapshots__
+        run: git -c safe.directory="$GITHUB_WORKSPACE" diff --exit-code -- packages/visual-tests/src/__image_snapshots__
       - name: Upload browser test evidence
         if: always()
         uses: actions/upload-artifact@v4
