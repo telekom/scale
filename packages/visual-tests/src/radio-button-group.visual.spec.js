@@ -1,44 +1,37 @@
-// FIXME unskip
-describe.skip('RadioButtonGroup', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup(
-        'components-radio-button-group--standard',
-        mode
-      );
+const { test } = require('./test-fixtures');
+test.describe.skip('RadioButtonGroup', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['helper-text'],
+    ['error'],
+    ['disabled'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-radio-button-group--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([['standard'], ['helper-text'], ['error'], ['disabled']])(
-      '%p',
-      async (variant) => {
-        await global.runSetup(`components-radio-button-group--${variant}`);
-
-        await global.visualCheck();
-      }
-    );
-    // focus, hover, active, click
-    test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`components-radio-button-group--${variant}`);
-      const firstRadioButton = await global.page.evaluateHandle(
-        `document.querySelector("#root > div > scale-radio-button-group > scale-radio-button:nth-child(1) input[type=radio]")`
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-radio-button-group--${variant}`);
+      const firstRadioButton = page.locator(
+        ':is(#root, #storybook-root) > div > scale-radio-button-group > scale-radio-button:nth-child(1) input[type=radio]'
       );
-      const label = await global.page.evaluateHandle(
-        `document.querySelector("#root scale-radio-button-group > scale-radio-button:nth-child(1) > div > label")`
+      const label = page.locator(
+        ':is(#root, #storybook-root) scale-radio-button-group > scale-radio-button:nth-child(1) > div > label'
       );
-      const base = await global.page.evaluateHandle(
-        `document.querySelector("#root")`
-      );
-
+      const base = page.locator(':is(#root, #storybook-root)');
       await firstRadioButton.focus();
-      await global.visualCheck();
+      await story.screenshot('focus.png');
       await base.click();
       await label.hover();
-      await global.visualCheck();
+      await story.screenshot('hover.png');
       await base.click();
-      await global.page.mouse.move(40, 70);
-      await global.page.mouse.down();
-      await global.visualCheck();
+      await page.mouse.move(40, 70);
+      await page.mouse.down();
+      await story.screenshot('active.png');
       await firstRadioButton.click();
-      await global.visualCheck();
+      await story.screenshot('selected.png');
     });
-  });
+  }
 });

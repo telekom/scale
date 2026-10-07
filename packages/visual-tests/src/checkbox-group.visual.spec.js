@@ -1,40 +1,32 @@
-describe('CheckboxGroup', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-checkbox-group--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('CheckboxGroup', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['checkbox-disabled'],
+    ['group-error'],
+    ['helper-text'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-checkbox-group--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['checkbox-disabled'],
-      ['group-error'],
-      ['helper-text'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-checkbox-group--${variant}`);
-      await global.page.waitForTimeout(500);
-      await global.visualCheck();
-    });
-    test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`components-checkbox-group--${variant}`);
-      await global.page.waitForSelector('#root');
-      await global.page.$('body');
-
-      await global.page.waitForSelector(
-        '#root > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]'
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-checkbox-group--${variant}`);
+      const firstCheckbox = page.locator(
+        ':is(#root, #storybook-root) > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]'
       );
-      const firstCheckbox = await global.page.evaluateHandle(
-        `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]")`
+      const label = page.locator(
+        ':is(#root, #storybook-root) > scale-checkbox-group > scale-checkbox:nth-child(1) > label'
       );
-      const label = await global.page.evaluateHandle(
-        `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > label")`
-      );
-
       await label.hover();
-      await global.visualCheck();
+      await story.screenshot('hover.png');
       await firstCheckbox.focus();
-      await global.visualCheck();
-      await global.page.mouse.move(20, 40);
-      await global.page.mouse.down();
-      await global.visualCheck();
+      await story.screenshot('focus.png');
+      await page.mouse.move(20, 40);
+      await page.mouse.down();
+      await story.screenshot('active.png');
     });
-  });
+  }
 });

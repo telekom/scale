@@ -1,38 +1,34 @@
-// FIXME unskip
-describe.skip('RadioButton', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-radio-button--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe.skip('RadioButton', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['standard-disabled'],
+    ['selected'],
+    ['selected-disabled'],
+    ['helper-text'],
+    ['error'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-radio-button--${variant}`);
+      await story.screenshot('default.png');
     });
-    test([
-      ['standard'],
-      ['standard-disabled'],
-      ['selected'],
-      ['selected-disabled'],
-      ['helper-text'],
-      ['error'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-radio-button--${variant}`);
-      await global.visualCheck();
+  }
+  for (const [variant] of [['standard'], ['selected']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-radio-button--${variant}`);
+      const radioButtonWrapper = page.locator(
+        ':is(#root, #storybook-root) > scale-radio-button > div'
+      );
+      const radioButton = page.locator(
+        ':is(#root, #storybook-root) > scale-radio-button > div > input'
+      );
+      await radioButton.focus();
+      await story.screenshot('focus.png');
+      await radioButtonWrapper.hover();
+      await story.screenshot('hover.png');
+      await page.mouse.move(20, 20);
+      await page.mouse.down();
+      await story.screenshot('active.png');
     });
-  });
-  // hover, active, focus
-  test([['standard'], ['selected']])('%p', async (variant) => {
-    await global.runSetup(`components-radio-button--${variant}`);
-
-    const radioButtonWrapper = await global.page.evaluateHandle(
-      `document.querySelector("#root > scale-radio-button > div")`
-    );
-    const radioButton = await global.page.evaluateHandle(
-      `document.querySelector("#root > scale-radio-button > div > input")`
-    );
-
-    radioButton.focus();
-    await global.visualCheck();
-    radioButtonWrapper.hover();
-    await global.visualCheck();
-    await global.page.mouse.move(20, 20);
-    await global.page.mouse.down();
-    await global.visualCheck();
-  });
+  }
 });

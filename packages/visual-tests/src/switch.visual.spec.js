@@ -1,40 +1,36 @@
-describe('Switch', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-switch--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('Switch', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['small'],
+    ['standard-disabled'],
+    ['selected'],
+    ['selected-disabled'],
+    ['android'],
+    ['android-disabled'],
+    ['android-selected'],
+    ['android-selected-disabled'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-switch--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['small'],
-      ['standard-disabled'],
-      ['selected'],
-      ['selected-disabled'],
-      ['android'],
-      ['android-disabled'],
-      ['android-selected'],
-      ['android-selected-disabled'],
-    ])('story %p', async (variant) => {
-      await global.runSetup(`components-switch--${variant}`);
-      await global.visualCheck();
+  }
+  for (const [variant] of [['standard'], ['selected'], ['android-selected']]) {
+    test(`${variant} hover`, async ({ page, story }) => {
+      await story.open(`components-switch--${variant}`);
+      const firstButton = page.locator(
+        ':is(#root, #storybook-root) scale-switch'
+      );
+      await firstButton.hover();
+      await story.screenshot('hover.png');
     });
-    test.each([['standard'], ['selected'], ['android-selected']])(
-      'hover %p',
-      async (variant) => {
-        await global.runSetup(`components-switch--${variant}`);
-        const firstButton = await global.page.evaluateHandle(
-          'document.querySelector("#root scale-switch")'
-        );
-        await firstButton.hover();
-        await global.visualCheck();
-      }
-    );
-
-    test.each([['standard']])('focus %p', async (variant) => {
-      await global.runSetup(`components-switch--${variant}`);
-      await global.page.waitForTimeout(3000);
-      await global.page.keyboard.press('Tab');
-      await global.page.waitForTimeout(3000);
-      await global.visualCheck();
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} focus`, async ({ page, story }) => {
+      await story.open(`components-switch--${variant}`);
+      await page.keyboard.press('Tab');
+      await story.screenshot('focus.png');
     });
-  });
+  }
 });

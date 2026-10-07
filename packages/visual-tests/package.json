@@ -5,22 +5,18 @@
   "main": "index.js",
   "license": "MPL-2.0",
   "scripts": {
-    "pretest": "cd ../components && yarn build && cd ../storybook-vue && yarn build && cd ../visual-tests && yarn copy",
-    "copy": "rimraf ./storybook-static && cp -R ../storybook-vue/storybook-static ./",
-    "test": "PUPPETEER_CHROMIUM_REVISION=1055161 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true jest --forceExit",
-    "test:ci": "JEST_IMAGE_SNAPSHOT_TRACK_OBSOLETE=1 PUPPETEER_CHROMIUM_REVISION=1055161 jest --forceExit",
-    "test:m1": "DOCKER_DEFAULT_PLATFORM=linux/amd64 PUPPETEER_CHROMIUM_REVISION=1055161 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true jest --forceExit --runInBand",
-    "format": "prettier --write \"package.json\" \"src/**/*.js\" \"./*.js\""
+    "test:prepare": "node scripts/prepare.js",
+    "copy": "node scripts/prepare.js --copy",
+    "test": "node scripts/run-container.js",
+    "test:ci": "playwright test --update-snapshots=none",
+    "test:update": "node scripts/run-container.js --update-snapshots=all",
+    "test:m1": "node scripts/run-container.js",
+    "test:interaction": "playwright test --grep @interaction --update-snapshots=none",
+    "test:policy": "node scripts/run-container.js --verify-policy",
+    "format": "prettier --write \"package.json\" \"src/**/*.js\" \"scripts/*.js\" \"./*.js\""
   },
   "dependencies": {
-    "fs-extra": "^10.1.0",
-    "jest": "^26.6.3",
-    "jest-cli": "^26.6.3",
-    "jest-html-reporter": "^3.6.0",
-    "jest-image-snapshot": "4.3.0",
-    "jest-puppeteer-docker": "^1.4.2",
-    "puppeteer": "^13.0.0",
-    "puppeteer-extensions": "^1.0.3",
-    "rimraf": "^6.1.3"
+    "@playwright/test": "1.63.0",
+    "http-server": "14.1.1"
   }
 }

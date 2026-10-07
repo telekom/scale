@@ -1,19 +1,17 @@
-describe.skip('SegmentedButton', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-segmented-button--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe.skip('SegmentedButton', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['multi-select'],
+    ['disabled-segment'],
+    ['disabled-button'],
+    ['icon-only'],
+    ['icon-and-text'],
+    ['invalid'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-segmented-button--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['multi-select'],
-      ['disabled-segment'],
-      ['disabled-button'],
-      ['icon-only'],
-      ['icon-and-text'],
-      ['invalid'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-segmented-button--${variant}`);
-      await global.visualCheck();
-    });
-  });
+  }
 });

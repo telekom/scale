@@ -1,48 +1,47 @@
-describe.skip('Deprecated ToggleGroup', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup(
-        'deprecated-components-toggle-group--standard',
-        mode
-      );
+const { test } = require('./test-fixtures');
+test.describe.skip('Deprecated ToggleGroup', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['monochrome-variant'],
+    ['grey-background'],
+    ['no-border'],
+    ['small-size'],
+    ['full-width'],
+    ['single-select'],
+    ['disabled'],
+    ['icon-before'],
+    ['icon-only'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`deprecated-toggle-group--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['monochrome-variant'],
-      ['grey-background'],
-      ['no-border'],
-      ['small-size'],
-      ['full-width'],
-      ['single-select'],
-      ['disabled'],
-      ['icon-before'],
-      ['icon-only'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`deprecated-toggle-group--${variant}`);
-      await global.page.waitForTimeout(500);
-      await global.visualCheck();
+  }
+  for (const [variant] of [['standard'], ['monochrome-variant']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`deprecated-toggle-group--${variant}`);
+      const buttonOne = page
+        .locator(
+          ":is(#root, #storybook-root) scale-toggle-group > scale-toggle-button[radius='left']"
+        )
+        .locator('button');
+      const buttonThree = page
+        .locator(
+          ":is(#root, #storybook-root) scale-toggle-group > scale-toggle-button[radius='right']"
+        )
+        .locator('button');
+      await buttonThree.hover();
+      await story.screenshot('hover.png');
+      await buttonOne.hover();
+      await story.screenshot('hover-2.png');
+      await buttonOne.focus();
+      await story.screenshot('focus.png');
+      await page.mouse.move(30, 30);
+      await page.mouse.down();
+      await story.screenshot('active.png');
+      await page.mouse.up();
+      await page.mouse.down();
+      await story.screenshot('active-2.png');
     });
-    // hover, active, focus
-    test.each([['standard'], ['monochrome-variant']])('%p', async (variant) => {
-      await global.runSetup(`deprecated-toggle-group--${variant}`);
-      const buttonOne = await global.page.evaluateHandle(
-        `document.querySelector("#root scale-toggle-group > scale-toggle-button[radius='left']").shadowRoot.querySelector("button")`
-      );
-      const buttonThree = await global.page.evaluateHandle(
-        `document.querySelector("#root scale-toggle-group > scale-toggle-button[radius='right']").shadowRoot.querySelector("button")`
-      );
-      buttonThree.hover();
-      await global.visualCheck();
-      buttonOne.hover();
-      await global.visualCheck();
-      buttonOne.focus();
-      await global.visualCheck();
-      await global.page.mouse.move(30, 30);
-      await global.page.mouse.down();
-      await global.visualCheck();
-      await global.page.mouse.up();
-      await global.page.mouse.down();
-      await global.visualCheck();
-    });
-  });
+  }
 });

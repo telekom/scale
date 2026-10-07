@@ -1,38 +1,35 @@
-describe('Accordion', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-accordion--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('Accordion', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['dependent'],
+    ['expanded'],
+    ['heading-level'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-accordion--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([['standard'], ['dependent'], ['expanded'], ['heading-level']])(
-      '%p',
-      async (variant) => {
-        await global.runSetup(`components-accordion--${variant}`);
-
-        await global.visualCheck();
-      }
-    );
-    test.each([['standard'], ['dependent']])('%p', async (variant) => {
-      await global.runSetup(`components-accordion--${variant}`);
-
-      await global.page.waitForTimeout(3000);
-
-      const firstButton = await global.page.evaluateHandle(
-        `document.querySelector("#root > scale-accordion > scale-collapsible:nth-child(1)").shadowRoot.querySelector("div > h2 > button")`
-      );
-
+  }
+  for (const [variant] of [['standard'], ['dependent']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-accordion--${variant}`);
+      const firstButton = page
+        .locator(
+          ':is(#root, #storybook-root) > scale-accordion > scale-collapsible:nth-child(1)'
+        )
+        .locator('div > h2 > button');
       await firstButton.hover();
-      await global.visualCheck();
-      // open first collapsible
+      await story.screenshot('hover.png');
       await firstButton.click();
-      await global.visualCheck();
-      // mouse down on first button
-      await global.page.mouse.move(20, 60);
-      await global.page.mouse.down();
-      await global.visualCheck();
-      await global.page.mouse.up();
-      await global.page.mouse.move(0, 0);
+      await story.screenshot('selected.png');
+      await page.mouse.move(20, 60);
+      await page.mouse.down();
+      await story.screenshot('active.png');
+      await page.mouse.up();
+      await page.mouse.move(0, 0);
       await firstButton.focus();
-      await global.visualCheck();
+      await story.screenshot('focus.png');
     });
-  });
+  }
 });

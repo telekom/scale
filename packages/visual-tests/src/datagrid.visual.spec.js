@@ -1,26 +1,26 @@
-describe('DataGrid', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-data-grid--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('DataGrid', () => {
+  for (const [variant] of [
+    ['email-cell'],
+    ['date-cell'],
+    ['html-cell'],
+    ['number-cell'],
+    ['select-cell'],
+    ['text-cell'],
+    ['heading'],
+    ['hide-extras'],
+    ['pagination'],
+    ['column-stretch'],
+    ['tags-cell'],
+    ['telephone-cell'],
+    ['selection-export'],
+  ]) {
+    test(`${variant}`, async ({ page, story }) => {
+      await story.open(`components-data-grid--${variant}`);
+      await page.locator('scale-data-grid').evaluate((grid) => {
+        grid.rows = [...grid.rows];
+      });
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['email-cell'],
-      ['date-cell'],
-      ['html-cell'],
-      ['number-cell'],
-      ['select-cell'],
-      ['text-cell'],
-      ['heading'],
-      ['hide-extras'],
-      ['pagination'],
-      ['column-stretch'],
-      ['tags-cell'],
-      ['telephone-cell'],
-      ['selection-export'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-data-grid--${variant}`);
-      await global.page.waitForTimeout(3000);
-      await global.visualCheck({ failureThreshold: 1000 });
-    });
-  });
+  }
 });

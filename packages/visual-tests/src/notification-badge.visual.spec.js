@@ -1,20 +1,15 @@
-describe('NotificationBadge', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup(
-        'components-notification-badge--standard',
-        mode
-      );
+const { test } = require('./test-fixtures');
+test.describe('NotificationBadge', () => {
+  for (const [variant] of [
+    ['label-text'],
+    ['label-icon'],
+    ['text'],
+    ['icon'],
+    ['standard'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-notification-badge--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['label-text'],
-      ['label-icon'],
-      ['text'],
-      ['icon'],
-      ['standard'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-notification-badge--${variant}`);
-      await global.visualCheck();
-    });
-  });
+  }
 });

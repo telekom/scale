@@ -1,20 +1,18 @@
-describe('Tag', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-tag--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('Tag', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['dismissable-tag'],
+    ['small-tag'],
+    ['small-dismissable-tag'],
+    ['disabled-dismissable-tag'],
+    ['colors'],
+    ['color-standard-tag'],
+    ['color-strong-tag'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-tag--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['dismissable-tag'],
-      ['small-tag'],
-      ['small-dismissable-tag'],
-      ['disabled-dismissable-tag'],
-      ['colors'],
-      ['color-standard-tag'],
-      ['color-strong-tag'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-tag--${variant}`);
-      await global.visualCheck();
-    });
-  });
+  }
 });

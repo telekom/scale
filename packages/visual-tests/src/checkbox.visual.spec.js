@@ -1,54 +1,59 @@
-describe('Checkbox', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-checkbox--standard', mode);
+const { test, expect } = require('./test-fixtures');
+test.describe('Checkbox', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['standard-disabled'],
+    ['selected'],
+    ['selected-disabled'],
+    ['helper-text'],
+    ['error'],
+    ['custom-label'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-checkbox--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['standard-disabled'],
-      ['selected'],
-      ['selected-disabled'],
-      ['helper-text'],
-      ['error'],
-      ['custom-label'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-checkbox--${variant}`);
-      await global.visualCheck();
-    });
-    test.each([
-      ['standard', 'hover'],
-      ['selected', 'hover'],
-      ['custom-label', 'hover'],
-      ['standard', 'active'],
-      ['selected', 'active'],
-      ['custom-label', 'active'],
-      ['standard', 'focus'],
-      ['selected', 'focus'],
-      ['custom-label', 'focus'],
-    ])('%p', async (variant, state) => {
-      await global.runSetup(`components-checkbox--${variant}`);
-      await global.page.waitForSelector('#root');
-      await global.page.$('body');
-      await global.page.waitForSelector('#root > scale-checkbox > label');
-      const checkbox = await global.page.evaluateHandle(
-        `document.querySelector("#root > scale-checkbox > label")`
+  }
+  for (const [variant, state] of [
+    ['standard', 'hover'],
+    ['selected', 'hover'],
+    ['custom-label', 'hover'],
+    ['standard', 'active'],
+    ['selected', 'active'],
+    ['custom-label', 'active'],
+    ['standard', 'focus'],
+    ['selected', 'focus'],
+    ['custom-label', 'focus'],
+  ]) {
+    test(`${variant} ${state} states`, async ({ page, story }) => {
+      await story.open(`components-checkbox--${variant}`);
+      const checkbox = page.locator(
+        ':is(#root, #storybook-root) > scale-checkbox > label'
       );
       if (state === 'hover') {
         await checkbox.hover();
-        await global.page.waitForTimeout(1000);
-        await global.visualCheck();
+        await story.screenshot('hover.png');
       }
       if (state === 'active') {
-        await global.page.mouse.move(20, 20);
-        await global.page.mouse.down();
-        await global.page.waitForTimeout(1000);
-        await global.visualCheck();
+        const input = page.locator('scale-checkbox').getByRole('checkbox');
+        if (variant === 'selected') await expect(input).toBeChecked();
+        else await expect(input).not.toBeChecked();
+        await checkbox.hover();
+        await page.mouse.down();
+        await expect
+          .poll(() =>
+            checkbox.evaluate((element) => element.matches(':active'))
+          )
+          .toBe(true);
+        await story.screenshot('active.png');
+        await page.mouse.up();
       }
       if (state === 'focus') {
-        await checkbox.focus();
-        await global.page.waitForTimeout(1000);
-        await global.visualCheck();
+        const input = page.locator('scale-checkbox').getByRole('checkbox');
+        await input.focus();
+        await expect(input).toBeFocused();
+        await story.screenshot('focus.png');
       }
     });
-  });
+  }
 });

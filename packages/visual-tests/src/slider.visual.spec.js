@@ -1,39 +1,37 @@
-describe('Slider', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-slider--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('Slider', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['range'],
+    ['step-marks'],
+    ['helper-text'],
+    ['disabled'],
+    ['platform-i-os'],
+    ['platform-android'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-slider--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['range'],
-      ['step-marks'],
-      ['helper-text'],
-      ['disabled'],
-      ['platform-i-os'],
-      ['platform-android'],
-    ])('story %p', async (variant) => {
-      await global.runSetup(`components-slider--${variant}`);
-      await global.visualCheck();
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} hover`, async ({ page, story }) => {
+      await story.open(`components-slider--${variant}`);
+      const slider = page
+        .locator(':is(#root, #storybook-root) > scale-slider')
+        .locator('#slider-0');
+      await slider.hover();
+      await story.screenshot('hover.png');
     });
-    test.each([['standard']])('hover %p', async (variant) => {
-      await global.runSetup(`components-slider--${variant}`);
-
-      const slider = await global.page.evaluateHandle(
-        `document.querySelector("#root > scale-slider").shadowRoot.querySelector("#slider-0")`
-      );
-
-      slider.hover();
-      await global.visualCheck();
-    });
-    test.each([['standard']])('focus %p', async (variant) => {
-      await global.runSetup(`components-slider--${variant}`);
-
-      const slider = await global.page.evaluateHandle(
-        `document.querySelector("#root > scale-slider").shadowRoot.querySelector("#slider-0")`
-      );
-
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} focus`, async ({ page, story }) => {
+      await story.open(`components-slider--${variant}`);
+      const slider = page
+        .locator(':is(#root, #storybook-root) > scale-slider')
+        .locator('#slider-0');
       await slider.focus();
-      await global.visualCheck();
+      await story.screenshot('focus.png');
     });
-  });
+  }
 });

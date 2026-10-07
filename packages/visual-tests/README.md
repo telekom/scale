@@ -1,37 +1,113 @@
-# Scale Visual Tests
+# Browser Tests
 
-## Prerequisites
-We use Jest to run tests on a headless Chrome driven by Puppeteer. As there might be visual differences - expecially around font rendering -  between operating systems, we run our tests in a Docker container to ensure the same results throughout different environments.
+Playwright tests the existing static Storybook in isolated browser contexts,
+in light and dark themes. It keeps the 1040 x 768 viewport, CSS-pixel body
+screenshots, DPR 1, `en-US`, and UTC. Fixtures wait for nested custom elements,
+fonts, and images and reject browser errors and failed asset requests.
+The date is fixed at 2026-01-15; timers continue to run.
 
-So in order to run the tests on your computer, your need Docker running on your system.
-The easies way to do that is to install [Docker Desktop](https://www.docker.com/products/docker-desktop).
+## Prepare
 
-We take visual snapshots of the components rendered in our Storybook, so you are going to need to have Stories ready to work with.
+Use Node 24, Yarn 1, and Docker Desktop for canonical screenshots.
+From the repository root:
 
-## Adding new tests
-- Take an existing test as an example 
-- Change the title, story names in the `test.each` block and the url pointing to an iframe in Storybook.
-- Read the [Jest Puppeteer Docs](https://github.com/smooth-code/jest-puppeteer) to learn details about writing tests with this setup. 
-- Consult the [Puppeteer Docs](https://github.com/puppeteer/puppeteer/blob/v5.0.0/docs/api.md) for all the possibilities driving the test browser.
-- You might want to interact with a specific element - having an instance of Storybook running and [using your Dev Tools to copy the JS Path](https://umaar.com/dev-tips/185-copy-js-path/) comes really hand in these cases - especially when Shadow DOM is involved.
-- Run the tests: `yarn test` - it might take a while for the first run to build the Docker container. The upcoming runs will be faster.
-- Verify the new images in `packages/visual-tests/src/__image_snapshots__` to see if they look as expected.
-- Check in the new snapshot images and test file(s) to GIT.
-- Profit
+```sh
+yarn install --frozen-lockfile
+yarn workspace @telekom/scale-visual-tests test:prepare
+```
 
-## Updating existing snapshots after a planned visual change
-Just run the tests again with the `-u` flag: `yarn test -u`.
+Preparation generates and builds components, builds Storybook from this source,
+and copies its output. It runs separately from tests so repeated comparisons do
+not rebuild. Run it again after changing components, stories, tokens, or assets.
+`copy` only copies an already-built Storybook.
 
-## Checking for failing tests
-After a failed run, Jest will put the differences in a folder, so you can inspect: `packages/visual-tests/src/__image_snapshots__/__diff_output__/` 
+## Compare Screenshots
 
-For HTML report, check: `packages/visual-tests/report/`
+```sh
+yarn workspace @telekom/scale-visual-tests test
+yarn workspace @telekom/scale-visual-tests test '(^|/)button[.]visual[.]spec[.]js$'
+yarn workspace @telekom/scale-visual-tests test --repeat-each=2
+```
 
-## Checking the test results in CI:
-Let's assume the `build-pr / visual-tests (pull_request)` check failed after you pushed to GitHub and you want to see what went wrong.
+The local runner uses Linux x64 in
+`mcr.microsoft.com/playwright:v1.63.0-noble`, pinned to digest
+`sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27`.
+It installs only the visual workspace's dependencies with the frozen root lock.
+A dependency volume is keyed by manifest, lock, and image. Tests and Storybook
+are copied to the container filesystem to avoid bind-mount browser I/O.
+No port is published, and no Docker socket or nested browser container is used.
+`test:m1` remains an alias; all hosts use the same x64 renderer.
 
-- Click on the `Show all checks` link close to the bottom of the Pull Request Page.
-- Click the `Details` link of the `build-pr / visual-tests (pull_request)` item.
-- Look for the `Artifacts (1)` button around the top right of your screen on the test run log page and click it.
-- Download artifact `diff-output`.
+Normal comparisons use `updateSnapshots: 'none'`. Missing images are errors,
+not new approvals. The matcher uses `threshold: 0` and `maxDiffPixels: 0`;
+its antialias handling still applies. Native Windows/macOS images are not
+accepted as canonical baselines.
 
+## Update And Review
+
+```sh
+yarn workspace @telekom/scale-visual-tests test:update
+yarn workspace @telekom/scale-visual-tests test
+git diff --stat -- packages/visual-tests/src/__image_snapshots__
+yarn workspace @telekom/scale-visual-tests playwright show-report report
+```
+
+Use `test:update` only for an intentional rendering or browser upgrade. Review
+all affected images in the HTML report and PR, including both themes and states.
+Passing comparisons prove agreement with committed images, not human approval
+of the design. The report includes expected baselines for passing tests, plus
+actual images, differences, and traces for failed tests. Commit approved images
+with their tests. Filtered runs never delete unrelated baselines.
+
+Images use
+`src/__image_snapshots__/<project>/<test-file>/<test-name>/<state>.png`.
+Update `@playwright/test`, its lock entries, the runner/workflow image digest,
+and the fixture's browser version check together. Review fonts, icons, native
+controls, focus, calendars, and popup positioning before accepting an upgrade.
+
+## Fast Native Checks
+
+```sh
+yarn workspace @telekom/scale-visual-tests playwright install chromium
+yarn workspace @telekom/scale-visual-tests test:interaction
+```
+
+These checks assert keyboard focus/activation and checkbox state without images
+or Docker. They do not replace Stencil spec/E2E tests. Set `SCALE_VISUAL_PORT`
+for a second worktree; the server will not attach to an existing server.
+Playwright stops the test server after the run.
+
+## Snapshot Policy
+
+```sh
+yarn workspace @telekom/scale-visual-tests test:policy
+```
+
+This checks a matching image, a deliberate style mismatch, and a missing image
+in temporary paths. Mismatches and missing baselines must fail without creating
+or rewriting canonical files.
+
+## GitHub Actions
+
+`visual-storybook` builds the candidate once. `visual-tests` downloads its
+SHA-named artifact into the same pinned image, verifies snapshot policy, and
+compares with updates disabled and one worker. Its `visual-results` artifact
+contains HTML, JSON, JUnit, images, and failure traces. Ordinary CI does not
+write baselines or open snapshot-update PRs.
+
+## Coverage
+
+All 38 legacy files are migrated: 396 active visual cases plus four new native
+interaction cases across both themes. Button interaction states now run in both
+themes instead of inheriting the previous suite's theme.
+
+The 128 skipped cases in nine existing suites remain explicit exclusions:
+Brand Header, Callout, DropdownSelect, Menu, RadioButtonGroup, RadioButton,
+SegmentedButton, SidebarNavigation, and ToggleGroup. Brand Header and ToggleGroup
+are deprecated. These exclusions are retained coverage debt, not a speed gain.
+
+New tests import `test` and `expect` from [the fixture](src/test-fixtures.js),
+open a story with `story.open(id)`, use locators through open shadow roots,
+assert the relevant UI state, and call `story.screenshot('state.png')`.
+Use visible labels for covered inputs; do not force clicks or replace state
+assertions with sleeps. Add state-only tests with `@interaction` for native runs.

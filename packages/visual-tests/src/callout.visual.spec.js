@@ -1,21 +1,17 @@
-// FIXME layout shift
-describe.skip('Callout', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-callout--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe.skip('Callout', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['primary'],
+    ['black'],
+    ['white'],
+    ['blue'],
+    ['medium'],
+    ['large-and-small'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-callout--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['primary'],
-      ['black'],
-      ['white'],
-      ['blue'],
-      ['medium'],
-      ['large-and-small'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-callout--${variant}`);
-      await global.page.waitForTimeout(500);
-      await global.visualCheck();
-    });
-  });
+  }
 });

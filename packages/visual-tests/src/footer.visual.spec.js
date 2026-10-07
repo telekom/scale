@@ -1,14 +1,9 @@
-describe('Footer', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup(
-        'deprecated-components-footer--standard',
-        mode
-      );
+const { test } = require('./test-fixtures');
+test.describe('Footer', () => {
+  for (const [variant] of [['standard'], ['minimal']]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`deprecated-components-footer--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([['standard'], ['minimal']])('%p', async (variant) => {
-      await global.runSetup(`deprecated-components-footer--${variant}`);
-      await global.visualCheck();
-    });
-  });
+  }
 });

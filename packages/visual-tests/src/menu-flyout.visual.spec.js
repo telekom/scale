@@ -1,71 +1,55 @@
-describe.skip('Menu', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-flyout-menu--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe.skip('Menu', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['cascading-menu'],
+    ['checked-toggle'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-flyout-menu--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([['standard'], ['cascading-menu'], ['checked-toggle']])(
-      '%p',
-      async (variant) => {
-        await global.runSetup(`components-flyout-menu--${variant}`);
-        await global.visualCheck();
-      }
-    );
-    // open menu on click
-    test.each([['standard'], ['cascading-menu']])('%p', async (variant) => {
-      await global.runSetup(`components-flyout-menu--${variant}`);
-      await global.page.waitForSelector('#root');
-      await global.page.$('body');
-      const button = await global.page.evaluateHandle(
-        `document.querySelector("#root scale-menu-flyout > scale-button").shadowRoot.querySelector("button")`
-      );
+  }
+  for (const [variant] of [['standard'], ['cascading-menu']]) {
+    test(`${variant} selected`, async ({ page, story }) => {
+      await story.open(`components-flyout-menu--${variant}`);
+      const button = page
+        .locator(':is(#root, #storybook-root) scale-menu-flyout > scale-button')
+        .locator('button');
       await button.click();
-      await global.page.waitForTimeout(500);
-      await global.visualCheck();
+      await story.screenshot('selected.png');
     });
-    // open 2nd and 3rd level of cascading menu on click
-    // hover, active, focus
-    test.each([['cascading-menu']])('%p', async (variant) => {
-      await global.runSetup(`components-flyout-menu--${variant}`);
-      await global.page.waitForSelector('#root');
-      await global.page.$('body');
-      const button = await global.page.evaluateHandle(
-        `document.querySelector("#root scale-menu-flyout > scale-button").shadowRoot.querySelector("button")`
+  }
+  for (const [variant] of [['cascading-menu']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-flyout-menu--${variant}`);
+      const button = page
+        .locator(':is(#root, #storybook-root) scale-menu-flyout > scale-button')
+        .locator('button');
+      const flyoutItemOne = page.locator(
+        ':is(#root, #storybook-root) scale-menu-flyout > scale-menu-flyout-list > scale-menu-flyout-item:nth-child(8)'
       );
-      const flyoutItemOne = await global.page.evaluateHandle(
-        `document.querySelector("#root scale-menu-flyout > scale-menu-flyout-list > scale-menu-flyout-item:nth-child(8)")`
+      const flyoutItemTwo = page.locator(
+        ':is(#root, #storybook-root) scale-menu-flyout > scale-menu-flyout-list > scale-menu-flyout-item:nth-child(8) > scale-menu-flyout-list > scale-menu-flyout-item:nth-child(2)'
       );
-      const flyoutItemTwo = await global.page.evaluateHandle(
-        `document.querySelector("#root scale-menu-flyout > scale-menu-flyout-list > scale-menu-flyout-item:nth-child(8) > scale-menu-flyout-list > scale-menu-flyout-item:nth-child(2)")`
-      );
-      const base = await global.page.evaluateHandle(
-        `document.querySelector("#root")`
-      );
+      const base = page.locator(':is(#root, #storybook-root)');
       await button.click();
-      await global.page.waitForTimeout(300);
       await flyoutItemOne.hover();
-      await global.page.waitForTimeout(300);
-      await global.visualCheck();
+      await story.screenshot('hover.png');
       await base.click();
       await button.click();
-      await global.page.waitForTimeout(300);
-      await global.page.keyboard.press('ArrowDown');
-      await global.page.waitForTimeout(300);
-      await global.page.keyboard.press('ArrowDown');
-      await global.page.waitForTimeout(300);
-      await global.page.keyboard.press('ArrowDown');
-      await global.page.waitForTimeout(300);
-      await global.page.keyboard.press('ArrowDown');
-      await global.page.waitForTimeout(300);
-      await global.page.keyboard.press('ArrowDown');
-      await global.page.waitForTimeout(300);
-      await global.visualCheck();
+      await page.keyboard.press('ArrowDown');
+      await page.keyboard.press('ArrowDown');
+      await page.keyboard.press('ArrowDown');
+      await page.keyboard.press('ArrowDown');
+      await page.keyboard.press('ArrowDown');
+      await story.screenshot('keyboard.png');
       await flyoutItemOne.click();
-      await global.page.waitForTimeout(300);
-      await global.visualCheck();
+      await story.screenshot('selected.png');
       await flyoutItemTwo.focus();
-      await global.visualCheck();
+      await story.screenshot('focus.png');
       await flyoutItemTwo.click();
-      await global.visualCheck();
+      await story.screenshot('selected-2.png');
     });
-  });
+  }
 });

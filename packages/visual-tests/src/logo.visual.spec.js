@@ -1,19 +1,14 @@
-describe('Logo', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-logo--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('Logo', () => {
+  for (const [variant] of [['standard'], ['white'], ['sizing'], ['link']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-logo--${variant}`);
+      await story.screenshot('default.png');
+      const image = page
+        .locator(':is(#root, #storybook-root) scale-logo')
+        .locator('svg');
+      await image.focus();
+      await story.screenshot('focus.png');
     });
-    test.each([['standard'], ['white'], ['sizing'], ['link']])(
-      '%p',
-      async (variant) => {
-        await global.runSetup(`components-logo--${variant}`);
-        await global.visualCheck();
-        const image = await global.page.evaluateHandle(
-          `document.querySelector("#root scale-logo").shadowRoot.querySelector("svg")`
-        );
-        await image.focus();
-        await global.visualCheck();
-      }
-    );
-  });
+  }
 });

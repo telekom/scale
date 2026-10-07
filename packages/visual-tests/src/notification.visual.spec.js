@@ -1,20 +1,18 @@
-describe('Notification', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-notification--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe('Notification', () => {
+  for (const [variant] of [
+    ['standard'],
+    ['inline'],
+    ['banner'],
+    ['toast'],
+    ['success'],
+    ['informational'],
+    ['danger'],
+    ['warning'],
+  ]) {
+    test(`${variant}`, async ({ story }) => {
+      await story.open(`components-notification--${variant}`);
+      await story.screenshot('default.png');
     });
-    test.each([
-      ['standard'],
-      ['inline'],
-      ['banner'],
-      ['toast'],
-      ['success'],
-      ['informational'],
-      ['danger'],
-      ['warning'],
-    ])('%p', async (variant) => {
-      await global.runSetup(`components-notification--${variant}`);
-      await global.visualCheck();
-    });
-  });
+  }
 });

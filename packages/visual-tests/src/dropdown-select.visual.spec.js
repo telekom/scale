@@ -1,34 +1,26 @@
-describe.skip('DropdownSelect', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-dropdown-select--standard', mode);
+const { test } = require('./test-fixtures');
+test.describe.skip('DropdownSelect', () => {
+  for (const [variant] of [['standard'], ['disabled'], ['error']]) {
+    test(`${variant} open`, async ({ page, story }) => {
+      await story.open(`components-dropdown-select--${variant}`);
+      const select = page
+        .locator(':is(#root, #storybook-root) > div > scale-dropdown-select')
+        .locator('#combobox');
+      await story.screenshot('default.png');
+      await select.click();
+      await story.screenshot('selected.png');
     });
-    // screenshots of stories
-    test.each([['standard'], ['disabled'], ['error']])(
-      '%p',
-      async (variant) => {
-        await global.runSetup(`components-dropdown-select--${variant}`);
-
-        const select = await global.page.evaluateHandle(
-          `document.querySelector("#root > div > scale-dropdown-select").shadowRoot.querySelector("#combobox")`
-        );
-        await global.visualCheck();
-        await select.click();
-        await global.visualCheck();
-      }
-    );
-    // hover, active, focus
-    test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`components-dropdown-select--${variant}`);
-
-      const select = await global.page.evaluateHandle(
-        `document.querySelector("#root > div > scale-dropdown-select").shadowRoot.querySelector("#combobox")`
-      );
-      await global.page.waitForTimeout(300);
+  }
+  for (const [variant] of [['standard']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-dropdown-select--${variant}`);
+      const select = page
+        .locator(':is(#root, #storybook-root) > div > scale-dropdown-select')
+        .locator('#combobox');
       await select.hover();
-      await global.visualCheck();
+      await story.screenshot('hover.png');
       await select.focus();
-      await global.visualCheck();
+      await story.screenshot('focus.png');
     });
-  });
+  }
 });

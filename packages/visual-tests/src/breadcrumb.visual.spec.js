@@ -1,21 +1,17 @@
-describe('Breadcrumb', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.runColorSetup('components-breadcrumb--standard', mode);
-    });
-    test.each([['standard']])('%p', async (variant) => {
-      await global.runSetup(`components-breadcrumb--${variant}`);
-
-      const firstLink = await global.page.evaluateHandle(
-        `document.querySelector("#root > scale-breadcrumb").shadowRoot.querySelector("nav > ol > li:nth-child(1) > a")`
-      );
-      await global.visualCheck();
+const { test } = require('./test-fixtures');
+test.describe('Breadcrumb', () => {
+  for (const [variant] of [['standard']]) {
+    test(`${variant} states`, async ({ page, story }) => {
+      await story.open(`components-breadcrumb--${variant}`);
+      const firstLink = page
+        .locator(':is(#root, #storybook-root) > scale-breadcrumb')
+        .locator('nav > ol > li:nth-child(1) > a');
+      await story.screenshot('default.png');
       await firstLink.hover();
-      await global.visualCheck();
-      // mouse down on firstlink
-      await global.page.mouse.move(40, 30);
-      await global.page.mouse.down();
-      await global.visualCheck();
+      await story.screenshot('hover.png');
+      await page.mouse.move(40, 30);
+      await page.mouse.down();
+      await story.screenshot('active.png');
     });
-  });
+  }
 });
