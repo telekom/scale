@@ -23,6 +23,7 @@ test.describe('Textfield', () => {
       await page.mouse.move(60, 40);
       await page.mouse.down();
       await story.screenshot('active.png');
+      await page.mouse.up();
       await page.keyboard.press('Tab');
       await textfield.hover();
       await story.screenshot('hover.png');

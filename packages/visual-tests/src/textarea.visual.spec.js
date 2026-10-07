@@ -22,6 +22,7 @@ test.describe('Textarea', () => {
       await page.mouse.move(60, 40);
       await page.mouse.down();
       await story.screenshot('active.png');
+      await page.mouse.up();
       await page.keyboard.press('Tab');
       await textarea.hover();
       await story.screenshot('hover.png');
