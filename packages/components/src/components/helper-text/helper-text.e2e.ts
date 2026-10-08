@@ -10,13 +10,14 @@
  */
 
 import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@jest/globals';
 
 describe('scale-helper-text', () => {
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent('<scale-helper-text>default</scale-helper-text>');
     const element = await page.find('scale-helper-text');
-    expect(element).toHaveClass('hydrated');
+    expect(await element.getAttribute('class')).toContain('hydrated');
   });
 
   it('uses the dark-mode danger token', async () => {
@@ -25,7 +26,7 @@ describe('scale-helper-text', () => {
       '<div data-mode="dark"><scale-helper-text variant="danger">default</scale-helper-text></div>'
     );
     const element = await page.find('scale-helper-text');
-    expect(element).toHaveClass('hydrated');
+    expect(await element.getAttribute('class')).toContain('hydrated');
 
     const expectedColor = await page.$eval(
       '[data-mode="dark"]',
@@ -61,7 +62,7 @@ describe('scale-helper-text', () => {
       `<scale-helper-text variant="${variant}">Message</scale-helper-text>`
     );
 
-    const icon = await page.find(`scale-helper-text >>> ${tag} >>> svg`);
-    expect(icon).toHaveAttribute('aria-hidden', 'true');
+    const icon = await page.find(`scale-helper-text >>> ${tag}`);
+    expect(await icon.getAttribute('aria-hidden')).toBe('true');
   });
 });
