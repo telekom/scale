@@ -62,7 +62,7 @@ describe('scale-helper-text', () => {
       `<scale-helper-text variant="${variant}">Message</scale-helper-text>`
     );
 
-    const icon = await page.find(`scale-helper-text >>> ${tag}`);
+    const icon = await page.find(`scale-helper-text >>> ${tag} >>> svg`);
     expect(await icon.getAttribute('aria-hidden')).toBe('true');
   });
 });
