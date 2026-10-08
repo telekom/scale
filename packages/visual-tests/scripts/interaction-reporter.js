@@ -25,6 +25,14 @@ class InteractionReporter {
   onBegin(config, suite) {
     this.config = config;
     this.suite = suite;
+    if (this.options.requireFullCoverage) {
+      for (const name of ['chromium-light', 'chromium-dark']) {
+        if (!config.projects.some((project) => project.name === name))
+          this.errors.push(
+            `Missing required interaction theme project: ${name}`
+          );
+      }
+    }
   }
 
   onError(error) {

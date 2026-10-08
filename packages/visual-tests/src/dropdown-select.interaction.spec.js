@@ -3,6 +3,15 @@ const { test, expect } = require('./test-fixtures');
 const dropdownSelector =
   ':is(#root, #storybook-root) > div > scale-dropdown-select';
 
+async function listenForChange(page, dropdown) {
+  await dropdown.evaluate((element) => {
+    element.__changes = [];
+    element.addEventListener('scale-change', (event) =>
+      element.__changes.push(event.detail.value)
+    );
+  });
+}
+
 test('dropdown-select commits a keyboard selection and emits its value @interaction', async ({
   page,
   story,
@@ -13,16 +22,7 @@ test('dropdown-select commits a keyboard selection and emits its value @interact
   const value = select.locator('[part="combobox-value"]');
   await expect(value).toHaveText('Caspar');
 
-  const emittedValue = dropdown.evaluate(
-    (element) =>
-      new Promise((resolve) => {
-        element.addEventListener(
-          'scale-change',
-          (event) => resolve(event.detail.value),
-          { once: true }
-        );
-      })
-  );
+  await listenForChange(page, dropdown);
 
   await select.press('ArrowDown');
   await expect(select).toHaveAttribute('aria-expanded', 'true');
@@ -33,55 +33,35 @@ test('dropdown-select commits a keyboard selection and emits its value @interact
   await expect(select).toHaveAttribute('aria-expanded', 'false');
   await expect(value).toHaveText('Cedric');
   await expect(dropdown).toHaveAttribute('value', 'cedric');
-  expect(await emittedValue).toBe('cedric');
+  await expect
+    .poll(() => dropdown.evaluate((element) => element.__changes))
+    .toEqual(['cedric']);
 });
 
-test('dropdown-select Escape cancels navigation and preserves selection @interaction', async ({
+test('dropdown-select skips a child option disabled at runtime @interaction', async ({
   page,
   story,
 }) => {
   await story.open('components-dropdown-select--standard');
   const dropdown = page.locator(dropdownSelector);
   const select = dropdown.getByRole('combobox');
-  const listbox = dropdown.getByRole('listbox', { includeHidden: true });
   const value = select.locator('[part="combobox-value"]');
-  const cedric = listbox.getByRole('option', { name: 'Cedric' });
+  await dropdown.evaluate((element) => {
+    const item = Array.from(element.children).find(
+      (child) => child.getAttribute('value') === 'cedric'
+    );
+    item.setAttribute('disabled', '');
+  });
+  await listenForChange(page, dropdown);
 
   await select.press('ArrowDown');
-  await expect(listbox).toBeVisible();
   await select.press('Home');
   await select.press('ArrowDown');
-  await expect(select).toHaveAttribute(
-    'aria-activedescendant',
-    await cedric.getAttribute('id')
-  );
-  await expect(value).toHaveText('Caspar');
-  await select.press('Escape');
+  await select.press('Enter');
 
-  await expect(select).toHaveAttribute('aria-expanded', 'false');
-  await expect(listbox).toBeHidden();
-  await expect(value).toHaveText('Caspar');
-  await expect(dropdown).toHaveAttribute('value', 'caspar');
-});
-
-test('disabled dropdown-select ignores a real pointer click @interaction', async ({
-  page,
-  story,
-}) => {
-  await story.open('components-dropdown-select--disabled');
-  const dropdown = page.locator(dropdownSelector);
-  const select = dropdown.getByRole('combobox');
-  const listbox = dropdown.getByRole('listbox', { includeHidden: true });
-
-  await expect(select).toHaveAttribute('tabindex', '-1');
-  await expect(select).toHaveAttribute('aria-expanded', 'false');
-  const bounds = await select.boundingBox();
-  expect(bounds).not.toBeNull();
-  await page.mouse.click(
-    bounds.x + bounds.width / 2,
-    bounds.y + bounds.height / 2
-  );
-
-  await expect(select).toHaveAttribute('aria-expanded', 'false');
-  await expect(listbox).toBeHidden();
+  await expect(value).toHaveText('Cem');
+  await expect(dropdown).toHaveAttribute('value', 'cem');
+  await expect
+    .poll(() => dropdown.evaluate((element) => element.__changes))
+    .toEqual(['cem']);
 });

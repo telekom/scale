@@ -66,7 +66,7 @@ test('accordion buttons open and close panels with keyboard activation @interact
   await expect(panel).toBeHidden();
 });
 
-test('dependent accordion keeps only the newly selected panel open @interaction', async ({
+test('dependent accordion applies single-open behavior to a live slotted panel @interaction', async ({
   page,
   story,
 }) => {
@@ -89,6 +89,39 @@ test('dependent accordion keeps only the newly selected panel open @interaction'
   await expect(firstPanel).toBeVisible();
   await expect(secondButton).toHaveAttribute('aria-expanded', 'false');
   await expect(secondPanel).toBeHidden();
+
+  const addedHeading = 'Runtime-added panel';
+  await page.evaluate(async (heading) => {
+    await customElements.whenDefined('scale-collapsible');
+    const collapsible = document.createElement('scale-collapsible');
+    const headingElement = document.createElement('span');
+    headingElement.slot = 'heading';
+    headingElement.textContent = heading;
+    const content = document.createElement('p');
+    content.textContent = 'Runtime-added panel content';
+    collapsible.append(headingElement, content);
+    document.querySelector('scale-accordion').append(collapsible);
+    await collapsible.componentOnReady();
+  }, addedHeading);
+
+  const addedButton = page.getByRole('button', { name: addedHeading });
+  const addedPanel = page.getByRole('region', {
+    name: addedHeading,
+    includeHidden: true,
+  });
+  const addedCollapsible = page
+    .locator('scale-accordion > scale-collapsible')
+    .filter({ hasText: addedHeading });
+  await expect(addedButton).toHaveAttribute('aria-expanded', 'false');
+  await addedButton.click();
+  await expect(addedButton).toHaveAttribute('aria-expanded', 'true');
+  await expect(addedPanel).toBeVisible();
+  await expect(firstButton).toHaveAttribute('aria-expanded', 'false');
+  await expect(firstPanel).toBeHidden();
+
+  await addedCollapsible.evaluate((element) => element.remove());
+  await expect(addedButton).toHaveCount(0);
+  await expect(addedPanel).toHaveCount(0);
 
   await secondButton.click();
   await expect(firstButton).toHaveAttribute('aria-expanded', 'false');

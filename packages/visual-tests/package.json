@@ -8,7 +8,7 @@
     "test:prepare": "node scripts/prepare.js",
     "copy": "node scripts/prepare.js --copy",
     "test": "node scripts/run-container.js",
-    "test:ci": "node \"$PLAYWRIGHT_CLI\" test --grep-invert @interaction --update-snapshots=none --workers=2",
+    "test:ci": "node \"$PLAYWRIGHT_CLI\" test --grep-invert @interaction --update-snapshots=none --workers=1",
     "test:update": "node scripts/run-container.js --update-snapshots=all",
     "test:interaction": "node scripts/run-container.js --config=playwright.interaction.config.js --update-snapshots=none",
     "test:interaction:native": "playwright test --config=playwright.interaction.config.js --update-snapshots=none",

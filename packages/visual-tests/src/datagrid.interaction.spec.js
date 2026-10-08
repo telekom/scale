@@ -7,7 +7,19 @@ test('data grid selection updates rows and exports the public selection @interac
   await story.open('components-data-grid--selection-export');
 
   const grid = page.locator('scale-data-grid');
-  await expect(grid.locator('.data-grid__auto-width-check')).toHaveCount(0);
+  await grid.evaluate((element) => {
+    element.fields = [
+      { type: 'text', label: 'Customer' },
+      { type: 'text', label: 'Status' },
+    ];
+    element.rows = [
+      ['Updated customer', 'Active'],
+      ['Another customer', 'Pending'],
+    ];
+  });
+  await expect(
+    grid.getByRole('columnheader', { name: 'Customer' })
+  ).toBeVisible();
 
   let selectionPayload;
   await page.exposeFunction('recordDataGridSelection', (rows) => {
@@ -24,7 +36,9 @@ test('data grid selection updates rows and exports the public selection @interac
     );
   });
 
-  const firstRow = grid.getByRole('row').filter({ hasText: 'Hilel Hurley' });
+  const firstRow = grid
+    .getByRole('row')
+    .filter({ hasText: 'Updated customer' });
   const selectionCheckbox = firstRow
     .locator('.tbody__cell--selection')
     .getByRole('checkbox');
@@ -36,7 +50,9 @@ test('data grid selection updates rows and exports the public selection @interac
   await expect(page.locator('#aria-live')).toHaveText(
     '1 rows selected for export'
   );
-  await expect.poll(() => selectionPayload).toEqual([['Hilel Hurley', false]]);
+  await expect
+    .poll(() => selectionPayload)
+    .toEqual([['Updated customer', 'Active']]);
 });
 
 test('data grid sorts the Name column with Enter and emits sorted rows @interaction', async ({
@@ -46,7 +62,6 @@ test('data grid sorts the Name column with Enter and emits sorted rows @interact
   await story.open('components-data-grid--standard');
 
   const grid = page.locator('scale-data-grid');
-  await expect(grid.locator('.data-grid__auto-width-check')).toHaveCount(0);
 
   let sortPayload;
   await page.exposeFunction('recordDataGridSort', (detail) => {

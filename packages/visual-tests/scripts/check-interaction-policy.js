@@ -48,11 +48,11 @@ function testCase(
   };
 }
 
-function run(tests) {
+function run(tests, projects = ['chromium-light', 'chromium-dark']) {
   const reporter = new Reporter({ contracts, requireFullCoverage: true });
   reporter.onBegin(
     {
-      projects: ['chromium-light', 'chromium-dark'].map((name) => ({
+      projects: projects.map((name) => ({
         name,
         testDir: source,
         outputDir: output,
@@ -95,6 +95,8 @@ try {
     'failed'
   );
   assert.equal(run([passing[0]]), 'failed');
+  assert.equal(run([passing[0]], ['chromium-light']), 'failed');
+  assert.equal(run([passing[1]], ['chromium-dark']), 'failed');
   assert.equal(
     run([
       testCase(
@@ -110,7 +112,7 @@ try {
   fs.unlinkSync(path.join(contracts, 'button.md'));
   assert.equal(run(passing), 'failed');
   console.log(
-    'Interaction evidence policy passed: passing evidence plus six rejection checks.'
+    'Interaction evidence policy passed: passing evidence plus eight rejection checks.'
   );
 } finally {
   fs.rmSync(temporary, { recursive: true, force: true });

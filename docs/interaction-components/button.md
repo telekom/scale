@@ -5,11 +5,13 @@ The Button stories in [Button.stories.mdx](../../packages/storybook-vue/stories/
 The visual interaction spec adds three tests:
 
 - `enabled button activates once with Enter @interaction` observes one public bubbling click event after keyboard activation. It detects a lost keyboard-to-click activation path.
-- `disabled button blocks keyboard and pointer activation @interaction` checks the native disabled state, skipped keyboard focus, and no public click after keyboard or pointer input. It detects a disabled control that can still activate.
+- `button disabled attribute blocks activation and resumes after removal @interaction` checks the native disabled state, skipped keyboard focus, and no public click after keyboard or pointer input. It then removes `disabled` and verifies keyboard and pointer activation resume.
 - `button activation submits its name and value through the parent form @interaction` configures the real button as submitter with name `action` and value `save`, then verifies that the native form submission includes that value. It detects a broken shadow-DOM form-submit fallback or lost submitter data.
+
+The existing core counterpart is `packages/components/src/components/button/button.e2e.ts`; this suite adds rendered-browser checks for the disabled-attribute transition and the public click and form outcomes.
 
 Disabled coverage is limited to the non-link `disabled` story. Keyboard coverage checks Enter activation for the enabled control, Enter and Space blocking for the disabled control, and Enter-key form submission. Link-specific keyboard behavior is not covered here.
 
 ## Central Execution
 
-Passed: 3 distinct checks in both Chromium themes (12 executions, including `repeat-each=2`). Evidence: [component report](../../packages/visual-tests/interaction-results/components/button/report.json). See the [consolidated report](../interaction-tests-report.md).
+Focused validation passed 4 executions across the two configured themes. The final full run passed 142 executions (71 checks in each theme), with no failures, skips, or flaky tests. Evidence: [component report](../../packages/visual-tests/interaction-results/components/button/report.json). See the [consolidated report](../interaction-tests-report.md).

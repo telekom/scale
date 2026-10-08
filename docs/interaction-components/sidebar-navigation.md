@@ -2,19 +2,16 @@
 
 ## Source and story contract
 
-The standard story, `components-sidebar-navigation--standard`, starts the `Reference` and `Function A` branches expanded. `Function A` contains the active `Endpoint 1` link. The collapsible renders its label as a link with `role="button"` and `aria-expanded`; pointer activation toggles the branch, and Space toggles it from the keyboard. Enter uses the link's normal keyboard activation. Collapsing hides the child list but does not clear the active link's `aria-current="page"`.
+The standard story, `components-sidebar-navigation--standard`, starts the `Reference` and `Function A` branches expanded. `Function A` contains the active `Endpoint 1` link. This interaction case changes that nested link and checks current-item state and real navigation.
+
+The interaction test also checks pointer-driven branch state. It does not repeat keyboard navigation or the broader collapse/reopen checks; those remain in the visual suite.
 
 ## Tests
 
-| Test title                                                                           | Regression detected                                                                                                                                                   |
-| ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sidebar child branch toggles by pointer and preserves its active link @interaction` | Detects pointer activation that fails to collapse or reopen the branch, stale `aria-expanded` or child visibility, or loss of the active link's `aria-current` state. |
-| `sidebar child branch toggles by keyboard with visible children @interaction`        | Detects loss of normal Tab focus order, Space collapse, Enter expansion, or synchronization between `aria-expanded` and child visibility.                             |
+- `sidebar follows an updated nested link while preserving its current item @interaction`: detects loss of the active link's `aria-current` state, a stale nested child label or `href`, or failure to follow the new link through real navigation.
 
-## Scope and validation
-
-The change adds only `packages/visual-tests/src/sidebar-navigation.interaction.spec.js` and this report. It does not change production code, shared fixtures, visual snapshots, or test configuration.
+The case changes the nested link's label and `href` at runtime, then checks the public link, current-item state, and resulting URL. The existing core counterparts, `packages/components/src/components/sidebar-nav-item/sidebar-nav-item.e2e.ts` and `packages/components/src/components/sidebar-nav-collapsible/sidebar-nav-collapsible.e2e.ts`, cover component rendering; they do not replace this Storybook navigation assertion.
 
 ## Central Execution
 
-Passed: 2 distinct checks in both Chromium themes (8 executions, including `repeat-each=2`). Evidence: [component report](../../packages/visual-tests/interaction-results/components/sidebar-navigation/report.json). See the [consolidated report](../interaction-tests-report.md).
+Focused validation passed 6 executions across the two configured themes. The narrowed case passed five repeats in each theme (10 repeat executions total). The final full run passed 142 executions (71 checks in each theme), with no failures, skips, or flaky tests. Remote PR CI remains pending until the changes are pushed. Evidence: [component report](../../packages/visual-tests/interaction-results/components/sidebar-navigation/report.json). See the [consolidated report](../interaction-tests-report.md).

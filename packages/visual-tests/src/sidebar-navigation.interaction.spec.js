@@ -1,62 +1,24 @@
 const { test, expect } = require('./test-fixtures');
 
-test('sidebar child branch toggles by pointer and preserves its active link @interaction', async ({
+test('sidebar follows an updated nested link while preserving its current item @interaction', async ({
   page,
   story,
 }) => {
   await story.open('components-sidebar-navigation--standard');
-  const functionA = page.getByRole('button', {
-    name: 'Function A',
-    exact: true,
-  });
+  const initialURL = page.url();
   const endpoint1 = page.getByRole('link', {
     name: /Endpoint 1/,
-    includeHidden: true,
   });
-
-  await expect(functionA).toHaveAttribute('aria-expanded', 'true');
-  await expect(endpoint1).toBeVisible();
-  await expect(endpoint1).toHaveAttribute('aria-current', 'page');
-
-  await functionA.click();
-  await expect(functionA).toHaveAttribute('aria-expanded', 'false');
-  await expect(endpoint1).toBeHidden();
-  await expect(endpoint1).toHaveAttribute('aria-current', 'page');
-
-  await functionA.click();
-  await expect(functionA).toHaveAttribute('aria-expanded', 'true');
-  await expect(endpoint1).toBeVisible();
-  await expect(endpoint1).toHaveAttribute('aria-current', 'page');
-});
-
-test('sidebar child branch toggles by keyboard with visible children @interaction', async ({
-  page,
-  story,
-}) => {
-  await story.open('components-sidebar-navigation--standard');
-  const functionA = page.getByRole('button', {
-    name: 'Function A',
-    exact: true,
+  await endpoint1.evaluate((link) => {
+    const label = Array.from(link.childNodes).find(
+      (node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim()
+    );
+    label.textContent = 'Endpoint Live';
+    link.setAttribute('href', '#endpoint-live');
   });
-  const endpoint1 = page.getByRole('link', { name: /Endpoint 1/ });
-
-  await page.keyboard.press('Tab');
-  await expect(
-    page.getByRole('link', { name: 'Overview', exact: true })
-  ).toBeFocused();
-  await page.keyboard.press('Tab');
-  await expect(
-    page.getByRole('button', { name: 'Reference', exact: true })
-  ).toBeFocused();
-  await page.keyboard.press('Tab');
-  await expect(functionA).toBeFocused();
-
-  await page.keyboard.press('Space');
-  await expect(functionA).toHaveAttribute('aria-expanded', 'false');
-  await expect(endpoint1).toBeHidden();
-
-  await page.keyboard.press('Enter');
-  await expect(functionA).toHaveAttribute('aria-expanded', 'true');
-  await expect(endpoint1).toBeVisible();
-  await expect(endpoint1).toHaveAttribute('aria-current', 'page');
+  const liveEndpoint = page.getByRole('link', { name: /Endpoint Live/ });
+  await expect(liveEndpoint).toHaveAttribute('href', '#endpoint-live');
+  await expect(liveEndpoint).toHaveAttribute('aria-current', 'page');
+  await liveEndpoint.click();
+  await expect(page).toHaveURL(`${initialURL}#endpoint-live`);
 });

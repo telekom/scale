@@ -18,10 +18,10 @@
 - `data grid selection updates rows and exports the public selection @interaction`
 - `data grid sorts the Name column with Enter and emits sorted rows @interaction`
 
-The selection row also contains a checkbox for its Toggle data cell. The selection test targets the dedicated `.tbody__cell--selection` cell so Playwright does not match both checkboxes. The saved light- and dark-theme failures were strict-mode errors at the initial unchecked-state assertion, before any click or event assertion; they do not show a product behavior failure.
+The selection row also contains a checkbox for its Toggle data cell. The selection test targets the dedicated `.tbody__cell--selection` cell so Playwright does not match both checkboxes.
 
-These checks validate visible state independently from the corresponding public event payload. Both wait for the temporary auto-width table to be removed before interacting with the rendered grid.
+The selection case sets public `fields` and `rows` for its scenario, then checks rendered selection, export feedback, and the `scale-selection` payload. The sorting case checks rendered order and `aria-sort` independently from the `scale-sort` payload. The existing core counterpart is `packages/components/src/components/data-grid/data-grid.spec.ts`; no private sizing or measurement guard is part of these browser assertions.
 
 ## Central Execution
 
-Passed: 2 distinct checks in both Chromium themes (8 executions, including `repeat-each=2`). Evidence: [component report](../../packages/visual-tests/interaction-results/components/datagrid/report.json). See the [consolidated report](../interaction-tests-report.md).
+Focused validation passed 4 executions across the two configured themes. The final full run passed 142 executions (71 checks in each theme), with no failures, skips, or flaky tests. Evidence: [component report](../../packages/visual-tests/interaction-results/components/datagrid/report.json). See the [consolidated report](../interaction-tests-report.md).

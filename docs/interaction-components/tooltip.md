@@ -13,10 +13,12 @@ The visual test fixture in [test-fixtures.js](../../packages/visual-tests/src/te
 | `tooltip opens on hover and closes when the pointer leaves @interaction` | Detects a broken hover-to-open path, missing accessible tooltip content, or a tooltip that remains exposed after mouseout.                                      |
 | `keyboard focus opens tooltip; blur and Escape close it @interaction`    | Detects a focus trigger that fails under Tab navigation, a tooltip that remains exposed after keyboard blur, or a failure to close an open tooltip with Escape. |
 
+The hover test changes the public `content` property after opening the story and checks the updated accessible tooltip text. The existing core counterpart is `packages/components/src/components/tooltip/tooltip.e2e.ts`.
+
 ## Scope and validation
 
 The change adds only `packages/visual-tests/src/tooltip.interaction.spec.js` and this report. It does not change production code, shared fixtures, visual snapshots, or test configuration.
 
 ## Central Execution
 
-Passed: 2 distinct checks in both Chromium themes (8 executions, including `repeat-each=2`). Evidence: [component report](../../packages/visual-tests/interaction-results/components/tooltip/report.json). See the [consolidated report](../interaction-tests-report.md).
+Focused validation passed 4 executions across the two configured themes. The final full run passed 142 executions (71 checks in each theme), with no failures, skips, or flaky tests. Evidence: [component report](../../packages/visual-tests/interaction-results/components/tooltip/report.json). See the [consolidated report](../interaction-tests-report.md).

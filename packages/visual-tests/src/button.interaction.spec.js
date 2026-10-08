@@ -25,19 +25,21 @@ test('enabled button activates once with Enter @interaction', async ({
   ]);
 });
 
-test('disabled button blocks keyboard and pointer activation @interaction', async ({
+test('button disabled attribute blocks activation and resumes after removal @interaction', async ({
   page,
   story,
 }) => {
-  await story.open('components-button--disabled');
+  await story.open('components-button--standard');
   const component = page.locator('scale-button');
   const button = page.getByRole('button', { name: 'Label' });
   await component.evaluate((element) => {
-    element.__clicks = [];
+    window.scaleButtonClicks = [];
     element.addEventListener('click', (event) =>
-      element.__clicks.push(event.type)
+      window.scaleButtonClicks.push(event.type)
     );
   });
+
+  await component.evaluate((element) => element.setAttribute('disabled', ''));
   await expect(button).toBeDisabled();
   await page.keyboard.press('Tab');
   await expect(button).not.toBeFocused();
@@ -50,7 +52,26 @@ test('disabled button blocks keyboard and pointer activation @interaction', asyn
     bounds.x + bounds.width / 2,
     bounds.y + bounds.height / 2
   );
-  expect(await component.evaluate((element) => element.__clicks)).toEqual([]);
+  expect(await page.evaluate(() => window.scaleButtonClicks)).toEqual([]);
+
+  await component.evaluate((element) => element.removeAttribute('disabled'));
+  await expect(button).toBeEnabled();
+  await button.focus();
+  await page.keyboard.press('Enter');
+  expect(await page.evaluate(() => window.scaleButtonClicks)).toEqual([
+    'click',
+  ]);
+
+  const enabledBounds = await button.boundingBox();
+  expect(enabledBounds).not.toBeNull();
+  await page.mouse.click(
+    enabledBounds.x + enabledBounds.width / 2,
+    enabledBounds.y + enabledBounds.height / 2
+  );
+  expect(await page.evaluate(() => window.scaleButtonClicks)).toEqual([
+    'click',
+    'click',
+  ]);
 });
 
 test('button activation submits its name and value through the parent form @interaction', async ({

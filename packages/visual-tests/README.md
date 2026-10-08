@@ -47,7 +47,8 @@ It installs only the visual workspace's dependencies with the frozen root lock.
 A dependency volume is keyed by manifest, lock, and image. Tests and Storybook
 are copied to the container filesystem to avoid bind-mount browser I/O.
 No port is published, and no Docker socket or nested browser container is used.
-All hosts use the same x64 renderer. `--workers=1` matches the CI worker count.
+All hosts use the same x64 renderer. `--workers=1` matches the visual and
+interaction CI worker counts.
 
 The local prepare command builds Storybook on the host, while CI builds it on
 Ubuntu. In a fresh worktree, test the exact Storybook artifact used by a CI run
@@ -120,9 +121,11 @@ yarn workspace @telekom/scale-visual-tests playwright show-report interaction-re
 
 The full run tests both themes, with no retries or snapshot updates. A failed
 assertion exits nonzero. CI also rejects skipped/expected-failure tests, missing
-component contracts, and missing theme execution. Filtered local runs mark other
-components `not-run`, not passed. Display-only and deprecated components have
-explicit reasons rather than tests that pass by construction.
+component contracts, and missing theme execution. It verifies that both
+configured theme projects exist, even when the configuration is reduced.
+Filtered local runs mark other components `not-run`, not passed. Display-only
+and deprecated components have explicit reasons rather than tests that pass by
+construction.
 
 `interaction-report/index.html` is the interactive HTML report.
 `interaction-results/results.json` and `results.xml` contain machine results.
@@ -135,9 +138,14 @@ Authored contracts record agent findings; the JSON reports contain actual run
 status and test-source hashes. The seven exclusions have contracts and JSON
 reports, but no invented browser evidence.
 
-Write tests like the supplied examples: import `test` and `expect` from the
-fixture, open a real story, use role/label locators, perform real user input, and
-assert independent public outcomes. Configure public props only for setup.
+Write tests around distinct public behavior, not an arbitrary test quota. Import
+`test` and `expect` from the fixture, open a real story, use role/label locators,
+perform real user input, and assert the rendered state and relevant public
+outcomes. Runtime attributes, live
+children or slots, form submission, and native validity are useful scenarios
+when required by the contract. Existing core tests may cover basic input
+actions; add a browser assertion for a distinct rendered contract. Configure
+public props only for setup.
 For input controls, check host state or an actual production event as well as
 native state. A test-owned click marker, assigned-property readback, synthetic
 tested event, or expected value calculated with the production algorithm is not
@@ -158,18 +166,22 @@ or rewriting canonical files.
 
 `visual-storybook` builds the candidate once. `visual-tests` downloads its
 SHA-named artifact into the same pinned image, verifies snapshot policy, and
-runs `test:ci` with updates disabled and two workers. Its `visual-results`
-artifact contains HTML, JSON, JUnit, images, and failure traces. Ordinary CI
-does not write baselines or open snapshot-update PRs.
+runs `test:ci` with updates disabled and one worker. Its `visual-results`
+artifact contains HTML, JSON, JUnit, images, and failure traces and uploads with
+`if: always()`. Ordinary CI does not write baselines or open snapshot-update
+PRs.
 Baseline generation through `test:update` uses the pinned Linux image and one
 worker, independently of comparison concurrency.
 
 The separate `interaction-tests` job reuses the same SHA-named Storybook and
-pinned image. It runs the evidence-policy checks and interaction configuration
-with one worker, then uploads `interaction-results-<commit>` on success or
-failure. Visual CI excludes `@interaction` to avoid duplicate execution.
-The interaction job is a PR status check; requiring it for merge also needs the
-repository administrator to enable it in branch protection.
+pinned image. Both browser jobs install from the frozen root lock and download
+the artifact built by `visual-storybook`. The workflow uses Node 24 and v4
+Actions. Its cache keys include the root and workspace manifests plus
+`yarn.lock`; install and bootstrap use the frozen lock and non-interactive
+mode. The interaction job runs its evidence-policy checks and interaction
+configuration with one worker, then uploads its evidence artifact for seven
+days with `if: always()` and `if-no-files-found: error`. Visual CI excludes
+`@interaction` to avoid duplicate execution.
 
 ## Coverage
 
@@ -178,12 +190,13 @@ The per-component interaction suite replaces the original two seed examples.
 Button interaction states now run in both
 themes instead of inheriting the previous suite's theme.
 
-RadioButton, RadioButtonGroup, DropdownSelect, Menu, SegmentedButton, and
-SidebarNavigation contribute 82 active cases. Their assertions check rendered
-states and user-driven selection, keyboard, disabled, and navigation behavior.
-RadioButton uses a test-local production-element fixture because standalone
-stories are absent. SegmentedButton remounts after assets load; its initial-mount
-sizing behavior is not covered.
+Interaction checks are selected by public contract. For example, the current
+DropdownSelect suite checks keyboard commit and a child option disabled at
+runtime; SegmentedButton checks enabling a live slotted segment; Sidebar
+Navigation checks a nested child's live label and `href` update, preserves
+`aria-current`, follows the link through real navigation, and checks
+pointer-driven branch state. These cases use rendered controls and public
+outcomes, without cloning or remounting components to set expected state.
 
 SegmentedButton uses Chromium's `--disable-lcd-text` launch option to avoid
 subpixel glyph-edge variation after selection changes. Its baselines use the
@@ -195,11 +208,12 @@ Brand Header, Callout, and ToggleGroup. Brand Header and ToggleGroup are
 deprecated. These exclusions are retained coverage debt, not a speed gain.
 
 New tests import `test` and `expect` from [the fixture](src/test-fixtures.js),
-open a story with `story.open(id)`, use locators through open shadow roots,
-assert the relevant UI state, and call `story.screenshot('state.png')`.
-Use visible labels for covered inputs; do not force clicks or replace state
-assertions with sleeps. Add state-only tests with `@interaction` for native runs.
+open a story with `story.open(id)`, use locators through open shadow roots, and
+assert the relevant UI state. The fixture captures evidence. Use visible labels
+for covered inputs; do not force clicks or replace state assertions with sleeps.
+Add state-only tests with `@interaction` for native runs.
 
-DataGrid measures automatic columns only after nested cells and fonts are ready.
-Its visual tests also wait for the temporary measurement table to disappear.
-This prevents first-render child widths from being retained as final widths.
+The interaction suite has 71 unique test titles across 31 active components;
+light and dark themes produce 142 expected executions. The final local run
+passed all 142 executions with no failures, skips, or flaky tests. CI remains
+the remote confirmation gate.

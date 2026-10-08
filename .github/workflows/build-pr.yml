@@ -4,32 +4,35 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   prettier:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 24
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/package.json') }}
 
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+        run: yarn install --frozen-lockfile --non-interactive
 
       - name: Run Lerna bootstrap
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
-          yarn bootstrap
+          yarn bootstrap --frozen-lockfile --non-interactive
 
       - name: Run Prettier
         run: |
@@ -41,28 +44,28 @@ jobs:
   tslint:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 24
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/package.json') }}
 
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+        run: yarn install --frozen-lockfile --non-interactive
 
       - name: Run Lerna bootstrap
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
-          yarn bootstrap
+          yarn bootstrap --frozen-lockfile --non-interactive
 
       - name: Run TSLint
         run: |
@@ -71,28 +74,28 @@ jobs:
   unit-tests:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 24
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/package.json') }}
 
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+        run: yarn install --frozen-lockfile --non-interactive
 
       - name: Run Lerna bootstrap
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
-          yarn bootstrap
+          yarn bootstrap --frozen-lockfile --non-interactive
 
       - name: Run unit tests
         run: |
@@ -100,28 +103,28 @@ jobs:
   e2e-tests:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 24
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/package.json') }}
 
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+        run: yarn install --frozen-lockfile --non-interactive
 
       - name: Run Lerna bootstrap
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
-          yarn bootstrap
+          yarn bootstrap --frozen-lockfile --non-interactive
 
       - name: Generate files
         run: |
@@ -196,7 +199,7 @@ jobs:
             packages/visual-tests/report
             packages/visual-tests/test-results
           retention-days: 7
-          if-no-files-found: warn
+          if-no-files-found: error
 
   interaction-tests:
     needs: visual-storybook
@@ -242,28 +245,28 @@ jobs:
   wrapper-build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 24
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/package.json') }}
 
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+        run: yarn install --frozen-lockfile --non-interactive
 
       - name: Run Lerna bootstrap
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
-          yarn bootstrap
+          yarn bootstrap --frozen-lockfile --non-interactive
 
       - name: Generate files
         run: |
@@ -284,28 +287,28 @@ jobs:
   uncommitted-changes:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 24
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/package.json') }}
 
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+        run: yarn install --frozen-lockfile --non-interactive
 
       - name: Run Lerna bootstrap
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
-          yarn bootstrap
+          yarn bootstrap --frozen-lockfile --non-interactive
 
       - name: Generate files
         run: |

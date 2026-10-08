@@ -2,10 +2,8 @@
 
 ## Scope
 
-This change adds two `@interaction` cases in
-`packages/visual-tests/src/textarea.interaction.spec.js`. It changes only
-that test file and this contract. It does not change production code, shared
-fixtures, stories, snapshots, or runner configuration.
+The suite contains three `@interaction` cases in
+`packages/visual-tests/src/textarea.interaction.spec.js`.
 
 ## Contract And Stories
 
@@ -24,18 +22,23 @@ fixtures, stories, snapshots, or runner configuration.
 
 ## Test Cases And Prevented Regressions
 
-- `textarea accepts multiline keyboard input and emits scale-change detail`:
+- `textarea accepts multiline keyboard input and emits scale-change detail @interaction`:
   detects a broken accessible label, keyboard editing/newline behavior, value
   update, or public change-event payload.
-- `textarea enforces max length and updates its counter and scale-change detail`:
+- `textarea enforces max length and updates its counter and scale-change detail @interaction`:
   detects a missing native length limit, stale counter, or incorrect final
   change-event payload after typing beyond the limit.
+- `textarea blocks editing while readonly or disabled and resumes after removal @interaction`:
+  detects edits or `scale-input` events while either public attribute is active,
+  and detects failure to resume editing and emit the final change after removal.
 
-Both tests use accessible role-and-name locators, real keyboard input, and
+All tests use accessible role-and-name locators, real keyboard input, and
 assertions on rendered values and public event details. They do not set the
 component value, dispatch synthetic input events, use force clicks, or call
 private component methods.
 
+The existing core counterpart is `packages/components/src/components/textarea/textarea.e2e.ts`; it covers rendering and label-class behavior, while these browser cases cover editing, length enforcement, events, and runtime readonly/disabled transitions.
+
 ## Central Execution
 
-Passed: 2 distinct checks in both Chromium themes (8 executions, including `repeat-each=2`). Evidence: [component report](../../packages/visual-tests/interaction-results/components/textarea/report.json). See the [consolidated report](../interaction-tests-report.md).
+Focused validation passed 8 executions across the two configured themes. The final full run passed 142 executions (71 checks in each theme), with no failures, skips, or flaky tests. Evidence: [component report](../../packages/visual-tests/interaction-results/components/textarea/report.json). See the [consolidated report](../interaction-tests-report.md).

@@ -24,4 +24,4 @@ Coverage is limited to the standard and disabled stories. Controlled-mode behavi
 
 ## Central Execution
 
-Passed: 3 distinct checks in both Chromium themes (12 executions, including `repeat-each=2`). Evidence: [component report](../../packages/visual-tests/interaction-results/components/dropdown/report.json). See the [consolidated report](../interaction-tests-report.md).
+Passed: 3 distinct checks in both Chromium themes (6 executions) in the final 142-execution full run, with no failures, skips, or flaky tests. Evidence: [component report](../../packages/visual-tests/interaction-results/components/dropdown/report.json). See the [consolidated report](../interaction-tests-report.md).
