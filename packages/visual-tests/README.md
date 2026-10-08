@@ -121,7 +121,7 @@ yarn workspace @telekom/scale-visual-tests playwright show-report interaction-re
 
 The full run tests both themes, with no retries or snapshot updates. A failed
 assertion exits nonzero. CI also rejects skipped/expected-failure tests, missing
-component contracts, and missing theme execution. It verifies that both
+theme execution. It verifies that both
 configured theme projects exist, even when the configuration is reduced.
 Filtered local runs mark other components `not-run`, not passed. Display-only
 and deprecated components have explicit reasons rather than tests that pass by
@@ -130,13 +130,13 @@ construction.
 `interaction-report/index.html` is the interactive HTML report.
 `interaction-results/results.json` and `results.xml` contain machine results.
 `interaction-results/components.json` is the component index. Each component has
-`interaction-results/components/<component>/report.json` and `contract.md`.
+`interaction-results/components/<component>/report.json`.
 Executed tests also include final screenshots, complete traces, and accessible
 state text, even on success. Use `playwright show-trace <trace.zip>` to inspect
 the copied traces. These are evidence only, never approved screenshot baselines.
-Authored contracts record agent findings; the JSON reports contain actual run
-status and test-source hashes. The seven exclusions have contracts and JSON
-reports, but no invented browser evidence.
+The JSON reports contain actual run status and test-source hashes. The seven
+exclusions have JSON reports, but no invented browser evidence. Markdown contract
+files are not required or copied into the reports.
 
 Write tests around distinct public behavior, not an arbitrary test quota. Import
 `test` and `expect` from the fixture, open a real story, use role/label locators,

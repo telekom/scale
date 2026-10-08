@@ -31,6 +31,24 @@ test('date picker selects a calendar date and emits scale-change @interaction', 
     .toEqual(['2021-01-15']);
 });
 
+test('date picker refreshes the toggle label when localization changes @interaction', async ({
+  page,
+  story,
+}) => {
+  await story.open('components-date-picker--standard');
+  const datePicker = page.locator('scale-date-picker');
+
+  await datePicker.evaluate((element) => {
+    element.localization = {
+      buttonLabel: 'Select a date',
+      calendarHeading: 'Choose a date',
+    };
+  });
+
+  const toggle = datePicker.getByRole('button', { name: 'Select a date' });
+  await expect(toggle).toHaveAttribute('title', 'Select a date');
+});
+
 test('date picker navigates months and restores focus after Escape @interaction', async ({
   page,
   story,

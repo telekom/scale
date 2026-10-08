@@ -37,8 +37,6 @@ const result = spawnSync(
     '--mount',
     `type=bind,source=${lock},target=/source.lock,readonly`,
     '--mount',
-    `type=bind,source=${path.join(repository, 'docs/interaction-components')},target=/component-contracts,readonly`,
-    '--mount',
     `type=volume,source=scale-visual-${cache},target=/dependencies`,
     image,
     'node',

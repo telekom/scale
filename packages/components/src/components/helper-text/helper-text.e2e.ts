@@ -49,4 +49,19 @@ describe('scale-helper-text', () => {
 
     expect(color).toBe(expectedColor);
   });
+
+  it.each([
+    ['informational', 'scale-icon-alert-information'],
+    ['warning', 'scale-icon-alert-information'],
+    ['danger', 'scale-icon-alert-error'],
+    ['success', 'scale-icon-action-success'],
+  ])('hides the %s icon from assistive technology', async (variant, tag) => {
+    const page = await newE2EPage();
+    await page.setContent(
+      `<scale-helper-text variant="${variant}">Message</scale-helper-text>`
+    );
+
+    const icon = await page.find(`scale-helper-text >>> ${tag} >>> svg`);
+    expect(icon).toHaveAttribute('aria-hidden', 'true');
+  });
 });

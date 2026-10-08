@@ -21,9 +21,6 @@ for (const filename of [
 ]) {
   fs.cpSync(`/tests/${filename}`, `/work/${filename}`, { recursive: true });
 }
-fs.cpSync('/component-contracts', '/work/component-contracts', {
-  recursive: true,
-});
 const arguments = process.argv.slice(2);
 const policy = arguments.includes('--verify-policy');
 const updating = arguments.some(
@@ -46,7 +43,6 @@ const result = spawnSync(
     env: {
       ...process.env,
       NODE_PATH: '/dependencies/node_modules',
-      SCALE_INTERACTION_CONTRACTS: '/work/component-contracts',
     },
   }
 );

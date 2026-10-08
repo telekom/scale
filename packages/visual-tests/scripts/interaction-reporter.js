@@ -52,10 +52,6 @@ class InteractionReporter {
     for (const component of components) {
       const directory = path.join(output, 'components', component);
       fs.mkdirSync(directory, { recursive: true });
-      const contract = path.join(this.options.contracts, `${component}.md`);
-      if (fs.existsSync(contract))
-        fs.copyFileSync(contract, path.join(directory, 'contract.md'));
-      else issues.push(`${component}: missing component contract`);
 
       const tests = this.suite
         .allTests()

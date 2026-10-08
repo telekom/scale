@@ -52,6 +52,30 @@ test('switch toggles with Space @interaction', async ({ page, story }) => {
     .toEqual([true]);
 });
 
+test('unchecked I/O glyph ignores a conflicting inherited text color @interaction', async ({
+  page,
+  story,
+}) => {
+  await story.open('components-switch--standard');
+  const component = page.locator('scale-switch');
+  await component.evaluate((element) => {
+    element.style.color = 'rgb(255, 0, 0)';
+  });
+
+  const colors = await component.evaluate((element) => {
+    const toggle = element.querySelector('.switch__toggle');
+    const glyph = element.querySelector('.switch__io-text span');
+    return {
+      inherited: getComputedStyle(element).color,
+      toggle: getComputedStyle(toggle).color,
+      glyph: getComputedStyle(glyph).color,
+    };
+  });
+
+  expect(colors.toggle).not.toBe(colors.inherited);
+  expect(colors.glyph).toBe(colors.toggle);
+});
+
 test('disabled switch ignores pointer activation @interaction', async ({
   page,
   story,

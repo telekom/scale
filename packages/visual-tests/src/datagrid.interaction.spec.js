@@ -109,3 +109,87 @@ test('data grid sorts the Name column with Enter and emits sorted rows @interact
       ],
     });
 });
+
+test('frozen header stays aligned while scrolling down and back @interaction', async ({
+  page,
+  story,
+}) => {
+  await story.open('components-data-grid--freeze-header');
+
+  const grid = page.locator('scale-data-grid');
+  const scrollContainer = grid.locator('.data-grid__scroll-container');
+  const header = grid.locator('.thead');
+  const initialTop = await header.evaluate(
+    (element) => element.getBoundingClientRect().top
+  );
+
+  await scrollContainer.evaluate((element) => {
+    element.scrollTop = element.scrollHeight;
+  });
+  await expect
+    .poll(() =>
+      header.evaluate((element) => element.getBoundingClientRect().top)
+    )
+    .toBe(initialTop);
+
+  await scrollContainer.evaluate((element) => {
+    element.scrollTop = 0;
+  });
+  await expect
+    .poll(() =>
+      header.evaluate((element) => element.getBoundingClientRect().top)
+    )
+    .toBe(initialTop);
+});
+
+test('long sortable header clips when its column is resized narrower @interaction', async ({
+  page,
+  story,
+}) => {
+  await story.open('components-data-grid--standard');
+  const grid = page.locator('scale-data-grid');
+  const label = 'A very long sortable column heading';
+  await grid.evaluate((element, heading) => {
+    element.fields = [
+      {
+        type: 'text',
+        label: heading,
+        width: 320,
+        minWidth: 80,
+        maxWidth: 480,
+        sortable: true,
+        resizable: true,
+      },
+    ];
+    element.rows = [['Value']];
+  }, label);
+
+  const header = grid.getByRole('columnheader', { name: label });
+  const divider = header.locator('.thead__divider');
+  await expect(header).toBeVisible();
+  const bounds = await divider.boundingBox();
+  const initialWidth = await grid.evaluate(
+    (element) => element.fields[0].width
+  );
+
+  await page.mouse.move(
+    bounds.x + bounds.width / 2,
+    bounds.y + bounds.height / 2
+  );
+  await page.mouse.down();
+  await page.mouse.move(bounds.x - 100, bounds.y + bounds.height / 2, {
+    steps: 4,
+  });
+  await page.mouse.up();
+
+  await expect
+    .poll(() => grid.evaluate((element) => element.fields[0].width))
+    .toBeLessThan(initialWidth);
+  await expect(header.locator('.thead__arrow-top')).toBeAttached();
+  await expect(header.locator('.thead__text')).toHaveCSS(
+    'text-overflow',
+    'ellipsis'
+  );
+  await header.click();
+  await expect(header).toHaveAttribute('aria-sort', 'ascending');
+});

@@ -1,4 +1,3 @@
-const path = require('path');
 const { defineConfig } = require('@playwright/test');
 const visual = require('./playwright.config');
 
@@ -14,9 +13,6 @@ module.exports = defineConfig(visual, {
     [
       './scripts/interaction-reporter.js',
       {
-        contracts:
-          process.env.SCALE_INTERACTION_CONTRACTS ||
-          path.resolve(__dirname, '../../docs/interaction-components'),
         requireFullCoverage: Boolean(process.env.CI),
       },
     ],

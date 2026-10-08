@@ -24,6 +24,68 @@ test('textfield accepts keyboard input and emits scale-change detail @interactio
   await expect.poll(() => changes.at(-1)).toEqual({ value: 'Ada' });
 });
 
+test('visually hidden label remains the textbox accessible name @interaction', async ({
+  page,
+  story,
+}) => {
+  await story.open('components-text-field--standard');
+  const component = page.locator('scale-text-field');
+  await component.evaluate((element) => {
+    element.hideLabelVisually = true;
+  });
+
+  const input = component.getByRole('textbox', { name: 'An input' });
+  await expect(input).toBeVisible();
+  await expect(input).toHaveAccessibleName('An input');
+});
+
+test('text-field control grows with the root font size @interaction', async ({
+  page,
+  story,
+}) => {
+  await story.open('components-text-field--standard');
+  const input = page
+    .locator('scale-text-field')
+    .getByRole('textbox', { name: 'An input' });
+  const initialHeight = await input.evaluate(
+    (element) => element.getBoundingClientRect().height
+  );
+
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = '32px';
+  });
+
+  await expect
+    .poll(() =>
+      input.evaluate((element) => element.getBoundingClientRect().height)
+    )
+    .toBeGreaterThan(initialHeight);
+});
+
+test('long text-field label stays on one clipped line @interaction', async ({
+  page,
+  story,
+}) => {
+  await story.open('components-text-field--standard');
+  const component = page.locator('scale-text-field');
+  await component.evaluate((element) => {
+    element.style.width = '220px';
+    element.label = 'A very long label that must stay within the text field';
+  });
+
+  const label = component.locator('.text-field__label');
+  await expect(label).toHaveCSS('text-overflow', 'ellipsis');
+  await expect(label).toHaveCSS('white-space', 'nowrap');
+  await expect(label).toHaveCSS('overflow', 'hidden');
+  const bounds = await label.boundingBox();
+  const fieldBounds = await component.boundingBox();
+  expect(bounds).not.toBeNull();
+  expect(fieldBounds).not.toBeNull();
+  expect(bounds.x + bounds.width).toBeLessThanOrEqual(
+    fieldBounds.x + fieldBounds.width
+  );
+});
+
 test('textfield enforces max length and updates counter with scale-change detail @interaction', async ({
   page,
   story,

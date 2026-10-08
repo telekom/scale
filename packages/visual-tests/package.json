@@ -12,7 +12,7 @@
     "test:update": "node scripts/run-container.js --update-snapshots=all",
     "test:interaction": "node scripts/run-container.js --config=playwright.interaction.config.js --update-snapshots=none",
     "test:interaction:native": "playwright test --config=playwright.interaction.config.js --update-snapshots=none",
-    "test:interaction:ci": "node \"$PLAYWRIGHT_CLI\" test --config=playwright.interaction.config.js --update-snapshots=none --workers=1",
+    "test:interaction:ci": "node \"$PLAYWRIGHT_CLI\" test --config=playwright.interaction.config.js --update-snapshots=none --workers=2",
     "test:interaction:policy": "node scripts/check-interaction-policy.js",
     "test:policy": "node scripts/run-container.js --verify-policy",
     "format": "prettier --write \"package.json\" \"src/**/*.js\" \"scripts/*.js\" \"./*.js\""
