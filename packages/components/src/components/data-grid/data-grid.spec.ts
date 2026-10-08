@@ -141,6 +141,15 @@ describe('DataGrid', () => {
     ).toBe('Nested details');
   });
 
+  it('uses non-nullish text values for auto-width checks', () => {
+    const longestContent = DataGrid.prototype.getDefaultLongestContent({
+      rows: [[null], [undefined], ['Present']],
+      columnIndex: 0,
+    });
+
+    expect(longestContent).toBe('Present');
+  });
+
   it('uses the longest inline html content for auto width checks', () => {
     const shortButton = document.createElement('button');
     shortButton.textContent = 'Open';

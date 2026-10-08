@@ -17,6 +17,7 @@ for (const filename of [
   'scripts',
   'storybook-static',
   'playwright.config.js',
+  'playwright.interaction.config.js',
 ]) {
   fs.cpSync(`/tests/${filename}`, `/work/${filename}`, { recursive: true });
 }
@@ -39,11 +40,19 @@ const result = spawnSync(
   {
     cwd: '/work',
     stdio: 'inherit',
-    env: { ...process.env, NODE_PATH: '/dependencies/node_modules' },
+    env: {
+      ...process.env,
+      NODE_PATH: '/dependencies/node_modules',
+    },
   }
 );
 if (!policy) {
-  for (const directory of ['report', 'test-results']) {
+  const directories = arguments.some((argument) =>
+    argument.includes('playwright.interaction.config.js')
+  )
+    ? ['interaction-report', 'interaction-results']
+    : ['report', 'test-results'];
+  for (const directory of directories) {
     fs.rmSync(`/tests/${directory}`, { recursive: true, force: true });
     if (fs.existsSync(`/work/${directory}`)) {
       fs.cpSync(`/work/${directory}`, `/tests/${directory}`, {
