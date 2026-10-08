@@ -198,6 +198,47 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
 
+  interaction-tests:
+    needs: visual-storybook
+    runs-on: ubuntu-22.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
+      options: --ipc=host
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install interaction test dependencies
+        run: |
+          mkdir -p /tmp/scale-interaction-dependencies
+          cp packages/visual-tests/package.json yarn.lock /tmp/scale-interaction-dependencies/
+          cd /tmp/scale-interaction-dependencies
+          yarn install --frozen-lockfile --ignore-scripts --non-interactive
+      - name: Download candidate Storybook
+        uses: actions/download-artifact@v4
+        with:
+          name: visual-storybook-${{ github.sha }}
+          path: packages/visual-tests/storybook-static
+      - name: Verify interaction evidence policy
+        working-directory: packages/visual-tests
+        run: node scripts/check-interaction-policy.js
+      - name: Run interaction correctness gate in both themes
+        working-directory: packages/visual-tests
+        env:
+          NODE_PATH: /tmp/scale-interaction-dependencies/node_modules
+          PLAYWRIGHT_CLI: /tmp/scale-interaction-dependencies/node_modules/@playwright/test/cli.js
+        run: yarn workspace @telekom/scale-visual-tests test:interaction:ci
+      - name: Check for snapshot changes
+        run: git -c safe.directory="$GITHUB_WORKSPACE" diff --exit-code -- packages/visual-tests/src/__image_snapshots__
+      - name: Upload per-component interaction evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: interaction-results-${{ github.sha }}
+          path: |
+            packages/visual-tests/interaction-report
+            packages/visual-tests/interaction-results
+          retention-days: 7
+          if-no-files-found: error
+
   wrapper-build:
     runs-on: ubuntu-22.04
     steps:

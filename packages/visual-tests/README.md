@@ -96,14 +96,53 @@ controls, focus, calendars, and popup positioning before accepting an upgrade.
 
 ```sh
 yarn workspace @telekom/scale-visual-tests playwright install chromium
-yarn workspace @telekom/scale-visual-tests test:interaction
+yarn workspace @telekom/scale-visual-tests test:interaction:native
 ```
 
-These checks assert keyboard focus/activation and checkbox state without images
-or Docker. They do not replace Stencil spec/E2E tests; the core package declares
+These checks run the interaction suite without Docker. Evidence screenshots are
+not visual baselines. They do not replace Stencil spec/E2E tests; the core package declares
 its existing Jest dependencies directly. Set `SCALE_VISUAL_PORT`
 for a second worktree; the server will not attach to an existing server.
 Playwright stops the test server after the run.
+
+## Interaction Correctness Gate
+
+Run the Prepare steps first, from this source. Use Docker Desktop for the same
+browser image as CI. Preparation is required again after source or story changes.
+
+```sh
+yarn workspace @telekom/scale-visual-tests test:interaction
+yarn workspace @telekom/scale-visual-tests test:interaction --workers=1 '(^|/)checkbox[.]interaction[.]spec[.]js$'
+yarn workspace @telekom/scale-visual-tests test:interaction --repeat-each=2
+yarn workspace @telekom/scale-visual-tests test:interaction:policy
+yarn workspace @telekom/scale-visual-tests playwright show-report interaction-report
+```
+
+The full run tests both themes, with no retries or snapshot updates. A failed
+assertion exits nonzero. CI also rejects skipped/expected-failure tests, missing
+component contracts, and missing theme execution. Filtered local runs mark other
+components `not-run`, not passed. Display-only and deprecated components have
+explicit reasons rather than tests that pass by construction.
+
+`interaction-report/index.html` is the interactive HTML report.
+`interaction-results/results.json` and `results.xml` contain machine results.
+`interaction-results/components.json` is the component index. Each component has
+`interaction-results/components/<component>/report.json` and `contract.md`.
+Executed tests also include final screenshots, complete traces, and accessible
+state text, even on success. Use `playwright show-trace <trace.zip>` to inspect
+the copied traces. These are evidence only, never approved screenshot baselines.
+Authored contracts record agent findings; the JSON reports contain actual run
+status and test-source hashes. The seven exclusions have contracts and JSON
+reports, but no invented browser evidence.
+
+Write tests like the supplied examples: import `test` and `expect` from the
+fixture, open a real story, use role/label locators, perform real user input, and
+assert independent public outcomes. Configure public props only for setup.
+For input controls, check host state or an actual production event as well as
+native state. A test-owned click marker, assigned-property readback, synthetic
+tested event, or expected value calculated with the production algorithm is not
+an interaction gate. Disabled pointer attempts use real coordinate clicks, not
+forced actions. Do not add sleeps or skip a failing behavior to make CI pass.
 
 ## Snapshot Policy
 
@@ -125,10 +164,18 @@ does not write baselines or open snapshot-update PRs.
 Baseline generation through `test:update` uses the pinned Linux image and one
 worker, independently of comparison concurrency.
 
+The separate `interaction-tests` job reuses the same SHA-named Storybook and
+pinned image. It runs the evidence-policy checks and interaction configuration
+with one worker, then uploads `interaction-results-<commit>` on success or
+failure. Visual CI excludes `@interaction` to avoid duplicate execution.
+The interaction job is a PR status check; requiring it for merge also needs the
+repository administrator to enable it in branch protection.
+
 ## Coverage
 
-All 38 legacy files are migrated: 478 active visual cases plus four native
-interaction cases across both themes. Button interaction states now run in both
+All 38 legacy visual files are migrated: 478 active visual cases.
+The per-component interaction suite replaces the original two seed examples.
+Button interaction states now run in both
 themes instead of inheriting the previous suite's theme.
 
 RadioButton, RadioButtonGroup, DropdownSelect, Menu, SegmentedButton, and

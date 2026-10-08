@@ -2,6 +2,18 @@ const path = require('path');
 const { test: base, expect } = require('@playwright/test');
 
 const test = base.extend({
+  interactionEvidence: [
+    async ({ page }, use, testInfo) => {
+      await use();
+      if (testInfo.title.includes('@interaction') && !page.isClosed()) {
+        await testInfo.attach('final-accessible-state', {
+          body: await page.locator('body').ariaSnapshot(),
+          contentType: 'text/plain',
+        });
+      }
+    },
+    { auto: true },
+  ],
   story: async ({ page, browser, colorScheme }, use, testInfo) => {
     const errors = [];
     page.on('pageerror', (error) => errors.push(error.message));
