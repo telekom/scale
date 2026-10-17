@@ -30,6 +30,8 @@ const result = spawnSync(
     '--init',
     '--ipc=host',
     '--platform=linux/amd64',
+    '--env',
+    `CI=${process.env.CI || ''}`,
     '--mount',
     `type=bind,source=${visual},target=/tests`,
     '--mount',

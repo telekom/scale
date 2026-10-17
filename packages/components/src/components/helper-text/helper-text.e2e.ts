@@ -10,13 +10,14 @@
  */
 
 import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@jest/globals';
 
 describe('scale-helper-text', () => {
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent('<scale-helper-text>default</scale-helper-text>');
     const element = await page.find('scale-helper-text');
-    expect(element).toHaveClass('hydrated');
+    expect(await element.getAttribute('class')).toContain('hydrated');
   });
 
   it('uses the dark-mode danger token', async () => {
@@ -25,7 +26,7 @@ describe('scale-helper-text', () => {
       '<div data-mode="dark"><scale-helper-text variant="danger">default</scale-helper-text></div>'
     );
     const element = await page.find('scale-helper-text');
-    expect(element).toHaveClass('hydrated');
+    expect(await element.getAttribute('class')).toContain('hydrated');
 
     const expectedColor = await page.$eval(
       '[data-mode="dark"]',
@@ -48,5 +49,20 @@ describe('scale-helper-text', () => {
     );
 
     expect(color).toBe(expectedColor);
+  });
+
+  it.each([
+    ['informational', 'scale-icon-alert-information'],
+    ['warning', 'scale-icon-alert-information'],
+    ['danger', 'scale-icon-alert-error'],
+    ['success', 'scale-icon-action-success'],
+  ])('hides the %s icon from assistive technology', async (variant, tag) => {
+    const page = await newE2EPage();
+    await page.setContent(
+      `<scale-helper-text variant="${variant}">Message</scale-helper-text>`
+    );
+
+    const icon = await page.find(`scale-helper-text >>> ${tag} >>> svg`);
+    expect(await icon.getAttribute('aria-hidden')).toBe('true');
   });
 });
