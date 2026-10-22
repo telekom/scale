@@ -13,7 +13,7 @@
     "@storybook/addon-docs": "^6.4.22",
     "@storybook/addon-links": "^6.4.22",
     "@storybook/addons": "^6.4.22",
-    "@storybook/api": "^6.4.22",
+    "@storybook/api": "^7.6.17",
     "@storybook/components": "^6.4.22",
     "@storybook/core-events": "^6.4.22",
     "@storybook/theming": "^6.4.22",
