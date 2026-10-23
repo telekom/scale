@@ -10,7 +10,7 @@
     "@babel/plugin-transform-class-properties": "^7.27.1",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-controls": "^6.4.22",
-    "@storybook/addon-docs": "^6.4.22",
+    "@storybook/addon-docs": "^10.6.1",
     "@storybook/addon-links": "^6.4.22",
     "@storybook/addons": "^6.4.22",
     "@storybook/api": "^7.6.17",
