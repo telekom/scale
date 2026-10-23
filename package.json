@@ -23,7 +23,7 @@
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "husky": "^9.1.7",
-    "lerna": "^9.0.7",
+    "lerna": "^10.0.1",
     "prettier": "3.8.4",
     "replace-in-file": "^8.4.0",
     "rimraf": "^6.1.3"
