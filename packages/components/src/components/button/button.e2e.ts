@@ -43,4 +43,20 @@ describe('scale-button', () => {
     await input.press('Enter');
     expect(spy).toHaveReceivedEvent();
   });
+
+  it('should reflect disabled property changes to the native button', async () => {
+    const page = await newE2EPage();
+    await page.setContent('<scale-button disabled>Click me!</scale-button>');
+    const element = await page.find('scale-button');
+    const button = await page.find('scale-button >>> button');
+
+    expect(element).toHaveAttribute('disabled');
+    expect(button).toHaveAttribute('disabled');
+
+    await element.setProperty('disabled', false);
+    await page.waitForChanges();
+
+    expect(element).not.toHaveAttribute('disabled');
+    expect(button).not.toHaveAttribute('disabled');
+  });
 });
