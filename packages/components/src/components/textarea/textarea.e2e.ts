@@ -12,6 +12,43 @@
 import { newE2EPage } from '@stencil/core/testing';
 
 describe('scale-textarea', () => {
+  it('keeps a visually hidden label as the accessible name', async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      '<scale-textarea label="Description" hide-label-visually></scale-textarea>'
+    );
+    const input = await page.$('scale-textarea textarea');
+    expect(await page.accessibility.snapshot({ root: input })).toMatchObject({
+      name: 'Description',
+    });
+    const size = await page.$eval('scale-textarea label', (label) => {
+      const rect = label.getBoundingClientRect();
+      return { width: rect.width, height: rect.height };
+    });
+    expect(size.width).toBeLessThanOrEqual(1);
+    expect(size.height).toBeLessThanOrEqual(1);
+
+    await input.focus();
+    await input.type('A note');
+    await page.waitForChanges();
+    expect(await page.accessibility.snapshot({ root: input })).toMatchObject({
+      name: 'Description',
+    });
+
+    const element = await page.find('scale-textarea');
+    element.setProperty('hideLabelVisually', false);
+    await page.waitForChanges();
+    expect(await page.accessibility.snapshot({ root: input })).toMatchObject({
+      name: 'Description',
+    });
+    expect(
+      await page.$eval(
+        'scale-textarea label',
+        (label) => label.getBoundingClientRect().height
+      )
+    ).toBeGreaterThan(1);
+  });
+
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent('<scale-textarea/>');
