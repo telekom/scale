@@ -122,7 +122,9 @@
   background-color: var(--background-hover);
 }
 
-[part~='select']:not([part~='disabled']):not([part~='readonly'])[part~='invalid']
+[part~='select']:not([part~='disabled']):not(
+    [part~='readonly']
+  )[part~='invalid']
   [part='combobox']:hover {
   background-color: var(--background-hover);
 }
