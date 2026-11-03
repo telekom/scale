@@ -216,6 +216,33 @@ describe('DropdownSelect', function () {
       expect(changeSpy).not.toBeCalled();
     });
 
+    it('should still close on blur when readonly is set while open', async () => {
+      const page = await newSpecPage({
+        components: [DropdownSelect],
+        html: `
+        <scale-dropdown-select value="caspar">
+            <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+        </scale-dropdown-select>`,
+      });
+      const selectEl = page.doc.querySelector('scale-dropdown-select');
+      const comboboxEl: HTMLElement =
+        selectEl.shadowRoot.querySelector('[part="combobox"]');
+      comboboxEl.scrollIntoView = function () {};
+      comboboxEl.focus = function () {};
+
+      comboboxEl.click();
+      await page.waitForChanges();
+      expect(comboboxEl.getAttribute('aria-expanded')).toBe('true');
+
+      selectEl.readonly = true;
+      await page.waitForChanges();
+      comboboxEl.dispatchEvent(new Event('blur'));
+      await page.waitForChanges();
+
+      expect(comboboxEl.getAttribute('aria-expanded')).toBe('false');
+    });
+
     it('should neither open nor change it`s value with the keyboard', async () => {
       const { page, changeSpy, selectEl, comboboxEl } = await setup();
 

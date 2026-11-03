@@ -367,7 +367,11 @@ export class DropdownSelect {
       return;
     }
 
-    if (this.disabled || this.readonly) {
+    if (this.disabled) {
+      return;
+    }
+    // read-only only blocks opening, so blur can still close a list opened before readonly was set
+    if (open && this.readonly) {
       return;
     }
     this.open = open;

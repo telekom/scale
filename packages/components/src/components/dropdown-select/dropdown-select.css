@@ -153,6 +153,12 @@
   background: var(--background-readonly);
 }
 
+/* read-only never opens, so the selected option can't take over the focus indicator */
+[part~='readonly'] [part='combobox']:focus {
+  outline: var(--focus-outline);
+  outline-offset: 1px;
+}
+
 [part~='disabled'] [part='combobox'] {
   cursor: not-allowed;
   border-color: var(--border-color-disabled);
