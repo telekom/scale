@@ -10,6 +10,8 @@
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --border-color-readonly: var(--telekom-color-ui-border-disabled);
+  --background-readonly: var(--telekom-color-ui-disabled);
   --border-invalid: var(--telekom-spacing-composition-space-02) solid
     var(--telekom-color-functional-danger-hovered);
   --focus-outline: var(--telekom-line-weight-highlight) solid
@@ -101,24 +103,26 @@
   text-overflow: ellipsis;
 }
 
-[part~='select']:not([part~='disabled'])
+[part~='select']:not([part~='disabled']):not([part~='readonly'])
   [part='combobox']:hover
   ~ [part='icon'] {
   color: var(--color-icon-hover);
 }
-[part~='select']:not([part~='disabled'])
+[part~='select']:not([part~='disabled']):not([part~='readonly'])
   [part='combobox']:active
   ~ [part='icon'] {
   color: var(--color-icon-active);
 }
 
-[part~='select']:not([part~='disabled']):not([part~='invalid'])
+[part~='select']:not([part~='disabled']):not([part~='readonly']):not(
+    [part~='invalid']
+  )
   [part='combobox']:hover {
   border-color: var(--border-color-hover);
   background-color: var(--background-hover);
 }
 
-[part~='select']:not([part~='disabled'])[part~='invalid']
+[part~='select']:not([part~='disabled']):not([part~='readonly'])[part~='invalid']
   [part='combobox']:hover {
   background-color: var(--background-hover);
 }
@@ -140,6 +144,11 @@
 
 [part~='transparent'] [part='combobox'] {
   background-color: transparent;
+}
+
+[part~='readonly'] [part='combobox'] {
+  border-color: var(--border-color-readonly);
+  background: var(--background-readonly);
 }
 
 [part~='disabled'] [part='combobox'] {
