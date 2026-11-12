@@ -370,6 +370,10 @@ export class DropdownSelect {
     if (this.disabled) {
       return;
     }
+    // read-only only blocks opening, so blur can still close a list opened before readonly was set
+    if (open && this.readonly) {
+      return;
+    }
     this.open = open;
 
     if (!this.open) {
@@ -381,7 +385,7 @@ export class DropdownSelect {
 
   handleOptionClick(event, index) {
     event.stopPropagation();
-    if (readOptions(this.hostElement)[index].disabled) {
+    if (this.readonly || readOptions(this.hostElement)[index].disabled) {
       return;
     }
 
@@ -426,6 +430,11 @@ export class DropdownSelect {
     const options = readOptions(this.hostElement);
     const action = getActionFromKey(event, this.open);
     emitEvent(this, 'scale-keydown', event);
+
+    // read-only: focusable like a native read-only input, but no key opens it or picks an option
+    if (this.readonly) {
+      return;
+    }
 
     switch (action) {
       case Actions['Last']:
@@ -535,6 +544,7 @@ export class DropdownSelect {
                 : {})}
               {...(describedBy ? ariaDescribedByAttr : {})}
               {...(this.invalid ? { 'aria-invalid': 'true' } : {})}
+              {...(this.readonly ? { 'aria-readonly': 'true' } : {})}
             >
               <span part="combobox-value">
                 {hasEmptyValueElement ? '' : ValueElement}

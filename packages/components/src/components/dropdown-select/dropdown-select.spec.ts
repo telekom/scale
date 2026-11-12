@@ -172,4 +172,88 @@ describe('DropdownSelect', function () {
       expect(changeSpy).not.toBeCalled();
     });
   });
+
+  describe('when readonly', () => {
+    const html = `
+      <scale-dropdown-select readonly value="caspar">
+          <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+          <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+          <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+      </scale-dropdown-select>`;
+
+    async function setup() {
+      const page = await newSpecPage({ components: [DropdownSelect], html });
+      const changeSpy = jest.fn();
+      const selectEl = page.doc.querySelector('scale-dropdown-select');
+      selectEl.addEventListener('scale-change', changeSpy);
+      const comboboxEl: HTMLElement =
+        selectEl.shadowRoot.querySelector('[part="combobox"]');
+      comboboxEl.scrollIntoView = function () {};
+      comboboxEl.focus = function () {};
+      return { page, changeSpy, selectEl, comboboxEl };
+    }
+
+    it('should stay focusable and be marked aria-readonly', async () => {
+      const { comboboxEl } = await setup();
+
+      expect(comboboxEl.getAttribute('tabindex')).toBe('0');
+      expect(comboboxEl.getAttribute('aria-readonly')).toBe('true');
+    });
+
+    it('should neither open nor change it`s value on click', async () => {
+      const { page, changeSpy, selectEl, comboboxEl } = await setup();
+      const optionsEls: NodeListOf<HTMLElement> =
+        selectEl.shadowRoot.querySelectorAll('[role="option"]');
+
+      comboboxEl.click();
+      await page.waitForChanges();
+      expect(comboboxEl.getAttribute('aria-expanded')).toBe('false');
+
+      optionsEls[2].click();
+      await page.waitForChanges();
+
+      expect(selectEl.value).toBe('caspar');
+      expect(changeSpy).not.toBeCalled();
+    });
+
+    it('should still close on blur when readonly is set while open', async () => {
+      const page = await newSpecPage({
+        components: [DropdownSelect],
+        html: `
+        <scale-dropdown-select value="caspar">
+            <scale-dropdown-select-item value="caspar">Caspar</scale-dropdown-select-item>
+            <scale-dropdown-select-item value="cedric">Cedric</scale-dropdown-select-item>
+        </scale-dropdown-select>`,
+      });
+      const selectEl = page.doc.querySelector('scale-dropdown-select');
+      const comboboxEl: HTMLElement =
+        selectEl.shadowRoot.querySelector('[part="combobox"]');
+      comboboxEl.scrollIntoView = function () {};
+      comboboxEl.focus = function () {};
+
+      comboboxEl.click();
+      await page.waitForChanges();
+      expect(comboboxEl.getAttribute('aria-expanded')).toBe('true');
+
+      selectEl.readonly = true;
+      await page.waitForChanges();
+      comboboxEl.dispatchEvent(new Event('blur'));
+      await page.waitForChanges();
+
+      expect(comboboxEl.getAttribute('aria-expanded')).toBe('false');
+    });
+
+    it('should neither open nor change it`s value with the keyboard', async () => {
+      const { page, changeSpy, selectEl, comboboxEl } = await setup();
+
+      for (const key of ['ArrowDown', 'Enter', ' ', 'End', 'c', 'Enter']) {
+        comboboxEl.dispatchEvent(new KeyboardEvent('keydown', { key }));
+        await page.waitForChanges();
+        expect(comboboxEl.getAttribute('aria-expanded')).toBe('false');
+      }
+
+      expect(selectEl.value).toBe('caspar');
+      expect(changeSpy).not.toBeCalled();
+    });
+  });
 });

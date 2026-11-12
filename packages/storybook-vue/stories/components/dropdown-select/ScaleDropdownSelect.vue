@@ -10,7 +10,7 @@
     :combobox-id="comboboxId"
     :hide-label-visually="hideLabelVisually"
     :floating-strategy="floatingStrategy"
-    :read-only="readOnly"
+    :readonly="readOnly"
     :transparent="transparent"
     :aria-label-selected="ariaLabelSelected"
     :hcm-label-disabled="hcmLabelDisabled"
