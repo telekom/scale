@@ -23,7 +23,11 @@ const isDirectChild = (parent: HTMLElement, child: HTMLElement) =>
 export class TelekomNavList {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop({ reflect: true }) role: string | null = 'menu';
+  /**
+   * ARIA role of the list. Defaults to `list` for `variant="main-nav"`, so its links
+   * keep their native link role, and to `menu` for the other variants.
+   */
+  @Prop() role?: string | null;
   @Prop({ reflect: true }) alignment: 'left' | 'center' | 'right' = 'left';
   @Prop({ reflect: true }) variant:
     | 'meta-nav-external'
@@ -57,9 +61,13 @@ export class TelekomNavList {
     });
   }
 
+  get defaultRole(): string {
+    return this.variant === 'main-nav' ? 'list' : 'menu';
+  }
+
   render() {
     return (
-      <Host class="scale-telekom-nav-list">
+      <Host class="scale-telekom-nav-list" role={this.role ?? this.defaultRole}>
         <slot></slot>
       </Host>
     );

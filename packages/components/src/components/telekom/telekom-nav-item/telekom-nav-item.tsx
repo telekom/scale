@@ -43,7 +43,11 @@ export class TelekomNavItem {
     | 'lang-switcher'
     | 'main-nav'
     | 'functions' = 'main-nav';
-  @Prop({ reflect: true }) role: string | null = 'none';
+  /**
+   * ARIA role of the item. Defaults to `listitem` inside a list with `role="list"`,
+   * and to `none` otherwise.
+   */
+  @Prop() role?: string | null;
   @Prop({ reflect: true }) hideOnMobile?: boolean = false;
   @Prop({ reflect: true }) hideOnDesktop?: boolean = false;
 
@@ -71,9 +75,18 @@ export class TelekomNavItem {
       el.matches('a, button')
     );
     const parentRole = this.hostElement.parentElement?.getAttribute('role');
+    if (this.role == null) {
+      // The parent list may set its role after this item first rendered.
+      this.hostElement.setAttribute('role', this.defaultRole);
+    }
     if (child && parentRole === 'menu') {
       child.setAttribute('role', 'menuitem');
     }
+  }
+
+  get defaultRole(): string {
+    const parentRole = this.hostElement.parentElement?.getAttribute('role');
+    return parentRole === 'list' ? 'listitem' : 'none';
   }
 
   get linkElement(): HTMLAnchorElement | null {
@@ -85,6 +98,7 @@ export class TelekomNavItem {
       // The `scale-telekom-nav-item` class is used to avoid coupling styles to the tagname
       // (which can be different based on who defines it)
       <Host
+        role={this.role ?? this.defaultRole}
         class={{
           'scale-telekom-nav-item': true,
           'scl-hide-on-mobile': this.hideOnMobile,
