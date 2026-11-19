@@ -61,6 +61,22 @@ export class TelekomNavList {
     });
   }
 
+  componentDidLoad() {
+    if ((this.role ?? this.defaultRole) !== 'list') {
+      return;
+    }
+    // A wrapper around a nav item, such as `scale-menu-flyout` for a dropdown,
+    // is the list item, so the list keeps list item children.
+    [...this.hostElement.children].forEach((el: HTMLElement) => {
+      if (
+        el.tagName.toLowerCase() !== 'scale-telekom-nav-item' &&
+        !el.hasAttribute('role')
+      ) {
+        el.setAttribute('role', 'listitem');
+      }
+    });
+  }
+
   get defaultRole(): string {
     return this.variant === 'main-nav' ? 'list' : 'menu';
   }

@@ -54,6 +54,29 @@ describe('scale-telekom-nav-list roles', () => {
     expect(link.getAttribute('role')).toBe('menuitem');
   });
 
+  it('makes a dropdown wrapper the list item', async () => {
+    const page = await newSpecPage({
+      components: [TelekomNavList, TelekomNavItem],
+      html: `
+        <scale-telekom-nav-list variant="main-nav">
+          <scale-menu-flyout>
+            <scale-telekom-nav-item slot="trigger"><button>Topic One</button></scale-telekom-nav-item>
+          </scale-menu-flyout>
+        </scale-telekom-nav-list>`,
+    });
+
+    expect(
+      page.body.querySelector('scale-telekom-nav-list').getAttribute('role')
+    ).toBe('list');
+    expect(
+      page.body.querySelector('scale-menu-flyout').getAttribute('role')
+    ).toBe('listitem');
+    expect(
+      page.body.querySelector('scale-telekom-nav-item').getAttribute('role')
+    ).toBe('none');
+    expect(page.body.querySelector('button').hasAttribute('role')).toBe(false);
+  });
+
   it('respects a role set by the consumer', async () => {
     const page = await renderList('variant="main-nav" role="menu"');
     const list = page.body.querySelector('scale-telekom-nav-list');
