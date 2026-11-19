@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                                                                                | Default      |
-| ----------- | ----------- | ----------- | ----------------------------------------------------------------------------------- | ------------ |
-| `alignment` | `alignment` |             | `"center" \| "left" \| "right"`                                                     | `'left'`     |
-| `role`      | `role`      |             | `string`                                                                            | `'menu'`     |
-| `variant`   | `variant`   |             | `"functions" \| "lang-switcher" \| "main-nav" \| "meta-nav" \| "meta-nav-external"` | `'main-nav'` |
+| Property    | Attribute   | Description                                                                                                                                         | Type                                                                                | Default      |
+| ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------ |
+| `alignment` | `alignment` |                                                                                                                                                     | `"center" \| "left" \| "right"`                                                     | `'left'`     |
+| `role`      | `role`      | ARIA role of the list. Defaults to `list` for `variant="main-nav"`, so its links keep their native link role, and to `menu` for the other variants. | `string`                                                                            | `undefined`  |
+| `variant`   | `variant`   |                                                                                                                                                     | `"functions" \| "lang-switcher" \| "main-nav" \| "meta-nav" \| "meta-nav-external"` | `'main-nav'` |
 
 
 ## Slots
